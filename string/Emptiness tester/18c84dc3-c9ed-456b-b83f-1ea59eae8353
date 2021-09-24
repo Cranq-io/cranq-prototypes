@@ -1,0 +1,100 @@
+{
+    "description":  "Tells whether the input string is empty.",
+    "interface":  {
+                      "inputs":  {
+                                     "string":  {
+                                                    "type":  "string"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "empty":  {
+                                                    "type":  "boolean"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "get length":  {
+                                                                           "coordinates":  [
+                                                                                               0,
+                                                                                               0
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "string/Length getter"
+                                                                       },
+                                                        "zero":  {
+                                                                     "coordinates":  [
+                                                                                         0,
+                                                                                         0
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+                                                                                    "data":  "0"
+                                                                                },
+                                                                     "prototype":  "data/Store"
+                                                                 },
+                                                        "is equal":  {
+                                                                         "coordinates":  [
+                                                                                             0,
+                                                                                             0
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "number/Equality tester"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "get length":  {
+                                                                                 "length":  {
+                                                                                                "zero":  {
+                                                                                                             "read":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                         },
+                                                                                                "is equal":  {
+                                                                                                                 "a":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                             }
+                                                                                            }
+                                                                             },
+                                                              "zero":  {
+                                                                           "data":  {
+                                                                                        "is equal":  {
+                                                                                                         "b":  {
+                                                                                                                   "description":  ""
+                                                                                                               }
+                                                                                                     }
+                                                                                    }
+                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "string":  {
+                                                                                         "get length":  {
+                                                                                                            "string":  {
+
+                                                                                                                       }
+                                                                                                        }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "empty":  {
+                                                                                         "is equal":  {
+                                                                                                          "equal":  {
+
+                                                                                                                    }
+                                                                                                      }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "string/Emptiness tester"
+}

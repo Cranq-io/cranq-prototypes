@@ -1,0 +1,77 @@
+{
+    "description":  "Example node that demonstrates the usage of the data/dictionary/JSON parser node.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "JSON parser A":  {
+                                                                              "coordinates":  [
+                                                                                                  26,
+                                                                                                  -67
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/JSON parser"
+                                                                          },
+                                                        "Store A":  {
+                                                                        "coordinates":  [
+                                                                                            -75,
+                                                                                            -42
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+                                                                                       "data":  "\"{\\\"a\\\":1, \\\"b\\\":\\\"value\\\"}\""
+                                                                                   },
+                                                                        "prototype":  "data/Store"
+                                                                    }
+                                                    },
+                                          "connections":  {
+                                                              "Store A":  {
+                                                                              "data":  {
+                                                                                           "JSON parser A":  {
+                                                                                                                 "json":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                             }
+                                                                                       }
+                                                                          }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "Store A":  {
+                                                                                                      "read":  {
+
+                                                                                                               }
+                                                                                                  }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "JSON parser A":  {
+                                                                                                                "parsed":  {
+
+                                                                                                                           }
+                                                                                                            }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/JSON parser example"
+}

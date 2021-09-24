@@ -1,0 +1,110 @@
+{
+    "description":  "Inserts a single record into the specified AirTable table.",
+    "interface":  {
+                      "inputs":  {
+                                     "base ID":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "table name":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    },
+                                     "API key":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "record":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "response body":  {
+                                                            "description":  "",
+                                                            "type":  "any"
+                                                        }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "insert records":  {
+                                                                               "coordinates":  [
+                                                                                                   -6,
+                                                                                                   -75
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "apis/airtable/Records inserter"
+                                                                           },
+                                                        "wrap in array":  {
+                                                                              "coordinates":  [
+                                                                                                  -5,
+                                                                                                  74
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+                                                                                             "count":  "1"
+                                                                                         },
+                                                                              "prototype":  "data/array/Builder"
+                                                                          }
+                                                    },
+                                          "connections":  {
+                                                              "wrap in array":  {
+                                                                                    "array":  {
+                                                                                                  "insert records":  {
+                                                                                                                         "table":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                     }
+                                                                                              }
+                                                                                }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "base ID":  {
+                                                                                          "insert records":  {
+                                                                                                                 "base ID":  {
+
+                                                                                                                             }
+                                                                                                             }
+                                                                                      },
+                                                                          "table name":  {
+                                                                                             "insert records":  {
+                                                                                                                    "table name":  {
+
+                                                                                                                                   }
+                                                                                                                }
+                                                                                         },
+                                                                          "API key":  {
+                                                                                          "insert records":  {
+                                                                                                                 "API key":  {
+
+                                                                                                                             }
+                                                                                                             }
+                                                                                      },
+                                                                          "record":  {
+                                                                                         "wrap in array":  {
+                                                                                                               "item":  {
+
+                                                                                                                        }
+                                                                                                           }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "response body":  {
+                                                                                                 "insert records":  {
+                                                                                                                        "response body":  {
+
+                                                                                                                                          }
+                                                                                                                    }
+                                                                                             }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "apis/airtable/Record inserter"
+}

@@ -1,0 +1,31 @@
+{
+    "description":  "Parses a JSON array",
+    "interface":  {
+                      "inputs":  {
+                                     "json":  {
+                                                  "type":  "string"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "parsed":  {
+                                                     "type":  "any[]"
+                                                 },
+                                      "bounced":  {
+                                                      "type":  "string"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "json":  "try {\n  const parsed = JSON.parse(data);\n  if (parsed instanceof Array) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
+                                                                }
+                                         }
+                        },
+    "name":  "data/array/JSON parser"
+}

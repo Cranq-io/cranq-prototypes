@@ -1,0 +1,32 @@
+{
+    "implementations":  {
+                            "es6-node":  {
+                                             "dependencies":  {
+                                                                  "npm":  {
+                                                                              "blinkstick":  {
+
+                                                                                             }
+                                                                          }
+                                                              },
+                                             "inputFunctions":  {
+                                                                    "e91d4b8a-3ecf-4339-9186-f3b49d365334":  "const {color, delay, repeats} = data;\nconst device = state.blinkstick.findFirst();\ndevice.blink(color, {delay, repeats}, () =\u003e {\n  device.close();\n  outputs.done(null, tag)\n});\n"
+                                                                },
+                                             "initFunction":  "state.blinkstick = require(\"blinkstick\");"
+                                         }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "e91d4b8a-3ecf-4339-9186-f3b49d365334":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "color \u0026 delay \u0026 repeat"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "925b9703-cd44-49fb-be6d-1e3555dd8db9":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "done"
+                                                                               }
+                                  }
+                  },
+    "name":  "blinkstick/Blinker/_"
+}

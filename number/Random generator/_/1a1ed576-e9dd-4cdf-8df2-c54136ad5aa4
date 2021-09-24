@@ -1,0 +1,30 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "inputs":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "random":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "inputs":  "const {min, max } = data;\nconst res = Math.floor(min + (Math.random() * (max - min + 1)));\noutputs.random(res, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Random generator/_"
+}

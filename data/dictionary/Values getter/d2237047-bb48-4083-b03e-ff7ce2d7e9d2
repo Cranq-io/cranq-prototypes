@@ -1,0 +1,28 @@
+{
+    "description":  "Gets values from the dictionary as an array.",
+    "interface":  {
+                      "inputs":  {
+                                     "dict":  {
+                                                  "type":  "{string:any}"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "values":  {
+                                                     "type":  "typeof(dict)[string]"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "dict":  "outputs.values(Object.values(data), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/dictionary/Values getter"
+}

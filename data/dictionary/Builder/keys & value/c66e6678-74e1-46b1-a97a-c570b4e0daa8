@@ -1,0 +1,137 @@
+{
+    "description":  "Builds dictionary based on an array of keys and a single value for all items.",
+    "interface":  {
+                      "inputs":  {
+                                     "keys":  {
+                                                  "type":  "string[]"
+                                              },
+                                     "value":  {
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "dict":  {
+                                                   "type":  "{string:typeof(value)}"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "forward inputs":  {
+                                                                               "coordinates":  [
+                                                                                                   0,
+                                                                                                   0
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "flow/Forwarder/double"
+                                                                           },
+                                                        "count keys":  {
+                                                                           "coordinates":  [
+                                                                                               0,
+                                                                                               0
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "data/array/Length getter"
+                                                                       },
+                                                        "create values":  {
+                                                                              "coordinates":  [
+                                                                                                  0,
+                                                                                                  0
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/array/Builder"
+                                                                          },
+                                                        "build dict":  {
+                                                                           "coordinates":  [
+                                                                                               0,
+                                                                                               0
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "data/dictionary/Builder/keys \u0026 values"
+                                                                       }
+                                                    },
+                                          "connections":  {
+                                                              "forward inputs":  {
+                                                                                     "1":  {
+                                                                                               "count keys":  {
+                                                                                                                  "array":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                              },
+                                                                                               "build dict":  {
+                                                                                                                  "keys":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                           },
+                                                                                     "2":  {
+                                                                                               "create values":  {
+                                                                                                                     "item":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                 }
+                                                                                           }
+                                                                                 },
+                                                              "count keys":  {
+                                                                                 "length":  {
+                                                                                                "create values":  {
+                                                                                                                      "count":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                  }
+                                                                                            }
+                                                                             },
+                                                              "create values":  {
+                                                                                    "array":  {
+                                                                                                  "build dict":  {
+                                                                                                                     "values":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                 }
+                                                                                              }
+                                                                                }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "keys":  {
+                                                                                       "forward inputs":  {
+                                                                                                              "1":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                   },
+                                                                          "value":  {
+                                                                                        "forward inputs":  {
+                                                                                                               "2":  {
+
+                                                                                                                     }
+                                                                                                           }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "dict":  {
+                                                                                        "build dict":  {
+                                                                                                           "dict":  {
+
+                                                                                                                    }
+                                                                                                       }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/dictionary/Builder/keys \u0026 value"
+}

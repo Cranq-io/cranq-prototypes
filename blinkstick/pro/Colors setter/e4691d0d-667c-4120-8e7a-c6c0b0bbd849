@@ -1,0 +1,124 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "085660e4-3818-41a3-8c72-37323cd540c9":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         62,
+                                                                                                                         -113
+                                                                                                                     ],
+                                                                                                     "name":  "set colors",
+                                                                                                     "prototype":  "2c161de8-80cb-4c87-9cbb-0c9d4a1dc944",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "9cb7fa25-1e1d-4653-a5e5-337397e0bf62":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -45,
+                                                                                                                         80
+                                                                                                                     ],
+                                                                                                     "name":  "mapper",
+                                                                                                     "prototype":  "data/array/Mapper",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "af5267f6-7092-498c-bcf1-ee87c09a77d9":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -71,
+                                                                                                                         -62
+                                                                                                                     ],
+                                                                                                     "name":  "flatten RGB colors",
+                                                                                                     "prototype":  "1833c846-f3b9-430a-9b20-c564d5f65c3f",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "222d9f21-4c95-40a3-885f-c487734fe882":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         78,
+                                                                                                                         36
+                                                                                                                     ],
+                                                                                                     "name":  "to RGB",
+                                                                                                     "prototype":  "bfcefc47-59ff-4ef0-ab40-a306354dc642",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "4640f4f4-0330-4a09-b8a5-00421543dbfe":  {
+                                                                                                                       "9cb7fa25-1e1d-4653-a5e5-337397e0bf62":  {
+                                                                                                                                                                    "array":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "d46ed961-4865-4aed-b4f6-a60b86bd9414":  {
+                                                                                                                        "085660e4-3818-41a3-8c72-37323cd540c9":  {
+                                                                                                                                                                     "a65c7dbb-4e69-4870-911b-bcd01080c4c0":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "connections":  {
+                                                              "9cb7fa25-1e1d-4653-a5e5-337397e0bf62":  {
+                                                                                                           "mapped":  {
+                                                                                                                          "af5267f6-7092-498c-bcf1-ee87c09a77d9":  {
+                                                                                                                                                                       "67681054-c95b-4da1-90d6-1a5461612c4c":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      },
+                                                                                                           "item":  {
+                                                                                                                        "222d9f21-4c95-40a3-885f-c487734fe882":  {
+                                                                                                                                                                     "b418dd70-767a-4f1b-b5b7-c454141db2f1":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                                                       },
+                                                              "af5267f6-7092-498c-bcf1-ee87c09a77d9":  {
+                                                                                                           "f6248b87-3fea-47f5-8cfc-42b33cdba963":  {
+                                                                                                                                                        "085660e4-3818-41a3-8c72-37323cd540c9":  {
+                                                                                                                                                                                                     "08b42750-6831-4e81-b914-f0f575fcf6a6":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "222d9f21-4c95-40a3-885f-c487734fe882":  {
+                                                                                                           "4904d584-d403-4876-87ef-ffa4be34d2cb":  {
+                                                                                                                                                        "9cb7fa25-1e1d-4653-a5e5-337397e0bf62":  {
+                                                                                                                                                                                                     "mapped item":  {
+
+                                                                                                                                                                                                                     }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       }
+                                                          }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "4640f4f4-0330-4a09-b8a5-00421543dbfe":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "colors",
+                                                                                  "description":  "type: [number, number, number][]"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "d46ed961-4865-4aed-b4f6-a60b86bd9414":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "done"
+                                                                               }
+                                  }
+                  },
+    "name":  "blinkstick/pro/Colors setter"
+}

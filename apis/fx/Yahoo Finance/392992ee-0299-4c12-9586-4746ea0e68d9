@@ -1,0 +1,119 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "symbol":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "instrument":  {
+                                                         "description":  "",
+                                                         "type":  "any"
+                                                     }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "dispatch request":  {
+                                                                                 "coordinates":  [
+                                                                                                     64,
+                                                                                                     -49
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+                                                                                                "verb":  "\"GET\"",
+                                                                                                "headers":  "{}",
+                                                                                                "body":  "\"\""
+                                                                                            },
+                                                                                 "prototype":  "io/http/Request dispatcher"
+                                                                             },
+                                                        "build URL":  {
+                                                                          "coordinates":  [
+                                                                                              -69,
+                                                                                              -101
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+                                                                                         "template":  "\"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}\""
+                                                                                     },
+                                                                          "prototype":  "string/Template filler"
+                                                                      },
+                                                        "wrap symbol":  {
+                                                                            "coordinates":  [
+                                                                                                -77,
+                                                                                                64
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+                                                                                           "fields":  "[\"symbol\"]"
+                                                                                       },
+                                                                            "prototype":  "flow/Syncer"
+                                                                        },
+                                                        "parse response":  {
+                                                                               "coordinates":  [
+                                                                                                   112,
+                                                                                                   88
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "data/dictionary/JSON parser"
+                                                                           }
+                                                    },
+                                          "connections":  {
+                                                              "wrap symbol":  {
+                                                                                  "synced":  {
+                                                                                                 "build URL":  {
+                                                                                                                   "params":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                               }
+                                                                                             }
+                                                                              },
+                                                              "build URL":  {
+                                                                                "filled":  {
+                                                                                               "dispatch request":  {
+                                                                                                                        "url":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                    }
+                                                                                           }
+                                                                            },
+                                                              "dispatch request":  {
+                                                                                       "body":  {
+                                                                                                    "parse response":  {
+                                                                                                                           "json":  {
+                                                                                                                                        "description":  ""
+                                                                                                                                    }
+                                                                                                                       }
+                                                                                                }
+                                                                                   }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "symbol":  {
+                                                                                         "wrap symbol":  {
+                                                                                                             "symbol":  {
+
+                                                                                                                        }
+                                                                                                         }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "instrument":  {
+                                                                                              "parse response":  {
+                                                                                                                     "parsed":  {
+
+                                                                                                                                }
+                                                                                                                 }
+                                                                                          }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "apis/fx/Yahoo Finance"
+}

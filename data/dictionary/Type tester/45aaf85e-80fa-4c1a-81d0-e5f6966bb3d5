@@ -1,0 +1,28 @@
+{
+    "description":  "Tells whether the input is a dictionary.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "is dict":  {
+                                                      "type":  "boolean"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "const isArray = data instanceof Array;\nconst isObject = data instanceof Object;\noutputs[\"is dict\"](!isArray \u0026\u0026 isObject, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/dictionary/Type tester"
+}

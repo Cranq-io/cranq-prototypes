@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "base \u0026 exponent":  {
+                                                                  "type":  "{\"base\":number,\"exponent\":number}"
+                                                              }
+                                 },
+                      "outputs":  {
+                                      "power":  {
+                                                    "type":  "number"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "base \u0026 exponent":  "outputs.power(Math.pow(data.base, data.exponent), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Power/_"
+}

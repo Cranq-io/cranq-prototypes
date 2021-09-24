@@ -1,0 +1,183 @@
+{
+    "description":  "Example node, that demonstrates the usage of dictionary getter nodes.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "keys":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               },
+                                      "values":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                      "name\u0026dept":  {
+                                                             "description":  "",
+                                                             "type":  "any"
+                                                         },
+                                      "size":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Keys getter A":  {
+                                                                              "coordinates":  [
+                                                                                                  10,
+                                                                                                  103
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/Keys getter"
+                                                                          },
+                                                        "Values getter A":  {
+                                                                                "coordinates":  [
+                                                                                                    6,
+                                                                                                    -112
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+
+                                                                                           },
+                                                                                "prototype":  "data/dictionary/Values getter"
+                                                                            },
+                                                        "Items getter A":  {
+                                                                               "coordinates":  [
+                                                                                                   5,
+                                                                                                   -184
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "data/dictionary/Items getter"
+                                                                           },
+                                                        "Size getter A":  {
+                                                                              "coordinates":  [
+                                                                                                  6,
+                                                                                                  -269
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/Size getter"
+                                                                          },
+                                                        "name_dept":  {
+                                                                          "coordinates":  [
+                                                                                              -269,
+                                                                                              -81
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+                                                                                         "data":  "[\"Name\",\"Dept\"]"
+                                                                                     },
+                                                                          "prototype":  "data/Store"
+                                                                      },
+                                                        "create_record":  {
+                                                                              "coordinates":  [
+                                                                                                  -307,
+                                                                                                  61
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "tutorials/data/Builder (dictionary) example"
+                                                                          }
+                                                    },
+                                          "connections":  {
+                                                              "name_dept":  {
+                                                                                "data":  {
+                                                                                             "Items getter A":  {
+                                                                                                                    "keys":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                                }
+                                                                                         }
+                                                                            },
+                                                              "create_record":  {
+                                                                                    "data":  {
+                                                                                                 "name_dept":  {
+                                                                                                                   "read":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                               },
+                                                                                                 "Size getter A":  {
+                                                                                                                       "dict":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                   },
+                                                                                                 "Items getter A":  {
+                                                                                                                        "dict":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                                    },
+                                                                                                 "Values getter A":  {
+                                                                                                                         "dict":  {
+                                                                                                                                      "description":  ""
+                                                                                                                                  }
+                                                                                                                     },
+                                                                                                 "Keys getter A":  {
+                                                                                                                       "dict":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                   }
+                                                                                             }
+                                                                                }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "create_record":  {
+                                                                                                            "build":  {
+
+                                                                                                                      }
+                                                                                                        }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "keys":  {
+                                                                                        "Keys getter A":  {
+                                                                                                              "keys":  {
+
+                                                                                                                       }
+                                                                                                          }
+                                                                                    },
+                                                                           "values":  {
+                                                                                          "Values getter A":  {
+                                                                                                                  "values":  {
+
+                                                                                                                             }
+                                                                                                              }
+                                                                                      },
+                                                                           "name\u0026dept":  {
+                                                                                                  "Items getter A":  {
+                                                                                                                         "values":  {
+
+                                                                                                                                    }
+                                                                                                                     }
+                                                                                              },
+                                                                           "size":  {
+                                                                                        "Size getter A":  {
+                                                                                                              "size":  {
+
+                                                                                                                       }
+                                                                                                          }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Getter (dictionary) example"
+}

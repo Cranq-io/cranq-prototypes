@@ -1,0 +1,34 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "path":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "bounced":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  },
+                                      "created":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "path":  "const {mkdir} = require(\"fs\");\nmkdir(data, (error) =\u003e {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.created(null, tag);\n  }\n});\n"
+                                                                }
+                                         }
+                        },
+    "name":  "io/file/Directory creator/_"
+}

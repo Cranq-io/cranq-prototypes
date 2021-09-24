@@ -1,0 +1,95 @@
+{
+    "name":  "apis/firebase/rtdb/rest/Data reader",
+    "interface":  {
+                      "inputs":  {
+                                     "28f77355-a9aa-45f6-bbb0-8a6f22964964":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "query context",
+                                                                                  "description":  "idToken\ndbUrl"
+                                                                              },
+                                     "90feee12-bb21-4f39-9a48-3cefe2564c83":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "path",
+                                                                                  "description":  "Identifies data entry to be read.\n\ntype: string[]"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "d8e6ac78-465c-4c70-837d-907478a5da62":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "data"
+                                                                               },
+                                      "20e12f45-8ccf-4499-9495-d42c57bebfa2":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "error"
+                                                                               },
+                                      "247a0645-70cf-4d2a-a551-4c5c47f956ee":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "query context",
+                                                                                   "description":  "idToken\ndbUrl"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "28f77355-a9aa-45f6-bbb0-8a6f22964964":  {
+                                                                                                                       "94e2301e-ec7e-4887-bfbf-4cc6030c8d4c":  {
+                                                                                                                                                                    "36e2743d-8088-4778-9194-583bb6289ab7":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "90feee12-bb21-4f39-9a48-3cefe2564c83":  {
+                                                                                                                       "94e2301e-ec7e-4887-bfbf-4cc6030c8d4c":  {
+                                                                                                                                                                    "0f0bade5-0b6a-4ad9-a3ba-774b5365d2d0":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "d8e6ac78-465c-4c70-837d-907478a5da62":  {
+                                                                                                                        "94e2301e-ec7e-4887-bfbf-4cc6030c8d4c":  {
+                                                                                                                                                                     "0066052c-0caa-4f32-ae2d-14c8859b0cce":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "20e12f45-8ccf-4499-9495-d42c57bebfa2":  {
+                                                                                                                        "94e2301e-ec7e-4887-bfbf-4cc6030c8d4c":  {
+                                                                                                                                                                     "104108dd-4808-4eeb-8458-9179728f4a9a":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "247a0645-70cf-4d2a-a551-4c5c47f956ee":  {
+                                                                                                                        "94e2301e-ec7e-4887-bfbf-4cc6030c8d4c":  {
+                                                                                                                                                                     "7e5fed65-b00e-4548-a057-0b1a101f5ef0":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "94e2301e-ec7e-4887-bfbf-4cc6030c8d4c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         0.2380952380952288,
+                                                                                                                         1.1428571428571423
+                                                                                                                     ],
+                                                                                                     "name":  "dispatch request",
+                                                                                                     "prototype":  "974d5e19-683a-43ec-9c89-5fd9aadb262e",
+                                                                                                     "params":  {
+                                                                                                                    "a1c0f925-e196-4ea6-ace4-383b40f18c7b":  "\"GET\"",
+                                                                                                                    "441a9d60-a5a2-4e63-a742-2c9bb772513f":  "\"\""
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Reads the data entry identified by \u0027path\u0027, from a Firebase Realtime Database."
+}

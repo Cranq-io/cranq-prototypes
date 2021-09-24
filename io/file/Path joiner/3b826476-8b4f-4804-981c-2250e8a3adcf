@@ -1,0 +1,88 @@
+{
+    "description":  "Joins the specified path parts in an operating system specific manner",
+    "interface":  {
+                      "inputs":  {
+                                     "first":  {
+                                                   "description":  "The first part of the path to join",
+                                                   "type":  "any"
+                                               },
+                                     "second":  {
+                                                    "description":  "The second part of the path to join",
+                                                    "type":  "any"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "path":  {
+                                                   "description":  "The resulting path",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "build path":  {
+                                                                           "coordinates":  [
+                                                                                               4,
+                                                                                               -83
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "io/file/Path builder"
+                                                                       },
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    -2,
+                                                                                                    68
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[0, 1]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "build path":  {
+                                                                                                                        "segments":  {
+                                                                                                                                         "description":  ""
+                                                                                                                                     }
+                                                                                                                    }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "first":  {
+                                                                                        "sync a \u0026 b":  {
+                                                                                                                "0":  {
+
+                                                                                                                      }
+                                                                                                            }
+                                                                                    },
+                                                                          "second":  {
+                                                                                         "sync a \u0026 b":  {
+                                                                                                                 "1":  {
+
+                                                                                                                       }
+                                                                                                             }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "path":  {
+                                                                                        "build path":  {
+                                                                                                           "path":  {
+
+                                                                                                                    }
+                                                                                                       }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "io/file/Path joiner"
+}

@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "type":  "{\"a\":number,\"b\":number}"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "diff":  {
+                                                   "type":  "number"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "outputs.diff(data.a - data.b, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Subtractor/_"
+}

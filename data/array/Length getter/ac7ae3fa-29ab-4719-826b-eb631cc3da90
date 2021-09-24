@@ -1,0 +1,28 @@
+{
+    "description":  "Determines the length of the input array.",
+    "interface":  {
+                      "inputs":  {
+                                     "array":  {
+                                                   "type":  "any[]"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "length":  {
+                                                     "type":  "number"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "array":  "outputs.length(data.length, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/array/Length getter"
+}

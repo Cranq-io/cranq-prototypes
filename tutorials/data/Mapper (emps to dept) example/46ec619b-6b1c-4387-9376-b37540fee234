@@ -1,0 +1,207 @@
+{
+    "description":  "Example node that demonstrates the usage of the data/array/Mapper node.",
+    "interface":  {
+                      "inputs":  {
+                                     "emps":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              },
+                                     "depts":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "array":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Mapper A":  {
+                                                                         "coordinates":  [
+                                                                                             7,
+                                                                                             -238
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/array/Mapper"
+                                                                     },
+                                                        "get_dept_name":  {
+                                                                              "coordinates":  [
+                                                                                                  -89,
+                                                                                                  -2
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+                                                                                             "key":  "\"Dept\""
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/Item getter"
+                                                                          },
+                                                        "get_dept_emps":  {
+                                                                              "coordinates":  [
+                                                                                                  55,
+                                                                                                  249
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "tutorials/data/Filter (emps by dept) example"
+                                                                          },
+                                                        "get_emp_names":  {
+                                                                              "coordinates":  [
+                                                                                                  212,
+                                                                                                  249
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "tutorials/data/Mapper (get emp names) example"
+                                                                          },
+                                                        "Repeater A":  {
+                                                                           "coordinates":  [
+                                                                                               -168,
+                                                                                               208
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "data/array/Repeater"
+                                                                       },
+                                                        "set_emps":  {
+                                                                         "coordinates":  [
+                                                                                             159,
+                                                                                             99
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "key":  "\"Emps\""
+                                                                                    },
+                                                                         "prototype":  "data/dictionary/Item setter"
+                                                                     },
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                -374,
+                                                                                                70
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "Mapper A":  {
+                                                                               "item":  {
+                                                                                            "get_dept_name":  {
+                                                                                                                  "dict":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              },
+                                                                                            "set_emps":  {
+                                                                                                             "dict":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                         }
+                                                                                        }
+                                                                           },
+                                                              "get_dept_name":  {
+                                                                                    "value":  {
+                                                                                                  "get_dept_emps":  {
+                                                                                                                        "dept":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                                    }
+                                                                                              }
+                                                                                },
+                                                              "get_dept_emps":  {
+                                                                                    "emps":  {
+                                                                                                 "get_emp_names":  {
+                                                                                                                       "array":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                                   }
+                                                                                             }
+                                                                                },
+                                                              "Repeater A":  {
+                                                                                 "data":  {
+                                                                                              "get_dept_emps":  {
+                                                                                                                    "emps":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                                }
+                                                                                          }
+                                                                             },
+                                                              "get_emp_names":  {
+                                                                                    "array":  {
+                                                                                                  "set_emps":  {
+                                                                                                                   "value":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                               }
+                                                                                              }
+                                                                                },
+                                                              "set_emps":  {
+                                                                               "dict":  {
+                                                                                            "Mapper A":  {
+                                                                                                             "mapped item":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                         }
+                                                                                        }
+                                                                           },
+                                                              "Forwarder A":  {
+                                                                                  "data":  {
+                                                                                               "Mapper A":  {
+                                                                                                                "array":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                            },
+                                                                                               "Repeater A":  {
+                                                                                                                  "array":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                              }
+                                                                                           }
+                                                                              }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "emps":  {
+                                                                                       "Repeater A":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                   },
+                                                                          "depts":  {
+                                                                                        "Forwarder A":  {
+                                                                                                            "data":  {
+
+                                                                                                                     }
+                                                                                                        }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "array":  {
+                                                                                         "Mapper A":  {
+                                                                                                          "mapped":  {
+
+                                                                                                                     }
+                                                                                                      }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Mapper (emps to dept) example"
+}

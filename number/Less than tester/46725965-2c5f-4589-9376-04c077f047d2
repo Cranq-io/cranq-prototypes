@@ -1,0 +1,85 @@
+{
+    "description":  "Checks if \u0027a\u0027 is less than \u0027b\u0027.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "number"
+                                           },
+                                     "b":  {
+                                               "type":  "number"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "less":  {
+                                                   "type":  "boolean"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "less than":  {
+                                                                          "coordinates":  [
+                                                                                              0,
+                                                                                              0
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "number/Less than tester/_"
+                                                                      }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "less than":  {
+                                                                                                                       "a \u0026 b":  {
+                                                                                                                                          "description":  ""
+                                                                                                                                      }
+                                                                                                                   }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "less":  {
+                                                                                        "less than":  {
+                                                                                                          "less":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Less than tester"
+}

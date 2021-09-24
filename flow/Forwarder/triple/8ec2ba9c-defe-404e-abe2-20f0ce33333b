@@ -1,0 +1,115 @@
+{
+    "description":  "Forwards 3 inputs in the order matching the order of the ports.",
+    "interface":  {
+                      "inputs":  {
+                                     "1":  {
+                                               "type":  "any"
+                                           },
+                                     "2":  {
+                                               "type":  "any"
+                                           },
+                                     "3":  {
+                                               "type":  "any"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "1":  {
+                                                "type":  "typeof(1)"
+                                            },
+                                      "2":  {
+                                                "type":  "typeof(2)"
+                                            },
+                                      "3":  {
+                                                "type":  "typeof(3)"
+                                            }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync inputs":  {
+                                                                            "coordinates":  [
+                                                                                                0,
+                                                                                                0
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+                                                                                           "fields":  "[\"1\",\"2\",\"3\"]"
+                                                                                       },
+                                                                            "prototype":  "flow/Syncer"
+                                                                        },
+                                                        "restore in order":  {
+                                                                                 "coordinates":  [
+                                                                                                     0,
+                                                                                                     0
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+                                                                                                "fields":  "[\"1\",\"2\",\"3\"]"
+                                                                                            },
+                                                                                 "prototype":  "flow/Splitter"
+                                                                             }
+                                                    },
+                                          "connections":  {
+                                                              "sync inputs":  {
+                                                                                  "synced":  {
+                                                                                                 "restore in order":  {
+                                                                                                                          "unsplit":  {
+                                                                                                                                          "description":  ""
+                                                                                                                                      }
+                                                                                                                      }
+                                                                                             }
+                                                                              }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "1":  {
+                                                                                    "sync inputs":  {
+                                                                                                        "1":  {
+
+                                                                                                              }
+                                                                                                    }
+                                                                                },
+                                                                          "2":  {
+                                                                                    "sync inputs":  {
+                                                                                                        "2":  {
+
+                                                                                                              }
+                                                                                                    }
+                                                                                },
+                                                                          "3":  {
+                                                                                    "sync inputs":  {
+                                                                                                        "3":  {
+
+                                                                                                              }
+                                                                                                    }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "1":  {
+                                                                                     "restore in order":  {
+                                                                                                              "1":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                 },
+                                                                           "2":  {
+                                                                                     "restore in order":  {
+                                                                                                              "2":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                 },
+                                                                           "3":  {
+                                                                                     "restore in order":  {
+                                                                                                              "3":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                 }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "flow/Forwarder/triple"
+}

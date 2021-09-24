@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "separator \u0026 substrings":  {
+                                                                         "type":  "{\"separator\":string,\"substrings\":string[]}"
+                                                                     }
+                                 },
+                      "outputs":  {
+                                      "joined":  {
+                                                     "type":  "string"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "separator \u0026 substrings":  "outputs.joined(data.substrings.join(data.separator), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "string/Joiner/_"
+}

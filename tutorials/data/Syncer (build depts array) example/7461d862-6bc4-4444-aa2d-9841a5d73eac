@@ -1,0 +1,242 @@
+{
+    "description":  "Example node, that demonstrates the building of arrays with the flow/Syncer. Provides the \"depts\" dataset for further examples.",
+    "interface":  {
+                      "inputs":  {
+                                     "build":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "array":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "forwarder":  {
+                                                                          "coordinates":  [
+                                                                                              -133,
+                                                                                              -11
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "flow/Forwarder"
+                                                                      },
+                                                        "schema":  {
+                                                                       "coordinates":  [
+                                                                                           43,
+                                                                                           -65
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+                                                                                      "data":  "[\"Dept\",\"Head\"]"
+                                                                                  },
+                                                                       "prototype":  "data/Store"
+                                                                   },
+                                                        "record_1":  {
+                                                                         "coordinates":  [
+                                                                                             42,
+                                                                                             18
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "[\"Accounting\",\"Joan\"]"
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "record_2":  {
+                                                                         "coordinates":  [
+                                                                                             40,
+                                                                                             95
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "[\"Facilities\",\"Frank\"]"
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "record_3":  {
+                                                                         "coordinates":  [
+                                                                                             39,
+                                                                                             182
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "[\"Legal\",\"Louis\"]"
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "build_1":  {
+                                                                        "coordinates":  [
+                                                                                            216,
+                                                                                            -10
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "data/dictionary/Builder/keys \u0026 values"
+                                                                    },
+                                                        "build_2":  {
+                                                                        "coordinates":  [
+                                                                                            218,
+                                                                                            69
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "data/dictionary/Builder/keys \u0026 values"
+                                                                    },
+                                                        "build_3":  {
+                                                                        "coordinates":  [
+                                                                                            220,
+                                                                                            152
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "data/dictionary/Builder/keys \u0026 values"
+                                                                    },
+                                                        "syncer":  {
+                                                                       "coordinates":  [
+                                                                                           356,
+                                                                                           31
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+                                                                                      "fields":  "[0,1,2]"
+                                                                                  },
+                                                                       "prototype":  "flow/Syncer"
+                                                                   }
+                                                    },
+                                          "connections":  {
+                                                              "schema":  {
+                                                                             "data":  {
+                                                                                          "build_1":  {
+                                                                                                          "keys":  {
+                                                                                                                       "description":  ""
+                                                                                                                   }
+                                                                                                      },
+                                                                                          "build_2":  {
+                                                                                                          "keys":  {
+                                                                                                                       "description":  ""
+                                                                                                                   }
+                                                                                                      },
+                                                                                          "build_3":  {
+                                                                                                          "keys":  {
+                                                                                                                       "description":  ""
+                                                                                                                   }
+                                                                                                      }
+                                                                                      }
+                                                                         },
+                                                              "record_1":  {
+                                                                               "data":  {
+                                                                                            "build_1":  {
+                                                                                                            "values":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                        }
+                                                                                        }
+                                                                           },
+                                                              "record_2":  {
+                                                                               "data":  {
+                                                                                            "build_2":  {
+                                                                                                            "values":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                        }
+                                                                                        }
+                                                                           },
+                                                              "record_3":  {
+                                                                               "data":  {
+                                                                                            "build_3":  {
+                                                                                                            "values":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                        }
+                                                                                        }
+                                                                           },
+                                                              "forwarder":  {
+                                                                                "data":  {
+                                                                                             "schema":  {
+                                                                                                            "read":  {
+                                                                                                                         "description":  ""
+                                                                                                                     }
+                                                                                                        },
+                                                                                             "record_1":  {
+                                                                                                              "read":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          },
+                                                                                             "record_2":  {
+                                                                                                              "read":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          },
+                                                                                             "record_3":  {
+                                                                                                              "read":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          }
+                                                                                         }
+                                                                            },
+                                                              "build_1":  {
+                                                                              "dict":  {
+                                                                                           "syncer":  {
+                                                                                                          "0":  {
+                                                                                                                    "description":  ""
+                                                                                                                }
+                                                                                                      }
+                                                                                       }
+                                                                          },
+                                                              "build_2":  {
+                                                                              "dict":  {
+                                                                                           "syncer":  {
+                                                                                                          "1":  {
+                                                                                                                    "description":  ""
+                                                                                                                }
+                                                                                                      }
+                                                                                       }
+                                                                          },
+                                                              "build_3":  {
+                                                                              "dict":  {
+                                                                                           "syncer":  {
+                                                                                                          "2":  {
+                                                                                                                    "description":  ""
+                                                                                                                }
+                                                                                                      }
+                                                                                       }
+                                                                          }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "build":  {
+                                                                                        "forwarder":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "array":  {
+                                                                                         "syncer":  {
+                                                                                                        "synced":  {
+
+                                                                                                                   }
+                                                                                                    }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Syncer (build depts array) example"
+}

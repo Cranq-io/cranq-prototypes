@@ -1,0 +1,85 @@
+{
+    "description":  "Builds an array of identical items.",
+    "interface":  {
+                      "inputs":  {
+                                     "item":  {
+                                                  "type":  "any"
+                                              },
+                                     "count":  {
+                                                   "type":  "number"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "array":  {
+                                                    "type":  "typeof(item)[]"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync item \u0026 count":  {
+                                                                                       "coordinates":  [
+                                                                                                           0,
+                                                                                                           0
+                                                                                                       ],
+                                                                                       "description":  "",
+                                                                                       "params":  {
+                                                                                                      "fields":  "[\"item\",\"count\"]"
+                                                                                                  },
+                                                                                       "prototype":  "flow/Syncer"
+                                                                                   },
+                                                        "build":  {
+                                                                      "coordinates":  [
+                                                                                          0,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "data/array/Builder/_"
+                                                                  }
+                                                    },
+                                          "connections":  {
+                                                              "sync item \u0026 count":  {
+                                                                                             "synced":  {
+                                                                                                            "build":  {
+                                                                                                                          "item \u0026 count":  {
+                                                                                                                                                    "description":  ""
+                                                                                                                                                }
+                                                                                                                      }
+                                                                                                        }
+                                                                                         }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "item":  {
+                                                                                       "sync item \u0026 count":  {
+                                                                                                                      "item":  {
+
+                                                                                                                               }
+                                                                                                                  }
+                                                                                   },
+                                                                          "count":  {
+                                                                                        "sync item \u0026 count":  {
+                                                                                                                       "count":  {
+
+                                                                                                                                 }
+                                                                                                                   }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "array":  {
+                                                                                         "build":  {
+                                                                                                       "array":  {
+
+                                                                                                                 }
+                                                                                                   }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/array/Builder"
+}

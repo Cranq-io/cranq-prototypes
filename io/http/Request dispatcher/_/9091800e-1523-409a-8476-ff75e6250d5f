@@ -1,0 +1,31 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "verb \u0026 url \u0026 headers \u0026 body":  {
+                                                                                        "type":  "{\"verb\":\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\"url\":string,\"headers\":{string:string},\"body\":any}"
+                                                                                    }
+                                 },
+                      "outputs":  {
+                                      "response":  {
+                                                       "type":  "{\"status\":string,\"headers\":{string:string},\"body\":string}"
+                                                   },
+                                      "error":  {
+                                                    "type":  "string"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "verb \u0026 url \u0026 headers \u0026 body":  "const {verb, url, headers = {}, body} = data;\nconst {port, protocol, hostname, pathname, search} = new URL(url);\nconst isHttps = protocol === \"https:\";\nconst {request} = isHttps ? require(\"https\") : require(\"http\");\nconst options = {\n  hostname,\n  port: port || isHttps ? 443 : 80,\n  path: pathname + search,\n  method: verb,\n  headers: body !== undefined\n    ? {\n      ...headers,\n      \"Content-Length\": Buffer.byteLength(body)\n    }\n    : headers\n};\nconst resultChunks = [];\nconst req = request(options, (response) =\u003e {\n  response.on(\"data\", (chunk) =\u003e {\n    resultChunks.push(String(chunk));\n  });\n  response.on(\"end\", () =\u003e {\n    outputs.response({\n      status: response.statusCode,\n      headers: response.headers,\n      body: resultChunks.join(\"\")\n    }, tag);\n  });\n});\nreq.on(\"error\", (error) =\u003e {\n  outputs.error({error: String(error)}, tag);\n});\nif (body !== undefined) {\n  req.write(body);\n}\nreq.end();\n"
+                                                                }
+                                         }
+                        },
+    "name":  "io/http/Request dispatcher/_"
+}

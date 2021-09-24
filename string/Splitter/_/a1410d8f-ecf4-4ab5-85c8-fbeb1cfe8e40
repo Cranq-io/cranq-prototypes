@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "separator \u0026 string":  {
+                                                                     "type":  "{\"separator\":string,\"string\":string}"
+                                                                 }
+                                 },
+                      "outputs":  {
+                                      "substrings":  {
+                                                         "type":  "string[]"
+                                                     }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "separator \u0026 string":  "outputs.substrings(data.string.split(data.separator), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "string/Splitter/_"
+}

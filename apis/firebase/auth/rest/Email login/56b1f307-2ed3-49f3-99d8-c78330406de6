@@ -1,0 +1,168 @@
+{
+    "name":  "apis/firebase/auth/rest/Email login",
+    "interface":  {
+                      "inputs":  {
+                                     "0e62fd47-4583-423e-b6bf-d2f3b3257594":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "API key"
+                                                                              },
+                                     "eaf55c6d-2c01-4902-9a47-aa100a0d73a3":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "email"
+                                                                              },
+                                     "e7885189-1fa4-4c5b-a338-a92bb4ecd0d9":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "password"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "67097c92-554b-499b-a993-77a2b16e4b9e":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "ID token"
+                                                                               },
+                                      "34fd9df2-24f5-491a-9a00-af0527d29f98":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "user ID"
+                                                                               },
+                                      "14f57a55-68df-4955-a00e-e939e6c89345":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "error"
+                                                                               },
+                                      "84bc7cf6-9ea1-45de-93cd-36e1f166fc17":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "auth context",
+                                                                                   "description":  "idToken\nemail\nrefreshToken\nexpiresIn\nlocalId\nregistered"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+                                                              "87f5cf79-a000-45cc-9caa-827c83d6424f":  {
+                                                                                                           "synced":  {
+                                                                                                                          "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                                                                                       "569e6e3f-b8d9-456d-9ab9-e51eb8cbab8f":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "c68a533f-4fe4-42e0-8cf1-3a9dd3be6508":  {
+                                                                                                           "1":  {
+                                                                                                                     "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                                                                                  "dcef6d37-33c5-48ac-8388-1aff79bd9e24":  {
+
+                                                                                                                                                                                                           }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "87f5cf79-a000-45cc-9caa-827c83d6424f":  {
+                                                                                                                                                                  "email":  {
+
+                                                                                                                                                                            }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "3":  {
+                                                                                                                     "87f5cf79-a000-45cc-9caa-827c83d6424f":  {
+                                                                                                                                                                  "password":  {
+
+                                                                                                                                                                               }
+                                                                                                                                                              }
+                                                                                                                 }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "e7885189-1fa4-4c5b-a338-a92bb4ecd0d9":  {
+                                                                                                                       "c68a533f-4fe4-42e0-8cf1-3a9dd3be6508":  {
+                                                                                                                                                                    "3":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "eaf55c6d-2c01-4902-9a47-aa100a0d73a3":  {
+                                                                                                                       "c68a533f-4fe4-42e0-8cf1-3a9dd3be6508":  {
+                                                                                                                                                                    "2":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "0e62fd47-4583-423e-b6bf-d2f3b3257594":  {
+                                                                                                                       "c68a533f-4fe4-42e0-8cf1-3a9dd3be6508":  {
+                                                                                                                                                                    "1":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "67097c92-554b-499b-a993-77a2b16e4b9e":  {
+                                                                                                                        "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                                                                                     "9eca7042-67ea-4e13-b3c9-ed08aa2048e9":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "34fd9df2-24f5-491a-9a00-af0527d29f98":  {
+                                                                                                                        "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                                                                                     "d9a0f69b-7ba5-4e9f-b3d3-fb17daa93c3c":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "14f57a55-68df-4955-a00e-e939e6c89345":  {
+                                                                                                                        "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                                                                                     "733ec7ae-d050-41f0-9c14-e24cfd7bed44":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "84bc7cf6-9ea1-45de-93cd-36e1f166fc17":  {
+                                                                                                                        "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                                                                                     "7180d915-967c-4ff6-963c-1a8163e70043":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "87f5cf79-a000-45cc-9caa-827c83d6424f":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -44,
+                                                                                                                         75.79557291666669
+                                                                                                                     ],
+                                                                                                     "name":  "build req. body",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"email\", \"password\", \"returnSecureToken\"]",
+                                                                                                                    "returnSecureToken":  "true"
+                                                                                                                }
+                                                                                                 },
+                                                        "c68a533f-4fe4-42e0-8cf1-3a9dd3be6508":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -77,
+                                                                                                                         -68.20442708333331
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/triple",
+                                                                                                     "prototype":  "flow/Forwarder/triple",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "75866b66-bb05-4ed0-b310-069306d7ba1d":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         78,
+                                                                                                                         1
+                                                                                                                     ],
+                                                                                                     "name":  "dispatch request",
+                                                                                                     "prototype":  "75d5381b-c018-4593-840b-be87a483234b",
+                                                                                                     "params":  {
+                                                                                                                    "7cfe5751-b2a9-42c1-9105-054322cca813":  "\"signInWithPassword\""
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Logs in a Firebase user by their email \u0026 password.\n\nUser must be signed up, and email authentication must be enabled for the relevant Firebase Project."
+}

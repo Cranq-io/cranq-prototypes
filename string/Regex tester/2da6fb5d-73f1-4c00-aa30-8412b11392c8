@@ -1,0 +1,85 @@
+{
+    "description":  "Tests whether the input string matches a regular expression.",
+    "interface":  {
+                      "inputs":  {
+                                     "string":  {
+                                                    "type":  "string"
+                                                },
+                                     "regex":  {
+                                                   "type":  "string"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "matches":  {
+                                                      "type":  "boolean"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync regex \u0026 string":  {
+                                                                                         "coordinates":  [
+                                                                                                             0,
+                                                                                                             0
+                                                                                                         ],
+                                                                                         "description":  "",
+                                                                                         "params":  {
+                                                                                                        "fields":  "[\"regex\",\"string\"]"
+                                                                                                    },
+                                                                                         "prototype":  "flow/Syncer"
+                                                                                     },
+                                                        "test regex":  {
+                                                                           "coordinates":  [
+                                                                                               0,
+                                                                                               0
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "string/Regex tester/_"
+                                                                       }
+                                                    },
+                                          "connections":  {
+                                                              "sync regex \u0026 string":  {
+                                                                                               "synced":  {
+                                                                                                              "test regex":  {
+                                                                                                                                 "regex \u0026 string":  {
+                                                                                                                                                             "description":  ""
+                                                                                                                                                         }
+                                                                                                                             }
+                                                                                                          }
+                                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "string":  {
+                                                                                         "sync regex \u0026 string":  {
+                                                                                                                          "string":  {
+
+                                                                                                                                     }
+                                                                                                                      }
+                                                                                     },
+                                                                          "regex":  {
+                                                                                        "sync regex \u0026 string":  {
+                                                                                                                         "regex":  {
+
+                                                                                                                                   }
+                                                                                                                     }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "matches":  {
+                                                                                           "test regex":  {
+                                                                                                              "matches":  {
+
+                                                                                                                          }
+                                                                                                          }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "string/Regex tester"
+}

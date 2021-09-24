@@ -1,0 +1,28 @@
+{
+    "description":  "Returns the absolute value of the input number.",
+    "interface":  {
+                      "inputs":  {
+                                     "number":  {
+                                                    "type":  "number"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "abs":  {
+                                                  "type":  "number"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "number":  "outputs.abs(Math.abs(data), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Abs"
+}

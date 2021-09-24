@@ -1,0 +1,149 @@
+{
+    "description":  "Example node, that demonstrates the basic usage of the flow/Fork node",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "3":  {
+                                                                  "coordinates":  [
+                                                                                      -242,
+                                                                                      -26
+                                                                                  ],
+                                                                  "description":  "",
+                                                                  "params":  {
+                                                                                 "data":  "3"
+                                                                             },
+                                                                  "prototype":  "data/Store"
+                                                              },
+                                                        "Odd tester A":  {
+                                                                             "coordinates":  [
+                                                                                                 -151,
+                                                                                                 61
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "number/Odd tester"
+                                                                         },
+                                                        "Fork A":  {
+                                                                       "coordinates":  [
+                                                                                           -38,
+                                                                                           -17
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "flow/Fork"
+                                                                   },
+                                                        "Adder A":  {
+                                                                        "coordinates":  [
+                                                                                            95,
+                                                                                            -75
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+                                                                                       "a":  "1"
+                                                                                   },
+                                                                        "prototype":  "number/Adder"
+                                                                    },
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                237,
+                                                                                                -7
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "3":  {
+                                                                        "data":  {
+                                                                                     "Odd tester A":  {
+                                                                                                          "number":  {
+                                                                                                                         "description":  ""
+                                                                                                                     }
+                                                                                                      },
+                                                                                     "Fork A":  {
+                                                                                                    "data":  {
+                                                                                                                 "description":  ""
+                                                                                                             }
+                                                                                                }
+                                                                                 }
+                                                                    },
+                                                              "Odd tester A":  {
+                                                                                   "odd":  {
+                                                                                               "Fork A":  {
+                                                                                                              "condition":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                          }
+                                                                                           }
+                                                                               },
+                                                              "Fork A":  {
+                                                                             "true":  {
+                                                                                          "Adder A":  {
+                                                                                                          "b":  {
+                                                                                                                    "description":  ""
+                                                                                                                }
+                                                                                                      }
+                                                                                      },
+                                                                             "false":  {
+                                                                                           "Forwarder A":  {
+                                                                                                               "data":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                           }
+                                                                                       }
+                                                                         },
+                                                              "Adder A":  {
+                                                                              "sum":  {
+                                                                                          "Forwarder A":  {
+                                                                                                              "data":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          }
+                                                                                      }
+                                                                          }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "3":  {
+                                                                                                "read":  {
+
+                                                                                                         }
+                                                                                            }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "Forwarder A":  {
+                                                                                                              "data":  {
+
+                                                                                                                       }
+                                                                                                          }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/flow/Fork example"
+}

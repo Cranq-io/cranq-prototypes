@@ -1,0 +1,210 @@
+{
+    "description":  "Tests whether a property/property path is found in the tree data structure",
+    "interface":  {
+                      "inputs":  {
+                                     "property":  {
+                                                      "description":  "The property/property path to look for in the tree",
+                                                      "type":  "string|array"
+                                                  },
+                                     "tree":  {
+                                                  "description":  "The tree data structure to find the property in",
+                                                  "type":  "tree"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "has":  {
+                                                  "description":  "Whether the property was found in the tree data structure",
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "get property":  {
+                                                                             "coordinates":  [
+                                                                                                 98,
+                                                                                                 29
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "data/tree/Node getter"
+                                                                         },
+                                                        "if array":  {
+                                                                         "coordinates":  [
+                                                                                             -111,
+                                                                                             -108
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "flow/Fork"
+                                                                     },
+                                                        "is array":  {
+                                                                         "coordinates":  [
+                                                                                             -189,
+                                                                                             -179
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/array/Type tester"
+                                                                     },
+                                                        "to array":  {
+                                                                         "coordinates":  [
+                                                                                             -49,
+                                                                                             -29
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "count":  "1"
+                                                                                    },
+                                                                         "prototype":  "data/array/Builder"
+                                                                     },
+                                                        "true":  {
+                                                                     "coordinates":  [
+                                                                                         211,
+                                                                                         -19
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+                                                                                    "data":  "true"
+                                                                                },
+                                                                     "prototype":  "data/Store"
+                                                                 },
+                                                        "false":  {
+                                                                      "coordinates":  [
+                                                                                          211,
+                                                                                          67
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+                                                                                     "data":  "false"
+                                                                                 },
+                                                                      "prototype":  "data/Store"
+                                                                  },
+                                                        "c105f654-25f5-4638-ba15-b06ba61db10e":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -341,
+                                                                                                                         1
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/double",
+                                                                                                     "prototype":  "flow/Forwarder/double",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "is array":  {
+                                                                               "is array":  {
+                                                                                                "if array":  {
+                                                                                                                 "condition":  {
+                                                                                                                                   "description":  ""
+                                                                                                                               }
+                                                                                                             }
+                                                                                            }
+                                                                           },
+                                                              "if array":  {
+                                                                               "true":  {
+                                                                                            "get property":  {
+                                                                                                                 "path":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                             }
+                                                                                        },
+                                                                               "false":  {
+                                                                                             "to array":  {
+                                                                                                              "item":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          }
+                                                                                         }
+                                                                           },
+                                                              "to array":  {
+                                                                               "array":  {
+                                                                                             "get property":  {
+                                                                                                                  "path":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                         }
+                                                                           },
+                                                              "get property":  {
+                                                                                   "node":  {
+                                                                                                "true":  {
+                                                                                                             "read":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                         }
+                                                                                            },
+                                                                                   "not found":  {
+                                                                                                     "false":  {
+                                                                                                                   "read":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                               }
+                                                                                                 }
+                                                                               },
+                                                              "c105f654-25f5-4638-ba15-b06ba61db10e":  {
+                                                                                                           "1":  {
+                                                                                                                     "if array":  {
+                                                                                                                                      "data":  {
+
+                                                                                                                                               }
+                                                                                                                                  },
+                                                                                                                     "is array":  {
+                                                                                                                                      "data":  {
+
+                                                                                                                                               }
+                                                                                                                                  }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "get property":  {
+                                                                                                                                          "tree":  {
+
+                                                                                                                                                   }
+                                                                                                                                      }
+                                                                                                                 }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "property":  {
+                                                                                           "c105f654-25f5-4638-ba15-b06ba61db10e":  {
+                                                                                                                                        "1":  {
+
+                                                                                                                                              }
+                                                                                                                                    }
+                                                                                       },
+                                                                          "tree":  {
+                                                                                       "c105f654-25f5-4638-ba15-b06ba61db10e":  {
+                                                                                                                                    "2":  {
+
+                                                                                                                                          }
+                                                                                                                                }
+                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "has":  {
+                                                                                       "true":  {
+                                                                                                    "data":  {
+
+                                                                                                             }
+                                                                                                },
+                                                                                       "false":  {
+                                                                                                     "data":  {
+
+                                                                                                              }
+                                                                                                 }
+                                                                                   }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/tree/Has property tester"
+}

@@ -1,0 +1,31 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "type":  "{\"a\":number,\"b\":number}"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "remainder":  {
+                                                        "type":  "number"
+                                                    },
+                                      "bounced":  {
+                                                      "type":  "typeof(a \u0026 b)"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "const {a, b} = data;\nif (b !== 0)\n  outputs.remainder(a % b, tag);\nelse\n  outputs.bounced(data, tag);\n"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Modulo/_"
+}

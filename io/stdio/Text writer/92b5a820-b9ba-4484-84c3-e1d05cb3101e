@@ -1,0 +1,26 @@
+{
+    "description":  "Writes to standard output.",
+    "interface":  {
+                      "inputs":  {
+                                     "text":  {
+                                                  "type":  "string"
+                                              }
+                                 },
+                      "outputs":  {
+
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "text":  "process.stdout.write(data);"
+                                                                }
+                                         }
+                        },
+    "name":  "io/stdio/Text writer"
+}

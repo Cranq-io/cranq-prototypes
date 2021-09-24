@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "type":  "{\"a\":{string:any},\"b\":{string:any}}"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "merged":  {
+                                                     "type":  "{string:typeof(a \u0026 b)[\"a\"][string] or typeof(a \u0026 b)[\"b\"][string]}"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "outputs.merged({...data.a, ...data.b}, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/dictionary/Merger/_"
+}

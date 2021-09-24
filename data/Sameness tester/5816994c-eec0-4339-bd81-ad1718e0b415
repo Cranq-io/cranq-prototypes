@@ -1,0 +1,88 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "description":  "",
+                                               "type":  "any"
+                                           },
+                                     "b":  {
+                                               "description":  "",
+                                               "type":  "any"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "same":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "same?":  {
+                                                                      "coordinates":  [
+                                                                                          16,
+                                                                                          -58
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "data/Sameness tester/_"
+                                                                  },
+                                                        "Syncer A":  {
+                                                                         "coordinates":  [
+                                                                                             -8,
+                                                                                             73
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "fields":  "[\"a\", \"b\"]"
+                                                                                    },
+                                                                         "prototype":  "flow/Syncer"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "Syncer A":  {
+                                                                               "synced":  {
+                                                                                              "same?":  {
+                                                                                                            "a \u0026 b":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                        }
+                                                                                          }
+                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "Syncer A":  {
+                                                                                                     "a":  {
+
+                                                                                                           }
+                                                                                                 }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "Syncer A":  {
+                                                                                                     "b":  {
+
+                                                                                                           }
+                                                                                                 }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "same":  {
+                                                                                        "same?":  {
+                                                                                                      "same":  {
+
+                                                                                                               }
+                                                                                                  }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/Sameness tester"
+}

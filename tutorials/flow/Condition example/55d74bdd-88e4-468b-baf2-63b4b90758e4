@@ -1,0 +1,164 @@
+{
+    "description":  "Example node, that demonstrates the basic usage of the flow/Condition node",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "3":  {
+                                                                  "coordinates":  [
+                                                                                      -376,
+                                                                                      -57
+                                                                                  ],
+                                                                  "description":  "",
+                                                                  "params":  {
+                                                                                 "data":  "3"
+                                                                             },
+                                                                  "prototype":  "data/Store"
+                                                              },
+                                                        "Odd tester A":  {
+                                                                             "coordinates":  [
+                                                                                                 -217,
+                                                                                                 60
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "number/Odd tester"
+                                                                         },
+                                                        "Condition A":  {
+                                                                            "coordinates":  [
+                                                                                                -72,
+                                                                                                -37
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "boolean/Condition"
+                                                                        },
+                                                        "\"odd\"":  {
+                                                                        "coordinates":  [
+                                                                                            122,
+                                                                                            -89
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+                                                                                       "data":  "\"odd\""
+                                                                                   },
+                                                                        "prototype":  "data/Store"
+                                                                    },
+                                                        "\"even\"":  {
+                                                                         "coordinates":  [
+                                                                                             120,
+                                                                                             35
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "\"even\""
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                289,
+                                                                                                -28
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "3":  {
+                                                                        "data":  {
+                                                                                     "Odd tester A":  {
+                                                                                                          "number":  {
+                                                                                                                         "description":  ""
+                                                                                                                     }
+                                                                                                      }
+                                                                                 }
+                                                                    },
+                                                              "Odd tester A":  {
+                                                                                   "odd":  {
+                                                                                               "Condition A":  {
+                                                                                                                   "boolean":  {
+                                                                                                                                   "description":  ""
+                                                                                                                               }
+                                                                                                               }
+                                                                                           }
+                                                                               },
+                                                              "Condition A":  {
+                                                                                  "true":  {
+                                                                                               "\"odd\"":  {
+                                                                                                               "read":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                           }
+                                                                                           },
+                                                                                  "false":  {
+                                                                                                "\"even\"":  {
+                                                                                                                 "read":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                             }
+                                                                                            }
+                                                                              },
+                                                              "\"odd\"":  {
+                                                                              "data":  {
+                                                                                           "Forwarder A":  {
+                                                                                                               "data":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                           }
+                                                                                       }
+                                                                          },
+                                                              "\"even\"":  {
+                                                                               "data":  {
+                                                                                            "Forwarder A":  {
+                                                                                                                "data":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                            }
+                                                                                        }
+                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "3":  {
+                                                                                                "read":  {
+
+                                                                                                         }
+                                                                                            }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "Forwarder A":  {
+                                                                                                              "data":  {
+
+                                                                                                                       }
+                                                                                                          }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/flow/Condition example"
+}

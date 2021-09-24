@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "data \u0026 count":  {
+                                                               "type":  "{\"data\":any,\"count\":number}"
+                                                           }
+                                 },
+                      "outputs":  {
+                                      "data":  {
+                                                   "type":  "typeof(data \u0026 count)[\"data\"]"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data \u0026 count":  "const {count, data:item} = data;\nfor (let i=0; i\u003ccount; i++)\n  outputs.data(item, `${tag}:${i}`);\n"
+                                                                }
+                                         }
+                        },
+    "name":  "flow/Repeater/_"
+}

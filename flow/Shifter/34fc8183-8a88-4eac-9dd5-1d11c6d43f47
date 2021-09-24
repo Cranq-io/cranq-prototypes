@@ -1,0 +1,25 @@
+{
+    "implementations":  {
+                            "es6-node":  {
+                                             "inputFunctions":  {
+                                                                    "52beed26-c59d-41c5-905d-8b966db24eb7":  "const {last} = state;\nstate.last = data;\nif (last !== undefined) {\n  outputs.data(last, tag);\n} else {\n  outputs.data(data, tag);\n}\n"
+                                                                }
+                                         }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "52beed26-c59d-41c5-905d-8b966db24eb7":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "data"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "40d1a5cf-aced-49cc-9e2f-27dcd6e300f8":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "data"
+                                                                               }
+                                  }
+                  },
+    "name":  "flow/Shifter",
+    "description":  "Shifts incoming data back in time by releasing the previously received data on each input."
+}

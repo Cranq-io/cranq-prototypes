@@ -1,0 +1,85 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "string"
+                                           },
+                                     "b":  {
+                                               "type":  "string"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "concatenated":  {
+                                                           "type":  "string"
+                                                       }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "concat":  {
+                                                                       "coordinates":  [
+                                                                                           0,
+                                                                                           0
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "string/Concatenator/_"
+                                                                   }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "concat":  {
+                                                                                                                    "a \u0026 b":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "concatenated":  {
+                                                                                                "concat":  {
+                                                                                                               "concatenated":  {
+
+                                                                                                                                }
+                                                                                                           }
+                                                                                            }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "string/Concatenator"
+}

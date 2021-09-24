@@ -1,0 +1,201 @@
+{
+    "name":  "db/sqlite3/Row getter",
+    "interface":  {
+                      "inputs":  {
+                                     "f8af22ef-179f-4eb1-baaa-c5bfe19583d7":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "DB ID"
+                                                                              },
+                                     "97d32b7b-b85f-41c1-b4f3-f85c4150e9e9":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "SQL"
+                                                                              },
+                                     "a9c36a44-0cba-4e7b-bb1f-4d8d80407b69":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "params"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "1f3844d2-aa63-4edf-a6bf-637e3b48f42b":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "row"
+                                                                               },
+                                      "04cc4561-e0bc-4d74-9df2-4d6430950aff":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "error"
+                                                                               },
+                                      "50907e55-a11e-428e-af13-2fbfe91b2140":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "DB ID"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+                                                              "6537bd92-3790-48d8-af12-098d78ab0e69":  {
+                                                                                                           "synced":  {
+                                                                                                                          "23725676-5b47-4976-950b-d25b26be0c83":  {
+                                                                                                                                                                       "b3ce4ca4-4138-4aea-8e53-c651ae333a07":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "037d0b67-6831-4a17-be0b-0a2de62667e1":  {
+                                                                                                           "synced":  {
+                                                                                                                          "6537bd92-3790-48d8-af12-098d78ab0e69":  {
+                                                                                                                                                                       "options":  {
+
+                                                                                                                                                                                   }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "ed5260c7-d2e8-474d-af16-e1bb2ebdad17":  {
+                                                                                                           "1":  {
+                                                                                                                     "44a8dc71-b7cb-48df-a54c-a21b6a4f9d71":  {
+                                                                                                                                                                  "72a73ffe-8319-4427-878e-3e67f2d150ff":  {
+
+                                                                                                                                                                                                           }
+                                                                                                                                                              },
+                                                                                                                     "6537bd92-3790-48d8-af12-098d78ab0e69":  {
+                                                                                                                                                                  "id":  {
+
+                                                                                                                                                                         }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "037d0b67-6831-4a17-be0b-0a2de62667e1":  {
+                                                                                                                                                                  "sql":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "3":  {
+                                                                                                                     "037d0b67-6831-4a17-be0b-0a2de62667e1":  {
+                                                                                                                                                                  "params":  {
+
+                                                                                                                                                                             }
+                                                                                                                                                              }
+                                                                                                                 }
+                                                                                                       },
+                                                              "23725676-5b47-4976-950b-d25b26be0c83":  {
+                                                                                                           "9ffca0a3-0927-4358-9cfb-28260054ea3f":  {
+                                                                                                                                                        "44a8dc71-b7cb-48df-a54c-a21b6a4f9d71":  {
+                                                                                                                                                                                                     "f58efe33-f70e-4570-ac54-670aaf844385":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "f8af22ef-179f-4eb1-baaa-c5bfe19583d7":  {
+                                                                                                                       "ed5260c7-d2e8-474d-af16-e1bb2ebdad17":  {
+                                                                                                                                                                    "1":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "97d32b7b-b85f-41c1-b4f3-f85c4150e9e9":  {
+                                                                                                                       "ed5260c7-d2e8-474d-af16-e1bb2ebdad17":  {
+                                                                                                                                                                    "2":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "a9c36a44-0cba-4e7b-bb1f-4d8d80407b69":  {
+                                                                                                                       "ed5260c7-d2e8-474d-af16-e1bb2ebdad17":  {
+                                                                                                                                                                    "3":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "50907e55-a11e-428e-af13-2fbfe91b2140":  {
+                                                                                                                        "44a8dc71-b7cb-48df-a54c-a21b6a4f9d71":  {
+                                                                                                                                                                     "eb4c2873-890f-4780-a895-53e321f3739e":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "1f3844d2-aa63-4edf-a6bf-637e3b48f42b":  {
+                                                                                                                        "23725676-5b47-4976-950b-d25b26be0c83":  {
+                                                                                                                                                                     "8cb67ee3-0b71-49a6-9c97-4909670a0177":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "04cc4561-e0bc-4d74-9df2-4d6430950aff":  {
+                                                                                                                        "23725676-5b47-4976-950b-d25b26be0c83":  {
+                                                                                                                                                                     "8a5f8aaf-0528-4a5b-9305-ba063d5120ba":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "23725676-5b47-4976-950b-d25b26be0c83":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         115.33333333333331,
+                                                                                                                         87.33333333333331
+                                                                                                                     ],
+                                                                                                     "name":  "sqlite3",
+                                                                                                     "prototype":  "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "6537bd92-3790-48d8-af12-098d78ab0e69":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         34.333333333333314,
+                                                                                                                         19.333333333333314
+                                                                                                                     ],
+                                                                                                     "name":  "action builder",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"id\", \"type\", \"options\"]",
+                                                                                                                    "type":  "\"get\""
+                                                                                                                }
+                                                                                                 },
+                                                        "037d0b67-6831-4a17-be0b-0a2de62667e1":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -77.66666666666669,
+                                                                                                                         95.33333333333331
+                                                                                                                     ],
+                                                                                                     "name":  "syncer",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"sql\", \"params\"]"
+                                                                                                                }
+                                                                                                 },
+                                                        "ed5260c7-d2e8-474d-af16-e1bb2ebdad17":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -111.66666666666669,
+                                                                                                                         -40.666666666666686
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/triple",
+                                                                                                     "prototype":  "flow/Forwarder/triple",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "44a8dc71-b7cb-48df-a54c-a21b6a4f9d71":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         72.33333333333331,
+                                                                                                                         -95.66666666666669
+                                                                                                                     ],
+                                                                                                     "name":  "DB ID",
+                                                                                                     "prototype":  "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Retrieves a single row from the specified database."
+}

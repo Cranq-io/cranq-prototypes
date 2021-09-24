@@ -1,0 +1,106 @@
+{
+    "description":  "Example node, that demonstrates the basic usage of the data/array/Filter node over an array",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "[1,8,13,7,2,10,84,26]":  {
+                                                                                      "coordinates":  [
+                                                                                                          -159,
+                                                                                                          -55
+                                                                                                      ],
+                                                                                      "description":  "",
+                                                                                      "params":  {
+                                                                                                     "data":  "[1,8,13,7,2,10,84,26]"
+                                                                                                 },
+                                                                                      "prototype":  "data/Store"
+                                                                                  },
+                                                        "Filter A":  {
+                                                                         "coordinates":  [
+                                                                                             46,
+                                                                                             -44
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/array/Filter"
+                                                                     },
+                                                        "Odd tester A":  {
+                                                                             "coordinates":  [
+                                                                                                 47,
+                                                                                                 189
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "number/Odd tester"
+                                                                         }
+                                                    },
+                                          "connections":  {
+                                                              "[1,8,13,7,2,10,84,26]":  {
+                                                                                            "data":  {
+                                                                                                         "Filter A":  {
+                                                                                                                          "array":  {
+                                                                                                                                        "description":  ""
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                                     }
+                                                                                        },
+                                                              "Filter A":  {
+                                                                               "item":  {
+                                                                                            "Odd tester A":  {
+                                                                                                                 "number":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                             }
+                                                                                        }
+                                                                           },
+                                                              "Odd tester A":  {
+                                                                                   "odd":  {
+                                                                                               "Filter A":  {
+                                                                                                                "include item":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                            }
+                                                                                           }
+                                                                               }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "[1,8,13,7,2,10,84,26]":  {
+                                                                                                                    "read":  {
+
+                                                                                                                             }
+                                                                                                                }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "Filter A":  {
+                                                                                                           "filtered":  {
+
+                                                                                                                        }
+                                                                                                       }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/flow/Filter example"
+}

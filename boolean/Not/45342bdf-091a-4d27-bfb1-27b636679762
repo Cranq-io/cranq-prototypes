@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "boolean"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "not":  {
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a":  "outputs.not(!data, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "boolean/Not"
+}

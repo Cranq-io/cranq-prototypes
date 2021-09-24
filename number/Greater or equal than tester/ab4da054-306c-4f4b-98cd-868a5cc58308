@@ -1,0 +1,121 @@
+{
+    "description":  "Tests whether the value is greater or equal than the reference",
+    "interface":  {
+                      "inputs":  {
+                                     "value":  {
+                                                   "description":  "The value to test against the reference",
+                                                   "type":  "number"
+                                               },
+                                     "reference":  {
+                                                       "description":  "The reference to compare the value with",
+                                                       "type":  "number"
+                                                   }
+                                 },
+                      "outputs":  {
+                                      "greater or equal":  {
+                                                               "description":  "Whether the value is greater or equal than the reference",
+                                                               "type":  "boolean"
+                                                           }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Or A":  {
+                                                                     "coordinates":  [
+                                                                                         150,
+                                                                                         1
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+
+                                                                                },
+                                                                     "prototype":  "boolean/Or",
+                                                                     "name":  "or"
+                                                                 },
+                                                        "Greater than tester A":  {
+                                                                                      "coordinates":  [
+                                                                                                          21,
+                                                                                                          -60
+                                                                                                      ],
+                                                                                      "description":  "",
+                                                                                      "params":  {
+
+                                                                                                 },
+                                                                                      "prototype":  "number/Greater than tester",
+                                                                                      "name":  "is greeter"
+                                                                                  },
+                                                        "Equality tester A":  {
+                                                                                  "coordinates":  [
+                                                                                                      22,
+                                                                                                      97
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+
+                                                                                             },
+                                                                                  "prototype":  "number/Equality tester",
+                                                                                  "name":  "is equal"
+                                                                              }
+                                                    },
+                                          "connections":  {
+                                                              "Greater than tester A":  {
+                                                                                            "greater":  {
+                                                                                                            "Or A":  {
+                                                                                                                         "a":  {
+                                                                                                                                   "description":  ""
+                                                                                                                               }
+                                                                                                                     }
+                                                                                                        }
+                                                                                        },
+                                                              "Equality tester A":  {
+                                                                                        "equal":  {
+                                                                                                      "Or A":  {
+                                                                                                                   "b":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                               }
+                                                                                                  }
+                                                                                    }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "value":  {
+                                                                                        "Greater than tester A":  {
+                                                                                                                      "a":  {
+
+                                                                                                                            }
+                                                                                                                  },
+                                                                                        "Equality tester A":  {
+                                                                                                                  "a":  {
+
+                                                                                                                        }
+                                                                                                              }
+                                                                                    },
+                                                                          "reference":  {
+                                                                                            "Greater than tester A":  {
+                                                                                                                          "b":  {
+
+                                                                                                                                }
+                                                                                                                      },
+                                                                                            "Equality tester A":  {
+                                                                                                                      "b":  {
+
+                                                                                                                            }
+                                                                                                                  }
+                                                                                        }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "greater or equal":  {
+                                                                                                    "Or A":  {
+                                                                                                                 "or":  {
+
+                                                                                                                        }
+                                                                                                             }
+                                                                                                }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Greater or equal than tester"
+}

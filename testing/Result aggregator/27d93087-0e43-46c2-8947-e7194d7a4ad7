@@ -1,0 +1,205 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "reset":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               },
+                                     "result":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "results":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "split assertions \u0026 descriptions":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -52,
+                                                                                                                         147
+                                                                                                                     ],
+                                                                                                     "description":  "",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"assertions\",\"descriptions\"]"
+                                                                                                                },
+                                                                                                     "prototype":  "flow/Splitter"
+                                                                                                 },
+                                                        "store result":  {
+                                                                             "coordinates":  [
+                                                                                                 74,
+                                                                                                 64
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "data/tree/Node setter/mutable"
+                                                                         },
+                                                        "empty set":  {
+                                                                          "coordinates":  [
+                                                                                              -203,
+                                                                                              -108
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+                                                                                         "data":  "{}"
+                                                                                     },
+                                                                          "prototype":  "data/Store"
+                                                                      },
+                                                        "result":  {
+                                                                       "coordinates":  [
+                                                                                           -197,
+                                                                                           72
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "flow/Forwarder"
+                                                                   },
+                                                        "results":  {
+                                                                        "coordinates":  [
+                                                                                            -58,
+                                                                                            -36
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "data/Store"
+                                                                    },
+                                                        "debounce results":  {
+                                                                                 "coordinates":  [
+                                                                                                     241,
+                                                                                                     -23
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+                                                                                                "delay":  "500"
+                                                                                            },
+                                                                                 "prototype":  "flow/Debouncer"
+                                                                             },
+                                                        "wait to finish":  {
+                                                                               "coordinates":  [
+                                                                                                   115,
+                                                                                                   -104
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "flow/Forwarder/double"
+                                                                           }
+                                                    },
+                                          "connections":  {
+                                                              "result":  {
+                                                                             "data":  {
+                                                                                          "split assertions \u0026 descriptions":  {
+                                                                                                                                       "unsplit":  {
+                                                                                                                                                       "description":  ""
+                                                                                                                                                   }
+                                                                                                                                   },
+                                                                                          "results":  {
+                                                                                                          "read":  {
+                                                                                                                       "description":  ""
+                                                                                                                   }
+                                                                                                      }
+                                                                                      }
+                                                                         },
+                                                              "empty set":  {
+                                                                                "data":  {
+                                                                                             "results":  {
+                                                                                                             "data":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                         }
+                                                                                         }
+                                                                            },
+                                                              "results":  {
+                                                                              "data":  {
+                                                                                           "store result":  {
+                                                                                                                "tree":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                            },
+                                                                                           "wait to finish":  {
+                                                                                                                  "1":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                              }
+                                                                                       }
+                                                                          },
+                                                              "store result":  {
+                                                                                   "written":  {
+                                                                                                   "wait to finish":  {
+                                                                                                                          "2":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                      }
+                                                                                               }
+                                                                               },
+                                                              "wait to finish":  {
+                                                                                     "1":  {
+                                                                                               "debounce results":  {
+                                                                                                                        "data":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                                    }
+                                                                                           }
+                                                                                 },
+                                                              "split assertions \u0026 descriptions":  {
+                                                                                                           "assertions":  {
+                                                                                                                              "store result":  {
+                                                                                                                                                   "node":  {
+                                                                                                                                                                "description":  ""
+                                                                                                                                                            }
+                                                                                                                                               }
+                                                                                                                          },
+                                                                                                           "descriptions":  {
+                                                                                                                                "store result":  {
+                                                                                                                                                     "path":  {
+                                                                                                                                                                  "description":  ""
+                                                                                                                                                              }
+                                                                                                                                                 }
+                                                                                                                            }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "reset":  {
+                                                                                        "empty set":  {
+                                                                                                          "read":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                    },
+                                                                          "result":  {
+                                                                                         "result":  {
+                                                                                                        "data":  {
+
+                                                                                                                 }
+                                                                                                    }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "results":  {
+                                                                                           "debounce results":  {
+                                                                                                                    "data":  {
+
+                                                                                                                             }
+                                                                                                                }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "testing/Result aggregator"
+}

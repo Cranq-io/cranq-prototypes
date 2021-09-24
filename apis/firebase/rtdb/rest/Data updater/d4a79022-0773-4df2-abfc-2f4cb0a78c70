@@ -1,0 +1,105 @@
+{
+    "name":  "apis/firebase/rtdb/rest/Data updater",
+    "interface":  {
+                      "inputs":  {
+                                     "ad1615e0-739e-4b02-b6cb-72d46a0e7276":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "query context",
+                                                                                  "description":  "idToken\ndbUrl"
+                                                                              },
+                                     "fcd8316c-b7e7-40be-9001-480a48523f77":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "path",
+                                                                                  "description":  "Identifies data entry to be updated.\n\ntype: string[]"
+                                                                              },
+                                     "9c6da285-d91c-4201-8e0d-8a4f5d2536b5":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "data"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "d2ec2a2d-fc26-4501-be97-b65e5cf97856":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "data"
+                                                                               },
+                                      "bde5e981-356b-4db5-837f-de2e1d6625ee":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "error"
+                                                                               },
+                                      "b3264542-6784-4b77-9816-59f9dc31a5fd":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "query context",
+                                                                                   "description":  "idToken\ndbUrl"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "ad1615e0-739e-4b02-b6cb-72d46a0e7276":  {
+                                                                                                                       "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                                                                                    "36e2743d-8088-4778-9194-583bb6289ab7":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "fcd8316c-b7e7-40be-9001-480a48523f77":  {
+                                                                                                                       "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                                                                                    "0f0bade5-0b6a-4ad9-a3ba-774b5365d2d0":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "9c6da285-d91c-4201-8e0d-8a4f5d2536b5":  {
+                                                                                                                       "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                                                                                    "441a9d60-a5a2-4e63-a742-2c9bb772513f":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "b3264542-6784-4b77-9816-59f9dc31a5fd":  {
+                                                                                                                        "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                                                                                     "7e5fed65-b00e-4548-a057-0b1a101f5ef0":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "bde5e981-356b-4db5-837f-de2e1d6625ee":  {
+                                                                                                                        "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                                                                                     "104108dd-4808-4eeb-8458-9179728f4a9a":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "d2ec2a2d-fc26-4501-be97-b65e5cf97856":  {
+                                                                                                                        "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                                                                                     "0066052c-0caa-4f32-ae2d-14c8859b0cce":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "80f14c01-a5d3-46df-8281-b200d8a7ff67":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         0,
+                                                                                                                         0
+                                                                                                                     ],
+                                                                                                     "name":  "dispatch request",
+                                                                                                     "prototype":  "974d5e19-683a-43ec-9c89-5fd9aadb262e",
+                                                                                                     "params":  {
+                                                                                                                    "a1c0f925-e196-4ea6-ace4-383b40f18c7b":  "\"PATCH\""
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Updates multiple data entries (fields) under \u0027path\u0027, in a Firebase Realtime Database."
+}

@@ -1,0 +1,34 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              },
+                                     "delay":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "data":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "const {timer} = state;\nif (timer)\n  clearTimeout(timer);\nstate.timer = setTimeout(() =\u003e outputs.data(data, tag), params.delay);"
+                                                                }
+                                         }
+                        },
+    "name":  "flow/Debouncer"
+}

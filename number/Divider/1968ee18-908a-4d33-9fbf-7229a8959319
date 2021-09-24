@@ -1,0 +1,96 @@
+{
+    "description":  "Divides \u0027a\u0027 by \u0027b\u0027. Bounces synced operands on division by zero.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "number"
+                                           },
+                                     "b":  {
+                                               "type":  "number"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "fraction":  {
+                                                       "type":  "number"
+                                                   },
+                                      "bounced":  {
+                                                      "description":  "Sends synced inputs on error.",
+                                                      "type":  "{\"a\":number,\"b\":number}"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "divide":  {
+                                                                       "coordinates":  [
+                                                                                           0,
+                                                                                           0
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "number/Divider/_"
+                                                                   }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "divide":  {
+                                                                                                                    "a \u0026 b":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "fraction":  {
+                                                                                            "divide":  {
+                                                                                                           "fraction":  {
+
+                                                                                                                        }
+                                                                                                       }
+                                                                                        },
+                                                                           "bounced":  {
+                                                                                           "divide":  {
+                                                                                                          "bounced":  {
+
+                                                                                                                      }
+                                                                                                      }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Divider"
+}

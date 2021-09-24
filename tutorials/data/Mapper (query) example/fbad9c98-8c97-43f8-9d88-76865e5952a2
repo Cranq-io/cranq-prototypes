@@ -1,0 +1,77 @@
+{
+    "description":  "Example wrapper node that demonstrates the usage of the data/array/Mapper node.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "mapped":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "get emp names":  {
+                                                                              "coordinates":  [
+                                                                                                  99,
+                                                                                                  29
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "tutorials/data/Mapper (get emp names) example"
+                                                                          },
+                                                        "get employees":  {
+                                                                              "coordinates":  [
+                                                                                                  -80,
+                                                                                                  -90
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "tutorials/data/Concatenator (array) example"
+                                                                          }
+                                                    },
+                                          "connections":  {
+                                                              "get employees":  {
+                                                                                    "array":  {
+                                                                                                  "get emp names":  {
+                                                                                                                        "array":  {
+                                                                                                                                      "description":  ""
+                                                                                                                                  }
+                                                                                                                    }
+                                                                                              }
+                                                                                }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "get employees":  {
+                                                                                                            "run":  {
+
+                                                                                                                    }
+                                                                                                        }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "mapped":  {
+                                                                                          "get emp names":  {
+                                                                                                                "array":  {
+
+                                                                                                                          }
+                                                                                                            }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Mapper (query) example"
+}

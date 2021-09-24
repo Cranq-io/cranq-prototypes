@@ -1,0 +1,110 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "param1":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                },
+                                     "param2":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "param2":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                      "param1":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                      "synced":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Syncer A":  {
+                                                                         "coordinates":  [
+                                                                                             -20,
+                                                                                             89
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "fields":  "[\"param1\",\"param2\"]"
+                                                                                    },
+                                                                         "prototype":  "flow/Syncer"
+                                                                     },
+                                                        "Splitter A":  {
+                                                                           "coordinates":  [
+                                                                                               -18,
+                                                                                               -131
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+                                                                                          "fields":  "[\"param1\",\"param2\"]"
+                                                                                      },
+                                                                           "prototype":  "flow/Splitter"
+                                                                       }
+                                                    },
+                                          "connections":  {
+                                                              "Syncer A":  {
+                                                                               "synced":  {
+                                                                                              "Splitter A":  {
+                                                                                                                 "unsplit":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                             }
+                                                                                          }
+                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "param1":  {
+                                                                                         "Syncer A":  {
+                                                                                                          "param1":  {
+
+                                                                                                                     }
+                                                                                                      }
+                                                                                     },
+                                                                          "param2":  {
+                                                                                         "Syncer A":  {
+                                                                                                          "param2":  {
+
+                                                                                                                     }
+                                                                                                      }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "synced":  {
+                                                                                          "Syncer A":  {
+                                                                                                           "synced":  {
+
+                                                                                                                      }
+                                                                                                       }
+                                                                                      },
+                                                                           "param2":  {
+                                                                                          "Splitter A":  {
+                                                                                                             "param2":  {
+
+                                                                                                                        }
+                                                                                                         }
+                                                                                      },
+                                                                           "param1":  {
+                                                                                          "Splitter A":  {
+                                                                                                             "param1":  {
+
+                                                                                                                        }
+                                                                                                         }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/flow/Syncer \u0026 splitter example/_"
+}

@@ -1,0 +1,88 @@
+{
+    "description":  "Tests whether the string contains the substring",
+    "interface":  {
+                      "inputs":  {
+                                     "string":  {
+                                                    "description":  "The string to look for the substring in",
+                                                    "type":  "string"
+                                                },
+                                     "substring":  {
+                                                       "description":  "The string to find",
+                                                       "type":  "string"
+                                                   }
+                                 },
+                      "outputs":  {
+                                      "contains":  {
+                                                       "description":  "Whether the string contains the substring",
+                                                       "type":  "boolean"
+                                                   }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "contains":  {
+                                                                         "coordinates":  [
+                                                                                             77,
+                                                                                             -9
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "247ccb7b-3b0b-4e32-974e-bc06c3f5b5e5"
+                                                                     },
+                                                        "syncer":  {
+                                                                       "coordinates":  [
+                                                                                           -120,
+                                                                                           6
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+                                                                                      "fields":  "[\"string\", \"substring\"]"
+                                                                                  },
+                                                                       "prototype":  "flow/Syncer"
+                                                                   }
+                                                    },
+                                          "connections":  {
+                                                              "syncer":  {
+                                                                             "synced":  {
+                                                                                            "contains":  {
+                                                                                                             "string \u0026 substring":  {
+                                                                                                                                             "description":  ""
+                                                                                                                                         }
+                                                                                                         }
+                                                                                        }
+                                                                         }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "string":  {
+                                                                                         "syncer":  {
+                                                                                                        "string":  {
+
+                                                                                                                   }
+                                                                                                    }
+                                                                                     },
+                                                                          "substring":  {
+                                                                                            "syncer":  {
+                                                                                                           "substring":  {
+
+                                                                                                                         }
+                                                                                                       }
+                                                                                        }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "contains":  {
+                                                                                            "contains":  {
+                                                                                                             "contains":  {
+
+                                                                                                                          }
+                                                                                                         }
+                                                                                        }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "string/Contains tester"
+}

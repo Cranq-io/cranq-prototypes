@@ -1,0 +1,30 @@
+{
+    "description":  "Sends input (data) to output without change.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "description":  "Receives data to be forwarded.",
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "data":  {
+                                                   "description":  "Sends forwarded data.",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "outputs.data(data, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "flow/Forwarder"
+}

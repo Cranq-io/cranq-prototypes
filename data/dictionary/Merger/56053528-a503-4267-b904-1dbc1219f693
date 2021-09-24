@@ -1,0 +1,85 @@
+{
+    "description":  "Merges dictionary \u0027b\u0027 to dictionary \u0027a\u0027. Values of \u0027a\u0027 will be ignored on conflict.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "{string:any}"
+                                           },
+                                     "b":  {
+                                               "type":  "{string:any}"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "merged":  {
+                                                     "type":  "{string:typeof(a)[string] or typeof(b)[string]}"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "merge":  {
+                                                                      "coordinates":  [
+                                                                                          0,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "data/dictionary/Merger/_"
+                                                                  }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "merge":  {
+                                                                                                                   "a \u0026 b":  {
+                                                                                                                                      "description":  ""
+                                                                                                                                  }
+                                                                                                               }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "merged":  {
+                                                                                          "merge":  {
+                                                                                                        "merged":  {
+
+                                                                                                                   }
+                                                                                                    }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/dictionary/Merger"
+}

@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "type":  "{\"a\":number,\"b\":number}"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "less":  {
+                                                   "type":  "boolean"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "outputs.less(data.a \u003c data.b, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Less than tester/_"
+}

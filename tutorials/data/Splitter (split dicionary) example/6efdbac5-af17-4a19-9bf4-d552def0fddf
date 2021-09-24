@@ -1,0 +1,88 @@
+{
+    "description":  "Example node, that demonstrates the usage of the flow/Splitter for splitting dictionaries by keys.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "Employees":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    },
+                                      "Departments":  {
+                                                          "description":  "",
+                                                          "type":  "any"
+                                                      }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Splitter A":  {
+                                                                           "coordinates":  [
+                                                                                               -9,
+                                                                                               -54
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+                                                                                          "fields":  "[\"Employees\",\"Departments\"]"
+                                                                                      },
+                                                                           "prototype":  "flow/Splitter"
+                                                                       },
+                                                        "get_repo":  {
+                                                                         "coordinates":  [
+                                                                                             -147,
+                                                                                             1
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "tutorials/data/Syncer (build dictionary) example"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "get_repo":  {
+                                                                               "dict":  {
+                                                                                            "Splitter A":  {
+                                                                                                               "unsplit":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                           }
+                                                                                        }
+                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "get_repo":  {
+                                                                                                       "build":  {
+
+                                                                                                                 }
+                                                                                                   }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "Employees":  {
+                                                                                             "Splitter A":  {
+                                                                                                                "Departments":  {
+
+                                                                                                                                }
+                                                                                                            }
+                                                                                         },
+                                                                           "Departments":  {
+                                                                                               "Splitter A":  {
+                                                                                                                  "Employees":  {
+
+                                                                                                                                }
+                                                                                                              }
+                                                                                           }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Splitter (split dicionary) example"
+}

@@ -1,0 +1,28 @@
+{
+    "description":  "Tells whether the input is a boolean.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "is boolean":  {
+                                                         "type":  "is boolean"
+                                                     }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "outputs[\"is boolean\"](typeof data === \"boolean\", tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "boolean/Type tester"
+}

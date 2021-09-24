@@ -1,0 +1,30 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "path":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "directory":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "path":  "const {lstat} = require(\"fs\");\nlstat(data,(error, stats) =\u003e {\n  if (error) {\n    outputs.directory(false, tag);\n  } else {\n    outputs.directory(stats.isDirectory(), tag);\n  }\n});"
+                                                                }
+                                         }
+                        },
+    "name":  "io/file/Directory tester/_"
+}

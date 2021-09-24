@@ -1,0 +1,97 @@
+{
+    "description":  "Tests whether a dictionary has a specific item by key",
+    "interface":  {
+                      "inputs":  {
+                                     "dict":  {
+                                                  "description":  "The dictionary to search for the item",
+                                                  "type":  "dictionary"
+                                              },
+                                     "key":  {
+                                                 "description":  "The key to look for in the dictionary",
+                                                 "type":  "string"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "has":  {
+                                                  "description":  "Whether the dictionary has the specific item",
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Item getter A":  {
+                                                                              "coordinates":  [
+                                                                                                  -84,
+                                                                                                  1
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/Item getter",
+                                                                              "name":  "get item"
+                                                                          },
+                                                        "To boolean A":  {
+                                                                             "coordinates":  [
+                                                                                                 128,
+                                                                                                 0
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "73b8273f-ef86-4797-8443-ab5662dda5d5",
+                                                                             "name":  "to boolean"
+                                                                         }
+                                                    },
+                                          "connections":  {
+                                                              "Item getter A":  {
+                                                                                    "value":  {
+                                                                                                  "To boolean A":  {
+                                                                                                                       "to true":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                   }
+                                                                                              },
+                                                                                    "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":  {
+                                                                                                                                 "To boolean A":  {
+                                                                                                                                                      "to false":  {
+
+                                                                                                                                                                   }
+                                                                                                                                                  }
+                                                                                                                             }
+                                                                                }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "dict":  {
+                                                                                       "Item getter A":  {
+                                                                                                             "dict":  {
+
+                                                                                                                      }
+                                                                                                         }
+                                                                                   },
+                                                                          "key":  {
+                                                                                      "Item getter A":  {
+                                                                                                            "key":  {
+
+                                                                                                                    }
+                                                                                                        }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "has":  {
+                                                                                       "To boolean A":  {
+                                                                                                            "output":  {
+
+                                                                                                                       }
+                                                                                                        }
+                                                                                   }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/dictionary/Has item tester"
+}

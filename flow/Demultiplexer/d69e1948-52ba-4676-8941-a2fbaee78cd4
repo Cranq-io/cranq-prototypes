@@ -1,0 +1,35 @@
+{
+    "description":  "Forwards the payload of an incoming multiplexed signal to the corresponding output.",
+    "interface":  {
+                      "inputs":  {
+                                     "fields":  {
+                                                    "description":  "Receives a list of output port names to send payload to.",
+                                                    "type":  "string[]"
+                                                },
+                                     "multiplexed":  {
+                                                         "description":  "Receives multiplexed data.",
+                                                         "type":  "{\"field\":string,\"data\":any}"
+                                                     }
+                                 },
+                      "outputs":  {
+                                      "demultiplexed":  {
+                                                            "description":  "Sends demultiplexed payload data.",
+                                                            "paramId":  "fields",
+                                                            "type":  "(multiplexed)[\"data\"]"
+                                                        }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "multiplexed":  "outputs[data.field](data.data, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "flow/Demultiplexer"
+}

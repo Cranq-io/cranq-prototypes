@@ -1,0 +1,176 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "fc3cdbb6-7065-40ac-9048-8b9f5bc741cc":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -156,
+                                                                                                                         99
+                                                                                                                     ],
+                                                                                                     "name":  "structure tester",
+                                                                                                     "prototype":  "1103810c-ece3-4274-987a-03447817473f",
+                                                                                                     "params":  {
+                                                                                                                    "strict":  "true"
+                                                                                                                }
+                                                                                                 },
+                                                        "d79d1e64-0606-49aa-a2dd-7114b33006c6":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         26,
+                                                                                                                         23
+                                                                                                                     ],
+                                                                                                     "name":  "fork",
+                                                                                                     "prototype":  "flow/Fork",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "4b14e3e1-f1ee-4f65-966e-f09c7028da7c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         145,
+                                                                                                                         -51
+                                                                                                                     ],
+                                                                                                     "name":  "gate",
+                                                                                                     "prototype":  "flow/Gate",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "e3434d6a-389a-4069-a66e-9b60857da5a6":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         247.0909090909091,
+                                                                                                                         -108.54545454545453
+                                                                                                                     ],
+                                                                                                     "name":  "values are same",
+                                                                                                     "prototype":  "f1b5321b-d504-4ae3-9eb9-8dae3426f137",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "3710e78f-480e-4ff8-b878-af1d31fa00d6":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -363,
+                                                                                                                         0
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/double",
+                                                                                                     "prototype":  "flow/Forwarder/double",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "2a9ca66c-22e3-4478-b06b-c1da6e93eeac":  {
+                                                                                                                       "3710e78f-480e-4ff8-b878-af1d31fa00d6":  {
+                                                                                                                                                                    "1":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "3878ff33-ee0b-4ec7-a9aa-76ea242941bf":  {
+                                                                                                                       "3710e78f-480e-4ff8-b878-af1d31fa00d6":  {
+                                                                                                                                                                    "2":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "0a0b3f3b-479f-4c35-b569-960ec2303cb9":  {
+                                                                                                                        "d79d1e64-0606-49aa-a2dd-7114b33006c6":  {
+                                                                                                                                                                     "false":  {
+
+                                                                                                                                                                               }
+                                                                                                                                                                 },
+                                                                                                                        "e3434d6a-389a-4069-a66e-9b60857da5a6":  {
+                                                                                                                                                                     "8c22681a-caad-4d69-b5b1-ee7404f70006":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "connections":  {
+                                                              "fc3cdbb6-7065-40ac-9048-8b9f5bc741cc":  {
+                                                                                                           "matches structure":  {
+                                                                                                                                     "d79d1e64-0606-49aa-a2dd-7114b33006c6":  {
+                                                                                                                                                                                  "data":  {
+
+                                                                                                                                                                                           },
+                                                                                                                                                                                  "condition":  {
+
+                                                                                                                                                                                                }
+                                                                                                                                                                              }
+                                                                                                                                 }
+                                                                                                       },
+                                                              "d79d1e64-0606-49aa-a2dd-7114b33006c6":  {
+                                                                                                           "true":  {
+                                                                                                                        "4b14e3e1-f1ee-4f65-966e-f09c7028da7c":  {
+                                                                                                                                                                     "open":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                                                       },
+                                                              "4b14e3e1-f1ee-4f65-966e-f09c7028da7c":  {
+                                                                                                           "data":  {
+                                                                                                                        "e3434d6a-389a-4069-a66e-9b60857da5a6":  {
+                                                                                                                                                                     "e468b571-c70a-453c-a6d9-6532e7ac947a":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                                                       },
+                                                              "3710e78f-480e-4ff8-b878-af1d31fa00d6":  {
+                                                                                                           "1":  {
+                                                                                                                     "4b14e3e1-f1ee-4f65-966e-f09c7028da7c":  {
+                                                                                                                                                                  "data":  {
+
+                                                                                                                                                                           }
+                                                                                                                                                              },
+                                                                                                                     "fc3cdbb6-7065-40ac-9048-8b9f5bc741cc":  {
+                                                                                                                                                                  "data":  {
+
+                                                                                                                                                                           }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "fc3cdbb6-7065-40ac-9048-8b9f5bc741cc":  {
+                                                                                                                                                                  "structure":  {
+
+                                                                                                                                                                                }
+                                                                                                                                                              },
+                                                                                                                     "e3434d6a-389a-4069-a66e-9b60857da5a6":  {
+                                                                                                                                                                  "255ee603-d7a4-4c1a-9379-98324a6d66ad":  {
+
+                                                                                                                                                                                                           }
+                                                                                                                                                              }
+                                                                                                                 }
+                                                                                                       }
+                                                          }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "2a9ca66c-22e3-4478-b06b-c1da6e93eeac":  {
+                                                                                  "type":  "dictionary",
+                                                                                  "name":  "dict",
+                                                                                  "description":  "The dictionary to test"
+                                                                              },
+                                     "3878ff33-ee0b-4ec7-a9aa-76ea242941bf":  {
+                                                                                  "type":  "dictionary",
+                                                                                  "name":  "reference",
+                                                                                  "description":  "The reference data"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "0a0b3f3b-479f-4c35-b569-960ec2303cb9":  {
+                                                                                   "type":  "boolean",
+                                                                                   "name":  "equals",
+                                                                                   "description":  "Whether all values in the dictionary are the same as the items with the same key in the reference"
+                                                                               }
+                                  }
+                  },
+    "name":  "data/tree/Equality tester",
+    "description":  "Tests whether the dictionary equals the reference (same structure and same values)"
+}

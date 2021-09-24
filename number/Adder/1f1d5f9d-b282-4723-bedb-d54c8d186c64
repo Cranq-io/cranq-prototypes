@@ -1,0 +1,85 @@
+{
+    "description":  "Adds \u0027b\u0027 to \u0027a\u0027.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "number"
+                                           },
+                                     "b":  {
+                                               "type":  "number"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "sum":  {
+                                                  "type":  "number"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\", \"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "add":  {
+                                                                    "coordinates":  [
+                                                                                        0,
+                                                                                        0
+                                                                                    ],
+                                                                    "description":  "",
+                                                                    "params":  {
+
+                                                                               },
+                                                                    "prototype":  "number/Adder/_"
+                                                                }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "add":  {
+                                                                                                                 "a \u0026 b":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                             }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "sum":  {
+                                                                                       "add":  {
+                                                                                                   "sum":  {
+
+                                                                                                           }
+                                                                                               }
+                                                                                   }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Adder"
+}

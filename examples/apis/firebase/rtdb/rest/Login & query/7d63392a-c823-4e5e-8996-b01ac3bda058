@@ -1,0 +1,238 @@
+{
+    "name":  "examples/apis/firebase/rtdb/rest/Login \u0026 query",
+    "interface":  {
+                      "inputs":  {
+                                     "b653d535-fb12-4b15-93eb-b62611922f58":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "API key"
+                                                                              },
+                                     "d33943de-e771-4d9f-a573-580b5f974736":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "DB URL"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "8c63fb02-5940-4324-af47-5e3c5c9dbcdf":  {
+                                                                                   "description":  "Sends forwarded data.",
+                                                                                   "type":  "any",
+                                                                                   "name":  "data"
+                                                                               },
+                                      "c4429513-bd28-4120-94cb-2a20d75286d2":  {
+                                                                                   "description":  "Sends forwarded data.",
+                                                                                   "type":  "any",
+                                                                                   "name":  "error"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+                                                              "ff1636ac-96e1-43ce-9e12-944d55e9c3d7":  {
+                                                                                                           "fcbf77e3-1272-4f78-bb3e-42bca6d1752a":  {
+                                                                                                                                                        "3eec21a7-34db-431c-b2ce-3c4e47b83de9":  {
+                                                                                                                                                                                                     "cb5c4483-5907-46f1-a3d3-0bb13aa95840":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 },
+                                                                                                                                                        "427222bd-6382-4e10-8b5a-09302b503258":  {
+                                                                                                                                                                                                     "90feee12-bb21-4f39-9a48-3cefe2564c83":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 },
+                                                                                                                                                        "67b6a8e0-8c0d-423b-a0b2-2a1aed28515a":  {
+                                                                                                                                                                                                     "fcd8316c-b7e7-40be-9001-480a48523f77":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    },
+                                                                                                           "75242bd8-8575-4bfe-ab8c-42b4a72819b7":  {
+                                                                                                                                                        "3eec21a7-34db-431c-b2ce-3c4e47b83de9":  {
+                                                                                                                                                                                                     "e72f4407-b4c2-49be-8a99-57d9d5683276":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "31a3956f-4e30-4228-81bc-3ce065ec53cf":  {
+                                                                                                           "synced":  {
+                                                                                                                          "ff1636ac-96e1-43ce-9e12-944d55e9c3d7":  {
+                                                                                                                                                                       "4e212e21-db72-4108-8bdb-0c1127fece5d":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "426a0436-4d2e-4189-b594-37e81a82f4ae":  {
+                                                                                                           "d89d6ebc-b84a-4eaa-9978-bb7386aaf180":  {
+                                                                                                                                                        "31a3956f-4e30-4228-81bc-3ce065ec53cf":  {
+                                                                                                                                                                                                     "0":  {
+
+                                                                                                                                                                                                           }
+                                                                                                                                                                                                 }
+                                                                                                                                                    },
+                                                                                                           "138b4093-d435-4fe2-bd6e-276e135d40b6":  {
+                                                                                                                                                        "2555ef8e-8c65-4708-b307-5bcb5b97465c":  {
+                                                                                                                                                                                                     "3629005f-d095-4e3c-8d26-9987239d5d69":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "2555ef8e-8c65-4708-b307-5bcb5b97465c":  {
+                                                                                                           "367a9897-be40-4dcf-854b-d565e32acfbf":  {
+                                                                                                                                                        "ff1636ac-96e1-43ce-9e12-944d55e9c3d7":  {
+                                                                                                                                                                                                     "e12d2a26-5aa7-4d1e-81c6-412106c756a9":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "3eec21a7-34db-431c-b2ce-3c4e47b83de9":  {
+                                                                                                           "d4692377-ab53-4cd2-86c2-2e6f2dee8f27":  {
+                                                                                                                                                        "67b6a8e0-8c0d-423b-a0b2-2a1aed28515a":  {
+                                                                                                                                                                                                     "ad1615e0-739e-4b02-b6cb-72d46a0e7276":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "67b6a8e0-8c0d-423b-a0b2-2a1aed28515a":  {
+                                                                                                           "b3264542-6784-4b77-9816-59f9dc31a5fd":  {
+                                                                                                                                                        "427222bd-6382-4e10-8b5a-09302b503258":  {
+                                                                                                                                                                                                     "28f77355-a9aa-45f6-bbb0-8a6f22964964":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "b653d535-fb12-4b15-93eb-b62611922f58":  {
+                                                                                                                       "426a0436-4d2e-4189-b594-37e81a82f4ae":  {
+                                                                                                                                                                    "933777c7-dc99-4629-8ad3-20b48bbf0a01":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "d33943de-e771-4d9f-a573-580b5f974736":  {
+                                                                                                                       "2555ef8e-8c65-4708-b307-5bcb5b97465c":  {
+                                                                                                                                                                    "f8ad245c-763e-47e8-9df2-ef1b439b7abd":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "c4429513-bd28-4120-94cb-2a20d75286d2":  {
+                                                                                                                        "3eec21a7-34db-431c-b2ce-3c4e47b83de9":  {
+                                                                                                                                                                     "0193e818-2bc1-44f8-acf1-b48fa679b125":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 },
+                                                                                                                        "67b6a8e0-8c0d-423b-a0b2-2a1aed28515a":  {
+                                                                                                                                                                     "bde5e981-356b-4db5-837f-de2e1d6625ee":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 },
+                                                                                                                        "427222bd-6382-4e10-8b5a-09302b503258":  {
+                                                                                                                                                                     "20e12f45-8ccf-4499-9495-d42c57bebfa2":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "8c63fb02-5940-4324-af47-5e3c5c9dbcdf":  {
+                                                                                                                        "427222bd-6382-4e10-8b5a-09302b503258":  {
+                                                                                                                                                                     "d8e6ac78-465c-4c70-837d-907478a5da62":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 },
+                                                                                                                        "ff1636ac-96e1-43ce-9e12-944d55e9c3d7":  {
+                                                                                                                                                                     "93b03f54-522f-46c9-98e3-269ce76602ad":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "ff1636ac-96e1-43ce-9e12-944d55e9c3d7":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -2.375,
+                                                                                                                         -7.375
+                                                                                                                     ],
+                                                                                                     "name":  "add task",
+                                                                                                     "prototype":  "7f7221a9-093d-4d57-9aec-8d3f803d1fd3",
+                                                                                                     "params":  {
+                                                                                                                    "4e24ecb7-7a45-4d02-b7f3-2091435c7eb5":  "{\"title\": \"do task\"}"
+                                                                                                                }
+                                                                                                 },
+                                                        "31a3956f-4e30-4228-81bc-3ce065ec53cf":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -15.375,
+                                                                                                                         -171.375
+                                                                                                                     ],
+                                                                                                     "name":  "build data path",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "1":  "\"tasks\"",
+                                                                                                                    "fields":  "[0, 1]"
+                                                                                                                }
+                                                                                                 },
+                                                        "3eec21a7-34db-431c-b2ce-3c4e47b83de9":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         157.625,
+                                                                                                                         -120.375
+                                                                                                                     ],
+                                                                                                     "name":  "update task",
+                                                                                                     "prototype":  "9d1228ce-f2c2-4c4f-b1c7-6079ad209130",
+                                                                                                     "params":  {
+                                                                                                                    "870214c6-152a-4aa5-9ed8-d4fe58f8c08e":  "{\"title\": \"do urgent task\"}"
+                                                                                                                }
+                                                                                                 },
+                                                        "427222bd-6382-4e10-8b5a-09302b503258":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         96.625,
+                                                                                                                         159.625
+                                                                                                                     ],
+                                                                                                     "name":  "read new task",
+                                                                                                     "prototype":  "b2ce5836-7a2f-459d-bd92-3f4c1ab0d8f9",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "67b6a8e0-8c0d-423b-a0b2-2a1aed28515a":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         161.625,
+                                                                                                                         33.625
+                                                                                                                     ],
+                                                                                                     "name":  "add field",
+                                                                                                     "prototype":  "f21b9d47-30ac-44eb-8a1d-cb44d6d73d23",
+                                                                                                     "params":  {
+                                                                                                                    "9c6da285-d91c-4201-8e0d-8a4f5d2536b5":  "{\"urgency\": \"high\"}"
+                                                                                                                }
+                                                                                                 },
+                                                        "426a0436-4d2e-4189-b594-37e81a82f4ae":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -179.375,
+                                                                                                                         -87.375
+                                                                                                                     ],
+                                                                                                     "name":  "anonymous login",
+                                                                                                     "prototype":  "43caa267-491d-4022-be49-1bc82f6811e6",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "2555ef8e-8c65-4708-b307-5bcb5b97465c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -132.375,
+                                                                                                                         79.625
+                                                                                                                     ],
+                                                                                                     "name":  "build query context",
+                                                                                                     "prototype":  "e45854b1-aa4f-4bc0-bad0-04d0657de11d"
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Demonstrates basic authentication and querying in a Firebase Realtime Database. Requires an API key and a database URL. (Obtained from the Firebase console\u0027s \"Project Overview\" and \"Realtime Database\" tabs.)\n\nFor the example to work the Firebase project must allow anonymous login and database rules must be set up as follows:\n\n{\n  \"rules\": {\n    \".read\": false,\n    \".write\": false,\n    \"$user_id\": {\n      \".read\": \"$user_id === auth.uid\",\n      \".write\": \"$user_id === auth.uid\"\n    }\n  }\n}"
+}

@@ -1,0 +1,34 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "path":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "children":  {
+                                                       "description":  "",
+                                                       "type":  "any"
+                                                   },
+                                      "bounced":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "path":  "const {readdir} = require(\"fs\");\nreaddir(data, (error, files) =\u003e {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.children(files, tag);\n  }\n});"
+                                                                }
+                                         }
+                        },
+    "name":  "io/file/Directory lister/_"
+}

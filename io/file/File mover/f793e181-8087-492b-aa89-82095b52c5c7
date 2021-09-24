@@ -1,0 +1,99 @@
+{
+    "description":  "Moves a file",
+    "interface":  {
+                      "inputs":  {
+                                     "source":  {
+                                                    "description":  "The path to the source file to move",
+                                                    "type":  "any"
+                                                },
+                                     "destination":  {
+                                                         "description":  "The path to the desired target file",
+                                                         "type":  "any"
+                                                     }
+                                 },
+                      "outputs":  {
+                                      "bounced":  {
+                                                      "description":  "Indicates, that the operation has failed",
+                                                      "type":  "any"
+                                                  },
+                                      "moved":  {
+                                                    "description":  "Indicates, that the operation has succeeded",
+                                                    "type":  "any"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "move file":  {
+                                                                          "coordinates":  [
+                                                                                              41,
+                                                                                              71
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "io/file/File mover/_"
+                                                                      },
+                                                        "sync inputs":  {
+                                                                            "coordinates":  [
+                                                                                                -49,
+                                                                                                -60
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+                                                                                           "fields":  "[\"source\",\"destination\"]"
+                                                                                       },
+                                                                            "prototype":  "flow/Syncer"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "sync inputs":  {
+                                                                                  "synced":  {
+                                                                                                 "move file":  {
+                                                                                                                   "source \u0026 destination":  {
+                                                                                                                                                     "description":  ""
+                                                                                                                                                 }
+                                                                                                               }
+                                                                                             }
+                                                                              }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "source":  {
+                                                                                         "sync inputs":  {
+                                                                                                             "source":  {
+
+                                                                                                                        }
+                                                                                                         }
+                                                                                     },
+                                                                          "destination":  {
+                                                                                              "sync inputs":  {
+                                                                                                                  "destination":  {
+
+                                                                                                                                  }
+                                                                                                              }
+                                                                                          }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "bounced":  {
+                                                                                           "move file":  {
+                                                                                                             "bounced":  {
+
+                                                                                                                         }
+                                                                                                         }
+                                                                                       },
+                                                                           "moved":  {
+                                                                                         "move file":  {
+                                                                                                           "moved":  {
+
+                                                                                                                     }
+                                                                                                       }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "io/file/File mover"
+}

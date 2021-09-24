@@ -1,0 +1,58 @@
+{
+    "description":  "Determines whether the the specified path points to a file",
+    "interface":  {
+                      "inputs":  {
+                                     "path":  {
+                                                  "description":  "The path to inspect",
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "is file":  {
+                                                      "description":  "Boolean value that indicates, whether the specified path is a file",
+                                                      "type":  "any"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "file tester":  {
+                                                                            "coordinates":  [
+                                                                                                -4,
+                                                                                                -42
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "io/file/File tester/_"
+                                                                        }
+                                                    },
+                                          "connections":  {
+
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "path":  {
+                                                                                       "file tester":  {
+                                                                                                           "path":  {
+
+                                                                                                                    }
+                                                                                                       }
+                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "is file":  {
+                                                                                           "file tester":  {
+                                                                                                               "file":  {
+
+                                                                                                                        }
+                                                                                                           }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "io/file/File tester"
+}

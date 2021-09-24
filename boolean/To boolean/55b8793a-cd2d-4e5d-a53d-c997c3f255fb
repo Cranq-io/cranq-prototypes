@@ -1,0 +1,85 @@
+{
+    "description":  "Converts a signal to boolean",
+    "interface":  {
+                      "inputs":  {
+                                     "to true":  {
+                                                     "description":  "trigger true output",
+                                                     "type":  "any"
+                                                 },
+                                     "to false":  {
+                                                      "description":  "trigger false output",
+                                                      "type":  "any"
+                                                  }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "Boolean value corresponding to the input trigger",
+                                                     "type":  "boolean"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "true":  {
+                                                                     "coordinates":  [
+                                                                                         9,
+                                                                                         -54
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+                                                                                    "data":  "true"
+                                                                                },
+                                                                     "prototype":  "data/Store"
+                                                                 },
+                                                        "false":  {
+                                                                      "coordinates":  [
+                                                                                          12,
+                                                                                          43
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+                                                                                     "data":  "false"
+                                                                                 },
+                                                                      "prototype":  "data/Store"
+                                                                  }
+                                                    },
+                                          "connections":  {
+
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "to true":  {
+                                                                                          "true":  {
+                                                                                                       "read":  {
+
+                                                                                                                }
+                                                                                                   }
+                                                                                      },
+                                                                          "to false":  {
+                                                                                           "false":  {
+                                                                                                         "read":  {
+
+                                                                                                                  }
+                                                                                                     }
+                                                                                       }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "true":  {
+                                                                                                       "data":  {
+
+                                                                                                                }
+                                                                                                   },
+                                                                                          "false":  {
+                                                                                                        "data":  {
+
+                                                                                                                 }
+                                                                                                    }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "boolean/To boolean"
+}

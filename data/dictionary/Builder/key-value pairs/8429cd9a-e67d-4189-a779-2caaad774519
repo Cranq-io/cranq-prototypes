@@ -1,0 +1,28 @@
+{
+    "description":  "Builds dictionary based on an array of objects with key\u0026value properties.",
+    "interface":  {
+                      "inputs":  {
+                                     "key-value pairs":  {
+                                                             "type":  "{\"key\":string,\"value\":any}[]"
+                                                         }
+                                 },
+                      "outputs":  {
+                                      "dict":  {
+                                                   "type":  "{string:typeof(key-value pairs)[number][\"value\"]}"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "key-value pairs":  "const result = {};\nfor (const item of data)\n  result[item.key] = item.value;\noutputs.dict(result, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/dictionary/Builder/key-value pairs"
+}

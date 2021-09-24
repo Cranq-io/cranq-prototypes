@@ -1,0 +1,102 @@
+{
+    "description":  "Example node, that demonstrates the usage of the data/array/Filter node.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "filtered_array":  {
+                                                             "description":  "",
+                                                             "type":  "any"
+                                                         }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "create_emps":  {
+                                                                            "coordinates":  [
+                                                                                                -118,
+                                                                                                -57
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "tutorials/data/Concatenator (array) example"
+                                                                        },
+                                                        "get_by_dept":  {
+                                                                            "coordinates":  [
+                                                                                                82,
+                                                                                                25
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "tutorials/data/Filter (emps by dept) example"
+                                                                        },
+                                                        "\"Accounting\"":  {
+                                                                               "coordinates":  [
+                                                                                                   -73,
+                                                                                                   92
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+                                                                                              "data":  "\"Accounting\""
+                                                                                          },
+                                                                               "prototype":  "data/Store"
+                                                                           }
+                                                    },
+                                          "connections":  {
+                                                              "create_emps":  {
+                                                                                  "array":  {
+                                                                                                "get_by_dept":  {
+                                                                                                                    "emps":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                                },
+                                                                                                "\"Accounting\"":  {
+                                                                                                                       "read":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                   }
+                                                                                            }
+                                                                              },
+                                                              "\"Accounting\"":  {
+                                                                                     "data":  {
+                                                                                                  "get_by_dept":  {
+                                                                                                                      "dept":  {
+                                                                                                                                   "description":  ""
+                                                                                                                               }
+                                                                                                                  }
+                                                                                              }
+                                                                                 }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "create_emps":  {
+                                                                                                          "run":  {
+
+                                                                                                                  }
+                                                                                                      }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "filtered_array":  {
+                                                                                                  "get_by_dept":  {
+                                                                                                                      "emps":  {
+
+                                                                                                                               }
+                                                                                                                  }
+                                                                                              }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Filter (query) example"
+}

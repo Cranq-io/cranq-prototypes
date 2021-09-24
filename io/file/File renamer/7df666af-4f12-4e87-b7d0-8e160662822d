@@ -1,0 +1,164 @@
+{
+    "description":  "Renames a file",
+    "interface":  {
+                      "inputs":  {
+                                     "source path":  {
+                                                         "description":  "The path to the source file",
+                                                         "type":  "any"
+                                                     },
+                                     "new name":  {
+                                                      "description":  "The desired new name",
+                                                      "type":  "any"
+                                                  }
+                                 },
+                      "outputs":  {
+                                      "bounced":  {
+                                                      "description":  "Indicates, that the operation has failed",
+                                                      "type":  "any"
+                                                  },
+                                      "renamed":  {
+                                                      "description":  "Indicates, that the operation has succeeded",
+                                                      "type":  "any"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "parse path":  {
+                                                                           "coordinates":  [
+                                                                                               -49,
+                                                                                               -117
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "io/file/Path parser"
+                                                                       },
+                                                        "get \"directory\"":  {
+                                                                                  "coordinates":  [
+                                                                                                      102,
+                                                                                                      -69
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+                                                                                                 "key":  "\"directory\""
+                                                                                             },
+                                                                                  "prototype":  "data/dictionary/Item getter"
+                                                                              },
+                                                        "join to dest path":  {
+                                                                                  "coordinates":  [
+                                                                                                      22,
+                                                                                                      86
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+
+                                                                                             },
+                                                                                  "prototype":  "io/file/Path joiner"
+                                                                              },
+                                                        "move file":  {
+                                                                          "coordinates":  [
+                                                                                              209,
+                                                                                              35
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "io/file/File mover"
+                                                                      },
+                                                        "forwarder":  {
+                                                                          "coordinates":  [
+                                                                                              -172,
+                                                                                              -33
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "flow/Forwarder"
+                                                                      }
+                                                    },
+                                          "connections":  {
+                                                              "parse path":  {
+                                                                                 "path components":  {
+                                                                                                         "get \"directory\"":  {
+                                                                                                                                   "dict":  {
+                                                                                                                                                "description":  ""
+                                                                                                                                            }
+                                                                                                                               }
+                                                                                                     }
+                                                                             },
+                                                              "get \"directory\"":  {
+                                                                                        "value":  {
+                                                                                                      "join to dest path":  {
+                                                                                                                                "first":  {
+                                                                                                                                              "description":  ""
+                                                                                                                                          }
+                                                                                                                            }
+                                                                                                  }
+                                                                                    },
+                                                              "forwarder":  {
+                                                                                "data":  {
+                                                                                             "parse path":  {
+                                                                                                                "path":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                            },
+                                                                                             "move file":  {
+                                                                                                               "source":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                           }
+                                                                                         }
+                                                                            },
+                                                              "join to dest path":  {
+                                                                                        "path":  {
+                                                                                                     "move file":  {
+                                                                                                                       "destination":  {
+                                                                                                                                           "description":  ""
+                                                                                                                                       }
+                                                                                                                   }
+                                                                                                 }
+                                                                                    }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "source path":  {
+                                                                                              "forwarder":  {
+                                                                                                                "data":  {
+
+                                                                                                                         }
+                                                                                                            }
+                                                                                          },
+                                                                          "new name":  {
+                                                                                           "join to dest path":  {
+                                                                                                                     "second":  {
+
+                                                                                                                                }
+                                                                                                                 }
+                                                                                       }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "bounced":  {
+                                                                                           "move file":  {
+                                                                                                             "bounced":  {
+
+                                                                                                                         }
+                                                                                                         }
+                                                                                       },
+                                                                           "renamed":  {
+                                                                                           "move file":  {
+                                                                                                             "moved":  {
+
+                                                                                                                       }
+                                                                                                         }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "io/file/File renamer"
+}

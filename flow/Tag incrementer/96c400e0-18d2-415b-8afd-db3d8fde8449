@@ -1,0 +1,28 @@
+{
+    "description":  "Increments the index part of the incoming signal\u0027s tag.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "data":  {
+                                                   "type":  "typeof(data)"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "const matches = /^(.*)\\+(.*?)$/.exec(tag);\nconst nextTag = matches === null\n  ? `${tag}+0`\n  : `${matches[1]}+${+matches[2] + 1}`;\noutputs.data(data, nextTag);\n"
+                                                                }
+                                         }
+                        },
+    "name":  "flow/Tag incrementer"
+}

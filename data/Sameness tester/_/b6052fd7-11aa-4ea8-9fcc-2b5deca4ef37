@@ -1,0 +1,30 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "same":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "outputs.same(data.a === data.b, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/Sameness tester/_"
+}

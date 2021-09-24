@@ -1,0 +1,142 @@
+{
+    "description":  "Joins an array of path parts to a common base",
+    "interface":  {
+                      "inputs":  {
+                                     "base":  {
+                                                  "description":  "The base path portion",
+                                                  "type":  "any"
+                                              },
+                                     "children":  {
+                                                      "description":  "The array of path parts to join onto the base",
+                                                      "type":  "any"
+                                                  }
+                                 },
+                      "outputs":  {
+                                      "paths":  {
+                                                    "description":  "The resulting paths",
+                                                    "type":  "any"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "map to paths":  {
+                                                                             "coordinates":  [
+                                                                                                 167,
+                                                                                                 -134
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "data/array/Mapper"
+                                                                         },
+                                                        "forwarder":  {
+                                                                          "coordinates":  [
+                                                                                              -220,
+                                                                                              98
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "flow/Forwarder"
+                                                                      },
+                                                        "join path":  {
+                                                                          "coordinates":  [
+                                                                                              168,
+                                                                                              61
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "io/file/Path joiner"
+                                                                      },
+                                                        "repeater":  {
+                                                                         "coordinates":  [
+                                                                                             -120,
+                                                                                             -88
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/array/Repeater"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "forwarder":  {
+                                                                                "data":  {
+                                                                                             "map to paths":  {
+                                                                                                                  "array":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                              },
+                                                                                             "repeater":  {
+                                                                                                              "array":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                          }
+                                                                                         }
+                                                                            },
+                                                              "repeater":  {
+                                                                               "data":  {
+                                                                                            "join path":  {
+                                                                                                              "first":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                          }
+                                                                                        }
+                                                                           },
+                                                              "map to paths":  {
+                                                                                   "item":  {
+                                                                                                "join path":  {
+                                                                                                                  "second":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                              }
+                                                                                            }
+                                                                               },
+                                                              "join path":  {
+                                                                                "path":  {
+                                                                                             "map to paths":  {
+                                                                                                                  "mapped item":  {
+                                                                                                                                      "description":  ""
+                                                                                                                                  }
+                                                                                                              }
+                                                                                         }
+                                                                            }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "base":  {
+                                                                                       "repeater":  {
+                                                                                                        "data":  {
+
+                                                                                                                 }
+                                                                                                    }
+                                                                                   },
+                                                                          "children":  {
+                                                                                           "forwarder":  {
+                                                                                                             "data":  {
+
+                                                                                                                      }
+                                                                                                         }
+                                                                                       }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "paths":  {
+                                                                                         "map to paths":  {
+                                                                                                              "mapped":  {
+
+                                                                                                                         }
+                                                                                                          }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "io/file/Paths joiner"
+}

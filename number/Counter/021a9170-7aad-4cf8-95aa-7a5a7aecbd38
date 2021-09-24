@@ -1,0 +1,84 @@
+{
+    "description":  "Counts input signals.",
+    "interface":  {
+                      "inputs":  {
+                                     "trigger":  {
+                                                     "type":  "any"
+                                                 }
+                                 },
+                      "outputs":  {
+                                      "count":  {
+                                                    "type":  "number"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "value":  {
+                                                                      "coordinates":  [
+                                                                                          0,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+                                                                                     "data":  "0"
+                                                                                 },
+                                                                      "prototype":  "data/Store"
+                                                                  },
+                                                        "adder":  {
+                                                                      "coordinates":  [
+                                                                                          0,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+                                                                                     "b":  "1"
+                                                                                 },
+                                                                      "prototype":  "number/Adder"
+                                                                  }
+                                                    },
+                                          "connections":  {
+                                                              "value":  {
+                                                                            "data":  {
+                                                                                         "adder":  {
+                                                                                                       "a":  {
+                                                                                                                 "description":  ""
+                                                                                                             }
+                                                                                                   }
+                                                                                     }
+                                                                        },
+                                                              "adder":  {
+                                                                            "sum":  {
+                                                                                        "value":  {
+                                                                                                      "data":  {
+                                                                                                                   "description":  ""
+                                                                                                               }
+                                                                                                  }
+                                                                                    }
+                                                                        }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "trigger":  {
+                                                                                          "value":  {
+                                                                                                        "read":  {
+
+                                                                                                                 }
+                                                                                                    }
+                                                                                      }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "count":  {
+                                                                                         "adder":  {
+                                                                                                       "sum":  {
+
+                                                                                                               }
+                                                                                                   }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Counter"
+}

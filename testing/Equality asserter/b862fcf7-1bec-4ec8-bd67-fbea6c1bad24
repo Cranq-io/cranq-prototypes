@@ -1,0 +1,99 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "6e431f3e-fab5-4d52-a0ff-7bd15cfa314d":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         56,
+                                                                                                                         82
+                                                                                                                     ],
+                                                                                                     "name":  "syncer",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"type\", \"expected\", \"actual\", \"success\"]",
+                                                                                                                    "unsynced":  "\"equality\"",
+                                                                                                                    "type":  "\"equality\""
+                                                                                                                }
+                                                                                                 },
+                                                        "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -41,
+                                                                                                                         -60
+                                                                                                                     ],
+                                                                                                     "name":  "sameness tester",
+                                                                                                     "prototype":  "data/Sameness tester",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "feba1c38-02d4-406e-90d8-74facfe7b6f8":  {
+                                                                                                                       "6e431f3e-fab5-4d52-a0ff-7bd15cfa314d":  {
+                                                                                                                                                                    "actual":  {
+
+                                                                                                                                                                               }
+                                                                                                                                                                },
+                                                                                                                       "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":  {
+                                                                                                                                                                    "b":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "1a694ec1-b05c-451e-a3b0-436e7ebbad81":  {
+                                                                                                                       "6e431f3e-fab5-4d52-a0ff-7bd15cfa314d":  {
+                                                                                                                                                                    "expected":  {
+
+                                                                                                                                                                                 }
+                                                                                                                                                                },
+                                                                                                                       "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":  {
+                                                                                                                                                                    "a":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "db472636-7240-4dbe-a79f-8a973053e2c6":  {
+                                                                                                                        "6e431f3e-fab5-4d52-a0ff-7bd15cfa314d":  {
+                                                                                                                                                                     "synced":  {
+
+                                                                                                                                                                                }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "connections":  {
+                                                              "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":  {
+                                                                                                           "same":  {
+                                                                                                                        "6e431f3e-fab5-4d52-a0ff-7bd15cfa314d":  {
+                                                                                                                                                                     "success":  {
+
+                                                                                                                                                                                 }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                                                       }
+                                                          }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "1a694ec1-b05c-451e-a3b0-436e7ebbad81":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "expected"
+                                                                              },
+                                     "feba1c38-02d4-406e-90d8-74facfe7b6f8":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "actual"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "db472636-7240-4dbe-a79f-8a973053e2c6":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "assertion"
+                                                                               }
+                                  }
+                  },
+    "name":  "testing/Equality asserter"
+}

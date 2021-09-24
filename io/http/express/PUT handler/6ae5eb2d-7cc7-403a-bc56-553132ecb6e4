@@ -1,0 +1,163 @@
+{
+    "name":  "io/http/express/PUT handler",
+    "interface":  {
+                      "inputs":  {
+                                     "b035c218-f613-4105-845f-8a90f9e74fa4":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "app ID"
+                                                                              },
+                                     "09ad0a55-6999-4fbb-aae5-8c2c77c3cab9":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "route"
+                                                                              },
+                                     "22ea4ce4-c526-4aeb-ad29-1a70abd14f13":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "status"
+                                                                              },
+                                     "aa8fe7d9-9d8b-45d8-8ad0-804bfb6ce1c7":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "headers"
+                                                                              },
+                                     "aec8c423-cf1d-4836-a2f5-db5acefdd038":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "body"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "981b5b28-6fda-40a7-aa3c-c2d6df86f7c1":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "headers"
+                                                                               },
+                                      "54afff64-fd15-4eab-98bc-4bee313d5941":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "body"
+                                                                               },
+                                      "df7f3151-0c5a-496a-b00c-c2cb288273ab":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "done"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+                                                              "d42ff57d-6cec-4407-a100-6e856cbe472c":  {
+                                                                                                           "synced":  {
+                                                                                                                          "1133dac2-7d2f-4e73-8f18-d55b77ccf409":  {
+                                                                                                                                                                       "91981648-5a12-4061-8be8-3c43210193c7":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "1133dac2-7d2f-4e73-8f18-d55b77ccf409":  {
+                                                                                                           "452b5701-97ed-4e87-b58d-34ea209e802d":  {
+                                                                                                                                                        "bea47959-a016-456e-b4c9-8cb21a3b302c":  {
+                                                                                                                                                                                                     "unsplit":  {
+
+                                                                                                                                                                                                                 }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "b035c218-f613-4105-845f-8a90f9e74fa4":  {
+                                                                                                                       "1133dac2-7d2f-4e73-8f18-d55b77ccf409":  {
+                                                                                                                                                                    "91ce9cc7-04d3-43af-81be-39747c4aaf61":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "09ad0a55-6999-4fbb-aae5-8c2c77c3cab9":  {
+                                                                                                                       "1133dac2-7d2f-4e73-8f18-d55b77ccf409":  {
+                                                                                                                                                                    "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "22ea4ce4-c526-4aeb-ad29-1a70abd14f13":  {
+                                                                                                                       "d42ff57d-6cec-4407-a100-6e856cbe472c":  {
+                                                                                                                                                                    "status":  {
+
+                                                                                                                                                                               }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "aa8fe7d9-9d8b-45d8-8ad0-804bfb6ce1c7":  {
+                                                                                                                       "d42ff57d-6cec-4407-a100-6e856cbe472c":  {
+                                                                                                                                                                    "headers":  {
+
+                                                                                                                                                                                }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "aec8c423-cf1d-4836-a2f5-db5acefdd038":  {
+                                                                                                                       "d42ff57d-6cec-4407-a100-6e856cbe472c":  {
+                                                                                                                                                                    "body":  {
+
+                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "981b5b28-6fda-40a7-aa3c-c2d6df86f7c1":  {
+                                                                                                                        "bea47959-a016-456e-b4c9-8cb21a3b302c":  {
+                                                                                                                                                                     "headers":  {
+
+                                                                                                                                                                                 }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "54afff64-fd15-4eab-98bc-4bee313d5941":  {
+                                                                                                                        "bea47959-a016-456e-b4c9-8cb21a3b302c":  {
+                                                                                                                                                                     "body":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "df7f3151-0c5a-496a-b00c-c2cb288273ab":  {
+                                                                                                                        "1133dac2-7d2f-4e73-8f18-d55b77ccf409":  {
+                                                                                                                                                                     "38bfa33c-cddf-478d-bf52-0f4ec611e800":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "1133dac2-7d2f-4e73-8f18-d55b77ccf409":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         0,
+                                                                                                                         -47
+                                                                                                                     ],
+                                                                                                     "name":  "route handler",
+                                                                                                     "prototype":  "a63f623a-f4b2-4a06-acca-83774cd4ca41",
+                                                                                                     "params":  {
+                                                                                                                    "929caaa1-7ba7-46bb-951d-869e82fd5e47":  "\"put\""
+                                                                                                                }
+                                                                                                 },
+                                                        "d42ff57d-6cec-4407-a100-6e856cbe472c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -128,
+                                                                                                                         23
+                                                                                                                     ],
+                                                                                                     "name":  "build response",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"status\", \"headers\", \"body\"]"
+                                                                                                                }
+                                                                                                 },
+                                                        "bea47959-a016-456e-b4c9-8cb21a3b302c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         129,
+                                                                                                                         24
+                                                                                                                     ],
+                                                                                                     "name":  "split request",
+                                                                                                     "prototype":  "flow/Splitter",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"headers\", \"body\"]"
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Receives PUT requests on the specified route and dispatches the corresponding response."
+}

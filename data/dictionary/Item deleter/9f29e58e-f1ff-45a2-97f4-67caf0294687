@@ -1,0 +1,88 @@
+{
+    "description":  "Deletes an item from the dictionary by it\u0027s key",
+    "interface":  {
+                      "inputs":  {
+                                     "dict":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              },
+                                     "key":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "dict":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync inputs":  {
+                                                                            "coordinates":  [
+                                                                                                12,
+                                                                                                111
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+                                                                                           "fields":  "[\"dict\",\"key\"]"
+                                                                                       },
+                                                                            "prototype":  "flow/Syncer"
+                                                                        },
+                                                        "delete item":  {
+                                                                            "coordinates":  [
+                                                                                                7,
+                                                                                                -69
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "data/dictionary/Item deleter/_"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "sync inputs":  {
+                                                                                  "synced":  {
+                                                                                                 "delete item":  {
+                                                                                                                     "dict \u0026 key":  {
+                                                                                                                                             "description":  ""
+                                                                                                                                         }
+                                                                                                                 }
+                                                                                             }
+                                                                              }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "dict":  {
+                                                                                       "sync inputs":  {
+                                                                                                           "dict":  {
+
+                                                                                                                    }
+                                                                                                       }
+                                                                                   },
+                                                                          "key":  {
+                                                                                      "sync inputs":  {
+                                                                                                          "key":  {
+
+                                                                                                                  }
+                                                                                                      }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "dict":  {
+                                                                                        "delete item":  {
+                                                                                                            "dict":  {
+
+                                                                                                                     }
+                                                                                                        }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/dictionary/Item deleter"
+}

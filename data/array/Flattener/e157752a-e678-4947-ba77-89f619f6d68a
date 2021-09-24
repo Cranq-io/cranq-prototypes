@@ -1,0 +1,92 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "e3a336af-001e-4300-9bfc-75ef66cd3c33":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -54,
+                                                                                                                         33
+                                                                                                                     ],
+                                                                                                     "name":  "reducer",
+                                                                                                     "prototype":  "data/array/Reducer",
+                                                                                                     "params":  {
+                                                                                                                    "initial":  "[]"
+                                                                                                                }
+                                                                                                 },
+                                                        "c0abc7c0-543d-4ded-9630-88525f4fcf15":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         61,
+                                                                                                                         -48
+                                                                                                                     ],
+                                                                                                     "name":  "concatenator",
+                                                                                                     "prototype":  "data/array/Concatenator",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "67681054-c95b-4da1-90d6-1a5461612c4c":  {
+                                                                                                                       "e3a336af-001e-4300-9bfc-75ef66cd3c33":  {
+                                                                                                                                                                    "array":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "f6248b87-3fea-47f5-8cfc-42b33cdba963":  {
+                                                                                                                        "e3a336af-001e-4300-9bfc-75ef66cd3c33":  {
+                                                                                                                                                                     "reduced":  {
+
+                                                                                                                                                                                 }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "connections":  {
+                                                              "e3a336af-001e-4300-9bfc-75ef66cd3c33":  {
+                                                                                                           "item":  {
+                                                                                                                        "c0abc7c0-543d-4ded-9630-88525f4fcf15":  {
+                                                                                                                                                                     "b":  {
+
+                                                                                                                                                                           }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                                                           "part reduced":  {
+                                                                                                                                "c0abc7c0-543d-4ded-9630-88525f4fcf15":  {
+                                                                                                                                                                             "a":  {
+
+                                                                                                                                                                                   }
+                                                                                                                                                                         }
+                                                                                                                            }
+                                                                                                       },
+                                                              "c0abc7c0-543d-4ded-9630-88525f4fcf15":  {
+                                                                                                           "concatenated":  {
+                                                                                                                                "e3a336af-001e-4300-9bfc-75ef66cd3c33":  {
+                                                                                                                                                                             "part reduced":  {
+
+                                                                                                                                                                                              }
+                                                                                                                                                                         }
+                                                                                                                            }
+                                                                                                       }
+                                                          }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "67681054-c95b-4da1-90d6-1a5461612c4c":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "2D array"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "f6248b87-3fea-47f5-8cfc-42b33cdba963":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "array"
+                                                                               }
+                                  }
+                  },
+    "name":  "data/array/Flattener"
+}

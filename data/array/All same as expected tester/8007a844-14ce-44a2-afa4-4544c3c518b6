@@ -1,0 +1,208 @@
+{
+    "description":  "Tests whether all elements of an array are the same as the expected value",
+    "interface":  {
+                      "inputs":  {
+                                     "array":  {
+                                                   "description":  "The array to be tested",
+                                                   "type":  "array"
+                                               },
+                                     "expected":  {
+                                                      "description":  "The expected value that all elements of the array will be tested against",
+                                                      "type":  "any",
+                                                      "name":  "expected"
+                                                  }
+                                 },
+                      "outputs":  {
+                                      "same":  {
+                                                   "description":  "Whether all elements of the array are the same as the expected value",
+                                                   "type":  "boolean",
+                                                   "name":  "same"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Reducer A":  {
+                                                                          "coordinates":  [
+                                                                                              222,
+                                                                                              -4
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+                                                                                         "initial":  "true"
+                                                                                     },
+                                                                          "prototype":  "data/array/Reducer",
+                                                                          "name":  "test \u0026 reduce"
+                                                                      },
+                                                        "And A":  {
+                                                                      "coordinates":  [
+                                                                                          135,
+                                                                                          25
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "boolean/And",
+                                                                      "name":  "and"
+                                                                  },
+                                                        "Sameness tester A":  {
+                                                                                  "coordinates":  [
+                                                                                                      -40,
+                                                                                                      59
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+
+                                                                                             },
+                                                                                  "prototype":  "data/Sameness tester",
+                                                                                  "name":  "same as expected"
+                                                                              },
+                                                        "cc998914-5f3a-4de6-892f-a2ab24d8cac3":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -244,
+                                                                                                                         73
+                                                                                                                     ],
+                                                                                                     "name":  "expected",
+                                                                                                     "prototype":  "data/Store",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "72a949a7-61b0-4e15-9acc-3b23ea3e70e5":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -142,
+                                                                                                                         -6
+                                                                                                                     ],
+                                                                                                     "name":  "sync \u0026 forward",
+                                                                                                     "prototype":  "flow/Forwarder/double",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "aa44f430-62de-4cb6-b0ce-dd0257acc57e":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -334,
+                                                                                                                         -1
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/double",
+                                                                                                     "prototype":  "flow/Forwarder/double",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "Reducer A":  {
+                                                                                "part reduced":  {
+                                                                                                     "And A":  {
+                                                                                                                   "a":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                               }
+                                                                                                 },
+                                                                                "item":  {
+                                                                                             "cc998914-5f3a-4de6-892f-a2ab24d8cac3":  {
+                                                                                                                                          "read":  {
+
+                                                                                                                                                   }
+                                                                                                                                      },
+                                                                                             "Sameness tester A":  {
+                                                                                                                       "b":  {
+
+                                                                                                                             }
+                                                                                                                   }
+                                                                                         }
+                                                                            },
+                                                              "And A":  {
+                                                                            "and":  {
+                                                                                        "Reducer A":  {
+                                                                                                          "part reduced":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                      }
+                                                                                    }
+                                                                        },
+                                                              "Sameness tester A":  {
+                                                                                        "same":  {
+                                                                                                     "And A":  {
+                                                                                                                   "b":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                               }
+                                                                                                 }
+                                                                                    },
+                                                              "cc998914-5f3a-4de6-892f-a2ab24d8cac3":  {
+                                                                                                           "data":  {
+                                                                                                                        "Sameness tester A":  {
+                                                                                                                                                  "a":  {
+
+                                                                                                                                                        }
+                                                                                                                                              }
+                                                                                                                    },
+                                                                                                           "written":  {
+                                                                                                                           "72a949a7-61b0-4e15-9acc-3b23ea3e70e5":  {
+                                                                                                                                                                        "2":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                    }
+                                                                                                                       }
+                                                                                                       },
+                                                              "72a949a7-61b0-4e15-9acc-3b23ea3e70e5":  {
+                                                                                                           "1":  {
+                                                                                                                     "Reducer A":  {
+                                                                                                                                       "array":  {
+
+                                                                                                                                                 }
+                                                                                                                                   }
+                                                                                                                 }
+                                                                                                       },
+                                                              "aa44f430-62de-4cb6-b0ce-dd0257acc57e":  {
+                                                                                                           "1":  {
+                                                                                                                     "72a949a7-61b0-4e15-9acc-3b23ea3e70e5":  {
+                                                                                                                                                                  "1":  {
+
+                                                                                                                                                                        }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "cc998914-5f3a-4de6-892f-a2ab24d8cac3":  {
+                                                                                                                                                                  "data":  {
+
+                                                                                                                                                                           }
+                                                                                                                                                              }
+                                                                                                                 }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "array":  {
+                                                                                        "aa44f430-62de-4cb6-b0ce-dd0257acc57e":  {
+                                                                                                                                     "1":  {
+
+                                                                                                                                           }
+                                                                                                                                 }
+                                                                                    },
+                                                                          "expected":  {
+                                                                                           "aa44f430-62de-4cb6-b0ce-dd0257acc57e":  {
+                                                                                                                                        "2":  {
+
+                                                                                                                                              }
+                                                                                                                                    }
+                                                                                       }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "same":  {
+                                                                                        "Reducer A":  {
+                                                                                                          "reduced":  {
+
+                                                                                                                      }
+                                                                                                      }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/array/All same as expected tester"
+}

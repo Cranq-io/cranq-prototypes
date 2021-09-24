@@ -1,0 +1,30 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "path":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "resolved":  {
+                                                       "description":  "",
+                                                       "type":  "any"
+                                                   }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "path":  "const path = require(\u0027path\u0027);\noutputs.resolved(path.resolve(data), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "io/file/Path resolver/_"
+}

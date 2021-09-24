@@ -1,0 +1,85 @@
+{
+    "description":  "Outputs \u0027a\u0027 AND \u0027b\u0027.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "boolean"
+                                           },
+                                     "b":  {
+                                               "type":  "boolean"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "and":  {
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "and":  {
+                                                                    "coordinates":  [
+                                                                                        0,
+                                                                                        0
+                                                                                    ],
+                                                                    "description":  "",
+                                                                    "params":  {
+
+                                                                               },
+                                                                    "prototype":  "boolean/And/_"
+                                                                }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "and":  {
+                                                                                                                 "a \u0026 b":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                             }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "and":  {
+                                                                                       "and":  {
+                                                                                                   "and":  {
+
+                                                                                                           }
+                                                                                               }
+                                                                                   }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "boolean/And"
+}

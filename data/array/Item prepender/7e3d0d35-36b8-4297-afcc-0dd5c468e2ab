@@ -1,0 +1,87 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "0e633c22-6a5e-47f3-bd88-5f1110614e34":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -21,
+                                                                                                                         58
+                                                                                                                     ],
+                                                                                                     "name":  "sync array \u0026 item",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"array\", \"item\"]"
+                                                                                                                }
+                                                                                                 },
+                                                        "7c461f18-a1bd-4111-ae74-0461c2741b23":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         29,
+                                                                                                                         -56
+                                                                                                                     ],
+                                                                                                     "name":  "prepend item",
+                                                                                                     "prototype":  "6c0df0d9-cac5-4178-9d77-341d1ede93ab",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "0e633c22-6a5e-47f3-bd88-5f1110614e34":  {
+                                                                                                           "synced":  {
+                                                                                                                          "7c461f18-a1bd-4111-ae74-0461c2741b23":  {
+                                                                                                                                                                       "7b96d4a4-b981-4144-9e89-53bd1419e5b0":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "ae9cbf02-40c8-46db-a638-b9f638be79a4":  {
+                                                                                                                       "0e633c22-6a5e-47f3-bd88-5f1110614e34":  {
+                                                                                                                                                                    "array":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "023b19ac-4478-42e0-acd8-ceef1ebe668d":  {
+                                                                                                                       "0e633c22-6a5e-47f3-bd88-5f1110614e34":  {
+                                                                                                                                                                    "item":  {
+
+                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "29ffadc0-ed66-44c4-ad0c-c95f59d05274":  {
+                                                                                                                        "7c461f18-a1bd-4111-ae74-0461c2741b23":  {
+                                                                                                                                                                     "47a28d29-1f5d-4870-917b-be464753e379":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "ae9cbf02-40c8-46db-a638-b9f638be79a4":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "array"
+                                                                              },
+                                     "023b19ac-4478-42e0-acd8-ceef1ebe668d":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "item"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "29ffadc0-ed66-44c4-ad0c-c95f59d05274":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "array"
+                                                                               }
+                                  }
+                  },
+    "name":  "data/array/Item prepender"
+}

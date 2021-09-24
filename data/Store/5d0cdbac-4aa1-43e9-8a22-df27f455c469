@@ -1,0 +1,35 @@
+{
+    "description":  "Stores data and sends it on input to (send).",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "type":  "any"
+                                              },
+                                     "read":  {
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "data":  {
+                                                   "type":  "any"
+                                               },
+                                      "written":  {
+                                                      "type":  "null"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "state.data = data;\noutputs.written(null, tag);",
+                                                                    "read":  "outputs.data(state.data || params.data, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/Store"
+}

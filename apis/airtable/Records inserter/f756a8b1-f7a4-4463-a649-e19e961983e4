@@ -1,0 +1,192 @@
+{
+    "description":  "Inserts a list of records into the specified AirTable table.",
+    "interface":  {
+                      "inputs":  {
+                                     "base ID":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "table name":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    },
+                                     "API key":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "table":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "response body":  {
+                                                            "description":  "",
+                                                            "type":  "any"
+                                                        }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "build request":  {
+                                                                              "coordinates":  [
+                                                                                                  -71,
+                                                                                                  -130
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "apis/airtable/Records insert request builder"
+                                                                          },
+                                                        "dispatch request":  {
+                                                                                 "coordinates":  [
+                                                                                                     85,
+                                                                                                     152
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+
+                                                                                            },
+                                                                                 "prototype":  "io/http/Request dispatcher"
+                                                                             },
+                                                        "sync inputs":  {
+                                                                            "coordinates":  [
+                                                                                                -160,
+                                                                                                96
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder/quadruple"
+                                                                        },
+                                                        "parse body":  {
+                                                                           "coordinates":  [
+                                                                                               131,
+                                                                                               -88
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "data/dictionary/JSON parser"
+                                                                       }
+                                                    },
+                                          "connections":  {
+                                                              "build request":  {
+                                                                                    "URL":  {
+                                                                                                "dispatch request":  {
+                                                                                                                         "url":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                                     }
+                                                                                            },
+                                                                                    "headers":  {
+                                                                                                    "dispatch request":  {
+                                                                                                                             "headers":  {
+                                                                                                                                             "description":  ""
+                                                                                                                                         }
+                                                                                                                         }
+                                                                                                },
+                                                                                    "body":  {
+                                                                                                 "dispatch request":  {
+                                                                                                                          "body":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                      }
+                                                                                             },
+                                                                                    "verb":  {
+                                                                                                 "dispatch request":  {
+                                                                                                                          "verb":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                      }
+                                                                                             }
+                                                                                },
+                                                              "sync inputs":  {
+                                                                                  "1":  {
+                                                                                            "build request":  {
+                                                                                                                  "base ID":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                              }
+                                                                                        },
+                                                                                  "2":  {
+                                                                                            "build request":  {
+                                                                                                                  "table name":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                              }
+                                                                                        },
+                                                                                  "3":  {
+                                                                                            "build request":  {
+                                                                                                                  "API key":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                              }
+                                                                                        },
+                                                                                  "4":  {
+                                                                                            "build request":  {
+                                                                                                                  "table":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                              }
+                                                                                        }
+                                                                              },
+                                                              "dispatch request":  {
+                                                                                       "body":  {
+                                                                                                    "parse body":  {
+                                                                                                                       "json":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                   }
+                                                                                                }
+                                                                                   }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "base ID":  {
+                                                                                          "sync inputs":  {
+                                                                                                              "1":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                      },
+                                                                          "table name":  {
+                                                                                             "sync inputs":  {
+                                                                                                                 "2":  {
+
+                                                                                                                       }
+                                                                                                             }
+                                                                                         },
+                                                                          "API key":  {
+                                                                                          "sync inputs":  {
+                                                                                                              "3":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                      },
+                                                                          "table":  {
+                                                                                        "sync inputs":  {
+                                                                                                            "4":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "response body":  {
+                                                                                                 "parse body":  {
+                                                                                                                    "parsed":  {
+
+                                                                                                                               }
+                                                                                                                }
+                                                                                             }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "apis/airtable/Records inserter"
+}

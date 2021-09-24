@@ -1,0 +1,98 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "55a2818c-80a4-4282-bb53-406f0e84a04c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         25,
+                                                                                                                         -56
+                                                                                                                     ],
+                                                                                                     "name":  "blink",
+                                                                                                     "prototype":  "74cbfafa-6394-4bd2-8e91-ea5e3568791d",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "3301c791-5705-4fbb-8477-acd58683926d":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -41,
+                                                                                                                         60
+                                                                                                                     ],
+                                                                                                     "name":  "sync inputs",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"color\", \"delay\", \"repeats\"]"
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "3301c791-5705-4fbb-8477-acd58683926d":  {
+                                                                                                           "synced":  {
+                                                                                                                          "55a2818c-80a4-4282-bb53-406f0e84a04c":  {
+                                                                                                                                                                       "e91d4b8a-3ecf-4339-9186-f3b49d365334":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "e3288770-63e8-4ebf-83f9-f4b0768ecc8a":  {
+                                                                                                                       "3301c791-5705-4fbb-8477-acd58683926d":  {
+                                                                                                                                                                    "color":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "7503cfb5-14e7-4541-82ae-882bcfa74483":  {
+                                                                                                                       "3301c791-5705-4fbb-8477-acd58683926d":  {
+                                                                                                                                                                    "delay":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "43a5a04f-9847-46b3-9f80-fad7790b0e74":  {
+                                                                                                                       "3301c791-5705-4fbb-8477-acd58683926d":  {
+                                                                                                                                                                    "repeats":  {
+
+                                                                                                                                                                                }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "bbe6fe7f-f5b5-4e80-a102-d50293a4dd0a":  {
+                                                                                                                        "55a2818c-80a4-4282-bb53-406f0e84a04c":  {
+                                                                                                                                                                     "925b9703-cd44-49fb-be6d-1e3555dd8db9":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "e3288770-63e8-4ebf-83f9-f4b0768ecc8a":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "color"
+                                                                              },
+                                     "7503cfb5-14e7-4541-82ae-882bcfa74483":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "delay"
+                                                                              },
+                                     "43a5a04f-9847-46b3-9f80-fad7790b0e74":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "repeats"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "bbe6fe7f-f5b5-4e80-a102-d50293a4dd0a":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "done"
+                                                                               }
+                                  }
+                  },
+    "name":  "blinkstick/Blinker"
+}

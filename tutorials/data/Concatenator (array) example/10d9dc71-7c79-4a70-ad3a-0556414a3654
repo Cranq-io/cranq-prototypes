@@ -1,0 +1,122 @@
+{
+    "description":  "Example node, that demonstrates the usage of the data/array/Concatenator node. Provides an extended \"emps\" dataset for further examples.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "array":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                -214,
+                                                                                                2
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        },
+                                                        "additional_emps":  {
+                                                                                "coordinates":  [
+                                                                                                    -7,
+                                                                                                    95
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "data":  "[\n\t{\n        \"EmpID\": 1,\n        \"Name\": \"Joan\",\n        \"Dept\": \"Accounting\",\n        \"HireDate\": \"2016-04-28\",\n        \"Salary\": 2200\n    }, {\n        \"EmpID\": 2,\n        \"Name\": \"Frank\",\n        \"Dept\": \"Facilities\",\n        \"HireDate\": \"2011-11-13\",\n        \"Salary\": 2000\n    }, {\n        \"EmpID\": 3,\n        \"Name\": \"Louis\",\n        \"Dept\": \"Legal\",\n        \"HireDate\": \"2015-09-01\",\n        \"Salary\": 3000\n    }\n]"
+                                                                                           },
+                                                                                "prototype":  "data/Store"
+                                                                            },
+                                                        "Concatenator A":  {
+                                                                               "coordinates":  [
+                                                                                                   194,
+                                                                                                   37
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "data/array/Concatenator"
+                                                                           },
+                                                        "Syncer (build emps array) example A":  {
+                                                                                                    "coordinates":  [
+                                                                                                                        0.1953125,
+                                                                                                                        -78.203125
+                                                                                                                    ],
+                                                                                                    "description":  "",
+                                                                                                    "params":  {
+
+                                                                                                               },
+                                                                                                    "prototype":  "tutorials/data/Syncer (build emps array) example"
+                                                                                                }
+                                                    },
+                                          "connections":  {
+                                                              "Forwarder A":  {
+                                                                                  "data":  {
+                                                                                               "additional_emps":  {
+                                                                                                                       "read":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                   },
+                                                                                               "Syncer (build emps array) example A":  {
+                                                                                                                                           "build":  {
+                                                                                                                                                         "description":  ""
+                                                                                                                                                     }
+                                                                                                                                       }
+                                                                                           }
+                                                                              },
+                                                              "additional_emps":  {
+                                                                                      "data":  {
+                                                                                                   "Concatenator A":  {
+                                                                                                                          "b":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                      }
+                                                                                               }
+                                                                                  },
+                                                              "Syncer (build emps array) example A":  {
+                                                                                                          "array":  {
+                                                                                                                        "Concatenator A":  {
+                                                                                                                                               "a":  {
+                                                                                                                                                         "description":  ""
+                                                                                                                                                     }
+                                                                                                                                           }
+                                                                                                                    }
+                                                                                                      }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "Forwarder A":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "array":  {
+                                                                                         "Concatenator A":  {
+                                                                                                                "concatenated":  {
+
+                                                                                                                                 }
+                                                                                                            }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Concatenator (array) example"
+}

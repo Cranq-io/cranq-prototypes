@@ -1,0 +1,172 @@
+{
+    "name":  "io/http/express/Middleware applicator",
+    "interface":  {
+                      "inputs":  {
+                                     "4caba675-aa86-4d81-82a5-6510f71a708d":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "app ID"
+                                                                              },
+                                     "10c0aa80-7a63-4647-bebf-2002804b315c":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "middleware"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "760e37e0-47dc-45b6-993e-06363b08b45f":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "done"
+                                                                               },
+                                      "af511dbd-294e-4cbf-940a-e81326cb837b":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "app ID"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+                                                              "8c7b91c6-23fe-4ad2-91a9-d357041195d4":  {
+                                                                                                           "synced":  {
+                                                                                                                          "6ea2a159-01bd-4627-92b5-bddfa0d29223":  {
+                                                                                                                                                                       "816628e2-c7f2-41f6-8cf2-27d752eff31c":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "c751a39c-acb3-4f6b-8b39-d20386af6993":  {
+                                                                                                           "synced":  {
+                                                                                                                          "8c7b91c6-23fe-4ad2-91a9-d357041195d4":  {
+                                                                                                                                                                       "options":  {
+
+                                                                                                                                                                                   }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       },
+                                                              "fbcece11-91ec-46af-a227-2a255fc8233f":  {
+                                                                                                           "1":  {
+                                                                                                                     "8c7b91c6-23fe-4ad2-91a9-d357041195d4":  {
+                                                                                                                                                                  "id":  {
+
+                                                                                                                                                                         }
+                                                                                                                                                              },
+                                                                                                                     "fe4c67d6-42f4-4258-8d83-ce30e3eba445":  {
+                                                                                                                                                                  "72a73ffe-8319-4427-878e-3e67f2d150ff":  {
+
+                                                                                                                                                                                                           }
+                                                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "c751a39c-acb3-4f6b-8b39-d20386af6993":  {
+                                                                                                                                                                  "middleware":  {
+
+                                                                                                                                                                                 }
+                                                                                                                                                              }
+                                                                                                                 }
+                                                                                                       },
+                                                              "6ea2a159-01bd-4627-92b5-bddfa0d29223":  {
+                                                                                                           "2d59f4f5-da3a-4e88-b071-f863cda4e553":  {
+                                                                                                                                                        "fe4c67d6-42f4-4258-8d83-ce30e3eba445":  {
+                                                                                                                                                                                                     "f58efe33-f70e-4570-ac54-670aaf844385":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "4caba675-aa86-4d81-82a5-6510f71a708d":  {
+                                                                                                                       "fbcece11-91ec-46af-a227-2a255fc8233f":  {
+                                                                                                                                                                    "1":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "10c0aa80-7a63-4647-bebf-2002804b315c":  {
+                                                                                                                       "fbcece11-91ec-46af-a227-2a255fc8233f":  {
+                                                                                                                                                                    "2":  {
+
+                                                                                                                                                                          }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "af511dbd-294e-4cbf-940a-e81326cb837b":  {
+                                                                                                                        "fe4c67d6-42f4-4258-8d83-ce30e3eba445":  {
+                                                                                                                                                                     "eb4c2873-890f-4780-a895-53e321f3739e":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "760e37e0-47dc-45b6-993e-06363b08b45f":  {
+                                                                                                                        "6ea2a159-01bd-4627-92b5-bddfa0d29223":  {
+                                                                                                                                                                     "2d59f4f5-da3a-4e88-b071-f863cda4e553":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "6ea2a159-01bd-4627-92b5-bddfa0d29223":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         94,
+                                                                                                                         -37.599999999999994
+                                                                                                                     ],
+                                                                                                     "name":  "express",
+                                                                                                     "prototype":  "ed69232f-75e0-4633-b602-9159d8f3c841",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "8c7b91c6-23fe-4ad2-91a9-d357041195d4":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -7,
+                                                                                                                         -85.6
+                                                                                                                     ],
+                                                                                                     "name":  "action builder",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"id\", \"type\", \"options\"]",
+                                                                                                                    "type":  "\"use\""
+                                                                                                                }
+                                                                                                 },
+                                                        "c751a39c-acb3-4f6b-8b39-d20386af6993":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -50,
+                                                                                                                         58.400000000000006
+                                                                                                                     ],
+                                                                                                     "name":  "options builder",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"middleware\"]"
+                                                                                                                }
+                                                                                                 },
+                                                        "fbcece11-91ec-46af-a227-2a255fc8233f":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -147,
+                                                                                                                         -8.599999999999994
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/double",
+                                                                                                     "prototype":  "flow/Forwarder/double",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "fe4c67d6-42f4-4258-8d83-ce30e3eba445":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         110,
+                                                                                                                         73.4
+                                                                                                                     ],
+                                                                                                     "name":  "depot",
+                                                                                                     "prototype":  "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Applies a known middleware to the specified express app.\n\nAccepted middleware identifiers:\n* \"json\"\n* \"urlencoded\""
+}

@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "regex \u0026 string":  {
+                                                                 "type":  "{\"regex\":string,\"string\":string}"
+                                                             }
+                                 },
+                      "outputs":  {
+                                      "matches":  {
+                                                      "type":  "boolean"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "regex \u0026 string":  "outputs.matches(new RegExp(data.regex).test(data.string), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "string/Regex tester/_"
+}

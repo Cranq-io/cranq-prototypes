@@ -1,0 +1,162 @@
+{
+    "name":  "apis/firebase/rtdb/rest/Request dispatcher",
+    "interface":  {
+                      "inputs":  {
+                                     "36e2743d-8088-4778-9194-583bb6289ab7":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "query context",
+                                                                                  "description":  "idToken\ndbUrl"
+                                                                              },
+                                     "a1c0f925-e196-4ea6-ace4-383b40f18c7b":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "method",
+                                                                                  "description":  "HTTP method as required by the Firebase Realtime Database REST API.\n\nhttps://firebase.google.com/docs/reference/rest/database"
+                                                                              },
+                                     "0f0bade5-0b6a-4ad9-a3ba-774b5365d2d0":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "path",
+                                                                                  "description":  "Identifies data entry that the query will interact with."
+                                                                              },
+                                     "441a9d60-a5a2-4e63-a742-2c9bb772513f":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "data",
+                                                                                  "description":  "Data to be sent via the HTTP request. Usually data to be set or updated."
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "0066052c-0caa-4f32-ae2d-14c8859b0cce":  {
+                                                                                   "type":  "{string:any}",
+                                                                                   "name":  "data"
+                                                                               },
+                                      "104108dd-4808-4eeb-8458-9179728f4a9a":  {
+                                                                                   "type":  "string",
+                                                                                   "name":  "error"
+                                                                               },
+                                      "7e5fed65-b00e-4548-a057-0b1a101f5ef0":  {
+                                                                                   "description":  "idToken\ndbUrl",
+                                                                                   "type":  "any",
+                                                                                   "name":  "query context"
+                                                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "connections":  {
+                                                              "8d98c780-3a54-46e9-93c1-98e032cd8498":  {
+                                                                                                           "4ad066d6-7352-477b-bb5a-1f78567c637a":  {
+                                                                                                                                                        "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                                                                                                                     "852731e0-9376-4446-bac0-718d8ca1fcc4":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                           "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d":  {
+                                                                                                                                                        "ae81c7dd-5be7-4f3d-b674-edc2db59b21b":  {
+                                                                                                                                                                                                     "f58efe33-f70e-4570-ac54-670aaf844385":  {
+
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "441a9d60-a5a2-4e63-a742-2c9bb772513f":  {
+                                                                                                                       "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                                                                                    "4e6e787e-0875-4f15-bf9c-a870f41f69bd":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "a1c0f925-e196-4ea6-ace4-383b40f18c7b":  {
+                                                                                                                       "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                                                                                    "52134df1-fbb5-4df4-99a6-25020abc427e":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "36e2743d-8088-4778-9194-583bb6289ab7":  {
+                                                                                                                       "8d98c780-3a54-46e9-93c1-98e032cd8498":  {
+                                                                                                                                                                    "ab1fea4c-d92b-49c7-990a-8f9aa87f4d16":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                },
+                                                                                                                       "ae81c7dd-5be7-4f3d-b674-edc2db59b21b":  {
+                                                                                                                                                                    "72a73ffe-8319-4427-878e-3e67f2d150ff":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "0f0bade5-0b6a-4ad9-a3ba-774b5365d2d0":  {
+                                                                                                                       "8d98c780-3a54-46e9-93c1-98e032cd8498":  {
+                                                                                                                                                                    "367976e3-7f2f-4295-93c8-3352a64792c6":  {
+
+                                                                                                                                                                                                             }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "7e5fed65-b00e-4548-a057-0b1a101f5ef0":  {
+                                                                                                                        "ae81c7dd-5be7-4f3d-b674-edc2db59b21b":  {
+                                                                                                                                                                     "eb4c2873-890f-4780-a895-53e321f3739e":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "0066052c-0caa-4f32-ae2d-14c8859b0cce":  {
+                                                                                                                        "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                                                                                     "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    },
+                                                                           "104108dd-4808-4eeb-8458-9179728f4a9a":  {
+                                                                                                                        "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                                                                                     "b73aa5bf-e098-4b22-b3bb-b921000af484":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       },
+                                          "nodes":  {
+                                                        "8d98c780-3a54-46e9-93c1-98e032cd8498":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -92.57142857142858,
+                                                                                                                         -107.14285714285714
+                                                                                                                     ],
+                                                                                                     "name":  "build URL",
+                                                                                                     "prototype":  "51ac2cf8-8007-458f-84d5-1075c73eca33",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "ae81c7dd-5be7-4f3d-b674-edc2db59b21b":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         120.42857142857144,
+                                                                                                                         126.85714285714286
+                                                                                                                     ],
+                                                                                                     "name":  "hold context",
+                                                                                                     "prototype":  "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "d8ed3bd8-7424-475b-bd80-57096e092da2":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         6.952380952380963,
+                                                                                                                         7.238095238095241
+                                                                                                                     ],
+                                                                                                     "name":  "dispatch request",
+                                                                                                     "prototype":  "2c32b709-466e-4797-a314-2486b20eb190",
+                                                                                                     "params":  {
+                                                                                                                    "f72ee334-6d61-43db-978f-f31d7d2ff917":  "{}"
+                                                                                                                }
+                                                                                                 }
+                                                    }
+                                      }
+                        },
+    "description":  "Dispatches an HTTP request for running a query in a Firebase Realtime Database via its REST API.\n\nhttps://firebase.google.com/docs/reference/rest/database"
+}

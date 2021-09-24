@@ -1,0 +1,87 @@
+{
+    "description":  "Converts plain table to list of AirTable records.",
+    "interface":  {
+                      "inputs":  {
+                                     "table":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "records":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "map records":  {
+                                                                            "coordinates":  [
+                                                                                                40,
+                                                                                                -41
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "data/array/Mapper"
+                                                                        },
+                                                        "wrap record":  {
+                                                                            "coordinates":  [
+                                                                                                -48,
+                                                                                                45
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+                                                                                           "dict":  "{}",
+                                                                                           "key":  "\"fields\""
+                                                                                       },
+                                                                            "prototype":  "data/dictionary/Item setter"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "map records":  {
+                                                                                  "item":  {
+                                                                                               "wrap record":  {
+                                                                                                                   "value":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                               }
+                                                                                           }
+                                                                              },
+                                                              "wrap record":  {
+                                                                                  "dict":  {
+                                                                                               "map records":  {
+                                                                                                                   "mapped item":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                               }
+                                                                                           }
+                                                                              }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "table":  {
+                                                                                        "map records":  {
+                                                                                                            "array":  {
+
+                                                                                                                      }
+                                                                                                        }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "records":  {
+                                                                                           "map records":  {
+                                                                                                               "mapped":  {
+
+                                                                                                                          }
+                                                                                                           }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "apis/airtable/Table to AirTable records converter"
+}

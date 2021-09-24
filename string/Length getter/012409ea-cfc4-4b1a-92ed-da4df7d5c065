@@ -1,0 +1,28 @@
+{
+    "description":  "Determines the length of the input string.",
+    "interface":  {
+                      "inputs":  {
+                                     "string":  {
+                                                    "type":  "string"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "length":  {
+                                                     "type":  "number"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "string":  "outputs.length(data.length, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "string/Length getter"
+}

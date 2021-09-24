@@ -1,0 +1,31 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "path \u0026 text":  {
+                                                              "type":  "{\"path\":string,\"text\":string}"
+                                                          }
+                                 },
+                      "outputs":  {
+                                      "bounced":  {
+                                                      "type":  "string"
+                                                  },
+                                      "written":  {
+                                                      "type":  "null"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "path \u0026 text":  "const {writeFile} = require(\"fs\");\nconst {path, text} = data;\nwriteFile(path, text, (error) =\u003e {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.written(null, tag);\n  }\n});"
+                                                                }
+                                         }
+                        },
+    "name":  "io/file/Text writer/_"
+}

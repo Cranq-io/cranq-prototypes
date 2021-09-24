@@ -1,0 +1,85 @@
+{
+    "description":  "Checks if number \u0027a\u0027 is equal to number \u0027b\u0027.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "number"
+                                           },
+                                     "b":  {
+                                               "type":  "number"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "equal":  {
+                                                    "type":  "boolean"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "equal":  {
+                                                                      "coordinates":  [
+                                                                                          0,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "number/Equality tester/_"
+                                                                  }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "equal":  {
+                                                                                                                   "a \u0026 b":  {
+                                                                                                                                      "description":  ""
+                                                                                                                                  }
+                                                                                                               }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "equal":  {
+                                                                                         "equal":  {
+                                                                                                       "equal":  {
+
+                                                                                                                 }
+                                                                                                   }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Equality tester"
+}

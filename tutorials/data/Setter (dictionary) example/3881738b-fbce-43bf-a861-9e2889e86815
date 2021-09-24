@@ -1,0 +1,217 @@
+{
+    "description":  "Example node, that demonstrates the basic usage of the dictionary setters",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "dict":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Item setter A":  {
+                                                                              "coordinates":  [
+                                                                                                  69,
+                                                                                                  34
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/Item setter"
+                                                                          },
+                                                        "{ \"key2\": \"value1\" }":  {
+                                                                                         "coordinates":  [
+                                                                                                             -79,
+                                                                                                             -50
+                                                                                                         ],
+                                                                                         "description":  "",
+                                                                                         "params":  {
+                                                                                                        "data":  "{ \"key2\": \"value1\" }"
+                                                                                                    },
+                                                                                         "prototype":  "data/Store"
+                                                                                     },
+                                                        "\"key1\"":  {
+                                                                         "coordinates":  [
+                                                                                             -76,
+                                                                                             128
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "\"key1\""
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "\"value1\"":  {
+                                                                           "coordinates":  [
+                                                                                               -74,
+                                                                                               201
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+                                                                                          "data":  "\"value1\""
+                                                                                      },
+                                                                           "prototype":  "data/Store"
+                                                                       },
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                -239,
+                                                                                                0
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        },
+                                                        "\"key2\"":  {
+                                                                         "coordinates":  [
+                                                                                             215,
+                                                                                             136
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "\"key2\""
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "\"value2\"":  {
+                                                                           "coordinates":  [
+                                                                                               215,
+                                                                                               200
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+                                                                                          "data":  "\"value2\""
+                                                                                      },
+                                                                           "prototype":  "data/Store"
+                                                                       },
+                                                        "Item setter B":  {
+                                                                              "coordinates":  [
+                                                                                                  383,
+                                                                                                  34
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/dictionary/Item setter"
+                                                                          }
+                                                    },
+                                          "connections":  {
+                                                              "\"key1\"":  {
+                                                                               "data":  {
+                                                                                            "Item setter A":  {
+                                                                                                                  "key":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                              }
+                                                                                        }
+                                                                           },
+                                                              "\"value1\"":  {
+                                                                                 "data":  {
+                                                                                              "Item setter A":  {
+                                                                                                                    "value":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                }
+                                                                                          }
+                                                                             },
+                                                              "{ \"key2\": \"value1\" }":  {
+                                                                                               "data":  {
+                                                                                                            "Item setter A":  {
+                                                                                                                                  "dict":  {
+                                                                                                                                               "description":  ""
+                                                                                                                                           }
+                                                                                                                              }
+                                                                                                        }
+                                                                                           },
+                                                              "Forwarder A":  {
+                                                                                  "data":  {
+                                                                                               "{ \"key2\": \"value1\" }":  {
+                                                                                                                                "read":  {
+                                                                                                                                             "description":  ""
+                                                                                                                                         }
+                                                                                                                            },
+                                                                                               "\"key1\"":  {
+                                                                                                                "read":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                            },
+                                                                                               "\"value1\"":  {
+                                                                                                                  "read":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                           }
+                                                                              },
+                                                              "Item setter A":  {
+                                                                                    "dict":  {
+                                                                                                 "Item setter B":  {
+                                                                                                                       "dict":  {
+                                                                                                                                    "description":  ""
+                                                                                                                                }
+                                                                                                                   },
+                                                                                                 "\"key2\"":  {
+                                                                                                                  "read":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              },
+                                                                                                 "\"value2\"":  {
+                                                                                                                    "read":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                                }
+                                                                                             }
+                                                                                },
+                                                              "\"key2\"":  {
+                                                                               "data":  {
+                                                                                            "Item setter B":  {
+                                                                                                                  "key":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                              }
+                                                                                        }
+                                                                           },
+                                                              "\"value2\"":  {
+                                                                                 "data":  {
+                                                                                              "Item setter B":  {
+                                                                                                                    "value":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                }
+                                                                                          }
+                                                                             }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "Forwarder A":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "dict":  {
+                                                                                        "Item setter B":  {
+                                                                                                              "dict":  {
+
+                                                                                                                       }
+                                                                                                          }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Setter (dictionary) example"
+}

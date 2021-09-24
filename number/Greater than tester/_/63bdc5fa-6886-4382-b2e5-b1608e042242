@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "type":  "{\"a\":number,\"b\":number}"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "greater":  {
+                                                      "type":  "boolean"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "outputs.greater(data.a \u003e data.b, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Greater than tester/_"
+}

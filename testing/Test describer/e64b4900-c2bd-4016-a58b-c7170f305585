@@ -1,0 +1,115 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "assertions":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    },
+                                     "description":  {
+                                                         "description":  "",
+                                                         "type":  "any"
+                                                     }
+                                 },
+                      "outputs":  {
+                                      "result":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "wrap description":  {
+                                                                                 "coordinates":  [
+                                                                                                     11,
+                                                                                                     76
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+                                                                                                "count":  "1"
+                                                                                            },
+                                                                                 "prototype":  "data/array/Builder"
+                                                                             },
+                                                        "sync success \u0026 descriptions":  {
+                                                                                                 "coordinates":  [
+                                                                                                                     42,
+                                                                                                                     -65
+                                                                                                                 ],
+                                                                                                 "description":  "",
+                                                                                                 "params":  {
+                                                                                                                "fields":  "[\"assertions\",\"descriptions\"]"
+                                                                                                            },
+                                                                                                 "prototype":  "flow/Syncer"
+                                                                                             },
+                                                        "sync inputs":  {
+                                                                            "coordinates":  [
+                                                                                                -79,
+                                                                                                -2
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder/double"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "sync inputs":  {
+                                                                                  "1":  {
+                                                                                            "sync success \u0026 descriptions":  {
+                                                                                                                                     "assertions":  {
+                                                                                                                                                        "description":  ""
+                                                                                                                                                    }
+                                                                                                                                 }
+                                                                                        },
+                                                                                  "2":  {
+                                                                                            "wrap description":  {
+                                                                                                                     "item":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                 }
+                                                                                        }
+                                                                              },
+                                                              "wrap description":  {
+                                                                                       "array":  {
+                                                                                                     "sync success \u0026 descriptions":  {
+                                                                                                                                              "descriptions":  {
+                                                                                                                                                                   "description":  ""
+                                                                                                                                                               }
+                                                                                                                                          }
+                                                                                                 }
+                                                                                   }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "assertions":  {
+                                                                                             "sync inputs":  {
+                                                                                                                 "1":  {
+
+                                                                                                                       }
+                                                                                                             }
+                                                                                         },
+                                                                          "description":  {
+                                                                                              "sync inputs":  {
+                                                                                                                  "2":  {
+
+                                                                                                                        }
+                                                                                                              }
+                                                                                          }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "result":  {
+                                                                                          "sync success \u0026 descriptions":  {
+                                                                                                                                   "synced":  {
+
+                                                                                                                                              }
+                                                                                                                               }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "testing/Test describer"
+}

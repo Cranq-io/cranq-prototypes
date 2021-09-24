@@ -1,0 +1,40 @@
+{
+    "implementations":  {
+                            "es6-node":  {
+                                             "dependencies":  {
+                                                                  "npm":  {
+                                                                              "sqlite3":  {
+                                                                                              "description":  ""
+                                                                                          }
+                                                                          }
+                                                              },
+                                             "inputFunctions":  {
+                                                                    "b3ce4ca4-4138-4aea-8e53-c651ae333a07":  "const sqlite3 = require(\"sqlite3\");\nconst {id, type, options = {}} = data;\nconst {sql, params} = options;\nconst db = shared[id];\nswitch (type) {\ncase \"open\":\n  const {filename, mode} = options;\n  if (db)\n    outputs.done(null, tag);\n  else\n    shared[id] = new sqlite3.Database(\n      filename, mode, (error) =\u003e error \n        ? outputs.error(`${error}`, tag) \n        : outputs.done(null, tag)\n    );\n  break;\ncase \"run\":\n  db.run(sql, params, function (error) {\n    if (error)\n      outputs.error(`${error}`, tag);\n    else {\n      outputs.data(this, tag);\n      outputs.done(null, tag);\n    }\n  });\n  break;\ncase \"get\":\n  db.get(sql, params, (error, row) =\u003e {\n    if (error)\n      outputs.error(`${error}`, tag);\n    else {\n      outputs.data(row || null, tag);\n      outputs.done(null, tag);\n    }\n  });\n  break;\ncase \"all\":\n  db.all(sql, params, (error, rows) =\u003e {\n    if (error)\n      outputs.error(`${error}`, tag);\n    else {\n      outputs.data(rows, tag);\n      outputs.done(null, tag);\n    }\n  });\n  break;\ncase \"each\":\n  db.each(sql, params, \n    (error, row) =\u003e error\n      ? outputs.error(`${error}`, tag)\n      : outputs.data(row, tag),\n    () =\u003e outputs.done(null, tag));\n  break;\ncase \"close\":\n  if (db) {\n    delete shared[id];\n    db.close((error) =\u003e error\n      ? outputs.error(`${error}`)\n      : outputs.done(null, tag));\n  } else\n    outputs.done(null, tag);\n  break;\n}"
+                                                                }
+                                         }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "b3ce4ca4-4138-4aea-8e53-c651ae333a07":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "action"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "8cb67ee3-0b71-49a6-9c97-4909670a0177":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "data"
+                                                                               },
+                                      "9ffca0a3-0927-4358-9cfb-28260054ea3f":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "done"
+                                                                               },
+                                      "8a5f8aaf-0528-4a5b-9305-ba063d5120ba":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "error"
+                                                                               }
+                                  }
+                  },
+    "name":  "db/sqlite3/Sqlite3",
+    "description":  "Generic SQLite 3 integration node.\nThis is an internal node. Use specific SQLite nodes instead."
+}

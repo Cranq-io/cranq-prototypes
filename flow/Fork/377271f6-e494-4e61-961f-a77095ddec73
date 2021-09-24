@@ -1,0 +1,99 @@
+{
+    "description":  "Forwards input data to one of two outputs, depending on the condition.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "description":  "Receives the data to be forwarded to either output.",
+                                                  "type":  "any"
+                                              },
+                                     "condition":  {
+                                                       "description":  "Receives the evaluation of some condition.",
+                                                       "type":  "boolean"
+                                                   }
+                                 },
+                      "outputs":  {
+                                      "true":  {
+                                                   "description":  "Sends the input when condition was true.",
+                                                   "type":  "typeof(data)"
+                                               },
+                                      "false":  {
+                                                    "description":  "Sends the input when condition was false.",
+                                                    "type":  "typeof(data)"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync data \u0026 condition":  {
+                                                                                           "coordinates":  [
+                                                                                                               0,
+                                                                                                               0
+                                                                                                           ],
+                                                                                           "description":  "",
+                                                                                           "params":  {
+                                                                                                          "fields":  "[\"data\",\"condition\"]"
+                                                                                                      },
+                                                                                           "prototype":  "flow/Syncer"
+                                                                                       },
+                                                        "fork":  {
+                                                                     "coordinates":  [
+                                                                                         0,
+                                                                                         0
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+
+                                                                                },
+                                                                     "prototype":  "flow/Fork/_"
+                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "sync data \u0026 condition":  {
+                                                                                                 "synced":  {
+                                                                                                                "fork":  {
+                                                                                                                             "data \u0026 condition":  {
+                                                                                                                                                           "description":  ""
+                                                                                                                                                       }
+                                                                                                                         }
+                                                                                                            }
+                                                                                             }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "data":  {
+                                                                                       "sync data \u0026 condition":  {
+                                                                                                                          "data":  {
+
+                                                                                                                                   }
+                                                                                                                      }
+                                                                                   },
+                                                                          "condition":  {
+                                                                                            "sync data \u0026 condition":  {
+                                                                                                                               "condition":  {
+
+                                                                                                                                             }
+                                                                                                                           }
+                                                                                        }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "true":  {
+                                                                                        "fork":  {
+                                                                                                     "true":  {
+
+                                                                                                              }
+                                                                                                 }
+                                                                                    },
+                                                                           "false":  {
+                                                                                         "fork":  {
+                                                                                                      "false":  {
+
+                                                                                                                }
+                                                                                                  }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "flow/Fork"
+}

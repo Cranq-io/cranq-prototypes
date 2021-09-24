@@ -1,0 +1,28 @@
+{
+    "description":  "Tells whether a number is odd.",
+    "interface":  {
+                      "inputs":  {
+                                     "number":  {
+                                                    "type":  "number"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "odd":  {
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "number":  "outputs.odd(data % 2 !== 0, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Odd tester"
+}

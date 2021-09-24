@@ -1,0 +1,85 @@
+{
+    "description":  "Checks if \u0027a\u0027 is greater than \u0027b\u0027.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "number"
+                                           },
+                                     "b":  {
+                                               "type":  "number"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "greater":  {
+                                                      "type":  "boolean"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "greater than":  {
+                                                                             "coordinates":  [
+                                                                                                 0,
+                                                                                                 0
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "number/Greater than tester/_"
+                                                                         }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "greater than":  {
+                                                                                                                          "a \u0026 b":  {
+                                                                                                                                             "description":  ""
+                                                                                                                                         }
+                                                                                                                      }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "greater":  {
+                                                                                           "greater than":  {
+                                                                                                                "greater":  {
+
+                                                                                                                            }
+                                                                                                            }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Greater than tester"
+}

@@ -1,0 +1,99 @@
+{
+    "description":  "Slices a section out of an array.",
+    "interface":  {
+                      "inputs":  {
+                                     "array":  {
+                                                   "description":  "Array to slice out of",
+                                                   "type":  "any[]"
+                                               },
+                                     "from":  {
+                                                  "description":  "Start position of the slice (included)",
+                                                  "type":  "number"
+                                              },
+                                     "to":  {
+                                                "description":  "End position of the slice (not included)",
+                                                "type":  "number"
+                                            }
+                                 },
+                      "outputs":  {
+                                      "slice":  {
+                                                    "description":  "Section sliced out of the input array",
+                                                    "type":  "typeof(array)"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync array \u0026 from \u0026 to":  {
+                                                                                                 "coordinates":  [
+                                                                                                                     0,
+                                                                                                                     0
+                                                                                                                 ],
+                                                                                                 "description":  "",
+                                                                                                 "params":  {
+                                                                                                                "fields":  "[\"array\",\"from\",\"to\"]"
+                                                                                                            },
+                                                                                                 "prototype":  "flow/Syncer"
+                                                                                             },
+                                                        "slice":  {
+                                                                      "coordinates":  [
+                                                                                          0,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "data/array/Slicer/_"
+                                                                  }
+                                                    },
+                                          "connections":  {
+                                                              "sync array \u0026 from \u0026 to":  {
+                                                                                                       "synced":  {
+                                                                                                                      "slice":  {
+                                                                                                                                    "array \u0026 from \u0026 to":  {
+                                                                                                                                                                        "description":  ""
+                                                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                  }
+                                                                                                   }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "array":  {
+                                                                                        "sync array \u0026 from \u0026 to":  {
+                                                                                                                                 "array":  {
+
+                                                                                                                                           }
+                                                                                                                             }
+                                                                                    },
+                                                                          "from":  {
+                                                                                       "sync array \u0026 from \u0026 to":  {
+                                                                                                                                "from":  {
+
+                                                                                                                                         }
+                                                                                                                            }
+                                                                                   },
+                                                                          "to":  {
+                                                                                     "sync array \u0026 from \u0026 to":  {
+                                                                                                                              "to":  {
+
+                                                                                                                                     }
+                                                                                                                          }
+                                                                                 }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "slice":  {
+                                                                                         "slice":  {
+                                                                                                       "slice":  {
+
+                                                                                                                 }
+                                                                                                   }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/array/Slicer"
+}

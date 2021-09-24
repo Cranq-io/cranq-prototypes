@@ -1,0 +1,122 @@
+{
+    "description":  "Example node, that demonstrates the usage of the string/Template filler node.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Template filler A":  {
+                                                                                  "coordinates":  [
+                                                                                                      129,
+                                                                                                      0
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+
+                                                                                             },
+                                                                                  "prototype":  "string/Template filler"
+                                                                              },
+                                                        "parameters":  {
+                                                                           "coordinates":  [
+                                                                                               -59,
+                                                                                               109
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+                                                                                          "data":  "{\n\"firstName\":\"John\",\n\"lastName\":\"Doe\"\n}"
+                                                                                      },
+                                                                           "prototype":  "data/Store"
+                                                                       },
+                                                        "template":  {
+                                                                         "coordinates":  [
+                                                                                             -58,
+                                                                                             -99
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "\"{lastName}, {firstName}\""
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                -209,
+                                                                                                0
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        }
+                                                    },
+                                          "connections":  {
+                                                              "parameters":  {
+                                                                                 "data":  {
+                                                                                              "Template filler A":  {
+                                                                                                                        "params":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                    }
+                                                                                          }
+                                                                             },
+                                                              "Forwarder A":  {
+                                                                                  "data":  {
+                                                                                               "template":  {
+                                                                                                                "read":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                            },
+                                                                                               "parameters":  {
+                                                                                                                  "read":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                           }
+                                                                              },
+                                                              "template":  {
+                                                                               "data":  {
+                                                                                            "Template filler A":  {
+                                                                                                                      "template":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                  }
+                                                                                        }
+                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "Forwarder A":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "Template filler A":  {
+                                                                                                                    "filled":  {
+
+                                                                                                                               }
+                                                                                                                }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Template filler example"
+}

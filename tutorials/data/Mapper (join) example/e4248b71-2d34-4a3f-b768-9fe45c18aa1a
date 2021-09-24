@@ -1,0 +1,104 @@
+{
+    "description":  "Example wrapper node that demonstrates the usage of the data/array/Mapper node.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "mapped":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "map emps to depts":  {
+                                                                                  "coordinates":  [
+                                                                                                      135,
+                                                                                                      -48
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+
+                                                                                             },
+                                                                                  "prototype":  "tutorials/data/Mapper (emps to dept) example"
+                                                                              },
+                                                        "get repository":  {
+                                                                               "coordinates":  [
+                                                                                                   -133,
+                                                                                                   -66
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "tutorials/data/Syncer (build dictionary) example"
+                                                                           },
+                                                        "splitter":  {
+                                                                         "coordinates":  [
+                                                                                             15,
+                                                                                             134
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "fields":  "[\"Employees\", \"Departments\"]"
+                                                                                    },
+                                                                         "prototype":  "flow/Splitter"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "get repository":  {
+                                                                                     "dict":  {
+                                                                                                  "splitter":  {
+                                                                                                                   "unsplit":  {
+                                                                                                                                   "description":  ""
+                                                                                                                               }
+                                                                                                               }
+                                                                                              }
+                                                                                 },
+                                                              "splitter":  {
+                                                                               "Employees":  {
+                                                                                                 "map emps to depts":  {
+                                                                                                                           "emps":  {
+                                                                                                                                        "description":  ""
+                                                                                                                                    }
+                                                                                                                       }
+                                                                                             },
+                                                                               "Departments":  {
+                                                                                                   "map emps to depts":  {
+                                                                                                                             "depts":  {
+                                                                                                                                           "description":  ""
+                                                                                                                                       }
+                                                                                                                         }
+                                                                                               }
+                                                                           }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "get repository":  {
+                                                                                                             "build":  {
+
+                                                                                                                       }
+                                                                                                         }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "mapped":  {
+                                                                                          "map emps to depts":  {
+                                                                                                                    "array":  {
+
+                                                                                                                              }
+                                                                                                                }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Mapper (join) example"
+}

@@ -1,0 +1,122 @@
+{
+    "description":  "Example node, that demonstrates parallel filtering with the data/array/Iterator node over an array",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "[1,8,13,7,2,10,84,26]":  {
+                                                                                      "coordinates":  [
+                                                                                                          -93,
+                                                                                                          -84
+                                                                                                      ],
+                                                                                      "description":  "",
+                                                                                      "params":  {
+                                                                                                     "data":  "[1,8,13,7,2,10,84,26]"
+                                                                                                 },
+                                                                                      "prototype":  "data/Store"
+                                                                                  },
+                                                        "Iterator A":  {
+                                                                           "coordinates":  [
+                                                                                               8,
+                                                                                               106
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "data/array/Iterator"
+                                                                       },
+                                                        "Odd tester A":  {
+                                                                             "coordinates":  [
+                                                                                                 135,
+                                                                                                 200
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "number/Odd tester"
+                                                                         },
+                                                        "Fork A":  {
+                                                                       "coordinates":  [
+                                                                                           280,
+                                                                                           44
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "flow/Fork"
+                                                                   }
+                                                    },
+                                          "connections":  {
+                                                              "[1,8,13,7,2,10,84,26]":  {
+                                                                                            "data":  {
+                                                                                                         "Iterator A":  {
+                                                                                                                            "array":  {
+                                                                                                                                          "description":  ""
+                                                                                                                                      }
+                                                                                                                        }
+                                                                                                     }
+                                                                                        },
+                                                              "Iterator A":  {
+                                                                                 "item":  {
+                                                                                              "Odd tester A":  {
+                                                                                                                   "number":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                               },
+                                                                                              "Fork A":  {
+                                                                                                             "data":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                         }
+                                                                                          }
+                                                                             },
+                                                              "Odd tester A":  {
+                                                                                   "odd":  {
+                                                                                               "Fork A":  {
+                                                                                                              "condition":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                          }
+                                                                                           }
+                                                                               }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "[1,8,13,7,2,10,84,26]":  {
+                                                                                                                    "read":  {
+
+                                                                                                                             }
+                                                                                                                }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "Fork A":  {
+                                                                                                         "true":  {
+
+                                                                                                                  }
+                                                                                                     }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/flow/Iterator (parallel filter) example"
+}

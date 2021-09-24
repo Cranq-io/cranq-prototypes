@@ -1,0 +1,304 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "actual":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                },
+                                     "expected":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  },
+                                     "success":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "template":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  }
+                                 },
+                      "outputs":  {
+                                      "assertion":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    },
+                                      "expected":  {
+                                                       "description":  "",
+                                                       "type":  "any"
+                                                   },
+                                      "actual":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "build message":  {
+                                                                              "coordinates":  [
+                                                                                                  -158,
+                                                                                                  85
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "string/Template filler"
+                                                                          },
+                                                        "sync serialized":  {
+                                                                                "coordinates":  [
+                                                                                                    -82,
+                                                                                                    -44
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"actual\", \"expected\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "forward message":  {
+                                                                                "coordinates":  [
+                                                                                                    59,
+                                                                                                    48
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+
+                                                                                           },
+                                                                                "prototype":  "flow/Gate"
+                                                                            },
+                                                        "assertion":  {
+                                                                          "coordinates":  [
+                                                                                              221,
+                                                                                              40
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "flow/Forwarder"
+                                                                      },
+                                                        "sync inputs":  {
+                                                                            "coordinates":  [
+                                                                                                118,
+                                                                                                -79
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder/double"
+                                                                        },
+                                                        "success":  {
+                                                                        "coordinates":  [
+                                                                                            -118,
+                                                                                            217
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "flow/Forwarder"
+                                                                    },
+                                                        "not":  {
+                                                                    "coordinates":  [
+                                                                                        -53,
+                                                                                        143
+                                                                                    ],
+                                                                    "description":  "",
+                                                                    "params":  {
+
+                                                                               },
+                                                                    "prototype":  "boolean/Not"
+                                                                },
+                                                        "forward null":  {
+                                                                             "coordinates":  [
+                                                                                                 147,
+                                                                                                 182
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+                                                                                            "data":  "null"
+                                                                                        },
+                                                                             "prototype":  "flow/Gate"
+                                                                         },
+                                                        "serialize actual":  {
+                                                                                 "coordinates":  [
+                                                                                                     -42,
+                                                                                                     -151
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+                                                                                                "pretty":  "true"
+                                                                                            },
+                                                                                 "prototype":  "json/Serializer"
+                                                                             },
+                                                        "Serializer A":  {
+                                                                             "coordinates":  [
+                                                                                                 -203,
+                                                                                                 -150
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+                                                                                            "pretty":  "true"
+                                                                                        },
+                                                                             "prototype":  "json/Serializer"
+                                                                         }
+                                                    },
+                                          "connections":  {
+                                                              "build message":  {
+                                                                                    "filled":  {
+                                                                                                   "forward message":  {
+                                                                                                                           "data":  {
+                                                                                                                                        "description":  ""
+                                                                                                                                    }
+                                                                                                                       }
+                                                                                               }
+                                                                                },
+                                                              "forward message":  {
+                                                                                      "data":  {
+                                                                                                   "assertion":  {
+                                                                                                                     "data":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                 }
+                                                                                               }
+                                                                                  },
+                                                              "forward null":  {
+                                                                                   "data":  {
+                                                                                                "assertion":  {
+                                                                                                                  "data":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                            }
+                                                                               },
+                                                              "sync serialized":  {
+                                                                                      "synced":  {
+                                                                                                     "build message":  {
+                                                                                                                           "params":  {
+                                                                                                                                          "description":  ""
+                                                                                                                                      }
+                                                                                                                       }
+                                                                                                 }
+                                                                                  },
+                                                              "success":  {
+                                                                              "data":  {
+                                                                                           "not":  {
+                                                                                                       "a":  {
+                                                                                                                 "description":  ""
+                                                                                                             }
+                                                                                                   },
+                                                                                           "forward null":  {
+                                                                                                                "open":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                            }
+                                                                                       }
+                                                                          },
+                                                              "not":  {
+                                                                          "not":  {
+                                                                                      "forward message":  {
+                                                                                                              "open":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          }
+                                                                                  }
+                                                                      },
+                                                              "sync inputs":  {
+                                                                                  "1":  {
+                                                                                            "serialize actual":  {
+                                                                                                                     "data":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                 }
+                                                                                        },
+                                                                                  "2":  {
+                                                                                            "Serializer A":  {
+                                                                                                                 "data":  {
+                                                                                                                              "description":  ""
+                                                                                                                          }
+                                                                                                             }
+                                                                                        }
+                                                                              },
+                                                              "serialize actual":  {
+                                                                                       "json":  {
+                                                                                                    "sync serialized":  {
+                                                                                                                            "actual":  {
+                                                                                                                                           "description":  ""
+                                                                                                                                       }
+                                                                                                                        }
+                                                                                                }
+                                                                                   },
+                                                              "Serializer A":  {
+                                                                                   "json":  {
+                                                                                                "sync serialized":  {
+                                                                                                                        "expected":  {
+                                                                                                                                         "description":  ""
+                                                                                                                                     }
+                                                                                                                    }
+                                                                                            }
+                                                                               }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "actual":  {
+                                                                                         "sync inputs":  {
+                                                                                                             "1":  {
+
+                                                                                                                   }
+                                                                                                         }
+                                                                                     },
+                                                                          "expected":  {
+                                                                                           "sync inputs":  {
+                                                                                                               "2":  {
+
+                                                                                                                     }
+                                                                                                           }
+                                                                                       },
+                                                                          "success":  {
+                                                                                          "success":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                      },
+                                                                          "template":  {
+                                                                                           "build message":  {
+                                                                                                                 "template":  {
+
+                                                                                                                              }
+                                                                                                             }
+                                                                                       }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "assertion":  {
+                                                                                             "assertion":  {
+                                                                                                               "data":  {
+
+                                                                                                                        }
+                                                                                                           }
+                                                                                         },
+                                                                           "expected":  {
+                                                                                            "sync inputs":  {
+                                                                                                                "2":  {
+
+                                                                                                                      }
+                                                                                                            }
+                                                                                        },
+                                                                           "actual":  {
+                                                                                          "sync inputs":  {
+                                                                                                              "1":  {
+
+                                                                                                                    }
+                                                                                                          }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "testing/Asserter"
+}

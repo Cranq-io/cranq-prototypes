@@ -1,0 +1,167 @@
+{
+    "description":  "Example node, that demonstrates the basic usage of array deleters",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "array":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "2":  {
+                                                                  "coordinates":  [
+                                                                                      -65,
+                                                                                      79
+                                                                                  ],
+                                                                  "description":  "",
+                                                                  "params":  {
+                                                                                 "data":  "2"
+                                                                             },
+                                                                  "prototype":  "data/Store"
+                                                              },
+                                                        "12":  {
+                                                                   "coordinates":  [
+                                                                                       225,
+                                                                                       98
+                                                                                   ],
+                                                                   "description":  "",
+                                                                   "params":  {
+                                                                                  "data":  "12"
+                                                                              },
+                                                                   "prototype":  "data/Store"
+                                                               },
+                                                        "[\"a\",\"b\",\"c\",\"d\"]":  {
+                                                                                          "coordinates":  [
+                                                                                                              -63,
+                                                                                                              -53
+                                                                                                          ],
+                                                                                          "description":  "",
+                                                                                          "params":  {
+                                                                                                         "data":  "[\"a\",\"b\",\"c\",\"d\"]"
+                                                                                                     },
+                                                                                          "prototype":  "data/Store"
+                                                                                      },
+                                                        "Item deleter A":  {
+                                                                               "coordinates":  [
+                                                                                                   100,
+                                                                                                   20
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "data/array/Item deleter"
+                                                                           },
+                                                        "Forwarder A":  {
+                                                                            "coordinates":  [
+                                                                                                -207,
+                                                                                                0
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "flow/Forwarder"
+                                                                        },
+                                                        "Item deleter B":  {
+                                                                               "coordinates":  [
+                                                                                                   358,
+                                                                                                   21
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+
+                                                                                          },
+                                                                               "prototype":  "data/array/Item deleter"
+                                                                           }
+                                                    },
+                                          "connections":  {
+                                                              "2":  {
+                                                                        "data":  {
+                                                                                     "Item deleter A":  {
+                                                                                                            "index":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                        }
+                                                                                 }
+                                                                    },
+                                                              "12":  {
+                                                                         "data":  {
+                                                                                      "Item deleter B":  {
+                                                                                                             "index":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                         }
+                                                                                  }
+                                                                     },
+                                                              "[\"a\",\"b\",\"c\",\"d\"]":  {
+                                                                                                "data":  {
+                                                                                                             "Item deleter A":  {
+                                                                                                                                    "array":  {
+                                                                                                                                                  "description":  ""
+                                                                                                                                              }
+                                                                                                                                }
+                                                                                                         }
+                                                                                            },
+                                                              "Forwarder A":  {
+                                                                                  "data":  {
+                                                                                               "2":  {
+                                                                                                         "read":  {
+                                                                                                                      "description":  ""
+                                                                                                                  }
+                                                                                                     },
+                                                                                               "[\"a\",\"b\",\"c\",\"d\"]":  {
+                                                                                                                                 "read":  {
+                                                                                                                                              "description":  ""
+                                                                                                                                          }
+                                                                                                                             }
+                                                                                           }
+                                                                              },
+                                                              "Item deleter A":  {
+                                                                                     "array":  {
+                                                                                                   "12":  {
+                                                                                                              "read":  {
+                                                                                                                           "description":  ""
+                                                                                                                       }
+                                                                                                          },
+                                                                                                   "Item deleter B":  {
+                                                                                                                          "array":  {
+                                                                                                                                        "description":  ""
+                                                                                                                                    }
+                                                                                                                      }
+                                                                                               }
+                                                                                 }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "Forwarder A":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "array":  {
+                                                                                         "Item deleter B":  {
+                                                                                                                "array":  {
+
+                                                                                                                          }
+                                                                                                            }
+                                                                                     }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Deleter (array) example"
+}

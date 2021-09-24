@@ -1,0 +1,95 @@
+{
+    "description":  "Sets a node at the specified path of the tree. Mutates input.",
+    "interface":  {
+                      "inputs":  {
+                                     "tree":  {
+                                                  "type":  "any[] or {string:any}"
+                                              },
+                                     "path":  {
+                                                  "type":  "(string | number)[]"
+                                              },
+                                     "node":  {
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "written":  {
+                                                      "type":  "null"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync tree \u0026 path \u0026 node":  {
+                                                                                                  "coordinates":  [
+                                                                                                                      0,
+                                                                                                                      0
+                                                                                                                  ],
+                                                                                                  "description":  "",
+                                                                                                  "params":  {
+                                                                                                                 "fields":  "[\"tree\",\"path\",\"node\"]"
+                                                                                                             },
+                                                                                                  "prototype":  "flow/Syncer"
+                                                                                              },
+                                                        "set node":  {
+                                                                         "coordinates":  [
+                                                                                             0,
+                                                                                             0
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/tree/Node setter/mutable/_"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "sync tree \u0026 path \u0026 node":  {
+                                                                                                        "synced":  {
+                                                                                                                       "set node":  {
+                                                                                                                                        "tree \u0026 path \u0026 node":  {
+                                                                                                                                                                             "description":  ""
+                                                                                                                                                                         }
+                                                                                                                                    }
+                                                                                                                   }
+                                                                                                    }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "tree":  {
+                                                                                       "sync tree \u0026 path \u0026 node":  {
+                                                                                                                                 "tree":  {
+
+                                                                                                                                          }
+                                                                                                                             }
+                                                                                   },
+                                                                          "path":  {
+                                                                                       "sync tree \u0026 path \u0026 node":  {
+                                                                                                                                 "path":  {
+
+                                                                                                                                          }
+                                                                                                                             }
+                                                                                   },
+                                                                          "node":  {
+                                                                                       "sync tree \u0026 path \u0026 node":  {
+                                                                                                                                 "node":  {
+
+                                                                                                                                          }
+                                                                                                                             }
+                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "written":  {
+                                                                                           "set node":  {
+                                                                                                            "written":  {
+
+                                                                                                                        }
+                                                                                                        }
+                                                                                       }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/tree/Node setter/mutable"
+}

@@ -1,0 +1,28 @@
+{
+    "description":  "Tells whether a number is even.",
+    "interface":  {
+                      "inputs":  {
+                                     "number":  {
+                                                    "type":  "number"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "even":  {
+                                                   "type":  "boolean"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "number":  "outputs.even(data % 2 === 0, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Even tester"
+}

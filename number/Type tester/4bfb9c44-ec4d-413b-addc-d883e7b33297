@@ -1,0 +1,28 @@
+{
+    "description":  "Tells whether the input is a number.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "type":  "any"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "is number":  {
+                                                        "type":  "is number"
+                                                    }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "data":  "outputs[\"is number\"](typeof data === \"number\", tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Type tester"
+}

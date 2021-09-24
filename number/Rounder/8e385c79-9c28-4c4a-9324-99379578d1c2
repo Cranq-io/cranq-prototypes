@@ -1,0 +1,28 @@
+{
+    "description":  "Returns the number rounded to the nearest integer.",
+    "interface":  {
+                      "inputs":  {
+                                     "number":  {
+                                                    "type":  "number"
+                                                }
+                                 },
+                      "outputs":  {
+                                      "rounded":  {
+                                                      "type":  "number"
+                                                  }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "number":  "outputs.rounded(Math.round(data), tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "number/Rounder"
+}

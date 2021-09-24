@@ -1,0 +1,88 @@
+{
+    "description":  "Retrieves item from the specified index.",
+    "interface":  {
+                      "inputs":  {
+                                     "array":  {
+                                                   "description":  "Array to retrieve item from",
+                                                   "type":  "any[]"
+                                               },
+                                     "index":  {
+                                                   "description":  "Identifies item to be retrieved in the array.",
+                                                   "type":  "number"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "item":  {
+                                                   "description":  "Item at the specified index.",
+                                                   "type":  "typeof(array)[number]"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync array \u0026 index":  {
+                                                                                        "coordinates":  [
+                                                                                                            0,
+                                                                                                            0
+                                                                                                        ],
+                                                                                        "description":  "",
+                                                                                        "params":  {
+                                                                                                       "fields":  "[\"array\",\"index\"]"
+                                                                                                   },
+                                                                                        "prototype":  "flow/Syncer"
+                                                                                    },
+                                                        "get item":  {
+                                                                         "coordinates":  [
+                                                                                             0,
+                                                                                             0
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/array/Item getter/_"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "sync array \u0026 index":  {
+                                                                                              "synced":  {
+                                                                                                             "get item":  {
+                                                                                                                              "array \u0026 index":  {
+                                                                                                                                                         "description":  ""
+                                                                                                                                                     }
+                                                                                                                          }
+                                                                                                         }
+                                                                                          }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "array":  {
+                                                                                        "sync array \u0026 index":  {
+                                                                                                                        "array":  {
+
+                                                                                                                                  }
+                                                                                                                    }
+                                                                                    },
+                                                                          "index":  {
+                                                                                        "sync array \u0026 index":  {
+                                                                                                                        "index":  {
+
+                                                                                                                                  }
+                                                                                                                    }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "item":  {
+                                                                                        "get item":  {
+                                                                                                         "item":  {
+
+                                                                                                                  }
+                                                                                                     }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/array/Item getter"
+}

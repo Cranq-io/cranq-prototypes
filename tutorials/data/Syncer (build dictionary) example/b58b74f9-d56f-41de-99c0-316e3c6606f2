@@ -1,0 +1,122 @@
+{
+    "description":  "Example node, that demonstrates the building of dictionaries with the flow/Syncer. Provides the \"repository\" dataset for further examples.",
+    "interface":  {
+                      "inputs":  {
+                                     "build":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "dict":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "build depts":  {
+                                                                            "coordinates":  [
+                                                                                                20,
+                                                                                                122
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "tutorials/data/Syncer (build depts array) example"
+                                                                        },
+                                                        "syncer":  {
+                                                                       "coordinates":  [
+                                                                                           204,
+                                                                                           2
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+                                                                                      "fields":  "[\"Employees\", \"Departments\"]"
+                                                                                  },
+                                                                       "prototype":  "flow/Syncer"
+                                                                   },
+                                                        "forwarder":  {
+                                                                          "coordinates":  [
+                                                                                              -163,
+                                                                                              0
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "flow/Forwarder"
+                                                                      },
+                                                        "build emps":  {
+                                                                           "coordinates":  [
+                                                                                               20,
+                                                                                               -114
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "tutorials/data/Concatenator (array) example"
+                                                                       }
+                                                    },
+                                          "connections":  {
+                                                              "forwarder":  {
+                                                                                "data":  {
+                                                                                             "build depts":  {
+                                                                                                                 "build":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                             },
+                                                                                             "build emps":  {
+                                                                                                                "run":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                            }
+                                                                                         }
+                                                                            },
+                                                              "build depts":  {
+                                                                                  "array":  {
+                                                                                                "syncer":  {
+                                                                                                               "Departments":  {
+                                                                                                                                   "description":  ""
+                                                                                                                               }
+                                                                                                           }
+                                                                                            }
+                                                                              },
+                                                              "build emps":  {
+                                                                                 "array":  {
+                                                                                               "syncer":  {
+                                                                                                              "Employees":  {
+                                                                                                                                "description":  ""
+                                                                                                                            }
+                                                                                                          }
+                                                                                           }
+                                                                             }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "build":  {
+                                                                                        "forwarder":  {
+                                                                                                          "data":  {
+
+                                                                                                                   }
+                                                                                                      }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "dict":  {
+                                                                                        "syncer":  {
+                                                                                                       "synced":  {
+
+                                                                                                                  }
+                                                                                                   }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Syncer (build dictionary) example"
+}

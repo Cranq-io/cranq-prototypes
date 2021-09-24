@@ -1,0 +1,142 @@
+{
+    "description":  "Example node, that demonstrates a basic polling scenario",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "output":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Counter A":  {
+                                                                          "coordinates":  [
+                                                                                              -116,
+                                                                                              29
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "number/Counter"
+                                                                      },
+                                                        "Equality tester A":  {
+                                                                                  "coordinates":  [
+                                                                                                      49,
+                                                                                                      50
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+                                                                                                 "a":  "10"
+                                                                                             },
+                                                                                  "prototype":  "number/Equality tester"
+                                                                              },
+                                                        "Condition A":  {
+                                                                            "coordinates":  [
+                                                                                                215,
+                                                                                                -33
+                                                                                            ],
+                                                                            "description":  "",
+                                                                            "params":  {
+
+                                                                                       },
+                                                                            "prototype":  "boolean/Condition"
+                                                                        },
+                                                        "Logger A":  {
+                                                                         "coordinates":  [
+                                                                                             -13,
+                                                                                             -115
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "debug/Logger"
+                                                                     },
+                                                        "Delayer A":  {
+                                                                          "coordinates":  [
+                                                                                              28,
+                                                                                              256
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+                                                                                         "delay":  "1000"
+                                                                                     },
+                                                                          "prototype":  "flow/Delayer"
+                                                                      }
+                                                    },
+                                          "connections":  {
+                                                              "Counter A":  {
+                                                                                "count":  {
+                                                                                              "Logger A":  {
+                                                                                                               "data":  {
+                                                                                                                            "description":  ""
+                                                                                                                        }
+                                                                                                           },
+                                                                                              "Equality tester A":  {
+                                                                                                                        "b":  {
+                                                                                                                                  "description":  ""
+                                                                                                                              }
+                                                                                                                    }
+                                                                                          }
+                                                                            },
+                                                              "Equality tester A":  {
+                                                                                        "equal":  {
+                                                                                                      "Condition A":  {
+                                                                                                                          "boolean":  {
+                                                                                                                                          "description":  ""
+                                                                                                                                      }
+                                                                                                                      }
+                                                                                                  }
+                                                                                    },
+                                                              "Condition A":  {
+                                                                                  "false":  {
+                                                                                                "Delayer A":  {
+                                                                                                                  "data":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                            }
+                                                                              },
+                                                              "Delayer A":  {
+                                                                                "data":  {
+                                                                                             "Counter A":  {
+                                                                                                               "trigger":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                           }
+                                                                                         }
+                                                                            }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "Counter A":  {
+                                                                                                        "trigger":  {
+
+                                                                                                                    }
+                                                                                                    }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "output":  {
+                                                                                          "Condition A":  {
+                                                                                                              "true":  {
+
+                                                                                                                       }
+                                                                                                          }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/flow/Polling example"
+}

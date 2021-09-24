@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "a \u0026 b":  {
+                                                        "type":  "{\"a\":boolean,\"b\":boolean}"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "and":  {
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "a \u0026 b":  "outputs.and(data.a \u0026\u0026 data.b, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "boolean/And/_"
+}

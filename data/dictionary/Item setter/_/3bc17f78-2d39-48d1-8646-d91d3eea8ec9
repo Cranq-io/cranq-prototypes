@@ -1,0 +1,28 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "dict \u0026 key \u0026 value":  {
+                                                                          "type":  "{\"dict\":{string:any},\"key\":string,\"value\":any}"
+                                                                      }
+                                 },
+                      "outputs":  {
+                                      "dict":  {
+                                                   "type":  "typeof(dict \u0026 key \u0026 value)[\"dict\"]"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "dict \u0026 key \u0026 value":  "outputs.dict({...data.dict, [data.key]:data.value}, tag);"
+                                                                }
+                                         }
+                        },
+    "name":  "data/dictionary/Item setter/_"
+}

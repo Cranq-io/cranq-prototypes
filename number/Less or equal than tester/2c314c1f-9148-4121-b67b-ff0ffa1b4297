@@ -1,0 +1,121 @@
+{
+    "description":  "Tests whether the value is less or equal than the reference",
+    "interface":  {
+                      "inputs":  {
+                                     "value":  {
+                                                   "description":  "The value to test against the reference",
+                                                   "type":  "number"
+                                               },
+                                     "reference":  {
+                                                       "description":  "The reference to compare the value with",
+                                                       "type":  "number"
+                                                   }
+                                 },
+                      "outputs":  {
+                                      "less or equal":  {
+                                                            "description":  "Whether the value is less or equal than the reference",
+                                                            "type":  "boolean"
+                                                        }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "Or A":  {
+                                                                     "coordinates":  [
+                                                                                         144,
+                                                                                         3
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+
+                                                                                },
+                                                                     "prototype":  "boolean/Or",
+                                                                     "name":  "or"
+                                                                 },
+                                                        "Equality tester A":  {
+                                                                                  "coordinates":  [
+                                                                                                      22,
+                                                                                                      97
+                                                                                                  ],
+                                                                                  "description":  "",
+                                                                                  "params":  {
+
+                                                                                             },
+                                                                                  "prototype":  "number/Equality tester",
+                                                                                  "name":  "is equal"
+                                                                              },
+                                                        "Less than tester A":  {
+                                                                                   "coordinates":  [
+                                                                                                       8,
+                                                                                                       -55
+                                                                                                   ],
+                                                                                   "description":  "",
+                                                                                   "params":  {
+
+                                                                                              },
+                                                                                   "prototype":  "number/Less than tester",
+                                                                                   "name":  "is less"
+                                                                               }
+                                                    },
+                                          "connections":  {
+                                                              "Equality tester A":  {
+                                                                                        "equal":  {
+                                                                                                      "Or A":  {
+                                                                                                                   "b":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                               }
+                                                                                                  }
+                                                                                    },
+                                                              "Less than tester A":  {
+                                                                                         "less":  {
+                                                                                                      "Or A":  {
+                                                                                                                   "a":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                               }
+                                                                                                  }
+                                                                                     }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "value":  {
+                                                                                        "Less than tester A":  {
+                                                                                                                   "a":  {
+
+                                                                                                                         }
+                                                                                                               },
+                                                                                        "Equality tester A":  {
+                                                                                                                  "a":  {
+
+                                                                                                                        }
+                                                                                                              }
+                                                                                    },
+                                                                          "reference":  {
+                                                                                            "Less than tester A":  {
+                                                                                                                       "b":  {
+
+                                                                                                                             }
+                                                                                                                   },
+                                                                                            "Equality tester A":  {
+                                                                                                                      "b":  {
+
+                                                                                                                            }
+                                                                                                                  }
+                                                                                        }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "less or equal":  {
+                                                                                                 "Or A":  {
+                                                                                                              "or":  {
+
+                                                                                                                     }
+                                                                                                          }
+                                                                                             }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Less or equal than tester"
+}

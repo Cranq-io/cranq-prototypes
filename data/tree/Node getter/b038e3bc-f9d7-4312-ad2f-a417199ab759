@@ -1,0 +1,96 @@
+{
+    "description":  "Retrieves the node at the specified path of the tree.",
+    "interface":  {
+                      "inputs":  {
+                                     "tree":  {
+                                                  "type":  "any[] or {string:any}"
+                                              },
+                                     "path":  {
+                                                  "type":  "(string | number)[]"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "node":  {
+                                                   "type":  "any"
+                                               },
+                                      "not found":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync tree \u0026 path":  {
+                                                                                      "coordinates":  [
+                                                                                                          0,
+                                                                                                          0
+                                                                                                      ],
+                                                                                      "description":  "",
+                                                                                      "params":  {
+                                                                                                     "fields":  "[\"tree\",\"path\"]"
+                                                                                                 },
+                                                                                      "prototype":  "flow/Syncer"
+                                                                                  },
+                                                        "get node":  {
+                                                                         "coordinates":  [
+                                                                                             145,
+                                                                                             -109
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "data/tree/Node getter/_"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "sync tree \u0026 path":  {
+                                                                                            "synced":  {
+                                                                                                           "get node":  {
+                                                                                                                            "tree \u0026 path":  {
+                                                                                                                                                     "description":  ""
+                                                                                                                                                 }
+                                                                                                                        }
+                                                                                                       }
+                                                                                        }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "tree":  {
+                                                                                       "sync tree \u0026 path":  {
+                                                                                                                     "tree":  {
+
+                                                                                                                              }
+                                                                                                                 }
+                                                                                   },
+                                                                          "path":  {
+                                                                                       "sync tree \u0026 path":  {
+                                                                                                                     "path":  {
+
+                                                                                                                              }
+                                                                                                                 }
+                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "node":  {
+                                                                                        "get node":  {
+                                                                                                         "node":  {
+
+                                                                                                                  }
+                                                                                                     }
+                                                                                    },
+                                                                           "not found":  {
+                                                                                             "get node":  {
+                                                                                                              "not found":  {
+
+                                                                                                                            }
+                                                                                                          }
+                                                                                         }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/tree/Node getter"
+}

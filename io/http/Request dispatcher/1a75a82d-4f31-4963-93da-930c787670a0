@@ -1,0 +1,155 @@
+{
+    "description":  "Dispatches HTTP request and outputs response or error.",
+    "interface":  {
+                      "inputs":  {
+                                     "verb":  {
+                                                  "type":  "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\""
+                                              },
+                                     "url":  {
+                                                 "type":  "string"
+                                             },
+                                     "headers":  {
+                                                     "type":  "{string:string}"
+                                                 },
+                                     "body":  {
+                                                  "type":  "string"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "status":  {
+                                                     "type":  "string"
+                                                 },
+                                      "headers":  {
+                                                      "type":  "{string:string}"
+                                                  },
+                                      "body":  {
+                                                   "type":  "string"
+                                               },
+                                      "error":  {
+                                                    "type":  "string"
+                                                }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync request":  {
+                                                                             "coordinates":  [
+                                                                                                 0,
+                                                                                                 0
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+                                                                                            "fields":  "[\"verb\",\"url\",\"headers\",\"body\"]"
+                                                                                        },
+                                                                             "prototype":  "flow/Syncer"
+                                                                         },
+                                                        "dispatch request":  {
+                                                                                 "coordinates":  [
+                                                                                                     0,
+                                                                                                     0
+                                                                                                 ],
+                                                                                 "description":  "",
+                                                                                 "params":  {
+
+                                                                                            },
+                                                                                 "prototype":  "io/http/Request dispatcher/_"
+                                                                             },
+                                                        "split response":  {
+                                                                               "coordinates":  [
+                                                                                                   0,
+                                                                                                   0
+                                                                                               ],
+                                                                               "description":  "",
+                                                                               "params":  {
+                                                                                              "fields":  "[\"status\",\"headers\",\"body\"]"
+                                                                                          },
+                                                                               "prototype":  "flow/Splitter"
+                                                                           }
+                                                    },
+                                          "connections":  {
+                                                              "sync request":  {
+                                                                                   "synced":  {
+                                                                                                  "dispatch request":  {
+                                                                                                                           "verb \u0026 url \u0026 headers \u0026 body":  {
+                                                                                                                                                                              "description":  ""
+                                                                                                                                                                          }
+                                                                                                                       }
+                                                                                              }
+                                                                               },
+                                                              "dispatch request":  {
+                                                                                       "response":  {
+                                                                                                        "split response":  {
+                                                                                                                               "unsplit":  {
+                                                                                                                                               "description":  ""
+                                                                                                                                           }
+                                                                                                                           }
+                                                                                                    }
+                                                                                   }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "verb":  {
+                                                                                       "sync request":  {
+                                                                                                            "verb":  {
+
+                                                                                                                     }
+                                                                                                        }
+                                                                                   },
+                                                                          "url":  {
+                                                                                      "sync request":  {
+                                                                                                           "url":  {
+
+                                                                                                                   }
+                                                                                                       }
+                                                                                  },
+                                                                          "headers":  {
+                                                                                          "sync request":  {
+                                                                                                               "headers":  {
+
+                                                                                                                           }
+                                                                                                           }
+                                                                                      },
+                                                                          "body":  {
+                                                                                       "sync request":  {
+                                                                                                            "body":  {
+
+                                                                                                                     }
+                                                                                                        }
+                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "error":  {
+                                                                                         "dispatch request":  {
+                                                                                                                  "error":  {
+
+                                                                                                                            }
+                                                                                                              }
+                                                                                     },
+                                                                           "status":  {
+                                                                                          "split response":  {
+                                                                                                                 "status":  {
+
+                                                                                                                            }
+                                                                                                             }
+                                                                                      },
+                                                                           "headers":  {
+                                                                                           "split response":  {
+                                                                                                                  "headers":  {
+
+                                                                                                                              }
+                                                                                                              }
+                                                                                       },
+                                                                           "body":  {
+                                                                                        "split response":  {
+                                                                                                               "body":  {
+
+                                                                                                                        }
+                                                                                                           }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "io/http/Request dispatcher"
+}

@@ -1,0 +1,241 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "base ID":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "table name":  {
+                                                        "description":  "",
+                                                        "type":  "any"
+                                                    },
+                                     "API key":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 },
+                                     "table":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "verb":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               },
+                                      "URL":  {
+                                                  "description":  "",
+                                                  "type":  "any"
+                                              },
+                                      "headers":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  },
+                                      "body":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "build records":  {
+                                                                              "coordinates":  [
+                                                                                                  -77,
+                                                                                                  25
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "apis/airtable/Table to AirTable records converter"
+                                                                          },
+                                                        "build URL":  {
+                                                                          "coordinates":  [
+                                                                                              103,
+                                                                                              -118
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+                                                                                         "template":  "\"https://api.airtable.com/v0/{base ID}/{table name}\""
+                                                                                     },
+                                                                          "prototype":  "string/Template filler"
+                                                                      },
+                                                        "sync URL params":  {
+                                                                                "coordinates":  [
+                                                                                                    -84,
+                                                                                                    -162
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"base ID\", \"table name\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "\"POST\"":  {
+                                                                         "coordinates":  [
+                                                                                             23,
+                                                                                             187
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "data":  "\"POST\""
+                                                                                    },
+                                                                         "prototype":  "data/Store"
+                                                                     },
+                                                        "table":  {
+                                                                      "coordinates":  [
+                                                                                          -191,
+                                                                                          99
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "flow/Forwarder"
+                                                                  },
+                                                        "build headers":  {
+                                                                              "coordinates":  [
+                                                                                                  3,
+                                                                                                  -56
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+                                                                                             "headers":  "{\"Content-Type\":\"application/json\"}"
+                                                                                         },
+                                                                              "prototype":  "io/http/Bearer token inserter"
+                                                                          },
+                                                        "wrap records":  {
+                                                                             "coordinates":  [
+                                                                                                 19,
+                                                                                                 75
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+                                                                                            "fields":  "[\"records\"]"
+                                                                                        },
+                                                                             "prototype":  "flow/Syncer"
+                                                                         },
+                                                        "to JSON":  {
+                                                                        "coordinates":  [
+                                                                                            107,
+                                                                                            21
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "data/dictionary/JSON serializer"
+                                                                    }
+                                                    },
+                                          "connections":  {
+                                                              "sync URL params":  {
+                                                                                      "synced":  {
+                                                                                                     "build URL":  {
+                                                                                                                       "params":  {
+                                                                                                                                      "description":  ""
+                                                                                                                                  }
+                                                                                                                   }
+                                                                                                 }
+                                                                                  },
+                                                              "table":  {
+                                                                            "data":  {
+                                                                                         "build records":  {
+                                                                                                               "table":  {
+                                                                                                                             "description":  ""
+                                                                                                                         }
+                                                                                                           },
+                                                                                         "\"POST\"":  {
+                                                                                                          "read":  {
+                                                                                                                       "description":  ""
+                                                                                                                   }
+                                                                                                      }
+                                                                                     }
+                                                                        },
+                                                              "wrap records":  {
+                                                                                   "synced":  {
+                                                                                                  "to JSON":  {
+                                                                                                                  "dict":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                              }
+                                                                                              }
+                                                                               },
+                                                              "build records":  {
+                                                                                    "records":  {
+                                                                                                    "wrap records":  {
+                                                                                                                         "records":  {
+                                                                                                                                         "description":  ""
+                                                                                                                                     }
+                                                                                                                     }
+                                                                                                }
+                                                                                }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "API key":  {
+                                                                                          "build headers":  {
+                                                                                                                "token":  {
+
+                                                                                                                          }
+                                                                                                            }
+                                                                                      },
+                                                                          "table":  {
+                                                                                        "table":  {
+                                                                                                      "data":  {
+
+                                                                                                               }
+                                                                                                  }
+                                                                                    },
+                                                                          "base ID":  {
+                                                                                          "sync URL params":  {
+                                                                                                                  "base ID":  {
+
+                                                                                                                              }
+                                                                                                              }
+                                                                                      },
+                                                                          "table name":  {
+                                                                                             "sync URL params":  {
+                                                                                                                     "table name":  {
+
+                                                                                                                                    }
+                                                                                                                 }
+                                                                                         }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "verb":  {
+                                                                                        "\"POST\"":  {
+                                                                                                         "data":  {
+
+                                                                                                                  }
+                                                                                                     }
+                                                                                    },
+                                                                           "URL":  {
+                                                                                       "build URL":  {
+                                                                                                         "filled":  {
+
+                                                                                                                    }
+                                                                                                     }
+                                                                                   },
+                                                                           "headers":  {
+                                                                                           "build headers":  {
+                                                                                                                 "headers":  {
+
+                                                                                                                             }
+                                                                                                             }
+                                                                                       },
+                                                                           "body":  {
+                                                                                        "to JSON":  {
+                                                                                                        "json":  {
+
+                                                                                                                 }
+                                                                                                    }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "apis/airtable/Records insert request builder"
+}

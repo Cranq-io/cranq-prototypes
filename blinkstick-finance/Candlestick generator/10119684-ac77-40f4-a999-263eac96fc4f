@@ -1,0 +1,87 @@
+{
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "2c9a6f16-6127-42d3-8948-459613d950d3":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -45,
+                                                                                                                         54
+                                                                                                                     ],
+                                                                                                     "name":  "sync value \u0026 scope",
+                                                                                                     "prototype":  "flow/Syncer",
+                                                                                                     "params":  {
+                                                                                                                    "fields":  "[\"value\", \"max\"]"
+                                                                                                                }
+                                                                                                 },
+                                                        "8b846c5d-ae60-4cb9-bc9a-345dd6594e5c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         55,
+                                                                                                                         -60
+                                                                                                                     ],
+                                                                                                     "name":  "generate candlestick",
+                                                                                                     "prototype":  "875530b5-d957-4c7b-8455-7620aa4f8c02",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "2c9a6f16-6127-42d3-8948-459613d950d3":  {
+                                                                                                           "synced":  {
+                                                                                                                          "8b846c5d-ae60-4cb9-bc9a-345dd6594e5c":  {
+                                                                                                                                                                       "b96ec769-1577-4abd-a377-1364242d19f5":  {
+
+                                                                                                                                                                                                                }
+                                                                                                                                                                   }
+                                                                                                                      }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "93258040-a049-4630-b9db-0583b3ddc610":  {
+                                                                                                                       "2c9a6f16-6127-42d3-8948-459613d950d3":  {
+                                                                                                                                                                    "value":  {
+
+                                                                                                                                                                              }
+                                                                                                                                                                }
+                                                                                                                   },
+                                                                          "e54927d6-6e42-454d-af1b-e8c338d8f9f1":  {
+                                                                                                                       "2c9a6f16-6127-42d3-8948-459613d950d3":  {
+                                                                                                                                                                    "max":  {
+
+                                                                                                                                                                            }
+                                                                                                                                                                }
+                                                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "417fa230-8dce-4f57-8c7b-356c7bd3dcc9":  {
+                                                                                                                        "8b846c5d-ae60-4cb9-bc9a-345dd6594e5c":  {
+                                                                                                                                                                     "dda60350-8891-4740-95c5-4015e88a2e8f":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "interface":  {
+                      "inputs":  {
+                                     "93258040-a049-4630-b9db-0583b3ddc610":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "value"
+                                                                              },
+                                     "e54927d6-6e42-454d-af1b-e8c338d8f9f1":  {
+                                                                                  "type":  "any",
+                                                                                  "name":  "max"
+                                                                              }
+                                 },
+                      "outputs":  {
+                                      "417fa230-8dce-4f57-8c7b-356c7bd3dcc9":  {
+                                                                                   "type":  "any",
+                                                                                   "name":  "colors"
+                                                                               }
+                                  }
+                  },
+    "name":  "blinkstick-finance/Candlestick generator"
+}

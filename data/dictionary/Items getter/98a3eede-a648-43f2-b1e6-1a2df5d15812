@@ -1,0 +1,85 @@
+{
+    "description":  "Retrieves multiple items\u0027 values from the dictionary, in the order of the keys provided.",
+    "interface":  {
+                      "inputs":  {
+                                     "dict":  {
+                                                  "type":  "{string:any}"
+                                              },
+                                     "keys":  {
+                                                  "type":  "string[]"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "values":  {
+                                                     "type":  "typeof(dict)[string][]"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync dict \u0026 keys":  {
+                                                                                      "coordinates":  [
+                                                                                                          0,
+                                                                                                          0
+                                                                                                      ],
+                                                                                      "description":  "",
+                                                                                      "params":  {
+                                                                                                     "fields":  "[\"dict\",\"keys\"]"
+                                                                                                 },
+                                                                                      "prototype":  "flow/Syncer"
+                                                                                  },
+                                                        "get items":  {
+                                                                          "coordinates":  [
+                                                                                              0,
+                                                                                              0
+                                                                                          ],
+                                                                          "description":  "",
+                                                                          "params":  {
+
+                                                                                     },
+                                                                          "prototype":  "data/dictionary/Items getter/_"
+                                                                      }
+                                                    },
+                                          "connections":  {
+                                                              "sync dict \u0026 keys":  {
+                                                                                            "synced":  {
+                                                                                                           "get items":  {
+                                                                                                                             "dict \u0026 keys":  {
+                                                                                                                                                      "description":  ""
+                                                                                                                                                  }
+                                                                                                                         }
+                                                                                                       }
+                                                                                        }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "dict":  {
+                                                                                       "sync dict \u0026 keys":  {
+                                                                                                                     "dict":  {
+
+                                                                                                                              }
+                                                                                                                 }
+                                                                                   },
+                                                                          "keys":  {
+                                                                                       "sync dict \u0026 keys":  {
+                                                                                                                     "keys":  {
+
+                                                                                                                              }
+                                                                                                                 }
+                                                                                   }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "values":  {
+                                                                                          "get items":  {
+                                                                                                            "values":  {
+
+                                                                                                                       }
+                                                                                                        }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/dictionary/Items getter"
+}

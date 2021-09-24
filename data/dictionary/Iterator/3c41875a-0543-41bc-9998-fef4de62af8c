@@ -1,0 +1,31 @@
+{
+    "description":  "Iterates through items of a dictionary.",
+    "interface":  {
+                      "inputs":  {
+                                     "dict":  {
+                                                  "type":  "{string:any}"
+                                              }
+                                 },
+                      "outputs":  {
+                                      "value":  {
+                                                    "type":  "typeof(dict)[string]"
+                                                },
+                                      "key":  {
+                                                  "type":  "string"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "",
+                                             "inputFunctions":  {
+                                                                    "dict":  "const keys = Object.keys(data);\nfor (let i=0, length=keys.length; i \u003c length; i++) {\n  const key = keys[i];\n  const itemTag = `${tag}:${i}`;\n  outputs.key(key, itemTag);\n  outputs.value(data[key], itemTag);\n}"
+                                                                }
+                                         }
+                        },
+    "name":  "data/dictionary/Iterator"
+}

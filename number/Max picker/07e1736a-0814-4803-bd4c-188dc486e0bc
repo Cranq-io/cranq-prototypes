@@ -1,0 +1,85 @@
+{
+    "description":  "Picks the maximum out of two numbers.",
+    "interface":  {
+                      "inputs":  {
+                                     "a":  {
+                                               "type":  "number"
+                                           },
+                                     "b":  {
+                                               "type":  "number"
+                                           }
+                                 },
+                      "outputs":  {
+                                      "max":  {
+                                                  "type":  "number"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync a \u0026 b":  {
+                                                                                "coordinates":  [
+                                                                                                    0,
+                                                                                                    0
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+                                                                                               "fields":  "[\"a\",\"b\"]"
+                                                                                           },
+                                                                                "prototype":  "flow/Syncer"
+                                                                            },
+                                                        "pick max":  {
+                                                                         "coordinates":  [
+                                                                                             0,
+                                                                                             0
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+
+                                                                                    },
+                                                                         "prototype":  "number/Max picker/_"
+                                                                     }
+                                                    },
+                                          "connections":  {
+                                                              "sync a \u0026 b":  {
+                                                                                      "synced":  {
+                                                                                                     "pick max":  {
+                                                                                                                      "a \u0026 b":  {
+                                                                                                                                         "description":  ""
+                                                                                                                                     }
+                                                                                                                  }
+                                                                                                 }
+                                                                                  }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "a":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "a":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                },
+                                                                          "b":  {
+                                                                                    "sync a \u0026 b":  {
+                                                                                                            "b":  {
+
+                                                                                                                  }
+                                                                                                        }
+                                                                                }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "max":  {
+                                                                                       "pick max":  {
+                                                                                                        "max":  {
+
+                                                                                                                }
+                                                                                                    }
+                                                                                   }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "number/Max picker"
+}

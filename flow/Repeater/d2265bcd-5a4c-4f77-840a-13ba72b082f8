@@ -1,0 +1,88 @@
+{
+    "description":  "Repeats the input the specified amount of times.",
+    "interface":  {
+                      "inputs":  {
+                                     "data":  {
+                                                  "description":  "Receives data to be repeated.",
+                                                  "type":  "any"
+                                              },
+                                     "count":  {
+                                                   "description":  "Receives the number of times the input is to be repeated.",
+                                                   "type":  "number"
+                                               }
+                                 },
+                      "outputs":  {
+                                      "data":  {
+                                                   "description":  "Sends the repeated signal.",
+                                                   "type":  "typeof(data)"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync data \u0026 count":  {
+                                                                                       "coordinates":  [
+                                                                                                           0,
+                                                                                                           0
+                                                                                                       ],
+                                                                                       "description":  "",
+                                                                                       "params":  {
+                                                                                                      "fields":  "[\"data\",\"count\"]"
+                                                                                                  },
+                                                                                       "prototype":  "flow/Syncer"
+                                                                                   },
+                                                        "repeat":  {
+                                                                       "coordinates":  [
+                                                                                           0,
+                                                                                           0
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "flow/Repeater/_"
+                                                                   }
+                                                    },
+                                          "connections":  {
+                                                              "sync data \u0026 count":  {
+                                                                                             "synced":  {
+                                                                                                            "repeat":  {
+                                                                                                                           "data \u0026 count":  {
+                                                                                                                                                     "description":  ""
+                                                                                                                                                 }
+                                                                                                                       }
+                                                                                                        }
+                                                                                         }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "data":  {
+                                                                                       "sync data \u0026 count":  {
+                                                                                                                      "data":  {
+
+                                                                                                                               }
+                                                                                                                  }
+                                                                                   },
+                                                                          "count":  {
+                                                                                        "sync data \u0026 count":  {
+                                                                                                                       "count":  {
+
+                                                                                                                                 }
+                                                                                                                   }
+                                                                                    }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "data":  {
+                                                                                        "repeat":  {
+                                                                                                       "data":  {
+
+                                                                                                                }
+                                                                                                   }
+                                                                                    }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "flow/Repeater"
+}

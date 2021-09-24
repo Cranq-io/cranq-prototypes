@@ -1,0 +1,38 @@
+{
+    "description":  "",
+    "interface":  {
+                      "inputs":  {
+                                     "array":  {
+                                                   "type":  "any[]"
+                                               },
+                                     "index \u0026 mapped item":  {
+                                                                      "type":  "{\"index\":number,\"mapped item\":any}"
+                                                                  }
+                                 },
+                      "outputs":  {
+                                      "mapped":  {
+                                                     "type":  "typeof(index \u0026 mapped item)[\"mapped item\"][]"
+                                                 },
+                                      "index":  {
+                                                    "type":  "number"
+                                                },
+                                      "item":  {
+                                                   "type":  "typeof(array)[number]"
+                                               }
+                                  }
+                  },
+    "implementations":  {
+                            "es6-node":  {
+                                             "cleanupFunction":  "",
+                                             "dependencies":  {
+
+                                                              },
+                                             "initFunction":  "state.mappingsByTag = state.mappingsByTag || new Map();",
+                                             "inputFunctions":  {
+                                                                    "array":  "const {length} = data;\nif (length) {\n  state.mappingsByTag.set(tag, {\n    result: [],\n    cursor: 0,\n    length\n  });\n  for (let i=0; i\u003clength; i++) {\n    const itemTag = `${tag}:${i}`;\n    outputs.item(data[i], itemTag);\n    outputs.index(i, itemTag);\n  }\n} else {\n  outputs.mapped([], tag);\n}",
+                                                                    "index \u0026 mapped item":  "const mappingTag = tag.substr(0, tag.lastIndexOf(\":\"));\nconst mapping = state.mappingsByTag.get(mappingTag);\nconst {result} = mapping;\nresult[data.index] = data[\"mapped item\"];\nif (++mapping.cursor === mapping.length) {\n  state.mappingsByTag.delete(mappingTag);\n  outputs.mapped(result, mappingTag);\n}"
+                                                                }
+                                         }
+                        },
+    "name":  "data/array/Mapper/_"
+}

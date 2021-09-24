@@ -1,0 +1,338 @@
+{
+    "description":  "Tests whether the dictionary has the expected keys (only the expected keys if in strict mode)",
+    "interface":  {
+                      "inputs":  {
+                                     "dict":  {
+                                                  "description":  "The dictionary to test",
+                                                  "type":  "dictionary"
+                                              },
+                                     "expected keys":  {
+                                                           "description":  "An array of expected keys",
+                                                           "type":  "array"
+                                                       },
+                                     "strict":  {
+                                                    "type":  "any",
+                                                    "description":  "Boolean.\nWhether to accept extra keys or not."
+                                                }
+                                 },
+                      "outputs":  {
+                                      "has":  {
+                                                  "description":  "Whether the dictionary has the expected keys",
+                                                  "type":  "boolean"
+                                              }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "actual":  {
+                                                                       "coordinates":  [
+                                                                                           -340,
+                                                                                           -143
+                                                                                       ],
+                                                                       "description":  "",
+                                                                       "params":  {
+
+                                                                                  },
+                                                                       "prototype":  "data/Store"
+                                                                   },
+                                                        "wait":  {
+                                                                     "coordinates":  [
+                                                                                         -216,
+                                                                                         -42
+                                                                                     ],
+                                                                     "description":  "wait for actual to be set",
+                                                                     "params":  {
+
+                                                                                },
+                                                                     "prototype":  "flow/Forwarder/double",
+                                                                     "name":  "hold expected keys"
+                                                                 },
+                                                        "has key":  {
+                                                                        "coordinates":  [
+                                                                                            31,
+                                                                                            -166
+                                                                                        ],
+                                                                        "description":  "",
+                                                                        "params":  {
+
+                                                                                   },
+                                                                        "prototype":  "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+                                                                        "name":  "key present in actual"
+                                                                    },
+                                                        "check keys":  {
+                                                                           "coordinates":  [
+                                                                                               33,
+                                                                                               -64
+                                                                                           ],
+                                                                           "description":  "",
+                                                                           "params":  {
+
+                                                                                      },
+                                                                           "prototype":  "data/array/Mapper",
+                                                                           "name":  "check expected keys"
+                                                                       },
+                                                        "all true":  {
+                                                                         "coordinates":  [
+                                                                                             208,
+                                                                                             -55
+                                                                                         ],
+                                                                         "description":  "",
+                                                                         "params":  {
+                                                                                        "expected":  "true"
+                                                                                    },
+                                                                         "prototype":  "57df6520-d6d4-4f27-a3b9-74c1305c0897",
+                                                                         "name":  "all keys present"
+                                                                     },
+                                                        "2dacb726-8e94-4050-acc8-63ff68c68d23":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         384,
+                                                                                                                         75
+                                                                                                                     ],
+                                                                                                     "name":  "and",
+                                                                                                     "prototype":  "boolean/And",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "83616978-3304-4684-a4f5-9333b2284e12":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         218,
+                                                                                                                         225
+                                                                                                                     ],
+                                                                                                     "name":  "skip with true",
+                                                                                                     "prototype":  "data/Store",
+                                                                                                     "params":  {
+                                                                                                                    "data":  "true"
+                                                                                                                }
+                                                                                                 },
+                                                        "e5aa0181-b5b6-4e5f-bff5-a492d97745be":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -50,
+                                                                                                                         187
+                                                                                                                     ],
+                                                                                                     "name":  "if strict",
+                                                                                                     "prototype":  "flow/Fork",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "b16710da-aab4-4fd0-bc81-b264fdd29e5c":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         216,
+                                                                                                                         146
+                                                                                                                     ],
+                                                                                                     "name":  "same number of  keys for actual \u0026 expected",
+                                                                                                     "prototype":  "8eeaa000-c916-4045-808d-b918f24d1aa2",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "b8937282-d855-451b-b374-701f9e703acd":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         86,
+                                                                                                                         76
+                                                                                                                     ],
+                                                                                                     "name":  "actual keys",
+                                                                                                     "prototype":  "data/dictionary/Keys getter",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 },
+                                                        "2b075e8f-a47d-4284-99dd-1e91b37ebe55":  {
+                                                                                                     "coordinates":  [
+                                                                                                                         -515,
+                                                                                                                         0
+                                                                                                                     ],
+                                                                                                     "name":  "forwarder/triple",
+                                                                                                     "prototype":  "flow/Forwarder/triple",
+                                                                                                     "params":  {
+
+                                                                                                                }
+                                                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "actual":  {
+                                                                             "written":  {
+                                                                                             "wait":  {
+                                                                                                          "1":  {
+                                                                                                                    "description":  ""
+                                                                                                                }
+                                                                                                      }
+                                                                                         },
+                                                                             "data":  {
+                                                                                          "has key":  {
+                                                                                                          "dict":  {
+                                                                                                                       "description":  ""
+                                                                                                                   }
+                                                                                                      },
+                                                                                          "b8937282-d855-451b-b374-701f9e703acd":  {
+                                                                                                                                       "dict":  {
+
+                                                                                                                                                }
+                                                                                                                                   }
+                                                                                      }
+                                                                         },
+                                                              "wait":  {
+                                                                           "2":  {
+                                                                                     "check keys":  {
+                                                                                                        "array":  {
+                                                                                                                      "description":  ""
+                                                                                                                  }
+                                                                                                    },
+                                                                                     "e5aa0181-b5b6-4e5f-bff5-a492d97745be":  {
+                                                                                                                                  "data":  {
+
+                                                                                                                                           }
+                                                                                                                              }
+                                                                                 }
+                                                                       },
+                                                              "check keys":  {
+                                                                                 "item":  {
+                                                                                              "has key":  {
+                                                                                                              "key":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                          },
+                                                                                              "actual":  {
+                                                                                                             "read":  {
+                                                                                                                          "description":  ""
+                                                                                                                      }
+                                                                                                         }
+                                                                                          },
+                                                                                 "mapped":  {
+                                                                                                "all true":  {
+                                                                                                                 "array":  {
+                                                                                                                               "description":  ""
+                                                                                                                           }
+                                                                                                             }
+                                                                                            }
+                                                                             },
+                                                              "has key":  {
+                                                                              "has":  {
+                                                                                          "check keys":  {
+                                                                                                             "mapped item":  {
+                                                                                                                                 "description":  ""
+                                                                                                                             }
+                                                                                                         }
+                                                                                      }
+                                                                          },
+                                                              "83616978-3304-4684-a4f5-9333b2284e12":  {
+                                                                                                           "data":  {
+                                                                                                                        "2dacb726-8e94-4050-acc8-63ff68c68d23":  {
+                                                                                                                                                                     "b":  {
+
+                                                                                                                                                                           }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                                                       },
+                                                              "e5aa0181-b5b6-4e5f-bff5-a492d97745be":  {
+                                                                                                           "false":  {
+                                                                                                                         "83616978-3304-4684-a4f5-9333b2284e12":  {
+                                                                                                                                                                      "read":  {
+
+                                                                                                                                                                               }
+                                                                                                                                                                  }
+                                                                                                                     },
+                                                                                                           "true":  {
+                                                                                                                        "b16710da-aab4-4fd0-bc81-b264fdd29e5c":  {
+                                                                                                                                                                     "8c54164c-70bc-4dd4-b2f7-7559ee42e3f2":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 },
+                                                                                                                        "actual":  {
+                                                                                                                                       "read":  {
+
+                                                                                                                                                }
+                                                                                                                                   }
+                                                                                                                    }
+                                                                                                       },
+                                                              "b16710da-aab4-4fd0-bc81-b264fdd29e5c":  {
+                                                                                                           "dac25b79-8a78-457d-9c9c-52cb867f85a0":  {
+                                                                                                                                                        "2dacb726-8e94-4050-acc8-63ff68c68d23":  {
+                                                                                                                                                                                                     "b":  {
+
+                                                                                                                                                                                                           }
+                                                                                                                                                                                                 }
+                                                                                                                                                    }
+                                                                                                       },
+                                                              "b8937282-d855-451b-b374-701f9e703acd":  {
+                                                                                                           "keys":  {
+                                                                                                                        "b16710da-aab4-4fd0-bc81-b264fdd29e5c":  {
+                                                                                                                                                                     "a1bcc52a-e27f-4ea9-9ccd-ed637bcf5e19":  {
+
+                                                                                                                                                                                                              }
+                                                                                                                                                                 }
+                                                                                                                    }
+                                                                                                       },
+                                                              "all true":  {
+                                                                               "same":  {
+                                                                                            "2dacb726-8e94-4050-acc8-63ff68c68d23":  {
+                                                                                                                                         "a":  {
+
+                                                                                                                                               }
+                                                                                                                                     }
+                                                                                        }
+                                                                           },
+                                                              "2b075e8f-a47d-4284-99dd-1e91b37ebe55":  {
+                                                                                                           "1":  {
+                                                                                                                     "actual":  {
+                                                                                                                                    "data":  {
+
+                                                                                                                                             }
+                                                                                                                                }
+                                                                                                                 },
+                                                                                                           "2":  {
+                                                                                                                     "wait":  {
+                                                                                                                                  "2":  {
+
+                                                                                                                                        }
+                                                                                                                              }
+                                                                                                                 },
+                                                                                                           "3":  {
+                                                                                                                     "e5aa0181-b5b6-4e5f-bff5-a492d97745be":  {
+                                                                                                                                                                  "condition":  {
+
+                                                                                                                                                                                }
+                                                                                                                                                              }
+                                                                                                                 }
+                                                                                                       }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "dict":  {
+                                                                                       "2b075e8f-a47d-4284-99dd-1e91b37ebe55":  {
+                                                                                                                                    "1":  {
+
+                                                                                                                                          }
+                                                                                                                                }
+                                                                                   },
+                                                                          "expected keys":  {
+                                                                                                "2b075e8f-a47d-4284-99dd-1e91b37ebe55":  {
+                                                                                                                                             "2":  {
+
+                                                                                                                                                   }
+                                                                                                                                         }
+                                                                                            },
+                                                                          "strict":  {
+                                                                                         "2b075e8f-a47d-4284-99dd-1e91b37ebe55":  {
+                                                                                                                                      "3":  {
+
+                                                                                                                                            }
+                                                                                                                                  }
+                                                                                     }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "has":  {
+                                                                                       "2dacb726-8e94-4050-acc8-63ff68c68d23":  {
+                                                                                                                                    "and":  {
+
+                                                                                                                                            }
+                                                                                                                                }
+                                                                                   }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "data/dictionary/Has keys tester"
+}

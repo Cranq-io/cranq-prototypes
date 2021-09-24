@@ -1,0 +1,183 @@
+{
+    "description":  "Example node, that demonstrates the usage of array getter nodes.",
+    "interface":  {
+                      "inputs":  {
+                                     "run":  {
+                                                 "description":  "",
+                                                 "type":  "any"
+                                             }
+                                 },
+                      "outputs":  {
+                                      "first":  {
+                                                    "description":  "",
+                                                    "type":  "any"
+                                                },
+                                      "last":  {
+                                                   "description":  "",
+                                                   "type":  "any"
+                                               },
+                                      "index_1":  {
+                                                      "description":  "",
+                                                      "type":  "any"
+                                                  },
+                                      "length":  {
+                                                     "description":  "",
+                                                     "type":  "any"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "1":  {
+                                                                  "coordinates":  [
+                                                                                      -65,
+                                                                                      -67
+                                                                                  ],
+                                                                  "description":  "",
+                                                                  "params":  {
+                                                                                 "data":  "8"
+                                                                             },
+                                                                  "prototype":  "data/Store"
+                                                              },
+                                                        "First item getter A":  {
+                                                                                    "coordinates":  [
+                                                                                                        17,
+                                                                                                        84
+                                                                                                    ],
+                                                                                    "description":  "",
+                                                                                    "params":  {
+
+                                                                                               },
+                                                                                    "prototype":  "data/array/First item getter"
+                                                                                },
+                                                        "Item getter A":  {
+                                                                              "coordinates":  [
+                                                                                                  33,
+                                                                                                  -171
+                                                                                              ],
+                                                                              "description":  "",
+                                                                              "params":  {
+
+                                                                                         },
+                                                                              "prototype":  "data/array/Item getter"
+                                                                          },
+                                                        "Last item getter A":  {
+                                                                                   "coordinates":  [
+                                                                                                       17,
+                                                                                                       -5
+                                                                                                   ],
+                                                                                   "description":  "",
+                                                                                   "params":  {
+
+                                                                                              },
+                                                                                   "prototype":  "data/array/Last item getter"
+                                                                               },
+                                                        "Length getter A":  {
+                                                                                "coordinates":  [
+                                                                                                    35,
+                                                                                                    -247
+                                                                                                ],
+                                                                                "description":  "",
+                                                                                "params":  {
+
+                                                                                           },
+                                                                                "prototype":  "data/array/Length getter"
+                                                                            },
+                                                        "create_array":  {
+                                                                             "coordinates":  [
+                                                                                                 -349,
+                                                                                                 -57
+                                                                                             ],
+                                                                             "description":  "",
+                                                                             "params":  {
+
+                                                                                        },
+                                                                             "prototype":  "tutorials/data/Syncer (build emps array) example"
+                                                                         }
+                                                    },
+                                          "connections":  {
+                                                              "1":  {
+                                                                        "data":  {
+                                                                                     "Item getter A":  {
+                                                                                                           "index":  {
+                                                                                                                         "description":  ""
+                                                                                                                     }
+                                                                                                       }
+                                                                                 }
+                                                                    },
+                                                              "create_array":  {
+                                                                                   "array":  {
+                                                                                                 "1":  {
+                                                                                                           "read":  {
+                                                                                                                        "description":  ""
+                                                                                                                    }
+                                                                                                       },
+                                                                                                 "First item getter A":  {
+                                                                                                                             "array":  {
+                                                                                                                                           "description":  ""
+                                                                                                                                       }
+                                                                                                                         },
+                                                                                                 "Item getter A":  {
+                                                                                                                       "array":  {
+                                                                                                                                     "description":  ""
+                                                                                                                                 }
+                                                                                                                   },
+                                                                                                 "Last item getter A":  {
+                                                                                                                            "array":  {
+                                                                                                                                          "description":  ""
+                                                                                                                                      }
+                                                                                                                        },
+                                                                                                 "Length getter A":  {
+                                                                                                                         "array":  {
+                                                                                                                                       "description":  ""
+                                                                                                                                   }
+                                                                                                                     }
+                                                                                             }
+                                                                               }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "run":  {
+                                                                                      "create_array":  {
+                                                                                                           "build":  {
+
+                                                                                                                     }
+                                                                                                       }
+                                                                                  }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "first":  {
+                                                                                         "First item getter A":  {
+                                                                                                                     "item":  {
+
+                                                                                                                              }
+                                                                                                                 }
+                                                                                     },
+                                                                           "last":  {
+                                                                                        "Last item getter A":  {
+                                                                                                                   "item":  {
+
+                                                                                                                            }
+                                                                                                               }
+                                                                                    },
+                                                                           "index_1":  {
+                                                                                           "Item getter A":  {
+                                                                                                                 "item":  {
+
+                                                                                                                          }
+                                                                                                             }
+                                                                                       },
+                                                                           "length":  {
+                                                                                          "Length getter A":  {
+                                                                                                                  "length":  {
+
+                                                                                                                             }
+                                                                                                              }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "tutorials/data/Getter (array) example"
+}

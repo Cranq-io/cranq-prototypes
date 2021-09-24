@@ -1,0 +1,51 @@
+{
+    "description":  "Project root",
+    "interface":  {
+                      "inputs":  {
+
+                                 },
+                      "outputs":  {
+
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "start":  {
+                                                                      "coordinates":  [
+                                                                                          -100,
+                                                                                          0
+                                                                                      ],
+                                                                      "description":  "",
+                                                                      "params":  {
+
+                                                                                 },
+                                                                      "prototype":  "flow/Starter"
+                                                                  },
+                                                        "log":  {
+                                                                    "coordinates":  [
+                                                                                        100,
+                                                                                        0
+                                                                                    ],
+                                                                    "description":  "",
+                                                                    "params":  {
+
+                                                                               },
+                                                                    "prototype":  "debug/Data logger"
+                                                                }
+                                                    },
+                                          "connections":  {
+
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+
+                                                                      },
+                                                           "outputs":  {
+
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "root"
+}

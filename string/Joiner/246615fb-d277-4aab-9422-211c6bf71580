@@ -1,0 +1,85 @@
+{
+    "description":  "Joins an ordered list of strings into a single string.",
+    "interface":  {
+                      "inputs":  {
+                                     "separator":  {
+                                                       "type":  "string"
+                                                   },
+                                     "substrings":  {
+                                                        "type":  "string[]"
+                                                    }
+                                 },
+                      "outputs":  {
+                                      "joined":  {
+                                                     "type":  "string"
+                                                 }
+                                  }
+                  },
+    "implementations":  {
+                            "cranq":  {
+                                          "nodes":  {
+                                                        "sync separator \u0026 substrings":  {
+                                                                                                 "coordinates":  [
+                                                                                                                     0,
+                                                                                                                     0
+                                                                                                                 ],
+                                                                                                 "description":  "",
+                                                                                                 "params":  {
+                                                                                                                "fields":  "[\"separator\",\"substrings\"]"
+                                                                                                            },
+                                                                                                 "prototype":  "flow/Syncer"
+                                                                                             },
+                                                        "join":  {
+                                                                     "coordinates":  [
+                                                                                         0,
+                                                                                         0
+                                                                                     ],
+                                                                     "description":  "",
+                                                                     "params":  {
+
+                                                                                },
+                                                                     "prototype":  "string/Joiner/_"
+                                                                 }
+                                                    },
+                                          "connections":  {
+                                                              "sync separator \u0026 substrings":  {
+                                                                                                       "synced":  {
+                                                                                                                      "join":  {
+                                                                                                                                   "separator \u0026 substrings":  {
+                                                                                                                                                                       "description":  ""
+                                                                                                                                                                   }
+                                                                                                                               }
+                                                                                                                  }
+                                                                                                   }
+                                                          },
+                                          "forwards":  {
+                                                           "inputs":  {
+                                                                          "separator":  {
+                                                                                            "sync separator \u0026 substrings":  {
+                                                                                                                                     "separator":  {
+
+                                                                                                                                                   }
+                                                                                                                                 }
+                                                                                        },
+                                                                          "substrings":  {
+                                                                                             "sync separator \u0026 substrings":  {
+                                                                                                                                      "substrings":  {
+
+                                                                                                                                                     }
+                                                                                                                                  }
+                                                                                         }
+                                                                      },
+                                                           "outputs":  {
+                                                                           "joined":  {
+                                                                                          "join":  {
+                                                                                                       "joined":  {
+
+                                                                                                                  }
+                                                                                                   }
+                                                                                      }
+                                                                       }
+                                                       }
+                                      }
+                        },
+    "name":  "string/Joiner"
+}

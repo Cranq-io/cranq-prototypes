@@ -1,1 +1,28 @@
-{"description":"Determines the length of the input string.","interface":{"inputs":{"5492a1ab-d090-491f-bc75-6a076ca54e5f":{"type":"string","name":"string"}},"outputs":{"a686073d-a910-4893-96c7-fb0bc900ea97":{"type":"number","name":"length"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"5492a1ab-d090-491f-bc75-6a076ca54e5f":"outputs.length(data.length, tag);"}}},"name":"string/Length getter"}
+{
+  "description": "Determines the length of the input string.",
+  "interface": {
+    "inputs": {
+      "5492a1ab-d090-491f-bc75-6a076ca54e5f": {
+        "type": "string",
+        "name": "string"
+      }
+    },
+    "outputs": {
+      "a686073d-a910-4893-96c7-fb0bc900ea97": {
+        "type": "number",
+        "name": "length"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "5492a1ab-d090-491f-bc75-6a076ca54e5f": "outputs.length(data.length, tag);"
+      }
+    }
+  },
+  "name": "string/Length getter"
+}

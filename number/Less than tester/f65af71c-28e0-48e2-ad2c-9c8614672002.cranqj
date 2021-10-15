@@ -1,1 +1,82 @@
-{"description":"Checks if 'a' is less than 'b'.","interface":{"inputs":{"357edd62-41de-4977-83b8-de8edde231d4":{"type":"number","name":"a"},"70e338f7-381a-499f-bf36-e5e4a9a30ab9":{"type":"number","name":"b"}},"outputs":{"2afc6921-7beb-4e8a-aec1-be4a46a2caa0":{"type":"boolean","name":"less"}}},"implementations":{"cranq":{"nodes":{"745889fb-e03a-4145-96e1-2b567a783a65":{"coordinates":[-19,65],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"a\",\"b\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync a & b"},"175e655e-45f4-4d35-a5b7-34b5013bac54":{"coordinates":[16,-58],"description":"","params":{},"prototype":"61688c69-d5f6-4648-9b7d-b408fc15a767","name":"less than"}},"connections":{"745889fb-e03a-4145-96e1-2b567a783a65":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"175e655e-45f4-4d35-a5b7-34b5013bac54":{"e543929e-247b-490e-8eef-45edbc9849b6":{"description":""}}}}},"forwards":{"inputs":{"357edd62-41de-4977-83b8-de8edde231d4":{"745889fb-e03a-4145-96e1-2b567a783a65":{"a":{}}},"70e338f7-381a-499f-bf36-e5e4a9a30ab9":{"745889fb-e03a-4145-96e1-2b567a783a65":{"b":{}}}},"outputs":{"2afc6921-7beb-4e8a-aec1-be4a46a2caa0":{"175e655e-45f4-4d35-a5b7-34b5013bac54":{"b5614ad3-c87f-49c8-9045-689f7e3ed527":{}}}}}}},"name":"number/Less than tester"}
+{
+  "description": "Checks if 'a' is less than 'b'.",
+  "interface": {
+    "inputs": {
+      "357edd62-41de-4977-83b8-de8edde231d4": {
+        "type": "number",
+        "name": "a"
+      },
+      "70e338f7-381a-499f-bf36-e5e4a9a30ab9": {
+        "type": "number",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "2afc6921-7beb-4e8a-aec1-be4a46a2caa0": {
+        "type": "boolean",
+        "name": "less"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "745889fb-e03a-4145-96e1-2b567a783a65": {
+          "coordinates": [
+            -19,
+            65
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\",\"b\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync a & b"
+        },
+        "175e655e-45f4-4d35-a5b7-34b5013bac54": {
+          "coordinates": [
+            16,
+            -58
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "61688c69-d5f6-4648-9b7d-b408fc15a767",
+          "name": "less than"
+        }
+      },
+      "connections": {
+        "745889fb-e03a-4145-96e1-2b567a783a65": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "175e655e-45f4-4d35-a5b7-34b5013bac54": {
+              "e543929e-247b-490e-8eef-45edbc9849b6": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "357edd62-41de-4977-83b8-de8edde231d4": {
+            "745889fb-e03a-4145-96e1-2b567a783a65": {
+              "a": {}
+            }
+          },
+          "70e338f7-381a-499f-bf36-e5e4a9a30ab9": {
+            "745889fb-e03a-4145-96e1-2b567a783a65": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "2afc6921-7beb-4e8a-aec1-be4a46a2caa0": {
+            "175e655e-45f4-4d35-a5b7-34b5013bac54": {
+              "b5614ad3-c87f-49c8-9045-689f7e3ed527": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "number/Less than tester"
+}

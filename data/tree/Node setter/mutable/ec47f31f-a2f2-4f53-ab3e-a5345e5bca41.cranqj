@@ -1,1 +1,91 @@
-{"description":"Sets a node at the specified path of the tree. Mutates input.","interface":{"inputs":{"0d7e3081-01f4-41bf-b4b3-822ee0990aa3":{"type":"any[] or {string:any}","name":"tree"},"1670d7c3-36ce-42d6-8411-b90866ca411a":{"type":"(string | number)[]","name":"path"},"5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a":{"type":"any","name":"node"}},"outputs":{"eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c":{"type":"null","name":"written"}}},"implementations":{"cranq":{"nodes":{"c86427a5-ebd2-4aa3-8032-4bf9383e7695":{"coordinates":[-20,67],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"tree\",\"path\",\"node\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync tree & path & node"},"db9c2660-ff6c-4308-80c1-f4c95472409e":{"coordinates":[7,-54],"description":"","params":{},"prototype":"f8dd4c21-dfc4-476e-8361-f6ef972d5e09","name":"set node"}},"connections":{"c86427a5-ebd2-4aa3-8032-4bf9383e7695":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"db9c2660-ff6c-4308-80c1-f4c95472409e":{"71cc8f4a-8801-4abc-9352-21125bb24296":{"description":""}}}}},"forwards":{"inputs":{"0d7e3081-01f4-41bf-b4b3-822ee0990aa3":{"c86427a5-ebd2-4aa3-8032-4bf9383e7695":{"tree":{}}},"1670d7c3-36ce-42d6-8411-b90866ca411a":{"c86427a5-ebd2-4aa3-8032-4bf9383e7695":{"path":{}}},"5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a":{"c86427a5-ebd2-4aa3-8032-4bf9383e7695":{"node":{}}}},"outputs":{"eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c":{"db9c2660-ff6c-4308-80c1-f4c95472409e":{"504be2a1-59dc-4120-bd4b-dc2a70c75d78":{}}}}}}},"name":"data/tree/Node setter/mutable"}
+{
+  "description": "Sets a node at the specified path of the tree. Mutates input.",
+  "interface": {
+    "inputs": {
+      "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {
+        "type": "any[] or {string:any}",
+        "name": "tree"
+      },
+      "1670d7c3-36ce-42d6-8411-b90866ca411a": {
+        "type": "(string | number)[]",
+        "name": "path"
+      },
+      "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {
+        "type": "any",
+        "name": "node"
+      }
+    },
+    "outputs": {
+      "eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c": {
+        "type": "null",
+        "name": "written"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c86427a5-ebd2-4aa3-8032-4bf9383e7695": {
+          "coordinates": [
+            -20,
+            67
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"tree\",\"path\",\"node\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync tree & path & node"
+        },
+        "db9c2660-ff6c-4308-80c1-f4c95472409e": {
+          "coordinates": [
+            7,
+            -54
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "f8dd4c21-dfc4-476e-8361-f6ef972d5e09",
+          "name": "set node"
+        }
+      },
+      "connections": {
+        "c86427a5-ebd2-4aa3-8032-4bf9383e7695": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "db9c2660-ff6c-4308-80c1-f4c95472409e": {
+              "71cc8f4a-8801-4abc-9352-21125bb24296": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {
+            "c86427a5-ebd2-4aa3-8032-4bf9383e7695": {
+              "tree": {}
+            }
+          },
+          "1670d7c3-36ce-42d6-8411-b90866ca411a": {
+            "c86427a5-ebd2-4aa3-8032-4bf9383e7695": {
+              "path": {}
+            }
+          },
+          "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {
+            "c86427a5-ebd2-4aa3-8032-4bf9383e7695": {
+              "node": {}
+            }
+          }
+        },
+        "outputs": {
+          "eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c": {
+            "db9c2660-ff6c-4308-80c1-f4c95472409e": {
+              "504be2a1-59dc-4120-bd4b-dc2a70c75d78": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/tree/Node setter/mutable"
+}

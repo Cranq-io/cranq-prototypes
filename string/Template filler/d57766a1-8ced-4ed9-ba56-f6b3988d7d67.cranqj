@@ -1,1 +1,82 @@
-{"description":"Substitutes parameters into a template.","interface":{"inputs":{"25aa567c-3316-4206-b42e-4cfe6a67b0c7":{"type":"string","name":"template"},"d0eb3b1c-04b8-4b95-96ee-76b37fc067c6":{"type":"{string:any}","name":"params"}},"outputs":{"d6272c3f-069b-4af8-8d4c-fe762a581c40":{"type":"string","name":"filled"}}},"implementations":{"cranq":{"nodes":{"ef09b848-e73a-434c-b826-d66ede351b15":{"coordinates":[-21,55],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"template\",\"params\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync template & params"},"be775bad-12dd-4560-bc84-95af8180521b":{"coordinates":[11,-48],"description":"","params":{},"prototype":"750a3b0e-1468-469d-870b-7c3b47a49ca0","name":"fill template"}},"connections":{"ef09b848-e73a-434c-b826-d66ede351b15":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"be775bad-12dd-4560-bc84-95af8180521b":{"df7b6135-bb57-4e2e-b1ad-3867c3d7a354":{"description":""}}}}},"forwards":{"inputs":{"25aa567c-3316-4206-b42e-4cfe6a67b0c7":{"ef09b848-e73a-434c-b826-d66ede351b15":{"template":{}}},"d0eb3b1c-04b8-4b95-96ee-76b37fc067c6":{"ef09b848-e73a-434c-b826-d66ede351b15":{"params":{}}}},"outputs":{"d6272c3f-069b-4af8-8d4c-fe762a581c40":{"be775bad-12dd-4560-bc84-95af8180521b":{"81d00a83-cfd8-4e85-a63f-dd177a8b4706":{}}}}}}},"name":"string/Template filler"}
+{
+  "description": "Substitutes parameters into a template.",
+  "interface": {
+    "inputs": {
+      "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {
+        "type": "string",
+        "name": "template"
+      },
+      "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {
+        "type": "{string:any}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+        "type": "string",
+        "name": "filled"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ef09b848-e73a-434c-b826-d66ede351b15": {
+          "coordinates": [
+            -21,
+            55
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"template\",\"params\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync template & params"
+        },
+        "be775bad-12dd-4560-bc84-95af8180521b": {
+          "coordinates": [
+            11,
+            -48
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "750a3b0e-1468-469d-870b-7c3b47a49ca0",
+          "name": "fill template"
+        }
+      },
+      "connections": {
+        "ef09b848-e73a-434c-b826-d66ede351b15": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "be775bad-12dd-4560-bc84-95af8180521b": {
+              "df7b6135-bb57-4e2e-b1ad-3867c3d7a354": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {
+            "ef09b848-e73a-434c-b826-d66ede351b15": {
+              "template": {}
+            }
+          },
+          "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {
+            "ef09b848-e73a-434c-b826-d66ede351b15": {
+              "params": {}
+            }
+          }
+        },
+        "outputs": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "be775bad-12dd-4560-bc84-95af8180521b": {
+              "81d00a83-cfd8-4e85-a63f-dd177a8b4706": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "string/Template filler"
+}

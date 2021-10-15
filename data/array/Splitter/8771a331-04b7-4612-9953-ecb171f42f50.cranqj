@@ -1,1 +1,77 @@
-{"name":"data/array/Splitter","interface":{"inputs":{"bfdf1859-7500-4213-a794-80dc100385c6":{"type":"any","name":"array"},"0fa7e71e-c029-4ea2-b69f-063d5a384f40":{"type":"any","name":"count"}},"outputs":{"89a6ec96-e4d0-4d12-8095-e720561a7896":{"type":"any","name":"2D array"}}},"implementations":{"cranq":{"nodes":{"de5e6e03-99ce-4a6a-8a56-b5520c3db5ca":{"coordinates":[23.5,-61.5],"name":"split array","prototype":"ad7387cd-51e8-429f-8888-f54acc8e1331","params":{}},"7ace5af1-835b-4535-9fbb-15334e0c8083":{"coordinates":[-11.5,68.5],"name":"syncer","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"array\", \"count\"]"}}},"connections":{"7ace5af1-835b-4535-9fbb-15334e0c8083":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"de5e6e03-99ce-4a6a-8a56-b5520c3db5ca":{"d7d41670-88f5-4edf-a2f5-25dec016e5f2":{}}}}},"forwards":{"inputs":{"bfdf1859-7500-4213-a794-80dc100385c6":{"7ace5af1-835b-4535-9fbb-15334e0c8083":{"array":{}}},"0fa7e71e-c029-4ea2-b69f-063d5a384f40":{"7ace5af1-835b-4535-9fbb-15334e0c8083":{"count":{}}}},"outputs":{"89a6ec96-e4d0-4d12-8095-e720561a7896":{"de5e6e03-99ce-4a6a-8a56-b5520c3db5ca":{"5d9c323a-9915-410c-8850-cf29b0b64039":{}}}}}}}}
+{
+  "name": "data/array/Splitter",
+  "interface": {
+    "inputs": {
+      "bfdf1859-7500-4213-a794-80dc100385c6": {
+        "type": "any",
+        "name": "array"
+      },
+      "0fa7e71e-c029-4ea2-b69f-063d5a384f40": {
+        "type": "any",
+        "name": "count"
+      }
+    },
+    "outputs": {
+      "89a6ec96-e4d0-4d12-8095-e720561a7896": {
+        "type": "any",
+        "name": "2D array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "de5e6e03-99ce-4a6a-8a56-b5520c3db5ca": {
+          "coordinates": [
+            23.5,
+            -61.5
+          ],
+          "name": "split array",
+          "prototype": "ad7387cd-51e8-429f-8888-f54acc8e1331",
+          "params": {}
+        },
+        "7ace5af1-835b-4535-9fbb-15334e0c8083": {
+          "coordinates": [
+            -11.5,
+            68.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"array\", \"count\"]"
+          }
+        }
+      },
+      "connections": {
+        "7ace5af1-835b-4535-9fbb-15334e0c8083": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "de5e6e03-99ce-4a6a-8a56-b5520c3db5ca": {
+              "d7d41670-88f5-4edf-a2f5-25dec016e5f2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bfdf1859-7500-4213-a794-80dc100385c6": {
+            "7ace5af1-835b-4535-9fbb-15334e0c8083": {
+              "array": {}
+            }
+          },
+          "0fa7e71e-c029-4ea2-b69f-063d5a384f40": {
+            "7ace5af1-835b-4535-9fbb-15334e0c8083": {
+              "count": {}
+            }
+          }
+        },
+        "outputs": {
+          "89a6ec96-e4d0-4d12-8095-e720561a7896": {
+            "de5e6e03-99ce-4a6a-8a56-b5520c3db5ca": {
+              "5d9c323a-9915-410c-8850-cf29b0b64039": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

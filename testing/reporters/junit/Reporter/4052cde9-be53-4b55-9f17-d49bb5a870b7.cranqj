@@ -1,1 +1,94 @@
-{"name":"testing/reporters/junit/Reporter","interface":{"inputs":{"cea919fc-5558-4d8b-ab09-fbb0a489cb59":{"description":"Individual assertion record with properties:\n* type\n* expected\n* actual\n* success\n* description\n* timestamp\n* durations","type":"any","name":"assertion"},"6155e0ed-073d-4322-8c54-b28d9a73b56c":{"type":"any","name":"delay","description":"Maximum allowed delay between assertions in milliseconds."}},"outputs":{"b00545ee-655e-442c-923a-9c58ae8c9dec":{"type":"any","name":"xml"}}},"implementations":{"cranq":{"connections":{"89464e16-98cd-4058-b690-900f53239468":{"6020a52b-4b1a-4fcb-8b02-d326b8ff4874":{"c9d3aae2-cd0f-474b-abd3-5c6c15888a37":{"f94b8152-f21b-4ff2-9e9e-3a1982adbbcd":{}}}},"c9d3aae2-cd0f-474b-abd3-5c6c15888a37":{"c3e226b1-1861-4c40-9d94-2803d58c15de":{"a1b20ef9-003b-4b31-924b-84cab1030da6":{"02fe64e5-60be-4623-8bef-6fbc0dbdc1e6":{}}}}},"forwards":{"inputs":{"cea919fc-5558-4d8b-ab09-fbb0a489cb59":{"89464e16-98cd-4058-b690-900f53239468":{"4f393d3f-a670-4c93-ba37-cda57199b968":{}}},"6155e0ed-073d-4322-8c54-b28d9a73b56c":{"89464e16-98cd-4058-b690-900f53239468":{"1fd8fa6d-f8f0-4d4a-843a-7c362a520468":{}}}},"outputs":{"b00545ee-655e-442c-923a-9c58ae8c9dec":{"a1b20ef9-003b-4b31-924b-84cab1030da6":{"da0919f8-f1f3-4a8a-8def-03360c87bdb4":{}}}}},"nodes":{"89464e16-98cd-4058-b690-900f53239468":{"coordinates":[-90.33333333333331,96.66666666666667],"name":"report preprocessor","prototype":"7c576be4-4651-4316-99ab-92b0d312e2a9","params":{}},"c9d3aae2-cd0f-474b-abd3-5c6c15888a37":{"coordinates":[-15.333333333333314,-105.33333333333333],"name":"report consolidator","prototype":"8f77cd30-fcd5-4cc9-8a6f-35d260a154c6","params":{}},"a1b20ef9-003b-4b31-924b-84cab1030da6":{"coordinates":[152.66666666666669,62.66666666666667],"name":"to XML","prototype":"c1891dcf-8698-4a54-a0e0-d849bcc77b10","params":{}}}}},"description":"Compiles a JUnit test result report based on incoming assertions."}
+{
+  "name": "testing/reporters/junit/Reporter",
+  "interface": {
+    "inputs": {
+      "cea919fc-5558-4d8b-ab09-fbb0a489cb59": {
+        "description": "Individual assertion record with properties:\n* type\n* expected\n* actual\n* success\n* description\n* timestamp\n* durations",
+        "type": "any",
+        "name": "assertion"
+      },
+      "6155e0ed-073d-4322-8c54-b28d9a73b56c": {
+        "type": "any",
+        "name": "delay",
+        "description": "Maximum allowed delay between assertions in milliseconds."
+      }
+    },
+    "outputs": {
+      "b00545ee-655e-442c-923a-9c58ae8c9dec": {
+        "type": "any",
+        "name": "xml"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "89464e16-98cd-4058-b690-900f53239468": {
+          "6020a52b-4b1a-4fcb-8b02-d326b8ff4874": {
+            "c9d3aae2-cd0f-474b-abd3-5c6c15888a37": {
+              "f94b8152-f21b-4ff2-9e9e-3a1982adbbcd": {}
+            }
+          }
+        },
+        "c9d3aae2-cd0f-474b-abd3-5c6c15888a37": {
+          "c3e226b1-1861-4c40-9d94-2803d58c15de": {
+            "a1b20ef9-003b-4b31-924b-84cab1030da6": {
+              "02fe64e5-60be-4623-8bef-6fbc0dbdc1e6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cea919fc-5558-4d8b-ab09-fbb0a489cb59": {
+            "89464e16-98cd-4058-b690-900f53239468": {
+              "4f393d3f-a670-4c93-ba37-cda57199b968": {}
+            }
+          },
+          "6155e0ed-073d-4322-8c54-b28d9a73b56c": {
+            "89464e16-98cd-4058-b690-900f53239468": {
+              "1fd8fa6d-f8f0-4d4a-843a-7c362a520468": {}
+            }
+          }
+        },
+        "outputs": {
+          "b00545ee-655e-442c-923a-9c58ae8c9dec": {
+            "a1b20ef9-003b-4b31-924b-84cab1030da6": {
+              "da0919f8-f1f3-4a8a-8def-03360c87bdb4": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "89464e16-98cd-4058-b690-900f53239468": {
+          "coordinates": [
+            -90.33333333333331,
+            96.66666666666667
+          ],
+          "name": "report preprocessor",
+          "prototype": "7c576be4-4651-4316-99ab-92b0d312e2a9",
+          "params": {}
+        },
+        "c9d3aae2-cd0f-474b-abd3-5c6c15888a37": {
+          "coordinates": [
+            -15.333333333333314,
+            -105.33333333333333
+          ],
+          "name": "report consolidator",
+          "prototype": "8f77cd30-fcd5-4cc9-8a6f-35d260a154c6",
+          "params": {}
+        },
+        "a1b20ef9-003b-4b31-924b-84cab1030da6": {
+          "coordinates": [
+            152.66666666666669,
+            62.66666666666667
+          ],
+          "name": "to XML",
+          "prototype": "c1891dcf-8698-4a54-a0e0-d849bcc77b10",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Compiles a JUnit test result report based on incoming assertions."
+}

@@ -1,1 +1,31 @@
-{"description":"","interface":{"inputs":{"0ba2f0ab-7189-4c5d-9c0f-8e335030402a":{"type":"{\"a\":number,\"b\":number}","name":"a & b"}},"outputs":{"d7ee93cc-ccab-45a2-9ac5-9875b71c42f9":{"type":"number","name":"max"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"0ba2f0ab-7189-4c5d-9c0f-8e335030402a":"outputs.max(Math.max(data.a, data.b), tag);"}}},"name":"number/Max picker/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "0ba2f0ab-7189-4c5d-9c0f-8e335030402a": {
+        "type": "{\"a\":number,\"b\":number}",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "d7ee93cc-ccab-45a2-9ac5-9875b71c42f9": {
+        "type": "number",
+        "name": "max"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "0ba2f0ab-7189-4c5d-9c0f-8e335030402a": "outputs.max(Math.max(data.a, data.b), tag);"
+      }
+    }
+  },
+  "name": "number/Max picker/_",
+  "attributes": {
+    "internal": true
+  }
+}

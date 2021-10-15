@@ -1,1 +1,95 @@
-{"description":"Moves a file","interface":{"inputs":{"ebc598f3-fc2c-4761-86a8-c1bc2244adea":{"description":"The path to the source file to move","type":"any","name":"source"},"780482cb-f782-49bc-92ee-d3103a0e6da9":{"description":"The path to the desired target file","type":"any","name":"destination"}},"outputs":{"de57a318-d6a3-49c5-bf1c-2c6a21ffec86":{"description":"Indicates, that the operation has failed","type":"any","name":"bounced"},"6c8e4252-68df-4c72-b3dd-f34955aa93f0":{"description":"Indicates, that the operation has succeeded","type":"any","name":"moved"}}},"implementations":{"cranq":{"nodes":{"e2942886-b384-4316-ae2d-dc479eb07197":{"coordinates":[41,71],"description":"","params":{},"prototype":"09367973-9721-44b9-b331-0310fce0982b","name":"move file"},"495c6bd5-662c-4a12-aaad-e0771022ec8a":{"coordinates":[-49,-60],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"source\",\"destination\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync inputs"}},"connections":{"495c6bd5-662c-4a12-aaad-e0771022ec8a":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"e2942886-b384-4316-ae2d-dc479eb07197":{"734fdacf-e24d-4e80-a715-3062e431d202":{"description":""}}}}},"forwards":{"inputs":{"ebc598f3-fc2c-4761-86a8-c1bc2244adea":{"495c6bd5-662c-4a12-aaad-e0771022ec8a":{"source":{}}},"780482cb-f782-49bc-92ee-d3103a0e6da9":{"495c6bd5-662c-4a12-aaad-e0771022ec8a":{"destination":{}}}},"outputs":{"de57a318-d6a3-49c5-bf1c-2c6a21ffec86":{"e2942886-b384-4316-ae2d-dc479eb07197":{"aec81441-0d60-4632-8bdd-980c39776e41":{}}},"6c8e4252-68df-4c72-b3dd-f34955aa93f0":{"e2942886-b384-4316-ae2d-dc479eb07197":{"b1814daf-05b5-41e9-8b7d-dec874824be2":{}}}}}}},"name":"io/file/File mover"}
+{
+  "description": "Moves a file",
+  "interface": {
+    "inputs": {
+      "ebc598f3-fc2c-4761-86a8-c1bc2244adea": {
+        "description": "The path to the source file to move",
+        "type": "any",
+        "name": "source"
+      },
+      "780482cb-f782-49bc-92ee-d3103a0e6da9": {
+        "description": "The path to the desired target file",
+        "type": "any",
+        "name": "destination"
+      }
+    },
+    "outputs": {
+      "de57a318-d6a3-49c5-bf1c-2c6a21ffec86": {
+        "description": "Indicates, that the operation has failed",
+        "type": "any",
+        "name": "bounced"
+      },
+      "6c8e4252-68df-4c72-b3dd-f34955aa93f0": {
+        "description": "Indicates, that the operation has succeeded",
+        "type": "any",
+        "name": "moved"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e2942886-b384-4316-ae2d-dc479eb07197": {
+          "coordinates": [
+            41,
+            71
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "09367973-9721-44b9-b331-0310fce0982b",
+          "name": "move file"
+        },
+        "495c6bd5-662c-4a12-aaad-e0771022ec8a": {
+          "coordinates": [
+            -49,
+            -60
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"source\",\"destination\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync inputs"
+        }
+      },
+      "connections": {
+        "495c6bd5-662c-4a12-aaad-e0771022ec8a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "e2942886-b384-4316-ae2d-dc479eb07197": {
+              "734fdacf-e24d-4e80-a715-3062e431d202": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ebc598f3-fc2c-4761-86a8-c1bc2244adea": {
+            "495c6bd5-662c-4a12-aaad-e0771022ec8a": {
+              "source": {}
+            }
+          },
+          "780482cb-f782-49bc-92ee-d3103a0e6da9": {
+            "495c6bd5-662c-4a12-aaad-e0771022ec8a": {
+              "destination": {}
+            }
+          }
+        },
+        "outputs": {
+          "de57a318-d6a3-49c5-bf1c-2c6a21ffec86": {
+            "e2942886-b384-4316-ae2d-dc479eb07197": {
+              "aec81441-0d60-4632-8bdd-980c39776e41": {}
+            }
+          },
+          "6c8e4252-68df-4c72-b3dd-f34955aa93f0": {
+            "e2942886-b384-4316-ae2d-dc479eb07197": {
+              "b1814daf-05b5-41e9-8b7d-dec874824be2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/File mover"
+}

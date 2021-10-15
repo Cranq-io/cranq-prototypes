@@ -1,1 +1,201 @@
-{"description":"Example node that demonstrates the usage of the data/array/Mapper node.","interface":{"inputs":{"fba992af-c169-4376-86da-95f5194da9fd":{"description":"","type":"any","name":"emps"},"221d9b10-ab68-4853-aafa-9fc03a36c2b1":{"description":"","type":"any","name":"depts"}},"outputs":{"c8c1eaf1-b5b1-4c98-bcfa-447e6eae8171":{"description":"","type":"any","name":"array"}}},"implementations":{"cranq":{"nodes":{"9b2016e3-61ba-47d5-a20a-a9937ce5ba0e":{"coordinates":[7,-238],"description":"","params":{},"prototype":"8193ce91-bc7b-4d4d-89d6-49abe83d2de3","name":"Mapper A"},"dc5ca16d-c9fa-45e4-8468-366aa284b600":{"coordinates":[-89,-2],"description":"","params":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":"\"Dept\""},"prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","name":"get_dept_name"},"c7692917-343a-412a-983e-053f5673ac71":{"coordinates":[55,249],"description":"","params":{},"prototype":"a4eb897a-a54f-4cff-be83-0bbd29f61165","name":"get_dept_emps"},"278ba06e-6ae4-4da4-843f-b3a26b43bf8a":{"coordinates":[212,249],"description":"","params":{},"prototype":"2a99f9a9-117c-41a4-8126-1b77e84cfa55","name":"get_emp_names"},"0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64":{"coordinates":[-168,208],"description":"","params":{},"prototype":"384a63e5-dbde-4312-99d1-257fa935c2fe","name":"Repeater A"},"1009737a-23a3-4ed5-8782-6d983e1c2153":{"coordinates":[159,99],"description":"","params":{"922a1964-91d4-4ad3-a9e4-7d245662a978":"\"Emps\""},"prototype":"3966e767-b7a7-4221-961d-338a13d18c57","name":"set_emps"},"63698b0a-f696-42b1-87f3-e775807c08a6":{"coordinates":[-374,70],"description":"","params":{},"prototype":"420bb3c5-79a9-4b4d-934e-ee04d07f92b0","name":"Forwarder A"}},"connections":{"9b2016e3-61ba-47d5-a20a-a9937ce5ba0e":{"dd117561-ffee-4b4f-aaec-44fb964dc6e5":{"dc5ca16d-c9fa-45e4-8468-366aa284b600":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{"description":""}},"1009737a-23a3-4ed5-8782-6d983e1c2153":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{"description":""}}}},"dc5ca16d-c9fa-45e4-8468-366aa284b600":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"c7692917-343a-412a-983e-053f5673ac71":{"fd957e65-a0d3-43a0-b687-b56b6f8d479c":{"description":""}}}},"c7692917-343a-412a-983e-053f5673ac71":{"c486f018-75c7-4646-975d-10846af3b019":{"278ba06e-6ae4-4da4-843f-b3a26b43bf8a":{"eb8dfa21-9cb5-49c8-9a77-e0c247f3424a":{"description":""}}}},"0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64":{"987cc1f0-ddda-4f01-8358-d32676a0861e":{"c7692917-343a-412a-983e-053f5673ac71":{"8353c89b-31e5-44ab-9c56-ce86f57c6a2f":{"description":""}}}},"278ba06e-6ae4-4da4-843f-b3a26b43bf8a":{"76346e6a-cf3c-4f7a-a216-23272f4fb2df":{"1009737a-23a3-4ed5-8782-6d983e1c2153":{"0ab0c723-793b-48a1-87d5-d64267665bd3":{"description":""}}}},"1009737a-23a3-4ed5-8782-6d983e1c2153":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{"9b2016e3-61ba-47d5-a20a-a9937ce5ba0e":{"246b2ba5-761d-44bc-932b-9ee909b00258":{"description":""}}}},"63698b0a-f696-42b1-87f3-e775807c08a6":{"0a9cd5b0-6de6-4c69-aa04-2816de994173":{"9b2016e3-61ba-47d5-a20a-a9937ce5ba0e":{"9552da55-ccec-4df0-a06b-c5eb0e961eab":{"description":""}},"0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64":{"eacfcdd3-c907-40b3-86a5-15855a7b4caf":{"description":""}}}}},"forwards":{"inputs":{"fba992af-c169-4376-86da-95f5194da9fd":{"0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64":{"c2471c2d-1ad7-4738-a3d8-87ebc566aa64":{}}},"221d9b10-ab68-4853-aafa-9fc03a36c2b1":{"63698b0a-f696-42b1-87f3-e775807c08a6":{"b0fb4a37-09d5-462e-952a-c3ab29a47e82":{}}}},"outputs":{"c8c1eaf1-b5b1-4c98-bcfa-447e6eae8171":{"9b2016e3-61ba-47d5-a20a-a9937ce5ba0e":{"9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7":{}}}}}}},"name":"tutorials/data/Mapper (emps to dept) example"}
+{
+  "description": "Example node that demonstrates the usage of the data/array/Mapper node.",
+  "interface": {
+    "inputs": {
+      "fba992af-c169-4376-86da-95f5194da9fd": {
+        "description": "",
+        "type": "any",
+        "name": "emps"
+      },
+      "221d9b10-ab68-4853-aafa-9fc03a36c2b1": {
+        "description": "",
+        "type": "any",
+        "name": "depts"
+      }
+    },
+    "outputs": {
+      "c8c1eaf1-b5b1-4c98-bcfa-447e6eae8171": {
+        "description": "",
+        "type": "any",
+        "name": "array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9b2016e3-61ba-47d5-a20a-a9937ce5ba0e": {
+          "coordinates": [
+            7,
+            -238
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3",
+          "name": "Mapper A"
+        },
+        "dc5ca16d-c9fa-45e4-8468-366aa284b600": {
+          "coordinates": [
+            -89,
+            -2
+          ],
+          "description": "",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"Dept\""
+          },
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "name": "get_dept_name"
+        },
+        "c7692917-343a-412a-983e-053f5673ac71": {
+          "coordinates": [
+            55,
+            249
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a4eb897a-a54f-4cff-be83-0bbd29f61165",
+          "name": "get_dept_emps"
+        },
+        "278ba06e-6ae4-4da4-843f-b3a26b43bf8a": {
+          "coordinates": [
+            212,
+            249
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "2a99f9a9-117c-41a4-8126-1b77e84cfa55",
+          "name": "get_emp_names"
+        },
+        "0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64": {
+          "coordinates": [
+            -168,
+            208
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe",
+          "name": "Repeater A"
+        },
+        "1009737a-23a3-4ed5-8782-6d983e1c2153": {
+          "coordinates": [
+            159,
+            99
+          ],
+          "description": "",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Emps\""
+          },
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "set_emps"
+        },
+        "63698b0a-f696-42b1-87f3-e775807c08a6": {
+          "coordinates": [
+            -374,
+            70
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
+          "name": "Forwarder A"
+        }
+      },
+      "connections": {
+        "9b2016e3-61ba-47d5-a20a-a9937ce5ba0e": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "dc5ca16d-c9fa-45e4-8468-366aa284b600": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {
+                "description": ""
+              }
+            },
+            "1009737a-23a3-4ed5-8782-6d983e1c2153": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "dc5ca16d-c9fa-45e4-8468-366aa284b600": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "c7692917-343a-412a-983e-053f5673ac71": {
+              "fd957e65-a0d3-43a0-b687-b56b6f8d479c": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "c7692917-343a-412a-983e-053f5673ac71": {
+          "c486f018-75c7-4646-975d-10846af3b019": {
+            "278ba06e-6ae4-4da4-843f-b3a26b43bf8a": {
+              "eb8dfa21-9cb5-49c8-9a77-e0c247f3424a": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "c7692917-343a-412a-983e-053f5673ac71": {
+              "8353c89b-31e5-44ab-9c56-ce86f57c6a2f": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "278ba06e-6ae4-4da4-843f-b3a26b43bf8a": {
+          "76346e6a-cf3c-4f7a-a216-23272f4fb2df": {
+            "1009737a-23a3-4ed5-8782-6d983e1c2153": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "1009737a-23a3-4ed5-8782-6d983e1c2153": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "9b2016e3-61ba-47d5-a20a-a9937ce5ba0e": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "63698b0a-f696-42b1-87f3-e775807c08a6": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "9b2016e3-61ba-47d5-a20a-a9937ce5ba0e": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {
+                "description": ""
+              }
+            },
+            "0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "fba992af-c169-4376-86da-95f5194da9fd": {
+            "0b71e2d9-fbfe-40b2-a4f6-2a05c4459a64": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          },
+          "221d9b10-ab68-4853-aafa-9fc03a36c2b1": {
+            "63698b0a-f696-42b1-87f3-e775807c08a6": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "outputs": {
+          "c8c1eaf1-b5b1-4c98-bcfa-447e6eae8171": {
+            "9b2016e3-61ba-47d5-a20a-a9937ce5ba0e": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Mapper (emps to dept) example"
+}

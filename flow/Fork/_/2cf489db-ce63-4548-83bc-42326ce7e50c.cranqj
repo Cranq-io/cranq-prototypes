@@ -1,1 +1,35 @@
-{"description":"","interface":{"inputs":{"71d40b23-b956-4355-813d-d2c70c81b7f5":{"type":"{\"data\":any,\"condition\":boolean}","name":"data & condition"}},"outputs":{"bbe6eb8b-a22e-4b23-9063-3cddbe4aafee":{"type":"typeof(data & condition[\"data\"])","name":"true"},"978a565d-6b67-4198-90a7-c3214ab6ae6a":{"type":"typeof(data & condition[\"data\"])","name":"false"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"71d40b23-b956-4355-813d-d2c70c81b7f5":"if (data.condition)\n  outputs.true(data.data, tag);\nelse\n  outputs.false(data.data, tag);\n"}}},"name":"flow/Fork/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "71d40b23-b956-4355-813d-d2c70c81b7f5": {
+        "type": "{\"data\":any,\"condition\":boolean}",
+        "name": "data & condition"
+      }
+    },
+    "outputs": {
+      "bbe6eb8b-a22e-4b23-9063-3cddbe4aafee": {
+        "type": "typeof(data & condition[\"data\"])",
+        "name": "true"
+      },
+      "978a565d-6b67-4198-90a7-c3214ab6ae6a": {
+        "type": "typeof(data & condition[\"data\"])",
+        "name": "false"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "71d40b23-b956-4355-813d-d2c70c81b7f5": "if (data.condition)\n  outputs.true(data.data, tag);\nelse\n  outputs.false(data.data, tag);\n"
+      }
+    }
+  },
+  "name": "flow/Fork/_",
+  "attributes": {
+    "internal": true
+  }
+}

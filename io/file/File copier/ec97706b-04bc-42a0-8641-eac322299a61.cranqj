@@ -1,1 +1,95 @@
-{"description":"Copies a file","interface":{"inputs":{"bdfb30ef-0da7-46e3-89a9-b0e1ada838b6":{"description":"The path to the source file to copy","type":"any","name":"source"},"f2de4810-6a6f-4191-a5c8-488099f67b04":{"description":"The path to the desired target file","type":"any","name":"destination"}},"outputs":{"2bfd6834-e8b7-4d12-95a4-588e2c9dbe31":{"description":"Indicates, that the operation has failed","type":"any","name":"bounced"},"b51bebcf-125e-46c7-a537-3d82c9be4fae":{"description":"Indicates, that the operation has succeeded","type":"any","name":"copied"}}},"implementations":{"cranq":{"nodes":{"d87d510c-49e3-4e04-9f61-cafb96fabca5":{"coordinates":[41,71],"description":"","params":{},"prototype":"e1e153b3-ec59-49e4-9fd0-c28521ea54c6","name":"copy file"},"5ec62bd6-01de-4f6a-98b3-57b53c37b7bc":{"coordinates":[-49,-60],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"source\",\"destination\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync inputs"}},"connections":{"5ec62bd6-01de-4f6a-98b3-57b53c37b7bc":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"d87d510c-49e3-4e04-9f61-cafb96fabca5":{"f436fe2a-5d0f-4921-ae35-b8f71c39f106":{"description":""}}}}},"forwards":{"inputs":{"bdfb30ef-0da7-46e3-89a9-b0e1ada838b6":{"5ec62bd6-01de-4f6a-98b3-57b53c37b7bc":{"source":{}}},"f2de4810-6a6f-4191-a5c8-488099f67b04":{"5ec62bd6-01de-4f6a-98b3-57b53c37b7bc":{"destination":{}}}},"outputs":{"2bfd6834-e8b7-4d12-95a4-588e2c9dbe31":{"d87d510c-49e3-4e04-9f61-cafb96fabca5":{"d7d40418-bc85-42fb-89bc-816218d69857":{}}},"b51bebcf-125e-46c7-a537-3d82c9be4fae":{"d87d510c-49e3-4e04-9f61-cafb96fabca5":{"3955ebfc-b642-4ed3-9c07-7f6ddd1c7399":{}}}}}}},"name":"io/file/File copier"}
+{
+  "description": "Copies a file",
+  "interface": {
+    "inputs": {
+      "bdfb30ef-0da7-46e3-89a9-b0e1ada838b6": {
+        "description": "The path to the source file to copy",
+        "type": "any",
+        "name": "source"
+      },
+      "f2de4810-6a6f-4191-a5c8-488099f67b04": {
+        "description": "The path to the desired target file",
+        "type": "any",
+        "name": "destination"
+      }
+    },
+    "outputs": {
+      "2bfd6834-e8b7-4d12-95a4-588e2c9dbe31": {
+        "description": "Indicates, that the operation has failed",
+        "type": "any",
+        "name": "bounced"
+      },
+      "b51bebcf-125e-46c7-a537-3d82c9be4fae": {
+        "description": "Indicates, that the operation has succeeded",
+        "type": "any",
+        "name": "copied"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d87d510c-49e3-4e04-9f61-cafb96fabca5": {
+          "coordinates": [
+            41,
+            71
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "e1e153b3-ec59-49e4-9fd0-c28521ea54c6",
+          "name": "copy file"
+        },
+        "5ec62bd6-01de-4f6a-98b3-57b53c37b7bc": {
+          "coordinates": [
+            -49,
+            -60
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"source\",\"destination\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync inputs"
+        }
+      },
+      "connections": {
+        "5ec62bd6-01de-4f6a-98b3-57b53c37b7bc": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d87d510c-49e3-4e04-9f61-cafb96fabca5": {
+              "f436fe2a-5d0f-4921-ae35-b8f71c39f106": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bdfb30ef-0da7-46e3-89a9-b0e1ada838b6": {
+            "5ec62bd6-01de-4f6a-98b3-57b53c37b7bc": {
+              "source": {}
+            }
+          },
+          "f2de4810-6a6f-4191-a5c8-488099f67b04": {
+            "5ec62bd6-01de-4f6a-98b3-57b53c37b7bc": {
+              "destination": {}
+            }
+          }
+        },
+        "outputs": {
+          "2bfd6834-e8b7-4d12-95a4-588e2c9dbe31": {
+            "d87d510c-49e3-4e04-9f61-cafb96fabca5": {
+              "d7d40418-bc85-42fb-89bc-816218d69857": {}
+            }
+          },
+          "b51bebcf-125e-46c7-a537-3d82c9be4fae": {
+            "d87d510c-49e3-4e04-9f61-cafb96fabca5": {
+              "3955ebfc-b642-4ed3-9c07-7f6ddd1c7399": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/File copier"
+}

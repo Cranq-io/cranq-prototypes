@@ -1,1 +1,35 @@
-{"description":"Gets a variable from the system environment by name","interface":{"inputs":{"a9d77664-8652-4a70-8fef-6f74e9facf57":{"description":"The name of the environment variable to get","type":"string","name":"name"}},"outputs":{"2886acb1-08d2-41b2-af64-929b44d8b21f":{"description":"The value of the environment variable if found","type":"string","name":"value"},"edd9ef99-be38-4bae-a302-81e7cdb86636":{"description":"The name of the environment variable that was not found","type":"string","name":"not found"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"a9d77664-8652-4a70-8fef-6f74e9facf57":"const value = process.env[data];\n\nif (value !== undefined) {\n  outputs.value(value, tag);\n}\nelse {\n  outputs[\"not found\"](data, tag);\n}\n"}}},"name":"system/Environment variable getter"}
+{
+  "description": "Gets a variable from the system environment by name",
+  "interface": {
+    "inputs": {
+      "a9d77664-8652-4a70-8fef-6f74e9facf57": {
+        "description": "The name of the environment variable to get",
+        "type": "string",
+        "name": "name"
+      }
+    },
+    "outputs": {
+      "2886acb1-08d2-41b2-af64-929b44d8b21f": {
+        "description": "The value of the environment variable if found",
+        "type": "string",
+        "name": "value"
+      },
+      "edd9ef99-be38-4bae-a302-81e7cdb86636": {
+        "description": "The name of the environment variable that was not found",
+        "type": "string",
+        "name": "not found"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "a9d77664-8652-4a70-8fef-6f74e9facf57": "const value = process.env[data];\n\nif (value !== undefined) {\n  outputs.value(value, tag);\n}\nelse {\n  outputs[\"not found\"](data, tag);\n}\n"
+      }
+    }
+  },
+  "name": "system/Environment variable getter"
+}

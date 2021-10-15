@@ -1,1 +1,32 @@
-{"description":"Parses a JSON array","interface":{"inputs":{"6af01236-82c3-45ef-91df-cadb3ac3aefd":{"type":"string","name":"json"}},"outputs":{"b47ccbae-9226-4704-b803-18055b97d2f5":{"type":"any[]","name":"parsed"},"e3aef7a7-7e19-4ed6-8d00-2ca95c98f12b":{"type":"string","name":"bounced"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"6af01236-82c3-45ef-91df-cadb3ac3aefd":"try {\n  const parsed = JSON.parse(data);\n  if (parsed instanceof Array) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n}"}}},"name":"data/array/JSON parser"}
+{
+  "description": "Parses a JSON array",
+  "interface": {
+    "inputs": {
+      "6af01236-82c3-45ef-91df-cadb3ac3aefd": {
+        "type": "string",
+        "name": "json"
+      }
+    },
+    "outputs": {
+      "b47ccbae-9226-4704-b803-18055b97d2f5": {
+        "type": "any[]",
+        "name": "parsed"
+      },
+      "e3aef7a7-7e19-4ed6-8d00-2ca95c98f12b": {
+        "type": "string",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6af01236-82c3-45ef-91df-cadb3ac3aefd": "try {\n  const parsed = JSON.parse(data);\n  if (parsed instanceof Array) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
+      }
+    }
+  },
+  "name": "data/array/JSON parser"
+}

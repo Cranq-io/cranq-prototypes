@@ -1,1 +1,82 @@
-{"description":"Builds a dictionary based on matching arrays of keys and values.","interface":{"inputs":{"33848016-8ca0-4d05-ae94-0666dc207a34":{"type":"string[]","name":"keys"},"e77e7439-84f9-414f-b45b-356ea70ce445":{"type":"any[]","name":"values"}},"outputs":{"852cd030-0794-42cc-b448-0886fb787cf2":{"type":"{string:typeof(values)[number]}","name":"dict"}}},"implementations":{"cranq":{"nodes":{"46a0c968-dd4b-4262-b6da-c5ce5239879e":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"keys\",\"values\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync keys & values"},"07a4e3f1-39b7-4c72-a610-25a2af1fe8ca":{"coordinates":[0,0],"description":"","params":{},"prototype":"e851b7fb-af59-4ad4-b0e9-09fcf26ad1f6","name":"build dict"}},"connections":{"46a0c968-dd4b-4262-b6da-c5ce5239879e":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"07a4e3f1-39b7-4c72-a610-25a2af1fe8ca":{"fce098d8-6196-428a-8339-362524563870":{"description":""}}}}},"forwards":{"inputs":{"33848016-8ca0-4d05-ae94-0666dc207a34":{"46a0c968-dd4b-4262-b6da-c5ce5239879e":{"keys":{}}},"e77e7439-84f9-414f-b45b-356ea70ce445":{"46a0c968-dd4b-4262-b6da-c5ce5239879e":{"values":{}}}},"outputs":{"852cd030-0794-42cc-b448-0886fb787cf2":{"07a4e3f1-39b7-4c72-a610-25a2af1fe8ca":{"c582741f-63d5-4316-9c18-bc10773c523e":{}}}}}}},"name":"data/dictionary/Builder/keys & values"}
+{
+  "description": "Builds a dictionary based on matching arrays of keys and values.",
+  "interface": {
+    "inputs": {
+      "33848016-8ca0-4d05-ae94-0666dc207a34": {
+        "type": "string[]",
+        "name": "keys"
+      },
+      "e77e7439-84f9-414f-b45b-356ea70ce445": {
+        "type": "any[]",
+        "name": "values"
+      }
+    },
+    "outputs": {
+      "852cd030-0794-42cc-b448-0886fb787cf2": {
+        "type": "{string:typeof(values)[number]}",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "46a0c968-dd4b-4262-b6da-c5ce5239879e": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"keys\",\"values\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync keys & values"
+        },
+        "07a4e3f1-39b7-4c72-a610-25a2af1fe8ca": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "e851b7fb-af59-4ad4-b0e9-09fcf26ad1f6",
+          "name": "build dict"
+        }
+      },
+      "connections": {
+        "46a0c968-dd4b-4262-b6da-c5ce5239879e": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "07a4e3f1-39b7-4c72-a610-25a2af1fe8ca": {
+              "fce098d8-6196-428a-8339-362524563870": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "33848016-8ca0-4d05-ae94-0666dc207a34": {
+            "46a0c968-dd4b-4262-b6da-c5ce5239879e": {
+              "keys": {}
+            }
+          },
+          "e77e7439-84f9-414f-b45b-356ea70ce445": {
+            "46a0c968-dd4b-4262-b6da-c5ce5239879e": {
+              "values": {}
+            }
+          }
+        },
+        "outputs": {
+          "852cd030-0794-42cc-b448-0886fb787cf2": {
+            "07a4e3f1-39b7-4c72-a610-25a2af1fe8ca": {
+              "c582741f-63d5-4316-9c18-bc10773c523e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Builder/keys & values"
+}

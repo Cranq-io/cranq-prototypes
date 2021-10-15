@@ -1,1 +1,32 @@
-{"description":"Reads a text file from the specified path and outputs its content.","interface":{"inputs":{"dbd6e98a-e575-469c-989a-a5e6c579a86d":{"type":"string","name":"path"}},"outputs":{"29f0cedc-2623-48fc-9bf8-75cd34436991":{"type":"string","name":"text"},"1c5e0968-5d00-4931-831b-8b8f716c5117":{"type":"string","name":"bounced"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"dbd6e98a-e575-469c-989a-a5e6c579a86d":"const {readFile} = require(\"fs\");\nreadFile(data, (error, contents)=> {\n  if (error)\n    outputs.bounced(data, tag);\n  else\n    outputs.text(String(contents), tag);\n});"}}},"name":"io/file/Text reader"}
+{
+  "description": "Reads a text file from the specified path and outputs its content.",
+  "interface": {
+    "inputs": {
+      "dbd6e98a-e575-469c-989a-a5e6c579a86d": {
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "29f0cedc-2623-48fc-9bf8-75cd34436991": {
+        "type": "string",
+        "name": "text"
+      },
+      "1c5e0968-5d00-4931-831b-8b8f716c5117": {
+        "type": "string",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "dbd6e98a-e575-469c-989a-a5e6c579a86d": "const {readFile} = require(\"fs\");\nreadFile(data, (error, contents)=> {\n  if (error)\n    outputs.bounced(data, tag);\n  else\n    outputs.text(String(contents), tag);\n});"
+      }
+    }
+  },
+  "name": "io/file/Text reader"
+}

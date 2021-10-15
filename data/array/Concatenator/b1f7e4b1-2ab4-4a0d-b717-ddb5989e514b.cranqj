@@ -1,1 +1,82 @@
-{"description":"Concatenates two arrays.","interface":{"inputs":{"a97745d1-5a27-401a-b341-c2efe8d8d5a8":{"type":"any[]","name":"a"},"a0cfd90a-1120-454d-99de-077ea55fede2":{"type":"any[]","name":"b"}},"outputs":{"dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13":{"type":"(typeof(a)[number] or typeof(b)[number])[]","name":"concatenated"}}},"implementations":{"cranq":{"nodes":{"d61fb826-7f08-44fc-9833-f6620dfe2537":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"a\",\"b\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync a & b"},"7fc642db-072a-4431-8411-ca0b02bca8cd":{"coordinates":[0,0],"description":"","params":{},"prototype":"e500e620-2e6c-494e-8746-1da8f703173e","name":"concat"}},"connections":{"d61fb826-7f08-44fc-9833-f6620dfe2537":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"7fc642db-072a-4431-8411-ca0b02bca8cd":{"f0dc065d-e50e-484c-ba2e-6d3a7e542a17":{"description":""}}}}},"forwards":{"inputs":{"a97745d1-5a27-401a-b341-c2efe8d8d5a8":{"d61fb826-7f08-44fc-9833-f6620dfe2537":{"a":{}}},"a0cfd90a-1120-454d-99de-077ea55fede2":{"d61fb826-7f08-44fc-9833-f6620dfe2537":{"b":{}}}},"outputs":{"dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13":{"7fc642db-072a-4431-8411-ca0b02bca8cd":{"0194cd4e-dc2c-4906-94a8-039b255dc494":{}}}}}}},"name":"data/array/Concatenator"}
+{
+  "description": "Concatenates two arrays.",
+  "interface": {
+    "inputs": {
+      "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {
+        "type": "any[]",
+        "name": "a"
+      },
+      "a0cfd90a-1120-454d-99de-077ea55fede2": {
+        "type": "any[]",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+        "type": "(typeof(a)[number] or typeof(b)[number])[]",
+        "name": "concatenated"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d61fb826-7f08-44fc-9833-f6620dfe2537": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\",\"b\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync a & b"
+        },
+        "7fc642db-072a-4431-8411-ca0b02bca8cd": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "e500e620-2e6c-494e-8746-1da8f703173e",
+          "name": "concat"
+        }
+      },
+      "connections": {
+        "d61fb826-7f08-44fc-9833-f6620dfe2537": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "7fc642db-072a-4431-8411-ca0b02bca8cd": {
+              "f0dc065d-e50e-484c-ba2e-6d3a7e542a17": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {
+            "d61fb826-7f08-44fc-9833-f6620dfe2537": {
+              "a": {}
+            }
+          },
+          "a0cfd90a-1120-454d-99de-077ea55fede2": {
+            "d61fb826-7f08-44fc-9833-f6620dfe2537": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+            "7fc642db-072a-4431-8411-ca0b02bca8cd": {
+              "0194cd4e-dc2c-4906-94a8-039b255dc494": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/array/Concatenator"
+}

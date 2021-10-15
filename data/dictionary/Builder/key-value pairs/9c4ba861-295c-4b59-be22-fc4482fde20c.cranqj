@@ -1,1 +1,28 @@
-{"description":"Builds dictionary based on an array of objects with key&value properties.","interface":{"inputs":{"6a7d3e96-88ec-43b5-a8ae-eab6206748b3":{"type":"{\"key\":string,\"value\":any}[]","name":"key-value pairs"}},"outputs":{"647899b9-8122-4a5b-a622-c9763e51d0c1":{"type":"{string:typeof(key-value pairs)[number][\"value\"]}","name":"dict"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"6a7d3e96-88ec-43b5-a8ae-eab6206748b3":"const result = {};\nfor (const item of data)\n  result[item.key] = item.value;\noutputs.dict(result, tag);"}}},"name":"data/dictionary/Builder/key-value pairs"}
+{
+  "description": "Builds dictionary based on an array of objects with key&value properties.",
+  "interface": {
+    "inputs": {
+      "6a7d3e96-88ec-43b5-a8ae-eab6206748b3": {
+        "type": "{\"key\":string,\"value\":any}[]",
+        "name": "key-value pairs"
+      }
+    },
+    "outputs": {
+      "647899b9-8122-4a5b-a622-c9763e51d0c1": {
+        "type": "{string:typeof(key-value pairs)[number][\"value\"]}",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6a7d3e96-88ec-43b5-a8ae-eab6206748b3": "const result = {};\nfor (const item of data)\n  result[item.key] = item.value;\noutputs.dict(result, tag);"
+      }
+    }
+  },
+  "name": "data/dictionary/Builder/key-value pairs"
+}

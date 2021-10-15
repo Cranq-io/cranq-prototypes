@@ -1,1 +1,122 @@
-{"name":"testing/Description inserter","interface":{"inputs":{"dc0b2e24-82b0-4891-a190-d5da20b81fb1":{"type":"{string:any}","name":"assertion"},"ceb56225-4e09-4754-aa21-b073ac1da945":{"type":"any","name":"description"}},"outputs":{"03f7f3d6-2eea-47ad-b5f4-b35b4052fcbe":{"type":"typeof(dict)","name":"assertion"}}},"implementations":{"cranq":{"connections":{"ee19a1e9-7b34-41b0-8d1b-a3a744b66806":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"5865b4dc-22bc-47c6-9770-baa3a9dc0a51":{"5cbbb232-d9b4-4d06-9db0-e548e44e43b6":{}}},"3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":{"a514c0e2-d139-431a-99f5-573f7afc4ba3":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}},"a514c0e2-d139-431a-99f5-573f7afc4ba3":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"5865b4dc-22bc-47c6-9770-baa3a9dc0a51":{"5cbbb232-d9b4-4d06-9db0-e548e44e43b6":{}}}},"5865b4dc-22bc-47c6-9770-baa3a9dc0a51":{"092ca265-7614-4182-9d9f-bd325c094abb":{"a796bd95-64c1-4583-80e8-79fe5aeaa9f8":{"0ab0c723-793b-48a1-87d5-d64267665bd3":{}}}}},"forwards":{"inputs":{"dc0b2e24-82b0-4891-a190-d5da20b81fb1":{"ee19a1e9-7b34-41b0-8d1b-a3a744b66806":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{}},"a796bd95-64c1-4583-80e8-79fe5aeaa9f8":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{}}},"ceb56225-4e09-4754-aa21-b073ac1da945":{"5865b4dc-22bc-47c6-9770-baa3a9dc0a51":{"2d02022b-c114-4207-935e-11490a6c2926":{}}}},"outputs":{"03f7f3d6-2eea-47ad-b5f4-b35b4052fcbe":{"a796bd95-64c1-4583-80e8-79fe5aeaa9f8":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{}}}}},"nodes":{"ee19a1e9-7b34-41b0-8d1b-a3a744b66806":{"coordinates":[-138.75,-81.75],"name":"get description","prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","params":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":"\"description\""}},"a514c0e2-d139-431a-99f5-573f7afc4ba3":{"coordinates":[13.25,-182.75],"name":"default description","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"[]"}},"a796bd95-64c1-4583-80e8-79fe5aeaa9f8":{"coordinates":[90.25,148.25],"name":"set description","prototype":"3966e767-b7a7-4221-961d-338a13d18c57","params":{"922a1964-91d4-4ad3-a9e4-7d245662a978":"\"description\""}},"5865b4dc-22bc-47c6-9770-baa3a9dc0a51":{"coordinates":[67.25,-19.75],"name":"add to description","prototype":"9882ea6b-43da-4a1f-b660-689da949c8f2","params":{}}}}},"description":"Inserts description into list of descriptions on an assertion record."}
+{
+  "name": "testing/Description inserter",
+  "interface": {
+    "inputs": {
+      "dc0b2e24-82b0-4891-a190-d5da20b81fb1": {
+        "type": "{string:any}",
+        "name": "assertion"
+      },
+      "ceb56225-4e09-4754-aa21-b073ac1da945": {
+        "type": "any",
+        "name": "description"
+      }
+    },
+    "outputs": {
+      "03f7f3d6-2eea-47ad-b5f4-b35b4052fcbe": {
+        "type": "typeof(dict)",
+        "name": "assertion"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "ee19a1e9-7b34-41b0-8d1b-a3a744b66806": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "5865b4dc-22bc-47c6-9770-baa3a9dc0a51": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "a514c0e2-d139-431a-99f5-573f7afc4ba3": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "a514c0e2-d139-431a-99f5-573f7afc4ba3": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "5865b4dc-22bc-47c6-9770-baa3a9dc0a51": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "5865b4dc-22bc-47c6-9770-baa3a9dc0a51": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "a796bd95-64c1-4583-80e8-79fe5aeaa9f8": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "dc0b2e24-82b0-4891-a190-d5da20b81fb1": {
+            "ee19a1e9-7b34-41b0-8d1b-a3a744b66806": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "a796bd95-64c1-4583-80e8-79fe5aeaa9f8": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "ceb56225-4e09-4754-aa21-b073ac1da945": {
+            "5865b4dc-22bc-47c6-9770-baa3a9dc0a51": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "outputs": {
+          "03f7f3d6-2eea-47ad-b5f4-b35b4052fcbe": {
+            "a796bd95-64c1-4583-80e8-79fe5aeaa9f8": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "ee19a1e9-7b34-41b0-8d1b-a3a744b66806": {
+          "coordinates": [
+            -138.75,
+            -81.75
+          ],
+          "name": "get description",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"description\""
+          }
+        },
+        "a514c0e2-d139-431a-99f5-573f7afc4ba3": {
+          "coordinates": [
+            13.25,
+            -182.75
+          ],
+          "name": "default description",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[]"
+          }
+        },
+        "a796bd95-64c1-4583-80e8-79fe5aeaa9f8": {
+          "coordinates": [
+            90.25,
+            148.25
+          ],
+          "name": "set description",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"description\""
+          }
+        },
+        "5865b4dc-22bc-47c6-9770-baa3a9dc0a51": {
+          "coordinates": [
+            67.25,
+            -19.75
+          ],
+          "name": "add to description",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Inserts description into list of descriptions on an assertion record."
+}

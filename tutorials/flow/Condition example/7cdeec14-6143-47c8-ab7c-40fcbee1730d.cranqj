@@ -1,1 +1,162 @@
-{"description":"Example node, that demonstrates the basic usage of the flow/Condition node","interface":{"inputs":{"aff49e58-b306-41ed-b100-6355ab022014":{"description":"","type":"any","name":"run"}},"outputs":{"015e1966-3d32-44a5-ac97-72ead774f9a8":{"description":"","type":"any","name":"output"}}},"implementations":{"cranq":{"nodes":{"4d56e6ee-6b58-49dc-a897-29ba4841ae75":{"coordinates":[-376,-57],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"3"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"3"},"0144615e-4511-4c8b-b66e-2c179f93403a":{"coordinates":[-217,60],"description":"","params":{},"prototype":"d5915a99-3dda-4671-9afd-768c8f5586ac","name":"Odd tester A"},"c3faf9d9-1cef-4309-bea2-492488202cbf":{"coordinates":[-72,-37],"description":"","params":{},"prototype":"a9ccc258-8320-46cd-a29a-180316401e63","name":"Condition A"},"0c9bd84b-e737-4d35-9bac-86dabbb3851b":{"coordinates":[122,-89],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"\"odd\""},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"\"odd\""},"5a5bb317-f266-4745-b191-22d2fc197475":{"coordinates":[120,35],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"\"even\""},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"\"even\""},"b85365b0-df96-48cb-b492-94a1193671fa":{"coordinates":[289,-28],"description":"","params":{},"prototype":"420bb3c5-79a9-4b4d-934e-ee04d07f92b0","name":"Forwarder A"}},"connections":{"4d56e6ee-6b58-49dc-a897-29ba4841ae75":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"0144615e-4511-4c8b-b66e-2c179f93403a":{"81eb9228-10a4-43ff-8f34-eda60dc7dbf7":{"description":""}}}},"0144615e-4511-4c8b-b66e-2c179f93403a":{"b90fc38e-5ece-475d-9ff3-0fde77ea7c88":{"c3faf9d9-1cef-4309-bea2-492488202cbf":{"1ea5f02f-e710-4bb6-911e-da7b2ab0dc71":{"description":""}}}},"c3faf9d9-1cef-4309-bea2-492488202cbf":{"d78d9223-eedf-44eb-acb0-244212fc86c5":{"0c9bd84b-e737-4d35-9bac-86dabbb3851b":{"read":{"description":""}}},"7cfb1db4-bf11-4d32-b364-4f9281088541":{"5a5bb317-f266-4745-b191-22d2fc197475":{"read":{"description":""}}}},"0c9bd84b-e737-4d35-9bac-86dabbb3851b":{"data":{"b85365b0-df96-48cb-b492-94a1193671fa":{"b0fb4a37-09d5-462e-952a-c3ab29a47e82":{"description":""}}}},"5a5bb317-f266-4745-b191-22d2fc197475":{"data":{"b85365b0-df96-48cb-b492-94a1193671fa":{"b0fb4a37-09d5-462e-952a-c3ab29a47e82":{"description":""}}}}},"forwards":{"inputs":{"aff49e58-b306-41ed-b100-6355ab022014":{"4d56e6ee-6b58-49dc-a897-29ba4841ae75":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}},"outputs":{"015e1966-3d32-44a5-ac97-72ead774f9a8":{"b85365b0-df96-48cb-b492-94a1193671fa":{"0a9cd5b0-6de6-4c69-aa04-2816de994173":{}}}}}}},"name":"tutorials/flow/Condition example"}
+{
+  "description": "Example node, that demonstrates the basic usage of the flow/Condition node",
+  "interface": {
+    "inputs": {
+      "aff49e58-b306-41ed-b100-6355ab022014": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "015e1966-3d32-44a5-ac97-72ead774f9a8": {
+        "description": "",
+        "type": "any",
+        "name": "output"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4d56e6ee-6b58-49dc-a897-29ba4841ae75": {
+          "coordinates": [
+            -376,
+            -57
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "3"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "3"
+        },
+        "0144615e-4511-4c8b-b66e-2c179f93403a": {
+          "coordinates": [
+            -217,
+            60
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d5915a99-3dda-4671-9afd-768c8f5586ac",
+          "name": "Odd tester A"
+        },
+        "c3faf9d9-1cef-4309-bea2-492488202cbf": {
+          "coordinates": [
+            -72,
+            -37
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a9ccc258-8320-46cd-a29a-180316401e63",
+          "name": "Condition A"
+        },
+        "0c9bd84b-e737-4d35-9bac-86dabbb3851b": {
+          "coordinates": [
+            122,
+            -89
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"odd\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "\"odd\""
+        },
+        "5a5bb317-f266-4745-b191-22d2fc197475": {
+          "coordinates": [
+            120,
+            35
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"even\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "\"even\""
+        },
+        "b85365b0-df96-48cb-b492-94a1193671fa": {
+          "coordinates": [
+            289,
+            -28
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
+          "name": "Forwarder A"
+        }
+      },
+      "connections": {
+        "4d56e6ee-6b58-49dc-a897-29ba4841ae75": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "0144615e-4511-4c8b-b66e-2c179f93403a": {
+              "81eb9228-10a4-43ff-8f34-eda60dc7dbf7": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "0144615e-4511-4c8b-b66e-2c179f93403a": {
+          "b90fc38e-5ece-475d-9ff3-0fde77ea7c88": {
+            "c3faf9d9-1cef-4309-bea2-492488202cbf": {
+              "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "c3faf9d9-1cef-4309-bea2-492488202cbf": {
+          "d78d9223-eedf-44eb-acb0-244212fc86c5": {
+            "0c9bd84b-e737-4d35-9bac-86dabbb3851b": {
+              "read": {
+                "description": ""
+              }
+            }
+          },
+          "7cfb1db4-bf11-4d32-b364-4f9281088541": {
+            "5a5bb317-f266-4745-b191-22d2fc197475": {
+              "read": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "0c9bd84b-e737-4d35-9bac-86dabbb3851b": {
+          "data": {
+            "b85365b0-df96-48cb-b492-94a1193671fa": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "5a5bb317-f266-4745-b191-22d2fc197475": {
+          "data": {
+            "b85365b0-df96-48cb-b492-94a1193671fa": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aff49e58-b306-41ed-b100-6355ab022014": {
+            "4d56e6ee-6b58-49dc-a897-29ba4841ae75": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "015e1966-3d32-44a5-ac97-72ead774f9a8": {
+            "b85365b0-df96-48cb-b492-94a1193671fa": {
+              "0a9cd5b0-6de6-4c69-aa04-2816de994173": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/flow/Condition example"
+}

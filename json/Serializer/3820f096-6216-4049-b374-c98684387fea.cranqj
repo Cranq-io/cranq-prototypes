@@ -1,1 +1,85 @@
-{"description":"","interface":{"inputs":{"cc00cc18-d6ce-4661-8dd5-eb3140a3acae":{"description":"","type":"any","name":"data"},"deb0a917-b393-4326-b573-ec6a6f82ffec":{"description":"","type":"any","name":"pretty"}},"outputs":{"25650a4f-7e35-4754-bc8f-1a57f538166f":{"description":"","type":"any","name":"json"}}},"implementations":{"cranq":{"nodes":{"d9b75e43-880e-42d8-ba9c-a79f03e3815c":{"coordinates":[-53,56],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"data\", \"pretty\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync data & pretty"},"186f22d0-90f7-4e41-a9ca-1c23036528f7":{"coordinates":[43,-47],"description":"","params":{},"prototype":"8bea41cd-6669-4b21-8242-75191ac6bd14","name":"serialize"}},"connections":{"d9b75e43-880e-42d8-ba9c-a79f03e3815c":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"186f22d0-90f7-4e41-a9ca-1c23036528f7":{"03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7":{"description":""}}}}},"forwards":{"inputs":{"cc00cc18-d6ce-4661-8dd5-eb3140a3acae":{"d9b75e43-880e-42d8-ba9c-a79f03e3815c":{"data":{}}},"deb0a917-b393-4326-b573-ec6a6f82ffec":{"d9b75e43-880e-42d8-ba9c-a79f03e3815c":{"pretty":{}}}},"outputs":{"25650a4f-7e35-4754-bc8f-1a57f538166f":{"186f22d0-90f7-4e41-a9ca-1c23036528f7":{"1c2473e9-843e-43f8-bcf4-53c157aa7b80":{}}}}}}},"name":"json/Serializer"}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {
+        "description": "",
+        "type": "any",
+        "name": "data"
+      },
+      "deb0a917-b393-4326-b573-ec6a6f82ffec": {
+        "description": "",
+        "type": "any",
+        "name": "pretty"
+      }
+    },
+    "outputs": {
+      "25650a4f-7e35-4754-bc8f-1a57f538166f": {
+        "description": "",
+        "type": "any",
+        "name": "json"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d9b75e43-880e-42d8-ba9c-a79f03e3815c": {
+          "coordinates": [
+            -53,
+            56
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"data\", \"pretty\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync data & pretty"
+        },
+        "186f22d0-90f7-4e41-a9ca-1c23036528f7": {
+          "coordinates": [
+            43,
+            -47
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "8bea41cd-6669-4b21-8242-75191ac6bd14",
+          "name": "serialize"
+        }
+      },
+      "connections": {
+        "d9b75e43-880e-42d8-ba9c-a79f03e3815c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "186f22d0-90f7-4e41-a9ca-1c23036528f7": {
+              "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {
+            "d9b75e43-880e-42d8-ba9c-a79f03e3815c": {
+              "data": {}
+            }
+          },
+          "deb0a917-b393-4326-b573-ec6a6f82ffec": {
+            "d9b75e43-880e-42d8-ba9c-a79f03e3815c": {
+              "pretty": {}
+            }
+          }
+        },
+        "outputs": {
+          "25650a4f-7e35-4754-bc8f-1a57f538166f": {
+            "186f22d0-90f7-4e41-a9ca-1c23036528f7": {
+              "1c2473e9-843e-43f8-bcf4-53c157aa7b80": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "json/Serializer"
+}

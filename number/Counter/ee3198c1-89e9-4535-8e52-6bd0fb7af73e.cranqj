@@ -1,1 +1,84 @@
-{"description":"Counts input signals.","interface":{"inputs":{"69d2aa68-6a45-4b2b-8754-6e79aaa239d7":{"type":"any","name":"trigger"}},"outputs":{"d5ac6560-861f-4b65-a373-6588088cb54d":{"type":"number","name":"count"}}},"implementations":{"cranq":{"nodes":{"c70d76e1-6609-41cc-9ef7-79ad7b61e7e0":{"coordinates":[0,0],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"0"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"value"},"29b2a4df-fb66-454a-a500-4f6598e5fb1f":{"coordinates":[0,0],"description":"","params":{"824b46d4-6dad-4859-939f-376702e84adb":"1"},"prototype":"172e2a79-6dd8-450d-9c60-99073c933eeb","name":"adder"}},"connections":{"c70d76e1-6609-41cc-9ef7-79ad7b61e7e0":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"29b2a4df-fb66-454a-a500-4f6598e5fb1f":{"f8db2394-8b73-41b1-8cee-570acf0ca976":{"description":""}}}},"29b2a4df-fb66-454a-a500-4f6598e5fb1f":{"3157073c-40d2-44fd-a94b-ea3adcce3440":{"c70d76e1-6609-41cc-9ef7-79ad7b61e7e0":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":{"description":""}}}}},"forwards":{"inputs":{"69d2aa68-6a45-4b2b-8754-6e79aaa239d7":{"c70d76e1-6609-41cc-9ef7-79ad7b61e7e0":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}},"outputs":{"d5ac6560-861f-4b65-a373-6588088cb54d":{"29b2a4df-fb66-454a-a500-4f6598e5fb1f":{"3157073c-40d2-44fd-a94b-ea3adcce3440":{}}}}}}},"name":"number/Counter"}
+{
+  "description": "Counts input signals.",
+  "interface": {
+    "inputs": {
+      "69d2aa68-6a45-4b2b-8754-6e79aaa239d7": {
+        "type": "any",
+        "name": "trigger"
+      }
+    },
+    "outputs": {
+      "d5ac6560-861f-4b65-a373-6588088cb54d": {
+        "type": "number",
+        "name": "count"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c70d76e1-6609-41cc-9ef7-79ad7b61e7e0": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "0"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "value"
+        },
+        "29b2a4df-fb66-454a-a500-4f6598e5fb1f": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "824b46d4-6dad-4859-939f-376702e84adb": "1"
+          },
+          "prototype": "172e2a79-6dd8-450d-9c60-99073c933eeb",
+          "name": "adder"
+        }
+      },
+      "connections": {
+        "c70d76e1-6609-41cc-9ef7-79ad7b61e7e0": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "29b2a4df-fb66-454a-a500-4f6598e5fb1f": {
+              "f8db2394-8b73-41b1-8cee-570acf0ca976": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "29b2a4df-fb66-454a-a500-4f6598e5fb1f": {
+          "3157073c-40d2-44fd-a94b-ea3adcce3440": {
+            "c70d76e1-6609-41cc-9ef7-79ad7b61e7e0": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "69d2aa68-6a45-4b2b-8754-6e79aaa239d7": {
+            "c70d76e1-6609-41cc-9ef7-79ad7b61e7e0": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "d5ac6560-861f-4b65-a373-6588088cb54d": {
+            "29b2a4df-fb66-454a-a500-4f6598e5fb1f": {
+              "3157073c-40d2-44fd-a94b-ea3adcce3440": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "number/Counter"
+}

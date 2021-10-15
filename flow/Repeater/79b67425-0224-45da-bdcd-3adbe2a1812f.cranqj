@@ -1,1 +1,85 @@
-{"description":"Repeats the input the specified amount of times.","interface":{"inputs":{"20b11cff-e0f4-415a-9a82-7d5f6d7e4a5f":{"description":"Receives data to be repeated.","type":"any","name":"data"},"8e1d3a32-366a-4829-9cad-5559dac5fba1":{"description":"Receives the number of times the input is to be repeated.","type":"number","name":"count"}},"outputs":{"fda3e580-c396-4439-a59d-f7cf0fac24a8":{"description":"Sends the repeated signal.","type":"typeof(data)","name":"data"}}},"implementations":{"cranq":{"nodes":{"6b5f63b1-6430-4f52-94be-bb4c87d50929":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"data\",\"count\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync data & count"},"dea17bc9-3677-4e41-a63a-47683a06c031":{"coordinates":[0,0],"description":"","params":{},"prototype":"3eff44c5-2016-47e9-bdef-0c86e69ed796","name":"repeat"}},"connections":{"6b5f63b1-6430-4f52-94be-bb4c87d50929":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"dea17bc9-3677-4e41-a63a-47683a06c031":{"152c9d12-556b-4bd4-ba17-e39ac5d72490":{"description":""}}}}},"forwards":{"inputs":{"20b11cff-e0f4-415a-9a82-7d5f6d7e4a5f":{"6b5f63b1-6430-4f52-94be-bb4c87d50929":{"data":{}}},"8e1d3a32-366a-4829-9cad-5559dac5fba1":{"6b5f63b1-6430-4f52-94be-bb4c87d50929":{"count":{}}}},"outputs":{"fda3e580-c396-4439-a59d-f7cf0fac24a8":{"dea17bc9-3677-4e41-a63a-47683a06c031":{"8bf5830c-baef-497f-a1d3-a9acfcf84618":{}}}}}}},"name":"flow/Repeater"}
+{
+  "description": "Repeats the input the specified amount of times.",
+  "interface": {
+    "inputs": {
+      "20b11cff-e0f4-415a-9a82-7d5f6d7e4a5f": {
+        "description": "Receives data to be repeated.",
+        "type": "any",
+        "name": "data"
+      },
+      "8e1d3a32-366a-4829-9cad-5559dac5fba1": {
+        "description": "Receives the number of times the input is to be repeated.",
+        "type": "number",
+        "name": "count"
+      }
+    },
+    "outputs": {
+      "fda3e580-c396-4439-a59d-f7cf0fac24a8": {
+        "description": "Sends the repeated signal.",
+        "type": "typeof(data)",
+        "name": "data"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6b5f63b1-6430-4f52-94be-bb4c87d50929": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"data\",\"count\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync data & count"
+        },
+        "dea17bc9-3677-4e41-a63a-47683a06c031": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "3eff44c5-2016-47e9-bdef-0c86e69ed796",
+          "name": "repeat"
+        }
+      },
+      "connections": {
+        "6b5f63b1-6430-4f52-94be-bb4c87d50929": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "dea17bc9-3677-4e41-a63a-47683a06c031": {
+              "152c9d12-556b-4bd4-ba17-e39ac5d72490": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "20b11cff-e0f4-415a-9a82-7d5f6d7e4a5f": {
+            "6b5f63b1-6430-4f52-94be-bb4c87d50929": {
+              "data": {}
+            }
+          },
+          "8e1d3a32-366a-4829-9cad-5559dac5fba1": {
+            "6b5f63b1-6430-4f52-94be-bb4c87d50929": {
+              "count": {}
+            }
+          }
+        },
+        "outputs": {
+          "fda3e580-c396-4439-a59d-f7cf0fac24a8": {
+            "dea17bc9-3677-4e41-a63a-47683a06c031": {
+              "8bf5830c-baef-497f-a1d3-a9acfcf84618": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "flow/Repeater"
+}

@@ -1,1 +1,24 @@
-{"implementations":{"es6-node":{"inputFunctions":{"06633f68-69b6-4d84-a0b6-e3a3dc409689":"const serialized = new URLSearchParams(data).toString();\noutputs.serialized(serialized, tag);"}}},"interface":{"inputs":{"06633f68-69b6-4d84-a0b6-e3a3dc409689":{"type":"any","name":"params"}},"outputs":{"8dc2060f-02da-4c93-9351-b2b8930bd6a2":{"type":"any","name":"serialized"}}},"name":"io/http/URL search params serializer"}
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "06633f68-69b6-4d84-a0b6-e3a3dc409689": "const serialized = new URLSearchParams(data).toString();\noutputs.serialized(serialized, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "06633f68-69b6-4d84-a0b6-e3a3dc409689": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8dc2060f-02da-4c93-9351-b2b8930bd6a2": {
+        "type": "any",
+        "name": "serialized"
+      }
+    }
+  },
+  "name": "io/http/URL search params serializer"
+}

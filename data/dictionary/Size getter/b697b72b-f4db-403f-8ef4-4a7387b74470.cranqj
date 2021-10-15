@@ -1,1 +1,71 @@
-{"description":"Gets the number of items in the dictionary.","interface":{"inputs":{"87ff1d14-e8fb-4c46-8afc-b9761eb88c7c":{"type":"{string:any}","name":"dict"}},"outputs":{"1d3ceb4b-cb4c-447e-80cb-c816b59d33b5":{"type":"number","name":"size"}}},"implementations":{"cranq":{"nodes":{"365da45d-94cf-4761-9ac2-64b9b5ec6c0c":{"coordinates":[-27,55],"description":"","params":{},"prototype":"39c76f61-a0f8-498f-9b94-94e0194ad51a","name":"get keys"},"05912b94-1918-4c24-9b0e-0b47319a1f13":{"coordinates":[31,-53],"description":"","params":{},"prototype":"ed50d3dd-e850-434d-a4da-90d05fc35e8b","name":"count items"}},"connections":{"365da45d-94cf-4761-9ac2-64b9b5ec6c0c":{"6f0b0618-c0fc-4aa9-8ae7-c95363b048c4":{"05912b94-1918-4c24-9b0e-0b47319a1f13":{"3796de71-a230-4869-9963-2c1815242213":{"description":""}}}}},"forwards":{"inputs":{"87ff1d14-e8fb-4c46-8afc-b9761eb88c7c":{"365da45d-94cf-4761-9ac2-64b9b5ec6c0c":{"e7596126-da2e-4451-b534-4043dfc13bf2":{}}}},"outputs":{"1d3ceb4b-cb4c-447e-80cb-c816b59d33b5":{"05912b94-1918-4c24-9b0e-0b47319a1f13":{"90dc3844-70bc-4a25-a7f4-3d281c97e5fc":{}}}}}}},"name":"data/dictionary/Size getter"}
+{
+  "description": "Gets the number of items in the dictionary.",
+  "interface": {
+    "inputs": {
+      "87ff1d14-e8fb-4c46-8afc-b9761eb88c7c": {
+        "type": "{string:any}",
+        "name": "dict"
+      }
+    },
+    "outputs": {
+      "1d3ceb4b-cb4c-447e-80cb-c816b59d33b5": {
+        "type": "number",
+        "name": "size"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "365da45d-94cf-4761-9ac2-64b9b5ec6c0c": {
+          "coordinates": [
+            -27,
+            55
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a",
+          "name": "get keys"
+        },
+        "05912b94-1918-4c24-9b0e-0b47319a1f13": {
+          "coordinates": [
+            31,
+            -53
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b",
+          "name": "count items"
+        }
+      },
+      "connections": {
+        "365da45d-94cf-4761-9ac2-64b9b5ec6c0c": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "05912b94-1918-4c24-9b0e-0b47319a1f13": {
+              "3796de71-a230-4869-9963-2c1815242213": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "87ff1d14-e8fb-4c46-8afc-b9761eb88c7c": {
+            "365da45d-94cf-4761-9ac2-64b9b5ec6c0c": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            }
+          }
+        },
+        "outputs": {
+          "1d3ceb4b-cb4c-447e-80cb-c816b59d33b5": {
+            "05912b94-1918-4c24-9b0e-0b47319a1f13": {
+              "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Size getter"
+}

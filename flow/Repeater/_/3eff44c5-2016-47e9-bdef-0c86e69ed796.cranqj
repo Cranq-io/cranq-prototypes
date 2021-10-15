@@ -1,1 +1,31 @@
-{"description":"","interface":{"inputs":{"152c9d12-556b-4bd4-ba17-e39ac5d72490":{"type":"{\"data\":any,\"count\":number}","name":"data & count"}},"outputs":{"8bf5830c-baef-497f-a1d3-a9acfcf84618":{"type":"typeof(data & count)[\"data\"]","name":"data"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"152c9d12-556b-4bd4-ba17-e39ac5d72490":"const {count, data:item} = data;\nfor (let i=0; i<count; i++)\n  outputs.data(item, `${tag}:${i}`);\n"}}},"name":"flow/Repeater/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "152c9d12-556b-4bd4-ba17-e39ac5d72490": {
+        "type": "{\"data\":any,\"count\":number}",
+        "name": "data & count"
+      }
+    },
+    "outputs": {
+      "8bf5830c-baef-497f-a1d3-a9acfcf84618": {
+        "type": "typeof(data & count)[\"data\"]",
+        "name": "data"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "152c9d12-556b-4bd4-ba17-e39ac5d72490": "const {count, data:item} = data;\nfor (let i=0; i<count; i++)\n  outputs.data(item, `${tag}:${i}`);\n"
+      }
+    }
+  },
+  "name": "flow/Repeater/_",
+  "attributes": {
+    "internal": true
+  }
+}

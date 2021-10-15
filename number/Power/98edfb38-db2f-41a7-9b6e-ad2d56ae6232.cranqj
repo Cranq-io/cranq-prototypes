@@ -1,1 +1,82 @@
-{"description":"","interface":{"inputs":{"77db574f-1a4f-45b9-89bc-3be9c8ac781e":{"type":"number","name":"base"},"27a4ed7c-720e-4fc5-bd47-9d37aaaf33fd":{"type":"number","name":"exponent"}},"outputs":{"33ca7ce0-bcf2-4dfb-a2a9-fcf890bca5fe":{"type":"number","name":"power"}}},"implementations":{"cranq":{"nodes":{"90806314-5ebc-4be0-9afc-a826cd4fc577":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"base\",\"exponent\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync base & exponent"},"f15bfaed-0402-4193-90b7-807a9f48da6e":{"coordinates":[0,0],"description":"","params":{},"prototype":"69f4658f-72dc-4e70-bf4f-8bf9e53e4801","name":"power"}},"connections":{"90806314-5ebc-4be0-9afc-a826cd4fc577":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"f15bfaed-0402-4193-90b7-807a9f48da6e":{"c5bef67c-a913-4362-9bb0-b26d2355cea8":{"description":""}}}}},"forwards":{"inputs":{"77db574f-1a4f-45b9-89bc-3be9c8ac781e":{"90806314-5ebc-4be0-9afc-a826cd4fc577":{"base":{}}},"27a4ed7c-720e-4fc5-bd47-9d37aaaf33fd":{"90806314-5ebc-4be0-9afc-a826cd4fc577":{"exponent":{}}}},"outputs":{"33ca7ce0-bcf2-4dfb-a2a9-fcf890bca5fe":{"f15bfaed-0402-4193-90b7-807a9f48da6e":{"aa27a16f-f457-4d88-a197-ad4ac6978356":{}}}}}}},"name":"number/Power"}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "77db574f-1a4f-45b9-89bc-3be9c8ac781e": {
+        "type": "number",
+        "name": "base"
+      },
+      "27a4ed7c-720e-4fc5-bd47-9d37aaaf33fd": {
+        "type": "number",
+        "name": "exponent"
+      }
+    },
+    "outputs": {
+      "33ca7ce0-bcf2-4dfb-a2a9-fcf890bca5fe": {
+        "type": "number",
+        "name": "power"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "90806314-5ebc-4be0-9afc-a826cd4fc577": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"base\",\"exponent\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync base & exponent"
+        },
+        "f15bfaed-0402-4193-90b7-807a9f48da6e": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "69f4658f-72dc-4e70-bf4f-8bf9e53e4801",
+          "name": "power"
+        }
+      },
+      "connections": {
+        "90806314-5ebc-4be0-9afc-a826cd4fc577": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f15bfaed-0402-4193-90b7-807a9f48da6e": {
+              "c5bef67c-a913-4362-9bb0-b26d2355cea8": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "77db574f-1a4f-45b9-89bc-3be9c8ac781e": {
+            "90806314-5ebc-4be0-9afc-a826cd4fc577": {
+              "base": {}
+            }
+          },
+          "27a4ed7c-720e-4fc5-bd47-9d37aaaf33fd": {
+            "90806314-5ebc-4be0-9afc-a826cd4fc577": {
+              "exponent": {}
+            }
+          }
+        },
+        "outputs": {
+          "33ca7ce0-bcf2-4dfb-a2a9-fcf890bca5fe": {
+            "f15bfaed-0402-4193-90b7-807a9f48da6e": {
+              "aa27a16f-f457-4d88-a197-ad4ac6978356": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "number/Power"
+}

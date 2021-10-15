@@ -1,1 +1,92 @@
-{"description":"Divides 'a' by 'b'. Bounces synced operands on division by zero.","interface":{"inputs":{"b8efe3c6-c75b-49eb-82b8-779a9b39962a":{"type":"number","name":"a"},"10bc95fb-d41f-4590-9390-6459c6644108":{"type":"number","name":"b"}},"outputs":{"4d369c1d-574a-45ac-a98a-9a80ba2f941a":{"type":"number","name":"fraction"},"009847de-abe7-45d4-968a-779b22f4e98e":{"description":"Sends synced inputs on error.","type":"{\"a\":number,\"b\":number}","name":"bounced"}}},"implementations":{"cranq":{"nodes":{"21041d94-731f-400b-a080-4ea5cde5440a":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"a\",\"b\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync a & b"},"b2c1ec87-6ebd-4937-953c-ec6654d56892":{"coordinates":[0,0],"description":"","params":{},"prototype":"f320c732-e487-4f75-b00b-742c87abdfb5","name":"divide"}},"connections":{"21041d94-731f-400b-a080-4ea5cde5440a":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"b2c1ec87-6ebd-4937-953c-ec6654d56892":{"c03e27e9-22ae-4ab7-8eb8-edf412f29759":{"description":""}}}}},"forwards":{"inputs":{"b8efe3c6-c75b-49eb-82b8-779a9b39962a":{"21041d94-731f-400b-a080-4ea5cde5440a":{"a":{}}},"10bc95fb-d41f-4590-9390-6459c6644108":{"21041d94-731f-400b-a080-4ea5cde5440a":{"b":{}}}},"outputs":{"4d369c1d-574a-45ac-a98a-9a80ba2f941a":{"b2c1ec87-6ebd-4937-953c-ec6654d56892":{"79d13688-55aa-424f-8208-857e7d947fa0":{}}},"009847de-abe7-45d4-968a-779b22f4e98e":{"b2c1ec87-6ebd-4937-953c-ec6654d56892":{"bcbdc842-c205-4164-959f-6c1800e5a657":{}}}}}}},"name":"number/Divider"}
+{
+  "description": "Divides 'a' by 'b'. Bounces synced operands on division by zero.",
+  "interface": {
+    "inputs": {
+      "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {
+        "type": "number",
+        "name": "a"
+      },
+      "10bc95fb-d41f-4590-9390-6459c6644108": {
+        "type": "number",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {
+        "type": "number",
+        "name": "fraction"
+      },
+      "009847de-abe7-45d4-968a-779b22f4e98e": {
+        "description": "Sends synced inputs on error.",
+        "type": "{\"a\":number,\"b\":number}",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "21041d94-731f-400b-a080-4ea5cde5440a": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\",\"b\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync a & b"
+        },
+        "b2c1ec87-6ebd-4937-953c-ec6654d56892": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "f320c732-e487-4f75-b00b-742c87abdfb5",
+          "name": "divide"
+        }
+      },
+      "connections": {
+        "21041d94-731f-400b-a080-4ea5cde5440a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b2c1ec87-6ebd-4937-953c-ec6654d56892": {
+              "c03e27e9-22ae-4ab7-8eb8-edf412f29759": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {
+            "21041d94-731f-400b-a080-4ea5cde5440a": {
+              "a": {}
+            }
+          },
+          "10bc95fb-d41f-4590-9390-6459c6644108": {
+            "21041d94-731f-400b-a080-4ea5cde5440a": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {
+            "b2c1ec87-6ebd-4937-953c-ec6654d56892": {
+              "79d13688-55aa-424f-8208-857e7d947fa0": {}
+            }
+          },
+          "009847de-abe7-45d4-968a-779b22f4e98e": {
+            "b2c1ec87-6ebd-4937-953c-ec6654d56892": {
+              "bcbdc842-c205-4164-959f-6c1800e5a657": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "number/Divider"
+}

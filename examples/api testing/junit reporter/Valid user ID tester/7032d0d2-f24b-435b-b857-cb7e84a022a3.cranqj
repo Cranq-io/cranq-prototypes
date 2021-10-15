@@ -1,1 +1,120 @@
-{"name":"examples/api testing/junit reporter/Valid user ID tester","interface":{"inputs":{"11214f91-208e-4751-8ea6-db9fbf6e71f5":{"type":"any","name":"description"},"dfa1ee5d-12ae-4eb5-8fcd-02d6b8ab538f":{"description":"","type":"any","name":"token"}},"outputs":{"00f8e221-4740-4c97-8522-f4849303f2c0":{"type":"any","name":"assertion"}}},"implementations":{"cranq":{"nodes":{"b63fa69c-f066-4f0d-bae6-576f371694d7":{"coordinates":[64,127],"name":"decorate assertion","prototype":"9a6363c5-0e09-4ad0-ba0a-6dfcda84ccdf","params":{}},"7595e014-f8b7-4835-b766-e08bbd0d0a99":{"coordinates":[-107,-95.66666666666667],"name":"fetch user","prototype":"fc2d49e4-9a41-41cd-84dd-da7d900f978f","params":{}},"3700d74e-e742-4ef4-a064-7a5f0f4e5d2e":{"coordinates":[94,-146.66666666666669],"name":"should return status 200","prototype":"c1025934-416f-4329-bbf0-ae3f0a0df84c","params":{"11214f91-208e-4751-8ea6-db9fbf6e71f5":"\"should return status 200\""}},"f00b573b-a3c8-4fee-9cc4-a92bf1f2fcae":{"coordinates":[54,-50.66666666666667],"name":"should have \"id\" field","prototype":"50fc536e-a390-47e6-9c07-5d2dae4088db","params":{"11214f91-208e-4751-8ea6-db9fbf6e71f5":"\"should have \\\"id\\\" field\""}}},"connections":{"7595e014-f8b7-4835-b766-e08bbd0d0a99":{"1da5c1e6-8caf-4b32-9bd4-e25b7d631092":{"3700d74e-e742-4ef4-a064-7a5f0f4e5d2e":{"19e93f71-3bea-4d3f-b964-b3ef6e61a1ac":{}}},"a9878718-4431-4c3b-a247-6ffe0f8c3a68":{"f00b573b-a3c8-4fee-9cc4-a92bf1f2fcae":{"c574dbf2-1240-490a-848f-59cd51d957bb":{}}}},"3700d74e-e742-4ef4-a064-7a5f0f4e5d2e":{"00f8e221-4740-4c97-8522-f4849303f2c0":{"b63fa69c-f066-4f0d-bae6-576f371694d7":{"4b211da5-9575-4fa4-a5e3-06e1eb3b1f3c":{}}}},"f00b573b-a3c8-4fee-9cc4-a92bf1f2fcae":{"00f8e221-4740-4c97-8522-f4849303f2c0":{"b63fa69c-f066-4f0d-bae6-576f371694d7":{"4b211da5-9575-4fa4-a5e3-06e1eb3b1f3c":{}}}}},"forwards":{"inputs":{"11214f91-208e-4751-8ea6-db9fbf6e71f5":{"b63fa69c-f066-4f0d-bae6-576f371694d7":{"177f4c60-3cd1-40c7-966a-9bafbd73d213":{}}},"dfa1ee5d-12ae-4eb5-8fcd-02d6b8ab538f":{"7595e014-f8b7-4835-b766-e08bbd0d0a99":{"e518c553-09ba-4343-8ced-45a05a42765f":{}},"b63fa69c-f066-4f0d-bae6-576f371694d7":{"a21e8c1d-841b-4583-bce9-92ed1c3355fc":{}}}},"outputs":{"00f8e221-4740-4c97-8522-f4849303f2c0":{"b63fa69c-f066-4f0d-bae6-576f371694d7":{"5253417d-2f81-4497-951d-4a94a0d9a486":{}}}}}}}}
+{
+  "name": "examples/api testing/junit reporter/Valid user ID tester",
+  "interface": {
+    "inputs": {
+      "11214f91-208e-4751-8ea6-db9fbf6e71f5": {
+        "type": "any",
+        "name": "description"
+      },
+      "dfa1ee5d-12ae-4eb5-8fcd-02d6b8ab538f": {
+        "description": "",
+        "type": "any",
+        "name": "token"
+      }
+    },
+    "outputs": {
+      "00f8e221-4740-4c97-8522-f4849303f2c0": {
+        "type": "any",
+        "name": "assertion"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b63fa69c-f066-4f0d-bae6-576f371694d7": {
+          "coordinates": [
+            64,
+            127
+          ],
+          "name": "decorate assertion",
+          "prototype": "9a6363c5-0e09-4ad0-ba0a-6dfcda84ccdf",
+          "params": {}
+        },
+        "7595e014-f8b7-4835-b766-e08bbd0d0a99": {
+          "coordinates": [
+            -107,
+            -95.66666666666667
+          ],
+          "name": "fetch user",
+          "prototype": "fc2d49e4-9a41-41cd-84dd-da7d900f978f",
+          "params": {}
+        },
+        "3700d74e-e742-4ef4-a064-7a5f0f4e5d2e": {
+          "coordinates": [
+            94,
+            -146.66666666666669
+          ],
+          "name": "should return status 200",
+          "prototype": "c1025934-416f-4329-bbf0-ae3f0a0df84c",
+          "params": {
+            "11214f91-208e-4751-8ea6-db9fbf6e71f5": "\"should return status 200\""
+          }
+        },
+        "f00b573b-a3c8-4fee-9cc4-a92bf1f2fcae": {
+          "coordinates": [
+            54,
+            -50.66666666666667
+          ],
+          "name": "should have \"id\" field",
+          "prototype": "50fc536e-a390-47e6-9c07-5d2dae4088db",
+          "params": {
+            "11214f91-208e-4751-8ea6-db9fbf6e71f5": "\"should have \\\"id\\\" field\""
+          }
+        }
+      },
+      "connections": {
+        "7595e014-f8b7-4835-b766-e08bbd0d0a99": {
+          "1da5c1e6-8caf-4b32-9bd4-e25b7d631092": {
+            "3700d74e-e742-4ef4-a064-7a5f0f4e5d2e": {
+              "19e93f71-3bea-4d3f-b964-b3ef6e61a1ac": {}
+            }
+          },
+          "a9878718-4431-4c3b-a247-6ffe0f8c3a68": {
+            "f00b573b-a3c8-4fee-9cc4-a92bf1f2fcae": {
+              "c574dbf2-1240-490a-848f-59cd51d957bb": {}
+            }
+          }
+        },
+        "3700d74e-e742-4ef4-a064-7a5f0f4e5d2e": {
+          "00f8e221-4740-4c97-8522-f4849303f2c0": {
+            "b63fa69c-f066-4f0d-bae6-576f371694d7": {
+              "4b211da5-9575-4fa4-a5e3-06e1eb3b1f3c": {}
+            }
+          }
+        },
+        "f00b573b-a3c8-4fee-9cc4-a92bf1f2fcae": {
+          "00f8e221-4740-4c97-8522-f4849303f2c0": {
+            "b63fa69c-f066-4f0d-bae6-576f371694d7": {
+              "4b211da5-9575-4fa4-a5e3-06e1eb3b1f3c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "11214f91-208e-4751-8ea6-db9fbf6e71f5": {
+            "b63fa69c-f066-4f0d-bae6-576f371694d7": {
+              "177f4c60-3cd1-40c7-966a-9bafbd73d213": {}
+            }
+          },
+          "dfa1ee5d-12ae-4eb5-8fcd-02d6b8ab538f": {
+            "7595e014-f8b7-4835-b766-e08bbd0d0a99": {
+              "e518c553-09ba-4343-8ced-45a05a42765f": {}
+            },
+            "b63fa69c-f066-4f0d-bae6-576f371694d7": {
+              "a21e8c1d-841b-4583-bce9-92ed1c3355fc": {}
+            }
+          }
+        },
+        "outputs": {
+          "00f8e221-4740-4c97-8522-f4849303f2c0": {
+            "b63fa69c-f066-4f0d-bae6-576f371694d7": {
+              "5253417d-2f81-4497-951d-4a94a0d9a486": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

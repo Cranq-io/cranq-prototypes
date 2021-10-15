@@ -1,1 +1,90 @@
-{"name":"examples/api testing/junit reporter/Authenticator","interface":{"inputs":{"bf13f240-0128-4063-b374-6e51c6c79e17":{"type":"any","name":"start"}},"outputs":{"65ebbf64-a482-4bad-b081-25714506fe00":{"type":"typeof(dict)[string]","name":"token"}}},"implementations":{"cranq":{"nodes":{"d65b6b1f-3674-4f20-8bae-a86de9bd4df5":{"coordinates":[-40.66666666666666,-92.66666666666666],"name":"POST /login","prototype":"2c32b709-466e-4797-a314-2486b20eb190","params":{"852731e0-9376-4446-bac0-718d8ca1fcc4":"\"https://reqres.in/api/login\"","f72ee334-6d61-43db-978f-f31d7d2ff917":"{}","52134df1-fbb5-4df4-99a6-25020abc427e":"\"POST\""}},"8b90ae3e-bfad-4bf9-a9eb-ba6414a4af12":{"coordinates":[-42.66666666666666,122.33333333333334],"name":"credentials","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"{\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}"}},"2def209a-1814-4fe4-a9f1-cf4933a06212":{"coordinates":[126.33333333333334,52.33333333333334],"name":"get token","prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","params":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":"\"token\""}}},"connections":{"8b90ae3e-bfad-4bf9-a9eb-ba6414a4af12":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"d65b6b1f-3674-4f20-8bae-a86de9bd4df5":{"4e6e787e-0875-4f15-bf9c-a870f41f69bd":{}}}},"d65b6b1f-3674-4f20-8bae-a86de9bd4df5":{"d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d":{"2def209a-1814-4fe4-a9f1-cf4933a06212":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{}}}}},"forwards":{"inputs":{"bf13f240-0128-4063-b374-6e51c6c79e17":{"8b90ae3e-bfad-4bf9-a9eb-ba6414a4af12":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}},"outputs":{"65ebbf64-a482-4bad-b081-25714506fe00":{"2def209a-1814-4fe4-a9f1-cf4933a06212":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{}}}}}}}}
+{
+  "name": "examples/api testing/junit reporter/Authenticator",
+  "interface": {
+    "inputs": {
+      "bf13f240-0128-4063-b374-6e51c6c79e17": {
+        "type": "any",
+        "name": "start"
+      }
+    },
+    "outputs": {
+      "65ebbf64-a482-4bad-b081-25714506fe00": {
+        "type": "typeof(dict)[string]",
+        "name": "token"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d65b6b1f-3674-4f20-8bae-a86de9bd4df5": {
+          "coordinates": [
+            -40.66666666666666,
+            -92.66666666666666
+          ],
+          "name": "POST /login",
+          "prototype": "2c32b709-466e-4797-a314-2486b20eb190",
+          "params": {
+            "852731e0-9376-4446-bac0-718d8ca1fcc4": "\"https://reqres.in/api/login\"",
+            "f72ee334-6d61-43db-978f-f31d7d2ff917": "{}",
+            "52134df1-fbb5-4df4-99a6-25020abc427e": "\"POST\""
+          }
+        },
+        "8b90ae3e-bfad-4bf9-a9eb-ba6414a4af12": {
+          "coordinates": [
+            -42.66666666666666,
+            122.33333333333334
+          ],
+          "name": "credentials",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}"
+          }
+        },
+        "2def209a-1814-4fe4-a9f1-cf4933a06212": {
+          "coordinates": [
+            126.33333333333334,
+            52.33333333333334
+          ],
+          "name": "get token",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"token\""
+          }
+        }
+      },
+      "connections": {
+        "8b90ae3e-bfad-4bf9-a9eb-ba6414a4af12": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d65b6b1f-3674-4f20-8bae-a86de9bd4df5": {
+              "4e6e787e-0875-4f15-bf9c-a870f41f69bd": {}
+            }
+          }
+        },
+        "d65b6b1f-3674-4f20-8bae-a86de9bd4df5": {
+          "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
+            "2def209a-1814-4fe4-a9f1-cf4933a06212": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bf13f240-0128-4063-b374-6e51c6c79e17": {
+            "8b90ae3e-bfad-4bf9-a9eb-ba6414a4af12": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "65ebbf64-a482-4bad-b081-25714506fe00": {
+            "2def209a-1814-4fe4-a9f1-cf4933a06212": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

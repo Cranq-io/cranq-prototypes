@@ -1,1 +1,44 @@
-{"description":"","interface":{"inputs":{"7048ce39-9f84-4a01-95c0-98ccf53d1997":{"type":"any[]","name":"array"},"a179595d-c1b0-4df2-afad-2b4bb9a00a5e":{"type":"{\"index\":number,\"mapped item\":any}","name":"index & mapped item"}},"outputs":{"408ce1cd-c8a7-4d7f-8d92-7cfe8bc318e0":{"type":"typeof(index & mapped item)[\"mapped item\"][]","name":"mapped"},"2687aeee-1193-4a22-b158-7ee57013fe45":{"type":"number","name":"index"},"2633875c-3925-45ca-ad7f-79d61ca64bc8":{"type":"typeof(array)[number]","name":"item"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"state.mappingsByTag = state.mappingsByTag || new Map();","inputFunctions":{"7048ce39-9f84-4a01-95c0-98ccf53d1997":"const {length} = data;\nif (length) {\n  state.mappingsByTag.set(tag, {\n    result: [],\n    cursor: 0,\n    length\n  });\n  for (let i=0; i<length; i++) {\n    const itemTag = `${tag}:${i}`;\n    outputs.item(data[i], itemTag);\n    outputs.index(i, itemTag);\n  }\n} else {\n  outputs.mapped([], tag);\n}","a179595d-c1b0-4df2-afad-2b4bb9a00a5e":"const mappingTag = tag.substr(0, tag.lastIndexOf(\":\"));\nconst mapping = state.mappingsByTag.get(mappingTag);\nconst {result} = mapping;\nresult[data.index] = data[\"mapped item\"];\nif (++mapping.cursor === mapping.length) {\n  state.mappingsByTag.delete(mappingTag);\n  outputs.mapped(result, mappingTag);\n}"}}},"name":"data/array/Mapper/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "7048ce39-9f84-4a01-95c0-98ccf53d1997": {
+        "type": "any[]",
+        "name": "array"
+      },
+      "a179595d-c1b0-4df2-afad-2b4bb9a00a5e": {
+        "type": "{\"index\":number,\"mapped item\":any}",
+        "name": "index & mapped item"
+      }
+    },
+    "outputs": {
+      "408ce1cd-c8a7-4d7f-8d92-7cfe8bc318e0": {
+        "type": "typeof(index & mapped item)[\"mapped item\"][]",
+        "name": "mapped"
+      },
+      "2687aeee-1193-4a22-b158-7ee57013fe45": {
+        "type": "number",
+        "name": "index"
+      },
+      "2633875c-3925-45ca-ad7f-79d61ca64bc8": {
+        "type": "typeof(array)[number]",
+        "name": "item"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "state.mappingsByTag = state.mappingsByTag || new Map();",
+      "inputFunctions": {
+        "7048ce39-9f84-4a01-95c0-98ccf53d1997": "const {length} = data;\nif (length) {\n  state.mappingsByTag.set(tag, {\n    result: [],\n    cursor: 0,\n    length\n  });\n  for (let i=0; i<length; i++) {\n    const itemTag = `${tag}:${i}`;\n    outputs.item(data[i], itemTag);\n    outputs.index(i, itemTag);\n  }\n} else {\n  outputs.mapped([], tag);\n}",
+        "a179595d-c1b0-4df2-afad-2b4bb9a00a5e": "const mappingTag = tag.substr(0, tag.lastIndexOf(\":\"));\nconst mapping = state.mappingsByTag.get(mappingTag);\nconst {result} = mapping;\nresult[data.index] = data[\"mapped item\"];\nif (++mapping.cursor === mapping.length) {\n  state.mappingsByTag.delete(mappingTag);\n  outputs.mapped(result, mappingTag);\n}"
+      }
+    }
+  },
+  "name": "data/array/Mapper/_",
+  "attributes": {
+    "internal": true
+  }
+}

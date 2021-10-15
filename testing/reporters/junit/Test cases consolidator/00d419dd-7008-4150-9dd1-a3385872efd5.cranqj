@@ -1,1 +1,111 @@
-{"name":"testing/reporters/junit/Test cases consolidator","interface":{"inputs":{"c672b5aa-5fb6-4ea0-8e1f-27b829e87fa0":{"type":"any","name":"pre-report"}},"outputs":{"8aeac4fc-e0a3-4d72-8d4a-0812ef03393a":{"type":"any","name":"pre-report"}}},"implementations":{"cranq":{"connections":{"d708fde2-0dcb-4d41-a233-b6d5b1ba8c04":{"2f73c01b-2351-4070-9ecf-b0fc8d7d5f20":{"7f280cd0-b17a-4eb5-bc23-a6045916f26d":{"8a82bc3e-2765-4d8b-b372-fbb77a4f4383":{}}},"a5ce631a-eed0-4098-acc1-0ee4ac1e70a1":{"6922fcf5-97d6-46e1-8fb8-9394cc68b4b3":{"1670d7c3-36ce-42d6-8411-b90866ca411a":{}}},"c4592bfb-7146-4b8a-8d45-9e58caecf861":{"8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b":{"f58efe33-f70e-4570-ac54-670aaf844385":{}}},"3eebba16-9a8b-47ce-a360-102fd11f5434":{"6922fcf5-97d6-46e1-8fb8-9394cc68b4b3":{"0d7e3081-01f4-41bf-b4b3-822ee0990aa3":{}}}},"7f280cd0-b17a-4eb5-bc23-a6045916f26d":{"807f86ec-082e-4a9a-a304-021a397dca4c":{"6922fcf5-97d6-46e1-8fb8-9394cc68b4b3":{"5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a":{}}}}},"forwards":{"inputs":{"c672b5aa-5fb6-4ea0-8e1f-27b829e87fa0":{"d708fde2-0dcb-4d41-a233-b6d5b1ba8c04":{"1b7f140a-f566-46af-9782-8e97804b07d6":{}},"8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{}}}},"outputs":{"8aeac4fc-e0a3-4d72-8d4a-0812ef03393a":{"8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b":{"eb4c2873-890f-4780-a895-53e321f3739e":{}}}}},"nodes":{"d708fde2-0dcb-4d41-a233-b6d5b1ba8c04":{"coordinates":[-132,51.25],"name":"iterator","prototype":"61321f3c-9b14-4779-ace6-ad9f32cc5f7f","params":{"788366e4-5319-4b4f-a2a6-124672c444f4":"[\"suites\", {\"type\": \"wildcard\"}, \"testCases\"]"}},"7f280cd0-b17a-4eb5-bc23-a6045916f26d":{"coordinates":[9,136.25],"name":"values getter","prototype":"3419d082-1bea-4e6b-8dfb-47eabfe792b0","params":{}},"6922fcf5-97d6-46e1-8fb8-9394cc68b4b3":{"coordinates":[134,-26.75],"name":"node setter/mutable","prototype":"ec47f31f-a2f2-4f53-ab3e-a5345e5bca41","params":{}},"8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b":{"coordinates":[83,-125.75],"name":"depot","prototype":"62c8e48b-0926-4fa7-8322-02975bf4dc41","params":{}}}}}}
+{
+  "name": "testing/reporters/junit/Test cases consolidator",
+  "interface": {
+    "inputs": {
+      "c672b5aa-5fb6-4ea0-8e1f-27b829e87fa0": {
+        "type": "any",
+        "name": "pre-report"
+      }
+    },
+    "outputs": {
+      "8aeac4fc-e0a3-4d72-8d4a-0812ef03393a": {
+        "type": "any",
+        "name": "pre-report"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "d708fde2-0dcb-4d41-a233-b6d5b1ba8c04": {
+          "2f73c01b-2351-4070-9ecf-b0fc8d7d5f20": {
+            "7f280cd0-b17a-4eb5-bc23-a6045916f26d": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          },
+          "a5ce631a-eed0-4098-acc1-0ee4ac1e70a1": {
+            "6922fcf5-97d6-46e1-8fb8-9394cc68b4b3": {
+              "1670d7c3-36ce-42d6-8411-b90866ca411a": {}
+            }
+          },
+          "c4592bfb-7146-4b8a-8d45-9e58caecf861": {
+            "8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          },
+          "3eebba16-9a8b-47ce-a360-102fd11f5434": {
+            "6922fcf5-97d6-46e1-8fb8-9394cc68b4b3": {
+              "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {}
+            }
+          }
+        },
+        "7f280cd0-b17a-4eb5-bc23-a6045916f26d": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "6922fcf5-97d6-46e1-8fb8-9394cc68b4b3": {
+              "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c672b5aa-5fb6-4ea0-8e1f-27b829e87fa0": {
+            "d708fde2-0dcb-4d41-a233-b6d5b1ba8c04": {
+              "1b7f140a-f566-46af-9782-8e97804b07d6": {}
+            },
+            "8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "8aeac4fc-e0a3-4d72-8d4a-0812ef03393a": {
+            "8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "d708fde2-0dcb-4d41-a233-b6d5b1ba8c04": {
+          "coordinates": [
+            -132,
+            51.25
+          ],
+          "name": "iterator",
+          "prototype": "61321f3c-9b14-4779-ace6-ad9f32cc5f7f",
+          "params": {
+            "788366e4-5319-4b4f-a2a6-124672c444f4": "[\"suites\", {\"type\": \"wildcard\"}, \"testCases\"]"
+          }
+        },
+        "7f280cd0-b17a-4eb5-bc23-a6045916f26d": {
+          "coordinates": [
+            9,
+            136.25
+          ],
+          "name": "values getter",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0",
+          "params": {}
+        },
+        "6922fcf5-97d6-46e1-8fb8-9394cc68b4b3": {
+          "coordinates": [
+            134,
+            -26.75
+          ],
+          "name": "node setter/mutable",
+          "prototype": "ec47f31f-a2f2-4f53-ab3e-a5345e5bca41",
+          "params": {}
+        },
+        "8b94ecb0-1799-4e62-b5a8-e20b73bd7b8b": {
+          "coordinates": [
+            83,
+            -125.75
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,28 @@
-{"description":"Tells whether the input is an array.","interface":{"inputs":{"fbe078e3-bdcf-4dff-be9b-6be2e50bedb3":{"type":"any","name":"data"}},"outputs":{"63f3f918-df9f-4037-870b-b5189bea60ad":{"type":"is any[]","name":"is array"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"fbe078e3-bdcf-4dff-be9b-6be2e50bedb3":"outputs[\"is array\"](data instanceof Array, tag);"}}},"name":"data/array/Type tester"}
+{
+  "description": "Tells whether the input is an array.",
+  "interface": {
+    "inputs": {
+      "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "63f3f918-df9f-4037-870b-b5189bea60ad": {
+        "type": "is any[]",
+        "name": "is array"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": "outputs[\"is array\"](data instanceof Array, tag);"
+      }
+    }
+  },
+  "name": "data/array/Type tester"
+}

@@ -1,1 +1,106 @@
-{"name":"data/tree/Iterator","interface":{"inputs":{"1b7f140a-f566-46af-9782-8e97804b07d6":{"type":"any","name":"tree"},"788366e4-5319-4b4f-a2a6-124672c444f4":{"type":"any","name":"query","description":"Pattern for paths. Array of strings or expressions.\nStrings look for exact matches, expressions describe matching mechanisms.\n\n{\"type\": \"wildcard\"}\nMatches any key in the current node.\n\n{\"type\": \"options\", \"options\":[]}\nMatches the listed keys."}},"outputs":{"a5ce631a-eed0-4098-acc1-0ee4ac1e70a1":{"type":"any","name":"path"},"2f73c01b-2351-4070-9ecf-b0fc8d7d5f20":{"type":"any","name":"node"},"3eebba16-9a8b-47ce-a360-102fd11f5434":{"type":"any","name":"tree"},"c4592bfb-7146-4b8a-8d45-9e58caecf861":{"type":"any","name":"done"}}},"implementations":{"cranq":{"connections":{"e8d500d0-555d-490a-aaa7-a737f143d77a":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"4f2253db-d322-4da2-b336-fa7fa529a8e7":{"f9494c81-42f8-41eb-8ca3-549f2c2f5a99":{}}}}},"forwards":{"inputs":{"1b7f140a-f566-46af-9782-8e97804b07d6":{"e8d500d0-555d-490a-aaa7-a737f143d77a":{"tree":{}}},"788366e4-5319-4b4f-a2a6-124672c444f4":{"e8d500d0-555d-490a-aaa7-a737f143d77a":{"query":{}}}},"outputs":{"a5ce631a-eed0-4098-acc1-0ee4ac1e70a1":{"4f2253db-d322-4da2-b336-fa7fa529a8e7":{"ac66fb51-bcd1-4c27-8024-12ab45e9ba50":{}}},"2f73c01b-2351-4070-9ecf-b0fc8d7d5f20":{"4f2253db-d322-4da2-b336-fa7fa529a8e7":{"6c3b779c-2ecb-438d-9c2b-1c4f7c3b7572":{}}},"3eebba16-9a8b-47ce-a360-102fd11f5434":{"4f2253db-d322-4da2-b336-fa7fa529a8e7":{"52331a9a-d02c-4a3d-adce-ed5ec6a6f32b":{}}},"c4592bfb-7146-4b8a-8d45-9e58caecf861":{"4f2253db-d322-4da2-b336-fa7fa529a8e7":{"48f0e66a-15f6-471c-a0bc-91ad78a2f921":{}}}}},"nodes":{"4f2253db-d322-4da2-b336-fa7fa529a8e7":{"coordinates":[25.5,61],"name":"iterate","prototype":"dfb2fd20-66a1-4163-a344-cc89d1d0fd4b","params":{}},"e8d500d0-555d-490a-aaa7-a737f143d77a":{"coordinates":[-12.5,-58],"name":"sync tree & query","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"tree\", \"query\"]"}}}}},"description":"Iterates over nodes in a tree structure, as specified by the query."}
+{
+  "name": "data/tree/Iterator",
+  "interface": {
+    "inputs": {
+      "1b7f140a-f566-46af-9782-8e97804b07d6": {
+        "type": "any",
+        "name": "tree"
+      },
+      "788366e4-5319-4b4f-a2a6-124672c444f4": {
+        "type": "any",
+        "name": "query",
+        "description": "Pattern for paths. Array of strings or expressions.\nStrings look for exact matches, expressions describe matching mechanisms.\n\n{\"type\": \"wildcard\"}\nMatches any key in the current node.\n\n{\"type\": \"options\", \"options\":[]}\nMatches the listed keys."
+      }
+    },
+    "outputs": {
+      "a5ce631a-eed0-4098-acc1-0ee4ac1e70a1": {
+        "type": "any",
+        "name": "path"
+      },
+      "2f73c01b-2351-4070-9ecf-b0fc8d7d5f20": {
+        "type": "any",
+        "name": "node"
+      },
+      "3eebba16-9a8b-47ce-a360-102fd11f5434": {
+        "type": "any",
+        "name": "tree"
+      },
+      "c4592bfb-7146-4b8a-8d45-9e58caecf861": {
+        "type": "any",
+        "name": "done"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "e8d500d0-555d-490a-aaa7-a737f143d77a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4f2253db-d322-4da2-b336-fa7fa529a8e7": {
+              "f9494c81-42f8-41eb-8ca3-549f2c2f5a99": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1b7f140a-f566-46af-9782-8e97804b07d6": {
+            "e8d500d0-555d-490a-aaa7-a737f143d77a": {
+              "tree": {}
+            }
+          },
+          "788366e4-5319-4b4f-a2a6-124672c444f4": {
+            "e8d500d0-555d-490a-aaa7-a737f143d77a": {
+              "query": {}
+            }
+          }
+        },
+        "outputs": {
+          "a5ce631a-eed0-4098-acc1-0ee4ac1e70a1": {
+            "4f2253db-d322-4da2-b336-fa7fa529a8e7": {
+              "ac66fb51-bcd1-4c27-8024-12ab45e9ba50": {}
+            }
+          },
+          "2f73c01b-2351-4070-9ecf-b0fc8d7d5f20": {
+            "4f2253db-d322-4da2-b336-fa7fa529a8e7": {
+              "6c3b779c-2ecb-438d-9c2b-1c4f7c3b7572": {}
+            }
+          },
+          "3eebba16-9a8b-47ce-a360-102fd11f5434": {
+            "4f2253db-d322-4da2-b336-fa7fa529a8e7": {
+              "52331a9a-d02c-4a3d-adce-ed5ec6a6f32b": {}
+            }
+          },
+          "c4592bfb-7146-4b8a-8d45-9e58caecf861": {
+            "4f2253db-d322-4da2-b336-fa7fa529a8e7": {
+              "48f0e66a-15f6-471c-a0bc-91ad78a2f921": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "4f2253db-d322-4da2-b336-fa7fa529a8e7": {
+          "coordinates": [
+            25.5,
+            61
+          ],
+          "name": "iterate",
+          "prototype": "dfb2fd20-66a1-4163-a344-cc89d1d0fd4b",
+          "params": {}
+        },
+        "e8d500d0-555d-490a-aaa7-a737f143d77a": {
+          "coordinates": [
+            -12.5,
+            -58
+          ],
+          "name": "sync tree & query",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"tree\", \"query\"]"
+          }
+        }
+      }
+    }
+  },
+  "description": "Iterates over nodes in a tree structure, as specified by the query."
+}

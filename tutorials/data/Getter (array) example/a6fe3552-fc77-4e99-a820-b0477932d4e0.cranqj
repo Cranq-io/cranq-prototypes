@@ -1,1 +1,174 @@
-{"description":"Example node, that demonstrates the usage of array getter nodes.","interface":{"inputs":{"e46ddfef-574e-4467-ad29-611697ad5a70":{"description":"","type":"any","name":"run"}},"outputs":{"d738ee1e-6ed9-4a49-9748-3f5bd4d437a5":{"description":"","type":"any","name":"first"},"da7ad5d8-6954-4bd8-9e0d-b36a09fcb002":{"description":"","type":"any","name":"last"},"8516b3c1-9346-4707-8fc5-e47902e14068":{"description":"","type":"any","name":"index_1"},"83d6ac85-9d5b-4e06-8e24-414919f4daa2":{"description":"","type":"any","name":"length"}}},"implementations":{"cranq":{"nodes":{"bb1212f6-2723-4b1e-ae67-d0e0d07079ae":{"coordinates":[-65,-67],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"8"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"1"},"c34ef789-8558-482e-b5a4-c26f4ca7220d":{"coordinates":[17,84],"description":"","params":{},"prototype":"5bead7ea-5031-4993-a855-dc9ca089802f","name":"First item getter A"},"d3b3d70a-9740-4380-83cf-aa9eef8c62dd":{"coordinates":[33,-171],"description":"","params":{},"prototype":"f659815e-3af3-4399-9c7b-dec6cd927b55","name":"Item getter A"},"1d7cf643-ccf3-43e8-9123-e659eb901f85":{"coordinates":[17,-5],"description":"","params":{},"prototype":"4a0c6a02-1411-407f-93a5-636b942968d8","name":"Last item getter A"},"993c5e8d-bc99-4486-998d-b986f09e4b3a":{"coordinates":[35,-247],"description":"","params":{},"prototype":"ed50d3dd-e850-434d-a4da-90d05fc35e8b","name":"Length getter A"},"611026ca-a33d-422b-b9f0-a00d6ef98016":{"coordinates":[-349,-57],"description":"","params":{},"prototype":"da897a3d-d49a-470b-a7b4-606697a885e1","name":"create_array"}},"connections":{"bb1212f6-2723-4b1e-ae67-d0e0d07079ae":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"d3b3d70a-9740-4380-83cf-aa9eef8c62dd":{"a6846250-26ed-4240-b65a-fd5eddd57556":{"description":""}}}},"611026ca-a33d-422b-b9f0-a00d6ef98016":{"8ba1e7be-fd21-4063-9a86-ae5042616b78":{"bb1212f6-2723-4b1e-ae67-d0e0d07079ae":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}},"c34ef789-8558-482e-b5a4-c26f4ca7220d":{"cfd3b3e7-80fb-464a-a923-f9fcb9555b0c":{"description":""}},"d3b3d70a-9740-4380-83cf-aa9eef8c62dd":{"352fc29e-79dd-4fa0-8b8b-0ff79ea197d1":{"description":""}},"1d7cf643-ccf3-43e8-9123-e659eb901f85":{"e4936450-3660-45ac-8cb5-7699ba69ba66":{"description":""}},"993c5e8d-bc99-4486-998d-b986f09e4b3a":{"3796de71-a230-4869-9963-2c1815242213":{"description":""}}}}},"forwards":{"inputs":{"e46ddfef-574e-4467-ad29-611697ad5a70":{"611026ca-a33d-422b-b9f0-a00d6ef98016":{"68298fb0-ad64-4e98-9606-4c6b75ac090f":{}}}},"outputs":{"d738ee1e-6ed9-4a49-9748-3f5bd4d437a5":{"c34ef789-8558-482e-b5a4-c26f4ca7220d":{"f7832747-fb1e-432b-9c10-60ac76c110cc":{}}},"da7ad5d8-6954-4bd8-9e0d-b36a09fcb002":{"1d7cf643-ccf3-43e8-9123-e659eb901f85":{"e6cf79e7-8084-402e-a28c-82b50b07e0ec":{}}},"8516b3c1-9346-4707-8fc5-e47902e14068":{"d3b3d70a-9740-4380-83cf-aa9eef8c62dd":{"4a915651-a98d-4ce4-901f-16f958b5b3a9":{}}},"83d6ac85-9d5b-4e06-8e24-414919f4daa2":{"993c5e8d-bc99-4486-998d-b986f09e4b3a":{"90dc3844-70bc-4a25-a7f4-3d281c97e5fc":{}}}}}}},"name":"tutorials/data/Getter (array) example"}
+{
+  "description": "Example node, that demonstrates the usage of array getter nodes.",
+  "interface": {
+    "inputs": {
+      "e46ddfef-574e-4467-ad29-611697ad5a70": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "d738ee1e-6ed9-4a49-9748-3f5bd4d437a5": {
+        "description": "",
+        "type": "any",
+        "name": "first"
+      },
+      "da7ad5d8-6954-4bd8-9e0d-b36a09fcb002": {
+        "description": "",
+        "type": "any",
+        "name": "last"
+      },
+      "8516b3c1-9346-4707-8fc5-e47902e14068": {
+        "description": "",
+        "type": "any",
+        "name": "index_1"
+      },
+      "83d6ac85-9d5b-4e06-8e24-414919f4daa2": {
+        "description": "",
+        "type": "any",
+        "name": "length"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bb1212f6-2723-4b1e-ae67-d0e0d07079ae": {
+          "coordinates": [
+            -65,
+            -67
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "8"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "1"
+        },
+        "c34ef789-8558-482e-b5a4-c26f4ca7220d": {
+          "coordinates": [
+            17,
+            84
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "5bead7ea-5031-4993-a855-dc9ca089802f",
+          "name": "First item getter A"
+        },
+        "d3b3d70a-9740-4380-83cf-aa9eef8c62dd": {
+          "coordinates": [
+            33,
+            -171
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "f659815e-3af3-4399-9c7b-dec6cd927b55",
+          "name": "Item getter A"
+        },
+        "1d7cf643-ccf3-43e8-9123-e659eb901f85": {
+          "coordinates": [
+            17,
+            -5
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "4a0c6a02-1411-407f-93a5-636b942968d8",
+          "name": "Last item getter A"
+        },
+        "993c5e8d-bc99-4486-998d-b986f09e4b3a": {
+          "coordinates": [
+            35,
+            -247
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b",
+          "name": "Length getter A"
+        },
+        "611026ca-a33d-422b-b9f0-a00d6ef98016": {
+          "coordinates": [
+            -349,
+            -57
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "da897a3d-d49a-470b-a7b4-606697a885e1",
+          "name": "create_array"
+        }
+      },
+      "connections": {
+        "bb1212f6-2723-4b1e-ae67-d0e0d07079ae": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d3b3d70a-9740-4380-83cf-aa9eef8c62dd": {
+              "a6846250-26ed-4240-b65a-fd5eddd57556": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "611026ca-a33d-422b-b9f0-a00d6ef98016": {
+          "8ba1e7be-fd21-4063-9a86-ae5042616b78": {
+            "bb1212f6-2723-4b1e-ae67-d0e0d07079ae": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            },
+            "c34ef789-8558-482e-b5a4-c26f4ca7220d": {
+              "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {
+                "description": ""
+              }
+            },
+            "d3b3d70a-9740-4380-83cf-aa9eef8c62dd": {
+              "352fc29e-79dd-4fa0-8b8b-0ff79ea197d1": {
+                "description": ""
+              }
+            },
+            "1d7cf643-ccf3-43e8-9123-e659eb901f85": {
+              "e4936450-3660-45ac-8cb5-7699ba69ba66": {
+                "description": ""
+              }
+            },
+            "993c5e8d-bc99-4486-998d-b986f09e4b3a": {
+              "3796de71-a230-4869-9963-2c1815242213": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e46ddfef-574e-4467-ad29-611697ad5a70": {
+            "611026ca-a33d-422b-b9f0-a00d6ef98016": {
+              "68298fb0-ad64-4e98-9606-4c6b75ac090f": {}
+            }
+          }
+        },
+        "outputs": {
+          "d738ee1e-6ed9-4a49-9748-3f5bd4d437a5": {
+            "c34ef789-8558-482e-b5a4-c26f4ca7220d": {
+              "f7832747-fb1e-432b-9c10-60ac76c110cc": {}
+            }
+          },
+          "da7ad5d8-6954-4bd8-9e0d-b36a09fcb002": {
+            "1d7cf643-ccf3-43e8-9123-e659eb901f85": {
+              "e6cf79e7-8084-402e-a28c-82b50b07e0ec": {}
+            }
+          },
+          "8516b3c1-9346-4707-8fc5-e47902e14068": {
+            "d3b3d70a-9740-4380-83cf-aa9eef8c62dd": {
+              "4a915651-a98d-4ce4-901f-16f958b5b3a9": {}
+            }
+          },
+          "83d6ac85-9d5b-4e06-8e24-414919f4daa2": {
+            "993c5e8d-bc99-4486-998d-b986f09e4b3a": {
+              "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Getter (array) example"
+}

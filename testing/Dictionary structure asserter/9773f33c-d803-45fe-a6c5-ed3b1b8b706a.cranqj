@@ -1,1 +1,92 @@
-{"name":"testing/Dictionary structure asserter","interface":{"inputs":{"c4ac0a1f-3a84-4f03-9e2c-a1f24e2e57ce":{"type":"any","name":"dict"},"4b0b3b1a-a930-4dd5-b9d7-0e8c855cb819":{"type":"any","name":"structure"},"636706b6-4c55-4ebe-96f8-be35a0db9020":{"type":"any","name":"strict"}},"outputs":{"c2619c7b-774a-481f-9eb9-ec4682a67c96":{"type":"any","name":"assertion"}}},"implementations":{"cranq":{"connections":{"bf490c49-b198-4451-9669-3083c5b5a14e":{"e85c0dbd-233a-491b-af85-389114b2eea3":{"ba4abe69-ded0-4829-8713-e2b2740347a6":{"2e61b0a5-85a3-4994-9748-cfd04bacb66d":{}}}}},"forwards":{"inputs":{"c4ac0a1f-3a84-4f03-9e2c-a1f24e2e57ce":{"bf490c49-b198-4451-9669-3083c5b5a14e":{"8ad77d9b-7994-4f7e-88b9-f2808948f5f7":{}},"ba4abe69-ded0-4829-8713-e2b2740347a6":{"802dd93c-3539-4302-ba8b-fbb41e91831b":{}}},"4b0b3b1a-a930-4dd5-b9d7-0e8c855cb819":{"bf490c49-b198-4451-9669-3083c5b5a14e":{"7345d213-6dde-4944-ba8b-7f8c0b88e6e3":{}},"ba4abe69-ded0-4829-8713-e2b2740347a6":{"dce20fa8-359e-463b-bb1a-6c9221759d8f":{}}},"636706b6-4c55-4ebe-96f8-be35a0db9020":{"bf490c49-b198-4451-9669-3083c5b5a14e":{"39d945ae-4df1-4409-822e-eb45b47695ee":{}}}},"outputs":{"c2619c7b-774a-481f-9eb9-ec4682a67c96":{"ba4abe69-ded0-4829-8713-e2b2740347a6":{"207e4ad2-ba4c-4146-98da-1898a56bb067":{}}}}},"nodes":{"bf490c49-b198-4451-9669-3083c5b5a14e":{"coordinates":[-4,-72.5],"name":"matches structure?","prototype":"1103810c-ece3-4274-987a-03447817473f","params":{}},"ba4abe69-ded0-4829-8713-e2b2740347a6":{"coordinates":[34,83.5],"name":"build assertion","prototype":"96f3e9b5-3694-4d0d-b420-e5c7500fd848","params":{"4b903c86-5f3c-48cb-93e5-0357f9a0b0f5":"\"matches structure\""}}}}}}
+{
+  "name": "testing/Dictionary structure asserter",
+  "interface": {
+    "inputs": {
+      "c4ac0a1f-3a84-4f03-9e2c-a1f24e2e57ce": {
+        "type": "any",
+        "name": "dict"
+      },
+      "4b0b3b1a-a930-4dd5-b9d7-0e8c855cb819": {
+        "type": "any",
+        "name": "structure"
+      },
+      "636706b6-4c55-4ebe-96f8-be35a0db9020": {
+        "type": "any",
+        "name": "strict"
+      }
+    },
+    "outputs": {
+      "c2619c7b-774a-481f-9eb9-ec4682a67c96": {
+        "type": "any",
+        "name": "assertion"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "bf490c49-b198-4451-9669-3083c5b5a14e": {
+          "e85c0dbd-233a-491b-af85-389114b2eea3": {
+            "ba4abe69-ded0-4829-8713-e2b2740347a6": {
+              "2e61b0a5-85a3-4994-9748-cfd04bacb66d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c4ac0a1f-3a84-4f03-9e2c-a1f24e2e57ce": {
+            "bf490c49-b198-4451-9669-3083c5b5a14e": {
+              "8ad77d9b-7994-4f7e-88b9-f2808948f5f7": {}
+            },
+            "ba4abe69-ded0-4829-8713-e2b2740347a6": {
+              "802dd93c-3539-4302-ba8b-fbb41e91831b": {}
+            }
+          },
+          "4b0b3b1a-a930-4dd5-b9d7-0e8c855cb819": {
+            "bf490c49-b198-4451-9669-3083c5b5a14e": {
+              "7345d213-6dde-4944-ba8b-7f8c0b88e6e3": {}
+            },
+            "ba4abe69-ded0-4829-8713-e2b2740347a6": {
+              "dce20fa8-359e-463b-bb1a-6c9221759d8f": {}
+            }
+          },
+          "636706b6-4c55-4ebe-96f8-be35a0db9020": {
+            "bf490c49-b198-4451-9669-3083c5b5a14e": {
+              "39d945ae-4df1-4409-822e-eb45b47695ee": {}
+            }
+          }
+        },
+        "outputs": {
+          "c2619c7b-774a-481f-9eb9-ec4682a67c96": {
+            "ba4abe69-ded0-4829-8713-e2b2740347a6": {
+              "207e4ad2-ba4c-4146-98da-1898a56bb067": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "bf490c49-b198-4451-9669-3083c5b5a14e": {
+          "coordinates": [
+            -4,
+            -72.5
+          ],
+          "name": "matches structure?",
+          "prototype": "1103810c-ece3-4274-987a-03447817473f",
+          "params": {}
+        },
+        "ba4abe69-ded0-4829-8713-e2b2740347a6": {
+          "coordinates": [
+            34,
+            83.5
+          ],
+          "name": "build assertion",
+          "prototype": "96f3e9b5-3694-4d0d-b420-e5c7500fd848",
+          "params": {
+            "4b903c86-5f3c-48cb-93e5-0357f9a0b0f5": "\"matches structure\""
+          }
+        }
+      }
+    }
+  }
+}

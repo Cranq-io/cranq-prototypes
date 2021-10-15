@@ -1,1 +1,28 @@
-{"description":"","interface":{"inputs":{"bffdd7a0-eeaa-41c5-b272-20aff39ae810":{"type":"boolean","name":"a"}},"outputs":{"442847b6-23b9-4ad6-a3f5-cce6e5159644":{"type":"boolean","name":"not"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"bffdd7a0-eeaa-41c5-b272-20aff39ae810":"outputs.not(!data, tag);"}}},"name":"boolean/Not"}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {
+        "type": "boolean",
+        "name": "a"
+      }
+    },
+    "outputs": {
+      "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
+        "type": "boolean",
+        "name": "not"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "bffdd7a0-eeaa-41c5-b272-20aff39ae810": "outputs.not(!data, tag);"
+      }
+    }
+  },
+  "name": "boolean/Not"
+}

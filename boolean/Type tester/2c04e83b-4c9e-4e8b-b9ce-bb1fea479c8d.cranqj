@@ -1,1 +1,28 @@
-{"description":"Tells whether the input is a boolean.","interface":{"inputs":{"6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b":{"type":"any","name":"data"}},"outputs":{"52a394b8-a406-424b-83fc-d6446eceb21f":{"type":"is boolean","name":"is boolean"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b":"outputs[\"is boolean\"](typeof data === \"boolean\", tag);"}}},"name":"boolean/Type tester"}
+{
+  "description": "Tells whether the input is a boolean.",
+  "interface": {
+    "inputs": {
+      "6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "52a394b8-a406-424b-83fc-d6446eceb21f": {
+        "type": "is boolean",
+        "name": "is boolean"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b": "outputs[\"is boolean\"](typeof data === \"boolean\", tag);"
+      }
+    }
+  },
+  "name": "boolean/Type tester"
+}

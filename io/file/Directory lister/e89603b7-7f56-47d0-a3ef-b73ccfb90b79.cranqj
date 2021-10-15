@@ -1,1 +1,63 @@
-{"description":"Non-recursively lists the files & directories under the specified path","interface":{"inputs":{"36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600":{"description":"","type":"any","name":"path"}},"outputs":{"acb2963b-7d28-4c79-b458-4cec00becf24":{"description":"The files & directories under the specified path","type":"any","name":"children"},"a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e":{"description":"Indicates, that the operation has failed","type":"any","name":"bounced"}}},"implementations":{"cranq":{"nodes":{"d074e86b-c9b1-40e3-b041-44b90dd5003a":{"coordinates":[-15,-59],"description":"","params":{},"prototype":"241785f4-c80a-42e4-a663-c5d2ec1b0066","name":"list directory"}},"connections":{},"forwards":{"inputs":{"36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600":{"d074e86b-c9b1-40e3-b041-44b90dd5003a":{"07712441-b6b1-4886-b336-a7feee991391":{}}}},"outputs":{"acb2963b-7d28-4c79-b458-4cec00becf24":{"d074e86b-c9b1-40e3-b041-44b90dd5003a":{"ca962ee9-2eac-455f-83c7-b115f7ab7f52":{}}},"a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e":{"d074e86b-c9b1-40e3-b041-44b90dd5003a":{"be7d3e30-3f34-4e8f-8a7b-2224ada135a6":{}}}}}}},"name":"io/file/Directory lister"}
+{
+  "description": "Non-recursively lists the files & directories under the specified path",
+  "interface": {
+    "inputs": {
+      "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {
+        "description": "",
+        "type": "any",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "acb2963b-7d28-4c79-b458-4cec00becf24": {
+        "description": "The files & directories under the specified path",
+        "type": "any",
+        "name": "children"
+      },
+      "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
+        "description": "Indicates, that the operation has failed",
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
+          "coordinates": [
+            -15,
+            -59
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "241785f4-c80a-42e4-a663-c5d2ec1b0066",
+          "name": "list directory"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {
+            "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
+              "07712441-b6b1-4886-b336-a7feee991391": {}
+            }
+          }
+        },
+        "outputs": {
+          "acb2963b-7d28-4c79-b458-4cec00becf24": {
+            "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
+              "ca962ee9-2eac-455f-83c7-b115f7ab7f52": {}
+            }
+          },
+          "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
+            "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
+              "be7d3e30-3f34-4e8f-8a7b-2224ada135a6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/Directory lister"
+}

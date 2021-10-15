@@ -1,1 +1,77 @@
-{"description":"Example node, that demonstrates the basic usage of the json/Serializer node.","interface":{"inputs":{"767943aa-d0f1-4ebf-bca0-caa8186f1545":{"description":"","type":"any","name":"run"}},"outputs":{"1a79a8b8-5b3b-4bca-83af-634020477720":{"description":"","type":"any","name":"output"}}},"implementations":{"cranq":{"nodes":{"c5bee7e9-0d23-4c28-b6bb-a8b3755b74fe":{"coordinates":[72,0],"description":"","params":{"deb0a917-b393-4326-b573-ec6a6f82ffec":"\"true\""},"prototype":"3820f096-6216-4049-b374-c98684387fea","name":"Serializer A"},"3c567b22-7559-41e9-8e4f-09cc33f220f0":{"coordinates":[-86,-82],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"{\n\"a\":1,\n\"b\":\"{value}\"\n}"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"json"}},"connections":{"3c567b22-7559-41e9-8e4f-09cc33f220f0":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"c5bee7e9-0d23-4c28-b6bb-a8b3755b74fe":{"cc00cc18-d6ce-4661-8dd5-eb3140a3acae":{"description":""}}}}},"forwards":{"inputs":{"767943aa-d0f1-4ebf-bca0-caa8186f1545":{"3c567b22-7559-41e9-8e4f-09cc33f220f0":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}},"outputs":{"1a79a8b8-5b3b-4bca-83af-634020477720":{"c5bee7e9-0d23-4c28-b6bb-a8b3755b74fe":{"25650a4f-7e35-4754-bc8f-1a57f538166f":{}}}}}}},"name":"tutorials/data/Serializer example"}
+{
+  "description": "Example node, that demonstrates the basic usage of the json/Serializer node.",
+  "interface": {
+    "inputs": {
+      "767943aa-d0f1-4ebf-bca0-caa8186f1545": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "1a79a8b8-5b3b-4bca-83af-634020477720": {
+        "description": "",
+        "type": "any",
+        "name": "output"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c5bee7e9-0d23-4c28-b6bb-a8b3755b74fe": {
+          "coordinates": [
+            72,
+            0
+          ],
+          "description": "",
+          "params": {
+            "deb0a917-b393-4326-b573-ec6a6f82ffec": "\"true\""
+          },
+          "prototype": "3820f096-6216-4049-b374-c98684387fea",
+          "name": "Serializer A"
+        },
+        "3c567b22-7559-41e9-8e4f-09cc33f220f0": {
+          "coordinates": [
+            -86,
+            -82
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n\"a\":1,\n\"b\":\"{value}\"\n}"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "json"
+        }
+      },
+      "connections": {
+        "3c567b22-7559-41e9-8e4f-09cc33f220f0": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "c5bee7e9-0d23-4c28-b6bb-a8b3755b74fe": {
+              "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "767943aa-d0f1-4ebf-bca0-caa8186f1545": {
+            "3c567b22-7559-41e9-8e4f-09cc33f220f0": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "1a79a8b8-5b3b-4bca-83af-634020477720": {
+            "c5bee7e9-0d23-4c28-b6bb-a8b3755b74fe": {
+              "25650a4f-7e35-4754-bc8f-1a57f538166f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Serializer example"
+}

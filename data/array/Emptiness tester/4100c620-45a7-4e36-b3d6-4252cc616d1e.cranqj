@@ -1,1 +1,97 @@
-{"description":"Tests whether array is empty.","interface":{"inputs":{"904fc9f3-3583-49e0-8c33-6e5ffd7e65a6":{"type":"any[]","name":"array"}},"outputs":{"dbb99a85-ea24-4922-b098-994987c8a10f":{"type":"boolean","name":"empty"}}},"implementations":{"cranq":{"nodes":{"9319198e-c486-4328-99fe-31ddeb780191":{"coordinates":[-38,-92],"description":"","params":{},"prototype":"ed50d3dd-e850-434d-a4da-90d05fc35e8b","name":"get length"},"79b20547-fa68-437b-9e1d-83dec06b52d1":{"coordinates":[-60,129],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"0"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"zero"},"babcfe4e-a33d-4b8e-a7ab-9671cf632ec3":{"coordinates":[121,47],"description":"","params":{},"prototype":"0497ba12-7946-4103-b58b-5e24cee0d46a","name":"is equal"}},"connections":{"9319198e-c486-4328-99fe-31ddeb780191":{"90dc3844-70bc-4a25-a7f4-3d281c97e5fc":{"79b20547-fa68-437b-9e1d-83dec06b52d1":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}},"babcfe4e-a33d-4b8e-a7ab-9671cf632ec3":{"50e32f24-30af-4721-9e0a-89e85a9ee240":{"description":""}}}},"79b20547-fa68-437b-9e1d-83dec06b52d1":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"babcfe4e-a33d-4b8e-a7ab-9671cf632ec3":{"2a91d8d8-a748-4135-9f8f-a7f200d97e6d":{"description":""}}}}},"forwards":{"inputs":{"904fc9f3-3583-49e0-8c33-6e5ffd7e65a6":{"9319198e-c486-4328-99fe-31ddeb780191":{"3796de71-a230-4869-9963-2c1815242213":{}}}},"outputs":{"dbb99a85-ea24-4922-b098-994987c8a10f":{"babcfe4e-a33d-4b8e-a7ab-9671cf632ec3":{"66ea4495-b5be-4650-9448-c802141b82cd":{}}}}}}},"name":"data/array/Emptiness tester"}
+{
+  "description": "Tests whether array is empty.",
+  "interface": {
+    "inputs": {
+      "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {
+        "type": "any[]",
+        "name": "array"
+      }
+    },
+    "outputs": {
+      "dbb99a85-ea24-4922-b098-994987c8a10f": {
+        "type": "boolean",
+        "name": "empty"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9319198e-c486-4328-99fe-31ddeb780191": {
+          "coordinates": [
+            -38,
+            -92
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b",
+          "name": "get length"
+        },
+        "79b20547-fa68-437b-9e1d-83dec06b52d1": {
+          "coordinates": [
+            -60,
+            129
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "0"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "zero"
+        },
+        "babcfe4e-a33d-4b8e-a7ab-9671cf632ec3": {
+          "coordinates": [
+            121,
+            47
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a",
+          "name": "is equal"
+        }
+      },
+      "connections": {
+        "9319198e-c486-4328-99fe-31ddeb780191": {
+          "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
+            "79b20547-fa68-437b-9e1d-83dec06b52d1": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            },
+            "babcfe4e-a33d-4b8e-a7ab-9671cf632ec3": {
+              "50e32f24-30af-4721-9e0a-89e85a9ee240": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "79b20547-fa68-437b-9e1d-83dec06b52d1": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "babcfe4e-a33d-4b8e-a7ab-9671cf632ec3": {
+              "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {
+            "9319198e-c486-4328-99fe-31ddeb780191": {
+              "3796de71-a230-4869-9963-2c1815242213": {}
+            }
+          }
+        },
+        "outputs": {
+          "dbb99a85-ea24-4922-b098-994987c8a10f": {
+            "babcfe4e-a33d-4b8e-a7ab-9671cf632ec3": {
+              "66ea4495-b5be-4650-9448-c802141b82cd": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/array/Emptiness tester"
+}

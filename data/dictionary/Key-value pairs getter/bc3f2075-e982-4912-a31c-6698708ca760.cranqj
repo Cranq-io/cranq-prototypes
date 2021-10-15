@@ -1,1 +1,28 @@
-{"description":"Gets key-value pairs from the dictionary as an array.","interface":{"inputs":{"8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2":{"type":"{string:any}","name":"dict"}},"outputs":{"c1e0e7c9-b331-443a-8005-d72bc86a0e07":{"type":"{\"key\":string,\"value\":typeof(dict)[string]}[]","name":"key-value pairs"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2":"outputs[\"key-value pairs\"](Object.keys(data).map(key => ({key, value:data[key]})), tag);"}}},"name":"data/dictionary/Key-value pairs getter"}
+{
+  "description": "Gets key-value pairs from the dictionary as an array.",
+  "interface": {
+    "inputs": {
+      "8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2": {
+        "type": "{string:any}",
+        "name": "dict"
+      }
+    },
+    "outputs": {
+      "c1e0e7c9-b331-443a-8005-d72bc86a0e07": {
+        "type": "{\"key\":string,\"value\":typeof(dict)[string]}[]",
+        "name": "key-value pairs"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2": "outputs[\"key-value pairs\"](Object.keys(data).map(key => ({key, value:data[key]})), tag);"
+      }
+    }
+  },
+  "name": "data/dictionary/Key-value pairs getter"
+}

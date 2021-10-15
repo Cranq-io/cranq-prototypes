@@ -1,1 +1,85 @@
-{"description":"Example node, that demonstrates the usage of the flow/Splitter for splitting dictionaries by keys.","interface":{"inputs":{"67886cad-e956-4ca8-bc2b-a3ba96a4dcd0":{"description":"","type":"any","name":"run"}},"outputs":{"f6674573-d1f1-40a1-af9b-911423e7a6a1":{"description":"","type":"any","name":"Employees"},"a9305606-23ef-48de-8ab3-703d79a205b7":{"description":"","type":"any","name":"Departments"}}},"implementations":{"cranq":{"nodes":{"10de1570-0ed0-41e5-87f1-267a782faf84":{"coordinates":[-9,-54],"description":"","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"Employees\",\"Departments\"]"},"prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","name":"Splitter A"},"05ee2c11-582e-4cb7-baf1-7f987b0573bf":{"coordinates":[-147,1],"description":"","params":{},"prototype":"cbfb2b1a-a0e6-43fe-9165-ab1f6cb44756","name":"get_repo"}},"connections":{"05ee2c11-582e-4cb7-baf1-7f987b0573bf":{"8bda2183-f897-436a-8f76-5ffbe18b63ab":{"10de1570-0ed0-41e5-87f1-267a782faf84":{"6ad86184-6890-4323-8021-3496a682c98e":{"description":""}}}}},"forwards":{"inputs":{"67886cad-e956-4ca8-bc2b-a3ba96a4dcd0":{"05ee2c11-582e-4cb7-baf1-7f987b0573bf":{"0369f677-4de9-4f29-9086-77bee79a35a3":{}}}},"outputs":{"f6674573-d1f1-40a1-af9b-911423e7a6a1":{"10de1570-0ed0-41e5-87f1-267a782faf84":{"Departments":{}}},"a9305606-23ef-48de-8ab3-703d79a205b7":{"10de1570-0ed0-41e5-87f1-267a782faf84":{"Employees":{}}}}}}},"name":"tutorials/data/Splitter (split dicionary) example"}
+{
+  "description": "Example node, that demonstrates the usage of the flow/Splitter for splitting dictionaries by keys.",
+  "interface": {
+    "inputs": {
+      "67886cad-e956-4ca8-bc2b-a3ba96a4dcd0": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "f6674573-d1f1-40a1-af9b-911423e7a6a1": {
+        "description": "",
+        "type": "any",
+        "name": "Employees"
+      },
+      "a9305606-23ef-48de-8ab3-703d79a205b7": {
+        "description": "",
+        "type": "any",
+        "name": "Departments"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "10de1570-0ed0-41e5-87f1-267a782faf84": {
+          "coordinates": [
+            -9,
+            -54
+          ],
+          "description": "",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"Employees\",\"Departments\"]"
+          },
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "name": "Splitter A"
+        },
+        "05ee2c11-582e-4cb7-baf1-7f987b0573bf": {
+          "coordinates": [
+            -147,
+            1
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "cbfb2b1a-a0e6-43fe-9165-ab1f6cb44756",
+          "name": "get_repo"
+        }
+      },
+      "connections": {
+        "05ee2c11-582e-4cb7-baf1-7f987b0573bf": {
+          "8bda2183-f897-436a-8f76-5ffbe18b63ab": {
+            "10de1570-0ed0-41e5-87f1-267a782faf84": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "67886cad-e956-4ca8-bc2b-a3ba96a4dcd0": {
+            "05ee2c11-582e-4cb7-baf1-7f987b0573bf": {
+              "0369f677-4de9-4f29-9086-77bee79a35a3": {}
+            }
+          }
+        },
+        "outputs": {
+          "f6674573-d1f1-40a1-af9b-911423e7a6a1": {
+            "10de1570-0ed0-41e5-87f1-267a782faf84": {
+              "Departments": {}
+            }
+          },
+          "a9305606-23ef-48de-8ab3-703d79a205b7": {
+            "10de1570-0ed0-41e5-87f1-267a782faf84": {
+              "Employees": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Splitter (split dicionary) example"
+}

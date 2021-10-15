@@ -1,1 +1,35 @@
-{"description":"","interface":{"inputs":{"1810d2e1-639e-46e6-8960-6aad7784279d":{"type":"{\"a\":number,\"b\":number}","name":"a & b"}},"outputs":{"262c15c8-8150-4034-8e2e-4b6126463efd":{"type":"number","name":"remainder"},"8e7c793a-2ead-4fe0-91f1-a09581523216":{"type":"typeof(a & b)","name":"bounced"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"1810d2e1-639e-46e6-8960-6aad7784279d":"const {a, b} = data;\nif (b !== 0)\n  outputs.remainder(a % b, tag);\nelse\n  outputs.bounced(data, tag);\n"}}},"name":"number/Modulo/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "1810d2e1-639e-46e6-8960-6aad7784279d": {
+        "type": "{\"a\":number,\"b\":number}",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "262c15c8-8150-4034-8e2e-4b6126463efd": {
+        "type": "number",
+        "name": "remainder"
+      },
+      "8e7c793a-2ead-4fe0-91f1-a09581523216": {
+        "type": "typeof(a & b)",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "1810d2e1-639e-46e6-8960-6aad7784279d": "const {a, b} = data;\nif (b !== 0)\n  outputs.remainder(a % b, tag);\nelse\n  outputs.bounced(data, tag);\n"
+      }
+    }
+  },
+  "name": "number/Modulo/_",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -1,1 +1,91 @@
-{"description":"Sets an item in the dictionary.","interface":{"inputs":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{"type":"{string:any}","name":"dict"},"922a1964-91d4-4ad3-a9e4-7d245662a978":{"type":"string","name":"key"},"0ab0c723-793b-48a1-87d5-d64267665bd3":{"type":"typeof(dict)[string]","name":"value"}},"outputs":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{"type":"typeof(dict)","name":"dict"}}},"implementations":{"cranq":{"nodes":{"ef5056f3-03ca-40ea-83ca-1131df83555d":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"dict\",\"key\",\"value\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync inputs"},"6e869bd7-0b9f-49f7-84fa-a56d8154a1a4":{"coordinates":[0,0],"description":"","params":{},"prototype":"d190025f-d967-4fa5-b44c-1582bb5cbb55","name":"set item"}},"connections":{"ef5056f3-03ca-40ea-83ca-1131df83555d":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"6e869bd7-0b9f-49f7-84fa-a56d8154a1a4":{"f573a5f6-1f17-4e97-910a-365621994c42":{"description":""}}}}},"forwards":{"inputs":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{"ef5056f3-03ca-40ea-83ca-1131df83555d":{"dict":{}}},"922a1964-91d4-4ad3-a9e4-7d245662a978":{"ef5056f3-03ca-40ea-83ca-1131df83555d":{"key":{}}},"0ab0c723-793b-48a1-87d5-d64267665bd3":{"ef5056f3-03ca-40ea-83ca-1131df83555d":{"value":{}}}},"outputs":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{"6e869bd7-0b9f-49f7-84fa-a56d8154a1a4":{"1710a75a-6d68-4280-8e23-f18116fa99ab":{}}}}}}},"name":"data/dictionary/Item setter"}
+{
+  "description": "Sets an item in the dictionary.",
+  "interface": {
+    "inputs": {
+      "96243772-f5b9-49b6-b60f-6841b5c8a535": {
+        "type": "{string:any}",
+        "name": "dict"
+      },
+      "922a1964-91d4-4ad3-a9e4-7d245662a978": {
+        "type": "string",
+        "name": "key"
+      },
+      "0ab0c723-793b-48a1-87d5-d64267665bd3": {
+        "type": "typeof(dict)[string]",
+        "name": "value"
+      }
+    },
+    "outputs": {
+      "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+        "type": "typeof(dict)",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ef5056f3-03ca-40ea-83ca-1131df83555d": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\",\"key\",\"value\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync inputs"
+        },
+        "6e869bd7-0b9f-49f7-84fa-a56d8154a1a4": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d190025f-d967-4fa5-b44c-1582bb5cbb55",
+          "name": "set item"
+        }
+      },
+      "connections": {
+        "ef5056f3-03ca-40ea-83ca-1131df83555d": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6e869bd7-0b9f-49f7-84fa-a56d8154a1a4": {
+              "f573a5f6-1f17-4e97-910a-365621994c42": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "96243772-f5b9-49b6-b60f-6841b5c8a535": {
+            "ef5056f3-03ca-40ea-83ca-1131df83555d": {
+              "dict": {}
+            }
+          },
+          "922a1964-91d4-4ad3-a9e4-7d245662a978": {
+            "ef5056f3-03ca-40ea-83ca-1131df83555d": {
+              "key": {}
+            }
+          },
+          "0ab0c723-793b-48a1-87d5-d64267665bd3": {
+            "ef5056f3-03ca-40ea-83ca-1131df83555d": {
+              "value": {}
+            }
+          }
+        },
+        "outputs": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "6e869bd7-0b9f-49f7-84fa-a56d8154a1a4": {
+              "1710a75a-6d68-4280-8e23-f18116fa99ab": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Item setter"
+}

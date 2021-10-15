@@ -1,1 +1,95 @@
-{"description":"Forwards input data to one of two outputs, depending on the condition.","interface":{"inputs":{"8dae1988-d752-4c9b-b8c5-f9222e776dec":{"description":"Receives the data to be forwarded to either output.","type":"any","name":"data"},"8e1a5f69-ca43-484d-8099-ef265bedda62":{"description":"Receives the evaluation of some condition.","type":"boolean","name":"condition"}},"outputs":{"26b011f0-6b5a-45a3-a4b6-a90d93ce7046":{"description":"Sends the input when condition was true.","type":"typeof(data)","name":"true"},"8c42e25b-e7f1-421a-90f5-cd88a4674cf0":{"description":"Sends the input when condition was false.","type":"typeof(data)","name":"false"}}},"implementations":{"cranq":{"nodes":{"dac346f3-5551-4dd1-ac9b-5297b4d303fb":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"data\",\"condition\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync data & condition"},"c530f214-0b46-41d4-ab2a-331e97584592":{"coordinates":[0,0],"description":"","params":{},"prototype":"2cf489db-ce63-4548-83bc-42326ce7e50c","name":"fork"}},"connections":{"dac346f3-5551-4dd1-ac9b-5297b4d303fb":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"c530f214-0b46-41d4-ab2a-331e97584592":{"71d40b23-b956-4355-813d-d2c70c81b7f5":{"description":""}}}}},"forwards":{"inputs":{"8dae1988-d752-4c9b-b8c5-f9222e776dec":{"dac346f3-5551-4dd1-ac9b-5297b4d303fb":{"data":{}}},"8e1a5f69-ca43-484d-8099-ef265bedda62":{"dac346f3-5551-4dd1-ac9b-5297b4d303fb":{"condition":{}}}},"outputs":{"26b011f0-6b5a-45a3-a4b6-a90d93ce7046":{"c530f214-0b46-41d4-ab2a-331e97584592":{"bbe6eb8b-a22e-4b23-9063-3cddbe4aafee":{}}},"8c42e25b-e7f1-421a-90f5-cd88a4674cf0":{"c530f214-0b46-41d4-ab2a-331e97584592":{"978a565d-6b67-4198-90a7-c3214ab6ae6a":{}}}}}}},"name":"flow/Fork"}
+{
+  "description": "Forwards input data to one of two outputs, depending on the condition.",
+  "interface": {
+    "inputs": {
+      "8dae1988-d752-4c9b-b8c5-f9222e776dec": {
+        "description": "Receives the data to be forwarded to either output.",
+        "type": "any",
+        "name": "data"
+      },
+      "8e1a5f69-ca43-484d-8099-ef265bedda62": {
+        "description": "Receives the evaluation of some condition.",
+        "type": "boolean",
+        "name": "condition"
+      }
+    },
+    "outputs": {
+      "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+        "description": "Sends the input when condition was true.",
+        "type": "typeof(data)",
+        "name": "true"
+      },
+      "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+        "description": "Sends the input when condition was false.",
+        "type": "typeof(data)",
+        "name": "false"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "dac346f3-5551-4dd1-ac9b-5297b4d303fb": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"data\",\"condition\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync data & condition"
+        },
+        "c530f214-0b46-41d4-ab2a-331e97584592": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "2cf489db-ce63-4548-83bc-42326ce7e50c",
+          "name": "fork"
+        }
+      },
+      "connections": {
+        "dac346f3-5551-4dd1-ac9b-5297b4d303fb": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c530f214-0b46-41d4-ab2a-331e97584592": {
+              "71d40b23-b956-4355-813d-d2c70c81b7f5": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8dae1988-d752-4c9b-b8c5-f9222e776dec": {
+            "dac346f3-5551-4dd1-ac9b-5297b4d303fb": {
+              "data": {}
+            }
+          },
+          "8e1a5f69-ca43-484d-8099-ef265bedda62": {
+            "dac346f3-5551-4dd1-ac9b-5297b4d303fb": {
+              "condition": {}
+            }
+          }
+        },
+        "outputs": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "c530f214-0b46-41d4-ab2a-331e97584592": {
+              "bbe6eb8b-a22e-4b23-9063-3cddbe4aafee": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "c530f214-0b46-41d4-ab2a-331e97584592": {
+              "978a565d-6b67-4198-90a7-c3214ab6ae6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "flow/Fork"
+}

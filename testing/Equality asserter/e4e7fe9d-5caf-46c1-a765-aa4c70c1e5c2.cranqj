@@ -1,1 +1,83 @@
-{"implementations":{"cranq":{"nodes":{"aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":{"coordinates":[-41,-60],"name":"equal?","prototype":"1b95222a-f137-4dc1-a3b8-ba206253d51a","params":{}},"02dc3ee6-cfc3-49e2-84e7-81c12c923fbb":{"coordinates":[56,82],"name":"build assertion","prototype":"96f3e9b5-3694-4d0d-b420-e5c7500fd848","params":{"4b903c86-5f3c-48cb-93e5-0357f9a0b0f5":"\"is strict equal\""}}},"forwards":{"inputs":{"feba1c38-02d4-406e-90d8-74facfe7b6f8":{"aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":{"fe931b95-da09-48e9-905f-8aa994150d4c":{}},"02dc3ee6-cfc3-49e2-84e7-81c12c923fbb":{"802dd93c-3539-4302-ba8b-fbb41e91831b":{}}},"1a694ec1-b05c-451e-a3b0-436e7ebbad81":{"aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":{"b38c258c-4fc5-4ba9-b2e2-a8bbf5c1666d":{}},"02dc3ee6-cfc3-49e2-84e7-81c12c923fbb":{"dce20fa8-359e-463b-bb1a-6c9221759d8f":{}}}},"outputs":{"db472636-7240-4dbe-a79f-8a973053e2c6":{"02dc3ee6-cfc3-49e2-84e7-81c12c923fbb":{"207e4ad2-ba4c-4146-98da-1898a56bb067":{}}}}},"connections":{"aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9":{"81f17548-01b0-42a0-8a58-4000bb3a9f51":{"02dc3ee6-cfc3-49e2-84e7-81c12c923fbb":{"2e61b0a5-85a3-4994-9748-cfd04bacb66d":{}}}}}}},"interface":{"inputs":{"1a694ec1-b05c-451e-a3b0-436e7ebbad81":{"type":"any","name":"expected"},"feba1c38-02d4-406e-90d8-74facfe7b6f8":{"type":"any","name":"actual"}},"outputs":{"db472636-7240-4dbe-a79f-8a973053e2c6":{"type":"any","name":"assertion"}}},"name":"testing/Equality asserter"}
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9": {
+          "coordinates": [
+            -41,
+            -60
+          ],
+          "name": "equal?",
+          "prototype": "1b95222a-f137-4dc1-a3b8-ba206253d51a",
+          "params": {}
+        },
+        "02dc3ee6-cfc3-49e2-84e7-81c12c923fbb": {
+          "coordinates": [
+            56,
+            82
+          ],
+          "name": "build assertion",
+          "prototype": "96f3e9b5-3694-4d0d-b420-e5c7500fd848",
+          "params": {
+            "4b903c86-5f3c-48cb-93e5-0357f9a0b0f5": "\"is strict equal\""
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "feba1c38-02d4-406e-90d8-74facfe7b6f8": {
+            "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9": {
+              "fe931b95-da09-48e9-905f-8aa994150d4c": {}
+            },
+            "02dc3ee6-cfc3-49e2-84e7-81c12c923fbb": {
+              "802dd93c-3539-4302-ba8b-fbb41e91831b": {}
+            }
+          },
+          "1a694ec1-b05c-451e-a3b0-436e7ebbad81": {
+            "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9": {
+              "b38c258c-4fc5-4ba9-b2e2-a8bbf5c1666d": {}
+            },
+            "02dc3ee6-cfc3-49e2-84e7-81c12c923fbb": {
+              "dce20fa8-359e-463b-bb1a-6c9221759d8f": {}
+            }
+          }
+        },
+        "outputs": {
+          "db472636-7240-4dbe-a79f-8a973053e2c6": {
+            "02dc3ee6-cfc3-49e2-84e7-81c12c923fbb": {
+              "207e4ad2-ba4c-4146-98da-1898a56bb067": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "aa4c7107-5ca1-43b3-a8cd-7958ca5f73e9": {
+          "81f17548-01b0-42a0-8a58-4000bb3a9f51": {
+            "02dc3ee6-cfc3-49e2-84e7-81c12c923fbb": {
+              "2e61b0a5-85a3-4994-9748-cfd04bacb66d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1a694ec1-b05c-451e-a3b0-436e7ebbad81": {
+        "type": "any",
+        "name": "expected"
+      },
+      "feba1c38-02d4-406e-90d8-74facfe7b6f8": {
+        "type": "any",
+        "name": "actual"
+      }
+    },
+    "outputs": {
+      "db472636-7240-4dbe-a79f-8a973053e2c6": {
+        "type": "any",
+        "name": "assertion"
+      }
+    }
+  },
+  "name": "testing/Equality asserter"
+}

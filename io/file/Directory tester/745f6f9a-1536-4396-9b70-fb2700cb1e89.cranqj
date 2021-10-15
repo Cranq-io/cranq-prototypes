@@ -1,1 +1,53 @@
-{"description":"Determines whether the specified path points to a directory","interface":{"inputs":{"8bebea78-fb92-4cab-8af9-a090c3fc7f3a":{"description":"The path to inspect","type":"any","name":"path"}},"outputs":{"121d6f2f-caf0-40e3-926c-4f33ad1c2026":{"description":"Boolean value that indicates whether the specified path is a directory","type":"any","name":"is directory"}}},"implementations":{"cranq":{"nodes":{"585fa4a0-1cb8-4221-9ad3-2c79cf69a9e1":{"coordinates":[-3,-39],"description":"","params":{},"prototype":"83cd7497-0864-4ad3-87d1-c2cf23cfb80d","name":"test directory"}},"connections":{},"forwards":{"inputs":{"8bebea78-fb92-4cab-8af9-a090c3fc7f3a":{"585fa4a0-1cb8-4221-9ad3-2c79cf69a9e1":{"a75b3153-1c32-4f65-8df4-7cb31f4d9d51":{}}}},"outputs":{"121d6f2f-caf0-40e3-926c-4f33ad1c2026":{"585fa4a0-1cb8-4221-9ad3-2c79cf69a9e1":{"d929fe69-7a19-444d-bfc4-dc4f6c2305bc":{}}}}}}},"name":"io/file/Directory tester"}
+{
+  "description": "Determines whether the specified path points to a directory",
+  "interface": {
+    "inputs": {
+      "8bebea78-fb92-4cab-8af9-a090c3fc7f3a": {
+        "description": "The path to inspect",
+        "type": "any",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "121d6f2f-caf0-40e3-926c-4f33ad1c2026": {
+        "description": "Boolean value that indicates whether the specified path is a directory",
+        "type": "any",
+        "name": "is directory"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "585fa4a0-1cb8-4221-9ad3-2c79cf69a9e1": {
+          "coordinates": [
+            -3,
+            -39
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "83cd7497-0864-4ad3-87d1-c2cf23cfb80d",
+          "name": "test directory"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "8bebea78-fb92-4cab-8af9-a090c3fc7f3a": {
+            "585fa4a0-1cb8-4221-9ad3-2c79cf69a9e1": {
+              "a75b3153-1c32-4f65-8df4-7cb31f4d9d51": {}
+            }
+          }
+        },
+        "outputs": {
+          "121d6f2f-caf0-40e3-926c-4f33ad1c2026": {
+            "585fa4a0-1cb8-4221-9ad3-2c79cf69a9e1": {
+              "d929fe69-7a19-444d-bfc4-dc4f6c2305bc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/Directory tester"
+}

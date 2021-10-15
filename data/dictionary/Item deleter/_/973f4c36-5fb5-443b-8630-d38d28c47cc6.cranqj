@@ -1,1 +1,31 @@
-{"description":"","interface":{"inputs":{"b2dba313-c94c-4788-9e3b-3e985f6d43d9":{"type":"{\"dict\":{string:any},\"key\":string}","name":"dict & key"}},"outputs":{"67cc96fd-fbd3-48e5-85bb-78ed6a07d23d":{"type":"typeof(dict & key)[\"dict\"][string]","name":"dict"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"b2dba313-c94c-4788-9e3b-3e985f6d43d9":"let res = data.dict;\ndelete res[data.key];\noutputs.dict(res, tag);"}}},"name":"data/dictionary/Item deleter/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "b2dba313-c94c-4788-9e3b-3e985f6d43d9": {
+        "type": "{\"dict\":{string:any},\"key\":string}",
+        "name": "dict & key"
+      }
+    },
+    "outputs": {
+      "67cc96fd-fbd3-48e5-85bb-78ed6a07d23d": {
+        "type": "typeof(dict & key)[\"dict\"][string]",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b2dba313-c94c-4788-9e3b-3e985f6d43d9": "let res = data.dict;\ndelete res[data.key];\noutputs.dict(res, tag);"
+      }
+    }
+  },
+  "name": "data/dictionary/Item deleter/_",
+  "attributes": {
+    "internal": true
+  }
+}

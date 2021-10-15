@@ -1,1 +1,111 @@
-{"description":"Forwards 3 inputs in the order matching the order of the ports.","interface":{"inputs":{"70da607a-8976-437b-b9e9-84cc63cd613b":{"type":"any","name":"1"},"54c357a1-045e-4817-beda-0017a586a499":{"type":"any","name":"2"},"507a0b1a-b9eb-4e67-a64d-47b405e17422":{"type":"any","name":"3"}},"outputs":{"c3fcabea-63e8-48a2-b736-e7a9954cf5ca":{"type":"typeof(1)","name":"1"},"9b746d54-f007-4bc0-9988-acb0a0a05cd5":{"type":"typeof(2)","name":"2"},"3f67095a-501d-4010-b37d-4e1ece60e2f2":{"type":"typeof(3)","name":"3"}}},"implementations":{"cranq":{"nodes":{"75ebc8d3-d935-4324-bc64-91f4e3f99add":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"1\",\"2\",\"3\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync inputs"},"26844947-fd82-46d6-9245-0f4519fa5842":{"coordinates":[0,0],"description":"","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"1\",\"2\",\"3\"]"},"prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","name":"restore in order"}},"connections":{"75ebc8d3-d935-4324-bc64-91f4e3f99add":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"26844947-fd82-46d6-9245-0f4519fa5842":{"6ad86184-6890-4323-8021-3496a682c98e":{"description":""}}}}},"forwards":{"inputs":{"70da607a-8976-437b-b9e9-84cc63cd613b":{"75ebc8d3-d935-4324-bc64-91f4e3f99add":{"1":{}}},"54c357a1-045e-4817-beda-0017a586a499":{"75ebc8d3-d935-4324-bc64-91f4e3f99add":{"2":{}}},"507a0b1a-b9eb-4e67-a64d-47b405e17422":{"75ebc8d3-d935-4324-bc64-91f4e3f99add":{"3":{}}}},"outputs":{"c3fcabea-63e8-48a2-b736-e7a9954cf5ca":{"26844947-fd82-46d6-9245-0f4519fa5842":{"1":{}}},"9b746d54-f007-4bc0-9988-acb0a0a05cd5":{"26844947-fd82-46d6-9245-0f4519fa5842":{"2":{}}},"3f67095a-501d-4010-b37d-4e1ece60e2f2":{"26844947-fd82-46d6-9245-0f4519fa5842":{"3":{}}}}}}},"name":"flow/Forwarder/triple"}
+{
+  "description": "Forwards 3 inputs in the order matching the order of the ports.",
+  "interface": {
+    "inputs": {
+      "70da607a-8976-437b-b9e9-84cc63cd613b": {
+        "type": "any",
+        "name": "1"
+      },
+      "54c357a1-045e-4817-beda-0017a586a499": {
+        "type": "any",
+        "name": "2"
+      },
+      "507a0b1a-b9eb-4e67-a64d-47b405e17422": {
+        "type": "any",
+        "name": "3"
+      }
+    },
+    "outputs": {
+      "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+        "type": "typeof(1)",
+        "name": "1"
+      },
+      "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+        "type": "typeof(2)",
+        "name": "2"
+      },
+      "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+        "type": "typeof(3)",
+        "name": "3"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "75ebc8d3-d935-4324-bc64-91f4e3f99add": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"1\",\"2\",\"3\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync inputs"
+        },
+        "26844947-fd82-46d6-9245-0f4519fa5842": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"1\",\"2\",\"3\"]"
+          },
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "name": "restore in order"
+        }
+      },
+      "connections": {
+        "75ebc8d3-d935-4324-bc64-91f4e3f99add": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "26844947-fd82-46d6-9245-0f4519fa5842": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "70da607a-8976-437b-b9e9-84cc63cd613b": {
+            "75ebc8d3-d935-4324-bc64-91f4e3f99add": {
+              "1": {}
+            }
+          },
+          "54c357a1-045e-4817-beda-0017a586a499": {
+            "75ebc8d3-d935-4324-bc64-91f4e3f99add": {
+              "2": {}
+            }
+          },
+          "507a0b1a-b9eb-4e67-a64d-47b405e17422": {
+            "75ebc8d3-d935-4324-bc64-91f4e3f99add": {
+              "3": {}
+            }
+          }
+        },
+        "outputs": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "26844947-fd82-46d6-9245-0f4519fa5842": {
+              "1": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "26844947-fd82-46d6-9245-0f4519fa5842": {
+              "2": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "26844947-fd82-46d6-9245-0f4519fa5842": {
+              "3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "flow/Forwarder/triple"
+}

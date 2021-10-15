@@ -1,1 +1,28 @@
-{"description":"Determines whether the input is truthy or falsy.","interface":{"inputs":{"ed9fa3f5-96fa-4e06-94b3-fde00cca3166":{"type":"any","name":"string"}},"outputs":{"7f661c8f-8ac8-407f-b012-c43f7b6aef89":{"type":"boolean","name":"boolean"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"ed9fa3f5-96fa-4e06-94b3-fde00cca3166":"outputs.boolean(!!data, tag);"}}},"name":"boolean/Parser"}
+{
+  "description": "Determines whether the input is truthy or falsy.",
+  "interface": {
+    "inputs": {
+      "ed9fa3f5-96fa-4e06-94b3-fde00cca3166": {
+        "type": "any",
+        "name": "string"
+      }
+    },
+    "outputs": {
+      "7f661c8f-8ac8-407f-b012-c43f7b6aef89": {
+        "type": "boolean",
+        "name": "boolean"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "ed9fa3f5-96fa-4e06-94b3-fde00cca3166": "outputs.boolean(!!data, tag);"
+      }
+    }
+  },
+  "name": "boolean/Parser"
+}

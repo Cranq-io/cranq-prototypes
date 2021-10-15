@@ -1,1 +1,78 @@
-{"name":"data/dictionary/Item deleter","description":"Deletes an item from the dictionary by it's key.","interface":{"inputs":{"af51c64a-620a-42e7-83e4-0497df3f0a65":{"type":"any","name":"dict"},"091d8b21-8ac5-47c6-8dd3-c5b1e533da66":{"type":"any","name":"key"}},"outputs":{"56c7d74d-57b2-4c50-afb8-5d675e28df74":{"type":"any","name":"dict"}}},"implementations":{"cranq":{"nodes":{"472389e6-1e2c-463a-a63f-e89a2d4d47cc":{"coordinates":[33,-59.5],"name":"delete item","prototype":"57123246-c5ca-4d34-89f3-7febe9202c49","params":{}},"2b7b4e0b-74a9-48a7-b8aa-76808fded383":{"coordinates":[-24,64.5],"name":"syncer","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"dict\", \"key\"]"}}},"connections":{"2b7b4e0b-74a9-48a7-b8aa-76808fded383":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"472389e6-1e2c-463a-a63f-e89a2d4d47cc":{"e4b04aac-2da4-4f6e-9ccc-d35118425418":{}}}}},"forwards":{"inputs":{"af51c64a-620a-42e7-83e4-0497df3f0a65":{"2b7b4e0b-74a9-48a7-b8aa-76808fded383":{"dict":{}}},"091d8b21-8ac5-47c6-8dd3-c5b1e533da66":{"2b7b4e0b-74a9-48a7-b8aa-76808fded383":{"key":{}}}},"outputs":{"56c7d74d-57b2-4c50-afb8-5d675e28df74":{"472389e6-1e2c-463a-a63f-e89a2d4d47cc":{"c5f5e30c-98b2-412c-b06d-8ce0f20578ba":{}}}}}}}}
+{
+  "name": "data/dictionary/Item deleter",
+  "description": "Deletes an item from the dictionary by it's key.",
+  "interface": {
+    "inputs": {
+      "af51c64a-620a-42e7-83e4-0497df3f0a65": {
+        "type": "any",
+        "name": "dict"
+      },
+      "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": {
+        "type": "any",
+        "name": "key"
+      }
+    },
+    "outputs": {
+      "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+        "type": "any",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "472389e6-1e2c-463a-a63f-e89a2d4d47cc": {
+          "coordinates": [
+            33,
+            -59.5
+          ],
+          "name": "delete item",
+          "prototype": "57123246-c5ca-4d34-89f3-7febe9202c49",
+          "params": {}
+        },
+        "2b7b4e0b-74a9-48a7-b8aa-76808fded383": {
+          "coordinates": [
+            -24,
+            64.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\", \"key\"]"
+          }
+        }
+      },
+      "connections": {
+        "2b7b4e0b-74a9-48a7-b8aa-76808fded383": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "472389e6-1e2c-463a-a63f-e89a2d4d47cc": {
+              "e4b04aac-2da4-4f6e-9ccc-d35118425418": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "af51c64a-620a-42e7-83e4-0497df3f0a65": {
+            "2b7b4e0b-74a9-48a7-b8aa-76808fded383": {
+              "dict": {}
+            }
+          },
+          "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": {
+            "2b7b4e0b-74a9-48a7-b8aa-76808fded383": {
+              "key": {}
+            }
+          }
+        },
+        "outputs": {
+          "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+            "472389e6-1e2c-463a-a63f-e89a2d4d47cc": {
+              "c5f5e30c-98b2-412c-b06d-8ce0f20578ba": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

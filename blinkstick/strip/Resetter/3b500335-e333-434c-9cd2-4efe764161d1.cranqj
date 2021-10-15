@@ -1,1 +1,68 @@
-{"implementations":{"cranq":{"nodes":{"84581f8e-cd6c-43a4-9fdc-e3b9aacaa744":{"coordinates":[-59,-51],"name":"all blank","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"[\"000000\", \"000000\", \"000000\", \"000000\", \"000000\", \"000000\", \"000000\", \"000000\"]"}},"d0b30deb-b2a1-4254-8ccb-3094f387158f":{"coordinates":[68,48],"name":"set colors","prototype":"d41a8679-4ab6-4a30-8de9-b3dd1b14f135","params":{}}},"forwards":{"inputs":{"e682afa1-8669-4a0a-8a9a-9e8e2bcbae82":{"84581f8e-cd6c-43a4-9fdc-e3b9aacaa744":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}},"outputs":{"17e5f3f7-a82b-4810-aefe-52315d464fa9":{"d0b30deb-b2a1-4254-8ccb-3094f387158f":{"6b3ea930-52a6-4a3e-bf73-8174440d9e97":{}}}}},"connections":{"84581f8e-cd6c-43a4-9fdc-e3b9aacaa744":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"d0b30deb-b2a1-4254-8ccb-3094f387158f":{"4cc39c5c-fc9f-40f7-ba39-50862f9fd552":{}}}}}}},"interface":{"inputs":{"e682afa1-8669-4a0a-8a9a-9e8e2bcbae82":{"type":"any","name":"start"}},"outputs":{"17e5f3f7-a82b-4810-aefe-52315d464fa9":{"type":"any","name":"done"}}},"name":"blinkstick/strip/Resetter"}
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "84581f8e-cd6c-43a4-9fdc-e3b9aacaa744": {
+          "coordinates": [
+            -59,
+            -51
+          ],
+          "name": "all blank",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"000000\", \"000000\", \"000000\", \"000000\", \"000000\", \"000000\", \"000000\", \"000000\"]"
+          }
+        },
+        "d0b30deb-b2a1-4254-8ccb-3094f387158f": {
+          "coordinates": [
+            68,
+            48
+          ],
+          "name": "set colors",
+          "prototype": "d41a8679-4ab6-4a30-8de9-b3dd1b14f135",
+          "params": {}
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e682afa1-8669-4a0a-8a9a-9e8e2bcbae82": {
+            "84581f8e-cd6c-43a4-9fdc-e3b9aacaa744": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "17e5f3f7-a82b-4810-aefe-52315d464fa9": {
+            "d0b30deb-b2a1-4254-8ccb-3094f387158f": {
+              "6b3ea930-52a6-4a3e-bf73-8174440d9e97": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "84581f8e-cd6c-43a4-9fdc-e3b9aacaa744": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d0b30deb-b2a1-4254-8ccb-3094f387158f": {
+              "4cc39c5c-fc9f-40f7-ba39-50862f9fd552": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e682afa1-8669-4a0a-8a9a-9e8e2bcbae82": {
+        "type": "any",
+        "name": "start"
+      }
+    },
+    "outputs": {
+      "17e5f3f7-a82b-4810-aefe-52315d464fa9": {
+        "type": "any",
+        "name": "done"
+      }
+    }
+  },
+  "name": "blinkstick/strip/Resetter"
+}

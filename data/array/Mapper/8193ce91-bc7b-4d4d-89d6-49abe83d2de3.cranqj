@@ -1,1 +1,104 @@
-{"description":"Maps array. External node(s) receive each item and send back a mapped item.","interface":{"inputs":{"9552da55-ccec-4df0-a06b-c5eb0e961eab":{"description":"Array to be mapped","type":"any[]","name":"array"},"246b2ba5-761d-44bc-932b-9ee909b00258":{"description":"The current (by tag) item, mapped.","type":"any","name":"mapped item"}},"outputs":{"9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7":{"description":"The mapped array","type":"typeof(mapped item)[]","name":"mapped"},"dd117561-ffee-4b4f-aaec-44fb964dc6e5":{"description":"The current item","type":"typeof(array)[number]","name":"item"}}},"implementations":{"cranq":{"nodes":{"dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"index\",\"mapped item\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync index & mapped item"},"a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0":{"coordinates":[0,0],"description":"","params":{},"prototype":"7d61f7c0-a55f-4c1c-80ff-2b6fef8b70c4","name":"map"}},"connections":{"dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0":{"a179595d-c1b0-4df2-afad-2b4bb9a00a5e":{"description":""}}}},"a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0":{"2687aeee-1193-4a22-b158-7ee57013fe45":{"dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9":{"index":{"description":""}}}}},"forwards":{"inputs":{"9552da55-ccec-4df0-a06b-c5eb0e961eab":{"a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0":{"7048ce39-9f84-4a01-95c0-98ccf53d1997":{}}},"246b2ba5-761d-44bc-932b-9ee909b00258":{"dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9":{"mapped item":{}}}},"outputs":{"9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7":{"a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0":{"408ce1cd-c8a7-4d7f-8d92-7cfe8bc318e0":{}}},"dd117561-ffee-4b4f-aaec-44fb964dc6e5":{"a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0":{"2633875c-3925-45ca-ad7f-79d61ca64bc8":{}}}}}}},"name":"data/array/Mapper"}
+{
+  "description": "Maps array. External node(s) receive each item and send back a mapped item.",
+  "interface": {
+    "inputs": {
+      "9552da55-ccec-4df0-a06b-c5eb0e961eab": {
+        "description": "Array to be mapped",
+        "type": "any[]",
+        "name": "array"
+      },
+      "246b2ba5-761d-44bc-932b-9ee909b00258": {
+        "description": "The current (by tag) item, mapped.",
+        "type": "any",
+        "name": "mapped item"
+      }
+    },
+    "outputs": {
+      "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+        "description": "The mapped array",
+        "type": "typeof(mapped item)[]",
+        "name": "mapped"
+      },
+      "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+        "description": "The current item",
+        "type": "typeof(array)[number]",
+        "name": "item"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"index\",\"mapped item\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync index & mapped item"
+        },
+        "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "7d61f7c0-a55f-4c1c-80ff-2b6fef8b70c4",
+          "name": "map"
+        }
+      },
+      "connections": {
+        "dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+              "a179595d-c1b0-4df2-afad-2b4bb9a00a5e": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+          "2687aeee-1193-4a22-b158-7ee57013fe45": {
+            "dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9": {
+              "index": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9552da55-ccec-4df0-a06b-c5eb0e961eab": {
+            "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+              "7048ce39-9f84-4a01-95c0-98ccf53d1997": {}
+            }
+          },
+          "246b2ba5-761d-44bc-932b-9ee909b00258": {
+            "dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9": {
+              "mapped item": {}
+            }
+          }
+        },
+        "outputs": {
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+              "408ce1cd-c8a7-4d7f-8d92-7cfe8bc318e0": {}
+            }
+          },
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+              "2633875c-3925-45ca-ad7f-79d61ca64bc8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/array/Mapper"
+}

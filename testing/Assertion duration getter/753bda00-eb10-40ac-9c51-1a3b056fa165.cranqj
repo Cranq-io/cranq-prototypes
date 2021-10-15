@@ -1,1 +1,131 @@
-{"name":"testing/Assertion duration getter","interface":{"inputs":{"7121cf58-f713-46b1-ad91-982339475c57":{"type":"any","name":"assertion"},"c24b973f-2859-4f98-9f2d-fed5f2fe705f":{"type":"any","name":"start"}},"outputs":{"cd544a4f-b842-4e79-bc5a-f98b3ed053f9":{"type":"any","name":"duration","description":"In milliseconds"}}},"implementations":{"cranq":{"connections":{"26928fbc-5738-4c05-ac7f-ff4f5ac34dbf":{"b57a2f23-7db9-4007-9c94-c66251abede3":{"b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":{}}}},"51c17346-a0e4-4e42-9c16-eabb124dde73":{"b57a2f23-7db9-4007-9c94-c66251abede3":{"6679305b-d5ec-42e5-8453-b0039afe2ab9":{"6ba1c098-1890-4585-9147-ee35b2c62ed9":{}}}},"b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"6679305b-d5ec-42e5-8453-b0039afe2ab9":{"977cb484-0c1d-461e-aa7c-2cc68969b280":{}}},"e3876be5-e8c8-4983-b770-81fc8cdf5ff5":{"76ee9d17-e0f2-44a4-b8df-22ae2ad50a15":{"read":{}}}}},"forwards":{"inputs":{"c24b973f-2859-4f98-9f2d-fed5f2fe705f":{"26928fbc-5738-4c05-ac7f-ff4f5ac34dbf":{"4181cd34-31ac-4d3b-8d19-3661105e6d1e":{}}},"7121cf58-f713-46b1-ad91-982339475c57":{"b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}},"51c17346-a0e4-4e42-9c16-eabb124dde73":{"4181cd34-31ac-4d3b-8d19-3661105e6d1e":{}}}},"outputs":{"cd544a4f-b842-4e79-bc5a-f98b3ed053f9":{"6679305b-d5ec-42e5-8453-b0039afe2ab9":{"34afedef-5145-418a-a3f7-7efaf93b8246":{}},"76ee9d17-e0f2-44a4-b8df-22ae2ad50a15":{"data":{}}}}},"nodes":{"26928fbc-5738-4c05-ac7f-ff4f5ac34dbf":{"coordinates":[-88.75,138.25],"name":"get start TS","prototype":"52636841-e2b9-4b13-ad5b-06eb8d1eb701","params":{}},"b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13":{"coordinates":[-31.75,20.25],"name":"store start TS","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{}},"6679305b-d5ec-42e5-8453-b0039afe2ab9":{"coordinates":[144.25,110.25],"name":"get TS diff","prototype":"13d79b7a-4c71-411f-9826-3ec6f385b66f","params":{}},"51c17346-a0e4-4e42-9c16-eabb124dde73":{"coordinates":[-77.75,-84.75],"name":"get assert TS","prototype":"52636841-e2b9-4b13-ad5b-06eb8d1eb701","params":{}},"76ee9d17-e0f2-44a4-b8df-22ae2ad50a15":{"coordinates":[133.58333333333337,-84.08333333333334],"name":"default TS diff","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"0"}}}}},"description":"Determines the time between the start of a test case (or suite) and a specific assertion."}
+{
+  "name": "testing/Assertion duration getter",
+  "interface": {
+    "inputs": {
+      "7121cf58-f713-46b1-ad91-982339475c57": {
+        "type": "any",
+        "name": "assertion"
+      },
+      "c24b973f-2859-4f98-9f2d-fed5f2fe705f": {
+        "type": "any",
+        "name": "start"
+      }
+    },
+    "outputs": {
+      "cd544a4f-b842-4e79-bc5a-f98b3ed053f9": {
+        "type": "any",
+        "name": "duration",
+        "description": "In milliseconds"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "26928fbc-5738-4c05-ac7f-ff4f5ac34dbf": {
+          "b57a2f23-7db9-4007-9c94-c66251abede3": {
+            "b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "51c17346-a0e4-4e42-9c16-eabb124dde73": {
+          "b57a2f23-7db9-4007-9c94-c66251abede3": {
+            "6679305b-d5ec-42e5-8453-b0039afe2ab9": {
+              "6ba1c098-1890-4585-9147-ee35b2c62ed9": {}
+            }
+          }
+        },
+        "b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "6679305b-d5ec-42e5-8453-b0039afe2ab9": {
+              "977cb484-0c1d-461e-aa7c-2cc68969b280": {}
+            }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "76ee9d17-e0f2-44a4-b8df-22ae2ad50a15": {
+              "read": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c24b973f-2859-4f98-9f2d-fed5f2fe705f": {
+            "26928fbc-5738-4c05-ac7f-ff4f5ac34dbf": {
+              "4181cd34-31ac-4d3b-8d19-3661105e6d1e": {}
+            }
+          },
+          "7121cf58-f713-46b1-ad91-982339475c57": {
+            "b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "51c17346-a0e4-4e42-9c16-eabb124dde73": {
+              "4181cd34-31ac-4d3b-8d19-3661105e6d1e": {}
+            }
+          }
+        },
+        "outputs": {
+          "cd544a4f-b842-4e79-bc5a-f98b3ed053f9": {
+            "6679305b-d5ec-42e5-8453-b0039afe2ab9": {
+              "34afedef-5145-418a-a3f7-7efaf93b8246": {}
+            },
+            "76ee9d17-e0f2-44a4-b8df-22ae2ad50a15": {
+              "data": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "26928fbc-5738-4c05-ac7f-ff4f5ac34dbf": {
+          "coordinates": [
+            -88.75,
+            138.25
+          ],
+          "name": "get start TS",
+          "prototype": "52636841-e2b9-4b13-ad5b-06eb8d1eb701",
+          "params": {}
+        },
+        "b5a9fd6e-5e66-4ba2-8831-f18bc3ee6c13": {
+          "coordinates": [
+            -31.75,
+            20.25
+          ],
+          "name": "store start TS",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {}
+        },
+        "6679305b-d5ec-42e5-8453-b0039afe2ab9": {
+          "coordinates": [
+            144.25,
+            110.25
+          ],
+          "name": "get TS diff",
+          "prototype": "13d79b7a-4c71-411f-9826-3ec6f385b66f",
+          "params": {}
+        },
+        "51c17346-a0e4-4e42-9c16-eabb124dde73": {
+          "coordinates": [
+            -77.75,
+            -84.75
+          ],
+          "name": "get assert TS",
+          "prototype": "52636841-e2b9-4b13-ad5b-06eb8d1eb701",
+          "params": {}
+        },
+        "76ee9d17-e0f2-44a4-b8df-22ae2ad50a15": {
+          "coordinates": [
+            133.58333333333337,
+            -84.08333333333334
+          ],
+          "name": "default TS diff",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "0"
+          }
+        }
+      }
+    }
+  },
+  "description": "Determines the time between the start of a test case (or suite) and a specific assertion."
+}

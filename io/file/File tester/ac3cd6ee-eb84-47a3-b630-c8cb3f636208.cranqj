@@ -1,1 +1,53 @@
-{"description":"Determines whether the the specified path points to a file","interface":{"inputs":{"6edaa1a0-b372-4f07-8a36-5144bb2e22a3":{"description":"The path to inspect","type":"any","name":"path"}},"outputs":{"7a6f90e6-76eb-46b1-bc2f-3d12b1499f1c":{"description":"Boolean value that indicates, whether the specified path is a file","type":"any","name":"is file"}}},"implementations":{"cranq":{"nodes":{"ca3796b2-a32f-4b7e-b880-8a8eb67c34ff":{"coordinates":[-4,-42],"description":"","params":{},"prototype":"05dd99b2-0407-4456-aad4-9273b918aa21","name":"file tester"}},"connections":{},"forwards":{"inputs":{"6edaa1a0-b372-4f07-8a36-5144bb2e22a3":{"ca3796b2-a32f-4b7e-b880-8a8eb67c34ff":{"f9a9258a-1629-4a75-8db7-20a0bc1735e5":{}}}},"outputs":{"7a6f90e6-76eb-46b1-bc2f-3d12b1499f1c":{"ca3796b2-a32f-4b7e-b880-8a8eb67c34ff":{"f6ccbc11-65f4-4caf-ad80-f587197ce186":{}}}}}}},"name":"io/file/File tester"}
+{
+  "description": "Determines whether the the specified path points to a file",
+  "interface": {
+    "inputs": {
+      "6edaa1a0-b372-4f07-8a36-5144bb2e22a3": {
+        "description": "The path to inspect",
+        "type": "any",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "7a6f90e6-76eb-46b1-bc2f-3d12b1499f1c": {
+        "description": "Boolean value that indicates, whether the specified path is a file",
+        "type": "any",
+        "name": "is file"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ca3796b2-a32f-4b7e-b880-8a8eb67c34ff": {
+          "coordinates": [
+            -4,
+            -42
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "05dd99b2-0407-4456-aad4-9273b918aa21",
+          "name": "file tester"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "6edaa1a0-b372-4f07-8a36-5144bb2e22a3": {
+            "ca3796b2-a32f-4b7e-b880-8a8eb67c34ff": {
+              "f9a9258a-1629-4a75-8db7-20a0bc1735e5": {}
+            }
+          }
+        },
+        "outputs": {
+          "7a6f90e6-76eb-46b1-bc2f-3d12b1499f1c": {
+            "ca3796b2-a32f-4b7e-b880-8a8eb67c34ff": {
+              "f6ccbc11-65f4-4caf-ad80-f587197ce186": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/File tester"
+}

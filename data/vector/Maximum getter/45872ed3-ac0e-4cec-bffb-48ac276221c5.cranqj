@@ -1,1 +1,82 @@
-{"name":"data/vector/Maximum getter","interface":{"inputs":{"74bf8aba-c257-45b3-ac6f-03225e3dcba3":{"description":"Array of numbers","type":"any[]","name":"vector"}},"outputs":{"812b7425-50e3-4cf5-9152-f0c2f310f501":{"description":"","type":"typeof(initial)","name":"max"}}},"implementations":{"cranq":{"connections":{"2110df1c-847b-42ed-9e07-362ea8e5da97":{"7e9f3838-b5d2-409b-ace3-9748bcff4346":{"677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4":{"9d532cb8-fe33-4eed-a5aa-b5bb2fb158a3":{}}},"b4087af0-fa79-4961-b9dc-964592eb007b":{"677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4":{"78f54a04-22d1-48ee-8e58-828c39b28f4a":{}}}},"677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4":{"9e9b1ca6-11e9-4032-91f7-938fe02e96a3":{"2110df1c-847b-42ed-9e07-362ea8e5da97":{"64f451de-50c9-44b4-b99c-03d58b2582bb":{}}}}},"forwards":{"inputs":{"74bf8aba-c257-45b3-ac6f-03225e3dcba3":{"2110df1c-847b-42ed-9e07-362ea8e5da97":{"9be15225-0044-4514-b2f1-5f8c1542ee87":{}}}},"outputs":{"812b7425-50e3-4cf5-9152-f0c2f310f501":{"2110df1c-847b-42ed-9e07-362ea8e5da97":{"75ea5be5-4e79-425e-87f4-930e8d21983d":{}}}}},"nodes":{"2110df1c-847b-42ed-9e07-362ea8e5da97":{"coordinates":[62,-39],"name":"reducer","prototype":"e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8","params":{"ec095128-e720-45fc-9b4f-b87a130d9249":"-1e309"}},"677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4":{"coordinates":[-62,39],"name":"max picker","prototype":"1d7ef575-38c7-4839-ab4b-507cac065992","params":{}}}}}}
+{
+  "name": "data/vector/Maximum getter",
+  "interface": {
+    "inputs": {
+      "74bf8aba-c257-45b3-ac6f-03225e3dcba3": {
+        "description": "Array of numbers",
+        "type": "any[]",
+        "name": "vector"
+      }
+    },
+    "outputs": {
+      "812b7425-50e3-4cf5-9152-f0c2f310f501": {
+        "description": "",
+        "type": "typeof(initial)",
+        "name": "max"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "2110df1c-847b-42ed-9e07-362ea8e5da97": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4": {
+              "9d532cb8-fe33-4eed-a5aa-b5bb2fb158a3": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4": {
+              "78f54a04-22d1-48ee-8e58-828c39b28f4a": {}
+            }
+          }
+        },
+        "677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4": {
+          "9e9b1ca6-11e9-4032-91f7-938fe02e96a3": {
+            "2110df1c-847b-42ed-9e07-362ea8e5da97": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "74bf8aba-c257-45b3-ac6f-03225e3dcba3": {
+            "2110df1c-847b-42ed-9e07-362ea8e5da97": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "812b7425-50e3-4cf5-9152-f0c2f310f501": {
+            "2110df1c-847b-42ed-9e07-362ea8e5da97": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "2110df1c-847b-42ed-9e07-362ea8e5da97": {
+          "coordinates": [
+            62,
+            -39
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "-1e309"
+          }
+        },
+        "677b46b6-56c2-4ddf-8d7f-8a7c18a2fae4": {
+          "coordinates": [
+            -62,
+            39
+          ],
+          "name": "max picker",
+          "prototype": "1d7ef575-38c7-4839-ab4b-507cac065992",
+          "params": {}
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,91 @@
-{"description":"Retrieves an item's value from the dictionary.","interface":{"inputs":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{"type":"{string:any}","name":"dict"},"23142cc5-6b71-4d69-8c46-cc1cd58793d1":{"type":"string","name":"key"}},"outputs":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"type":"typeof(dict)[string]","name":"value"},"3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":{"type":"any","name":"not found"}}},"implementations":{"cranq":{"nodes":{"5ae09e24-6724-4227-aa2c-a41ff95c9d53":{"coordinates":[-119,80],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"dict\",\"key\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync dict & key"},"06f47813-60ef-40d1-9f9b-b31940f27820":{"coordinates":[5,-26],"description":"","params":{},"prototype":"78639337-d706-4a1a-b612-ba170e83b8e2","name":"get item"}},"connections":{"5ae09e24-6724-4227-aa2c-a41ff95c9d53":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"06f47813-60ef-40d1-9f9b-b31940f27820":{"50395fef-5d23-4f22-ad85-ac41ce728ca8":{"description":""}}}}},"forwards":{"inputs":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{"5ae09e24-6724-4227-aa2c-a41ff95c9d53":{"dict":{}}},"23142cc5-6b71-4d69-8c46-cc1cd58793d1":{"5ae09e24-6724-4227-aa2c-a41ff95c9d53":{"key":{}}}},"outputs":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"06f47813-60ef-40d1-9f9b-b31940f27820":{"773e3764-85ca-4882-ad5a-4a8fcfdcbe9d":{}}},"3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":{"06f47813-60ef-40d1-9f9b-b31940f27820":{"c1a88321-b05f-4ef4-8ae1-a3527b419c92":{}}}}}}},"name":"data/dictionary/Item getter"}
+{
+  "description": "Retrieves an item's value from the dictionary.",
+  "interface": {
+    "inputs": {
+      "47c56035-5bed-4f91-b7a9-606dedd7a13c": {
+        "type": "{string:any}",
+        "name": "dict"
+      },
+      "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {
+        "type": "string",
+        "name": "key"
+      }
+    },
+    "outputs": {
+      "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+        "type": "typeof(dict)[string]",
+        "name": "value"
+      },
+      "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+        "type": "any",
+        "name": "not found"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5ae09e24-6724-4227-aa2c-a41ff95c9d53": {
+          "coordinates": [
+            -119,
+            80
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\",\"key\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync dict & key"
+        },
+        "06f47813-60ef-40d1-9f9b-b31940f27820": {
+          "coordinates": [
+            5,
+            -26
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "78639337-d706-4a1a-b612-ba170e83b8e2",
+          "name": "get item"
+        }
+      },
+      "connections": {
+        "5ae09e24-6724-4227-aa2c-a41ff95c9d53": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "06f47813-60ef-40d1-9f9b-b31940f27820": {
+              "50395fef-5d23-4f22-ad85-ac41ce728ca8": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "47c56035-5bed-4f91-b7a9-606dedd7a13c": {
+            "5ae09e24-6724-4227-aa2c-a41ff95c9d53": {
+              "dict": {}
+            }
+          },
+          "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {
+            "5ae09e24-6724-4227-aa2c-a41ff95c9d53": {
+              "key": {}
+            }
+          }
+        },
+        "outputs": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "06f47813-60ef-40d1-9f9b-b31940f27820": {
+              "773e3764-85ca-4882-ad5a-4a8fcfdcbe9d": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "06f47813-60ef-40d1-9f9b-b31940f27820": {
+              "c1a88321-b05f-4ef4-8ae1-a3527b419c92": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Item getter"
+}

@@ -1,1 +1,82 @@
-{"name":"flow/Depot","interface":{"inputs":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{"type":"any","name":"data"},"f58efe33-f70e-4570-ac54-670aaf844385":{"description":"type: any","type":"any","name":"trigger"}},"outputs":{"eb4c2873-890f-4780-a895-53e321f3739e":{"description":"","type":"any","name":"data"}}},"implementations":{"cranq":{"connections":{"d0227f18-3f30-44b3-ba97-3a632066ff5c":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"d43f830c-9821-4442-911b-ee7d9447b55b":{"6ad86184-6890-4323-8021-3496a682c98e":{}}}}},"forwards":{"inputs":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{"d0227f18-3f30-44b3-ba97-3a632066ff5c":{"data":{}}},"f58efe33-f70e-4570-ac54-670aaf844385":{"d0227f18-3f30-44b3-ba97-3a632066ff5c":{"trigger":{}}}},"outputs":{"eb4c2873-890f-4780-a895-53e321f3739e":{"d43f830c-9821-4442-911b-ee7d9447b55b":{"data":{}}}}},"nodes":{"d0227f18-3f30-44b3-ba97-3a632066ff5c":{"coordinates":[-53,22.5],"name":"syncer","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"data\", \"trigger\"]"}},"d43f830c-9821-4442-911b-ee7d9447b55b":{"coordinates":[53,-22.5],"name":"splitter","prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"data\"]"}}}}},"description":"Forwards incoming data when both data and trigger have been received."}
+{
+  "name": "flow/Depot",
+  "interface": {
+    "inputs": {
+      "72a73ffe-8319-4427-878e-3e67f2d150ff": {
+        "type": "any",
+        "name": "data"
+      },
+      "f58efe33-f70e-4570-ac54-670aaf844385": {
+        "description": "type: any",
+        "type": "any",
+        "name": "trigger"
+      }
+    },
+    "outputs": {
+      "eb4c2873-890f-4780-a895-53e321f3739e": {
+        "description": "",
+        "type": "any",
+        "name": "data"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "d0227f18-3f30-44b3-ba97-3a632066ff5c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d43f830c-9821-4442-911b-ee7d9447b55b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "72a73ffe-8319-4427-878e-3e67f2d150ff": {
+            "d0227f18-3f30-44b3-ba97-3a632066ff5c": {
+              "data": {}
+            }
+          },
+          "f58efe33-f70e-4570-ac54-670aaf844385": {
+            "d0227f18-3f30-44b3-ba97-3a632066ff5c": {
+              "trigger": {}
+            }
+          }
+        },
+        "outputs": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "d43f830c-9821-4442-911b-ee7d9447b55b": {
+              "data": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "d0227f18-3f30-44b3-ba97-3a632066ff5c": {
+          "coordinates": [
+            -53,
+            22.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"data\", \"trigger\"]"
+          }
+        },
+        "d43f830c-9821-4442-911b-ee7d9447b55b": {
+          "coordinates": [
+            53,
+            -22.5
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"data\"]"
+          }
+        }
+      }
+    }
+  },
+  "description": "Forwards incoming data when both data and trigger have been received."
+}

@@ -1,1 +1,82 @@
-{"description":"Retrieves multiple items' values from the dictionary, in the order of the keys provided.","interface":{"inputs":{"257885b0-08c2-41c8-ba17-d6f9b80e93d1":{"type":"{string:any}","name":"dict"},"72550b19-9434-43d7-a6af-468a19288808":{"type":"string[]","name":"keys"}},"outputs":{"6dd99f55-3d65-42ca-b301-c2c6367c334c":{"type":"typeof(dict)[string][]","name":"values"}}},"implementations":{"cranq":{"nodes":{"80cf6f87-077e-4816-8dde-dc2e87ae9ece":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"dict\",\"keys\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync dict & keys"},"638de552-beea-4ce8-9c11-c3341ceec70a":{"coordinates":[0,0],"description":"","params":{},"prototype":"b6d7b23b-3795-4dbc-bee0-ffd139641f13","name":"get items"}},"connections":{"80cf6f87-077e-4816-8dde-dc2e87ae9ece":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"638de552-beea-4ce8-9c11-c3341ceec70a":{"9af21210-8f9c-4067-986a-f29fe11cede0":{"description":""}}}}},"forwards":{"inputs":{"257885b0-08c2-41c8-ba17-d6f9b80e93d1":{"80cf6f87-077e-4816-8dde-dc2e87ae9ece":{"dict":{}}},"72550b19-9434-43d7-a6af-468a19288808":{"80cf6f87-077e-4816-8dde-dc2e87ae9ece":{"keys":{}}}},"outputs":{"6dd99f55-3d65-42ca-b301-c2c6367c334c":{"638de552-beea-4ce8-9c11-c3341ceec70a":{"9e6164b8-807d-4f53-9a1b-2c8654bdcbbd":{}}}}}}},"name":"data/dictionary/Items getter"}
+{
+  "description": "Retrieves multiple items' values from the dictionary, in the order of the keys provided.",
+  "interface": {
+    "inputs": {
+      "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
+        "type": "{string:any}",
+        "name": "dict"
+      },
+      "72550b19-9434-43d7-a6af-468a19288808": {
+        "type": "string[]",
+        "name": "keys"
+      }
+    },
+    "outputs": {
+      "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
+        "type": "typeof(dict)[string][]",
+        "name": "values"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\",\"keys\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync dict & keys"
+        },
+        "638de552-beea-4ce8-9c11-c3341ceec70a": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "b6d7b23b-3795-4dbc-bee0-ffd139641f13",
+          "name": "get items"
+        }
+      },
+      "connections": {
+        "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "638de552-beea-4ce8-9c11-c3341ceec70a": {
+              "9af21210-8f9c-4067-986a-f29fe11cede0": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
+            "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+              "dict": {}
+            }
+          },
+          "72550b19-9434-43d7-a6af-468a19288808": {
+            "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+              "keys": {}
+            }
+          }
+        },
+        "outputs": {
+          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
+            "638de552-beea-4ce8-9c11-c3341ceec70a": {
+              "9e6164b8-807d-4f53-9a1b-2c8654bdcbbd": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Items getter"
+}

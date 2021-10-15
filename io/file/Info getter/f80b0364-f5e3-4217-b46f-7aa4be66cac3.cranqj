@@ -1,1 +1,109 @@
-{"description":"Reads common file system information of the file or directory, specified by a path","interface":{"inputs":{"cdf47862-fad9-4cc5-9855-12550aa9ae20":{"description":"The path to inspect","type":"any","name":"path"}},"outputs":{"64cad980-4f8d-4481-82fc-7087ee134d30":{"description":"The resulting file/directory information","type":"any","name":"info"},"e9d1e0bf-5e20-4912-96f5-b9ceef99d0d4":{"description":"Indicates, that the operation has failed","type":"any","name":"bounced"}}},"implementations":{"cranq":{"nodes":{"a7ce2a42-5785-4877-9665-61feab812c6c":{"coordinates":[-19,-71],"description":"","params":{},"prototype":"a861fd15-7e39-4092-a752-6b69424aa464","name":"get file info"},"fab1394b-f1fa-4455-af58-4700f19fbea7":{"coordinates":[-79,158],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"{\n\t\"size_bytes\":\"size\",\n\t\"created\":\"birthtime\",\n\t\"accessed\":\"atime\",\n\t\"modified\":\"mtime\",\n\t\"changed\":\"ctime\"\n}"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"template"},"532105c3-4b9e-420d-8a74-8c8222243034":{"coordinates":[118,112],"description":"","params":{},"prototype":"20ab24f4-9017-4cf1-9b44-45211ec3d074","name":"Left joiner A"}},"connections":{"fab1394b-f1fa-4455-af58-4700f19fbea7":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"532105c3-4b9e-420d-8a74-8c8222243034":{"dfab5f2f-9107-481d-b7b1-19a7631381fb":{"description":""}}}},"a7ce2a42-5785-4877-9665-61feab812c6c":{"b8505489-fe43-4d0e-ae40-f9d6fe652d39":{"532105c3-4b9e-420d-8a74-8c8222243034":{"be713809-1c65-4abb-9525-87ee9f75e9be":{"description":""}},"fab1394b-f1fa-4455-af58-4700f19fbea7":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}}}}},"forwards":{"inputs":{"cdf47862-fad9-4cc5-9855-12550aa9ae20":{"a7ce2a42-5785-4877-9665-61feab812c6c":{"90f71778-3403-49b1-b363-cb9dd9da3ee2":{}}}},"outputs":{"64cad980-4f8d-4481-82fc-7087ee134d30":{"532105c3-4b9e-420d-8a74-8c8222243034":{"81c6113a-17f2-4f3b-840b-51a7f1026d3d":{}}},"e9d1e0bf-5e20-4912-96f5-b9ceef99d0d4":{"a7ce2a42-5785-4877-9665-61feab812c6c":{"44a16cd8-9568-44a2-9f8b-d98c1a632f48":{}}}}}}},"name":"io/file/Info getter"}
+{
+  "description": "Reads common file system information of the file or directory, specified by a path",
+  "interface": {
+    "inputs": {
+      "cdf47862-fad9-4cc5-9855-12550aa9ae20": {
+        "description": "The path to inspect",
+        "type": "any",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "64cad980-4f8d-4481-82fc-7087ee134d30": {
+        "description": "The resulting file/directory information",
+        "type": "any",
+        "name": "info"
+      },
+      "e9d1e0bf-5e20-4912-96f5-b9ceef99d0d4": {
+        "description": "Indicates, that the operation has failed",
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a7ce2a42-5785-4877-9665-61feab812c6c": {
+          "coordinates": [
+            -19,
+            -71
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a861fd15-7e39-4092-a752-6b69424aa464",
+          "name": "get file info"
+        },
+        "fab1394b-f1fa-4455-af58-4700f19fbea7": {
+          "coordinates": [
+            -79,
+            158
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n\t\"size_bytes\":\"size\",\n\t\"created\":\"birthtime\",\n\t\"accessed\":\"atime\",\n\t\"modified\":\"mtime\",\n\t\"changed\":\"ctime\"\n}"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "template"
+        },
+        "532105c3-4b9e-420d-8a74-8c8222243034": {
+          "coordinates": [
+            118,
+            112
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "name": "Left joiner A"
+        }
+      },
+      "connections": {
+        "fab1394b-f1fa-4455-af58-4700f19fbea7": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "532105c3-4b9e-420d-8a74-8c8222243034": {
+              "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "a7ce2a42-5785-4877-9665-61feab812c6c": {
+          "b8505489-fe43-4d0e-ae40-f9d6fe652d39": {
+            "532105c3-4b9e-420d-8a74-8c8222243034": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {
+                "description": ""
+              }
+            },
+            "fab1394b-f1fa-4455-af58-4700f19fbea7": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cdf47862-fad9-4cc5-9855-12550aa9ae20": {
+            "a7ce2a42-5785-4877-9665-61feab812c6c": {
+              "90f71778-3403-49b1-b363-cb9dd9da3ee2": {}
+            }
+          }
+        },
+        "outputs": {
+          "64cad980-4f8d-4481-82fc-7087ee134d30": {
+            "532105c3-4b9e-420d-8a74-8c8222243034": {
+              "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {}
+            }
+          },
+          "e9d1e0bf-5e20-4912-96f5-b9ceef99d0d4": {
+            "a7ce2a42-5785-4877-9665-61feab812c6c": {
+              "44a16cd8-9568-44a2-9f8b-d98c1a632f48": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/Info getter"
+}

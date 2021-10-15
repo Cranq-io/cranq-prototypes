@@ -1,1 +1,161 @@
-{"name":"apis/ga/measurement protocol/Event params builder","interface":{"inputs":{"28d8bde7-3842-43d1-9315-78e6225d86bc":{"type":"any","name":"tracking ID"},"8cadfb2c-7ff5-406d-b12b-b3b0600bccdc":{"type":"any","name":"client ID"},"5ef28d67-2196-4b49-87af-50d8e7b5360a":{"type":"any","name":"category"},"95752806-7f62-451b-b9c5-2838c0529a06":{"type":"any","name":"action"},"a71a81e0-099c-463a-8cdd-8bdaaa5c56b0":{"type":"any","name":"label"},"0d1356f2-a60d-400c-85ce-43c484a57b1d":{"type":"any","name":"value"}},"outputs":{"3eba35e7-ff64-42e0-b695-ae250aa052e0":{"type":"{string:typeof(a)[string] or typeof(b)[string]}","name":"params","description":"Measurement Protocol parameters for \"event\" hit type. Key-value pairs, must be serialized to be passed as payload."}}},"implementations":{"cranq":{"connections":{"6434b940-d6f5-4b0e-bb25-0854bf42eb9c":{"synced":{"2f085f37-af45-4051-9ae3-3e87c45c30c4":{"507a0b1a-b9eb-4e67-a64d-47b405e17422":{}}}},"8059d1a3-0eca-4dba-971d-26927d28d2e6":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"d35bed94-661b-4de9-808e-e4e1f66c98e6":{"545a5e1a-9807-4456-b557-dfa8aa8ef28a":{}}}},"2f085f37-af45-4051-9ae3-3e87c45c30c4":{"c3fcabea-63e8-48a2-b736-e7a9954cf5ca":{"8059d1a3-0eca-4dba-971d-26927d28d2e6":{"tid":{}}},"9b746d54-f007-4bc0-9988-acb0a0a05cd5":{"8059d1a3-0eca-4dba-971d-26927d28d2e6":{"cid":{}}},"3f67095a-501d-4010-b37d-4e1ece60e2f2":{"d35bed94-661b-4de9-808e-e4e1f66c98e6":{"d694bd76-84f6-465f-9c8e-8b9570cc8e69":{}}}}},"forwards":{"inputs":{"5ef28d67-2196-4b49-87af-50d8e7b5360a":{"6434b940-d6f5-4b0e-bb25-0854bf42eb9c":{"ec":{}}},"95752806-7f62-451b-b9c5-2838c0529a06":{"6434b940-d6f5-4b0e-bb25-0854bf42eb9c":{"ea":{}}},"a71a81e0-099c-463a-8cdd-8bdaaa5c56b0":{"6434b940-d6f5-4b0e-bb25-0854bf42eb9c":{"el":{}}},"0d1356f2-a60d-400c-85ce-43c484a57b1d":{"6434b940-d6f5-4b0e-bb25-0854bf42eb9c":{"ev":{}}},"28d8bde7-3842-43d1-9315-78e6225d86bc":{"2f085f37-af45-4051-9ae3-3e87c45c30c4":{"70da607a-8976-437b-b9e9-84cc63cd613b":{}}},"8cadfb2c-7ff5-406d-b12b-b3b0600bccdc":{"2f085f37-af45-4051-9ae3-3e87c45c30c4":{"54c357a1-045e-4817-beda-0017a586a499":{}}}},"outputs":{"3eba35e7-ff64-42e0-b695-ae250aa052e0":{"d35bed94-661b-4de9-808e-e4e1f66c98e6":{"8357d165-4753-4d32-8c61-e3baff88d8ba":{}}}}},"nodes":{"8059d1a3-0eca-4dba-971d-26927d28d2e6":{"coordinates":[85.33333333333334,-141.66666666666666],"name":"sync required","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"v\", \"tid\", \"cid\", \"t\"]","v":"1","t":"\"event\""}},"6434b940-d6f5-4b0e-bb25-0854bf42eb9c":{"coordinates":[-101.66666666666666,114.33333333333334],"name":"sync event params","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"ec\", \"ea\", \"el\", \"ev\"]"}},"d35bed94-661b-4de9-808e-e4e1f66c98e6":{"coordinates":[83.33333333333334,54.33333333333334],"name":"merger","prototype":"b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301","params":{}},"2f085f37-af45-4051-9ae3-3e87c45c30c4":{"coordinates":[-97.66666666666666,-57.66666666666666],"name":"forwarder/triple","prototype":"ccd44557-20cf-4582-9c10-99bc31b22380","params":{}}}}},"description":"Builds raw \"event\" parameter set for Google Analytics Measurement Protocol request."}
+{
+  "name": "apis/ga/measurement protocol/Event params builder",
+  "interface": {
+    "inputs": {
+      "28d8bde7-3842-43d1-9315-78e6225d86bc": {
+        "type": "any",
+        "name": "tracking ID"
+      },
+      "8cadfb2c-7ff5-406d-b12b-b3b0600bccdc": {
+        "type": "any",
+        "name": "client ID"
+      },
+      "5ef28d67-2196-4b49-87af-50d8e7b5360a": {
+        "type": "any",
+        "name": "category"
+      },
+      "95752806-7f62-451b-b9c5-2838c0529a06": {
+        "type": "any",
+        "name": "action"
+      },
+      "a71a81e0-099c-463a-8cdd-8bdaaa5c56b0": {
+        "type": "any",
+        "name": "label"
+      },
+      "0d1356f2-a60d-400c-85ce-43c484a57b1d": {
+        "type": "any",
+        "name": "value"
+      }
+    },
+    "outputs": {
+      "3eba35e7-ff64-42e0-b695-ae250aa052e0": {
+        "type": "{string:typeof(a)[string] or typeof(b)[string]}",
+        "name": "params",
+        "description": "Measurement Protocol parameters for \"event\" hit type. Key-value pairs, must be serialized to be passed as payload."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+          "synced": {
+            "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "8059d1a3-0eca-4dba-971d-26927d28d2e6": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d35bed94-661b-4de9-808e-e4e1f66c98e6": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "8059d1a3-0eca-4dba-971d-26927d28d2e6": {
+              "tid": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "8059d1a3-0eca-4dba-971d-26927d28d2e6": {
+              "cid": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "d35bed94-661b-4de9-808e-e4e1f66c98e6": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5ef28d67-2196-4b49-87af-50d8e7b5360a": {
+            "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+              "ec": {}
+            }
+          },
+          "95752806-7f62-451b-b9c5-2838c0529a06": {
+            "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+              "ea": {}
+            }
+          },
+          "a71a81e0-099c-463a-8cdd-8bdaaa5c56b0": {
+            "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+              "el": {}
+            }
+          },
+          "0d1356f2-a60d-400c-85ce-43c484a57b1d": {
+            "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+              "ev": {}
+            }
+          },
+          "28d8bde7-3842-43d1-9315-78e6225d86bc": {
+            "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "8cadfb2c-7ff5-406d-b12b-b3b0600bccdc": {
+            "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        },
+        "outputs": {
+          "3eba35e7-ff64-42e0-b695-ae250aa052e0": {
+            "d35bed94-661b-4de9-808e-e4e1f66c98e6": {
+              "8357d165-4753-4d32-8c61-e3baff88d8ba": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "8059d1a3-0eca-4dba-971d-26927d28d2e6": {
+          "coordinates": [
+            85.33333333333334,
+            -141.66666666666666
+          ],
+          "name": "sync required",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"v\", \"tid\", \"cid\", \"t\"]",
+            "v": "1",
+            "t": "\"event\""
+          }
+        },
+        "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+          "coordinates": [
+            -101.66666666666666,
+            114.33333333333334
+          ],
+          "name": "sync event params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"ec\", \"ea\", \"el\", \"ev\"]"
+          }
+        },
+        "d35bed94-661b-4de9-808e-e4e1f66c98e6": {
+          "coordinates": [
+            83.33333333333334,
+            54.33333333333334
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {}
+        },
+        "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
+          "coordinates": [
+            -97.66666666666666,
+            -57.66666666666666
+          ],
+          "name": "forwarder/triple",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Builds raw \"event\" parameter set for Google Analytics Measurement Protocol request."
+}

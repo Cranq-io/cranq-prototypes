@@ -1,1 +1,28 @@
-{"description":"Maps the input signal to the tag associated with it.","interface":{"inputs":{"0723ecba-2687-4629-8890-c8ea2bfe3636":{"type":"any","name":"data"}},"outputs":{"324467b9-5b8a-4996-ab9c-0fa5dbfbcfc0":{"type":"string","name":"tag"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"0723ecba-2687-4629-8890-c8ea2bfe3636":"outputs.tag(tag, tag);"}}},"name":"flow/Tag extractor"}
+{
+  "description": "Maps the input signal to the tag associated with it.",
+  "interface": {
+    "inputs": {
+      "0723ecba-2687-4629-8890-c8ea2bfe3636": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "324467b9-5b8a-4996-ab9c-0fa5dbfbcfc0": {
+        "type": "string",
+        "name": "tag"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "0723ecba-2687-4629-8890-c8ea2bfe3636": "outputs.tag(tag, tag);"
+      }
+    }
+  },
+  "name": "flow/Tag extractor"
+}

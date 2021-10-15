@@ -1,1 +1,69 @@
-{"implementations":{"cranq":{"nodes":{"a86aee96-d81e-4570-8cfb-d17ec95392ad":{"coordinates":[-27,66],"name":"shift","prototype":"14ded86b-1b95-40cf-aead-585d5dd81c7d","params":{}},"ebcb6dd2-44d4-4587-a0dd-1b9dad12d100":{"coordinates":[21,-54],"name":"subtract","prototype":"13d79b7a-4c71-411f-9826-3ec6f385b66f","params":{}}},"forwards":{"inputs":{"0ac84fa4-2f09-46c4-9054-63a985801b0c":{"a86aee96-d81e-4570-8cfb-d17ec95392ad":{"52beed26-c59d-41c5-905d-8b966db24eb7":{}},"ebcb6dd2-44d4-4587-a0dd-1b9dad12d100":{"6ba1c098-1890-4585-9147-ee35b2c62ed9":{}}}},"outputs":{"42638cb8-ff5a-41c9-bb8f-cd6615653161":{"ebcb6dd2-44d4-4587-a0dd-1b9dad12d100":{"34afedef-5145-418a-a3f7-7efaf93b8246":{}}}}},"connections":{"a86aee96-d81e-4570-8cfb-d17ec95392ad":{"40d1a5cf-aced-49cc-9e2f-27dcd6e300f8":{"ebcb6dd2-44d4-4587-a0dd-1b9dad12d100":{"977cb484-0c1d-461e-aa7c-2cc68969b280":{}}}}}}},"interface":{"inputs":{"0ac84fa4-2f09-46c4-9054-63a985801b0c":{"type":"any","name":"number"}},"outputs":{"42638cb8-ff5a-41c9-bb8f-cd6615653161":{"type":"any","name":"diff"}}},"name":"number/Differ"}
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a86aee96-d81e-4570-8cfb-d17ec95392ad": {
+          "coordinates": [
+            -27,
+            66
+          ],
+          "name": "shift",
+          "prototype": "14ded86b-1b95-40cf-aead-585d5dd81c7d",
+          "params": {}
+        },
+        "ebcb6dd2-44d4-4587-a0dd-1b9dad12d100": {
+          "coordinates": [
+            21,
+            -54
+          ],
+          "name": "subtract",
+          "prototype": "13d79b7a-4c71-411f-9826-3ec6f385b66f",
+          "params": {}
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0ac84fa4-2f09-46c4-9054-63a985801b0c": {
+            "a86aee96-d81e-4570-8cfb-d17ec95392ad": {
+              "52beed26-c59d-41c5-905d-8b966db24eb7": {}
+            },
+            "ebcb6dd2-44d4-4587-a0dd-1b9dad12d100": {
+              "6ba1c098-1890-4585-9147-ee35b2c62ed9": {}
+            }
+          }
+        },
+        "outputs": {
+          "42638cb8-ff5a-41c9-bb8f-cd6615653161": {
+            "ebcb6dd2-44d4-4587-a0dd-1b9dad12d100": {
+              "34afedef-5145-418a-a3f7-7efaf93b8246": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "a86aee96-d81e-4570-8cfb-d17ec95392ad": {
+          "40d1a5cf-aced-49cc-9e2f-27dcd6e300f8": {
+            "ebcb6dd2-44d4-4587-a0dd-1b9dad12d100": {
+              "977cb484-0c1d-461e-aa7c-2cc68969b280": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "0ac84fa4-2f09-46c4-9054-63a985801b0c": {
+        "type": "any",
+        "name": "number"
+      }
+    },
+    "outputs": {
+      "42638cb8-ff5a-41c9-bb8f-cd6615653161": {
+        "type": "any",
+        "name": "diff"
+      }
+    }
+  },
+  "name": "number/Differ"
+}

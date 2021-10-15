@@ -1,1 +1,111 @@
-{"name":"testing/reporters/junit/Failures consolidator","interface":{"inputs":{"6d895045-7e50-44a4-80d5-2651afb3f4a8":{"type":"any","name":"pre-report"}},"outputs":{"65642c26-6595-4891-a5ff-e9a67bba3a74":{"type":"any","name":"pre-report"}}},"implementations":{"cranq":{"connections":{"0e5ffaa8-a5f7-4ea4-840c-582602f19d5b":{"2f73c01b-2351-4070-9ecf-b0fc8d7d5f20":{"a268cf2e-5d82-44e4-9d36-d5b4db923819":{"8a82bc3e-2765-4d8b-b372-fbb77a4f4383":{}}},"a5ce631a-eed0-4098-acc1-0ee4ac1e70a1":{"c68f153c-9f21-4f85-b5f1-7467a906a49f":{"1670d7c3-36ce-42d6-8411-b90866ca411a":{}}},"3eebba16-9a8b-47ce-a360-102fd11f5434":{"c68f153c-9f21-4f85-b5f1-7467a906a49f":{"0d7e3081-01f4-41bf-b4b3-822ee0990aa3":{}}},"c4592bfb-7146-4b8a-8d45-9e58caecf861":{"d9e96e11-995d-4c68-801d-b770f34a0f6a":{"f58efe33-f70e-4570-ac54-670aaf844385":{}}}},"a268cf2e-5d82-44e4-9d36-d5b4db923819":{"807f86ec-082e-4a9a-a304-021a397dca4c":{"c68f153c-9f21-4f85-b5f1-7467a906a49f":{"5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a":{}}}}},"forwards":{"inputs":{"6d895045-7e50-44a4-80d5-2651afb3f4a8":{"0e5ffaa8-a5f7-4ea4-840c-582602f19d5b":{"1b7f140a-f566-46af-9782-8e97804b07d6":{}},"d9e96e11-995d-4c68-801d-b770f34a0f6a":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{}}}},"outputs":{"65642c26-6595-4891-a5ff-e9a67bba3a74":{"d9e96e11-995d-4c68-801d-b770f34a0f6a":{"eb4c2873-890f-4780-a895-53e321f3739e":{}}}}},"nodes":{"0e5ffaa8-a5f7-4ea4-840c-582602f19d5b":{"coordinates":[-117.5,64.5],"name":"iterator","prototype":"61321f3c-9b14-4779-ace6-ad9f32cc5f7f","params":{"788366e4-5319-4b4f-a2a6-124672c444f4":"[\"suites\", {\"type\": \"wildcard\"}, \"testCases\", {\"type\": \"wildcard\"}, \"failures\"]"}},"a268cf2e-5d82-44e4-9d36-d5b4db923819":{"coordinates":[-11.5,140.5],"name":"values getter","prototype":"3419d082-1bea-4e6b-8dfb-47eabfe792b0","params":{}},"c68f153c-9f21-4f85-b5f1-7467a906a49f":{"coordinates":[67.5,-10.5],"name":"node setter/mutable","prototype":"ec47f31f-a2f2-4f53-ab3e-a5345e5bca41","params":{}},"d9e96e11-995d-4c68-801d-b770f34a0f6a":{"coordinates":[30.5,-123.5],"name":"hold report","prototype":"62c8e48b-0926-4fa7-8322-02975bf4dc41","params":{}}}}}}
+{
+  "name": "testing/reporters/junit/Failures consolidator",
+  "interface": {
+    "inputs": {
+      "6d895045-7e50-44a4-80d5-2651afb3f4a8": {
+        "type": "any",
+        "name": "pre-report"
+      }
+    },
+    "outputs": {
+      "65642c26-6595-4891-a5ff-e9a67bba3a74": {
+        "type": "any",
+        "name": "pre-report"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "0e5ffaa8-a5f7-4ea4-840c-582602f19d5b": {
+          "2f73c01b-2351-4070-9ecf-b0fc8d7d5f20": {
+            "a268cf2e-5d82-44e4-9d36-d5b4db923819": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          },
+          "a5ce631a-eed0-4098-acc1-0ee4ac1e70a1": {
+            "c68f153c-9f21-4f85-b5f1-7467a906a49f": {
+              "1670d7c3-36ce-42d6-8411-b90866ca411a": {}
+            }
+          },
+          "3eebba16-9a8b-47ce-a360-102fd11f5434": {
+            "c68f153c-9f21-4f85-b5f1-7467a906a49f": {
+              "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {}
+            }
+          },
+          "c4592bfb-7146-4b8a-8d45-9e58caecf861": {
+            "d9e96e11-995d-4c68-801d-b770f34a0f6a": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "a268cf2e-5d82-44e4-9d36-d5b4db923819": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "c68f153c-9f21-4f85-b5f1-7467a906a49f": {
+              "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6d895045-7e50-44a4-80d5-2651afb3f4a8": {
+            "0e5ffaa8-a5f7-4ea4-840c-582602f19d5b": {
+              "1b7f140a-f566-46af-9782-8e97804b07d6": {}
+            },
+            "d9e96e11-995d-4c68-801d-b770f34a0f6a": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "65642c26-6595-4891-a5ff-e9a67bba3a74": {
+            "d9e96e11-995d-4c68-801d-b770f34a0f6a": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "0e5ffaa8-a5f7-4ea4-840c-582602f19d5b": {
+          "coordinates": [
+            -117.5,
+            64.5
+          ],
+          "name": "iterator",
+          "prototype": "61321f3c-9b14-4779-ace6-ad9f32cc5f7f",
+          "params": {
+            "788366e4-5319-4b4f-a2a6-124672c444f4": "[\"suites\", {\"type\": \"wildcard\"}, \"testCases\", {\"type\": \"wildcard\"}, \"failures\"]"
+          }
+        },
+        "a268cf2e-5d82-44e4-9d36-d5b4db923819": {
+          "coordinates": [
+            -11.5,
+            140.5
+          ],
+          "name": "values getter",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0",
+          "params": {}
+        },
+        "c68f153c-9f21-4f85-b5f1-7467a906a49f": {
+          "coordinates": [
+            67.5,
+            -10.5
+          ],
+          "name": "node setter/mutable",
+          "prototype": "ec47f31f-a2f2-4f53-ab3e-a5345e5bca41",
+          "params": {}
+        },
+        "d9e96e11-995d-4c68-801d-b770f34a0f6a": {
+          "coordinates": [
+            30.5,
+            -123.5
+          ],
+          "name": "hold report",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      }
+    }
+  }
+}

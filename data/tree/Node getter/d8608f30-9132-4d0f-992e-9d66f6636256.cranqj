@@ -1,1 +1,92 @@
-{"description":"Retrieves the node at the specified path of the tree.","interface":{"inputs":{"cf2ad35e-cfac-4c59-ab25-30a4dd08111f":{"type":"any[] or {string:any}","name":"tree"},"927e6b17-97e0-44de-887f-57204b7a1f9b":{"type":"(string | number)[]","name":"path"}},"outputs":{"b6722d08-460c-465b-a9f1-d1f843500424":{"type":"any","name":"node"},"e97caed4-5898-4f86-911d-8e31acb2617b":{"description":"","type":"any","name":"not found"}}},"implementations":{"cranq":{"nodes":{"ef429890-b8b0-45f5-9188-b626aa5275eb":{"coordinates":[-48,48],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"tree\",\"path\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync tree & path"},"796f16be-c947-444c-98a5-4046fb7b995b":{"coordinates":[25,-63],"description":"","params":{},"prototype":"75c75287-5053-43b3-bf03-5ce52c947695","name":"get node"}},"connections":{"ef429890-b8b0-45f5-9188-b626aa5275eb":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"796f16be-c947-444c-98a5-4046fb7b995b":{"acf1b446-a89f-4af0-8865-174b1dcbb51f":{"description":""}}}}},"forwards":{"inputs":{"cf2ad35e-cfac-4c59-ab25-30a4dd08111f":{"ef429890-b8b0-45f5-9188-b626aa5275eb":{"tree":{}}},"927e6b17-97e0-44de-887f-57204b7a1f9b":{"ef429890-b8b0-45f5-9188-b626aa5275eb":{"path":{}}}},"outputs":{"b6722d08-460c-465b-a9f1-d1f843500424":{"796f16be-c947-444c-98a5-4046fb7b995b":{"55eb513c-0913-498a-b11c-db8d9d0d41bf":{}}},"e97caed4-5898-4f86-911d-8e31acb2617b":{"796f16be-c947-444c-98a5-4046fb7b995b":{"0b5f38f9-0f97-4d38-8cfa-92d2b444a159":{}}}}}}},"name":"data/tree/Node getter"}
+{
+  "description": "Retrieves the node at the specified path of the tree.",
+  "interface": {
+    "inputs": {
+      "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {
+        "type": "any[] or {string:any}",
+        "name": "tree"
+      },
+      "927e6b17-97e0-44de-887f-57204b7a1f9b": {
+        "type": "(string | number)[]",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "b6722d08-460c-465b-a9f1-d1f843500424": {
+        "type": "any",
+        "name": "node"
+      },
+      "e97caed4-5898-4f86-911d-8e31acb2617b": {
+        "description": "",
+        "type": "any",
+        "name": "not found"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ef429890-b8b0-45f5-9188-b626aa5275eb": {
+          "coordinates": [
+            -48,
+            48
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"tree\",\"path\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync tree & path"
+        },
+        "796f16be-c947-444c-98a5-4046fb7b995b": {
+          "coordinates": [
+            25,
+            -63
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "75c75287-5053-43b3-bf03-5ce52c947695",
+          "name": "get node"
+        }
+      },
+      "connections": {
+        "ef429890-b8b0-45f5-9188-b626aa5275eb": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "796f16be-c947-444c-98a5-4046fb7b995b": {
+              "acf1b446-a89f-4af0-8865-174b1dcbb51f": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {
+            "ef429890-b8b0-45f5-9188-b626aa5275eb": {
+              "tree": {}
+            }
+          },
+          "927e6b17-97e0-44de-887f-57204b7a1f9b": {
+            "ef429890-b8b0-45f5-9188-b626aa5275eb": {
+              "path": {}
+            }
+          }
+        },
+        "outputs": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "796f16be-c947-444c-98a5-4046fb7b995b": {
+              "55eb513c-0913-498a-b11c-db8d9d0d41bf": {}
+            }
+          },
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "796f16be-c947-444c-98a5-4046fb7b995b": {
+              "0b5f38f9-0f97-4d38-8cfa-92d2b444a159": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/tree/Node getter"
+}

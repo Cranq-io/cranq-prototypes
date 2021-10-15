@@ -1,1 +1,144 @@
-{"implementations":{"cranq":{"nodes":{"9bf92ef4-9e01-47c9-97e8-2c0a4b25b4e2":{"coordinates":[-101,-192],"name":"splitter","prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"suiteId\", \"caseId\", \"assertionId\", \"buffer\"]"}},"28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905":{"coordinates":[-105,-46],"name":"build path","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"0":"\"suites\"","2":"\"testCases\"","4":"\"time\"","ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[0, 1, 2, 3, 4, 5]"}},"7d740f81-d5ef-4047-b995-c48cf4edbe4b":{"coordinates":[120,-111],"name":"node setter/mutable","prototype":"ec47f31f-a2f2-4f53-ab3e-a5345e5bca41","params":{}},"82dd499a-60f7-4823-987e-eac9e1708201":{"coordinates":[176,101],"name":"depot","prototype":"62c8e48b-0926-4fa7-8322-02975bf4dc41","params":{}},"3f715f80-bd0d-4116-b09c-0cacaaf6d736":{"coordinates":[-163,89],"name":"node getter","prototype":"d8608f30-9132-4d0f-992e-9d66f6636256","params":{"927e6b17-97e0-44de-887f-57204b7a1f9b":"[\"assertion\", \"durations\", 0]"}}},"connections":{"9bf92ef4-9e01-47c9-97e8-2c0a4b25b4e2":{"buffer":{"7d740f81-d5ef-4047-b995-c48cf4edbe4b":{"0d7e3081-01f4-41bf-b4b3-822ee0990aa3":{}}},"suiteId":{"28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905":{"1":{}}},"caseId":{"28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905":{"3":{}}},"assertionId":{"28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905":{"5":{}}}},"28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"7d740f81-d5ef-4047-b995-c48cf4edbe4b":{"1670d7c3-36ce-42d6-8411-b90866ca411a":{}}}},"7d740f81-d5ef-4047-b995-c48cf4edbe4b":{"eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c":{"82dd499a-60f7-4823-987e-eac9e1708201":{"f58efe33-f70e-4570-ac54-670aaf844385":{}}}},"3f715f80-bd0d-4116-b09c-0cacaaf6d736":{"b6722d08-460c-465b-a9f1-d1f843500424":{"7d740f81-d5ef-4047-b995-c48cf4edbe4b":{"5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a":{}}}}},"forwards":{"inputs":{"9859e1b4-bb1d-40d1-9491-130e1f9cb641":{"82dd499a-60f7-4823-987e-eac9e1708201":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{}},"9bf92ef4-9e01-47c9-97e8-2c0a4b25b4e2":{"6ad86184-6890-4323-8021-3496a682c98e":{}},"3f715f80-bd0d-4116-b09c-0cacaaf6d736":{"cf2ad35e-cfac-4c59-ab25-30a4dd08111f":{}}}},"outputs":{"ba0fc0d5-7cbb-457e-b31e-053b11e67ede":{"82dd499a-60f7-4823-987e-eac9e1708201":{"eb4c2873-890f-4780-a895-53e321f3739e":{}}}}}}},"interface":{"inputs":{"9859e1b4-bb1d-40d1-9491-130e1f9cb641":{"type":"any","name":"context"}},"outputs":{"ba0fc0d5-7cbb-457e-b31e-053b11e67ede":{"type":"any","name":"context"}}},"name":"testing/reporters/junit/Case time inserter"}
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9bf92ef4-9e01-47c9-97e8-2c0a4b25b4e2": {
+          "coordinates": [
+            -101,
+            -192
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"suiteId\", \"caseId\", \"assertionId\", \"buffer\"]"
+          }
+        },
+        "28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905": {
+          "coordinates": [
+            -105,
+            -46
+          ],
+          "name": "build path",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "0": "\"suites\"",
+            "2": "\"testCases\"",
+            "4": "\"time\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1, 2, 3, 4, 5]"
+          }
+        },
+        "7d740f81-d5ef-4047-b995-c48cf4edbe4b": {
+          "coordinates": [
+            120,
+            -111
+          ],
+          "name": "node setter/mutable",
+          "prototype": "ec47f31f-a2f2-4f53-ab3e-a5345e5bca41",
+          "params": {}
+        },
+        "82dd499a-60f7-4823-987e-eac9e1708201": {
+          "coordinates": [
+            176,
+            101
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        },
+        "3f715f80-bd0d-4116-b09c-0cacaaf6d736": {
+          "coordinates": [
+            -163,
+            89
+          ],
+          "name": "node getter",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"assertion\", \"durations\", 0]"
+          }
+        }
+      },
+      "connections": {
+        "9bf92ef4-9e01-47c9-97e8-2c0a4b25b4e2": {
+          "buffer": {
+            "7d740f81-d5ef-4047-b995-c48cf4edbe4b": {
+              "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {}
+            }
+          },
+          "suiteId": {
+            "28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905": {
+              "1": {}
+            }
+          },
+          "caseId": {
+            "28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905": {
+              "3": {}
+            }
+          },
+          "assertionId": {
+            "28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905": {
+              "5": {}
+            }
+          }
+        },
+        "28e3f70a-1eb6-4d7f-8f22-f3e4fe6f6905": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "7d740f81-d5ef-4047-b995-c48cf4edbe4b": {
+              "1670d7c3-36ce-42d6-8411-b90866ca411a": {}
+            }
+          }
+        },
+        "7d740f81-d5ef-4047-b995-c48cf4edbe4b": {
+          "eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c": {
+            "82dd499a-60f7-4823-987e-eac9e1708201": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "3f715f80-bd0d-4116-b09c-0cacaaf6d736": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "7d740f81-d5ef-4047-b995-c48cf4edbe4b": {
+              "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9859e1b4-bb1d-40d1-9491-130e1f9cb641": {
+            "82dd499a-60f7-4823-987e-eac9e1708201": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            },
+            "9bf92ef4-9e01-47c9-97e8-2c0a4b25b4e2": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "3f715f80-bd0d-4116-b09c-0cacaaf6d736": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "ba0fc0d5-7cbb-457e-b31e-053b11e67ede": {
+            "82dd499a-60f7-4823-987e-eac9e1708201": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "9859e1b4-bb1d-40d1-9491-130e1f9cb641": {
+        "type": "any",
+        "name": "context"
+      }
+    },
+    "outputs": {
+      "ba0fc0d5-7cbb-457e-b31e-053b11e67ede": {
+        "type": "any",
+        "name": "context"
+      }
+    }
+  },
+  "name": "testing/reporters/junit/Case time inserter"
+}

@@ -1,1 +1,206 @@
-{"description":"Example node, that demonstrates the basic usage of the flow/Gate node","interface":{"inputs":{"5726c450-4b86-49bc-9aca-a31d69d8f53e":{"description":"","type":"any","name":"run"}},"outputs":{"3e4d6c51-24a0-46e7-b0c0-99914edf3880":{"description":"","type":"any","name":"output"}}},"implementations":{"cranq":{"nodes":{"68982973-dc3c-4efb-9438-086ba4a0db77":{"coordinates":[-155,-80],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"2"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"2"},"8812d71d-3eb7-4397-a51f-1154fa24940b":{"coordinates":[149,-141],"description":"","params":{},"prototype":"40a2e145-0193-461f-978a-d6aaf4a7ea09","name":"Gate A"},"178e3512-c895-4668-a3f5-e0b6bc40dba0":{"coordinates":[-116,234],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"\"even\""},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"\"even\""},"0548841f-c29e-484b-9f16-5faba08f4e11":{"coordinates":[-5,15],"description":"","params":{},"prototype":"d5915a99-3dda-4671-9afd-768c8f5586ac","name":"Odd tester A"},"d381dadd-7445-4fbe-afbb-8611a1d5f69f":{"coordinates":[209,237],"description":"","params":{},"prototype":"40a2e145-0193-461f-978a-d6aaf4a7ea09","name":"Gate B"},"51be9c80-ac3f-4a5e-8623-5b1c99226c55":{"coordinates":[78,166],"description":"","params":{},"prototype":"f4ae2e14-2316-42ca-a3be-e1de3eaff164","name":"Not A"},"d4034ffa-1796-4e17-9dcb-a74af7759089":{"coordinates":[-295,-1],"description":"","params":{},"prototype":"420bb3c5-79a9-4b4d-934e-ee04d07f92b0","name":"Forwarder A"},"98a728c0-d505-4ed2-9cd2-dbe7fd7697d1":{"coordinates":[357,-2],"description":"","params":{},"prototype":"420bb3c5-79a9-4b4d-934e-ee04d07f92b0","name":"Forwarder B"}},"connections":{"68982973-dc3c-4efb-9438-086ba4a0db77":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"0548841f-c29e-484b-9f16-5faba08f4e11":{"81eb9228-10a4-43ff-8f34-eda60dc7dbf7":{"description":""}},"8812d71d-3eb7-4397-a51f-1154fa24940b":{"87d3064e-5a44-4029-bea8-ba632449f2f5":{"description":""}}}},"0548841f-c29e-484b-9f16-5faba08f4e11":{"b90fc38e-5ece-475d-9ff3-0fde77ea7c88":{"8812d71d-3eb7-4397-a51f-1154fa24940b":{"0e7419a5-ec56-4a97-8f11-6add5ff3ae1e":{"description":""}},"51be9c80-ac3f-4a5e-8623-5b1c99226c55":{"bffdd7a0-eeaa-41c5-b272-20aff39ae810":{"description":""}}}},"51be9c80-ac3f-4a5e-8623-5b1c99226c55":{"442847b6-23b9-4ad6-a3f5-cce6e5159644":{"d381dadd-7445-4fbe-afbb-8611a1d5f69f":{"open":{"description":""}}}},"178e3512-c895-4668-a3f5-e0b6bc40dba0":{"data":{"d381dadd-7445-4fbe-afbb-8611a1d5f69f":{"data":{"description":""}}}},"d4034ffa-1796-4e17-9dcb-a74af7759089":{"0a9cd5b0-6de6-4c69-aa04-2816de994173":{"68982973-dc3c-4efb-9438-086ba4a0db77":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}},"178e3512-c895-4668-a3f5-e0b6bc40dba0":{"read":{"description":""}}}},"8812d71d-3eb7-4397-a51f-1154fa24940b":{"7fe23af1-29bf-4cc5-810c-5b91dea1b61a":{"98a728c0-d505-4ed2-9cd2-dbe7fd7697d1":{"data":{"description":""}}}},"d381dadd-7445-4fbe-afbb-8611a1d5f69f":{"data":{"98a728c0-d505-4ed2-9cd2-dbe7fd7697d1":{"data":{"description":""}}}}},"forwards":{"inputs":{"5726c450-4b86-49bc-9aca-a31d69d8f53e":{"d4034ffa-1796-4e17-9dcb-a74af7759089":{"b0fb4a37-09d5-462e-952a-c3ab29a47e82":{}}}},"outputs":{"3e4d6c51-24a0-46e7-b0c0-99914edf3880":{"98a728c0-d505-4ed2-9cd2-dbe7fd7697d1":{"data":{}}}}}}},"name":"tutorials/flow/Gate example"}
+{
+  "description": "Example node, that demonstrates the basic usage of the flow/Gate node",
+  "interface": {
+    "inputs": {
+      "5726c450-4b86-49bc-9aca-a31d69d8f53e": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "3e4d6c51-24a0-46e7-b0c0-99914edf3880": {
+        "description": "",
+        "type": "any",
+        "name": "output"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "68982973-dc3c-4efb-9438-086ba4a0db77": {
+          "coordinates": [
+            -155,
+            -80
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "2"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "2"
+        },
+        "8812d71d-3eb7-4397-a51f-1154fa24940b": {
+          "coordinates": [
+            149,
+            -141
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09",
+          "name": "Gate A"
+        },
+        "178e3512-c895-4668-a3f5-e0b6bc40dba0": {
+          "coordinates": [
+            -116,
+            234
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"even\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "\"even\""
+        },
+        "0548841f-c29e-484b-9f16-5faba08f4e11": {
+          "coordinates": [
+            -5,
+            15
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d5915a99-3dda-4671-9afd-768c8f5586ac",
+          "name": "Odd tester A"
+        },
+        "d381dadd-7445-4fbe-afbb-8611a1d5f69f": {
+          "coordinates": [
+            209,
+            237
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09",
+          "name": "Gate B"
+        },
+        "51be9c80-ac3f-4a5e-8623-5b1c99226c55": {
+          "coordinates": [
+            78,
+            166
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164",
+          "name": "Not A"
+        },
+        "d4034ffa-1796-4e17-9dcb-a74af7759089": {
+          "coordinates": [
+            -295,
+            -1
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
+          "name": "Forwarder A"
+        },
+        "98a728c0-d505-4ed2-9cd2-dbe7fd7697d1": {
+          "coordinates": [
+            357,
+            -2
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
+          "name": "Forwarder B"
+        }
+      },
+      "connections": {
+        "68982973-dc3c-4efb-9438-086ba4a0db77": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "0548841f-c29e-484b-9f16-5faba08f4e11": {
+              "81eb9228-10a4-43ff-8f34-eda60dc7dbf7": {
+                "description": ""
+              }
+            },
+            "8812d71d-3eb7-4397-a51f-1154fa24940b": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "0548841f-c29e-484b-9f16-5faba08f4e11": {
+          "b90fc38e-5ece-475d-9ff3-0fde77ea7c88": {
+            "8812d71d-3eb7-4397-a51f-1154fa24940b": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {
+                "description": ""
+              }
+            },
+            "51be9c80-ac3f-4a5e-8623-5b1c99226c55": {
+              "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "51be9c80-ac3f-4a5e-8623-5b1c99226c55": {
+          "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
+            "d381dadd-7445-4fbe-afbb-8611a1d5f69f": {
+              "open": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "178e3512-c895-4668-a3f5-e0b6bc40dba0": {
+          "data": {
+            "d381dadd-7445-4fbe-afbb-8611a1d5f69f": {
+              "data": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "d4034ffa-1796-4e17-9dcb-a74af7759089": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "68982973-dc3c-4efb-9438-086ba4a0db77": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            },
+            "178e3512-c895-4668-a3f5-e0b6bc40dba0": {
+              "read": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "8812d71d-3eb7-4397-a51f-1154fa24940b": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "98a728c0-d505-4ed2-9cd2-dbe7fd7697d1": {
+              "data": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "d381dadd-7445-4fbe-afbb-8611a1d5f69f": {
+          "data": {
+            "98a728c0-d505-4ed2-9cd2-dbe7fd7697d1": {
+              "data": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5726c450-4b86-49bc-9aca-a31d69d8f53e": {
+            "d4034ffa-1796-4e17-9dcb-a74af7759089": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "outputs": {
+          "3e4d6c51-24a0-46e7-b0c0-99914edf3880": {
+            "98a728c0-d505-4ed2-9cd2-dbe7fd7697d1": {
+              "data": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/flow/Gate example"
+}

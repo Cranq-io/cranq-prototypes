@@ -1,1 +1,22 @@
-{"description":"Sends a start signal asynchronously right after the creation of the node.","interface":{"inputs":{},"outputs":{"fb159194-7413-4b61-9b9a-f6bbfd3d7977":{"description":"Sends signal after the node's been created.","type":"null","name":"start"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"setTimeout(()=>outputs.start(null, \"start\"), 0);","inputFunctions":{}}},"name":"flow/Starter"}
+{
+  "description": "Sends a start signal asynchronously right after the creation of the node.",
+  "interface": {
+    "inputs": {},
+    "outputs": {
+      "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+        "description": "Sends signal after the node's been created.",
+        "type": "null",
+        "name": "start"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "setTimeout(()=>outputs.start(null, \"start\"), 0);",
+      "inputFunctions": {}
+    }
+  },
+  "name": "flow/Starter"
+}

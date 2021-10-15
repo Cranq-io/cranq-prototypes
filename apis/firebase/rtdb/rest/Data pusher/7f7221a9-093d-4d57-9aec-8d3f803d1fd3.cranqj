@@ -1,1 +1,158 @@
-{"name":"apis/firebase/rtdb/rest/Data pusher","interface":{"inputs":{"e12d2a26-5aa7-4d1e-81c6-412106c756a9":{"type":"any","name":"query context","description":"idToken\ndbUrl"},"4e212e21-db72-4108-8bdb-0c1127fece5d":{"type":"any","name":"parent path","description":"Identifies parent data entry that will contain the new entry.\n\ntype: string[]"},"4e24ecb7-7a45-4d02-b7f3-2091435c7eb5":{"type":"any","name":"data","description":""}},"outputs":{"fcbf77e3-1272-4f78-bb3e-42bca6d1752a":{"type":"any","name":"path","description":"Identifies data actually written.\n\ntype: string[]"},"93b03f54-522f-46c9-98e3-269ce76602ad":{"type":"any","name":"data"},"95f79da4-1ef1-4ba4-aab0-9013f7ce3ff2":{"type":"any","name":"error"},"75242bd8-8575-4bfe-ab8c-42b4a72819b7":{"type":"any","name":"query context","description":"idToken\ndbUrl"}}},"implementations":{"cranq":{"connections":{"87410813-a90d-47c5-844d-1f52fa3470d1":{"0066052c-0caa-4f32-ae2d-14c8859b0cce":{"61a33c3f-2dc8-45ab-a08a-a90594d91f1f":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{}},"9a352523-47c5-4b16-9fa9-d9c78a591dee":{"f58efe33-f70e-4570-ac54-670aaf844385":{}}}},"61a33c3f-2dc8-45ab-a08a-a90594d91f1f":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"ad26d304-81eb-4113-b6d2-244336733811":{"2d02022b-c114-4207-935e-11490a6c2926":{}}}}},"forwards":{"inputs":{"4e212e21-db72-4108-8bdb-0c1127fece5d":{"ad26d304-81eb-4113-b6d2-244336733811":{"5cbbb232-d9b4-4d06-9db0-e548e44e43b6":{}},"87410813-a90d-47c5-844d-1f52fa3470d1":{"0f0bade5-0b6a-4ad9-a3ba-774b5365d2d0":{}}},"e12d2a26-5aa7-4d1e-81c6-412106c756a9":{"87410813-a90d-47c5-844d-1f52fa3470d1":{"36e2743d-8088-4778-9194-583bb6289ab7":{}}},"4e24ecb7-7a45-4d02-b7f3-2091435c7eb5":{"87410813-a90d-47c5-844d-1f52fa3470d1":{"441a9d60-a5a2-4e63-a742-2c9bb772513f":{}},"9a352523-47c5-4b16-9fa9-d9c78a591dee":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{}}}},"outputs":{"fcbf77e3-1272-4f78-bb3e-42bca6d1752a":{"ad26d304-81eb-4113-b6d2-244336733811":{"092ca265-7614-4182-9d9f-bd325c094abb":{}}},"95f79da4-1ef1-4ba4-aab0-9013f7ce3ff2":{"61a33c3f-2dc8-45ab-a08a-a90594d91f1f":{"3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":{}},"87410813-a90d-47c5-844d-1f52fa3470d1":{"104108dd-4808-4eeb-8458-9179728f4a9a":{}}},"75242bd8-8575-4bfe-ab8c-42b4a72819b7":{"87410813-a90d-47c5-844d-1f52fa3470d1":{"7e5fed65-b00e-4548-a057-0b1a101f5ef0":{}}},"93b03f54-522f-46c9-98e3-269ce76602ad":{"9a352523-47c5-4b16-9fa9-d9c78a591dee":{"eb4c2873-890f-4780-a895-53e321f3739e":{}}}}},"nodes":{"87410813-a90d-47c5-844d-1f52fa3470d1":{"coordinates":[-146,-49],"name":"dispatch request","prototype":"974d5e19-683a-43ec-9c89-5fd9aadb262e","params":{"a1c0f925-e196-4ea6-ace4-383b40f18c7b":"\"POST\""}},"61a33c3f-2dc8-45ab-a08a-a90594d91f1f":{"coordinates":[-37,161],"name":"get name","prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","params":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":"\"name\""}},"ad26d304-81eb-4113-b6d2-244336733811":{"coordinates":[27.1171875,39.0078125],"name":"build new path","prototype":"9882ea6b-43da-4a1f-b660-689da949c8f2","params":{}},"9a352523-47c5-4b16-9fa9-d9c78a591dee":{"coordinates":[101,-94],"name":"hold data","prototype":"62c8e48b-0926-4fa7-8322-02975bf4dc41","params":{}}}}},"description":"Adds a new data entry to a Firebase Realtime Database under 'parent path'.\nReturns the path of the new entry."}
+{
+  "name": "apis/firebase/rtdb/rest/Data pusher",
+  "interface": {
+    "inputs": {
+      "e12d2a26-5aa7-4d1e-81c6-412106c756a9": {
+        "type": "any",
+        "name": "query context",
+        "description": "idToken\ndbUrl"
+      },
+      "4e212e21-db72-4108-8bdb-0c1127fece5d": {
+        "type": "any",
+        "name": "parent path",
+        "description": "Identifies parent data entry that will contain the new entry.\n\ntype: string[]"
+      },
+      "4e24ecb7-7a45-4d02-b7f3-2091435c7eb5": {
+        "type": "any",
+        "name": "data",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "fcbf77e3-1272-4f78-bb3e-42bca6d1752a": {
+        "type": "any",
+        "name": "path",
+        "description": "Identifies data actually written.\n\ntype: string[]"
+      },
+      "93b03f54-522f-46c9-98e3-269ce76602ad": {
+        "type": "any",
+        "name": "data"
+      },
+      "95f79da4-1ef1-4ba4-aab0-9013f7ce3ff2": {
+        "type": "any",
+        "name": "error"
+      },
+      "75242bd8-8575-4bfe-ab8c-42b4a72819b7": {
+        "type": "any",
+        "name": "query context",
+        "description": "idToken\ndbUrl"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "87410813-a90d-47c5-844d-1f52fa3470d1": {
+          "0066052c-0caa-4f32-ae2d-14c8859b0cce": {
+            "61a33c3f-2dc8-45ab-a08a-a90594d91f1f": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "9a352523-47c5-4b16-9fa9-d9c78a591dee": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "61a33c3f-2dc8-45ab-a08a-a90594d91f1f": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "ad26d304-81eb-4113-b6d2-244336733811": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4e212e21-db72-4108-8bdb-0c1127fece5d": {
+            "ad26d304-81eb-4113-b6d2-244336733811": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            },
+            "87410813-a90d-47c5-844d-1f52fa3470d1": {
+              "0f0bade5-0b6a-4ad9-a3ba-774b5365d2d0": {}
+            }
+          },
+          "e12d2a26-5aa7-4d1e-81c6-412106c756a9": {
+            "87410813-a90d-47c5-844d-1f52fa3470d1": {
+              "36e2743d-8088-4778-9194-583bb6289ab7": {}
+            }
+          },
+          "4e24ecb7-7a45-4d02-b7f3-2091435c7eb5": {
+            "87410813-a90d-47c5-844d-1f52fa3470d1": {
+              "441a9d60-a5a2-4e63-a742-2c9bb772513f": {}
+            },
+            "9a352523-47c5-4b16-9fa9-d9c78a591dee": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "fcbf77e3-1272-4f78-bb3e-42bca6d1752a": {
+            "ad26d304-81eb-4113-b6d2-244336733811": {
+              "092ca265-7614-4182-9d9f-bd325c094abb": {}
+            }
+          },
+          "95f79da4-1ef1-4ba4-aab0-9013f7ce3ff2": {
+            "61a33c3f-2dc8-45ab-a08a-a90594d91f1f": {
+              "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {}
+            },
+            "87410813-a90d-47c5-844d-1f52fa3470d1": {
+              "104108dd-4808-4eeb-8458-9179728f4a9a": {}
+            }
+          },
+          "75242bd8-8575-4bfe-ab8c-42b4a72819b7": {
+            "87410813-a90d-47c5-844d-1f52fa3470d1": {
+              "7e5fed65-b00e-4548-a057-0b1a101f5ef0": {}
+            }
+          },
+          "93b03f54-522f-46c9-98e3-269ce76602ad": {
+            "9a352523-47c5-4b16-9fa9-d9c78a591dee": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "87410813-a90d-47c5-844d-1f52fa3470d1": {
+          "coordinates": [
+            -146,
+            -49
+          ],
+          "name": "dispatch request",
+          "prototype": "974d5e19-683a-43ec-9c89-5fd9aadb262e",
+          "params": {
+            "a1c0f925-e196-4ea6-ace4-383b40f18c7b": "\"POST\""
+          }
+        },
+        "61a33c3f-2dc8-45ab-a08a-a90594d91f1f": {
+          "coordinates": [
+            -37,
+            161
+          ],
+          "name": "get name",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"name\""
+          }
+        },
+        "ad26d304-81eb-4113-b6d2-244336733811": {
+          "coordinates": [
+            27.1171875,
+            39.0078125
+          ],
+          "name": "build new path",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2",
+          "params": {}
+        },
+        "9a352523-47c5-4b16-9fa9-d9c78a591dee": {
+          "coordinates": [
+            101,
+            -94
+          ],
+          "name": "hold data",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Adds a new data entry to a Firebase Realtime Database under 'parent path'.\nReturns the path of the new entry."
+}

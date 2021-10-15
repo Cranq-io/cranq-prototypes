@@ -1,1 +1,118 @@
-{"description":"Example node, that demonstrates the building of dictionaries with the flow/Syncer. Provides the \"repository\" dataset for further examples.","interface":{"inputs":{"0369f677-4de9-4f29-9086-77bee79a35a3":{"description":"","type":"any","name":"build"}},"outputs":{"8bda2183-f897-436a-8f76-5ffbe18b63ab":{"description":"","type":"any","name":"dict"}}},"implementations":{"cranq":{"nodes":{"55aebc19-11b5-4d1a-b400-ef0794e6269a":{"coordinates":[20,122],"description":"","params":{},"prototype":"19e94fcf-e899-4231-bbc4-d80c10e0a001","name":"build depts"},"136ddeb5-7866-4758-a97f-67d519d9d4b7":{"coordinates":[204,2],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"Employees\", \"Departments\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"syncer"},"991b0e56-cc1f-4a30-9677-8ae033b623dc":{"coordinates":[-163,0],"description":"","params":{},"prototype":"420bb3c5-79a9-4b4d-934e-ee04d07f92b0","name":"forwarder"},"9d8c7564-5228-4b72-b0db-aab5d70725b5":{"coordinates":[20,-114],"description":"","params":{},"prototype":"797f08e2-8494-46b6-99ee-ab520ce6f3b0","name":"build emps"}},"connections":{"991b0e56-cc1f-4a30-9677-8ae033b623dc":{"0a9cd5b0-6de6-4c69-aa04-2816de994173":{"55aebc19-11b5-4d1a-b400-ef0794e6269a":{"0bcc9e0a-3dcc-41d2-b0b2-69d30a3f5370":{"description":""}},"9d8c7564-5228-4b72-b0db-aab5d70725b5":{"41905943-946b-4c12-8068-a6d41535bc1b":{"description":""}}}},"55aebc19-11b5-4d1a-b400-ef0794e6269a":{"d5d391b2-4325-4306-84e9-67de5d649964":{"136ddeb5-7866-4758-a97f-67d519d9d4b7":{"Departments":{"description":""}}}},"9d8c7564-5228-4b72-b0db-aab5d70725b5":{"5c95c4ae-8a22-45a4-a94b-6645217b0172":{"136ddeb5-7866-4758-a97f-67d519d9d4b7":{"Employees":{"description":""}}}}},"forwards":{"inputs":{"0369f677-4de9-4f29-9086-77bee79a35a3":{"991b0e56-cc1f-4a30-9677-8ae033b623dc":{"b0fb4a37-09d5-462e-952a-c3ab29a47e82":{}}}},"outputs":{"8bda2183-f897-436a-8f76-5ffbe18b63ab":{"136ddeb5-7866-4758-a97f-67d519d9d4b7":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{}}}}}}},"name":"tutorials/data/Syncer (build dictionary) example"}
+{
+  "description": "Example node, that demonstrates the building of dictionaries with the flow/Syncer. Provides the \"repository\" dataset for further examples.",
+  "interface": {
+    "inputs": {
+      "0369f677-4de9-4f29-9086-77bee79a35a3": {
+        "description": "",
+        "type": "any",
+        "name": "build"
+      }
+    },
+    "outputs": {
+      "8bda2183-f897-436a-8f76-5ffbe18b63ab": {
+        "description": "",
+        "type": "any",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "55aebc19-11b5-4d1a-b400-ef0794e6269a": {
+          "coordinates": [
+            20,
+            122
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "19e94fcf-e899-4231-bbc4-d80c10e0a001",
+          "name": "build depts"
+        },
+        "136ddeb5-7866-4758-a97f-67d519d9d4b7": {
+          "coordinates": [
+            204,
+            2
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"Employees\", \"Departments\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "syncer"
+        },
+        "991b0e56-cc1f-4a30-9677-8ae033b623dc": {
+          "coordinates": [
+            -163,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
+          "name": "forwarder"
+        },
+        "9d8c7564-5228-4b72-b0db-aab5d70725b5": {
+          "coordinates": [
+            20,
+            -114
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "797f08e2-8494-46b6-99ee-ab520ce6f3b0",
+          "name": "build emps"
+        }
+      },
+      "connections": {
+        "991b0e56-cc1f-4a30-9677-8ae033b623dc": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "55aebc19-11b5-4d1a-b400-ef0794e6269a": {
+              "0bcc9e0a-3dcc-41d2-b0b2-69d30a3f5370": {
+                "description": ""
+              }
+            },
+            "9d8c7564-5228-4b72-b0db-aab5d70725b5": {
+              "41905943-946b-4c12-8068-a6d41535bc1b": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "55aebc19-11b5-4d1a-b400-ef0794e6269a": {
+          "d5d391b2-4325-4306-84e9-67de5d649964": {
+            "136ddeb5-7866-4758-a97f-67d519d9d4b7": {
+              "Departments": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "9d8c7564-5228-4b72-b0db-aab5d70725b5": {
+          "5c95c4ae-8a22-45a4-a94b-6645217b0172": {
+            "136ddeb5-7866-4758-a97f-67d519d9d4b7": {
+              "Employees": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0369f677-4de9-4f29-9086-77bee79a35a3": {
+            "991b0e56-cc1f-4a30-9677-8ae033b623dc": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "outputs": {
+          "8bda2183-f897-436a-8f76-5ffbe18b63ab": {
+            "136ddeb5-7866-4758-a97f-67d519d9d4b7": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Syncer (build dictionary) example"
+}

@@ -1,1 +1,99 @@
-{"description":"Example node, that demonstrates the usage of the data/array/Filter node.","interface":{"inputs":{"bb633af4-a0ed-4767-8c41-00b714ed4dbe":{"description":"","type":"any","name":"run"}},"outputs":{"f35ae120-0b47-4337-9a36-9371c5f0ab7b":{"description":"","type":"any","name":"filtered_array"}}},"implementations":{"cranq":{"nodes":{"d1912d70-36b7-4ab5-bab7-24f4a5676258":{"coordinates":[-118,-57],"description":"","params":{},"prototype":"797f08e2-8494-46b6-99ee-ab520ce6f3b0","name":"create_emps"},"8cdb340e-e0e9-45a7-8fc3-106e28d13491":{"coordinates":[82,25],"description":"","params":{},"prototype":"a4eb897a-a54f-4cff-be83-0bbd29f61165","name":"get_by_dept"},"0d21c5ef-ea65-4385-8e44-1832e026110b":{"coordinates":[-73,92],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"\"Accounting\""},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"\"Accounting\""}},"connections":{"d1912d70-36b7-4ab5-bab7-24f4a5676258":{"5c95c4ae-8a22-45a4-a94b-6645217b0172":{"8cdb340e-e0e9-45a7-8fc3-106e28d13491":{"8353c89b-31e5-44ab-9c56-ce86f57c6a2f":{"description":""}},"0d21c5ef-ea65-4385-8e44-1832e026110b":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}}}},"0d21c5ef-ea65-4385-8e44-1832e026110b":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"8cdb340e-e0e9-45a7-8fc3-106e28d13491":{"fd957e65-a0d3-43a0-b687-b56b6f8d479c":{"description":""}}}}},"forwards":{"inputs":{"bb633af4-a0ed-4767-8c41-00b714ed4dbe":{"d1912d70-36b7-4ab5-bab7-24f4a5676258":{"41905943-946b-4c12-8068-a6d41535bc1b":{}}}},"outputs":{"f35ae120-0b47-4337-9a36-9371c5f0ab7b":{"8cdb340e-e0e9-45a7-8fc3-106e28d13491":{"c486f018-75c7-4646-975d-10846af3b019":{}}}}}}},"name":"tutorials/data/Filter (query) example"}
+{
+  "description": "Example node, that demonstrates the usage of the data/array/Filter node.",
+  "interface": {
+    "inputs": {
+      "bb633af4-a0ed-4767-8c41-00b714ed4dbe": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "f35ae120-0b47-4337-9a36-9371c5f0ab7b": {
+        "description": "",
+        "type": "any",
+        "name": "filtered_array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d1912d70-36b7-4ab5-bab7-24f4a5676258": {
+          "coordinates": [
+            -118,
+            -57
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "797f08e2-8494-46b6-99ee-ab520ce6f3b0",
+          "name": "create_emps"
+        },
+        "8cdb340e-e0e9-45a7-8fc3-106e28d13491": {
+          "coordinates": [
+            82,
+            25
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a4eb897a-a54f-4cff-be83-0bbd29f61165",
+          "name": "get_by_dept"
+        },
+        "0d21c5ef-ea65-4385-8e44-1832e026110b": {
+          "coordinates": [
+            -73,
+            92
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"Accounting\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "\"Accounting\""
+        }
+      },
+      "connections": {
+        "d1912d70-36b7-4ab5-bab7-24f4a5676258": {
+          "5c95c4ae-8a22-45a4-a94b-6645217b0172": {
+            "8cdb340e-e0e9-45a7-8fc3-106e28d13491": {
+              "8353c89b-31e5-44ab-9c56-ce86f57c6a2f": {
+                "description": ""
+              }
+            },
+            "0d21c5ef-ea65-4385-8e44-1832e026110b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "0d21c5ef-ea65-4385-8e44-1832e026110b": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "8cdb340e-e0e9-45a7-8fc3-106e28d13491": {
+              "fd957e65-a0d3-43a0-b687-b56b6f8d479c": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bb633af4-a0ed-4767-8c41-00b714ed4dbe": {
+            "d1912d70-36b7-4ab5-bab7-24f4a5676258": {
+              "41905943-946b-4c12-8068-a6d41535bc1b": {}
+            }
+          }
+        },
+        "outputs": {
+          "f35ae120-0b47-4337-9a36-9371c5f0ab7b": {
+            "8cdb340e-e0e9-45a7-8fc3-106e28d13491": {
+              "c486f018-75c7-4646-975d-10846af3b019": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Filter (query) example"
+}

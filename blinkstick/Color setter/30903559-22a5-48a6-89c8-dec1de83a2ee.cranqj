@@ -1,1 +1,89 @@
-{"implementations":{"cranq":{"nodes":{"6859bef3-90e7-48a3-a6a1-b68e004a4b67":{"coordinates":[-47,60],"name":"sync color & index","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"color\", \"index\"]"}},"73e13628-30ae-4c64-bfea-b5ccdecb9e5c":{"coordinates":[62,-57],"name":"set color","prototype":"03973cb0-f209-4820-a3c3-e9879f08a126","params":{}}},"connections":{"6859bef3-90e7-48a3-a6a1-b68e004a4b67":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"73e13628-30ae-4c64-bfea-b5ccdecb9e5c":{"953cc293-3cb0-4932-bbd9-8f3680bef950":{}}}}},"forwards":{"inputs":{"f650834f-2b14-463d-a5ab-052a61f1525c":{"6859bef3-90e7-48a3-a6a1-b68e004a4b67":{"color":{}}},"6f858b1f-5055-4d36-897b-95113d47ef76":{"6859bef3-90e7-48a3-a6a1-b68e004a4b67":{"index":{}}}},"outputs":{"4924190a-01b1-4a2d-82b1-07d60d8df7f6":{"73e13628-30ae-4c64-bfea-b5ccdecb9e5c":{"ffd50503-5337-49b4-a28c-61a3fee1f2a8":{}}},"d8226121-aa95-4a46-bec1-0e234f7c8524":{"73e13628-30ae-4c64-bfea-b5ccdecb9e5c":{"32839470-5765-43ea-ac8c-46f2e5294bb0":{}}}}}}},"interface":{"inputs":{"f650834f-2b14-463d-a5ab-052a61f1525c":{"type":"any","name":"color","description":"type: [number, number, number]"},"6f858b1f-5055-4d36-897b-95113d47ef76":{"type":"any","name":"index","description":"type: number"}},"outputs":{"4924190a-01b1-4a2d-82b1-07d60d8df7f6":{"type":"any","name":"done"},"d8226121-aa95-4a46-bec1-0e234f7c8524":{"type":"any","name":"bounced"}}},"name":"blinkstick/Color setter","description":"Sets an RGB color on the specified LED."}
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6859bef3-90e7-48a3-a6a1-b68e004a4b67": {
+          "coordinates": [
+            -47,
+            60
+          ],
+          "name": "sync color & index",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"color\", \"index\"]"
+          }
+        },
+        "73e13628-30ae-4c64-bfea-b5ccdecb9e5c": {
+          "coordinates": [
+            62,
+            -57
+          ],
+          "name": "set color",
+          "prototype": "03973cb0-f209-4820-a3c3-e9879f08a126",
+          "params": {}
+        }
+      },
+      "connections": {
+        "6859bef3-90e7-48a3-a6a1-b68e004a4b67": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "73e13628-30ae-4c64-bfea-b5ccdecb9e5c": {
+              "953cc293-3cb0-4932-bbd9-8f3680bef950": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f650834f-2b14-463d-a5ab-052a61f1525c": {
+            "6859bef3-90e7-48a3-a6a1-b68e004a4b67": {
+              "color": {}
+            }
+          },
+          "6f858b1f-5055-4d36-897b-95113d47ef76": {
+            "6859bef3-90e7-48a3-a6a1-b68e004a4b67": {
+              "index": {}
+            }
+          }
+        },
+        "outputs": {
+          "4924190a-01b1-4a2d-82b1-07d60d8df7f6": {
+            "73e13628-30ae-4c64-bfea-b5ccdecb9e5c": {
+              "ffd50503-5337-49b4-a28c-61a3fee1f2a8": {}
+            }
+          },
+          "d8226121-aa95-4a46-bec1-0e234f7c8524": {
+            "73e13628-30ae-4c64-bfea-b5ccdecb9e5c": {
+              "32839470-5765-43ea-ac8c-46f2e5294bb0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "f650834f-2b14-463d-a5ab-052a61f1525c": {
+        "type": "any",
+        "name": "color",
+        "description": "type: [number, number, number]"
+      },
+      "6f858b1f-5055-4d36-897b-95113d47ef76": {
+        "type": "any",
+        "name": "index",
+        "description": "type: number"
+      }
+    },
+    "outputs": {
+      "4924190a-01b1-4a2d-82b1-07d60d8df7f6": {
+        "type": "any",
+        "name": "done"
+      },
+      "d8226121-aa95-4a46-bec1-0e234f7c8524": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "blinkstick/Color setter",
+  "description": "Sets an RGB color on the specified LED."
+}

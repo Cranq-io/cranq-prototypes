@@ -1,1 +1,23 @@
-{"description":"Writes to standard output.","interface":{"inputs":{"74353fac-df86-4ac5-9ed1-31d5b3b4e35f":{"type":"string","name":"text"}},"outputs":{}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"74353fac-df86-4ac5-9ed1-31d5b3b4e35f":"process.stdout.write(data);"}}},"name":"io/stdio/Text writer"}
+{
+  "description": "Writes to standard output.",
+  "interface": {
+    "inputs": {
+      "74353fac-df86-4ac5-9ed1-31d5b3b4e35f": {
+        "type": "string",
+        "name": "text"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "74353fac-df86-4ac5-9ed1-31d5b3b4e35f": "process.stdout.write(data);"
+      }
+    }
+  },
+  "name": "io/stdio/Text writer"
+}

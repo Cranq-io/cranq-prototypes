@@ -1,1 +1,28 @@
-{"description":"Tells whether the input is a number.","interface":{"inputs":{"644fec41-e452-4867-ad43-2d718d30dd22":{"type":"any","name":"data"}},"outputs":{"755231fe-f438-4017-aeab-753b07ccb260":{"type":"is number","name":"is number"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"644fec41-e452-4867-ad43-2d718d30dd22":"outputs[\"is number\"](typeof data === \"number\", tag);"}}},"name":"number/Type tester"}
+{
+  "description": "Tells whether the input is a number.",
+  "interface": {
+    "inputs": {
+      "644fec41-e452-4867-ad43-2d718d30dd22": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "755231fe-f438-4017-aeab-753b07ccb260": {
+        "type": "is number",
+        "name": "is number"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "644fec41-e452-4867-ad43-2d718d30dd22": "outputs[\"is number\"](typeof data === \"number\", tag);"
+      }
+    }
+  },
+  "name": "number/Type tester"
+}

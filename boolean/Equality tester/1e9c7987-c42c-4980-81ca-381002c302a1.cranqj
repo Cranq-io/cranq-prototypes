@@ -1,1 +1,82 @@
-{"description":"Checks if boolean 'a' is equal to boolean 'b'.","interface":{"inputs":{"c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea":{"type":"boolean","name":"a"},"100c6612-03e8-49fb-96c3-676047ed9e5c":{"type":"boolean","name":"b"}},"outputs":{"9f08a7ac-1742-4de2-8683-fa5a7f6f3867":{"type":"boolean","name":"equal"}}},"implementations":{"cranq":{"nodes":{"c79edc39-9797-4687-8277-88bd80badadd":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"a\",\"b\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync a & b"},"14745484-c906-4bdc-832b-deaa35418451":{"coordinates":[0,0],"description":"","params":{},"prototype":"12bcca1e-df68-4371-b517-3fead7a4f8c8","name":"equal"}},"connections":{"c79edc39-9797-4687-8277-88bd80badadd":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"14745484-c906-4bdc-832b-deaa35418451":{"7f88862c-de98-4c09-97c6-08ade598bca4":{"description":""}}}}},"forwards":{"inputs":{"c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea":{"c79edc39-9797-4687-8277-88bd80badadd":{"a":{}}},"100c6612-03e8-49fb-96c3-676047ed9e5c":{"c79edc39-9797-4687-8277-88bd80badadd":{"b":{}}}},"outputs":{"9f08a7ac-1742-4de2-8683-fa5a7f6f3867":{"14745484-c906-4bdc-832b-deaa35418451":{"d8f928ee-2d08-45a4-9273-8763a2223de2":{}}}}}}},"name":"boolean/Equality tester"}
+{
+  "description": "Checks if boolean 'a' is equal to boolean 'b'.",
+  "interface": {
+    "inputs": {
+      "c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea": {
+        "type": "boolean",
+        "name": "a"
+      },
+      "100c6612-03e8-49fb-96c3-676047ed9e5c": {
+        "type": "boolean",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "9f08a7ac-1742-4de2-8683-fa5a7f6f3867": {
+        "type": "boolean",
+        "name": "equal"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c79edc39-9797-4687-8277-88bd80badadd": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\",\"b\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync a & b"
+        },
+        "14745484-c906-4bdc-832b-deaa35418451": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "12bcca1e-df68-4371-b517-3fead7a4f8c8",
+          "name": "equal"
+        }
+      },
+      "connections": {
+        "c79edc39-9797-4687-8277-88bd80badadd": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "14745484-c906-4bdc-832b-deaa35418451": {
+              "7f88862c-de98-4c09-97c6-08ade598bca4": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea": {
+            "c79edc39-9797-4687-8277-88bd80badadd": {
+              "a": {}
+            }
+          },
+          "100c6612-03e8-49fb-96c3-676047ed9e5c": {
+            "c79edc39-9797-4687-8277-88bd80badadd": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "9f08a7ac-1742-4de2-8683-fa5a7f6f3867": {
+            "14745484-c906-4bdc-832b-deaa35418451": {
+              "d8f928ee-2d08-45a4-9273-8763a2223de2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "boolean/Equality tester"
+}

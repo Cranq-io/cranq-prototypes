@@ -1,1 +1,82 @@
-{"description":"Picks the minimum out of two numbers.","interface":{"inputs":{"aa1f8f2f-1676-4be6-a8e1-e74acffbeffd":{"type":"number","name":"a"},"4f9a7be2-f54a-4447-bc3c-c813adf0051b":{"type":"number","name":"b"}},"outputs":{"0c5489c9-f28d-4ca4-b93f-3c2bb821a2ae":{"type":"number","name":"min"}}},"implementations":{"cranq":{"nodes":{"0a44b540-dec5-4a19-a41c-187250c73055":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"a\",\"b\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync a & b"},"828dbd6d-ae34-480d-82d3-fd7abc514372":{"coordinates":[0,0],"description":"","params":{},"prototype":"cbe46428-c283-488f-b491-90f0e0023122","name":"pick min"}},"connections":{"0a44b540-dec5-4a19-a41c-187250c73055":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"828dbd6d-ae34-480d-82d3-fd7abc514372":{"bd6d3a45-6800-4f99-89bf-355e3740c104":{"description":""}}}}},"forwards":{"inputs":{"aa1f8f2f-1676-4be6-a8e1-e74acffbeffd":{"0a44b540-dec5-4a19-a41c-187250c73055":{"a":{}}},"4f9a7be2-f54a-4447-bc3c-c813adf0051b":{"0a44b540-dec5-4a19-a41c-187250c73055":{"b":{}}}},"outputs":{"0c5489c9-f28d-4ca4-b93f-3c2bb821a2ae":{"828dbd6d-ae34-480d-82d3-fd7abc514372":{"4328a906-3097-42a8-b056-7e8f951eef65":{}}}}}}},"name":"number/Min picker"}
+{
+  "description": "Picks the minimum out of two numbers.",
+  "interface": {
+    "inputs": {
+      "aa1f8f2f-1676-4be6-a8e1-e74acffbeffd": {
+        "type": "number",
+        "name": "a"
+      },
+      "4f9a7be2-f54a-4447-bc3c-c813adf0051b": {
+        "type": "number",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "0c5489c9-f28d-4ca4-b93f-3c2bb821a2ae": {
+        "type": "number",
+        "name": "min"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0a44b540-dec5-4a19-a41c-187250c73055": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\",\"b\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync a & b"
+        },
+        "828dbd6d-ae34-480d-82d3-fd7abc514372": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "cbe46428-c283-488f-b491-90f0e0023122",
+          "name": "pick min"
+        }
+      },
+      "connections": {
+        "0a44b540-dec5-4a19-a41c-187250c73055": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "828dbd6d-ae34-480d-82d3-fd7abc514372": {
+              "bd6d3a45-6800-4f99-89bf-355e3740c104": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aa1f8f2f-1676-4be6-a8e1-e74acffbeffd": {
+            "0a44b540-dec5-4a19-a41c-187250c73055": {
+              "a": {}
+            }
+          },
+          "4f9a7be2-f54a-4447-bc3c-c813adf0051b": {
+            "0a44b540-dec5-4a19-a41c-187250c73055": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "0c5489c9-f28d-4ca4-b93f-3c2bb821a2ae": {
+            "828dbd6d-ae34-480d-82d3-fd7abc514372": {
+              "4328a906-3097-42a8-b056-7e8f951eef65": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "number/Min picker"
+}

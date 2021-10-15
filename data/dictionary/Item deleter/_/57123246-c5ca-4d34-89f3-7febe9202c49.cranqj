@@ -1,1 +1,27 @@
-{"implementations":{"es6-node":{"inputFunctions":{"e4b04aac-2da4-4f6e-9ccc-d35118425418":"const result = {...data.dict};\ndelete result[data.key];\noutputs.dict(result, tag);"}}},"interface":{"inputs":{"e4b04aac-2da4-4f6e-9ccc-d35118425418":{"type":"any","name":"dict & key"}},"outputs":{"c5f5e30c-98b2-412c-b06d-8ce0f20578ba":{"type":"any","name":"dict"}}},"name":"data/dictionary/Item deleter/_","attributes":{"internal":true}}
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "e4b04aac-2da4-4f6e-9ccc-d35118425418": "const result = {...data.dict};\ndelete result[data.key];\noutputs.dict(result, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e4b04aac-2da4-4f6e-9ccc-d35118425418": {
+        "type": "any",
+        "name": "dict & key"
+      }
+    },
+    "outputs": {
+      "c5f5e30c-98b2-412c-b06d-8ce0f20578ba": {
+        "type": "any",
+        "name": "dict"
+      }
+    }
+  },
+  "name": "data/dictionary/Item deleter/_",
+  "attributes": {
+    "internal": true
+  }
+}

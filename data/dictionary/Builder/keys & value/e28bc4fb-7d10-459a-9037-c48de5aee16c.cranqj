@@ -1,1 +1,130 @@
-{"description":"Builds dictionary based on an array of keys and a single value for all items.","interface":{"inputs":{"4cb1e461-05c1-4454-940e-5b7657cb916e":{"type":"string[]","name":"keys"},"8b675c7e-77b3-4fc6-b065-adbedf46b485":{"type":"any","name":"value"}},"outputs":{"93171c70-9aa9-42ec-b7ff-60f99a488352":{"type":"{string:typeof(value)}","name":"dict"}}},"implementations":{"cranq":{"nodes":{"99c22970-28fc-4709-9089-05ecce7f463c":{"coordinates":[0,0],"description":"","params":{},"prototype":"9067c53e-399e-4f28-a6ed-26e987ab2418","name":"forward inputs"},"4a981a64-40b6-4465-b8b7-9edaffe720f1":{"coordinates":[0,0],"description":"","params":{},"prototype":"ed50d3dd-e850-434d-a4da-90d05fc35e8b","name":"count keys"},"174f8391-66f8-41d4-b331-fae7b9fbf69e":{"coordinates":[0,0],"description":"","params":{},"prototype":"28bc82de-76de-427e-8e2c-f0114cee3475","name":"create values"},"4f888c25-0c85-4cb0-8caf-cc7028abd29c":{"coordinates":[0,0],"description":"","params":{},"prototype":"a1f5e88b-1a03-464d-a797-0e678404eead","name":"build dict"}},"connections":{"99c22970-28fc-4709-9089-05ecce7f463c":{"069a212d-9cea-4987-be45-e0079a13d96f":{"4a981a64-40b6-4465-b8b7-9edaffe720f1":{"3796de71-a230-4869-9963-2c1815242213":{"description":""}},"4f888c25-0c85-4cb0-8caf-cc7028abd29c":{"33848016-8ca0-4d05-ae94-0666dc207a34":{"description":""}}},"d1295197-1962-4680-a037-5890f2175bb9":{"174f8391-66f8-41d4-b331-fae7b9fbf69e":{"2813c5a2-d4d6-42ce-a52f-9def6df97814":{"description":""}}}},"4a981a64-40b6-4465-b8b7-9edaffe720f1":{"90dc3844-70bc-4a25-a7f4-3d281c97e5fc":{"174f8391-66f8-41d4-b331-fae7b9fbf69e":{"ed11e46e-595d-4515-8681-ff35c7a555c6":{"description":""}}}},"174f8391-66f8-41d4-b331-fae7b9fbf69e":{"c0facb18-50d6-464f-8c91-d6255080b146":{"4f888c25-0c85-4cb0-8caf-cc7028abd29c":{"e77e7439-84f9-414f-b45b-356ea70ce445":{"description":""}}}}},"forwards":{"inputs":{"4cb1e461-05c1-4454-940e-5b7657cb916e":{"99c22970-28fc-4709-9089-05ecce7f463c":{"e76062c0-e298-4443-a187-94cbd4b3bc74":{}}},"8b675c7e-77b3-4fc6-b065-adbedf46b485":{"99c22970-28fc-4709-9089-05ecce7f463c":{"7af76a3e-ed65-41b9-9f9d-1a4593c5bf69":{}}}},"outputs":{"93171c70-9aa9-42ec-b7ff-60f99a488352":{"4f888c25-0c85-4cb0-8caf-cc7028abd29c":{"852cd030-0794-42cc-b448-0886fb787cf2":{}}}}}}},"name":"data/dictionary/Builder/keys & value"}
+{
+  "description": "Builds dictionary based on an array of keys and a single value for all items.",
+  "interface": {
+    "inputs": {
+      "4cb1e461-05c1-4454-940e-5b7657cb916e": {
+        "type": "string[]",
+        "name": "keys"
+      },
+      "8b675c7e-77b3-4fc6-b065-adbedf46b485": {
+        "type": "any",
+        "name": "value"
+      }
+    },
+    "outputs": {
+      "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+        "type": "{string:typeof(value)}",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "99c22970-28fc-4709-9089-05ecce7f463c": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "name": "forward inputs"
+        },
+        "4a981a64-40b6-4465-b8b7-9edaffe720f1": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b",
+          "name": "count keys"
+        },
+        "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
+          "name": "create values"
+        },
+        "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
+          "name": "build dict"
+        }
+      },
+      "connections": {
+        "99c22970-28fc-4709-9089-05ecce7f463c": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "4a981a64-40b6-4465-b8b7-9edaffe720f1": {
+              "3796de71-a230-4869-9963-2c1815242213": {
+                "description": ""
+              }
+            },
+            "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {
+                "description": ""
+              }
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+              "2813c5a2-d4d6-42ce-a52f-9def6df97814": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "4a981a64-40b6-4465-b8b7-9edaffe720f1": {
+          "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
+            "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+              "ed11e46e-595d-4515-8681-ff35c7a555c6": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+          "c0facb18-50d6-464f-8c91-d6255080b146": {
+            "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4cb1e461-05c1-4454-940e-5b7657cb916e": {
+            "99c22970-28fc-4709-9089-05ecce7f463c": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "8b675c7e-77b3-4fc6-b065-adbedf46b485": {
+            "99c22970-28fc-4709-9089-05ecce7f463c": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+            "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Builder/keys & value"
+}

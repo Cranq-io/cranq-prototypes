@@ -1,1 +1,36 @@
-{"description":"Forwards the payload of an incoming multiplexed signal to the corresponding output.","interface":{"inputs":{"85fde0ba-068b-457d-9003-e29e47af2e38":{"description":"Receives a list of output port names to send payload to.","type":"string[]","name":"fields"},"b9b5fa59-8f22-46df-9305-b2d6f74f4085":{"description":"Receives multiplexed data.","type":"{\"field\":string,\"data\":any}","name":"multiplexed"}},"outputs":{"61f36158-26a5-4c4e-9622-0a673fc47f4c":{"description":"Sends demultiplexed payload data.","paramId":"85fde0ba-068b-457d-9003-e29e47af2e38","type":"(multiplexed)[\"data\"]","name":"demultiplexed"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"b9b5fa59-8f22-46df-9305-b2d6f74f4085":"outputs[data.field](data.data, tag);"}}},"name":"flow/Demultiplexer"}
+{
+  "description": "Forwards the payload of an incoming multiplexed signal to the corresponding output.",
+  "interface": {
+    "inputs": {
+      "85fde0ba-068b-457d-9003-e29e47af2e38": {
+        "description": "Receives a list of output port names to send payload to.",
+        "type": "string[]",
+        "name": "fields"
+      },
+      "b9b5fa59-8f22-46df-9305-b2d6f74f4085": {
+        "description": "Receives multiplexed data.",
+        "type": "{\"field\":string,\"data\":any}",
+        "name": "multiplexed"
+      }
+    },
+    "outputs": {
+      "61f36158-26a5-4c4e-9622-0a673fc47f4c": {
+        "description": "Sends demultiplexed payload data.",
+        "paramId": "85fde0ba-068b-457d-9003-e29e47af2e38",
+        "type": "(multiplexed)[\"data\"]",
+        "name": "demultiplexed"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b9b5fa59-8f22-46df-9305-b2d6f74f4085": "outputs[data.field](data.data, tag);"
+      }
+    }
+  },
+  "name": "flow/Demultiplexer"
+}

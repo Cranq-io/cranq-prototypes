@@ -1,1 +1,85 @@
-{"description":"Deletes item from the array at the specified index.","interface":{"inputs":{"5e2cd3a6-5c09-4da1-8b38-08fa9fc4e955":{"description":"Array to delete item from","type":"any[]","name":"array"},"e576f38e-a208-47e2-a690-abf2d3232f78":{"description":"Identifies item to be deleted","type":"number","name":"index"}},"outputs":{"e685dbbe-2d75-40aa-88dc-a5154e434f3d":{"description":"Array with specified item deleted","type":"typeof(array)","name":"array"}}},"implementations":{"cranq":{"nodes":{"dfca9db9-2134-4a80-9cbf-f7d46699b359":{"coordinates":[-29,56],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"array\",\"index\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync array & index"},"5d69d664-69a1-4697-9348-fe680e3a66e7":{"coordinates":[22,-65],"description":"","params":{},"prototype":"37f820aa-4842-43ab-acd4-2c47f999ce08","name":"delete"}},"connections":{"dfca9db9-2134-4a80-9cbf-f7d46699b359":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"5d69d664-69a1-4697-9348-fe680e3a66e7":{"4ecebc94-045d-4c52-a31a-4cb76749371a":{"description":""}}}}},"forwards":{"inputs":{"5e2cd3a6-5c09-4da1-8b38-08fa9fc4e955":{"dfca9db9-2134-4a80-9cbf-f7d46699b359":{"array":{}}},"e576f38e-a208-47e2-a690-abf2d3232f78":{"dfca9db9-2134-4a80-9cbf-f7d46699b359":{"index":{}}}},"outputs":{"e685dbbe-2d75-40aa-88dc-a5154e434f3d":{"5d69d664-69a1-4697-9348-fe680e3a66e7":{"63ede1b7-2b35-42ec-9116-725f7909d3f6":{}}}}}}},"name":"data/array/Item deleter"}
+{
+  "description": "Deletes item from the array at the specified index.",
+  "interface": {
+    "inputs": {
+      "5e2cd3a6-5c09-4da1-8b38-08fa9fc4e955": {
+        "description": "Array to delete item from",
+        "type": "any[]",
+        "name": "array"
+      },
+      "e576f38e-a208-47e2-a690-abf2d3232f78": {
+        "description": "Identifies item to be deleted",
+        "type": "number",
+        "name": "index"
+      }
+    },
+    "outputs": {
+      "e685dbbe-2d75-40aa-88dc-a5154e434f3d": {
+        "description": "Array with specified item deleted",
+        "type": "typeof(array)",
+        "name": "array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "dfca9db9-2134-4a80-9cbf-f7d46699b359": {
+          "coordinates": [
+            -29,
+            56
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"array\",\"index\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync array & index"
+        },
+        "5d69d664-69a1-4697-9348-fe680e3a66e7": {
+          "coordinates": [
+            22,
+            -65
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "37f820aa-4842-43ab-acd4-2c47f999ce08",
+          "name": "delete"
+        }
+      },
+      "connections": {
+        "dfca9db9-2134-4a80-9cbf-f7d46699b359": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "5d69d664-69a1-4697-9348-fe680e3a66e7": {
+              "4ecebc94-045d-4c52-a31a-4cb76749371a": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5e2cd3a6-5c09-4da1-8b38-08fa9fc4e955": {
+            "dfca9db9-2134-4a80-9cbf-f7d46699b359": {
+              "array": {}
+            }
+          },
+          "e576f38e-a208-47e2-a690-abf2d3232f78": {
+            "dfca9db9-2134-4a80-9cbf-f7d46699b359": {
+              "index": {}
+            }
+          }
+        },
+        "outputs": {
+          "e685dbbe-2d75-40aa-88dc-a5154e434f3d": {
+            "5d69d664-69a1-4697-9348-fe680e3a66e7": {
+              "63ede1b7-2b35-42ec-9116-725f7909d3f6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/array/Item deleter"
+}

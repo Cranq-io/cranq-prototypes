@@ -1,1 +1,150 @@
-{"name":"apis/ga/measurement protocol/Page tracker","interface":{"inputs":{"b351e90e-5c28-43fb-aa10-1e2358f60cc9":{"type":"any","name":"tracking ID"},"2c6b22a7-a15b-4073-b7be-fea049867385":{"type":"any","name":"client ID"},"b08b8823-3fdd-49d5-bbcc-2b2b389fae88":{"type":"any","name":"hostname"},"f248e7b8-daec-4674-97ef-d158dd1b6b3e":{"type":"any","name":"page"},"1291bba8-706a-4329-9ed3-efcfb0abf6ed":{"type":"any","name":"title"}},"outputs":{"7aea0f67-0766-44d0-b718-c1a05c476db5":{"type":"any","name":"done"},"26bebde8-a936-41ad-9a28-b9f0370676c6":{"type":"any","name":"error"}}},"implementations":{"cranq":{"connections":{"0f096f1a-4141-4780-8c96-ccc6016dda99":{"32fae487-6d69-4514-a546-434341328095":{"9b159605-f77f-4deb-97ef-56a947dffd2e":{"06633f68-69b6-4d84-a0b6-e3a3dc409689":{}}}},"9b159605-f77f-4deb-97ef-56a947dffd2e":{"8dc2060f-02da-4c93-9351-b2b8930bd6a2":{"660aaa33-bb67-4733-99fb-b84eee6c6583":{"f11b9873-7a11-4241-9e17-a16496cf783e":{}}}},"660aaa33-bb67-4733-99fb-b84eee6c6583":{"09b13a33-348d-458b-b43f-5013a45f4893":{"0b5f289c-fdc0-441b-8057-f6a41843136d":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}}}},"forwards":{"inputs":{"1291bba8-706a-4329-9ed3-efcfb0abf6ed":{"0f096f1a-4141-4780-8c96-ccc6016dda99":{"308b055b-3d21-4c7d-9375-cc59481885da":{}}},"f248e7b8-daec-4674-97ef-d158dd1b6b3e":{"0f096f1a-4141-4780-8c96-ccc6016dda99":{"f6d72245-455b-4084-aa88-ec88ff06422b":{}}},"b08b8823-3fdd-49d5-bbcc-2b2b389fae88":{"0f096f1a-4141-4780-8c96-ccc6016dda99":{"c692f166-2186-400d-9322-dee26ef1370d":{}}},"2c6b22a7-a15b-4073-b7be-fea049867385":{"0f096f1a-4141-4780-8c96-ccc6016dda99":{"7a7a5434-ae98-4ddc-885e-263d615149ba":{}}},"b351e90e-5c28-43fb-aa10-1e2358f60cc9":{"0f096f1a-4141-4780-8c96-ccc6016dda99":{"88749a40-65a2-468f-b4d1-12dfcad43e37":{}}}},"outputs":{"26bebde8-a936-41ad-9a28-b9f0370676c6":{"660aaa33-bb67-4733-99fb-b84eee6c6583":{"4991414b-16a6-4a01-a988-c841eac995c7":{}}},"7aea0f67-0766-44d0-b718-c1a05c476db5":{"0b5f289c-fdc0-441b-8057-f6a41843136d":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{}}}}},"nodes":{"660aaa33-bb67-4733-99fb-b84eee6c6583":{"coordinates":[86.22222222222223,115.66666666666666],"name":"request dispatcher","prototype":"83ebbf9f-d428-4577-a650-761868a002dc","params":{"e69367fe-1abe-4422-a70a-4d67c614f464":"\"https://google-analytics.com/collect\"","7468e859-6176-4c54-a03a-9039e7024bed":"\"POST\"","50a82f4b-f270-470f-872e-f7f6f2f0fc36":"{}"}},"0f096f1a-4141-4780-8c96-ccc6016dda99":{"coordinates":[-110.44444444444446,118.66666666666666],"name":"build params","prototype":"222b5565-8640-479d-8a10-160f7b386895","params":{}},"9b159605-f77f-4deb-97ef-56a947dffd2e":{"coordinates":[-90.77777777777777,-92.33333333333334],"name":"serialize params","prototype":"506a2d51-6d29-406d-be70-5e5de945a524","params":{}},"0b5f289c-fdc0-441b-8057-f6a41843136d":{"coordinates":[93.22222222222223,-83.33333333333334],"name":"null","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"null"}}}}},"description":"Tracks page views via Google Analytics Measurement Protocol.\nhttps://developers.google.com/analytics/devguides/collection/protocol/v1/devguide"}
+{
+  "name": "apis/ga/measurement protocol/Page tracker",
+  "interface": {
+    "inputs": {
+      "b351e90e-5c28-43fb-aa10-1e2358f60cc9": {
+        "type": "any",
+        "name": "tracking ID"
+      },
+      "2c6b22a7-a15b-4073-b7be-fea049867385": {
+        "type": "any",
+        "name": "client ID"
+      },
+      "b08b8823-3fdd-49d5-bbcc-2b2b389fae88": {
+        "type": "any",
+        "name": "hostname"
+      },
+      "f248e7b8-daec-4674-97ef-d158dd1b6b3e": {
+        "type": "any",
+        "name": "page"
+      },
+      "1291bba8-706a-4329-9ed3-efcfb0abf6ed": {
+        "type": "any",
+        "name": "title"
+      }
+    },
+    "outputs": {
+      "7aea0f67-0766-44d0-b718-c1a05c476db5": {
+        "type": "any",
+        "name": "done"
+      },
+      "26bebde8-a936-41ad-9a28-b9f0370676c6": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+          "32fae487-6d69-4514-a546-434341328095": {
+            "9b159605-f77f-4deb-97ef-56a947dffd2e": {
+              "06633f68-69b6-4d84-a0b6-e3a3dc409689": {}
+            }
+          }
+        },
+        "9b159605-f77f-4deb-97ef-56a947dffd2e": {
+          "8dc2060f-02da-4c93-9351-b2b8930bd6a2": {
+            "660aaa33-bb67-4733-99fb-b84eee6c6583": {
+              "f11b9873-7a11-4241-9e17-a16496cf783e": {}
+            }
+          }
+        },
+        "660aaa33-bb67-4733-99fb-b84eee6c6583": {
+          "09b13a33-348d-458b-b43f-5013a45f4893": {
+            "0b5f289c-fdc0-441b-8057-f6a41843136d": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1291bba8-706a-4329-9ed3-efcfb0abf6ed": {
+            "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+              "308b055b-3d21-4c7d-9375-cc59481885da": {}
+            }
+          },
+          "f248e7b8-daec-4674-97ef-d158dd1b6b3e": {
+            "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+              "f6d72245-455b-4084-aa88-ec88ff06422b": {}
+            }
+          },
+          "b08b8823-3fdd-49d5-bbcc-2b2b389fae88": {
+            "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+              "c692f166-2186-400d-9322-dee26ef1370d": {}
+            }
+          },
+          "2c6b22a7-a15b-4073-b7be-fea049867385": {
+            "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+              "7a7a5434-ae98-4ddc-885e-263d615149ba": {}
+            }
+          },
+          "b351e90e-5c28-43fb-aa10-1e2358f60cc9": {
+            "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+              "88749a40-65a2-468f-b4d1-12dfcad43e37": {}
+            }
+          }
+        },
+        "outputs": {
+          "26bebde8-a936-41ad-9a28-b9f0370676c6": {
+            "660aaa33-bb67-4733-99fb-b84eee6c6583": {
+              "4991414b-16a6-4a01-a988-c841eac995c7": {}
+            }
+          },
+          "7aea0f67-0766-44d0-b718-c1a05c476db5": {
+            "0b5f289c-fdc0-441b-8057-f6a41843136d": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "660aaa33-bb67-4733-99fb-b84eee6c6583": {
+          "coordinates": [
+            86.22222222222223,
+            115.66666666666666
+          ],
+          "name": "request dispatcher",
+          "prototype": "83ebbf9f-d428-4577-a650-761868a002dc",
+          "params": {
+            "e69367fe-1abe-4422-a70a-4d67c614f464": "\"https://google-analytics.com/collect\"",
+            "7468e859-6176-4c54-a03a-9039e7024bed": "\"POST\"",
+            "50a82f4b-f270-470f-872e-f7f6f2f0fc36": "{}"
+          }
+        },
+        "0f096f1a-4141-4780-8c96-ccc6016dda99": {
+          "coordinates": [
+            -110.44444444444446,
+            118.66666666666666
+          ],
+          "name": "build params",
+          "prototype": "222b5565-8640-479d-8a10-160f7b386895",
+          "params": {}
+        },
+        "9b159605-f77f-4deb-97ef-56a947dffd2e": {
+          "coordinates": [
+            -90.77777777777777,
+            -92.33333333333334
+          ],
+          "name": "serialize params",
+          "prototype": "506a2d51-6d29-406d-be70-5e5de945a524",
+          "params": {}
+        },
+        "0b5f289c-fdc0-441b-8057-f6a41843136d": {
+          "coordinates": [
+            93.22222222222223,
+            -83.33333333333334
+          ],
+          "name": "null",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "null"
+          }
+        }
+      }
+    }
+  },
+  "description": "Tracks page views via Google Analytics Measurement Protocol.\nhttps://developers.google.com/analytics/devguides/collection/protocol/v1/devguide"
+}

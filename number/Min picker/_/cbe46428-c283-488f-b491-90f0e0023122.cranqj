@@ -1,1 +1,31 @@
-{"description":"","interface":{"inputs":{"bd6d3a45-6800-4f99-89bf-355e3740c104":{"type":"{\"a\":number,\"b\":number}","name":"a & b"}},"outputs":{"4328a906-3097-42a8-b056-7e8f951eef65":{"type":"number","name":"min"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"bd6d3a45-6800-4f99-89bf-355e3740c104":"outputs.min(Math.min(data.a, data.b), tag);"}}},"name":"number/Min picker/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "bd6d3a45-6800-4f99-89bf-355e3740c104": {
+        "type": "{\"a\":number,\"b\":number}",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "4328a906-3097-42a8-b056-7e8f951eef65": {
+        "type": "number",
+        "name": "min"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "bd6d3a45-6800-4f99-89bf-355e3740c104": "outputs.min(Math.min(data.a, data.b), tag);"
+      }
+    }
+  },
+  "name": "number/Min picker/_",
+  "attributes": {
+    "internal": true
+  }
+}

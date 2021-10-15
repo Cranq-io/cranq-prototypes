@@ -1,1 +1,38 @@
-{"description":"","interface":{"inputs":{"536d7745-cd49-470b-8cb4-593a1d425acb":{"description":"","type":"any","name":"path & recursive"}},"outputs":{"5034a7e2-5b16-4d04-a9cf-da944f7f35a4":{"description":"","type":"any","name":"deleted"},"c67e320e-d293-4058-97bf-7258426ff76d":{"description":"","type":"any","name":"bounced"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"536d7745-cd49-470b-8cb4-593a1d425acb":"const {rm} = require(\"fs\");\nconst {path, recursive} = data;\nrm(path, { recursive: recursive }, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.deleted(null, tag);\n  }\n});"}}},"name":"io/file/Deleter/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "536d7745-cd49-470b-8cb4-593a1d425acb": {
+        "description": "",
+        "type": "any",
+        "name": "path & recursive"
+      }
+    },
+    "outputs": {
+      "5034a7e2-5b16-4d04-a9cf-da944f7f35a4": {
+        "description": "",
+        "type": "any",
+        "name": "deleted"
+      },
+      "c67e320e-d293-4058-97bf-7258426ff76d": {
+        "description": "",
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "536d7745-cd49-470b-8cb4-593a1d425acb": "const {rm} = require(\"fs\");\nconst {path, recursive} = data;\nrm(path, { recursive: recursive }, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.deleted(null, tag);\n  }\n});"
+      }
+    }
+  },
+  "name": "io/file/Deleter/_",
+  "attributes": {
+    "internal": true
+  }
+}

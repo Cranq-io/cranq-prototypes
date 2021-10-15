@@ -1,1 +1,152 @@
-{"name":"apis/ga/measurement protocol/Pageview params builder","interface":{"inputs":{"88749a40-65a2-468f-b4d1-12dfcad43e37":{"type":"any","name":"tracking ID"},"7a7a5434-ae98-4ddc-885e-263d615149ba":{"type":"any","name":"client ID"},"c692f166-2186-400d-9322-dee26ef1370d":{"type":"any","name":"hostname"},"f6d72245-455b-4084-aa88-ec88ff06422b":{"type":"any","name":"page"},"308b055b-3d21-4c7d-9375-cc59481885da":{"type":"any","name":"title"}},"outputs":{"32fae487-6d69-4514-a546-434341328095":{"type":"any","name":"params","description":"Measurement Protocol parameters for \"pageview\" hit type. Key-value pairs, must be serialized to be passed as payload."}}},"implementations":{"cranq":{"connections":{"5b6e65d6-6621-4244-8ac4-c12ea8223f92":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"08f0e947-188a-4ec1-879b-36f70b4d2442":{"545a5e1a-9807-4456-b557-dfa8aa8ef28a":{}}}},"e078728a-7c52-4e0d-8ea6-c686855f00e7":{"synced":{"c1bf39c0-137c-4f84-b336-55e29d65505c":{"507a0b1a-b9eb-4e67-a64d-47b405e17422":{}}}},"c1bf39c0-137c-4f84-b336-55e29d65505c":{"c3fcabea-63e8-48a2-b736-e7a9954cf5ca":{"5b6e65d6-6621-4244-8ac4-c12ea8223f92":{"tid":{}}},"9b746d54-f007-4bc0-9988-acb0a0a05cd5":{"5b6e65d6-6621-4244-8ac4-c12ea8223f92":{"cid":{}}},"3f67095a-501d-4010-b37d-4e1ece60e2f2":{"08f0e947-188a-4ec1-879b-36f70b4d2442":{"d694bd76-84f6-465f-9c8e-8b9570cc8e69":{}}}}},"forwards":{"inputs":{"c692f166-2186-400d-9322-dee26ef1370d":{"e078728a-7c52-4e0d-8ea6-c686855f00e7":{"dh":{}}},"f6d72245-455b-4084-aa88-ec88ff06422b":{"e078728a-7c52-4e0d-8ea6-c686855f00e7":{"dp":{}}},"308b055b-3d21-4c7d-9375-cc59481885da":{"e078728a-7c52-4e0d-8ea6-c686855f00e7":{"dt":{}}},"88749a40-65a2-468f-b4d1-12dfcad43e37":{"c1bf39c0-137c-4f84-b336-55e29d65505c":{"70da607a-8976-437b-b9e9-84cc63cd613b":{}}},"7a7a5434-ae98-4ddc-885e-263d615149ba":{"c1bf39c0-137c-4f84-b336-55e29d65505c":{"54c357a1-045e-4817-beda-0017a586a499":{}}}},"outputs":{"32fae487-6d69-4514-a546-434341328095":{"08f0e947-188a-4ec1-879b-36f70b4d2442":{"8357d165-4753-4d32-8c61-e3baff88d8ba":{}}}}},"nodes":{"5b6e65d6-6621-4244-8ac4-c12ea8223f92":{"coordinates":[87.66666666666667,-129],"name":"sync required","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"v\", \"tid\", \"cid\", \"t\"]","v":"1","t":"\"pageview\""}},"08f0e947-188a-4ec1-879b-36f70b4d2442":{"coordinates":[95.66666666666669,77],"name":"build params","prototype":"b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301","params":{}},"e078728a-7c52-4e0d-8ea6-c686855f00e7":{"coordinates":[-89.33333333333331,123],"name":"sync page params","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"dh\", \"dp\", \"dt\"]"}},"c1bf39c0-137c-4f84-b336-55e29d65505c":{"coordinates":[-83.33333333333331,-48.00000000000003],"name":"forwarder/triple","prototype":"ccd44557-20cf-4582-9c10-99bc31b22380","params":{}}}}},"description":"Builds raw \"pageview\" parameter set for Google Analytics Measurement Protocol request."}
+{
+  "name": "apis/ga/measurement protocol/Pageview params builder",
+  "interface": {
+    "inputs": {
+      "88749a40-65a2-468f-b4d1-12dfcad43e37": {
+        "type": "any",
+        "name": "tracking ID"
+      },
+      "7a7a5434-ae98-4ddc-885e-263d615149ba": {
+        "type": "any",
+        "name": "client ID"
+      },
+      "c692f166-2186-400d-9322-dee26ef1370d": {
+        "type": "any",
+        "name": "hostname"
+      },
+      "f6d72245-455b-4084-aa88-ec88ff06422b": {
+        "type": "any",
+        "name": "page"
+      },
+      "308b055b-3d21-4c7d-9375-cc59481885da": {
+        "type": "any",
+        "name": "title"
+      }
+    },
+    "outputs": {
+      "32fae487-6d69-4514-a546-434341328095": {
+        "type": "any",
+        "name": "params",
+        "description": "Measurement Protocol parameters for \"pageview\" hit type. Key-value pairs, must be serialized to be passed as payload."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "5b6e65d6-6621-4244-8ac4-c12ea8223f92": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "08f0e947-188a-4ec1-879b-36f70b4d2442": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "e078728a-7c52-4e0d-8ea6-c686855f00e7": {
+          "synced": {
+            "c1bf39c0-137c-4f84-b336-55e29d65505c": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "c1bf39c0-137c-4f84-b336-55e29d65505c": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "5b6e65d6-6621-4244-8ac4-c12ea8223f92": {
+              "tid": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "5b6e65d6-6621-4244-8ac4-c12ea8223f92": {
+              "cid": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "08f0e947-188a-4ec1-879b-36f70b4d2442": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c692f166-2186-400d-9322-dee26ef1370d": {
+            "e078728a-7c52-4e0d-8ea6-c686855f00e7": {
+              "dh": {}
+            }
+          },
+          "f6d72245-455b-4084-aa88-ec88ff06422b": {
+            "e078728a-7c52-4e0d-8ea6-c686855f00e7": {
+              "dp": {}
+            }
+          },
+          "308b055b-3d21-4c7d-9375-cc59481885da": {
+            "e078728a-7c52-4e0d-8ea6-c686855f00e7": {
+              "dt": {}
+            }
+          },
+          "88749a40-65a2-468f-b4d1-12dfcad43e37": {
+            "c1bf39c0-137c-4f84-b336-55e29d65505c": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "7a7a5434-ae98-4ddc-885e-263d615149ba": {
+            "c1bf39c0-137c-4f84-b336-55e29d65505c": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        },
+        "outputs": {
+          "32fae487-6d69-4514-a546-434341328095": {
+            "08f0e947-188a-4ec1-879b-36f70b4d2442": {
+              "8357d165-4753-4d32-8c61-e3baff88d8ba": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "5b6e65d6-6621-4244-8ac4-c12ea8223f92": {
+          "coordinates": [
+            87.66666666666667,
+            -129
+          ],
+          "name": "sync required",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"v\", \"tid\", \"cid\", \"t\"]",
+            "v": "1",
+            "t": "\"pageview\""
+          }
+        },
+        "08f0e947-188a-4ec1-879b-36f70b4d2442": {
+          "coordinates": [
+            95.66666666666669,
+            77
+          ],
+          "name": "build params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {}
+        },
+        "e078728a-7c52-4e0d-8ea6-c686855f00e7": {
+          "coordinates": [
+            -89.33333333333331,
+            123
+          ],
+          "name": "sync page params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dh\", \"dp\", \"dt\"]"
+          }
+        },
+        "c1bf39c0-137c-4f84-b336-55e29d65505c": {
+          "coordinates": [
+            -83.33333333333331,
+            -48.00000000000003
+          ],
+          "name": "forwarder/triple",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Builds raw \"pageview\" parameter set for Google Analytics Measurement Protocol request."
+}

@@ -1,1 +1,122 @@
-{"name":"testing/Duration inserter","interface":{"inputs":{"420018a7-6a4d-4b2d-8e51-87ab4e94e50c":{"type":"{string:any}","name":"assertion"},"a6a65b8a-985a-40d0-8558-d7612ef77f62":{"type":"any","name":"duration"}},"outputs":{"67dd5912-a93f-4f7d-b171-356622c1cd37":{"type":"typeof(dict)","name":"assertion"}}},"implementations":{"cranq":{"connections":{"d78fc0c8-9a3f-4aef-b80a-f47f703d6ceb":{"3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":{"3bd9e4cd-1c62-4a1d-bf0c-aac14f0b45ea":{"0b28df10-b056-4666-ae14-2357d747f7b9":{}}},"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58":{"5cbbb232-d9b4-4d06-9db0-e548e44e43b6":{}}}},"3bd9e4cd-1c62-4a1d-bf0c-aac14f0b45ea":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58":{"5cbbb232-d9b4-4d06-9db0-e548e44e43b6":{}}}},"6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58":{"092ca265-7614-4182-9d9f-bd325c094abb":{"5e39e8ce-ae72-4c24-a050-0bfd057664a7":{"0ab0c723-793b-48a1-87d5-d64267665bd3":{}}}}},"forwards":{"inputs":{"420018a7-6a4d-4b2d-8e51-87ab4e94e50c":{"d78fc0c8-9a3f-4aef-b80a-f47f703d6ceb":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{}},"5e39e8ce-ae72-4c24-a050-0bfd057664a7":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{}}},"a6a65b8a-985a-40d0-8558-d7612ef77f62":{"6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58":{"2d02022b-c114-4207-935e-11490a6c2926":{}}}},"outputs":{"67dd5912-a93f-4f7d-b171-356622c1cd37":{"5e39e8ce-ae72-4c24-a050-0bfd057664a7":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{}}}}},"nodes":{"d78fc0c8-9a3f-4aef-b80a-f47f703d6ceb":{"coordinates":[-147.5,-92.75],"name":"get durations","prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","params":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":"\"durations\""}},"3bd9e4cd-1c62-4a1d-bf0c-aac14f0b45ea":{"coordinates":[30.5,-197.75],"name":"default durations","prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"[]"}},"5e39e8ce-ae72-4c24-a050-0bfd057664a7":{"coordinates":[66.5,132.25],"name":"set durations","prototype":"3966e767-b7a7-4221-961d-338a13d18c57","params":{"922a1964-91d4-4ad3-a9e4-7d245662a978":"\"durations\""}},"6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58":{"coordinates":[51.5,-26.75],"name":"add to durations","prototype":"9882ea6b-43da-4a1f-b660-689da949c8f2","params":{}}}}},"description":"Inserts test duration into a list of durations on an assertion record."}
+{
+  "name": "testing/Duration inserter",
+  "interface": {
+    "inputs": {
+      "420018a7-6a4d-4b2d-8e51-87ab4e94e50c": {
+        "type": "{string:any}",
+        "name": "assertion"
+      },
+      "a6a65b8a-985a-40d0-8558-d7612ef77f62": {
+        "type": "any",
+        "name": "duration"
+      }
+    },
+    "outputs": {
+      "67dd5912-a93f-4f7d-b171-356622c1cd37": {
+        "type": "typeof(dict)",
+        "name": "assertion"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "d78fc0c8-9a3f-4aef-b80a-f47f703d6ceb": {
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "3bd9e4cd-1c62-4a1d-bf0c-aac14f0b45ea": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "3bd9e4cd-1c62-4a1d-bf0c-aac14f0b45ea": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "5e39e8ce-ae72-4c24-a050-0bfd057664a7": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "420018a7-6a4d-4b2d-8e51-87ab4e94e50c": {
+            "d78fc0c8-9a3f-4aef-b80a-f47f703d6ceb": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "5e39e8ce-ae72-4c24-a050-0bfd057664a7": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "a6a65b8a-985a-40d0-8558-d7612ef77f62": {
+            "6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "outputs": {
+          "67dd5912-a93f-4f7d-b171-356622c1cd37": {
+            "5e39e8ce-ae72-4c24-a050-0bfd057664a7": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "d78fc0c8-9a3f-4aef-b80a-f47f703d6ceb": {
+          "coordinates": [
+            -147.5,
+            -92.75
+          ],
+          "name": "get durations",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"durations\""
+          }
+        },
+        "3bd9e4cd-1c62-4a1d-bf0c-aac14f0b45ea": {
+          "coordinates": [
+            30.5,
+            -197.75
+          ],
+          "name": "default durations",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[]"
+          }
+        },
+        "5e39e8ce-ae72-4c24-a050-0bfd057664a7": {
+          "coordinates": [
+            66.5,
+            132.25
+          ],
+          "name": "set durations",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"durations\""
+          }
+        },
+        "6a81cfaf-64c0-41fa-9e9f-49bfcc9dcc58": {
+          "coordinates": [
+            51.5,
+            -26.75
+          ],
+          "name": "add to durations",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Inserts test duration into a list of durations on an assertion record."
+}

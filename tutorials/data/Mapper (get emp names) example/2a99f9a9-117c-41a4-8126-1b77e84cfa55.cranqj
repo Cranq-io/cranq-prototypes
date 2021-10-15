@@ -1,1 +1,108 @@
-{"description":"Example node that demonstrates the usage of the data/array/Mapper node.","interface":{"inputs":{"eb8dfa21-9cb5-49c8-9a77-e0c247f3424a":{"description":"","type":"any","name":"array"}},"outputs":{"76346e6a-cf3c-4f7a-a216-23272f4fb2df":{"description":"","type":"any","name":"array"}}},"implementations":{"cranq":{"nodes":{"0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac":{"coordinates":[-2,-68],"description":"","params":{},"prototype":"8193ce91-bc7b-4d4d-89d6-49abe83d2de3","name":"Mapper A"},"ba13c3f2-3572-4bc0-b7d8-6de8abbf6411":{"coordinates":[-2,220],"description":"","params":{},"prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","name":"Item getter A"},"431c3d3f-7a31-43a3-992d-27fc29631b3d":{"coordinates":[-155,154],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"\"Name\""},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"\"Name\""}},"connections":{"0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac":{"dd117561-ffee-4b4f-aaec-44fb964dc6e5":{"ba13c3f2-3572-4bc0-b7d8-6de8abbf6411":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{"description":""}},"431c3d3f-7a31-43a3-992d-27fc29631b3d":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}}}},"ba13c3f2-3572-4bc0-b7d8-6de8abbf6411":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac":{"246b2ba5-761d-44bc-932b-9ee909b00258":{"description":""}}}},"431c3d3f-7a31-43a3-992d-27fc29631b3d":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"ba13c3f2-3572-4bc0-b7d8-6de8abbf6411":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":{"description":""}}}}},"forwards":{"inputs":{"eb8dfa21-9cb5-49c8-9a77-e0c247f3424a":{"0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac":{"9552da55-ccec-4df0-a06b-c5eb0e961eab":{}}}},"outputs":{"76346e6a-cf3c-4f7a-a216-23272f4fb2df":{"0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac":{"9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7":{}}}}}}},"name":"tutorials/data/Mapper (get emp names) example"}
+{
+  "description": "Example node that demonstrates the usage of the data/array/Mapper node.",
+  "interface": {
+    "inputs": {
+      "eb8dfa21-9cb5-49c8-9a77-e0c247f3424a": {
+        "description": "",
+        "type": "any",
+        "name": "array"
+      }
+    },
+    "outputs": {
+      "76346e6a-cf3c-4f7a-a216-23272f4fb2df": {
+        "description": "",
+        "type": "any",
+        "name": "array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac": {
+          "coordinates": [
+            -2,
+            -68
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3",
+          "name": "Mapper A"
+        },
+        "ba13c3f2-3572-4bc0-b7d8-6de8abbf6411": {
+          "coordinates": [
+            -2,
+            220
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "name": "Item getter A"
+        },
+        "431c3d3f-7a31-43a3-992d-27fc29631b3d": {
+          "coordinates": [
+            -155,
+            154
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"Name\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "\"Name\""
+        }
+      },
+      "connections": {
+        "0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "ba13c3f2-3572-4bc0-b7d8-6de8abbf6411": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {
+                "description": ""
+              }
+            },
+            "431c3d3f-7a31-43a3-992d-27fc29631b3d": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "ba13c3f2-3572-4bc0-b7d8-6de8abbf6411": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "431c3d3f-7a31-43a3-992d-27fc29631b3d": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "ba13c3f2-3572-4bc0-b7d8-6de8abbf6411": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "eb8dfa21-9cb5-49c8-9a77-e0c247f3424a": {
+            "0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "76346e6a-cf3c-4f7a-a216-23272f4fb2df": {
+            "0eb8c9f5-5a03-4025-8f28-ff9f9614f5ac": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Mapper (get emp names) example"
+}

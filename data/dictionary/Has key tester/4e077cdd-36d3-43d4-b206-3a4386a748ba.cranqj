@@ -1,1 +1,88 @@
-{"description":"Tests whether a dictionary has a specific key","interface":{"inputs":{"9debb883-e28c-42e7-8680-6e479e795d0d":{"description":"The dictionary to search for the item","type":"dictionary","name":"dict"},"d1abdb29-7cc9-4d41-8b20-9594e3e9504c":{"description":"The key to look for in the dictionary","type":"string","name":"key"}},"outputs":{"1f6bf4d0-2058-4552-9e89-1a67a502a762":{"description":"Whether the dictionary has the specific item","type":"boolean","name":"has"}}},"implementations":{"cranq":{"nodes":{"2f47a491-c1ad-4e11-8560-bac7c37fb21d":{"coordinates":[-84,1],"description":"","params":{},"prototype":"857aacdb-326e-4b2e-a261-5197b667e14f","name":"get item"},"474213fa-035b-427f-ab76-8c8a482d28bf":{"coordinates":[128,0],"description":"","params":{},"prototype":"73b8273f-ef86-4797-8443-ab5662dda5d5","name":"to boolean"}},"connections":{"2f47a491-c1ad-4e11-8560-bac7c37fb21d":{"ebb678af-2bc0-4d06-99dd-6dbb5647ad6a":{"474213fa-035b-427f-ab76-8c8a482d28bf":{"7d8a1e5c-fe55-4483-8604-d8198c09f05e":{"description":""}}},"3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7":{"474213fa-035b-427f-ab76-8c8a482d28bf":{"71b2d8f8-8c04-4e7d-8f46-049cee8da304":{}}}}},"forwards":{"inputs":{"9debb883-e28c-42e7-8680-6e479e795d0d":{"2f47a491-c1ad-4e11-8560-bac7c37fb21d":{"47c56035-5bed-4f91-b7a9-606dedd7a13c":{}}},"d1abdb29-7cc9-4d41-8b20-9594e3e9504c":{"2f47a491-c1ad-4e11-8560-bac7c37fb21d":{"23142cc5-6b71-4d69-8c46-cc1cd58793d1":{}}}},"outputs":{"1f6bf4d0-2058-4552-9e89-1a67a502a762":{"474213fa-035b-427f-ab76-8c8a482d28bf":{"5d478d32-ae8f-4f2b-8f32-9d3cf14db437":{}}}}}}},"name":"data/dictionary/Has key tester"}
+{
+  "description": "Tests whether a dictionary has a specific key",
+  "interface": {
+    "inputs": {
+      "9debb883-e28c-42e7-8680-6e479e795d0d": {
+        "description": "The dictionary to search for the item",
+        "type": "dictionary",
+        "name": "dict"
+      },
+      "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": {
+        "description": "The key to look for in the dictionary",
+        "type": "string",
+        "name": "key"
+      }
+    },
+    "outputs": {
+      "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+        "description": "Whether the dictionary has the specific item",
+        "type": "boolean",
+        "name": "has"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2f47a491-c1ad-4e11-8560-bac7c37fb21d": {
+          "coordinates": [
+            -84,
+            1
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "name": "get item"
+        },
+        "474213fa-035b-427f-ab76-8c8a482d28bf": {
+          "coordinates": [
+            128,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "73b8273f-ef86-4797-8443-ab5662dda5d5",
+          "name": "to boolean"
+        }
+      },
+      "connections": {
+        "2f47a491-c1ad-4e11-8560-bac7c37fb21d": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "474213fa-035b-427f-ab76-8c8a482d28bf": {
+              "7d8a1e5c-fe55-4483-8604-d8198c09f05e": {
+                "description": ""
+              }
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "474213fa-035b-427f-ab76-8c8a482d28bf": {
+              "71b2d8f8-8c04-4e7d-8f46-049cee8da304": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9debb883-e28c-42e7-8680-6e479e795d0d": {
+            "2f47a491-c1ad-4e11-8560-bac7c37fb21d": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          },
+          "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": {
+            "2f47a491-c1ad-4e11-8560-bac7c37fb21d": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          }
+        },
+        "outputs": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "474213fa-035b-427f-ab76-8c8a482d28bf": {
+              "5d478d32-ae8f-4f2b-8f32-9d3cf14db437": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Has key tester"
+}

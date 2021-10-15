@@ -1,1 +1,95 @@
-{"description":"Appends the input text to a file.","interface":{"inputs":{"62b759b8-f031-47f0-8574-5d844f085801":{"description":"The file path to append to","type":"any","name":"path"},"cb6954c4-dfb5-4690-8635-67e18e34119b":{"description":"The text value to append","type":"any","name":"text"}},"outputs":{"531c7678-2340-423b-8738-7a738b3bb3ae":{"description":"Indicates, that the operation has failed","type":"any","name":"bounced"},"1d9507f4-6c7c-4639-ba2a-d05baaf352c6":{"description":"Indicates, that the operation has succeeded","type":"any","name":"written"}}},"implementations":{"cranq":{"nodes":{"37718119-3e50-4759-9936-2d49838e748c":{"coordinates":[6,-92],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"path\",\"text\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync path & text"},"039e3179-8642-4c38-ba2e-07d62002cf03":{"coordinates":[34,89],"description":"","params":{},"prototype":"45be543f-6964-4b0c-a5e4-35b101647f42","name":"append text"}},"connections":{"37718119-3e50-4759-9936-2d49838e748c":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"039e3179-8642-4c38-ba2e-07d62002cf03":{"cba79d77-af59-4347-be54-3b6956c94460":{"description":""}}}}},"forwards":{"inputs":{"62b759b8-f031-47f0-8574-5d844f085801":{"37718119-3e50-4759-9936-2d49838e748c":{"path":{}}},"cb6954c4-dfb5-4690-8635-67e18e34119b":{"37718119-3e50-4759-9936-2d49838e748c":{"text":{}}}},"outputs":{"531c7678-2340-423b-8738-7a738b3bb3ae":{"039e3179-8642-4c38-ba2e-07d62002cf03":{"6ae5883e-69d4-403b-ae35-7bb624673ecb":{}}},"1d9507f4-6c7c-4639-ba2a-d05baaf352c6":{"039e3179-8642-4c38-ba2e-07d62002cf03":{"2bd1ae85-9ce4-4fd2-915c-853e77b97689":{}}}}}}},"name":"io/file/Text appender"}
+{
+  "description": "Appends the input text to a file.",
+  "interface": {
+    "inputs": {
+      "62b759b8-f031-47f0-8574-5d844f085801": {
+        "description": "The file path to append to",
+        "type": "any",
+        "name": "path"
+      },
+      "cb6954c4-dfb5-4690-8635-67e18e34119b": {
+        "description": "The text value to append",
+        "type": "any",
+        "name": "text"
+      }
+    },
+    "outputs": {
+      "531c7678-2340-423b-8738-7a738b3bb3ae": {
+        "description": "Indicates, that the operation has failed",
+        "type": "any",
+        "name": "bounced"
+      },
+      "1d9507f4-6c7c-4639-ba2a-d05baaf352c6": {
+        "description": "Indicates, that the operation has succeeded",
+        "type": "any",
+        "name": "written"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "37718119-3e50-4759-9936-2d49838e748c": {
+          "coordinates": [
+            6,
+            -92
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"path\",\"text\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync path & text"
+        },
+        "039e3179-8642-4c38-ba2e-07d62002cf03": {
+          "coordinates": [
+            34,
+            89
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "45be543f-6964-4b0c-a5e4-35b101647f42",
+          "name": "append text"
+        }
+      },
+      "connections": {
+        "37718119-3e50-4759-9936-2d49838e748c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "039e3179-8642-4c38-ba2e-07d62002cf03": {
+              "cba79d77-af59-4347-be54-3b6956c94460": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "62b759b8-f031-47f0-8574-5d844f085801": {
+            "37718119-3e50-4759-9936-2d49838e748c": {
+              "path": {}
+            }
+          },
+          "cb6954c4-dfb5-4690-8635-67e18e34119b": {
+            "37718119-3e50-4759-9936-2d49838e748c": {
+              "text": {}
+            }
+          }
+        },
+        "outputs": {
+          "531c7678-2340-423b-8738-7a738b3bb3ae": {
+            "039e3179-8642-4c38-ba2e-07d62002cf03": {
+              "6ae5883e-69d4-403b-ae35-7bb624673ecb": {}
+            }
+          },
+          "1d9507f4-6c7c-4639-ba2a-d05baaf352c6": {
+            "039e3179-8642-4c38-ba2e-07d62002cf03": {
+              "2bd1ae85-9ce4-4fd2-915c-853e77b97689": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/file/Text appender"
+}

@@ -1,1 +1,36 @@
-{"description":"","interface":{"inputs":{"16d7d9a2-4ad2-4cb6-9194-7c6b2eaf3f99":{"description":"","type":"any","name":"read"}},"outputs":{"85222ff0-6d07-4ccc-940f-6e43b180f699":{"description":"","type":"any","name":"date"}}},"implementations":{"target":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{}},"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"16d7d9a2-4ad2-4cb6-9194-7c6b2eaf3f99":"outputs.date(new Date().toISOString(), tag);"}}},"name":"date/Current date getter/utc"}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "16d7d9a2-4ad2-4cb6-9194-7c6b2eaf3f99": {
+        "description": "",
+        "type": "any",
+        "name": "read"
+      }
+    },
+    "outputs": {
+      "85222ff0-6d07-4ccc-940f-6e43b180f699": {
+        "description": "",
+        "type": "any",
+        "name": "date"
+      }
+    }
+  },
+  "implementations": {
+    "target": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {}
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "16d7d9a2-4ad2-4cb6-9194-7c6b2eaf3f99": "outputs.date(new Date().toISOString(), tag);"
+      }
+    }
+  },
+  "name": "date/Current date getter/utc"
+}

@@ -1,1 +1,85 @@
-{"description":"Deletes an item from the dictionary by it's key.\nMutates input.","interface":{"inputs":{"fe46ad6a-e159-40cb-bfb0-c3860de81a4d":{"description":"","type":"any","name":"dict"},"875f3af3-fed8-4bef-bde4-bafd794770c7":{"description":"","type":"any","name":"key"}},"outputs":{"676b0740-4b60-4d12-9c77-665e78450f80":{"description":"","type":"any","name":"dict"}}},"implementations":{"cranq":{"nodes":{"235fe4d2-f323-49f3-be11-4c55cc71e5ee":{"coordinates":[12,111],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"dict\",\"key\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync inputs"},"c49c3efa-ddf8-4507-add9-1f1473a342fd":{"coordinates":[7,-69],"description":"","params":{},"prototype":"973f4c36-5fb5-443b-8630-d38d28c47cc6","name":"delete item"}},"connections":{"235fe4d2-f323-49f3-be11-4c55cc71e5ee":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"c49c3efa-ddf8-4507-add9-1f1473a342fd":{"b2dba313-c94c-4788-9e3b-3e985f6d43d9":{"description":""}}}}},"forwards":{"inputs":{"fe46ad6a-e159-40cb-bfb0-c3860de81a4d":{"235fe4d2-f323-49f3-be11-4c55cc71e5ee":{"dict":{}}},"875f3af3-fed8-4bef-bde4-bafd794770c7":{"235fe4d2-f323-49f3-be11-4c55cc71e5ee":{"key":{}}}},"outputs":{"676b0740-4b60-4d12-9c77-665e78450f80":{"c49c3efa-ddf8-4507-add9-1f1473a342fd":{"67cc96fd-fbd3-48e5-85bb-78ed6a07d23d":{}}}}}}},"name":"data/dictionary/Item deleter"}
+{
+  "description": "Deletes an item from the dictionary by it's key.\nMutates input.",
+  "interface": {
+    "inputs": {
+      "fe46ad6a-e159-40cb-bfb0-c3860de81a4d": {
+        "description": "",
+        "type": "any",
+        "name": "dict"
+      },
+      "875f3af3-fed8-4bef-bde4-bafd794770c7": {
+        "description": "",
+        "type": "any",
+        "name": "key"
+      }
+    },
+    "outputs": {
+      "676b0740-4b60-4d12-9c77-665e78450f80": {
+        "description": "",
+        "type": "any",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "235fe4d2-f323-49f3-be11-4c55cc71e5ee": {
+          "coordinates": [
+            12,
+            111
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\",\"key\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync inputs"
+        },
+        "c49c3efa-ddf8-4507-add9-1f1473a342fd": {
+          "coordinates": [
+            7,
+            -69
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "973f4c36-5fb5-443b-8630-d38d28c47cc6",
+          "name": "delete item"
+        }
+      },
+      "connections": {
+        "235fe4d2-f323-49f3-be11-4c55cc71e5ee": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c49c3efa-ddf8-4507-add9-1f1473a342fd": {
+              "b2dba313-c94c-4788-9e3b-3e985f6d43d9": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "fe46ad6a-e159-40cb-bfb0-c3860de81a4d": {
+            "235fe4d2-f323-49f3-be11-4c55cc71e5ee": {
+              "dict": {}
+            }
+          },
+          "875f3af3-fed8-4bef-bde4-bafd794770c7": {
+            "235fe4d2-f323-49f3-be11-4c55cc71e5ee": {
+              "key": {}
+            }
+          }
+        },
+        "outputs": {
+          "676b0740-4b60-4d12-9c77-665e78450f80": {
+            "c49c3efa-ddf8-4507-add9-1f1473a342fd": {
+              "67cc96fd-fbd3-48e5-85bb-78ed6a07d23d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Item deleter"
+}

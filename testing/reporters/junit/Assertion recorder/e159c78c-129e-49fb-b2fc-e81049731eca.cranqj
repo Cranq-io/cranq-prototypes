@@ -1,1 +1,183 @@
-{"name":"testing/reporters/junit/Assertion recorder","interface":{"inputs":{"3a1678d8-2172-49b2-b116-ee293cd8ede0":{"description":"","type":"any","name":"assertion"},"2f5dc1e9-1ab0-4fb3-97e9-0e5c468e68f8":{"type":"any","name":"assertion ID"},"b3404b8e-ec90-4ba5-9ff3-ef542b23dd89":{"type":"any","name":"pre-report"}},"outputs":{"ca7d3125-921a-48c3-9054-5ad7b0c328bc":{"type":"any","name":"pre-report"}}},"implementations":{"cranq":{"connections":{"a8d98e3d-3168-473f-8f0e-1685eee32aae":{"3a5e414a-cd40-459e-a92e-e10885e4134c":{"dd8e65fe-188d-4d1c-9f37-aab1654fbcb2":{"6ad86184-6890-4323-8021-3496a682c98e":{}}}},"66169294-ba2c-4a97-84bc-e4f807431e4e":{"1544a7b6-ca75-411f-8e50-6b899ac4ca44":{"cf04ad95-5cd1-4639-a6f6-b9b9b21024b5":{"d41e8b3d-4978-499f-80c1-280a77f99465":{}}}},"c4a31be6-2ac7-4454-8f44-0cfc4e5e1142":{"9095d42a-f3d4-4102-871d-7f3e2321d911":{"a97257fb-4a43-4b12-9b74-41bf9416ff9d":{"4a04da9f-f8cd-4ab4-bb89-50dbda950e37":{}}}},"a97257fb-4a43-4b12-9b74-41bf9416ff9d":{"fb8dc057-1b4e-4c8f-b50b-95b213ccb3ad":{"f1533eed-8bf8-45b5-a7cf-0497d2710036":{"9859e1b4-bb1d-40d1-9491-130e1f9cb641":{}}}},"f1533eed-8bf8-45b5-a7cf-0497d2710036":{"ba0fc0d5-7cbb-457e-b31e-053b11e67ede":{"a8d98e3d-3168-473f-8f0e-1685eee32aae":{"a0766adf-faba-4e61-8fac-651a1e9728b1":{}}}},"cf04ad95-5cd1-4639-a6f6-b9b9b21024b5":{"af0b89a3-d85d-4c70-83e3-3c6f481429a1":{"e22f4dda-a3b8-4ba2-bd6d-f138099aee1f":{"5efc1798-b353-42bb-be0c-3a6893c25794":{}}}},"e22f4dda-a3b8-4ba2-bd6d-f138099aee1f":{"a7020967-d625-42ce-9d73-42db63f5efc5":{"c4a31be6-2ac7-4454-8f44-0cfc4e5e1142":{"f31944df-c1a8-4606-a4ad-64038656f215":{}}}}},"forwards":{"inputs":{"2f5dc1e9-1ab0-4fb3-97e9-0e5c468e68f8":{"66169294-ba2c-4a97-84bc-e4f807431e4e":{"6397bc68-c4d1-4552-80cd-26945ea64442":{}}},"3a1678d8-2172-49b2-b116-ee293cd8ede0":{"66169294-ba2c-4a97-84bc-e4f807431e4e":{"f9cbfa00-3a53-401a-888c-4c198771ccce":{}}},"b3404b8e-ec90-4ba5-9ff3-ef542b23dd89":{"66169294-ba2c-4a97-84bc-e4f807431e4e":{"84a34eff-f62f-4727-ab0b-718ca9fe27e0":{}}}},"outputs":{"ca7d3125-921a-48c3-9054-5ad7b0c328bc":{"dd8e65fe-188d-4d1c-9f37-aab1654fbcb2":{"buffer":{}}}}},"nodes":{"cf04ad95-5cd1-4639-a6f6-b9b9b21024b5":{"coordinates":[-110.71190476190469,-190.71428571428572],"name":"insert suite name","prototype":"16bbd780-0d33-417e-8e96-3da9038b285e","params":{}},"c4a31be6-2ac7-4454-8f44-0cfc4e5e1142":{"coordinates":[-105.04523809523812,104.28571428571422],"name":"insert case name","prototype":"840b6e9e-bd69-4e7e-a119-a25ff7756492","params":{}},"a97257fb-4a43-4b12-9b74-41bf9416ff9d":{"coordinates":[153.50424107142857,-186.3887648809524],"name":"insert assertion","prototype":"08ea2df1-bef0-40d8-9e40-f71631d71eb9","params":{}},"66169294-ba2c-4a97-84bc-e4f807431e4e":{"coordinates":[-307.0642857142857,-7.690476190476204],"name":"build context","prototype":"4dd77365-a18d-45ef-8ecb-8639151bc64b"},"a8d98e3d-3168-473f-8f0e-1685eee32aae":{"coordinates":[158.42142857142858,113.39682539682536],"name":"insert failure","prototype":"b4a8455b-cead-4b01-8ca5-540233e892b2","params":{}},"dd8e65fe-188d-4d1c-9f37-aab1654fbcb2":{"coordinates":[309,58],"name":"extract buffer","prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"buffer\"]"}},"f1533eed-8bf8-45b5-a7cf-0497d2710036":{"coordinates":[156,-38],"name":"insert case time","prototype":"925f8f8c-de82-496b-8ee3-9fbbc73f6999","params":{}},"e22f4dda-a3b8-4ba2-bd6d-f138099aee1f":{"coordinates":[-94,-40],"name":"insert suite time","prototype":"06d5b9f5-91a2-4187-952a-5cb7ed73af51","params":{}}}}},"description":"Records a single assertion into a preprocessed report JSON."}
+{
+  "name": "testing/reporters/junit/Assertion recorder",
+  "interface": {
+    "inputs": {
+      "3a1678d8-2172-49b2-b116-ee293cd8ede0": {
+        "description": "",
+        "type": "any",
+        "name": "assertion"
+      },
+      "2f5dc1e9-1ab0-4fb3-97e9-0e5c468e68f8": {
+        "type": "any",
+        "name": "assertion ID"
+      },
+      "b3404b8e-ec90-4ba5-9ff3-ef542b23dd89": {
+        "type": "any",
+        "name": "pre-report"
+      }
+    },
+    "outputs": {
+      "ca7d3125-921a-48c3-9054-5ad7b0c328bc": {
+        "type": "any",
+        "name": "pre-report"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "a8d98e3d-3168-473f-8f0e-1685eee32aae": {
+          "3a5e414a-cd40-459e-a92e-e10885e4134c": {
+            "dd8e65fe-188d-4d1c-9f37-aab1654fbcb2": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "66169294-ba2c-4a97-84bc-e4f807431e4e": {
+          "1544a7b6-ca75-411f-8e50-6b899ac4ca44": {
+            "cf04ad95-5cd1-4639-a6f6-b9b9b21024b5": {
+              "d41e8b3d-4978-499f-80c1-280a77f99465": {}
+            }
+          }
+        },
+        "c4a31be6-2ac7-4454-8f44-0cfc4e5e1142": {
+          "9095d42a-f3d4-4102-871d-7f3e2321d911": {
+            "a97257fb-4a43-4b12-9b74-41bf9416ff9d": {
+              "4a04da9f-f8cd-4ab4-bb89-50dbda950e37": {}
+            }
+          }
+        },
+        "a97257fb-4a43-4b12-9b74-41bf9416ff9d": {
+          "fb8dc057-1b4e-4c8f-b50b-95b213ccb3ad": {
+            "f1533eed-8bf8-45b5-a7cf-0497d2710036": {
+              "9859e1b4-bb1d-40d1-9491-130e1f9cb641": {}
+            }
+          }
+        },
+        "f1533eed-8bf8-45b5-a7cf-0497d2710036": {
+          "ba0fc0d5-7cbb-457e-b31e-053b11e67ede": {
+            "a8d98e3d-3168-473f-8f0e-1685eee32aae": {
+              "a0766adf-faba-4e61-8fac-651a1e9728b1": {}
+            }
+          }
+        },
+        "cf04ad95-5cd1-4639-a6f6-b9b9b21024b5": {
+          "af0b89a3-d85d-4c70-83e3-3c6f481429a1": {
+            "e22f4dda-a3b8-4ba2-bd6d-f138099aee1f": {
+              "5efc1798-b353-42bb-be0c-3a6893c25794": {}
+            }
+          }
+        },
+        "e22f4dda-a3b8-4ba2-bd6d-f138099aee1f": {
+          "a7020967-d625-42ce-9d73-42db63f5efc5": {
+            "c4a31be6-2ac7-4454-8f44-0cfc4e5e1142": {
+              "f31944df-c1a8-4606-a4ad-64038656f215": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2f5dc1e9-1ab0-4fb3-97e9-0e5c468e68f8": {
+            "66169294-ba2c-4a97-84bc-e4f807431e4e": {
+              "6397bc68-c4d1-4552-80cd-26945ea64442": {}
+            }
+          },
+          "3a1678d8-2172-49b2-b116-ee293cd8ede0": {
+            "66169294-ba2c-4a97-84bc-e4f807431e4e": {
+              "f9cbfa00-3a53-401a-888c-4c198771ccce": {}
+            }
+          },
+          "b3404b8e-ec90-4ba5-9ff3-ef542b23dd89": {
+            "66169294-ba2c-4a97-84bc-e4f807431e4e": {
+              "84a34eff-f62f-4727-ab0b-718ca9fe27e0": {}
+            }
+          }
+        },
+        "outputs": {
+          "ca7d3125-921a-48c3-9054-5ad7b0c328bc": {
+            "dd8e65fe-188d-4d1c-9f37-aab1654fbcb2": {
+              "buffer": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "cf04ad95-5cd1-4639-a6f6-b9b9b21024b5": {
+          "coordinates": [
+            -110.71190476190469,
+            -190.71428571428572
+          ],
+          "name": "insert suite name",
+          "prototype": "16bbd780-0d33-417e-8e96-3da9038b285e",
+          "params": {}
+        },
+        "c4a31be6-2ac7-4454-8f44-0cfc4e5e1142": {
+          "coordinates": [
+            -105.04523809523812,
+            104.28571428571422
+          ],
+          "name": "insert case name",
+          "prototype": "840b6e9e-bd69-4e7e-a119-a25ff7756492",
+          "params": {}
+        },
+        "a97257fb-4a43-4b12-9b74-41bf9416ff9d": {
+          "coordinates": [
+            153.50424107142857,
+            -186.3887648809524
+          ],
+          "name": "insert assertion",
+          "prototype": "08ea2df1-bef0-40d8-9e40-f71631d71eb9",
+          "params": {}
+        },
+        "66169294-ba2c-4a97-84bc-e4f807431e4e": {
+          "coordinates": [
+            -307.0642857142857,
+            -7.690476190476204
+          ],
+          "name": "build context",
+          "prototype": "4dd77365-a18d-45ef-8ecb-8639151bc64b"
+        },
+        "a8d98e3d-3168-473f-8f0e-1685eee32aae": {
+          "coordinates": [
+            158.42142857142858,
+            113.39682539682536
+          ],
+          "name": "insert failure",
+          "prototype": "b4a8455b-cead-4b01-8ca5-540233e892b2",
+          "params": {}
+        },
+        "dd8e65fe-188d-4d1c-9f37-aab1654fbcb2": {
+          "coordinates": [
+            309,
+            58
+          ],
+          "name": "extract buffer",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"buffer\"]"
+          }
+        },
+        "f1533eed-8bf8-45b5-a7cf-0497d2710036": {
+          "coordinates": [
+            156,
+            -38
+          ],
+          "name": "insert case time",
+          "prototype": "925f8f8c-de82-496b-8ee3-9fbbc73f6999",
+          "params": {}
+        },
+        "e22f4dda-a3b8-4ba2-bd6d-f138099aee1f": {
+          "coordinates": [
+            -94,
+            -40
+          ],
+          "name": "insert suite time",
+          "prototype": "06d5b9f5-91a2-4187-952a-5cb7ed73af51",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Records a single assertion into a preprocessed report JSON."
+}

@@ -1,1 +1,108 @@
-{"description":"Inserts bearer token into a HTTP request header.","interface":{"inputs":{"84d949e6-dadd-4a81-b5e9-0625da43c8ae":{"description":"","type":"any","name":"headers"},"1c98fc7c-432f-40c4-84f4-4253b0bbefc9":{"description":"","type":"any","name":"token"}},"outputs":{"444e0ab1-5053-4a77-bed3-e5061f3b7d10":{"description":"","type":"any","name":"headers"}}},"implementations":{"cranq":{"nodes":{"5200ec61-2c89-402e-bb11-ed6200ce1709":{"coordinates":[41,93],"description":"","params":{"25aa567c-3316-4206-b42e-4cfe6a67b0c7":"\"Bearer {token}\""},"prototype":"d57766a1-8ced-4ed9-ba56-f6b3988d7d67","name":"build auth header"},"3ae29c02-c517-42f2-b212-644a9c15f0b5":{"coordinates":[74,-77],"description":"","params":{"922a1964-91d4-4ad3-a9e4-7d245662a978":"\"Authorization\""},"prototype":"3966e767-b7a7-4221-961d-338a13d18c57","name":"add auth header"},"0c85cffb-f50b-4be2-8b0e-4168feb38538":{"coordinates":[-88,41],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"token\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"wrap token"}},"connections":{"5200ec61-2c89-402e-bb11-ed6200ce1709":{"d6272c3f-069b-4af8-8d4c-fe762a581c40":{"3ae29c02-c517-42f2-b212-644a9c15f0b5":{"0ab0c723-793b-48a1-87d5-d64267665bd3":{"description":""}}}},"0c85cffb-f50b-4be2-8b0e-4168feb38538":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"5200ec61-2c89-402e-bb11-ed6200ce1709":{"d0eb3b1c-04b8-4b95-96ee-76b37fc067c6":{"description":""}}}}},"forwards":{"inputs":{"84d949e6-dadd-4a81-b5e9-0625da43c8ae":{"3ae29c02-c517-42f2-b212-644a9c15f0b5":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{}}},"1c98fc7c-432f-40c4-84f4-4253b0bbefc9":{"0c85cffb-f50b-4be2-8b0e-4168feb38538":{"token":{}}}},"outputs":{"444e0ab1-5053-4a77-bed3-e5061f3b7d10":{"3ae29c02-c517-42f2-b212-644a9c15f0b5":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{}}}}}}},"name":"io/http/Bearer token inserter"}
+{
+  "description": "Inserts bearer token into a HTTP request header.",
+  "interface": {
+    "inputs": {
+      "84d949e6-dadd-4a81-b5e9-0625da43c8ae": {
+        "description": "",
+        "type": "any",
+        "name": "headers"
+      },
+      "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {
+        "description": "",
+        "type": "any",
+        "name": "token"
+      }
+    },
+    "outputs": {
+      "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+        "description": "",
+        "type": "any",
+        "name": "headers"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5200ec61-2c89-402e-bb11-ed6200ce1709": {
+          "coordinates": [
+            41,
+            93
+          ],
+          "description": "",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"Bearer {token}\""
+          },
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "name": "build auth header"
+        },
+        "3ae29c02-c517-42f2-b212-644a9c15f0b5": {
+          "coordinates": [
+            74,
+            -77
+          ],
+          "description": "",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Authorization\""
+          },
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "add auth header"
+        },
+        "0c85cffb-f50b-4be2-8b0e-4168feb38538": {
+          "coordinates": [
+            -88,
+            41
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"token\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "wrap token"
+        }
+      },
+      "connections": {
+        "5200ec61-2c89-402e-bb11-ed6200ce1709": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "3ae29c02-c517-42f2-b212-644a9c15f0b5": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "0c85cffb-f50b-4be2-8b0e-4168feb38538": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "5200ec61-2c89-402e-bb11-ed6200ce1709": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "84d949e6-dadd-4a81-b5e9-0625da43c8ae": {
+            "3ae29c02-c517-42f2-b212-644a9c15f0b5": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {
+            "0c85cffb-f50b-4be2-8b0e-4168feb38538": {
+              "token": {}
+            }
+          }
+        },
+        "outputs": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "3ae29c02-c517-42f2-b212-644a9c15f0b5": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/http/Bearer token inserter"
+}

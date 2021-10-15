@@ -1,1 +1,101 @@
-{"description":"Example node, that demonstrates the basic usage of array builders","interface":{"inputs":{"bd4b8f16-f0ac-4ba2-b308-8061ef00a3fd":{"description":"","type":"any","name":"run"}},"outputs":{"d2092b10-5475-48e5-90bc-1a96caf00485":{"description":"","type":"any","name":"array"}}},"implementations":{"cranq":{"nodes":{"89e28f61-f34e-45d9-aa27-67801f7b9c9a":{"coordinates":[-75,-75],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"0"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"0"},"92a6bda1-daf1-429f-80f0-bf5c0928a5ba":{"coordinates":[-91,128],"description":"","params":{"543f8ad2-7755-44f6-bc9b-e6208c87b15a":"4"},"prototype":"485b6519-9402-4e78-8599-47ad52c92b2f","name":"4"},"b945998e-5f43-43c9-b0b9-8a9d987ed504":{"coordinates":[91,7],"description":"","params":{},"prototype":"28bc82de-76de-427e-8e2c-f0114cee3475","name":"Builder A"}},"connections":{"89e28f61-f34e-45d9-aa27-67801f7b9c9a":{"e7a0df14-dc8c-41bd-8aba-367fdb468ce3":{"b945998e-5f43-43c9-b0b9-8a9d987ed504":{"2813c5a2-d4d6-42ce-a52f-9def6df97814":{"description":""}}}},"92a6bda1-daf1-429f-80f0-bf5c0928a5ba":{"data":{"89e28f61-f34e-45d9-aa27-67801f7b9c9a":{"0b28df10-b056-4666-ae14-2357d747f7b9":{"description":""}},"b945998e-5f43-43c9-b0b9-8a9d987ed504":{"ed11e46e-595d-4515-8681-ff35c7a555c6":{"description":""}}}}},"forwards":{"inputs":{"bd4b8f16-f0ac-4ba2-b308-8061ef00a3fd":{"92a6bda1-daf1-429f-80f0-bf5c0928a5ba":{"read":{}}}},"outputs":{"d2092b10-5475-48e5-90bc-1a96caf00485":{"b945998e-5f43-43c9-b0b9-8a9d987ed504":{"c0facb18-50d6-464f-8c91-d6255080b146":{}}}}}}},"name":"tutorials/data/Builder (array) example"}
+{
+  "description": "Example node, that demonstrates the basic usage of array builders",
+  "interface": {
+    "inputs": {
+      "bd4b8f16-f0ac-4ba2-b308-8061ef00a3fd": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "d2092b10-5475-48e5-90bc-1a96caf00485": {
+        "description": "",
+        "type": "any",
+        "name": "array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "89e28f61-f34e-45d9-aa27-67801f7b9c9a": {
+          "coordinates": [
+            -75,
+            -75
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "0"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "0"
+        },
+        "92a6bda1-daf1-429f-80f0-bf5c0928a5ba": {
+          "coordinates": [
+            -91,
+            128
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "4"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "4"
+        },
+        "b945998e-5f43-43c9-b0b9-8a9d987ed504": {
+          "coordinates": [
+            91,
+            7
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
+          "name": "Builder A"
+        }
+      },
+      "connections": {
+        "89e28f61-f34e-45d9-aa27-67801f7b9c9a": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "b945998e-5f43-43c9-b0b9-8a9d987ed504": {
+              "2813c5a2-d4d6-42ce-a52f-9def6df97814": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "92a6bda1-daf1-429f-80f0-bf5c0928a5ba": {
+          "data": {
+            "89e28f61-f34e-45d9-aa27-67801f7b9c9a": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            },
+            "b945998e-5f43-43c9-b0b9-8a9d987ed504": {
+              "ed11e46e-595d-4515-8681-ff35c7a555c6": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bd4b8f16-f0ac-4ba2-b308-8061ef00a3fd": {
+            "92a6bda1-daf1-429f-80f0-bf5c0928a5ba": {
+              "read": {}
+            }
+          }
+        },
+        "outputs": {
+          "d2092b10-5475-48e5-90bc-1a96caf00485": {
+            "b945998e-5f43-43c9-b0b9-8a9d987ed504": {
+              "c0facb18-50d6-464f-8c91-d6255080b146": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Builder (array) example"
+}

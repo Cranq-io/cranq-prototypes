@@ -1,1 +1,32 @@
-{"implementations":{"es6-node":{"dependencies":{"npm":{"junit-xml":{"description":""}}},"inputFunctions":{"02fe64e5-60be-4623-8bef-6fbc0dbdc1e6":"const {getJunitXml} = require(\"junit-xml\");\noutputs.xml(getJunitXml(data), tag);"}}},"interface":{"inputs":{"02fe64e5-60be-4623-8bef-6fbc0dbdc1e6":{"type":"any","name":"json"}},"outputs":{"da0919f8-f1f3-4a8a-8def-03360c87bdb4":{"type":"any","name":"xml"}}},"name":"testing/reporters/junit/Serializer","description":"Serializes the JSON object representation of a JUnit report to XML.\nUses https://www.npmjs.com/package/junit-xml. "}
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "junit-xml": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "02fe64e5-60be-4623-8bef-6fbc0dbdc1e6": "const {getJunitXml} = require(\"junit-xml\");\noutputs.xml(getJunitXml(data), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "02fe64e5-60be-4623-8bef-6fbc0dbdc1e6": {
+        "type": "any",
+        "name": "json"
+      }
+    },
+    "outputs": {
+      "da0919f8-f1f3-4a8a-8def-03360c87bdb4": {
+        "type": "any",
+        "name": "xml"
+      }
+    }
+  },
+  "name": "testing/reporters/junit/Serializer",
+  "description": "Serializes the JSON object representation of a JUnit report to XML.\nUses https://www.npmjs.com/package/junit-xml. "
+}

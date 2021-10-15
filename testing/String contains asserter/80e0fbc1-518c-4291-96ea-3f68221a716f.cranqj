@@ -1,1 +1,83 @@
-{"name":"testing/String contains asserter","interface":{"inputs":{"ec315234-0ef3-434a-adfa-1505cc936936":{"type":"any","name":"string"},"e90fb401-5cf0-41aa-968e-561efa56192e":{"type":"any","name":"substring"}},"outputs":{"ed0b6029-458d-4683-98c3-2c7418414dcf":{"type":"any","name":"assertion"}}},"implementations":{"cranq":{"connections":{"d61c77a3-9b43-4774-a203-f82994d51df9":{"bcdf00ed-c426-4def-a5e8-c46dacb999b4":{"2baa2c46-76d2-44e2-b25a-01c07dfdf840":{"2e61b0a5-85a3-4994-9748-cfd04bacb66d":{}}}}},"forwards":{"inputs":{"ec315234-0ef3-434a-adfa-1505cc936936":{"d61c77a3-9b43-4774-a203-f82994d51df9":{"409537ec-71f1-4cb6-9182-593db78f95f0":{}},"2baa2c46-76d2-44e2-b25a-01c07dfdf840":{"802dd93c-3539-4302-ba8b-fbb41e91831b":{}}},"e90fb401-5cf0-41aa-968e-561efa56192e":{"d61c77a3-9b43-4774-a203-f82994d51df9":{"128781f4-ab0b-404a-8e59-e6194693916b":{}},"2baa2c46-76d2-44e2-b25a-01c07dfdf840":{"dce20fa8-359e-463b-bb1a-6c9221759d8f":{}}}},"outputs":{"ed0b6029-458d-4683-98c3-2c7418414dcf":{"2baa2c46-76d2-44e2-b25a-01c07dfdf840":{"207e4ad2-ba4c-4146-98da-1898a56bb067":{}}}}},"nodes":{"d61c77a3-9b43-4774-a203-f82994d51df9":{"coordinates":[-26,-60.5],"name":"contains substring?","prototype":"0c5e27a9-1960-4f78-b984-ce90f7f38f30","params":{}},"2baa2c46-76d2-44e2-b25a-01c07dfdf840":{"coordinates":[28,71.5],"name":"build assertion","prototype":"96f3e9b5-3694-4d0d-b420-e5c7500fd848","params":{"4b903c86-5f3c-48cb-93e5-0357f9a0b0f5":"\"string contains\""}}}}}}
+{
+  "name": "testing/String contains asserter",
+  "interface": {
+    "inputs": {
+      "ec315234-0ef3-434a-adfa-1505cc936936": {
+        "type": "any",
+        "name": "string"
+      },
+      "e90fb401-5cf0-41aa-968e-561efa56192e": {
+        "type": "any",
+        "name": "substring"
+      }
+    },
+    "outputs": {
+      "ed0b6029-458d-4683-98c3-2c7418414dcf": {
+        "type": "any",
+        "name": "assertion"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "d61c77a3-9b43-4774-a203-f82994d51df9": {
+          "bcdf00ed-c426-4def-a5e8-c46dacb999b4": {
+            "2baa2c46-76d2-44e2-b25a-01c07dfdf840": {
+              "2e61b0a5-85a3-4994-9748-cfd04bacb66d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ec315234-0ef3-434a-adfa-1505cc936936": {
+            "d61c77a3-9b43-4774-a203-f82994d51df9": {
+              "409537ec-71f1-4cb6-9182-593db78f95f0": {}
+            },
+            "2baa2c46-76d2-44e2-b25a-01c07dfdf840": {
+              "802dd93c-3539-4302-ba8b-fbb41e91831b": {}
+            }
+          },
+          "e90fb401-5cf0-41aa-968e-561efa56192e": {
+            "d61c77a3-9b43-4774-a203-f82994d51df9": {
+              "128781f4-ab0b-404a-8e59-e6194693916b": {}
+            },
+            "2baa2c46-76d2-44e2-b25a-01c07dfdf840": {
+              "dce20fa8-359e-463b-bb1a-6c9221759d8f": {}
+            }
+          }
+        },
+        "outputs": {
+          "ed0b6029-458d-4683-98c3-2c7418414dcf": {
+            "2baa2c46-76d2-44e2-b25a-01c07dfdf840": {
+              "207e4ad2-ba4c-4146-98da-1898a56bb067": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "d61c77a3-9b43-4774-a203-f82994d51df9": {
+          "coordinates": [
+            -26,
+            -60.5
+          ],
+          "name": "contains substring?",
+          "prototype": "0c5e27a9-1960-4f78-b984-ce90f7f38f30",
+          "params": {}
+        },
+        "2baa2c46-76d2-44e2-b25a-01c07dfdf840": {
+          "coordinates": [
+            28,
+            71.5
+          ],
+          "name": "build assertion",
+          "prototype": "96f3e9b5-3694-4d0d-b420-e5c7500fd848",
+          "params": {
+            "4b903c86-5f3c-48cb-93e5-0357f9a0b0f5": "\"string contains\""
+          }
+        }
+      }
+    }
+  }
+}

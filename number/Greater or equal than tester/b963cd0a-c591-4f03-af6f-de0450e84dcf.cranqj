@@ -1,1 +1,108 @@
-{"description":"Tests whether the value is greater or equal than the reference","interface":{"inputs":{"51066c1d-ae64-48f5-8d18-63d9cda9f2ee":{"description":"The value to test against the reference","type":"number","name":"value"},"fa70beab-7306-4d15-9aa6-d808755a2a02":{"description":"The reference to compare the value with","type":"number","name":"reference"}},"outputs":{"16e781b0-5e94-4e62-8c67-8a2aff19e0dc":{"description":"Whether the value is greater or equal than the reference","type":"boolean","name":"greater or equal"}}},"implementations":{"cranq":{"nodes":{"8feb760d-b98a-4323-b88e-7e90f87ed33c":{"coordinates":[150,1],"description":"","params":{},"prototype":"39e5f41a-9931-4125-8857-1a0fdf6eba7c","name":"or"},"27c5b7bd-efb3-47b5-aef4-7e382dcc4825":{"coordinates":[21,-60],"description":"","params":{},"prototype":"81881ae5-e545-4ff2-a9d4-ee8d86980a0f","name":"is greeter"},"52c1f97b-8a04-45d0-810c-96b566ac25fd":{"coordinates":[22,97],"description":"","params":{},"prototype":"0497ba12-7946-4103-b58b-5e24cee0d46a","name":"is equal"}},"connections":{"27c5b7bd-efb3-47b5-aef4-7e382dcc4825":{"5d88b9c8-0961-45fb-b196-03194f84bb36":{"8feb760d-b98a-4323-b88e-7e90f87ed33c":{"8ec8a078-5e9b-46bb-81ee-73036e73be39":{"description":""}}}},"52c1f97b-8a04-45d0-810c-96b566ac25fd":{"66ea4495-b5be-4650-9448-c802141b82cd":{"8feb760d-b98a-4323-b88e-7e90f87ed33c":{"b14a43ef-20d9-406b-b8df-2ae35ce3cd76":{"description":""}}}}},"forwards":{"inputs":{"51066c1d-ae64-48f5-8d18-63d9cda9f2ee":{"27c5b7bd-efb3-47b5-aef4-7e382dcc4825":{"7b679ba7-414d-4173-8a23-29438816b480":{}},"52c1f97b-8a04-45d0-810c-96b566ac25fd":{"50e32f24-30af-4721-9e0a-89e85a9ee240":{}}},"fa70beab-7306-4d15-9aa6-d808755a2a02":{"27c5b7bd-efb3-47b5-aef4-7e382dcc4825":{"7eef3ae2-2380-4f3e-9f5e-ff0f3e036d76":{}},"52c1f97b-8a04-45d0-810c-96b566ac25fd":{"2a91d8d8-a748-4135-9f8f-a7f200d97e6d":{}}}},"outputs":{"16e781b0-5e94-4e62-8c67-8a2aff19e0dc":{"8feb760d-b98a-4323-b88e-7e90f87ed33c":{"9f059fac-fb54-456b-a7e3-5f2e22261b7c":{}}}}}}},"name":"number/Greater or equal than tester"}
+{
+  "description": "Tests whether the value is greater or equal than the reference",
+  "interface": {
+    "inputs": {
+      "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {
+        "description": "The value to test against the reference",
+        "type": "number",
+        "name": "value"
+      },
+      "fa70beab-7306-4d15-9aa6-d808755a2a02": {
+        "description": "The reference to compare the value with",
+        "type": "number",
+        "name": "reference"
+      }
+    },
+    "outputs": {
+      "16e781b0-5e94-4e62-8c67-8a2aff19e0dc": {
+        "description": "Whether the value is greater or equal than the reference",
+        "type": "boolean",
+        "name": "greater or equal"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8feb760d-b98a-4323-b88e-7e90f87ed33c": {
+          "coordinates": [
+            150,
+            1
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "39e5f41a-9931-4125-8857-1a0fdf6eba7c",
+          "name": "or"
+        },
+        "27c5b7bd-efb3-47b5-aef4-7e382dcc4825": {
+          "coordinates": [
+            21,
+            -60
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "81881ae5-e545-4ff2-a9d4-ee8d86980a0f",
+          "name": "is greeter"
+        },
+        "52c1f97b-8a04-45d0-810c-96b566ac25fd": {
+          "coordinates": [
+            22,
+            97
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a",
+          "name": "is equal"
+        }
+      },
+      "connections": {
+        "27c5b7bd-efb3-47b5-aef4-7e382dcc4825": {
+          "5d88b9c8-0961-45fb-b196-03194f84bb36": {
+            "8feb760d-b98a-4323-b88e-7e90f87ed33c": {
+              "8ec8a078-5e9b-46bb-81ee-73036e73be39": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "52c1f97b-8a04-45d0-810c-96b566ac25fd": {
+          "66ea4495-b5be-4650-9448-c802141b82cd": {
+            "8feb760d-b98a-4323-b88e-7e90f87ed33c": {
+              "b14a43ef-20d9-406b-b8df-2ae35ce3cd76": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {
+            "27c5b7bd-efb3-47b5-aef4-7e382dcc4825": {
+              "7b679ba7-414d-4173-8a23-29438816b480": {}
+            },
+            "52c1f97b-8a04-45d0-810c-96b566ac25fd": {
+              "50e32f24-30af-4721-9e0a-89e85a9ee240": {}
+            }
+          },
+          "fa70beab-7306-4d15-9aa6-d808755a2a02": {
+            "27c5b7bd-efb3-47b5-aef4-7e382dcc4825": {
+              "7eef3ae2-2380-4f3e-9f5e-ff0f3e036d76": {}
+            },
+            "52c1f97b-8a04-45d0-810c-96b566ac25fd": {
+              "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": {}
+            }
+          }
+        },
+        "outputs": {
+          "16e781b0-5e94-4e62-8c67-8a2aff19e0dc": {
+            "8feb760d-b98a-4323-b88e-7e90f87ed33c": {
+              "9f059fac-fb54-456b-a7e3-5f2e22261b7c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "number/Greater or equal than tester"
+}

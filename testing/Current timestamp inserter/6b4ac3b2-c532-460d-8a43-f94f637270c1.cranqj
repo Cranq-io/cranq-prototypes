@@ -1,1 +1,72 @@
-{"name":"testing/Current timestamp inserter","interface":{"inputs":{"0050843f-47ff-43e3-8796-fb64fc64a35c":{"type":"{string:any}","name":"assertion"}},"outputs":{"c673e007-399c-429d-b549-58cc9498f3c8":{"type":"typeof(dict)","name":"assertion"}}},"implementations":{"cranq":{"connections":{"6bdfffb0-a019-48e3-afbc-62e491090baa":{"b57a2f23-7db9-4007-9c94-c66251abede3":{"b3d20016-a8dc-4da1-a6fc-d2781e727282":{"0ab0c723-793b-48a1-87d5-d64267665bd3":{}}}}},"forwards":{"inputs":{"0050843f-47ff-43e3-8796-fb64fc64a35c":{"b3d20016-a8dc-4da1-a6fc-d2781e727282":{"96243772-f5b9-49b6-b60f-6841b5c8a535":{}},"6bdfffb0-a019-48e3-afbc-62e491090baa":{"4181cd34-31ac-4d3b-8d19-3661105e6d1e":{}}}},"outputs":{"c673e007-399c-429d-b549-58cc9498f3c8":{"b3d20016-a8dc-4da1-a6fc-d2781e727282":{"7adbf554-0042-42c0-90b4-03b5d1406a88":{}}}}},"nodes":{"6bdfffb0-a019-48e3-afbc-62e491090baa":{"coordinates":[-34.5,-72.5],"name":"get timestamp","prototype":"52636841-e2b9-4b13-ad5b-06eb8d1eb701","params":{}},"b3d20016-a8dc-4da1-a6fc-d2781e727282":{"coordinates":[35.5,81.5],"name":"insert timestamp","prototype":"3966e767-b7a7-4221-961d-338a13d18c57","params":{"922a1964-91d4-4ad3-a9e4-7d245662a978":"\"timestamp\""}}}}},"description":"Inserts current timestamp into an assertion record. "}
+{
+  "name": "testing/Current timestamp inserter",
+  "interface": {
+    "inputs": {
+      "0050843f-47ff-43e3-8796-fb64fc64a35c": {
+        "type": "{string:any}",
+        "name": "assertion"
+      }
+    },
+    "outputs": {
+      "c673e007-399c-429d-b549-58cc9498f3c8": {
+        "type": "typeof(dict)",
+        "name": "assertion"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "6bdfffb0-a019-48e3-afbc-62e491090baa": {
+          "b57a2f23-7db9-4007-9c94-c66251abede3": {
+            "b3d20016-a8dc-4da1-a6fc-d2781e727282": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0050843f-47ff-43e3-8796-fb64fc64a35c": {
+            "b3d20016-a8dc-4da1-a6fc-d2781e727282": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            },
+            "6bdfffb0-a019-48e3-afbc-62e491090baa": {
+              "4181cd34-31ac-4d3b-8d19-3661105e6d1e": {}
+            }
+          }
+        },
+        "outputs": {
+          "c673e007-399c-429d-b549-58cc9498f3c8": {
+            "b3d20016-a8dc-4da1-a6fc-d2781e727282": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "6bdfffb0-a019-48e3-afbc-62e491090baa": {
+          "coordinates": [
+            -34.5,
+            -72.5
+          ],
+          "name": "get timestamp",
+          "prototype": "52636841-e2b9-4b13-ad5b-06eb8d1eb701",
+          "params": {}
+        },
+        "b3d20016-a8dc-4da1-a6fc-d2781e727282": {
+          "coordinates": [
+            35.5,
+            81.5
+          ],
+          "name": "insert timestamp",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"timestamp\""
+          }
+        }
+      }
+    }
+  },
+  "description": "Inserts current timestamp into an assertion record. "
+}

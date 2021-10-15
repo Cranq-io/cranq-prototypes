@@ -1,1 +1,28 @@
-{"description":"Returns the number rounded to the nearest integer.","interface":{"inputs":{"1eeeb864-32e8-4ccd-874f-99105df4b7d6":{"type":"number","name":"number"}},"outputs":{"b427a068-28dd-4949-be83-d08c1374ea32":{"type":"number","name":"rounded"}}},"implementations":{"es6-node":{"cleanupFunction":"","dependencies":{},"initFunction":"","inputFunctions":{"1eeeb864-32e8-4ccd-874f-99105df4b7d6":"outputs.rounded(Math.round(data), tag);"}}},"name":"number/Rounder"}
+{
+  "description": "Returns the number rounded to the nearest integer.",
+  "interface": {
+    "inputs": {
+      "1eeeb864-32e8-4ccd-874f-99105df4b7d6": {
+        "type": "number",
+        "name": "number"
+      }
+    },
+    "outputs": {
+      "b427a068-28dd-4949-be83-d08c1374ea32": {
+        "type": "number",
+        "name": "rounded"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "1eeeb864-32e8-4ccd-874f-99105df4b7d6": "outputs.rounded(Math.round(data), tag);"
+      }
+    }
+  },
+  "name": "number/Rounder"
+}

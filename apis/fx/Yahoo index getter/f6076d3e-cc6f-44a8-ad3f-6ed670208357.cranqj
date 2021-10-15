@@ -1,1 +1,75 @@
-{"description":"","interface":{"inputs":{"7d2a81f4-b69d-42fe-82b5-bdc045b081de":{"description":"","type":"any","name":"symbol"}},"outputs":{"17973189-7d68-4fd2-a5dc-d9ff0af3a366":{"description":"","type":"any","name":"index"}}},"implementations":{"cranq":{"nodes":{"3319bb19-fdd7-4cce-9277-03c5848b1efa":{"coordinates":[-41,-83],"description":"","params":{},"prototype":"fc2cea40-7301-49d2-9153-77bb4a811605","name":"fetch instrument"},"9bae409c-07f7-486d-ad53-f71ee2a0098b":{"coordinates":[57,88],"description":"","params":{"927e6b17-97e0-44de-887f-57204b7a1f9b":"[\"chart\", \"result\", \"0\", \"meta\", \"regularMarketPrice\"]"},"prototype":"d8608f30-9132-4d0f-992e-9d66f6636256","name":"query index"}},"connections":{"3319bb19-fdd7-4cce-9277-03c5848b1efa":{"97e587fb-0703-4183-b5fc-5fc7866c5661":{"9bae409c-07f7-486d-ad53-f71ee2a0098b":{"cf2ad35e-cfac-4c59-ab25-30a4dd08111f":{"description":""}}}}},"forwards":{"inputs":{"7d2a81f4-b69d-42fe-82b5-bdc045b081de":{"3319bb19-fdd7-4cce-9277-03c5848b1efa":{"045fe2de-d612-47da-b91c-4af808edd741":{}}}},"outputs":{"17973189-7d68-4fd2-a5dc-d9ff0af3a366":{"9bae409c-07f7-486d-ad53-f71ee2a0098b":{"b6722d08-460c-465b-a9f1-d1f843500424":{}}}}}}},"name":"apis/fx/Yahoo index getter"}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "7d2a81f4-b69d-42fe-82b5-bdc045b081de": {
+        "description": "",
+        "type": "any",
+        "name": "symbol"
+      }
+    },
+    "outputs": {
+      "17973189-7d68-4fd2-a5dc-d9ff0af3a366": {
+        "description": "",
+        "type": "any",
+        "name": "index"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3319bb19-fdd7-4cce-9277-03c5848b1efa": {
+          "coordinates": [
+            -41,
+            -83
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "fc2cea40-7301-49d2-9153-77bb4a811605",
+          "name": "fetch instrument"
+        },
+        "9bae409c-07f7-486d-ad53-f71ee2a0098b": {
+          "coordinates": [
+            57,
+            88
+          ],
+          "description": "",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"chart\", \"result\", \"0\", \"meta\", \"regularMarketPrice\"]"
+          },
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "name": "query index"
+        }
+      },
+      "connections": {
+        "3319bb19-fdd7-4cce-9277-03c5848b1efa": {
+          "97e587fb-0703-4183-b5fc-5fc7866c5661": {
+            "9bae409c-07f7-486d-ad53-f71ee2a0098b": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7d2a81f4-b69d-42fe-82b5-bdc045b081de": {
+            "3319bb19-fdd7-4cce-9277-03c5848b1efa": {
+              "045fe2de-d612-47da-b91c-4af808edd741": {}
+            }
+          }
+        },
+        "outputs": {
+          "17973189-7d68-4fd2-a5dc-d9ff0af3a366": {
+            "9bae409c-07f7-486d-ad53-f71ee2a0098b": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "apis/fx/Yahoo index getter"
+}

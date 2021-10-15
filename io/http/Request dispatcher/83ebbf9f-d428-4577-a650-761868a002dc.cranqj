@@ -1,1 +1,148 @@
-{"description":"Dispatches HTTP request and outputs response or error.","interface":{"inputs":{"7468e859-6176-4c54-a03a-9039e7024bed":{"type":"\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"","name":"verb"},"e69367fe-1abe-4422-a70a-4d67c614f464":{"type":"string","name":"url"},"50a82f4b-f270-470f-872e-f7f6f2f0fc36":{"type":"{string:string}","name":"headers"},"f11b9873-7a11-4241-9e17-a16496cf783e":{"type":"string","name":"body"}},"outputs":{"09b13a33-348d-458b-b43f-5013a45f4893":{"type":"string","name":"status"},"d057c749-d7a8-4108-adcc-31eb1878349b":{"type":"{string:string}","name":"headers"},"498b10a6-ba52-43d0-a28a-73dc43eaf048":{"type":"string","name":"body"},"4991414b-16a6-4a01-a988-c841eac995c7":{"type":"string","name":"error"}}},"implementations":{"cranq":{"nodes":{"22fba5c3-c3c1-4afa-a53a-b628f6f890fb":{"coordinates":[0,0],"description":"","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"verb\",\"url\",\"headers\",\"body\"]"},"prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","name":"sync request"},"05f9d837-288a-40bb-aadf-cc33002e04b2":{"coordinates":[0,0],"description":"","params":{},"prototype":"dcd9db32-5536-4152-950e-a48ef183552c","name":"dispatch request"},"683f6e8b-715e-4449-94f6-4f67214e1843":{"coordinates":[0,0],"description":"","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"status\",\"headers\",\"body\"]"},"prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","name":"split response"}},"connections":{"22fba5c3-c3c1-4afa-a53a-b628f6f890fb":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"05f9d837-288a-40bb-aadf-cc33002e04b2":{"b176e769-b2ab-45ad-b333-1886030931e3":{"description":""}}}},"05f9d837-288a-40bb-aadf-cc33002e04b2":{"2b56fb5f-6bc5-4f51-8f62-b08957bec6a2":{"683f6e8b-715e-4449-94f6-4f67214e1843":{"6ad86184-6890-4323-8021-3496a682c98e":{"description":""}}}}},"forwards":{"inputs":{"7468e859-6176-4c54-a03a-9039e7024bed":{"22fba5c3-c3c1-4afa-a53a-b628f6f890fb":{"verb":{}}},"e69367fe-1abe-4422-a70a-4d67c614f464":{"22fba5c3-c3c1-4afa-a53a-b628f6f890fb":{"url":{}}},"50a82f4b-f270-470f-872e-f7f6f2f0fc36":{"22fba5c3-c3c1-4afa-a53a-b628f6f890fb":{"headers":{}}},"f11b9873-7a11-4241-9e17-a16496cf783e":{"22fba5c3-c3c1-4afa-a53a-b628f6f890fb":{"body":{}}}},"outputs":{"4991414b-16a6-4a01-a988-c841eac995c7":{"05f9d837-288a-40bb-aadf-cc33002e04b2":{"741875aa-5ef2-4704-a593-f26f3eeddbfa":{}}},"09b13a33-348d-458b-b43f-5013a45f4893":{"683f6e8b-715e-4449-94f6-4f67214e1843":{"status":{}}},"d057c749-d7a8-4108-adcc-31eb1878349b":{"683f6e8b-715e-4449-94f6-4f67214e1843":{"headers":{}}},"498b10a6-ba52-43d0-a28a-73dc43eaf048":{"683f6e8b-715e-4449-94f6-4f67214e1843":{"body":{}}}}}}},"name":"io/http/Request dispatcher"}
+{
+  "description": "Dispatches HTTP request and outputs response or error.",
+  "interface": {
+    "inputs": {
+      "7468e859-6176-4c54-a03a-9039e7024bed": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "verb"
+      },
+      "e69367fe-1abe-4422-a70a-4d67c614f464": {
+        "type": "string",
+        "name": "url"
+      },
+      "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {
+        "type": "{string:string}",
+        "name": "headers"
+      },
+      "f11b9873-7a11-4241-9e17-a16496cf783e": {
+        "type": "string",
+        "name": "body"
+      }
+    },
+    "outputs": {
+      "09b13a33-348d-458b-b43f-5013a45f4893": {
+        "type": "string",
+        "name": "status"
+      },
+      "d057c749-d7a8-4108-adcc-31eb1878349b": {
+        "type": "{string:string}",
+        "name": "headers"
+      },
+      "498b10a6-ba52-43d0-a28a-73dc43eaf048": {
+        "type": "string",
+        "name": "body"
+      },
+      "4991414b-16a6-4a01-a988-c841eac995c7": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"verb\",\"url\",\"headers\",\"body\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync request"
+        },
+        "05f9d837-288a-40bb-aadf-cc33002e04b2": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c",
+          "name": "dispatch request"
+        },
+        "683f6e8b-715e-4449-94f6-4f67214e1843": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"status\",\"headers\",\"body\"]"
+          },
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "name": "split response"
+        }
+      },
+      "connections": {
+        "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "05f9d837-288a-40bb-aadf-cc33002e04b2": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "05f9d837-288a-40bb-aadf-cc33002e04b2": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "683f6e8b-715e-4449-94f6-4f67214e1843": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7468e859-6176-4c54-a03a-9039e7024bed": {
+            "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
+              "verb": {}
+            }
+          },
+          "e69367fe-1abe-4422-a70a-4d67c614f464": {
+            "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
+              "url": {}
+            }
+          },
+          "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {
+            "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
+              "headers": {}
+            }
+          },
+          "f11b9873-7a11-4241-9e17-a16496cf783e": {
+            "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
+              "body": {}
+            }
+          }
+        },
+        "outputs": {
+          "4991414b-16a6-4a01-a988-c841eac995c7": {
+            "05f9d837-288a-40bb-aadf-cc33002e04b2": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            }
+          },
+          "09b13a33-348d-458b-b43f-5013a45f4893": {
+            "683f6e8b-715e-4449-94f6-4f67214e1843": {
+              "status": {}
+            }
+          },
+          "d057c749-d7a8-4108-adcc-31eb1878349b": {
+            "683f6e8b-715e-4449-94f6-4f67214e1843": {
+              "headers": {}
+            }
+          },
+          "498b10a6-ba52-43d0-a28a-73dc43eaf048": {
+            "683f6e8b-715e-4449-94f6-4f67214e1843": {
+              "body": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "io/http/Request dispatcher"
+}

@@ -1,1 +1,183 @@
-{"name":"testing/reporters/junit/Failure inserter","interface":{"inputs":{"702f7a14-45bd-4e0f-bd90-1df31b2c64d1":{"type":"any[] or {string:any}","name":"context"}},"outputs":{"11faf669-100c-4cb2-ae7c-3e2f9071bc63":{"type":"any","name":"context"}}},"implementations":{"cranq":{"connections":{"0316dcf8-24c5-422e-b0d5-a853de31370f":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"c4e8c28f-84d5-47d0-9956-10df14ace0f2":{"1670d7c3-36ce-42d6-8411-b90866ca411a":{}}}},"589baefa-07a4-48e3-a3af-5332e4edbb32":{"dea013e9-cea5-459d-a9a3-5901ff1bb787":{"39d1f899-ca73-4fe0-87cc-088de40f44f2":{"message":{}}}},"737a6e22-4eaa-47e8-bc34-9163b263caf4":{"type":{"39d1f899-ca73-4fe0-87cc-088de40f44f2":{"type":{}}}},"39d1f899-ca73-4fe0-87cc-088de40f44f2":{"synced":{"c4e8c28f-84d5-47d0-9956-10df14ace0f2":{"5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a":{}}}},"c4e8c28f-84d5-47d0-9956-10df14ace0f2":{"eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c":{"6d056eb3-e609-4b48-a02b-6d3411bf2976":{"f58efe33-f70e-4570-ac54-670aaf844385":{}}}},"c56831ab-d3c7-4e09-adfc-005624b52db0":{"buffer":{"c4e8c28f-84d5-47d0-9956-10df14ace0f2":{"0d7e3081-01f4-41bf-b4b3-822ee0990aa3":{}}},"suiteId":{"0316dcf8-24c5-422e-b0d5-a853de31370f":{"1":{}}},"caseId":{"0316dcf8-24c5-422e-b0d5-a853de31370f":{"3":{}}},"assertionId":{"0316dcf8-24c5-422e-b0d5-a853de31370f":{"5":{}}},"assertion":{"737a6e22-4eaa-47e8-bc34-9163b263caf4":{"6ad86184-6890-4323-8021-3496a682c98e":{}},"589baefa-07a4-48e3-a3af-5332e4edbb32":{"c5b11474-026b-41d6-ae55-5cb4013c938b":{}}}}},"forwards":{"inputs":{"702f7a14-45bd-4e0f-bd90-1df31b2c64d1":{"c56831ab-d3c7-4e09-adfc-005624b52db0":{"unsplit":{}},"6d056eb3-e609-4b48-a02b-6d3411bf2976":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{}}}},"outputs":{"11faf669-100c-4cb2-ae7c-3e2f9071bc63":{"6d056eb3-e609-4b48-a02b-6d3411bf2976":{"eb4c2873-890f-4780-a895-53e321f3739e":{}}}}},"nodes":{"589baefa-07a4-48e3-a3af-5332e4edbb32":{"coordinates":[-104.39999999999998,134.33333333333334],"name":"create assertion msg","prototype":"dc3128fc-7bc5-4e14-83b8-c72bb13d0f5a","params":{}},"c4e8c28f-84d5-47d0-9956-10df14ace0f2":{"coordinates":[178.60000000000002,63.66666666666666],"name":"node setter/mutable","prototype":"ec47f31f-a2f2-4f53-ab3e-a5345e5bca41","params":{}},"0316dcf8-24c5-422e-b0d5-a853de31370f":{"coordinates":[29.600000000000023,-134.33333333333334],"name":"build path","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"0":"\"suites\"","2":"\"testCases\"","4":"\"failures\"","ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[0, 1, 2, 3, 4, 5]"}},"39d1f899-ca73-4fe0-87cc-088de40f44f2":{"coordinates":[32.60000000000002,175.66666666666666],"name":"build failure node","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"message\", \"type\"]"}},"737a6e22-4eaa-47e8-bc34-9163b263caf4":{"coordinates":[7.600000000000023,14.666666666666657],"name":"get assertion type","prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"type\"]"}},"6d056eb3-e609-4b48-a02b-6d3411bf2976":{"coordinates":[218.60000000000002,-62.33333333333334],"name":"hold context","prototype":"62c8e48b-0926-4fa7-8322-02975bf4dc41","params":{}},"c56831ab-d3c7-4e09-adfc-005624b52db0":{"coordinates":[-221.02142857142854,44.04761904761904],"name":"get params","prototype":"73303290-6d1e-44cf-9414-66769cbb8e91","params":{"7b39d568-3d5a-46fe-8670-3355f60c2746":"[\"suiteId\", \"caseId\", \"assertionId\", \"assertion\", \"buffer\"]"}}}}}}
+{
+  "name": "testing/reporters/junit/Failure inserter",
+  "interface": {
+    "inputs": {
+      "702f7a14-45bd-4e0f-bd90-1df31b2c64d1": {
+        "type": "any[] or {string:any}",
+        "name": "context"
+      }
+    },
+    "outputs": {
+      "11faf669-100c-4cb2-ae7c-3e2f9071bc63": {
+        "type": "any",
+        "name": "context"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "0316dcf8-24c5-422e-b0d5-a853de31370f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c4e8c28f-84d5-47d0-9956-10df14ace0f2": {
+              "1670d7c3-36ce-42d6-8411-b90866ca411a": {}
+            }
+          }
+        },
+        "589baefa-07a4-48e3-a3af-5332e4edbb32": {
+          "dea013e9-cea5-459d-a9a3-5901ff1bb787": {
+            "39d1f899-ca73-4fe0-87cc-088de40f44f2": {
+              "message": {}
+            }
+          }
+        },
+        "737a6e22-4eaa-47e8-bc34-9163b263caf4": {
+          "type": {
+            "39d1f899-ca73-4fe0-87cc-088de40f44f2": {
+              "type": {}
+            }
+          }
+        },
+        "39d1f899-ca73-4fe0-87cc-088de40f44f2": {
+          "synced": {
+            "c4e8c28f-84d5-47d0-9956-10df14ace0f2": {
+              "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {}
+            }
+          }
+        },
+        "c4e8c28f-84d5-47d0-9956-10df14ace0f2": {
+          "eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c": {
+            "6d056eb3-e609-4b48-a02b-6d3411bf2976": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "c56831ab-d3c7-4e09-adfc-005624b52db0": {
+          "buffer": {
+            "c4e8c28f-84d5-47d0-9956-10df14ace0f2": {
+              "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {}
+            }
+          },
+          "suiteId": {
+            "0316dcf8-24c5-422e-b0d5-a853de31370f": {
+              "1": {}
+            }
+          },
+          "caseId": {
+            "0316dcf8-24c5-422e-b0d5-a853de31370f": {
+              "3": {}
+            }
+          },
+          "assertionId": {
+            "0316dcf8-24c5-422e-b0d5-a853de31370f": {
+              "5": {}
+            }
+          },
+          "assertion": {
+            "737a6e22-4eaa-47e8-bc34-9163b263caf4": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "589baefa-07a4-48e3-a3af-5332e4edbb32": {
+              "c5b11474-026b-41d6-ae55-5cb4013c938b": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "702f7a14-45bd-4e0f-bd90-1df31b2c64d1": {
+            "c56831ab-d3c7-4e09-adfc-005624b52db0": {
+              "unsplit": {}
+            },
+            "6d056eb3-e609-4b48-a02b-6d3411bf2976": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "11faf669-100c-4cb2-ae7c-3e2f9071bc63": {
+            "6d056eb3-e609-4b48-a02b-6d3411bf2976": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "589baefa-07a4-48e3-a3af-5332e4edbb32": {
+          "coordinates": [
+            -104.39999999999998,
+            134.33333333333334
+          ],
+          "name": "create assertion msg",
+          "prototype": "dc3128fc-7bc5-4e14-83b8-c72bb13d0f5a",
+          "params": {}
+        },
+        "c4e8c28f-84d5-47d0-9956-10df14ace0f2": {
+          "coordinates": [
+            178.60000000000002,
+            63.66666666666666
+          ],
+          "name": "node setter/mutable",
+          "prototype": "ec47f31f-a2f2-4f53-ab3e-a5345e5bca41",
+          "params": {}
+        },
+        "0316dcf8-24c5-422e-b0d5-a853de31370f": {
+          "coordinates": [
+            29.600000000000023,
+            -134.33333333333334
+          ],
+          "name": "build path",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "0": "\"suites\"",
+            "2": "\"testCases\"",
+            "4": "\"failures\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1, 2, 3, 4, 5]"
+          }
+        },
+        "39d1f899-ca73-4fe0-87cc-088de40f44f2": {
+          "coordinates": [
+            32.60000000000002,
+            175.66666666666666
+          ],
+          "name": "build failure node",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"message\", \"type\"]"
+          }
+        },
+        "737a6e22-4eaa-47e8-bc34-9163b263caf4": {
+          "coordinates": [
+            7.600000000000023,
+            14.666666666666657
+          ],
+          "name": "get assertion type",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"type\"]"
+          }
+        },
+        "6d056eb3-e609-4b48-a02b-6d3411bf2976": {
+          "coordinates": [
+            218.60000000000002,
+            -62.33333333333334
+          ],
+          "name": "hold context",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        },
+        "c56831ab-d3c7-4e09-adfc-005624b52db0": {
+          "coordinates": [
+            -221.02142857142854,
+            44.04761904761904
+          ],
+          "name": "get params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"suiteId\", \"caseId\", \"assertionId\", \"assertion\", \"buffer\"]"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,27 @@
-{"implementations":{"es6-node":{"inputFunctions":{"b96ec769-1577-4abd-a377-1364242d19f5":"const bk = \"000000\";\nconst r = \"FF0000\";\nconst g = \"00FF00\"\nconst b = \"0000FF\";\nconst {value, max} = data;\nconst count = Math.ceil(4 * Math.abs(value) / max);\nif (value > 0) {\n  switch (count) {\n  case 1:\n    outputs.colors([bk, bk, bk, bk, g, bk, bk, bk], tag);\n    break;\n  case 2:\n    outputs.colors([bk, bk, bk, bk, g, g, bk, bk], tag);\n    break;\n  case 3:\n    outputs.colors([bk, bk, bk, bk, g, g, g, bk], tag);\n    break;\n  default:\n    outputs.colors([bk, bk, bk, bk, g, g, g, g], tag);\n    break;\n  }\n} else if (value < 0) {\n  switch (count) {\n  case 1:\n    outputs.colors([bk, bk, bk, r, bk, bk, bk, bk], tag);\n    break;\n  case 2:\n    outputs.colors([bk, bk, r, r, bk, bk, bk, bk], tag);\n    break;\n  case 3:\n    outputs.colors([bk, r, r, r, bk, bk, bk, bk], tag);\n    break;\n  default:\n    outputs.colors([r, r, r, r, bk, bk, bk, bk], tag);\n    break;\n  }\n} else {\n  outputs.colors([bk, bk, bk, b, b, bk, bk, bk], tag);\n}"}}},"interface":{"inputs":{"b96ec769-1577-4abd-a377-1364242d19f5":{"type":"any","name":"value & max"}},"outputs":{"dda60350-8891-4740-95c5-4015e88a2e8f":{"type":"any","name":"colors"}}},"name":"blinkstick/Candlestick generator/_","attributes":{"internal":true}}
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "b96ec769-1577-4abd-a377-1364242d19f5": "const bk = \"000000\";\nconst r = \"FF0000\";\nconst g = \"00FF00\"\nconst b = \"0000FF\";\nconst {value, max} = data;\nconst count = Math.ceil(4 * Math.abs(value) / max);\nif (value > 0) {\n  switch (count) {\n  case 1:\n    outputs.colors([bk, bk, bk, bk, g, bk, bk, bk], tag);\n    break;\n  case 2:\n    outputs.colors([bk, bk, bk, bk, g, g, bk, bk], tag);\n    break;\n  case 3:\n    outputs.colors([bk, bk, bk, bk, g, g, g, bk], tag);\n    break;\n  default:\n    outputs.colors([bk, bk, bk, bk, g, g, g, g], tag);\n    break;\n  }\n} else if (value < 0) {\n  switch (count) {\n  case 1:\n    outputs.colors([bk, bk, bk, r, bk, bk, bk, bk], tag);\n    break;\n  case 2:\n    outputs.colors([bk, bk, r, r, bk, bk, bk, bk], tag);\n    break;\n  case 3:\n    outputs.colors([bk, r, r, r, bk, bk, bk, bk], tag);\n    break;\n  default:\n    outputs.colors([r, r, r, r, bk, bk, bk, bk], tag);\n    break;\n  }\n} else {\n  outputs.colors([bk, bk, bk, b, b, bk, bk, bk], tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "b96ec769-1577-4abd-a377-1364242d19f5": {
+        "type": "any",
+        "name": "value & max"
+      }
+    },
+    "outputs": {
+      "dda60350-8891-4740-95c5-4015e88a2e8f": {
+        "type": "any",
+        "name": "colors"
+      }
+    }
+  },
+  "name": "blinkstick/Candlestick generator/_",
+  "attributes": {
+    "internal": true
+  }
+}

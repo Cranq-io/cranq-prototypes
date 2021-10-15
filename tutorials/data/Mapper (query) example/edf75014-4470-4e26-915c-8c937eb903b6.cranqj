@@ -1,1 +1,73 @@
-{"description":"Example wrapper node that demonstrates the usage of the data/array/Mapper node.","interface":{"inputs":{"9d2bfac8-5ce8-4dd6-9ced-2e514df80b8f":{"description":"","type":"any","name":"run"}},"outputs":{"e0c4dd30-0510-44fa-8696-ede108c55ff5":{"description":"","type":"any","name":"mapped"}}},"implementations":{"cranq":{"nodes":{"4c5cdcdb-d3c9-4adc-8bec-b381ee5d5c9f":{"coordinates":[99,29],"description":"","params":{},"prototype":"2a99f9a9-117c-41a4-8126-1b77e84cfa55","name":"get emp names"},"f7bf1864-650b-485d-b1d8-ac9c1a38dcc8":{"coordinates":[-80,-90],"description":"","params":{},"prototype":"797f08e2-8494-46b6-99ee-ab520ce6f3b0","name":"get employees"}},"connections":{"f7bf1864-650b-485d-b1d8-ac9c1a38dcc8":{"5c95c4ae-8a22-45a4-a94b-6645217b0172":{"4c5cdcdb-d3c9-4adc-8bec-b381ee5d5c9f":{"eb8dfa21-9cb5-49c8-9a77-e0c247f3424a":{"description":""}}}}},"forwards":{"inputs":{"9d2bfac8-5ce8-4dd6-9ced-2e514df80b8f":{"f7bf1864-650b-485d-b1d8-ac9c1a38dcc8":{"41905943-946b-4c12-8068-a6d41535bc1b":{}}}},"outputs":{"e0c4dd30-0510-44fa-8696-ede108c55ff5":{"4c5cdcdb-d3c9-4adc-8bec-b381ee5d5c9f":{"76346e6a-cf3c-4f7a-a216-23272f4fb2df":{}}}}}}},"name":"tutorials/data/Mapper (query) example"}
+{
+  "description": "Example wrapper node that demonstrates the usage of the data/array/Mapper node.",
+  "interface": {
+    "inputs": {
+      "9d2bfac8-5ce8-4dd6-9ced-2e514df80b8f": {
+        "description": "",
+        "type": "any",
+        "name": "run"
+      }
+    },
+    "outputs": {
+      "e0c4dd30-0510-44fa-8696-ede108c55ff5": {
+        "description": "",
+        "type": "any",
+        "name": "mapped"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4c5cdcdb-d3c9-4adc-8bec-b381ee5d5c9f": {
+          "coordinates": [
+            99,
+            29
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "2a99f9a9-117c-41a4-8126-1b77e84cfa55",
+          "name": "get emp names"
+        },
+        "f7bf1864-650b-485d-b1d8-ac9c1a38dcc8": {
+          "coordinates": [
+            -80,
+            -90
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "797f08e2-8494-46b6-99ee-ab520ce6f3b0",
+          "name": "get employees"
+        }
+      },
+      "connections": {
+        "f7bf1864-650b-485d-b1d8-ac9c1a38dcc8": {
+          "5c95c4ae-8a22-45a4-a94b-6645217b0172": {
+            "4c5cdcdb-d3c9-4adc-8bec-b381ee5d5c9f": {
+              "eb8dfa21-9cb5-49c8-9a77-e0c247f3424a": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9d2bfac8-5ce8-4dd6-9ced-2e514df80b8f": {
+            "f7bf1864-650b-485d-b1d8-ac9c1a38dcc8": {
+              "41905943-946b-4c12-8068-a6d41535bc1b": {}
+            }
+          }
+        },
+        "outputs": {
+          "e0c4dd30-0510-44fa-8696-ede108c55ff5": {
+            "4c5cdcdb-d3c9-4adc-8bec-b381ee5d5c9f": {
+              "76346e6a-cf3c-4f7a-a216-23272f4fb2df": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "tutorials/data/Mapper (query) example"
+}

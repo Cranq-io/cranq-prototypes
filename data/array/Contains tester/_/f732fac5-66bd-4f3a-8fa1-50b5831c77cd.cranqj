@@ -1,1 +1,31 @@
-{"description":"","interface":{"inputs":{"a4deaeb7-998b-49aa-a75e-0780f7718f68":{"description":"","type":"any","name":"array & item"}},"outputs":{"efa0fea3-0f9f-427e-843f-2664aead5d18":{"description":"","type":"any","name":"contains"}}},"implementations":{"es6-node":{"dependencies":{},"inputFunctions":{"a4deaeb7-998b-49aa-a75e-0780f7718f68":"outputs.contains(data.array.indexOf(data.item) >= 0, tag)"}}},"name":"data/array/Contains tester/_","attributes":{"internal":true}}
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "a4deaeb7-998b-49aa-a75e-0780f7718f68": {
+        "description": "",
+        "type": "any",
+        "name": "array & item"
+      }
+    },
+    "outputs": {
+      "efa0fea3-0f9f-427e-843f-2664aead5d18": {
+        "description": "",
+        "type": "any",
+        "name": "contains"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "dependencies": {},
+      "inputFunctions": {
+        "a4deaeb7-998b-49aa-a75e-0780f7718f68": "outputs.contains(data.array.indexOf(data.item) >= 0, tag)"
+      }
+    }
+  },
+  "name": "data/array/Contains tester/_",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -1,1 +1,179 @@
-{"name":"db/sqlite3/Row iterator","interface":{"inputs":{"234d8706-b98b-4a40-8bc2-a6ba6a17b5d9":{"type":"any","name":"DB ID"},"f2c08460-570b-4e3c-a28b-940ded4d4082":{"type":"any","name":"SQL"},"aedf1bc7-25a3-40ef-b738-7352526888d5":{"type":"any","name":"params"}},"outputs":{"35a33951-e012-472a-b5ba-a72fff5dd960":{"type":"any","name":"row"},"7a905a6b-7d04-4614-b083-29fcce9a3be7":{"type":"any","name":"done"},"40914d83-9814-4fba-86b1-fa77bf0f3103":{"type":"any","name":"error"},"0ca3fbc8-bff9-4e5a-bd44-ff5eddc167fd":{"type":"any","name":"DB ID"}}},"implementations":{"cranq":{"connections":{"e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{"639fd63d-62df-4fa0-aa51-b8cd38d31dc6":{"b3ce4ca4-4138-4aea-8e53-c651ae333a07":{}}}},"fccf66d8-8067-41ad-8a08-3c2f4c85e742":{"synced":{"e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478":{"options":{}}}},"ec3c9a67-b188-4d07-8af5-c4f167e6d08e":{"c3fcabea-63e8-48a2-b736-e7a9954cf5ca":{"e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478":{"id":{}},"1fca53dd-70bb-4c1a-89e6-01ae6a6564a5":{"72a73ffe-8319-4427-878e-3e67f2d150ff":{}}},"9b746d54-f007-4bc0-9988-acb0a0a05cd5":{"fccf66d8-8067-41ad-8a08-3c2f4c85e742":{"sql":{}}},"3f67095a-501d-4010-b37d-4e1ece60e2f2":{"fccf66d8-8067-41ad-8a08-3c2f4c85e742":{"params":{}}}},"639fd63d-62df-4fa0-aa51-b8cd38d31dc6":{"9ffca0a3-0927-4358-9cfb-28260054ea3f":{"1fca53dd-70bb-4c1a-89e6-01ae6a6564a5":{"f58efe33-f70e-4570-ac54-670aaf844385":{}}}}},"forwards":{"inputs":{"234d8706-b98b-4a40-8bc2-a6ba6a17b5d9":{"ec3c9a67-b188-4d07-8af5-c4f167e6d08e":{"70da607a-8976-437b-b9e9-84cc63cd613b":{}}},"f2c08460-570b-4e3c-a28b-940ded4d4082":{"ec3c9a67-b188-4d07-8af5-c4f167e6d08e":{"54c357a1-045e-4817-beda-0017a586a499":{}}},"aedf1bc7-25a3-40ef-b738-7352526888d5":{"ec3c9a67-b188-4d07-8af5-c4f167e6d08e":{"507a0b1a-b9eb-4e67-a64d-47b405e17422":{}}}},"outputs":{"0ca3fbc8-bff9-4e5a-bd44-ff5eddc167fd":{"1fca53dd-70bb-4c1a-89e6-01ae6a6564a5":{"eb4c2873-890f-4780-a895-53e321f3739e":{}}},"35a33951-e012-472a-b5ba-a72fff5dd960":{"639fd63d-62df-4fa0-aa51-b8cd38d31dc6":{"8cb67ee3-0b71-49a6-9c97-4909670a0177":{}}},"7a905a6b-7d04-4614-b083-29fcce9a3be7":{"639fd63d-62df-4fa0-aa51-b8cd38d31dc6":{"9ffca0a3-0927-4358-9cfb-28260054ea3f":{}}},"40914d83-9814-4fba-86b1-fa77bf0f3103":{"639fd63d-62df-4fa0-aa51-b8cd38d31dc6":{"8a5f8aaf-0528-4a5b-9305-ba063d5120ba":{}}}}},"nodes":{"639fd63d-62df-4fa0-aa51-b8cd38d31dc6":{"coordinates":[99,-56.599999999999994],"name":"sqlite3","prototype":"d6499ae4-731f-45a8-bb7a-08e05a4a007a","params":{}},"e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478":{"coordinates":[-2,-102.6],"name":"build action","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"id\", \"type\", \"options\"]","eaadc9a9-28f4-48f0-b7d3-0c811b515f4a":"\"each\"","type":"\"each\""}},"fccf66d8-8067-41ad-8a08-3c2f4c85e742":{"coordinates":[-18,81.4],"name":"build options","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"sql\", \"params\"]"}},"1fca53dd-70bb-4c1a-89e6-01ae6a6564a5":{"coordinates":[116,79.4],"name":"depot","prototype":"62c8e48b-0926-4fa7-8322-02975bf4dc41","params":{}},"ec3c9a67-b188-4d07-8af5-c4f167e6d08e":{"coordinates":[-158,-7.600000000000001],"name":"forwarder/triple","prototype":"ccd44557-20cf-4582-9c10-99bc31b22380","params":{}}}}},"description":"Retrieves multiple rows one by one from the specified database."}
+{
+  "name": "db/sqlite3/Row iterator",
+  "interface": {
+    "inputs": {
+      "234d8706-b98b-4a40-8bc2-a6ba6a17b5d9": {
+        "type": "any",
+        "name": "DB ID"
+      },
+      "f2c08460-570b-4e3c-a28b-940ded4d4082": {
+        "type": "any",
+        "name": "SQL"
+      },
+      "aedf1bc7-25a3-40ef-b738-7352526888d5": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "35a33951-e012-472a-b5ba-a72fff5dd960": {
+        "type": "any",
+        "name": "row"
+      },
+      "7a905a6b-7d04-4614-b083-29fcce9a3be7": {
+        "type": "any",
+        "name": "done"
+      },
+      "40914d83-9814-4fba-86b1-fa77bf0f3103": {
+        "type": "any",
+        "name": "error"
+      },
+      "0ca3fbc8-bff9-4e5a-bd44-ff5eddc167fd": {
+        "type": "any",
+        "name": "DB ID"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "639fd63d-62df-4fa0-aa51-b8cd38d31dc6": {
+              "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {}
+            }
+          }
+        },
+        "fccf66d8-8067-41ad-8a08-3c2f4c85e742": {
+          "synced": {
+            "e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478": {
+              "options": {}
+            }
+          }
+        },
+        "ec3c9a67-b188-4d07-8af5-c4f167e6d08e": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478": {
+              "id": {}
+            },
+            "1fca53dd-70bb-4c1a-89e6-01ae6a6564a5": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "fccf66d8-8067-41ad-8a08-3c2f4c85e742": {
+              "sql": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "fccf66d8-8067-41ad-8a08-3c2f4c85e742": {
+              "params": {}
+            }
+          }
+        },
+        "639fd63d-62df-4fa0-aa51-b8cd38d31dc6": {
+          "9ffca0a3-0927-4358-9cfb-28260054ea3f": {
+            "1fca53dd-70bb-4c1a-89e6-01ae6a6564a5": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "234d8706-b98b-4a40-8bc2-a6ba6a17b5d9": {
+            "ec3c9a67-b188-4d07-8af5-c4f167e6d08e": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "f2c08460-570b-4e3c-a28b-940ded4d4082": {
+            "ec3c9a67-b188-4d07-8af5-c4f167e6d08e": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "aedf1bc7-25a3-40ef-b738-7352526888d5": {
+            "ec3c9a67-b188-4d07-8af5-c4f167e6d08e": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "0ca3fbc8-bff9-4e5a-bd44-ff5eddc167fd": {
+            "1fca53dd-70bb-4c1a-89e6-01ae6a6564a5": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          },
+          "35a33951-e012-472a-b5ba-a72fff5dd960": {
+            "639fd63d-62df-4fa0-aa51-b8cd38d31dc6": {
+              "8cb67ee3-0b71-49a6-9c97-4909670a0177": {}
+            }
+          },
+          "7a905a6b-7d04-4614-b083-29fcce9a3be7": {
+            "639fd63d-62df-4fa0-aa51-b8cd38d31dc6": {
+              "9ffca0a3-0927-4358-9cfb-28260054ea3f": {}
+            }
+          },
+          "40914d83-9814-4fba-86b1-fa77bf0f3103": {
+            "639fd63d-62df-4fa0-aa51-b8cd38d31dc6": {
+              "8a5f8aaf-0528-4a5b-9305-ba063d5120ba": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "639fd63d-62df-4fa0-aa51-b8cd38d31dc6": {
+          "coordinates": [
+            99,
+            -56.599999999999994
+          ],
+          "name": "sqlite3",
+          "prototype": "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
+          "params": {}
+        },
+        "e66ddcdc-9fb6-4cf0-b77f-abee5bcdf478": {
+          "coordinates": [
+            -2,
+            -102.6
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "\"each\"",
+            "type": "\"each\""
+          }
+        },
+        "fccf66d8-8067-41ad-8a08-3c2f4c85e742": {
+          "coordinates": [
+            -18,
+            81.4
+          ],
+          "name": "build options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sql\", \"params\"]"
+          }
+        },
+        "1fca53dd-70bb-4c1a-89e6-01ae6a6564a5": {
+          "coordinates": [
+            116,
+            79.4
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        },
+        "ec3c9a67-b188-4d07-8af5-c4f167e6d08e": {
+          "coordinates": [
+            -158,
+            -7.600000000000001
+          ],
+          "name": "forwarder/triple",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Retrieves multiple rows one by one from the specified database."
+}

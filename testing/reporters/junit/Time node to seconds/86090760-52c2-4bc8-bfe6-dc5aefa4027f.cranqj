@@ -1,1 +1,83 @@
-{"name":"testing/reporters/junit/Time node to seconds","interface":{"inputs":{"6c842a41-e339-4a48-948b-257dea3c6d6e":{"type":"{string:any}","name":"pre-report time"}},"outputs":{"ec634578-3701-4c21-9469-441d95863398":{"type":"number","name":"seconds"}}},"implementations":{"cranq":{"connections":{"0017ed81-4dcc-421f-b630-ecd82ec6c18e":{"807f86ec-082e-4a9a-a304-021a397dca4c":{"359276e0-1732-4a53-8e14-32cc493a35d2":{"74bf8aba-c257-45b3-ac6f-03225e3dcba3":{}}}},"359276e0-1732-4a53-8e14-32cc493a35d2":{"812b7425-50e3-4cf5-9152-f0c2f310f501":{"27b002a7-006a-47c3-a091-0ad9a26927f2":{"b8efe3c6-c75b-49eb-82b8-779a9b39962a":{}}}}},"forwards":{"inputs":{"6c842a41-e339-4a48-948b-257dea3c6d6e":{"0017ed81-4dcc-421f-b630-ecd82ec6c18e":{"8a82bc3e-2765-4d8b-b372-fbb77a4f4383":{}}}},"outputs":{"ec634578-3701-4c21-9469-441d95863398":{"27b002a7-006a-47c3-a091-0ad9a26927f2":{"4d369c1d-574a-45ac-a98a-9a80ba2f941a":{}}}}},"nodes":{"0017ed81-4dcc-421f-b630-ecd82ec6c18e":{"coordinates":[-104.33333333333333,17.333333333333343],"name":"get times","prototype":"3419d082-1bea-4e6b-8dfb-47eabfe792b0","params":{}},"359276e0-1732-4a53-8e14-32cc493a35d2":{"coordinates":[1.6666666666666679,-36.66666666666666],"name":"get max time","prototype":"45872ed3-ac0e-4cec-bffb-48ac276221c5"},"27b002a7-006a-47c3-a091-0ad9a26927f2":{"coordinates":[102.66666666666667,19.333333333333343],"name":"to seconds","prototype":"4d0c01f3-d192-4832-a316-7b4f3ff8fa87","params":{"10bc95fb-d41f-4590-9390-6459c6644108":"1000"}}}}}}
+{
+  "name": "testing/reporters/junit/Time node to seconds",
+  "interface": {
+    "inputs": {
+      "6c842a41-e339-4a48-948b-257dea3c6d6e": {
+        "type": "{string:any}",
+        "name": "pre-report time"
+      }
+    },
+    "outputs": {
+      "ec634578-3701-4c21-9469-441d95863398": {
+        "type": "number",
+        "name": "seconds"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "0017ed81-4dcc-421f-b630-ecd82ec6c18e": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "359276e0-1732-4a53-8e14-32cc493a35d2": {
+              "74bf8aba-c257-45b3-ac6f-03225e3dcba3": {}
+            }
+          }
+        },
+        "359276e0-1732-4a53-8e14-32cc493a35d2": {
+          "812b7425-50e3-4cf5-9152-f0c2f310f501": {
+            "27b002a7-006a-47c3-a091-0ad9a26927f2": {
+              "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6c842a41-e339-4a48-948b-257dea3c6d6e": {
+            "0017ed81-4dcc-421f-b630-ecd82ec6c18e": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          }
+        },
+        "outputs": {
+          "ec634578-3701-4c21-9469-441d95863398": {
+            "27b002a7-006a-47c3-a091-0ad9a26927f2": {
+              "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "0017ed81-4dcc-421f-b630-ecd82ec6c18e": {
+          "coordinates": [
+            -104.33333333333333,
+            17.333333333333343
+          ],
+          "name": "get times",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0",
+          "params": {}
+        },
+        "359276e0-1732-4a53-8e14-32cc493a35d2": {
+          "coordinates": [
+            1.6666666666666679,
+            -36.66666666666666
+          ],
+          "name": "get max time",
+          "prototype": "45872ed3-ac0e-4cec-bffb-48ac276221c5"
+        },
+        "27b002a7-006a-47c3-a091-0ad9a26927f2": {
+          "coordinates": [
+            102.66666666666667,
+            19.333333333333343
+          ],
+          "name": "to seconds",
+          "prototype": "4d0c01f3-d192-4832-a316-7b4f3ff8fa87",
+          "params": {
+            "10bc95fb-d41f-4590-9390-6459c6644108": "1000"
+          }
+        }
+      }
+    }
+  }
+}

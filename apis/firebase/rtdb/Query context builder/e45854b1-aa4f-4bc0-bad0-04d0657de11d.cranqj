@@ -1,1 +1,66 @@
-{"name":"apis/firebase/rtdb/Query context builder","interface":{"inputs":{"3629005f-d095-4e3c-8d26-9987239d5d69":{"description":"Receives individual fields for syncing.","paramId":"fields","type":"any","name":"ID token"},"f8ad245c-763e-47e8-9df2-ef1b439b7abd":{"description":"Receives individual fields for syncing.","paramId":"fields","type":"any","name":"DB URL"}},"outputs":{"367a9897-be40-4dcf-854b-d565e32acfbf":{"description":"Sends synchronized inputs as a dictionary, indexed by field.","type":"{typeof(fields):any}","name":"sync context-synced"}}},"implementations":{"cranq":{"connections":{},"forwards":{"inputs":{"3629005f-d095-4e3c-8d26-9987239d5d69":{"db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73":{"idToken":{}}},"f8ad245c-763e-47e8-9df2-ef1b439b7abd":{"db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73":{"dbUrl":{}}}},"outputs":{"367a9897-be40-4dcf-854b-d565e32acfbf":{"db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73":{"75cde7e3-b158-4836-8bcd-a89e72314ee8":{}}}}},"nodes":{"db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73":{"coordinates":[0,0],"name":"sync context","prototype":"222a7543-3692-4c6d-b027-c422c99b23a1","params":{"ef31c1e9-cfd5-458b-8d3a-951e3db9c232":"[\"idToken\", \"dbUrl\"]"}}}}},"description":"Builds a Firebase Realtime Database query context from a Firebase ID token and a database URL (found on the Firebase Realtime Database console) to be passed around among related data querying and manipulation nodes."}
+{
+  "name": "apis/firebase/rtdb/Query context builder",
+  "interface": {
+    "inputs": {
+      "3629005f-d095-4e3c-8d26-9987239d5d69": {
+        "description": "Receives individual fields for syncing.",
+        "paramId": "fields",
+        "type": "any",
+        "name": "ID token"
+      },
+      "f8ad245c-763e-47e8-9df2-ef1b439b7abd": {
+        "description": "Receives individual fields for syncing.",
+        "paramId": "fields",
+        "type": "any",
+        "name": "DB URL"
+      }
+    },
+    "outputs": {
+      "367a9897-be40-4dcf-854b-d565e32acfbf": {
+        "description": "Sends synchronized inputs as a dictionary, indexed by field.",
+        "type": "{typeof(fields):any}",
+        "name": "sync context-synced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "3629005f-d095-4e3c-8d26-9987239d5d69": {
+            "db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73": {
+              "idToken": {}
+            }
+          },
+          "f8ad245c-763e-47e8-9df2-ef1b439b7abd": {
+            "db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73": {
+              "dbUrl": {}
+            }
+          }
+        },
+        "outputs": {
+          "367a9897-be40-4dcf-854b-d565e32acfbf": {
+            "db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "db01d380-8a7d-4fb6-a8e2-2c08b9ed3d73": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "sync context",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"idToken\", \"dbUrl\"]"
+          }
+        }
+      }
+    }
+  },
+  "description": "Builds a Firebase Realtime Database query context from a Firebase ID token and a database URL (found on the Firebase Realtime Database console) to be passed around among related data querying and manipulation nodes."
+}

@@ -1,0 +1,31 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "8a26724d-8c4e-457d-a51d-2fc4fa9f064e": {
+        "type": "{\"array\":any[],\"index\":number,\"item\":any}",
+        "name": "array & item & index"
+      }
+    },
+    "outputs": {
+      "be152602-9e14-4a8b-a0a2-2a4b0d0a3e45": {
+        "type": "typeof(array & item & index)[\"array\"]",
+        "name": "array"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "8a26724d-8c4e-457d-a51d-2fc4fa9f064e": "const {array, index, item} = data;\noutputs.array([\n  ...array.slice(0, index),\n  item,\n  ...array.slice(index)\n], tag);"
+      }
+    }
+  },
+  "name": "data/array/Item inserter/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

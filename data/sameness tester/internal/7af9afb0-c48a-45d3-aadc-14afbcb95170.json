@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "ea8ab9f9-425c-4028-bc27-dd271c7616fe": {
+        "description": "",
+        "type": "any",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "2ec1bc7c-1f88-44aa-93f7-00aa41363fbb": {
+        "description": "",
+        "type": "any",
+        "name": "same"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "ea8ab9f9-425c-4028-bc27-dd271c7616fe": "outputs.same(data.a === data.b, tag);"
+      }
+    }
+  },
+  "name": "data/Sameness tester/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

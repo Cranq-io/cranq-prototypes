@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "7b96d4a4-b981-4144-9e89-53bd1419e5b0": "outputs.array([data.item, ...data.array], tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "7b96d4a4-b981-4144-9e89-53bd1419e5b0": {
+        "type": "any",
+        "name": "array & item"
+      }
+    },
+    "outputs": {
+      "47a28d29-1f5d-4870-917b-be464753e379": {
+        "type": "any",
+        "name": "array"
+      }
+    }
+  },
+  "name": "data/array/Item prepender/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

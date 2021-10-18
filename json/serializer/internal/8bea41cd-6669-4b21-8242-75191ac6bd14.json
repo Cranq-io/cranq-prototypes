@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": {
+        "description": "",
+        "type": "any",
+        "name": "data & pretty"
+      }
+    },
+    "outputs": {
+      "1c2473e9-843e-43f8-bcf4-53c157aa7b80": {
+        "description": "",
+        "type": "any",
+        "name": "json"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": "outputs.json(JSON.stringify(data.data, null, data.pretty ? 2 : 0), tag);"
+      }
+    }
+  },
+  "name": "json/Serializer/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

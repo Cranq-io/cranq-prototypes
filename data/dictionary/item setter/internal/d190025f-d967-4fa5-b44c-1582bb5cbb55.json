@@ -1,0 +1,31 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "f573a5f6-1f17-4e97-910a-365621994c42": {
+        "type": "{\"dict\":{string:any},\"key\":string,\"value\":any}",
+        "name": "dict & key & value"
+      }
+    },
+    "outputs": {
+      "1710a75a-6d68-4280-8e23-f18116fa99ab": {
+        "type": "typeof(dict & key & value)[\"dict\"]",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "f573a5f6-1f17-4e97-910a-365621994c42": "outputs.dict({...data.dict, [data.key]:data.value}, tag);"
+      }
+    }
+  },
+  "name": "data/dictionary/Item setter/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

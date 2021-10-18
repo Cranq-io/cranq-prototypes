@@ -1,0 +1,35 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "34fe32a8-173b-48b9-9b83-b1fa7c37029e": {
+        "type": "{\"path\":string,\"text\":string}",
+        "name": "path & text"
+      }
+    },
+    "outputs": {
+      "2c6db427-e64a-4434-a232-cdd8f0eeb98b": {
+        "type": "string",
+        "name": "bounced"
+      },
+      "fe1dc54d-6fec-43bb-a112-f977461960ce": {
+        "type": "null",
+        "name": "written"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "34fe32a8-173b-48b9-9b83-b1fa7c37029e": "const {writeFile} = require(\"fs\");\nconst {path, text} = data;\nwriteFile(path, text, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.written(null, tag);\n  }\n});"
+      }
+    }
+  },
+  "name": "io/file/Text writer/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

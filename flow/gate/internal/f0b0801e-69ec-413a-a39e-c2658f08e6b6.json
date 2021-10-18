@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "98485573-47d4-418c-8005-be19cff54d6a": {
+        "description": "",
+        "type": "any",
+        "name": "data & open"
+      }
+    },
+    "outputs": {
+      "ff977c1f-7317-4ae9-b0d5-4c0e308a7f2c": {
+        "description": "",
+        "type": "any",
+        "name": "data"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "98485573-47d4-418c-8005-be19cff54d6a": "if (data.open) outputs.data(data.data, tag);"
+      }
+    }
+  },
+  "name": "flow/Gate/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

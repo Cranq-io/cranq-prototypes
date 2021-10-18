@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "7df3c994-7d7b-4213-a08a-b092223538f5": {
+        "description": "",
+        "type": "any",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "b539e90f-bb87-4b68-b817-1fd20f5c364d": {
+        "description": "",
+        "type": "any",
+        "name": "resolved"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "7df3c994-7d7b-4213-a08a-b092223538f5": "const path = require('path');\noutputs.resolved(path.resolve(data), tag);"
+      }
+    }
+  },
+  "name": "io/file/Path resolver/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

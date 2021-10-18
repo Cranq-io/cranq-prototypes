@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "51e9aff9-1f7e-4a83-bdaf-c07c0f95eedd": {
+        "description": "",
+        "type": "any",
+        "name": "inputs"
+      }
+    },
+    "outputs": {
+      "7a9be613-a044-4666-8d7d-56796e6c71db": {
+        "description": "",
+        "type": "any",
+        "name": "random"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "51e9aff9-1f7e-4a83-bdaf-c07c0f95eedd": "const {min, max } = data;\nconst res = Math.floor(min + (Math.random() * (max - min + 1)));\noutputs.random(res, tag);"
+      }
+    }
+  },
+  "name": "number/Random generator/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

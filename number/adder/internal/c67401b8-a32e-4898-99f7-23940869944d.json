@@ -1,0 +1,31 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "0ad25c87-04a9-47ce-94c5-4b4af15d7e09": {
+        "type": "{\"a\":number,\"b\":number}",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "f3bdd887-63e3-4db0-8735-38ea85e2a74e": {
+        "type": "number",
+        "name": "sum"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "0ad25c87-04a9-47ce-94c5-4b4af15d7e09": "outputs.sum(data.a + data.b, tag);"
+      }
+    }
+  },
+  "name": "number/Adder/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

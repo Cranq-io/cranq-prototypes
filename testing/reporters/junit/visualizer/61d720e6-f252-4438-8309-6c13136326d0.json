@@ -1,0 +1,111 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c5ce7df8-f055-441e-90eb-a7f2c94fb130": {
+          "coordinates": [
+            -14,
+            -161
+          ],
+          "name": "generate report",
+          "prototype": "c636bbe0-b2bc-4238-9fe4-67ddb035ea2d",
+          "params": {}
+        },
+        "743b50c6-da00-47ad-8a03-5a0579f41a38": {
+          "coordinates": [
+            176,
+            223
+          ],
+          "name": "open file",
+          "prototype": "522a0dae-945f-46c0-ae94-05a8df434fa8",
+          "params": {}
+        },
+        "3a25e084-0dac-4b97-9d49-0fbbeb34db7e": {
+          "coordinates": [
+            -234,
+            143
+          ],
+          "name": "\"junit-report.html\"",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"junit-report.html\""
+          }
+        },
+        "e479e739-9660-4dad-b663-ed9e7e9cf408": {
+          "coordinates": [
+            78,
+            40
+          ],
+          "name": "generated?",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {}
+        },
+        "483e94d0-ca74-4634-82a3-983a1e82ef79": {
+          "coordinates": [
+            -116,
+            73
+          ],
+          "name": "path resolver",
+          "prototype": "27101a1a-13b2-4ad0-9820-c6506568c75b",
+          "params": {}
+        }
+      },
+      "connections": {
+        "c5ce7df8-f055-441e-90eb-a7f2c94fb130": {
+          "18c21fb0-76aa-4f30-a218-c4b4fca8e313": {
+            "e479e739-9660-4dad-b663-ed9e7e9cf408": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "e479e739-9660-4dad-b663-ed9e7e9cf408": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "743b50c6-da00-47ad-8a03-5a0579f41a38": {
+              "c9575bf3-b041-4fb3-931e-f046e248bda9": {}
+            }
+          }
+        },
+        "3a25e084-0dac-4b97-9d49-0fbbeb34db7e": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "483e94d0-ca74-4634-82a3-983a1e82ef79": {
+              "b1091169-85d7-43ec-a94a-f9b20070685f": {}
+            }
+          }
+        },
+        "483e94d0-ca74-4634-82a3-983a1e82ef79": {
+          "bc9c01ea-bb7a-4d08-8e1f-33925dc70ca5": {
+            "c5ce7df8-f055-441e-90eb-a7f2c94fb130": {
+              "3c99ccb9-961c-41e2-b307-99bd1126b200": {}
+            },
+            "e479e739-9660-4dad-b663-ed9e7e9cf408": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b2ee76fd-af62-42fb-acaa-eee61b0442fd": {
+            "3a25e084-0dac-4b97-9d49-0fbbeb34db7e": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "c5ce7df8-f055-441e-90eb-a7f2c94fb130": {
+              "33718a8a-5df7-4f65-af53-1bd2b4b15ed7": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "b2ee76fd-af62-42fb-acaa-eee61b0442fd": {
+        "type": "any",
+        "name": "junit xml"
+      }
+    },
+    "outputs": {}
+  },
+  "name": "testing/reporters/junit/Visualizer"
+}

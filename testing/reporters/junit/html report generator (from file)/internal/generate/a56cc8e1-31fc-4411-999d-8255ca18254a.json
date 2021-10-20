@@ -1,0 +1,41 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "c9171ddf-0c3e-49c2-add4-0348fd16c633": "const { fork } = require('child_process');\nconst npx = require.resolve('npx');\nconst args = [\"xunit-viewer\", \"-r\", data[\"junit xml path\"], \"-o\", data[\"report path\"], \"-t\", \"Test report\"]\n\nconst child = fork(npx, args, {silent: true, windowsHide: true});\n\nchild.on('exit', (code) => {\n  if (code===0) { \n    outputs.generated(null, tag); \n  } else {\n    outputs.bounced(data, tag);\n  }\n});"
+      },
+      "dependencies": {
+        "npm": {
+          "xunit-viewer": {
+            "description": ""
+          },
+          "npx": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "c9171ddf-0c3e-49c2-add4-0348fd16c633": {
+        "type": "any",
+        "name": "junit xml path & report path"
+      }
+    },
+    "outputs": {
+      "e26993b3-170a-46ca-a8c2-6215173a0331": {
+        "type": "any",
+        "name": "generated"
+      },
+      "5852a39e-17f2-4fbd-8ccf-0ee89bcb8b4e": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "testing/reporters/junit/HTML report generator (from file)/Internal/Generate",
+  "attributes": {
+    "internal": true
+  }
+}

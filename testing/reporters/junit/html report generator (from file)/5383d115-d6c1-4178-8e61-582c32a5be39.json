@@ -1,0 +1,86 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "99519557-cd5d-4276-90e1-3d8e250ba70e": {
+          "coordinates": [
+            2,
+            144
+          ],
+          "name": "generate",
+          "prototype": "a56cc8e1-31fc-4411-999d-8255ca18254a",
+          "params": {}
+        },
+        "f1f91215-740a-4df4-bf5e-055829b3c91e": {
+          "coordinates": [
+            3,
+            -89
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"junit xml path\", \"report path\"]"
+          }
+        }
+      },
+      "connections": {
+        "f1f91215-740a-4df4-bf5e-055829b3c91e": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "99519557-cd5d-4276-90e1-3d8e250ba70e": {
+              "c9171ddf-0c3e-49c2-add4-0348fd16c633": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "11dcb7b3-fc20-4493-b3b9-9b09b1f39dc2": {
+            "f1f91215-740a-4df4-bf5e-055829b3c91e": {
+              "junit xml path": {}
+            }
+          },
+          "35196ddd-2bf2-495d-9f53-2ae6517a2304": {
+            "f1f91215-740a-4df4-bf5e-055829b3c91e": {
+              "report path": {}
+            }
+          }
+        },
+        "outputs": {
+          "e2f2f0a1-4a06-4f47-b02c-984bbdb9a5dc": {
+            "99519557-cd5d-4276-90e1-3d8e250ba70e": {
+              "e26993b3-170a-46ca-a8c2-6215173a0331": {}
+            }
+          },
+          "8f45fbfd-bd4f-4f2a-8cfa-6dd9617d9dd4": {
+            "99519557-cd5d-4276-90e1-3d8e250ba70e": {
+              "5852a39e-17f2-4fbd-8ccf-0ee89bcb8b4e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "11dcb7b3-fc20-4493-b3b9-9b09b1f39dc2": {
+        "type": "any",
+        "name": "junit xml path"
+      },
+      "35196ddd-2bf2-495d-9f53-2ae6517a2304": {
+        "type": "any",
+        "name": "report path"
+      }
+    },
+    "outputs": {
+      "e2f2f0a1-4a06-4f47-b02c-984bbdb9a5dc": {
+        "type": "any",
+        "name": "generated"
+      },
+      "8f45fbfd-bd4f-4f2a-8cfa-6dd9617d9dd4": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "testing/reporters/junit/HTML report generator (from file)"
+}

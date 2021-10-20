@@ -1,0 +1,118 @@
+{
+  "name": "testing/reporters/junit/HTML report generator (from xml)/Internal/Persist tmp junit xml",
+  "attributes": {
+    "internal": true
+  },
+  "interface": {
+    "inputs": {
+      "36f741a7-75f1-4a82-b4ae-ef08d32278ee": {
+        "type": "string",
+        "name": "junit xml"
+      }
+    },
+    "outputs": {
+      "f3d386ce-2c9d-4715-9d08-080373b059f2": {
+        "type": "null",
+        "name": "path"
+      },
+      "659179e8-b0fc-4202-9ae8-ea9af6872cdd": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2a609a66-c34d-4642-9418-f5b5ce3ad3b4": {
+          "coordinates": [
+            118.66666666666666,
+            149.66666666666666
+          ],
+          "name": "persist junit xml",
+          "prototype": "c4812ed9-c9c7-42ba-8e7f-4b8721090de0",
+          "params": {}
+        },
+        "5c179043-df08-4cb1-9368-f972f1e6ab00": {
+          "coordinates": [
+            -141.33333333333334,
+            -200.33333333333334
+          ],
+          "name": "\"tmp-junit-xml.xml\"",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"tmp-junit-xml.xml\""
+          }
+        },
+        "d5392e47-ee0e-4472-bc7b-537ccdf529c5": {
+          "coordinates": [
+            -9.333333333333343,
+            -5.333333333333343
+          ],
+          "name": "path resolver",
+          "prototype": "27101a1a-13b2-4ad0-9820-c6506568c75b",
+          "params": {}
+        },
+        "f624bf06-a793-4d4a-8316-6e67c9cf246b": {
+          "coordinates": [
+            270.66666666666663,
+            -58.33333333333337
+          ],
+          "name": "path",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {}
+        }
+      },
+      "connections": {
+        "5c179043-df08-4cb1-9368-f972f1e6ab00": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d5392e47-ee0e-4472-bc7b-537ccdf529c5": {
+              "b1091169-85d7-43ec-a94a-f9b20070685f": {}
+            }
+          }
+        },
+        "d5392e47-ee0e-4472-bc7b-537ccdf529c5": {
+          "bc9c01ea-bb7a-4d08-8e1f-33925dc70ca5": {
+            "2a609a66-c34d-4642-9418-f5b5ce3ad3b4": {
+              "e93c06b9-6b79-4f39-b74c-606a85e80b4f": {}
+            },
+            "f624bf06-a793-4d4a-8316-6e67c9cf246b": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "2a609a66-c34d-4642-9418-f5b5ce3ad3b4": {
+          "e7b571f3-b288-4cb3-99cb-0c87a42ff9eb": {
+            "f624bf06-a793-4d4a-8316-6e67c9cf246b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "36f741a7-75f1-4a82-b4ae-ef08d32278ee": {
+            "2a609a66-c34d-4642-9418-f5b5ce3ad3b4": {
+              "aad67a3a-6f75-4fb8-9ddd-f7ea549b1491": {}
+            },
+            "5c179043-df08-4cb1-9368-f972f1e6ab00": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "f3d386ce-2c9d-4715-9d08-080373b059f2": {
+            "f624bf06-a793-4d4a-8316-6e67c9cf246b": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          },
+          "659179e8-b0fc-4202-9ae8-ea9af6872cdd": {
+            "2a609a66-c34d-4642-9418-f5b5ce3ad3b4": {
+              "07af60a7-4070-4d30-a243-8b05b6476ee1": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

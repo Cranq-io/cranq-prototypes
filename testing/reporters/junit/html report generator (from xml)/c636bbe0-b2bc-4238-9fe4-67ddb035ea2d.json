@@ -1,0 +1,149 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6b5f0bef-9200-4d3c-89b0-d497b2fd5dc3": {
+          "coordinates": [
+            -250,
+            3
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "dcb652bc-aea8-4acd-bb21-d0767553f10c": {
+          "coordinates": [
+            30,
+            5
+          ],
+          "name": "generate report",
+          "prototype": "5383d115-d6c1-4178-8e61-582c32a5be39",
+          "params": {}
+        },
+        "6c859638-1d05-4fc5-90d7-12cb8623b8c6": {
+          "coordinates": [
+            26,
+            139
+          ],
+          "name": "after generated",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {}
+        },
+        "eb376b39-575c-4c7c-9292-f0467e4ff208": {
+          "coordinates": [
+            166,
+            157
+          ],
+          "name": "cleanup junit xml",
+          "prototype": "70bef097-0789-4a72-914c-401e017e6e2c",
+          "params": {
+            "8e89f1e5-dcda-4a62-9329-9dd7feca6d45": "false"
+          }
+        },
+        "baf6e199-d2ca-4735-a922-d730ab493f70": {
+          "coordinates": [
+            -174.66666666666666,
+            -164.66666666666663
+          ],
+          "name": "persist junit xml",
+          "prototype": "24446a40-a4e2-49d3-80ab-9273310cac70"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "33718a8a-5df7-4f65-af53-1bd2b4b15ed7": {
+            "6b5f0bef-9200-4d3c-89b0-d497b2fd5dc3": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "3c99ccb9-961c-41e2-b307-99bd1126b200": {
+            "6b5f0bef-9200-4d3c-89b0-d497b2fd5dc3": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "18c21fb0-76aa-4f30-a218-c4b4fca8e313": {
+            "dcb652bc-aea8-4acd-bb21-d0767553f10c": {
+              "e2f2f0a1-4a06-4f47-b02c-984bbdb9a5dc": {}
+            }
+          },
+          "ca3b4a8c-a307-48e9-86a8-c68322f96c99": {
+            "dcb652bc-aea8-4acd-bb21-d0767553f10c": {
+              "8f45fbfd-bd4f-4f2a-8cfa-6dd9617d9dd4": {}
+            },
+            "baf6e199-d2ca-4735-a922-d730ab493f70": {
+              "659179e8-b0fc-4202-9ae8-ea9af6872cdd": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "6b5f0bef-9200-4d3c-89b0-d497b2fd5dc3": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "dcb652bc-aea8-4acd-bb21-d0767553f10c": {
+              "35196ddd-2bf2-495d-9f53-2ae6517a2304": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "baf6e199-d2ca-4735-a922-d730ab493f70": {
+              "36f741a7-75f1-4a82-b4ae-ef08d32278ee": {}
+            }
+          }
+        },
+        "dcb652bc-aea8-4acd-bb21-d0767553f10c": {
+          "e2f2f0a1-4a06-4f47-b02c-984bbdb9a5dc": {
+            "6c859638-1d05-4fc5-90d7-12cb8623b8c6": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "8f45fbfd-bd4f-4f2a-8cfa-6dd9617d9dd4": {
+            "6c859638-1d05-4fc5-90d7-12cb8623b8c6": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "6c859638-1d05-4fc5-90d7-12cb8623b8c6": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "eb376b39-575c-4c7c-9292-f0467e4ff208": {
+              "88e2ece8-3028-4c84-a008-587b54b6a1f9": {}
+            }
+          }
+        },
+        "baf6e199-d2ca-4735-a922-d730ab493f70": {
+          "f3d386ce-2c9d-4715-9d08-080373b059f2": {
+            "dcb652bc-aea8-4acd-bb21-d0767553f10c": {
+              "11dcb7b3-fc20-4493-b3b9-9b09b1f39dc2": {}
+            },
+            "6c859638-1d05-4fc5-90d7-12cb8623b8c6": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "33718a8a-5df7-4f65-af53-1bd2b4b15ed7": {
+        "type": "any",
+        "name": "junit xml"
+      },
+      "3c99ccb9-961c-41e2-b307-99bd1126b200": {
+        "type": "any",
+        "name": "report path"
+      }
+    },
+    "outputs": {
+      "18c21fb0-76aa-4f30-a218-c4b4fca8e313": {
+        "type": "any",
+        "name": "generated"
+      },
+      "ca3b4a8c-a307-48e9-86a8-c68322f96c99": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "testing/reporters/junit/HTML report generator (from xml)"
+}

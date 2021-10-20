@@ -64,23 +64,28 @@
     "inputs": {
       "11dcb7b3-fc20-4493-b3b9-9b09b1f39dc2": {
         "type": "any",
-        "name": "junit xml path"
+        "name": "junit xml path",
+        "description": "The path to the JUnit XML file to generate the report for.\n\nExample:\n\"C:\\\\folder\\\\report.xml\""
       },
       "35196ddd-2bf2-495d-9f53-2ae6517a2304": {
         "type": "any",
-        "name": "report path"
+        "name": "report path",
+        "description": "The desired report path.\n\nExample:\n\"C:\\\\folder\\\\report.html\""
       }
     },
     "outputs": {
       "e2f2f0a1-4a06-4f47-b02c-984bbdb9a5dc": {
         "type": "any",
-        "name": "generated"
+        "name": "generated",
+        "description": "Indicates, that the report was generated successfully."
       },
       "8f45fbfd-bd4f-4f2a-8cfa-6dd9617d9dd4": {
         "type": "any",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "Indicates, that the report has failed to generate."
       }
     }
   },
-  "name": "testing/reporters/junit/HTML report generator (from file)"
+  "name": "testing/reporters/junit/HTML report generator (from file)",
+  "description": "Generates an HTML report of the specified JUnit XML file, and saves it to the specified path."
 }

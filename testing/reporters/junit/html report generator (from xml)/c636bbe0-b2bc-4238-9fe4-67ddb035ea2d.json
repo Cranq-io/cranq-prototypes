@@ -127,23 +127,28 @@
     "inputs": {
       "33718a8a-5df7-4f65-af53-1bd2b4b15ed7": {
         "type": "any",
-        "name": "junit xml"
+        "name": "junit xml",
+        "description": "The JUnit-format XML content to generate the report for.\n\nExample:\n\"<testsuites tests=\\\"2\\\" errors=\\\"0\\\" failures=\\\"0\\\" skipped=\\\"0\\\"><testsuite tests=\\\"2\\\" errors=\\\"0\\\" failures=\\\"0\\\" skipped=\\\"0\\\" name=\\\"GET /user/:id - for valid user IDs\\\" time=\\\"0.145\\\"><testcase name=\\\"should return status 200\\\" classname=\\\"should return status 200\\\" assertions=\\\"1\\\"></testcase><testcase name=\\\"should have &quot;id&quot; field\\\" classname=\\\"should have &quot;id&quot; field\\\" assertions=\\\"1\\\"></testcase></testsuite></testsuites>\""
       },
       "3c99ccb9-961c-41e2-b307-99bd1126b200": {
         "type": "any",
-        "name": "report path"
+        "name": "report path",
+        "description": "The desired report path."
       }
     },
     "outputs": {
       "18c21fb0-76aa-4f30-a218-c4b4fca8e313": {
         "type": "any",
-        "name": "generated"
+        "name": "generated",
+        "description": "Indicates, that the report was generated successfully."
       },
       "ca3b4a8c-a307-48e9-86a8-c68322f96c99": {
         "type": "any",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "Indicates, that the report has failed to generate."
       }
     }
   },
-  "name": "testing/reporters/junit/HTML report generator (from xml)"
+  "name": "testing/reporters/junit/HTML report generator (from xml)",
+  "description": "Generates a HTML report of the specified JUnit XML, and saves it to the specified path."
 }

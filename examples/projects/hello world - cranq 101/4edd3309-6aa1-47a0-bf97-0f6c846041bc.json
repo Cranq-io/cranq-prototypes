@@ -1,0 +1,137 @@
+{
+  "description": "Example project of the Cranq 101 video series",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "939cab81-9a7f-4026-8faf-1adeb65ea572": {
+          "coordinates": [
+            -100,
+            0
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "4718e064-66a0-48d8-846b-f36088530e00": {
+          "coordinates": [
+            158,
+            -148
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"hello\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "hello"
+        },
+        "2f339cda-1766-44f3-8ba3-0242eb5d9bff": {
+          "coordinates": [
+            23,
+            -37
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Budapest\", \"World\", \"Universe\"]"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "greeted list"
+        },
+        "d31c4dbb-b980-49b3-882f-7642923cb5b2": {
+          "coordinates": [
+            376,
+            -151
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "9ded6f26-d2d0-49dd-a8da-3536fcbb74e4",
+          "name": "Greeter"
+        },
+        "34daaf15-8b5f-41a0-8160-d4694872becd": {
+          "coordinates": [
+            176,
+            23
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117",
+          "name": "Iterator A"
+        },
+        "346869bc-595d-41f5-b217-f4f857ebac42": {
+          "coordinates": [
+            569,
+            10
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "0adf0dbf-66e3-4942-8766-b30731f4fcdd",
+          "name": "console"
+        }
+      },
+      "connections": {
+        "939cab81-9a7f-4026-8faf-1adeb65ea572": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "2f339cda-1766-44f3-8ba3-0242eb5d9bff": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "4718e064-66a0-48d8-846b-f36088530e00": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d31c4dbb-b980-49b3-882f-7642923cb5b2": {
+              "039bdb8c-739e-4743-9aee-4f1cd4023849": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "2f339cda-1766-44f3-8ba3-0242eb5d9bff": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "34daaf15-8b5f-41a0-8160-d4694872becd": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "34daaf15-8b5f-41a0-8160-d4694872becd": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "d31c4dbb-b980-49b3-882f-7642923cb5b2": {
+              "b8f19355-d65a-4059-9941-f0e677e9e59c": {
+                "description": ""
+              }
+            },
+            "4718e064-66a0-48d8-846b-f36088530e00": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "d31c4dbb-b980-49b3-882f-7642923cb5b2": {
+          "42f8d249-4a22-4dc3-9917-f0303f0e6889": {
+            "346869bc-595d-41f5-b217-f4f857ebac42": {
+              "a646ba52-2da2-4b71-9f43-df4fd0e779b2": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "examples/projects/Hello World - Cranq 101",
+  "attributes": {
+    "root": true
+  }
+}

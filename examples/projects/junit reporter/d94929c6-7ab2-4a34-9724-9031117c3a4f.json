@@ -1,0 +1,102 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "Example project testing and API and producing JUnit XML output",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -364,
+            -17
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            352,
+            3
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "473337c0-f2a2-4a4c-bb0c-a931e51eb0b3": {
+          "coordinates": [
+            -202.1111111111111,
+            -108.66666666666669
+          ],
+          "name": "authenticate",
+          "prototype": "246824cf-2645-43fb-8c47-485addbdaed5",
+          "params": {}
+        },
+        "5e70d4da-5640-4c97-a012-0c6c22b43b86": {
+          "coordinates": [
+            -7.111111111111114,
+            -196
+          ],
+          "name": "GET /user/:id",
+          "prototype": "d07d1d05-54bf-4d29-837c-5cb5214b89e3",
+          "params": {
+            "11214f91-208e-4751-8ea6-db9fbf6e71f5": "\"GET /user/:id\""
+          }
+        },
+        "a6877633-062e-4c65-977e-9e1b2304aaf4": {
+          "coordinates": [
+            176.22222222222223,
+            -97.33333333333337
+          ],
+          "name": "prepare JUnit report",
+          "prototype": "4052cde9-be53-4b55-9f17-d49bb5a870b7",
+          "params": {
+            "6155e0ed-073d-4322-8c54-b28d9a73b56c": "100"
+          }
+        }
+      },
+      "connections": {
+        "473337c0-f2a2-4a4c-bb0c-a931e51eb0b3": {
+          "65ebbf64-a482-4bad-b081-25714506fe00": {
+            "5e70d4da-5640-4c97-a012-0c6c22b43b86": {
+              "b193e927-35dc-4ce2-bbba-1d84d3c297a8": {}
+            }
+          }
+        },
+        "5e70d4da-5640-4c97-a012-0c6c22b43b86": {
+          "00f8e221-4740-4c97-8522-f4849303f2c0": {
+            "a6877633-062e-4c65-977e-9e1b2304aaf4": {
+              "cea919fc-5558-4d8b-ab09-fbb0a489cb59": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "473337c0-f2a2-4a4c-bb0c-a931e51eb0b3": {
+              "bf13f240-0128-4063-b374-6e51c6c79e17": {}
+            }
+          }
+        },
+        "a6877633-062e-4c65-977e-9e1b2304aaf4": {
+          "b00545ee-655e-442c-923a-9c58ae8c9dec": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "examples/projects/JUnit reporter"
+}

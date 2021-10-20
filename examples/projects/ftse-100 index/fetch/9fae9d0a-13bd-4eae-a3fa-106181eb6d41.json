@@ -1,0 +1,75 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "a2469e11-dc40-44e0-ab73-c0a4892c91fa": {
+        "description": "",
+        "type": "any",
+        "name": "symbol"
+      }
+    },
+    "outputs": {
+      "f629dc95-8dc8-48dd-9228-ab36941a1df4": {
+        "description": "",
+        "type": "any",
+        "name": "index"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8037c961-cfd6-455e-a792-a80f09ea67d8": {
+          "coordinates": [
+            -41,
+            -83
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "fc2cea40-7301-49d2-9153-77bb4a811605",
+          "name": "fetch instrument"
+        },
+        "d14a15ef-4e0e-497e-ad6c-4c278abc24a1": {
+          "coordinates": [
+            57,
+            88
+          ],
+          "description": "",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"chart\", \"result\", \"0\", \"meta\", \"regularMarketPrice\"]"
+          },
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "name": "get index"
+        }
+      },
+      "connections": {
+        "8037c961-cfd6-455e-a792-a80f09ea67d8": {
+          "97e587fb-0703-4183-b5fc-5fc7866c5661": {
+            "d14a15ef-4e0e-497e-ad6c-4c278abc24a1": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a2469e11-dc40-44e0-ab73-c0a4892c91fa": {
+            "8037c961-cfd6-455e-a792-a80f09ea67d8": {
+              "045fe2de-d612-47da-b91c-4af808edd741": {}
+            }
+          }
+        },
+        "outputs": {
+          "f629dc95-8dc8-48dd-9228-ab36941a1df4": {
+            "d14a15ef-4e0e-497e-ad6c-4c278abc24a1": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "examples/projects/FTSE-100 Index/Fetch"
+}

@@ -1,0 +1,92 @@
+{
+  "description": "Example project querying the Financial Times Stock Exchange 100 Index",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c5af74e2-a1de-44ef-a48a-ccc77a9b7d2c": {
+          "coordinates": [
+            -369,
+            -80
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "6f399624-9541-4cb6-9422-6dbf2ade7283": {
+          "coordinates": [
+            -199,
+            -157
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"^FTSE\""
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "get symbol"
+        },
+        "a4f33c28-2533-4697-bacf-c7d901bff348": {
+          "coordinates": [
+            163,
+            -94
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "8992956b-cea7-4b73-8f30-d40f49893f9a",
+          "name": "log"
+        },
+        "8a85fc90-4fb9-491b-b2b3-2cf09f5e0db7": {
+          "coordinates": [
+            -47,
+            -174.5
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "9fae9d0a-13bd-4eae-a3fa-106181eb6d41",
+          "name": "fetch FTSE index"
+        }
+      },
+      "connections": {
+        "6f399624-9541-4cb6-9422-6dbf2ade7283": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "8a85fc90-4fb9-491b-b2b3-2cf09f5e0db7": {
+              "a2469e11-dc40-44e0-ab73-c0a4892c91fa": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "c5af74e2-a1de-44ef-a48a-ccc77a9b7d2c": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "6f399624-9541-4cb6-9422-6dbf2ade7283": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "8a85fc90-4fb9-491b-b2b3-2cf09f5e0db7": {
+          "f629dc95-8dc8-48dd-9228-ab36941a1df4": {
+            "a4f33c28-2533-4697-bacf-c7d901bff348": {
+              "f6458629-a8b7-4338-b8c1-94eee78f7af5": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "examples/projects/FTSE-100 Index",
+  "attributes": {
+    "root": true
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "039bdb8c-739e-4743-9aee-4f1cd4023849": {
+        "description": "",
+        "type": "any",
+        "name": "greeting"
+      },
+      "b8f19355-d65a-4059-9941-f0e677e9e59c": {
+        "description": "",
+        "type": "any",
+        "name": "greeted"
+      }
+    },
+    "outputs": {
+      "42f8d249-4a22-4dc3-9917-f0303f0e6889": {
+        "description": "",
+        "type": "any",
+        "name": "greeting"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5f8431cf-6e56-4b3e-9457-f7cc2cfa3ff8": {
+          "coordinates": [
+            -141,
+            -53
+          ],
+          "description": "",
+          "params": {
+            "6b3b4622-93d9-49c8-ac1e-89af0e30731d": "\" \""
+          },
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "name": "append space"
+        },
+        "43289974-72b5-4831-b8bf-eb187ec488af": {
+          "coordinates": [
+            12,
+            27
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "name": "append greeted"
+        },
+        "80332775-3530-4f7d-aabd-a5c16597053a": {
+          "coordinates": [
+            185,
+            89
+          ],
+          "description": "",
+          "params": {
+            "6b3b4622-93d9-49c8-ac1e-89af0e30731d": "\"!\""
+          },
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "name": "append !"
+        }
+      },
+      "connections": {
+        "5f8431cf-6e56-4b3e-9457-f7cc2cfa3ff8": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "43289974-72b5-4831-b8bf-eb187ec488af": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "43289974-72b5-4831-b8bf-eb187ec488af": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "80332775-3530-4f7d-aabd-a5c16597053a": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "039bdb8c-739e-4743-9aee-4f1cd4023849": {
+            "5f8431cf-6e56-4b3e-9457-f7cc2cfa3ff8": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {}
+            }
+          },
+          "b8f19355-d65a-4059-9941-f0e677e9e59c": {
+            "43289974-72b5-4831-b8bf-eb187ec488af": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          }
+        },
+        "outputs": {
+          "42f8d249-4a22-4dc3-9917-f0303f0e6889": {
+            "80332775-3530-4f7d-aabd-a5c16597053a": {
+              "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "examples/projects/Hello World - Cranq 101/Greeter"
+}

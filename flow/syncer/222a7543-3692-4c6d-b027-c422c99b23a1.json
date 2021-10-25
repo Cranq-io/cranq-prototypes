@@ -1,14 +1,14 @@
 {
-  "description": "Bundles input signals that have the same tag.",
+  "description": "Bundles input signals that have the same tag. All inputs must receive exactly one signal for a given tag (or be a parameter) for the bundle to be sent.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_3_synchronization/README.md#example---synchronizing-node-inputs",
   "interface": {
     "inputs": {
       "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": {
-        "description": "Receives a list of custom input port names through which the node will receive signals for syncing.",
-        "type": "string[]",
+        "description": "Receives a list of custom input port names through which the node will receive signals for syncing. \n\nMust be parameter.\n\nexample:\n[\"a\",\"b\"]",
+        "type": "string[] or number[]",
         "name": "fields"
       },
       "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": {
-        "description": "Receives individual fields for syncing.",
+        "description": "Receives individual fields for syncing.\n\nexample:\n\"Foo\" -> \"a\"\n\"Bar\" -> \"b\"",
         "paramId": "ef31c1e9-cfd5-458b-8d3a-951e3db9c232",
         "type": "any",
         "name": "unsynced"
@@ -16,8 +16,8 @@
     },
     "outputs": {
       "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-        "description": "Sends synchronized inputs as a dictionary, indexed by field.",
-        "type": "{typeof(fields):any}",
+        "description": "Sends synchronized inputs as a dictionary, indexed by field. Or as an array of the inputs. Depends on the fields parameter value.\n\nexample:\n{\"a\":\"Foo\". \"b\":\"Bar\"}",
+        "type": "{string:any} or any[]",
         "name": "synced"
       }
     }

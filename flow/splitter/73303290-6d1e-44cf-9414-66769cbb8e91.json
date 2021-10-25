@@ -1,21 +1,21 @@
 {
-  "description": "Splits bundled signals into individual signals.",
+  "description": "Splits bundled signals into individual signals\nCan be used to extract item values from dictionaries.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_3_synchronization/README.md#example---synchronizing-node-inputs.",
   "interface": {
     "inputs": {
       "7b39d568-3d5a-46fe-8670-3355f60c2746": {
-        "description": "Receives a list of output port names matching the names of individual signals.",
-        "type": "string[]",
+        "description": "Receives a list of output port names matching the names of individual signals.\n\nMust be parameter.\n\nexample:\n[\"a\",\"b\"]",
+        "type": "string[] or number[]",
         "name": "fields"
       },
       "6ad86184-6890-4323-8021-3496a682c98e": {
-        "description": "Receives a signal bundle as a dictionary, where keys identify individual signals.",
-        "type": "{typeof(fields):any}",
+        "description": "Receives a signal bundle as a dictionary, where keys identify individual signals.\n\nexample:\n{\"a\":5, \"b\":2}",
+        "type": "{string:any} or any[]",
         "name": "unsplit"
       }
     },
     "outputs": {
       "12be78f3-a82c-4a9e-bb4e-46d61ee64ca3": {
-        "description": "Sends input data split into individual fields.",
+        "description": "Sends input data split into individual fields.\n\n\"a\" -> \"Foo\"\n\"b\" -> \"Bar\"",
         "paramId": "7b39d568-3d5a-46fe-8670-3355f60c2746",
         "type": "any",
         "name": "split"

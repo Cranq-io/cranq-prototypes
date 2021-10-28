@@ -1,0 +1,31 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "This example CRANQ program runs tests on a mock API endpoint and collects the results in JUnint XML format.",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c12014a5-c9b4-43cc-b0e7-956289b133f0": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "CLICK ME",
+          "prototype": "c344812e-1572-41cc-b09e-2b129e67920f",
+          "description": "Great!\n\nNow, double-click to zoom into the node."
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "examples/projects/JUnit reporter"
+}

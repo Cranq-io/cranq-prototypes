@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "f5e0ae76-bfc3-4041-98b7-9fbc6688a148": "outputs.data(data, `${tag}:0`);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "f5e0ae76-bfc3-4041-98b7-9fbc6688a148": {
+        "type": "any",
+        "name": "data",
+        "description": "The original signal."
+      }
+    },
+    "outputs": {
+      "f61bcb62-2072-41d6-87da-79ccad20f7d2": {
+        "type": "any",
+        "name": "data",
+        "description": "Signal with nested tag, but payload identical to what was received."
+      }
+    }
+  },
+  "name": "flow/Tag nester",
+  "description": "Creates a new level of iteration on the received tag, by appending \":0\" to it."
+}

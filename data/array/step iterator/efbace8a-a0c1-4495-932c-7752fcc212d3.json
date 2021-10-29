@@ -1,0 +1,141 @@
+{
+  "name": "data/array/Step iterator",
+  "description": "Iterates over the items of an array, asynchronously.\n\nTags are controlled:\n\nOn receiving the array, the node sends out the first item (if any) using a nested tag. (\":0\" appended to the original tag.)\n\nSubsequent items will be sent out on receiving signals on `next`, with incremented tags.",
+  "interface": {
+    "inputs": {
+      "d079a46d-16a1-4019-b037-eb25ff63b344": {
+        "type": "any[]",
+        "name": "array",
+        "description": "Sets up iteration and sends out the first item and index 0 with an iterable tag based on the original tag.\n\nWhen the array has only one or zero elements, a signal with the same tag will also be sent through `done`."
+      },
+      "6724a763-9749-41bb-a3dc-2ec659c8b72b": {
+        "type": "any",
+        "name": "next",
+        "description": "Triggers sending out the next item and index, or, when there are no more items, the done signal.\n\nTags on signals received through `next` are expected to be iterable, and identical to the tag sent out for the previous item. (This allows for simple loopbacks between `item` and `next`.)\n\nTags on signals sent out on `item` and `index` are incremented versions of what was received through `next`."
+      }
+    },
+    "outputs": {
+      "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {
+        "type": "any",
+        "name": "item",
+        "description": "The next item in the array.\n\nTags are iterable, and nested versions of the tag of the received array. (If the array tag was \"start\", item tags will be \"start:0\", \"start:1\", etc.)"
+      },
+      "0d15a9b9-a708-4b34-b199-51232e59f94b": {
+        "type": "any",
+        "name": "index",
+        "description": "The next index in the array.\n\nTags are iterable, and nested versions of the tag of the received array. (If the array tag was \"start\", item tags will be \"start:0\", \"start:1\", etc.)"
+      },
+      "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {
+        "type": "any",
+        "name": "done",
+        "description": "Sends out the iterated array when there are no more items in the array and a signal received through `next`, or, when an array is received through `array` that has one or 0 items.\n\nThe tag of the outgoing signal matches that of he original array."
+      },
+      "5f5589df-af99-4cdf-82f7-2e4d99e6962c": {
+        "type": "any",
+        "name": "bounced",
+        "description": "Sends any `next` signal that didn't satisfy the iterable tag requirement."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "494ff0d1-6927-4a1c-88ff-94b9e543b3dd": {
+          "coordinates": [
+            -114.25,
+            -67.25
+          ],
+          "name": "nest tag",
+          "prototype": "faf21612-e9e1-447b-8afd-b4eae3366676",
+          "params": {}
+        },
+        "41e56f76-09a7-448a-b664-8abe89489332": {
+          "coordinates": [
+            -9.25,
+            22.75
+          ],
+          "name": "iterate",
+          "prototype": "78684ad8-a8de-4eff-b275-04d97c8391d8",
+          "params": {}
+        },
+        "6f28b266-027d-49ca-9b50-071c0294ad9d": {
+          "coordinates": [
+            112.75,
+            -94.25
+          ],
+          "name": "trim tag",
+          "prototype": "d755b98a-18fb-4ca2-8580-7ad8c426f4b2",
+          "params": {}
+        },
+        "58b349c6-e113-4592-b7f1-f9a857a46626": {
+          "coordinates": [
+            -6,
+            145
+          ],
+          "name": "increment tag",
+          "prototype": "34ed5ff2-43d8-46c5-92cb-f25b1ecbfeda",
+          "params": {}
+        }
+      },
+      "connections": {
+        "494ff0d1-6927-4a1c-88ff-94b9e543b3dd": {
+          "f61bcb62-2072-41d6-87da-79ccad20f7d2": {
+            "41e56f76-09a7-448a-b664-8abe89489332": {
+              "c1a54d85-36b5-4842-9688-fb2ab8d1cd41": {}
+            }
+          }
+        },
+        "41e56f76-09a7-448a-b664-8abe89489332": {
+          "e159c36b-a301-46ff-92db-64eaeab74d69": {
+            "6f28b266-027d-49ca-9b50-071c0294ad9d": {
+              "ca54dccf-ed97-4731-8eb0-ef76fe19e844": {}
+            }
+          }
+        },
+        "58b349c6-e113-4592-b7f1-f9a857a46626": {
+          "b9ad661b-2879-4b8f-9335-c223ba010a4b": {
+            "41e56f76-09a7-448a-b664-8abe89489332": {
+              "9f2d26e4-7f08-45c0-91bc-b2495b0c4a79": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d079a46d-16a1-4019-b037-eb25ff63b344": {
+            "494ff0d1-6927-4a1c-88ff-94b9e543b3dd": {
+              "f5e0ae76-bfc3-4041-98b7-9fbc6688a148": {}
+            }
+          },
+          "6724a763-9749-41bb-a3dc-2ec659c8b72b": {
+            "58b349c6-e113-4592-b7f1-f9a857a46626": {
+              "4b2b80cb-8d64-40a5-ae06-342257b858cc": {}
+            }
+          }
+        },
+        "outputs": {
+          "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {
+            "41e56f76-09a7-448a-b664-8abe89489332": {
+              "232f9f14-c24e-4f7f-b415-27ccbdfb9dbf": {}
+            }
+          },
+          "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {
+            "6f28b266-027d-49ca-9b50-071c0294ad9d": {
+              "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {}
+            }
+          },
+          "5f5589df-af99-4cdf-82f7-2e4d99e6962c": {
+            "58b349c6-e113-4592-b7f1-f9a857a46626": {
+              "a5ea47e0-1e3f-4f32-afc4-3f0ebe9c3030": {}
+            }
+          },
+          "0d15a9b9-a708-4b34-b199-51232e59f94b": {
+            "41e56f76-09a7-448a-b664-8abe89489332": {
+              "8e36f0c9-932a-4e31-aa7a-e17ff0fee028": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

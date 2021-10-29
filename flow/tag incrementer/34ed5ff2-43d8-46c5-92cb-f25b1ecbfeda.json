@@ -1,16 +1,23 @@
 {
-  "description": "Increments the index part of the incoming signal's tag.",
+  "description": "Increments the iterable (colon-separated) part of the received signal's tag.",
   "interface": {
     "inputs": {
       "4b2b80cb-8d64-40a5-ae06-342257b858cc": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Signal with iterable tag.\n\nWhen the tag on the received signal is not iterable, the signal will be bounced."
       }
     },
     "outputs": {
       "b9ad661b-2879-4b8f-9335-c223ba010a4b": {
         "type": "typeof(data)",
-        "name": "data"
+        "name": "data",
+        "description": "Signal identical to what was received but with an incremented tag."
+      },
+      "a5ea47e0-1e3f-4f32-afc4-3f0ebe9c3030": {
+        "type": "any",
+        "name": "bounced",
+        "description": "The signal received through `data`, when its tag was not iterable."
       }
     }
   },
@@ -20,7 +27,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "4b2b80cb-8d64-40a5-ae06-342257b858cc": "const matches = /^(.*)\\+(.*?)$/.exec(tag);\nconst nextTag = matches === null\n  ? `${tag}+0`\n  : `${matches[1]}+${+matches[2] + 1}`;\noutputs.data(data, nextTag);\n"
+        "4b2b80cb-8d64-40a5-ae06-342257b858cc": "const matches = /^(.*)\\:(\\d+)$/.exec(tag);\nif (matches !== null)\n  outputs.data(data, `${matches[1]}:${+matches[2] + 1}`);\nelse\n  outputs.bounced(data, tag);"
       }
     }
   },

@@ -1,16 +1,18 @@
 {
-  "description": "Trims the last colon-separated section of the tag of the incoming signal.",
+  "description": "Trims the last iterable (colon-separated) section of the tag of the received signal.",
   "interface": {
     "inputs": {
       "ca54dccf-ed97-4731-8eb0-ef76fe19e844": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Signal with iterable tag."
       }
     },
     "outputs": {
       "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {
         "type": "typeof(data)",
-        "name": "data"
+        "name": "data",
+        "description": "Signal identical to what was received but with the last iterable section removed from the tag."
       }
     }
   },
@@ -20,7 +22,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "ca54dccf-ed97-4731-8eb0-ef76fe19e844": "const matches = /^(.*)[:+].*$/.exec(tag);\noutputs.data(data, matches && matches[1] || tag);\n"
+        "ca54dccf-ed97-4731-8eb0-ef76fe19e844": "const matches = /^(.*):\\d+$/.exec(tag);\noutputs.data(data, matches && matches[1] || tag);\n"
       }
     }
   },

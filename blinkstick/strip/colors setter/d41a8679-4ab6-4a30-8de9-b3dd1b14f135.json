@@ -4,82 +4,57 @@
       "nodes": {
         "aa8591b4-1aaf-4dae-86e2-56f44f14d898": {
           "coordinates": [
-            110,
-            -68
+            116,
+            -45
           ],
-          "name": "color setter",
+          "name": "set LED color",
           "prototype": "30903559-22a5-48a6-89c8-dec1de83a2ee",
-          "params": {}
-        },
-        "c8f9bf25-123b-4d06-bfd7-fe6930bb7a9a": {
-          "coordinates": [
-            -110,
-            75
-          ],
-          "name": "iterate",
-          "prototype": "78684ad8-a8de-4eff-b275-04d97c8391d8",
-          "params": {}
-        },
-        "80ffd247-53de-43c6-8b54-831a3b16df71": {
-          "coordinates": [
-            -97,
-            -73
-          ],
-          "name": "tag incrementer",
-          "prototype": "34ed5ff2-43d8-46c5-92cb-f25b1ecbfeda",
           "params": {}
         },
         "65b58395-90b2-4e58-bb48-52b55325fdbd": {
           "coordinates": [
-            45,
-            127
+            -8,
+            -131
           ],
           "name": "to RGB",
           "prototype": "bfcefc47-59ff-4ef0-ab40-a306354dc642",
+          "params": {}
+        },
+        "86c2beae-49c0-4934-9177-933282c69649": {
+          "coordinates": [
+            -91,
+            31
+          ],
+          "name": "loop through colors",
+          "prototype": "efbace8a-a0c1-4495-932c-7752fcc212d3",
           "params": {}
         }
       },
       "forwards": {
         "inputs": {
           "4cc39c5c-fc9f-40f7-ba39-50862f9fd552": {
-            "c8f9bf25-123b-4d06-bfd7-fe6930bb7a9a": {
-              "c1a54d85-36b5-4842-9688-fb2ab8d1cd41": {}
+            "86c2beae-49c0-4934-9177-933282c69649": {
+              "d079a46d-16a1-4019-b037-eb25ff63b344": {}
             }
           }
         },
         "outputs": {
           "6b3ea930-52a6-4a3e-bf73-8174440d9e97": {
-            "c8f9bf25-123b-4d06-bfd7-fe6930bb7a9a": {
-              "e159c36b-a301-46ff-92db-64eaeab74d69": {}
+            "86c2beae-49c0-4934-9177-933282c69649": {
+              "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {}
             }
           },
           "c6660fd5-229e-4763-b4cb-b77ae083613f": {
             "aa8591b4-1aaf-4dae-86e2-56f44f14d898": {
               "d8226121-aa95-4a46-bec1-0e234f7c8524": {}
+            },
+            "86c2beae-49c0-4934-9177-933282c69649": {
+              "5f5589df-af99-4cdf-82f7-2e4d99e6962c": {}
             }
           }
         }
       },
       "connections": {
-        "c8f9bf25-123b-4d06-bfd7-fe6930bb7a9a": {
-          "232f9f14-c24e-4f7f-b415-27ccbdfb9dbf": {
-            "65b58395-90b2-4e58-bb48-52b55325fdbd": {
-              "b418dd70-767a-4f1b-b5b7-c454141db2f1": {}
-            }
-          },
-          "8e36f0c9-932a-4e31-aa7a-e17ff0fee028": {
-            "aa8591b4-1aaf-4dae-86e2-56f44f14d898": {
-              "6f858b1f-5055-4d36-897b-95113d47ef76": {}
-            }
-          }
-        },
-        "80ffd247-53de-43c6-8b54-831a3b16df71": {
-          "b9ad661b-2879-4b8f-9335-c223ba010a4b": {
-            "c8f9bf25-123b-4d06-bfd7-fe6930bb7a9a": {
-              "9f2d26e4-7f08-45c0-91bc-b2495b0c4a79": {}
-            }
-          }
-        },
         "65b58395-90b2-4e58-bb48-52b55325fdbd": {
           "4904d584-d403-4876-87ef-ffa4be34d2cb": {
             "aa8591b4-1aaf-4dae-86e2-56f44f14d898": {
@@ -89,8 +64,20 @@
         },
         "aa8591b4-1aaf-4dae-86e2-56f44f14d898": {
           "4924190a-01b1-4a2d-82b1-07d60d8df7f6": {
-            "80ffd247-53de-43c6-8b54-831a3b16df71": {
-              "4b2b80cb-8d64-40a5-ae06-342257b858cc": {}
+            "86c2beae-49c0-4934-9177-933282c69649": {
+              "6724a763-9749-41bb-a3dc-2ec659c8b72b": {}
+            }
+          }
+        },
+        "86c2beae-49c0-4934-9177-933282c69649": {
+          "0d15a9b9-a708-4b34-b199-51232e59f94b": {
+            "aa8591b4-1aaf-4dae-86e2-56f44f14d898": {
+              "6f858b1f-5055-4d36-897b-95113d47ef76": {}
+            }
+          },
+          "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {
+            "65b58395-90b2-4e58-bb48-52b55325fdbd": {
+              "b418dd70-767a-4f1b-b5b7-c454141db2f1": {}
             }
           }
         }
@@ -101,7 +88,8 @@
     "inputs": {
       "4cc39c5c-fc9f-40f7-ba39-50862f9fd552": {
         "type": "any",
-        "name": "colors"
+        "name": "colors",
+        "description": "Array of 8 HEX RGB color values. (Without leading hash.)"
       }
     },
     "outputs": {

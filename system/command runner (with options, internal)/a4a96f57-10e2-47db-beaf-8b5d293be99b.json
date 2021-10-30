@@ -1,0 +1,36 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "ed6eb9d5-b40e-4c95-b08e-cbbe9b2999a6": "const {exec} = require(\"child_process\");\nconst {command, options} = data;\nif (state.running)\n  outputs.bounced(data, tag);\nelse {\n  state.running = true;\n  exec(command, options, (error, stdout, stderr) => {\n    if (error)\n      outputs.error(`${error}`, tag);\n    else {\n      outputs.stdout(stdout || \"\", tag);\n      outputs.stderr(stderr || \"\", tag);\n      outputs.error(null, tag);\n    }\n    state.running = false;\n  });\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "ed6eb9d5-b40e-4c95-b08e-cbbe9b2999a6": {
+        "type": "{\n\"command\": string,\n\"options\": {\n  \"cwd\": string,\n  \"env\": {string: string}\n}\n}",
+        "name": "command & options"
+      }
+    },
+    "outputs": {
+      "eeb267b0-8f1f-4fb6-b38d-bc45364370e6": {
+        "type": "string",
+        "name": "stdout"
+      },
+      "6dc0de18-f1fe-46e2-afe1-7d189553178a": {
+        "type": "string",
+        "name": "stderr"
+      },
+      "5b16080b-ca82-4496-bd32-0e4b347ebbcc": {
+        "type": "string or null",
+        "name": "error"
+      },
+      "61144bc0-f947-4a6f-90a8-c62dab8d334d": {
+        "type": "typeof `command & options`",
+        "name": "on busy"
+      }
+    }
+  },
+  "name": "system/Command runner (with options, internal)"
+}

@@ -4,17 +4,20 @@
     "inputs": {
       "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {
         "type": "string",
-        "name": "string"
+        "name": "string",
+        "description": "String to be tested against the specified RegEx."
       },
       "4ad33973-93b5-42cd-b485-76c517507786": {
         "type": "string",
-        "name": "regex"
+        "name": "regex",
+        "description": "Regular expression to test the specified string against.\n\nFlavor depends on the running environment!"
       }
     },
     "outputs": {
       "b3b69745-686f-4978-a5cf-ef61c31da582": {
         "type": "boolean",
-        "name": "matches"
+        "name": "matches",
+        "description": "Whether the received string matched the RegEx."
       }
     }
   },
@@ -23,8 +26,8 @@
       "nodes": {
         "9b799024-1668-4772-8f10-0e497188a6ef": {
           "coordinates": [
-            0,
-            0
+            -40,
+            -68
           ],
           "description": "",
           "params": {
@@ -35,8 +38,8 @@
         },
         "ba1f2ca1-6018-4ff6-afd6-8b599c01748c": {
           "coordinates": [
-            0,
-            0
+            26,
+            61
           ],
           "description": "",
           "params": {},

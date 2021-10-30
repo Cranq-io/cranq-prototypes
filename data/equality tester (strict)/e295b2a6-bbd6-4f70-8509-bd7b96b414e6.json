@@ -1,0 +1,78 @@
+{
+  "name": "data/Equality tester (strict)",
+  "description": "Tests whether `a` and `b` are equal by reference. (Primitives by value.) ",
+  "interface": {
+    "inputs": {
+      "272e953d-2449-4834-aedc-09d8375646f1": {
+        "type": "any",
+        "name": "a"
+      },
+      "59126607-3a6e-4e0a-813f-8c6f497ee6d5": {
+        "type": "any",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "e7c3b457-6663-4157-99d4-c42f41ebf4e5": {
+        "type": "any",
+        "name": "equal"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "310f99fb-2eb4-4b9a-8419-7cf1ab203279": {
+          "coordinates": [
+            29,
+            65
+          ],
+          "name": "test equality",
+          "prototype": "a14f9fbe-cd72-420f-8738-44dc8c0ec55b",
+          "params": {}
+        },
+        "23c3b162-bcf6-43f6-8f04-c8c186f7fab4": {
+          "coordinates": [
+            -46,
+            -59
+          ],
+          "name": "sync a & b",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\", \"b\"]"
+          }
+        }
+      },
+      "connections": {
+        "23c3b162-bcf6-43f6-8f04-c8c186f7fab4": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "310f99fb-2eb4-4b9a-8419-7cf1ab203279": {
+              "27092652-f007-4d12-a162-512c135c8de2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "272e953d-2449-4834-aedc-09d8375646f1": {
+            "23c3b162-bcf6-43f6-8f04-c8c186f7fab4": {
+              "a": {}
+            }
+          },
+          "59126607-3a6e-4e0a-813f-8c6f497ee6d5": {
+            "23c3b162-bcf6-43f6-8f04-c8c186f7fab4": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "e7c3b457-6663-4157-99d4-c42f41ebf4e5": {
+            "310f99fb-2eb4-4b9a-8419-7cf1ab203279": {
+              "a4d8ff7c-3463-4ae8-9158-602fe05b617b": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "io/stdio/Line writer (with param)",
+  "interface": {
+    "inputs": {
+      "a47305ec-75e3-43d6-84cf-54f5d04fa823": {
+        "type": "string",
+        "name": "message"
+      },
+      "e466ea21-7500-4746-9676-2255590b6b93": {
+        "type": "any",
+        "name": "start"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "73fbabcb-ca60-440d-b70f-4b27d3e8849e": {
+          "coordinates": [
+            66.5,
+            -58.5
+          ],
+          "name": "write line",
+          "prototype": "0adf0dbf-66e3-4942-8766-b30731f4fcdd",
+          "params": {}
+        },
+        "72fac438-2d5a-405b-af8f-e9aa17a0ece5": {
+          "coordinates": [
+            -48.5,
+            51.5
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        }
+      },
+      "connections": {
+        "72fac438-2d5a-405b-af8f-e9aa17a0ece5": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "73fbabcb-ca60-440d-b70f-4b27d3e8849e": {
+              "a646ba52-2da2-4b71-9f43-df4fd0e779b2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a47305ec-75e3-43d6-84cf-54f5d04fa823": {
+            "72fac438-2d5a-405b-af8f-e9aa17a0ece5": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "e466ea21-7500-4746-9676-2255590b6b93": {
+            "72fac438-2d5a-405b-af8f-e9aa17a0ece5": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "c29976d3-1c56-41d1-a5ec-97a8208d77f7": "const {access} = require(\"fs\");\naccess(data, (error) =>\n  outputs.exists(!error, tag));"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "c29976d3-1c56-41d1-a5ec-97a8208d77f7": {
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "ba564f2b-6ccf-443b-8789-472332f0b60a": {
+        "type": "boolean",
+        "name": "exists"
+      }
+    }
+  },
+  "name": "io/file/Path exist tester",
+  "description": "Tests whether the specified path exists in the filesystem."
+}

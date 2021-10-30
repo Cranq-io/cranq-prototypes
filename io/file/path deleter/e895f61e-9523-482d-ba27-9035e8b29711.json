@@ -1,0 +1,30 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "37af9ddc-63e5-4e93-aeb0-6dcb68421a6d": "const {rm} = require(\"fs\");\nrm(data, {recursive: true, force: true}, (error) => {\n  outputs.success(!error, tag);\n  if (error)\n    outputs.error(`${error}`, tag);\n});"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "37af9ddc-63e5-4e93-aeb0-6dcb68421a6d": {
+        "type": "string",
+        "name": "path",
+        "description": "Deletes all folders on the specified path from the filesystem."
+      }
+    },
+    "outputs": {
+      "42dae2ad-f4d1-49ff-84b1-9017bcacc5d1": {
+        "type": "boolean",
+        "name": "success"
+      },
+      "add35d1f-f739-48f2-85a3-b4342427f537": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "name": "io/file/Path deleter",
+  "description": "Deletes the specified path recursively, and forced."
+}

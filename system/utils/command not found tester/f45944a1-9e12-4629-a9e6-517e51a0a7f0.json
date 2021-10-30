@@ -1,0 +1,111 @@
+{
+  "name": "system/utils/Command not found tester",
+  "description": "Tests whether a command error says the command was not found.",
+  "interface": {
+    "inputs": {
+      "8eceeade-d785-405b-8621-f3d8b9529d17": {
+        "description": "Error from a `system/Command runner` node.",
+        "type": "string or null",
+        "name": "command error"
+      }
+    },
+    "outputs": {
+      "829f0bd7-1f01-4d52-9981-ba5701621618": {
+        "type": "boolean",
+        "name": "not found",
+        "description": "Whether the error said a command was not found."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ae7804cd-14c3-4ddf-af46-918fba23db37": {
+          "coordinates": [
+            95.5,
+            112.25
+          ],
+          "name": "test error",
+          "prototype": "98f4e330-2578-4a0f-89c2-e90e8fff7ec4",
+          "params": {
+            "4ad33973-93b5-42cd-b485-76c517507786": "\"command not found\""
+          }
+        },
+        "6f5898c1-f808-4bf1-b4e6-12ba5272a2ee": {
+          "coordinates": [
+            -119.5,
+            87.25
+          ],
+          "name": "is null?",
+          "prototype": "e295b2a6-bbd6-4f70-8509-bd7b96b414e6",
+          "params": {
+            "59126607-3a6e-4e0a-813f-8c6f497ee6d5": "null"
+          }
+        },
+        "d7bda024-6925-4814-bc24-b34a6615d209": {
+          "coordinates": [
+            -73.5,
+            -73.75
+          ],
+          "name": "when null",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce",
+          "params": {}
+        },
+        "707d31ed-38a6-4601-8617-8657d94ee0ab": {
+          "coordinates": [
+            95.5,
+            -110.75
+          ],
+          "name": "false",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "false"
+          }
+        }
+      },
+      "connections": {
+        "6f5898c1-f808-4bf1-b4e6-12ba5272a2ee": {
+          "e7c3b457-6663-4157-99d4-c42f41ebf4e5": {
+            "d7bda024-6925-4814-bc24-b34a6615d209": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "d7bda024-6925-4814-bc24-b34a6615d209": {
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "ae7804cd-14c3-4ddf-af46-918fba23db37": {
+              "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {}
+            }
+          },
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "707d31ed-38a6-4601-8617-8657d94ee0ab": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8eceeade-d785-405b-8621-f3d8b9529d17": {
+            "d7bda024-6925-4814-bc24-b34a6615d209": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            },
+            "6f5898c1-f808-4bf1-b4e6-12ba5272a2ee": {
+              "272e953d-2449-4834-aedc-09d8375646f1": {}
+            }
+          }
+        },
+        "outputs": {
+          "829f0bd7-1f01-4d52-9981-ba5701621618": {
+            "707d31ed-38a6-4601-8617-8657d94ee0ab": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            },
+            "ae7804cd-14c3-4ddf-af46-918fba23db37": {
+              "b3b69745-686f-4978-a5cf-ef61c31da582": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

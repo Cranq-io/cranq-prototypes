@@ -1,0 +1,63 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8e6081f4-d095-4eb5-9e25-145732eaa415": {
+          "coordinates": [
+            39,
+            -72
+          ],
+          "name": "log",
+          "prototype": "8992956b-cea7-4b73-8f30-d40f49893f9a",
+          "params": {}
+        },
+        "3857b11e-3de4-4da1-bdf3-66b1ccd53c56": {
+          "coordinates": [
+            -20.75,
+            73.75
+          ],
+          "name": "format output",
+          "prototype": "fcf45309-c43e-42ee-8335-1957ca9f427e"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {
+            "3857b11e-3de4-4da1-bdf3-66b1ccd53c56": {
+              "212ca288-0b71-4a49-bc23-cfe9caf267b9": {}
+            }
+          },
+          "5773699e-0819-4c74-8282-fb2a9a77b0cf": {
+            "3857b11e-3de4-4da1-bdf3-66b1ccd53c56": {
+              "ad22d739-2b4a-481e-8d8c-4fd38873dec3": {}
+            }
+          }
+        },
+        "outputs": {}
+      },
+      "connections": {
+        "3857b11e-3de4-4da1-bdf3-66b1ccd53c56": {
+          "cf8c6e28-3f51-4550-8ab4-a52f61b30f19": {
+            "8e6081f4-d095-4eb5-9e25-145732eaa415": {
+              "f6458629-a8b7-4338-b8c1-94eee78f7af5": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {
+        "type": "any",
+        "name": "data"
+      },
+      "5773699e-0819-4c74-8282-fb2a9a77b0cf": {
+        "type": "string",
+        "name": "message"
+      }
+    },
+    "outputs": {}
+  },
+  "name": "debug/Logger (with message)"
+}

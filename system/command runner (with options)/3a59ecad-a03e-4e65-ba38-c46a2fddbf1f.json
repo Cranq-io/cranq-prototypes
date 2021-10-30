@@ -1,0 +1,107 @@
+{
+  "name": "system/Command runner (with options)",
+  "description": "Runs the received command string with the received options.\n\nSends stdout, stderr and optionally error message when the process finished.\n\nBounces command and options when the node is already in the state of executing a command.",
+  "interface": {
+    "inputs": {
+      "edba8e9f-810d-43a7-ac53-099cb383514e": {
+        "type": "string",
+        "name": "command"
+      },
+      "2306645b-1405-4270-acda-dab0946ef715": {
+        "type": "{\n\"cwd\": string,\n\"env\": {string: string}\n}",
+        "name": "options"
+      }
+    },
+    "outputs": {
+      "fc13dd6a-514a-48c6-8c4a-c4c951b09184": {
+        "type": "string",
+        "name": "stdout"
+      },
+      "472a0b60-33a3-4ae0-a953-e865b1472519": {
+        "type": "string",
+        "name": "stderr"
+      },
+      "cd26d4bd-8355-4c74-8262-1e9faf1554a2": {
+        "type": "string or null",
+        "name": "error",
+        "description": "Null on success."
+      },
+      "ff5e32e3-a7b2-4443-9f25-6f5b108c3d97": {
+        "type": "{\n\"command\": typeof `command`,\n\"options\": typeof `options`\n}",
+        "name": "on busy",
+        "description": "The received command and options when the node is still executing another command."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+          "coordinates": [
+            43.5,
+            63
+          ],
+          "name": "run command",
+          "prototype": "a4a96f57-10e2-47db-beaf-8b5d293be99b",
+          "params": {}
+        },
+        "419df68a-af63-46b4-8e7f-a3f8c4d72884": {
+          "coordinates": [
+            -43.5,
+            -63
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"command\", \"options\"]"
+          }
+        }
+      },
+      "connections": {
+        "419df68a-af63-46b4-8e7f-a3f8c4d72884": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+              "ed6eb9d5-b40e-4c95-b08e-cbbe9b2999a6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "edba8e9f-810d-43a7-ac53-099cb383514e": {
+            "419df68a-af63-46b4-8e7f-a3f8c4d72884": {
+              "command": {}
+            }
+          },
+          "2306645b-1405-4270-acda-dab0946ef715": {
+            "419df68a-af63-46b4-8e7f-a3f8c4d72884": {
+              "options": {}
+            }
+          }
+        },
+        "outputs": {
+          "fc13dd6a-514a-48c6-8c4a-c4c951b09184": {
+            "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+              "eeb267b0-8f1f-4fb6-b38d-bc45364370e6": {}
+            }
+          },
+          "472a0b60-33a3-4ae0-a953-e865b1472519": {
+            "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+              "6dc0de18-f1fe-46e2-afe1-7d189553178a": {}
+            }
+          },
+          "cd26d4bd-8355-4c74-8262-1e9faf1554a2": {
+            "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+              "5b16080b-ca82-4496-bd32-0e4b347ebbcc": {}
+            }
+          },
+          "ff5e32e3-a7b2-4443-9f25-6f5b108c3d97": {
+            "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+              "61144bc0-f947-4a6f-90a8-c62dab8d334d": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

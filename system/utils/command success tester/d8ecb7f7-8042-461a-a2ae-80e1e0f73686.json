@@ -1,0 +1,77 @@
+{
+  "name": "system/utils/Command success tester",
+  "description": "Tests whether a command was executed successfully",
+  "interface": {
+    "inputs": {
+      "9150f371-de99-43e5-a529-afdae72ea4da": {
+        "type": "string or null",
+        "name": "error",
+        "description": "Error from a `system/Command runner` node."
+      },
+      "4cd53645-0d3c-43a3-806f-d79d0c4def06": {
+        "type": "any",
+        "name": "busy",
+        "description": "The \"busy\" signal of a `system/Command runner` node."
+      }
+    },
+    "outputs": {
+      "34ddbe5d-0623-45b3-a467-0ee4a9ad17f1": {
+        "type": "any",
+        "name": "success"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7aaa34cf-f754-4ed4-8fce-b94fc49cec0a": {
+          "coordinates": [
+            -4,
+            -63.5
+          ],
+          "name": "is null?",
+          "prototype": "e295b2a6-bbd6-4f70-8509-bd7b96b414e6",
+          "params": {
+            "59126607-3a6e-4e0a-813f-8c6f497ee6d5": "null"
+          }
+        },
+        "4f415f13-dfed-4500-ab5e-92665d2a2c77": {
+          "coordinates": [
+            -1,
+            70
+          ],
+          "name": "false",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "false"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "9150f371-de99-43e5-a529-afdae72ea4da": {
+            "7aaa34cf-f754-4ed4-8fce-b94fc49cec0a": {
+              "272e953d-2449-4834-aedc-09d8375646f1": {}
+            }
+          },
+          "4cd53645-0d3c-43a3-806f-d79d0c4def06": {
+            "4f415f13-dfed-4500-ab5e-92665d2a2c77": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "34ddbe5d-0623-45b3-a467-0ee4a9ad17f1": {
+            "7aaa34cf-f754-4ed4-8fce-b94fc49cec0a": {
+              "e7c3b457-6663-4157-99d4-c42f41ebf4e5": {}
+            },
+            "4f415f13-dfed-4500-ab5e-92665d2a2c77": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

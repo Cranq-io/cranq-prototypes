@@ -1,5 +1,5 @@
 {
-  "description": "Logs input signal to standard logging output.",
+  "description": "Logs received data to the output, using default formatting options.\n\nNot recommended for complex data types.",
   "interface": {
     "inputs": {
       "f6458629-a8b7-4338-b8c1-94eee78f7af5": {
@@ -19,7 +19,7 @@
       }
     }
   },
-  "name": "debug/Logger",
+  "name": "debug/Logger (unformatted)",
   "attributes": {
     "locked": true
   }

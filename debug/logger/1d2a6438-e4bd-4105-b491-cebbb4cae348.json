@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "Logs received data and tag to the output. Formats data as JSON.",
   "interface": {
     "inputs": {
       "73758fba-7b0c-4ea6-8fec-0b56982d5451": {
@@ -59,7 +59,7 @@
       }
     }
   },
-  "name": "debug/Data logger",
+  "name": "debug/Logger",
   "attributes": {
     "locked": true
   }

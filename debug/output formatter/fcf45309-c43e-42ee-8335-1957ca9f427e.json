@@ -1,0 +1,119 @@
+{
+  "name": "debug/Output formatter",
+  "description": "Formats output based on received data and a custom message.",
+  "interface": {
+    "inputs": {
+      "212ca288-0b71-4a49-bc23-cfe9caf267b9": {
+        "type": "any",
+        "name": "data"
+      },
+      "ad22d739-2b4a-481e-8d8c-4fd38873dec3": {
+        "type": "string",
+        "name": "message"
+      }
+    },
+    "outputs": {
+      "cf8c6e28-3f51-4550-8ab4-a52f61b30f19": {
+        "type": "string",
+        "name": "prepare output-filled"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "342e1b32-1ec8-4522-a4d8-89e3f7783956": {
+          "coordinates": [
+            -169.25,
+            43.25
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "dc962b16-d558-4210-9b54-f706b8d6d3ba": {
+          "coordinates": [
+            -21.25,
+            -76.75
+          ],
+          "name": "serialize",
+          "prototype": "3820f096-6216-4049-b374-c98684387fea",
+          "params": {
+            "deb0a917-b393-4326-b573-ec6a6f82ffec": "true"
+          }
+        },
+        "f676106a-0950-4945-9d85-ced698472c5e": {
+          "coordinates": [
+            171.75,
+            -75.75
+          ],
+          "name": "prepare output",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{MESSAGE} {DATA}\""
+          }
+        },
+        "e14995f6-e7c2-4b8c-859c-613093366a6c": {
+          "coordinates": [
+            18.75,
+            109.25
+          ],
+          "name": "prepare params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"MESSAGE\", \"DATA\"]"
+          }
+        }
+      },
+      "connections": {
+        "342e1b32-1ec8-4522-a4d8-89e3f7783956": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "dc962b16-d558-4210-9b54-f706b8d6d3ba": {
+              "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "e14995f6-e7c2-4b8c-859c-613093366a6c": {
+              "MESSAGE": {}
+            }
+          }
+        },
+        "e14995f6-e7c2-4b8c-859c-613093366a6c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f676106a-0950-4945-9d85-ced698472c5e": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "dc962b16-d558-4210-9b54-f706b8d6d3ba": {
+          "25650a4f-7e35-4754-bc8f-1a57f538166f": {
+            "e14995f6-e7c2-4b8c-859c-613093366a6c": {
+              "DATA": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "212ca288-0b71-4a49-bc23-cfe9caf267b9": {
+            "342e1b32-1ec8-4522-a4d8-89e3f7783956": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "ad22d739-2b4a-481e-8d8c-4fd38873dec3": {
+            "342e1b32-1ec8-4522-a4d8-89e3f7783956": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "cf8c6e28-3f51-4550-8ab4-a52f61b30f19": {
+            "f676106a-0950-4945-9d85-ced698472c5e": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "name": "file/JSON writer",
+  "interface": {
+    "inputs": {
+      "6f0ae3fe-c0b4-47d9-a955-c9bb6a00b01a": {
+        "type": "string",
+        "name": "path"
+      },
+      "d8b35e2b-a496-4f85-ac10-0b8ce4a08ec0": {
+        "description": "",
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "9473b1d7-7a1c-40f2-81a6-9dafdac6cfe2": {
+        "type": "null",
+        "name": "written"
+      },
+      "c0454ba5-58d8-4629-b9ea-1c0d4a777b7e": {
+        "type": "{\"data\": any, \"path\": string}",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b0533adc-e2a3-4da7-b438-f67930fc8a8b": {
+          "coordinates": [
+            52.5,
+            -69
+          ],
+          "name": "write file",
+          "prototype": "c4812ed9-c9c7-42ba-8e7f-4b8721090de0",
+          "params": {}
+        },
+        "9878362b-b85f-472c-b9f2-be05399dfd41": {
+          "coordinates": [
+            -31.5,
+            78
+          ],
+          "name": "serialize data",
+          "prototype": "3820f096-6216-4049-b374-c98684387fea",
+          "params": {
+            "deb0a917-b393-4326-b573-ec6a6f82ffec": "true"
+          }
+        }
+      },
+      "connections": {
+        "9878362b-b85f-472c-b9f2-be05399dfd41": {
+          "25650a4f-7e35-4754-bc8f-1a57f538166f": {
+            "b0533adc-e2a3-4da7-b438-f67930fc8a8b": {
+              "aad67a3a-6f75-4fb8-9ddd-f7ea549b1491": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6f0ae3fe-c0b4-47d9-a955-c9bb6a00b01a": {
+            "b0533adc-e2a3-4da7-b438-f67930fc8a8b": {
+              "e93c06b9-6b79-4f39-b74c-606a85e80b4f": {}
+            }
+          },
+          "d8b35e2b-a496-4f85-ac10-0b8ce4a08ec0": {
+            "9878362b-b85f-472c-b9f2-be05399dfd41": {
+              "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {}
+            }
+          }
+        },
+        "outputs": {
+          "9473b1d7-7a1c-40f2-81a6-9dafdac6cfe2": {
+            "b0533adc-e2a3-4da7-b438-f67930fc8a8b": {
+              "e7b571f3-b288-4cb3-99cb-0c87a42ff9eb": {}
+            }
+          },
+          "c0454ba5-58d8-4629-b9ea-1c0d4a777b7e": {
+            "b0533adc-e2a3-4da7-b438-f67930fc8a8b": {
+              "07af60a7-4070-4d30-a243-8b05b6476ee1": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

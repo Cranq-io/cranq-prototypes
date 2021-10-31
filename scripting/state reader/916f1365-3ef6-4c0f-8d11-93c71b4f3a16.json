@@ -1,0 +1,155 @@
+{
+  "name": "scripting/State reader",
+  "description": "Reads the contents of \"state.json\", or, when absent, forwards the received `state`. The initial state is required to contain the current working directory (cwd) on the specified path.",
+  "interface": {
+    "inputs": {
+      "c6f9c457-6a58-4612-8ef7-0b688655ceed": {
+        "type": "any",
+        "name": "state"
+      },
+      "4e033796-b2b2-46d9-9663-4f29921b9a3e": {
+        "type": "any",
+        "name": "cwd path"
+      }
+    },
+    "outputs": {
+      "86a15190-4a2a-4f63-8b99-3d0b87cf6aee": {
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3f9b89e9-005e-43c0-a69b-e47b22e523e5": {
+          "coordinates": [
+            82,
+            -167.5
+          ],
+          "name": "read file",
+          "prototype": "e017ff92-bf1a-4a2f-8520-bd706deb466c",
+          "params": {}
+        },
+        "0bccafa6-7a9f-4621-92b7-b2e83834e85e": {
+          "coordinates": [
+            -166,
+            37.5
+          ],
+          "name": "get working dir",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "b090714b-47a8-4c51-bddf-fbde12d415ca": {
+          "coordinates": [
+            -114,
+            237.5
+          ],
+          "name": "prepare params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"CWD\"]"
+          }
+        },
+        "6a1a5a5d-f165-45de-9b68-9600828d5c53": {
+          "coordinates": [
+            32,
+            36.5
+          ],
+          "name": "prepare path",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{CWD}/state.json\""
+          }
+        },
+        "29cc2f08-a45f-4734-9d81-cae981fed56b": {
+          "coordinates": [
+            -168,
+            -127.5
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "920acee9-b901-40b3-9b17-08a2272eaaae": {
+          "coordinates": [
+            236,
+            100.5
+          ],
+          "name": "hold state",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      },
+      "connections": {
+        "b090714b-47a8-4c51-bddf-fbde12d415ca": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6a1a5a5d-f165-45de-9b68-9600828d5c53": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "0bccafa6-7a9f-4621-92b7-b2e83834e85e": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "b090714b-47a8-4c51-bddf-fbde12d415ca": {
+              "CWD": {}
+            }
+          }
+        },
+        "6a1a5a5d-f165-45de-9b68-9600828d5c53": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "3f9b89e9-005e-43c0-a69b-e47b22e523e5": {
+              "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {}
+            }
+          }
+        },
+        "29cc2f08-a45f-4734-9d81-cae981fed56b": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "0bccafa6-7a9f-4621-92b7-b2e83834e85e": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "0bccafa6-7a9f-4621-92b7-b2e83834e85e": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "3f9b89e9-005e-43c0-a69b-e47b22e523e5": {
+          "8c073c0a-c7fe-4c28-901f-717ab7df4f65": {
+            "920acee9-b901-40b3-9b17-08a2272eaaae": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c6f9c457-6a58-4612-8ef7-0b688655ceed": {
+            "29cc2f08-a45f-4734-9d81-cae981fed56b": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            },
+            "920acee9-b901-40b3-9b17-08a2272eaaae": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "4e033796-b2b2-46d9-9663-4f29921b9a3e": {
+            "29cc2f08-a45f-4734-9d81-cae981fed56b": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "86a15190-4a2a-4f63-8b99-3d0b87cf6aee": {
+            "3f9b89e9-005e-43c0-a69b-e47b22e523e5": {
+              "a858b493-c881-476d-89af-688826173640": {}
+            },
+            "920acee9-b901-40b3-9b17-08a2272eaaae": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

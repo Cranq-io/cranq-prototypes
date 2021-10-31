@@ -1,0 +1,138 @@
+{
+  "name": "scripting/State writer",
+  "interface": {
+    "inputs": {
+      "e847461c-ba07-49ea-89df-55a2dfa44235": {
+        "type": "any",
+        "name": "state"
+      },
+      "0eba5635-c787-4b52-802d-37cb36cba341": {
+        "type": "(string or number)[]",
+        "name": "cwd path"
+      }
+    },
+    "outputs": {
+      "6e97f6b8-4616-46a3-8ceb-b206a08d14e9": {
+        "type": "typeof `state`",
+        "name": "state",
+        "description": "The state that was written"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "71cc4bbc-e4e4-41eb-b4dc-541cc75f2457": {
+          "coordinates": [
+            -152.2,
+            -94.4
+          ],
+          "name": "get working dir",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "b3ce86a0-c5ac-46fc-9702-68f5b7e90697": {
+          "coordinates": [
+            145.8,
+            -109.4
+          ],
+          "name": "prepare path",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{CWD}/state.json\""
+          }
+        },
+        "a14edd22-5352-4d1b-9e1b-e2174031286a": {
+          "coordinates": [
+            -1.2000000000000028,
+            -194.4
+          ],
+          "name": "prepare params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"CWD\"]"
+          }
+        },
+        "012f8473-785c-4e23-bdb4-ad8f4d9c0618": {
+          "coordinates": [
+            9.300000000000011,
+            39.599999999999994
+          ],
+          "name": "write file",
+          "prototype": "e232403f-a261-4865-9b28-9f6888979276"
+        },
+        "2698fb52-ffd7-4051-8aa3-8329637bcb6b": {
+          "coordinates": [
+            34.80000000000001,
+            158.60000000000002
+          ],
+          "name": "wait for write",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      },
+      "connections": {
+        "a14edd22-5352-4d1b-9e1b-e2174031286a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b3ce86a0-c5ac-46fc-9702-68f5b7e90697": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "71cc4bbc-e4e4-41eb-b4dc-541cc75f2457": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "a14edd22-5352-4d1b-9e1b-e2174031286a": {
+              "CWD": {}
+            }
+          }
+        },
+        "b3ce86a0-c5ac-46fc-9702-68f5b7e90697": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "012f8473-785c-4e23-bdb4-ad8f4d9c0618": {
+              "6f0ae3fe-c0b4-47d9-a955-c9bb6a00b01a": {}
+            }
+          }
+        },
+        "012f8473-785c-4e23-bdb4-ad8f4d9c0618": {
+          "9473b1d7-7a1c-40f2-81a6-9dafdac6cfe2": {
+            "2698fb52-ffd7-4051-8aa3-8329637bcb6b": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          },
+          "c0454ba5-58d8-4629-b9ea-1c0d4a777b7e": {
+            "2698fb52-ffd7-4051-8aa3-8329637bcb6b": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e847461c-ba07-49ea-89df-55a2dfa44235": {
+            "71cc4bbc-e4e4-41eb-b4dc-541cc75f2457": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            },
+            "012f8473-785c-4e23-bdb4-ad8f4d9c0618": {
+              "d8b35e2b-a496-4f85-ac10-0b8ce4a08ec0": {}
+            },
+            "2698fb52-ffd7-4051-8aa3-8329637bcb6b": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "0eba5635-c787-4b52-802d-37cb36cba341": {
+            "71cc4bbc-e4e4-41eb-b4dc-541cc75f2457": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "outputs": {
+          "6e97f6b8-4616-46a3-8ceb-b206a08d14e9": {
+            "2698fb52-ffd7-4051-8aa3-8329637bcb6b": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "io/stdio/Line writer (conditional)",
+  "description": "Writes a line to the standard output when the condition is true.",
+  "interface": {
+    "inputs": {
+      "512911c2-29d7-422e-b9b3-0e5fb395c769": {
+        "type": "string",
+        "name": "line"
+      },
+      "c585c536-0dba-49b3-9493-281079742b0c": {
+        "type": "boolean",
+        "name": "condition"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6faab095-6470-4ce1-bd87-7a993c67901c": {
+          "coordinates": [
+            47,
+            -51.5
+          ],
+          "name": "line writer",
+          "prototype": "0adf0dbf-66e3-4942-8766-b30731f4fcdd",
+          "params": {}
+        },
+        "3f4b7853-51ac-44c5-a694-d393cef09e17": {
+          "coordinates": [
+            -47,
+            51.5
+          ],
+          "name": "gate",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09",
+          "params": {}
+        }
+      },
+      "connections": {
+        "3f4b7853-51ac-44c5-a694-d393cef09e17": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "6faab095-6470-4ce1-bd87-7a993c67901c": {
+              "a646ba52-2da2-4b71-9f43-df4fd0e779b2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "512911c2-29d7-422e-b9b3-0e5fb395c769": {
+            "3f4b7853-51ac-44c5-a694-d393cef09e17": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          },
+          "c585c536-0dba-49b3-9493-281079742b0c": {
+            "3f4b7853-51ac-44c5-a694-d393cef09e17": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  }
+}

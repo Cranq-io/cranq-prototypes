@@ -14,24 +14,24 @@
       },
       "64f451de-50c9-44b4-b99c-03d58b2582bb": {
         "description": "Reduced array before the current (by tag) item.",
-        "type": "typeof(initial)",
+        "type": "typeof `initial`",
         "name": "part reduced"
       }
     },
     "outputs": {
       "75ea5be5-4e79-425e-87f4-930e8d21983d": {
         "description": "The reduced array",
-        "type": "typeof(initial)",
+        "type": "typeof `initial`",
         "name": "reduced"
       },
       "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
         "description": "The current item",
-        "type": "typeof(array)[number]",
+        "type": "any",
         "name": "item"
       },
       "b4087af0-fa79-4961-b9dc-964592eb007b": {
         "description": "Reduced array after the current (by tag) item.",
-        "type": "typeof(initial)",
+        "type": "typeof `initial`",
         "name": "part reduced"
       }
     }
@@ -41,8 +41,8 @@
       "nodes": {
         "5f6314db-e3b8-45c9-9b2e-1d01b6f5b27d": {
           "coordinates": [
-            0,
-            0
+            -21,
+            105
           ],
           "description": "",
           "params": {
@@ -53,8 +53,8 @@
         },
         "05834969-ad52-43e8-a419-0b1bb399e699": {
           "coordinates": [
-            0,
-            0
+            38,
+            -68
           ],
           "description": "",
           "params": {},

@@ -1,0 +1,89 @@
+{
+  "name": "scripting/Command runner",
+  "interface": {
+    "inputs": {
+      "8cd3317f-3352-4d50-af72-e489fbf214d7": {
+        "type": "",
+        "name": "state"
+      },
+      "6444661b-8ca4-46b6-95bd-e31e380a9c99": {
+        "type": "string",
+        "name": "command"
+      },
+      "a77a41b5-ab99-4368-b432-e9bfddc83b8f": {
+        "type": "(string or number)[]",
+        "name": "cwd path",
+        "description": "Locates the current working directory in the state."
+      }
+    },
+    "outputs": {
+      "3abf8867-0196-4087-b034-1a4c213ef5b3": {
+        "type": "boolean",
+        "name": "success"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d5621499-8201-4fc1-8f12-f1f373efca85": {
+          "coordinates": [
+            77,
+            -57.5
+          ],
+          "name": "run command",
+          "prototype": "b5a5fc7f-4cee-4549-947a-0a23463748ce",
+          "params": {}
+        },
+        "a2537848-6833-426c-893d-6ab622dc578a": {
+          "coordinates": [
+            -34,
+            78.5
+          ],
+          "name": "get working folder",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        }
+      },
+      "connections": {
+        "a2537848-6833-426c-893d-6ab622dc578a": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "d5621499-8201-4fc1-8f12-f1f373efca85": {
+              "cfc5b416-9908-42b5-b250-0c1c4f038825": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6444661b-8ca4-46b6-95bd-e31e380a9c99": {
+            "d5621499-8201-4fc1-8f12-f1f373efca85": {
+              "269b0a58-6557-4fb4-8204-a5873f58f6cd": {}
+            }
+          },
+          "8cd3317f-3352-4d50-af72-e489fbf214d7": {
+            "a2537848-6833-426c-893d-6ab622dc578a": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {
+                "description": "undefined\nundefined"
+              }
+            }
+          },
+          "a77a41b5-ab99-4368-b432-e9bfddc83b8f": {
+            "a2537848-6833-426c-893d-6ab622dc578a": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "outputs": {
+          "3abf8867-0196-4087-b034-1a4c213ef5b3": {
+            "d5621499-8201-4fc1-8f12-f1f373efca85": {
+              "cb724100-5480-4958-9a63-73defe53823c": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

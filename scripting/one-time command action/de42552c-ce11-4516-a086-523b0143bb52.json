@@ -1,0 +1,222 @@
+{
+  "name": "scripting/One-time command action",
+  "interface": {
+    "inputs": {
+      "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+        "description": "",
+        "type": "any",
+        "name": "state"
+      },
+      "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+        "type": "{\n\"command\": string,\n\"cwd-path\": (string or number)[],\n\"done-path\": (string or number)[],\n\"start-msg\": string,\n\"finish-msg\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "type": "any",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fa24b5be-491d-48fc-9d20-415bb75fe9da": {
+          "coordinates": [
+            126.16666666666666,
+            131.66666666666669
+          ],
+          "name": "whether done",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce",
+          "params": {}
+        },
+        "713bfbf1-15ec-419a-bc53-a1c01939b603": {
+          "coordinates": [
+            -45.83333333333337,
+            -118.83333333333331
+          ],
+          "name": "run command",
+          "prototype": "4e8412cf-3137-4f15-9e67-c9ef00772a54",
+          "params": {}
+        },
+        "e57f62a0-b1b9-4d69-9430-0e634a781e8f": {
+          "coordinates": [
+            170.16666666666663,
+            -145.33333333333331
+          ],
+          "name": "write state",
+          "prototype": "37b06bef-bc5a-42ec-b45b-ec0d82dc0c4a",
+          "params": {}
+        },
+        "303e1a3c-dd31-4b09-9d66-7772ec5bc55e": {
+          "coordinates": [
+            -59.83333333333337,
+            -253.33333333333331
+          ],
+          "name": "log success",
+          "prototype": "0fbfd6b9-5295-44b4-805a-d85bb0640e23",
+          "params": {}
+        },
+        "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+          "coordinates": [
+            -67.83333333333337,
+            198
+          ],
+          "name": "test \"done\"",
+          "prototype": "a7258813-8254-4545-aedc-3c271a160345",
+          "params": {}
+        },
+        "ac33409f-5eaa-4187-8438-9c37a0c36ff7": {
+          "coordinates": [
+            -232.83333333333337,
+            -79.33333333333331
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"command\", \"cwd-path\", \"done-path\", \"start-msg\", \"finish-msg\"]"
+          }
+        },
+        "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+          "coordinates": [
+            122.16666666666663,
+            -27.333333333333314
+          ],
+          "name": "record done",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "5dca309f-984d-4c27-8402-d2eedf77f5aa": "true"
+          }
+        },
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "coordinates": [
+            -247.83333333333337,
+            64.66666666666669
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
+          "coordinates": [
+            78.16666666666663,
+            267.6666666666667
+          ],
+          "name": "log start",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {}
+        }
+      },
+      "connections": {
+        "713bfbf1-15ec-419a-bc53-a1c01939b603": {
+          "3abf8867-0196-4087-b034-1a4c213ef5b3": {
+            "fa24b5be-491d-48fc-9d20-415bb75fe9da": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            },
+            "303e1a3c-dd31-4b09-9d66-7772ec5bc55e": {
+              "c585c536-0dba-49b3-9493-281079742b0c": {}
+            }
+          }
+        },
+        "fa24b5be-491d-48fc-9d20-415bb75fe9da": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+              "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            }
+          }
+        },
+        "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "e57f62a0-b1b9-4d69-9430-0e634a781e8f": {
+              "2f314f09-39ee-40c4-aff3-940186439fee": {}
+            }
+          }
+        },
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "ac33409f-5eaa-4187-8438-9c37a0c36ff7": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "fa24b5be-491d-48fc-9d20-415bb75fe9da": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            },
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "97875ef4-94b5-42d6-a7df-b235c3f60992": {}
+            }
+          }
+        },
+        "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+          "784b20e3-9f91-492b-80b3-b103900d421f": {
+            "713bfbf1-15ec-419a-bc53-a1c01939b603": {
+              "8cd3317f-3352-4d50-af72-e489fbf214d7": {}
+            },
+            "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          }
+        },
+        "ac33409f-5eaa-4187-8438-9c37a0c36ff7": {
+          "command": {
+            "713bfbf1-15ec-419a-bc53-a1c01939b603": {
+              "6444661b-8ca4-46b6-95bd-e31e380a9c99": {}
+            }
+          },
+          "cwd-path": {
+            "713bfbf1-15ec-419a-bc53-a1c01939b603": {
+              "a77a41b5-ab99-4368-b432-e9bfddc83b8f": {}
+            }
+          },
+          "done-path": {
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "2a125b7d-4e80-4cdd-96a3-a7dd0a87e7e2": {}
+            },
+            "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
+            }
+          },
+          "start-msg": {
+            "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
+              "a47305ec-75e3-43d6-84cf-54f5d04fa823": {}
+            }
+          },
+          "finish-msg": {
+            "303e1a3c-dd31-4b09-9d66-7772ec5bc55e": {
+              "512911c2-29d7-422e-b9b3-0e5fb395c769": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "fa24b5be-491d-48fc-9d20-415bb75fe9da": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            },
+            "e57f62a0-b1b9-4d69-9430-0e634a781e8f": {
+              "8a863f1d-3881-45e1-826d-155e88545fb3": {}
+            },
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "53e06d50-a6da-46b3-a47d-667aaf155a9a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Runs a command and records success."
+}

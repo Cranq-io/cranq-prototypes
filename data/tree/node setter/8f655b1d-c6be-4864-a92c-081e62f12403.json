@@ -1,0 +1,90 @@
+{
+  "name": "data/tree/Node setter",
+  "description": "Immutably stores the specified node on the specified path of the tree.",
+  "interface": {
+    "inputs": {
+      "2041b83b-940c-4ef5-89e6-07eb74a42daf": {
+        "type": "any[] or {string:any}",
+        "name": "tree",
+        "description": "Tree data structure in which to store a node."
+      },
+      "bae8488b-e628-456c-8ba4-df9b28a52d3e": {
+        "type": "(string or number)[]",
+        "name": "path",
+        "description": "Specifies the location of the node."
+      },
+      "5dca309f-984d-4c27-8402-d2eedf77f5aa": {
+        "type": "any",
+        "name": "node",
+        "description": "The node to be stored in the tree."
+      }
+    },
+    "outputs": {
+      "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+        "type": "typeof `tree`",
+        "name": "tree"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f80981ba-b58c-40ac-bcf6-f67e853b35e6": {
+          "coordinates": [
+            36.5,
+            -64
+          ],
+          "name": "set node",
+          "prototype": "b387d94d-eb3b-4dcf-ab4c-7340f38cf26e",
+          "params": {}
+        },
+        "8112d4da-ee18-47d0-a80b-6180f7a0445c": {
+          "coordinates": [
+            -18.5,
+            71
+          ],
+          "name": "sync inputs",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"tree\", \"path\", \"node\"]"
+          }
+        }
+      },
+      "connections": {
+        "8112d4da-ee18-47d0-a80b-6180f7a0445c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f80981ba-b58c-40ac-bcf6-f67e853b35e6": {
+              "a3746e5d-5a79-4943-8318-db69cd8f92fa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2041b83b-940c-4ef5-89e6-07eb74a42daf": {
+            "8112d4da-ee18-47d0-a80b-6180f7a0445c": {
+              "tree": {}
+            }
+          },
+          "bae8488b-e628-456c-8ba4-df9b28a52d3e": {
+            "8112d4da-ee18-47d0-a80b-6180f7a0445c": {
+              "path": {}
+            }
+          },
+          "5dca309f-984d-4c27-8402-d2eedf77f5aa": {
+            "8112d4da-ee18-47d0-a80b-6180f7a0445c": {
+              "node": {}
+            }
+          }
+        },
+        "outputs": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "f80981ba-b58c-40ac-bcf6-f67e853b35e6": {
+              "77ffd279-c6a6-4084-8d00-158ce6d72fb4": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,18 +1,21 @@
 {
-  "description": "Sets a node at the specified path of the tree. Mutates input.",
+  "description": "Stores the specified node on the specified path of the tree.\n\nMutates input.",
   "interface": {
     "inputs": {
       "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {
         "type": "any[] or {string:any}",
-        "name": "tree"
+        "name": "tree",
+        "description": "Tree data structure in which to store a node.\n\nWill be mutated."
       },
       "1670d7c3-36ce-42d6-8411-b90866ca411a": {
-        "type": "(string | number)[]",
-        "name": "path"
+        "type": "(string or number)[]",
+        "name": "path",
+        "description": "Specifies the location of the node."
       },
       "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {
         "type": "any",
-        "name": "node"
+        "name": "node",
+        "description": "The node to be stored in the tree."
       }
     },
     "outputs": {
@@ -87,7 +90,7 @@
       }
     }
   },
-  "name": "data/tree/Node setter/mutable",
+  "name": "data/tree/Node setter (mutable)",
   "attributes": {
     "locked": true
   }

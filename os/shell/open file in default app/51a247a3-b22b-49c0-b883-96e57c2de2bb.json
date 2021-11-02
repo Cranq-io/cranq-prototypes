@@ -1,0 +1,39 @@
+{
+  "name": "os/shell/Open file in default app",
+  "interface": {
+    "inputs": {
+      "2fe52f00-26b7-4014-a043-578890459c71": {
+        "type": "any",
+        "name": "path",
+        "description": "The path to the file to open.\n\nExample:\n\"C:\\\\folder\\\\file.ext\""
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "743b50c6-da00-47ad-8a03-5a0579f41a38": {
+          "coordinates": [
+            8,
+            -5
+          ],
+          "name": "open file",
+          "prototype": "522a0dae-945f-46c0-ae94-05a8df434fa8",
+          "params": {}
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "2fe52f00-26b7-4014-a043-578890459c71": {
+            "743b50c6-da00-47ad-8a03-5a0579f41a38": {
+              "c9575bf3-b041-4fb3-931e-f046e248bda9": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  }
+}

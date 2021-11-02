@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "c9171ddf-0c3e-49c2-add4-0348fd16c633": "const { fork } = require('child_process');\nconst npx = require.resolve('npx');\nconst args = [\"xunit-viewer\", \"-r\", data[\"junit xml path\"], \"-o\", data[\"report path\"], \"-t\", \"Test report\"]\n\nconst child = fork(npx, args, {silent: true, windowsHide: true});\n\nchild.on('exit', (code) => {\n  if (code===0) { \n    outputs.generated(null, tag); \n  } else {\n    outputs.bounced(data, tag);\n  }\n});"
+        "c9171ddf-0c3e-49c2-add4-0348fd16c633": "const { fork } = require('child_process');\nconst npx = require.resolve('npx');\nconst args = [\"xunit-viewer\", \"-r\", data[\"junit xml path\"], \"-o\", data[\"report path\"], \"-t\", \"Test report\"]\n\nconst child = fork(npx, args, {silent: true, windowsHide: true});\n\nchild.on('exit', (code) => {\n  if (code===0) { \n    outputs.generated(data[\"report path\"], tag); \n  } else {\n    outputs.bounced(data, tag);\n  }\n});"
       },
       "dependencies": {
         "npm": {

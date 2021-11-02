@@ -4,8 +4,8 @@
       "nodes": {
         "99519557-cd5d-4276-90e1-3d8e250ba70e": {
           "coordinates": [
-            2,
-            144
+            56,
+            146
           ],
           "name": "generate",
           "prototype": "a56cc8e1-31fc-4411-999d-8255ca18254a",
@@ -13,14 +13,32 @@
         },
         "f1f91215-740a-4df4-bf5e-055829b3c91e": {
           "coordinates": [
-            3,
-            -89
+            38,
+            -48
           ],
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"junit xml path\", \"report path\"]"
           }
+        },
+        "1fca0005-9b14-4e86-be84-7d01a63627a5": {
+          "coordinates": [
+            -131,
+            -126
+          ],
+          "name": "resolve junit xml path",
+          "prototype": "27101a1a-13b2-4ad0-9820-c6506568c75b",
+          "params": {}
+        },
+        "028feb66-1063-4399-ba80-bba950ae0c2f": {
+          "coordinates": [
+            -138,
+            68
+          ],
+          "name": "resolve report path",
+          "prototype": "27101a1a-13b2-4ad0-9820-c6506568c75b",
+          "params": {}
         }
       },
       "connections": {
@@ -30,18 +48,32 @@
               "c9171ddf-0c3e-49c2-add4-0348fd16c633": {}
             }
           }
+        },
+        "1fca0005-9b14-4e86-be84-7d01a63627a5": {
+          "bc9c01ea-bb7a-4d08-8e1f-33925dc70ca5": {
+            "f1f91215-740a-4df4-bf5e-055829b3c91e": {
+              "junit xml path": {}
+            }
+          }
+        },
+        "028feb66-1063-4399-ba80-bba950ae0c2f": {
+          "bc9c01ea-bb7a-4d08-8e1f-33925dc70ca5": {
+            "f1f91215-740a-4df4-bf5e-055829b3c91e": {
+              "report path": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
           "11dcb7b3-fc20-4493-b3b9-9b09b1f39dc2": {
-            "f1f91215-740a-4df4-bf5e-055829b3c91e": {
-              "junit xml path": {}
+            "1fca0005-9b14-4e86-be84-7d01a63627a5": {
+              "b1091169-85d7-43ec-a94a-f9b20070685f": {}
             }
           },
           "35196ddd-2bf2-495d-9f53-2ae6517a2304": {
-            "f1f91215-740a-4df4-bf5e-055829b3c91e": {
-              "report path": {}
+            "028feb66-1063-4399-ba80-bba950ae0c2f": {
+              "b1091169-85d7-43ec-a94a-f9b20070685f": {}
             }
           }
         },
@@ -76,7 +108,7 @@
     "outputs": {
       "e2f2f0a1-4a06-4f47-b02c-984bbdb9a5dc": {
         "type": "any",
-        "name": "generated",
+        "name": "generated path",
         "description": "Indicates, that the report was generated successfully."
       },
       "8f45fbfd-bd4f-4f2a-8cfa-6dd9617d9dd4": {

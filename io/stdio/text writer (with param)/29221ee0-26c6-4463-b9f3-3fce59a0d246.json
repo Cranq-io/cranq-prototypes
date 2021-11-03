@@ -1,0 +1,64 @@
+{
+  "name": "io/stdio/Text writer (with param)",
+  "interface": {
+    "inputs": {
+      "f9f516fd-7f3a-4004-9f33-152f2da53fe5": {
+        "type": "string",
+        "name": "text"
+      },
+      "28431bca-245e-455a-a1fa-1dda02d082a5": {
+        "type": "any",
+        "name": "start"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2c0b5bbd-392a-4119-b157-120cc1453eb9": {
+          "coordinates": [
+            43,
+            -73
+          ],
+          "name": "write text",
+          "prototype": "46a8b971-7a01-485f-9c22-5c31cb6ca213",
+          "params": {}
+        },
+        "ba7f41c1-61c9-45af-a88e-6c89d595bc66": {
+          "coordinates": [
+            -19,
+            68
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        }
+      },
+      "connections": {
+        "ba7f41c1-61c9-45af-a88e-6c89d595bc66": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "2c0b5bbd-392a-4119-b157-120cc1453eb9": {
+              "74353fac-df86-4ac5-9ed1-31d5b3b4e35f": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f9f516fd-7f3a-4004-9f33-152f2da53fe5": {
+            "ba7f41c1-61c9-45af-a88e-6c89d595bc66": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "28431bca-245e-455a-a1fa-1dda02d082a5": {
+            "ba7f41c1-61c9-45af-a88e-6c89d595bc66": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  }
+}

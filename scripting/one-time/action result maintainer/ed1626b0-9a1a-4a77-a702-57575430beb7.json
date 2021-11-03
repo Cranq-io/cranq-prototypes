@@ -1,5 +1,5 @@
 {
-  "name": "scripting/One-time action result maintainer",
+  "name": "scripting/one-time/Action result maintainer",
   "interface": {
     "inputs": {
       "354855a7-bbff-4e07-a469-2a433bf8e839": {
@@ -50,15 +50,6 @@
           "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {}
         },
-        "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
-          "coordinates": [
-            138.88888888888889,
-            138.07407407407402
-          ],
-          "name": "log start",
-          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
-          "params": {}
-        },
         "77902c9b-03c7-4bc2-8e5f-b549619dab0e": {
           "coordinates": [
             -182.1111111111111,
@@ -67,7 +58,7 @@
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\", \"result-path\", \"start-msg\", \"finish-msg\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\", \"result-path\", \"message\"]"
           }
         },
         "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
@@ -75,9 +66,11 @@
             -121.11111111111111,
             -120.92592592592592
           ],
-          "name": "write finished",
+          "name": "write \"OK\"",
           "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
-          "params": {}
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\" OK\""
+          }
         },
         "4db99b21-aaba-4042-a23d-98841bf3cbe2": {
           "coordinates": [
@@ -87,16 +80,25 @@
           "name": "write state",
           "prototype": "7fe3c64f-6642-4ed4-9757-a6006b30aac8",
           "params": {}
+        },
+        "9ea93730-141f-43d1-a5fa-9ce8fa3abe37": {
+          "coordinates": [
+            141.72222222222229,
+            147.4074074074074
+          ],
+          "name": "write message",
+          "prototype": "29221ee0-26c6-4463-b9f3-3fce59a0d246",
+          "params": {}
         }
       },
       "connections": {
         "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
           "784b20e3-9f91-492b-80b3-b103900d421f": {
-            "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
-              "e466ea21-7500-4746-9676-2255590b6b93": {}
-            },
             "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
               "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            },
+            "9ea93730-141f-43d1-a5fa-9ce8fa3abe37": {
+              "28431bca-245e-455a-a1fa-1dda02d082a5": {}
             }
           }
         },
@@ -123,14 +125,9 @@
               "2a125b7d-4e80-4cdd-96a3-a7dd0a87e7e2": {}
             }
           },
-          "start-msg": {
-            "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
-              "a47305ec-75e3-43d6-84cf-54f5d04fa823": {}
-            }
-          },
-          "finish-msg": {
-            "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
-              "a47305ec-75e3-43d6-84cf-54f5d04fa823": {}
+          "message": {
+            "9ea93730-141f-43d1-a5fa-9ce8fa3abe37": {
+              "f9f516fd-7f3a-4004-9f33-152f2da53fe5": {}
             }
           }
         }

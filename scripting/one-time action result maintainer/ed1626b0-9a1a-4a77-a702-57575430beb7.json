@@ -1,0 +1,179 @@
+{
+  "name": "scripting/One-time action result maintainer",
+  "interface": {
+    "inputs": {
+      "354855a7-bbff-4e07-a469-2a433bf8e839": {
+        "type": "boolean",
+        "name": "action result"
+      },
+      "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {
+        "description": "Receives data to be forwarded.",
+        "type": "any",
+        "name": "params"
+      },
+      "9d2803fc-d73d-4d98-adb5-2460ecc70413": {
+        "description": "Receives data to be forwarded.",
+        "type": "any",
+        "name": "state"
+      }
+    },
+    "outputs": {
+      "b6686489-d7c4-4f8d-beed-027997128d36": {
+        "description": "",
+        "type": "typeof `state`",
+        "name": "state (action not started)"
+      },
+      "be1e4812-a83d-41b8-b739-99586a0bd93a": {
+        "type": "any",
+        "name": "state (action finished)"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+          "coordinates": [
+            11.888888888888886,
+            207.4074074074074
+          ],
+          "name": "action finished?",
+          "prototype": "a7258813-8254-4545-aedc-3c271a160345",
+          "params": {}
+        },
+        "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+          "coordinates": [
+            30.888888888888886,
+            -11.92592592592598
+          ],
+          "name": "store result",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {}
+        },
+        "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
+          "coordinates": [
+            138.88888888888889,
+            138.07407407407402
+          ],
+          "name": "log start",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {}
+        },
+        "77902c9b-03c7-4bc2-8e5f-b549619dab0e": {
+          "coordinates": [
+            -182.1111111111111,
+            80.07407407407405
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\", \"result-path\", \"start-msg\", \"finish-msg\"]"
+          }
+        },
+        "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
+          "coordinates": [
+            -121.11111111111111,
+            -120.92592592592592
+          ],
+          "name": "write finished",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {}
+        },
+        "4db99b21-aaba-4042-a23d-98841bf3cbe2": {
+          "coordinates": [
+            34.888888888888914,
+            -158.92592592592595
+          ],
+          "name": "write state",
+          "prototype": "7fe3c64f-6642-4ed4-9757-a6006b30aac8",
+          "params": {}
+        }
+      },
+      "connections": {
+        "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+          "784b20e3-9f91-492b-80b3-b103900d421f": {
+            "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            },
+            "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+              "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            }
+          }
+        },
+        "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "4db99b21-aaba-4042-a23d-98841bf3cbe2": {
+              "e847461c-ba07-49ea-89df-55a2dfa44235": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        },
+        "77902c9b-03c7-4bc2-8e5f-b549619dab0e": {
+          "cwd-path": {
+            "4db99b21-aaba-4042-a23d-98841bf3cbe2": {
+              "0eba5635-c787-4b52-802d-37cb36cba341": {}
+            }
+          },
+          "result-path": {
+            "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
+            },
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "2a125b7d-4e80-4cdd-96a3-a7dd0a87e7e2": {}
+            }
+          },
+          "start-msg": {
+            "6c32ba38-a84d-4395-91f4-f2a7f41d9108": {
+              "a47305ec-75e3-43d6-84cf-54f5d04fa823": {}
+            }
+          },
+          "finish-msg": {
+            "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
+              "a47305ec-75e3-43d6-84cf-54f5d04fa823": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {
+            "77902c9b-03c7-4bc2-8e5f-b549619dab0e": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "9d2803fc-d73d-4d98-adb5-2460ecc70413": {
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "97875ef4-94b5-42d6-a7df-b235c3f60992": {}
+            }
+          },
+          "354855a7-bbff-4e07-a469-2a433bf8e839": {
+            "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            },
+            "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        },
+        "outputs": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "784b20e3-9f91-492b-80b3-b103900d421f": {}
+            }
+          },
+          "be1e4812-a83d-41b8-b739-99586a0bd93a": {
+            "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
+              "53e06d50-a6da-46b3-a47d-667aaf155a9a": {}
+            },
+            "4db99b21-aaba-4042-a23d-98841bf3cbe2": {
+              "6e97f6b8-4616-46a3-8ceb-b206a08d14e9": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

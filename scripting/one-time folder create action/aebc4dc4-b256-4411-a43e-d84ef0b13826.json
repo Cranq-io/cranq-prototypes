@@ -1,0 +1,172 @@
+{
+  "name": "scripting/One-time folder create action",
+  "description": "",
+  "interface": {
+    "inputs": {
+      "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+        "description": "",
+        "type": "any",
+        "name": "state"
+      },
+      "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"start-msg\": string,\n\"finish-msg\": string\n}",
+        "name": "params"
+      },
+      "6abfaa51-17e3-4e9e-a68f-520c3ed984aa": {
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "type": "any",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "coordinates": [
+            41.27777777777774,
+            198.5925925925926
+          ],
+          "name": "fetch / store result",
+          "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
+          "params": {}
+        },
+        "898282f9-549a-4a17-997e-1956b2e28710": {
+          "coordinates": [
+            80,
+            74
+          ],
+          "name": "create working dir",
+          "prototype": "3c5d8397-ffca-4e6a-894f-d85d03433e08",
+          "params": {}
+        },
+        "eed35af4-fccb-404f-8f54-3237883648fb": {
+          "coordinates": [
+            -133,
+            -27
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\"]"
+          }
+        },
+        "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
+          "coordinates": [
+            22,
+            -164
+          ],
+          "name": "get CWD",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "f9555b9d-c1bf-4df5-9905-4461f5cb6529": {
+          "coordinates": [
+            -153.59375,
+            159
+          ],
+          "name": "forwarder/triple",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        },
+        "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
+          "coordinates": [
+            164,
+            -81
+          ],
+          "name": "path joiner",
+          "prototype": "e41763a1-9605-4954-a735-4d5946e1afe5",
+          "params": {}
+        }
+      },
+      "connections": {
+        "898282f9-549a-4a17-997e-1956b2e28710": {
+          "003eec16-3c0d-4669-9e69-7eadef26bd7c": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "354855a7-bbff-4e07-a469-2a433bf8e839": {}
+            }
+          }
+        },
+        "eed35af4-fccb-404f-8f54-3237883648fb": {
+          "cwd-path": {
+            "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "f9555b9d-c1bf-4df5-9905-4461f5cb6529": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "eed35af4-fccb-404f-8f54-3237883648fb": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
+              "3a5d55e5-53ef-4c70-a361-35608a7474d2": {}
+            }
+          }
+        },
+        "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
+              "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
+            }
+          }
+        },
+        "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
+          "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
+            "898282f9-549a-4a17-997e-1956b2e28710": {
+              "1874467c-b1d0-49a4-8112-1280e2f69ce0": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+            "f9555b9d-c1bf-4df5-9905-4461f5cb6529": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+            "f9555b9d-c1bf-4df5-9905-4461f5cb6529": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "6abfaa51-17e3-4e9e-a68f-520c3ed984aa": {
+            "f9555b9d-c1bf-4df5-9905-4461f5cb6529": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "be1e4812-a83d-41b8-b739-99586a0bd93a": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

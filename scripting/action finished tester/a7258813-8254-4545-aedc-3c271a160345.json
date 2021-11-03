@@ -1,27 +1,28 @@
 {
-  "name": "scripting/Action done tester",
+  "name": "scripting/Action finished tester",
   "interface": {
     "inputs": {
       "97875ef4-94b5-42d6-a7df-b235c3f60992": {
-        "description": "",
+        "description": "Current state of the script.",
         "type": "any",
         "name": "state"
       },
       "2a125b7d-4e80-4cdd-96a3-a7dd0a87e7e2": {
         "type": "(string or number)[]",
-        "name": "done path"
+        "name": "result path",
+        "description": "Locates an action result in the state."
       }
     },
     "outputs": {
       "53e06d50-a6da-46b3-a47d-667aaf155a9a": {
         "description": "",
         "type": "typeof `state`",
-        "name": "on done"
+        "name": "on finished"
       },
       "784b20e3-9f91-492b-80b3-b103900d421f": {
         "description": "",
         "type": "typeof `state`",
-        "name": "on not done"
+        "name": "on not started"
       }
     }
   },
@@ -111,5 +112,6 @@
         }
       }
     }
-  }
+  },
+  "description": "Tests whether there's aresult recorded on the specified result path of the state."
 }

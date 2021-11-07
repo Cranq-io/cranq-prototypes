@@ -1,0 +1,24 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "d78b418d-2fa8-4dc1-aa44-0f3693861838": "outputs.groups(data.string.match(new RegExp(data.regex)), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "d78b418d-2fa8-4dc1-aa44-0f3693861838": {
+        "type": "{\"regex\": \"string\", \"string\": string}",
+        "name": "regex & string"
+      }
+    },
+    "outputs": {
+      "e06cb940-74ef-45b7-bf29-c0d721f254db": {
+        "type": "string[] or null",
+        "name": "groups"
+      }
+    }
+  },
+  "name": "string/Regex matcher (internal)"
+}

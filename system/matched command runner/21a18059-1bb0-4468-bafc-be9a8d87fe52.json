@@ -1,0 +1,195 @@
+{
+  "name": "system/Matched command runner",
+  "description": "Runs the received command and matches standard output against the specified regular expression.\n\nSends matched RegEx groups through `groups`.\n\nSends empty array on no match.",
+  "interface": {
+    "inputs": {
+      "06827957-9f37-49b2-8aa6-fa4ddbdfc8fa": {
+        "description": "Receives individual fields for syncing.",
+        "paramId": "ef31c1e9-cfd5-458b-8d3a-951e3db9c232",
+        "type": "any",
+        "name": "cwd"
+      },
+      "6ea83637-28d4-495c-aeab-cd7d2d59222e": {
+        "type": "string",
+        "name": "command"
+      },
+      "321d9242-3c12-48b0-b92e-182514d38e3f": {
+        "type": "string",
+        "name": "regex"
+      }
+    },
+    "outputs": {
+      "887db6fc-131c-45e6-8de4-e50808638c4c": {
+        "description": "Matched RegEx groups",
+        "type": "string[]",
+        "name": "groups"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "eb2934c1-917b-480f-9e62-c5817648206f": {
+          "coordinates": [
+            1,
+            11.5
+          ],
+          "name": "run command",
+          "prototype": "3a59ecad-a03e-4e65-ba38-c46a2fddbf1f",
+          "params": {}
+        },
+        "9197062e-a378-4199-bbe7-54b0a48190ce": {
+          "coordinates": [
+            -181,
+            -46.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"cwd\"]"
+          }
+        },
+        "2ad5e095-a1de-49a2-8f2a-f96548239b3a": {
+          "coordinates": [
+            72,
+            -143.5
+          ],
+          "name": "match output",
+          "prototype": "c9b76fa0-7428-4b19-8b09-63bf023088c9",
+          "params": {}
+        },
+        "d2cd4497-e276-4465-8094-265364fa443b": {
+          "coordinates": [
+            34,
+            188.5
+          ],
+          "name": "success?",
+          "prototype": "d8ecb7f7-8042-461a-a2ae-80e1e0f73686",
+          "params": {}
+        },
+        "07eecab0-fec4-46ec-96d8-1ced60846460": {
+          "coordinates": [
+            143,
+            113.5
+          ],
+          "name": "when unsuccessful",
+          "prototype": "a9ccc258-8320-46cd-a29a-180316401e63",
+          "params": {}
+        },
+        "7b72cbb7-612b-4af8-8a54-346fe66e3b5a": {
+          "coordinates": [
+            248,
+            40.5
+          ],
+          "name": "send empty",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[]"
+          }
+        },
+        "15767eb3-ae45-4d9f-80eb-d78ca96046b4": {
+          "coordinates": [
+            -180,
+            92.5
+          ],
+          "name": "forwarder/triple",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        }
+      },
+      "connections": {
+        "9197062e-a378-4199-bbe7-54b0a48190ce": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "eb2934c1-917b-480f-9e62-c5817648206f": {
+              "2306645b-1405-4270-acda-dab0946ef715": {}
+            }
+          }
+        },
+        "eb2934c1-917b-480f-9e62-c5817648206f": {
+          "fc13dd6a-514a-48c6-8c4a-c4c951b09184": {
+            "2ad5e095-a1de-49a2-8f2a-f96548239b3a": {
+              "85025d96-fe7b-4714-a6cb-a52ae7f4aa6e": {}
+            }
+          },
+          "cd26d4bd-8355-4c74-8262-1e9faf1554a2": {
+            "d2cd4497-e276-4465-8094-265364fa443b": {
+              "9150f371-de99-43e5-a529-afdae72ea4da": {}
+            }
+          },
+          "ff5e32e3-a7b2-4443-9f25-6f5b108c3d97": {
+            "d2cd4497-e276-4465-8094-265364fa443b": {
+              "4cd53645-0d3c-43a3-806f-d79d0c4def06": {}
+            }
+          }
+        },
+        "d2cd4497-e276-4465-8094-265364fa443b": {
+          "34ddbe5d-0623-45b3-a467-0ee4a9ad17f1": {
+            "07eecab0-fec4-46ec-96d8-1ced60846460": {
+              "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {}
+            }
+          }
+        },
+        "2ad5e095-a1de-49a2-8f2a-f96548239b3a": {
+          "28491fbe-c349-461b-adad-f33fa7c6ecab": {
+            "7b72cbb7-612b-4af8-8a54-346fe66e3b5a": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "07eecab0-fec4-46ec-96d8-1ced60846460": {
+          "7cfb1db4-bf11-4d32-b364-4f9281088541": {
+            "7b72cbb7-612b-4af8-8a54-346fe66e3b5a": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "15767eb3-ae45-4d9f-80eb-d78ca96046b4": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "9197062e-a378-4199-bbe7-54b0a48190ce": {
+              "cwd": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "eb2934c1-917b-480f-9e62-c5817648206f": {
+              "edba8e9f-810d-43a7-ac53-099cb383514e": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "2ad5e095-a1de-49a2-8f2a-f96548239b3a": {
+              "2c82a6df-0eee-4ef1-a9b0-b795c338f9c8": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "06827957-9f37-49b2-8aa6-fa4ddbdfc8fa": {
+            "15767eb3-ae45-4d9f-80eb-d78ca96046b4": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          },
+          "6ea83637-28d4-495c-aeab-cd7d2d59222e": {
+            "15767eb3-ae45-4d9f-80eb-d78ca96046b4": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "321d9242-3c12-48b0-b92e-182514d38e3f": {
+            "15767eb3-ae45-4d9f-80eb-d78ca96046b4": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        },
+        "outputs": {
+          "887db6fc-131c-45e6-8de4-e50808638c4c": {
+            "2ad5e095-a1de-49a2-8f2a-f96548239b3a": {
+              "f6986868-ad47-431b-80d9-e68b4a199710": {}
+            },
+            "7b72cbb7-612b-4af8-8a54-346fe66e3b5a": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

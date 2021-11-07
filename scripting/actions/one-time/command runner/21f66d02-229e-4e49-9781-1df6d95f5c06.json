@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"start-msg\": string,\n\"finish-msg\": string\n}",
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string\n}",
         "name": "params"
       },
       "4d408eb1-2343-4d1c-b841-53c0212d54f8": {
@@ -29,82 +29,82 @@
       "nodes": {
         "733af17d-de08-473c-b7a2-ab49f11be687": {
           "coordinates": [
-            48.27777777777774,
-            195.5925925925926
+            72.27777777777774,
+            149.5925925925926
           ],
           "name": "fetch / store result",
           "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
           "params": {}
         },
-        "eced1d1f-22ed-49f4-a160-9748bf434560": {
+        "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
           "coordinates": [
-            30,
-            -105.5
+            77,
+            -44
           ],
           "name": "run command",
-          "prototype": "4e8412cf-3137-4f15-9e67-c9ef00772a54",
+          "prototype": "b5a5fc7f-4cee-4549-947a-0a23463748ce",
           "params": {}
         },
-        "f65f0e70-ccc4-4aa1-9e15-755442fce523": {
+        "d74f223a-3cfd-4d1e-b53f-c0ef6fc44df7": {
           "coordinates": [
-            -139,
-            -25.5
-          ],
-          "name": "splitter",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
-          "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\"]"
-          }
-        },
-        "b3c18dfc-51ec-46e1-afb4-cb9dfad427d8": {
-          "coordinates": [
-            -161.59375,
-            128
+            -117.2734375,
+            86
           ],
           "name": "forwarder/triple",
           "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
           "params": {}
+        },
+        "063bf829-b16c-4029-a40f-7aa50cb06f72": {
+          "coordinates": [
+            -82.2734375,
+            -112
+          ],
+          "name": "get CWD",
+          "prototype": "d663cd3d-0876-409e-9dbb-1669e97a8662",
+          "params": {}
         }
       },
       "connections": {
-        "eced1d1f-22ed-49f4-a160-9748bf434560": {
-          "3abf8867-0196-4087-b034-1a4c213ef5b3": {
+        "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+          "cb724100-5480-4958-9a63-73defe53823c": {
             "733af17d-de08-473c-b7a2-ab49f11be687": {
-              "354855a7-bbff-4e07-a469-2a433bf8e839": {}
+              "354855a7-bbff-4e07-a469-2a433bf8e839": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        },
+        "d74f223a-3cfd-4d1e-b53f-c0ef6fc44df7": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            },
+            "063bf829-b16c-4029-a40f-7aa50cb06f72": {
+              "091a4665-aec1-4475-9b14-7ee983e90326": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+              "269b0a58-6557-4fb4-8204-a5873f58f6cd": {}
+            }
+          }
+        },
+        "063bf829-b16c-4029-a40f-7aa50cb06f72": {
+          "fb2ddb6a-998f-4060-a5a3-1aa8016c5f34": {
+            "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+              "cfc5b416-9908-42b5-b250-0c1c4f038825": {}
             }
           }
         },
         "733af17d-de08-473c-b7a2-ab49f11be687": {
           "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "eced1d1f-22ed-49f4-a160-9748bf434560": {
-              "8cd3317f-3352-4d50-af72-e489fbf214d7": {}
-            }
-          }
-        },
-        "b3c18dfc-51ec-46e1-afb4-cb9dfad427d8": {
-          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
-            "eced1d1f-22ed-49f4-a160-9748bf434560": {
-              "6444661b-8ca4-46b6-95bd-e31e380a9c99": {}
-            }
-          },
-          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
-            "f65f0e70-ccc4-4aa1-9e15-755442fce523": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
-            },
-            "733af17d-de08-473c-b7a2-ab49f11be687": {
-              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
-            }
-          },
-          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-            "733af17d-de08-473c-b7a2-ab49f11be687": {
-              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
-            }
-          }
-        },
-        "f65f0e70-ccc4-4aa1-9e15-755442fce523": {
-          "cwd-path": {
-            "eced1d1f-22ed-49f4-a160-9748bf434560": {
-              "a77a41b5-ab99-4368-b432-e9bfddc83b8f": {}
+            "063bf829-b16c-4029-a40f-7aa50cb06f72": {
+              "723b6b11-3c70-49b0-a6d1-7a202fb088f6": {}
             }
           }
         }
@@ -112,17 +112,17 @@
       "forwards": {
         "inputs": {
           "4d408eb1-2343-4d1c-b841-53c0212d54f8": {
-            "b3c18dfc-51ec-46e1-afb4-cb9dfad427d8": {
+            "d74f223a-3cfd-4d1e-b53f-c0ef6fc44df7": {
               "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
             }
           },
           "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
-            "b3c18dfc-51ec-46e1-afb4-cb9dfad427d8": {
+            "d74f223a-3cfd-4d1e-b53f-c0ef6fc44df7": {
               "70da607a-8976-437b-b9e9-84cc63cd613b": {}
             }
           },
           "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-            "b3c18dfc-51ec-46e1-afb4-cb9dfad427d8": {
+            "d74f223a-3cfd-4d1e-b53f-c0ef6fc44df7": {
               "54c357a1-045e-4817-beda-0017a586a499": {}
             }
           }

@@ -1,0 +1,134 @@
+{
+  "name": "scripting/Working folder getter",
+  "description": "Extracts working folder from config.",
+  "interface": {
+    "inputs": {
+      "723b6b11-3c70-49b0-a6d1-7a202fb088f6": {
+        "type": "{string: any}",
+        "name": "state"
+      },
+      "091a4665-aec1-4475-9b14-7ee983e90326": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "fb2ddb6a-998f-4060-a5a3-1aa8016c5f34": {
+        "type": "string",
+        "name": "working folder"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b9cb5a62-c847-49d2-afa4-a71febdf8115": {
+          "coordinates": [
+            -28,
+            -98
+          ],
+          "name": "get working folder",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "b8d65d63-a994-430d-a047-65b8e306f89c": {
+          "coordinates": [
+            67,
+            -168
+          ],
+          "name": "log error",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"WARNING: Working folder not found in config. Using default: `./script`.\""
+          }
+        },
+        "8933acc7-325b-4642-93a8-892dea120d1f": {
+          "coordinates": [
+            172,
+            74
+          ],
+          "name": "default working folder",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"./script\""
+          }
+        },
+        "831973f3-83f6-49d0-a776-914f3fc1858c": {
+          "coordinates": [
+            -22.3828125,
+            149
+          ],
+          "name": "get cwd path",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\"]"
+          }
+        },
+        "f6a1923e-8fc5-48f3-8dd4-45952babcc2d": {
+          "coordinates": [
+            -177.3828125,
+            53
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        }
+      },
+      "connections": {
+        "b9cb5a62-c847-49d2-afa4-a71febdf8115": {
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "b8d65d63-a994-430d-a047-65b8e306f89c": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            },
+            "8933acc7-325b-4642-93a8-892dea120d1f": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "831973f3-83f6-49d0-a776-914f3fc1858c": {
+          "cwd-path": {
+            "b9cb5a62-c847-49d2-afa4-a71febdf8115": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "f6a1923e-8fc5-48f3-8dd4-45952babcc2d": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "b9cb5a62-c847-49d2-afa4-a71febdf8115": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "831973f3-83f6-49d0-a776-914f3fc1858c": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "723b6b11-3c70-49b0-a6d1-7a202fb088f6": {
+            "f6a1923e-8fc5-48f3-8dd4-45952babcc2d": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "091a4665-aec1-4475-9b14-7ee983e90326": {
+            "f6a1923e-8fc5-48f3-8dd4-45952babcc2d": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "fb2ddb6a-998f-4060-a5a3-1aa8016c5f34": {
+            "b9cb5a62-c847-49d2-afa4-a71febdf8115": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            },
+            "8933acc7-325b-4642-93a8-892dea120d1f": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

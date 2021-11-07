@@ -1,0 +1,122 @@
+{
+  "name": "string/Regex matcher",
+  "description": "Matches a string to a non-global regular expression, and returns substrings that match the regular expression's groups.",
+  "interface": {
+    "inputs": {
+      "2c82a6df-0eee-4ef1-a9b0-b795c338f9c8": {
+        "type": "string",
+        "name": "regex"
+      },
+      "85025d96-fe7b-4714-a6cb-a52ae7f4aa6e": {
+        "type": "string",
+        "name": "string"
+      }
+    },
+    "outputs": {
+      "f6986868-ad47-431b-80d9-e68b4a199710": {
+        "type": "string[] or null",
+        "name": "groups"
+      },
+      "28491fbe-c349-461b-adad-f33fa7c6ecab": {
+        "type": "any",
+        "name": "not found"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cd0a31d2-4965-4daf-be71-05a53a06eafd": {
+          "coordinates": [
+            -78,
+            -50
+          ],
+          "name": "get groups",
+          "prototype": "6b165394-9fc2-4a84-8561-cda913775bc3",
+          "params": {}
+        },
+        "aea91175-c562-42f2-8991-35f1df53b49f": {
+          "coordinates": [
+            -59,
+            135
+          ],
+          "name": "sync regex & string",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"regex\", \"string\"]"
+          }
+        },
+        "cb0ca83f-1f5d-4838-91b6-14fbd8d7bf49": {
+          "coordinates": [
+            55,
+            -150
+          ],
+          "name": "type tester",
+          "prototype": "35c45234-1f7a-41c4-a876-48a6395770b8",
+          "params": {}
+        },
+        "ce09a952-1ae8-4602-bae9-4c14476bb079": {
+          "coordinates": [
+            99,
+            49
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce",
+          "params": {}
+        }
+      },
+      "connections": {
+        "aea91175-c562-42f2-8991-35f1df53b49f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "cd0a31d2-4965-4daf-be71-05a53a06eafd": {
+              "d78b418d-2fa8-4dc1-aa44-0f3693861838": {}
+            }
+          }
+        },
+        "cd0a31d2-4965-4daf-be71-05a53a06eafd": {
+          "e06cb940-74ef-45b7-bf29-c0d721f254db": {
+            "cb0ca83f-1f5d-4838-91b6-14fbd8d7bf49": {
+              "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {}
+            },
+            "ce09a952-1ae8-4602-bae9-4c14476bb079": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "cb0ca83f-1f5d-4838-91b6-14fbd8d7bf49": {
+          "63f3f918-df9f-4037-870b-b5189bea60ad": {
+            "ce09a952-1ae8-4602-bae9-4c14476bb079": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2c82a6df-0eee-4ef1-a9b0-b795c338f9c8": {
+            "aea91175-c562-42f2-8991-35f1df53b49f": {
+              "regex": {}
+            }
+          },
+          "85025d96-fe7b-4714-a6cb-a52ae7f4aa6e": {
+            "aea91175-c562-42f2-8991-35f1df53b49f": {
+              "string": {}
+            }
+          }
+        },
+        "outputs": {
+          "f6986868-ad47-431b-80d9-e68b4a199710": {
+            "ce09a952-1ae8-4602-bae9-4c14476bb079": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "28491fbe-c349-461b-adad-f33fa7c6ecab": {
+            "ce09a952-1ae8-4602-bae9-4c14476bb079": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

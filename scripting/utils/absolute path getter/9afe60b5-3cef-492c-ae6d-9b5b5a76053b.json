@@ -1,0 +1,87 @@
+{
+  "name": "scripting/utils/Absolute path getter",
+  "interface": {
+    "inputs": {
+      "e7279a82-9c96-4339-ae13-87f24d6e421d": {
+        "type": "(string or number)[]",
+        "name": "base path path",
+        "description": "Locates the base path in `state`."
+      },
+      "d05fd8bf-67a8-4e7b-82eb-c990dc562060": {
+        "type": "any",
+        "name": "state"
+      },
+      "b5b515bd-0861-4378-8dcf-92bb9ded93af": {
+        "description": "Path relative to `base`.",
+        "type": "string",
+        "name": "relative path"
+      }
+    },
+    "outputs": {
+      "e13dabd0-6f22-47ac-a1a3-04a8c3c3ea17": {
+        "description": "",
+        "type": "string",
+        "name": "absolute path"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1a451c9e-bfec-433f-bf2b-526c4b9d0600": {
+          "coordinates": [
+            -44.796875,
+            -64.5
+          ],
+          "name": "get CWD",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "228463be-b80d-40cf-88c5-0145b190c0fe": {
+          "coordinates": [
+            44.796875,
+            64.5
+          ],
+          "name": "build path",
+          "prototype": "e41763a1-9605-4954-a735-4d5946e1afe5",
+          "params": {}
+        }
+      },
+      "connections": {
+        "1a451c9e-bfec-433f-bf2b-526c4b9d0600": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "228463be-b80d-40cf-88c5-0145b190c0fe": {
+              "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e7279a82-9c96-4339-ae13-87f24d6e421d": {
+            "1a451c9e-bfec-433f-bf2b-526c4b9d0600": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          },
+          "b5b515bd-0861-4378-8dcf-92bb9ded93af": {
+            "228463be-b80d-40cf-88c5-0145b190c0fe": {
+              "3a5d55e5-53ef-4c70-a361-35608a7474d2": {}
+            }
+          },
+          "d05fd8bf-67a8-4e7b-82eb-c990dc562060": {
+            "1a451c9e-bfec-433f-bf2b-526c4b9d0600": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "e13dabd0-6f22-47ac-a1a3-04a8c3c3ea17": {
+            "228463be-b80d-40cf-88c5-0145b190c0fe": {
+              "884ec964-878a-469d-8c1d-c8a3b7365f8f": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

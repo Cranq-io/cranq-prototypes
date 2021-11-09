@@ -1,5 +1,5 @@
 {
-  "name": "system/Command runner (with options)",
+  "name": "system/Command runner",
   "description": "Runs the received command string with the received options.\n\nSends stdout, stderr and optionally error message when the process finished.\n\nBounces command and options when the node is already in the state of executing a command.",
   "interface": {
     "inputs": {

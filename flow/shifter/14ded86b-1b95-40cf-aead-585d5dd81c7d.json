@@ -21,5 +21,8 @@
     }
   },
   "name": "flow/Shifter",
-  "description": "Shifts incoming data back in time by releasing the previously received data on each input."
+  "description": "Shifts incoming data back in time by releasing the previously received data on each input.",
+  "attributes": {
+    "locked": true
+  }
 }

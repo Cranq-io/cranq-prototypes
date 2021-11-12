@@ -196,5 +196,8 @@
       }
     }
   },
-  "description": "Demonstrates basic authentication and querying in a Firebase Realtime Database. Requires an API key and a database URL. (Obtained from the Firebase console's \"Project Overview\" and \"Realtime Database\" tabs.)\n\nFor the example to work the Firebase project must allow anonymous login and database rules must be set up as follows:\n\n{\n  \"rules\": {\n    \".read\": false,\n    \".write\": false,\n    \"$user_id\": {\n      \".read\": \"$user_id === auth.uid\",\n      \".write\": \"$user_id === auth.uid\"\n    }\n  }\n}"
+  "description": "Demonstrates basic authentication and querying in a Firebase Realtime Database. Requires an API key and a database URL. (Obtained from the Firebase console's \"Project Overview\" and \"Realtime Database\" tabs.)\n\nFor the example to work the Firebase project must allow anonymous login and database rules must be set up as follows:\n\n{\n  \"rules\": {\n    \".read\": false,\n    \".write\": false,\n    \"$user_id\": {\n      \".read\": \"$user_id === auth.uid\",\n      \".write\": \"$user_id === auth.uid\"\n    }\n  }\n}",
+  "attributes": {
+    "locked": true
+  }
 }

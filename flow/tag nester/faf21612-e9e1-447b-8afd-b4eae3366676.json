@@ -23,5 +23,8 @@
     }
   },
   "name": "flow/Tag nester",
-  "description": "Creates a new level of iteration on the received tag, by appending \":0\" to it."
+  "description": "Creates a new level of iteration on the received tag, by appending \":0\" to it.",
+  "attributes": {
+    "locked": true
+  }
 }

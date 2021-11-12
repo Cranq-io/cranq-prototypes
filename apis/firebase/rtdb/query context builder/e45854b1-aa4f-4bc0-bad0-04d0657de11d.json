@@ -62,5 +62,8 @@
       }
     }
   },
-  "description": "Builds a Firebase Realtime Database query context from a Firebase ID token and a database URL (found on the Firebase Realtime Database console) to be passed around among related data querying and manipulation nodes."
+  "description": "Builds a Firebase Realtime Database query context from a Firebase ID token and a database URL (found on the Firebase Realtime Database console) to be passed around among related data querying and manipulation nodes.",
+  "attributes": {
+    "locked": true
+  }
 }

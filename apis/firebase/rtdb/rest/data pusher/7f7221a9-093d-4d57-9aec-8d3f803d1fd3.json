@@ -154,5 +154,8 @@
       }
     }
   },
-  "description": "Adds a new data entry to a Firebase Realtime Database under 'parent path'.\nReturns the path of the new entry."
+  "description": "Adds a new data entry to a Firebase Realtime Database under 'parent path'.\nReturns the path of the new entry.",
+  "attributes": {
+    "locked": true
+  }
 }

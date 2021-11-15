@@ -1,0 +1,41 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "19476252-601a-47a3-bb8e-78e5b6661233": {
+        "type": "{\"regex\":string,\"string\":string}",
+        "name": "regex & string"
+      }
+    },
+    "outputs": {
+      "50c52761-41fa-4141-a292-6479356bde8d": {
+        "type": "boolean",
+        "name": "matches"
+      },
+      "7866a8a3-a295-4bed-832f-e5c901996c42": {
+        "type": "any",
+        "name": "groups"
+      },
+      "239820df-8fbf-4dfa-ae34-274add25bbd4": {
+        "type": "any",
+        "name": "result"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex, 'g').exec(data.string);\nconst [matched, ...groups] = result || [];\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);"
+      }
+    }
+  },
+  "name": "string/Global regex matcher (internal)",
+  "original": "d7c7f894-f692-4452-b2b0-70fb743f0d47",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

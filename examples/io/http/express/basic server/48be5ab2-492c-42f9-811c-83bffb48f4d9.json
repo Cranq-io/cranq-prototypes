@@ -306,5 +306,8 @@
       }
     }
   },
-  "description": "This example exposes a /status endpoint on port 3000 which accepts GET, POST, PUT, PATCH, and DELETE."
+  "description": "This example exposes a /status endpoint on port 3000 which accepts GET, POST, PUT, PATCH, and DELETE.",
+  "attributes": {
+    "locked": true
+  }
 }

@@ -140,5 +140,8 @@
       }
     }
   },
-  "description": "Signs up a Firebase user by their email & password.\n\nEmail authentication must be enabled for the relevant Firebase Project."
+  "description": "Signs up a Firebase user by their email & password.\n\nEmail authentication must be enabled for the relevant Firebase Project.",
+  "attributes": {
+    "locked": true
+  }
 }

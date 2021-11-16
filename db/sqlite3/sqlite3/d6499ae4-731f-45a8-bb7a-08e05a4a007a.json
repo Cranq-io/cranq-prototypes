@@ -36,5 +36,8 @@
     }
   },
   "name": "db/sqlite3/Sqlite3",
-  "description": "Generic SQLite 3 integration node.\nThis is an internal node. Use specific SQLite nodes instead."
+  "description": "Generic SQLite 3 integration node.\nThis is an internal node. Use specific SQLite nodes instead.",
+  "attributes": {
+    "locked": true
+  }
 }

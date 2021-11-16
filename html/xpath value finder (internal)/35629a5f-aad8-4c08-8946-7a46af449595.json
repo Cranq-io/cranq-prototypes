@@ -1,0 +1,44 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "xpath": {
+            "description": ""
+          },
+          "parse5": {
+            "description": ""
+          },
+          "xmlserializer": {
+            "description": ""
+          },
+          "xmldom": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "6c326055-5409-47ab-8197-305240922f8e": "const xpath = require(\"xpath\");\nconst parse5 = require(\"parse5\");\nconst xmlser = require(\"xmlserializer\");\nconst dom = require(\"xmldom\").DOMParser;\n\nconst { document, query } = data;\nconst doc = new dom({ errorHandler: () =>{}}).parseFromString(document);\n\nconst select = xpath.useNamespaces({ \"x\": \"http://www.w3.org/1999/xhtml\" });\nconst nodes = select(query, doc);\n\nconst values = nodes.map((node) => node.value);\n\noutputs.results(values, tag)"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "6c326055-5409-47ab-8197-305240922f8e": {
+        "type": "any",
+        "name": "document and query"
+      }
+    },
+    "outputs": {
+      "25eed9f7-7c3f-45f6-890e-0bbd32ab803a": {
+        "type": "any",
+        "name": "results"
+      }
+    }
+  },
+  "name": "html/XPath value finder (internal)",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

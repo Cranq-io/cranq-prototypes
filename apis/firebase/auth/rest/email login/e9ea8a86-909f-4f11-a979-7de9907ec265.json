@@ -140,5 +140,8 @@
       }
     }
   },
-  "description": "Logs in a Firebase user by their email & password.\n\nUser must be signed up, and email authentication must be enabled for the relevant Firebase Project."
+  "description": "Logs in a Firebase user by their email & password.\n\nUser must be signed up, and email authentication must be enabled for the relevant Firebase Project.",
+  "attributes": {
+    "locked": true
+  }
 }

@@ -26,5 +26,8 @@
     }
   },
   "name": "io/file/Path deleter",
-  "description": "Deletes the specified path recursively, and forced."
+  "description": "Deletes the specified path recursively, and forced.",
+  "attributes": {
+    "locked": true
+  }
 }

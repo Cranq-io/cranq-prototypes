@@ -1,40 +1,48 @@
 {
-  "description": "Dispatches HTTP request and outputs response or error.",
+  "description": "Dispatches HTTP request and outputs response or error.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/tree/main/http_request",
   "interface": {
     "inputs": {
       "7468e859-6176-4c54-a03a-9039e7024bed": {
         "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
-        "name": "method"
+        "name": "method",
+        "description": "Recives http method. Indicates the desired action to be performed for a given target or resource.\n\nExample:\n\"GET\""
       },
       "e69367fe-1abe-4422-a70a-4d67c614f464": {
         "type": "string",
-        "name": "url"
+        "name": "url",
+        "description": "Recieves the target of the HTTP request. Also called \"resource\" \n\nExample:\n\"https://jsonplaceholder.typicode.com/todos/1\""
       },
       "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {
         "type": "{string:string}",
-        "name": "headers"
+        "name": "headers",
+        "description": "Recieves request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\"content-type\": \"application/json; charset=utf-8\"}"
       },
       "f11b9873-7a11-4241-9e17-a16496cf783e": {
         "type": "string",
-        "name": "body"
+        "name": "body",
+        "description": "Recieves the http request body. Some requests send data to the server in order to update it. In case of GET or DELETE request the body should be empty (will be ignored).\n\nExample:\n\"\""
       }
     },
     "outputs": {
       "09b13a33-348d-458b-b43f-5013a45f4893": {
-        "type": "string",
-        "name": "status"
+        "type": "number",
+        "name": "status",
+        "description": "Sends http response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200"
       },
       "d057c749-d7a8-4108-adcc-31eb1878349b": {
         "type": "{string:string}",
-        "name": "headers"
+        "name": "headers",
+        "description": "Sends http response headers.\n\nExample:\n{\n\"content-type\": \"application/json; charset=utf-8\",\n\"cache-control\":\"max-age=43200\"\n}\n"
       },
       "498b10a6-ba52-43d0-a28a-73dc43eaf048": {
         "type": "string",
-        "name": "body"
+        "name": "body",
+        "description": "Sends http response message body data.\n\nExample:\n\"{\\\"userId\\\": 1, \\\"id\\\": 1, \\\"title\\\": \\\"delectus aut autem\\\",  \\\"completed\\\": false\n}\""
       },
       "4991414b-16a6-4a01-a988-c841eac995c7": {
         "type": "string",
-        "name": "error"
+        "name": "error",
+        "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
       }
     }
   },
@@ -43,8 +51,8 @@
       "nodes": {
         "22fba5c3-c3c1-4afa-a53a-b628f6f890fb": {
           "coordinates": [
-            0,
-            0
+            26,
+            106
           ],
           "description": "",
           "params": {
@@ -55,8 +63,8 @@
         },
         "05f9d837-288a-40bb-aadf-cc33002e04b2": {
           "coordinates": [
-            0,
-            0
+            120,
+            -165
           ],
           "description": "",
           "params": {},
@@ -65,8 +73,8 @@
         },
         "683f6e8b-715e-4449-94f6-4f67214e1843": {
           "coordinates": [
-            0,
-            0
+            -85,
+            -61
           ],
           "description": "",
           "params": {

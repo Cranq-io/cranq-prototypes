@@ -1,5 +1,6 @@
 {
-  "name": "scripting/utils/Absolute path getter",
+  "name": "scripting/Absolute path getter",
+  "description": "Retrieves absolute path based on a relative path and working folder stored in script state.",
   "interface": {
     "inputs": {
       "e7279a82-9c96-4339-ae13-87f24d6e421d": {
@@ -9,7 +10,8 @@
       },
       "d05fd8bf-67a8-4e7b-82eb-c990dc562060": {
         "type": "any",
-        "name": "state"
+        "name": "state",
+        "description": "Receives script state."
       },
       "b5b515bd-0861-4378-8dcf-92bb9ded93af": {
         "description": "Path relative to `base`.",
@@ -19,7 +21,7 @@
     },
     "outputs": {
       "e13dabd0-6f22-47ac-a1a3-04a8c3c3ea17": {
-        "description": "",
+        "description": "Path resolved based on relative path and working folder in state.",
         "type": "string",
         "name": "absolute path"
       }

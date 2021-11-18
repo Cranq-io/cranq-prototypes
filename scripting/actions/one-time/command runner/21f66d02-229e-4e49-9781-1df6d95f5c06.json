@@ -1,10 +1,10 @@
 {
   "name": "scripting/actions/one-time/Command runner",
-  "description": "",
+  "description": "Runs an OS command.",
   "interface": {
     "inputs": {
       "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
-        "description": "",
+        "description": "Receives script state.",
         "type": "any",
         "name": "state"
       },
@@ -13,12 +13,14 @@
         "name": "params"
       },
       "4d408eb1-2343-4d1c-b841-53c0212d54f8": {
+        "description": "Command to be run. OS specific.",
         "type": "string",
         "name": "command"
       }
     },
     "outputs": {
       "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "description": "Sends updated script state.",
         "type": "any",
         "name": "state"
       }

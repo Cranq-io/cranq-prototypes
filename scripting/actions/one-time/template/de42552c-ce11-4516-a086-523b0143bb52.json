@@ -6,7 +6,7 @@
   "interface": {
     "inputs": {
       "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
-        "description": "",
+        "description": "Receives script state.",
         "type": "any",
         "name": "state"
       },
@@ -17,6 +17,7 @@
     },
     "outputs": {
       "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "description": "Sends updated script state.",
         "type": "any",
         "name": "state"
       }

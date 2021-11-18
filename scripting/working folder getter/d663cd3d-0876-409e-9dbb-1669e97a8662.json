@@ -1,11 +1,11 @@
 {
   "name": "scripting/Working folder getter",
-  "description": "Extracts working folder from config.",
+  "description": "Extracts working folder from script config.",
   "interface": {
     "inputs": {
       "723b6b11-3c70-49b0-a6d1-7a202fb088f6": {
         "type": "{string: any}",
-        "name": "state"
+        "name": "config"
       },
       "091a4665-aec1-4475-9b14-7ee983e90326": {
         "type": "{\"cwd-path\": (string or number)[]}",

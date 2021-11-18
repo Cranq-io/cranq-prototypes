@@ -3,6 +3,7 @@
   "interface": {
     "inputs": {
       "e847461c-ba07-49ea-89df-55a2dfa44235": {
+        "description": "Receives script state.",
         "type": "any",
         "name": "state"
       },
@@ -15,7 +16,7 @@
       "6e97f6b8-4616-46a3-8ceb-b206a08d14e9": {
         "type": "typeof `state`",
         "name": "state",
-        "description": "The state that was written"
+        "description": "Sends script state as it was written."
       }
     }
   },

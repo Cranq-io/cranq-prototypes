@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "97875ef4-94b5-42d6-a7df-b235c3f60992": {
-        "description": "Current state of the script.",
+        "description": "Receives script state.",
         "type": "any",
         "name": "state"
       },
@@ -15,12 +15,12 @@
     },
     "outputs": {
       "53e06d50-a6da-46b3-a47d-667aaf155a9a": {
-        "description": "",
+        "description": "Forwards state when result path exists.",
         "type": "typeof `state`",
         "name": "on finished"
       },
       "784b20e3-9f91-492b-80b3-b103900d421f": {
-        "description": "",
+        "description": "Forwards state when result path does not exist.",
         "type": "typeof `state`",
         "name": "on not started"
       }

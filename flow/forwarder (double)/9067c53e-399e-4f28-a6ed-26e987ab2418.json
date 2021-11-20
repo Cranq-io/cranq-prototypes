@@ -1,24 +1,28 @@
 {
-  "description": "Forwards 2 inputs in the order matching the order of the ports.",
+  "description": "Forwards both received signals in the order of the names of the ports.\n\nUsed for two purposes:\n* Ensuring that any of a node's inputs may receive signals or be set as parameter.\n* Ensuring the order in which signals are sent.\n\nExample a) param vs. signal:\n1. `2`(input) set to \"B\"\n2. \"A\"@0 received via `1` (input)\n3. \"A\"@0 sent via `1` (output)\n4. \"B\"@0 sent via `2` (output)\n\nExample b) signal order:\n1. \"B\"@0 received via `2` (input)\n2. \"A\"@0 received via `1` (input)\n3. \"A\"@0 sent via `1` (output)\n4. \"B\"@0 sent via `2` (output)",
   "interface": {
     "inputs": {
       "e76062c0-e298-4443-a187-94cbd4b3bc74": {
         "type": "any",
-        "name": "1"
+        "name": "1",
+        "description": "Receives signal or takes parameter to be sent out first."
       },
       "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {
         "type": "any",
-        "name": "2"
+        "name": "2",
+        "description": "Receives signal or takes parameter to be sent out second."
       }
     },
     "outputs": {
       "069a212d-9cea-4987-be45-e0079a13d96f": {
-        "type": "typeof(1)",
-        "name": "1"
+        "type": "typeof `1`",
+        "name": "1",
+        "description": "Forwards signal received via `1` (input)."
       },
       "d1295197-1962-4680-a037-5890f2175bb9": {
-        "type": "typeof(2)",
-        "name": "2"
+        "type": "typeof `2`",
+        "name": "2",
+        "description": "Forwards signal received via `2` (input). Does not send before `1` (output)."
       }
     }
   },
@@ -89,8 +93,13 @@
       }
     }
   },
-  "name": "flow/Forwarder/double",
+  "name": "flow/Forwarder (double)",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "order": null,
+    "signal order": null,
+    "parameter to signal": null
   }
 }

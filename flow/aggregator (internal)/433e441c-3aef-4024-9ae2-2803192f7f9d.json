@@ -1,15 +1,15 @@
 {
-  "description": "",
+  "description": "See `flow/Aggregator`",
   "interface": {
     "inputs": {
       "9a18c395-51a4-46f6-8fa5-41a4a77a117d": {
-        "type": "{\"data\":any,\"released\":boolean}",
+        "type": "{\"data\": any, \"released\": boolean}",
         "name": "data & release"
       }
     },
     "outputs": {
       "d52d914a-5f94-4a04-8543-d920e2df5ee9": {
-        "type": "typeof(data & release)[\"data\"][]",
+        "type": "typeof `data & release`[\"data\"][]",
         "name": "aggregated"
       }
     }
@@ -24,7 +24,7 @@
       }
     }
   },
-  "name": "flow/Aggregator/Internal",
+  "name": "flow/Aggregator (internal)",
   "attributes": {
     "internal": true,
     "locked": true

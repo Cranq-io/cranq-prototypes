@@ -1,0 +1,43 @@
+{
+  "implementations": {
+    "es6-node": {
+      "initFunction": "state.aggregated = state.aggregated || [];",
+      "inputFunctions": {
+        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",
+        "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "86fe0f3a-e1c5-425e-b832-e056c31adec2": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives data items to be aggregated."
+      },
+      "e08ac6a2-b556-455a-8271-fa730e5b2366": {
+        "type": "any",
+        "name": "release",
+        "description": "Receives signal to release aggregated inputs. Independent of `data`."
+      }
+    },
+    "outputs": {
+      "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {
+        "type": "typeof `data`[]",
+        "name": "aggregated",
+        "description": "Sends the aggregated data."
+      }
+    }
+  },
+  "name": "flow/Aggregator (async)",
+  "attributes": {
+    "locked": true
+  },
+  "description": "Aggregates inputs into an array until released.\n\nThe `release` signal is received and processed independently from those received via `data`. (As opposed to `flow/Aggregator`.)\n\nThe output reflects the order as received through `data`. \n\nExample:\n1. \"a\"@0 is received via `data`\n2. \"b\"@1 is received via `data`\n3. null@2 is received via `release`\n5. [\"a\", \"b\"]@2 is sent via `aggregated`",
+  "keywords": {
+    "aggregate": null,
+    "collect": null,
+    "accumulate": null,
+    "burst": null
+  }
+}

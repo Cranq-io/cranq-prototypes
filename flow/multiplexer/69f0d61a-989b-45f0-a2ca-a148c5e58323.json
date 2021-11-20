@@ -1,14 +1,14 @@
 {
-  "description": "Associates incoming data with the name of the port they entered through.",
+  "description": "Forwards data received via dynamic inputs to `multiplexed`, wrapped in a record which carries both the data and the ID of the port (field) that it was received through.\n\nExample:\n1. `fields` is set to [\"a\", \"b\"]\n2. Input ports `a` and `b` get created\n3. The number 5 received via `b`\n4. {\"field\": \"b\", \"data\": 5} will be sent via `multiplexed`.",
   "interface": {
     "inputs": {
       "812fd3c6-a75b-486e-9bd1-3f2a1ee28f0c": {
-        "description": "Receives a list of input port names to accept payload from.",
-        "type": "string[]",
+        "description": "Receives a list of input port names to accept data payload through.",
+        "type": "string[] or number[]",
         "name": "fields"
       },
       "7bf13909-e44b-4f6a-9fc5-153cf3c2d286": {
-        "description": "Receives payload data for multiplexing.",
+        "description": "Receives data payload for multiplexing.",
         "paramId": "812fd3c6-a75b-486e-9bd1-3f2a1ee28f0c",
         "type": "any",
         "name": "demultiplexed"
@@ -17,7 +17,7 @@
     "outputs": {
       "b20b339d-6c7a-4f30-87c4-d600b4452103": {
         "description": "Sends multiplexed data.",
-        "type": "{\"field\":string,\"data\":(demultiplexed)}",
+        "type": "{\"field\": string, \"data\": typeof `demultiplexed`}",
         "name": "multiplexed"
       }
     }
@@ -35,5 +35,9 @@
   "name": "flow/Multiplexer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "collect": null,
+    "bundle": null
   }
 }

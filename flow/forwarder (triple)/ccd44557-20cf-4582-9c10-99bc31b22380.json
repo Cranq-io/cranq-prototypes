@@ -1,32 +1,38 @@
 {
-  "description": "Forwards 3 inputs in the order matching the order of the ports.",
+  "description": "Forwards all 3 received signals in the order of the names of the ports.\n\nUsed for two purposes:\n* Ensuring that any of a node's inputs may receive signals or be set as parameter.\n* Ensuring the order in which signals are sent.\n\nFor examples, see `flow/Forwarder (double)`.",
   "interface": {
     "inputs": {
       "70da607a-8976-437b-b9e9-84cc63cd613b": {
         "type": "any",
-        "name": "1"
+        "name": "1",
+        "description": "Receives signal or takes parameter to be sent out first."
       },
       "54c357a1-045e-4817-beda-0017a586a499": {
         "type": "any",
-        "name": "2"
+        "name": "2",
+        "description": "Receives signal or takes parameter to be sent out second."
       },
       "507a0b1a-b9eb-4e67-a64d-47b405e17422": {
         "type": "any",
-        "name": "3"
+        "name": "3",
+        "description": "Receives signal or takes parameter to be sent out third."
       }
     },
     "outputs": {
       "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-        "type": "typeof(1)",
-        "name": "1"
+        "type": "typeof `1`",
+        "name": "1",
+        "description": "Forwards signal received via `1` (input)."
       },
       "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
-        "type": "typeof(2)",
-        "name": "2"
+        "type": "typeof `2`",
+        "name": "2",
+        "description": "Forwards signal received via `2` (input). Does not send before `1` (output)."
       },
       "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
-        "type": "typeof(3)",
-        "name": "3"
+        "type": "typeof `3`",
+        "name": "3",
+        "description": "Forwards signal received via `3` (input). Does not send before `2` (output)."
       }
     }
   },
@@ -107,8 +113,11 @@
       }
     }
   },
-  "name": "flow/Forwarder/triple",
-  "attributes": {
-    "locked": true
+  "name": "flow/Forwarder (triple)",
+  "attributes": {},
+  "keywords": {
+    "order": null,
+    "signal order": null,
+    "parameter to signal": null
   }
 }

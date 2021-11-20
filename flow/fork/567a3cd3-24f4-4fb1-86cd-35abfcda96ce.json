@@ -1,5 +1,5 @@
 {
-  "description": "Forwards input data to one of two outputs, depending on the condition.",
+  "description": "Forwards input data to one of two outputs, depending on the condition.\n\nExample:\n1. false@0 received via `condition`\n2. \"A\"@0 received via `data`\n3. \"A\"@0 sent via `on false`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_1_junctions/README.md#example---using-forks",
   "interface": {
     "inputs": {
       "8dae1988-d752-4c9b-b8c5-f9222e776dec": {
@@ -15,14 +15,14 @@
     },
     "outputs": {
       "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
-        "description": "Sends the input when condition was true.",
-        "type": "typeof(data)",
-        "name": "true"
+        "description": "Sends signal received via `data` when condition was true.",
+        "type": "typeof `data`",
+        "name": "on true"
       },
       "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
-        "description": "Sends the input when condition was false.",
-        "type": "typeof(data)",
-        "name": "false"
+        "description": "Sends signal received via `data` when condition was false.",
+        "type": "typeof `data`",
+        "name": "on false"
       }
     }
   },
@@ -31,8 +31,8 @@
       "nodes": {
         "dac346f3-5551-4dd1-ac9b-5297b4d303fb": {
           "coordinates": [
-            0,
-            0
+            -47,
+            -48
           ],
           "description": "",
           "params": {
@@ -43,8 +43,8 @@
         },
         "c530f214-0b46-41d4-ab2a-331e97584592": {
           "coordinates": [
-            0,
-            0
+            35,
+            55
           ],
           "description": "",
           "params": {},
@@ -94,5 +94,12 @@
   "name": "flow/Fork",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "if": null,
+    "conditional": null,
+    "ternary": null,
+    "route": null,
+    "routing": null
   }
 }

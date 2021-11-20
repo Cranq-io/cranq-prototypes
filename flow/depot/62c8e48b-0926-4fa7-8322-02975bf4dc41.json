@@ -4,18 +4,19 @@
     "inputs": {
       "72a73ffe-8319-4427-878e-3e67f2d150ff": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Receives data to be forwarded on trigger signal."
       },
       "f58efe33-f70e-4570-ac54-670aaf844385": {
-        "description": "type: any",
+        "description": "Signals that the corresponding `data` input signal may be forwarded.",
         "type": "any",
         "name": "trigger"
       }
     },
     "outputs": {
       "eb4c2873-890f-4780-a895-53e321f3739e": {
-        "description": "",
-        "type": "any",
+        "description": "Sends signal as received through `data` (input).",
+        "type": "typeof `data`",
         "name": "data"
       }
     }
@@ -78,8 +79,12 @@
       }
     }
   },
-  "description": "Forwards incoming data when both data and trigger have been received.",
+  "description": "Forwards signal received through `data` when corresponding signal was received via `trigger`.\n\nExample:\n1. \"A\"@0 received via `data` (input)\n2. Wait 1s\n3. null@0 received via `trigger`\n4. \"A\"@0 is sent through `data` (output)",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "wait": null,
+    "hold": null
   }
 }

@@ -1,22 +1,22 @@
 {
-  "description": "",
+  "description": "Debounces signals received through `data`.\n\nExample:\n1. `delay` is set to 1000.\n2. \"a\"@0 received via `data`\n3. waiting 0.5s (500ms)\n4. \"b\"@1 received via `data`\n5. waiting 1.1s (1100ms)\n6. \"b\"@1 sent via `data` (output)",
   "interface": {
     "inputs": {
       "5819ad6f-855e-4be2-aec5-f715de73eecd": {
-        "description": "",
+        "description": "Receives signal to be debounced.",
         "type": "any",
         "name": "data"
       },
       "3fd86ab3-788e-461e-86cc-4437ff36963f": {
-        "description": "",
-        "type": "any",
+        "description": "Minimum delay in milliseconds between last signal received through `data` (input) and sent through `data` (output).\n\nMust be set as a parameter.",
+        "type": "number",
         "name": "delay"
       }
     },
     "outputs": {
       "56fc164d-1c57-4795-9efb-e610645ec87b": {
-        "description": "",
-        "type": "any",
+        "description": "Sends the debounced signal.",
+        "type": "typeof `data`",
         "name": "data"
       }
     }
@@ -34,5 +34,10 @@
   "name": "flow/Debouncer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "time": null,
+    "timing": null,
+    "throttle": null
   }
 }

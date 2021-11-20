@@ -1,14 +1,14 @@
 {
-  "description": "Bundles input signals that have the same tag. All inputs must receive exactly one signal for a given tag (or be a parameter) for the bundle to be sent.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_3_synchronization/README.md#example---synchronizing-node-inputs",
+  "description": "Bundles input signals that have the same tag. All inputs must receive exactly one signal for a given tag (or be a parameter) for the bundle to be sent.\n\nExample:\n1. `fields` is set to [\"a\", \"b\"]\n2. Node will have inputs `a` and `b`\n3. `a` receives \"Foo\"\n4. `b` receives \"Bar\"\n5. Output `synced` sends {\"a\": \"Foo\", \"b\": \"Bar\"}\n\nMore: https://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_3_synchronization/README.md#example---synchronizing-node-inputs",
   "interface": {
     "inputs": {
       "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": {
-        "description": "Receives a list of custom input port names through which the node will receive signals for syncing. \n\nMust be parameter.\n\nexample:\n[\"a\",\"b\"]",
+        "description": "Receives a list of custom input port names or indexes through which the node will receive signals for syncing. \n\nMust be parameter.\n\nExample values:\n* [\"a\", \"b\"] will result in record output\n* [0, 1] will result in a tuple output",
         "type": "string[] or number[]",
         "name": "fields"
       },
       "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": {
-        "description": "Receives individual fields for syncing.\n\nExample:\n\"Foo\" -> \"a\"\n\"Bar\" -> \"b\"",
+        "description": "Receives individual fields for syncing.",
         "paramId": "ef31c1e9-cfd5-458b-8d3a-951e3db9c232",
         "type": "any",
         "name": "unsynced"
@@ -16,7 +16,7 @@
     },
     "outputs": {
       "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-        "description": "Sends synchronized inputs as a dictionary, indexed by field. Or as an array of the inputs. Depends on the fields parameter value.\n\nExample:\n{\"a\":\"Foo\". \"b\":\"Bar\"}",
+        "description": "Sends synchronized inputs as a dictionary, indexed by field. Or as an array of the inputs. Depends on the fields parameter value.\n\nExample data:\n{\"a\": \"Foo\", \"b\": \"Bar\"}",
         "type": "{string:any} or any[]",
         "name": "synced"
       }

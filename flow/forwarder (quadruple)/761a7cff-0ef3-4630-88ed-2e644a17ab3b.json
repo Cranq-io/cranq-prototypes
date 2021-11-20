@@ -1,40 +1,48 @@
 {
-  "description": "Forwards 4 inputs in the order matching the order of the ports.",
+  "description": "Forwards all 4 received signals in the order of the names of the ports.\n\nUsed for two purposes:\n* Ensuring that any of a node's inputs may receive signals or be set as parameter.\n* Ensuring the order in which signals are sent.\n\nFor examples, see `flow/Forwarder (double)`.",
   "interface": {
     "inputs": {
       "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {
         "type": "any",
-        "name": "1"
+        "name": "1",
+        "description": "Receives signal or takes parameter to be sent out first."
       },
       "f1aff635-6110-419c-81b3-ea2bd8b5f791": {
         "type": "any",
-        "name": "2"
+        "name": "2",
+        "description": "Receives signal or takes parameter to be sent out second."
       },
       "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {
         "type": "any",
-        "name": "3"
+        "name": "3",
+        "description": "Receives signal or takes parameter to be sent out third."
       },
       "4fcb135a-9c6c-497b-a96e-526c4727a64a": {
         "type": "any",
-        "name": "4"
+        "name": "4",
+        "description": "Receives signal or takes parameter to be sent out fourth."
       }
     },
     "outputs": {
       "8ee51005-e876-4db5-88b5-c9e148feba3f": {
-        "type": "typeof(1)",
-        "name": "1"
+        "type": "typeof `1`",
+        "name": "1",
+        "description": "Forwards signal received via `1` (input)."
       },
       "34f942cc-96a7-4278-a931-d9194e89dfe1": {
-        "type": "typeof(2)",
-        "name": "2"
+        "type": "typeof `2`",
+        "name": "2",
+        "description": "Forwards signal received via `2` (input). Does not send before `1` (output)."
       },
       "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
-        "type": "typeof(3)",
-        "name": "3"
+        "type": "typeof `3`",
+        "name": "3",
+        "description": "Forwards signal received via `3` (input). Does not send before `2` (output)."
       },
       "a5a46e47-dacb-477b-b823-398e570fe259": {
-        "type": "typeof(4)",
-        "name": "4"
+        "type": "typeof `4`",
+        "name": "4",
+        "description": "Forwards signal received via `4` (input). Does not send before `3` (output)."
       }
     }
   },
@@ -125,8 +133,13 @@
       }
     }
   },
-  "name": "flow/Forwarder/quadruple",
+  "name": "flow/Forwarder (quadruple)",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "order": null,
+    "signal order": null,
+    "parameter to signal": null
   }
 }

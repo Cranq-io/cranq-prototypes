@@ -1,20 +1,23 @@
 {
-  "description": "Delays the input by the specified amount of time.",
+  "description": "Forwards each signal received via `data` (input) after waiting as may milliseconds as received or specified by `delay`.",
   "interface": {
     "inputs": {
       "9bb57db0-a8db-452b-9174-24e1da433464": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Data to be forwarded."
       },
       "68d749c7-b1f5-4932-bea8-8489568babb1": {
         "type": "number",
-        "name": "delay"
+        "name": "delay",
+        "description": "Time to wait in milliseconds before forwarding the signal received via `data` (input).\n\nCan be both parameter or signal (For each input through `data`.)"
       }
     },
     "outputs": {
       "1f4df6bd-7aec-487b-abcf-95d688b3ccc9": {
-        "type": "typeof(data)",
-        "name": "data"
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Data forwarded with a delay."
       }
     }
   },
@@ -23,8 +26,8 @@
       "nodes": {
         "e0294087-aae0-4430-a808-9815e289877c": {
           "coordinates": [
-            0,
-            0
+            -25,
+            61
           ],
           "description": "",
           "params": {
@@ -35,8 +38,8 @@
         },
         "dcea1809-d999-43d7-bd18-99ca9b72aba0": {
           "coordinates": [
-            0,
-            0
+            36,
+            -57
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,11 @@
   "name": "flow/Delayer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "time": null,
+    "timing": null,
+    "wait": null,
+    "lag": null
   }
 }

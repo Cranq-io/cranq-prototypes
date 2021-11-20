@@ -1,15 +1,15 @@
 {
-  "description": "Forwards the payload of an incoming multiplexed signal to the corresponding output.",
+  "description": "Forwards the data property of the received multiplexed signal to the output port matching the corresponding port ID (field).\n\nExample:\n1. `fields` is set to [\"a\", \"b\"]\n2. Output ports `a` and `b` get created\n3. {\"field\": \"b\", \"data\": 5} received via `multiplexed`\n4. The number 5 will be sent via `b`.",
   "interface": {
     "inputs": {
       "85fde0ba-068b-457d-9003-e29e47af2e38": {
-        "description": "Receives a list of output port names to send payload to.",
-        "type": "string[]",
+        "description": "Receives a list of output port names to send multiplexed data payload to.\n\nMust be parameter.",
+        "type": "string[] or number[]",
         "name": "fields"
       },
       "b9b5fa59-8f22-46df-9305-b2d6f74f4085": {
         "description": "Receives multiplexed data.",
-        "type": "{\"field\":string,\"data\":any}",
+        "type": "{\"field\": string, \"data\": any}",
         "name": "multiplexed"
       }
     },
@@ -35,5 +35,9 @@
   "name": "flow/Demultiplexer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "distribute": null,
+    "unbundle": null
   }
 }

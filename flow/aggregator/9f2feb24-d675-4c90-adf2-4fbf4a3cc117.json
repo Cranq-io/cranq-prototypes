@@ -1,22 +1,23 @@
 {
-  "description": "Aggregates inputs into an array until released.",
+  "description": "Aggregates inputs into an array until released.\n\nA `release` signal must accompany each `data` signal, bearing the same tag.\n\nThe output reflects the order as received through `data`. Matching `release` signals may come in any order as long as each pairs up with a `data` signal.\n\nExample:\n1. true@1 is received via `release`\n2. false@0 is received via `release`\n3. \"a\"@0 is received via `data`\n4. \"b\"@1 is received via `data`\n5. [\"a\", \"b\"]@1 is sent via `aggregated`",
   "interface": {
     "inputs": {
       "3357c999-1fc5-4d98-bbfc-0ce9848e95f8": {
-        "description": "Receives data to be aggregated",
+        "description": "Receives data items to be aggregated.",
         "type": "any",
         "name": "data"
       },
       "64cdf7c6-6975-404d-a52e-071f865cb41a": {
-        "description": "Receives flag whether to release aggregated inputs.",
+        "description": "Receives flag whether to release aggregated inputs. Must be provided for each `data` input signal.",
         "type": "boolean",
         "name": "release"
       }
     },
     "outputs": {
       "efbe70db-9685-4636-9ace-906c771fb058": {
-        "type": "typeof(data)[]",
-        "name": "aggregated"
+        "type": "typeof `data`[]",
+        "name": "aggregated",
+        "description": "Sends the aggregated data."
       }
     }
   },
@@ -105,5 +106,11 @@
   "name": "flow/Aggregator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "aggregate": null,
+    "collect": null,
+    "accumulate": null,
+    "burst": null
   }
 }

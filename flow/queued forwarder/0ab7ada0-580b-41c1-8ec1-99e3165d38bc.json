@@ -1,14 +1,14 @@
 {
-  "description": "Forwards data input in the order defined by a reference input.",
+  "description": "Forwards data input in the order defined by the tags of a reference signal.",
   "interface": {
     "inputs": {
       "f8530cfa-8bf3-43c0-a3a6-ead766852ef1": {
-        "description": "Receives data to be forwarded",
+        "description": "Receives data to be forwarded.",
         "type": "any",
         "name": "data"
       },
       "70a488b9-2e95-4dca-8fae-266d8ac65dfc": {
-        "description": "Receives signals that define the order of the forwarded signals.",
+        "description": "Receives signals that define the order of the forwarded signals, based on their tags.",
         "type": "any",
         "name": "reference"
       }

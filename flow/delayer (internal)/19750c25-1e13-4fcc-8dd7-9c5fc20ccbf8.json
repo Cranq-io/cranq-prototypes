@@ -1,15 +1,15 @@
 {
-  "description": "",
+  "description": "See `flow/Delayer`.",
   "interface": {
     "inputs": {
       "b0b36893-9643-46d4-9cb6-dedbc5ea90d2": {
-        "type": "{\"data\":any,\"delay\":number}",
+        "type": "{\"data\": any, \"delay\": number}",
         "name": "data & delay"
       }
     },
     "outputs": {
       "e253eb08-5ae6-4202-a255-04a6454c0be0": {
-        "type": "typeof(data)",
+        "type": "typeof `data & delay`[\"data\"]",
         "name": "data"
       }
     }
@@ -24,7 +24,7 @@
       }
     }
   },
-  "name": "flow/Delayer/Internal",
+  "name": "flow/Delayer (internal)",
   "attributes": {
     "internal": true,
     "locked": true

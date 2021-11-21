@@ -1,16 +1,18 @@
 {
-  "description": "Maps the payload of the received signal to its tag.",
+  "description": "Maps the signal received via `data` to its tag.\n\nExample:\n1. \"A\"@0 received via `data`\n2. \"0\"@0 sent via `tag`",
   "interface": {
     "inputs": {
       "0723ecba-2687-4629-8890-c8ea2bfe3636": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Receives the signal to extract the tag from."
       }
     },
     "outputs": {
       "324467b9-5b8a-4996-ab9c-0fa5dbfbcfc0": {
         "type": "string",
-        "name": "tag"
+        "name": "tag",
+        "description": "Sends the extracted tag."
       }
     }
   },
@@ -25,7 +27,5 @@
     }
   },
   "name": "flow/Tag extractor",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

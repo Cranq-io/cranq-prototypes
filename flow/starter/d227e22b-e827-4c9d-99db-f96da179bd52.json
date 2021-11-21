@@ -1,10 +1,10 @@
 {
-  "description": "Sends a start signal asynchronously right after the creation of the node.",
+  "description": "Sends the signal null@\"start\" asynchronously right after the node was created at runtime.\n\nMostly used to kick-start the entire program.",
   "interface": {
     "inputs": {},
     "outputs": {
       "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
-        "description": "Sends signal after the node's been created.",
+        "description": "Sends null@\"start\" right after the node's creation at runtime.",
         "type": "null",
         "name": "start"
       }
@@ -21,5 +21,9 @@
   "name": "flow/Starter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "trigger": null,
+    "initial signal": null
   }
 }

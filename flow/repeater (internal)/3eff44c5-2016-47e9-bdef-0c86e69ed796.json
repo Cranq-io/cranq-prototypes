@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See `flow/Repeater`.",
   "interface": {
     "inputs": {
       "152c9d12-556b-4bd4-ba17-e39ac5d72490": {
@@ -9,7 +9,7 @@
     },
     "outputs": {
       "8bf5830c-baef-497f-a1d3-a9acfcf84618": {
-        "type": "typeof(data & count)[\"data\"]",
+        "type": "typeof `data & count`[\"data\"]",
         "name": "data"
       }
     }
@@ -24,7 +24,7 @@
       }
     }
   },
-  "name": "flow/Repeater/Internal",
+  "name": "flow/Repeater (internal)",
   "attributes": {
     "internal": true,
     "locked": true

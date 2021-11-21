@@ -1,17 +1,17 @@
 {
-  "description": "",
+  "description": "See `flow/Gate`",
   "interface": {
     "inputs": {
       "98485573-47d4-418c-8005-be19cff54d6a": {
         "description": "",
-        "type": "any",
+        "type": "{\"data\": any, \"open\": boolean}",
         "name": "data & open"
       }
     },
     "outputs": {
       "ff977c1f-7317-4ae9-b0d5-4c0e308a7f2c": {
         "description": "",
-        "type": "any",
+        "type": "typeof `data & open`[\"data\"]",
         "name": "data"
       }
     }
@@ -26,7 +26,7 @@
       }
     }
   },
-  "name": "flow/Gate/Internal",
+  "name": "flow/Gate (internal)",
   "attributes": {
     "internal": true,
     "locked": true

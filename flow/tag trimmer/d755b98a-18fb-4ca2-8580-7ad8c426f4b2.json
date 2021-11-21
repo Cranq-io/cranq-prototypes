@@ -1,18 +1,23 @@
 {
-  "description": "Trims the last iterable (colon-separated) section of the tag of the received signal.",
+  "description": "Trims the last iterable (colon-separated) section of the tag on the signal received via `data`.\n\nBounces when tag is not iterable.\n\nOpposite of `flow/Tag nester`.\n\nUsed for lining up signals with iterations. (See eg. `data/array/Iterator`.)\n\nExample:\n1. \"A\"@\"x:9\" received via `data`\n2. \"A\"@\"x\" is sent via `data` (output)",
   "interface": {
     "inputs": {
       "ca54dccf-ed97-4731-8eb0-ef76fe19e844": {
         "type": "any",
         "name": "data",
-        "description": "Signal with iterable tag."
+        "description": "Receives signal with iterable tag."
       }
     },
     "outputs": {
       "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {
-        "type": "typeof(data)",
+        "type": "typeof `data`",
         "name": "data",
-        "description": "Signal identical to what was received but with the last iterable section removed from the tag."
+        "description": "Sends signal with data identical to the one received via `data`, but with the last iterable section removed from the tag."
+      },
+      "490cac9b-c555-40d9-b5b2-06d7e75e84db": {
+        "type": "typeof `data`",
+        "name": "bounced",
+        "description": "Forwards the signal received through `data` when its tag was not iterable."
       }
     }
   },
@@ -22,12 +27,16 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "ca54dccf-ed97-4731-8eb0-ef76fe19e844": "const matches = /^(.*):\\d+$/.exec(tag);\noutputs.data(data, matches && matches[1] || tag);\n"
+        "ca54dccf-ed97-4731-8eb0-ef76fe19e844": "const matches = /^(.*):\\d+$/.exec(tag);\nif (matches !== null)\n  outputs.data(data, matches[1]);\nelse\n  outputs.bounced(data, tag);"
       }
     }
   },
   "name": "flow/Tag trimmer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "simulate iteration": null,
+    "fake iteration": null
   }
 }

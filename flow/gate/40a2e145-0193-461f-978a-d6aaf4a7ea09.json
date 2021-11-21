@@ -1,22 +1,22 @@
 {
-  "description": "",
+  "description": "Forwards signal received via `data` when corresponding signal received via `open` is true.\n\nExample A:\n1. \"A\"@0 received via `data`\n2. false@0 received via `open`\n3. No signal is sent via `data` (output)\n\nExample B:\n1. true@0 received via `open`\n2. \"B\"@0  received via `data`\n3. \"B\"@0 is sent via `data` (output)",
   "interface": {
     "inputs": {
       "87d3064e-5a44-4029-bea8-ba632449f2f5": {
-        "description": "",
+        "description": "Receives the signal to be forwarded / filtered.",
         "type": "any",
         "name": "data"
       },
       "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {
-        "description": "",
-        "type": "any",
+        "description": "Whether to forward the signal received via `data`.",
+        "type": "boolean",
         "name": "open"
       }
     },
     "outputs": {
       "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
         "description": "",
-        "type": "any",
+        "type": "typeof `data`",
         "name": "data"
       }
     }
@@ -84,5 +84,9 @@
   "name": "flow/Gate",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "filter": null,
+    "stop": null
   }
 }

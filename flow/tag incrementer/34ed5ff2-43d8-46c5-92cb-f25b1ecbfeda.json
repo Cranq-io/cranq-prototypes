@@ -1,23 +1,23 @@
 {
-  "description": "Increments the iterable (colon-separated) part of the received signal's tag.",
+  "description": "Increments the iterable (colon-separated) part of the received signal's tag.\n\nBounces when tag is not iterable.\n\nUsed for lining up signals with iterations. (See eg. `data/array/Iterator`.)\n\nExample A (success):\n1. \"A\"@\"x:1\" received via `data`\n2. \"A\"@\"x:2\" is sent via `data` (output)\n\nExample B (invalid input):\n1. \"A\"@\"x\" received via `data`\n2. \"A\"@\"x\" is sent via `bounced`\n\nSee also:\n* `flow/Tag nester`\n* `flow/Tag trimer`",
   "interface": {
     "inputs": {
       "4b2b80cb-8d64-40a5-ae06-342257b858cc": {
         "type": "any",
         "name": "data",
-        "description": "Signal with iterable tag.\n\nWhen the tag on the received signal is not iterable, the signal will be bounced."
+        "description": "Receives signal with iterable tag.\n\nWhen the tag is not iterable, the signal will be bounced."
       }
     },
     "outputs": {
       "b9ad661b-2879-4b8f-9335-c223ba010a4b": {
-        "type": "typeof(data)",
+        "type": "typeof `data`",
         "name": "data",
-        "description": "Signal identical to what was received but with an incremented tag."
+        "description": "Sends signal with data identical to the one received via `data`, but with incremented tag."
       },
       "a5ea47e0-1e3f-4f32-afc4-3f0ebe9c3030": {
-        "type": "any",
+        "type": "typeof `data`",
         "name": "bounced",
-        "description": "The signal received through `data`, when its tag was not iterable."
+        "description": "Forwards the signal received through `data` when its tag was not iterable."
       }
     }
   },
@@ -34,5 +34,9 @@
   "name": "flow/Tag incrementer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "simulated iteration": null,
+    "fake iteration": null
   }
 }

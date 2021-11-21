@@ -10,19 +10,24 @@
     "inputs": {
       "52beed26-c59d-41c5-905d-8b966db24eb7": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Receives signal to be shifted back."
       }
     },
     "outputs": {
       "40d1a5cf-aced-49cc-9e2f-27dcd6e300f8": {
-        "type": "any",
-        "name": "data"
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Sends previously received signal."
       }
     }
   },
   "name": "flow/Shifter",
-  "description": "Shifts incoming data back in time by releasing the previously received data on each input.",
+  "description": "Shifts incoming data back in time by releasing the previously received data on each input. \n\nExample:\n1. \"A\"@0 received via `data`.\n2. \"B\"@1 received via `data`.\n3. \"A\"@0 sent via `data` (output).",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "previous signal": null
   }
 }

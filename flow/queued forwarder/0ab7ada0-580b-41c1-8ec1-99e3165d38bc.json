@@ -1,5 +1,5 @@
 {
-  "description": "Forwards data input in the order defined by the tags of a reference signal.",
+  "description": "Forwards data received via `data` in the order defined by the tags of the signals received via `reference`.\n\nQueues `reference` inputs until the first N signals have all received matching inputs via `data` then releases them one-by-one via `data` (output).\n\nUsed to signal sequence after asynchronous transformations.\n\nExample:\n1. \"A\"@0 received via `reference`\n2. \"B\"@1 received via `reference`\n3. \"b\"@1 received via ",
   "interface": {
     "inputs": {
       "f8530cfa-8bf3-43c0-a3a6-ead766852ef1": {
@@ -15,8 +15,8 @@
     },
     "outputs": {
       "a9f0987d-4f2c-4f3b-be77-7f57b6a20ee5": {
-        "description": "Sends forwarded data",
-        "type": "typeof(data)",
+        "description": "Sends forwarded data.",
+        "type": "typeof `data`",
         "name": "data"
       }
     }
@@ -35,5 +35,11 @@
   "name": "flow/Queued forwarder",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "sequence": null,
+    "order": null,
+    "sort": null,
+    "restore": null
   }
 }

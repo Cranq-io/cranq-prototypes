@@ -8,7 +8,7 @@
         "description": "Receives data to be forwarded on trigger signal."
       },
       "f58efe33-f70e-4570-ac54-670aaf844385": {
-        "description": "Signals that the corresponding `data` input signal may be forwarded.",
+        "description": "Receives a signal indicating that the corresponding `data` input signal may be forwarded.",
         "type": "any",
         "name": "trigger"
       }

@@ -1,16 +1,16 @@
 {
-  "description": "Forwards each signal received via `data` (input) after waiting as may milliseconds as received or specified by `delay`.",
+  "description": "Forwards each signal received via `data` (input) after waiting as many milliseconds as received or specified by `delay`.",
   "interface": {
     "inputs": {
       "9bb57db0-a8db-452b-9174-24e1da433464": {
         "type": "any",
         "name": "data",
-        "description": "Data to be forwarded."
+        "description": "Receives data to be forwarded."
       },
       "68d749c7-b1f5-4932-bea8-8489568babb1": {
         "type": "number",
         "name": "delay",
-        "description": "Time to wait in milliseconds before forwarding the signal received via `data` (input).\n\nCan be both parameter or signal (For each input through `data`.)"
+        "description": "Receives / sets time to wait in milliseconds before forwarding the signal received via `data` (input).\n\nCan be both parameter or signal (For each input through `data`.)"
       }
     },
     "outputs": {

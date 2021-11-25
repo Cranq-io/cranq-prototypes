@@ -1,0 +1,81 @@
+{
+  "name": "examples/projects/nft/Click me",
+  "description": "Single NFT mintig example",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -430.4381424515336,
+            35.260279224537044
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "30335ced-a668-42f4-b933-0ea774049df4": {
+          "coordinates": [
+            344.94467004846643,
+            -119.59128327546296
+          ],
+          "name": "log state",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"STATE:\""
+          }
+        },
+        "a033c742-44b2-4b36-b33f-662349af7dc7": {
+          "coordinates": [
+            -184.43814245153357,
+            -120.23972077546296
+          ],
+          "name": "prepare state",
+          "prototype": "e2fe1b6e-0c3d-4561-949f-b5e07272e485",
+          "params": {},
+          "description": "Here we prepare the state of the minting"
+        },
+        "5615984b-bff5-49d4-bece-6b1b78b155ad": {
+          "coordinates": [
+            110.96353307653357,
+            45.12839265046297
+          ],
+          "name": "mint nft",
+          "prototype": "43626e65-94ae-440c-b1cf-29d61cab1e70"
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "a033c742-44b2-4b36-b33f-662349af7dc7": {
+              "99218f8c-08c2-47b1-a5ee-a6115a3afe3c": {}
+            }
+          }
+        },
+        "5615984b-bff5-49d4-bece-6b1b78b155ad": {
+          "ea4b3019-c0b7-4c8d-9c1a-a7379bef94c5": {
+            "30335ced-a668-42f4-b933-0ea774049df4": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        },
+        "a033c742-44b2-4b36-b33f-662349af7dc7": {
+          "27ba325b-31af-4d57-9027-144d0199fe19": {
+            "5615984b-bff5-49d4-bece-6b1b78b155ad": {
+              "c0f1d972-6a14-43d1-b2a7-7278e7b6bc31": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "attributes": {}
+}

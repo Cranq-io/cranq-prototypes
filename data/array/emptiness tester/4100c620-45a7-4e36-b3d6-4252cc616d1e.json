@@ -1,16 +1,18 @@
 {
-  "description": "Tests whether array is empty.",
+  "description": "Tests whether array is empty.\n\nExample:\n1. []@0 is received via `array` \n2. true@0 is sent via `empyty`",
   "interface": {
     "inputs": {
       "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {
         "type": "any[]",
-        "name": "array"
+        "name": "array",
+        "description": "Receives array to be tested"
       }
     },
     "outputs": {
       "dbb99a85-ea24-4922-b098-994987c8a10f": {
         "type": "boolean",
-        "name": "empty"
+        "name": "empty",
+        "description": "Sends whether the `array` does not contain any element"
       }
     }
   },
@@ -96,5 +98,8 @@
   "name": "data/array/Emptiness tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "empty": null
   }
 }

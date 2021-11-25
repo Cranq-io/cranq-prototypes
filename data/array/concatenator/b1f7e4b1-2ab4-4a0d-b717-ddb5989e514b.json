@@ -1,20 +1,23 @@
 {
-  "description": "Concatenates two arrays.",
+  "description": "Concatenates two arrays.\n\nExample:\n1. [1,2]@0 is recieved via `a`\n1. [3,4]@0 is recieved via `b`\n3. [1,2,3,4]@0 is sent \n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/2_constructing_data/2_4_merge_concat/README.md#example---concatenating-arrays",
   "interface": {
     "inputs": {
       "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {
         "type": "any[]",
-        "name": "a"
+        "name": "a",
+        "description": "Receives array `a` to concatenate."
       },
       "a0cfd90a-1120-454d-99de-077ea55fede2": {
         "type": "any[]",
-        "name": "b"
+        "name": "b",
+        "description": "Receives array `b` to concatenate."
       }
     },
     "outputs": {
       "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
-        "type": "(typeof(a)[number] or typeof(b)[number])[]",
-        "name": "concatenated"
+        "type": "(typeof `a` [] or typeof `b` [])[]",
+        "name": "concatenated",
+        "description": "Sends the concatenated array.\n"
       }
     }
   },
@@ -23,8 +26,8 @@
       "nodes": {
         "d61fb826-7f08-44fc-9833-f6620dfe2537": {
           "coordinates": [
-            0,
-            0
+            -18,
+            -75
           ],
           "description": "",
           "params": {
@@ -35,8 +38,8 @@
         },
         "7fc642db-072a-4431-8411-ca0b02bca8cd": {
           "coordinates": [
-            0,
-            0
+            49,
+            59
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,10 @@
   "name": "data/array/Concatenator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "append": null,
+    "join": null,
+    "prepend": null
   }
 }

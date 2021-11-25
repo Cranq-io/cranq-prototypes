@@ -1,21 +1,21 @@
 {
-  "description": "Tests whether the array contains a given item",
+  "description": "Tests whether the array contains a given item\n\nExample:\nExample:\n1. [1,2]@0 is received via `array` \n2. 1]@0 is received via `item` \n3. true@0 is sent via `contains`",
   "interface": {
     "inputs": {
       "8d132e63-efb4-44cc-951e-37339e2018eb": {
-        "description": "The array look for the item in",
-        "type": "array",
+        "description": "Recieves array look for the item in",
+        "type": "any[]",
         "name": "array"
       },
       "79658fd3-0926-46a2-ac24-76023f522dec": {
-        "description": "The item to find in the array",
+        "description": "Recieves item to find in the array",
         "type": "any",
         "name": "item"
       }
     },
     "outputs": {
       "08d49cf0-efe3-42d3-8099-5d9d22f7f492": {
-        "description": "Whether the item was found in the array",
+        "description": "Sends whether the `item` was found in the `array`",
         "type": "boolean",
         "name": "contains"
       }
@@ -26,8 +26,8 @@
       "nodes": {
         "989d5240-4307-463c-8cb1-33935e2440a4": {
           "coordinates": [
-            77,
-            -9
+            55,
+            57
           ],
           "description": "",
           "params": {},
@@ -36,8 +36,8 @@
         },
         "1b840ad4-9d75-41be-be3a-5ecef9018c7f": {
           "coordinates": [
-            -120,
-            6
+            -27,
+            -65
           ],
           "description": "",
           "params": {

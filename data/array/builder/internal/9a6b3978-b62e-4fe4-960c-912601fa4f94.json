@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See data/array/Builder\n\n",
   "interface": {
     "inputs": {
       "236a0ed3-2ef0-4a72-bfe4-c3ab20a4da85": {
@@ -9,7 +9,7 @@
     },
     "outputs": {
       "22433c0a-a79a-46d3-b649-2e75f5375624": {
-        "type": "typeof(item & count)[\"item\"]",
+        "type": "typeof `item & count`[\"item\"]",
         "name": "array"
       }
     }

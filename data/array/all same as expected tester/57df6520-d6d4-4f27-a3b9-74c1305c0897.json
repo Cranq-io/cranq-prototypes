@@ -1,21 +1,21 @@
 {
-  "description": "Tests whether all elements of an array are the same as the expected value",
+  "description": "Tests whether all elements of an array are the same as the expected value\n\nExample:\n1. [1,2]@0 is received via `array` \n2. [1,2]@0 is received via `expected` \n3. true@0 is sent via `same`",
   "interface": {
     "inputs": {
       "b175c339-20f7-430e-b101-f6dbe2ff0e21": {
-        "description": "The array to be tested",
-        "type": "array",
+        "description": "Receives array to be tested",
+        "type": "any[]",
         "name": "array"
       },
       "a76eb162-9b0d-46b5-82a3-b0445c6f1c01": {
-        "description": "The expected value that all elements of the array will be tested against",
-        "type": "any",
+        "description": "Receives the expected value that all elements of the array will be tested against",
+        "type": "any[]",
         "name": "expected"
       }
     },
     "outputs": {
       "8502c78e-7e2e-4be9-8ec5-7b109a9d442a": {
-        "description": "Whether all elements of the array are the same as the expected value",
+        "description": "Sends whether all elements of the `array` are the same as the `expected` value",
         "type": "boolean",
         "name": "same"
       }
@@ -178,5 +178,9 @@
   "name": "data/array/All same as expected tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "match": null,
+    "equal": null
   }
 }

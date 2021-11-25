@@ -1,20 +1,23 @@
 {
-  "description": "Builds an array of identical items.",
+  "description": "Builds an array of identical items.\n\nExample:\n1. item recieves \"Foo\"@0 \n2. count recieves 3@0 \n3. array sends [\"Foo\", \"Foo\", \"Foo\"]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_2_builders",
   "interface": {
     "inputs": {
       "2813c5a2-d4d6-42ce-a52f-9def6df97814": {
         "type": "any",
-        "name": "item"
+        "name": "item",
+        "description": "Receives item to be add to the array."
       },
       "ed11e46e-595d-4515-8681-ff35c7a555c6": {
         "type": "number",
-        "name": "count"
+        "name": "count",
+        "description": "Receives the number of times the item is to be add to the array.\n"
       }
     },
     "outputs": {
       "c0facb18-50d6-464f-8c91-d6255080b146": {
-        "type": "typeof(item)[]",
-        "name": "array"
+        "type": "typeof `item`[]",
+        "name": "array",
+        "description": "Sends the built array"
       }
     }
   },
@@ -23,8 +26,8 @@
       "nodes": {
         "8f99f950-9583-4a3e-a6bc-3a348e63f7a8": {
           "coordinates": [
-            0,
-            0
+            3,
+            -64
           ],
           "description": "",
           "params": {
@@ -35,8 +38,8 @@
         },
         "b03380dc-5416-4c38-94d4-50afecd15778": {
           "coordinates": [
-            0,
-            0
+            78,
+            70
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,8 @@
   "name": "data/array/Builder",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "create": null
   }
 }

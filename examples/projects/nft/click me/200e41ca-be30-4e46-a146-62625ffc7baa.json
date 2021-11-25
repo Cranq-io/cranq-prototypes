@@ -1,6 +1,6 @@
 {
   "name": "examples/projects/nft/Click me",
-  "description": "Single NFT mintig example",
+  "description": "Example project that mints an NFT.",
   "interface": {
     "inputs": {},
     "outputs": {}
@@ -10,42 +10,44 @@
       "nodes": {
         "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
           "coordinates": [
-            -430.4381424515336,
-            35.260279224537044
+            -208.43814245153362,
+            19.260279224537044
           ],
-          "description": "",
+          "description": "This node starts the minting program.\n\nNow check out the next node on the wire!",
           "params": {},
           "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
           "name": "start"
         },
         "30335ced-a668-42f4-b933-0ea774049df4": {
           "coordinates": [
-            344.94467004846643,
-            -119.59128327546296
+            208.94467004846643,
+            -38.591283275462956
           ],
-          "name": "log state",
+          "name": "log state to output",
           "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
           "params": {
             "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"STATE:\""
-          }
+          },
+          "description": "The final state of the program, with the result of each step recorded, is logged to the output."
         },
         "a033c742-44b2-4b36-b33f-662349af7dc7": {
           "coordinates": [
-            -184.43814245153357,
-            -120.23972077546296
+            -26.438142451533565,
+            -89.23972077546296
           ],
-          "name": "prepare state",
+          "name": "initialize state",
           "prototype": "e2fe1b6e-0c3d-4561-949f-b5e07272e485",
           "params": {},
-          "description": "Here we prepare the state of the minting"
+          "description": "Here we initialize the program's state by setting some parameters.\n\nZoom inside, and inspect the nodes on the left."
         },
         "5615984b-bff5-49d4-bece-6b1b78b155ad": {
           "coordinates": [
-            110.96353307653357,
-            45.12839265046297
+            37.963533076533565,
+            137.12839265046296
           ],
-          "name": "mint nft",
-          "prototype": "43626e65-94ae-440c-b1cf-29d61cab1e70"
+          "name": "mint NFT",
+          "prototype": "43626e65-94ae-440c-b1cf-29d61cab1e70",
+          "description": "This is where we get into the nitty-gritty of the minting process.\n\nPeek inside to see how this breaks down to smaller steps."
         }
       },
       "connections": {
@@ -77,5 +79,7 @@
       }
     }
   },
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

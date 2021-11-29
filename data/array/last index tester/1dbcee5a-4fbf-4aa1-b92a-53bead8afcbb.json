@@ -1,0 +1,96 @@
+{
+  "name": "data/array/Last index tester",
+  "interface": {
+    "inputs": {
+      "5b8b2c1a-3bb8-46e5-b7c8-ef7d4d50ae36": {
+        "type": "any[]",
+        "name": "array"
+      },
+      "7480cb53-db90-4057-84c2-65d849004ffa": {
+        "type": "number",
+        "name": "index"
+      }
+    },
+    "outputs": {
+      "ea810b75-a715-4c5f-883e-399e8eb67f69": {
+        "type": "boolean",
+        "name": "is last"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a85e69e5-bb0e-4cf4-86ad-2fb6bfa2dbe4": {
+          "coordinates": [
+            -142.33333333333331,
+            -87.33333333333334
+          ],
+          "name": "length getter",
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b",
+          "params": {}
+        },
+        "bd6a0167-9bf8-4069-8ff8-325344ccf538": {
+          "coordinates": [
+            2.6666666666666856,
+            -15.333333333333343
+          ],
+          "name": "subtractor",
+          "prototype": "13d79b7a-4c71-411f-9826-3ec6f385b66f",
+          "params": {
+            "977cb484-0c1d-461e-aa7c-2cc68969b280": "1"
+          }
+        },
+        "bb0eff5d-5fde-4ac9-8612-4c77893d8b7a": {
+          "coordinates": [
+            138.66666666666669,
+            73.66666666666666
+          ],
+          "name": "equality tester",
+          "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a",
+          "params": {}
+        }
+      },
+      "connections": {
+        "a85e69e5-bb0e-4cf4-86ad-2fb6bfa2dbe4": {
+          "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
+            "bd6a0167-9bf8-4069-8ff8-325344ccf538": {
+              "6ba1c098-1890-4585-9147-ee35b2c62ed9": {}
+            }
+          }
+        },
+        "bd6a0167-9bf8-4069-8ff8-325344ccf538": {
+          "34afedef-5145-418a-a3f7-7efaf93b8246": {
+            "bb0eff5d-5fde-4ac9-8612-4c77893d8b7a": {
+              "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5b8b2c1a-3bb8-46e5-b7c8-ef7d4d50ae36": {
+            "a85e69e5-bb0e-4cf4-86ad-2fb6bfa2dbe4": {
+              "3796de71-a230-4869-9963-2c1815242213": {}
+            }
+          },
+          "7480cb53-db90-4057-84c2-65d849004ffa": {
+            "bb0eff5d-5fde-4ac9-8612-4c77893d8b7a": {
+              "50e32f24-30af-4721-9e0a-89e85a9ee240": {}
+            }
+          }
+        },
+        "outputs": {
+          "ea810b75-a715-4c5f-883e-399e8eb67f69": {
+            "bb0eff5d-5fde-4ac9-8612-4c77893d8b7a": {
+              "66ea4495-b5be-4650-9448-c802141b82cd": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

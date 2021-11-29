@@ -1,0 +1,32 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "ce04d499-18d2-4144-90ca-d16858956905": "const {readFile} = require(\"fs\");\nreadFile(data, (error, contents)=> {\n  if (error)\n    outputs.bounced(data, tag);\n  else\n    outputs.base64(contents.toString(\"base64\"), tag);\n});"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "ce04d499-18d2-4144-90ca-d16858956905": {
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "237527ce-952c-4ffc-9e25-ce80755d2a00": {
+        "type": "string",
+        "name": "base64"
+      },
+      "9e9040c1-0cf3-4af3-87ed-bf120c0a5c77": {
+        "type": "string",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "io/file/Base64 reader",
+  "description": "Reads binary files Base64 encoded.",
+  "attributes": {
+    "locked": true
+  }
+}

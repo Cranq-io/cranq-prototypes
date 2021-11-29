@@ -1,0 +1,151 @@
+{
+  "name": "scripting/actions/Directory lister",
+  "description": "",
+  "interface": {
+    "inputs": {
+      "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      },
+      "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"directory-path\": (string or number)[]\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "description": "Sends updated script state.",
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "coordinates": [
+            -158.83333333333337,
+            68.66666666666669
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "coordinates": [
+            49.27777777777774,
+            158.5925925925926
+          ],
+          "name": "fetch / store result",
+          "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
+          "params": {}
+        },
+        "58e4302b-18a8-4484-81fc-42361841a75f": {
+          "coordinates": [
+            -110.88671875,
+            -71.125
+          ],
+          "name": "directory lister",
+          "prototype": "e89603b7-7f56-47d0-a3ef-b73ccfb90b79",
+          "params": {}
+        },
+        "7c63f766-fc8f-4689-be66-03c177b34e55": {
+          "coordinates": [
+            48.61328125,
+            -170.875
+          ],
+          "name": "logger (with message)",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
+          }
+        },
+        "61076b4a-4c5b-4d4c-a881-0cd549e51609": {
+          "coordinates": [
+            99.25,
+            -21.875
+          ],
+          "name": "get image path",
+          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "params": {
+            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"directory-path\""
+          }
+        }
+      },
+      "connections": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            },
+            "61076b4a-4c5b-4d4c-a881-0cd549e51609": {
+              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+            }
+          }
+        },
+        "58e4302b-18a8-4484-81fc-42361841a75f": {
+          "acb2963b-7d28-4c79-b458-4cec00becf24": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "354855a7-bbff-4e07-a469-2a433bf8e839": {}
+            }
+          },
+          "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
+            "7c63f766-fc8f-4689-be66-03c177b34e55": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        },
+        "61076b4a-4c5b-4d4c-a881-0cd549e51609": {
+          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+            "58e4302b-18a8-4484-81fc-42361841a75f": {
+              "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {}
+            }
+          },
+          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
+            "7c63f766-fc8f-4689-be66-03c177b34e55": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "61076b4a-4c5b-4d4c-a881-0cd549e51609": {
+              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "be1e4812-a83d-41b8-b739-99586a0bd93a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

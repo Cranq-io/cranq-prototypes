@@ -11,8 +11,8 @@
     "outputs": {
       "2fe22f0a-b3b2-4856-b473-65a32a2ffd18": {
         "description": "The resulting path components",
-        "type": "any",
-        "name": "path components"
+        "type": "{\n  \"volume\": string,\n  \"directory\": string,\n  \"base\": string,\n  \"name\": string,\n  \"extension\": string\n}",
+        "name": "components"
       }
     }
   },
@@ -21,33 +21,23 @@
       "nodes": {
         "7400eae5-9017-4ebb-8dfa-3c3301d566f9": {
           "coordinates": [
-            -94,
-            -88
+            -34,
+            -85
           ],
           "description": "",
           "params": {},
           "prototype": "fbd99377-747c-4d22-bd3f-51a58471b8d8",
           "name": "parse path"
         },
-        "15ce1431-387e-44bb-b304-1e0bb86bbcb5": {
+        "86f31da2-03f5-4656-b154-338fb22d03ab": {
           "coordinates": [
-            -67,
-            77
+            26,
+            67
           ],
           "description": "",
           "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n\t\"volume\":\"root\",\n\t\"directory\":\"dir\",\n\t\"base\":\"base\",\n\t\"name\":\"name\",\n\t\"extension\":\"ext\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"volume\":\"root\",\n  \"directory\":\"dir\",\n  \"base\":\"base\",\n  \"name\":\"name\",\n  \"extension\":\"ext\"\n}"
           },
-          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "template"
-        },
-        "86f31da2-03f5-4656-b154-338fb22d03ab": {
-          "coordinates": [
-            123,
-            53
-          ],
-          "description": "",
-          "params": {},
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "name": "Left joiner A"
         }
@@ -55,22 +45,8 @@
       "connections": {
         "7400eae5-9017-4ebb-8dfa-3c3301d566f9": {
           "42ec8d26-2aec-499f-b916-643ccc466315": {
-            "15ce1431-387e-44bb-b304-1e0bb86bbcb5": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {
-                "description": ""
-              }
-            },
             "86f31da2-03f5-4656-b154-338fb22d03ab": {
               "be713809-1c65-4abb-9525-87ee9f75e9be": {
-                "description": ""
-              }
-            }
-          }
-        },
-        "15ce1431-387e-44bb-b304-1e0bb86bbcb5": {
-          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "86f31da2-03f5-4656-b154-338fb22d03ab": {
-              "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
                 "description": ""
               }
             }

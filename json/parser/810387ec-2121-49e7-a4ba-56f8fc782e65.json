@@ -1,0 +1,32 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": "try {\n  outputs.parsed(JSON.parse(data), tag);\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {
+        "type": "string",
+        "name": "json"
+      }
+    },
+    "outputs": {
+      "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {
+        "type": "any",
+        "name": "parsed"
+      },
+      "98e5a7d3-3b54-4287-b956-6eb13ead38d7": {
+        "type": "string",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "json/Parser",
+  "description": "Parses JSON.",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "name": "blockchain/moralis/actions/Folder uploader",
+  "description": "",
+  "interface": {
+    "inputs": {
+      "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      },
+      "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"folder-data-path\": (string or number)[],\n\"api-key-path\": (string or number)[]\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "description": "Sends updated script state.",
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "coordinates": [
+            -197.83333333333337,
+            126.66666666666669
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "coordinates": [
+            38.27777777777774,
+            224.5925925925926
+          ],
+          "name": "fetch / store result",
+          "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
+          "params": {}
+        },
+        "28103ff8-d253-481b-ac5c-493e7138b686": {
+          "coordinates": [
+            82.45591517857144,
+            -201.57142857142856
+          ],
+          "name": "upload images",
+          "prototype": "55a07049-01f0-46b4-aea0-35be55c4ee77",
+          "params": {}
+        },
+        "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
+          "coordinates": [
+            95.07310267857144,
+            -77.57142857142856
+          ],
+          "name": "log error",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
+          }
+        },
+        "735f738d-913e-42d6-b269-348977b202eb": {
+          "coordinates": [
+            -150,
+            -172
+          ],
+          "name": "get folder data",
+          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "params": {
+            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"folder-data-path\""
+          }
+        },
+        "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
+          "coordinates": [
+            -128,
+            -51
+          ],
+          "name": "get API key",
+          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "params": {
+            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"api-key-path\""
+          }
+        }
+      },
+      "connections": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            },
+            "735f738d-913e-42d6-b269-348977b202eb": {
+              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            },
+            "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
+              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+            }
+          }
+        },
+        "28103ff8-d253-481b-ac5c-493e7138b686": {
+          "678eb67e-d332-435d-a087-1a7c168dc24f": {
+            "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "7e984380-5a08-4f9e-8d84-404fb1fd4e80": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "354855a7-bbff-4e07-a469-2a433bf8e839": {}
+            }
+          }
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "735f738d-913e-42d6-b269-348977b202eb": {
+              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+            },
+            "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
+              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+            }
+          }
+        },
+        "735f738d-913e-42d6-b269-348977b202eb": {
+          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
+            "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+            "28103ff8-d253-481b-ac5c-493e7138b686": {
+              "6563df06-3ce3-4d32-a3d6-44d78d203e8a": {}
+            }
+          }
+        },
+        "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
+          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
+            "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+            "28103ff8-d253-481b-ac5c-493e7138b686": {
+              "dcec7b3f-c0c0-4778-9f37-004a68adf620": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "be1e4812-a83d-41b8-b739-99586a0bd93a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

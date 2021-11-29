@@ -1,0 +1,122 @@
+{
+  "name": "blockchain/moralis/Image upload data builder",
+  "interface": {
+    "inputs": {
+      "d5525f11-6356-4d88-ac2a-ab640eb9c4cb": {
+        "description": "",
+        "type": "string[]",
+        "name": "image paths"
+      }
+    },
+    "outputs": {
+      "a60958b0-7457-44e0-8636-8e21e1232d3b": {
+        "description": "",
+        "type": "{\"path\": string, \"content\": string}[]",
+        "name": "image data"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8cf34d27-4046-4d7e-8d14-ac3ef9fcf159": {
+          "coordinates": [
+            84.52901785714286,
+            -141.14285714285714
+          ],
+          "name": "read as base64",
+          "prototype": "0f3adae4-2f1b-4f8f-90ed-463b9fc92edb",
+          "params": {}
+        },
+        "a37efc32-6c1f-4baa-85a1-2ab292fc9c72": {
+          "coordinates": [
+            -151.08816964285714,
+            -51.14285714285714
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "[]"
+          }
+        },
+        "5ff07540-21ef-4cc7-9e43-8a98ac7bc1f0": {
+          "coordinates": [
+            137.9118303571429,
+            20.85714285714286
+          ],
+          "name": "bulid record",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"path\", \"content\"]"
+          }
+        },
+        "3679b770-bc85-4c85-ad88-76c7c1ac37be": {
+          "coordinates": [
+            -12.088169642857139,
+            41.85714285714286
+          ],
+          "name": "item appender",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2",
+          "params": {}
+        }
+      },
+      "connections": {
+        "a37efc32-6c1f-4baa-85a1-2ab292fc9c72": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "5ff07540-21ef-4cc7-9e43-8a98ac7bc1f0": {
+              "path": {}
+            },
+            "8cf34d27-4046-4d7e-8d14-ac3ef9fcf159": {
+              "ce04d499-18d2-4144-90ca-d16858956905": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "3679b770-bc85-4c85-ad88-76c7c1ac37be": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "8cf34d27-4046-4d7e-8d14-ac3ef9fcf159": {
+          "237527ce-952c-4ffc-9e25-ce80755d2a00": {
+            "5ff07540-21ef-4cc7-9e43-8a98ac7bc1f0": {
+              "content": {}
+            }
+          }
+        },
+        "5ff07540-21ef-4cc7-9e43-8a98ac7bc1f0": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "3679b770-bc85-4c85-ad88-76c7c1ac37be": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "3679b770-bc85-4c85-ad88-76c7c1ac37be": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "a37efc32-6c1f-4baa-85a1-2ab292fc9c72": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d5525f11-6356-4d88-ac2a-ab640eb9c4cb": {
+            "a37efc32-6c1f-4baa-85a1-2ab292fc9c72": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "a60958b0-7457-44e0-8636-8e21e1232d3b": {
+            "a37efc32-6c1f-4baa-85a1-2ab292fc9c72": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

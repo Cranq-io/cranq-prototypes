@@ -18,6 +18,10 @@
         "description": "Sends current index.\n\nExample:\n0",
         "type": "number",
         "name": "index"
+      },
+      "27a3c7be-464c-4961-ab8c-8e6e3328abae": {
+        "type": "typeof `array`",
+        "name": "done"
       }
     }
   },
@@ -27,7 +31,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": "for (let i=0, length=data.length; i<length; i++) {\n  const itemTag = `${tag}:${i}`;\n  outputs.index(i, itemTag);\n  outputs.item(data[i], itemTag);\n}"
+        "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": "for (let i=0, length=data.length; i<length; i++) {\n  const itemTag = `${tag}:${i}`;\n  outputs.index(i, itemTag);\n  outputs.item(data[i], itemTag);\n}\noutputs.done(data, tag);"
       }
     }
   },

@@ -1,5 +1,5 @@
 {
-  "description": "Builds an array of identical items.\n\nExample:\n1. item recieves \"Foo\"@0 \n2. count recieves 3@0 \n3. array sends [\"Foo\", \"Foo\", \"Foo\"]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_2_builders",
+  "description": "Builds an array of identical items.\n\nExample:\n1. \"Foo\"@0 recieved via  `item`\n2. 3@0 recieved via `count` \n3. [\"Foo\", \"Foo\", \"Foo\"]@0 sent  via `array`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_2_builders",
   "interface": {
     "inputs": {
       "2813c5a2-d4d6-42ce-a52f-9def6df97814": {

@@ -1,22 +1,22 @@
 {
-  "description": "Deletes item from the array at the specified index.",
+  "description": "Deletes item from the array at the specified index.\n\nExample: \n1.  [1,2,3]@0 recieved via array \n2. 1@0 recieved via `index` \n3. [1,3]@0 sent via `array`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/2_constructing_data/2_1_setters_deleters/README.md#example---deleting-items-from-arrays",
   "interface": {
     "inputs": {
       "5e2cd3a6-5c09-4da1-8b38-08fa9fc4e955": {
-        "description": "Array to delete item from",
+        "description": "Recieves array to delete item from.",
         "type": "any[]",
         "name": "array"
       },
       "e576f38e-a208-47e2-a690-abf2d3232f78": {
-        "description": "Identifies item to be deleted",
+        "description": "Recieves index which identifies item to be deleted from the array.",
         "type": "number",
         "name": "index"
       }
     },
     "outputs": {
       "e685dbbe-2d75-40aa-88dc-a5154e434f3d": {
-        "description": "Array with specified item deleted",
-        "type": "typeof(array)",
+        "description": "Sends array with specified item deleted.",
+        "type": "typeof `array`",
         "name": "array"
       }
     }
@@ -84,5 +84,8 @@
   "name": "data/array/Item deleter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "remove": null
   }
 }

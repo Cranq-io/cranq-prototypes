@@ -4,7 +4,7 @@
       "nodes": {
         "492cdba8-ab4f-4428-8339-5ab70efa576f": {
           "coordinates": [
-            30,
+            28,
             -63
           ],
           "name": "append item",
@@ -58,23 +58,30 @@
   "interface": {
     "inputs": {
       "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {
-        "type": "any",
-        "name": "array"
+        "type": "any[]",
+        "name": "array",
+        "description": "Receives array to append item to."
       },
       "2d02022b-c114-4207-935e-11490a6c2926": {
         "type": "any",
-        "name": "item"
+        "name": "item",
+        "description": "Receives item to append to the array."
       }
     },
     "outputs": {
       "092ca265-7614-4182-9d9f-bd325c094abb": {
-        "type": "any",
-        "name": "array"
+        "type": "typeof `array`",
+        "name": "array",
+        "description": "Sends the new array with the appended item."
       }
     }
   },
   "name": "data/array/Item appender",
   "attributes": {
     "locked": true
-  }
+  },
+  "keywords": {
+    "add": null
+  },
+  "description": "Appends item to the array.\n\nExample: \n1. [1,2,3]@0 recieved via `array` \n2. 1@0 recieved via `item` \n3. [1,2,3,1]@0 sent via `array`"
 }

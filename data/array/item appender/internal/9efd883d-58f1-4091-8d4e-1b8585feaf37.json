@@ -9,13 +9,13 @@
   "interface": {
     "inputs": {
       "313b183a-6816-45e9-abb7-dd5319a48fbd": {
-        "type": "any",
+        "type": "{\"array\": any[], \"item\": any}",
         "name": "array & item"
       }
     },
     "outputs": {
       "5de10da8-d82e-4757-9e51-fd1815c2e57b": {
-        "type": "any",
+        "type": "(typeof `array & item`)[\"array\"]",
         "name": "array"
       }
     }
@@ -24,5 +24,6 @@
   "attributes": {
     "internal": true,
     "locked": true
-  }
+  },
+  "description": "See data/array/Item appender"
 }

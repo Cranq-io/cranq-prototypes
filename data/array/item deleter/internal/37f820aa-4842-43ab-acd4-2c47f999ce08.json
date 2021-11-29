@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See data/array/Item deleter",
   "interface": {
     "inputs": {
       "4ecebc94-045d-4c52-a31a-4cb76749371a": {
@@ -9,7 +9,7 @@
     },
     "outputs": {
       "63ede1b7-2b35-42ec-9116-725f7909d3f6": {
-        "type": "typeof(array & index)[\"array\"]",
+        "type": "(typeof `array & index`)[\"array\"]",
         "name": "array"
       }
     }

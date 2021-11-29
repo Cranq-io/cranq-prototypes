@@ -1,27 +1,27 @@
 {
-  "description": "Inserts item into the array at the specified index.",
+  "description": "Inserts item into the array at the specified index.\n\nExample: \n1. [1,2,3]@0 recieved via `array` \n2.  1@0 recieved via `index` \n2. 1@0 recieved via `item` \n3. [1,1,2,3]@0 sent via `array`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/2_constructing_data/2_1_setters_deleters/README.md#example---inserting-items-into-arrays",
   "interface": {
     "inputs": {
       "52161cdb-5e79-4e37-8e72-eee28c90bbe2": {
-        "description": "Array to insert into",
+        "description": "Recieves array to insert into",
         "type": "any[]",
         "name": "array"
       },
       "059d506a-50a3-4355-8684-a91e79abcf47": {
-        "description": "Index at which to insert",
+        "description": "Recieves index at which to insert",
         "type": "number",
         "name": "index"
       },
       "a01a4414-cb16-41a8-a41c-56f960585577": {
-        "description": "Item to be inserted",
-        "type": "typeof(array)[number]",
+        "description": "Recieves item to be inserted",
+        "type": "any",
         "name": "item"
       }
     },
     "outputs": {
       "c0ffb518-35d4-48e9-b07e-45b58e951c44": {
-        "description": "Array with specified item inserted",
-        "type": "typeof(array)",
+        "description": "Sends array with specified item inserted",
+        "type": "typeof `array`",
         "name": "array"
       }
     }

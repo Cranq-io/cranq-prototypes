@@ -1,5 +1,5 @@
 {
-  "description": "Tests whether two arrays have the same length",
+  "description": "Tests whether two arrays have the same length\n\nExample:\n1. [1,2]@0 recieved via `array1` \n2. [3,4]@0 recieved via `array2`\n3. true@0 sent via `has same length`",
   "implementations": {
     "cranq": {
       "nodes": {
@@ -94,23 +94,30 @@
   "interface": {
     "inputs": {
       "8c54164c-70bc-4dd4-b2f7-7559ee42e3f2": {
-        "type": "array",
-        "name": "array1"
+        "type": "any[]",
+        "name": "array1",
+        "description": "Recieves array1 to compare its lenght "
       },
       "a1bcc52a-e27f-4ea9-9ccd-ed637bcf5e19": {
-        "type": "array",
-        "name": "array2"
+        "type": "any[]",
+        "name": "array2",
+        "description": "Recieves array2 to compare its lenght "
       }
     },
     "outputs": {
       "dac25b79-8a78-457d-9c9c-52cb867f85a0": {
-        "type": "any",
-        "name": "has same length"
+        "type": "boolean",
+        "name": "has same length",
+        "description": "Sends whether length of array1 and array1 is the same."
       }
     }
   },
   "name": "data/array/Has same length tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "compare": null,
+    "equality": null
   }
 }

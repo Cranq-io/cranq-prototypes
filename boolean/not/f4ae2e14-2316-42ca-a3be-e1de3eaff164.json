@@ -1,16 +1,18 @@
 {
-  "description": "",
+  "description": "Performs a boolean NOT operation on the value received via input `a`.\n\nExample:\n\n1. false@0 is received via `a`\n2. true@0 is sent via `not`",
   "interface": {
     "inputs": {
       "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {
         "type": "boolean",
-        "name": "a"
+        "name": "a",
+        "description": "The value to be negated."
       }
     },
     "outputs": {
       "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
         "type": "boolean",
-        "name": "not"
+        "name": "not",
+        "description": "Sends the negated value of the input `a`."
       }
     }
   },
@@ -27,5 +29,10 @@
   "name": "boolean/Not",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "logical": null,
+    "not": null
   }
 }

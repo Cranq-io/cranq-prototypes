@@ -1,20 +1,23 @@
 {
-  "description": "Outputs 'a' AND 'b'.",
+  "description": "Performs a boolean AND operation on the values received via inputs `a` and `b`.\n\nExample:\n\n1. true@0 is received via `a`\n2. true@0 is received via `b`\n3. true@0 is sent via `and`",
   "interface": {
     "inputs": {
       "a218ce35-ba8f-40e7-9cee-e4355f5907b1": {
         "type": "boolean",
-        "name": "a"
+        "name": "a",
+        "description": "Receives the first operand."
       },
       "5cfcd4a1-9167-4aa4-ad58-061a306fc901": {
         "type": "boolean",
-        "name": "b"
+        "name": "b",
+        "description": "Receives the second operand."
       }
     },
     "outputs": {
       "d65617ef-2d6e-4a4e-8e24-5e9434cc234b": {
         "type": "boolean",
-        "name": "and"
+        "name": "and",
+        "description": "Sends the result of the logical AND operation."
       }
     }
   },
@@ -23,8 +26,8 @@
       "nodes": {
         "2cd0e0a8-0ed5-4208-a980-18f9745ab531": {
           "coordinates": [
-            0,
-            0
+            5,
+            -101
           ],
           "description": "",
           "params": {
@@ -35,8 +38,8 @@
         },
         "fd35c6b8-c978-482c-8ae1-1d1890cf7381": {
           "coordinates": [
-            0,
-            0
+            56,
+            67
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,10 @@
   "name": "boolean/And",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "and": null,
+    "logical": null
   }
 }

@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether the input is a boolean.",
+  "description": "Checks whether the `data` input is a boolean.\n\nExample:\n\n1.  false@0 is received via `data`\n2. true@0 is sent via `is boolean`",
   "interface": {
     "inputs": {
       "6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Input value to be checked"
       }
     },
     "outputs": {
       "52a394b8-a406-424b-83fc-d6446eceb21f": {
-        "type": "is boolean",
-        "name": "is boolean"
+        "type": "boolean",
+        "name": "is boolean",
+        "description": "Sends true if the input is a boolean, false otherwise."
       }
     }
   },
@@ -27,5 +29,9 @@
   "name": "boolean/Type tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "logical": null
   }
 }

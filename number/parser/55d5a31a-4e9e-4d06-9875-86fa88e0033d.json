@@ -1,20 +1,23 @@
 {
-  "description": "Converts a string to number.",
+  "description": "Converts a string to number. If the string cannot be converted to number, it will be bounced.\n\nExample:\n\n1. \"23.05\"@0 is received via `string`\n2. 23.05@0 is sent via `number`",
   "interface": {
     "inputs": {
       "68e94af3-1532-4b7d-a7e3-ceafacdccbfd": {
         "type": "string",
-        "name": "string"
+        "name": "string",
+        "description": "String input to parse"
       }
     },
     "outputs": {
       "72bad116-28e0-4288-b294-07824385a4b8": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "Sends the parsed number if the parsing was successful."
       },
       "68902b39-8889-4885-9b75-f5b2c8a0ddb8": {
         "type": "string",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "Sends the input data if the parsing has failed."
       }
     }
   },
@@ -31,5 +34,10 @@
   "name": "number/Parser",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "cast": null,
+    "parse": null
   }
 }

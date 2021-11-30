@@ -1,20 +1,23 @@
 {
-  "description": "Picks the minimum out of two numbers.",
+  "description": "Picks the minimum out of two numbers.\n\nExample:\n\n1. 12@0 is received via `a`\n2. 22@0 is received via `b`\n3. 12@0 is sent via `min`",
   "interface": {
     "inputs": {
       "aa1f8f2f-1676-4be6-a8e1-e74acffbeffd": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The first value to pick the minimum from"
       },
       "4f9a7be2-f54a-4447-bc3c-c813adf0051b": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "The second value to pick the minimum from"
       }
     },
     "outputs": {
       "0c5489c9-f28d-4ca4-b93f-3c2bb821a2ae": {
         "type": "number",
-        "name": "min"
+        "name": "min",
+        "description": "Sends the minimum of the provided values."
       }
     }
   },
@@ -81,5 +84,10 @@
   "name": "number/Min picker",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "min": null,
+    "minimum": null
   }
 }

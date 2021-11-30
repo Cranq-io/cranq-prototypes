@@ -1,20 +1,23 @@
 {
-  "description": "Checks if boolean 'a' is equal to boolean 'b'.",
+  "description": "Checks if boolean `a` is equal to boolean `b`.\n\nExample:\n\n1. false@0 is received via `a`\n2. false@0 is received via `b`\n3. true@0 is sent via `equal`",
   "interface": {
     "inputs": {
       "c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea": {
         "type": "boolean",
-        "name": "a"
+        "name": "a",
+        "description": "First operand"
       },
       "100c6612-03e8-49fb-96c3-676047ed9e5c": {
         "type": "boolean",
-        "name": "b"
+        "name": "b",
+        "description": "Second operand"
       }
     },
     "outputs": {
       "9f08a7ac-1742-4de2-8683-fa5a7f6f3867": {
         "type": "boolean",
-        "name": "equal"
+        "name": "equal",
+        "description": "Sends true if the provided values are equal, false otherwise."
       }
     }
   },
@@ -81,5 +84,10 @@
   "name": "boolean/Equality tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "equality": null,
+    "sameness": null
   }
 }

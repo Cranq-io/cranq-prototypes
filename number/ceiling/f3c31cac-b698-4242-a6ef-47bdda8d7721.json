@@ -1,16 +1,18 @@
 {
-  "description": "Returns the number rounded up to the nearest integer.",
+  "description": "Returns the number rounded up to the nearest integer.\n\nExample:\n\n1. 1.23@0 is received via `number`\n2. 2@0 is sent via `ceiling`\n\nExample (negative number):\n\n1. -1.23@0 is received via `number`\n2. -1@0 is sent via `ceiling`",
   "interface": {
     "inputs": {
       "c80e9f96-0036-4299-b6d4-23cb0b138839": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "Input number"
       }
     },
     "outputs": {
       "31d821d9-acb9-44fe-8e9b-3e1fe31fcbc2": {
         "type": "number",
-        "name": "ceiling"
+        "name": "ceiling",
+        "description": "The nearest integer which is greater than or equal to the input."
       }
     }
   },
@@ -27,5 +29,11 @@
   "name": "number/Ceiling",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "ceil": null,
+    "integer": null,
+    "ceiling": null
   }
 }

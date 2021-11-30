@@ -1,20 +1,23 @@
 {
-  "description": "Takes the difference of 'a' and 'b'.",
+  "description": "Takes the difference of the value received on `a` and the value received on `b`.\n\nExample:\n\n1. 23@0 is received via `a`\n2. 22@0 is received via `b`\n3. 1@0 is sent via `diff`",
   "interface": {
     "inputs": {
       "6ba1c098-1890-4585-9147-ee35b2c62ed9": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The first operand of the subtraction"
       },
       "977cb484-0c1d-461e-aa7c-2cc68969b280": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "The second operand of the subtraction"
       }
     },
     "outputs": {
       "34afedef-5145-418a-a3f7-7efaf93b8246": {
         "type": "number",
-        "name": "diff"
+        "name": "diff",
+        "description": "Sends the difference of 'a' from 'b'"
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "number/Subtractor",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "subtract": null
   }
 }

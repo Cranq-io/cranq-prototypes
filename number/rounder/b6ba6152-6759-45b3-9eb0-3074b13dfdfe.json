@@ -1,16 +1,18 @@
 {
-  "description": "Returns the number rounded to the nearest integer.",
+  "description": "Returns the number rounded to the nearest integer.\n\nExample:\n\n1. 1.51@0 is received via `number`\n2. 2@0 is sent via `rounded`\n\nExample (negative number):\n\n1. -1.23@0 is received via `number`\n2. -1@0 is sent via `rounded`",
   "interface": {
     "inputs": {
       "1eeeb864-32e8-4ccd-874f-99105df4b7d6": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "The number to be rounded."
       }
     },
     "outputs": {
       "b427a068-28dd-4949-be83-d08c1374ea32": {
         "type": "number",
-        "name": "rounded"
+        "name": "rounded",
+        "description": "Sends the nearest integer to the number."
       }
     }
   },
@@ -27,5 +29,10 @@
   "name": "number/Rounder",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "round": null,
+    "integer": null
   }
 }

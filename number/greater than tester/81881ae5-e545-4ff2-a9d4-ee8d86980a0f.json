@@ -1,20 +1,23 @@
 {
-  "description": "Checks if 'a' is greater than 'b'.",
+  "description": "Checks if the value received on `value` is greater than the value received on `reference`. If the values are equal, it outputs false.\n\nExample:\n\n1. 20@0 is received via `value`\n2. 19@0 is received via `reference`\n3. true@0 is sent via `greater`",
   "interface": {
     "inputs": {
       "7b679ba7-414d-4173-8a23-29438816b480": {
         "type": "number",
-        "name": "a"
+        "name": "value",
+        "description": "The first operand of the comparison."
       },
       "7eef3ae2-2380-4f3e-9f5e-ff0f3e036d76": {
         "type": "number",
-        "name": "b"
+        "name": "reference",
+        "description": "The second operand of the comparison."
       }
     },
     "outputs": {
       "5d88b9c8-0961-45fb-b196-03194f84bb36": {
         "type": "boolean",
-        "name": "greater"
+        "name": "greater",
+        "description": "Sends true if \"a\" is greater than \"b\""
       }
     }
   },
@@ -35,8 +38,8 @@
         },
         "587a30c1-8fd9-45ea-931b-f38c24cfd817": {
           "coordinates": [
-            0,
-            0
+            65,
+            -78
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,11 @@
   "name": "number/Greater than tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "greater": null,
+    "compare": null,
+    "gt": null
   }
 }

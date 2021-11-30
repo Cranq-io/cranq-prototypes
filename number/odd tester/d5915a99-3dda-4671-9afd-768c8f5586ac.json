@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether a number is odd.",
+  "description": "Tells whether a number is odd.\n\nExample:\n\n1. 23@0 is received via `number`\n2. true@0 is sent via `odd`",
   "interface": {
     "inputs": {
       "81eb9228-10a4-43ff-8f34-eda60dc7dbf7": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "Number to be tested for oddness."
       }
     },
     "outputs": {
       "b90fc38e-5ece-475d-9ff3-0fde77ea7c88": {
         "type": "boolean",
-        "name": "odd"
+        "name": "odd",
+        "description": "Sends true if the number is odd, false otherwise."
       }
     }
   },
@@ -27,5 +29,10 @@
   "name": "number/Odd tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "odd": null,
+    "integer": null
   }
 }

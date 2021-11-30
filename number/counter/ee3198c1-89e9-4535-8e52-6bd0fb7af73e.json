@@ -1,16 +1,18 @@
 {
-  "description": "Counts input signals.",
+  "description": "Counts the received input signals.\n\nExample:\n\n1. true@0 is received via `trigger`\n2. 1@0 is sent via `count`\n3. false@1 is received via `trigger`\n4. 2@1 is sent via `count`",
   "interface": {
     "inputs": {
       "69d2aa68-6a45-4b2b-8754-6e79aaa239d7": {
         "type": "any",
-        "name": "trigger"
+        "name": "trigger",
+        "description": "The input signals to be counted"
       }
     },
     "outputs": {
       "d5ac6560-861f-4b65-a373-6588088cb54d": {
         "type": "number",
-        "name": "count"
+        "name": "count",
+        "description": "Total count of the signals received."
       }
     }
   },
@@ -31,8 +33,8 @@
         },
         "29b2a4df-fb66-454a-a500-4f6598e5fb1f": {
           "coordinates": [
-            0,
-            0
+            73,
+            -76
           ],
           "description": "",
           "params": {
@@ -83,5 +85,9 @@
   "name": "number/Counter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "count": null
   }
 }

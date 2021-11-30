@@ -1,16 +1,18 @@
 {
-  "description": "Returns the absolute value of the input number.",
+  "description": "Returns the absolute value of the input number.\n\nExample:\n\n1. -23@0 is received via `number`\n2. 23@0 is sent via `abs`",
   "interface": {
     "inputs": {
       "2b75f38c-2f5c-4adf-bfc0-397eac698b6f": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "Input value"
       }
     },
     "outputs": {
       "8f9147ed-aca8-47db-9899-18fced565c37": {
         "type": "number",
-        "name": "abs"
+        "name": "abs",
+        "description": "The absolute value of the input."
       }
     }
   },
@@ -27,5 +29,10 @@
   "name": "number/Abs",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "operator": null,
+    "absolute": null
   }
 }

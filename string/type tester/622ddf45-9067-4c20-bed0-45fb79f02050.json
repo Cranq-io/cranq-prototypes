@@ -4,13 +4,15 @@
     "inputs": {
       "6a3c089d-b056-4f4d-991c-a8a8112d3659": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "The value to be tested."
       }
     },
     "outputs": {
       "8ba76f0d-0adc-43b6-b2f1-18b88b24db41": {
-        "type": "is string",
-        "name": "is string"
+        "type": "boolean",
+        "name": "is string",
+        "description": "Sends true if the data is a string, false otherwise."
       }
     }
   },
@@ -27,5 +29,9 @@
   "name": "string/Type tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "tester": null
   }
 }

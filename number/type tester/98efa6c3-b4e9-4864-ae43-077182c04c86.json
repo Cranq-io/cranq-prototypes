@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether the input is a number.",
+  "description": "Tells whether the received value on `data` is a number.\n\nExample (not a number):\n\n1. \"some string\"@0 is received via `data`\n2. false@0 is sent via `is number`\n\nExample (receives a number):\n\n1. 23.23@0 is received via `data`\n2. true@0 is sent via `is number`",
   "interface": {
     "inputs": {
       "644fec41-e452-4867-ad43-2d718d30dd22": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "the value to be tested."
       }
     },
     "outputs": {
       "755231fe-f438-4017-aeab-753b07ccb260": {
-        "type": "is number",
-        "name": "is number"
+        "type": "boolean",
+        "name": "is number",
+        "description": "Sends true if the data is a number, false otherwise."
       }
     }
   },
@@ -27,5 +29,9 @@
   "name": "number/Type tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "tester": null
   }
 }

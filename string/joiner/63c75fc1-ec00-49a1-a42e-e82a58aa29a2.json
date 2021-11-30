@@ -1,20 +1,23 @@
 {
-  "description": "Joins an ordered list of strings into a single string.",
+  "description": "Joins an ordered list of strings into a single string.\n\nExample:\n\n1. [\"Hello\", \"!\"]@0 is received via `substrings`\n2. \" world\"@0 is received via `separator`\n3. \"Hello world!\"@0 is sent via `joined`",
   "interface": {
     "inputs": {
       "6e8f72af-0e88-49da-88d1-ca8e525e8e9f": {
         "type": "string",
-        "name": "separator"
+        "name": "separator",
+        "description": "The separator string"
       },
       "2c5f0d7f-8f9d-4741-af0b-544aa15406f0": {
         "type": "string[]",
-        "name": "substrings"
+        "name": "substrings",
+        "description": "Array containing the parts"
       }
     },
     "outputs": {
       "61fd421d-d6b7-49d3-a63b-ec3e1f0b092f": {
         "type": "string",
-        "name": "joined"
+        "name": "joined",
+        "description": "Sends the joined parts, separated by the separator string."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "string/Joiner",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "join": null
   }
 }

@@ -1,20 +1,23 @@
 {
-  "description": "Takes modulo of 'a' and 'b'. Bounces synced operands on division by zero.",
+  "description": "Takes modulo of 'a' and 'b'. Bounces synced operands on division by zero.\n\nExample:\n\n1. 10@0 is received via `a`\n2. 9@0 is received via `b`\n3. 1@0 is sent via `remainder`",
   "interface": {
     "inputs": {
       "625f4fa9-245e-4bf4-9f76-a5b57c83d3a0": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The divident of the operation."
       },
       "842d2ecd-e864-4c84-9168-32a2233794c0": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "The divisor of the operation."
       }
     },
     "outputs": {
       "bf0270dd-fd27-4c94-b02d-d3e08122f1bb": {
         "type": "number",
-        "name": "remainder"
+        "name": "remainder",
+        "description": "The remainder of the operation."
       },
       "c2f38541-ae6c-415d-8270-d5a4865c3f60": {
         "description": "Sends synced inputs on error.",
@@ -91,5 +94,9 @@
   "name": "number/Modulo",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "modulo": null
   }
 }

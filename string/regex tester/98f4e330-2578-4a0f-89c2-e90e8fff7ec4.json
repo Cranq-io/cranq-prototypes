@@ -10,7 +10,7 @@
       "4ad33973-93b5-42cd-b485-76c517507786": {
         "type": "string",
         "name": "regex",
-        "description": "Regular expression to test the specified string against.\n\nFlavor depends on the running environment!"
+        "description": "Regular expression to test the specified string against.\n\nFlavour depends on the running environment."
       }
     },
     "outputs": {
@@ -84,5 +84,10 @@
   "name": "string/Regex tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "regular expression": null,
+    "regex": null
   }
 }

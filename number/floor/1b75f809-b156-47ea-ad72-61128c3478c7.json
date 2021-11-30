@@ -1,16 +1,18 @@
 {
-  "description": "Returns the number rounded down to the nearest integer.",
+  "description": "Returns the number rounded down to the nearest integer.\n\nExample:\n\n1. 5.23@0 is received via `number`\n2. 5@0 is sent via `floor`\n\nExample (negative number):\n\n1. -1.23@0 is received via `number`\n2. -2@0 is sent via `floor`",
   "interface": {
     "inputs": {
       "79d13466-1915-482f-b1d3-fe4c8a4b589b": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "The number to be rounded."
       }
     },
     "outputs": {
       "49b73ade-9552-43bf-bb6a-26abe4b20b9c": {
         "type": "number",
-        "name": "floor"
+        "name": "floor",
+        "description": "The nearest integer which is less than or equal to the input number."
       }
     }
   },
@@ -27,5 +29,10 @@
   "name": "number/Floor",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "floor": null,
+    "integer": null
   }
 }

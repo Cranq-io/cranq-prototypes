@@ -1,20 +1,23 @@
 {
-  "description": "Splits incoming string along a specified separator string.",
+  "description": "Splits the  value received on `string` by the value received on `separator`.\n\nExample:\n\n1. \"foo.bar.baz\"@0 is received via `string`\n2. \".\"@0 is received via `separator`\n3. [\"foo\", \"bar\", \"baz\"]@0 is sent via `substrings`",
   "interface": {
     "inputs": {
       "761c44f9-80b3-410c-820f-b004e8787521": {
         "type": "string",
-        "name": "separator"
+        "name": "separator",
+        "description": "The separator string"
       },
       "fe310222-173b-4335-93f7-b17e41eba89e": {
         "type": "string",
-        "name": "string"
+        "name": "string",
+        "description": "The string to be splitted"
       }
     },
     "outputs": {
       "9b8b171b-8873-471d-a7a0-588f5f2340fc": {
         "type": "string[]",
-        "name": "substrings"
+        "name": "substrings",
+        "description": "Sends the array of the parts."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "string/Splitter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "split": null
   }
 }

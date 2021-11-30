@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "14c6fd48-6a62-42fa-9c50-731dccb6de9e": {
-        "type": "{\n\"working-folder\": string,\n\"state-path\": string\n}",
+        "type": "{\n\"state-path\": string\n}",
         "name": "params"
       }
     },
@@ -47,8 +47,8 @@
         },
         "3eef520d-bb7c-47e3-a8c1-6b9d42a8019c": {
           "coordinates": [
-            -135.63671875,
-            108.57421875
+            -161.63671875,
+            100.57421875
           ],
           "name": "depot",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
@@ -56,8 +56,8 @@
         },
         "19d782b0-6251-4e83-96b1-f15c33b540fa": {
           "coordinates": [
-            -15.63671875,
-            13.57421875
+            -20.63671875,
+            12.57421875
           ],
           "name": "item getter",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -125,6 +125,8 @@
       }
     }
   },
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "description": "Starts a script, by reading the persisted state, or if there is none, the specified params."
 }

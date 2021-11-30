@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"folder-data-path\": (string or number)[],\n\"api-key-path\": (string or number)[]\n}",
+        "type": "{\n\"cwd\": string,\n\"result-path\": (string or number)[],\n\"message\": string,\n\"folder-upload-data\": any,\n\"api-key\": string\n}",
         "name": "params"
       }
     },
@@ -44,8 +44,8 @@
         },
         "28103ff8-d253-481b-ac5c-493e7138b686": {
           "coordinates": [
-            82.45591517857144,
-            -201.57142857142856
+            72.45591517857144,
+            -127.57142857142856
           ],
           "name": "upload images",
           "prototype": "55a07049-01f0-46b4-aea0-35be55c4ee77",
@@ -53,8 +53,8 @@
         },
         "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
           "coordinates": [
-            95.07310267857144,
-            -77.57142857142856
+            256.07310267857144,
+            -60.571428571428555
           ],
           "name": "log error",
           "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
@@ -62,27 +62,25 @@
             "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
           }
         },
-        "735f738d-913e-42d6-b269-348977b202eb": {
+        "be3e73ec-c102-46d9-96ad-af5dc6381337": {
           "coordinates": [
-            -150,
-            -172
+            -94.6171875,
+            -205
           ],
-          "name": "get folder data",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"folder-data-path\""
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"folder-upload-data\", \"api-key\"]"
           }
         },
-        "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
+        "e80ecc21-bb62-425a-806f-f2e07a73ea79": {
           "coordinates": [
-            -128,
-            -51
+            -168.6171875,
+            -75
           ],
-          "name": "get API key",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
-          "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"api-key-path\""
-          }
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
         }
       },
       "connections": {
@@ -91,11 +89,8 @@
             "733af17d-de08-473c-b7a2-ab49f11be687": {
               "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
             },
-            "735f738d-913e-42d6-b269-348977b202eb": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
-            },
-            "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            "e80ecc21-bb62-425a-806f-f2e07a73ea79": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
             }
           },
           "069a212d-9cea-4987-be45-e0079a13d96f": {
@@ -116,35 +111,27 @@
             }
           }
         },
-        "733af17d-de08-473c-b7a2-ab49f11be687": {
-          "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "735f738d-913e-42d6-b269-348977b202eb": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
-            },
-            "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+        "e80ecc21-bb62-425a-806f-f2e07a73ea79": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "be3e73ec-c102-46d9-96ad-af5dc6381337": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           }
         },
-        "735f738d-913e-42d6-b269-348977b202eb": {
-          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
-            "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "e80ecc21-bb62-425a-806f-f2e07a73ea79": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
             }
-          },
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+          }
+        },
+        "be3e73ec-c102-46d9-96ad-af5dc6381337": {
+          "folder-upload-data": {
             "28103ff8-d253-481b-ac5c-493e7138b686": {
               "6563df06-3ce3-4d32-a3d6-44d78d203e8a": {}
             }
-          }
-        },
-        "1718f45b-e731-4de3-97b9-3d18eadd8ba5": {
-          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
-            "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
-            }
           },
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+          "api-key": {
             "28103ff8-d253-481b-ac5c-493e7138b686": {
               "dcec7b3f-c0c0-4778-9f37-004a68adf620": {}
             }
@@ -174,7 +161,5 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"children-path\": (string or number)[],\n\"base-path\": (string or number)[]\n}",
+        "type": "{\n\"cwd\": string,\n\"result-path\": (string or number)[],\n\"message\": string,\n\"child-paths\": string[],\n\"base-path\": string\n}",
         "name": "params"
       }
     },
@@ -26,8 +26,8 @@
       "nodes": {
         "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
           "coordinates": [
-            -191.83333333333337,
-            84.66666666666669
+            -171.83333333333337,
+            96.66666666666669
           ],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
@@ -44,45 +44,32 @@
         },
         "d84f41d7-0a3f-4b1e-acd4-3d77f8dbebae": {
           "coordinates": [
-            152,
-            -160
+            76,
+            -10
           ],
           "name": "paths joiner",
           "prototype": "045f235f-8cd4-4fe3-ad50-5d63a6609d16",
           "params": {}
         },
-        "3fd061cc-95a9-44e8-a737-01462bd86c80": {
+        "10143e24-671f-456c-8587-ef05e8f5507b": {
           "coordinates": [
-            -32,
-            -14
+            31.3828125,
+            -199
           ],
-          "name": "get children paths",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"children-path\""
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"base-path\", \"child-paths\"]"
           }
         },
-        "92f04291-7742-4d7c-a0a5-745b9eeaa002": {
+        "678bbe37-ac4b-40a0-a3cd-3150e3533fb1": {
           "coordinates": [
-            157,
-            -74
+            -114.6171875,
+            -97
           ],
-          "name": "logger (with message)",
-          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
-          "params": {
-            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
-          }
-        },
-        "93ba009c-cd39-4a03-9cb3-a9972cc76ad7": {
-          "coordinates": [
-            -31,
-            -118
-          ],
-          "name": "get base path",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
-          "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"base-path\""
-          }
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
         }
       },
       "connections": {
@@ -91,11 +78,8 @@
             "733af17d-de08-473c-b7a2-ab49f11be687": {
               "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
             },
-            "3fd061cc-95a9-44e8-a737-01462bd86c80": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
-            },
-            "93ba009c-cd39-4a03-9cb3-a9972cc76ad7": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            "678bbe37-ac4b-40a0-a3cd-3150e3533fb1": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
             }
           },
           "069a212d-9cea-4987-be45-e0079a13d96f": {
@@ -104,39 +88,36 @@
             }
           }
         },
-        "733af17d-de08-473c-b7a2-ab49f11be687": {
-          "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "3fd061cc-95a9-44e8-a737-01462bd86c80": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
-            },
-            "93ba009c-cd39-4a03-9cb3-a9972cc76ad7": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
-            }
-          }
-        },
-        "3fd061cc-95a9-44e8-a737-01462bd86c80": {
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
-            "d84f41d7-0a3f-4b1e-acd4-3d77f8dbebae": {
-              "31eb45e1-a408-4231-a41e-28365fe3c8aa": {}
-            }
-          },
-          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
-            "92f04291-7742-4d7c-a0a5-745b9eeaa002": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
-            }
-          }
-        },
-        "93ba009c-cd39-4a03-9cb3-a9972cc76ad7": {
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
-            "d84f41d7-0a3f-4b1e-acd4-3d77f8dbebae": {
-              "8a8fd503-291b-40dc-8ed7-c7b1fa350386": {}
-            }
-          }
-        },
         "d84f41d7-0a3f-4b1e-acd4-3d77f8dbebae": {
           "426e0682-4e1f-4243-b526-080dc273ca2e": {
             "733af17d-de08-473c-b7a2-ab49f11be687": {
               "354855a7-bbff-4e07-a469-2a433bf8e839": {}
+            }
+          }
+        },
+        "678bbe37-ac4b-40a0-a3cd-3150e3533fb1": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "10143e24-671f-456c-8587-ef05e8f5507b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "678bbe37-ac4b-40a0-a3cd-3150e3533fb1": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "10143e24-671f-456c-8587-ef05e8f5507b": {
+          "base-path": {
+            "d84f41d7-0a3f-4b1e-acd4-3d77f8dbebae": {
+              "8a8fd503-291b-40dc-8ed7-c7b1fa350386": {}
+            }
+          },
+          "child-paths": {
+            "d84f41d7-0a3f-4b1e-acd4-3d77f8dbebae": {
+              "31eb45e1-a408-4231-a41e-28365fe3c8aa": {}
             }
           }
         }

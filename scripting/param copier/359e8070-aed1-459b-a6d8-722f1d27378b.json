@@ -1,0 +1,168 @@
+{
+  "name": "scripting/Param copier",
+  "description": "Copies values from state over to a params structure.",
+  "interface": {
+    "inputs": {
+      "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {
+        "type": "any",
+        "name": "state"
+      },
+      "9bd88c07-0858-4ead-b615-069284f0db34": {
+        "type": "any",
+        "name": "params"
+      },
+      "71ef594f-2661-492f-b6e6-278e6ce94c3d": {
+        "type": "{string: (string or number)[]}",
+        "name": "mapping"
+      }
+    },
+    "outputs": {
+      "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+        "type": "any",
+        "name": "params"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b422236f-bae1-46bb-a209-504eab3b46b2": {
+          "coordinates": [
+            157,
+            -15
+          ],
+          "name": "node getter",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "fe0dec04-1637-4aca-bb0b-0a96092214be": {
+          "coordinates": [
+            -173,
+            50
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        },
+        "5bc99733-e214-412f-b502-ac0b5df934b1": {
+          "coordinates": [
+            149,
+            114
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {}
+        },
+        "40bea481-67ac-4532-bad8-6b6a500816c1": {
+          "coordinates": [
+            157,
+            -85
+          ],
+          "name": "logger (with message)",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
+          }
+        },
+        "cf0c39b4-dbd8-4640-b92f-3bb65efa408f": {
+          "coordinates": [
+            -10.599999999999994,
+            -102
+          ],
+          "name": "map params",
+          "prototype": "90061d99-64eb-4260-ac6d-abdf4c6e9fb1"
+        },
+        "00096849-3607-4986-8c37-8d6723ed8273": {
+          "coordinates": [
+            -11,
+            175.5
+          ],
+          "name": "group B",
+          "prototype": "335d91cb-607f-4e04-af26-357558fca0eb"
+        }
+      },
+      "connections": {
+        "fe0dec04-1637-4aca-bb0b-0a96092214be": {
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "5bc99733-e214-412f-b502-ac0b5df934b1": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "cf0c39b4-dbd8-4640-b92f-3bb65efa408f": {
+              "a7988a90-76f7-46ff-b09b-61858d52be3b": {}
+            },
+            "00096849-3607-4986-8c37-8d6723ed8273": {
+              "6aeaf7e6-b523-4247-a7e6-bb15dd0bb0e9": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "00096849-3607-4986-8c37-8d6723ed8273": {
+              "c929159c-7b75-455d-bad0-0dd020626367": {}
+            }
+          }
+        },
+        "b422236f-bae1-46bb-a209-504eab3b46b2": {
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "40bea481-67ac-4532-bad8-6b6a500816c1": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "cf0c39b4-dbd8-4640-b92f-3bb65efa408f": {
+              "04851541-789c-4440-86b2-4006842c7489": {}
+            }
+          }
+        },
+        "cf0c39b4-dbd8-4640-b92f-3bb65efa408f": {
+          "43dde9dc-1e3f-4784-9311-306e5b37df42": {
+            "b422236f-bae1-46bb-a209-504eab3b46b2": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          },
+          "362372d2-9af3-43b4-8948-e7c80050c1af": {
+            "5bc99733-e214-412f-b502-ac0b5df934b1": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "00096849-3607-4986-8c37-8d6723ed8273": {
+          "1a918fd9-bb0b-47ce-8f11-1a6d4353a79d": {
+            "b422236f-bae1-46bb-a209-504eab3b46b2": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {
+            "fe0dec04-1637-4aca-bb0b-0a96092214be": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "9bd88c07-0858-4ead-b615-069284f0db34": {
+            "fe0dec04-1637-4aca-bb0b-0a96092214be": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "71ef594f-2661-492f-b6e6-278e6ce94c3d": {
+            "fe0dec04-1637-4aca-bb0b-0a96092214be": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "5bc99733-e214-412f-b502-ac0b5df934b1": {
+              "8357d165-4753-4d32-8c61-e3baff88d8ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

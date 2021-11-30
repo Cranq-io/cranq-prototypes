@@ -9,12 +9,8 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string\n}",
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"path-locator\": (string or number)[]\n}",
         "name": "params"
-      },
-      "6abfaa51-17e3-4e9e-a68f-520c3ed984aa": {
-        "type": "string",
-        "name": "path"
       }
     },
     "outputs": {
@@ -30,8 +26,8 @@
       "nodes": {
         "733af17d-de08-473c-b7a2-ab49f11be687": {
           "coordinates": [
-            40.27777777777774,
-            215.5925925925926
+            31.277777777777743,
+            221.5925925925926
           ],
           "name": "fetch / store result",
           "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
@@ -39,49 +35,62 @@
         },
         "898282f9-549a-4a17-997e-1956b2e28710": {
           "coordinates": [
-            69,
-            64
+            117,
+            -8
           ],
           "name": "create working dir",
           "prototype": "3c5d8397-ffca-4e6a-894f-d85d03433e08",
           "params": {}
         },
-        "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
-          "coordinates": [
-            22,
-            -164
-          ],
-          "name": "get CWD",
-          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
-          "params": {}
-        },
         "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
           "coordinates": [
-            152,
-            -93
+            182,
+            -114
           ],
           "name": "path joiner",
           "prototype": "e41763a1-9605-4954-a735-4d5946e1afe5",
           "params": {}
         },
-        "ab177cc8-876d-4b77-afda-028f928a19c0": {
+        "2c82e5df-bb89-424f-863a-c7769addc65d": {
           "coordinates": [
-            -208.2734375,
-            46
+            -171.89062500000006,
+            108
           ],
-          "name": "forwarder/triple",
-          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
-        "eb33abe2-e2d5-4d28-8655-928a3ef26bf0": {
+        "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
           "coordinates": [
-            -145.2734375,
-            -88
+            -104.89062500000006,
+            -73
           ],
-          "name": "splitter",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "name": "param path resolver",
+          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd-path\"]"
+            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"path-locator\""
+          }
+        },
+        "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
+          "coordinates": [
+            -106.89062500000006,
+            -184
+          ],
+          "name": "param path resolver B",
+          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "params": {
+            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"cwd-path\""
+          }
+        },
+        "fff3f33e-e5f5-46d6-8fb5-d66883bf5297": {
+          "coordinates": [
+            9.109374999999943,
+            -126
+          ],
+          "name": "logger (with message)",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
           }
         }
       },
@@ -93,20 +102,6 @@
             }
           }
         },
-        "733af17d-de08-473c-b7a2-ab49f11be687": {
-          "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
-              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
-            }
-          }
-        },
-        "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
-          "b6722d08-460c-465b-a9f1-d1f843500424": {
-            "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
-              "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
-            }
-          }
-        },
         "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
           "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
             "898282f9-549a-4a17-997e-1956b2e28710": {
@@ -114,30 +109,55 @@
             }
           }
         },
-        "ab177cc8-876d-4b77-afda-028f928a19c0": {
-          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
-            "eb33abe2-e2d5-4d28-8655-928a3ef26bf0": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
-            },
+        "2c82e5df-bb89-424f-863a-c7769addc65d": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
             "733af17d-de08-473c-b7a2-ab49f11be687": {
-              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
             }
           },
-          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            },
+            "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
+              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            },
+            "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
+              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
+            }
+          }
+        },
+        "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
+          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
             "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
               "3a5d55e5-53ef-4c70-a361-35608a7474d2": {}
             }
           },
-          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-            "733af17d-de08-473c-b7a2-ab49f11be687": {
-              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
+            "fff3f33e-e5f5-46d6-8fb5-d66883bf5297": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
             }
           }
         },
-        "eb33abe2-e2d5-4d28-8655-928a3ef26bf0": {
-          "cwd-path": {
-            "9f2eaa84-7878-495f-88c1-9f2f77543f68": {
-              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
+              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+            },
+            "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
+              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+            }
+          }
+        },
+        "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
+          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+            "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
+              "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
+            }
+          },
+          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
+            "fff3f33e-e5f5-46d6-8fb5-d66883bf5297": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
             }
           }
         }
@@ -145,18 +165,13 @@
       "forwards": {
         "inputs": {
           "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
-            "ab177cc8-876d-4b77-afda-028f928a19c0": {
-              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            "2c82e5df-bb89-424f-863a-c7769addc65d": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           },
           "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-            "ab177cc8-876d-4b77-afda-028f928a19c0": {
-              "54c357a1-045e-4817-beda-0017a586a499": {}
-            }
-          },
-          "6abfaa51-17e3-4e9e-a68f-520c3ed984aa": {
-            "ab177cc8-876d-4b77-afda-028f928a19c0": {
-              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            "2c82e5df-bb89-424f-863a-c7769addc65d": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
           }
         },

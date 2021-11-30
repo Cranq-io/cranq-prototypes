@@ -1,20 +1,23 @@
 {
-  "description": "Builds dictionary based on an array of keys and a single value for all items.",
+  "description": "Builds a dictionary based on an array of keys and a single value for all items.\n\nExample:\n1. [ \"first\", \"third\", \"fifth\" ]@0 received via `keys`\n1. 1@0 received via `value`\n2. `dict` sends { \"first\": 1, \"third\": 1, \"fifth\": 1 }@0",
   "interface": {
     "inputs": {
       "4cb1e461-05c1-4454-940e-5b7657cb916e": {
         "type": "string[]",
-        "name": "keys"
+        "name": "keys",
+        "description": "Receives the keys to construct the dictionary from.\n\nExample:\n[\"first\",\"third\",\"fifth\"]"
       },
       "8b675c7e-77b3-4fc6-b065-adbedf46b485": {
         "type": "any",
-        "name": "value"
+        "name": "value",
+        "description": "Receives the value to assign to all items.\n\nExample:\n1"
       }
     },
     "outputs": {
       "93171c70-9aa9-42ec-b7ff-60f99a488352": {
-        "type": "{string:typeof(value)}",
-        "name": "dict"
+        "type": "{string:typeof`value`}",
+        "name": "dict",
+        "description": "Sends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 1, \"fifth\": 1 }"
       }
     }
   },
@@ -126,8 +129,13 @@
       }
     }
   },
-  "name": "data/dictionary/Builder/keys & value",
-  "attributes": {
-    "locked": true
+  "name": "data/dictionary/Builder (keys & value)",
+  "attributes": {},
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "build": null,
+    "new": null,
+    "create": null
   }
 }

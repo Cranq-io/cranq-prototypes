@@ -1,21 +1,24 @@
 {
   "name": "data/dictionary/Item deleter",
-  "description": "Deletes an item from the dictionary by it's key.",
+  "description": "Deletes an item from a dictionary by it's key. \nIf the item is not found, the original dictionary is forwarded.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `dict` sends { \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `dict` sends{ \"first\": 1, \"third\": 3, \"fifth\": 5 }@0",
   "interface": {
     "inputs": {
       "af51c64a-620a-42e7-83e4-0497df3f0a65": {
-        "type": "any",
-        "name": "dict"
+        "type": "{string:any}",
+        "name": "dict",
+        "description": "Receives the dictionary to delete the item from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": {
-        "type": "any",
-        "name": "key"
+        "type": "string",
+        "name": "key",
+        "description": "Receives the key corresponding to the value to delete.\n\nExample:\n\"third\""
       }
     },
     "outputs": {
       "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
-        "type": "any",
-        "name": "dict"
+        "type": "typeof`dict`",
+        "name": "dict",
+        "description": "Sends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"fifth\": 5 }"
       }
     }
   },
@@ -75,7 +78,12 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
+  "attributes": {},
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "delete": null,
+    "remove": null,
+    "key": null
   }
 }

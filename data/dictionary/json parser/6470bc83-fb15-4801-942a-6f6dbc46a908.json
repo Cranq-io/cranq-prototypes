@@ -1,20 +1,23 @@
 {
-  "description": "Parses a JSON dictionary",
+  "description": "Parses the string representation of a JSON dictionary to a dictionary.\nIf the parsing is unsuccessful, the input is forwarded via `bounced`.\n\nExample A:\n1. \"{\\\"first\\\":1,\\\"third\\\":3,\\\"fifth\\\":5}\"@0 received via `json`\n2. `parsed` sends { \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. \"malformed\"@0 received via `json`\n2. `bounced` sends \"malformed\"@0",
   "interface": {
     "inputs": {
       "612de880-6653-4097-b917-aabc4f6aceb2": {
         "type": "string",
-        "name": "json"
+        "name": "json",
+        "description": "Receives the JSON string to parse.\n\nExample:\n\"{\\\"first\\\":1,\\\"third\\\":3,\\\"fifth\\\":5}\""
       }
     },
     "outputs": {
       "6cdc0c38-5098-4ffd-a5d8-ee18d077dda3": {
         "type": "{string:any}",
-        "name": "parsed"
+        "name": "parsed",
+        "description": "Sends the parsed dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "426110b5-257a-45c2-976c-f42195dafde8": {
-        "type": "string",
-        "name": "bounced"
+        "type": "typeof`json`",
+        "name": "bounced",
+        "description": "Sends the value of `json`, if the parsing was unsuccessful."
       },
       "a42a0dbc-5235-416c-9166-9999d79c06f6": {
         "type": "{ \"error\": string }",
@@ -34,7 +37,12 @@
     }
   },
   "name": "data/dictionary/JSON parser",
-  "attributes": {
-    "locked": true
+  "attributes": {},
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "parse": null,
+    "load": null,
+    "from string": null
   }
 }

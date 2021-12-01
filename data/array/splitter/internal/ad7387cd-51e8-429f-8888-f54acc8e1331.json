@@ -9,13 +9,13 @@
   "interface": {
     "inputs": {
       "d7d41670-88f5-4edf-a2f5-25dec016e5f2": {
-        "type": "any",
+        "type": "{\"array\": any[], \"count\": number}",
         "name": "array & count"
       }
     },
     "outputs": {
       "5d9c323a-9915-410c-8850-cf29b0b64039": {
-        "type": "any",
+        "type": "(typeof `array & count`[\"array\"])[][]",
         "name": "2D array"
       }
     }
@@ -24,5 +24,6 @@
   "attributes": {
     "internal": true,
     "locked": true
-  }
+  },
+  "description": "See data/array/Splitter"
 }

@@ -1,27 +1,27 @@
 {
-  "description": "Slices a section out of an array.",
+  "description": "Slices a section out of an array.\n\nExample: \n1. [1,2,3]@0 received via `array`\n2. 0@0 received via `from`\n3. 2@0 received via `from`\n4. [1,2]@0 sent via `array`",
   "interface": {
     "inputs": {
       "a1f90e89-d800-44de-a283-cb70ee5aa269": {
-        "description": "Array to slice out of",
+        "description": "Receives array to slice out of.",
         "type": "any[]",
         "name": "array"
       },
       "e8b61a56-314f-4ac7-a7ba-28207aa3c6a7": {
-        "description": "Start position of the slice (included)",
+        "description": "Receives start position of the slice (included).",
         "type": "number",
         "name": "from"
       },
       "08b4d532-f026-4a3e-8938-be30410e5339": {
-        "description": "End position of the slice (not included)",
+        "description": "Receives end position of the slice (not included.",
         "type": "number",
         "name": "to"
       }
     },
     "outputs": {
       "f424fd04-bfba-4088-972e-77ba5d7e613e": {
-        "description": "Section sliced out of the input array",
-        "type": "typeof(array)",
+        "description": "Sends section sliced out of the input array.",
+        "type": "typeof`array`",
         "name": "slice"
       }
     }
@@ -31,8 +31,8 @@
       "nodes": {
         "efaa8dd0-59ff-4a58-b350-d61d807d7b44": {
           "coordinates": [
-            0,
-            0
+            -24,
+            -67
           ],
           "description": "",
           "params": {
@@ -43,8 +43,8 @@
         },
         "073ab6f4-1193-4269-b561-04c7e2dc57fd": {
           "coordinates": [
-            0,
-            0
+            42,
+            54
           ],
           "description": "",
           "params": {},

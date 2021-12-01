@@ -1,36 +1,36 @@
 {
-  "description": "Reduces array. External node(s) receive the partial result and each item and send back a new partial result.",
+  "description": "Reduces array. External node(s) receive the partial result and each item and send back a new partial result.\n\nExample:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_4_reducers/README.md#using-reducers",
   "interface": {
     "inputs": {
       "9be15225-0044-4514-b2f1-5f8c1542ee87": {
-        "description": "Array to be reduced",
+        "description": "Receives array to be reduced",
         "type": "any[]",
         "name": "array"
       },
       "ec095128-e720-45fc-9b4f-b87a130d9249": {
-        "description": "Initial value for the reduced array",
-        "type": "any",
+        "description": "Receives initial value for the reduced array",
+        "type": "typeof `array`[number]",
         "name": "initial"
       },
       "64f451de-50c9-44b4-b99c-03d58b2582bb": {
-        "description": "Reduced array before the current (by tag) item.",
+        "description": "Receives reduced array before the current (by tag) item.",
         "type": "typeof `initial`",
         "name": "part reduced"
       }
     },
     "outputs": {
       "75ea5be5-4e79-425e-87f4-930e8d21983d": {
-        "description": "The reduced array",
+        "description": "Sends the reduced array",
         "type": "typeof `initial`",
         "name": "reduced"
       },
       "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
-        "description": "The current item",
+        "description": "Sends the current item",
         "type": "any",
         "name": "item"
       },
       "b4087af0-fa79-4961-b9dc-964592eb007b": {
-        "description": "Reduced array after the current (by tag) item.",
+        "description": "Sends reduced array after the current (by tag) item.",
         "type": "typeof `initial`",
         "name": "part reduced"
       }
@@ -114,5 +114,9 @@
   "name": "data/array/Reducer",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "single": null,
+    "iterate": null
   }
 }

@@ -1,20 +1,23 @@
 {
-  "description": "Parses a JSON array",
+  "description": "Parses a JSON string to  array.\n\nExamples:\nA.\n1. \"[1,2]\"@0 recieved via `json`\n2. [1,2]@0 sent via `parsed`\n\nB.\n1. \"{}]\"@0 recieved via `json`\n2. \"{}]\"@00 sent via `bounced`",
   "interface": {
     "inputs": {
       "6af01236-82c3-45ef-91df-cadb3ac3aefd": {
         "type": "string",
-        "name": "json"
+        "name": "json",
+        "description": "Recieves JSON string."
       }
     },
     "outputs": {
       "b47ccbae-9226-4704-b803-18055b97d2f5": {
         "type": "any[]",
-        "name": "parsed"
+        "name": "parsed",
+        "description": "Sends the parsed array."
       },
       "e3aef7a7-7e19-4ed6-8d00-2ca95c98f12b": {
         "type": "string",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "In case of error during parsing or when the result of the parseisng is not array it sends the `json` input string."
       }
     }
   },
@@ -31,5 +34,8 @@
   "name": "data/array/JSON parser",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string to array": null
   }
 }

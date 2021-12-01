@@ -16,17 +16,17 @@
     },
     "outputs": {
       "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {
-        "type": "any",
+        "type": "typeof`array`[number]",
         "name": "item",
-        "description": "The next item in the array.\n\nTags are iterable, and nested versions of the tag of the received array. (If the array tag was \"start\", item tags will be \"start:0\", \"start:1\", etc.)"
+        "description": "Sends the next item in the array.\n\nTags are iterable, and nested versions of the tag of the received array. (If the array tag was \"start\", item tags will be \"start:0\", \"start:1\", etc.)"
       },
       "0d15a9b9-a708-4b34-b199-51232e59f94b": {
-        "type": "any",
+        "type": "number",
         "name": "index",
-        "description": "The next index in the array.\n\nTags are iterable, and nested versions of the tag of the received array. (If the array tag was \"start\", item tags will be \"start:0\", \"start:1\", etc.)"
+        "description": "Sends the next index in the array.\n\nTags are iterable, and nested versions of the tag of the received array. (If the array tag was \"start\", item tags will be \"start:0\", \"start:1\", etc.)"
       },
       "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {
-        "type": "any",
+        "type": "typeof`array`",
         "name": "done",
         "description": "Sends out the iterated array when there are no more items in the array and a signal received through `next`, or, when an array is received through `array` that has one or 0 items.\n\nThe tag of the outgoing signal matches that of he original array."
       },

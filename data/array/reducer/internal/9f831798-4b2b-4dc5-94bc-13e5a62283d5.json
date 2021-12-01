@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See data/array/Reducer",
   "interface": {
     "inputs": {
       "c02fd4fd-1183-4bc4-a5f6-74974734d5ce": {
@@ -7,21 +7,21 @@
         "name": "array & initial"
       },
       "655b6bc3-d733-4188-a4c4-a3d981b1b4bf": {
-        "type": "any",
+        "type": "typeof `array & initial`[\"array\"][\"number\"]",
         "name": "part reduced"
       }
     },
     "outputs": {
       "908b5fbc-dece-4b48-9adf-c3b18e4355e9": {
-        "type": "any",
+        "type": "typeof `array & initial`[\"initial\"]",
         "name": "reduced"
       },
       "7dd363ac-4ea8-4f45-a2a9-7d7e3300faa9": {
-        "type": "any",
+        "type": "typeof `array & initial`[\"initial\"]",
         "name": "item"
       },
       "60e4af16-838e-4c63-b55f-4b93e9a62572": {
-        "type": "any",
+        "type": "typeof `array & initial`[\"initial\"]",
         "name": "part reduced"
       }
     }

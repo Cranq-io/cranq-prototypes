@@ -40,8 +40,8 @@
         },
         "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
           "coordinates": [
-            169,
-            -106
+            120,
+            -54
           ],
           "name": "run command",
           "prototype": "b5a5fc7f-4cee-4549-947a-0a23463748ce",
@@ -56,46 +56,24 @@
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
-        "650c9ee1-91a5-4a0c-bebd-cd8915a49b5a": {
+        "9ae49d25-c753-4d61-b872-792042285a9a": {
           "coordinates": [
-            -120.89062500000006,
-            -33
+            -65.89062500000006,
+            -192
           ],
-          "name": "get working folder",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"working-folder-path\""
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd\", \"command\"]"
           }
         },
-        "0f4429d9-aa7f-44c6-a868-abda58570f43": {
+        "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
           "coordinates": [
-            -5.890625000000057,
-            -108
+            -135.89062500000006,
+            -87
           ],
-          "name": "logger (with message)",
-          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
-          "params": {
-            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
-          }
-        },
-        "7cc1f1be-bfbc-49e8-ab3c-620f874f8939": {
-          "coordinates": [
-            -113.89062500000006,
-            -186
-          ],
-          "name": "item getter",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"command\""
-          }
-        },
-        "fb5e45ae-56c2-464d-8ebf-f789c2e84397": {
-          "coordinates": [
-            -73.89062500000006,
-            252
-          ],
-          "name": "logger",
-          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
           "params": {}
         }
       },
@@ -114,11 +92,8 @@
             "733af17d-de08-473c-b7a2-ab49f11be687": {
               "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
             },
-            "650c9ee1-91a5-4a0c-bebd-cd8915a49b5a": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
-            },
-            "7cc1f1be-bfbc-49e8-ab3c-620f874f8939": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
             }
           },
           "069a212d-9cea-4987-be45-e0079a13d96f": {
@@ -127,40 +102,29 @@
             }
           }
         },
-        "733af17d-de08-473c-b7a2-ab49f11be687": {
-          "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "650c9ee1-91a5-4a0c-bebd-cd8915a49b5a": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
-            }
-          }
-        },
-        "650c9ee1-91a5-4a0c-bebd-cd8915a49b5a": {
-          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
-            "0f4429d9-aa7f-44c6-a868-abda58570f43": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
-            }
-          },
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+        "9ae49d25-c753-4d61-b872-792042285a9a": {
+          "cwd": {
             "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
               "cfc5b416-9908-42b5-b250-0c1c4f038825": {}
-            },
-            "fb5e45ae-56c2-464d-8ebf-f789c2e84397": {
-              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          },
+          "command": {
+            "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+              "269b0a58-6557-4fb4-8204-a5873f58f6cd": {}
             }
           }
         },
-        "7cc1f1be-bfbc-49e8-ab3c-620f874f8939": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
-              "269b0a58-6557-4fb4-8204-a5873f58f6cd": {}
-            },
-            "fb5e45ae-56c2-464d-8ebf-f789c2e84397": {
-              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
             }
-          },
-          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
-            "0f4429d9-aa7f-44c6-a868-abda58570f43": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+          }
+        },
+        "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "9ae49d25-c753-4d61-b872-792042285a9a": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           }
         }
@@ -188,5 +152,7 @@
       }
     }
   },
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

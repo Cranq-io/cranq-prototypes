@@ -13,7 +13,7 @@
     },
     "outputs": {
       "cdc15dc2-7bfd-44e7-acbc-1d948558b139": {
-        "type": "{\n\"working-folder\": string,\n\"api-url\": string,\n\"private-key\": string,\n\"public-key\": string,\n\"token-uri\": string\n}",
+        "type": "{\n\"api-url\": string,\n\"private-key\": string,\n\"public-key\": string,\n\"token-uri\": string\n}",
         "name": "config"
       }
     }
@@ -72,7 +72,5 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

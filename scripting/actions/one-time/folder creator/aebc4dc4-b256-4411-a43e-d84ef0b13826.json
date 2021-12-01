@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"path-locator\": (string or number)[]\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"path\": string\n}",
         "name": "params"
       }
     },
@@ -35,17 +35,17 @@
         },
         "898282f9-549a-4a17-997e-1956b2e28710": {
           "coordinates": [
-            117,
-            -8
+            152,
+            -78
           ],
-          "name": "create working dir",
+          "name": "create folder",
           "prototype": "3c5d8397-ffca-4e6a-894f-d85d03433e08",
           "params": {}
         },
         "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
           "coordinates": [
-            182,
-            -114
+            45,
+            -1
           ],
           "name": "path joiner",
           "prototype": "e41763a1-9605-4954-a735-4d5946e1afe5",
@@ -60,37 +60,24 @@
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
-        "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
+        "37cd6a02-7974-4b84-958c-dcc3e8fda495": {
           "coordinates": [
-            -104.89062500000006,
-            -73
+            -127.89062500000006,
+            -71
           ],
-          "name": "param path resolver",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
-          "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"path-locator\""
-          }
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
         },
-        "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
+        "7743a4e6-caab-461f-9578-835aa7ae1e00": {
           "coordinates": [
-            -106.89062500000006,
-            -184
+            -31.890625000000057,
+            -155
           ],
-          "name": "param path resolver B",
-          "prototype": "3691fb48-1801-403d-9fe2-f6fb6197b8a2",
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "6d2b313b-29c5-4311-9686-5db7747e9179": "\"cwd-path\""
-          }
-        },
-        "fff3f33e-e5f5-46d6-8fb5-d66883bf5297": {
-          "coordinates": [
-            9.109374999999943,
-            -126
-          ],
-          "name": "logger (with message)",
-          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
-          "params": {
-            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd\", \"path\"]"
           }
         }
       },
@@ -119,45 +106,34 @@
             "733af17d-de08-473c-b7a2-ab49f11be687": {
               "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
             },
-            "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
-            },
-            "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
-              "bf08b442-4a3a-4a3c-83cf-4965f30fd860": {}
-            }
-          }
-        },
-        "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
-            "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
-              "3a5d55e5-53ef-4c70-a361-35608a7474d2": {}
-            }
-          },
-          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
-            "fff3f33e-e5f5-46d6-8fb5-d66883bf5297": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            "37cd6a02-7974-4b84-958c-dcc3e8fda495": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
             }
           }
         },
         "733af17d-de08-473c-b7a2-ab49f11be687": {
           "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "86edd465-683f-4eeb-ad25-e0f04dc9e753": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
-            },
-            "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
-              "04240de6-5a85-41b0-867a-5f2ed74b326b": {}
+            "37cd6a02-7974-4b84-958c-dcc3e8fda495": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
             }
           }
         },
-        "d29e1b58-f8a7-4e23-bba7-a59dd4f7194b": {
-          "e1503ed9-bb89-4fb3-8185-8d5531f8762c": {
+        "37cd6a02-7974-4b84-958c-dcc3e8fda495": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "7743a4e6-caab-461f-9578-835aa7ae1e00": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "7743a4e6-caab-461f-9578-835aa7ae1e00": {
+          "cwd": {
             "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
               "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
             }
           },
-          "475e0b25-a7f6-457e-8b67-3fb39157e71d": {
-            "fff3f33e-e5f5-46d6-8fb5-d66883bf5297": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+          "path": {
+            "559d2a82-e28f-4c49-a961-2ae33391e7f2": {
+              "3a5d55e5-53ef-4c70-a361-35608a7474d2": {}
             }
           }
         }
@@ -185,7 +161,5 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

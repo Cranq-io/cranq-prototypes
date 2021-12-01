@@ -1,16 +1,16 @@
 {
-  "description": "Retrieves first item of the array.\n\nExample:\n1. [1,2]@0 is received via `array`\n2. 1@0 is sent via `item`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_1_getters/README.md#getting-the-first--last-array-elements",
+  "description": "Retrieves first item of the array.\n\nExample:\n1. [1,2]@0 received via `array`\n2. 1@0 sent via `item`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_1_getters/README.md#getting-the-first--last-array-elements",
   "interface": {
     "inputs": {
       "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {
-        "description": "Receives array to retrieve first item from",
+        "description": "Receives array to retrieve first item from.",
         "type": "any[]",
         "name": "array"
       }
     },
     "outputs": {
       "f7832747-fb1e-432b-9c10-60ac76c110cc": {
-        "description": "Sends first item of the array",
+        "description": "Sends first item of the array.",
         "type": "typeof `array`[number]",
         "name": "item"
       }

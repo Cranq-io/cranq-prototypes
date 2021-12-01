@@ -9,13 +9,13 @@
   "interface": {
     "inputs": {
       "7b96d4a4-b981-4144-9e89-53bd1419e5b0": {
-        "type": "any",
+        "type": "{\"array\": any[], \"item\": any}",
         "name": "array & item"
       }
     },
     "outputs": {
       "47a28d29-1f5d-4870-917b-be464753e379": {
-        "type": "any",
+        "type": "(typeof`array & item`[\"array\"][number])[]",
         "name": "array"
       }
     }
@@ -24,5 +24,6 @@
   "attributes": {
     "internal": true,
     "locked": true
-  }
+  },
+  "description": "See data/array/Item prepender"
 }

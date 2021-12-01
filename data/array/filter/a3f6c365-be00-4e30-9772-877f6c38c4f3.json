@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "07c8d06d-f187-4600-8bfe-7ab740adebb8": {
-        "description": "Receives array to be filtered",
+        "description": "Receives array to be filtered.",
         "type": "any[]",
         "name": "array"
       },
@@ -15,12 +15,12 @@
     },
     "outputs": {
       "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
-        "description": "Sends the filtered array",
+        "description": "Sends the filtered array.",
         "type": "typeof `array`",
         "name": "filtered"
       },
       "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
-        "description": "Sends the current item",
+        "description": "Sends the current item.",
         "type": "typeof `array`[number]",
         "name": "item"
       }

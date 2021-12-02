@@ -12,7 +12,7 @@
       "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
         "type": "string[]",
         "name": "keys",
-        "description": "Sends the keys of the dictionary.\n\nExample:\n[ \"first\", \"third\", \"fifth\" ]"
+        "description": "Sends the keys of the dictionary as an array.\n\nExample:\n[ \"first\", \"third\", \"fifth\" ]"
       }
     }
   },
@@ -27,7 +27,9 @@
     }
   },
   "name": "data/dictionary/Keys getter",
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "dictionary": null,
     "dict": null,

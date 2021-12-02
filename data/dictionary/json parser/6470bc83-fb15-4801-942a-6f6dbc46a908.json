@@ -1,5 +1,5 @@
 {
-  "description": "Parses the string representation of a JSON dictionary to a dictionary.\nIf the parsing is unsuccessful, the input is forwarded via `bounced`.\n\nExample A:\n1. \"{\\\"first\\\":1,\\\"third\\\":3,\\\"fifth\\\":5}\"@0 received via `json`\n2. `parsed` sends { \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. \"malformed\"@0 received via `json`\n2. `bounced` sends \"malformed\"@0",
+  "description": "Parses the JSON  string representation of a dictionary.\nIf the parsing is unsuccessful, the input is forwarded via `bounced`.\n\nExample A:\n1. \"{\\\"first\\\":1,\\\"third\\\":3,\\\"fifth\\\":5}\"@0 received via `json`\n2. `parsed` sends { \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. \"malformed\"@0 received via `json`\n2. `bounced` sends \"malformed\"@0",
   "interface": {
     "inputs": {
       "612de880-6653-4097-b917-aabc4f6aceb2": {
@@ -37,7 +37,9 @@
     }
   },
   "name": "data/dictionary/JSON parser",
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "dictionary": null,
     "dict": null,

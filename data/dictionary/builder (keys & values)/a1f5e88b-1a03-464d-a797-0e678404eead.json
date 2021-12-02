@@ -10,7 +10,7 @@
       "e77e7439-84f9-414f-b45b-356ea70ce445": {
         "type": "any[]",
         "name": "values",
-        "description": "Receives the values to construct the dictionary from.\n\nExample:\n[1, 3, 5]]"
+        "description": "Receives the values to construct the dictionary from.\n\nExample:\n[1, 3, 5]"
       }
     },
     "outputs": {
@@ -82,7 +82,9 @@
     }
   },
   "name": "data/dictionary/Builder (keys & values)",
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "dictionary": null,
     "dict": null,

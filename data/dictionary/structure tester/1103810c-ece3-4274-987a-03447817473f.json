@@ -1,28 +1,28 @@
 {
-  "description": "Tests whether the specified dictionary has a given structure.",
+  "description": "Tests whether a dictionary  has the same structure as another one. Values are ignored.\n\nIf `strict` is set, extra properties are not tolerated, the provided dictionaries must have the same keys.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. { \"first\": 0, \"fifth\": 0 }@0 received via `structure`\n3. `strict` is set to false\n4. `matches` sends true@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. { \"first\": 0, \"seventh\": 0 }@0 received via `structure`\n3. `strict` is set to false\n4. `matches` sends false@0\n\nExample C:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. { \"first\": 0, \"fifth\": 0 }@0 received via `structure`\n3. `strict` is set to true\n4. `matches` sends false@0\n",
   "interface": {
     "inputs": {
       "8ad77d9b-7994-4f7e-88b9-f2808948f5f7": {
-        "description": "The dictionary to test",
-        "type": "dictionary",
-        "name": "data"
+        "description": "Receives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }",
+        "type": "{string:any}",
+        "name": "dict"
       },
       "7345d213-6dde-4944-ba8b-7f8c0b88e6e3": {
-        "description": "The reference structure (a dictionary that values will be ignored during the test)",
-        "type": "dictionary",
+        "description": "Receives the dictionary with the reference structure, to which the comparison will be made.\n\nExample:\n{ \"first\": 0, \"fifth\": 0 }",
+        "type": "{string:any}",
         "name": "structure"
       },
       "39d945ae-4df1-4409-822e-eb45b47695ee": {
         "type": "boolean",
-        "description": "In strict mode extra properties are not tolerated, the dictionary must have exactly the same properties than the reference structure.",
+        "description": "Receives whether extra keys in `dict` are allowed.\n\nExample:\ntrue",
         "name": "strict"
       }
     },
     "outputs": {
       "e85c0dbd-233a-491b-af85-389114b2eea3": {
-        "description": "Whether the data matches the structure",
+        "description": "Sends a value indicating whether the dictionary matches the structure.\n\nExample:\ntrue",
         "type": "boolean",
-        "name": "matches structure"
+        "name": "matches"
       }
     }
   },
@@ -154,5 +154,13 @@
   "name": "data/dictionary/Structure tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "structure": null,
+    "compare": null,
+    "validate": null,
+    "equals": null
   }
 }

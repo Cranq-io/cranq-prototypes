@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether the input is a dictionary.",
+  "description": "Tells whether the `data` provided is a dictionary.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `data`\n4. `is dict` sends true@0\n\nExample B:\n1. [ \"first\", \"third\" ]@0 received via `data`\n4. `is dict` sends false@0",
   "interface": {
     "inputs": {
       "af6185f2-aefb-453b-a836-99c55cf4e39f": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Receives the data to test for being a dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
       }
     },
     "outputs": {
       "c81b5913-e539-4b47-8f78-21ba43ea7058": {
         "type": "boolean",
-        "name": "is dict"
+        "name": "is dict",
+        "description": "Sends a value indicating whether the `data` received is a dictionary.\n\nExample:\ntrue"
       }
     }
   },
@@ -27,5 +29,11 @@
   "name": "data/dictionary/Type tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "type": null,
+    "validate": null
   }
 }

@@ -1,5 +1,5 @@
 {
-  "description": "Tests whether the key set of the dictionary contains the expected keys.\nIf `strict` is set, the dictionary may not contain additional keys.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\", \"fifth\"]@0 received via `expected keys`\n3. `strict` is set to false\n4. `has` sends true@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"second\", \"seventh\"]@0 received via `expected keys`\n3. `strict` is set to false\n4. `has` sends false@0\n\nExample C:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\", \"fifth\"]@0 received via `expected keys`\n3. `strict` is set to true\n4. `has` sends false@0",
+  "description": "Tests whether the key set of the dictionary contains the expected keys.\n\nIf `strict` is set, extra properties are not tolerated, the dictionary provided must have exactly the expected keys.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\", \"fifth\"]@0 received via `expected keys`\n3. `strict` is set to false\n4. `has` sends true@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"second\", \"seventh\"]@0 received via `expected keys`\n3. `strict` is set to false\n4. `has` sends false@0\n\nExample C:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\", \"fifth\"]@0 received via `expected keys`\n3. `strict` is set to true\n4. `has` sends false@0",
   "interface": {
     "inputs": {
       "0e052b66-636e-4187-b2f9-a4d8cb0a3b68": {
@@ -290,7 +290,9 @@
     }
   },
   "name": "data/dictionary/Has keys tester",
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "dictionary": null,
     "dict": null,
@@ -298,6 +300,6 @@
     "key": null,
     "contains": null,
     "any": null,
-    "strict": null
+    "validate": null
   }
 }

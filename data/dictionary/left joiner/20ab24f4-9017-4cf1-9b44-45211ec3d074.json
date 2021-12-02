@@ -5,12 +5,12 @@
       "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
         "type": "{string:string}",
         "name": "a",
-        "description": "Receives the dictionary containing the keys to join to, and the values to join by.\n\nExample:\n{\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}"
+        "description": "Receives the dictionary containing the keys to join and the values to join by.\n\nExample:\n{\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}"
       },
       "be713809-1c65-4abb-9525-87ee9f75e9be": {
         "type": "{string:any}",
         "name": "b",
-        "description": "Receives the dictionary containing the values to join to, and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "description": "Receives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       }
     },
     "outputs": {

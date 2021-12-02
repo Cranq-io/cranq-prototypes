@@ -1,5 +1,5 @@
 {
-  "description": "Deletes an item from the dictionary by it's key.\nMutates input.\n\nIf the item is not found, the original dictionary is forwarded.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `dict` sends { \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `dict` sends{ \"first\": 1, \"third\": 3, \"fifth\": 5 }@0",
+  "description": "Deletes an item from the dictionary by its key.\nMutates input.\n\nIf the item is not found, the original dictionary is forwarded.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `dict` sends { \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `dict` sends{ \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_1_setters_deleters",
   "interface": {
     "inputs": {
       "fe46ad6a-e159-40cb-bfb0-c3860de81a4d": {

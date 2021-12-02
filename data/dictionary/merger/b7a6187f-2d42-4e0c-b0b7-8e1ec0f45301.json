@@ -1,5 +1,5 @@
 {
-  "description": "Merges dictionary `b` to dictionary `a`. Values of `a` will be ignored on key conflict.\n\nExample:\n1. { \"first\": 1, \"third\": 0 }@0 received via `a`\n2. { \"third\": 3, \"fifth\": 5 }@0 received via `b`\n3. `merged` sends { \"first\": 1, \"third\": 3, \"fifth\": 5 }@0",
+  "description": "Merges dictionary `b` to dictionary `a`. Values of `a` will be ignored on key conflict.\n\nExample:\n1. { \"first\": 1, \"third\": 0 }@0 received via `a`\n2. { \"third\": 3, \"fifth\": 5 }@0 received via `b`\n3. `merged` sends { \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_4_merge_concat",
   "interface": {
     "inputs": {
       "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {

@@ -1,5 +1,5 @@
 {
-  "description": "Retrieves an item's value by it's key from a dictionary.\nIf the item is not found, the inputs are sent via `not found`.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `value` sends 1@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `not found` sends { \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }@0",
+  "description": "Retrieves an item's value by its key from a dictionary.\nIf the item is not found, the inputs are sent via `not found`.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `value` sends 1@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `not found` sends { \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
   "interface": {
     "inputs": {
       "47c56035-5bed-4f91-b7a9-606dedd7a13c": {

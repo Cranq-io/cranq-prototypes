@@ -1,5 +1,5 @@
 {
-  "description": "Parses a file system path into it's components.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}@0 sent on `components`",
+  "description": "Parses a file system path into its components.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}@0 sent on `components`",
   "interface": {
     "inputs": {
       "598eb83b-2266-441c-8a3e-7f414aed4895": {

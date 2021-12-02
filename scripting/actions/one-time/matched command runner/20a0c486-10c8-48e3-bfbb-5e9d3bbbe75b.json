@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"command\": string,\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"start-msg\": string,\n\"finish-msg\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"command\": string,\n  \"regex\": string\n}",
         "name": "params"
       },
       "4310785d-0679-4c73-b33b-7256ba3e7d95": {

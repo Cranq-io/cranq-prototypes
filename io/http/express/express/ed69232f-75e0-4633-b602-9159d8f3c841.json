@@ -12,7 +12,7 @@
         }
       },
       "inputFunctions": {
-        "816628e2-c7f2-41f6-8cf2-27d752eff31c": "const express = require(\"express\");\nconst cors = require(\"cors\");\nconst {id, type, options = {}} = data;\nlet app = shared[id];\nif (!app)\n  app = shared[id] = express();\nswitch (type) {\ncase \"use\":\n  const {middleware} = options;\n  switch (middleware) {\n  case \"json\":\n    app.use(express.json());\n    outputs.done(null, tag);\n    break;\n  case \"urlencoded\":\n    app.use(express.urlencoded());\n    outputs.done(null, tag);\n    break;\n  case \"cors\":\n    app.use(cors());\n    outputs.done(null, tag);\n    break;\n  }\n  break;\ncase \"listen\":\n  const {port} = options;\n  app.listen(port, () => outputs.done(null, tag));\n  break;\ncase \"method\":\n  const {method, route} = options;\n  app[method](route, (req, res) => {\n    state[tag] = res;\n    const {\n      baseUrl, body, cookies, hostname, headers, ip, ips, method, originalUrl, params, path, protocol, query, route, secure, signedCookies, stale, subdomains, xhr\n    } = req;\n    outputs.request({\n      baseUrl, body, cookies, hostname, headers, ip, ips, method, originalUrl, params, path, protocol, query, route, secure, signedCookies, stale, subdomains, xhr\n    }, tag);\n  });\n  break;\n}",
+        "816628e2-c7f2-41f6-8cf2-27d752eff31c": "try\n{\n  const express = require(\"express\");\n  const cors = require(\"cors\");\n  const {id, type, options = {}} = data;\n  let app = shared[id];\n  if (!app) {\n    app = shared[id] = express();\n    const errorHandler = (err, req, res, next) => {\n      res.status(500);\n      outputs.error({error: String(err)}, tag);\n    }\n    app.use(errorHandler);\n  }\n  switch (type) {\n  case \"use\":\n    const {middleware} = options;\n    switch (middleware) {\n    case \"json\":\n      app.use(express.json());\n      outputs.done(null, tag);\n      break;\n    case \"urlencoded\":\n      app.use(express.urlencoded());\n      outputs.done(null, tag);\n      break;\n    case \"cors\":\n      app.use(cors());\n      outputs.done(null, tag);\n      break;\n    }\n    break;\n  case \"listen\":\n    const {port} = options;\n    app.listen(port, () => outputs.done(null, tag))\n      .on('error', (err) => outputs.error({error: String(err)}, tag));\n    break;\n  case \"method\":\n    const {method, route} = options;\n    app[method](route, (req, res) => {\n      state[tag] = res;\n      const {\n        baseUrl, body, cookies, hostname, headers, ip, ips, method, originalUrl, params, path, protocol, query, route, secure, signedCookies, stale, subdomains, xhr\n      } = req;\n      outputs.request({\n        baseUrl, body, cookies, hostname, headers, ip, ips, method, originalUrl, params, path, protocol, query, route, secure, signedCookies, stale, subdomains, xhr\n      }, tag);\n    });\n    break;\n  }\n} catch(err) {\n  outputs.error({error: String(err)}, tag);\n}",
         "a6b8ed07-3298-4bc7-acee-4c18f2399ffd": "const res = state[tag];\nconst {status, headers, body} = data;\nif (res) {\n  res.status(status);\n  for (const header in headers)\n    res.set(header, headers[header]);\n  res.send(body);\n  delete state[tag];\n  outputs.done(null, tag);\n}"
       }
     }
@@ -20,22 +20,31 @@
   "interface": {
     "inputs": {
       "816628e2-c7f2-41f6-8cf2-27d752eff31c": {
-        "type": "any",
-        "name": "action"
+        "type": "{\n\"id\": string, \n\"type\": string, \n\"options\": {string: any}\n}",
+        "name": "action",
+        "description": "Receives the parameters of the action to execute.\n\nExample: \n{\n  \"id\": \"my-express-server\",\n  \"type\": \"listen\",\n  \"options\": {\n    \"port\": 3000\n  }\n}"
       },
       "a6b8ed07-3298-4bc7-acee-4c18f2399ffd": {
-        "type": "any",
-        "name": "response"
+        "type": "{\n\"status\": number,\n\"headers\": {string:string},\n\"body\": any\n}",
+        "name": "response",
+        "description": "Receives the response to be sent out to the client.\n\nExample:\n{\n  \"status\": 200,\n  \"headers\": {\n    \"content-type\": \"application/json\" \n  },\n  \"body\": \"Done\"\n}"
       }
     },
     "outputs": {
       "38ea8704-dc28-470e-b30f-f1eee9adaafd": {
-        "type": "any",
-        "name": "request"
+        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\", \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": \"http\" or \"https\", \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "name": "request",
+        "description": "Sends the request processed by  defined handlers. Can be used to post-process the request."
       },
       "2d59f4f5-da3a-4e88-b071-f863cda4e553": {
-        "type": "any",
-        "name": "done"
+        "type": "null",
+        "name": "done",
+        "description": "Event triggered when the specified action has been executed."
+      },
+      "1eb10a35-5039-4196-b3b5-e59757befe88": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the specified action could not be successfully executed.\n\nExample:\n{\n  \"error\": \"Error: listen EADDRINUSE: address already in use :::3000\"\n}"
       }
     }
   },
@@ -43,5 +52,9 @@
   "description": "Core interface to Express.js. Use higher level nodes to interact with Express.",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "http server": null,
+    "api": null
   }
 }

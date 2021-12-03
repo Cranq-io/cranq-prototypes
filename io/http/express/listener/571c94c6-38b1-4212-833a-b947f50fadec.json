@@ -3,26 +3,31 @@
   "interface": {
     "inputs": {
       "655df4af-25f6-4658-9d19-24bd222f2d29": {
-        "type": "any",
-        "name": "app ID"
+        "type": "string",
+        "name": "app ID",
+        "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "11745554-d9d0-41bb-af77-987d8450ccfe": {
-        "type": "any",
-        "name": "port"
+        "type": "number",
+        "name": "port",
+        "description": "The port number express should listen to.\n\nExample: \n3000"
       }
     },
     "outputs": {
       "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
-        "type": "any",
-        "name": "done"
+        "type": "null",
+        "name": "done",
+        "description": "Event triggered when the action has been executed."
       },
       "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {
-        "type": "any",
-        "name": "error"
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the specified action could not be successfully executed.\n\nExample:\n{\n  \"code\": \"EADDRINUSE\",\n  \"errno\": -98,\n  \"syscall\": \"listen\",\n  \"address\": \"::\",\n  \"port\": 3000\n}"
       },
       "541fc93b-1098-4659-95a2-f75bcf3109b1": {
-        "type": "any",
-        "name": "app ID"
+        "type": "typeof `app ID`",
+        "name": "app ID",
+        "description": "The id of the express instance the action was executed on. Emitted when the action was executed.\nTo be used when chaining multiple actions on the same express instance.\n\nExample: \n\"my-express-server\""
       }
     }
   },
@@ -33,13 +38,6 @@
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
             "47256e94-2f64-4488-92cd-ee7aabebeff7": {
               "816628e2-c7f2-41f6-8cf2-27d752eff31c": {}
-            }
-          }
-        },
-        "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
-          "synced": {
-            "33303022-6273-40a5-aeec-2699f2b78d38": {
-              "options": {}
             }
           }
         },
@@ -62,6 +60,13 @@
           "2d59f4f5-da3a-4e88-b071-f863cda4e553": {
             "72b289ed-028b-4315-af9e-878bfee3857a": {
               "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "33303022-6273-40a5-aeec-2699f2b78d38": {
+              "options": {}
             }
           }
         }
@@ -89,14 +94,19 @@
             "47256e94-2f64-4488-92cd-ee7aabebeff7": {
               "2d59f4f5-da3a-4e88-b071-f863cda4e553": {}
             }
+          },
+          "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {
+            "47256e94-2f64-4488-92cd-ee7aabebeff7": {
+              "1eb10a35-5039-4196-b3b5-e59757befe88": {}
+            }
           }
         }
       },
       "nodes": {
         "47256e94-2f64-4488-92cd-ee7aabebeff7": {
           "coordinates": [
-            105.80000000000001,
-            -82.19999999999999
+            106.80000000000001,
+            -83.19999999999999
           ],
           "name": "express",
           "prototype": "ed69232f-75e0-4633-b602-9159d8f3c841",
@@ -146,8 +156,13 @@
       }
     }
   },
-  "description": "Sets up the specified Express server to listen on the specified port.",
+  "description": "Sets up the specified Express server to listen on the specified port.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. 3000@0 received on `port`\n3. Express server is started to listen on http//localhost:3000\n4/a. In case of success\n-  null@0 sent on `done`\n- \"my-express-server\"@0 sent on `app iD`\n4/b. In case of failure\n-  {\n  \"code\": \"EADDRINUSE\",\n  \"errno\": -98,\n  \"syscall\": \"listen\",\n  \"address\": \"::\",\n  \"port\": 3000\n}@0 sent on `error`\n",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "http server": null,
+    "api": null,
+    "bind": null
   }
 }

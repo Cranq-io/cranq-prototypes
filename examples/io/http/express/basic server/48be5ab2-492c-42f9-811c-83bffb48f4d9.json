@@ -11,6 +11,10 @@
       "f67fc09b-2170-4925-ae4f-f92beb1769e2": {
         "type": "any",
         "name": "req body / query"
+      },
+      "4183f354-a667-4f95-afca-2b0a576a8079": {
+        "type": "any",
+        "name": "error"
       }
     }
   },
@@ -146,14 +150,19 @@
             "04dddac3-81d3-4d5e-94d5-5469cffd2ec4": {
               "f0395ca1-8098-4603-ba0b-2f8c262d865a": {}
             }
+          },
+          "4183f354-a667-4f95-afca-2b0a576a8079": {
+            "be81ce66-c05d-463a-9b86-15ccbcaec5a0": {
+              "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {}
+            }
           }
         }
       },
       "nodes": {
         "be81ce66-c05d-463a-9b86-15ccbcaec5a0": {
           "coordinates": [
-            -216.0974358974359,
-            -150.83589743589744
+            -386.0974358974359,
+            -206.83589743589744
           ],
           "name": "start server",
           "prototype": "571c94c6-38b1-4212-833a-b947f50fadec",
@@ -163,8 +172,8 @@
         },
         "82e716b5-8e84-47a2-81e7-a8c1ed5efbd5": {
           "coordinates": [
-            -381.2974358974359,
-            -98.03589743589744
+            -544.2974358974359,
+            -103.03589743589744
           ],
           "name": "app ID",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
@@ -222,8 +231,8 @@
         },
         "763e521b-4b9e-4861-b621-62d8d63f4610": {
           "coordinates": [
-            -223.2974358974359,
-            -15.435897435897417
+            -300.2974358974359,
+            1.5641025641025834
           ],
           "name": "use JSON",
           "prototype": "f11e66a5-1a5c-406b-bfe0-d21a5bf6297d",
@@ -233,8 +242,8 @@
         },
         "cf9fde8e-a476-4e4d-b98a-7acac634fb9d": {
           "coordinates": [
-            226.2025641025641,
-            12.96410256410256
+            248.2025641025641,
+            22.96410256410256
           ],
           "name": "PUT /status",
           "prototype": "6493e928-7c3d-410b-b994-3c04e15f7690",
@@ -307,7 +316,5 @@
     }
   },
   "description": "This example exposes a /status endpoint on port 3000 which accepts GET, POST, PUT, PATCH, and DELETE.",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

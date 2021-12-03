@@ -3,38 +3,46 @@
   "interface": {
     "inputs": {
       "b035c218-f613-4105-845f-8a90f9e74fa4": {
-        "type": "any",
-        "name": "app ID"
+        "type": "string",
+        "name": "app ID",
+        "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "09ad0a55-6999-4fbb-aae5-8c2c77c3cab9": {
-        "type": "any",
-        "name": "route"
+        "type": "string or string[]",
+        "name": "route",
+        "description": "Receives the route(s) to handle requests for. Route be specified as exact match (1) or as pattern match (2).\n\nExample:\n1) \"/status\" will just match \"/status\"\n2) \"/s*s\" will match \"status\", \"shoes\", etc.."
       },
       "22ea4ce4-c526-4aeb-ad29-1a70abd14f13": {
-        "type": "any",
-        "name": "status"
+        "type": "number",
+        "name": "status",
+        "description": "Receives the HTTP status code to be sent with the response to the client.\n\nExample: \n200"
       },
       "aa8fe7d9-9d8b-45d8-8ad0-804bfb6ce1c7": {
-        "type": "any",
-        "name": "headers"
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Receives the HTTP headers to be sent with the response to the client.\n\nExample: \n{\n  \"content-type\": \"application/json\"\n}"
       },
       "aec8c423-cf1d-4836-a2f5-db5acefdd038": {
         "type": "any",
-        "name": "body"
+        "name": "body",
+        "description": "Receives the content to send to the client as response body.\n\nExample:\n- \"OK\"\n- 3.14\n- { \"status\": \"OK\" }"
       }
     },
     "outputs": {
       "981b5b28-6fda-40a7-aa3c-c2d6df86f7c1": {
-        "type": "any",
-        "name": "headers"
+        "type": "typeof `headers`",
+        "name": "headers",
+        "description": "Forwards  the headers of the request to be processed.\n\nExample: \n{\n  \"content-type\": \"application/json\"\n}"
       },
       "54afff64-fd15-4eab-98bc-4bee313d5941": {
         "type": "any",
-        "name": "body"
+        "name": "body",
+        "description": "Forwards the body of the request to be processed.\n\nExample:\n- \"OK\"\n- 3.14\n- { \"status\": \"OK\" }"
       },
       "df7f3151-0c5a-496a-b00c-c2cb288273ab": {
         "type": "any",
-        "name": "done"
+        "name": "done",
+        "description": "Event triggered when the request has been processed."
       }
     }
   },
@@ -139,8 +147,13 @@
       }
     }
   },
-  "description": "Receives PUT requests on the specified route and dispatches the corresponding response.",
+  "description": "Receives PUT requests on the specified route and dispatches the corresponding response.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. \"/users/\"@0 received on `route`\n3. a client POST request received by express with URL \"http://api.mydomain.com/users/2\n4. the following signals are sent to other node(s) processing the request\n- {\n \"accept\": \"application/json\"\n}@0 sent on `headers`\n- { id:2, \"name\": \"John Doe\", \"age\": 29 }@0 sent `body`\n5. The following signals are received back from processing nodes and sent out to the client:\n- 200@0 on `status`,\n- {\n    \"content-type\": \"application/json\" \n  }@0 on `headers`,\n-  { id:2, \"name\": \"John Doe\", \"age\": 29 }@0 on `body`\n6. null@0 sent on `done`",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "api": null,
+    "request": null,
+    "response": null
   }
 }

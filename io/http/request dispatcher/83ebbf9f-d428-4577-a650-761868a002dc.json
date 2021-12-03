@@ -5,22 +5,22 @@
       "7468e859-6176-4c54-a03a-9039e7024bed": {
         "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
         "name": "method",
-        "description": "Recives http method. Indicates the desired action to be performed for a given target or resource.\n\nExample:\n\"GET\""
+        "description": "Receives http method. Indicates the desired action to be performed for a given target or resource.\n\nExample:\n\"GET\""
       },
       "e69367fe-1abe-4422-a70a-4d67c614f464": {
         "type": "string",
         "name": "url",
-        "description": "Recieves the target of the HTTP request. Also called \"resource\" \n\nExample:\n\"https://jsonplaceholder.typicode.com/todos/1\""
+        "description": "Receives the target of the HTTP request. Also called \"resource\" \n\nExample:\n\"https://jsonplaceholder.typicode.com/todos/1\""
       },
       "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {
         "type": "{string:string}",
         "name": "headers",
-        "description": "Recieves request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\"content-type\": \"application/json; charset=utf-8\"}"
+        "description": "Receives request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}"
       },
       "f11b9873-7a11-4241-9e17-a16496cf783e": {
         "type": "string",
         "name": "body",
-        "description": "Recieves the http request body. Some requests send data to the server in order to update it. In case of GET or DELETE request the body should be empty (will be ignored).\n\nExample:\n\"\""
+        "description": "Receives the http request body. Some requests send data to the server in order to update it. In case of GET or DELETE request the body should be empty (will be ignored).\n\nExample:\n\"\""
       }
     },
     "outputs": {
@@ -40,7 +40,7 @@
         "description": "Sends http response message body data.\n\nExample:\n\"{\\\"userId\\\": 1, \\\"id\\\": 1, \\\"title\\\": \\\"delectus aut autem\\\",  \\\"completed\\\": false\n}\""
       },
       "4991414b-16a6-4a01-a988-c841eac995c7": {
-        "type": "string",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
       }
@@ -155,5 +155,14 @@
   "name": "io/http/Request dispatcher",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "get": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "delete": null,
+    "fetch": null,
+    "api": null
   }
 }

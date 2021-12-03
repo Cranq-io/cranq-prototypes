@@ -1,10 +1,11 @@
 {
-  "description": "Writes a line to standard output.",
+  "description": "Writes a line to standard output.\n\nExample:\n1. \"hello world\"@0 received on `line`\n2. \"hello world\" followed by a line break is written to the standard output ",
   "interface": {
     "inputs": {
       "a646ba52-2da2-4b71-9f43-df4fd0e779b2": {
         "type": "string",
-        "name": "line"
+        "name": "line",
+        "description": "The line of text to be written to the standard output. (Does not need to include a line break)\n\n\nExample: \"hello world\""
       }
     },
     "outputs": {}

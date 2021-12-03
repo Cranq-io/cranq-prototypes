@@ -1,0 +1,193 @@
+{
+  "name": "data/tree/Merger",
+  "description": "Merges two tree data structures. On conflict, the relevant paths / values of `b` take precedence.",
+  "interface": {
+    "inputs": {
+      "ee22e0d2-e49b-4547-adf5-af8938feb5db": {
+        "type": "any",
+        "name": "a",
+        "description": "Receives tree data structure to merge to."
+      },
+      "d767ae4f-9534-4f5a-a1a9-15b519a2740c": {
+        "type": "any",
+        "name": "b",
+        "description": "Receives tree data structure to be merged onto the one received via `a`. Data received via this port takes precedence on conflict."
+      }
+    },
+    "outputs": {
+      "f5757305-2a5f-41d3-9678-119d8128e22f": {
+        "type": "any",
+        "name": "merged",
+        "description": "Sends the merged tree structure."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a4c52727-a301-4776-87b0-ac5b3a54f58e": {
+          "coordinates": [
+            174.66666666666669,
+            41.66666666666663
+          ],
+          "name": "rebuild merged",
+          "prototype": "6d43e07e-dd53-4e82-afd1-7d3da833d53a",
+          "params": {},
+          "description": "Bounce is not connected b/c will never bounce."
+        },
+        "59a88ab7-edce-4603-8bc5-f796b6df6e2e": {
+          "coordinates": [
+            -78.33333333333334,
+            -178.33333333333337
+          ],
+          "name": "get A paths",
+          "prototype": "6c3d971c-f860-4ad2-a462-2b77bae30df7",
+          "params": {}
+        },
+        "b3c4f9e8-b349-4a7f-ac9a-aac9454672ac": {
+          "coordinates": [
+            -74.33333333333333,
+            -102.33333333333337
+          ],
+          "name": "get A values",
+          "prototype": "d8d6bcd8-ab31-4e3e-bb3f-ab7110582d05",
+          "params": {}
+        },
+        "2768d216-02b3-48cd-b914-49d148798ed9": {
+          "coordinates": [
+            -166.33333333333334,
+            57.66666666666663
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "cfc5a918-2b96-4327-a5b5-0b3b1b093d52": {
+          "coordinates": [
+            79.66666666666666,
+            -101.33333333333337
+          ],
+          "name": "concat paths",
+          "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b",
+          "params": {}
+        },
+        "e12f7aa6-91f2-403c-b320-b8fd508e8fd2": {
+          "coordinates": [
+            -69.33333333333333,
+            235.66666666666663
+          ],
+          "name": "values getter",
+          "prototype": "d8d6bcd8-ab31-4e3e-bb3f-ab7110582d05",
+          "params": {}
+        },
+        "d399fa78-ff9c-4348-965a-2e8e713a78a8": {
+          "coordinates": [
+            -73.33333333333334,
+            165.66666666666663
+          ],
+          "name": "paths getter",
+          "prototype": "6c3d971c-f860-4ad2-a462-2b77bae30df7",
+          "params": {}
+        },
+        "8dd9d279-2dbe-4eba-b62e-aa9d2d4720c1": {
+          "coordinates": [
+            73.66666666666667,
+            192.66666666666663
+          ],
+          "name": "concat values",
+          "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b",
+          "params": {}
+        }
+      },
+      "connections": {
+        "59a88ab7-edce-4603-8bc5-f796b6df6e2e": {
+          "cb0d36f9-d18e-4799-9fcd-9349634391f9": {
+            "cfc5a918-2b96-4327-a5b5-0b3b1b093d52": {
+              "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {}
+            }
+          }
+        },
+        "2768d216-02b3-48cd-b914-49d148798ed9": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "b3c4f9e8-b349-4a7f-ac9a-aac9454672ac": {
+              "376e9955-012a-4b86-a062-f41b479fa6ba": {}
+            },
+            "59a88ab7-edce-4603-8bc5-f796b6df6e2e": {
+              "3433f00c-3f07-41a9-8979-8d68b7fd7ec1": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "d399fa78-ff9c-4348-965a-2e8e713a78a8": {
+              "3433f00c-3f07-41a9-8979-8d68b7fd7ec1": {}
+            },
+            "e12f7aa6-91f2-403c-b320-b8fd508e8fd2": {
+              "376e9955-012a-4b86-a062-f41b479fa6ba": {}
+            }
+          }
+        },
+        "d399fa78-ff9c-4348-965a-2e8e713a78a8": {
+          "cb0d36f9-d18e-4799-9fcd-9349634391f9": {
+            "cfc5a918-2b96-4327-a5b5-0b3b1b093d52": {
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            }
+          }
+        },
+        "b3c4f9e8-b349-4a7f-ac9a-aac9454672ac": {
+          "15c36d00-6f40-4f21-a735-0835c76c2222": {
+            "8dd9d279-2dbe-4eba-b62e-aa9d2d4720c1": {
+              "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {}
+            }
+          }
+        },
+        "e12f7aa6-91f2-403c-b320-b8fd508e8fd2": {
+          "15c36d00-6f40-4f21-a735-0835c76c2222": {
+            "8dd9d279-2dbe-4eba-b62e-aa9d2d4720c1": {
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            }
+          }
+        },
+        "cfc5a918-2b96-4327-a5b5-0b3b1b093d52": {
+          "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+            "a4c52727-a301-4776-87b0-ac5b3a54f58e": {
+              "babc9690-9f74-4f4e-9629-c795c657ac33": {}
+            }
+          }
+        },
+        "8dd9d279-2dbe-4eba-b62e-aa9d2d4720c1": {
+          "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+            "a4c52727-a301-4776-87b0-ac5b3a54f58e": {
+              "ce4e9ea6-fec4-4bad-93fa-7e9014783994": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ee22e0d2-e49b-4547-adf5-af8938feb5db": {
+            "2768d216-02b3-48cd-b914-49d148798ed9": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "d767ae4f-9534-4f5a-a1a9-15b519a2740c": {
+            "2768d216-02b3-48cd-b914-49d148798ed9": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "f5757305-2a5f-41d3-9678-119d8128e22f": {
+            "a4c52727-a301-4776-87b0-ac5b3a54f58e": {
+              "2fd74a79-be1a-4e93-8b31-d12a1cd6ab32": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "blend": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

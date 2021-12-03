@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "52161cdb-5e79-4e37-8e72-eee28c90bbe2": {
-        "description": "Recieves array to insert into.",
+        "description": "Recieves array to insert into.\n\nExample:\n[1,2,3]",
         "type": "any[]",
         "name": "array"
       },
       "059d506a-50a3-4355-8684-a91e79abcf47": {
-        "description": "Recieves index at which to insert.",
+        "description": "Recieves index at which to insert.\n\nExample:\n1",
         "type": "number",
         "name": "index"
       },
       "a01a4414-cb16-41a8-a41c-56f960585577": {
-        "description": "Recieves item to be inserted.",
+        "description": "Recieves item to be inserted.\n\nExample:\n1",
         "type": "any",
         "name": "item"
       }
     },
     "outputs": {
       "c0ffb518-35d4-48e9-b07e-45b58e951c44": {
-        "description": "Sends array with specified item inserted.",
+        "description": "Sends array with specified item inserted.\n\nExample:\n[1,1,2,3]",
         "type": "(typeof `array`[number])[]",
         "name": "array"
       }

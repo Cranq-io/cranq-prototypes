@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "e4936450-3660-45ac-8cb5-7699ba69ba66": {
-        "description": "Recieves array to retrieve last item from.",
+        "description": "Recieves array to retrieve last item from.\n\nExample:\n[1,2]",
         "type": "any[]",
         "name": "array"
       }
     },
     "outputs": {
       "e6cf79e7-8084-402e-a28c-82b50b07e0ec": {
-        "description": ".Sends last item of the array.",
+        "description": "Sends last item of the array.\n\nExample:\n2",
         "type": "typeof`array`[number]",
         "name": "item"
       }

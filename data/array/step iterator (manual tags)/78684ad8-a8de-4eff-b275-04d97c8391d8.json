@@ -12,29 +12,29 @@
       "c1a54d85-36b5-4842-9688-fb2ab8d1cd41": {
         "type": "any[]",
         "name": "array",
-        "description": "Sets up iteration and sends out the first item and index 0 with the tag associated with the received array.\nWhen the array has only one or zero elements, a signal will also be sent through `done`. "
+        "description": "Sets up iteration and sends out the first item and index 0 with the tag associated with the received array.\nWhen the array has only one or zero elements, a signal will also be sent through `done`. \n\nExample:\n[\"A\",\"B\",\"C\"]"
       },
       "9f2d26e4-7f08-45c0-91bc-b2495b0c4a79": {
         "type": "any",
         "name": "next",
-        "description": "Triggers sending out the next item and index, or, when there are no more items, the done signal.\n\nSignals sent out on `item` and `index` bear the same tag as the signal received through `next`."
+        "description": "Triggers sending out the next item and index, or, when there are no more items, the done signal.\n\nSignals sent out on `item` and `index` bear the same tag as the signal received through `next`.\n\nExample:\n0"
       }
     },
     "outputs": {
       "232f9f14-c24e-4f7f-b415-27ccbdfb9dbf": {
         "type": "typeof`array`[number]",
         "name": "item",
-        "description": "The next item in the array.\n\nThe first item (index 0) bears the tag of the received array, subsequent items bear the tag of the corresponding signals received through `next`."
+        "description": "The next item in the array.\n\nThe first item (index 0) bears the tag of the received array, subsequent items bear the tag of the corresponding signals received through `next`.\n\nExample:\n\"A\""
       },
       "8e36f0c9-932a-4e31-aa7a-e17ff0fee028": {
         "type": "number",
         "name": "index",
-        "description": "The next index in the array.\n\nThe first index (0) bears the tag of the received array, subsequent indexes bear the tag of the corresponding signals received through `next`."
+        "description": "The next index in the array.\n\nThe first index (0) bears the tag of the received array, subsequent indexes bear the tag of the corresponding signals received through `next`.\n\nExample:\n0"
       },
       "e159c36b-a301-46ff-92db-64eaeab74d69": {
         "type": "typeof`array`",
         "name": "done",
-        "description": "Sends out the iterated array when there are no more items in the array and a signal was received through `next`, or, when an array was received through `array` that has one or 0 items.\n\nThe tag of the outgoing signal matches that of he original array."
+        "description": "Sends out the iterated array when there are no more items in the array and a signal was received through `next`, or, when an array was received through `array` that has one or 0 items.\n\nThe tag of the outgoing signal matches that of he original array.\n\nExample:\n[\"A\",\"B\",\"C\"]"
       }
     }
   },

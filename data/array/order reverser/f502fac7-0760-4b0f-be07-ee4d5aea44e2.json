@@ -11,14 +11,14 @@
       "a4683149-c868-455c-a905-6bd311756ed0": {
         "type": "any[]",
         "name": "array",
-        "description": "Recieves array to reserve."
+        "description": "Recieves array to reserve.\n\nExample:\n[1,2,3]"
       }
     },
     "outputs": {
       "f3edda5c-4559-4793-8605-b7e6e5a06ff9": {
         "type": "typeof`array`",
         "name": "reversed",
-        "description": "Sends reversed array."
+        "description": "Sends reversed array.\n\nExample:\n[3,2,1"
       }
     }
   },
@@ -26,5 +26,8 @@
   "description": "Reverses the order of items in the received array.\n\nExample:\n1. [1,2,3]@0 received via `array`\n2. [3,2,1]@0 sent via `reversed`",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "reverse": null
   }
 }

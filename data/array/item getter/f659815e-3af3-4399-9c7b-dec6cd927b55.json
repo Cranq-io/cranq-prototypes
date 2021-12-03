@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "352fc29e-79dd-4fa0-8b8b-0ff79ea197d1": {
-        "description": "Recieves array to retrieve item from",
+        "description": "Recieves array to retrieve item from.\n\nExample:\n[1,2]",
         "type": "any[]",
         "name": "array"
       },
       "a6846250-26ed-4240-b65a-fd5eddd57556": {
-        "description": "Recieves index which identifies item to be retrieved in the array.",
+        "description": "Recieves index which identifies item to be retrieved in the array.\n\nExample:\n1",
         "type": "number",
         "name": "index"
       }
     },
     "outputs": {
       "4a915651-a98d-4ce4-901f-16f958b5b3a9": {
-        "description": "Sends item at the specified index.",
+        "description": "Sends item at the specified index.\n\nExample:\n2",
         "type": "(typeof `array`)[number]",
         "name": "item"
       }
@@ -86,6 +86,7 @@
     "locked": true
   },
   "keywords": {
-    "select": null
+    "select": null,
+    "retrieve": null
   }
 }

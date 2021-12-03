@@ -1,21 +1,21 @@
 {
-  "description": "Tests whether all elements of an array are the same as the expected value.\n\nExample:\n1. `array` recieved  [1,2]@0  \n2. `expected` recieved  [1,2]@0  \n3.  true@0 sent via `same`",
+  "description": "Tests whether all elements of an array are the same as the expected value.\n\nExample:\n1. `array` recieved  [1,1]@0  \n2. `expected` recieved  1]@0  \n3.  true@0 sent via `same`",
   "interface": {
     "inputs": {
       "b175c339-20f7-430e-b101-f6dbe2ff0e21": {
-        "description": "Receives array to be tested.",
-        "type": "any[]",
+        "description": "Receives array to be tested.\n\nExample: \n[1,2,3]",
+        "type": "any",
         "name": "array"
       },
       "a76eb162-9b0d-46b5-82a3-b0445c6f1c01": {
-        "description": "Receives the expected value that all elements of the array will be tested against.",
-        "type": "any[]",
+        "description": "Receives the expected value that all elements of the array will be tested against.\n\nExample:\n1",
+        "type": "any",
         "name": "expected"
       }
     },
     "outputs": {
       "8502c78e-7e2e-4be9-8ec5-7b109a9d442a": {
-        "description": "Sends whether all elements of the `array` are the same as the `expected` value.",
+        "description": "Sends whether all elements of the `array` are the same as the `expected` value.\n\nExample:\ntrue",
         "type": "boolean",
         "name": "same"
       }
@@ -76,8 +76,8 @@
         },
         "aa44f430-62de-4cb6-b0ce-dd0257acc57e": {
           "coordinates": [
-            -334,
-            -1
+            -447,
+            -39
           ],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
@@ -140,28 +140,28 @@
           }
         },
         "aa44f430-62de-4cb6-b0ce-dd0257acc57e": {
-          "1": {
-            "72a949a7-61b0-4e15-9acc-3b23ea3e70e5": {
-              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
-            }
-          },
-          "2": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
             "cc998914-5f3a-4de6-892f-a2ab24d8cac3": {
               "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "72a949a7-61b0-4e15-9acc-3b23ea3e70e5": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           }
         }
       },
       "forwards": {
         "inputs": {
-          "b175c339-20f7-430e-b101-f6dbe2ff0e21": {
-            "aa44f430-62de-4cb6-b0ce-dd0257acc57e": {
-              "1": {}
-            }
-          },
           "a76eb162-9b0d-46b5-82a3-b0445c6f1c01": {
             "aa44f430-62de-4cb6-b0ce-dd0257acc57e": {
-              "2": {}
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "b175c339-20f7-430e-b101-f6dbe2ff0e21": {
+            "aa44f430-62de-4cb6-b0ce-dd0257acc57e": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           }
         },
@@ -180,7 +180,6 @@
     "locked": true
   },
   "keywords": {
-    "match": null,
-    "equal": null
+    "match": null
   }
 }

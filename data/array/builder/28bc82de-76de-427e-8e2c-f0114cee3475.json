@@ -5,19 +5,19 @@
       "2813c5a2-d4d6-42ce-a52f-9def6df97814": {
         "type": "any",
         "name": "item",
-        "description": "Receives item to be add to the array."
+        "description": "Receives item to be added to the array.\n\nExample:\n\"Foo\""
       },
       "ed11e46e-595d-4515-8681-ff35c7a555c6": {
         "type": "number",
         "name": "count",
-        "description": "Receives the number of times the item is to be add to the array.\n"
+        "description": "Receives the number of times the item is to be add to the array.\n\nExample:\n3"
       }
     },
     "outputs": {
       "c0facb18-50d6-464f-8c91-d6255080b146": {
         "type": "typeof `item`[]",
         "name": "array",
-        "description": "Sends the built array."
+        "description": "Sends the built array.\n\nExample:\n[\"Foo\", \"Foo\", \"Foo\"]"
       }
     }
   },
@@ -86,6 +86,8 @@
     "locked": true
   },
   "keywords": {
-    "create": null
+    "create": null,
+    "new": null,
+    "repeat": null
   }
 }

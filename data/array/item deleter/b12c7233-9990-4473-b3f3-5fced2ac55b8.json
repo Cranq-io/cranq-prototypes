@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "5e2cd3a6-5c09-4da1-8b38-08fa9fc4e955": {
-        "description": "Recieves array to delete item from.",
+        "description": "Recieves array to delete item from.\n\nExample:\n[1,2,3]",
         "type": "any[]",
         "name": "array"
       },
       "e576f38e-a208-47e2-a690-abf2d3232f78": {
-        "description": "Recieves index which identifies item to be deleted from the array.",
+        "description": "Recieves index which identifies item to be deleted from the array.\n\nExample:\n1",
         "type": "number",
         "name": "index"
       }
     },
     "outputs": {
       "e685dbbe-2d75-40aa-88dc-a5154e434f3d": {
-        "description": "Sends array with specified item deleted.",
+        "description": "Sends array with specified item deleted.\n\nExample:\n[1,3]",
         "type": "typeof `array`",
         "name": "array"
       }

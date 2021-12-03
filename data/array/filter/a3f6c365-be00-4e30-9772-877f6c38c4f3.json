@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "07c8d06d-f187-4600-8bfe-7ab740adebb8": {
-        "description": "Receives array to be filtered.",
+        "description": "Receives array to be filtered.\n\nExample:\n[1,2,3,4]",
         "type": "any[]",
         "name": "array"
       },
       "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {
-        "description": "Receives whether to include the current (by tag) item.",
+        "description": "Receives whether to include the current (by tag) item.\n\nExample:\ntrue",
         "type": "boolean",
         "name": "include item"
       }
     },
     "outputs": {
       "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
-        "description": "Sends the filtered array.",
+        "description": "Sends the filtered array.\n\nExample:\n[1,2]",
         "type": "typeof `array`",
         "name": "filtered"
       },
       "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
-        "description": "Sends the current item.",
+        "description": "Sends the current item.\n\nExample:\n1",
         "type": "typeof `array`[number]",
         "name": "item"
       }
@@ -103,5 +103,8 @@
   "name": "data/array/Filter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "select": null
   }
 }

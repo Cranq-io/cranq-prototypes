@@ -5,14 +5,14 @@
       "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {
         "type": "any[]",
         "name": "data",
-        "description": "Receives data to test if its type is array."
+        "description": "Receives data to test if its type is array.\n\nExample:\n[1,2,3]"
       }
     },
     "outputs": {
       "63f3f918-df9f-4037-870b-b5189bea60ad": {
         "type": "boolean",
         "name": "is array",
-        "description": "Sends if the type of the recieved `data` is array."
+        "description": "Sends if the type of the recieved `data` is array.\n\nExample:\ntrue"
       }
     }
   },

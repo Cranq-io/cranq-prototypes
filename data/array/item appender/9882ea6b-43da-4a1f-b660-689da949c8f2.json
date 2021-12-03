@@ -60,19 +60,19 @@
       "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {
         "type": "any[]",
         "name": "array",
-        "description": "Receives array to append item to."
+        "description": "Receives array to append item to.\n\nExample:\n[1,2,3]"
       },
       "2d02022b-c114-4207-935e-11490a6c2926": {
         "type": "any",
         "name": "item",
-        "description": "Receives item to append to the array."
+        "description": "Receives item to append to the array.\n\nExample:\n1"
       }
     },
     "outputs": {
       "092ca265-7614-4182-9d9f-bd325c094abb": {
         "type": "typeof `array`",
         "name": "array",
-        "description": "Sends the new array with the appended item."
+        "description": "Sends the new array with the appended item.\n\nExample:\n[1,2,3,1]"
       }
     }
   },
@@ -81,7 +81,8 @@
     "locked": true
   },
   "keywords": {
-    "add": null
+    "add": null,
+    "insert": null
   },
   "description": "Appends item to the array.\n\nExample: \n1. [1,2,3]@0 recieved via `array` \n2. 1@0 recieved via `item` \n3. [1,2,3,1]@0 sent via `array`"
 }

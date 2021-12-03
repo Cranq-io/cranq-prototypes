@@ -5,14 +5,14 @@
       "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {
         "type": "any[]",
         "name": "array",
-        "description": "Receives array to be tested."
+        "description": "Receives array to be tested.\n\nExample:\n[]"
       }
     },
     "outputs": {
       "dbb99a85-ea24-4922-b098-994987c8a10f": {
         "type": "boolean",
         "name": "empty",
-        "description": "Sends whether the `array` does not contain any element."
+        "description": "Sends whether the `array` does not contain any element.\n\nExample:\ntrue"
       }
     }
   },

@@ -1,21 +1,21 @@
 {
-  "description": "Tests whether the array contains a given item\n\nExample:\nExample:\n1. [1,2]@0 received via `array` \n2. 1]@0 received via `item` \n3. true@0 sent via `contains`",
+  "description": "Tests whether the array contains a given item\n\nExample:\nExample:\n1. [1,2]@0 received via `array` \n2. 1@0 received via `item` \n3. true@0 sent via `contains`",
   "interface": {
     "inputs": {
       "8d132e63-efb4-44cc-951e-37339e2018eb": {
-        "description": "Recieves array look for the item in.",
+        "description": "Recieves array look for the item in.\n\nExample:\n[1,2]",
         "type": "any[]",
         "name": "array"
       },
       "79658fd3-0926-46a2-ac24-76023f522dec": {
-        "description": "Recieves item to find in the array.",
+        "description": "Recieves item to find in the array.\n\nExample:\n 1",
         "type": "any",
         "name": "item"
       }
     },
     "outputs": {
       "08d49cf0-efe3-42d3-8099-5d9d22f7f492": {
-        "description": "Sends whether the `item` was found in the `array`.",
+        "description": "Sends whether the `item` was found in the `array`.\n\nExample:\ntrue",
         "type": "boolean",
         "name": "contains"
       }
@@ -84,5 +84,8 @@
   "name": "data/array/Contains tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "include": null
   }
 }

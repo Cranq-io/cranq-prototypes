@@ -67,14 +67,14 @@
       "67681054-c95b-4da1-90d6-1a5461612c4c": {
         "type": "any[][]",
         "name": "2D array",
-        "description": "Recieves 2D arrays to be flattened."
+        "description": "Recieves 2D arrays to be flattened.\n\nExample:\n[[1,2], [3,4]]"
       }
     },
     "outputs": {
       "f6248b87-3fea-47f5-8cfc-42b33cdba963": {
         "type": "(typeof `2D array`[number][number])[]",
         "name": "array",
-        "description": "Sends flattened array."
+        "description": "Sends flattened array.\n\nExample:\n[1,2,3,4]"
       }
     }
   },
@@ -82,7 +82,7 @@
   "attributes": {
     "locked": true
   },
-  "description": "Flattens a 2D array into a  1 D array with.\n\nExample:\n1. [[1,2], [3,4]]@0 recieved via `2D array`\n2.  [1,2,3,4]@0 sent via `array` ",
+  "description": "Flattens a 2D array into a  1 D array with.\n\nExample:\n1. [[1,2], [3,4]]@0 recieved via `2D array`\n2. [1,2,3,4]@0 sent via `array` ",
   "keywords": {
     "reduce": null
   }

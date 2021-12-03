@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {
-        "description": "Receives array to retrieve first item from.",
+        "description": "Receives array to retrieve first item from.\n\nExample:\n[1,2]",
         "type": "any[]",
         "name": "array"
       }
     },
     "outputs": {
       "f7832747-fb1e-432b-9c10-60ac76c110cc": {
-        "description": "Sends first item of the array.",
+        "description": "Sends first item of the array.\n\nExample:\n1",
         "type": "typeof `array`[number]",
         "name": "item"
       }

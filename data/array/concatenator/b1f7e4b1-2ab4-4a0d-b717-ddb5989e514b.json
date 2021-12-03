@@ -5,19 +5,19 @@
       "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {
         "type": "any[]",
         "name": "a",
-        "description": "Receives array `a` to concatenate."
+        "description": "Receives array `a` to concatenate.\n\nExample:\n[1,2]"
       },
       "a0cfd90a-1120-454d-99de-077ea55fede2": {
         "type": "any[]",
         "name": "b",
-        "description": "Receives array `b` to concatenate."
+        "description": "Receives array `b` to concatenate.\n\nExample:\n[3,4]"
       }
     },
     "outputs": {
       "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
         "type": "typeof `a` or typeof `b`",
         "name": "concatenated",
-        "description": "Sends the concatenated array.\n"
+        "description": "Sends the concatenated array.\n\nExample:\n[1,2,3,4]"
       }
     }
   },

@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {
-        "description": "Recieves array which specifies number of times to repeat data.",
+        "description": "Recieves array which specifies number of times to repeat data.\n\nExample:\n[1,2,3]",
         "type": "any[]",
         "name": "array"
       },
       "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {
-        "description": "Recieves data to be repeated",
+        "description": "Recieves data to be repeated.\n\nExample:\n\"foo\"",
         "type": "any",
         "name": "data"
       }
     },
     "outputs": {
       "987cc1f0-ddda-4f01-8358-d32676a0861e": {
-        "description": "Sends repeated data with tag.",
+        "description": "Sends repeated data with tag.\n\nExample:\n\"foo\"",
         "type": "typeof`data`",
         "name": "data"
       }

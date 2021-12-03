@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "a1f90e89-d800-44de-a283-cb70ee5aa269": {
-        "description": "Receives array to slice out of.",
+        "description": "Receives array to slice out of.\n\nExample:\n[1,2,3]",
         "type": "any[]",
         "name": "array"
       },
       "e8b61a56-314f-4ac7-a7ba-28207aa3c6a7": {
-        "description": "Receives start position of the slice (included).",
+        "description": "Receives start position of the slice (included).\n\nExample:\n0",
         "type": "number",
         "name": "from"
       },
       "08b4d532-f026-4a3e-8938-be30410e5339": {
-        "description": "Receives end position of the slice (not included.",
+        "description": "Receives end position of the slice (not included.\n\nExample:\n2",
         "type": "number",
         "name": "to"
       }
     },
     "outputs": {
       "f424fd04-bfba-4088-972e-77ba5d7e613e": {
-        "description": "Sends section sliced out of the input array.",
+        "description": "Sends section sliced out of the input array.\n\nExample:\n[1,2]",
         "type": "typeof`array`",
         "name": "slice"
       }

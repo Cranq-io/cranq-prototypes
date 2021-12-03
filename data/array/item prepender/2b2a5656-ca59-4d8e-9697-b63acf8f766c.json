@@ -60,19 +60,19 @@
       "ae9cbf02-40c8-46db-a638-b9f638be79a4": {
         "type": "any[]",
         "name": "array",
-        "description": "Recieves array to prepend to."
+        "description": "Recieves array to prepend to.\n\nExample:\n[1,2,3]"
       },
       "023b19ac-4478-42e0-acd8-ceef1ebe668d": {
         "type": "typeof`array`[number]",
         "name": "item",
-        "description": "Recieves item to prepend."
+        "description": "Recieves item to prepend.\n\nExample:\n4"
       }
     },
     "outputs": {
       "29ffadc0-ed66-44c4-ad0c-c95f59d05274": {
         "type": "typeof `array`",
         "name": "array",
-        "description": "Sends array with specified item inserted to the begining."
+        "description": "Sends array with specified item inserted to the begining.\n\nExample:\n[4,1,2,3]"
       }
     }
   },

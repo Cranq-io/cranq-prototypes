@@ -37,10 +37,10 @@
         },
         "1afef728-6147-4e66-88e6-b3661fec497f": {
           "coordinates": [
-            -168.3828125,
-            156
+            -172.3828125,
+            155
           ],
-          "name": "keys getter",
+          "name": "get destinaiton paths",
           "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
         },
         "2f454a86-a2d3-49a2-bee4-a0e9cd0500ce": {
@@ -48,7 +48,7 @@
             -178.3828125,
             -82
           ],
-          "name": "values getter",
+          "name": "get source paths",
           "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
         },
         "dc1a1f8c-4d0c-4d84-a54b-b5e4947e3875": {
@@ -56,7 +56,7 @@
             183.6171875,
             164
           ],
-          "name": "reconstruct tree",
+          "name": "build new params",
           "prototype": "6d43e07e-dd53-4e82-afd1-7d3da833d53a"
         },
         "7d0a337d-8ff4-4e46-b89b-77bf193c0c6e": {
@@ -64,7 +64,7 @@
             229.6171875,
             -66
           ],
-          "name": "merger",
+          "name": "merge into params",
           "prototype": "5d12659a-6cfc-460a-b1c8-9dd0c6b16d3d"
         },
         "019abaca-bdc0-4cee-bbc0-23a7be972005": {
@@ -72,7 +72,7 @@
             24.6171875,
             -15.666666666666657
           ],
-          "name": "get values from state",
+          "name": "get source values",
           "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1"
         },
         "e0bf7495-326f-470f-bca2-6223349c80e3": {
@@ -80,7 +80,7 @@
             -16.3828125,
             -207
           ],
-          "name": "parse state paths",
+          "name": "parse source paths",
           "prototype": "67d203be-1f6e-4ecb-82d2-f7ef31a87118"
         },
         "b07e5ef2-936f-4cc4-b0f2-3c91ef4eb897": {
@@ -88,7 +88,7 @@
             -4.3828125,
             92
           ],
-          "name": "parse params paths",
+          "name": "parse desctination paths",
           "prototype": "67d203be-1f6e-4ecb-82d2-f7ef31a87118"
         }
       },
@@ -184,7 +184,9 @@
       }
     }
   },
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "state": null,
     "params": null,

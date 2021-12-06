@@ -9,14 +9,14 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd\": string,\n\"result-path\": (string or number)[],\n\"message\": string,\n\"image-urls\": string[],\n\"image-names\": string[]\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"image-urls\": string[],\n  \"image-names\": string[]\n}",
         "name": "params"
       }
     },
     "outputs": {
       "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
         "description": "Sends updated script state.",
-        "type": "any",
+        "type": "typeof `state`",
         "name": "state"
       }
     }
@@ -147,5 +147,15 @@
   },
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "scripting": null,
+    "action": null,
+    "one-time": null,
+    "no-code": null,
+    "api": null,
+    "metadata": null,
+    "nft": null,
+    "ipfs": null
   }
 }

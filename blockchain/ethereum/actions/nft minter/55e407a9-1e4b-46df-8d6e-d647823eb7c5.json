@@ -1,0 +1,152 @@
+{
+  "name": "blockchain/ethereum/actions/NFT minter",
+  "interface": {
+    "inputs": {
+      "b415a97e-17ae-4afb-9495-0c665d6d6a9e": {
+        "description": "",
+        "type": "any",
+        "name": "state"
+      },
+      "bbfc612d-4b90-4759-9a80-530cdb7dae4f": {
+        "type": "{\n  \"install-dependencies\": typeof `params` of `install dependencies`,\n  \"create-files\": typeof `params` of `create files`,\n  \"run-script\": typeof `params` of `run mint script`,\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "06ebcac2-f8bd-4e82-ae70-71bbeae69980": {
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b550fe64-0954-457a-8945-b8e32666eba0": {
+          "coordinates": [
+            162.8981481481482,
+            -50.203703703703695
+          ],
+          "name": "run mint script",
+          "prototype": "20a0c486-10c8-48e3-bfbb-5e9d3bbbe75b",
+          "params": {}
+        },
+        "048ad6bd-ea4a-431e-a0b8-27d694bed513": {
+          "coordinates": [
+            -11.525462962962933,
+            25.449074074074076
+          ],
+          "name": "create files",
+          "prototype": "ac667fa7-364a-4070-9d19-e45c913e24d0",
+          "params": {}
+        },
+        "f78758aa-ba0d-4dd7-b4b4-017e904e07c3": {
+          "coordinates": [
+            -55.10185185185179,
+            -146.2037037037037
+          ],
+          "name": "install dependencies",
+          "prototype": "95ce0ccb-02ba-4934-90ad-c9e7ce441d07",
+          "params": {}
+        },
+        "9d97a8d7-de8a-4095-a96e-e9be04c21065": {
+          "coordinates": [
+            -211.71903935185185,
+            104.7962962962963
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"install-dependencies\", \"create-files\", \"run-script\"]"
+          }
+        },
+        "1a3370eb-b606-4d42-b7a7-39e92cd00262": {
+          "coordinates": [
+            -243.71903935185185,
+            -79.2037037037037
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        }
+      },
+      "connections": {
+        "1a3370eb-b606-4d42-b7a7-39e92cd00262": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "9d97a8d7-de8a-4095-a96e-e9be04c21065": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "f78758aa-ba0d-4dd7-b4b4-017e904e07c3": {
+              "2cfb8098-6ef8-4cbe-b464-983654500190": {}
+            }
+          }
+        },
+        "9d97a8d7-de8a-4095-a96e-e9be04c21065": {
+          "install-dependencies": {
+            "f78758aa-ba0d-4dd7-b4b4-017e904e07c3": {
+              "490dea97-96f7-43d6-89a0-bcd7eda50f8c": {}
+            }
+          },
+          "create-files": {
+            "048ad6bd-ea4a-431e-a0b8-27d694bed513": {
+              "f3aeec69-5a23-4b4c-b586-f4b2e8061f99": {}
+            }
+          },
+          "run-script": {
+            "b550fe64-0954-457a-8945-b8e32666eba0": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        },
+        "f78758aa-ba0d-4dd7-b4b4-017e904e07c3": {
+          "217da33e-4732-4b9f-ab87-5701ca9a04fa": {
+            "048ad6bd-ea4a-431e-a0b8-27d694bed513": {
+              "5743a340-bd06-48fa-9801-e4b213342b6e": {}
+            }
+          }
+        },
+        "048ad6bd-ea4a-431e-a0b8-27d694bed513": {
+          "f0cf6eb5-8aa1-4d7d-ab01-e4280b7b2ef7": {
+            "b550fe64-0954-457a-8945-b8e32666eba0": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b415a97e-17ae-4afb-9495-0c665d6d6a9e": {
+            "1a3370eb-b606-4d42-b7a7-39e92cd00262": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "bbfc612d-4b90-4759-9a80-530cdb7dae4f": {
+            "1a3370eb-b606-4d42-b7a7-39e92cd00262": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "06ebcac2-f8bd-4e82-ae70-71bbeae69980": {
+            "b550fe64-0954-457a-8945-b8e32666eba0": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "scripting": null,
+    "action": null,
+    "no-code": null,
+    "one-time": null,
+    "nft": null,
+    "minting": null
+  }
+}

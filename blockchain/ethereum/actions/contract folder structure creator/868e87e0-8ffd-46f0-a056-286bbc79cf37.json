@@ -1,0 +1,151 @@
+{
+  "name": "blockchain/ethereum/actions/Contract folder structure creator",
+  "interface": {
+    "inputs": {
+      "6363cdca-dab9-451d-8f7c-1878b4d4bb73": {
+        "description": "",
+        "type": "any",
+        "name": "state"
+      },
+      "0116d36a-ddea-422e-af3a-f9cfbae682a6": {
+        "type": "{\n  \"create-working-folder\": typeof `params` of `create working folder`,\n  \"create-contract-folder\": typeof `params` of `create \"contracts\" folder`,\n  \"create-scripts-folder\": typeof `params` of `create \"scripts\" folder`\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "4e3a7c5e-689b-4752-a1c7-7e2d3c12e095": {
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "79f6f693-a119-48b7-8eb6-842ade2f9683": {
+          "coordinates": [
+            105.92708333333333,
+            -181.33333333333334
+          ],
+          "name": "create working folder",
+          "prototype": "aebc4dc4-b256-4411-a43e-d84ef0b13826",
+          "params": {}
+        },
+        "1c971e14-6f93-4e18-b2e7-f81c815d4749": {
+          "coordinates": [
+            100.03645833333333,
+            -23.333333333333336
+          ],
+          "name": "create \"contracts\" folder",
+          "prototype": "aebc4dc4-b256-4411-a43e-d84ef0b13826",
+          "params": {}
+        },
+        "5c0a41ac-0bab-4733-bee6-282352f5ebf7": {
+          "coordinates": [
+            106.03645833333333,
+            130.66666666666666
+          ],
+          "name": "create \"scripts\" folder",
+          "prototype": "aebc4dc4-b256-4411-a43e-d84ef0b13826",
+          "params": {}
+        },
+        "16bf4999-0f8f-4fec-ba6c-ed46ac3a0289": {
+          "coordinates": [
+            -155.96354166666674,
+            -83.33333333333337
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "bc4d08ec-a79b-4ff2-927e-519202dc64c2": {
+          "coordinates": [
+            -157.96354166666674,
+            46.66666666666663
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"create-working-folder\", \"create-contracts-folder\", \"create-scripts-folder\"]"
+          }
+        }
+      },
+      "connections": {
+        "1c971e14-6f93-4e18-b2e7-f81c815d4749": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "5c0a41ac-0bab-4733-bee6-282352f5ebf7": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "79f6f693-a119-48b7-8eb6-842ade2f9683": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "1c971e14-6f93-4e18-b2e7-f81c815d4749": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "16bf4999-0f8f-4fec-ba6c-ed46ac3a0289": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "79f6f693-a119-48b7-8eb6-842ade2f9683": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "bc4d08ec-a79b-4ff2-927e-519202dc64c2": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "bc4d08ec-a79b-4ff2-927e-519202dc64c2": {
+          "create-working-folder": {
+            "79f6f693-a119-48b7-8eb6-842ade2f9683": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "create-contracts-folder": {
+            "1c971e14-6f93-4e18-b2e7-f81c815d4749": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "create-scripts-folder": {
+            "5c0a41ac-0bab-4733-bee6-282352f5ebf7": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6363cdca-dab9-451d-8f7c-1878b4d4bb73": {
+            "16bf4999-0f8f-4fec-ba6c-ed46ac3a0289": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "0116d36a-ddea-422e-af3a-f9cfbae682a6": {
+            "16bf4999-0f8f-4fec-ba6c-ed46ac3a0289": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "4e3a7c5e-689b-4752-a1c7-7e2d3c12e095": {
+            "5c0a41ac-0bab-4733-bee6-282352f5ebf7": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "action": null,
+    "scripting": null,
+    "no-code": null,
+    "dependency": null,
+    "smart contract": null
+  }
+}

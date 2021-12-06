@@ -1,6 +1,6 @@
 {
-  "name": "blockchain/moralis/actions/Image data builder",
-  "description": "",
+  "name": "scripting/actions/Command runner",
+  "description": "Runs an OS command.",
   "interface": {
     "inputs": {
       "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"image-paths\": string[]\n}",
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"command\": string\n}",
         "name": "params"
       }
     },
@@ -24,48 +24,48 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
-          "coordinates": [
-            -104.83333333333337,
-            133.66666666666669
-          ],
-          "name": "forwarder/double",
-          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
-          "params": {}
-        },
         "733af17d-de08-473c-b7a2-ab49f11be687": {
           "coordinates": [
-            77.27777777777774,
-            209.5925925925926
+            66.27777777777774,
+            212.5925925925926
           ],
           "name": "fetch / store result",
           "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
           "params": {}
         },
-        "5563117d-0d85-47c5-9185-3736bd1ebc91": {
+        "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
           "coordinates": [
-            141.05412946428572,
-            -97.0357142857143
+            120,
+            -54
           ],
-          "name": "build image data",
-          "prototype": "dcb5f06e-2657-4f72-bb92-78e13a5e7adb",
+          "name": "run command",
+          "prototype": "b5a5fc7f-4cee-4549-947a-0a23463748ce",
           "params": {}
         },
-        "3422ab10-1727-4968-b077-c27f334cc433": {
+        "b88aa8bc-288c-4fa1-aac3-88437c538217": {
           "coordinates": [
-            -27.107142857142833,
-            -189.60714285714283
+            -145.89062500000006,
+            110
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "9ae49d25-c753-4d61-b872-792042285a9a": {
+          "coordinates": [
+            -65.89062500000006,
+            -192
           ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"image-paths\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"cwd\", \"command\"]"
           }
         },
-        "cee77967-42b6-4f57-bb85-01b94fe99def": {
+        "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
           "coordinates": [
-            -123.10714285714283,
-            -41.60714285714283
+            -135.89062500000006,
+            -87
           ],
           "name": "depot",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
@@ -73,12 +73,21 @@
         }
       },
       "connections": {
-        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+        "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+          "cb724100-5480-4958-9a63-73defe53823c": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "354855a7-bbff-4e07-a469-2a433bf8e839": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        },
+        "b88aa8bc-288c-4fa1-aac3-88437c538217": {
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "733af17d-de08-473c-b7a2-ab49f11be687": {
               "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
             },
-            "cee77967-42b6-4f57-bb85-01b94fe99def": {
+            "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
               "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
             }
           },
@@ -88,32 +97,28 @@
             }
           }
         },
-        "5563117d-0d85-47c5-9185-3736bd1ebc91": {
-          "a60958b0-7457-44e0-8636-8e21e1232d3b": {
-            "733af17d-de08-473c-b7a2-ab49f11be687": {
-              "354855a7-bbff-4e07-a469-2a433bf8e839": {
-                "description": "undefined\nundefined"
-              }
+        "9ae49d25-c753-4d61-b872-792042285a9a": {
+          "cwd": {
+            "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+              "cfc5b416-9908-42b5-b250-0c1c4f038825": {}
             }
-          }
-        },
-        "3422ab10-1727-4968-b077-c27f334cc433": {
-          "image-paths": {
-            "5563117d-0d85-47c5-9185-3736bd1ebc91": {
-              "d5525f11-6356-4d88-ac2a-ab640eb9c4cb": {}
+          },
+          "command": {
+            "e9b99ffe-8352-46b7-8bb4-4e501d2c5b2a": {
+              "269b0a58-6557-4fb4-8204-a5873f58f6cd": {}
             }
           }
         },
         "733af17d-de08-473c-b7a2-ab49f11be687": {
           "b6686489-d7c4-4f8d-beed-027997128d36": {
-            "cee77967-42b6-4f57-bb85-01b94fe99def": {
+            "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
               "f58efe33-f70e-4570-ac54-670aaf844385": {}
             }
           }
         },
-        "cee77967-42b6-4f57-bb85-01b94fe99def": {
+        "b2613a03-7651-42f8-b5fb-0fa66f274e49": {
           "eb4c2873-890f-4780-a895-53e321f3739e": {
-            "3422ab10-1727-4968-b077-c27f334cc433": {
+            "9ae49d25-c753-4d61-b872-792042285a9a": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           }
@@ -122,12 +127,12 @@
       "forwards": {
         "inputs": {
           "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
-            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+            "b88aa8bc-288c-4fa1-aac3-88437c538217": {
               "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           },
           "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+            "b88aa8bc-288c-4fa1-aac3-88437c538217": {
               "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
           }
@@ -147,11 +152,8 @@
   },
   "keywords": {
     "action": null,
-    "scripting": null,
-    "no-code": null,
     "one-time": null,
-    "api": null,
-    "nft": null,
-    "ipfs": null
+    "no-code": null,
+    "execute": null
   }
 }

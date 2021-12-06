@@ -1,0 +1,130 @@
+{
+  "name": "blockchain/ethereum/actions/Contract compiler & deployer",
+  "interface": {
+    "inputs": {
+      "83cc9b81-9f6e-435c-a5c2-cbe10652b8c5": {
+        "description": "",
+        "type": "any",
+        "name": "state"
+      },
+      "149caba5-e128-4834-96c5-ef8985c865da": {
+        "type": "{\n  \"compile-contract\": typeof `params` of `compile contract`,\n  \"deploy-contract\": `params` of `deploy contract`\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "bf7f4037-1a03-4377-8a34-590d6f9bd770": {
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
+          "coordinates": [
+            80.09140625000009,
+            -113.80000000000001
+          ],
+          "name": "compile contract",
+          "prototype": "21f66d02-229e-4e49-9781-1df6d95f5c06",
+          "params": {}
+        },
+        "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+          "coordinates": [
+            77.90859375000014,
+            126.80000000000001
+          ],
+          "name": "deploy contract",
+          "prototype": "20a0c486-10c8-48e3-bfbb-5e9d3bbbe75b",
+          "params": {}
+        },
+        "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
+          "coordinates": [
+            -150.90859374999997,
+            71.19999999999999
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"compile-contract\", \"deploy-contract\"]"
+          }
+        },
+        "cfeceed5-7883-49d8-bb49-1757bebe0f9e": {
+          "coordinates": [
+            -149.90859374999997,
+            -61.80000000000001
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        }
+      },
+      "connections": {
+        "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
+          "compile-contract": {
+            "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "deploy-contract": {
+            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        },
+        "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "cfeceed5-7883-49d8-bb49-1757bebe0f9e": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "83cc9b81-9f6e-435c-a5c2-cbe10652b8c5": {
+            "cfeceed5-7883-49d8-bb49-1757bebe0f9e": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "149caba5-e128-4834-96c5-ef8985c865da": {
+            "cfeceed5-7883-49d8-bb49-1757bebe0f9e": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "bf7f4037-1a03-4377-8a34-590d6f9bd770": {
+            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "action": null,
+    "one-time": null,
+    "no-code": null,
+    "smart contract": null
+  },
+  "description": "Compiles and deploys a smart contract"
+}

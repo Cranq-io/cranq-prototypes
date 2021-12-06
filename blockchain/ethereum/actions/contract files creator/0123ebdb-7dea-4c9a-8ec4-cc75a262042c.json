@@ -1,0 +1,193 @@
+{
+  "name": "blockchain/ethereum/actions/Contract files creator",
+  "interface": {
+    "inputs": {
+      "396160e0-25fd-4a13-a32c-94c0adf6884e": {
+        "description": "",
+        "type": "any",
+        "name": "state"
+      },
+      "b0c10279-2fdc-48ec-926d-f348e6222553": {
+        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"write-deploy\": typeof `params` of `write deploy.js`,\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "7a4ab3a3-2de9-4d6e-872b-fdb7a21f6d09": {
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
+          "coordinates": [
+            -19.28164062499991,
+            163.03333333333336
+          ],
+          "name": "create Hardhat config",
+          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
+          "params": {}
+        },
+        "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+          "coordinates": [
+            186.22148437500005,
+            -98.56666666666666
+          ],
+          "name": "create contract",
+          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
+          "params": {}
+        },
+        "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
+          "coordinates": [
+            186.83867187500005,
+            88.43333333333334
+          ],
+          "name": "write deploy.js",
+          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
+          "params": {}
+        },
+        "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
+          "coordinates": [
+            -9.161328124999955,
+            -196.5666666666667
+          ],
+          "name": "API URL -> .env",
+          "prototype": "fb69ffe9-5900-42e3-b4bb-3741e6671fd0",
+          "params": {}
+        },
+        "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+          "coordinates": [
+            -19.161328124999955,
+            -18.56666666666669
+          ],
+          "name": "private key -> .env",
+          "prototype": "fb69ffe9-5900-42e3-b4bb-3741e6671fd0",
+          "params": {}
+        },
+        "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
+          "coordinates": [
+            -234.778515625,
+            84.43333333333334
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"write-api-url\", \"write-private-key\", \"create-hardhat-config\", \"create-contract\", \"write-deploy\"]"
+          }
+        },
+        "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
+          "coordinates": [
+            -224.778515625,
+            -91.56666666666666
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        }
+      },
+      "connections": {
+        "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
+          "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
+            "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+              "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
+            }
+          }
+        },
+        "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
+          "write-api-url": {
+            "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
+              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
+            }
+          },
+          "write-private-key": {
+            "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
+            }
+          },
+          "create-hardhat-config": {
+            "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "create-contract": {
+            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "write-deploy": {
+            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        },
+        "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+          "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
+            "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
+              "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "396160e0-25fd-4a13-a32c-94c0adf6884e": {
+            "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "b0c10279-2fdc-48ec-926d-f348e6222553": {
+            "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "7a4ab3a3-2de9-4d6e-872b-fdb7a21f6d09": {
+            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "action": null,
+    "scripting": null,
+    "smart contract": null,
+    "dependency": null,
+    "no-code": null
+  }
+}

@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd\": string,\n\"result-path\": (string or number)[],\n\"message\": string,\n\"folder-upload-data\": any,\n\"api-key\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"folder-upload-data\": any,\n  \"api-key\": string\n}",
         "name": "params"
       }
     },
@@ -161,5 +161,7 @@
       }
     }
   },
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

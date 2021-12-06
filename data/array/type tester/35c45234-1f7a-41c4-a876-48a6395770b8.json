@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether the input is an array.",
+  "description": "Tells whether the input is an array.\n\nExample:\n1. [1,2,3]@0 received via `data`\n2. true@0 sent via `is array`",
   "interface": {
     "inputs": {
       "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {
-        "type": "any",
-        "name": "data"
+        "type": "any[]",
+        "name": "data",
+        "description": "Receives data to test if its type is array.\n\nExample:\n[1,2,3]"
       }
     },
     "outputs": {
       "63f3f918-df9f-4037-870b-b5189bea60ad": {
-        "type": "is any[]",
-        "name": "is array"
+        "type": "boolean",
+        "name": "is array",
+        "description": "Sends if the type of the recieved `data` is array.\n\nExample:\ntrue"
       }
     }
   },
@@ -27,5 +29,8 @@
   "name": "data/array/Type tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "is array": null
   }
 }

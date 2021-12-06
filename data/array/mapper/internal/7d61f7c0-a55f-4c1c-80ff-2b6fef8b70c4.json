@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See data/array/Mapper",
   "interface": {
     "inputs": {
       "7048ce39-9f84-4a01-95c0-98ccf53d1997": {
@@ -13,7 +13,7 @@
     },
     "outputs": {
       "408ce1cd-c8a7-4d7f-8d92-7cfe8bc318e0": {
-        "type": "typeof(index & mapped item)[\"mapped item\"][]",
+        "type": "(typeof`index & mapped item`[\"mapped item\"])[]",
         "name": "mapped"
       },
       "2687aeee-1193-4a22-b158-7ee57013fe45": {
@@ -21,7 +21,7 @@
         "name": "index"
       },
       "2633875c-3925-45ca-ad7f-79d61ca64bc8": {
-        "type": "typeof(array)[number]",
+        "type": "typeof`array`[number]",
         "name": "item"
       }
     }
@@ -39,7 +39,6 @@
   },
   "name": "data/array/Mapper/Internal",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

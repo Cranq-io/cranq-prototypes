@@ -1,21 +1,21 @@
 {
-  "description": "Iterates through items of an array.",
+  "description": "Iterates through items of an array.\n\n\nExamples:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/1_application_flow/1_2_iterators",
   "interface": {
     "inputs": {
       "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {
-        "description": "Array to be iterated over",
-        "type": "any",
+        "description": "Recieves array to be iterated over.\n\nExample:\n[1,2,3]\n",
+        "type": "any[]",
         "name": "array"
       }
     },
     "outputs": {
       "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
-        "description": "Current item",
-        "type": "typeof(array)[number]",
+        "description": "Sends current item.\n\nExample:\n1",
+        "type": "typeof`array`[number]",
         "name": "item"
       },
       "fd814053-60ce-4e59-b187-cea6f9b8481b": {
-        "description": "Current index",
+        "description": "Sends current index.\n\nExample:\n0",
         "type": "number",
         "name": "index"
       }
@@ -34,5 +34,9 @@
   "name": "data/array/Iterator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "loop": null,
+    "foreach": null
   }
 }

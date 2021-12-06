@@ -1,27 +1,27 @@
 {
-  "description": "Filters array. External node(s) receive each item and decide whether to include them in the result.",
+  "description": "Filters array. External node(s) receive each item and decide whether to include them in the result.\n\nExample:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_2_filters/README.md#using-filters",
   "interface": {
     "inputs": {
       "07c8d06d-f187-4600-8bfe-7ab740adebb8": {
-        "description": "Array to be filtered",
+        "description": "Receives array to be filtered.\n\nExample:\n[1,2,3,4]",
         "type": "any[]",
         "name": "array"
       },
       "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {
-        "description": "Whether to include the current (by tag) item.",
+        "description": "Receives whether to include the current (by tag) item.\n\nExample:\ntrue",
         "type": "boolean",
         "name": "include item"
       }
     },
     "outputs": {
       "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
-        "description": "The filtered array",
-        "type": "typeof(array)",
+        "description": "Sends the filtered array.\n\nExample:\n[1,2]",
+        "type": "typeof `array`",
         "name": "filtered"
       },
       "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
-        "description": "The current item",
-        "type": "typeof(array)[number]",
+        "description": "Sends the current item.\n\nExample:\n1",
+        "type": "typeof `array`[number]",
         "name": "item"
       }
     }
@@ -31,8 +31,8 @@
       "nodes": {
         "2ca471ca-da7c-437e-981f-edfff2729fab": {
           "coordinates": [
-            0,
-            0
+            24,
+            35
           ],
           "description": "",
           "params": {
@@ -43,8 +43,8 @@
         },
         "685671f5-4520-447a-8e2f-429838afafd0": {
           "coordinates": [
-            0,
-            0
+            -56,
+            -59
           ],
           "description": "",
           "params": {},
@@ -103,5 +103,8 @@
   "name": "data/array/Filter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "select": null
   }
 }

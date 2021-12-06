@@ -4,8 +4,8 @@
       "nodes": {
         "e3a336af-001e-4300-9bfc-75ef66cd3c33": {
           "coordinates": [
-            -54,
-            33
+            -85,
+            -21
           ],
           "name": "reducer",
           "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
@@ -15,8 +15,8 @@
         },
         "c0abc7c0-543d-4ded-9630-88525f4fcf15": {
           "coordinates": [
-            61,
-            -48
+            106,
+            -88
           ],
           "name": "concatenator",
           "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b",
@@ -65,19 +65,25 @@
   "interface": {
     "inputs": {
       "67681054-c95b-4da1-90d6-1a5461612c4c": {
-        "type": "any",
-        "name": "2D array"
+        "type": "any[][]",
+        "name": "2D array",
+        "description": "Recieves 2D arrays to be flattened.\n\nExample:\n[[1,2], [3,4]]"
       }
     },
     "outputs": {
       "f6248b87-3fea-47f5-8cfc-42b33cdba963": {
-        "type": "any",
-        "name": "array"
+        "type": "(typeof `2D array`[number][number])[]",
+        "name": "array",
+        "description": "Sends flattened array.\n\nExample:\n[1,2,3,4]"
       }
     }
   },
   "name": "data/array/Flattener",
   "attributes": {
     "locked": true
+  },
+  "description": "Flattens a 2D array into a  1 D array with.\n\nExample:\n1. [[1,2], [3,4]]@0 recieved via `2D array`\n2. [1,2,3,4]@0 sent via `array` ",
+  "keywords": {
+    "reduce": null
   }
 }

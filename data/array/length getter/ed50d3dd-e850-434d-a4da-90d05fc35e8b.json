@@ -1,16 +1,18 @@
 {
-  "description": "Determines the length of the input array.",
+  "description": "Determines the length of the input array.\n\nExample:\n1. [1,2]@0 received via `array`\n2. 2@0 sent via `length`",
   "interface": {
     "inputs": {
       "3796de71-a230-4869-9963-2c1815242213": {
         "type": "any[]",
-        "name": "array"
+        "name": "array",
+        "description": "Recieves array to determine length of.\n\nExample:\n[1,2]"
       }
     },
     "outputs": {
       "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
         "type": "number",
-        "name": "length"
+        "name": "length",
+        "description": "Sends `array` length.\n\nExample:\n2"
       }
     }
   },
@@ -27,5 +29,8 @@
   "name": "data/array/Length getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "size": null
   }
 }

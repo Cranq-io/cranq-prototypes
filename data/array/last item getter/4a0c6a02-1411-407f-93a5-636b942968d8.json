@@ -1,17 +1,17 @@
 {
-  "description": "Retrieves last item of the array.",
+  "description": "Retrieves last item of the array.\n\nExample:\n1. [1,2]@0 received via `array`\n2. 2@0 sent via `item`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters#getting-the-first--last-array-elements",
   "interface": {
     "inputs": {
       "e4936450-3660-45ac-8cb5-7699ba69ba66": {
-        "description": "Array to retrieve last item from",
+        "description": "Recieves array to retrieve last item from.\n\nExample:\n[1,2]",
         "type": "any[]",
         "name": "array"
       }
     },
     "outputs": {
       "e6cf79e7-8084-402e-a28c-82b50b07e0ec": {
-        "description": "Last item of the array",
-        "type": "typeof(array)[number]",
+        "description": "Sends last item of the array.\n\nExample:\n2",
+        "type": "typeof`array`[number]",
         "name": "item"
       }
     }

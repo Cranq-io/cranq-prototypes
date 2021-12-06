@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See data/array/Filter\n",
   "interface": {
     "inputs": {
       "08a9c003-6d71-40c9-aa01-2cb82d91382b": {
@@ -13,7 +13,7 @@
     },
     "outputs": {
       "d66b801b-7f23-48af-81ed-d5143935cbe3": {
-        "type": "typeof(array)",
+        "type": "typeof `array`",
         "name": "filtered"
       },
       "cb1e0f96-71c5-4ca3-8755-f09a5ae9372d": {
@@ -21,7 +21,7 @@
         "name": "index"
       },
       "d0d5edcd-4558-464b-9f61-2acd19a7c2b8": {
-        "type": "typeof(array)[number]",
+        "type": "typeof `array`[number]",
         "name": "item"
       }
     }

@@ -1,22 +1,22 @@
 {
-  "description": "Repeats the input data for each item in the array.",
+  "description": "Repeats the input data for each item in the array.\n\nExample:\n1. [1,2,3]@0 receiced via `array`\n2. \"foo\"@0 received via `data`\n3. \"foo\"@0:0\n    \"foo\"@0:1\n    \"foo\"@0:2\nsent via `data`\n    ",
   "interface": {
     "inputs": {
       "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {
-        "description": "Specifies number of times to repeat data.",
+        "description": "Recieves array which specifies number of times to repeat data.\n\nExample:\n[1,2,3]",
         "type": "any[]",
         "name": "array"
       },
       "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {
-        "description": "Data to be repeated",
+        "description": "Recieves data to be repeated.\n\nExample:\n\"foo\"",
         "type": "any",
         "name": "data"
       }
     },
     "outputs": {
       "987cc1f0-ddda-4f01-8358-d32676a0861e": {
-        "description": "Repeated data",
-        "type": "typeof(data)",
+        "description": "Sends repeated data with tag.\n\nExample:\n\"foo\"",
+        "type": "typeof`data`",
         "name": "data"
       }
     }
@@ -36,8 +36,8 @@
         },
         "1b383f97-809a-4271-9071-3016d4fe986d": {
           "coordinates": [
-            0,
-            0
+            64,
+            -94
           ],
           "description": "",
           "params": {},

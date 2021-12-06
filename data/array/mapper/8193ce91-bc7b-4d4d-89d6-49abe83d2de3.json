@@ -1,27 +1,27 @@
 {
-  "description": "Maps array. External node(s) receive each item and send back a mapped item.",
+  "description": "Maps array. External node(s) receive each item and send back a mapped item.\n\nExample:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_3_mappers/README.md#using-mappers",
   "interface": {
     "inputs": {
       "9552da55-ccec-4df0-a06b-c5eb0e961eab": {
-        "description": "Array to be mapped",
+        "description": "Recieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]",
         "type": "any[]",
         "name": "array"
       },
       "246b2ba5-761d-44bc-932b-9ee909b00258": {
-        "description": "The current (by tag) item, mapped.",
-        "type": "any",
+        "description": "Recieves the current (by tag) item, mapped.\n\nExample:\n\"Foo A\"",
+        "type": "typeof`array`[number]",
         "name": "mapped item"
       }
     },
     "outputs": {
       "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
-        "description": "The mapped array",
-        "type": "typeof(mapped item)[]",
+        "description": "Sends the mapped array.\n\nExample:\n[\"Foo A\", \"Bar A\"]",
+        "type": "typeof`mapped item`[]",
         "name": "mapped"
       },
       "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
-        "description": "The current item",
-        "type": "typeof(array)[number]",
+        "description": "Sends the current item.\n\nExample:\n\"Foo\"",
+        "type": "typeof`array`[number]",
         "name": "item"
       }
     }
@@ -31,8 +31,8 @@
       "nodes": {
         "dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9": {
           "coordinates": [
-            0,
-            0
+            30,
+            64
           ],
           "description": "",
           "params": {
@@ -43,8 +43,8 @@
         },
         "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
           "coordinates": [
-            0,
-            0
+            -62,
+            -105
           ],
           "description": "",
           "params": {},
@@ -103,5 +103,9 @@
   "name": "data/array/Mapper",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "foreach": null,
+    "iterate": null
   }
 }

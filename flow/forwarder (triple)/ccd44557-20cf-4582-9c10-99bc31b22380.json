@@ -41,8 +41,8 @@
       "nodes": {
         "75ebc8d3-d935-4324-bc64-91f4e3f99add": {
           "coordinates": [
-            0,
-            0
+            -20,
+            62
           ],
           "description": "",
           "params": {
@@ -53,8 +53,8 @@
         },
         "26844947-fd82-46d6-9245-0f4519fa5842": {
           "coordinates": [
-            0,
-            0
+            22,
+            -64
           ],
           "description": "",
           "params": {
@@ -114,7 +114,9 @@
     }
   },
   "name": "flow/Forwarder (triple)",
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "order": null,
     "signal order": null,

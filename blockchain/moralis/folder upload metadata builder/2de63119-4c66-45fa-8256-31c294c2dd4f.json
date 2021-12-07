@@ -1,0 +1,164 @@
+{
+  "name": "blockchain/moralis/Folder upload metadata builder",
+  "interface": {
+    "inputs": {
+      "114a8d09-c769-4f10-9dac-629837795265": {
+        "type": "string[]",
+        "name": "item URLs"
+      },
+      "cea2fc27-2bdc-41ed-ab64-0c6fb3fc4707": {
+        "type": "string[]",
+        "name": "item names"
+      }
+    },
+    "outputs": {
+      "fefe1283-5052-469e-918c-9e21082dd670": {
+        "type": "{\n\"image\": string,\n\"name\": string,\n\"description\": string\n}[]",
+        "name": "item metadata"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "18c55410-67c2-4d3e-b8f3-9b8ac670c7b3": {
+          "coordinates": [
+            -138.5,
+            -91.83333333333331
+          ],
+          "name": "build content",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"image\", \"name\", \"description\"]",
+            "description": "\"Image\""
+          }
+        },
+        "1a9e117a-96d8-4aed-94fb-7a336a50851c": {
+          "coordinates": [
+            164.5,
+            -43.833333333333314
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3",
+          "params": {}
+        },
+        "6439aa79-aad6-4b42-85b9-729a1bbc368d": {
+          "coordinates": [
+            55.5,
+            241.16666666666669
+          ],
+          "name": "iterator",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117",
+          "params": {}
+        },
+        "097f0340-75ce-4926-803e-8a1e7a0e80b4": {
+          "coordinates": [
+            -127.5,
+            150.16666666666669
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "04a051e5-50e3-450b-b66a-d318179fe912": {
+          "coordinates": [
+            6.5,
+            -224.83333333333331
+          ],
+          "name": "build file data",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"path\", \"content\"]"
+          }
+        },
+        "e3940b08-9fe2-4e5b-b356-59884f04425f": {
+          "coordinates": [
+            -11.166666666666686,
+            -22.166666666666643
+          ],
+          "name": "create JSON name",
+          "prototype": "52eba358-388c-45fb-b113-4c5dfc26067a",
+          "params": {
+            "e027c4e0-2efb-4034-9c7b-de3c2f1b8370": "\".json\""
+          }
+        }
+      },
+      "connections": {
+        "1a9e117a-96d8-4aed-94fb-7a336a50851c": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "18c55410-67c2-4d3e-b8f3-9b8ac670c7b3": {
+              "image": {}
+            }
+          }
+        },
+        "6439aa79-aad6-4b42-85b9-729a1bbc368d": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "18c55410-67c2-4d3e-b8f3-9b8ac670c7b3": {
+              "name": {}
+            },
+            "e3940b08-9fe2-4e5b-b356-59884f04425f": {
+              "a772a272-9568-4df2-b070-204f626e8cf1": {}
+            }
+          }
+        },
+        "097f0340-75ce-4926-803e-8a1e7a0e80b4": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "6439aa79-aad6-4b42-85b9-729a1bbc368d": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "1a9e117a-96d8-4aed-94fb-7a336a50851c": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "18c55410-67c2-4d3e-b8f3-9b8ac670c7b3": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "04a051e5-50e3-450b-b66a-d318179fe912": {
+              "content": {}
+            }
+          }
+        },
+        "04a051e5-50e3-450b-b66a-d318179fe912": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "1a9e117a-96d8-4aed-94fb-7a336a50851c": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "e3940b08-9fe2-4e5b-b356-59884f04425f": {
+          "22876091-fb5a-4a1d-a0fe-fb84b688346f": {
+            "04a051e5-50e3-450b-b66a-d318179fe912": {
+              "path": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "114a8d09-c769-4f10-9dac-629837795265": {
+            "097f0340-75ce-4926-803e-8a1e7a0e80b4": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "cea2fc27-2bdc-41ed-ab64-0c6fb3fc4707": {
+            "097f0340-75ce-4926-803e-8a1e7a0e80b4": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "fefe1283-5052-469e-918c-9e21082dd670": {
+            "1a9e117a-96d8-4aed-94fb-7a336a50851c": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

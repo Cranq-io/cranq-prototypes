@@ -28,7 +28,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "6ad86184-6890-4323-8021-3496a682c98e": "const fields = params.fields;\nfor (const field of fields)\n  outputs[field](data[field], tag);\n"
+        "6ad86184-6890-4323-8021-3496a682c98e": "const fields = params.fields;\nfor (const field of fields) {\n  const value = data[field];\n  if (value !== undefined)\n    outputs[field](value, tag);\n}\n"
       }
     }
   },

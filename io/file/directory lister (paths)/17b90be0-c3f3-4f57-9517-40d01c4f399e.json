@@ -1,0 +1,148 @@
+{
+  "name": "io/file/Directory lister (paths)",
+  "interface": {
+    "inputs": {
+      "d2a2cb7d-11ad-4e04-88e9-4498660a0f2a": {
+        "description": "",
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "16bd6ea1-1bf8-4c2e-b42e-64bd013de08b": {
+        "description": "The resulting path",
+        "type": "string[]",
+        "name": "child paths"
+      },
+      "8fa53b01-eb86-4415-afb4-abe262a3094b": {
+        "type": "string",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "34e8ec8b-9d24-4140-bfdd-6d8050d184fa": {
+          "coordinates": [
+            -213.5,
+            -43.25
+          ],
+          "name": "directory lister",
+          "prototype": "e89603b7-7f56-47d0-a3ef-b73ccfb90b79",
+          "params": {}
+        },
+        "5fce1a5c-2eac-43f3-a017-a94bed671008": {
+          "coordinates": [
+            107.5,
+            157.75
+          ],
+          "name": "path joiner",
+          "prototype": "e41763a1-9605-4954-a735-4d5946e1afe5",
+          "params": {}
+        },
+        "5a1c5fab-93d8-4e96-9cb5-dbb54917cac1": {
+          "coordinates": [
+            -97.5,
+            86.75
+          ],
+          "name": "repeat path",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe",
+          "params": {}
+        },
+        "cbc2a13b-6547-4e5e-9d1e-96d116a229d5": {
+          "coordinates": [
+            -47.5,
+            -100.25
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "[]"
+          }
+        },
+        "7bc602a0-feb5-4902-9ce4-1d5e37b20672": {
+          "coordinates": [
+            132.5,
+            -170.25
+          ],
+          "name": "item appender",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2",
+          "params": {}
+        }
+      },
+      "connections": {
+        "34e8ec8b-9d24-4140-bfdd-6d8050d184fa": {
+          "acb2963b-7d28-4c79-b458-4cec00becf24": {
+            "5a1c5fab-93d8-4e96-9cb5-dbb54917cac1": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            },
+            "cbc2a13b-6547-4e5e-9d1e-96d116a229d5": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "5a1c5fab-93d8-4e96-9cb5-dbb54917cac1": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "5fce1a5c-2eac-43f3-a017-a94bed671008": {
+              "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
+            }
+          }
+        },
+        "5fce1a5c-2eac-43f3-a017-a94bed671008": {
+          "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
+            "7bc602a0-feb5-4902-9ce4-1d5e37b20672": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "cbc2a13b-6547-4e5e-9d1e-96d116a229d5": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "5fce1a5c-2eac-43f3-a017-a94bed671008": {
+              "3a5d55e5-53ef-4c70-a361-35608a7474d2": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "7bc602a0-feb5-4902-9ce4-1d5e37b20672": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "7bc602a0-feb5-4902-9ce4-1d5e37b20672": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "cbc2a13b-6547-4e5e-9d1e-96d116a229d5": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d2a2cb7d-11ad-4e04-88e9-4498660a0f2a": {
+            "34e8ec8b-9d24-4140-bfdd-6d8050d184fa": {
+              "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {}
+            },
+            "5a1c5fab-93d8-4e96-9cb5-dbb54917cac1": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "outputs": {
+          "16bd6ea1-1bf8-4c2e-b42e-64bd013de08b": {
+            "cbc2a13b-6547-4e5e-9d1e-96d116a229d5": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          },
+          "8fa53b01-eb86-4415-afb4-abe262a3094b": {
+            "34e8ec8b-9d24-4140-bfdd-6d8050d184fa": {
+              "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

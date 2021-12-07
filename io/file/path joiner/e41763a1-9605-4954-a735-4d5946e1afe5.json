@@ -1,59 +1,56 @@
 {
-  "description": "Joins the specified path parts in an operating system specific manner",
+  "description": "Joins the specified relative path to a base path in an operating system-specific manner.",
   "interface": {
     "inputs": {
       "ab886f82-7887-4f25-b2f4-d5a48c111845": {
-        "description": "The first part of the path to join",
-        "type": "any",
-        "name": "first"
+        "description": "The base path to concatenate onto.",
+        "type": "string",
+        "name": "base"
       },
       "3a5d55e5-53ef-4c70-a361-35608a7474d2": {
-        "description": "The second part of the path to join",
-        "type": "any",
-        "name": "second"
+        "description": "Path relative to `base`.",
+        "type": "string",
+        "name": "relative"
       }
     },
     "outputs": {
       "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
         "description": "The resulting path",
-        "type": "any",
-        "name": "path"
+        "type": "string",
+        "name": "joined"
       }
     }
   },
   "implementations": {
     "cranq": {
       "nodes": {
-        "390f9185-1943-4f57-96b3-1243402831a9": {
-          "coordinates": [
-            4,
-            -83
-          ],
-          "description": "",
-          "params": {},
-          "prototype": "a44a0840-89b7-42ef-9145-3c761159f07e",
-          "name": "build path"
-        },
         "956b4893-3438-4ddf-a915-f8665ef63906": {
           "coordinates": [
-            -2,
-            68
+            -13,
+            71
           ],
           "description": "",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"base\", \"relative\"]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "sync a & b"
+          "name": "sync base & relative"
+        },
+        "9a540a73-00b0-4caa-abb4-b8e42b338e97": {
+          "coordinates": [
+            22,
+            -63
+          ],
+          "name": "join path",
+          "prototype": "d886d565-99b1-4476-a37a-eedd6d16baf1",
+          "params": {}
         }
       },
       "connections": {
         "956b4893-3438-4ddf-a915-f8665ef63906": {
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "390f9185-1943-4f57-96b3-1243402831a9": {
-              "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {
-                "description": ""
-              }
+            "9a540a73-00b0-4caa-abb4-b8e42b338e97": {
+              "42125248-2550-4ffb-8c0f-66742e77e306": {}
             }
           }
         }
@@ -62,19 +59,19 @@
         "inputs": {
           "ab886f82-7887-4f25-b2f4-d5a48c111845": {
             "956b4893-3438-4ddf-a915-f8665ef63906": {
-              "0": {}
+              "base": {}
             }
           },
           "3a5d55e5-53ef-4c70-a361-35608a7474d2": {
             "956b4893-3438-4ddf-a915-f8665ef63906": {
-              "1": {}
+              "relative": {}
             }
           }
         },
         "outputs": {
           "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
-            "390f9185-1943-4f57-96b3-1243402831a9": {
-              "fd474d6f-8b92-420c-b58b-da44d233e028": {}
+            "9a540a73-00b0-4caa-abb4-b8e42b338e97": {
+              "0438b31d-ac03-44c0-8f68-ce8183296ca7": {}
             }
           }
         }

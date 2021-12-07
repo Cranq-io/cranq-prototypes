@@ -1,0 +1,132 @@
+{
+  "name": "scripting/Starter",
+  "interface": {
+    "inputs": {
+      "14c6fd48-6a62-42fa-9c50-731dccb6de9e": {
+        "type": "{\n\"state-path\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "c83f1a25-ca2d-41a4-bfca-97f9cc3b42d8": {
+        "type": "any",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -174.63671875,
+            -105.57421875
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "557aa7f2-fe50-4c93-a0aa-844230432b35": {
+          "coordinates": [
+            133.63671875,
+            -132.42578125
+          ],
+          "name": "store B",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {}
+        },
+        "54bb087a-6051-4a18-b82f-98af808e89ef": {
+          "coordinates": [
+            134.36328125,
+            120.57421875
+          ],
+          "name": "json reader",
+          "prototype": "e017ff92-bf1a-4a2f-8520-bd706deb466c",
+          "params": {}
+        },
+        "3eef520d-bb7c-47e3-a8c1-6b9d42a8019c": {
+          "coordinates": [
+            -161.63671875,
+            100.57421875
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        },
+        "19d782b0-6251-4e83-96b1-f15c33b540fa": {
+          "coordinates": [
+            -20.63671875,
+            12.57421875
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"state-path\""
+          }
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "3eef520d-bb7c-47e3-a8c1-6b9d42a8019c": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "3eef520d-bb7c-47e3-a8c1-6b9d42a8019c": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "19d782b0-6251-4e83-96b1-f15c33b540fa": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "19d782b0-6251-4e83-96b1-f15c33b540fa": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "54bb087a-6051-4a18-b82f-98af808e89ef": {
+              "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "557aa7f2-fe50-4c93-a0aa-844230432b35": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "54bb087a-6051-4a18-b82f-98af808e89ef": {
+          "8c073c0a-c7fe-4c28-901f-717ab7df4f65": {
+            "557aa7f2-fe50-4c93-a0aa-844230432b35": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "14c6fd48-6a62-42fa-9c50-731dccb6de9e": {
+            "557aa7f2-fe50-4c93-a0aa-844230432b35": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            },
+            "3eef520d-bb7c-47e3-a8c1-6b9d42a8019c": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "c83f1a25-ca2d-41a4-bfca-97f9cc3b42d8": {
+            "557aa7f2-fe50-4c93-a0aa-844230432b35": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            },
+            "54bb087a-6051-4a18-b82f-98af808e89ef": {
+              "a858b493-c881-476d-89af-688826173640": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "description": "Starts a script, by reading the persisted state, or if there is none, the specified params."
+}

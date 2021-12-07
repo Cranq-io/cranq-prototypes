@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "27092652-f007-4d12-a162-512c135c8de2": "const {a, b} = data;\noutputs.equal(a === b, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "27092652-f007-4d12-a162-512c135c8de2": {
+        "type": "any",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "a4d8ff7c-3463-4ae8-9158-602fe05b617b": {
+        "type": "boolean",
+        "name": "equal"
+      }
+    }
+  },
+  "name": "data/Equality tester (strict, internal)",
+  "attributes": {
+    "locked": true
+  }
+}

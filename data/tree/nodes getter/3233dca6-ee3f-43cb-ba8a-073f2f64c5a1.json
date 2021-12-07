@@ -1,0 +1,125 @@
+{
+  "name": "data/tree/Nodes getter",
+  "description": "Retrieves multiple nodes from a tree.",
+  "interface": {
+    "inputs": {
+      "78d20842-0e8f-40a9-86e5-fecd315da10f": {
+        "description": "Data to be repeated",
+        "type": "any",
+        "name": "tree"
+      },
+      "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": {
+        "description": "",
+        "type": "((string or number)[])[]",
+        "name": "paths"
+      }
+    },
+    "outputs": {
+      "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
+        "description": "",
+        "type": "any[]",
+        "name": "nodes"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "778f4ad5-2465-4bb4-99da-165c9c6428d4": {
+          "coordinates": [
+            -55,
+            -96.33333333333334
+          ],
+          "name": "build nodes",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "39f4ba94-a4be-4e49-8abc-6aa55c50d780": {
+          "coordinates": [
+            6,
+            162.66666666666666
+          ],
+          "name": "repeat tree",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "524943f0-d362-4439-ab32-2950fb26ef65": {
+          "coordinates": [
+            70,
+            -22.333333333333343
+          ],
+          "name": "get node",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256"
+        },
+        "cd005ba1-628e-4eb1-a48f-1a95fd35153d": {
+          "coordinates": [
+            -119,
+            77.66666666666663
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "778f4ad5-2465-4bb4-99da-165c9c6428d4": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "524943f0-d362-4439-ab32-2950fb26ef65": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "39f4ba94-a4be-4e49-8abc-6aa55c50d780": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "524943f0-d362-4439-ab32-2950fb26ef65": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "524943f0-d362-4439-ab32-2950fb26ef65": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "778f4ad5-2465-4bb4-99da-165c9c6428d4": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "cd005ba1-628e-4eb1-a48f-1a95fd35153d": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "39f4ba94-a4be-4e49-8abc-6aa55c50d780": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "39f4ba94-a4be-4e49-8abc-6aa55c50d780": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            },
+            "778f4ad5-2465-4bb4-99da-165c9c6428d4": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "78d20842-0e8f-40a9-86e5-fecd315da10f": {
+            "cd005ba1-628e-4eb1-a48f-1a95fd35153d": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": {
+            "cd005ba1-628e-4eb1-a48f-1a95fd35153d": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
+            "778f4ad5-2465-4bb4-99da-165c9c6428d4": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

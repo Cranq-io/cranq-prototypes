@@ -1,0 +1,34 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "134b54f9-5924-48a6-87d2-19f933b7e148": "const serialized = data\n  .map(component => component.replace(\".\", \"\\\\.\"))\n  .join(\".\");\noutputs.serialized(serialized, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "134b54f9-5924-48a6-87d2-19f933b7e148": {
+        "type": "(string or number)[]",
+        "name": "path",
+        "description": "Receives tree path. (Array of strings and numbers.)\n\nExample: [\"foo\", 0, \"bar\"]"
+      }
+    },
+    "outputs": {
+      "971c32c3-9f6a-43f7-b403-15ed3541ffb4": {
+        "type": "string",
+        "name": "serialized",
+        "description": "Sends a serialized tree path in canonical format.\n\nExamples:\n* \"foo.bar.baz\"\n* \"foo\"\n* \"foo.b\\\\.r\""
+      }
+    }
+  },
+  "name": "data/tree/Path serializer",
+  "description": "Serializes tree path, producing a canonically formatted path string.\nCanonical tree paths are dot-separated, with dots inside components escaped with a backslash.",
+  "keywords": {
+    "escape": null,
+    "node": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

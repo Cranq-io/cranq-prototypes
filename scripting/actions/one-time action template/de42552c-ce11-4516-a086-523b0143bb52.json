@@ -1,0 +1,93 @@
+{
+  "name": "scripting/actions/One-time action template",
+  "attributes": {
+    "template": true,
+    "locked": true
+  },
+  "interface": {
+    "inputs": {
+      "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      },
+      "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "description": "Sends updated script state.",
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "coordinates": [
+            -104.83333333333337,
+            133.66666666666669
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "coordinates": [
+            21.277777777777743,
+            199.5925925925926
+          ],
+          "name": "fetch / store result",
+          "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
+          "params": {}
+        }
+      },
+      "connections": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "be1e4812-a83d-41b8-b739-99586a0bd93a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Template for creating actions that run only once during the execution of the script and record their result into the state. Once a result is recorded, the action will be skipped on the next run.",
+  "keywords": {
+    "no-code": null,
+    "action": null,
+    "scripting": null,
+    "one-time": null
+  }
+}

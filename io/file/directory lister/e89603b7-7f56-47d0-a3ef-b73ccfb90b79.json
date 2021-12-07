@@ -4,19 +4,19 @@
     "inputs": {
       "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "acb2963b-7d28-4c79-b458-4cec00becf24": {
         "description": "The files & directories under the specified path",
-        "type": "any",
-        "name": "children"
+        "type": "string[]",
+        "name": "child names"
       },
       "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
         "description": "Indicates, that the operation has failed",
-        "type": "any",
+        "type": "string",
         "name": "bounced"
       }
     }
@@ -26,8 +26,8 @@
       "nodes": {
         "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
           "coordinates": [
-            -15,
-            -59
+            -9,
+            -52
           ],
           "description": "",
           "params": {},

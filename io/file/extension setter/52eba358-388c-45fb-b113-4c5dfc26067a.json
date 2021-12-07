@@ -1,0 +1,135 @@
+{
+  "name": "io/file/Extension setter",
+  "interface": {
+    "inputs": {
+      "a772a272-9568-4df2-b070-204f626e8cf1": {
+        "type": "string",
+        "name": "path"
+      },
+      "e027c4e0-2efb-4034-9c7b-de3c2f1b8370": {
+        "type": "string",
+        "name": "extension"
+      }
+    },
+    "outputs": {
+      "22876091-fb5a-4a1d-a0fe-fb84b688346f": {
+        "type": "string",
+        "name": "path"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7a6073f8-2336-488a-8d1a-709ed9cd2fa6": {
+          "coordinates": [
+            -170.33333333333331,
+            -116.66666666666667
+          ],
+          "name": "path parser",
+          "prototype": "6fcee884-409f-4696-b51c-20b6ad3c3d17",
+          "params": {}
+        },
+        "34172158-fc62-494f-b2bb-772b90c7efe9": {
+          "coordinates": [
+            108.66666666666669,
+            -91.66666666666667
+          ],
+          "name": "path builder",
+          "prototype": "a44a0840-89b7-42ef-9145-3c761159f07e",
+          "params": {}
+        },
+        "a68a8662-be56-4f67-974f-b3d14cef3549": {
+          "coordinates": [
+            71.66666666666669,
+            56.33333333333333
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"extension\""
+          }
+        },
+        "dd53c95b-c466-42f9-9ed3-136d23365b1f": {
+          "coordinates": [
+            -113.33333333333331,
+            123.33333333333331
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "a79f3310-3fb0-4e0a-834a-42ac6d3dfbb8": {
+          "coordinates": [
+            -50.333333333333314,
+            -31.666666666666686
+          ],
+          "name": "item deleter",
+          "prototype": "73a9fd6e-d594-4efc-a0ae-acf4ab89b577",
+          "params": {
+            "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": "\"base\""
+          }
+        }
+      },
+      "connections": {
+        "7a6073f8-2336-488a-8d1a-709ed9cd2fa6": {
+          "2fe22f0a-b3b2-4856-b473-65a32a2ffd18": {
+            "a79f3310-3fb0-4e0a-834a-42ac6d3dfbb8": {
+              "af51c64a-620a-42e7-83e4-0497df3f0a65": {}
+            }
+          }
+        },
+        "a68a8662-be56-4f67-974f-b3d14cef3549": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "34172158-fc62-494f-b2bb-772b90c7efe9": {
+              "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {}
+            }
+          }
+        },
+        "dd53c95b-c466-42f9-9ed3-136d23365b1f": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "7a6073f8-2336-488a-8d1a-709ed9cd2fa6": {
+              "598eb83b-2266-441c-8a3e-7f414aed4895": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "a68a8662-be56-4f67-974f-b3d14cef3549": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "a79f3310-3fb0-4e0a-834a-42ac6d3dfbb8": {
+          "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+            "a68a8662-be56-4f67-974f-b3d14cef3549": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a772a272-9568-4df2-b070-204f626e8cf1": {
+            "dd53c95b-c466-42f9-9ed3-136d23365b1f": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "e027c4e0-2efb-4034-9c7b-de3c2f1b8370": {
+            "dd53c95b-c466-42f9-9ed3-136d23365b1f": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "22876091-fb5a-4a1d-a0fe-fb84b688346f": {
+            "34172158-fc62-494f-b2bb-772b90c7efe9": {
+              "fd474d6f-8b92-420c-b58b-da44d233e028": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

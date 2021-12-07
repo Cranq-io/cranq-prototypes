@@ -1,0 +1,33 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "1fbfe015-30c9-4d22-8823-2e3e45591924": "const re = /(.*?[^\\\\])(?:\\.|$)/g;\nconst components = [];\nfor (let next = re.exec(data); next !== null; next = re.exec(data)) {\n  const key = next[1];\n  const index = parseInt(key, 10);\n  components.push(isNaN(index) ? key : index);\n}\noutputs.parsed(components, tag);\n"
+      },
+      "initFunction": ""
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1fbfe015-30c9-4d22-8823-2e3e45591924": {
+        "type": "string",
+        "name": "path",
+        "description": "Receives a serialized tree path in canonical format.\n\nExamples:\n* \"foo.bar.baz\"\n* \"foo\"\n* \"foo.b\\\\.r\""
+      }
+    },
+    "outputs": {
+      "184176dd-7150-4352-b384-094444315af7": {
+        "type": "(string or number)[]",
+        "name": "parsed",
+        "description": "Sends tree path. (Array of strings and numbers.)\n\nExample: [\"foo\", 0, \"bar\"]"
+      }
+    }
+  },
+  "name": "data/tree/Path parser",
+  "description": "Parses a canonical string representation of a tree path. Tree paths are dot-separated, and dots in components are escaped with backslash.\n\nExamples:\n1. \"foo.bar\\.baz\" is received via `path`\n2. [\"foo\", \"bar.baz\"] is sent via `parsed`",
+  "keywords": {
+    "unescape": null,
+    "node": null
+  },
+  "attributes": {}
+}

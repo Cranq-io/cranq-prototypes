@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "3c78d8eb-e414-412b-b78d-c2acc5c187b0": {
+        "description": "",
+        "type": "any",
+        "name": "components"
+      }
+    },
+    "outputs": {
+      "04999125-f43a-433c-98e9-db35f0a24d20": {
+        "description": "",
+        "type": "any",
+        "name": "path"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "3c78d8eb-e414-412b-b78d-c2acc5c187b0": "const path = require('path');\noutputs.path(path.format(data), tag);"
+      }
+    }
+  },
+  "name": "io/file/Path builder (internal)",
+  "attributes": {
+    "internal": true
+  }
+}

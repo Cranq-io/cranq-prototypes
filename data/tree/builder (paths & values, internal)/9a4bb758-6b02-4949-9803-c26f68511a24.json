@@ -1,0 +1,31 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "5535b65e-4199-4a7f-8f21-342fbf079660": "const {paths, values} = data;\nconst {setNode} = state;\nconst {length} = paths;\nif (length !== values.length || !length || !paths[0].length)\n  outputs.bounced(data, tag);\nelse {\n  const result = typeof paths[0][0] === \"number\" ? [] : {};\n  for (let i = 0; i < length; i++)\n    setNode(result, paths[i], values[i]);\n  outputs.tree(result, tag);\n}"
+      },
+      "initFunction": "const setNode = (tree, path, node) => {\n  let parentNode = tree;\n  let i;\n  for (i = 0, length = path.length - 1; i < length; i++) {\n    const key = path[i];\n    let currentNode = parentNode[key];\n    if (currentNode === undefined)\n      currentNode = parentNode[key] = \n        typeof path[i + 1] === \"number\" ? [] : {};\n    parentNode = currentNode;\n  }\n  const key = path[i];\n  parentNode[key] = node;\n}\nstate.setNode = setNode;"
+    }
+  },
+  "interface": {
+    "inputs": {
+      "5535b65e-4199-4a7f-8f21-342fbf079660": {
+        "type": "{\n  \"paths\": (string or number)[][],\n  \"values\": any[]\n}",
+        "name": "paths & values"
+      }
+    },
+    "outputs": {
+      "80a2e97d-cebf-4c92-bcfc-873d18914173": {
+        "type": "any",
+        "name": "tree"
+      },
+      "72d10b81-4a6d-499a-a131-9eda2bf9d4c6": {
+        "type": "typeof `paths & values`",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "data/tree/Builder (paths & values, internal)",
+  "description": "See `data/tree/Builder (paths & values)`",
+  "attributes": {}
+}

@@ -1,0 +1,28 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "1874467c-b1d0-49a4-8112-1280e2f69ce0": "const {mkdir} = require(\"fs\");\nmkdir(data, {recursive: true}, (error) =>\n  outputs.success(!error, tag));"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1874467c-b1d0-49a4-8112-1280e2f69ce0": {
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "003eec16-3c0d-4669-9e69-7eadef26bd7c": {
+        "type": "boolean",
+        "name": "success"
+      }
+    }
+  },
+  "name": "io/file/Path creator",
+  "description": "Creates a path in the filesystem.",
+  "attributes": {
+    "locked": true
+  }
+}

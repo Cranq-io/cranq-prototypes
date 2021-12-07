@@ -1,0 +1,80 @@
+{
+  "name": "data/dictionary/Repeater",
+  "interface": {
+    "inputs": {
+      "6aeaf7e6-b523-4247-a7e6-bb15dd0bb0e9": {
+        "type": "{string: any}",
+        "name": "dict"
+      },
+      "c929159c-7b75-455d-bad0-0dd020626367": {
+        "description": "Data to be repeated",
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "1a918fd9-bb0b-47ce-8f11-1a6d4353a79d": {
+        "description": "Repeated data",
+        "type": "typeof `data`",
+        "name": "data"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0f8e91f7-bcbc-47c3-a7b0-09e18a74ca5d": {
+          "coordinates": [
+            26,
+            -57.5
+          ],
+          "name": "repeater",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe",
+          "params": {}
+        },
+        "1d5d0b6c-ecf3-4d6d-a6df-6fe21f469cb0": {
+          "coordinates": [
+            -18,
+            75.5
+          ],
+          "name": "keys getter",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a",
+          "params": {}
+        }
+      },
+      "connections": {
+        "1d5d0b6c-ecf3-4d6d-a6df-6fe21f469cb0": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "0f8e91f7-bcbc-47c3-a7b0-09e18a74ca5d": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6aeaf7e6-b523-4247-a7e6-bb15dd0bb0e9": {
+            "1d5d0b6c-ecf3-4d6d-a6df-6fe21f469cb0": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            }
+          },
+          "c929159c-7b75-455d-bad0-0dd020626367": {
+            "0f8e91f7-bcbc-47c3-a7b0-09e18a74ca5d": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "outputs": {
+          "1a918fd9-bb0b-47ce-8f11-1a6d4353a79d": {
+            "0f8e91f7-bcbc-47c3-a7b0-09e18a74ca5d": {
+              "987cc1f0-ddda-4f01-8358-d32676a0861e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

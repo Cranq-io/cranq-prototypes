@@ -1,0 +1,96 @@
+{
+  "name": "data/tree/Builder (paths & values)",
+  "description": "Constructs a tree data structure based on the path-value pairs received via `paths` and `values`.\n\nBounces when the length of `values` and `path` don't match.",
+  "interface": {
+    "inputs": {
+      "babc9690-9f74-4f4e-9629-c795c657ac33": {
+        "type": "((string or number)[])[]",
+        "name": "paths",
+        "description": "Receives paths that form the structure of the constructed tree."
+      },
+      "ce4e9ea6-fec4-4bad-93fa-7e9014783994": {
+        "type": "any[]",
+        "name": "values",
+        "description": "Receives the values that will be the leaf nodes of the constructed tree."
+      }
+    },
+    "outputs": {
+      "2fd74a79-be1a-4e93-8b31-d12a1cd6ab32": {
+        "type": "any",
+        "name": "tree"
+      },
+      "e6aa5a22-96bb-43c4-8dc8-857bbd557fb9": {
+        "type": "{\n  \"paths\": ((string or number)[])[],\n  \"values\": any[]\n}",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "60e33d56-10d5-4372-b659-d3dd84d1df5d": {
+          "coordinates": [
+            16,
+            67
+          ],
+          "name": "build tree",
+          "prototype": "9a4bb758-6b02-4949-9803-c26f68511a24",
+          "params": {}
+        },
+        "6d578774-a5ba-4f46-bc90-3fbb61f4262c": {
+          "coordinates": [
+            -32,
+            -57
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"paths\", \"values\"]"
+          }
+        }
+      },
+      "connections": {
+        "6d578774-a5ba-4f46-bc90-3fbb61f4262c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "60e33d56-10d5-4372-b659-d3dd84d1df5d": {
+              "5535b65e-4199-4a7f-8f21-342fbf079660": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "babc9690-9f74-4f4e-9629-c795c657ac33": {
+            "6d578774-a5ba-4f46-bc90-3fbb61f4262c": {
+              "paths": {}
+            }
+          },
+          "ce4e9ea6-fec4-4bad-93fa-7e9014783994": {
+            "6d578774-a5ba-4f46-bc90-3fbb61f4262c": {
+              "values": {}
+            }
+          }
+        },
+        "outputs": {
+          "2fd74a79-be1a-4e93-8b31-d12a1cd6ab32": {
+            "60e33d56-10d5-4372-b659-d3dd84d1df5d": {
+              "80a2e97d-cebf-4c92-bcfc-873d18914173": {}
+            }
+          },
+          "e6aa5a22-96bb-43c4-8dc8-857bbd557fb9": {
+            "60e33d56-10d5-4372-b659-d3dd84d1df5d": {
+              "72d10b81-4a6d-499a-a131-9eda2bf9d4c6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "zip": null,
+    "construct": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

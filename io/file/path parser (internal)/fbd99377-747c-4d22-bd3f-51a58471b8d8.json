@@ -1,0 +1,34 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "0467ec39-d854-4492-a0bd-5c14a7d79c1d": {
+        "description": "",
+        "type": "any",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "42ec8d26-2aec-499f-b916-643ccc466315": {
+        "description": "",
+        "type": "any",
+        "name": "components"
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "0467ec39-d854-4492-a0bd-5c14a7d79c1d": "const path = require('path');\noutputs.components(path.parse(data), tag);"
+      }
+    }
+  },
+  "name": "io/file/Path parser (internal)",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

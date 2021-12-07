@@ -1,0 +1,157 @@
+{
+  "name": "blockchain/moralis/actions/Image data builder",
+  "description": "",
+  "interface": {
+    "inputs": {
+      "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      },
+      "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"image-paths\": string[]\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+        "description": "Sends updated script state.",
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "coordinates": [
+            -104.83333333333337,
+            133.66666666666669
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "coordinates": [
+            77.27777777777774,
+            209.5925925925926
+          ],
+          "name": "fetch / store result",
+          "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
+          "params": {}
+        },
+        "5563117d-0d85-47c5-9185-3736bd1ebc91": {
+          "coordinates": [
+            141.05412946428572,
+            -97.0357142857143
+          ],
+          "name": "build image data",
+          "prototype": "dcb5f06e-2657-4f72-bb92-78e13a5e7adb",
+          "params": {}
+        },
+        "3422ab10-1727-4968-b077-c27f334cc433": {
+          "coordinates": [
+            -27.107142857142833,
+            -189.60714285714283
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"image-paths\"]"
+          }
+        },
+        "cee77967-42b6-4f57-bb85-01b94fe99def": {
+          "coordinates": [
+            -123.10714285714283,
+            -41.60714285714283
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      },
+      "connections": {
+        "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "09f29af9-5c14-4df7-9f7c-d401f70bc76c": {}
+            },
+            "cee77967-42b6-4f57-bb85-01b94fe99def": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "9d2803fc-d73d-4d98-adb5-2460ecc70413": {}
+            }
+          }
+        },
+        "5563117d-0d85-47c5-9185-3736bd1ebc91": {
+          "a60958b0-7457-44e0-8636-8e21e1232d3b": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "354855a7-bbff-4e07-a469-2a433bf8e839": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        },
+        "3422ab10-1727-4968-b077-c27f334cc433": {
+          "image-paths": {
+            "5563117d-0d85-47c5-9185-3736bd1ebc91": {
+              "d5525f11-6356-4d88-ac2a-ab640eb9c4cb": {}
+            }
+          }
+        },
+        "733af17d-de08-473c-b7a2-ab49f11be687": {
+          "b6686489-d7c4-4f8d-beed-027997128d36": {
+            "cee77967-42b6-4f57-bb85-01b94fe99def": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "cee77967-42b6-4f57-bb85-01b94fe99def": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "3422ab10-1727-4968-b077-c27f334cc433": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
+            "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "733af17d-de08-473c-b7a2-ab49f11be687": {
+              "be1e4812-a83d-41b8-b739-99586a0bd93a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "action": null,
+    "scripting": null,
+    "no-code": null,
+    "one-time": null,
+    "api": null,
+    "nft": null,
+    "ipfs": null
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "data/tree/Paths parser",
+  "interface": {
+    "inputs": {
+      "a423b288-a3de-4555-921f-2d5f77aee0fa": {
+        "description": "",
+        "type": "string[]",
+        "name": "paths"
+      }
+    },
+    "outputs": {
+      "b9a75c88-adb0-4978-b810-0457ae59849a": {
+        "description": "",
+        "type": "((string or number)[])[]",
+        "name": "parsed"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2d12830d-dadd-4f0e-a120-f4bc9df6ce9e": {
+          "coordinates": [
+            -83,
+            39
+          ],
+          "name": "parse path",
+          "prototype": "fb71609d-1a84-4085-9415-f083f6438788"
+        },
+        "1e19bc4a-f43a-4666-a8bd-508a588d2caf": {
+          "coordinates": [
+            55,
+            -54
+          ],
+          "name": "build parsed paths",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        }
+      },
+      "connections": {
+        "1e19bc4a-f43a-4666-a8bd-508a588d2caf": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "2d12830d-dadd-4f0e-a120-f4bc9df6ce9e": {
+              "1fbfe015-30c9-4d22-8823-2e3e45591924": {}
+            }
+          }
+        },
+        "2d12830d-dadd-4f0e-a120-f4bc9df6ce9e": {
+          "184176dd-7150-4352-b384-094444315af7": {
+            "1e19bc4a-f43a-4666-a8bd-508a588d2caf": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a423b288-a3de-4555-921f-2d5f77aee0fa": {
+            "1e19bc4a-f43a-4666-a8bd-508a588d2caf": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "b9a75c88-adb0-4978-b810-0457ae59849a": {
+            "1e19bc4a-f43a-4666-a8bd-508a588d2caf": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

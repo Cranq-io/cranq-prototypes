@@ -1,15 +1,15 @@
 {
-  "name": "scripting/Param copier (simple)",
+  "name": "scripting/Params copier (simple)",
   "interface": {
     "inputs": {
       "41087308-662d-4122-9083-e9bce9ec4ee9": {
         "type": "any",
-        "name": "state"
+        "name": "source"
       },
       "7487c3dd-503c-455d-be9f-8b289d30f96b": {
-        "description": "Receives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]",
-        "type": "{\n  \"params\": any,\n  \"mapping\": {string: string}\n}",
-        "name": "params & mapping"
+        "description": "",
+        "type": "{\n  \"destination\": any,\n  \"mapping\": {string: string}\n}",
+        "name": "dest & mapping"
       }
     },
     "outputs": {
@@ -39,7 +39,7 @@
           "name": "split params & mapping",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"params\", \"mapping\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"destination\", \"mapping\"]"
           }
         },
         "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
@@ -52,18 +52,6 @@
         }
       },
       "connections": {
-        "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
-          "params": {
-            "86d09ebd-421e-43e2-977f-61e44a972e15": {
-              "9bd88c07-0858-4ead-b615-069284f0db34": {}
-            }
-          },
-          "mapping": {
-            "86d09ebd-421e-43e2-977f-61e44a972e15": {
-              "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
-            }
-          }
-        },
         "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
             "86d09ebd-421e-43e2-977f-61e44a972e15": {
@@ -73,6 +61,18 @@
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
+          "destination": {
+            "86d09ebd-421e-43e2-977f-61e44a972e15": {
+              "9bd88c07-0858-4ead-b615-069284f0db34": {}
+            }
+          },
+          "mapping": {
+            "86d09ebd-421e-43e2-977f-61e44a972e15": {
+              "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
             }
           }
         }

@@ -1,0 +1,104 @@
+{
+  "name": "blockchain/ethereum/actions/Minting finish listener (simplified)",
+  "interface": {
+    "inputs": {
+      "55602844-449c-46a1-be32-00c4baf54fa2": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      },
+      "3cb5a952-2955-4e38-9c8a-b92824d386d5": {
+        "type": "{\n  \"cwd\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "121cbeb0-e2b2-4985-b230-fdf8735d725a": {
+        "description": "Forwards script state.",
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8515b5c8-c9ec-42d6-96b1-cc653c27f67b": {
+          "coordinates": [
+            56,
+            104
+          ],
+          "name": "wait 10s",
+          "prototype": "97c6708c-143f-4deb-869a-1a1255815a30",
+          "params": {},
+          "description": "Need to wait for contract to be mined before using it to mint NFT."
+        },
+        "db152563-c9a7-490b-a6fc-1e0ec39fc160": {
+          "coordinates": [
+            -160,
+            41
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "7bf2c3a3-e4eb-4ce8-8d4c-8333eb5cbec6": {
+          "coordinates": [
+            4,
+            -95
+          ],
+          "name": "params copier",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {
+            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"cwd\": \"./temp\",\n  \"result-path\": [\"blockchain\", \"contract-mined\"],\n  \"message\": \"Waiting for smart contract to be mined...\",\n  \"delay\": 10000\n}",
+            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\"cwd\": \"cwd\"}"
+          }
+        }
+      },
+      "connections": {
+        "db152563-c9a7-490b-a6fc-1e0ec39fc160": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "8515b5c8-c9ec-42d6-96b1-cc653c27f67b": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "7bf2c3a3-e4eb-4ce8-8d4c-8333eb5cbec6": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          }
+        },
+        "7bf2c3a3-e4eb-4ce8-8d4c-8333eb5cbec6": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "8515b5c8-c9ec-42d6-96b1-cc653c27f67b": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "55602844-449c-46a1-be32-00c4baf54fa2": {
+            "db152563-c9a7-490b-a6fc-1e0ec39fc160": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "3cb5a952-2955-4e38-9c8a-b92824d386d5": {
+            "db152563-c9a7-490b-a6fc-1e0ec39fc160": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "121cbeb0-e2b2-4985-b230-fdf8735d725a": {
+            "8515b5c8-c9ec-42d6-96b1-cc653c27f67b": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

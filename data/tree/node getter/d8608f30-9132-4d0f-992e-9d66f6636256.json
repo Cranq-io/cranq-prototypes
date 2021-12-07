@@ -1,24 +1,27 @@
 {
-  "description": "Retrieves the node at the specified path of the tree.",
+  "description": "Retrieves the node at the specified path of the tree.\n\nExample:\n1. {\"foo\": {\"bar\": \"baz\"}}@0 is received via `tree`\n2. [\"foo\", \"bar\"]@0 is received via `path`\n3. \"baz\"@0 is sent via `node`\n",
   "interface": {
     "inputs": {
       "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {
         "type": "any[] or {string:any}",
-        "name": "tree"
+        "name": "tree",
+        "description": "Receives the tree the node is extracted from"
       },
       "927e6b17-97e0-44de-887f-57204b7a1f9b": {
         "type": "(string or number)[]",
-        "name": "path"
+        "name": "path",
+        "description": "Receives the path segments in an array"
       }
     },
     "outputs": {
       "b6722d08-460c-465b-a9f1-d1f843500424": {
         "type": "any",
-        "name": "node"
+        "name": "node",
+        "description": "Sends the node at the specified path"
       },
       "e97caed4-5898-4f86-911d-8e31acb2617b": {
-        "description": "",
-        "type": "any",
+        "description": "Sends the `path` if it was not found",
+        "type": "(string or number)[]",
         "name": "not found"
       }
     }
@@ -91,5 +94,10 @@
   "name": "data/tree/Node getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "picker": null,
+    "get": null,
+    "lookup": null
   }
 }

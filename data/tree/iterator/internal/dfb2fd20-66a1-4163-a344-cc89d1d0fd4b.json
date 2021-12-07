@@ -9,26 +9,30 @@
   "interface": {
     "inputs": {
       "f9494c81-42f8-41eb-8ca3-549f2c2f5a99": {
-        "type": "any",
+        "type": "{\"tree\": {string: any}, \"query\": (string or number or {\"type\": \"wildcard\"} or {\"type:\"options\", \"options\": (string[] or number[])})[]}",
         "name": "tree & query"
       }
     },
     "outputs": {
       "ac66fb51-bcd1-4c27-8024-12ab45e9ba50": {
-        "type": "any",
-        "name": "path"
+        "type": "(string or number)[]",
+        "name": "path",
+        "description": "Sends the current path."
       },
       "6c3b779c-2ecb-438d-9c2b-1c4f7c3b7572": {
         "type": "any",
-        "name": "node"
+        "name": "node",
+        "description": "Sends the current node from the iteration."
       },
       "52331a9a-d02c-4a3d-adce-ed5ec6a6f32b": {
-        "type": "any",
-        "name": "tree"
+        "type": "typeof `tree & query`[\"tree\"]",
+        "name": "tree",
+        "description": "Sends the entire `tree`"
       },
       "48f0e66a-15f6-471c-a0bc-91ad78a2f921": {
-        "type": "any",
-        "name": "done"
+        "type": "null",
+        "name": "done",
+        "description": "Sent when the iteration completes."
       }
     }
   },
@@ -36,5 +40,6 @@
   "attributes": {
     "internal": true,
     "locked": true
-  }
+  },
+  "description": "See data/tree/Iterator"
 }

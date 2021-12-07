@@ -1,15 +1,15 @@
 {
-  "description": "",
+  "description": "See data/tree/node setter",
   "interface": {
     "inputs": {
       "71cc8f4a-8801-4abc-9352-21125bb24296": {
-        "type": "{\"tree\":any[] or {string:any},\"path\":(string | number)[],\"node\":any}",
+        "type": "{\"tree\":any[] or {string:any},\"path\":(string or number)[],\"node\":any}",
         "name": "tree & path & node"
       }
     },
     "outputs": {
       "504be2a1-59dc-4120-bd4b-dc2a70c75d78": {
-        "type": "null",
+        "type": "any[] or {string:any}",
         "name": "written"
       }
     }

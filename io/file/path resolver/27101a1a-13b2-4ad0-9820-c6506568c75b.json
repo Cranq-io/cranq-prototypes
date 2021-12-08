@@ -1,17 +1,17 @@
 {
-  "description": "Resolves a relative file system path into a fully qualified one",
+  "description": "Resolves a file system path into a fully qualified one relative to the current working directory.",
   "interface": {
     "inputs": {
       "b1091169-85d7-43ec-a94a-f9b20070685f": {
-        "description": "The path to resolve",
-        "type": "any",
+        "description": "Receives the path to resolve to absolute path.\n\nExample:\n- \"dir1\"\n- \"dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)\n",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "bc9c01ea-bb7a-4d08-8e1f-33925dc70ca5": {
-        "description": "The resolved path",
-        "type": "any",
+        "description": "Sends the resolved absolute path.\n\nExample:\n- \"/home/user1/.cranq/runtime/dir1\"\n- \"/home/user1/.cranq/runtime/dir1/foo.txt\"",
+        "type": "string",
         "name": "resolved"
       }
     }
@@ -50,7 +50,5 @@
     }
   },
   "name": "io/file/Path resolver",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

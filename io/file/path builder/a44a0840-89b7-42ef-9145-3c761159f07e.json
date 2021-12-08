@@ -3,15 +3,15 @@
   "interface": {
     "inputs": {
       "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {
-        "description": "The components to build the path from",
-        "type": "{\n  \"volume\": string,\n  \"directory\": string,\n  \"base\": string,\n  \"name\": string,\n  \"extension\": string\n}",
-        "name": "components"
+        "description": "Receives the segments to build the path from.\n\nExample:\n[\n \"/home\",\n\"user1/dir1\",\n\"foo.txt\"\n]\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string[]",
+        "name": "segments"
       }
     },
     "outputs": {
       "fd474d6f-8b92-420c-b58b-da44d233e028": {
-        "description": "The resulting path",
-        "type": "any",
+        "description": "Sends the resulting path.\n\nExample:\n\"/home/user1/dir1/foo.txt\"",
+        "type": "string",
         "name": "path"
       }
     }
@@ -21,40 +21,21 @@
       "nodes": {
         "49783188-3557-48a8-87ad-27ebbf8c983c": {
           "coordinates": [
-            16,
-            -96
+            2,
+            -47
           ],
           "description": "",
           "params": {},
           "prototype": "3b2ec484-ea46-4d2b-83da-4701e6a7f32f",
           "name": "build path"
-        },
-        "10896be8-bc9b-4668-9522-be2c36d12dc7": {
-          "coordinates": [
-            -33.00000000000006,
-            68
-          ],
-          "name": "left joiner",
-          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
-          "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"root\": \"volume\",\n  \"dir\": \"directory\",\n  \"base\": \"base\",\n  \"name\": \"name\",\n  \"ext\": \"extension\"\n}"
-          }
         }
       },
-      "connections": {
-        "10896be8-bc9b-4668-9522-be2c36d12dc7": {
-          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
-            "49783188-3557-48a8-87ad-27ebbf8c983c": {
-              "3c78d8eb-e414-412b-b78d-c2acc5c187b0": {}
-            }
-          }
-        }
-      },
+      "connections": {},
       "forwards": {
         "inputs": {
           "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {
-            "10896be8-bc9b-4668-9522-be2c36d12dc7": {
-              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            "49783188-3557-48a8-87ad-27ebbf8c983c": {
+              "3c78d8eb-e414-412b-b78d-c2acc5c187b0": {}
             }
           }
         },
@@ -69,7 +50,5 @@
     }
   },
   "name": "io/file/Path builder",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "792b051d-421b-4aef-bf53-beda69f57af1": {
-        "description": "The path to the source file",
-        "type": "any",
+        "description": "Receives the path of the file to rename.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "source path"
       },
       "6d745d7e-8ad3-424d-9ab6-17f05f2feee5": {
-        "description": "The desired new name",
-        "type": "any",
+        "description": "Receives the desired new file name.\n\nExample:\n\"bar.txt\"",
+        "type": "string",
         "name": "new name"
       }
     },
@@ -154,7 +154,5 @@
     }
   },
   "name": "io/file/File renamer",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

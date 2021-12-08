@@ -3,20 +3,20 @@
   "interface": {
     "inputs": {
       "8a8fd503-291b-40dc-8ed7-c7b1fa350386": {
-        "description": "The base path portion",
-        "type": "any",
+        "description": "Receives the base path portion.\n\nExample:\n\"/home/user1\"\n\n(To keep the application portable use \"/\" as path separator.)\n",
+        "type": "string",
         "name": "base"
       },
       "31eb45e1-a408-4231-a41e-28365fe3c8aa": {
-        "description": "The array of path parts to join onto the base",
-        "type": "any",
+        "description": "Receives the array of path parts to join onto the base.\n\nExample:\n[\n  \"dir1/foo.txt\",\n  \"dir2/bar.txt\"\n]\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string[]",
         "name": "children"
       }
     },
     "outputs": {
       "426e0682-4e1f-4243-b526-080dc273ca2e": {
-        "description": "The resulting paths",
-        "type": "any",
+        "description": "Sends the resulting paths.\n\nExample:\n[\n  \"/home/user1/dir1/foo.txt\",\n  \"/home/user1/dir2/bar.txt\"\n]",
+        "type": "string[]",
         "name": "paths"
       }
     }
@@ -132,7 +132,5 @@
     }
   },
   "name": "io/file/Paths joiner",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

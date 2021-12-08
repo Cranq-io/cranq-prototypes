@@ -3,15 +3,15 @@
   "interface": {
     "inputs": {
       "01e0aa47-a46f-4a6e-aab0-81ba017b1fb7": {
-        "description": "The path to inspect",
-        "type": "any",
+        "description": "Receives the path to test whether it exists or not.\n\nExample:\nExample:\n- \"/home/user1/dir1\"\n- \"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "2fbb4186-4120-4c2a-a11f-2dd364ffe891": {
-        "description": "Boolean value that indicates whether a file or directory exists under the specified path",
-        "type": "any",
+        "description": "Sends boolean value that indicates whether a file or directory exists under the specified path.\n\nExample:\ntrue",
+        "type": "boolean",
         "name": "exists"
       }
     }
@@ -50,7 +50,5 @@
     }
   },
   "name": "io/file/Path tester",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

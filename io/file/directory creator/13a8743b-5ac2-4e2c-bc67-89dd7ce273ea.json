@@ -1,23 +1,28 @@
 {
-  "description": "Creates an empty directory under the specified path",
+  "description": "Creates an empty directory under the specified path\n\nExample:\n1. \"/home/user1/newdir\"@0 received on `path`\n2/a. \"/home/user1/newdir\"@0 sent on `created` if directory has been successfully created\n2/b. \"/home/user1/newdir\"@0 sent on `bounced` if any error occured during directory creation",
   "interface": {
     "inputs": {
       "a2fd7842-f43c-4897-934f-fa2fd0cc89aa": {
-        "description": "The path of the desired directory",
-        "type": "any",
+        "description": "Receives the path of the  directory to create.\n\nExample:\n\"/home/user1/newdir\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "63483514-7af9-4b11-9f73-475da4c3dd7c": {
-        "description": "Indicates, that the operation has succeeded",
-        "type": "any",
+        "description": "Sends the path if the operation has succeeded\n\n",
+        "type": "typeof `path`",
         "name": "created"
       },
       "9d680e45-3011-4727-b8e3-41c0dc450f8f": {
-        "description": "Indicates, that the operation has failed",
-        "type": "any",
+        "description": "Sends the path if the operation has failed.",
+        "type": "typeof `path`",
         "name": "bounced"
+      },
+      "062c5d6b-8e47-4dd0-8419-c0a8e65e489b": {
+        "type": "{ \"message\": string }",
+        "name": "error",
+        "description": "Sends error information.\n\nExample: \n{\n  \"message\": \"ENOENT: no such file or directory, mkdir '/home/user1/newdir'\"\n}"
       }
     }
   },
@@ -54,13 +59,20 @@
             "8e3dcac4-5a4b-4d4d-8fec-124eddd931ae": {
               "1ada4458-6111-463a-9d9d-58248e221c16": {}
             }
+          },
+          "062c5d6b-8e47-4dd0-8419-c0a8e65e489b": {
+            "8e3dcac4-5a4b-4d4d-8fec-124eddd931ae": {
+              "704cf0dc-c2a7-4ad1-9272-49b6b744790e": {}
+            }
           }
         }
       }
     }
   },
   "name": "io/file/Directory creator",
-  "attributes": {
-    "locked": true
+  "attributes": {},
+  "keywords": {
+    "folder": null,
+    "mkdir": null
   }
 }

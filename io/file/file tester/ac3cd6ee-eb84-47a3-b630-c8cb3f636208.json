@@ -3,15 +3,15 @@
   "interface": {
     "inputs": {
       "6edaa1a0-b372-4f07-8a36-5144bb2e22a3": {
-        "description": "The path to inspect",
-        "type": "any",
+        "description": "Receives the path to test whether it is a file or not.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "7a6f90e6-76eb-46b1-bc2f-3d12b1499f1c": {
         "description": "Boolean value that indicates, whether the specified path is a file",
-        "type": "any",
+        "type": "boolean",
         "name": "is file"
       }
     }
@@ -50,7 +50,5 @@
     }
   },
   "name": "io/file/File tester",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

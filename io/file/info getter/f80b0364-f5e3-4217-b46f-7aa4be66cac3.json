@@ -3,8 +3,8 @@
   "interface": {
     "inputs": {
       "cdf47862-fad9-4cc5-9855-12550aa9ae20": {
-        "description": "The path to inspect",
-        "type": "any",
+        "description": "Receives the path of the file or directory to get information of.\n\nExample:\n- \"/home/user1/dir1\"\n- \"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
@@ -106,7 +106,5 @@
     }
   },
   "name": "io/file/Info getter",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

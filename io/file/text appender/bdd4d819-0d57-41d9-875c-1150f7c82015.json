@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "62b759b8-f031-47f0-8574-5d844f085801": {
-        "description": "The file path to append to",
-        "type": "any",
+        "description": "Receives the path of the file to append text to.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       },
       "cb6954c4-dfb5-4690-8635-67e18e34119b": {
-        "description": "The text value to append",
-        "type": "any",
+        "description": "Receives the text to append to the specified file.\n\nExample:\n\"Hello World\"",
+        "type": "string",
         "name": "text"
       }
     },
@@ -92,7 +92,5 @@
     }
   },
   "name": "io/file/Text appender",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

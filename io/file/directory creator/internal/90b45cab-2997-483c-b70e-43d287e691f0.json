@@ -1,23 +1,28 @@
 {
-  "description": "",
+  "description": "See io/file/Directory creator.",
   "interface": {
     "inputs": {
       "11d18626-aa1d-40c8-9538-bc997b99b974": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "1ada4458-6111-463a-9d9d-58248e221c16": {
         "description": "",
-        "type": "any",
+        "type": "typeof `path`",
         "name": "bounced"
       },
       "cf1e1c1f-86e4-468d-9a2e-1ff6b641d6a6": {
         "description": "",
-        "type": "any",
+        "type": "typeof `path`",
         "name": "created"
+      },
+      "704cf0dc-c2a7-4ad1-9272-49b6b744790e": {
+        "type": "{ \"message\": string }",
+        "name": "error",
+        "description": "Sends error information.\n\nExample: \n{\n  \"message\": \"ENOENT: no such file or directory, mkdir '/home/user1/newdir'\"\n}"
       }
     }
   },
@@ -27,13 +32,12 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "11d18626-aa1d-40c8-9538-bc997b99b974": "const {mkdir} = require(\"fs\");\nmkdir(data, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.created(null, tag);\n  }\n});\n"
+        "11d18626-aa1d-40c8-9538-bc997b99b974": "const {mkdir} = require(\"fs\");\nmkdir(data, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n    outputs.error({error: String(error)}, tag);\n  } else {\n    outputs.created(data, tag);\n  }\n});\n"
       }
     }
   },
   "name": "io/file/Directory creator/Internal",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

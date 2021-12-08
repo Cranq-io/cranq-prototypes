@@ -4,11 +4,13 @@
     "inputs": {
       "e93c06b9-6b79-4f39-b74c-606a85e80b4f": {
         "type": "string",
-        "name": "path"
+        "name": "path",
+        "description": "Receives the path of the file to write the specified text to.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)"
       },
       "aad67a3a-6f75-4fb8-9ddd-f7ea549b1491": {
         "type": "string",
-        "name": "text"
+        "name": "text",
+        "description": "Receives the text to write to the specified file. (Will overwrite existing content of the file if exists!)\n\nExample:\n\"Hello World\""
       }
     },
     "outputs": {
@@ -27,8 +29,8 @@
       "nodes": {
         "a6d9b787-92fc-4cd7-a0ab-81384a67cb33": {
           "coordinates": [
-            -38,
-            61
+            0,
+            0
           ],
           "description": "",
           "params": {
@@ -39,8 +41,8 @@
         },
         "c64a34f6-77ec-443c-8ffb-bfbad763e95f": {
           "coordinates": [
-            29,
-            -57
+            0,
+            0
           ],
           "description": "",
           "params": {},
@@ -88,7 +90,5 @@
     }
   },
   "name": "io/file/Text writer",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

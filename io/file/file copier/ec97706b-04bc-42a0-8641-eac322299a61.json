@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "bdfb30ef-0da7-46e3-89a9-b0e1ada838b6": {
-        "description": "The path to the source file to copy",
-        "type": "any",
+        "description": "Receives the path of the source file to copy.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "source"
       },
       "f2de4810-6a6f-4191-a5c8-488099f67b04": {
-        "description": "The path to the desired target file",
-        "type": "any",
+        "description": "Receives the path of the desired target file.\n\nExample:\n\"/home/user1/dir2/bar.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "destination"
       }
     },
@@ -92,7 +92,5 @@
     }
   },
   "name": "io/file/File copier",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

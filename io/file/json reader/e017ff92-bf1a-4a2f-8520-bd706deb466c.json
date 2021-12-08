@@ -4,7 +4,8 @@
     "inputs": {
       "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {
         "type": "string",
-        "name": "path"
+        "name": "path",
+        "description": "Receives the path of the file to read content of as JSON.\n\nExample:\n\"/home/user1/dir1/foo.json\"\n\n(To keep the application portable use \"/\" as path separator.)"
       }
     },
     "outputs": {
@@ -75,7 +76,5 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

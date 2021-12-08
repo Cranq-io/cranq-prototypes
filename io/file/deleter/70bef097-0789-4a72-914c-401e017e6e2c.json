@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "88e2ece8-3028-4c84-a008-587b54b6a1f9": {
-        "description": "The file or directory path to delete",
-        "type": "any",
+        "description": "Receives the path of the file or directory to delete.\n\nExample:\n- \"/home/user1/dir1\"\n- \"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       },
       "8e89f1e5-dcda-4a62-9329-9dd7feca6d45": {
-        "description": "Boolean flag which when set, performs a recursive delete of all files & folders under the specified path",
-        "type": "any",
+        "description": "Receives boolean flag which, when set, performs a recursive delete of all files & folders under the specified path.\n\nExample:\nfalse\n\n(Be VERY cautious with recursive delete as it may cause irreversible harm on the host running the application if applied to a wrong path!)",
+        "type": "boolean",
         "name": "recursive"
       }
     },
@@ -92,7 +92,5 @@
     }
   },
   "name": "io/file/Deleter",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

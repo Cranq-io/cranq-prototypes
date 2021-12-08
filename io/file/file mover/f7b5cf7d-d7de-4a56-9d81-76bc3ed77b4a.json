@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "ebc598f3-fc2c-4761-86a8-c1bc2244adea": {
-        "description": "The path to the source file to move",
+        "description": "Receives the path of the source file to move.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
         "type": "any",
         "name": "source"
       },
       "780482cb-f782-49bc-92ee-d3103a0e6da9": {
-        "description": "The path to the desired target file",
-        "type": "any",
+        "description": "Receives the path of the desired target file.\n\nExample:\n\"/home/user1/dir2/bar.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "destination"
       }
     },
@@ -92,7 +92,5 @@
     }
   },
   "name": "io/file/File mover",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

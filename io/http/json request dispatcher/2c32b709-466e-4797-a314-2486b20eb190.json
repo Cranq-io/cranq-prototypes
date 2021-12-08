@@ -2,40 +2,47 @@
   "name": "io/http/JSON request dispatcher",
   "interface": {
     "inputs": {
-      "f72ee334-6d61-43db-978f-f31d7d2ff917": {
-        "type": "{string:string}",
-        "name": "headers"
+      "52134df1-fbb5-4df4-99a6-25020abc427e": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "method",
+        "description": "Receives http method. Indicates the desired action to be performed for a given target or resource.\n\nExample:\n\"GET\"\n"
       },
       "852731e0-9376-4446-bac0-718d8ca1fcc4": {
         "type": "string",
-        "name": "URL"
+        "name": "URL",
+        "description": "Receives the target of the HTTP request. Also called \"resource\" \n\nExample:\n\"https://jsonplaceholder.typicode.com/todos/1\"\n"
       },
-      "52134df1-fbb5-4df4-99a6-25020abc427e": {
-        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
-        "name": "method"
+      "f72ee334-6d61-43db-978f-f31d7d2ff917": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Receives request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nAny received headers are added to the defaults.\n\nDefault:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}\n\nExample: \n{\n\"Accept\": \"application/json\"\n}\n"
       },
       "4e6e787e-0875-4f15-bf9c-a870f41f69bd": {
-        "description": "",
+        "description": "Receives the http request body as data. Some requests send data to the server in order to update it. In case of GET or DELETE request the body should be empty (will be ignored).\n\nExample:\n{}",
         "type": "any",
         "name": "data"
       }
     },
     "outputs": {
       "a3c1977b-bff4-4384-902c-fd24f1356beb": {
-        "type": "any",
-        "name": "status"
+        "type": "number",
+        "name": "status",
+        "description": "Sends http response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200\n"
       },
       "52cb551e-169b-45a3-ad2d-aacff39506c1": {
-        "type": "any",
-        "name": "headers"
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Sends http response headers.\n\nExample:\n{\n\"content-type\": \"application/json; charset=utf-8\",\n\"cache-control\":\"max-age=43200\"\n}"
       },
       "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Sends http response message body as data.\n\nExample:\n{\n  \"userId\": 1, \n  \"id\": 1, \n  \"title\": \"delectus aut autem\",  \n  \"completed\": false\n}\""
       },
       "b73aa5bf-e098-4b22-b3bb-b921000af484": {
-        "type": "any",
-        "name": "error"
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n}"
       }
     }
   },
@@ -207,5 +214,15 @@
   },
   "attributes": {
     "locked": true
+  },
+  "description": "Dispatches HTTP request, expects response as JSON, parses it and outputs it as data. Outputs error if failed.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/tree/main/http_request",
+  "keywords": {
+    "get": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "delete": null,
+    "fetch": null,
+    "api": null
   }
 }

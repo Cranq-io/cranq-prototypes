@@ -9,19 +9,22 @@
   "interface": {
     "inputs": {
       "06633f68-69b6-4d84-a0b6-e3a3dc409689": {
-        "type": "any",
-        "name": "params"
+        "type": "{string: any} or [string, any][]",
+        "name": "params",
+        "description": "Received URL search parameters.\n\nExample:\n1. { \"term1\": \"foo\", \"term2\": \"bar\"}\n2. [[\"term1\", \"foo\"], [\"term2\", \"bar\"]]"
       }
     },
     "outputs": {
       "8dc2060f-02da-4c93-9351-b2b8930bd6a2": {
-        "type": "any",
-        "name": "serialized"
+        "type": "string",
+        "name": "serialized",
+        "description": "Serialized parameters\n\nExample:\n\"term1=foo&term2=bar\""
       }
     }
   },
   "name": "io/http/URL search params serializer",
   "attributes": {
     "locked": true
-  }
+  },
+  "description": "Serializes URL search parameters.\n\nExample:\n1. { \"term1\": \"foo\", \"term2\": \"bar\"}@0 received on `params`\n2. \"term1=foo&term2=bar\"@0 sent on `serialized`\n\n1.[[\"term1\", \"foo\"], [\"term2\", \"bar\"]]@0 received on `params`\n2. \"term1=foo&term2=bar\"@0 sent on `serialized`"
 }

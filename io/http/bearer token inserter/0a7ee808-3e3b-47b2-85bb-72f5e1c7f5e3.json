@@ -1,22 +1,22 @@
 {
-  "description": "Inserts bearer token into a HTTP request header.",
+  "description": "Inserts bearer token into a HTTP request header.\n\nExample:\n1. { \"content-type\": \"application/json\" }@0 received on  `headers`\n2. \"SomeDummyToken\"@0 received on `token`\n3. {\"content-type\": \"application/json\", \"Authorization\": \"Bearer SomeDummyToken\" }@0 sent on `headers`",
   "interface": {
     "inputs": {
       "84d949e6-dadd-4a81-b5e9-0625da43c8ae": {
-        "description": "",
-        "type": "any",
+        "description": "Recieves request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}",
+        "type": "{string: string}",
         "name": "headers"
       },
       "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {
-        "description": "",
-        "type": "any",
+        "description": "Receives the string token to be inserted into the Authorization header as Bearer token.\nThe token is usually used in base64 encoded form.\n\nExample: \n- \"SomeDummyToken\" as plain text \n- \"U29tZUR1bW15VG9rZW4=\" as base64 encoded text",
+        "type": "string",
         "name": "token"
       }
     },
     "outputs": {
       "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
-        "description": "",
-        "type": "any",
+        "description": "Sends the received request headers with the authorization header added to it.\n\nExample:\n{\n  \"content-type\": \"application/json\", \n  \"Authorization\": \"Bearer SomeDummyToken\" \n}",
+        "type": "typeof `headers`",
         "name": "headers"
       }
     }
@@ -107,5 +107,10 @@
   "name": "io/http/Bearer token inserter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "authorization": null,
+    "request": null,
+    "api": null
   }
 }

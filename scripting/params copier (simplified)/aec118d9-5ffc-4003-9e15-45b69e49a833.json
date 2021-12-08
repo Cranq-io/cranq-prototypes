@@ -1,5 +1,5 @@
 {
-  "name": "scripting/Params copier (simple)",
+  "name": "scripting/Params copier (simplified)",
   "interface": {
     "inputs": {
       "41087308-662d-4122-9083-e9bce9ec4ee9": {
@@ -8,8 +8,8 @@
       },
       "7487c3dd-503c-455d-be9f-8b289d30f96b": {
         "description": "",
-        "type": "{\n  \"destination\": any,\n  \"mapping\": {string: string}\n}",
-        "name": "dest & mapping"
+        "type": "{\n  \"params\": any,\n  \"mapping\": {string: string}\n}",
+        "name": "params & mapping"
       }
     },
     "outputs": {
@@ -39,7 +39,7 @@
           "name": "split params & mapping",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"destination\", \"mapping\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"params\", \"mapping\"]"
           }
         },
         "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
@@ -65,7 +65,7 @@
           }
         },
         "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
-          "destination": {
+          "params": {
             "86d09ebd-421e-43e2-977f-61e44a972e15": {
               "9bd88c07-0858-4ead-b615-069284f0db34": {}
             }

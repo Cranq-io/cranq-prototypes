@@ -1,24 +1,24 @@
 {
-  "name": "scripting/Param copier",
+  "name": "scripting/Params copier",
   "description": "Copies values from state over to a params structure.",
   "interface": {
     "inputs": {
       "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {
         "type": "any",
-        "name": "state"
+        "name": "source"
       },
       "9bd88c07-0858-4ead-b615-069284f0db34": {
         "type": "any",
-        "name": "params"
+        "name": "destination"
       },
       "71ef594f-2661-492f-b6e6-278e6ce94c3d": {
-        "type": "any",
+        "type": "{string: string}",
         "name": "mapping"
       }
     },
     "outputs": {
       "016df9f6-e555-4594-b84f-ca1e9401fae8": {
-        "type": "typeof `params`",
+        "type": "typeof `destination`",
         "name": "params"
       }
     }
@@ -88,7 +88,7 @@
             -4.3828125,
             92
           ],
-          "name": "parse desctination paths",
+          "name": "parse destination paths",
           "prototype": "67d203be-1f6e-4ecb-82d2-f7ef31a87118"
         }
       },

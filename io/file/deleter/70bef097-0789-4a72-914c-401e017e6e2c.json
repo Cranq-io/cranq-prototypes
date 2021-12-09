@@ -15,14 +15,19 @@
     },
     "outputs": {
       "cb592eed-1a47-441d-9f18-853b646ae9e7": {
-        "description": "Indicates, that the operation has failed",
-        "type": "any",
+        "description": "Sends synched parameters if operation has failed.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
+        "type": "{ \"path\": typeof `path`, \"recursive\": typeof `recursive` }",
         "name": "bounced"
       },
       "b5fbbb89-cc84-4fbc-8005-e076edf97ebc": {
-        "description": "Indicates, that the operation has succeeded",
-        "type": "any",
+        "description": "Sends synched parameters if the operation has succeeded.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
+        "type": "{ \"path\": typeof `path`, \"recursive\": typeof `recursive` }",
         "name": "deleted"
+      },
+      "d8b90ced-0042-4b3b-99fa-32071f0d29f0": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, scandir 'home/user1'\"\n}"
       }
     }
   },
@@ -86,11 +91,18 @@
             "1d74cc3b-3173-4b6d-a871-2ad2dc8f28a5": {
               "5034a7e2-5b16-4d04-a9cf-da944f7f35a4": {}
             }
+          },
+          "d8b90ced-0042-4b3b-99fa-32071f0d29f0": {
+            "1d74cc3b-3173-4b6d-a871-2ad2dc8f28a5": {
+              "07423026-fa36-4277-a6a5-d8229f457517": {}
+            }
           }
         }
       }
     }
   },
   "name": "io/file/Deleter",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

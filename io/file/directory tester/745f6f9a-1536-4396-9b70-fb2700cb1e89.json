@@ -1,5 +1,5 @@
 {
-  "description": "Determines whether the specified path points to a directory",
+  "description": "Determines whether the specified path points to a directory.\n\nExample:\n1. \"/home/user1/dir1\"@0 received on `path`\n2. true@0 sent on `is directory`",
   "interface": {
     "inputs": {
       "8bebea78-fb92-4cab-8af9-a090c3fc7f3a": {
@@ -50,5 +50,14 @@
     }
   },
   "name": "io/file/Directory tester",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "folder": null,
+    "isdir": null,
+    "is_dir": null,
+    "isDirectory": null,
+    "exists": null
+  }
 }

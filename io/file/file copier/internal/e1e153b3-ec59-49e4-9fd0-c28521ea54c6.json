@@ -1,10 +1,10 @@
 {
-  "description": "",
+  "description": "See io/file/File copier",
   "interface": {
     "inputs": {
       "f436fe2a-5d0f-4921-ae35-b8f71c39f106": {
         "description": "",
-        "type": "any",
+        "type": "{ \"source\": string, \"destination\": string }",
         "name": "source & destination"
       }
     },
@@ -18,6 +18,10 @@
         "description": "",
         "type": "any",
         "name": "bounced"
+      },
+      "73ac1afe-dbe7-4679-b7e7-777ec2327113": {
+        "type": "{ \"error\": string }",
+        "name": "error"
       }
     }
   },
@@ -27,13 +31,12 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "f436fe2a-5d0f-4921-ae35-b8f71c39f106": "const {copyFile} = require(\"fs\");\nconst {source, destination} = data;\ncopyFile(source, destination, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.copied(null, tag);\n  }\n});"
+        "f436fe2a-5d0f-4921-ae35-b8f71c39f106": "const {copyFile} = require(\"fs\");\nconst {source, destination} = data;\ncopyFile(source, destination, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n    outputs.error({error: String(error)}, tag);\n  } else {\n    outputs.copied(data, tag);\n  }\n});"
       }
     }
   },
   "name": "io/file/File copier/Internal",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

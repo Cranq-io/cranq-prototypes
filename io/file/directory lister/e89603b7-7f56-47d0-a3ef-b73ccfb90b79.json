@@ -1,5 +1,5 @@
 {
-  "description": "Non-recursively lists the files & directories under the specified path",
+  "description": "Non-recursively lists the files & directories under the specified path.\n\nExample (success): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. [ \"foo.txt\", \"bar.txt\" ]@0 sent on `children`\n\nExample (failure): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. \n- \"/home/user1/dir1\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, scandir 'home/user1'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {
@@ -18,6 +18,11 @@
         "description": "Indicates, that the operation has failed",
         "type": "any",
         "name": "bounced"
+      },
+      "07d91672-6601-4fc4-bd83-bdfe25786b18": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, scandir 'home/user1'\"\n}"
       }
     }
   },
@@ -54,11 +59,18 @@
             "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
               "be7d3e30-3f34-4e8f-8a7b-2224ada135a6": {}
             }
+          },
+          "07d91672-6601-4fc4-bd83-bdfe25786b18": {
+            "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
+              "df32507c-8d79-4bae-a869-c82a0af1b271": {}
+            }
           }
         }
       }
     }
   },
   "name": "io/file/Directory lister",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

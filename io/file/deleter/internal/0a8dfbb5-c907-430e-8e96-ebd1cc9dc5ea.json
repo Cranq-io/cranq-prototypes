@@ -1,23 +1,27 @@
 {
-  "description": "",
+  "description": "See io/file/Deleter",
   "interface": {
     "inputs": {
       "536d7745-cd49-470b-8cb4-593a1d425acb": {
         "description": "",
-        "type": "any",
+        "type": "{ \"path\": string, \"recursive\": boolean }",
         "name": "path & recursive"
       }
     },
     "outputs": {
       "5034a7e2-5b16-4d04-a9cf-da944f7f35a4": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "deleted"
       },
       "c67e320e-d293-4058-97bf-7258426ff76d": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "bounced"
+      },
+      "07423026-fa36-4277-a6a5-d8229f457517": {
+        "type": "{ \"error\": string }",
+        "name": "error"
       }
     }
   },
@@ -27,13 +31,12 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "536d7745-cd49-470b-8cb4-593a1d425acb": "const {rm} = require(\"fs\");\nconst {path, recursive} = data;\nrm(path, { recursive: recursive }, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.deleted(null, tag);\n  }\n});"
+        "536d7745-cd49-470b-8cb4-593a1d425acb": "const {rm} = require(\"fs\");\nconst {path, recursive} = data;\nrm(path, { recursive: recursive }, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n    outputs.error({ error: String(error) }, tag);\n  } else {\n    outputs.deleted(data, tag);\n  }\n});"
       }
     }
   },
   "name": "io/file/Deleter/Internal",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

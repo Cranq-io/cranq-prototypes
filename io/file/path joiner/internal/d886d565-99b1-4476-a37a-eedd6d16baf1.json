@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "42125248-2550-4ffb-8c0f-66742e77e306": "const path = require('path');\noutputs.joined(path.join(data.base, data.relative), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "42125248-2550-4ffb-8c0f-66742e77e306": {
+        "type": "{\"base\": string, \"relative\": string}",
+        "name": "base & relative"
+      }
+    },
+    "outputs": {
+      "0438b31d-ac03-44c0-8f68-ce8183296ca7": {
+        "type": "string",
+        "name": "joined"
+      }
+    }
+  },
+  "name": "io/file/Path joiner/internal",
+  "attributes": {
+    "locked": true
+  }
+}

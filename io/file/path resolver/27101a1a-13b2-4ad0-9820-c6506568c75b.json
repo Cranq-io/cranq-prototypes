@@ -1,5 +1,5 @@
 {
-  "description": "Resolves a file system path into a fully qualified one relative to the current working directory.",
+  "description": "Resolves a file system path into a fully qualified one relative to the current working directory.\n\nExample:\n1. \"dir1\"@0 received on `path`\n2. \"/home/user1/.cranq/runtime/dir1\"@0 sent on `resolved` \n(\"/home/user1/.cranq/runtime\" being the current working directory)",
   "interface": {
     "inputs": {
       "b1091169-85d7-43ec-a94a-f9b20070685f": {
@@ -50,5 +50,12 @@
     }
   },
   "name": "io/file/Path resolver",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "relative path": null,
+    "absolute path": null,
+    "to absolute": null
+  }
 }

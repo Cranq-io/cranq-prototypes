@@ -11,12 +11,12 @@
     "outputs": {
       "3955ebfc-b642-4ed3-9c07-7f6ddd1c7399": {
         "description": "",
-        "type": "any",
+        "type": "typeof `source & destination`",
         "name": "copied"
       },
       "d7d40418-bc85-42fb-89bc-816218d69857": {
         "description": "",
-        "type": "any",
+        "type": "typeof `source & destination`",
         "name": "bounced"
       },
       "73ac1afe-dbe7-4679-b7e7-777ec2327113": {
@@ -37,6 +37,7 @@
   },
   "name": "io/file/File copier/Internal",
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

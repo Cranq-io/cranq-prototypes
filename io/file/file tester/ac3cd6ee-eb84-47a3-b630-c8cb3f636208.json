@@ -1,5 +1,5 @@
 {
-  "description": "Determines whether the the specified path points to a file",
+  "description": "Determines whether the the specified path points to a file.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. true sent on `is file`",
   "interface": {
     "inputs": {
       "6edaa1a0-b372-4f07-8a36-5144bb2e22a3": {
@@ -10,7 +10,7 @@
     },
     "outputs": {
       "7a6f90e6-76eb-46b1-bc2f-3d12b1499f1c": {
-        "description": "Boolean value that indicates, whether the specified path is a file",
+        "description": "Boolean value that indicates, whether the specified path is a file.\n\nExample:\ntrue",
         "type": "boolean",
         "name": "is file"
       }
@@ -50,5 +50,12 @@
     }
   },
   "name": "io/file/File tester",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "is file": null,
+    "isfile": null,
+    "is_file": null
+  }
 }

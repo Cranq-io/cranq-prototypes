@@ -1,5 +1,5 @@
 {
-  "description": "Deletes a file or directory specified by the path input",
+  "description": "Deletes a file or directory specified by the path input.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2 false@0 received on `recursive`\n3. { path: \"/home/user1/dir1/foo.txt\", recursive: false } sent on `deleted`\n\nExample (failure): \n1. \"/home/user1/dir1\"@0 received on `path`\n2 true@0 received on `recursive`\n3.\n- { path: \"/home/user1/dir1\", recursive: true } sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, stat '/home/user1/dir1'\"\n} sent on `error`",
   "interface": {
     "inputs": {
       "88e2ece8-3028-4c84-a008-587b54b6a1f9": {
@@ -15,19 +15,19 @@
     },
     "outputs": {
       "cb592eed-1a47-441d-9f18-853b646ae9e7": {
-        "description": "Sends synched parameters if operation has failed.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
+        "description": "Sends synced parameters if operation has failed.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
         "type": "{ \"path\": typeof `path`, \"recursive\": typeof `recursive` }",
         "name": "bounced"
       },
       "b5fbbb89-cc84-4fbc-8005-e076edf97ebc": {
-        "description": "Sends synched parameters if the operation has succeeded.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
+        "description": "Sends synced parameters if the operation has succeeded.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
         "type": "{ \"path\": typeof `path`, \"recursive\": typeof `recursive` }",
         "name": "deleted"
       },
       "d8b90ced-0042-4b3b-99fa-32071f0d29f0": {
         "type": "{ \"error\": string }",
         "name": "error",
-        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, scandir 'home/user1'\"\n}"
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, stat 'home/user1'\"\n}"
       }
     }
   },

@@ -41,10 +41,10 @@
           ],
           "description": "",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dir\", \"base\"]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "sync a & b"
+          "name": "sync dir & base"
         }
       },
       "connections": {
@@ -62,12 +62,12 @@
         "inputs": {
           "ab886f82-7887-4f25-b2f4-d5a48c111845": {
             "956b4893-3438-4ddf-a915-f8665ef63906": {
-              "0": {}
+              "dir": {}
             }
           },
           "3a5d55e5-53ef-4c70-a361-35608a7474d2": {
             "956b4893-3438-4ddf-a915-f8665ef63906": {
-              "1": {}
+              "base": {}
             }
           }
         },
@@ -82,5 +82,7 @@
     }
   },
   "name": "io/file/Path joiner",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

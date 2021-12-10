@@ -1,5 +1,5 @@
 {
-  "description": "Determines whether a file or directory exists under the specified path",
+  "description": "Determines whether a file or directory exists under the specified path.\n\nExample: \n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. true@0 sent on `exists`",
   "interface": {
     "inputs": {
       "01e0aa47-a46f-4a6e-aab0-81ba017b1fb7": {
@@ -50,5 +50,10 @@
     }
   },
   "name": "io/file/Path tester",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "exists": null
+  }
 }

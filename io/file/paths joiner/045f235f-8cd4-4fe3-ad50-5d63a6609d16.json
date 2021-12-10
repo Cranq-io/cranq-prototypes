@@ -1,5 +1,5 @@
 {
-  "description": "Joins an array of path parts to a common base",
+  "description": "Joins an array of path parts to a common base.\n\nExample: \n1. \"/home/user1\"@0 received on `base`\n2. [\n  \"dir1/foo.txt\",\n  \"dir2/bar.txt\"\n]@0 received on `children`\n3. [\n  \"/home/user1/dir1/foo.txt\",\n  \"/home/user1/dir2/bar.txt\"\n]@0 sent on `paths`",
   "interface": {
     "inputs": {
       "8a8fd503-291b-40dc-8ed7-c7b1fa350386": {
@@ -132,5 +132,12 @@
     }
   },
   "name": "io/file/Paths joiner",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "concat": null,
+    "append": null,
+    "join": null
+  }
 }

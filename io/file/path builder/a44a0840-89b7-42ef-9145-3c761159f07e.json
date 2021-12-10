@@ -4,7 +4,7 @@
     "inputs": {
       "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {
         "description": "Receives the segments to build the path from.\n\nExample:\n[\n \"/home\",\n\"user1/dir1\",\n\"foo.txt\"\n]\n\n(To keep the application portable use \"/\" as path separator.)",
-        "type": "string[]",
+        "type": "{ \n  \"dir\": string,\n  \"root\": string,\n  \"base\": string,\n  \"name\": string,\n  \"ext\": string\n}",
         "name": "segments"
       }
     },

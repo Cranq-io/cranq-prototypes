@@ -1,17 +1,17 @@
 {
-  "description": "",
+  "description": "See `io/file/Path tester`",
   "interface": {
     "inputs": {
       "639c89f3-344a-46c7-a7f9-1988eec6b92d": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "43edc6c1-c124-44b1-ba2c-3bb0555ca270": {
         "description": "",
-        "type": "any",
+        "type": "boolean",
         "name": "exists"
       }
     }

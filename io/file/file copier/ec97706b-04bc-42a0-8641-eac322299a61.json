@@ -1,5 +1,5 @@
 {
-  "description": "Copies a file specified by the path in `source` to the path in `destination`.\n\nExample (success): \n1. \"home/user1/foo.txt\"@0 received on `source`\n2. \"home/user2/bar.txt\"@0 received on `destination`\n3. { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"home/user2/bar.txt\"\n}@ sent on `copied`\n\nExample (failure): \n1. \"home/user1/foo.txt\"@0 received on `source`\n2. \"home/user2/bar.txt\"@0 received on `destination`\n3. \n- { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"home/user2/bar.txt\"\n}@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, copyfile 'home/user1/foo.txt' -> 'home/user2/bar.txt'\"\n}@0 sent on `error`",
+  "description": "Copies a file specified by the path in `source` to the path in `destination`.\n\nExample (success): \n1. \"/home/user1/dir1/foo.txt\"@0 received on `source`\n2. \"/home/user2/dir2/bar.txt\"@0 received on `destination`\n3. { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"/home/user1/dir2/bar.txt\"\n}@ sent on `copied`\n\nExample (failure): \n1. \"/home/user1/dir1/foo.txt\"@0 received on `source`\n2. \"/home/user1/dir2/bar.txt\"@0 received on `destination`\n3. \n- { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"/home/user1/dir2/bar.txt\"\n}@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, copyfile '/home/user1/dir1/foo.txt' -> '/home/user1/dir2/bar.txt'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "bdfb30ef-0da7-46e3-89a9-b0e1ada838b6": {
@@ -15,19 +15,19 @@
     },
     "outputs": {
       "2bfd6834-e8b7-4d12-95a4-588e2c9dbe31": {
-        "description": "Sends synched parameters if operation has failed.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}\n",
-        "type": "any",
+        "description": "Sends synced parameters if operation has failed.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}\n",
+        "type": "{ \"source\": string, \"destination\": string }",
         "name": "bounced"
       },
       "b51bebcf-125e-46c7-a537-3d82c9be4fae": {
-        "description": "Sends synched parameters if operation has succeeded.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}",
-        "type": "any",
+        "description": "Sends synced parameters if operation has succeeded.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}",
+        "type": "{ \"source\": string, \"destination\": string }",
         "name": "copied"
       },
       "2e29c5f3-28f9-4351-87e5-7c9bf80721fd": {
         "type": "{ \"error\": string }",
         "name": "error",
-        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, copyfile 'home/user1/foo.txt' -> 'home/user2/bar.txt'\"\n}"
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, copyfile '/home/user1/dir1/foo.txt' -> '/home/user2/dir2/bar.txt'\"\n}"
       }
     }
   },
@@ -104,5 +104,9 @@
   "name": "io/file/File copier",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "cp": null,
+    "copy": null
   }
 }

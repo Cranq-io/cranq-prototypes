@@ -15,8 +15,8 @@
         "name": "children"
       },
       "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
-        "description": "Indicates, that the operation has failed",
-        "type": "any",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/newdir\"",
+        "type": "typeof `path`",
         "name": "bounced"
       },
       "07d91672-6601-4fc4-bd83-bdfe25786b18": {

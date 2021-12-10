@@ -1,5 +1,5 @@
 {
-  "description": "Reads a text file from the specified path and outputs its content.",
+  "description": "Reads a text file from the specified path and outputs its content.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \"Hello World\"@0 sent on `text`\n\nExample (failure):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \n- \"/home/user1/dir1/foo.txt\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "dbd6e98a-e575-469c-989a-a5e6c579a86d": {
@@ -11,11 +11,18 @@
     "outputs": {
       "29f0cedc-2623-48fc-9bf8-75cd34436991": {
         "type": "string",
-        "name": "text"
+        "name": "text",
+        "description": "Sends the text content read from the file specified by `path`.\n\nExample:\n\"Hello World\""
       },
       "1c5e0968-5d00-4931-831b-8b8f716c5117": {
         "type": "string",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/dir1/foo.txt\""
+      },
+      "839ba056-d6b2-4102-bd70-4f45677858ee": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}"
       }
     }
   },
@@ -25,10 +32,12 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "dbd6e98a-e575-469c-989a-a5e6c579a86d": "const {readFile} = require(\"fs\");\nreadFile(data, (error, contents)=> {\n  if (error)\n    outputs.bounced(data, tag);\n  else\n    outputs.text(String(contents), tag);\n});"
+        "dbd6e98a-e575-469c-989a-a5e6c579a86d": "const {readFile} = require(\"fs\");\nreadFile(data, (error, contents)=> {\n  if (error) {\n    outputs.bounced(data, tag);\n    outputs.error({error: String(error)}, tag);\n  }\n  else {\n    outputs.text(String(contents), tag);\n  }\n});"
       }
     }
   },
   "name": "io/file/Text reader",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

@@ -15,6 +15,11 @@
       "426110b5-257a-45c2-976c-f42195dafde8": {
         "type": "string",
         "name": "bounced"
+      },
+      "a42a0dbc-5235-416c-9166-9999d79c06f6": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}"
       }
     }
   },
@@ -24,7 +29,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "612de880-6653-4097-b917-aabc4f6aceb2": "try {\n  const parsed = JSON.parse(data);\n  if (!(parsed instanceof Array) && parsed instanceof Object) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
+        "612de880-6653-4097-b917-aabc4f6aceb2": "try {\n  const parsed = JSON.parse(data);\n  if (!(parsed instanceof Array) && parsed instanceof Object) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n  outputs.error({error: String(error)}, tag);\n}"
       }
     }
   },

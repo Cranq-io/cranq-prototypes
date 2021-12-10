@@ -16,11 +16,18 @@
     "outputs": {
       "07af60a7-4070-4d30-a243-8b05b6476ee1": {
         "type": "string",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "Sends synced parameters if operation has failed.\n\nExample:\n{ \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}"
       },
       "e7b571f3-b288-4cb3-99cb-0c87a42ff9eb": {
         "type": "null",
-        "name": "written"
+        "name": "written",
+        "description": "Sends synced parameters if operation has succeeded..\n\nExample:\n{ \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}"
+      },
+      "9f719c89-b9c3-4f02-be23-dcedd3a4befe": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}"
       }
     }
   },
@@ -29,8 +36,8 @@
       "nodes": {
         "a6d9b787-92fc-4cd7-a0ab-81384a67cb33": {
           "coordinates": [
-            0,
-            0
+            -28,
+            12
           ],
           "description": "",
           "params": {
@@ -41,8 +48,8 @@
         },
         "c64a34f6-77ec-443c-8ffb-bfbad763e95f": {
           "coordinates": [
-            0,
-            0
+            56,
+            -39
           ],
           "description": "",
           "params": {},
@@ -84,11 +91,18 @@
             "c64a34f6-77ec-443c-8ffb-bfbad763e95f": {
               "fe1dc54d-6fec-43bb-a112-f977461960ce": {}
             }
+          },
+          "9f719c89-b9c3-4f02-be23-dcedd3a4befe": {
+            "c64a34f6-77ec-443c-8ffb-bfbad763e95f": {
+              "56ad3432-ceeb-4e29-85f4-7c244c50a1d9": {}
+            }
           }
         }
       }
     }
   },
   "name": "io/file/Text writer",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

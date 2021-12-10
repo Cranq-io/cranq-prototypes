@@ -10,12 +10,12 @@
     },
     "outputs": {
       "63483514-7af9-4b11-9f73-475da4c3dd7c": {
-        "description": "Sends the path if the operation has succeeded\n\n",
+        "description": "Sends the path if the operation has succeeded.\n\nExample:\n\"/home/user1/newdir\"\n\n",
         "type": "typeof `path`",
         "name": "created"
       },
       "9d680e45-3011-4727-b8e3-41c0dc450f8f": {
-        "description": "Sends the path if the operation has failed.",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/newdir\"",
         "type": "typeof `path`",
         "name": "bounced"
       },

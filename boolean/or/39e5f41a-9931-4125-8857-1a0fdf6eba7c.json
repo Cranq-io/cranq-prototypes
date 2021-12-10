@@ -1,20 +1,23 @@
 {
-  "description": "Outputs 'a' OR 'b'.",
+  "description": "Performs a boolean OR operation on the received values via inputs `a` and `b`.\n\nExample:\n\n1. false@0 is received via `a`\n2. true@0 is received via `b`\n3. true@0 is sent via `or`",
   "interface": {
     "inputs": {
       "8ec8a078-5e9b-46bb-81ee-73036e73be39": {
         "type": "boolean",
-        "name": "a"
+        "name": "a",
+        "description": "Receives the first operand"
       },
       "b14a43ef-20d9-406b-b8df-2ae35ce3cd76": {
         "type": "boolean",
-        "name": "b"
+        "name": "b",
+        "description": "Receives the second operand"
       }
     },
     "outputs": {
       "9f059fac-fb54-456b-a7e3-5f2e22261b7c": {
         "type": "boolean",
-        "name": "or"
+        "name": "or",
+        "description": "Sends the result of the OR operation."
       }
     }
   },
@@ -81,5 +84,10 @@
   "name": "boolean/Or",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "or": null,
+    "logical": null
   }
 }

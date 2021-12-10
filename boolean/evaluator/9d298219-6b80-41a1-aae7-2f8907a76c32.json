@@ -1,16 +1,18 @@
 {
-  "description": "Determines whether the input is truthy or falsy.",
+  "description": "Determines whether the input is truthy or falsy.\n\nExample A (for truthy):\n\n1. 23@0 is received via `value`\n2. true@0 is sent via `boolean`\n\nExample B (for falsy):\n1. null@0 is received via `value`\n2. false@0 is sent via `boolean`",
   "interface": {
     "inputs": {
       "ed9fa3f5-96fa-4e06-94b3-fde00cca3166": {
         "type": "any",
-        "name": "string"
+        "name": "value",
+        "description": "Data to be evaulated as boolean"
       }
     },
     "outputs": {
       "7f661c8f-8ac8-407f-b012-c43f7b6aef89": {
         "type": "boolean",
-        "name": "boolean"
+        "name": "boolean",
+        "description": "The value evaulated as boolean."
       }
     }
   },
@@ -24,8 +26,12 @@
       }
     }
   },
-  "name": "boolean/Parser",
+  "name": "boolean/Evaluator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "evaluate": null
   }
 }

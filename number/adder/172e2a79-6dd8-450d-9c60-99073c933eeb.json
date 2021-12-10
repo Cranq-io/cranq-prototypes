@@ -1,20 +1,23 @@
 {
-  "description": "Adds 'b' to 'a'.",
+  "description": "Performs an addition operation on the input values.\n\nExample:\n\n1. 19@0 is received via `a`\n2. 2@0 is received via `b`\n3. 21@0 is sent via `sum`",
   "interface": {
     "inputs": {
       "f8db2394-8b73-41b1-8cee-570acf0ca976": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The first operand"
       },
       "824b46d4-6dad-4859-939f-376702e84adb": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "Second operand"
       }
     },
     "outputs": {
       "3157073c-40d2-44fd-a94b-ea3adcce3440": {
         "type": "number",
-        "name": "sum"
+        "name": "sum",
+        "description": "The sum of the two operands."
       }
     }
   },
@@ -81,5 +84,10 @@
   "name": "number/Adder",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "addition": null,
+    "sum": null
   }
 }

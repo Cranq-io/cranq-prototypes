@@ -1,5 +1,5 @@
 {
-  "description": "Tests whether the string contains the substring",
+  "description": "Tests whether the value received via `string` contains the value received via `substring`.\n\nExample:\n\n1. \"Quick brown fox\"@0 is received via `string`\n2. \"brown\"@0 is received via `substring`\n3. true@0 is sent via `contains`",
   "interface": {
     "inputs": {
       "409537ec-71f1-4cb6-9182-593db78f95f0": {
@@ -84,5 +84,12 @@
   "name": "string/Contains tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "contains": null,
+    "includes": null,
+    "search": null,
+    "substring": null
   }
 }

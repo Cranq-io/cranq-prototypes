@@ -1,20 +1,23 @@
 {
-  "description": "Multiplies two numbers together.",
+  "description": "Multiplies two numbers together.\n\nExample:\n\n1. 2@0 is received via `a`\n2. 2@0 is received via `b`\n3. 4@0 is sent via `product`",
   "interface": {
     "inputs": {
       "b157e0fc-052f-441b-be01-206f10ca8725": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The first operand of the multiplication"
       },
       "4c8ebaff-e1e3-4485-aabf-c225128ff951": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "The second operand of the multiplication"
       }
     },
     "outputs": {
       "0cdb5d84-8bbf-4078-8193-d0d13bf76f29": {
         "type": "number",
-        "name": "product"
+        "name": "product",
+        "description": "Sends the product of the two inputs."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "number/Multiplier",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "multiply": null
   }
 }

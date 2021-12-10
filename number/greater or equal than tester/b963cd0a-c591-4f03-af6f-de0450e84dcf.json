@@ -1,5 +1,5 @@
 {
-  "description": "Tests whether the value is greater or equal than the reference",
+  "description": "Tests whether the value is greater or equal than the reference.\n\nExample:\n\n1. 23@0 is received via `value`\n2. 19@0 is received via `reference`\n3. true@0 is sent via `greater or equal`",
   "interface": {
     "inputs": {
       "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {
@@ -107,5 +107,11 @@
   "name": "number/Greater or equal than tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "greater than or equal": null,
+    "gte": null,
+    "compare": null
   }
 }

@@ -1,20 +1,23 @@
 {
-  "description": "Substitutes parameters into a template.",
+  "description": "Substitutes parameters into a template.\n\nExample:\n\n1. \"Hello {subject}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"Hello world!\"@0 is sent via `filled`",
   "interface": {
     "inputs": {
       "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {
         "type": "string",
-        "name": "template"
+        "name": "template",
+        "description": "The template to be filled"
       },
       "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {
         "type": "{string:any}",
-        "name": "params"
+        "name": "params",
+        "description": "The actual parameters used for filling the template"
       }
     },
     "outputs": {
       "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
         "type": "string",
-        "name": "filled"
+        "name": "filled",
+        "description": "Sends the template filled with the given values from params."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "string/Template filler",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "template": null
   }
 }

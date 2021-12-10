@@ -54,19 +54,27 @@
   "interface": {
     "inputs": {
       "0ac84fa4-2f09-46c4-9054-63a985801b0c": {
-        "type": "any",
-        "name": "number"
+        "type": "number",
+        "name": "number",
+        "description": "Receives numbers to be subtracted"
       }
     },
     "outputs": {
       "42638cb8-ff5a-41c9-bb8f-cd6615653161": {
-        "type": "any",
-        "name": "diff"
+        "type": "number",
+        "name": "diff",
+        "description": "The difference of the last two numbers received."
       }
     }
   },
   "name": "number/Differ",
   "attributes": {
     "locked": true
+  },
+  "description": "Sends the difference of the last two numbers received. The (n-1)th number will be subtracted from the nth number.\n\nExample:\n1. 10@0 is received via `number`\n2. 20@1 is received via `number`\n3. 10@1 is sent via `diff`",
+  "keywords": {
+    "number": null,
+    "subtract": null,
+    "difference": null
   }
 }

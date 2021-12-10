@@ -1,22 +1,22 @@
 {
-  "description": "",
+  "description": "Sends either on the `true` or the `false` output port, depending on the input value received on the `boolean` port.\n\nExample:\n\n1. true@0 is received on `boolean`\n2. null@0 is sent via `true`",
   "interface": {
     "inputs": {
       "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {
-        "description": "",
-        "type": "any",
+        "description": "Input condition value",
+        "type": "boolean",
         "name": "boolean"
       }
     },
     "outputs": {
       "d78d9223-eedf-44eb-acb0-244212fc86c5": {
-        "description": "",
-        "type": "any",
+        "description": "Sends null if the input value is true.",
+        "type": "null",
         "name": "true"
       },
       "7cfb1db4-bf11-4d32-b364-4f9281088541": {
-        "description": "",
-        "type": "any",
+        "description": "Sends null if the input value is false.",
+        "type": "null",
         "name": "false"
       }
     }
@@ -34,5 +34,10 @@
   "name": "boolean/Condition",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "boolean": null,
+    "condition": null,
+    "logical": null
   }
 }

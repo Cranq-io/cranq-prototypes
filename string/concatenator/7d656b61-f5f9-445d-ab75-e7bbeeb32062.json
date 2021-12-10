@@ -1,20 +1,23 @@
 {
-  "description": "",
+  "description": "Concatenates two strings together.\n\nExample:\n\n1. \"Hello\"@0 is received via `a`\n2. \" world!\"@0 is received via `b`\n3. \"Hello world!\"@0 is sent via `concatenated`",
   "interface": {
     "inputs": {
       "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {
         "type": "string",
-        "name": "a"
+        "name": "a",
+        "description": "The first string"
       },
       "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {
         "type": "string",
-        "name": "b"
+        "name": "b",
+        "description": "The second string"
       }
     },
     "outputs": {
       "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
         "type": "string",
-        "name": "concatenated"
+        "name": "concatenated",
+        "description": "Sends the concatenation of the two inputs."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "string/Concatenator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "concat": null
   }
 }

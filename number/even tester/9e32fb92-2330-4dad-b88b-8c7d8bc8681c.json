@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether a number is even.",
+  "description": "Tells whether a number is even.\n\nExample:\n\n1. 26@0 is received via `number`\n2. true@0 is sent via `even`",
   "interface": {
     "inputs": {
       "06d2cc9c-cda6-4ea9-9c7f-c594b767bf47": {
         "type": "number",
-        "name": "number"
+        "name": "number",
+        "description": "Number to be tested for evenness."
       }
     },
     "outputs": {
       "066af434-8df5-4f27-9f61-879431ebc09e": {
         "type": "boolean",
-        "name": "even"
+        "name": "even",
+        "description": "Sends true if the input value is even, false otherwise."
       }
     }
   },
@@ -27,5 +29,10 @@
   "name": "number/Even tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "even": null,
+    "integer": null
   }
 }

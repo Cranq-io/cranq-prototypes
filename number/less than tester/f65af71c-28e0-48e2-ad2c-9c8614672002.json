@@ -1,20 +1,23 @@
 {
-  "description": "Checks if 'a' is less than 'b'.",
+  "description": "Checks if the value received via `value` is less than the value received via `reference`. If the values are equal, it outputs false.\n\nExample:\n\n1. 19@0 is received via `value`\n2. 23@0 is received via `reference`\n3. true@0 is sent via `less`",
   "interface": {
     "inputs": {
       "357edd62-41de-4977-83b8-de8edde231d4": {
         "type": "number",
-        "name": "a"
+        "name": "value",
+        "description": "The first operand of the comparison"
       },
       "70e338f7-381a-499f-bf36-e5e4a9a30ab9": {
         "type": "number",
-        "name": "b"
+        "name": "reference",
+        "description": "The second operand of the comparison"
       }
     },
     "outputs": {
       "2afc6921-7beb-4e8a-aec1-be4a46a2caa0": {
         "type": "boolean",
-        "name": "less"
+        "name": "less",
+        "description": "Sends true if 'a' is less than 'b'."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "number/Less than tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "less": null
   }
 }

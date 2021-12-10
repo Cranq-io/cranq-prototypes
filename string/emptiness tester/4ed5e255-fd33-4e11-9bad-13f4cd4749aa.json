@@ -1,16 +1,18 @@
 {
-  "description": "Tells whether the input string is empty.",
+  "description": "Tells whether the value received on `string` is empty.\n\nExample:\n\n1. \"\"@0 is received via `string`\n2. true@0 is sent via `empty`",
   "interface": {
     "inputs": {
       "2ff42537-6311-4256-85c9-8d2fca6c7103": {
         "type": "string",
-        "name": "string"
+        "name": "string",
+        "description": "The string to be tested for emptiness."
       }
     },
     "outputs": {
       "513683c2-be43-4b6b-9355-4450004d1f53": {
         "type": "boolean",
-        "name": "empty"
+        "name": "empty",
+        "description": "Sends true if the string is empty, false otherwise."
       }
     }
   },
@@ -19,8 +21,8 @@
       "nodes": {
         "64fcf165-bc1c-4700-b7a1-aef73ac55c6f": {
           "coordinates": [
-            0,
-            0
+            -1,
+            93
           ],
           "description": "",
           "params": {},
@@ -29,8 +31,8 @@
         },
         "ce251fab-1d78-4fae-abeb-35ea7a23a7e3": {
           "coordinates": [
-            0,
-            0
+            -97,
+            -86
           ],
           "description": "",
           "params": {
@@ -41,8 +43,8 @@
         },
         "dc4cc34f-adf5-4594-a2a6-15d30b6e1fc2": {
           "coordinates": [
-            0,
-            0
+            92,
+            -148
           ],
           "description": "",
           "params": {},
@@ -96,5 +98,9 @@
   "name": "string/Emptiness tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "empty": null
   }
 }

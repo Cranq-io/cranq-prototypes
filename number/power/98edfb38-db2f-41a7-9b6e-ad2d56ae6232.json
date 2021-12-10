@@ -1,20 +1,23 @@
 {
-  "description": "",
+  "description": "Performs a power arithmetical operation on the inputs. Sends base ^ exponent.\n\nExample:\n\n1. 2@0 is received via `base`\n2. 3@0 is received via `exponent`\n3. 8@0 is sent via `power`",
   "interface": {
     "inputs": {
       "77db574f-1a4f-45b9-89bc-3be9c8ac781e": {
         "type": "number",
-        "name": "base"
+        "name": "base",
+        "description": "The base operand of the power operation."
       },
       "27a4ed7c-720e-4fc5-bd47-9d37aaaf33fd": {
         "type": "number",
-        "name": "exponent"
+        "name": "exponent",
+        "description": "The exponent operand of the power operation."
       }
     },
     "outputs": {
       "33ca7ce0-bcf2-4dfb-a2a9-fcf890bca5fe": {
         "type": "number",
-        "name": "power"
+        "name": "power",
+        "description": "Sends the power of the provided inputs."
       }
     }
   },
@@ -81,5 +84,9 @@
   "name": "number/Power",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "power": null
   }
 }

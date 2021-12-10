@@ -1,20 +1,23 @@
 {
-  "description": "Checks if string 'a' is equal to string 'b'.",
+  "description": "Checks if the string received on `a` is equal to string received via `b`.\n\nExample:\n\n1. \"foo\"@0 is received via `a`\n2. \"bar\"@0 is received via `b`\n3. false@0 is sent via `equal`",
   "interface": {
     "inputs": {
       "a0934373-43a4-4cd5-83eb-860bc20d790a": {
         "type": "string",
-        "name": "a"
+        "name": "a",
+        "description": "The first string"
       },
       "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {
         "type": "string",
-        "name": "b"
+        "name": "b",
+        "description": "The second string"
       }
     },
     "outputs": {
       "61410efe-0096-4bd0-8169-30b254646910": {
         "type": "boolean",
-        "name": "equal"
+        "name": "equal",
+        "description": "Sends true if the two strings are the same, false otherwise."
       }
     }
   },
@@ -81,5 +84,10 @@
   "name": "string/Equality tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "string": null,
+    "equal": null,
+    "sameness": null
   }
 }

@@ -1,5 +1,5 @@
 {
-  "description": "Tests whether the value is less or equal than the reference",
+  "description": "Tests whether the value is less or equal than the reference.\n\nExample:\n\n1. 19@0 is received via `value`\n2. 21@0 is received via `reference`\n3. true@0 is sent via `less or equal`",
   "interface": {
     "inputs": {
       "a21ae903-6f59-42e8-9c87-f3decc53e7b0": {
@@ -107,5 +107,11 @@
   "name": "number/Less or equal than tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "tester": null,
+    "less than or eqal": null,
+    "lte": null
   }
 }

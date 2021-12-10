@@ -1,22 +1,22 @@
 {
-  "description": "Generates a random number, that is greater than or equal to a specified minimum, and less than or equal to the specified maximum value",
+  "description": "Generates a random number, that is greater than or equal to a specified minimum, and less than or equal to the specified maximum value.\n\nExample:\n\n1. 3@0 is received via `min`\n2. 19@0 is received via `max`\n3. 14@0 is sent via `random`",
   "interface": {
     "inputs": {
       "d5711a6a-49d3-4b04-9cb6-4be3f52390a9": {
         "description": "The minimum value",
-        "type": "any",
+        "type": "number",
         "name": "min"
       },
       "dd5bfcf0-d8d3-4ee9-9ad4-a6cac9341f62": {
         "description": "The maximum value",
-        "type": "any",
+        "type": "number",
         "name": "max"
       }
     },
     "outputs": {
       "7bea1bfa-24c6-40ce-b427-ed2b3a1bb3fe": {
         "description": "Random number",
-        "type": "any",
+        "type": "number",
         "name": "random"
       }
     }
@@ -84,5 +84,9 @@
   "name": "number/Random generator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "random": null
   }
 }

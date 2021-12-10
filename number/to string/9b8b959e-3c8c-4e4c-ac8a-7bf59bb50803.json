@@ -1,0 +1,36 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "607be551-0389-42f8-99bb-088bfd8b1579": "outputs.string(`${data}`, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "607be551-0389-42f8-99bb-088bfd8b1579": {
+        "type": "number",
+        "name": "number",
+        "description": "The number to be converted."
+      }
+    },
+    "outputs": {
+      "60eb7bd0-fd76-48a5-a787-78a6f87d131b": {
+        "type": "string",
+        "name": "string",
+        "description": "Sends the serialized number."
+      }
+    }
+  },
+  "name": "number/to string",
+  "attributes": {
+    "locked": true
+  },
+  "description": "Serializes the given number to a string.\n\nExample:\n\n1. 23.45@0 is received via `number`\n2. \"23.45\"@0 is sent via `string`",
+  "keywords": {
+    "number": null,
+    "string": null,
+    "serialize": null,
+    "stringify": null
+  }
+}

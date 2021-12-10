@@ -1,20 +1,23 @@
 {
-  "description": "Picks the maximum out of two numbers.",
+  "description": "Picks the maximum out of two numbers.\n\nExample:\n\n1. 3@0 is received via `a`\n2. 12@0 is received via `b`\n3. 12@0 is sent via `max`",
   "interface": {
     "inputs": {
       "9d532cb8-fe33-4eed-a5aa-b5bb2fb158a3": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The first value to pick the max from"
       },
       "78f54a04-22d1-48ee-8e58-828c39b28f4a": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "The second value to pick the max from"
       }
     },
     "outputs": {
       "9e9b1ca6-11e9-4032-91f7-938fe02e96a3": {
         "type": "number",
-        "name": "max"
+        "name": "max",
+        "description": "Sends the maximum of the provided two values."
       }
     }
   },
@@ -23,8 +26,8 @@
       "nodes": {
         "5c6cf62e-2625-45e6-9552-b34d294f150d": {
           "coordinates": [
-            0,
-            0
+            -26,
+            -20
           ],
           "description": "",
           "params": {
@@ -35,8 +38,8 @@
         },
         "8850add4-fa32-4550-be66-76b46bd86265": {
           "coordinates": [
-            0,
-            0
+            58,
+            54
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,10 @@
   "name": "number/Max picker",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "max": null,
+    "maximum": null
   }
 }

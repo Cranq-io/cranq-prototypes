@@ -1,20 +1,23 @@
 {
-  "description": "Checks if number 'a' is equal to number 'b'.",
+  "description": "Checks the received numbers for equality.\n\nExample:\n\n1. 23@0 is received via `a`\n2. 23@0 is received via `b`\n3. true@0 is sent via `equal`",
   "interface": {
     "inputs": {
       "50e32f24-30af-4721-9e0a-89e85a9ee240": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The first number"
       },
       "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "The second number"
       }
     },
     "outputs": {
       "66ea4495-b5be-4650-9448-c802141b82cd": {
         "type": "boolean",
-        "name": "equal"
+        "name": "equal",
+        "description": "Sends true if the received numbers are equal, false otherwise."
       }
     }
   },
@@ -81,5 +84,10 @@
   "name": "number/Equality tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "equality": null,
+    "compare": null
   }
 }

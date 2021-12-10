@@ -1,20 +1,23 @@
 {
-  "description": "Divides 'a' by 'b'. Bounces synced operands on division by zero.",
+  "description": "Divides the received inputs. Bounces synced operands on division by zero.\n\nExample (valid division):\n\n1. 1@0 is received via `a`\n2. 2@0 is received via `b`\n3. 0.5@0 is sent via `fraction`\n\nExample (divide by zero):\n\n1. 13@0 is received via `a`\n2. 0@0 is received via `b`\n3. {\"a\":13, \"b\":0}@0 is sent via `bounced`",
   "interface": {
     "inputs": {
       "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {
         "type": "number",
-        "name": "a"
+        "name": "a",
+        "description": "The counter part of the fraction."
       },
       "10bc95fb-d41f-4590-9390-6459c6644108": {
         "type": "number",
-        "name": "b"
+        "name": "b",
+        "description": "Denominator part of the fraction."
       }
     },
     "outputs": {
       "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {
         "type": "number",
-        "name": "fraction"
+        "name": "fraction",
+        "description": "The fraction of the received numbers."
       },
       "009847de-abe7-45d4-968a-779b22f4e98e": {
         "description": "Sends synced inputs on error.",
@@ -91,5 +94,10 @@
   "name": "number/Divider",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "number": null,
+    "division": null,
+    "operator": null
   }
 }

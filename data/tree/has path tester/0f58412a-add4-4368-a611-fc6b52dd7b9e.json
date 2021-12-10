@@ -1,21 +1,21 @@
 {
-  "description": "Tests whether a path is found in the specified tree data structure.",
+  "description": "Tests whether a path is found in the specified tree data structure.\n\nExample:\n1. [\"foo\", \"bar\", \"baz\"]@0 is received via `path`\n2. {\"foo\": { \"bar\": { \"baz\": 0 }}}@0 is received via `tree`\n3. true@0 is sent via `has`",
   "interface": {
     "inputs": {
       "39726df2-a22a-4790-b3e6-aac1c756ff90": {
-        "description": "The path to look for in the tree",
-        "type": "string|array",
-        "name": "property"
+        "description": "The path to look for in the `tree`\n\nExample:\n\n[\"foo\", 1, \"bar\"] would match for the following `tree`:\n{\"foo\":[0, {\"bar\": \"baz\"}]}",
+        "type": "(string or number)[]",
+        "name": "path"
       },
       "02b2f50b-eebc-4f3c-ad76-dafa56d33f69": {
-        "description": "The tree data structure to find the property in",
-        "type": "tree",
+        "description": "The tree data structure to find the `path` within",
+        "type": "any[] or {string: any}",
         "name": "tree"
       }
     },
     "outputs": {
       "d25ea070-01da-4df7-898e-06c7fa069368": {
-        "description": "Whether the property was found in the tree data structure",
+        "description": "Whether the `path` was found in the `tree`",
         "type": "boolean",
         "name": "has"
       }
@@ -106,5 +106,12 @@
   "name": "data/tree/Has path tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "path": null,
+    "tree": null,
+    "key": null,
+    "hasOwnProperty": null,
+    "exists": null
   }
 }

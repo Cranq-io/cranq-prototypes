@@ -1,5 +1,5 @@
 {
-  "description": "Stores the specified node on the specified path of the tree.\n\nMutates input.",
+  "description": "Sets a node at the specified path of the tree. Mutates input.\n\nWarning! This node mutates the tree it gets that means if any other node received the same tree as input from the original source it may get the modified tree depending on the execution order!\n\nExample:\n1. {\"foo\": {\"bar\": 1}}@0 is received via `tree`\n2. [\"foo\", \"baz\"]@0 is received via `path`\n3. 1@0 is received via `node`\n4. {\"foo\": {\"bar\": 1, \"baz\": 1}}@0 is sent via `modified tree`",
   "interface": {
     "inputs": {
       "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {
@@ -10,18 +10,19 @@
       "1670d7c3-36ce-42d6-8411-b90866ca411a": {
         "type": "(string or number)[]",
         "name": "path",
-        "description": "Specifies the location of the node."
+        "description": "Receives the path segments where the `node` should  be written to"
       },
       "5436f8ba-84e3-48e2-bd39-9ccaa8aeea9a": {
         "type": "any",
         "name": "node",
-        "description": "The node to be stored in the tree."
+        "description": "Receives the node to be set"
       }
     },
     "outputs": {
       "eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c": {
-        "type": "null",
-        "name": "written"
+        "type": "any[] or {string:any}",
+        "name": "modified tree",
+        "description": "Sends the modified tree"
       }
     }
   },
@@ -93,5 +94,10 @@
   "name": "data/tree/Node setter (mutable)",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "tree": null,
+    "set": null,
+    "setter": null
   }
 }

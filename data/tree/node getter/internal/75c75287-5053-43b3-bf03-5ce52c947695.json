@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "acf1b446-a89f-4af0-8865-174b1dcbb51f": {
-        "type": "{\"tree\":any[] or {string:any},\"path\":(string | number)[]}",
+        "type": "{\"tree\":({string:any} or any[]),\"path\":(string or number)[]}",
         "name": "tree & path"
       }
     },
@@ -14,7 +14,7 @@
       },
       "0b5f38f9-0f97-4d38-8cfa-92d2b444a159": {
         "description": "",
-        "type": "any",
+        "type": "(string or number)[]",
         "name": "not found"
       }
     }

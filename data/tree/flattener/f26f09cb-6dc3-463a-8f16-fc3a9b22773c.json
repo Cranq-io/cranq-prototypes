@@ -1,10 +1,10 @@
 {
-  "description": "Flattens a tree into a flat dictionary with keys created by prepending parent keys and a delimiter to child keys recursively.",
+  "description": "Flattens a tree into a flat dictionary with keys created by prepending parent keys and a delimiter to child keys recursively.\n\nExample:\n\n1. {\"a\": {\"a1\": 1, \"a2\":2}}@0 is received via `tree`\n2. \"-\"@0 is received via `delimiter`\n3. {\"a-a1\": 1, \"a-a2\":2}@0 is sent via `flattened`",
   "interface": {
     "inputs": {
       "5eacb3f2-0e3d-4944-b933-4a119cdcdb59": {
         "description": "The tree to flatten",
-        "type": "tree",
+        "type": "any[] or {string: any}",
         "name": "tree"
       },
       "3a97b9dd-4dc6-41d2-9072-ed7f4074edd5": {
@@ -16,7 +16,7 @@
     "outputs": {
       "426bf938-9b69-456a-b4b3-d03c2eb5f904": {
         "description": "The flat dictionary",
-        "type": "dictionary",
+        "type": "{string: any}",
         "name": "flattened"
       }
     }
@@ -34,5 +34,10 @@
   "name": "data/tree/Flattener",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "flatten": null,
+    "tree": null,
+    "transform": null
   }
 }

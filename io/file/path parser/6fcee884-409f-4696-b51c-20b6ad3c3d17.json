@@ -1,17 +1,17 @@
 {
-  "description": "Parses a file system path into it's components",
+  "description": "Parses a file system path into it's components.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}@0 sent on `components`",
   "interface": {
     "inputs": {
       "598eb83b-2266-441c-8a3e-7f414aed4895": {
-        "description": "The path to parse",
-        "type": "any",
+        "description": "Receives the path to parse.\n\nExample:\n- \"/home/user1/dir1/foo.txt\"\n- \"C:/Users/User1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "2fe22f0a-b3b2-4856-b473-65a32a2ffd18": {
-        "description": "The resulting path components",
-        "type": "{\n  \"volume\": string,\n  \"directory\": string,\n  \"base\": string,\n  \"name\": string,\n  \"extension\": string\n}",
+        "description": "Sends the resulting path components.\n\nExample:\n- {\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}\n- {\n  \"directory\": \"C:/Users/User1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}",
+        "type": "{\n  \"directory\": string,\n  \"basename\": string,\n  \"extension\": string\n}",
         "name": "components"
       }
     }
@@ -36,7 +36,7 @@
           ],
           "description": "",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"volume\":\"root\",\n  \"directory\":\"dir\",\n  \"base\":\"base\",\n  \"name\":\"name\",\n  \"extension\":\"ext\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"directory\":\"dir\",\n  \"basename\":\"name\",\n  \"extension\":\"ext\"\n}"
           },
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "name": "Left joiner A"

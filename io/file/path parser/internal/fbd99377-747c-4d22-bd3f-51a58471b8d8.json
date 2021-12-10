@@ -1,17 +1,17 @@
 {
-  "description": "",
+  "description": "See `io/file/Path parser`",
   "interface": {
     "inputs": {
       "0467ec39-d854-4492-a0bd-5c14a7d79c1d": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "42ec8d26-2aec-499f-b916-643ccc466315": {
         "description": "",
-        "type": "any",
+        "type": "{\n  \"root\": string,\n  \"dir\": string,\n  \"base\": string,\n  \"name\": string,\n  \"ext\": string\n}",
         "name": "components"
       }
     }
@@ -26,7 +26,7 @@
       }
     }
   },
-  "name": "io/file/Path parser (internal)",
+  "name": "io/file/Path parser/Internal",
   "attributes": {
     "internal": true,
     "locked": true

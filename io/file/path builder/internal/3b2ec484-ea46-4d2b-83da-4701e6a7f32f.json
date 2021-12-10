@@ -4,7 +4,7 @@
     "inputs": {
       "3c78d8eb-e414-412b-b78d-c2acc5c187b0": {
         "description": "",
-        "type": "any",
+        "type": "{\n  \"volume\": string,\n  \"directory\": string,\n  \"base\": string,\n  \"name\": string,\n  \"extension\": string\n}",
         "name": "components"
       }
     },
@@ -26,7 +26,7 @@
       }
     }
   },
-  "name": "io/file/Path builder (internal)",
+  "name": "io/file/Path builder/Internal",
   "attributes": {
     "internal": true
   }

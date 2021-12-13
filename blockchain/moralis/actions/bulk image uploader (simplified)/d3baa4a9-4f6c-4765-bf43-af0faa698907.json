@@ -1,0 +1,104 @@
+{
+  "name": "blockchain/moralis/actions/Bulk image uploader (simplified)",
+  "interface": {
+    "inputs": {
+      "da142a96-9c10-4879-b6cc-beb512f063b8": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      },
+      "549815a9-c81e-42ae-8bfc-7604206bb6de": {
+        "type": "{\n  \"cwd\": string,\n  \"images-directory\": string,\n  \"moralis-api-key\": string\n}\n",
+        "name": "params",
+        "description": "Recieves upload images script parameters.\n\nExample:\n{\n  \"cwd\": \"./nft\",\n  \"images-directory\": \"nft/batch-images\",\n  \"moralis-api-key\": \"API_KEY\"\n}"
+      }
+    },
+    "outputs": {
+      "fa0310e3-9e7a-4e17-9d44-074cb535b1e8": {
+        "description": "Sends updated script state.",
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "70d86403-bff3-45af-9735-ca10827163f9": {
+          "coordinates": [
+            183,
+            -154
+          ],
+          "name": "upload images",
+          "prototype": "f0e5b614-cbea-4af7-8fc3-a428681cc2cb",
+          "params": {}
+        },
+        "b0d5939b-3130-47f0-a597-baa896cd136b": {
+          "coordinates": [
+            -179.00358737244898,
+            -46.14588647959184
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "ce8c6bed-a362-4ecb-8a74-07f2c467dd26": {
+          "coordinates": [
+            -24.003587372448976,
+            98.85411352040816
+          ],
+          "name": "params copier",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {
+            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"get-names\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": [\"image-names\"],\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-paths\"],\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"temp/batch-images\"\n    },\n    \"mapping\": {\"child-paths\": \"image-names\"}\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-upload-data\"],\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\"image-paths\": \"image-paths\"}\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-urls\"],\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API-KEY\"\n    },\n    \"mapping\": {\"folder-upload-data\": \"image-upload-data\"}\n  }\n}",
+            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n\"get-names.cwd\" : \"cwd\",\n\"get-names.directory-path\" : \"images-directory\",\n\"build-paths.params.cwd\" : \"cwd\",\n\"build-paths.params.base-path\" : \"images-directory\",\n\"build-data.params.cwd\" : \"cwd\",\n\"upload.params.cwd\" : \"cwd\",\n\"upload.params.api-key\" :  \"moralis-api-key\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "ce8c6bed-a362-4ecb-8a74-07f2c467dd26": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "70d86403-bff3-45af-9735-ca10827163f9": {
+              "5ccbb1e3-defa-4b8f-94e5-b81e502bdc35": {}
+            }
+          }
+        },
+        "b0d5939b-3130-47f0-a597-baa896cd136b": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "ce8c6bed-a362-4ecb-8a74-07f2c467dd26": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "70d86403-bff3-45af-9735-ca10827163f9": {
+              "653efdd0-5c28-4301-93a7-df8a67f0c02c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "da142a96-9c10-4879-b6cc-beb512f063b8": {
+            "b0d5939b-3130-47f0-a597-baa896cd136b": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "549815a9-c81e-42ae-8bfc-7604206bb6de": {
+            "b0d5939b-3130-47f0-a597-baa896cd136b": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "fa0310e3-9e7a-4e17-9d44-074cb535b1e8": {
+            "70d86403-bff3-45af-9735-ca10827163f9": {
+              "070cf742-56d1-4250-82ae-ede4edac00a2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

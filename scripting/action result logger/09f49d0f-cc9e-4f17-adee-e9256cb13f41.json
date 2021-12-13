@@ -1,0 +1,84 @@
+{
+  "name": "scripting/Action result logger",
+  "interface": {
+    "inputs": {
+      "1e8a9682-2a5b-4a57-9713-94c7e66d4faf": {
+        "description": "",
+        "type": "{\n  \"message\": string\n}",
+        "name": "params"
+      },
+      "b8d7ec9f-7814-4c70-9269-d90196b586f1": {
+        "type": "any",
+        "name": "action result"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cd3f04e9-303e-41b2-94c9-5b98f8b05e66": {
+          "coordinates": [
+            -30.944444444444457,
+            -125.11111111111114
+          ],
+          "name": "get message",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"message\"]"
+          }
+        },
+        "2b59b7b1-37f9-4b95-94fc-1e24000c76e1": {
+          "coordinates": [
+            19.055555555555543,
+            102.88888888888891
+          ],
+          "name": "write \"OK\"",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\" OK\""
+          }
+        },
+        "c9ff35cd-b5e5-4e6c-9c35-1cc3528e9f81": {
+          "coordinates": [
+            137.8888888888889,
+            23.22222222222223
+          ],
+          "name": "write message",
+          "prototype": "29221ee0-26c6-4463-b9f3-3fce59a0d246",
+          "params": {}
+        }
+      },
+      "connections": {
+        "cd3f04e9-303e-41b2-94c9-5b98f8b05e66": {
+          "message": {
+            "c9ff35cd-b5e5-4e6c-9c35-1cc3528e9f81": {
+              "f9f516fd-7f3a-4004-9f33-152f2da53fe5": {},
+              "28431bca-245e-455a-a1fa-1dda02d082a5": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1e8a9682-2a5b-4a57-9713-94c7e66d4faf": {
+            "cd3f04e9-303e-41b2-94c9-5b98f8b05e66": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {
+                "description": "undefined\nundefined"
+              }
+            }
+          },
+          "b8d7ec9f-7814-4c70-9269-d90196b586f1": {
+            "2b59b7b1-37f9-4b95-94fc-1e24000c76e1": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

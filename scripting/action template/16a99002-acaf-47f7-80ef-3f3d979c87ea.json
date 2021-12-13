@@ -1,0 +1,87 @@
+{
+  "name": "scripting/Action template",
+  "interface": {
+    "inputs": {
+      "a18cf886-5592-41f3-9bc0-bf62238024ad": {
+        "type": "any",
+        "name": "state"
+      },
+      "42e3845a-5a39-4e31-9fba-5769df601da6": {
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "b2d1695e-a3c4-4431-ae7a-cf8b6ee29eb3": {
+        "type": "typeof `state`",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "700290b5-76d7-4d5d-83d0-4d522ec0b019": {
+          "coordinates": [
+            -107.41666666666669,
+            93.83333333333334
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "27f2b264-bc5a-4d0c-8fc9-fe28adba8704": {
+          "coordinates": [
+            100.41666666666669,
+            162.16666666666666
+          ],
+          "name": "store result",
+          "prototype": "df2ee367-133e-49a5-afc3-277a41ddd699"
+        }
+      },
+      "connections": {
+        "700290b5-76d7-4d5d-83d0-4d522ec0b019": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "27f2b264-bc5a-4d0c-8fc9-fe28adba8704": {
+              "9bdba6eb-78cd-49d8-a8d6-77acbe532c3b": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "27f2b264-bc5a-4d0c-8fc9-fe28adba8704": {
+              "a2390ce8-29b0-42ae-ba7c-c2f177b7072b": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a18cf886-5592-41f3-9bc0-bf62238024ad": {
+            "700290b5-76d7-4d5d-83d0-4d522ec0b019": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "42e3845a-5a39-4e31-9fba-5769df601da6": {
+            "700290b5-76d7-4d5d-83d0-4d522ec0b019": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "b2d1695e-a3c4-4431-ae7a-cf8b6ee29eb3": {
+            "27f2b264-bc5a-4d0c-8fc9-fe28adba8704": {
+              "655e815a-cae9-4779-8fb1-b7f12b329bae": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "repeatable": null,
+    "recurring": null
+  },
+  "attributes": {
+    "locked": true,
+    "template": true
+  }
+}

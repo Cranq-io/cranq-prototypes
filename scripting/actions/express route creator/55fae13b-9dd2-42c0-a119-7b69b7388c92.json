@@ -1,5 +1,5 @@
 {
-  "name": "scripting/actions/Express endpoint creator",
+  "name": "scripting/actions/Express route creator",
   "description": "Sets up an API endpoint using Express. An express server must be started in the script before the flow gets to this one.\n\nSee `scripting/actions/Express server starter`.",
   "interface": {
     "inputs": {
@@ -165,6 +165,7 @@
   },
   "keywords": {
     "api": null,
+    "route": null,
     "endpoint": null,
     "request": null,
     "response": null,

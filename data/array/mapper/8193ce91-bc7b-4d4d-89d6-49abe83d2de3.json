@@ -23,6 +23,10 @@
         "description": "Sends the current item.\n\nExample:\n\"Foo\"",
         "type": "typeof`array`[number]",
         "name": "item"
+      },
+      "f6bfa0c4-5143-491d-ac1c-bc56d32ab41d": {
+        "type": "number",
+        "name": "index"
       }
     }
   },
@@ -31,8 +35,8 @@
       "nodes": {
         "dfb50a96-dded-44c4-b5bd-bd4ae4e13dc9": {
           "coordinates": [
-            30,
-            64
+            42,
+            129
           ],
           "description": "",
           "params": {
@@ -43,8 +47,8 @@
         },
         "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
           "coordinates": [
-            -62,
-            -105
+            -56,
+            -102
           ],
           "description": "",
           "params": {},
@@ -94,6 +98,11 @@
           "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
             "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
               "2633875c-3925-45ca-ad7f-79d61ca64bc8": {}
+            }
+          },
+          "f6bfa0c4-5143-491d-ac1c-bc56d32ab41d": {
+            "a0165e02-a07b-4e8e-9b8f-ed637d3f3ed0": {
+              "2687aeee-1193-4a22-b158-7ee57013fe45": {}
             }
           }
         }

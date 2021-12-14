@@ -34,8 +34,8 @@
         },
         "625fc953-d93a-4e63-8233-99b7a5bf316e": {
           "coordinates": [
-            -60.050925925925924,
-            -110.10185185185185
+            60.949074074074076,
+            -120.10185185185185
           ],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
@@ -51,6 +51,17 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "efb6bba9-1f59-4489-af1c-d06298a519db": {
+          "coordinates": [
+            -86,
+            -41
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"cwd\": \"./temp\"}"
+          }
         }
       },
       "connections": {
@@ -68,6 +79,13 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
+            "efb6bba9-1f59-4489-af1c-d06298a519db": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "efb6bba9-1f59-4489-af1c-d06298a519db": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "625fc953-d93a-4e63-8233-99b7a5bf316e": {
               "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
             }

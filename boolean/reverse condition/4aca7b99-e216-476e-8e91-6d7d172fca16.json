@@ -1,0 +1,32 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "e7417484-ea01-4448-9666-f601edcaac11": "outputs.boolean(true, tag);",
+        "883c5c6b-7512-481d-b7b7-0f988046cc76": "outputs.boolean(false, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e7417484-ea01-4448-9666-f601edcaac11": {
+        "type": "any",
+        "name": "true"
+      },
+      "883c5c6b-7512-481d-b7b7-0f988046cc76": {
+        "type": "any",
+        "name": "false"
+      }
+    },
+    "outputs": {
+      "9c95f7fd-ee7e-41fb-be63-361f33159a77": {
+        "type": "boolean",
+        "name": "boolean"
+      }
+    }
+  },
+  "name": "boolean/Reverse condition",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,5 +1,6 @@
 {
   "name": "flow/Forked aggregator (async)",
+  "description": "Aggregates data received via `data` into two output arrays, depending on whether a corresponding arbitrary input is received via `true` or `false`.\n\nReleases both output arrays on receiving a signal on `release`.\n\nThe input `release` is independent from `data`, `true`, and `false`.\n\nExample:\n1. \"foo\"@0 is received via `data`\n2. \"bar\"@1 is received via `data`\n3. \"baz\"@2 is received via `data`\n4. null@0 is received via `false`\n5. null@1 is received via `true`\n6. null@2 is received via `false`\n7. null@3 is received via `release`\n8. [\"foo\", \"baz\"]@3 is sent via `falses`, and [\"bar\"]@3 is sent via `trues`",
   "interface": {
     "inputs": {
       "08ffc3a6-d343-407f-b9fb-0c7932b7f908": {
@@ -14,23 +15,25 @@
       },
       "12ec5f29-56eb-46c3-98ff-f7acf288bac7": {
         "type": "any",
-        "name": "true"
+        "name": "true",
+        "description": "Receives signal that corresponding `data` should be aggregated into `trues`."
       },
       "c1badfb0-6127-4747-a650-1653ece3bdfd": {
         "type": "any",
-        "name": "false"
+        "name": "false",
+        "description": "Receives signal that corresponding `data` should be aggregated into `falses`."
       }
     },
     "outputs": {
       "254a0d3d-e9c1-452e-a444-63f9f9a7834b": {
         "type": "typeof `data`[]",
         "name": "trues",
-        "description": "Sends the aggregated data."
+        "description": "Sends the aggregated data, that was accompanied by signals via `true`."
       },
       "4402b2b3-49a4-4236-b2a5-b027cee9075c": {
         "type": "typeof `data`[]",
         "name": "falses",
-        "description": "Sends the aggregated data."
+        "description": "Sends the aggregated data, that was accompanied by signals via `false`."
       }
     }
   },

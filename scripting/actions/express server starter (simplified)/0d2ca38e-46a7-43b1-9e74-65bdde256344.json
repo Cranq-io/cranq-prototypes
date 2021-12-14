@@ -1,20 +1,24 @@
 {
   "name": "scripting/actions/Express server starter (simplified)",
+  "description": "Starts an express server on the specified port and with the specified middlewares.\n\nSpecifying an 'app-id' allows running multiple express servers at the same time.\n\nWrites the app ID of the started server to state.\n\nRepeatable action.",
   "interface": {
     "inputs": {
       "7a0bb4ed-4ce8-407b-b6be-6dc87e32a7ca": {
         "type": "any",
-        "name": "state"
+        "name": "state",
+        "description": "Receives script state."
       },
       "cd9b4ff4-1a3b-4b5f-a5e1-bccaac9dfdd9": {
         "type": "{\n  \"cwd\": string,\n  \"app-id\": string,\n  \"port\": number,\n  \"middlewares\": (\"json\" or \"cors\" or \"urlencoded\")[]\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives:\n* 'cwd' locates directory for persisted state\n* 'app-id' identifies Express server (default: \"default\")\n* 'port' specifies port to run server on (default: 8080)\n* 'middlewares' lists express middlewares to be activated (default: [])\n\nExample:\n{\n  \"cwd\": \"./express\",\n  \"middlewares\": [\"json\"]\n}"
       }
     },
     "outputs": {
       "303be1b5-4b8c-4366-9fc9-6ad611f92d63": {
         "type": "typeof `state`",
-        "name": "state"
+        "name": "state",
+        "description": "Sends updates script state."
       }
     }
   },
@@ -115,5 +119,12 @@
   },
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "express": null,
+    "api": null,
+    "server": null,
+    "routing": null,
+    "initialize": null
   }
 }

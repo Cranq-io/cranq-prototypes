@@ -11,22 +11,31 @@
     "inputs": {
       "e7417484-ea01-4448-9666-f601edcaac11": {
         "type": "any",
-        "name": "true"
+        "name": "true",
+        "description": "Receives signals to be evaluated to true."
       },
       "883c5c6b-7512-481d-b7b7-0f988046cc76": {
         "type": "any",
-        "name": "false"
+        "name": "false",
+        "description": "Receives signals to be evaluated to false."
       }
     },
     "outputs": {
       "9c95f7fd-ee7e-41fb-be63-361f33159a77": {
         "type": "boolean",
-        "name": "boolean"
+        "name": "boolean",
+        "description": "Sends boolean depending on which input the signal was received through."
       }
     }
   },
   "name": "boolean/Reverse condition",
   "attributes": {
     "locked": true
+  },
+  "description": "Turns binary independent signals into a boolean.\n\nExample A:\n1. null@0 is received via `true`\n2. true@0 is sent via `boolean`\n\nExample B:\n1. \"foo\"@1 is received via `false`\n2. false@1 is sent via `boolean`",
+  "keywords": {
+    "condition": null,
+    "evaluate": null,
+    "boolean": null
   }
 }

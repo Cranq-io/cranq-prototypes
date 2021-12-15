@@ -56,31 +56,24 @@
           "name": "aggregate falses",
           "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
         },
-        "aa9bac38-2e60-4c5c-bd3a-13af33cccc86": {
-          "coordinates": [
-            -184.75,
-            59.25
-          ],
-          "name": "signal to bool",
-          "prototype": "4aca7b99-e216-476e-8e91-6d7d172fca16"
-        },
         "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
           "coordinates": [
-            -37.75,
-            12.25
+            -40.75,
+            39.25
           ],
           "name": "fork",
           "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "cf405253-fe49-49b9-8256-dfd697839e63": {
+          "coordinates": [
+            -207.75,
+            142.25000000000003
+          ],
+          "name": "to boolean",
+          "prototype": "73b8273f-ef86-4797-8443-ab5662dda5d5"
         }
       },
       "connections": {
-        "aa9bac38-2e60-4c5c-bd3a-13af33cccc86": {
-          "9c95f7fd-ee7e-41fb-be63-361f33159a77": {
-            "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
-              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
-            }
-          }
-        },
         "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
           "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
             "506a4c74-ad1f-4649-a53d-d310b35825ef": {
@@ -90,6 +83,13 @@
           "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
             "f6b1a5b7-f2cc-4b8b-9ad4-78d2c379cadb": {
               "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          }
+        },
+        "cf405253-fe49-49b9-8256-dfd697839e63": {
+          "5d478d32-ae8f-4f2b-8f32-9d3cf14db437": {
+            "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
             }
           }
         }
@@ -110,13 +110,13 @@
             }
           },
           "12ec5f29-56eb-46c3-98ff-f7acf288bac7": {
-            "aa9bac38-2e60-4c5c-bd3a-13af33cccc86": {
-              "e7417484-ea01-4448-9666-f601edcaac11": {}
+            "cf405253-fe49-49b9-8256-dfd697839e63": {
+              "7d8a1e5c-fe55-4483-8604-d8198c09f05e": {}
             }
           },
           "c1badfb0-6127-4747-a650-1653ece3bdfd": {
-            "aa9bac38-2e60-4c5c-bd3a-13af33cccc86": {
-              "883c5c6b-7512-481d-b7b7-0f988046cc76": {}
+            "cf405253-fe49-49b9-8256-dfd697839e63": {
+              "71b2d8f8-8c04-4e7d-8f46-049cee8da304": {}
             }
           }
         },

@@ -1,0 +1,100 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "970caf3b-b250-40ae-bb05-caa661b88b5b": {
+          "coordinates": [
+            -101,
+            -96
+          ],
+          "name": "contract text template",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"//Contract based on [https://docs.openzeppelin.com/contracts/3.x/erc721](https://docs.openzeppelin.com/contracts/3.x/erc721)\\n// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport \\\"@openzeppelin/contracts/token/ERC721/ERC721.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/Counters.sol\\\";\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\\\";\\n\\ncontract {name} is ERC721URIStorage, Ownable {\\n    using Counters for Counters.Counter;\\n    Counters.Counter private _tokenIds;\\n\\n    constructor() public ERC721(\\\"{name}\\\", \\\"{symbol}\\\") {}\\n\\n    function mintNFT(address recipient, string memory tokenURI)\\n        public onlyOwner\\n        returns (uint256)\\n    {\\n        _tokenIds.increment();\\n\\n        uint256 newItemId = _tokenIds.current();\\n        _mint(recipient, newItemId);\\n        _setTokenURI(newItemId, tokenURI);\\n\\n        return newItemId;\\n    }\\n}\""
+          }
+        },
+        "90fca3cc-60e2-493f-ae26-95b8a567ef4a": {
+          "coordinates": [
+            69,
+            -24
+          ],
+          "name": "fill template",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67"
+        },
+        "959c1a96-0e03-42fd-a457-bf4f03875a78": {
+          "coordinates": [
+            -92,
+            21
+          ],
+          "name": "group params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"name\", \"symbol\"]"
+          }
+        }
+      },
+      "connections": {
+        "959c1a96-0e03-42fd-a457-bf4f03875a78": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "90fca3cc-60e2-493f-ae26-95b8a567ef4a": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "970caf3b-b250-40ae-bb05-caa661b88b5b": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "90fca3cc-60e2-493f-ae26-95b8a567ef4a": {
+              "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f754a021-ca40-4cf4-ad70-7fe4316edd21": {
+            "959c1a96-0e03-42fd-a457-bf4f03875a78": {
+              "name": {}
+            },
+            "970caf3b-b250-40ae-bb05-caa661b88b5b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "c2fd47aa-cb65-4b3a-b1bd-2af16b77df4e": {
+            "959c1a96-0e03-42fd-a457-bf4f03875a78": {
+              "symbol": {}
+            }
+          }
+        },
+        "outputs": {
+          "17de6c8d-6e17-4110-9eec-5ae8986759d3": {
+            "90fca3cc-60e2-493f-ae26-95b8a567ef4a": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "f754a021-ca40-4cf4-ad70-7fe4316edd21": {
+        "type": "string",
+        "name": "name"
+      },
+      "c2fd47aa-cb65-4b3a-b1bd-2af16b77df4e": {
+        "type": "string",
+        "name": "symbol"
+      }
+    },
+    "outputs": {
+      "17de6c8d-6e17-4110-9eec-5ae8986759d3": {
+        "type": "string",
+        "name": "contract text"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Single NFT contract",
+  "attributes": {
+    "locked": true
+  }
+}

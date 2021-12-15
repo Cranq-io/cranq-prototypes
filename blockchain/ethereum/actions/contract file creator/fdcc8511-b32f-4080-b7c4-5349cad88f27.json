@@ -1,0 +1,343 @@
+{
+  "name": "blockchain/ethereum/actions/Contract file creator",
+  "interface": {
+    "inputs": {
+      "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {
+        "type": "{\n  \"cwd\": string,\n  \"contract\": \"single-nft\",\n  \"contract-name\": string,\n  \"contract-symbol\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string\n}",
+        "name": "params"
+      },
+      "7468b09f-e723-4d9b-8857-57348f32ec77": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      }
+    },
+    "outputs": {
+      "7de95841-2f5a-4e13-9729-8992b8e9ebc0": {
+        "description": "Sends updated script state.",
+        "type": "any",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+          "coordinates": [
+            382,
+            268
+          ],
+          "name": "write contract file",
+          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
+          "params": {}
+        },
+        "36e12cbd-b6fc-43fc-a0f7-53f9971923ce": {
+          "coordinates": [
+            318.61718749999994,
+            -191.9453125
+          ],
+          "name": "single nft contract",
+          "prototype": "ee336c7d-e949-405c-be50-2e0cfee6e15b"
+        },
+        "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+          "coordinates": [
+            407.61718749999994,
+            -45.9453125
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n  \"cwd\",\n  \"path\",\n  \"text\",\n  \"result-path\",\n  \"message\"\n]"
+          }
+        },
+        "d51eb939-1abd-49c1-995e-ffa0cdc83b87": {
+          "coordinates": [
+            -285.38281250000006,
+            -86.9453125
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\n  \"cwd\",\n  \"contract\",\n  \"contract-name\",\n  \"contract-symbol\",\n  \"result-path\",\n  \"message\"\n]"
+          }
+        },
+        "6b373469-6514-4065-a6ac-c90fd17cab2a": {
+          "coordinates": [
+            206.61718749999994,
+            3.0546875
+          ],
+          "name": "create path",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"contracts/{contract_name}.sol\""
+          }
+        },
+        "de45732e-28bc-411f-baf0-8d3959e47cfd": {
+          "coordinates": [
+            22.617187499999943,
+            -43.9453125
+          ],
+          "name": "path params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract_name\"]"
+          }
+        },
+        "a35f86b2-a63f-46fe-9eda-6447e5c532c8": {
+          "coordinates": [
+            251.61718749999994,
+            -441.9453125
+          ],
+          "name": "write error",
+          "prototype": "0adf0dbf-66e3-4942-8766-b30731f4fcdd"
+        },
+        "b3d0b0c6-7ce6-44da-81df-2c529062da84": {
+          "coordinates": [
+            99.61718749999994,
+            -416.9453125
+          ],
+          "name": "error unknown contract",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"Error: unknown contract\""
+          }
+        },
+        "c079f7bc-18e6-4e82-a279-2e0e0beabdad": {
+          "coordinates": [
+            -109.38281250000006,
+            38.0546875
+          ],
+          "name": "create message template",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "6b3b4622-93d9-49c8-ac1e-89af0e30731d": "\" ({contract_name}) \""
+          }
+        },
+        "ef42e182-1c80-4708-88a0-1c389200bee6": {
+          "coordinates": [
+            144.61718749999994,
+            85.0546875
+          ],
+          "name": "create message",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67"
+        },
+        "6acedeb6-6aa4-4810-8c56-9405d4f955f3": {
+          "coordinates": [
+            -460.38281250000006,
+            67.0546875
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "a21c07d3-d984-4b4c-bb46-f6bab5351ce4": {
+          "coordinates": [
+            -7.382812500000057,
+            -293.9453125
+          ],
+          "name": "switch  by contract",
+          "prototype": "cce896e9-6c21-49dd-920d-967f53cf6a09",
+          "params": {
+            "a760fbf3-927c-4c25-80d8-198c096dc4fd": "[\"single-nft\"]"
+          }
+        },
+        "c91f8207-0d6e-42df-af92-f6aa7aaef200": {
+          "coordinates": [
+            -140.38281250000006,
+            -205.9453125
+          ],
+          "name": "contract_name",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}"
+          }
+        },
+        "50706933-ee87-4501-b90a-661572116254": {
+          "coordinates": [
+            -237.38281250000006,
+            -243.9453125
+          ],
+          "name": "wrap contract params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"name\", \"symbol\"]"
+          }
+        },
+        "6f198db1-af52-42e6-8ea6-f165338aa7b2": {
+          "coordinates": [
+            111.61718749999994,
+            -249.9453125
+          ],
+          "name": "unwrap params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"name\", \"symbol\"]"
+          }
+        }
+      },
+      "connections": {
+        "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        },
+        "d51eb939-1abd-49c1-995e-ffa0cdc83b87": {
+          "cwd": {
+            "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+              "cwd": {}
+            }
+          },
+          "result-path": {
+            "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+              "result-path": {}
+            }
+          },
+          "contract-name": {
+            "de45732e-28bc-411f-baf0-8d3959e47cfd": {
+              "contract_name": {}
+            },
+            "50706933-ee87-4501-b90a-661572116254": {
+              "name": {}
+            }
+          },
+          "message": {
+            "c079f7bc-18e6-4e82-a279-2e0e0beabdad": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {}
+            }
+          },
+          "contract": {
+            "c91f8207-0d6e-42df-af92-f6aa7aaef200": {
+              "922a1964-91d4-4ad3-a9e4-7d245662a978": {}
+            }
+          },
+          "contract-symbol": {
+            "50706933-ee87-4501-b90a-661572116254": {
+              "symbol": {}
+            }
+          }
+        },
+        "36e12cbd-b6fc-43fc-a0f7-53f9971923ce": {
+          "17de6c8d-6e17-4110-9eec-5ae8986759d3": {
+            "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+              "text": {}
+            }
+          }
+        },
+        "de45732e-28bc-411f-baf0-8d3959e47cfd": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6b373469-6514-4065-a6ac-c90fd17cab2a": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            },
+            "ef42e182-1c80-4708-88a0-1c389200bee6": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "6b373469-6514-4065-a6ac-c90fd17cab2a": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+              "path": {}
+            }
+          }
+        },
+        "b3d0b0c6-7ce6-44da-81df-2c529062da84": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "a35f86b2-a63f-46fe-9eda-6447e5c532c8": {
+              "a646ba52-2da2-4b71-9f43-df4fd0e779b2": {}
+            }
+          }
+        },
+        "c079f7bc-18e6-4e82-a279-2e0e0beabdad": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "ef42e182-1c80-4708-88a0-1c389200bee6": {
+              "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {}
+            }
+          }
+        },
+        "ef42e182-1c80-4708-88a0-1c389200bee6": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
+              "message": {}
+            }
+          }
+        },
+        "6acedeb6-6aa4-4810-8c56-9405d4f955f3": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "d51eb939-1abd-49c1-995e-ffa0cdc83b87": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "c91f8207-0d6e-42df-af92-f6aa7aaef200": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "a21c07d3-d984-4b4c-bb46-f6bab5351ce4": {
+              "02664129-3c8c-42d3-8260-74d10fbdc40d": {}
+            }
+          }
+        },
+        "a21c07d3-d984-4b4c-bb46-f6bab5351ce4": {
+          "9ea0c017-7eba-4bfc-a3fb-770b2fc8ef3b": {
+            "b3d0b0c6-7ce6-44da-81df-2c529062da84": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "single-nft": {
+            "6f198db1-af52-42e6-8ea6-f165338aa7b2": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "50706933-ee87-4501-b90a-661572116254": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c91f8207-0d6e-42df-af92-f6aa7aaef200": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "6f198db1-af52-42e6-8ea6-f165338aa7b2": {
+          "name": {
+            "36e12cbd-b6fc-43fc-a0f7-53f9971923ce": {
+              "f754a021-ca40-4cf4-ad70-7fe4316edd21": {}
+            }
+          },
+          "symbol": {
+            "36e12cbd-b6fc-43fc-a0f7-53f9971923ce": {
+              "c2fd47aa-cb65-4b3a-b1bd-2af16b77df4e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7468b09f-e723-4d9b-8857-57348f32ec77": {
+            "6acedeb6-6aa4-4810-8c56-9405d4f955f3": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {
+            "6acedeb6-6aa4-4810-8c56-9405d4f955f3": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "7de95841-2f5a-4e13-9729-8992b8e9ebc0": {
+            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

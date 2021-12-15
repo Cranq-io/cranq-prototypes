@@ -98,15 +98,16 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
-  "description": "Uploads multiple images and place them in a folder directory and stores the ipfs URLs in the state.\n\nExample:\n1. {}@0 receiced via `state`\n2. {\n  \"cwd\": \"./nft\",\n  \"images-directory\": \"nft/batch-images\",\n  \"moralis-api-key\": \"API_KEY\"\n}@0 received via `params`\n3.{\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"nft\\\\batch-images\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"nft\\\\batch-images\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/nft\\\\batch-images\\\\logo.jpg\"\n  ]\n}@0 sent via `state`",
+  "attributes": {},
+  "description": "Uploads multiple images  and stores the ipfs URLs in the state.\n\nExample:\n1. {}@0 receiced via `state`\n2. {\n  \"cwd\": \"./nft\",\n  \"images-directory\": \"nft/batch-images\",\n  \"moralis-api-key\": \"API_KEY\"\n}@0 received via `params`\n3.{\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"nft\\\\batch-images\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"nft\\\\batch-images\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/nft\\\\batch-images\\\\logo.jpg\"\n  ]\n}@0 sent via `state`",
   "keywords": {
     "batch": null,
+    "bulk": null,
     "minting": null,
     "nft": null,
     "crypto": null,
-    "action": null
+    "scripting": null,
+    "action": null,
+    "no-code": null
   }
 }

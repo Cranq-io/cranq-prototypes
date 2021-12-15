@@ -1,17 +1,17 @@
 {
-  "description": "Determines whether the specified path points to a directory",
+  "description": "Determines whether the specified path points to a directory.\n\nExample:\n1. \"/home/user1/dir1\"@0 received on `path`\n2. true@0 sent on `is directory`",
   "interface": {
     "inputs": {
       "8bebea78-fb92-4cab-8af9-a090c3fc7f3a": {
-        "description": "The path to inspect",
-        "type": "any",
+        "description": "Receives the path to test whether it is a directory or not.\n\nExample:\n\"/home/user1/dir1\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "121d6f2f-caf0-40e3-926c-4f33ad1c2026": {
-        "description": "Boolean value that indicates whether the specified path is a directory",
-        "type": "any",
+        "description": "Sends boolean value that indicates whether the specified path is a directory.\n\nExample:\ntrue",
+        "type": "boolean",
         "name": "is directory"
       }
     }
@@ -52,5 +52,12 @@
   "name": "io/file/Directory tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "folder": null,
+    "isdir": null,
+    "is_dir": null,
+    "isDirectory": null,
+    "exists": null
   }
 }

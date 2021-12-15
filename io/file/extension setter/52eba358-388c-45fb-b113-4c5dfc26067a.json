@@ -4,17 +4,20 @@
     "inputs": {
       "a772a272-9568-4df2-b070-204f626e8cf1": {
         "type": "string",
-        "name": "path"
+        "name": "path",
+        "description": "Receives the path to set the extension on.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)"
       },
       "e027c4e0-2efb-4034-9c7b-de3c2f1b8370": {
         "type": "string",
-        "name": "extension"
+        "name": "extension",
+        "description": "Receives the extension to set on `path`.\n\nExample:\n\".json\""
       }
     },
     "outputs": {
       "22876091-fb5a-4a1d-a0fe-fb84b688346f": {
         "type": "string",
-        "name": "path"
+        "name": "path",
+        "description": "Sends the resulting path.\n\nExample:\n\"/home/user1/dir1/foo.json\""
       }
     }
   },
@@ -67,7 +70,7 @@
           "name": "item deleter",
           "prototype": "73a9fd6e-d594-4efc-a0ae-acf4ab89b577",
           "params": {
-            "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": "\"base\""
+            "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": "\"extension\""
           }
         }
       },
@@ -131,5 +134,6 @@
   },
   "attributes": {
     "locked": true
-  }
+  },
+  "description": "Sets the extension on the received path.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \".json\"@0 received on `extension`\n3. \"/home/user1/dir1/foo.json\"@0 sent on `path`"
 }

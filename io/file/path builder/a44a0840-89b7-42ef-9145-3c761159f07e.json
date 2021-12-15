@@ -1,17 +1,17 @@
 {
-  "description": "Constructs an operating system specific path of the specified segments",
+  "description": "Constructs an operating system specific path of the specified segments.\n\nExample:\n1. {\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}@0 received on `components`\n2. \"/home/user1/dir1/foo.txt\"@0 sent on `path`",
   "interface": {
     "inputs": {
       "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {
-        "description": "The components to build the path from",
-        "type": "{\n  \"volume\": string,\n  \"directory\": string,\n  \"base\": string,\n  \"name\": string,\n  \"extension\": string\n}",
+        "description": "Receives the components to build the path from.\n\nExample (Windows): \n{\n  \"directory\": \"C:/Users/User1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}\n\nExample (OSX & *nix): \n{\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "{\n  \"directory\": string,\n  \"basename\": string,\n  \"extension\": string\n}",
         "name": "components"
       }
     },
     "outputs": {
       "fd474d6f-8b92-420c-b58b-da44d233e028": {
-        "description": "The resulting path",
-        "type": "any",
+        "description": "Sends the resulting path.\n\nExample (Windows):\n\"C:/Users/User1/dir1/foo.txt\"\n\nExample (OSX & *nix):\n\"/home/user1/dir1/foo.txt\"",
+        "type": "string",
         "name": "path"
       }
     }
@@ -37,7 +37,7 @@
           "name": "left joiner",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"root\": \"volume\",\n  \"dir\": \"directory\",\n  \"base\": \"base\",\n  \"name\": \"name\",\n  \"ext\": \"extension\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"dir\": \"directory\",\n  \"name\": \"basename\",\n  \"ext\": \"extension\"\n}"
           }
         }
       },

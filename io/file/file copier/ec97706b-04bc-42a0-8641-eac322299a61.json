@@ -1,28 +1,33 @@
 {
-  "description": "Copies a file",
+  "description": "Copies a file specified by the path in `source` to the path in `destination`.\n\nExample (success): \n1. \"/home/user1/dir1/foo.txt\"@0 received on `source`\n2. \"/home/user2/dir2/bar.txt\"@0 received on `destination`\n3. { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"/home/user1/dir2/bar.txt\"\n}@ sent on `copied`\n\nExample (failure): \n1. \"/home/user1/dir1/foo.txt\"@0 received on `source`\n2. \"/home/user1/dir2/bar.txt\"@0 received on `destination`\n3. \n- { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"/home/user1/dir2/bar.txt\"\n}@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, copyfile '/home/user1/dir1/foo.txt' -> '/home/user1/dir2/bar.txt'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "bdfb30ef-0da7-46e3-89a9-b0e1ada838b6": {
-        "description": "The path to the source file to copy",
-        "type": "any",
+        "description": "Receives the path of the source file to copy.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "source"
       },
       "f2de4810-6a6f-4191-a5c8-488099f67b04": {
-        "description": "The path to the desired target file",
-        "type": "any",
+        "description": "Receives the path of the desired target file.\n\nExample:\n\"/home/user1/dir2/bar.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "destination"
       }
     },
     "outputs": {
       "2bfd6834-e8b7-4d12-95a4-588e2c9dbe31": {
-        "description": "Indicates, that the operation has failed",
-        "type": "any",
+        "description": "Sends synced parameters if operation has failed.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}\n",
+        "type": "{ \"source\": string, \"destination\": string }",
         "name": "bounced"
       },
       "b51bebcf-125e-46c7-a537-3d82c9be4fae": {
-        "description": "Indicates, that the operation has succeeded",
-        "type": "any",
+        "description": "Sends synced parameters if operation has succeeded.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}",
+        "type": "{ \"source\": string, \"destination\": string }",
         "name": "copied"
+      },
+      "2e29c5f3-28f9-4351-87e5-7c9bf80721fd": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, copyfile '/home/user1/dir1/foo.txt' -> '/home/user2/dir2/bar.txt'\"\n}"
       }
     }
   },
@@ -86,6 +91,11 @@
             "d87d510c-49e3-4e04-9f61-cafb96fabca5": {
               "3955ebfc-b642-4ed3-9c07-7f6ddd1c7399": {}
             }
+          },
+          "2e29c5f3-28f9-4351-87e5-7c9bf80721fd": {
+            "d87d510c-49e3-4e04-9f61-cafb96fabca5": {
+              "73ac1afe-dbe7-4679-b7e7-777ec2327113": {}
+            }
           }
         }
       }
@@ -94,5 +104,9 @@
   "name": "io/file/File copier",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "cp": null,
+    "copy": null
   }
 }

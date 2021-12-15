@@ -1,22 +1,22 @@
 {
-  "description": "Reads common file system information of the file or directory, specified by a path",
+  "description": "Reads common file system information of the file or directory, specified by `path`.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"size_bytes\": 3128,\n  \"created\": \"2021-12-09T15:47:56.441Z\",\n  \"accessed\": \"2021-12-09T15:47:56.441Z\",\n  \"modified\": \"2021-12-09T15:47:56.441Z\",\n  \"changed\": \"2021-12-09T22:08:22.314Z\"\n}@0 sent on `info`\n\nExample (failure):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2.\"/home/user1/dir1/foo.txt\"@ sent on `bounced`",
   "interface": {
     "inputs": {
       "cdf47862-fad9-4cc5-9855-12550aa9ae20": {
-        "description": "The path to inspect",
-        "type": "any",
+        "description": "Receives the path of the file or directory to get information of.\n\nExample:\n- \"/home/user1/dir1\"\n- \"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "64cad980-4f8d-4481-82fc-7087ee134d30": {
-        "description": "The resulting file/directory information",
-        "type": "any",
+        "description": "The resulting file/directory information.\n\nExample:\n{\n  \"size_bytes\": 3128,\n  \"created\": \"2021-12-09T15:47:56.441Z\",\n  \"accessed\": \"2021-12-09T15:47:56.441Z\",\n  \"modified\": \"2021-12-09T15:47:56.441Z\",\n  \"changed\": \"2021-12-09T22:08:22.314Z\"\n}",
+        "type": "{\n  \"size_bytes\": number,\n  \"created\": string,\n  \"accessed\": string,\n  \"modified\": string,\n  \"changed\": string\n}",
         "name": "info"
       },
       "e9d1e0bf-5e20-4912-96f5-b9ceef99d0d4": {
-        "description": "Indicates, that the operation has failed",
-        "type": "any",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n- \"/home/user1/dir1\"\n- \"/home/user1/dir1/foo.txt\"",
+        "type": "typeof `path`",
         "name": "bounced"
       }
     }
@@ -36,8 +36,8 @@
         },
         "fab1394b-f1fa-4455-af58-4700f19fbea7": {
           "coordinates": [
-            -79,
-            158
+            -118,
+            74
           ],
           "description": "",
           "params": {
@@ -48,8 +48,8 @@
         },
         "532105c3-4b9e-420d-8a74-8c8222243034": {
           "coordinates": [
-            118,
-            112
+            144,
+            83
           ],
           "description": "",
           "params": {},
@@ -108,5 +108,10 @@
   "name": "io/file/Info getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "stat": null,
+    "fstat": null,
+    "fileinfo": null
   }
 }

@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See `io/file/Text writer/`",
   "interface": {
     "inputs": {
       "34fe32a8-173b-48b9-9b83-b1fa7c37029e": {
@@ -15,6 +15,10 @@
       "fe1dc54d-6fec-43bb-a112-f977461960ce": {
         "type": "null",
         "name": "written"
+      },
+      "56ad3432-ceeb-4e29-85f4-7c244c50a1d9": {
+        "type": "{ \"error\": string }",
+        "name": "error"
       }
     }
   },
@@ -24,7 +28,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "34fe32a8-173b-48b9-9b83-b1fa7c37029e": "const {writeFile} = require(\"fs\");\nconst {path, text} = data;\nwriteFile(path, text, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs.written(null, tag);\n  }\n});"
+        "34fe32a8-173b-48b9-9b83-b1fa7c37029e": "const {writeFile} = require(\"fs\");\nconst {path, text} = data;\nwriteFile(path, text, (error) => {\n  if (error) {\n    outputs.bounced(data, tag);\n    outputs.error({error: String(error)}, tag);\n  } else {\n    outputs.written(null, tag);\n  }\n});"
       }
     }
   },

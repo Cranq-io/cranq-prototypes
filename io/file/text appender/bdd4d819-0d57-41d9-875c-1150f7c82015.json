@@ -1,28 +1,33 @@
 {
-  "description": "Appends the input text to a file.",
+  "description": "Appends the input text to a file specified on `path`.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \"Hello World\"@0 received on `text`\n3. { \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}@0 sent on `written`\n\nExample (failure):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \"Hello World\"@0 received on `text`\n3.\n- { \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "62b759b8-f031-47f0-8574-5d844f085801": {
-        "description": "The file path to append to",
-        "type": "any",
+        "description": "Receives the path of the file to append text to.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "path"
       },
       "cb6954c4-dfb5-4690-8635-67e18e34119b": {
-        "description": "The text value to append",
-        "type": "any",
+        "description": "Receives the text to append to the specified file.\n\nExample:\n\"Hello World\"",
+        "type": "string",
         "name": "text"
       }
     },
     "outputs": {
       "531c7678-2340-423b-8738-7a738b3bb3ae": {
-        "description": "Indicates, that the operation has failed",
+        "description": "Sends synced parameters if operation has failed.\n\nExample:\n{ \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}",
         "type": "any",
         "name": "bounced"
       },
       "1d9507f4-6c7c-4639-ba2a-d05baaf352c6": {
-        "description": "Indicates, that the operation has succeeded",
+        "description": "Sends synced parameters if operation has succeeded..\n\nExample:\n{ \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}",
         "type": "any",
         "name": "written"
+      },
+      "31b24ad1-7133-4085-9404-793adda54770": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}"
       }
     }
   },
@@ -85,6 +90,11 @@
           "1d9507f4-6c7c-4639-ba2a-d05baaf352c6": {
             "039e3179-8642-4c38-ba2e-07d62002cf03": {
               "2bd1ae85-9ce4-4fd2-915c-853e77b97689": {}
+            }
+          },
+          "31b24ad1-7133-4085-9404-793adda54770": {
+            "039e3179-8642-4c38-ba2e-07d62002cf03": {
+              "cad6cd61-93c6-4da3-97cd-f45304c3f953": {}
             }
           }
         }

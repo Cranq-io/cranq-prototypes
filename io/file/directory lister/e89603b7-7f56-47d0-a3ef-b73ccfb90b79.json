@@ -1,23 +1,28 @@
 {
-  "description": "Non-recursively lists the files & directories under the specified path",
+  "description": "Non-recursively lists the names of files & directories under the specified path.\n\nExample (success): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. [ \"foo.txt\", \"bar.txt\" ]@0 sent on `child names`\n\nExample (failure): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. \n- \"/home/user1/dir1\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, scandir '/home/user1/dir1'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "36d9c3b0-c2c3-4ac9-a2e4-1bf8528f7600": {
-        "description": "",
+        "description": "Receives the path of the directory to list the content of.\n\nExample:\n\"/home/user1/dir1\"\n\n(To keep the application portable use \"/\" as path separator.)",
         "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "acb2963b-7d28-4c79-b458-4cec00becf24": {
-        "description": "The files & directories under the specified path",
+        "description": "Sends the names of files & directories under the specified path.\n\nExample:\n[\n  \"foo.txt\",\n  \"subdir1\"\n]",
         "type": "string[]",
         "name": "child names"
       },
       "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
-        "description": "Indicates, that the operation has failed",
-        "type": "string",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/dir1\"",
+        "type": "typeof `path`",
         "name": "bounced"
+      },
+      "07d91672-6601-4fc4-bd83-bdfe25786b18": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, scandir '/home/user1/dir1'\"\n}"
       }
     }
   },
@@ -26,8 +31,8 @@
       "nodes": {
         "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
           "coordinates": [
-            -9,
-            -52
+            -15,
+            -59
           ],
           "description": "",
           "params": {},
@@ -53,6 +58,11 @@
           "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {
             "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
               "be7d3e30-3f34-4e8f-8a7b-2224ada135a6": {}
+            }
+          },
+          "07d91672-6601-4fc4-bd83-bdfe25786b18": {
+            "d074e86b-c9b1-40e3-b041-44b90dd5003a": {
+              "df32507c-8d79-4bae-a869-c82a0af1b271": {}
             }
           }
         }

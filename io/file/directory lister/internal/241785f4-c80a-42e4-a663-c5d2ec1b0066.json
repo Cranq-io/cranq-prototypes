@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "See io/file/Directory lister",
   "interface": {
     "inputs": {
       "07712441-b6b1-4886-b336-a7feee991391": {
@@ -18,6 +18,10 @@
         "description": "",
         "type": "string",
         "name": "bounced"
+      },
+      "df32507c-8d79-4bae-a869-c82a0af1b271": {
+        "type": "{\"error\": string}",
+        "name": "error"
       }
     }
   },
@@ -27,11 +31,11 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "07712441-b6b1-4886-b336-a7feee991391": "const {readdir} = require(\"fs\");\nreaddir(data, (error, files) => {\n  if (error) {\n    outputs.bounced(data, tag);\n  } else {\n    outputs[\"child names\"](files, tag);\n  }\n});"
+        "07712441-b6b1-4886-b336-a7feee991391": "const {readdir} = require(\"fs\");\nreaddir(data, (error, files) => {\n  if (error) {\n    outputs.bounced(data, tag);\n    outputs.error({error: String(error)}, tag);\n  } else {\n    outputs[\"child names\"](files, tag);\n  }\n});"
       }
     }
   },
-  "name": "io/file/Directory lister (internal)",
+  "name": "io/file/Directory lister/Internal",
   "attributes": {
     "internal": true,
     "locked": true

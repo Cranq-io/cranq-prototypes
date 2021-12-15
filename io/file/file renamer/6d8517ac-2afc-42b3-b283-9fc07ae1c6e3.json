@@ -1,28 +1,33 @@
 {
-  "description": "Renames a file",
+  "description": "Renames a file specified by the path in `source path` to the new file name in `new name`.\n\nExample (success): \n1. \"home/user1/foo.txt\"@0 received on `source path`\n2. \"bar.txt\"@0 received on `new name`\n3. { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"/home/user1/dir1/bar.txt\"\n}@ sent on `renamed`\n\nExample (failure): \n1. \"/home/user1/foo.txt\"@0 received on `source path`\n2. \"bar.txt\"@0 received on `new name`\n3. \n- { \nsource: \"/home/user1/dir1/foo.txt\", \ndestination: \"/home/user1/dir1/bar.txt\"\n}@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, rename '/home/user1/dir1/foo.txt' -> '/home/user2/dir1/bar.txt'\"\n}@0 sent on `error`",
   "interface": {
     "inputs": {
       "792b051d-421b-4aef-bf53-beda69f57af1": {
-        "description": "The path to the source file",
-        "type": "any",
+        "description": "Receives the path of the file to rename.\n\nExample:\n\"/home/user1/dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
+        "type": "string",
         "name": "source path"
       },
       "6d745d7e-8ad3-424d-9ab6-17f05f2feee5": {
-        "description": "The desired new name",
-        "type": "any",
+        "description": "Receives the desired new file name.\n\nExample:\n\"bar.txt\"",
+        "type": "string",
         "name": "new name"
       }
     },
     "outputs": {
       "80086718-d928-4b93-aba9-13e6bf1c03b8": {
-        "description": "Indicates, that the operation has failed",
+        "description": "Sends synced parameters if operation has failed.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir1/bar.txt\"\n}",
         "type": "any",
         "name": "bounced"
       },
       "d500d1f6-20b9-4704-9c92-52a253ee2862": {
-        "description": "Indicates, that the operation has succeeded",
+        "description": "Sends synced parameters if operation has succeeded.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir1/bar.txt\"\n}",
         "type": "any",
         "name": "renamed"
+      },
+      "db50d76f-e0bc-4d56-a919-90167da777c9": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, rename '/home/user1/dir1/foo.txt' -> '/home/user1/dir1/bar.txt'\"\n}"
       }
     }
   },
@@ -147,6 +152,11 @@
           "d500d1f6-20b9-4704-9c92-52a253ee2862": {
             "4e5dfdb9-72bc-4dec-ab98-a4cb51ab466c": {
               "6c8e4252-68df-4c72-b3dd-f34955aa93f0": {}
+            }
+          },
+          "db50d76f-e0bc-4d56-a919-90167da777c9": {
+            "4e5dfdb9-72bc-4dec-ab98-a4cb51ab466c": {
+              "14ba3f81-13c6-4d9d-a08f-6dfca5766529": {}
             }
           }
         }

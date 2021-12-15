@@ -3,20 +3,26 @@
   "interface": {
     "inputs": {
       "d2a2cb7d-11ad-4e04-88e9-4498660a0f2a": {
-        "description": "",
+        "description": "Receives the path of the directory to list the content of.\n\nExample:\n\"/home/user1/dir1\"\n\n(To keep the application portable use \"/\" as path separator.)",
         "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "16bd6ea1-1bf8-4c2e-b42e-64bd013de08b": {
-        "description": "The resulting path",
+        "description": "Sends the path of files & directories under the specified path.\n\nExample:\n[\n  \"/home/user1/dir1/foo.txt\",\n  \"/home/user1/dir1/subdir1\"\n]",
         "type": "string[]",
         "name": "child paths"
       },
       "8fa53b01-eb86-4415-afb4-abe262a3094b": {
         "type": "string",
-        "name": "bounced"
+        "name": "bounced",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/dir1\""
+      },
+      "1ecda668-2270-43f1-8bfb-9e10dc7f48e8": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, scandir 'home/user1'\"\n}"
       }
     }
   },
@@ -137,6 +143,11 @@
             "34e8ec8b-9d24-4140-bfdd-6d8050d184fa": {
               "a994fc3f-0d26-4a45-b3e0-96d6ddd8ae6e": {}
             }
+          },
+          "1ecda668-2270-43f1-8bfb-9e10dc7f48e8": {
+            "34e8ec8b-9d24-4140-bfdd-6d8050d184fa": {
+              "07d91672-6601-4fc4-bd83-bdfe25786b18": {}
+            }
           }
         }
       }
@@ -144,5 +155,6 @@
   },
   "attributes": {
     "locked": true
-  }
+  },
+  "description": "Non-recursively lists the paths of files & directories under the specified path.\n\nExample (success): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. [ \"/home/user1/dir1/foo.txt\", \"/home/user1/dir1/bar.txt\" ]@0 sent on `child names`\n\nExample (failure): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. \n- \"/home/user1/dir1\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, scandir '/home/user1/dir1'\"\n}@0 sent on `error`"
 }

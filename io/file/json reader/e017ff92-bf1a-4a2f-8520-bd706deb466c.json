@@ -4,17 +4,25 @@
     "inputs": {
       "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {
         "type": "string",
-        "name": "path"
+        "name": "path",
+        "description": "Receives the path of the file to read content of as JSON.\n\nExample:\n\"/home/user1/dir1/foo.json\"\n\n(To keep the application portable use \"/\" as path separator.)"
       }
     },
     "outputs": {
       "a858b493-c881-476d-89af-688826173640": {
         "type": "{string:any}",
-        "name": "data"
+        "name": "data",
+        "description": "Sends the parsed JSON content read from the file specified by `path`.\n\nExample:\n{\n  \"foo\": 1,\n  \"bar\": 2,\n  \"foobar\": [1,2]\n}\n"
       },
       "8c073c0a-c7fe-4c28-901f-717ab7df4f65": {
-        "type": "any",
-        "name": "bounced"
+        "type": "typeof `path`",
+        "name": "bounced",
+        "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/dir1/foo.json\""
+      },
+      "5f515f63-3948-4612-8987-0417f8b03ae9": {
+        "type": "{ \"error\": string }",
+        "name": "error",
+        "description": "Sends error information if the operation has failed.\n\nExample (file access error): \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}\n\nExample (json parse error):\n{\n  \"error\": \"SyntaxError: Unexpected token } in JSON at position 45\"\n}"
       }
     }
   },
@@ -27,11 +35,21 @@
               "612de880-6653-4097-b917-aabc4f6aceb2": {}
             }
           }
+        },
+        "dcb05387-332f-4ba5-98e9-a1c3d780906c": {
+          "426110b5-257a-45c2-976c-f42195dafde8": {
+            "17c36c99-f974-4f15-be7e-ff86ed05b3b6": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
           "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {
+            "17c36c99-f974-4f15-be7e-ff86ed05b3b6": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            },
             "a865d03d-303a-4c43-93ec-5f57537db5af": {
               "dbd6e98a-e575-469c-989a-a5e6c579a86d": {}
             }
@@ -44,11 +62,19 @@
             }
           },
           "8c073c0a-c7fe-4c28-901f-717ab7df4f65": {
-            "dcb05387-332f-4ba5-98e9-a1c3d780906c": {
-              "426110b5-257a-45c2-976c-f42195dafde8": {}
-            },
             "a865d03d-303a-4c43-93ec-5f57537db5af": {
               "1c5e0968-5d00-4931-831b-8b8f716c5117": {}
+            },
+            "17c36c99-f974-4f15-be7e-ff86ed05b3b6": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          },
+          "5f515f63-3948-4612-8987-0417f8b03ae9": {
+            "a865d03d-303a-4c43-93ec-5f57537db5af": {
+              "839ba056-d6b2-4102-bd70-4f45677858ee": {}
+            },
+            "dcb05387-332f-4ba5-98e9-a1c3d780906c": {
+              "a42a0dbc-5235-416c-9166-9999d79c06f6": {}
             }
           }
         }
@@ -56,8 +82,8 @@
       "nodes": {
         "a865d03d-303a-4c43-93ec-5f57537db5af": {
           "coordinates": [
-            1,
-            -55
+            -61,
+            0
           ],
           "name": "read file",
           "prototype": "712583d9-30e2-4ec7-81c7-3a12ee18c4e8",
@@ -65,17 +91,26 @@
         },
         "dcb05387-332f-4ba5-98e9-a1c3d780906c": {
           "coordinates": [
-            -1,
-            62
+            36,
+            -77
           ],
           "name": "parse json",
           "prototype": "6470bc83-fb15-4801-942a-6f6dbc46a908",
           "params": {}
+        },
+        "17c36c99-f974-4f15-be7e-ff86ed05b3b6": {
+          "coordinates": [
+            183,
+            -146
+          ],
+          "name": "path",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
         }
       }
     }
   },
   "attributes": {
     "locked": true
-  }
+  },
+  "description": "Reads a JSON file from the specified path and outputs its content.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"foo\": 1,\n  \"bar\": 2,\n  \"foobar\": [1,2]\n}@0 sent on `text`\n\nExample (failure):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \n- \"/home/user1/dir1/foo.txt\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}@0 sent on `error`"
 }

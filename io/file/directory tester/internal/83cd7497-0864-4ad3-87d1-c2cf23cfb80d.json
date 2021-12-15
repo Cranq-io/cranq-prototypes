@@ -1,17 +1,17 @@
 {
-  "description": "",
+  "description": "See io/file/Directory tester",
   "interface": {
     "inputs": {
       "a75b3153-1c32-4f65-8df4-7cb31f4d9d51": {
         "description": "",
-        "type": "any",
+        "type": "string",
         "name": "path"
       }
     },
     "outputs": {
       "d929fe69-7a19-444d-bfc4-dc4f6c2305bc": {
         "description": "",
-        "type": "any",
+        "type": "boolean",
         "name": "directory"
       }
     }

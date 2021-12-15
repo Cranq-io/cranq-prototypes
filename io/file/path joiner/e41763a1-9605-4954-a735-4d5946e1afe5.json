@@ -1,21 +1,21 @@
 {
-  "description": "Joins the specified relative path to a base path in an operating system-specific manner.",
+  "description": "Joins the specified relative path to a base path in an operating system-specific manner.\n\nExample:\n1. \"/home/user1/\" received on `base`\n2. \"dir1/foo.txt\" received on `relative`\n3. \"/home/user1/dir1/foo.txt\" sent on `joined`",
   "interface": {
     "inputs": {
       "ab886f82-7887-4f25-b2f4-d5a48c111845": {
-        "description": "The base path to concatenate onto.",
+        "description": "Receives the base path to concatenate onto.\n\nExample:\n\"/home/user1/\"\n\n(To keep the application portable use \"/\" as path separator.)",
         "type": "string",
         "name": "base"
       },
       "3a5d55e5-53ef-4c70-a361-35608a7474d2": {
-        "description": "Path relative to `base`.",
+        "description": "Receives the path relative to `base`.\n\nExample:\n\"dir1/foo.txt\"\n\n(To keep the application portable use \"/\" as path separator.)",
         "type": "string",
         "name": "relative"
       }
     },
     "outputs": {
       "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
-        "description": "The resulting path",
+        "description": "Sends the resulting path.\n\nExample:\n\"/home/user1/dir1/foo.txt\"",
         "type": "string",
         "name": "joined"
       }

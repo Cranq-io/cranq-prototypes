@@ -9,7 +9,8 @@
       },
       "5ccbb1e3-defa-4b8f-94e5-b81e502bdc35": {
         "type": "{\n  \"get-names\": typeof `params` of `get image names`,\n  \"build-paths\": typeof `params` of `build image paths`,\n  \"build-data\": typeof `params` of `build image data`,\n  \"upload\": typeof `params` of `upload images`\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Recieves upload images params.\n\nExample:\n{\n  \"get-names\": {\n    \"cwd\": \"./moralis\",\n    \"result-path\": [\"image-names\"],\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"moralis\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./moralis\",\n      \"result-path\": [\"image-paths\"],\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"moralis\"\n    },\n    \"mapping\": {\"child-paths\": \"image-names\"}\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./moralis\",\n      \"result-path\": [\"image-upload-data\"],\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\"image-paths\": \"image-paths\"}\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./moralis\",\n      \"result-path\": [\"image-urls\"],\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API-KEY\"\n    },\n    \"mapping\": {\"folder-upload-data\": \"image-upload-data\"}\n  }\n}"
       }
     },
     "outputs": {
@@ -222,5 +223,6 @@
   },
   "attributes": {
     "locked": true
-  }
+  },
+  "description": "Uploads multiple images and place them in a folder directory and stores the ipfs URLs in the state.\n\nExample:\n{}"
 }

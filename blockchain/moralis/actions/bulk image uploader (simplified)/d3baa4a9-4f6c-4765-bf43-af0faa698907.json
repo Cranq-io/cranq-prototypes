@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "da142a96-9c10-4879-b6cc-beb512f063b8": {
-        "description": "Receives script state.",
+        "description": "Receives script state.\n\nExample:\n{}@0",
         "type": "any",
         "name": "state"
       },
@@ -15,7 +15,7 @@
     },
     "outputs": {
       "fa0310e3-9e7a-4e17-9d44-074cb535b1e8": {
-        "description": "Sends updated script state.",
+        "description": "Sends updated script state.\n\nExample:\n{\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"moralis\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"moralis\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/moralis/logo.jpg\"\n  ]\n}",
         "type": "typeof `state`",
         "name": "state"
       }
@@ -49,8 +49,8 @@
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {
-            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"get-names\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": [\"image-names\"],\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-paths\"],\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"temp/batch-images\"\n    },\n    \"mapping\": {\"child-paths\": \"image-names\"}\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-upload-data\"],\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\"image-paths\": \"image-paths\"}\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-urls\"],\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API-KEY\"\n    },\n    \"mapping\": {\"folder-upload-data\": \"image-upload-data\"}\n  }\n}",
-            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n\"get-names.cwd\" : \"cwd\",\n\"get-names.directory-path\" : \"images-directory\",\n\"build-paths.params.cwd\" : \"cwd\",\n\"build-paths.params.base-path\" : \"images-directory\",\n\"build-data.params.cwd\" : \"cwd\",\n\"upload.params.cwd\" : \"cwd\",\n\"upload.params.api-key\" :  \"moralis-api-key\"\n}"
+            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n\"get-names.cwd\" : \"cwd\",\n\"get-names.directory-path\" : \"images-directory\",\n\"build-paths.params.cwd\" : \"cwd\",\n\"build-paths.params.base-path\" : \"images-directory\",\n\"build-data.params.cwd\" : \"cwd\",\n\"upload.params.cwd\" : \"cwd\",\n\"upload.params.api-key\" :  \"moralis-api-key\"\n}",
+            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"get-names\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": [\"image-names\"],\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"temp/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-paths\"],\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"temp/batch-images\"\n    },\n    \"mapping\": {\"child-paths\": \"image-names\"}\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-upload-data\"],\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\"image-paths\": \"image-paths\"}\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"image-urls\"],\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API-KEY\"\n    },\n    \"mapping\": {\"folder-upload-data\": \"image-upload-data\"}\n  }\n}"
           }
         }
       },
@@ -100,5 +100,13 @@
   },
   "attributes": {
     "locked": true
+  },
+  "description": "Uploads multiple images and place them in a folder directory and stores the ipfs URLs in the state.\n\nExample:\n1. {}@0 receiced via `state`\n2. {\n  \"cwd\": \"./nft\",\n  \"images-directory\": \"nft/batch-images\",\n  \"moralis-api-key\": \"API_KEY\"\n}@0 received via `params`\n3.{\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"moralis\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"moralis\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/moralis/logo.jpg\"\n  ]\n}@0 sent via `state`",
+  "keywords": {
+    "batch": null,
+    "minting": null,
+    "nft": null,
+    "crypto": null,
+    "action": null
   }
 }

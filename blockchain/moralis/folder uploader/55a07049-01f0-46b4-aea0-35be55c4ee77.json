@@ -3,19 +3,21 @@
   "interface": {
     "inputs": {
       "6563df06-3ce3-4d32-a3d6-44d78d203e8a": {
-        "description": "",
-        "type": "{\"path\": string, \"content\": any}",
+        "description": "Receives moralis post data.\n\nExample:\n[\n    {\n      \"path\": \"moralis/logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ]",
+        "type": "{\n \"path\": string,\n \"content\": \n string\n} []",
         "name": "folder data"
       },
       "dcec7b3f-c0c0-4778-9f37-004a68adf620": {
         "type": "string",
-        "name": "API key"
+        "name": "API key",
+        "description": "Receives moralis API key.\n\nExample: \n\"ffdfdhdhgdjjhggkjcvxc\" "
       }
     },
     "outputs": {
       "7e984380-5a08-4f9e-8d84-404fb1fd4e80": {
-        "type": "{\"path\": string}[]",
-        "name": "file URLs"
+        "type": "string[]",
+        "name": "file URLs",
+        "description": "Sends file ipfs URLs.\n\nExample:\n [\n\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/moralis/logo.jpg\" \n]\n"
       },
       "678eb67e-d332-435d-a087-1a7c168dc24f": {
         "type": "any",
@@ -152,5 +154,11 @@
   },
   "attributes": {
     "locked": true
-  }
+  },
+  "keywords": {
+    "image": null,
+    "upload": null,
+    "ipfs": null
+  },
+  "description": "Posts upload file data to  https://deep-index.moralis.io/api/v2/ipfs/uploadFolder endpoint\n\nMore: \nhttps://docs.moralis.io/moralis-server/web3-sdk/ipfs-storage-new\n\nExample:\n1. [\n    {\n      \"path\": \"moralis/logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ]\"@0 received via `folder data`  \n2. \"ffdfdhdhgdjjhggkjcvxc\"@0 received via `API key` \n3. [  :\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/moralis/logo.jpg\" \n]@0 sent via `file URLs`"
 }

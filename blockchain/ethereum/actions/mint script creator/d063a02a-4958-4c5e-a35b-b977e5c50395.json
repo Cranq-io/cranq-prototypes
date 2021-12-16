@@ -7,7 +7,7 @@
         "name": "state"
       },
       "1a073da4-ab17-4a41-9099-dd98bc1589a0": {
-        "type": "{\n  \"cwd\": string,\n  \"result-path\": string,\n  \"message\": string,\n  \"contract-address\": string,\n  \"token-uri\": string,\n  \"create-file\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"contract-address\": string,\n  \"contract-name\": string,\n  \"token-uri\": string,\n  \"create-file\": string\n}",
         "name": "params",
         "description": ""
       }
@@ -39,7 +39,7 @@
           "name": "prepare mint-nft.js",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"require(\\\"dotenv\\\").config()\\nconst API_URL = process.env.API_URL\\nconst PUBLIC_KEY = process.env.PUBLIC_KEY\\nconst PRIVATE_KEY = process.env.PRIVATE_KEY\\n\\nconst { createAlchemyWeb3 } = require(\\\"@alch/alchemy-web3\\\")\\nconst web3 = createAlchemyWeb3(API_URL)\\n\\nconst contract = require(\\\"../artifacts/contracts/MyNFT.sol/MyNFT.json\\\")\\nconst contractAddress = \\\"{CONTRACT_ADDRESS}\\\"\\nconst nftContract = new web3.eth.Contract(contract.abi, contractAddress)\\n\\nasync function mintNFT(tokenURI) {\\n  const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, \\\"latest\\\") //get latest nonce\\n\\n  //the transaction\\n  const tx = {\\n    from: PUBLIC_KEY,\\n    to: contractAddress,\\n    nonce: nonce,\\n    gas: 500000,\\n    data: nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI(),\\n  }\\n\\n  const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY)\\n  signPromise\\n    .then((signedTx) => {\\n      web3.eth.sendSignedTransaction(\\n        signedTx.rawTransaction,\\n        function (err, hash) {\\n          if (!err) {\\n            console.log(\\n              \\\"The hash of your transaction is: \\\",\\n              hash,\\n              \\\"Check Alchemy's Mempool to view the status of your transaction!\\\"\\n            )\\n          } else {\\n            console.log(\\n              \\\"Something went wrong when submitting your transaction:\\\",\\n              err\\n            )\\n          }\\n        }\\n      )\\n    })\\n    .catch((err) => {\\n      console.log(\\\"Promise failed:\\\", err)\\n    })\\n}\\n\\nmintNFT(\\\"{TOKEN_URI}\\\")\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"require(\\\"dotenv\\\").config()\\nconst API_URL = process.env.API_URL\\nconst PUBLIC_KEY = process.env.PUBLIC_KEY\\nconst PRIVATE_KEY = process.env.PRIVATE_KEY\\n\\nconst { createAlchemyWeb3 } = require(\\\"@alch/alchemy-web3\\\")\\nconst web3 = createAlchemyWeb3(API_URL)\\n\\nconst contract = require(\\\"../artifacts/contracts/{CONTRACT_NAME}.sol/{CONTRACT_NAME}.json\\\")\\nconst contractAddress = \\\"{CONTRACT_ADDRESS}\\\"\\nconst nftContract = new web3.eth.Contract(contract.abi, contractAddress)\\n\\nasync function mintNFT(tokenURI) {\\n  const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, \\\"latest\\\") //get latest nonce\\n\\n  //the transaction\\n  const tx = {\\n    from: PUBLIC_KEY,\\n    to: contractAddress,\\n    nonce: nonce,\\n    gas: 500000,\\n    data: nftContract.methods.mintNFT(PUBLIC_KEY, tokenURI).encodeABI(),\\n  }\\n\\n  const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY)\\n  signPromise\\n    .then((signedTx) => {\\n      web3.eth.sendSignedTransaction(\\n        signedTx.rawTransaction,\\n        function (err, hash) {\\n          if (!err) {\\n            console.log(\\n              \\\"The hash of your transaction is: \\\",\\n              hash,\\n              \\\"Check Alchemy's Mempool to view the status of your transaction!\\\"\\n            )\\n          } else {\\n            console.log(\\n              \\\"Something went wrong when submitting your transaction:\\\",\\n              err\\n            )\\n          }\\n        }\\n      )\\n    })\\n    .catch((err) => {\\n      console.log(\\\"Promise failed:\\\", err)\\n    })\\n}\\n\\nmintNFT(\\\"{TOKEN_URI}\\\")\""
           }
         },
         "7924b52c-30d6-4c2e-bac8-07cfbd89a15e": {
@@ -47,7 +47,7 @@
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"CONTRACT_ADDRESS\", \"TOKEN_URI\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n\"CONTRACT_ADDRESS\", \"CONTRACT_NAME\", \"TOKEN_URI\"\n]"
           }
         },
         "81f9c990-972e-49d3-8c7c-b71daf24eb86": {
@@ -55,7 +55,7 @@
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"contract-address\", \"token-uri\", \"create-file\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\n\"contract-address\", \n\"contract-name\", \n\"token-uri\", \n\"create-file\"\n]"
           }
         },
         "b3870b47-870c-4299-ab2d-cc976d562513": {
@@ -105,6 +105,11 @@
           "contract-address": {
             "7924b52c-30d6-4c2e-bac8-07cfbd89a15e": {
               "CONTRACT_ADDRESS": {}
+            }
+          },
+          "contract-name": {
+            "7924b52c-30d6-4c2e-bac8-07cfbd89a15e": {
+              "CONTRACT_NAME": {}
             }
           },
           "token-uri": {

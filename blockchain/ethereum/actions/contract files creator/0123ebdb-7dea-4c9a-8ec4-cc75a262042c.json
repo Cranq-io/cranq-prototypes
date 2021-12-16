@@ -8,7 +8,7 @@
         "name": "state"
       },
       "b0c10279-2fdc-48ec-926d-f348e6222553": {
-        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"write-deploy\": typeof `params` of `write deploy.js`,\n}",
+        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"write-deploy\": typeof `params` of `write deploy.js`\n}",
         "name": "params"
       }
     },
@@ -28,15 +28,6 @@
             -29.96666666666664
           ],
           "name": "create Hardhat config",
-          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
-          "params": {}
-        },
-        "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-          "coordinates": [
-            342.83867187500005,
-            142.43333333333334
-          ],
-          "name": "write deploy.js",
           "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
           "params": {}
         },
@@ -85,6 +76,26 @@
           ],
           "name": "create contract",
           "prototype": "fdcc8511-b32f-4080-b7c4-5349cad88f27"
+        },
+        "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+          "coordinates": [
+            361.83867187500005,
+            220.43333333333334
+          ],
+          "name": "create deploy script",
+          "prototype": "ceeb0e68-734f-4ff4-aaad-7302710fffae",
+          "params": {}
+        },
+        "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+          "coordinates": [
+            95.83867187499999,
+            186.28489583333334
+          ],
+          "name": "params copier",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {
+            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n \"contract-name\": \"blockchain.erc721.single-nft.contract-created\"\n}"
+          }
         }
       },
       "connections": {
@@ -111,14 +122,14 @@
               "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
             }
           },
-          "write-deploy": {
-            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
-            }
-          },
           "create-contract": {
             "1c274963-734b-4da2-8751-0edc9d947d73": {
               "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {}
+            }
+          },
+          "write-deploy": {
+            "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+              "9bd88c07-0858-4ead-b615-069284f0db34": {}
             }
           }
         },
@@ -150,8 +161,18 @@
         },
         "1c274963-734b-4da2-8751-0edc9d947d73": {
           "7de95841-2f5a-4e13-9729-8992b8e9ebc0": {
-            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+              "38ea00a8-4881-4cf3-9a2a-7ccbc3adecd1": {}
+            },
+            "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          }
+        },
+        "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+              "83168491-efcd-4eb0-9358-30f5cdccb58c": {}
             }
           }
         }
@@ -171,17 +192,15 @@
         },
         "outputs": {
           "7a4ab3a3-2de9-4d6e-872b-fdb7a21f6d09": {
-            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+              "f8f2fca1-9c18-4064-8fe2-bd296e2c824c": {}
             }
           }
         }
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
+  "attributes": {},
   "keywords": {
     "action": null,
     "scripting": null,

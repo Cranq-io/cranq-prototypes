@@ -15,7 +15,8 @@
     "outputs": {
       "c4f2da1e-2250-4d46-aaf3-936d50d2dde3": {
         "type": "typeof `state`",
-        "name": "state"
+        "name": "state",
+        "description": "Example: \n{\n  \"working-folder-created\": true,\n  \"hardhat\": {\n    \"contracts-folder-created\": true,\n    \"scripts-folder-created\": true,\n    \"installed\": true,\n    \"config-created\": true,\n    \"deploy-script-created\": true,\n    \"contract-compiled\": true,\n    \"contract-deployed\": \"0xC6041039D24BF7BC467Ee51423347d6015bdC68C\"\n  },\n  \"npm\": {\n    \"package-initialized\": true\n  },\n  \"dotenv\": {\n    \"installed\": true\n  },\n  \"etherjs\": {\n    \"installed\": true\n  },\n  \"openzeppelin\": {\n    \"contracts\": {\n      \"installed\": true\n    }\n  },\n  \".env\": {\n    \"alchemy\": {\n      \"api-url-written\": true\n    },\n    \"metamask\": {\n      \"private-key-written\": true\n    }\n  },\n  \"blockchain\": {\n    \"erc721\": {\n      \"contract\": {\n        \"contract-created\": \"My_Test_NFT_Contract\"\n      }\n    }\n  }\n} @start"
       }
     }
   },
@@ -159,9 +160,7 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
+  "attributes": {},
   "keywords": {
     "scripting": null,
     "action": null,

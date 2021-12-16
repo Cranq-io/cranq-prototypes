@@ -93,8 +93,17 @@
           ],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {}
+        },
+        "0b3e17bb-e567-4433-80e4-6dfbee58b5a3": {
+          "coordinates": [
+            -137.161328125,
+            263.9515625
+          ],
+          "name": "create mapping",
+          "prototype": "6b437beb-0074-483a-82de-9aa7c96120d9",
           "params": {
-            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n \"contract-name\": \"blockchain.erc721.single-nft.contract-created\"\n}"
+            "59af9cac-db09-4217-978c-a9cbb5736bbe": "\"contract-name\""
           }
         }
       },
@@ -125,6 +134,9 @@
           "create-contract": {
             "1c274963-734b-4da2-8751-0edc9d947d73": {
               "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {}
+            },
+            "0b3e17bb-e567-4433-80e4-6dfbee58b5a3": {
+              "6d487f10-89cc-4b88-8b79-ec70db7f2e6c": {}
             }
           },
           "write-deploy": {
@@ -173,6 +185,13 @@
           "016df9f6-e555-4594-b84f-ca1e9401fae8": {
             "e4a9320b-bcce-400f-85fd-c998389d68ae": {
               "83168491-efcd-4eb0-9358-30f5cdccb58c": {}
+            }
+          }
+        },
+        "0b3e17bb-e567-4433-80e4-6dfbee58b5a3": {
+          "25bf2ee5-052b-441b-ba02-3ce70a1e8cb8": {
+            "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+              "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
             }
           }
         }

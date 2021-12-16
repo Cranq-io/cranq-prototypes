@@ -7,7 +7,7 @@
         "name": "state"
       },
       "42e3845a-5a39-4e31-9fba-5769df601da6": {
-        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"app-id\": string,\n  \"port\": number,\n  \"middlewares\": (\"json\" or \"cors\" or \"urlencoded\")[]\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": string,\n  \"message\": string,\n  \"app-id\": string,\n  \"port\": number,\n  \"middlewares\": (\"json\" or \"cors\" or \"urlencoded\")[]\n}",
         "name": "params"
       }
     },
@@ -22,43 +22,28 @@
     "cranq": {
       "nodes": {
         "700290b5-76d7-4d5d-83d0-4d522ec0b019": {
-          "coordinates": [
-            -168.41666666666669,
-            186.83333333333334
-          ],
+          "coordinates": [-168.41666666666669, 186.83333333333334],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
         "27f2b264-bc5a-4d0c-8fc9-fe28adba8704": {
-          "coordinates": [
-            63.416666666666686,
-            263.16666666666663
-          ],
+          "coordinates": [63.416666666666686, 263.16666666666663],
           "name": "store result",
           "prototype": "df2ee367-133e-49a5-afc3-277a41ddd699"
         },
         "23436680-26aa-46b7-83ff-d40e0d7f7062": {
-          "coordinates": [
-            -123.71875,
-            -202.39999999999998
-          ],
+          "coordinates": [-123.71875, -202.39999999999998],
           "name": "start server",
           "prototype": "571c94c6-38b1-4212-833a-b947f50fadec"
         },
         "b2930d66-1d76-49d1-8c2a-8d48c10fcde0": {
-          "coordinates": [
-            143.5546875,
-            -159.39999999999998
-          ],
+          "coordinates": [143.5546875, -159.39999999999998],
           "name": "depot",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
         },
         "f736cc10-27e9-44ad-9798-5ed1aff78e90": {
-          "coordinates": [
-            -156.4453125,
-            -61.39999999999998
-          ],
+          "coordinates": [-156.4453125, -61.39999999999998],
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -66,26 +51,17 @@
           }
         },
         "4413dbe7-35dc-4857-8449-545da59af8f1": {
-          "coordinates": [
-            137.0546875,
-            -20.399999999999977
-          ],
+          "coordinates": [137.0546875, -20.399999999999977],
           "name": "apply middlewares",
           "prototype": "223c258a-c95c-4883-b843-500555539885"
         },
         "16f92e01-1e4d-4e87-a927-a1c6775b49ff": {
-          "coordinates": [
-            132.5546875,
-            121.60000000000002
-          ],
+          "coordinates": [132.5546875, 121.60000000000002],
           "name": "depot B",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
         },
         "6479205b-52ac-46f7-913e-e88aea11c339": {
-          "coordinates": [
-            -164.4453125,
-            65.60000000000002
-          ],
+          "coordinates": [-164.4453125, 65.60000000000002],
           "name": "apply defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {

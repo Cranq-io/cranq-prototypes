@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n  \"cwd-path\": (string or number)[],\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"directory-path\": string\n}",
+        "type": "{\n  \"cwd-path\": (string or number)[],\n  \"result-path\": string,\n  \"message\": string,\n  \"directory-path\": string\n}",
         "name": "params"
       }
     },
@@ -25,37 +25,25 @@
     "cranq": {
       "nodes": {
         "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
-          "coordinates": [
-            -158.83333333333337,
-            68.66666666666669
-          ],
+          "coordinates": [-158.83333333333337, 68.66666666666669],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
         "733af17d-de08-473c-b7a2-ab49f11be687": {
-          "coordinates": [
-            71.27777777777774,
-            166.5925925925926
-          ],
+          "coordinates": [71.27777777777774, 166.5925925925926],
           "name": "fetch / store result",
           "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
           "params": {}
         },
         "58e4302b-18a8-4484-81fc-42361841a75f": {
-          "coordinates": [
-            85.11328125,
-            -11.125
-          ],
+          "coordinates": [85.11328125, -11.125],
           "name": "directory lister",
           "prototype": "e89603b7-7f56-47d0-a3ef-b73ccfb90b79",
           "params": {}
         },
         "7c63f766-fc8f-4689-be66-03c177b34e55": {
-          "coordinates": [
-            190.61328125,
-            -80.875
-          ],
+          "coordinates": [190.61328125, -80.875],
           "name": "logger (with message)",
           "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
           "params": {
@@ -63,10 +51,7 @@
           }
         },
         "29eca8f1-bd89-468c-964f-89b849485206": {
-          "coordinates": [
-            -94.00390625,
-            -171.875
-          ],
+          "coordinates": [-94.00390625, -171.875],
           "name": "get directory",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
@@ -74,10 +59,7 @@
           }
         },
         "10b17b27-6e2f-4212-8f90-ae749b981a3e": {
-          "coordinates": [
-            -153.00390625,
-            -60.875
-          ],
+          "coordinates": [-153.00390625, -60.875],
           "name": "depot",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
           "params": {}

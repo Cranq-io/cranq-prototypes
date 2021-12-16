@@ -25,31 +25,22 @@
     "cranq": {
       "nodes": {
         "b32be61b-0937-4dc2-bd45-d647be7c1065": {
-          "coordinates": [
-            69,
-            -142
-          ],
+          "coordinates": [69, -142],
           "name": "upload metadata",
           "prototype": "1e73bb54-fb0b-418b-bcfb-4c30bf792f96",
           "params": {}
         },
         "8e97ace0-6a6b-47ba-a600-04c70ac9a6bd": {
-          "coordinates": [
-            7.08020833333336,
-            78.69600694444443
-          ],
+          "coordinates": [7.08020833333336, 78.69600694444443],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {
             "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n\"build-data.cwd\" : \"cwd\",\n\"build-data.image-urls\" : \"image-urls\",\n\"build-data.image-names\" : \"image-names\",\n\"upload.params.cwd\" : \"cwd\",\n\"upload.params.api-key\" :  \"moralis-api-key\"\n}",
-            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"build-data\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": [\n      \"ipfs\",\"image-metadata\"\n    ],\n    \"message\": \"Building metadata for images...\",\n    \"image-urls\": [],\n    \"image-names\": []\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\n        \"ipfs\", \"metadata-urls\"\n      ],\n      \"message\": \"Uploading metadata to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"ipfs.image-metadata\"\n    }\n  }\n}"
+            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"build-data\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": \"ipfs.image-metadata\",\n    \"message\": \"Building metadata for images...\",\n    \"image-urls\": [],\n    \"image-names\": []\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": \"ipfs.metadata-urls\",\n      \"message\": \"Uploading metadata to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"ipfs.image-metadata\"\n    }\n  }\n}"
           }
         },
         "ba5f7a83-003d-41fc-a360-8c0bd19bd6b6": {
-          "coordinates": [
-            -355.91979166666664,
-            -10.303993055555566
-          ],
+          "coordinates": [-355.91979166666664, -10.303993055555566],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         }

@@ -23,40 +23,28 @@
     "cranq": {
       "nodes": {
         "b99a2e75-8046-44d5-a5a2-1d52a937c782": {
-          "coordinates": [
-            129.05092592592592,
-            34.10185185185185
-          ],
+          "coordinates": [129.05092592592592, 34.10185185185185],
           "name": "mint NFT",
           "prototype": "55e407a9-1e4b-46df-8d6e-d647823eb7c5",
           "params": {},
           "description": ""
         },
         "625fc953-d93a-4e63-8233-99b7a5bf316e": {
-          "coordinates": [
-            60.949074074074076,
-            -120.10185185185185
-          ],
+          "coordinates": [60.949074074074076, -120.10185185185185],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {
-            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"install-dependencies\": {\n    \"install-web3\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"web3\", \"installed\"],\n      \"message\": \"Installing web3...\",\n      \"command\": \"npm install @alch/alchemy-web3\"\n    },\n    \"install-dotenv\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": [\"dotenv\", \"installed\"],\n      \"message\": \"Installing dotenv...\",\n      \"command\": \"npm install dotenv --save\"\n    }\n  },\n  \"create-files\": {\n    \"write-api-url\": {\n      \"name\": \"API_URL\",\n      \"value\": \"\",\n      \"append\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": [\".env\", \"alchemy\", \"api-url-written\"],\n        \"message\": \"Writing API URL to .env file...\",\n        \"path\": \".env\"\n      }\n    },\n    \"write-private-key\": {\n      \"name\": \"PRIVATE_KEY\",\n      \"value\": \"\",\n      \"append\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": [\".env\", \"metamask\", \"private-key-written\"],\n        \"message\": \"Writing private key to .env file...\",\n        \"path\": \".env\"\n      }\n    },\n    \"write-public-key\": {\n      \"name\": \"PUBLIC_KEY\",\n      \"value\": \"\",\n      \"append\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": [\".env\", \"metamask\", \"public-key-written\"],\n        \"message\": \"Writing public key to .env file...\",\n        \"path\": \".env\"\n      }\n    },\n    \"create-mint-script\": {\n      \"token-uri\": \"\",\n      \"contract-address\": \"\",\n      \"create-file\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": [\"hardhat\", \"mint-script-created\"],\n        \"message\": \"Creating mint script...\",\n        \"path\": \"scripts/mint-nft.js\"\n      }\n    }\n  },\n  \"run-script\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": [\"hardhat\", \"nft-minted\"],\n    \"message\": \"Minting NFT...\",\n    \"command\": \"node scripts/mint-nft.js\",\n    \"regex\": \"The hash of your transaction is:\\\\s*(0x[a-zA-Z0-9]+)\"\n  }\n}",
+            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"install-dependencies\": {\n    \"install-web3\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": \"web3.installed\",\n      \"message\": \"Installing web3...\",\n      \"command\": \"npm install @alch/alchemy-web3\"\n    },\n    \"install-dotenv\": {\n      \"cwd\": \"./temp\",\n      \"result-path\": \"dotenv.installed\",\n      \"message\": \"Installing dotenv...\",\n      \"command\": \"npm install dotenv --save\"\n    }\n  },\n  \"create-files\": {\n    \"write-api-url\": {\n      \"name\": \"API_URL\",\n      \"value\": \"\",\n      \"append\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": \"\\.env.alchemy.api-url-written\",\n        \"message\": \"Writing API URL to .env file...\",\n        \"path\": \".env\"\n      }\n    },\n    \"write-private-key\": {\n      \"name\": \"PRIVATE_KEY\",\n      \"value\": \"\",\n      \"append\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": \"\\.env.metamask.private-key-written\",\n        \"message\": \"Writing private key to .env file...\",\n        \"path\": \".env\"\n      }\n    },\n    \"write-public-key\": {\n      \"name\": \"PUBLIC_KEY\",\n      \"value\": \"\",\n      \"append\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": \"\\.env.metamask.public-key-written\",\n        \"message\": \"Writing public key to .env file...\",\n        \"path\": \".env\"\n      }\n    },\n    \"create-mint-script\": {\n      \"token-uri\": \"\",\n      \"contract-address\": \"\",\n      \"create-file\": {\n        \"cwd\": \"./temp\",\n        \"result-path\": \"hardhat.mint-script-created\",\n        \"message\": \"Creating mint script...\",\n        \"path\": \"scripts/mint-nft.js\"\n      }\n    }\n  },\n  \"run-script\": {\n    \"cwd\": \"./temp\",\n    \"result-path\": \"hardhat.nft-minted\",\n    \"message\": \"Minting NFT...\",\n    \"command\": \"node scripts/mint-nft.js\",\n    \"regex\": \"The hash of your transaction is:\\\\s*(0x[a-zA-Z0-9]+)\"\n  }\n}",
             "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n  \"create-files.write-private-key.value\": \"wallet-private-key\",\n  \"create-files.write-public-key.value\": \"wallet-public-key\",\n  \"create-files.write-api-url.value\": \"api-url\",\n  \"create-files.create-mint-script.token-uri\": \"token-uri\",\n  \"create-files.create-mint-script.contract-address\": \"contract-address\",\n  \"install-dependencies.install-web3.cwd\": \"cwd\",\n  \"install-dependencies.install-dotenv.cwd\": \"cwd\",\n  \"create-files.write-api-url.append.cwd\": \"cwd\",\n  \"create-files.write-private-key.append.cwd\": \"cwd\",\n  \"create-files.write-public-key.append.cwd\": \"cwd\",\n  \"create-files.create-mint-script.create-file.cwd\": \"cwd\",\n  \"run-script.cwd\": \"cwd\"\n}"
           }
         },
         "df2c0471-2769-4834-823a-03a3a81258ae": {
-          "coordinates": [
-            -116.05092592592592,
-            103.89814814814815
-          ],
+          "coordinates": [-116.05092592592592, 103.89814814814815],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "efb6bba9-1f59-4489-af1c-d06298a519db": {
-          "coordinates": [
-            -86,
-            -41
-          ],
+          "coordinates": [-86, -41],
           "name": "merger",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {

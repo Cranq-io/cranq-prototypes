@@ -24,8 +24,8 @@
       "nodes": {
         "e1f35c80-f7c4-4f83-a4cd-459c338d3edc": {
           "coordinates": [
-            111.50242513020834,
-            38.837500000000034
+            135.50242513020834,
+            54.837500000000034
           ],
           "name": "create smart contract",
           "prototype": "07af5abe-408d-4e83-8e38-79b79ecb26fc",
@@ -33,8 +33,8 @@
         },
         "2ab4feae-fd03-4d9d-91be-8223fc083294": {
           "coordinates": [
-            -82.50242513020834,
-            -91.83749999999998
+            27.497574869791663,
+            -161.83749999999998
           ],
           "name": "prepare params",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
@@ -50,6 +50,17 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "df91a66d-2232-4401-8fe4-8b71657bdaf5": {
+          "coordinates": [
+            -105.2265625,
+            -28.8671875
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"cwd\": \"./temp\"\n}"
+          }
         }
       },
       "connections": {
@@ -67,6 +78,13 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
+            "df91a66d-2232-4401-8fe4-8b71657bdaf5": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "df91a66d-2232-4401-8fe4-8b71657bdaf5": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "2ab4feae-fd03-4d9d-91be-8223fc083294": {
               "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
             }

@@ -1,0 +1,141 @@
+{
+  "name": "flow/Forked aggregator (async)",
+  "description": "Aggregates data received via `data` into two output arrays, depending on whether a corresponding arbitrary input is received via `true` or `false`.\n\nReleases both output arrays on receiving a signal on `release`.\n\nThe input `release` is independent from `data`, `true`, and `false`.\n\nExample:\n1. \"foo\"@0 is received via `data`\n2. \"bar\"@1 is received via `data`\n3. \"baz\"@2 is received via `data`\n4. null@0 is received via `false`\n5. null@1 is received via `true`\n6. null@2 is received via `false`\n7. null@3 is received via `release`\n8. [\"foo\", \"baz\"]@3 is sent via `falses`, and [\"bar\"]@3 is sent via `trues`",
+  "interface": {
+    "inputs": {
+      "08ffc3a6-d343-407f-b9fb-0c7932b7f908": {
+        "type": "any",
+        "name": "release",
+        "description": "Receives signal to release aggregated inputs. Independent of `data`."
+      },
+      "ce19141a-6a9d-4b21-b063-0594935f65c6": {
+        "description": "Receives the data to be forwarded to either output.",
+        "type": "any",
+        "name": "data"
+      },
+      "12ec5f29-56eb-46c3-98ff-f7acf288bac7": {
+        "type": "any",
+        "name": "true",
+        "description": "Receives signal that corresponding `data` should be aggregated into `trues`."
+      },
+      "c1badfb0-6127-4747-a650-1653ece3bdfd": {
+        "type": "any",
+        "name": "false",
+        "description": "Receives signal that corresponding `data` should be aggregated into `falses`."
+      }
+    },
+    "outputs": {
+      "254a0d3d-e9c1-452e-a444-63f9f9a7834b": {
+        "type": "typeof `data`[]",
+        "name": "trues",
+        "description": "Sends the aggregated data, that was accompanied by signals via `true`."
+      },
+      "4402b2b3-49a4-4236-b2a5-b027cee9075c": {
+        "type": "typeof `data`[]",
+        "name": "falses",
+        "description": "Sends the aggregated data, that was accompanied by signals via `false`."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "506a4c74-ad1f-4649-a53d-d310b35825ef": {
+          "coordinates": [
+            125.25,
+            -142.75
+          ],
+          "name": "aggregate trues",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "f6b1a5b7-f2cc-4b8b-9ad4-78d2c379cadb": {
+          "coordinates": [
+            131.25,
+            108.25
+          ],
+          "name": "aggregate falses",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
+          "coordinates": [
+            -40.75,
+            39.25
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "cf405253-fe49-49b9-8256-dfd697839e63": {
+          "coordinates": [
+            -207.75,
+            142.25000000000003
+          ],
+          "name": "to boolean",
+          "prototype": "73b8273f-ef86-4797-8443-ab5662dda5d5"
+        }
+      },
+      "connections": {
+        "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "506a4c74-ad1f-4649-a53d-d310b35825ef": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "f6b1a5b7-f2cc-4b8b-9ad4-78d2c379cadb": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          }
+        },
+        "cf405253-fe49-49b9-8256-dfd697839e63": {
+          "5d478d32-ae8f-4f2b-8f32-9d3cf14db437": {
+            "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "08ffc3a6-d343-407f-b9fb-0c7932b7f908": {
+            "f6b1a5b7-f2cc-4b8b-9ad4-78d2c379cadb": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            },
+            "506a4c74-ad1f-4649-a53d-d310b35825ef": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            }
+          },
+          "ce19141a-6a9d-4b21-b063-0594935f65c6": {
+            "7ffd978f-7da9-4a58-b1b3-9b1c3e11004b": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          },
+          "12ec5f29-56eb-46c3-98ff-f7acf288bac7": {
+            "cf405253-fe49-49b9-8256-dfd697839e63": {
+              "7d8a1e5c-fe55-4483-8604-d8198c09f05e": {}
+            }
+          },
+          "c1badfb0-6127-4747-a650-1653ece3bdfd": {
+            "cf405253-fe49-49b9-8256-dfd697839e63": {
+              "71b2d8f8-8c04-4e7d-8f46-049cee8da304": {}
+            }
+          }
+        },
+        "outputs": {
+          "254a0d3d-e9c1-452e-a444-63f9f9a7834b": {
+            "506a4c74-ad1f-4649-a53d-d310b35825ef": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
+            }
+          },
+          "4402b2b3-49a4-4236-b2a5-b027cee9075c": {
+            "f6b1a5b7-f2cc-4b8b-9ad4-78d2c379cadb": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

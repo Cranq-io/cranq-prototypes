@@ -4,13 +4,15 @@
     "inputs": {
       "14c6fd48-6a62-42fa-9c50-731dccb6de9e": {
         "type": "{\n  \"cwd\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives essential parameters for initializing the state of the script.\n\nProperty 'cwd' defaults to \"./temp\".\n\nExamples:\n* {}\n* {\"cwd\": \"./foo\"}"
       }
     },
     "outputs": {
       "c83f1a25-ca2d-41a4-bfca-97f9cc3b42d8": {
         "type": "any",
-        "name": "state"
+        "name": "state",
+        "description": "Initial state of the program. Sends either the contents of the previously persisted state, or a blank state record.\n\nExamlpe: {}"
       }
     }
   },
@@ -29,8 +31,8 @@
         },
         "557aa7f2-fe50-4c93-a0aa-844230432b35": {
           "coordinates": [
-            133.63671875,
-            -132.42578125
+            161.63671875,
+            -95.42578125
           ],
           "name": "empty state",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
@@ -43,7 +45,7 @@
             134.36328125,
             120.57421875
           ],
-          "name": "json reader",
+          "name": "read state",
           "prototype": "e017ff92-bf1a-4a2f-8520-bd706deb466c",
           "params": {}
         },
@@ -58,10 +60,10 @@
         },
         "19d782b0-6251-4e83-96b1-f15c33b540fa": {
           "coordinates": [
-            -27.63671875,
-            20.57421875
+            10.36328125,
+            15.57421875
           ],
-          "name": "item getter",
+          "name": "get cwd",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
             "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"cwd\""
@@ -69,13 +71,24 @@
         },
         "820e3efe-de64-4f90-828d-48d1df0cbd2b": {
           "coordinates": [
-            -10.3828125,
-            182
+            -5.3828125,
+            190
           ],
-          "name": "path joiner",
+          "name": "state.json path",
           "prototype": "e41763a1-9605-4954-a735-4d5946e1afe5",
           "params": {
             "3a5d55e5-53ef-4c70-a361-35608a7474d2": "\"state.json\""
+          }
+        },
+        "222f8e78-2001-4aed-8cf6-9023b5395747": {
+          "coordinates": [
+            -3,
+            -154
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"cwd\": \"./temp\"}"
           }
         }
       },
@@ -89,8 +102,8 @@
         },
         "3eef520d-bb7c-47e3-a8c1-6b9d42a8019c": {
           "eb4c2873-890f-4780-a895-53e321f3739e": {
-            "19d782b0-6251-4e83-96b1-f15c33b540fa": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            "222f8e78-2001-4aed-8cf6-9023b5395747": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },
@@ -98,11 +111,6 @@
           "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
             "820e3efe-de64-4f90-828d-48d1df0cbd2b": {
               "ab886f82-7887-4f25-b2f4-d5a48c111845": {}
-            }
-          },
-          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
-            "557aa7f2-fe50-4c93-a0aa-844230432b35": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
@@ -117,6 +125,13 @@
           "884ec964-878a-469d-8c1d-c8a3b7365f8f": {
             "54bb087a-6051-4a18-b82f-98af808e89ef": {
               "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {}
+            }
+          }
+        },
+        "222f8e78-2001-4aed-8cf6-9023b5395747": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "19d782b0-6251-4e83-96b1-f15c33b540fa": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
           }
         }
@@ -145,5 +160,11 @@
   "attributes": {
     "locked": true
   },
-  "description": "Starts a script, by reading the persisted state, or if there is none, the specified params."
+  "description": "Starts a script, by reading the persisted state, or if there is none, initializes an blank state.\n\nExample:\n1. {\"cwd\": \"foo\"}@0 received via `params`\n2. {}@0 sent via `state`",
+  "keywords": {
+    "state": null,
+    "reinitialize": null,
+    "initiailze": null,
+    "persist": null
+  }
 }

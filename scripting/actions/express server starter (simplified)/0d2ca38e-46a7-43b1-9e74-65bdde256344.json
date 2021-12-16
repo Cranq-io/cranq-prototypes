@@ -1,0 +1,130 @@
+{
+  "name": "scripting/actions/Express server starter (simplified)",
+  "description": "Starts an express server on the specified port and with the specified middlewares.\n\nSpecifying an 'app-id' allows running multiple express servers at the same time.\n\nWrites the app ID of the started server to state.\n\nRepeatable action.",
+  "interface": {
+    "inputs": {
+      "7a0bb4ed-4ce8-407b-b6be-6dc87e32a7ca": {
+        "type": "any",
+        "name": "state",
+        "description": "Receives script state."
+      },
+      "cd9b4ff4-1a3b-4b5f-a5e1-bccaac9dfdd9": {
+        "type": "{\n  \"cwd\": string,\n  \"app-id\": string,\n  \"port\": number,\n  \"middlewares\": (\"json\" or \"cors\" or \"urlencoded\")[]\n}",
+        "name": "params",
+        "description": "Receives:\n* 'cwd' locates directory for persisted state\n* 'app-id' identifies Express server (default: \"default\")\n* 'port' specifies port to run server on (default: 8080)\n* 'middlewares' lists express middlewares to be activated (default: [])\n\nExample:\n{\n  \"cwd\": \"./express\",\n  \"middlewares\": [\"json\"]\n}"
+      }
+    },
+    "outputs": {
+      "303be1b5-4b8c-4366-9fc9-6ad611f92d63": {
+        "type": "typeof `state`",
+        "name": "state",
+        "description": "Sends updates script state."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ea4f7678-db72-42a3-bc5d-2bdf10745a96": {
+          "coordinates": [
+            103,
+            144
+          ],
+          "name": "start express server",
+          "prototype": "2bb63b5a-5cfb-4dc4-bba1-0b5a597a92ff",
+          "params": {}
+        },
+        "9a631fd0-80e2-4baa-bd4a-9efbcd43d67f": {
+          "coordinates": [
+            -120.71875,
+            75.60000000000002
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "fb45552a-1ea6-4596-9b3e-29fc580ae533": {
+          "coordinates": [
+            94.28125,
+            -105.39999999999998
+          ],
+          "name": "params copier",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {
+            "9bd88c07-0858-4ead-b615-069284f0db34": "{\n  \"cwd\": \"./temp\",\n  \"result-path\": [\"express\", \"started\"],\n  \"message\": \"Starting express...\",\n  \"app-id\": \"default\",\n  \"port\": 8080,\n  \"middlewares\": []\n}\n",
+            "71ef594f-2661-492f-b6e6-278e6ce94c3d": "{\n  \"cwd\": \"cwd\",\n  \"app-id\": \"app-id\",\n  \"port\": \"port\",\n  \"middlewares\": \"middlewares\"\n}"
+          }
+        },
+        "535d1981-b8b2-482f-a748-050d3cfe198b": {
+          "coordinates": [
+            -88.71875,
+            -49.39999999999998
+          ],
+          "name": "apply default",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "d694bd76-84f6-465f-9c8e-8b9570cc8e69": "{\n  \"cwd\": \"./temp\",\n  \"app-id\": \"default\",\n  \"port\": 8080,\n  \"middlewares\": []\n}"
+          }
+        }
+      },
+      "connections": {
+        "9a631fd0-80e2-4baa-bd4a-9efbcd43d67f": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "ea4f7678-db72-42a3-bc5d-2bdf10745a96": {
+              "a18cf886-5592-41f3-9bc0-bf62238024ad": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "535d1981-b8b2-482f-a748-050d3cfe198b": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "fb45552a-1ea6-4596-9b3e-29fc580ae533": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "ea4f7678-db72-42a3-bc5d-2bdf10745a96": {
+              "42e3845a-5a39-4e31-9fba-5769df601da6": {}
+            }
+          }
+        },
+        "535d1981-b8b2-482f-a748-050d3cfe198b": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "fb45552a-1ea6-4596-9b3e-29fc580ae533": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7a0bb4ed-4ce8-407b-b6be-6dc87e32a7ca": {
+            "9a631fd0-80e2-4baa-bd4a-9efbcd43d67f": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "cd9b4ff4-1a3b-4b5f-a5e1-bccaac9dfdd9": {
+            "9a631fd0-80e2-4baa-bd4a-9efbcd43d67f": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "303be1b5-4b8c-4366-9fc9-6ad611f92d63": {
+            "ea4f7678-db72-42a3-bc5d-2bdf10745a96": {
+              "b2d1695e-a3c4-4431-ae7a-cf8b6ee29eb3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "express": null,
+    "api": null,
+    "server": null,
+    "routing": null,
+    "initialize": null
+  }
+}

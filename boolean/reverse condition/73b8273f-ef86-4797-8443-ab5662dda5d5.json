@@ -1,23 +1,23 @@
 {
-  "description": "Converts a signal to boolean. \n\nExample:\n\n1. \"a\"@0 is received via `to true`\n2. true@0 is sent via `output`\n",
+  "description": "Turns binary independent signals into a boolean.\n\nExample A:\n1. null@0 is received via `true`\n2. true@0 is sent via `boolean`\n\nExample B:\n1. \"foo\"@1 is received via `false`\n2. false@1 is sent via `boolean`",
   "interface": {
     "inputs": {
       "7d8a1e5c-fe55-4483-8604-d8198c09f05e": {
-        "description": "trigger true on the `output` port",
+        "description": "Receives signals to be evaluated to true.",
         "type": "any",
         "name": "to true"
       },
       "71b2d8f8-8c04-4e7d-8f46-049cee8da304": {
-        "description": "trigger false on `output` port",
+        "description": "Receives signals to be evaluated to false.",
         "type": "any",
         "name": "to false"
       }
     },
     "outputs": {
       "5d478d32-ae8f-4f2b-8f32-9d3cf14db437": {
-        "description": "Boolean value corresponding to the input trigger",
+        "description": "Sends boolean depending on which input the signal was received through.",
         "type": "boolean",
-        "name": "output"
+        "name": "boolean"
       }
     }
   },
@@ -76,13 +76,15 @@
       }
     }
   },
-  "name": "boolean/To boolean",
+  "name": "boolean/Reverse condition",
   "attributes": {
     "locked": true
   },
   "keywords": {
+    "condition": null,
+    "evaluate": null,
+    "convert": null,
     "boolean": null,
-    "logical": null,
-    "fork": null
+    "logical": null
   }
 }

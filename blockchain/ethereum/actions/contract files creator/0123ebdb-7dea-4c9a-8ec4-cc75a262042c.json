@@ -8,7 +8,7 @@
         "name": "state"
       },
       "b0c10279-2fdc-48ec-926d-f348e6222553": {
-        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"write-deploy\": typeof `params` of `write deploy.js`\n}",
+        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"prepare-write-deploy-params\": typeof `mappings` of `prepare write deploy params`,\n  \"write-deploy\": typeof `params` of `write deploy.js`\n}",
         "name": "params"
       }
     },
@@ -57,7 +57,7 @@
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"write-api-url\", \"write-private-key\", \"create-hardhat-config\", \"create-contract\", \"write-deploy\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"write-api-url\", \"write-private-key\", \"create-hardhat-config\", \"create-contract\", \"prepare-write-deploy-params\", \"write-deploy\"]"
           }
         },
         "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
@@ -75,36 +75,26 @@
             59.43333333333334
           ],
           "name": "create contract",
-          "prototype": "fdcc8511-b32f-4080-b7c4-5349cad88f27"
+          "prototype": "fdcc8511-b32f-4080-b7c4-5349cad88f27",
+          "params": {}
         },
         "e4a9320b-bcce-400f-85fd-c998389d68ae": {
           "coordinates": [
-            361.83867187500005,
-            220.43333333333334
+            375.83867187500005,
+            257.43333333333334
           ],
           "name": "create deploy script",
           "prototype": "ceeb0e68-734f-4ff4-aaad-7302710fffae",
           "params": {}
         },
-        "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+        "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
           "coordinates": [
-            95.83867187499999,
-            186.28489583333334
+            132.838671875,
+            258.28489583333334
           ],
-          "name": "params copier",
+          "name": "prepare write deploy params",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {}
-        },
-        "0b3e17bb-e567-4433-80e4-6dfbee58b5a3": {
-          "coordinates": [
-            -137.161328125,
-            263.9515625
-          ],
-          "name": "create mapping",
-          "prototype": "6b437beb-0074-483a-82de-9aa7c96120d9",
-          "params": {
-            "59af9cac-db09-4217-978c-a9cbb5736bbe": "\"contract-name\""
-          }
         }
       },
       "connections": {
@@ -112,36 +102,6 @@
           "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
             "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
               "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
-            }
-          }
-        },
-        "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
-          "write-api-url": {
-            "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
-              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
-            }
-          },
-          "write-private-key": {
-            "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
-              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
-            }
-          },
-          "create-hardhat-config": {
-            "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
-            }
-          },
-          "create-contract": {
-            "1c274963-734b-4da2-8751-0edc9d947d73": {
-              "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {}
-            },
-            "0b3e17bb-e567-4433-80e4-6dfbee58b5a3": {
-              "6d487f10-89cc-4b88-8b79-ec70db7f2e6c": {}
-            }
-          },
-          "write-deploy": {
-            "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
-              "9bd88c07-0858-4ead-b615-069284f0db34": {}
             }
           }
         },
@@ -176,22 +136,47 @@
             "e4a9320b-bcce-400f-85fd-c998389d68ae": {
               "38ea00a8-4881-4cf3-9a2a-7ccbc3adecd1": {}
             },
-            "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+            "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
               "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
             }
           }
         },
-        "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+        "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
           "016df9f6-e555-4594-b84f-ca1e9401fae8": {
             "e4a9320b-bcce-400f-85fd-c998389d68ae": {
               "83168491-efcd-4eb0-9358-30f5cdccb58c": {}
             }
           }
         },
-        "0b3e17bb-e567-4433-80e4-6dfbee58b5a3": {
-          "25bf2ee5-052b-441b-ba02-3ce70a1e8cb8": {
-            "24ab05f1-04e7-491a-8ef0-20f77f166d3a": {
+        "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
+          "write-api-url": {
+            "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
+              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
+            }
+          },
+          "write-private-key": {
+            "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
+            }
+          },
+          "create-hardhat-config": {
+            "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "create-contract": {
+            "1c274963-734b-4da2-8751-0edc9d947d73": {
+              "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {}
+            }
+          },
+          "prepare-write-deploy-params": {
+            "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
               "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
+            }
+          },
+          "write-deploy": {
+            "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
+              "9bd88c07-0858-4ead-b615-069284f0db34": {}
             }
           }
         }

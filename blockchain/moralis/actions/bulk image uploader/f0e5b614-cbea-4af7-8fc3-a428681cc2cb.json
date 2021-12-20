@@ -10,7 +10,7 @@
       "5ccbb1e3-defa-4b8f-94e5-b81e502bdc35": {
         "type": "{\n  \"get-names\": typeof `params` of `get image names`,\n  \"build-paths\": typeof `params` of `build image paths`,\n  \"build-data\": typeof `params` of `build image data`,\n  \"upload\": typeof `params` of `upload images`\n}",
         "name": "params",
-        "description": "Recieves upload images params.\n\nExample:\n{\n  \"get-names\": {\n    \"cwd\": \"./nft\",\n    \"result-path\": [\n      \"image-names\"\n    ],\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": [\n        \"image-paths\"\n      ],\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"nft/batch-images\"\n    },\n    \"mapping\": {\n      \"child-paths\": \"image-names\"\n    }\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": [\n        \"image-upload-data\"\n      ],\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\n      \"image-paths\": \"image-paths\"\n    }\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": [\n        \"image-urls\"\n      ],\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"image-upload-data\"\n    }\n  }\n}"
+        "description": "Recieves upload images params.\n\nExample:\n{\n  \"get-names\": {\n    \"cwd\": \"./nft\",\n    \"result-path\": \"image-names\",\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-paths\",\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"nft/batch-images\"\n    },\n    \"mapping\": {\n      \"child-paths\": \"image-names\"\n    }\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-upload-data\",\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\n      \"image-paths\": \"image-paths\"\n    }\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-urls\",\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"image-upload-data\"\n    }\n  }\n}"
       }
     },
     "outputs": {
@@ -25,46 +25,31 @@
     "cranq": {
       "nodes": {
         "e7bcbd5f-44c8-4916-bcc2-01ebb5dd4754": {
-          "coordinates": [
-            -278.616868622449,
-            -29.62244897959181
-          ],
+          "coordinates": [-278.616868622449, -29.62244897959181],
           "name": "get image names",
           "prototype": "b014ba06-3287-4933-ac87-2097add5983f",
           "params": {}
         },
         "08afe28e-b80f-4d6c-a08e-93901f114050": {
-          "coordinates": [
-            -50.003587372448976,
-            -79.49744897959184
-          ],
+          "coordinates": [-50.003587372448976, -79.49744897959184],
           "name": "build image paths",
           "prototype": "275ac9ef-4997-4a9f-b1aa-4d414d0ef9e5",
           "params": {}
         },
         "d3dae401-d5c2-444d-8a3a-a49559a25dd4": {
-          "coordinates": [
-            169.99641262755102,
-            58.50255102040816
-          ],
+          "coordinates": [169.99641262755102, 58.50255102040816],
           "name": "upload images",
           "prototype": "bcb59543-2216-46da-8b68-77e2d406c951",
           "params": {}
         },
         "de4942ae-6bae-4494-aa41-41bcb160b545": {
-          "coordinates": [
-            -40.51363201530616,
-            220.10969387755097
-          ],
+          "coordinates": [-40.51363201530616, 220.10969387755097],
           "name": "build image data",
           "prototype": "579485c8-9437-45d9-a5fe-98e5fd525dac",
           "params": {}
         },
         "a3d66523-5a16-4915-b54b-9b70bf9c707b": {
-          "coordinates": [
-            -241.00358737244898,
-            270.5025510204082
-          ],
+          "coordinates": [-241.00358737244898, 270.5025510204082],
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -72,34 +57,22 @@
           }
         },
         "b962d178-304d-48b6-8ec1-801124d7aa12": {
-          "coordinates": [
-            -297.003587372449,
-            154.5025510204082
-          ],
+          "coordinates": [-297.003587372449, 154.5025510204082],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "f59c42b3-de40-4d91-9768-60d64f5823d8": {
-          "coordinates": [
-            -46.312181122448976,
-            -189.99744897959184
-          ],
+          "coordinates": [-46.312181122448976, -189.99744897959184],
           "name": "copy params",
           "prototype": "aec118d9-5ffc-4003-9e15-45b69e49a833"
         },
         "793e51ae-5023-4c49-b86a-65e429f4e449": {
-          "coordinates": [
-            -41.003587372448976,
-            116.50255102040816
-          ],
+          "coordinates": [-41.003587372448976, 116.50255102040816],
           "name": "copy params 2",
           "prototype": "aec118d9-5ffc-4003-9e15-45b69e49a833"
         },
         "2272d5bd-3c39-4538-8c21-022f30015af5": {
-          "coordinates": [
-            168.99641262755102,
-            -46.49744897959184
-          ],
+          "coordinates": [168.99641262755102, -46.49744897959184],
           "name": "copy params 3",
           "prototype": "aec118d9-5ffc-4003-9e15-45b69e49a833"
         }
@@ -224,5 +197,5 @@
   "attributes": {
     "locked": true
   },
-  "description": "Uploads multiple images and place them in a folder directory and stores the ipfs URLs in the state.\n\nExample:\n1. {}@0 received via `state`\n2. {\n  \"get-names\": {\n    \"cwd\": \"./nft\",\n    \"result-path\": [\n      \"image-names\"\n    ],\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": [\n        \"image-paths\"\n      ],\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"nft/batch-images\"\n    },\n    \"mapping\": {\n      \"child-paths\": \"image-names\"\n    }\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": [\n        \"image-upload-data\"\n      ],\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\n      \"image-paths\": \"image-paths\"\n    }\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": [\n        \"image-urls\"\n      ],\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"image-upload-data\"\n    }\n  }\n}@0 received via `params`\n3. {\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"nft\\\\batch-images\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"nft\\\\batch-images\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/nft\\\\batch-images\\\\logo.jpg\"\n  ]\n}@0 sent via `state`"
+  "description": "Uploads multiple images and place them in a folder directory and stores the ipfs URLs in the state.\n\nExample:\n1. {}@0 received via `state`\n2. {\n  \"get-names\": {\n    \"cwd\": \"./nft\",\n    \"result-path\": \"image-names\",\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-paths\",\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"nft/batch-images\"\n    },\n    \"mapping\": {\n      \"child-paths\": \"image-names\"\n    }\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-upload-data\",\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\n      \"image-paths\": \"image-paths\"\n    }\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-urls\",\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"image-upload-data\"\n    }\n  }\n}@0 received via `params`\n3. {\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"nft\\\\batch-images\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"nft\\\\batch-images\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/nft\\\\batch-images\\\\logo.jpg\"\n  ]\n}@0 sent via `state`"
 }

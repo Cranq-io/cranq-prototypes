@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"folder-upload-data\": any,\n  \"api-key\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": string,\n  \"message\": string,\n  \"folder-upload-data\": any,\n  \"api-key\": string\n}",
         "name": "params"
       }
     },
@@ -25,37 +25,25 @@
     "cranq": {
       "nodes": {
         "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
-          "coordinates": [
-            -197.83333333333337,
-            126.66666666666669
-          ],
+          "coordinates": [-197.83333333333337, 126.66666666666669],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
         "733af17d-de08-473c-b7a2-ab49f11be687": {
-          "coordinates": [
-            38.27777777777774,
-            224.5925925925926
-          ],
+          "coordinates": [38.27777777777774, 224.5925925925926],
           "name": "fetch / store result",
           "prototype": "ed1626b0-9a1a-4a77-a702-57575430beb7",
           "params": {}
         },
         "28103ff8-d253-481b-ac5c-493e7138b686": {
-          "coordinates": [
-            72.45591517857144,
-            -127.57142857142856
-          ],
+          "coordinates": [72.45591517857144, -127.57142857142856],
           "name": "upload images",
           "prototype": "55a07049-01f0-46b4-aea0-35be55c4ee77",
           "params": {}
         },
         "a90d1c9a-fda1-40b9-b7c2-a11850dbb281": {
-          "coordinates": [
-            256.07310267857144,
-            -60.571428571428555
-          ],
+          "coordinates": [256.07310267857144, -60.571428571428555],
           "name": "log error",
           "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
           "params": {
@@ -63,10 +51,7 @@
           }
         },
         "be3e73ec-c102-46d9-96ad-af5dc6381337": {
-          "coordinates": [
-            -94.6171875,
-            -205
-          ],
+          "coordinates": [-94.6171875, -205],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -74,10 +59,7 @@
           }
         },
         "e80ecc21-bb62-425a-806f-f2e07a73ea79": {
-          "coordinates": [
-            -168.6171875,
-            -75
-          ],
+          "coordinates": [-168.6171875, -75],
           "name": "depot",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
           "params": {}

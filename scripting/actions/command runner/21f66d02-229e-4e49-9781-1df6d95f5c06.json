@@ -9,7 +9,7 @@
         "name": "state"
       },
       "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {
-        "type": "{\n\"cwd-path\": (string or number)[],\n\"result-path\": string,\n\"message\": string,\n\"command\": string\n}",
+        "type": "{\n\"cwd\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string,\n\"command\": string\n}",
         "name": "params"
       }
     },
@@ -37,7 +37,10 @@
           "params": {}
         },
         "b88aa8bc-288c-4fa1-aac3-88437c538217": {
-          "coordinates": [-145.89062500000006, 110],
+          "coordinates": [
+            -147.89062500000006,
+            127
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}

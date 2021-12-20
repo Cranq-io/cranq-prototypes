@@ -52,8 +52,8 @@
         },
         "af2375d3-c8cc-40f3-baeb-91727a4b62ea": {
           "coordinates": [
-            171.16250000000002,
-            48
+            269.1625,
+            328
           ],
           "name": "install contracts",
           "prototype": "21f66d02-229e-4e49-9781-1df6d95f5c06",
@@ -61,8 +61,8 @@
         },
         "87b55440-320a-4d81-bf05-0e58a00aca89": {
           "coordinates": [
-            168.16250000000002,
-            -132
+            173.16250000000002,
+            -45
           ],
           "name": "install ether.js",
           "prototype": "21f66d02-229e-4e49-9781-1df6d95f5c06",
@@ -70,13 +70,13 @@
         },
         "6a976678-d09a-4b0c-b8e1-da492cf52f53": {
           "coordinates": [
-            -268.83750000000003,
-            133
+            -303.83750000000003,
+            295
           ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"init-package\", \"install-hardhat\", \"install-dotenv\", \"install-ether\", \"install-contracts\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"init-package\", \"install-hardhat\", \"install-dotenv\", \"install-ether\", \"install-etherscan-plugin\", \"install-contracts\"]"
           }
         },
         "38367763-a332-4ad6-a6dd-e8940ff5cfae": {
@@ -87,12 +87,61 @@
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
+        },
+        "6d783e81-0d93-472c-be55-c057ee5db30c": {
+          "coordinates": [
+            219.16250000000002,
+            133
+          ],
+          "name": "install etherscn plugin",
+          "prototype": "21f66d02-229e-4e49-9781-1df6d95f5c06",
+          "params": {}
         }
       },
       "connections": {
         "15205c5f-cc65-4555-88b2-722da48add91": {
           "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
             "fb40c494-b330-49bb-bc5a-293d2ab52b27": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "fb40c494-b330-49bb-bc5a-293d2ab52b27": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "82783e37-d4d9-4479-8e4e-8bddb865ce5c": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "82783e37-d4d9-4479-8e4e-8bddb865ce5c": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "87b55440-320a-4d81-bf05-0e58a00aca89": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "38367763-a332-4ad6-a6dd-e8940ff5cfae": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "6a976678-d09a-4b0c-b8e1-da492cf52f53": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "15205c5f-cc65-4555-88b2-722da48add91": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "87b55440-320a-4d81-bf05-0e58a00aca89": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "6d783e81-0d93-472c-be55-c057ee5db30c": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "6d783e81-0d93-472c-be55-c057ee5db30c": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "af2375d3-c8cc-40f3-baeb-91727a4b62ea": {
               "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
             }
           }
@@ -118,42 +167,14 @@
               "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
             }
           },
+          "install-etherscan-plugin": {
+            "6d783e81-0d93-472c-be55-c057ee5db30c": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
           "install-contracts": {
             "af2375d3-c8cc-40f3-baeb-91727a4b62ea": {
               "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
-            }
-          }
-        },
-        "fb40c494-b330-49bb-bc5a-293d2ab52b27": {
-          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
-            "82783e37-d4d9-4479-8e4e-8bddb865ce5c": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
-        "82783e37-d4d9-4479-8e4e-8bddb865ce5c": {
-          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
-            "87b55440-320a-4d81-bf05-0e58a00aca89": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
-        "87b55440-320a-4d81-bf05-0e58a00aca89": {
-          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
-            "af2375d3-c8cc-40f3-baeb-91727a4b62ea": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
-        "38367763-a332-4ad6-a6dd-e8940ff5cfae": {
-          "d1295197-1962-4680-a037-5890f2175bb9": {
-            "6a976678-d09a-4b0c-b8e1-da492cf52f53": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
-            }
-          },
-          "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "15205c5f-cc65-4555-88b2-722da48add91": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
             }
           }
         }

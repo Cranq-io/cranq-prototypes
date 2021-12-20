@@ -8,7 +8,7 @@
         "name": "state"
       },
       "149caba5-e128-4834-96c5-ef8985c865da": {
-        "type": "{\n  \"compile-contract\": typeof `params` of `compile contract`,\n  \"deploy-contract\": `params` of `deploy contract`\n}",
+        "type": "{\n  \"compile-contract\": typeof `params` of `compile contract`,\n  \"deploy-contract\": `params` of `deploy contract`,\n\"prepare-verify-contract-params\": `mappings` of `prepare verify contract params`\n\"verify-contract\": `params` of `verify contract`\n}",
         "name": "params"
       }
     },
@@ -24,20 +24,11 @@
       "nodes": {
         "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
           "coordinates": [
-            80.09140625000009,
-            -113.80000000000001
+            73.09140625000009,
+            -190.8
           ],
           "name": "compile contract",
           "prototype": "21f66d02-229e-4e49-9781-1df6d95f5c06",
-          "params": {}
-        },
-        "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
-          "coordinates": [
-            77.90859375000014,
-            126.80000000000001
-          ],
-          "name": "deploy contract",
-          "prototype": "20a0c486-10c8-48e3-bfbb-5e9d3bbbe75b",
           "params": {}
         },
         "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
@@ -48,7 +39,7 @@
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"compile-contract\", \"deploy-contract\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"compile-contract\", \"deploy-contract\", \"prepare-verify-contract-params\", \"verify-contract\"]"
           }
         },
         "cfeceed5-7883-49d8-bb49-1757bebe0f9e": {
@@ -59,28 +50,36 @@
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
+        },
+        "97a11b07-7492-4a16-ace9-396fad585a55": {
+          "coordinates": [
+            81.90859375000014,
+            -42.19999999999999
+          ],
+          "name": "deploy contract",
+          "prototype": "5856cd72-1d61-41a9-afa6-7c48cac41215",
+          "params": {}
+        },
+        "ac330173-f5c4-485c-bc2f-60cc15a6b45e": {
+          "coordinates": [
+            287.0914062500001,
+            65.19999999999999
+          ],
+          "name": "verify contract",
+          "prototype": "a57f8d8b-778e-42fd-a3bd-8f44a6825cdd",
+          "params": {}
+        },
+        "a3c27ad2-2275-473f-8ed4-8e71a1bbea74": {
+          "coordinates": [
+            88.70859375000003,
+            127.05156249999999
+          ],
+          "name": "prepare verify contract params",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {}
         }
       },
       "connections": {
-        "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
-          "compile-contract": {
-            "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
-            }
-          },
-          "deploy-contract": {
-            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
-            }
-          }
-        },
-        "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
-          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
-            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
         "cfeceed5-7883-49d8-bb49-1757bebe0f9e": {
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
@@ -90,6 +89,52 @@
           "069a212d-9cea-4987-be45-e0079a13d96f": {
             "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
               "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          }
+        },
+        "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
+          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
+            "97a11b07-7492-4a16-ace9-396fad585a55": {
+              "564ef7ef-a222-4d78-9d54-c1841d237e43": {}
+            }
+          }
+        },
+        "97a11b07-7492-4a16-ace9-396fad585a55": {
+          "560af228-aefb-4c95-83cd-7b54bcbce616": {
+            "ac330173-f5c4-485c-bc2f-60cc15a6b45e": {
+              "d8b0c443-3e13-477e-9a90-8c8b10231fe3": {}
+            },
+            "a3c27ad2-2275-473f-8ed4-8e71a1bbea74": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          }
+        },
+        "a3c27ad2-2275-473f-8ed4-8e71a1bbea74": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "ac330173-f5c4-485c-bc2f-60cc15a6b45e": {
+              "4ee1f911-462e-4083-8547-c522a8b15744": {}
+            }
+          }
+        },
+        "6a730bf0-ede6-484d-912d-d07a2f42bc81": {
+          "compile-contract": {
+            "f83f928f-b3ca-44ce-a2c9-d4017915f054": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          },
+          "deploy-contract": {
+            "97a11b07-7492-4a16-ace9-396fad585a55": {
+              "af9aae22-42ab-4f18-b298-1cb31c3a73e1": {}
+            }
+          },
+          "prepare-verify-contract-params": {
+            "a3c27ad2-2275-473f-8ed4-8e71a1bbea74": {
+              "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
+            }
+          },
+          "verify-contract": {
+            "a3c27ad2-2275-473f-8ed4-8e71a1bbea74": {
+              "9bd88c07-0858-4ead-b615-069284f0db34": {}
             }
           }
         }
@@ -109,17 +154,15 @@
         },
         "outputs": {
           "bf7f4037-1a03-4377-8a34-590d6f9bd770": {
-            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
-              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            "ac330173-f5c4-485c-bc2f-60cc15a6b45e": {
+              "f779891f-7738-4e18-acd2-2dec7a94feaa": {}
             }
           }
         }
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
+  "attributes": {},
   "keywords": {
     "action": null,
     "one-time": null,

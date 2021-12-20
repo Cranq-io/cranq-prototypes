@@ -1,0 +1,175 @@
+{
+  "name": "blockchain/ethereum/actions/Deploy script runner",
+  "interface": {
+    "inputs": {
+      "af9aae22-42ab-4f18-b298-1cb31c3a73e1": {
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"network\": string,\n  \"regex\": string\n}",
+        "name": "params"
+      },
+      "564ef7ef-a222-4d78-9d54-c1841d237e43": {
+        "description": "Receives script state.",
+        "type": "any",
+        "name": "state"
+      }
+    },
+    "outputs": {
+      "560af228-aefb-4c95-83cd-7b54bcbce616": {
+        "description": "Sends updated script state.",
+        "type": "any",
+        "name": "state"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+          "coordinates": [
+            193,
+            85
+          ],
+          "name": "deploy contract",
+          "prototype": "20a0c486-10c8-48e3-bfbb-5e9d3bbbe75b",
+          "params": {}
+        },
+        "b40c1ef0-5376-48d1-b108-d4e134e0221f": {
+          "coordinates": [
+            -169.2000000000001,
+            -205.74843750000002
+          ],
+          "name": "depoy command template",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"npx hardhat run scripts/deploy.js --network {network}\""
+          }
+        },
+        "4b963ea4-7939-488b-9b04-29b0b926a6f1": {
+          "coordinates": [
+            -245.2000000000001,
+            -37.74843750000002
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\n  \"network\",\n  \"cwd\",\n  \"result-path\",\n  \"message\",\n  \"regex\"\n]"
+          }
+        },
+        "26b498fd-1e70-4efc-897d-85afb4b8948f": {
+          "coordinates": [
+            -71.2000000000001,
+            -135.74843750000002
+          ],
+          "name": "create deploy command",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {}
+        },
+        "04fb24e4-2d6d-4ca7-8322-711f5c5cd42b": {
+          "coordinates": [
+            -234.2000000000001,
+            -142.74843750000002
+          ],
+          "name": "wrap to params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"network\"]"
+          }
+        },
+        "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+          "coordinates": [
+            18.799999999999898,
+            -35.74843750000002
+          ],
+          "name": "assemble params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n  \"command\",\n  \"cwd\",\n  \"result-path\",\n  \"message\",\n  \"regex\"\n]"
+          }
+        }
+      },
+      "connections": {
+        "4b963ea4-7939-488b-9b04-29b0b926a6f1": {
+          "network": {
+            "04fb24e4-2d6d-4ca7-8322-711f5c5cd42b": {
+              "network": {}
+            }
+          },
+          "cwd": {
+            "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+              "cwd": {}
+            }
+          },
+          "result-path": {
+            "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+              "result-path": {}
+            }
+          },
+          "message": {
+            "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+              "message": {}
+            }
+          },
+          "regex": {
+            "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+              "regex": {}
+            }
+          }
+        },
+        "04fb24e4-2d6d-4ca7-8322-711f5c5cd42b": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b40c1ef0-5376-48d1-b108-d4e134e0221f": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "26b498fd-1e70-4efc-897d-85afb4b8948f": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "b40c1ef0-5376-48d1-b108-d4e134e0221f": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "26b498fd-1e70-4efc-897d-85afb4b8948f": {
+              "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {}
+            }
+          }
+        },
+        "26b498fd-1e70-4efc-897d-85afb4b8948f": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+              "command": {}
+            }
+          }
+        },
+        "32b1729c-81ce-4a2f-8abd-b1738c8e3be8": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "564ef7ef-a222-4d78-9d54-c1841d237e43": {
+            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
+            }
+          },
+          "af9aae22-42ab-4f18-b298-1cb31c3a73e1": {
+            "4b963ea4-7939-488b-9b04-29b0b926a6f1": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "560af228-aefb-4c95-83cd-7b54bcbce616": {
+            "5443fe74-80eb-4c8e-a3b6-0c08eb1d48f5": {
+              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

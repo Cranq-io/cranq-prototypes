@@ -25,8 +25,8 @@
       "nodes": {
         "f5c2d5cd-5c79-49dc-9085-bb9dbebfae02": {
           "coordinates": [
-            -35.65849609374993,
-            -182.34166666666667
+            -102.65849609374993,
+            -185.34166666666667
           ],
           "name": "prepare folder structure",
           "prototype": "868e87e0-8ffd-46f0-a056-286bbc79cf37",
@@ -34,8 +34,8 @@
         },
         "08e7ceae-3038-432a-b799-d9803937d9ee": {
           "coordinates": [
-            81.21546223958336,
-            -94.67500000000001
+            6.21546223958336,
+            -90.67500000000001
           ],
           "name": "install dependencies",
           "prototype": "458370ff-65df-4eff-b18e-3fe356c016fb",
@@ -43,8 +43,8 @@
         },
         "9def6647-6832-446b-b8fe-21bbcee328b7": {
           "coordinates": [
-            150.15647786458334,
-            46.89166666666665
+            111.15647786458334,
+            -9.108333333333348
           ],
           "name": "create files",
           "prototype": "0123ebdb-7dea-4c9a-8ec4-cc75a262042c",
@@ -52,8 +52,8 @@
         },
         "2c537a7c-a2e6-423e-bc54-190b05d8ab4d": {
           "coordinates": [
-            208.2865559895833,
-            151.125
+            229.2865559895833,
+            74.125
           ],
           "name": "compile & deploy contract",
           "prototype": "0a8c6280-07d4-48cd-9cab-bbca94d858c6",
@@ -61,8 +61,8 @@
         },
         "b08dae84-cb3c-4fc1-9f37-2775ce81c352": {
           "coordinates": [
-            -228.62203776041667,
-            -72.67500000000001
+            -314.6220377604167,
+            -14.675000000000011
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
@@ -70,13 +70,13 @@
         },
         "3d967168-59bf-4359-ba4d-049ecd1574a9": {
           "coordinates": [
-            -208.62203776041667,
-            56.32499999999999
+            -251.62203776041667,
+            66.32499999999999
           ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"create-folders\", \"install-dependencies\", \"create-files\", \"deploy-contract\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"create-folders\", \"install-dependencies\", \"create-files\",  \"deploy-contract\"]"
           }
         }
       },
@@ -107,6 +107,13 @@
             }
           }
         },
+        "9def6647-6832-446b-b8fe-21bbcee328b7": {
+          "7a4ab3a3-2de9-4d6e-872b-fdb7a21f6d09": {
+            "2c537a7c-a2e6-423e-bc54-190b05d8ab4d": {
+              "83cc9b81-9f6e-435c-a5c2-cbe10652b8c5": {}
+            }
+          }
+        },
         "3d967168-59bf-4359-ba4d-049ecd1574a9": {
           "create-folders": {
             "f5c2d5cd-5c79-49dc-9085-bb9dbebfae02": {
@@ -126,13 +133,6 @@
           "deploy-contract": {
             "2c537a7c-a2e6-423e-bc54-190b05d8ab4d": {
               "149caba5-e128-4834-96c5-ef8985c865da": {}
-            }
-          }
-        },
-        "9def6647-6832-446b-b8fe-21bbcee328b7": {
-          "7a4ab3a3-2de9-4d6e-872b-fdb7a21f6d09": {
-            "2c537a7c-a2e6-423e-bc54-190b05d8ab4d": {
-              "83cc9b81-9f6e-435c-a5c2-cbe10652b8c5": {}
             }
           }
         }

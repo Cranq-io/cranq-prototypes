@@ -53,7 +53,10 @@
           }
         },
         "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
-          "coordinates": [-216.11111111111111, -285.9259259259259],
+          "coordinates": [
+            -106.11111111111111,
+            -257.9259259259259
+          ],
           "name": "write \"OK\"",
           "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
           "params": {
@@ -168,7 +171,9 @@
       }
     }
   },
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "keywords": {
     "scripting": null,
     "action": null,

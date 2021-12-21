@@ -24,13 +24,19 @@
     "cranq": {
       "nodes": {
         "91255d84-6263-4585-8b16-b3db83428f3a": {
-          "coordinates": [90, 121.00000000000003],
+          "coordinates": [
+            90,
+            121.00000000000003
+          ],
           "name": "append to .env",
           "prototype": "587f8781-9f5d-4dfc-ad7e-99c0fb5fb5a5",
           "params": {}
         },
         "f336445d-08f4-45f0-9e21-567eb5b5c19e": {
-          "coordinates": [90, -201.99999999999994],
+          "coordinates": [
+            90,
+            -201.99999999999994
+          ],
           "name": "build .env line",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
@@ -38,7 +44,10 @@
           }
         },
         "2464b9d7-cb60-4dea-8077-b5a4b2d24478": {
-          "coordinates": [-68, -134.99999999999994],
+          "coordinates": [
+            -68,
+            -134.99999999999994
+          ],
           "name": "prepare params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
@@ -46,13 +55,19 @@
           }
         },
         "569f2add-2685-4254-bd7c-a81ee4df1d39": {
-          "coordinates": [-100.61718750000006, 182.00000000000003],
+          "coordinates": [
+            -100.61718750000006,
+            182.00000000000003
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
         "a294bcbf-8d42-4e3f-9be5-b4a373e46d92": {
-          "coordinates": [-110.61718750000006, 10.000000000000028],
+          "coordinates": [
+            -110.61718750000006,
+            10.000000000000028
+          ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -60,7 +75,10 @@
           }
         },
         "84485134-3457-4c7f-a42d-3944dd8ba220": {
-          "coordinates": [86.38281249999994, -29.99999999999997],
+          "coordinates": [
+            86.38281249999994,
+            -29.99999999999997
+          ],
           "name": "item setter",
           "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
           "params": {

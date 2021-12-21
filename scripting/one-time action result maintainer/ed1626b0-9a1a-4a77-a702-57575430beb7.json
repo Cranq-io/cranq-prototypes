@@ -33,19 +33,28 @@
     "cranq": {
       "nodes": {
         "6a23c6e6-693d-43f7-b723-d941afaacf5d": {
-          "coordinates": [40.888888888888886, 295.4074074074074],
+          "coordinates": [
+            40.888888888888886,
+            295.4074074074074
+          ],
           "name": "action finished?",
           "prototype": "a7258813-8254-4545-aedc-3c271a160345",
           "params": {}
         },
         "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
-          "coordinates": [60.888888888888886, -5.925925925925981],
+          "coordinates": [
+            60.888888888888886,
+            -5.925925925925981
+          ],
           "name": "store result",
           "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {}
         },
         "77902c9b-03c7-4bc2-8e5f-b549619dab0e": {
-          "coordinates": [-274.1111111111111, 1.0740740740740478],
+          "coordinates": [
+            -274.1111111111111,
+            1.0740740740740478
+          ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -54,8 +63,8 @@
         },
         "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
           "coordinates": [
-            -106.11111111111111,
-            -257.9259259259259
+            -158.11111111111111,
+            -268.9259259259259
           ],
           "name": "write \"OK\"",
           "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
@@ -64,22 +73,61 @@
           }
         },
         "4db99b21-aaba-4042-a23d-98841bf3cbe2": {
-          "coordinates": [87.88888888888891, -174.92592592592595],
+          "coordinates": [
+            87.88888888888891,
+            -174.92592592592595
+          ],
           "name": "write state",
           "prototype": "7fe3c64f-6642-4ed4-9757-a6006b30aac8",
           "params": {}
         },
         "9ea93730-141f-43d1-a5fa-9ce8fa3abe37": {
-          "coordinates": [-1.2777777777777146, 207.4074074074074],
+          "coordinates": [
+            -1.2777777777777146,
+            207.4074074074074
+          ],
           "name": "write message",
           "prototype": "29221ee0-26c6-4463-b9f3-3fce59a0d246",
           "params": {}
         },
         "fe16cf0c-3b98-4988-9cdb-c6dc58e82a3b": {
-          "coordinates": [-68.27777777777777, 33.40740740740739],
+          "coordinates": [
+            -68.27777777777777,
+            33.40740740740739
+          ],
           "name": "path parser",
           "prototype": "fb71609d-1a84-4085-9415-f083f6438788",
           "params": {}
+        },
+        "c693d385-8e92-4a66-9409-789f508a9fb2": {
+          "coordinates": [
+            -338,
+            -120.796875
+          ],
+          "name": "evaluator",
+          "prototype": "9d298219-6b80-41a1-aae7-2f8907a76c32"
+        },
+        "bfb63069-eb10-46c3-a193-00ab46ba5d16": {
+          "coordinates": [
+            -162.11111111111111,
+            -159.92592592592592
+          ],
+          "name": "write \"FAILED\"",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\" FAILED\""
+          }
+        },
+        "28d52497-c2dd-4f8c-b2cc-fa6ea878bebc": {
+          "coordinates": [
+            -250,
+            -214.796875
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce",
+          "params": {
+            "8dae1988-d752-4c9b-b8c5-f9222e776dec": "null"
+          }
         }
       },
       "connections": {
@@ -128,6 +176,25 @@
               "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
             }
           }
+        },
+        "c693d385-8e92-4a66-9409-789f508a9fb2": {
+          "7f661c8f-8ac8-407f-b012-c43f7b6aef89": {
+            "28d52497-c2dd-4f8c-b2cc-fa6ea878bebc": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "28d52497-c2dd-4f8c-b2cc-fa6ea878bebc": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "bfb63069-eb10-46c3-a193-00ab46ba5d16": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -143,11 +210,11 @@
             }
           },
           "354855a7-bbff-4e07-a469-2a433bf8e839": {
-            "40e7d6d8-ff04-498d-8c0c-cc590167927d": {
-              "e466ea21-7500-4746-9676-2255590b6b93": {}
-            },
             "8d25fc34-c1d4-40ca-b681-7131d52b3ee6": {
               "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            },
+            "c693d385-8e92-4a66-9409-789f508a9fb2": {
+              "ed9fa3f5-96fa-4e06-94b3-fde00cca3166": {}
             }
           }
         },

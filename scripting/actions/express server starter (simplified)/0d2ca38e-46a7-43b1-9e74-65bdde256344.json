@@ -26,18 +26,27 @@
     "cranq": {
       "nodes": {
         "ea4f7678-db72-42a3-bc5d-2bdf10745a96": {
-          "coordinates": [103, 144],
+          "coordinates": [
+            103,
+            144
+          ],
           "name": "start express server",
           "prototype": "2bb63b5a-5cfb-4dc4-bba1-0b5a597a92ff",
           "params": {}
         },
         "9a631fd0-80e2-4baa-bd4a-9efbcd43d67f": {
-          "coordinates": [-120.71875, 75.60000000000002],
+          "coordinates": [
+            -120.71875,
+            75.60000000000002
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "fb45552a-1ea6-4596-9b3e-29fc580ae533": {
-          "coordinates": [94.28125, -105.39999999999998],
+          "coordinates": [
+            94.28125,
+            -105.39999999999998
+          ],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {
@@ -46,7 +55,10 @@
           }
         },
         "535d1981-b8b2-482f-a748-050d3cfe198b": {
-          "coordinates": [-88.71875, -49.39999999999998],
+          "coordinates": [
+            -88.71875,
+            -49.39999999999998
+          ],
           "name": "apply default",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {

@@ -26,8 +26,8 @@
       "nodes": {
         "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
           "coordinates": [
-            125,
-            139
+            127,
+            137
           ],
           "name": "write contract file",
           "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
@@ -46,8 +46,8 @@
         },
         "d51eb939-1abd-49c1-995e-ffa0cdc83b87": {
           "coordinates": [
-            -333.38281250000006,
-            -84.9453125
+            -319.38281250000006,
+            21.0546875
           ],
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -98,8 +98,8 @@
         },
         "6acedeb6-6aa4-4810-8c56-9405d4f955f3": {
           "coordinates": [
-            -376.38281250000006,
-            41.0546875
+            -421.38281250000006,
+            107.0546875
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
@@ -121,6 +121,17 @@
           "name": "node setter",
           "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {}
+        },
+        "2a6f68be-21ee-4b7b-aaed-21ea93e33cfb": {
+          "coordinates": [
+            -226.38281250000006,
+            206.0546875
+          ],
+          "name": "split result-path",
+          "prototype": "e1418571-da49-467a-aefe-0a97394344e9",
+          "params": {
+            "761c44f9-80b3-410c-820f-b004e8787521": "\".\""
+          }
         }
       },
       "connections": {
@@ -184,8 +195,8 @@
             "d30b71df-186c-48ba-a53d-f4214fd03f7c": {
               "result-path": {}
             },
-            "40e6fea8-fb73-43a5-adb3-bd9e92b213da": {
-              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
+            "2a6f68be-21ee-4b7b-aaed-21ea93e33cfb": {
+              "fe310222-173b-4335-93f7-b17e41eba89e": {}
             }
           },
           "cwd": {
@@ -223,6 +234,13 @@
           "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
             "40e6fea8-fb73-43a5-adb3-bd9e92b213da": {
               "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            }
+          }
+        },
+        "2a6f68be-21ee-4b7b-aaed-21ea93e33cfb": {
+          "9b8b171b-8873-471d-a7a0-588f5f2340fc": {
+            "40e6fea8-fb73-43a5-adb3-bd9e92b213da": {
+              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
             }
           }
         }

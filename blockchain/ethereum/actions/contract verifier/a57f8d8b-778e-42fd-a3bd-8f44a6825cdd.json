@@ -8,7 +8,7 @@
         "name": "state"
       },
       "4ee1f911-462e-4083-8547-c522a8b15744": {
-        "type": "{\n\"contract-address\": string,\n\"cwd\": (string or number)[],\n\"result-path\": (string or number)[],\n\"message\": string\n}",
+        "type": "{\n\"contract-address\": string,\n\"cwd\": string,\n\"result-path\": string,\n\"message\": string\n}",
         "name": "params"
       }
     },

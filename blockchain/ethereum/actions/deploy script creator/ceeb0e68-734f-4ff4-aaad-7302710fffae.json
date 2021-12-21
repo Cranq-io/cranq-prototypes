@@ -3,9 +3,9 @@
   "interface": {
     "inputs": {
       "83168491-efcd-4eb0-9358-30f5cdccb58c": {
-        "type": "{\n  \"cwd\": string,\n  \"path\": string,\n  \"contract-name\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"path\": string,\n  \"contract-name\": string,\n  \"result-path\": string,\n  \"message\": string\n}",
         "name": "params",
-        "description": "{\n  \"cwd\": string, // the working directory\n  \"path\": string, // the path to write the deploy script to\n  \"contract-name\": string, // the name of the contract to deploy\n  \"result-path\": (string or number)[], // the path in the state to write the result to\n  \"message\": string // the message to print on the console\n}"
+        "description": "{\n  \"cwd\": string, // the working directory\n  \"path\": string, // the path to write the deploy script to\n  \"contract-name\": string, // the name of the contract to deploy\n  \"result-path\": string, // the path in the state to write the result to\n  \"message\": string // the message to print on the console\n}"
       },
       "38ea00a8-4881-4cf3-9a2a-7ccbc3adecd1": {
         "description": "Receives script state.",

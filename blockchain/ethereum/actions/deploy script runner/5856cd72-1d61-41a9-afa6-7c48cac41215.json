@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "af9aae22-42ab-4f18-b298-1cb31c3a73e1": {
-        "type": "{\n  \"cwd\": string,\n  \"result-path\": (string or number)[],\n  \"message\": string,\n  \"network\": string,\n  \"regex\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"result-path\": string,\n  \"message\": string,\n  \"network\": string,\n  \"regex\": string\n}",
         "name": "params"
       },
       "564ef7ef-a222-4d78-9d54-c1841d237e43": {

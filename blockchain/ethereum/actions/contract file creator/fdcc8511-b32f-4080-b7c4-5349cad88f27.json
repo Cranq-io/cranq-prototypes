@@ -3,9 +3,9 @@
   "interface": {
     "inputs": {
       "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {
-        "type": "{\n  \"cwd\": string,\n  \"contract\": \"single-nft\",\n  \"single-nft\": { \n    \"contract-name\": string,\n    \"token-name\": string,\n    \"token-symbol\": string\n  },\n  \"result-path\": (string or number)[],\n  \"message\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"contract\": \"single-nft\",\n  \"single-nft\": { \n    \"contract-name\": string,\n    \"token-name\": string,\n    \"token-symbol\": string\n  },\n  \"result-path\": string,\n  \"message\": string\n}",
         "name": "params",
-        "description": "{\n  \"cwd\": string, // the working directory\n  \"contract\": \"single-nft\", // the contract type\n  \"single-nft\": {  // the parameters specific to the contract type\n    \"contract-name\": string,\n    \"token-name\": string,\n    \"token-symbol\": string\n  },\n  \"result-path\": (string or number)[], // the path in the state to write the result to\n  \"message\": string // the message to print on the console\n}"
+        "description": "{\n  \"cwd\": string, // the working directory\n  \"contract\": \"single-nft\", // the contract type\n  \"single-nft\": {  // the parameters specific to the contract type\n    \"contract-name\": string,\n    \"token-name\": string,\n    \"token-symbol\": string\n  },\n  \"result-path\": string, // the path in the state to write the result to\n  \"message\": string // the message to print on the console\n}"
       },
       "7468b09f-e723-4d9b-8857-57348f32ec77": {
         "description": "Receives script state.",

@@ -1,0 +1,24 @@
+{
+  "implementations": {
+    "es6-node": {}
+  },
+  "interface": {
+    "inputs": {
+      "6d97abb4-b466-4fe0-b5d3-900ebc8033ee": {
+        "type": "{\n  \"api-url\": string,\n  \"sender-address\": string,\n  \"sender-private-key\": string,\n  \"receiver-address\": string,\n  \"contract-address\": string ,\n  \"contract-abi\": string\n}",
+        "name": "transfer params"
+      }
+    },
+    "outputs": {
+      "cd7846ab-cfe5-4ef4-b6f9-d58e8a340818": {
+        "type": "any",
+        "name": "hash"
+      },
+      "34d5211a-b956-4ab3-a2ab-c21357f3f0bf": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Token transferer"
+}

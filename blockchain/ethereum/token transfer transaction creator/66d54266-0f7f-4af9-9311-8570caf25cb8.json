@@ -1,0 +1,35 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "178512e8-33b8-4b78-bfdc-3ba1693d609c": "const Web3 = require(\"web3\");\n\nconst {apiUrl, contractAddress, contractAbi, senderAddress, receiverAddress, tokenId} = data;\n\nconst web3 = new Web3(apiUrl); \n\ntry {\n  const nftContract = new web3.eth.Contract(contractAbi, contractAddress);\n  const transactionData = nftContract.methods.safeTransferFrom( senderAddress, receiverAddress,tokenId).encodeABI();\n  outputs[\"transaction data\"](transactionData, tag);\n} catch (e) {\n  outputs.error({error: String(e)}, tag);\n}"
+      },
+      "dependencies": {
+        "npm": {
+          "web3": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "178512e8-33b8-4b78-bfdc-3ba1693d609c": {
+        "type": "{\n  \"apiUrl\": string,\n  \"contractAddress\": string,\n  \"contractAbi\": string,\n  \"senderAddress\": string,\n  \"receiverAddress\": string,\n  \"tokenId\": number\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "37e7eca5-c15f-4385-adeb-adc623e1f20d": {
+        "type": "string",
+        "name": "transaction data"
+      },
+      "7fad21f1-379d-44b4-bd65-092c8831db8c": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Token transfer transaction creator"
+}

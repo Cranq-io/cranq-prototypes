@@ -1,0 +1,35 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "c8ab09c1-c89e-4f4c-8046-56d3e9fd9f99": "const Web3 = require(\"web3\");\n\nconst {apiUrl, senderPrivateKey, transactionData} = data;\n\nconst web3 = new Web3(apiUrl);\n\nweb3.eth.accounts\n  .signTransaction(transactionData, senderPrivateKey)\n  .then((signedTransaction) => {\n     try {\n       web3.eth.sendSignedTransaction(\n          signedTransaction.rawTransaction,\n          function (err, hash) {\n             if (!err) {\n               outputs[\"transaction hash\"](hash, tag);\n             } else {\n               outputs.error({error: String(err)}, tag);   \n             }\n          })\n     }\n     catch (e){\n       outputs.errors({error: String(e)}, tag)\n     }\n  })\n  .catch((e) => outputs.errors({error: String(e)}), tag)\n\n"
+      },
+      "dependencies": {
+        "npm": {
+          "web3": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "c8ab09c1-c89e-4f4c-8046-56d3e9fd9f99": {
+        "type": "{\n  \"apiUrl\": string,\n  \"senderPrivateKey\": string,\n  \"transactionData\": {\n    \"from\": string,\n    \"to\": string,\n    \"nonce\": number,\n    \"gas\": number,\n    \"data\": string\n  }\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "c4aaddd1-8a50-4399-9759-dd6c39e216e1": {
+        "type": "string",
+        "name": "transaction hash"
+      },
+      "d174b345-ce9b-42e5-a19e-a50e7ba2f846": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Signed transaction senderner"
+}

@@ -1,26 +1,26 @@
 {
-  "description": "Tests whether the dictionary has the expected keys (only the expected keys if in strict mode)",
+  "description": "Tests whether the key set of the dictionary contains the expected keys.\n\nIf `strict` is set, extra properties are not tolerated, the dictionary provided must have exactly the expected keys.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\", \"fifth\"]@0 received via `expected keys`\n3. `strict` is set to false\n4. `has` sends true@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"second\", \"seventh\"]@0 received via `expected keys`\n3. `strict` is set to false\n4. `has` sends false@0\n\nExample C:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\", \"fifth\"]@0 received via `expected keys`\n3. `strict` is set to true\n4. `has` sends false@0",
   "interface": {
     "inputs": {
       "0e052b66-636e-4187-b2f9-a4d8cb0a3b68": {
-        "description": "The dictionary to test",
-        "type": "dictionary",
+        "description": "Receives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }",
+        "type": "{string:any}",
         "name": "dict"
       },
       "d592670b-ea8e-429b-924e-e6c6f46233f6": {
-        "description": "An array of expected keys",
-        "type": "array",
+        "description": "Receives an array of expected keys.\n\nExample:\n[ \"first\", \"third\" ]",
+        "type": "string[]",
         "name": "expected keys"
       },
       "36af5981-ceb0-4128-97c4-1b1e7eb7732b": {
-        "type": "any",
-        "description": "Boolean.\nWhether to accept extra keys or not.",
+        "type": "boolean",
+        "description": "Receives whether extra keys in `dict` are allowed.\n\nExample:\nfalse",
         "name": "strict"
       }
     },
     "outputs": {
       "4affda51-79e5-44bb-b6b3-55e7aee541c2": {
-        "description": "Whether the dictionary has the expected keys",
+        "description": "Sends a value indicating whether the dictionary has the expected keys.\n\nExample:\ntrue\n",
         "type": "boolean",
         "name": "has"
       }
@@ -292,5 +292,14 @@
   "name": "data/dictionary/Has keys tester",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "has": null,
+    "key": null,
+    "contains": null,
+    "any": null,
+    "validate": null
   }
 }

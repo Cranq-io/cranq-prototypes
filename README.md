@@ -10,11 +10,11 @@ Upon the installation of the CRANQ IDE, this repository is copied to your home f
 ```
 ~/.cranq/repository
 ```
-Every leaf directory in the folder structure represents a CRANQ prototype, structured by it's ***namespace*** - for example, the description of the node ```data/array/Item deleter``` can be found under ```./data/array/item deleter```.
+Every leaf directory in the folder structure represents a CRANQ prototype, structured by its ***namespace*** - for example, the description of the node ```data/array/Item deleter``` can be found under ```./data/array/item deleter```.
 
 > **_How do I know the namespace of a node?_**
 >
-> The fully qualified name of a CRANQ node consists of it's name, and it's namespace path. Namespaces are divided by forward slashes ```/```, with the last segment being the node name.  
+> The fully qualified name of a CRANQ node consists of its name, and its namespace path. Namespaces are divided by forward slashes ```/```, with the last segment being the node name.  
 > For example:  
 > ```data/array/Item deleter```  
 > -> ```data```: root namespace  

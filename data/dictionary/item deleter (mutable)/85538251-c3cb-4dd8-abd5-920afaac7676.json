@@ -1,21 +1,21 @@
 {
-  "description": "Deletes an item from the dictionary by it's key.\nMutates input.",
+  "description": "Deletes an item from the dictionary by its key.\nMutates input.\n\nIf the item is not found, the original dictionary is forwarded.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `dict` sends { \"third\": 3, \"fifth\": 5 }@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `dict` sends{ \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_1_setters_deleters",
   "interface": {
     "inputs": {
       "fe46ad6a-e159-40cb-bfb0-c3860de81a4d": {
-        "description": "",
-        "type": "any",
+        "description": "Receives the dictionary to delete the item from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }",
+        "type": "{string:any}",
         "name": "dict"
       },
       "875f3af3-fed8-4bef-bde4-bafd794770c7": {
-        "description": "",
-        "type": "any",
+        "description": "Receives the key corresponding to the value to delete.\n\nExample:\n\"third\"",
+        "type": "string",
         "name": "key"
       }
     },
     "outputs": {
       "676b0740-4b60-4d12-9c77-665e78450f80": {
-        "description": "",
+        "description": "Sends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"fifth\": 5 }",
         "type": "any",
         "name": "dict"
       }
@@ -81,8 +81,16 @@
       }
     }
   },
-  "name": "data/dictionary/Item deleter/mutable",
+  "name": "data/dictionary/Item deleter (mutable)",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "delete": null,
+    "remove": null,
+    "key": null,
+    "mutable": null
   }
 }

@@ -1,20 +1,23 @@
 {
-  "description": "Merges dictionary 'b' to dictionary 'a'. Values of 'a' will be ignored on conflict.",
+  "description": "Merges dictionary `b` to dictionary `a`. Values of `a` will be ignored on key conflict.\n\nExample:\n1. { \"first\": 1, \"third\": 0 }@0 received via `a`\n2. { \"third\": 3, \"fifth\": 5 }@0 received via `b`\n3. `merged` sends { \"first\": 1, \"third\": 3, \"fifth\": 5 }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_4_merge_concat",
   "interface": {
     "inputs": {
       "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {
         "type": "{string:any}",
-        "name": "a"
+        "name": "a",
+        "description": "Receives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
       },
       "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {
         "type": "{string:any}",
-        "name": "b"
+        "name": "b",
+        "description": "Receives the dictionary to merge with.\n\nExample:\n{ \"third\": 3, \"fifth\": 5 }"
       }
     },
     "outputs": {
       "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-        "type": "{string:typeof(a)[string] or typeof(b)[string]}",
-        "name": "merged"
+        "type": "{string:typeof`a`[string] or typeof`b`[string]}",
+        "name": "merged",
+        "description": "Sends the resulting merged dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
     }
   },
@@ -81,5 +84,11 @@
   "name": "data/dictionary/Merger",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "merge": null,
+    "union": null
   }
 }

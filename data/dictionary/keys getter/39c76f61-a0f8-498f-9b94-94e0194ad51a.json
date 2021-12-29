@@ -1,16 +1,18 @@
 {
-  "description": "Gets keys from the dictionary as an array.",
+  "description": "Gets all keys from the dictionary as an array.\n\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. `keys` sends  [ \"first\", \"third\", \"fifth\" ]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
   "interface": {
     "inputs": {
       "e7596126-da2e-4451-b534-4043dfc13bf2": {
         "type": "{string:any}",
-        "name": "dict"
+        "name": "dict",
+        "description": "Receives to dictionary to extract the keys from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 } "
       }
     },
     "outputs": {
       "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
         "type": "string[]",
-        "name": "keys"
+        "name": "keys",
+        "description": "Sends the keys of the dictionary as an array.\n\nExample:\n[ \"first\", \"third\", \"fifth\" ]"
       }
     }
   },
@@ -27,5 +29,11 @@
   "name": "data/dictionary/Keys getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "get": null,
+    "keys": null
   }
 }

@@ -1,24 +1,28 @@
 {
-  "description": "Retrieves an item's value from the dictionary.",
+  "description": "Retrieves an item's value by its key from a dictionary.\nIf the item is not found, the inputs are sent via `not found`.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `value` sends 1@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `not found` sends { \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
   "interface": {
     "inputs": {
       "47c56035-5bed-4f91-b7a9-606dedd7a13c": {
         "type": "{string:any}",
-        "name": "dict"
+        "name": "dict",
+        "description": "Receives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {
         "type": "string",
-        "name": "key"
+        "name": "key",
+        "description": "Receives the key corresponding to the value to get.\n\nExample:\n\"third\""
       }
     },
     "outputs": {
       "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-        "type": "typeof(dict)[string]",
-        "name": "value"
+        "type": "typeof`dict`[string]",
+        "name": "value",
+        "description": "If found, sends the value corresponding to the specified key.\n\nExample:\n1"
       },
       "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
-        "type": "any",
-        "name": "not found"
+        "type": "{ \"dict\":typeof`dict`, \"key\":string}",
+        "name": "not found",
+        "description": "Sends the input values, when the specified key is not found in the dictionary.\n\nExample:\n{ \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }"
       }
     }
   },
@@ -90,5 +94,11 @@
   "name": "data/dictionary/Item getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "get": null,
+    "value": null
   }
 }

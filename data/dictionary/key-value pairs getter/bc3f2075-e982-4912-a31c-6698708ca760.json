@@ -1,16 +1,18 @@
 {
-  "description": "Gets key-value pairs from the dictionary as an array.",
+  "description": "Gets the key-value pairs from the dictionary as an array.\n\nExample:\n1. { \"first\": 1, \"third\": 3 }@0 is received by `dict`\n2. `key-value pairs` sends [ { \"key\":\"first\", \"value\": 1 }, { \"key\":\"third\", \"value\": 3 } ]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
   "interface": {
     "inputs": {
       "8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2": {
         "type": "{string:any}",
-        "name": "dict"
+        "name": "dict",
+        "description": "Receives a dictionary to extract the key-value pairs from.\n\nExample:\n { \"first\": 1, \"third\": 3 }"
       }
     },
     "outputs": {
       "c1e0e7c9-b331-443a-8005-d72bc86a0e07": {
-        "type": "{\"key\":string,\"value\":typeof(dict)[string]}[]",
-        "name": "key-value pairs"
+        "type": "{\"key\":string,\"value\":typeof`dict`[string]}[]",
+        "name": "key-value pairs",
+        "description": "Sends the extracted key-value pairs.\n\nExample:\n[ { \"key\":\"first\", \"value\": 1 }, { \"key\":\"third\", \"value\": 3 } ]"
       }
     }
   },
@@ -27,5 +29,11 @@
   "name": "data/dictionary/Key-value pairs getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "get": null,
+    "key-value": null
   }
 }

@@ -1,20 +1,23 @@
 {
-  "description": "Retrieves multiple items' values from the dictionary, in the order of the keys provided.",
+  "description": "Retrieves multiple items' values from the dictionary by their keys, in the order of the keys provided.\nIf any of the items are not found in the dictionary, a 'null' value will be sent in its place.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [ \"first\", \"third\" ]@0 received via `key`\n3. `values` sends  [ 1, 3 ]@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `values` sends  [ 1, null ]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
   "interface": {
     "inputs": {
       "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
         "type": "{string:any}",
-        "name": "dict"
+        "name": "dict",
+        "description": "Receives the dictionary to get the values from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "72550b19-9434-43d7-a6af-468a19288808": {
         "type": "string[]",
-        "name": "keys"
+        "name": "keys",
+        "description": "Receives the keys corresponding to the values to get.\n\nExample:\n[\"first\", \"third\"]"
       }
     },
     "outputs": {
       "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
-        "type": "typeof(dict)[string][]",
-        "name": "values"
+        "type": "typeof`dict`[string][]",
+        "name": "values",
+        "description": "Sends the values corresponding to the received keys.\n\nExample:\n[1, 3]"
       }
     }
   },
@@ -35,8 +38,8 @@
         },
         "638de552-beea-4ce8-9c11-c3341ceec70a": {
           "coordinates": [
-            0,
-            0
+            2,
+            -47
           ],
           "description": "",
           "params": {},
@@ -81,5 +84,11 @@
   "name": "data/dictionary/Items getter",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "get": null,
+    "values": null
   }
 }

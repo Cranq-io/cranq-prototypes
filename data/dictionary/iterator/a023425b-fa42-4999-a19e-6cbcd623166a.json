@@ -1,20 +1,23 @@
 {
-  "description": "Iterates through items of a dictionary.",
+  "description": "Iterates through items of a dictionary.\n\nThe tag on the output signals will contain the index of the current iteration.\n\nExample:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. `key` sends  \"first\"@0:0\n3. `value` sends  1@0:0\n4. `key` sends  \"third\"@0:1\n5. `value` sends  3@0:1\n6. `key` sends  \"fifth\"@0:2\n7. `value` sends  5@0:2\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/1_application_flow/1_2_iterators",
   "interface": {
     "inputs": {
       "994dd3e0-c1a7-4e71-8e11-272a668dafea": {
         "type": "{string:any}",
-        "name": "dict"
+        "name": "dict",
+        "description": "Receives the dictionary to iterate through.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
     },
     "outputs": {
       "38e1ece7-ee49-4fe2-a10c-c10edcecbf2f": {
-        "type": "typeof(dict)[string]",
-        "name": "value"
+        "type": "typeof`dict`[string]",
+        "name": "value",
+        "description": "Sends the value of the current item, with the tag corresponding to the iteration."
       },
       "551ab892-27c3-48a5-8b44-f44295bd96ed": {
         "type": "string",
-        "name": "key"
+        "name": "key",
+        "description": "Sends the key of the current item, with the tag corresponding to the iteration."
       }
     }
   },
@@ -31,5 +34,11 @@
   "name": "data/dictionary/Iterator",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "foreach": null,
+    "each": null
   }
 }

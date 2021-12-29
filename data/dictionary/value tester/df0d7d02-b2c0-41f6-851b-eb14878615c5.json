@@ -3,22 +3,24 @@
   "interface": {
     "inputs": {
       "d38c874c-3db0-4be0-b69a-27dd0bdbab38": {
-        "type": "dictionary",
-        "name": "reference",
-        "description": "The reference dictionary"
+        "type": "{string:typeof`value`}",
+        "name": "dict",
+        "description": "Receives the dictionary to validate the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "e8f9a1e6-7052-4485-b37f-f4914a9ecfb2": {
         "type": "string",
-        "name": "key"
+        "name": "key",
+        "description": "Receives the key in the dictionary to compare the value of.\n\nExample:\n\"third\""
       },
       "252829eb-434f-41d7-a9d1-154777a47ab5": {
         "type": "any",
-        "name": "value"
+        "name": "value",
+        "description": "Receives the value to test against the specified dictionary key.\n\nExample:\n3"
       }
     },
     "outputs": {
       "9cc74dff-bfae-449c-be70-d0453025674d": {
-        "description": "Whether the value is the same as the item with the same key in the reference",
+        "description": "Sends a value indicating whether the value is the same as the item with the specified key in the provided dictionary.\n\nExample:\ntrue\n\n",
         "type": "boolean",
         "name": "same"
       }
@@ -126,8 +128,15 @@
       }
     }
   },
-  "description": "Tests whether a given value is the same as in the reference dictionary under the given key",
+  "description": "Tests whether the value of  a certain `key` in a dictionary equals to the `value` provided.\n\nIf the `key` provided does not exist, the result will be false.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"third\"@0 received via `key`\n3. 3@0 received via `value`\n4. `same` sends true@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"seventh\"@0 received via `key`\n3. 7@0 received via `value`\n4. `same` sends false@0\n\nExample C:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"third\"@0 received via `key`\n3. 7@0 received via `value`\n4. `same` sends false@0",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "value": null,
+    "validate": null,
+    "equals": null
   }
 }

@@ -1,20 +1,23 @@
 {
-  "description": "Joins dictionary 'b' to dictionary 'a', by matching the values of 'a' to the keys of 'b'.",
+  "description": "Joins dictionary 'b' to dictionary `a`, by matching the values of `a` to the keys of `b`.\n\nItems from `b` with no matching value in `a` are excluded from the result.\n\nItems from `a` with no matching key in `b` are excluded from the result.\n\nExample:\n1. {\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}@0 received via `a`\n2. {\"first_id\":1, \"second_id\":2, \"third_id\":3}@0 received via `b`\n3. `joined` sends {\"first\": 1,\"third\": 3}@0",
   "interface": {
     "inputs": {
       "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
         "type": "{string:string}",
-        "name": "a"
+        "name": "a",
+        "description": "Receives the dictionary containing the keys to join and the values to join by.\n\nExample:\n{\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}"
       },
       "be713809-1c65-4abb-9525-87ee9f75e9be": {
         "type": "{string:any}",
-        "name": "b"
+        "name": "b",
+        "description": "Receives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       }
     },
     "outputs": {
       "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
-        "type": "{string:typeof(b)[string]}",
-        "name": "joined"
+        "type": "{string:typeof`b`[string]}",
+        "name": "joined",
+        "description": "Sends the resulting joined dictionary.\n\nExample:\n{\"first\": 1,\"third\": 3}"
       }
     }
   },
@@ -148,5 +151,10 @@
   "name": "data/dictionary/Left joiner",
   "attributes": {
     "locked": true
+  },
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "join": null
   }
 }

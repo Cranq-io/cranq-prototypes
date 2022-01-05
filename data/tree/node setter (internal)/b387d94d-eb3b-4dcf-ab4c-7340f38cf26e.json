@@ -1,6 +1,6 @@
 {
   "implementations": {
-    "es6-node": {
+    "es6": {
       "inputFunctions": {
         "a3746e5d-5a79-4943-8318-db69cd8f92fa": "const {tree, path, node} = data;\nlet source = tree;\nlet dest = {...tree};\nconst result = dest;\nfor (let i = 0, count = path.length - 1; i < count; i++) {\n  const key = path[i];\n  const child = source !== undefined\n    ? source[key]\n    : undefined;\n  if (child instanceof Array)\n    dest[key] = [...child];\n  else if (child instanceof Object)\n    dest[key] = {...child};\n  else {\n    const nextKey = path[i + 1];\n    if (typeof nextKey === \"number\")\n      dest[key] = [];\n    else if (typeof nextKey === \"string\")\n      dest[key] = {};\n  }\n  source = child;\n  dest = dest[key];\n}\nconst key = path[path.length - 1];\ndest[key] = node;\noutputs.tree(result, tag);"
       }

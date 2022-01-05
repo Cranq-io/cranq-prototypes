@@ -1,6 +1,6 @@
 {
   "implementations": {
-    "es6-node": {
+    "es6": {
       "inputFunctions": {
         "5535b65e-4199-4a7f-8f21-342fbf079660": "const {paths, values} = data;\nconst {setNode} = state;\nconst {length} = paths;\nif (length !== values.length || !length || !paths[0].length)\n  outputs.bounced(data, tag);\nelse {\n  const result = typeof paths[0][0] === \"number\" ? [] : {};\n  for (let i = 0; i < length; i++)\n    setNode(result, paths[i], values[i]);\n  outputs.tree(result, tag);\n}"
       },

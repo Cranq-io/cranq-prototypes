@@ -1,6 +1,6 @@
 {
   "implementations": {
-    "es6-node": {
+    "es6": {
       "inputFunctions": {
         "b418dd70-767a-4f1b-b5b7-c454141db2f1": "const r = parseInt(`0x${data.slice(0, 2)}`);\nconst g = parseInt(`0x${data.slice(2, 4)}`);\nconst b = parseInt(`0x${data.slice(4, 6)}`);\noutputs.RGB([r, g, b], tag);"
       }

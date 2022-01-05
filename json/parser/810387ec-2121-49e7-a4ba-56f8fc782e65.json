@@ -1,6 +1,6 @@
 {
   "implementations": {
-    "es6-node": {
+    "es6": {
       "inputFunctions": {
         "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": "try {\n  outputs.parsed(JSON.parse(data), tag);\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
       }

@@ -27,7 +27,7 @@
     }
   },
   "implementations": {
-    "es6-node": {
+    "es6": {
       "cleanupFunction": "",
       "dependencies": {},
       "initFunction": "state.reductionsByTag = state.reductionsByTag || new Map();\nstate.copy = (value) => (value instanceof Array)\n    ? [...value] : (value instanceof Object)\n      ? {...value} : value;",

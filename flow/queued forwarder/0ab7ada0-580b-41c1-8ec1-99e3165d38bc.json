@@ -22,7 +22,7 @@
     }
   },
   "implementations": {
-    "es6-node": {
+    "es6": {
       "cleanupFunction": "",
       "dependencies": {},
       "initFunction": "state.dataByTag = state.dataByTag || new Map();\nstate.queue = state.queue || [];\nconst {dataByTag, queue} = state;\nstate.flush = () => {\n  while (dataByTag.has(queue[0])) {\n    const tag = queue.shift();\n    const data = dataByTag.get(tag);\n    dataByTag.delete(tag);\n    outputs.data(data, tag);\n  }\n}",

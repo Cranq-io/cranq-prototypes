@@ -1,6 +1,6 @@
 {
   "implementations": {
-    "es6-node": {
+    "es6": {
       "inputFunctions": {
         "1fbfe015-30c9-4d22-8823-2e3e45591924": "const re = /(.*?[^\\\\])(?:\\.|$)/g;\nconst components = [];\nfor (let next = re.exec(data); next !== null; next = re.exec(data)) {\n  const key = next[1];\n  const index = parseInt(key, 10);\n  components.push(isNaN(index) ? key : index);\n}\noutputs.parsed(components, tag);\n"
       },

@@ -1,6 +1,6 @@
 {
   "implementations": {
-    "es6-node": {
+    "es6": {
       "initFunction": "state.aggregated = state.aggregated || [];",
       "inputFunctions": {
         "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",

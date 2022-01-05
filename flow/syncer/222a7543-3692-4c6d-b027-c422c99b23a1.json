@@ -23,7 +23,7 @@
     }
   },
   "implementations": {
-    "es6-node": {
+    "es6": {
       "cleanupFunction": "",
       "dependencies": {},
       "initFunction": "const fields = params.fields || []\nstate.dynamicFields = fields\n  .filter(field => params[field] === undefined);\nstate.staticBundle = fields\n  .filter(field => params[field] !== undefined)\n  .reduce(\n    (result, field) => {result[field] = params[field]; return result},\n    typeof fields[0] === \"number\" ? [] : {});\nstate.bundlesByTag = state.bundlesByTag || new Map();\nstate.portsByTag = state.portsByTag || new Map();\nstate.copy = (value) => value instanceof Array\n  ? [...value] : value instanceof Object\n    ? {...value} : value;",

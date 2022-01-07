@@ -30,6 +30,14 @@
       "inputFunctions": {
         "7bf13909-e44b-4f6a-9fc5-153cf3c2d286": "outputs.multiplexed({data, field: input}, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "7bf13909-e44b-4f6a-9fc5-153cf3c2d286": "outputs.multiplexed({data, field: input}, tag);"
+      }
     }
   },
   "name": "flow/Multiplexer",

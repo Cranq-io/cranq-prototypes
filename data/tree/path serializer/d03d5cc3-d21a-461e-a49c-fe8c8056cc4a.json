@@ -4,6 +4,11 @@
       "inputFunctions": {
         "134b54f9-5924-48a6-87d2-19f933b7e148": "const serialized = data\n  .map(component => component.replace(\".\", \"\\\\.\"))\n  .join(\".\");\noutputs.serialized(serialized, tag);"
       }
+    },
+    "es6-node": {
+      "inputFunctions": {
+        "134b54f9-5924-48a6-87d2-19f933b7e148": "const serialized = data\n  .map(component => component.replace(\".\", \"\\\\.\"))\n  .join(\".\");\noutputs.serialized(serialized, tag);"
+      }
     }
   },
   "interface": {

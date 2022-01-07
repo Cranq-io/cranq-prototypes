@@ -22,6 +22,14 @@
       "inputFunctions": {
         "4ecebc94-045d-4c52-a31a-4cb76749371a": "const {array, index} = data;\noutputs.array([\n  ...array.slice(0, index),\n  ...array.slice(index + 1)\n], tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "4ecebc94-045d-4c52-a31a-4cb76749371a": "const {array, index} = data;\noutputs.array([\n  ...array.slice(0, index),\n  ...array.slice(index + 1)\n], tag);"
+      }
     }
   },
   "name": "data/array/Item deleter/Internal",

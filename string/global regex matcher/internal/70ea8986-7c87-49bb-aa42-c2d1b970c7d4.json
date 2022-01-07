@@ -30,6 +30,14 @@
       "inputFunctions": {
         "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex, 'g').exec(data.string);\nconst [matched, ...groups] = result || [];\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex, 'g').exec(data.string);\nconst [matched, ...groups] = result || [];\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);"
+      }
     }
   },
   "name": "string/Global regex matcher/Internal",

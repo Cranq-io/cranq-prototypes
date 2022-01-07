@@ -22,6 +22,14 @@
       "inputFunctions": {
         "236a0ed3-2ef0-4a72-bfe4-c3ab20a4da85": "const {item, count} = data;\nconst result = [];\nresult.length = count;\nfor (let i=0; i<count; i++)\n  result[i] = item;\noutputs.array(result, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "236a0ed3-2ef0-4a72-bfe4-c3ab20a4da85": "const {item, count} = data;\nconst result = [];\nresult.length = count;\nfor (let i=0; i<count; i++)\n  result[i] = item;\noutputs.array(result, tag);"
+      }
     }
   },
   "name": "data/array/Builder/Internal",

@@ -22,6 +22,14 @@
       "inputFunctions": {
         "f0dc065d-e50e-484c-ba2e-6d3a7e542a17": "outputs.concatenated([...data.a, ...data.b], tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "f0dc065d-e50e-484c-ba2e-6d3a7e542a17": "outputs.concatenated([...data.a, ...data.b], tag);"
+      }
     }
   },
   "name": "data/array/Concatenator/Internal",

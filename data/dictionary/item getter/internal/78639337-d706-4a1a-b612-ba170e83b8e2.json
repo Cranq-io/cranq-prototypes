@@ -26,6 +26,14 @@
       "inputFunctions": {
         "50395fef-5d23-4f22-ad85-ac41ce728ca8": "const value = data.dict[data.key];\n\nif (value !== undefined) {\n  outputs.value(value, tag);\n} else {\n  outputs[\"not found\"](data, tag); \n}"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "50395fef-5d23-4f22-ad85-ac41ce728ca8": "const value = data.dict[data.key];\n\nif (value !== undefined) {\n  outputs.value(value, tag);\n} else {\n  outputs[\"not found\"](data, tag); \n}"
+      }
     }
   },
   "name": "data/dictionary/Item getter/Internal",

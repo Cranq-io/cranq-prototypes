@@ -30,6 +30,14 @@
       "inputFunctions": {
         "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "const {bundlesByTag, portsByTag} = state;\nlet bundle = bundlesByTag.get(tag);\nif (!bundle) {\n  bundle = state.copy(state.staticBundle);\n  bundlesByTag.set(tag, bundle);\n}\nlet ports = portsByTag.get(tag);\nif (!ports) {\n  ports = new Set(state.dynamicFields);\n  portsByTag.set(tag, ports);\n}\nbundle[input] = data;\nports.delete(input);\nif (ports.size === 0) {\n  bundlesByTag.delete(tag);\n  portsByTag.delete(tag);\n  outputs.synced(bundle, tag);\n}"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "const fields = params.fields || []\nstate.dynamicFields = fields\n  .filter(field => params[field] === undefined);\nstate.staticBundle = fields\n  .filter(field => params[field] !== undefined)\n  .reduce(\n    (result, field) => {result[field] = params[field]; return result},\n    typeof fields[0] === \"number\" ? [] : {});\nstate.bundlesByTag = state.bundlesByTag || new Map();\nstate.portsByTag = state.portsByTag || new Map();\nstate.copy = (value) => value instanceof Array\n  ? [...value] : value instanceof Object\n    ? {...value} : value;",
+      "inputFunctions": {
+        "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "const {bundlesByTag, portsByTag} = state;\nlet bundle = bundlesByTag.get(tag);\nif (!bundle) {\n  bundle = state.copy(state.staticBundle);\n  bundlesByTag.set(tag, bundle);\n}\nlet ports = portsByTag.get(tag);\nif (!ports) {\n  ports = new Set(state.dynamicFields);\n  portsByTag.set(tag, ports);\n}\nbundle[input] = data;\nports.delete(input);\nif (ports.size === 0) {\n  bundlesByTag.delete(tag);\n  portsByTag.delete(tag);\n  outputs.synced(bundle, tag);\n}"
+      }
     }
   },
   "name": "flow/Syncer",

@@ -30,6 +30,14 @@
       "inputFunctions": {
         "6ad86184-6890-4323-8021-3496a682c98e": "const fields = params.fields;\nfor (const field of fields) {\n  const value = data[field];\n  if (value !== undefined)\n    outputs[field](value, tag);\n}\n"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6ad86184-6890-4323-8021-3496a682c98e": "const fields = params.fields;\nfor (const field of fields) {\n  const value = data[field];\n  if (value !== undefined)\n    outputs[field](value, tag);\n}\n"
+      }
     }
   },
   "name": "flow/Splitter",

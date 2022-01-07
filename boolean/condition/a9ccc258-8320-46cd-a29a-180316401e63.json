@@ -29,6 +29,14 @@
       "inputFunctions": {
         "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": "if (data)\n  outputs.true(null, tag);\nelse\n  outputs.false(null, tag);\n"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": "if (data)\n  outputs.true(null, tag);\nelse\n  outputs.false(null, tag);\n"
+      }
     }
   },
   "name": "boolean/Condition",

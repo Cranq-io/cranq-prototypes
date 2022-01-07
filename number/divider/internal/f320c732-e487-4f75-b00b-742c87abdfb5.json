@@ -26,6 +26,14 @@
       "inputFunctions": {
         "c03e27e9-22ae-4ab7-8eb8-edf412f29759": "const {a, b} = data;\nif (b !== 0)\n  outputs.fraction(a / b, tag);\nelse\n  outputs.bounced(data, tag);\n"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "c03e27e9-22ae-4ab7-8eb8-edf412f29759": "const {a, b} = data;\nif (b !== 0)\n  outputs.fraction(a / b, tag);\nelse\n  outputs.bounced(data, tag);\n"
+      }
     }
   },
   "name": "number/Divider/Internal",

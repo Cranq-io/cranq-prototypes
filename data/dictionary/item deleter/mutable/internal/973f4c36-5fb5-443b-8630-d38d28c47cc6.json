@@ -22,6 +22,14 @@
       "inputFunctions": {
         "b2dba313-c94c-4788-9e3b-3e985f6d43d9": "let res = data.dict;\ndelete res[data.key];\noutputs.dict(res, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b2dba313-c94c-4788-9e3b-3e985f6d43d9": "let res = data.dict;\ndelete res[data.key];\noutputs.dict(res, tag);"
+      }
     }
   },
   "name": "data/dictionary/Item deleter/mutable/Internal",

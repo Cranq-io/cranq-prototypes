@@ -6,6 +6,13 @@
         "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",
         "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
       }
+    },
+    "es6-node": {
+      "initFunction": "state.aggregated = state.aggregated || [];",
+      "inputFunctions": {
+        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",
+        "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
+      }
     }
   },
   "interface": {

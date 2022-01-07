@@ -29,6 +29,14 @@
       "inputFunctions": {
         "5819ad6f-855e-4be2-aec5-f715de73eecd": "const {timer} = state;\nif (timer)\n  clearTimeout(timer);\nstate.timer = setTimeout(() => outputs.data(data, tag), params.delay);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "5819ad6f-855e-4be2-aec5-f715de73eecd": "const {timer} = state;\nif (timer)\n  clearTimeout(timer);\nstate.timer = setTimeout(() => outputs.data(data, tag), params.delay);"
+      }
     }
   },
   "name": "flow/Debouncer",

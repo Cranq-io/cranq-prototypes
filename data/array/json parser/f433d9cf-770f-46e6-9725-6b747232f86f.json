@@ -29,6 +29,14 @@
       "inputFunctions": {
         "6af01236-82c3-45ef-91df-cadb3ac3aefd": "try {\n  const parsed = JSON.parse(data);\n  if (parsed instanceof Array) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6af01236-82c3-45ef-91df-cadb3ac3aefd": "try {\n  const parsed = JSON.parse(data);\n  if (parsed instanceof Array) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
+      }
     }
   },
   "name": "data/array/JSON parser",

@@ -35,6 +35,15 @@
         "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "state.data = data;\noutputs.written(null, tag);",
         "0b28df10-b056-4666-ae14-2357d747f7b9": "const value = state.data || params.data;\nif (value !== undefined)\n  outputs.data(value, tag);\nelse\n  outputs[\"not found\"](null, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "state.data = data;\noutputs.written(null, tag);",
+        "0b28df10-b056-4666-ae14-2357d747f7b9": "const value = state.data || params.data;\nif (value !== undefined)\n  outputs.data(value, tag);\nelse\n  outputs[\"not found\"](null, tag);"
+      }
     }
   },
   "name": "data/Store",

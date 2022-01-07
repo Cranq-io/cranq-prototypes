@@ -29,6 +29,14 @@
       "inputFunctions": {
         "ca54dccf-ed97-4731-8eb0-ef76fe19e844": "const matches = /^(.*):\\d+$/.exec(tag);\nif (matches !== null)\n  outputs.data(data, matches[1]);\nelse\n  outputs.bounced(data, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "ca54dccf-ed97-4731-8eb0-ef76fe19e844": "const matches = /^(.*):\\d+$/.exec(tag);\nif (matches !== null)\n  outputs.data(data, matches[1]);\nelse\n  outputs.bounced(data, tag);"
+      }
     }
   },
   "name": "flow/Tag trimmer",

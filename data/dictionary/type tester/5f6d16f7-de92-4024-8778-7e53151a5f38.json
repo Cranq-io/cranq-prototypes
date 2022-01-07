@@ -24,6 +24,14 @@
       "inputFunctions": {
         "af6185f2-aefb-453b-a836-99c55cf4e39f": "const isArray = data instanceof Array;\nconst isObject = data instanceof Object;\noutputs[\"is dict\"](!isArray && isObject, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "af6185f2-aefb-453b-a836-99c55cf4e39f": "const isArray = data instanceof Array;\nconst isObject = data instanceof Object;\noutputs[\"is dict\"](!isArray && isObject, tag);"
+      }
     }
   },
   "name": "data/dictionary/Type tester",

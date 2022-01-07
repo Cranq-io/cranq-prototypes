@@ -33,6 +33,14 @@
       "inputFunctions": {
         "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": "for (let i=0, length=data.length; i<length; i++) {\n  const itemTag = `${tag}:${i}`;\n  outputs.index(i, itemTag);\n  outputs.item(data[i], itemTag);\n}\noutputs.done(data, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": "for (let i=0, length=data.length; i<length; i++) {\n  const itemTag = `${tag}:${i}`;\n  outputs.index(i, itemTag);\n  outputs.item(data[i], itemTag);\n}\noutputs.done(data, tag);"
+      }
     }
   },
   "name": "data/array/Iterator",

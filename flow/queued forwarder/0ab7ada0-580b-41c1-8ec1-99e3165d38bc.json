@@ -30,6 +30,15 @@
         "f8530cfa-8bf3-43c0-a3a6-ead766852ef1": "state.dataByTag.set(tag, data);\nstate.flush();",
         "70a488b9-2e95-4dca-8fae-266d8ac65dfc": "state.queue.push(tag);\nstate.flush();"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "state.dataByTag = state.dataByTag || new Map();\nstate.queue = state.queue || [];\nconst {dataByTag, queue} = state;\nstate.flush = () => {\n  while (dataByTag.has(queue[0])) {\n    const tag = queue.shift();\n    const data = dataByTag.get(tag);\n    dataByTag.delete(tag);\n    outputs.data(data, tag);\n  }\n}",
+      "inputFunctions": {
+        "f8530cfa-8bf3-43c0-a3a6-ead766852ef1": "state.dataByTag.set(tag, data);\nstate.flush();",
+        "70a488b9-2e95-4dca-8fae-266d8ac65dfc": "state.queue.push(tag);\nstate.flush();"
+      }
     }
   },
   "name": "flow/Queued forwarder",

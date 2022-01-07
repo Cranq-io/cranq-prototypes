@@ -24,6 +24,14 @@
       "inputFunctions": {
         "6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b": "outputs[\"is boolean\"](typeof data === \"boolean\", tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6a2b4de4-15a1-48bf-8fa9-eb3144cbaa0b": "outputs[\"is boolean\"](typeof data === \"boolean\", tag);"
+      }
     }
   },
   "name": "boolean/Type tester",

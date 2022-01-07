@@ -4,6 +4,11 @@
       "inputFunctions": {
         "d7d41670-88f5-4edf-a2f5-25dec016e5f2": "const {array, count} = data;\nconst result = [];\nfor (let i = 0, length = array.length; i < length; i+=count)\n  result.push(array.slice(i, i + count));\noutputs[\"2D array\"](result, tag);\n"
       }
+    },
+    "es6-node": {
+      "inputFunctions": {
+        "d7d41670-88f5-4edf-a2f5-25dec016e5f2": "const {array, count} = data;\nconst result = [];\nfor (let i = 0, length = array.length; i < length; i+=count)\n  result.push(array.slice(i, i + count));\noutputs[\"2D array\"](result, tag);\n"
+      }
     }
   },
   "interface": {

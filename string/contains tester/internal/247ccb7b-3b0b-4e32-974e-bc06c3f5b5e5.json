@@ -24,6 +24,14 @@
       "inputFunctions": {
         "ce4922d1-60b3-43e9-bbec-2fafcfdfaaa3": "outputs.contains(data[\"string\"].indexOf(data.substring) >= 0, tag)"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "ce4922d1-60b3-43e9-bbec-2fafcfdfaaa3": "outputs.contains(data[\"string\"].indexOf(data.substring) >= 0, tag)"
+      }
     }
   },
   "name": "string/Contains tester/Internal",

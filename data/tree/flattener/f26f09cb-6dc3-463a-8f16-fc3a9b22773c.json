@@ -29,6 +29,14 @@
       "inputFunctions": {
         "5eacb3f2-0e3d-4944-b933-4a119cdcdb59": "function flatten(tree, baseKey = \"\", delimiter = \".\") {\n  function flattenToKeyValueList(tree, baseKey = \"\") {\n    return Array.isArray(tree)\n      ? flattenToKeyValueList( // convert to object with numeric keys then proceed as usual\n        tree.reduce((acc, value, index) => ({ ...acc, ...({[index]: value})}), {}),\n        baseKey\n      )\n      : Object.entries(tree).flatMap(([key, value]) => {\n        const compoundKey = `${baseKey ? `${baseKey}${delimiter}` : \"\"}${key}`;\n        if (typeof value === \"object\" && value !== null) {\n          return flattenToKeyValueList(value, compoundKey);\n        }\n        return [compoundKey, value];\n      });\n  }\n\n  function fromKeyValueList(list) {\n    return list.reduce((acc, curr, index, source) => {\n      if (index % 2 === 1) { // every second is value, process it\n        acc[source[index - 1]] = curr;\n      }\n      return acc;\n    }, {});\n  }\n\n  return fromKeyValueList(flattenToKeyValueList(tree));\n}\n\noutputs.flattened(flatten(data, \"\", params.delimiter), tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "5eacb3f2-0e3d-4944-b933-4a119cdcdb59": "function flatten(tree, baseKey = \"\", delimiter = \".\") {\n  function flattenToKeyValueList(tree, baseKey = \"\") {\n    return Array.isArray(tree)\n      ? flattenToKeyValueList( // convert to object with numeric keys then proceed as usual\n        tree.reduce((acc, value, index) => ({ ...acc, ...({[index]: value})}), {}),\n        baseKey\n      )\n      : Object.entries(tree).flatMap(([key, value]) => {\n        const compoundKey = `${baseKey ? `${baseKey}${delimiter}` : \"\"}${key}`;\n        if (typeof value === \"object\" && value !== null) {\n          return flattenToKeyValueList(value, compoundKey);\n        }\n        return [compoundKey, value];\n      });\n  }\n\n  function fromKeyValueList(list) {\n    return list.reduce((acc, curr, index, source) => {\n      if (index % 2 === 1) { // every second is value, process it\n        acc[source[index - 1]] = curr;\n      }\n      return acc;\n    }, {});\n  }\n\n  return fromKeyValueList(flattenToKeyValueList(tree));\n}\n\noutputs.flattened(flatten(data, \"\", params.delimiter), tag);"
+      }
     }
   },
   "name": "data/tree/Flattener",

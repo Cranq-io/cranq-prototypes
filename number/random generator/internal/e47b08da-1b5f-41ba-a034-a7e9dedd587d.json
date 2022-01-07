@@ -24,6 +24,14 @@
       "inputFunctions": {
         "51e9aff9-1f7e-4a83-bdaf-c07c0f95eedd": "const {min, max } = data;\nconst res = Math.floor(min + (Math.random() * (max - min + 1)));\noutputs.random(res, tag);"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "51e9aff9-1f7e-4a83-bdaf-c07c0f95eedd": "const {min, max } = data;\nconst res = Math.floor(min + (Math.random() * (max - min + 1)));\noutputs.random(res, tag);"
+      }
     }
   },
   "name": "number/Random generator/Internal",

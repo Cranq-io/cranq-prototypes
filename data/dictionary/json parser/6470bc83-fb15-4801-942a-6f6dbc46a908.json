@@ -34,6 +34,14 @@
       "inputFunctions": {
         "612de880-6653-4097-b917-aabc4f6aceb2": "try {\n  const parsed = JSON.parse(data);\n  if (!(parsed instanceof Array) && parsed instanceof Object) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n  outputs.error({error: String(error)}, tag);\n}"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "612de880-6653-4097-b917-aabc4f6aceb2": "try {\n  const parsed = JSON.parse(data);\n  if (!(parsed instanceof Array) && parsed instanceof Object) {\n    outputs.parsed(parsed, tag);\n  } else {\n    outputs.bounced(data, tag);\n  }\n} catch (error) {\n  outputs.bounced(data, tag);\n  outputs.error({error: String(error)}, tag);\n}"
+      }
     }
   },
   "name": "data/dictionary/JSON parser",

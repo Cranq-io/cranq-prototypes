@@ -35,6 +35,15 @@
         "c02fd4fd-1183-4bc4-a5f6-74974734d5ce": "const {array, initial} = data;\nconst {length} = array;\nconst result = state.copy(initial);\nif (length) {\n  state.reductionsByTag.set(tag, {\n    array,\n    result,\n    cursor: 0,\n    length\n  });\n  outputs.item(array[0], `${tag}:0`);\n  outputs[\"part reduced\"](result, `${tag}:0`);\n} else {\n  outputs.reduced(result, tag);\n}",
         "655b6bc3-d733-4188-a4c4-a3d981b1b4bf": "const reductionTag = tag.substr(0, tag.lastIndexOf(\":\"));\nconst reduction = state.reductionsByTag.get(reductionTag);\nconst {array, result, length} = reduction;\nconst cursor = ++reduction.cursor;\nif (cursor === length) {\n  // Reduction finished\n  state.reductionsByTag.delete(reductionTag);\n  outputs.reduced(data, reductionTag);\n} else {\n  reduction.result = data;\n  const itemTag = `${reductionTag}:${cursor}`;\n  outputs.item(array[cursor], itemTag)\n  outputs[\"part reduced\"](data, itemTag);\n}"
       }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "state.reductionsByTag = state.reductionsByTag || new Map();\nstate.copy = (value) => (value instanceof Array)\n    ? [...value] : (value instanceof Object)\n      ? {...value} : value;",
+      "inputFunctions": {
+        "c02fd4fd-1183-4bc4-a5f6-74974734d5ce": "const {array, initial} = data;\nconst {length} = array;\nconst result = state.copy(initial);\nif (length) {\n  state.reductionsByTag.set(tag, {\n    array,\n    result,\n    cursor: 0,\n    length\n  });\n  outputs.item(array[0], `${tag}:0`);\n  outputs[\"part reduced\"](result, `${tag}:0`);\n} else {\n  outputs.reduced(result, tag);\n}",
+        "655b6bc3-d733-4188-a4c4-a3d981b1b4bf": "const reductionTag = tag.substr(0, tag.lastIndexOf(\":\"));\nconst reduction = state.reductionsByTag.get(reductionTag);\nconst {array, result, length} = reduction;\nconst cursor = ++reduction.cursor;\nif (cursor === length) {\n  // Reduction finished\n  state.reductionsByTag.delete(reductionTag);\n  outputs.reduced(data, reductionTag);\n} else {\n  reduction.result = data;\n  const itemTag = `${reductionTag}:${cursor}`;\n  outputs.item(array[cursor], itemTag)\n  outputs[\"part reduced\"](data, itemTag);\n}"
+      }
     }
   },
   "name": "data/array/Reducer/Internal",

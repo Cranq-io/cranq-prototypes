@@ -25,18 +25,27 @@
     "cranq": {
       "nodes": {
         "70d86403-bff3-45af-9735-ca10827163f9": {
-          "coordinates": [183, -154],
+          "coordinates": [
+            183,
+            -154
+          ],
           "name": "upload images",
           "prototype": "f0e5b614-cbea-4af7-8fc3-a428681cc2cb",
           "params": {}
         },
         "b0d5939b-3130-47f0-a597-baa896cd136b": {
-          "coordinates": [-179.00358737244898, -46.14588647959184],
+          "coordinates": [
+            -179.00358737244898,
+            -46.14588647959184
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "ce8c6bed-a362-4ecb-8a74-07f2c467dd26": {
-          "coordinates": [-24.003587372448976, 98.85411352040816],
+          "coordinates": [
+            -24.003587372448976,
+            98.85411352040816
+          ],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {
@@ -89,7 +98,9 @@
       }
     }
   },
-  "attributes": {},
+  "attributes": {
+    "locked": true
+  },
   "description": "Uploads multiple images  and stores the ipfs URLs in the state.\n\nExample:\n1. {}@0 receiced via `state`\n2. {\n  \"cwd\": \"./nft\",\n  \"images-directory\": \"nft/batch-images\",\n  \"moralis-api-key\": \"API_KEY\"\n}@0 received via `params`\n3.{\n  \"image-names\": [\n    \"logo.jpg\"\n  ],\n  \"image-paths\": [\n    \"nft\\\\batch-images\\\\logo.jpg\"\n  ],\n  \"image-upload-data\": [\n    {\n      \"path\": \"nft\\\\batch-images\\\\logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ],\n  \"image-urls\": [\n\t\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/nft\\\\batch-images\\\\logo.jpg\"\n  ]\n}@0 sent via `state`",
   "keywords": {
     "batch": null,

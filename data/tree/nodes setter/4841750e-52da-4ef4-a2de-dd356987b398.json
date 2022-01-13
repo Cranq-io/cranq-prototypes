@@ -1,0 +1,148 @@
+{
+  "name": "data/tree/Nodes setter",
+  "description": "Immutably stores the specified nodes on the specified paths of the tree.\n\nExample:\n1. `tree` receives \n{\"a\": \"a\"}@0\n2. `path` receives\n[\n  [\"a\", \"b\"],\n  [\"a\", \"c\"]\n]@0\n3. `nodes` receives\n[0,1]@0\n4. `tree` sends\n{\n  \"a\": {\n     \"b\" : 0,\n     \"c\": 1\n  }\n}@0",
+  "interface": {
+    "inputs": {
+      "e080c294-84b6-4587-b31c-a04e230f632e": {
+        "type": "any",
+        "name": "tree",
+        "description": "Receives tree data structure in which to store a node.\n\nExample:\n{\"a\": \"a\"}"
+      },
+      "2cb4d528-cacc-4d46-97a2-eee2143be1c1": {
+        "type": "(string[] or number[])[]",
+        "name": "paths",
+        "description": "Receives the location of the nodes.\n\nExample:\n[\n  [\"a\", \"b\"],\n  [\"a\", \"c\"]\n]"
+      },
+      "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {
+        "type": "any[]",
+        "name": "nodes",
+        "description": "Receives nodes to be stored in the tree.\n\nExample:\n[0,1]"
+      }
+    },
+    "outputs": {
+      "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+        "description": "Sends updated tree data structure.\n\nExample:\n{\n  \"a\": {\n     \"b\" : 0,\n     \"c\": 1\n  }\n}",
+        "type": "typeof `tree`",
+        "name": "tree"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a8f4a16d-00e3-4722-ae00-2e1dd1023c5e": {
+          "coordinates": [
+            118.75,
+            40.25
+          ],
+          "name": "set node",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {}
+        },
+        "2f7460fd-c106-4b45-a638-ed01fba18dd6": {
+          "coordinates": [
+            -222.25,
+            -31.75
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "5ad80248-2c32-4d36-b431-b3e8bcb9c51e": {
+          "coordinates": [
+            -107.25,
+            57.25
+          ],
+          "name": "iterate on nodes",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        },
+        "11ac2df0-70d5-489f-a32e-560ec1382915": {
+          "coordinates": [
+            207.75,
+            -144.75
+          ],
+          "name": "iterate on paths and update the tree",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8"
+        }
+      },
+      "connections": {
+        "2f7460fd-c106-4b45-a638-ed01fba18dd6": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "11ac2df0-70d5-489f-a32e-560ec1382915": {
+              "ec095128-e720-45fc-9b4f-b87a130d9249": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "5ad80248-2c32-4d36-b431-b3e8bcb9c51e": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "11ac2df0-70d5-489f-a32e-560ec1382915": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "11ac2df0-70d5-489f-a32e-560ec1382915": {
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "a8f4a16d-00e3-4722-ae00-2e1dd1023c5e": {
+              "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            }
+          },
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "a8f4a16d-00e3-4722-ae00-2e1dd1023c5e": {
+              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
+            }
+          }
+        },
+        "a8f4a16d-00e3-4722-ae00-2e1dd1023c5e": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "11ac2df0-70d5-489f-a32e-560ec1382915": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "5ad80248-2c32-4d36-b431-b3e8bcb9c51e": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "a8f4a16d-00e3-4722-ae00-2e1dd1023c5e": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e080c294-84b6-4587-b31c-a04e230f632e": {
+            "2f7460fd-c106-4b45-a638-ed01fba18dd6": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "2cb4d528-cacc-4d46-97a2-eee2143be1c1": {
+            "2f7460fd-c106-4b45-a638-ed01fba18dd6": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {
+            "2f7460fd-c106-4b45-a638-ed01fba18dd6": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "11ac2df0-70d5-489f-a32e-560ec1382915": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  },
+  "keywords": {
+    "object": null,
+    "field": null,
+    "setter": null
+  }
+}

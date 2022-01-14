@@ -22,7 +22,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "3c78d8eb-e414-412b-b78d-c2acc5c187b0": "const path = require('path');\noutputs.path(path.format(data), tag);"
+        "3c78d8eb-e414-412b-b78d-c2acc5c187b0": "const path = require('path');\noutputs.path(path.format(data).split(path.sep).join(\"/\"), tag);"
       }
     }
   },

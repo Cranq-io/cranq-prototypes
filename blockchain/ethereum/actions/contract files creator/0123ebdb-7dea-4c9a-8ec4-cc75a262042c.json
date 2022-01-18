@@ -8,7 +8,7 @@
         "name": "state"
       },
       "b0c10279-2fdc-48ec-926d-f348e6222553": {
-        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"write-deploy\": typeof `params` of `write deploy.js`,\n}",
+        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"prepare-write-deploy-params\": typeof `mappings` of `prepare write deploy params`,\n  \"write-deploy\": typeof `params` of `write deploy.js`\n}",
         "name": "params"
       }
     },
@@ -22,37 +22,10 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
-          "coordinates": [
-            -19.28164062499991,
-            163.03333333333336
-          ],
-          "name": "create Hardhat config",
-          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
-          "params": {}
-        },
-        "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
-          "coordinates": [
-            186.22148437500005,
-            -98.56666666666666
-          ],
-          "name": "create contract",
-          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
-          "params": {}
-        },
-        "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-          "coordinates": [
-            186.83867187500005,
-            88.43333333333334
-          ],
-          "name": "write deploy.js",
-          "prototype": "15631c05-0c74-441c-8890-871b87e93b4e",
-          "params": {}
-        },
         "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
           "coordinates": [
-            -9.161328124999955,
-            -196.5666666666667
+            -237.16132812499995,
+            -310.5666666666667
           ],
           "name": "API URL -> .env",
           "prototype": "fb69ffe9-5900-42e3-b4bb-3741e6671fd0",
@@ -60,8 +33,8 @@
         },
         "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
           "coordinates": [
-            -19.161328124999955,
-            -18.56666666666669
+            -111.16132812499995,
+            -221.5666666666667
           ],
           "name": "private key -> .env",
           "prototype": "fb69ffe9-5900-42e3-b4bb-3741e6671fd0",
@@ -69,29 +42,102 @@
         },
         "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
           "coordinates": [
-            -234.778515625,
-            84.43333333333334
+            -398.778515625,
+            104.43333333333334
           ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"write-api-url\", \"write-private-key\", \"create-hardhat-config\", \"create-contract\", \"write-deploy\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"write-api-url\", \"write-private-key\", \"write-etherscan-api-key\", \"create-hardhat-config\", \"create-contract\", \"prepare-write-deploy-params\", \"write-deploy\"]"
           }
         },
         "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
           "coordinates": [
-            -224.778515625,
-            -91.56666666666666
+            -433.778515625,
+            -2.566666666666663
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
+        },
+        "1c274963-734b-4da2-8751-0edc9d947d73": {
+          "coordinates": [
+            245.22148437500005,
+            37.43333333333334
+          ],
+          "name": "create contract",
+          "prototype": "fdcc8511-b32f-4080-b7c4-5349cad88f27",
+          "params": {}
+        },
+        "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+          "coordinates": [
+            375.83867187500005,
+            257.43333333333334
+          ],
+          "name": "create deploy script",
+          "prototype": "ceeb0e68-734f-4ff4-aaad-7302710fffae",
+          "params": {}
+        },
+        "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
+          "coordinates": [
+            132.838671875,
+            258.28489583333334
+          ],
+          "name": "prepare write deploy params",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {}
+        },
+        "9f526f2d-c54e-4258-83d2-59200dda633a": {
+          "coordinates": [
+            2.8386718750000455,
+            -139.5666666666667
+          ],
+          "name": "ehterscan api key -> .env",
+          "prototype": "fb69ffe9-5900-42e3-b4bb-3741e6671fd0",
+          "params": {}
+        },
+        "c90f36ca-abe7-4992-885d-962cb4398b37": {
+          "coordinates": [
+            111.71835937500009,
+            -47.96666666666664
+          ],
+          "name": "create hardhat config",
+          "prototype": "d07b0f52-2ac7-462e-bf0e-1d80099d68b4"
         }
       },
       "connections": {
         "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
           "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
             "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+              "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
+            }
+          }
+        },
+        "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
+              "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "1c274963-734b-4da2-8751-0edc9d947d73": {
+          "7de95841-2f5a-4e13-9729-8992b8e9ebc0": {
+            "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+              "38ea00a8-4881-4cf3-9a2a-7ccbc3adecd1": {}
+            },
+            "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          }
+        },
+        "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
+          "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
+            "9f526f2d-c54e-4258-83d2-59200dda633a": {
               "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
             }
           }
@@ -107,52 +153,50 @@
               "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
             }
           },
-          "create-hardhat-config": {
-            "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+          "write-etherscan-api-key": {
+            "9f526f2d-c54e-4258-83d2-59200dda633a": {
+              "27a532aa-a36d-4ace-a86c-c8b09ace2502": {}
             }
           },
           "create-contract": {
-            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
+            "1c274963-734b-4da2-8751-0edc9d947d73": {
+              "e1f1e996-3bd9-494e-8916-0e2cedd4cd76": {}
+            }
+          },
+          "prepare-write-deploy-params": {
+            "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
+              "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
             }
           },
           "write-deploy": {
-            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-              "6cb322bc-07bf-4ee3-9af3-52dbb39c1584": {}
-            }
-          }
-        },
-        "34ee7c01-c56c-4e81-8871-b37b1b35899e": {
-          "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
-            "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
-        "c23d10d0-2596-49eb-b5b1-c8482fcb1c7b": {
-          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
-            "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
-        "69a1984a-04b5-4dcc-ae50-fb6ec3031d61": {
-          "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {
-            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-              "b6e955a9-eb4d-40f1-97f7-00abd7ff25cf": {}
-            }
-          }
-        },
-        "5dcee8ce-d7bf-4c29-8a39-94502fdcec9d": {
-          "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "ccfd3cb5-08e1-400d-91a7-5036c46a9886": {
-              "0a401b75-ad4b-4ea5-a189-0b35de528055": {}
+            "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
+              "9bd88c07-0858-4ead-b615-069284f0db34": {}
             }
           },
-          "d1295197-1962-4680-a037-5890f2175bb9": {
-            "fe05062e-f86c-4ec7-8311-f4d36c5673e7": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
+          "create-hardhat-config": {
+            "c90f36ca-abe7-4992-885d-962cb4398b37": {
+              "cc5871a4-697b-4be6-8d26-1a26fcabff85": {}
+            }
+          }
+        },
+        "c90f36ca-abe7-4992-885d-962cb4398b37": {
+          "28b994ac-7400-477a-bde8-2548b7d05b03": {
+            "1c274963-734b-4da2-8751-0edc9d947d73": {
+              "7468b09f-e723-4d9b-8857-57348f32ec77": {}
+            }
+          }
+        },
+        "9f526f2d-c54e-4258-83d2-59200dda633a": {
+          "439428df-cb94-45a7-9b2b-5025a2b5ae5e": {
+            "c90f36ca-abe7-4992-885d-962cb4398b37": {
+              "8f352ced-f7ed-433a-81ca-1f8c3a5374ab": {}
+            }
+          }
+        },
+        "02a440f0-6a26-4c1e-9998-c28a2bebc1d4": {
+          "016df9f6-e555-4594-b84f-ca1e9401fae8": {
+            "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+              "83168491-efcd-4eb0-9358-30f5cdccb58c": {}
             }
           }
         }
@@ -172,17 +216,15 @@
         },
         "outputs": {
           "7a4ab3a3-2de9-4d6e-872b-fdb7a21f6d09": {
-            "1a1153ce-b61b-47a6-923c-62bde7a8238e": {
-              "8605dd77-cbd0-4ec0-af0b-91ab9240b4f9": {}
+            "e4a9320b-bcce-400f-85fd-c998389d68ae": {
+              "f8f2fca1-9c18-4064-8fe2-bd296e2c824c": {}
             }
           }
         }
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
+  "attributes": {},
   "keywords": {
     "action": null,
     "scripting": null,

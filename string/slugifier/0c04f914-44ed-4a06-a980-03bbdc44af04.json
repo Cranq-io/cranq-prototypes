@@ -1,0 +1,39 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "transliteration": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "6c85259f-8909-4cb8-baf5-89b3f28ae57d": "const slugify = require(\"transliteration\").slugify;\n\nconst options = {\n  trim: true,\n  lowercase: params.lowercase === undefined ? true :  params.lowercase,\n  separator: params.separator || \"-\"\n};\n\noutputs.slug(slugify(data, options), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "6c85259f-8909-4cb8-baf5-89b3f28ae57d": {
+        "type": "any",
+        "name": "text"
+      },
+      "d2c1c47d-62ef-4b13-a3f7-e39a806f1059": {
+        "type": "boolean",
+        "name": "lowercase"
+      },
+      "25a2b148-6442-42c2-9899-8f8f5a43523c": {
+        "type": "string",
+        "name": "separator"
+      }
+    },
+    "outputs": {
+      "5b95387f-2a40-436c-9245-cba83fcfe37c": {
+        "type": "any",
+        "name": "slug"
+      }
+    }
+  },
+  "name": "string/Slugifier"
+}

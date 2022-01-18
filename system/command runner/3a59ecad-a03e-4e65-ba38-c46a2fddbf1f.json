@@ -30,6 +30,10 @@
         "type": "{\n\"command\": typeof `command`,\n\"options\": typeof `options`\n}",
         "name": "on busy",
         "description": "The received command and options when the node is still executing another command."
+      },
+      "5f759d9a-9bdd-4179-99f9-890cd87fd80e": {
+        "type": "any",
+        "name": "bounced"
       }
     }
   },
@@ -98,6 +102,11 @@
           "ff5e32e3-a7b2-4443-9f25-6f5b108c3d97": {
             "08c7b731-6a56-42a5-a4e2-42fde7719376": {
               "61144bc0-f947-4a6f-90a8-c62dab8d334d": {}
+            }
+          },
+          "5f759d9a-9bdd-4179-99f9-890cd87fd80e": {
+            "08c7b731-6a56-42a5-a4e2-42fde7719376": {
+              "73a9870f-7d1b-489b-a46e-cc0520c09fa6": {}
             }
           }
         }

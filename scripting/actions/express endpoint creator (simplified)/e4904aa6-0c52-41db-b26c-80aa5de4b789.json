@@ -36,18 +36,27 @@
     "cranq": {
       "nodes": {
         "86930768-86db-400e-918d-404c1d8cfa0d": {
-          "coordinates": [76, 253],
+          "coordinates": [
+            76,
+            253
+          ],
           "name": "set up route",
           "prototype": "55fae13b-9dd2-42c0-a119-7b69b7388c92",
           "params": {}
         },
         "e0c62193-fa50-4e4d-853b-072ca7ddff76": {
-          "coordinates": [-200, 131],
+          "coordinates": [
+            -200,
+            131
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "fb609c31-c086-46c9-81e1-c4530c30a901": {
-          "coordinates": [72, 87],
+          "coordinates": [
+            72,
+            87
+          ],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {
@@ -55,7 +64,10 @@
           }
         },
         "47ba760e-be8c-4775-8159-10bfaa7505a0": {
-          "coordinates": [-34, -268],
+          "coordinates": [
+            -34,
+            -268
+          ],
           "name": "prepare message",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
@@ -63,7 +75,10 @@
           }
         },
         "b4730120-13e6-47d1-b87e-2f8b57dae2c4": {
-          "coordinates": [84, -65],
+          "coordinates": [
+            84,
+            -65
+          ],
           "name": "build result path",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
@@ -74,7 +89,10 @@
           }
         },
         "bf62e0c1-4eb3-453f-aa73-954238e1ecb2": {
-          "coordinates": [-35, -115],
+          "coordinates": [
+            -35,
+            -115
+          ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -82,7 +100,10 @@
           }
         },
         "376bac73-f524-41d4-a42a-96c4e4e8b75a": {
-          "coordinates": [117, -204],
+          "coordinates": [
+            117,
+            -204
+          ],
           "name": "build params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
@@ -90,7 +111,10 @@
           }
         },
         "01c942af-9b43-4bbd-8d7d-d62f46213228": {
-          "coordinates": [239, -116],
+          "coordinates": [
+            239,
+            -116
+          ],
           "name": "merger",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
@@ -98,7 +122,10 @@
           }
         },
         "3af635cc-9cb8-414f-8565-b32dddef2c58": {
-          "coordinates": [-181, -183],
+          "coordinates": [
+            -181,
+            -183
+          ],
           "name": "apply defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {

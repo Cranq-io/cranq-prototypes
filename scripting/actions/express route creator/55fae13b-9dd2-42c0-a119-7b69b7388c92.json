@@ -33,18 +33,27 @@
     "cranq": {
       "nodes": {
         "44c1e0f0-cfea-4c82-94c4-53e631a15edf": {
-          "coordinates": [-232.83333333333337, 145.66666666666669],
+          "coordinates": [
+            -232.83333333333337,
+            145.66666666666669
+          ],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
           "params": {}
         },
         "ad204853-895b-4e2d-b281-2eed0c42cf18": {
-          "coordinates": [31, -37],
+          "coordinates": [
+            31,
+            -37
+          ],
           "name": "handle route",
           "prototype": "a63f623a-f4b2-4a06-acca-83774cd4ca41"
         },
         "c6223f58-106f-4934-8bdd-3e953a82132a": {
-          "coordinates": [-207, -79],
+          "coordinates": [
+            -207,
+            -79
+          ],
           "name": "apply defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
@@ -52,7 +61,10 @@
           }
         },
         "3a4f065a-aa31-4dd9-b166-dc525ab16905": {
-          "coordinates": [-43, -178],
+          "coordinates": [
+            -43,
+            -178
+          ],
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -60,7 +72,10 @@
           }
         },
         "7b46bb24-1f7f-4efa-aaee-6c669c001bf5": {
-          "coordinates": [20.184548611111126, 238.8592592592592],
+          "coordinates": [
+            20.184548611111126,
+            238.8592592592592
+          ],
           "name": "store result",
           "prototype": "df2ee367-133e-49a5-afc3-277a41ddd699"
         }

@@ -7,7 +7,7 @@
         "name": "state"
       },
       "f3aeec69-5a23-4b4c-b586-f4b2e8061f99": {
-        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"write-public-key\": typeof `params` of `public key -> .env`,\n  \"create-mint-script\": typeof `params` of `create \"mint-nft.js\"`\n}",
+        "type": "{\n  \"write-api-url\": typeof `params` of `API URL` -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"write-public-key\": typeof `params` of `public key -> .env`,\n  \"create-mint-script\": typeof `params` of `create \"mint-nft.js\"`\n}",
         "name": "params"
       }
     },
@@ -23,8 +23,8 @@
       "nodes": {
         "1ad63bbc-a7df-49d0-aa37-4437df6aa32a": {
           "coordinates": [
-            144.72916666666663,
-            158.95833333333331
+            143.72916666666663,
+            162.95833333333331
           ],
           "name": "create \"mint-nft.js\"",
           "prototype": "d063a02a-4958-4c5e-a35b-b977e5c50395",
@@ -158,9 +158,7 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
+  "attributes": {},
   "keywords": {
     "scripting": null,
     "action": null,

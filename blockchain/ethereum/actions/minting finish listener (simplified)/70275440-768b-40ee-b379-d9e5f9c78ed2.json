@@ -24,19 +24,28 @@
     "cranq": {
       "nodes": {
         "8515b5c8-c9ec-42d6-96b1-cc653c27f67b": {
-          "coordinates": [56, 104],
+          "coordinates": [
+            56,
+            104
+          ],
           "name": "wait 10s",
           "prototype": "97c6708c-143f-4deb-869a-1a1255815a30",
           "params": {},
           "description": "Need to wait for contract to be mined before using it to mint NFT."
         },
         "db152563-c9a7-490b-a6fc-1e0ec39fc160": {
-          "coordinates": [-160, 41],
+          "coordinates": [
+            -160,
+            41
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "7bf2c3a3-e4eb-4ce8-8d4c-8333eb5cbec6": {
-          "coordinates": [4, -95],
+          "coordinates": [
+            4,
+            -95
+          ],
           "name": "params copier",
           "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
           "params": {

@@ -25,31 +25,46 @@
     "cranq": {
       "nodes": {
         "e7bcbd5f-44c8-4916-bcc2-01ebb5dd4754": {
-          "coordinates": [-278.616868622449, -29.62244897959181],
+          "coordinates": [
+            -278.616868622449,
+            -29.62244897959181
+          ],
           "name": "get image names",
           "prototype": "b014ba06-3287-4933-ac87-2097add5983f",
           "params": {}
         },
         "08afe28e-b80f-4d6c-a08e-93901f114050": {
-          "coordinates": [-50.003587372448976, -79.49744897959184],
+          "coordinates": [
+            -50.003587372448976,
+            -79.49744897959184
+          ],
           "name": "build image paths",
           "prototype": "275ac9ef-4997-4a9f-b1aa-4d414d0ef9e5",
           "params": {}
         },
         "d3dae401-d5c2-444d-8a3a-a49559a25dd4": {
-          "coordinates": [169.99641262755102, 58.50255102040816],
+          "coordinates": [
+            169.99641262755102,
+            58.50255102040816
+          ],
           "name": "upload images",
           "prototype": "bcb59543-2216-46da-8b68-77e2d406c951",
           "params": {}
         },
         "de4942ae-6bae-4494-aa41-41bcb160b545": {
-          "coordinates": [-40.51363201530616, 220.10969387755097],
+          "coordinates": [
+            -40.51363201530616,
+            220.10969387755097
+          ],
           "name": "build image data",
           "prototype": "579485c8-9437-45d9-a5fe-98e5fd525dac",
           "params": {}
         },
         "a3d66523-5a16-4915-b54b-9b70bf9c707b": {
-          "coordinates": [-241.00358737244898, 270.5025510204082],
+          "coordinates": [
+            -241.00358737244898,
+            270.5025510204082
+          ],
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
@@ -57,22 +72,34 @@
           }
         },
         "b962d178-304d-48b6-8ec1-801124d7aa12": {
-          "coordinates": [-297.003587372449, 154.5025510204082],
+          "coordinates": [
+            -297.003587372449,
+            154.5025510204082
+          ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "f59c42b3-de40-4d91-9768-60d64f5823d8": {
-          "coordinates": [-46.312181122448976, -189.99744897959184],
+          "coordinates": [
+            -46.312181122448976,
+            -189.99744897959184
+          ],
           "name": "copy params",
           "prototype": "aec118d9-5ffc-4003-9e15-45b69e49a833"
         },
         "793e51ae-5023-4c49-b86a-65e429f4e449": {
-          "coordinates": [-41.003587372448976, 116.50255102040816],
+          "coordinates": [
+            -41.003587372448976,
+            116.50255102040816
+          ],
           "name": "copy params 2",
           "prototype": "aec118d9-5ffc-4003-9e15-45b69e49a833"
         },
         "2272d5bd-3c39-4538-8c21-022f30015af5": {
-          "coordinates": [168.99641262755102, -46.49744897959184],
+          "coordinates": [
+            168.99641262755102,
+            -46.49744897959184
+          ],
           "name": "copy params 3",
           "prototype": "aec118d9-5ffc-4003-9e15-45b69e49a833"
         }

@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "42125248-2550-4ffb-8c0f-66742e77e306": "const path = require('path');\nconst joinedPath = path.join(data.base, data.relative);\nconst platformIndependentPath = joinedPath.split(path.sep).join(\"/\");\n\noutputs.joined(platformIndependentPath , tag);"
+        "42125248-2550-4ffb-8c0f-66742e77e306": "const path = require('path');\nconst joinedPath = path.join(data.base.split(\"\\\\\").join(\"/\"), data.relative.split(\"\\\\\").join(\"/\"));\nconst platformIndependentPath = joinedPath.split(path.sep).join(\"/\");\n\noutputs.joined(platformIndependentPath , tag);"
       }
     }
   },
@@ -22,8 +22,8 @@
   },
   "name": "io/file/Path joiner/internal",
   "attributes": {
-    "locked": true,
-    "internal": true
+    "internal": true,
+    "locked": true
   },
   "description": "See `io/file/Path joiner`"
 }

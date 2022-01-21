@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "19476252-601a-47a3-bb8e-78e5b6661233": "outputs.matches(new RegExp(data.regex).test(data.string), tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b0b36893-9643-46d4-9cb6-dedbc5ea90d2": "setTimeout(()=>outputs.data(data.data, tag), data.delay);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

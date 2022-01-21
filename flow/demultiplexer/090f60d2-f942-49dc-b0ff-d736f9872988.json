@@ -23,6 +23,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b9b5fa59-8f22-46df-9305-b2d6f74f4085": "outputs[data.field](data.data, tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

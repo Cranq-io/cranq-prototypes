@@ -15,12 +15,20 @@
     }
   },
   "implementations": {
-    "es6-node": {
+    "es6": {
       "cleanupFunction": "",
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
         "df7b6135-bb57-4e2e-b1ad-3867c3d7a354": "const {template, params} = data;\noutputs.filled(template.replace(\n  /{((?:[^{}]|\\\\})*)}/g,\n  (match, key) => {\n    const param = params[key];\n    return param === undefined ? match : param;\n  }), tag);"
+      }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "df7b6135-bb57-4e2e-b1ad-3867c3d7a354": "const {template, params} = data;\noutputs.filled(template.replace(\n  /{((?:[^}]|\\\\})*)}/g,\n  (match, key) => {\n    const param = params[key];\n    return param === undefined ? match : param;\n  }), tag);"
       }
     }
   },

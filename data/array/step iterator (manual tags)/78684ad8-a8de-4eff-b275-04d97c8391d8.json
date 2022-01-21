@@ -1,5 +1,11 @@
 {
   "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "c1a54d85-36b5-4842-9688-fb2ab8d1cd41": "const {length} = data;\nstate.doneTag = tag;\n\nif (length > 1) {\n  state.array = data;\n  state.index = 1;\n}\nif (length > 0) {\n  outputs.item(data[0], tag);\n  outputs.index(0, tag);\n}\nif (length <= 1) {\n  outputs.done(data, tag);\n}",
+        "9f2d26e4-7f08-45c0-91bc-b2495b0c4a79": "const {array, index, doneTag} = state;\nif (array !== undefined) {\n  const {length} = array;\n  if (index < length) {\n    state.index = index + 1;\n    outputs.item(array[index], tag);\n    outputs.index(index, tag);\n  }\n  if (state.index === length) {\n    state.array = undefined;\n    state.index = undefined;\n    state.doneTag = undefined;\n    outputs.done(array, doneTag);\n  }\n}"
+      }
+    },
     "es6-node": {
       "inputFunctions": {
         "c1a54d85-36b5-4842-9688-fb2ab8d1cd41": "const {length} = data;\nstate.doneTag = tag;\n\nif (length > 1) {\n  state.array = data;\n  state.index = 1;\n}\nif (length > 0) {\n  outputs.item(data[0], tag);\n  outputs.index(0, tag);\n}\nif (length <= 1) {\n  outputs.done(data, tag);\n}",

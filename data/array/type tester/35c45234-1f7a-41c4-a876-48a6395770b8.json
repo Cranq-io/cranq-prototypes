@@ -17,6 +17,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": "outputs[\"is array\"](data instanceof Array, tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

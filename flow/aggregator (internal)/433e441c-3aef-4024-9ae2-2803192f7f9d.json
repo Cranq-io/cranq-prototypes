@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "state.aggregated = state.aggregated || [];",
+      "inputFunctions": {
+        "9a18c395-51a4-46f6-8fa5-41a4a77a117d": "const {data:item, release} = data;state.aggregated.push(item);\nif (release) {\n  outputs.aggregated(state.aggregated, tag);\n  state.aggregated = [];\n}"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

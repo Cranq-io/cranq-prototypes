@@ -19,6 +19,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "71d40b23-b956-4355-813d-d2c70c81b7f5": "if (data.condition)\n  outputs.true(data.data, tag);\nelse\n  outputs.false(data.data, tag);\n"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

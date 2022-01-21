@@ -17,6 +17,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "644fec41-e452-4867-ad43-2d718d30dd22": "outputs[\"is number\"](typeof data === \"number\", tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

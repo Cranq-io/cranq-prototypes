@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "ca5090ac-fdf0-4efd-a672-e66c52507873": "outputs.merged({...data.a, ...data.b}, tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

@@ -17,6 +17,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "c80e9f96-0036-4299-b6d4-23cb0b138839": "outputs.ceiling(Math.ceil(data), tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "8a26724d-8c4e-457d-a51d-2fc4fa9f064e": "const {array, index, item} = data;\noutputs.array([\n  ...array.slice(0, index),\n  item,\n  ...array.slice(index)\n], tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

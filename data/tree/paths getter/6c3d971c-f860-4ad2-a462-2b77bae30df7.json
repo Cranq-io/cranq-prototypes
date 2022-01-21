@@ -1,5 +1,11 @@
 {
   "implementations": {
+    "es6": {
+      "initFunction": "const traverse = (node, path, cb) => {\n  if (node instanceof Array)\n    for (let i = 0, length = node.length; i < length; i++)\n      traverse(node[i], [...path, i], cb);\n  else if (node instanceof Object)\n    for (const key in node)\n      traverse(node[key], [...path, key], cb);\n  else if (node !== undefined)\n    cb(path);\n}\nstate.traverse = traverse;",
+      "inputFunctions": {
+        "3433f00c-3f07-41a9-8979-8d68b7fd7ec1": "const result = [];\nstate.traverse(data, [], (path) => result.push(path));\noutputs.paths(result, tag);"
+      }
+    },
     "es6-node": {
       "initFunction": "const traverse = (node, path, cb) => {\n  if (node instanceof Array)\n    for (let i = 0, length = node.length; i < length; i++)\n      traverse(node[i], [...path, i], cb);\n  else if (node instanceof Object)\n    for (const key in node)\n      traverse(node[key], [...path, key], cb);\n  else if (node !== undefined)\n    cb(path);\n}\nstate.traverse = traverse;",
       "inputFunctions": {

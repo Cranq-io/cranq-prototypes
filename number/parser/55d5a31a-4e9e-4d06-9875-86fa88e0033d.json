@@ -22,6 +22,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "68e94af3-1532-4b7d-a7e3-ceafacdccbfd": "const number = parseFloat(data);\nif (isNaN(number))\n  outputs.bounced(data, tag);\nelse\n  outputs.number(number, tag);\n"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

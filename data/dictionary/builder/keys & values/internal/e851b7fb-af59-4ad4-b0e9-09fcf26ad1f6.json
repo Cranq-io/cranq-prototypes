@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "fce098d8-6196-428a-8339-362524563870": "const result = {};\nconst {keys, values} = data;\nfor (let i=0, length=Math.min(keys.length, values.length); i<length; i++)\n  result[keys[i]] = values[i];\noutputs.dict(result, tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

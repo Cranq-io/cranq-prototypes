@@ -27,6 +27,15 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "state.filteringsByTag = state.filteringsByTag || new Map();",
+      "inputFunctions": {
+        "08a9c003-6d71-40c9-aa01-2cb82d91382b": "const {length} = data;\nif (length) {\n  state.filteringsByTag.set(tag, {\n    array: data,\n    result: [],\n    cursor: 0,\n    length\n  });\n  for (let i=0; i<length; i++) {\n    const itemTag = `${tag}:${i}`;\n    outputs.item(data[i], itemTag);\n    outputs.index(i, itemTag);\n  }\n} else {\n  outputs.filtered([], tag);\n}",
+        "446ec1e2-4372-4468-aa56-75b2e304cafa": "const filteringTag = tag.substr(0, tag.lastIndexOf(\":\"));\nconst filtering = state.filteringsByTag.get(filteringTag);\nconst {result} = filtering;\nresult[data.index] = data[\"include item\"];\nif (++filtering.cursor === filtering.length) {\n  state.filteringsByTag.delete(filteringTag);\n  const {length, array} = filtering;\n  outputs.filtered(array.filter((v, i)=>result[i]), filteringTag);\n}"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

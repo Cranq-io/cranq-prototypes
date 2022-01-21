@@ -1,5 +1,10 @@
 {
   "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "52beed26-c59d-41c5-905d-8b966db24eb7": "const {last} = state;\nstate.last = data;\nif (last !== undefined) {\n  outputs.data(last, tag);\n} else {\n  outputs.data(data, tag);\n}\n"
+      }
+    },
     "es6-node": {
       "inputFunctions": {
         "52beed26-c59d-41c5-905d-8b966db24eb7": "const {last} = state;\nstate.last = data;\nif (last !== undefined) {\n  outputs.data(last, tag);\n} else {\n  outputs.data(data, tag);\n}\n"

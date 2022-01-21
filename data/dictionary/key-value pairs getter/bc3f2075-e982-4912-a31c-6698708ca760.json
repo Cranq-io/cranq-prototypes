@@ -17,6 +17,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2": "outputs[\"key-value pairs\"](Object.keys(data).map(key => ({key, value:data[key]})), tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

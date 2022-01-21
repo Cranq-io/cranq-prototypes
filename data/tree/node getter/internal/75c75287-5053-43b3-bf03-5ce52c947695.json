@@ -20,6 +20,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "acf1b446-a89f-4af0-8865-174b1dcbb51f": "const {tree, path} = data;\nlet node = tree;\nfor (let i=0, length=path.length; i<length; i++) {\n  if (node instanceof Object) {\n    node = node[path[i]];\n  } else {\n    node = undefined;\n    break;\n  }\n}\nif(node === undefined) {\n  outputs[\"not found\"](path, tag)\n}\nelse {\n  outputs.node(node, tag);\n}"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

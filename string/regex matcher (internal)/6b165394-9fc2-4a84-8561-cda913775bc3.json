@@ -1,5 +1,10 @@
 {
   "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "d78b418d-2fa8-4dc1-aa44-0f3693861838": "outputs.groups(data.string.match(new RegExp(data.regex)), tag);"
+      }
+    },
     "es6-node": {
       "inputFunctions": {
         "d78b418d-2fa8-4dc1-aa44-0f3693861838": "outputs.groups(data.string.match(new RegExp(data.regex)), tag);"

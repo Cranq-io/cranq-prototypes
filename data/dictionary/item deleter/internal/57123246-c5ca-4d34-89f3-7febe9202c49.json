@@ -1,5 +1,10 @@
 {
   "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "e4b04aac-2da4-4f6e-9ccc-d35118425418": "const result = {...data.dict};\ndelete result[data.key];\noutputs.dict(result, tag);"
+      }
+    },
     "es6-node": {
       "inputFunctions": {
         "e4b04aac-2da4-4f6e-9ccc-d35118425418": "const result = {...data.dict};\ndelete result[data.key];\noutputs.dict(result, tag);"

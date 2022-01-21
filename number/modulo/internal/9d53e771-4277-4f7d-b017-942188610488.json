@@ -19,6 +19,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "1810d2e1-639e-46e6-8960-6aad7784279d": "const {a, b} = data;\nif (b !== 0)\n  outputs.remainder(a % b, tag);\nelse\n  outputs.bounced(data, tag);\n"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

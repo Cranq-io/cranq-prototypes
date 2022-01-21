@@ -22,6 +22,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "4b2b80cb-8d64-40a5-ae06-342257b858cc": "const matches = /^(.*)\\:(\\d+)$/.exec(tag);\nif (matches !== null)\n  outputs.data(data, `${matches[1]}:${+matches[2] + 1}`);\nelse\n  outputs.bounced(data, tag);"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

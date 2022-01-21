@@ -11,6 +11,12 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "setTimeout(()=>outputs.start(null, \"start\"), 0);",
+      "inputFunctions": {}
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

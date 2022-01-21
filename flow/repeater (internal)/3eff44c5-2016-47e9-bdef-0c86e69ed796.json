@@ -15,6 +15,14 @@
     }
   },
   "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "152c9d12-556b-4bd4-ba17-e39ac5d72490": "const {count, data:item} = data;\nfor (let i=0; i<count; i++)\n  outputs.data(item, `${tag}:${i}`);\n"
+      }
+    },
     "es6-node": {
       "cleanupFunction": "",
       "dependencies": {},

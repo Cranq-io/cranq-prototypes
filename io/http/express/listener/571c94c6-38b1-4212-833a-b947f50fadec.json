@@ -27,7 +27,7 @@
       "541fc93b-1098-4659-95a2-f75bcf3109b1": {
         "type": "typeof `app ID`",
         "name": "app ID",
-        "description": "The id of the express instance the action was executed on. Emitted when the action was executed.\nTo be used when chaining multiple actions on the same express instance.\n\nExample: \n\"my-express-server\""
+        "description": "DEPRECATED\n\nThe id of the express instance the action was executed on. Emitted when the action was executed.\nTo be used when chaining multiple actions on the same express instance.\n\nExample: \n\"my-express-server\""
       }
     }
   },

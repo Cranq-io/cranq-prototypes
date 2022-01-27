@@ -3,7 +3,7 @@
     "es6": {
       "initFunction": "state.buffer = [];",
       "inputFunctions": {
-        "7a2da0d9-b262-4d23-90b3-55a833924d8f": "const {size} = params;\nif (typeof size !== \"number\" || size === 0) {\n  outputs.error({message: \"Invalid buffer size\"}, tag);\n  outputs.bounced(data, tag);\n} else {\n  const {timestamp} = data;\n  let buffer = state.buffer;\n  // Start of the new time window\n  let ts0 = timestamp - size;\n  let i0 = -1;\n  // Finding first non-overflowing sample\n  for (let i = 0, length = buffer.length; i < length; i++)\n    if (buffer[i].timestamp > ts0) {\n      i0 = i;\n      break;\n    }\n  buffer = \n    // All samples overflown\n    i0 === -1 ? [data]\n    // Some samples overflown\n    : i0 > 0 ? [...buffer.slice(i0), data]\n    // No samples overflown\n    : [...buffer, data];\n  state.buffer = buffer;\n  outputs.buffer(buffer, tag);\n}"
+        "7a2da0d9-b262-4d23-90b3-55a833924d8f": "const {size} = params;\nif (typeof size !== \"number\" || size <= 0) {\n  outputs.error({message: \"Invalid buffer size\"}, tag);\n  outputs.bounced(data, tag);\n} else {\n  const {timestamp} = data;\n  let buffer = state.buffer;\n  // Start of the new time window\n  let ts0 = timestamp - size;\n  let i0 = -1;\n  // Finding first non-overflowing sample\n  for (let i = 0, length = buffer.length; i < length; i++)\n    if (buffer[i].timestamp > ts0) {\n      i0 = i;\n      break;\n    }\n  buffer = \n    // All samples overflown\n    i0 === -1 ? [data]\n    // Some samples overflown\n    : i0 > 0 ? [...buffer.slice(i0), data]\n    // No samples overflown\n    : [...buffer, data];\n  state.buffer = buffer;\n  outputs.buffer(buffer, tag);\n}"
       }
     }
   },
@@ -24,12 +24,12 @@
       "aeb4e275-748e-4b06-a5ba-125b65a2e159": {
         "type": "(typeof `sample`[\"value\"])[]",
         "name": "buffer",
-        "description": "Sends current contents of moving buffer. Immutable."
+        "description": "Sends current contents of moving buffer."
       },
       "062a6ebe-5e47-401a-943f-9adb1045120c": {
         "type": "{\"message\": string}",
         "name": "error",
-        "description": "Sends error when:\n* size is 0 or not set"
+        "description": "Sends error when:\n* size is equal or less than 0 or not set"
       },
       "74eadb80-080a-4842-a7bd-151aa169281c": {
         "type": "typeof `sample`",

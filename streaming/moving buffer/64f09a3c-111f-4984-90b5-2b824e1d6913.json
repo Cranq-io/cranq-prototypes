@@ -2,7 +2,7 @@
   "implementations": {
     "es6": {
       "inputFunctions": {
-        "acf08481-e382-4767-82f1-5c3af3ed13fd": "const {size} = params;\nif (typeof size !== \"number\" || size === 0) {\n  outputs.error({message: \"Invalid buffer size\"}, tag);\n  outputs.bounced(data, tag);\n} else {\n  let buffer = state.buffer;\n  buffer = buffer.length < size\n    ? [...buffer, data]\n    : [...buffer.slice(1), data];\n  state.buffer = buffer;\n  outputs.buffer(buffer, tag);\n}"
+        "acf08481-e382-4767-82f1-5c3af3ed13fd": "const {size} = params;\nif (typeof size !== \"number\" || size <= 0) {\n  outputs.error({message: \"Invalid buffer size\"}, tag);\n  outputs.bounced(data, tag);\n} else {\n  let buffer = state.buffer;\n  buffer = buffer.length < size\n    ? [...buffer, data]\n    : [...buffer.slice(1), data];\n  state.buffer = buffer;\n  outputs.buffer(buffer, tag);\n}"
       },
       "initFunction": "state.buffer = [];"
     }
@@ -24,12 +24,12 @@
       "a02faf6e-026c-48c5-b31c-96c80ef3ac57": {
         "type": "typeof `sample`[]",
         "name": "buffer",
-        "description": "Sends current contents of moving buffer. Immutable."
+        "description": "Sends current contents of moving buffer."
       },
       "077d4a27-827c-4e33-bded-ab812c5ee18d": {
         "type": "{\"message\": string}",
         "name": "error",
-        "description": "Sends error when:\n* size is 0 or not set"
+        "description": "Sends error when:\n* size is equal or less than 0 or not set"
       },
       "236e0b01-a5f6-4872-a427-b40e38873798": {
         "type": "typeof `sample`",

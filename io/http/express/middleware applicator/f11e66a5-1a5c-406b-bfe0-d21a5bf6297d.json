@@ -7,7 +7,7 @@
         "name": "app ID"
       },
       "10c0aa80-7a63-4647-bebf-2002804b315c": {
-        "type": "any",
+        "type": "\"text\" or \"json\" or \"urlencoded\" or \"cors\"",
         "name": "middleware"
       }
     },
@@ -18,7 +18,13 @@
       },
       "af511dbd-294e-4cbf-940a-e81326cb837b": {
         "type": "any",
-        "name": "app ID"
+        "name": "app ID",
+        "description": "DEPRECATED"
+      },
+      "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the middleware could not be applied."
       }
     }
   },
@@ -84,6 +90,11 @@
           "760e37e0-47dc-45b6-993e-06363b08b45f": {
             "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
               "2d59f4f5-da3a-4e88-b071-f863cda4e553": {}
+            }
+          },
+          "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {
+            "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
+              "1eb10a35-5039-4196-b3b5-e59757befe88": {}
             }
           }
         }

@@ -38,6 +38,11 @@
         "type": "typeof `app ID`",
         "name": "app ID",
         "description": "The id of the express instance the action was executed on. Emitted when the action was executed.\nTo be used when chaining multiple actions on the same express instance.\n\nExample: \n\"my-express-server\""
+      },
+      "12b5e681-073c-47bc-abb3-698530817f66": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the request could not be handled."
       }
     }
   },
@@ -123,6 +128,11 @@
           "38bfa33c-cddf-478d-bf52-0f4ec611e800": {
             "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
               "2d59f4f5-da3a-4e88-b071-f863cda4e553": {}
+            }
+          },
+          "12b5e681-073c-47bc-abb3-698530817f66": {
+            "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+              "1eb10a35-5039-4196-b3b5-e59757befe88": {}
             }
           }
         }

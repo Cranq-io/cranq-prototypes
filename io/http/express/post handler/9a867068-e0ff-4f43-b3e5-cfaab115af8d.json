@@ -43,6 +43,11 @@
         "type": "any",
         "name": "done",
         "description": "Event triggered when the request has been processed."
+      },
+      "76d7c1be-b596-4fd8-89ed-a6b66e3ad954": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the request could not be handled."
       }
     }
   },
@@ -106,6 +111,11 @@
           "2f6d037f-891c-4083-9b12-3d8da03330b6": {
             "bcebe197-0d57-4814-afa6-3199deeff5ee": {
               "body": {}
+            }
+          },
+          "76d7c1be-b596-4fd8-89ed-a6b66e3ad954": {
+            "88c1b47c-8c76-4e13-9516-cad949be5044": {
+              "12b5e681-073c-47bc-abb3-698530817f66": {}
             }
           }
         }

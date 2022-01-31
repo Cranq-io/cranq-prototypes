@@ -1,0 +1,54 @@
+{
+  "implementations": {
+    "es6": {
+      "initFunction": "state.buffer = [];",
+      "inputFunctions": {
+        "7a2da0d9-b262-4d23-90b3-55a833924d8f": "const {size} = params;\nif (typeof size !== \"number\" || size <= 0) {\n  outputs.error({message: \"Invalid buffer size\"}, tag);\n  outputs.bounced(data, tag);\n} else {\n  const {timestamp} = data;\n  let buffer = state.buffer;\n  // Start of the new time window\n  const ts0 = timestamp - size;\n  // Finding first non-overflowing sample\n  const i0 = buffer.findIndex(\n    ({timestamp}) => timestamp > ts0);\n  buffer = \n    // All samples overflown\n    i0 === -1 ? [data]\n    // Some samples overflown\n    : i0 > 0 ? [...buffer.slice(i0), data]\n    // No samples overflown\n    : [...buffer, data];\n  state.buffer = buffer;\n  outputs.buffer(buffer, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "7a2da0d9-b262-4d23-90b3-55a833924d8f": {
+        "type": "{\"value\": any, \"timestamp\": number}",
+        "name": "sample",
+        "description": "Receives individual samples to be buffered."
+      },
+      "a82386a7-8529-4b73-b6f5-1531b491ae45": {
+        "type": "number",
+        "name": "size",
+        "description": "Size of the buffer in seconds."
+      }
+    },
+    "outputs": {
+      "aeb4e275-748e-4b06-a5ba-125b65a2e159": {
+        "type": "(typeof `sample`[\"value\"])[]",
+        "name": "buffer",
+        "description": "Sends current contents of moving buffer."
+      },
+      "062a6ebe-5e47-401a-943f-9adb1045120c": {
+        "type": "{\"message\": string}",
+        "name": "error",
+        "description": "Sends error when:\n* size is equal or less than 0 or not set"
+      },
+      "74eadb80-080a-4842-a7bd-151aa169281c": {
+        "type": "typeof `sample`",
+        "name": "bounced",
+        "description": "Forwards input received via `sample` on error."
+      }
+    }
+  },
+  "name": "streaming/Time-based moving buffer",
+  "description": "Stores the \"value\" property of samples received in the last `length` seconds and sends them via `buffer`.\n\nErrors on invalid `size`.\n\nExpects samples to be received in ascending order of \"timestamp\".\n\nData sent via `buffer` is immutable.\n\nExample:\n1. `size` set to 2 (seconds)\n2. {value: \"A\", timestamp: 0}@0 received via `sample`\n3. [{value: \"A\", timestamp: 0}]@0 sent via `buffer`\n4. {value: \"B\", timestamp: 1}@1 received via `sample`\n5. [{value: \"A\", timestamp: 0}, {value: \"B\", timestamp: 1}]@1 sent via `buffer`\n6. {value: \"C\", timestamp: 3}@2 received via `sample`\n7. [{value: \"B\", timestamp: 1}, {value: \"C\", timestamp: 3}]@1 sent via `buffer`",
+  "keywords": {
+    "buffer": null,
+    "overflow": null,
+    "stream": null,
+    "rotate": null,
+    "window": null,
+    "seconds": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

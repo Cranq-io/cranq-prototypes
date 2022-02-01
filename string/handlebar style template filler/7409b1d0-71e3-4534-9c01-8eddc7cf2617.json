@@ -3,22 +3,26 @@
   "interface": {
     "inputs": {
       "85041f66-7ce0-4265-8471-96cfb773b878": {
-        "type": "any",
-        "name": "template"
+        "type": "string",
+        "name": "template",
+        "description": "Receives the template string to replace parameters in.\n\nExample:\n\"Hello {{subject}}!\""
       },
       "1e9967ed-2371-4814-8cc5-7b0515131c74": {
-        "type": "any",
-        "name": "params"
+        "type": "{string: any}",
+        "name": "params",
+        "description": "Receives the parameters to replace in the template.\n\nExample: \n{\"subject\":\"world\"}"
       }
     },
     "outputs": {
       "5c29911e-8f91-4922-9159-349baba6e2e9": {
-        "type": "any",
-        "name": "filled"
+        "type": "string",
+        "name": "filled",
+        "description": "Sends the template string with replaced parameters.\n\nExample:\n\"Hello world!\""
       },
       "7a9e0956-1617-4649-b404-02f1451b7442": {
-        "type": "any",
-        "name": "error"
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error in case any occurs during operation.\n\nExample: \n{\"error\": \"Some error message\"}"
       }
     }
   },
@@ -66,5 +70,9 @@
         }
       }
     }
+  },
+  "description": "Substitutes parameters into a template. Parameters are marked by Handlebars style tokens.\n\nExample:\n\n1. \"Hello {{subject}}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"Hello world!\"@0 is sent via `filled`",
+  "attributes": {
+    "locked": true
   }
 }

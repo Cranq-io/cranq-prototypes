@@ -9,7 +9,7 @@
   "interface": {
     "inputs": {
       "e327497c-6228-471d-ba94-955c145ccfdc": {
-        "type": "any",
+        "type": "{\n\"template\": string,\n\"params\": {string: any},\n\"token start\": string,\n\"token end\": string\n}",
         "name": "params"
       }
     },
@@ -24,5 +24,7 @@
       }
     }
   },
-  "name": "string/Custom template filler/Internal"
+  "name": "string/Custom template filler/Internal",
+  "description": "See `string/Custom template filler`",
+  "attributes": {}
 }

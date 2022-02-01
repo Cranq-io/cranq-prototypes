@@ -4,8 +4,8 @@
       "nodes": {
         "140d4de0-65a6-403d-9e3f-661f9bad8032": {
           "coordinates": [
-            145,
-            -10
+            144,
+            -13
           ],
           "name": "fill template",
           "prototype": "7b8de482-ede2-44b6-83ee-f04e3ddb9513"
@@ -26,7 +26,7 @@
             -157,
             16
           ],
-          "name": "forwarder (quadruple)",
+          "name": "forward",
           "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
         }
       },
@@ -103,32 +103,38 @@
     "inputs": {
       "07538bcd-7376-4aec-ad93-b4b368ae919c": {
         "type": "string",
-        "name": "template"
+        "name": "template",
+        "description": "Receives the template string to replace parameters in.\n\nExample:\n\"Hello {#subject#}!\""
       },
       "06531082-3e2d-45ab-ba18-527917d0ef5e": {
         "type": "{string: any}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives the parameters to replace in the template.\n\nExample: \n{\"subject\":\"world\"}"
       },
       "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": {
         "type": "string",
-        "name": "token start"
+        "name": "token start",
+        "description": "Receives the string that marks the start of the parameter within the template.\n\nExample:\n\"{#\""
       },
       "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": {
         "type": "string",
-        "name": "token end"
+        "name": "token end",
+        "description": "Receives the string that marks the end of the parameter within the template.\n\nExample:\n\"#}\""
       }
     },
     "outputs": {
       "949d328e-fa91-41e4-8929-d3cd7a8d4cfc": {
         "type": "typeof `filled` of `fill template`",
-        "name": "filled"
+        "name": "filled",
+        "description": "Sends the template string with replaced parameters.\n\nExample:\n\"Hello world!\""
       },
       "b517f1ce-8441-406b-a71b-5741bd38d41f": {
         "type": "typeof `error` of `fill template`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends error in case any occurs during operation.\n\nExample: \n{\"error\": \"Some error message\"}"
       }
     }
   },
   "name": "string/Custom template filler",
-  "description": "Substitutes parameters into a template. Token start/end can be customized.\n\nExample:\n\n1. \"Hello {subject}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"Hello world!\"@0 is sent via `filled`"
+  "description": "Substitutes parameters into a template. Token start/end can be customized.\n\nExample:\n\n1. \"Hello {#subject#}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"{#\"@0 received via `token start`\n4. \"#}\"@0 received via `token end`\n5. \"Hello world!\"@0 is sent via `filled`"
 }

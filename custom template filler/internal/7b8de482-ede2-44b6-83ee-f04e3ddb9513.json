@@ -1,0 +1,28 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "e327497c-6228-471d-ba94-955c145ccfdc": "// from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions\nfunction escapeRegExp(string) {\n  return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'); // $& means the whole matched string\n}\n\nconst { \n  template,\n  params,\n  [\"token start\"]: tokenStart, \n  [\"token end\"]: tokenEnd\n} = data;\ntry {\n  const re = new RegExp(`${escapeRegExp(tokenStart)}((?:.)*?)${escapeRegExp(tokenEnd)}`, \"g\");\n  \n  outputs.filled(\n    template.replace(\n      re,\n      (match, key) => {\n        const param = params[key];\n        return param === undefined ? match : param;\n      }\n    ),\n    tag);\n} catch(error) {\n  outputs.error({error: error.toString()}, tag);\n}\n"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e327497c-6228-471d-ba94-955c145ccfdc": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "ae4b344c-7e24-434a-a9ad-d7f5cc260d09": {
+        "type": "string",
+        "name": "filled"
+      },
+      "45c8e624-b725-40b6-8155-2ed9d980f540": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "string/Custom template filler/Internal"
+}

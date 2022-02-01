@@ -1,0 +1,70 @@
+{
+  "name": "string/Handlebar style template filler",
+  "interface": {
+    "inputs": {
+      "85041f66-7ce0-4265-8471-96cfb773b878": {
+        "type": "any",
+        "name": "template"
+      },
+      "1e9967ed-2371-4814-8cc5-7b0515131c74": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "5c29911e-8f91-4922-9159-349baba6e2e9": {
+        "type": "any",
+        "name": "filled"
+      },
+      "7a9e0956-1617-4649-b404-02f1451b7442": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "60a39fe8-a6e5-4439-84a7-1e4919363798": {
+          "coordinates": [
+            12,
+            -1
+          ],
+          "name": "fill custom template copy",
+          "prototype": "04db51a6-0278-4937-9483-7406f96de641",
+          "params": {
+            "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": "\"}}\"",
+            "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": "\"{{\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "85041f66-7ce0-4265-8471-96cfb773b878": {
+            "60a39fe8-a6e5-4439-84a7-1e4919363798": {
+              "07538bcd-7376-4aec-ad93-b4b368ae919c": {}
+            }
+          },
+          "1e9967ed-2371-4814-8cc5-7b0515131c74": {
+            "60a39fe8-a6e5-4439-84a7-1e4919363798": {
+              "06531082-3e2d-45ab-ba18-527917d0ef5e": {}
+            }
+          }
+        },
+        "outputs": {
+          "5c29911e-8f91-4922-9159-349baba6e2e9": {
+            "60a39fe8-a6e5-4439-84a7-1e4919363798": {
+              "949d328e-fa91-41e4-8929-d3cd7a8d4cfc": {}
+            }
+          },
+          "7a9e0956-1617-4649-b404-02f1451b7442": {
+            "60a39fe8-a6e5-4439-84a7-1e4919363798": {
+              "b517f1ce-8441-406b-a71b-5741bd38d41f": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "name": "io/http/utils/Query params flattener",
+  "description": "Flattens query parameters received via `params` expressed as a dictionary, into an array of single query parameters as key-value pairs sent via `flattened`.",
+  "interface": {
+    "inputs": {
+      "f35ba18b-75dc-4258-b811-5eeed7e8189f": {
+        "type": "{string: string or string[]}",
+        "name": "params",
+        "description": "Receives query parameters as dictionary."
+      }
+    },
+    "outputs": {
+      "11ad71dd-5937-405d-be08-c660b696442c": {
+        "type": "{\"key\": string, \"value\": string}[]",
+        "name": "flattened",
+        "description": "Sends query parameter key-value pairs individually."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ed02fc46-dac4-4486-b14b-1594a3cdcfdc": {
+          "coordinates": [
+            -82.45454545454547,
+            -75
+          ],
+          "name": "get keys & values",
+          "prototype": "bc3f2075-e982-4912-a31c-6698708ca760"
+        },
+        "0ec7433a-4a2f-4673-851b-977b531e8e07": {
+          "coordinates": [
+            -43.45454545454547,
+            77
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "[]"
+          }
+        },
+        "267b08a2-ac50-4be9-98e0-55fa7e6454fb": {
+          "coordinates": [
+            125.9090909090909,
+            -2
+          ],
+          "name": "append params",
+          "prototype": "a8ee7fa4-82e5-4667-9722-3aa95d4a1ff4"
+        }
+      },
+      "connections": {
+        "ed02fc46-dac4-4486-b14b-1594a3cdcfdc": {
+          "c1e0e7c9-b331-443a-8005-d72bc86a0e07": {
+            "0ec7433a-4a2f-4673-851b-977b531e8e07": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "0ec7433a-4a2f-4673-851b-977b531e8e07": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "267b08a2-ac50-4be9-98e0-55fa7e6454fb": {
+              "f251b239-b3e9-43f6-b38a-63cebdf134ba": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "267b08a2-ac50-4be9-98e0-55fa7e6454fb": {
+              "7050c598-ca4d-4ab3-b7e3-30421a6d0773": {}
+            }
+          }
+        },
+        "267b08a2-ac50-4be9-98e0-55fa7e6454fb": {
+          "e6d7424f-c892-4787-a9b3-73bfe503e0de": {
+            "0ec7433a-4a2f-4673-851b-977b531e8e07": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f35ba18b-75dc-4258-b811-5eeed7e8189f": {
+            "ed02fc46-dac4-4486-b14b-1594a3cdcfdc": {
+              "8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2": {}
+            }
+          }
+        },
+        "outputs": {
+          "11ad71dd-5937-405d-be08-c660b696442c": {
+            "0ec7433a-4a2f-4673-851b-977b531e8e07": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "flatten": null,
+    "transform": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

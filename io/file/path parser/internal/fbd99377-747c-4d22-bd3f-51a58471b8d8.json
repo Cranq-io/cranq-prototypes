@@ -22,7 +22,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "0467ec39-d854-4492-a0bd-5c14a7d79c1d": "const path = require('path');\noutputs.components(path.parse(data), tag);"
+        "0467ec39-d854-4492-a0bd-5c14a7d79c1d": "const path = require('path');\nconst components = path.parse(data);\nconst platformIndependentComponents = Object.fromEntries(\n    Object.entries(components)\n    .map(([key, value]) => [key, value.split(\"\\\\\").join(\"/\")])\n    );\noutputs.components(platformIndependentComponents, tag);"
       }
     }
   },

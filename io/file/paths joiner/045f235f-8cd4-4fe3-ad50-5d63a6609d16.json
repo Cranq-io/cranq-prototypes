@@ -4,12 +4,12 @@
     "inputs": {
       "8a8fd503-291b-40dc-8ed7-c7b1fa350386": {
         "description": "The base path portion",
-        "type": "any",
+        "type": "string",
         "name": "base"
       },
       "31eb45e1-a408-4231-a41e-28365fe3c8aa": {
         "description": "The array of path parts to join onto the base",
-        "type": "any",
+        "type": "string[]",
         "name": "children"
       }
     },

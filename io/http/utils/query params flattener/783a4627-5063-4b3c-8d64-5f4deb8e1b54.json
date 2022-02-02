@@ -22,18 +22,18 @@
       "nodes": {
         "ed02fc46-dac4-4486-b14b-1594a3cdcfdc": {
           "coordinates": [
-            -82.45454545454547,
-            -75
+            -72.4545454545455,
+            -165
           ],
           "name": "get keys & values",
           "prototype": "bc3f2075-e982-4912-a31c-6698708ca760"
         },
         "0ec7433a-4a2f-4673-851b-977b531e8e07": {
           "coordinates": [
-            -43.45454545454547,
-            77
+            88.54545454545453,
+            152
           ],
-          "name": "reducer",
+          "name": "build flat array",
           "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
           "params": {
             "ec095128-e720-45fc-9b4f-b87a130d9249": "[]"
@@ -41,21 +41,33 @@
         },
         "267b08a2-ac50-4be9-98e0-55fa7e6454fb": {
           "coordinates": [
-            125.9090909090909,
-            -2
+            -98.09090909090912,
+            78
           ],
           "name": "append params",
           "prototype": "a8ee7fa4-82e5-4667-9722-3aa95d4a1ff4"
+        },
+        "c5f43008-0955-4737-841a-db2bca29b665": {
+          "coordinates": [
+            147.5454545454545,
+            -122
+          ],
+          "name": "has value?",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {
+            "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": "\"value\""
+          }
+        },
+        "974c6f42-fdb6-4071-9121-f5f5d54adef1": {
+          "coordinates": [
+            -91.4545454545455,
+            -42
+          ],
+          "name": "exclude empty values",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
         }
       },
       "connections": {
-        "ed02fc46-dac4-4486-b14b-1594a3cdcfdc": {
-          "c1e0e7c9-b331-443a-8005-d72bc86a0e07": {
-            "0ec7433a-4a2f-4673-851b-977b531e8e07": {
-              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
-            }
-          }
-        },
         "0ec7433a-4a2f-4673-851b-977b531e8e07": {
           "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
             "267b08a2-ac50-4be9-98e0-55fa7e6454fb": {
@@ -74,6 +86,32 @@
               "64f451de-50c9-44b4-b99c-03d58b2582bb": {
                 "description": "undefined\nundefined"
               }
+            }
+          }
+        },
+        "c5f43008-0955-4737-841a-db2bca29b665": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "974c6f42-fdb6-4071-9121-f5f5d54adef1": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            }
+          }
+        },
+        "ed02fc46-dac4-4486-b14b-1594a3cdcfdc": {
+          "c1e0e7c9-b331-443a-8005-d72bc86a0e07": {
+            "974c6f42-fdb6-4071-9121-f5f5d54adef1": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        },
+        "974c6f42-fdb6-4071-9121-f5f5d54adef1": {
+          "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
+            "c5f43008-0955-4737-841a-db2bca29b665": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            }
+          },
+          "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
+            "0ec7433a-4a2f-4673-851b-977b531e8e07": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
             }
           }
         }

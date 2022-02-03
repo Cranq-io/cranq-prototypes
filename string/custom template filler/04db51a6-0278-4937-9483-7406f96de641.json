@@ -114,12 +114,12 @@
       "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": {
         "type": "string",
         "name": "token start",
-        "description": "Receives the string that marks the start of the parameter within the template.\n\nExample:\n\"{#\""
+        "description": "Receives the string that marks the start of the parameter placeholder (token) within the template.\n\nExample:\n\"{#\""
       },
       "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": {
         "type": "string",
         "name": "token end",
-        "description": "Receives the string that marks the end of the parameter within the template.\n\nExample:\n\"#}\""
+        "description": "Receives the string that marks the end of the parameter placholder (token) within the template.\n\nExample:\n\"#}\""
       }
     },
     "outputs": {
@@ -136,5 +136,5 @@
     }
   },
   "name": "string/Custom template filler",
-  "description": "Substitutes parameters into a template. Token start/end can be customized.\n\nExample:\n\n1. \"Hello {#subject#}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"{#\"@0 received via `token start`\n4. \"#}\"@0 received via `token end`\n5. \"Hello world!\"@0 is sent via `filled`"
+  "description": "Substitutes parameters into a template. Parameter placeholder's (token) start/end can be customized.\n\nExample:\n\n1. \"Hello {#subject#}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"{#\"@0 is received via `token start`\n4. \"#}\"@0 is received via `token end`\n5. \"Hello world!\"@0 is sent via `filled`"
 }

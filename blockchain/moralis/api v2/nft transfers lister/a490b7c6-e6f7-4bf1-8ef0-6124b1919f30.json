@@ -1,23 +1,29 @@
 {
   "name": "blockchain/moralis/api v2/NFT transfers lister",
-  "description": "Retrieves a list of transfers matching the specified contract and token.",
+  "description": "Retrieves a list of transfers matching the specified contract and token ID using the Moralis API. Also returns the original API response for additional information.\n\nRequires Moralis account.\n\nAPI key and endpoint documentation can be found at:\nhttps://admin.moralis.io/web3Api",
   "interface": {
     "inputs": {
       "f10b111d-0ff3-483b-9835-1f114daf107c": {
         "type": "{\n  \"api_key\": string,\n  \"contract_address\": string,\n  \"token_id\": number,\n  \"chain\": \"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\",\n  \"format\": \"decimal\" or \"hex\",\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
         "name": "params",
-        "description": "Receives the parameters identifying the contract / token pair and query preferences."
+        "description": "Receives the parameters identifying the contract / token pair and query preferences.\n\nExample:\n{\n  \"api_key\": \"xxx\",\n  \"contract_address\": \"yyy\",\n  \"token_id\": \"1\",\n  \"chain\": \"ropsten\"\n}"
       }
     },
     "outputs": {
       "c7a5ab3c-ee14-4438-a52f-764a3424f8b6": {
-        "type": "`blockchain/moralis/NFT transfers response`",
-        "name": "transactions",
-        "description": ""
+        "type": "`blockchain/moralis/NFT transfer`[]",
+        "name": "transfers",
+        "description": "Sends a list of NFT transfers as returned by the Moralis API"
       },
-      "e1d0c68a-154b-471e-bc5d-887ca7b037fc": {
+      "c957f9d8-fa55-499c-8439-7cd42c334413": {
+        "type": "{\"status\": number, \"headers\": {string: string}, \"data\": `blockchain/moralis/NFT transfers response`}",
+        "name": "response",
+        "description": "Sends the entire response from the Moralis API, including status and header."
+      },
+      "a30ca9fa-7a5f-4ca1-829a-3afcbde4a604": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": ""
       }
     }
   },
@@ -26,8 +32,8 @@
       "nodes": {
         "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
           "coordinates": [
-            125.44999999999999,
-            77
+            52.44999999999999,
+            111
           ],
           "name": "dispatch request",
           "prototype": "2c32b709-466e-4797-a314-2486b20eb190",
@@ -38,8 +44,8 @@
         },
         "89e66c4d-9e78-4c8d-bc87-c06398408e3f": {
           "coordinates": [
-            141.45,
-            -81
+            69.44999999999999,
+            -71
           ],
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
@@ -49,8 +55,8 @@
         },
         "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
           "coordinates": [
-            34.44999999999999,
-            -143
+            -22.55000000000001,
+            -134
           ],
           "name": "build params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -60,16 +66,16 @@
         },
         "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
           "coordinates": [
-            -81.34999999999997,
-            -73
+            -141.34999999999997,
+            -68
           ],
           "name": "serialize params",
           "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
         },
         "71113b5e-8084-44ba-a2de-6721685a5790": {
           "coordinates": [
-            -79.55000000000001,
-            -204
+            -180.55,
+            -202
           ],
           "name": "extract path params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -79,8 +85,8 @@
         },
         "70d80f30-af1a-4011-b7f2-16a1c50e398a": {
           "coordinates": [
-            -157.55,
-            75
+            -199.55,
+            89
           ],
           "name": "extract query params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
@@ -90,8 +96,8 @@
         },
         "3a72509c-054b-453f-9508-db24041ffe8e": {
           "coordinates": [
-            -191.55,
-            175
+            -234.55,
+            205
           ],
           "name": "get API key",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -109,6 +115,28 @@
           "params": {
             "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"X-API-KEY\"",
             "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"accept\":\"application/json\"}"
+          }
+        },
+        "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
+          "coordinates": [
+            241.45,
+            187
+          ],
+          "name": "get transfers",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"result\"]"
+          }
+        },
+        "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+          "coordinates": [
+            252.45,
+            -143
+          ],
+          "name": "build response",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"status\",\"headers\",\"data\"]"
           }
         }
       },
@@ -166,6 +194,26 @@
               "f72ee334-6d61-43db-978f-f31d7d2ff917": {}
             }
           }
+        },
+        "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
+          "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
+            "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "data": {}
+            }
+          },
+          "a3c1977b-bff4-4384-902c-fd24f1356beb": {
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "status": {}
+            }
+          },
+          "52cb551e-169b-45a3-ad2d-aacff39506c1": {
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "headers": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -184,13 +232,18 @@
         },
         "outputs": {
           "c7a5ab3c-ee14-4438-a52f-764a3424f8b6": {
-            "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
-              "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {}
+            "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
+              "result": {}
             }
           },
-          "e1d0c68a-154b-471e-bc5d-887ca7b037fc": {
+          "a30ca9fa-7a5f-4ca1-829a-3afcbde4a604": {
             "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
               "b73aa5bf-e098-4b22-b3bb-b921000af484": {}
+            }
+          },
+          "c957f9d8-fa55-499c-8439-7cd42c334413": {
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
             }
           }
         }
@@ -198,6 +251,7 @@
     }
   },
   "keywords": {
+    "smart contract": null,
     "transactions": null,
     "transfers": null,
     "nft": null

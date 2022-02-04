@@ -9,7 +9,7 @@
     },
     "outputs": {
       "c582741f-63d5-4316-9c18-bc10773c523e": {
-        "type": "{string:typeof(keys & values)[\"values\"][number]}",
+        "type": "{string:(typeof `keys & values`)[\"values\"][number]}",
         "name": "dict"
       }
     }

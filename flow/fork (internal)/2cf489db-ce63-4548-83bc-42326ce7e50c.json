@@ -9,11 +9,11 @@
     },
     "outputs": {
       "bbe6eb8b-a22e-4b23-9063-3cddbe4aafee": {
-        "type": "typeof(data & condition[\"data\"])",
+        "type": "(typeof `data & condition`)[\"data\"]",
         "name": "true"
       },
       "978a565d-6b67-4198-90a7-c3214ab6ae6a": {
-        "type": "typeof(data & condition[\"data\"])",
+        "type": "(typeof `data & condition`)[\"data\"]",
         "name": "false"
       }
     }

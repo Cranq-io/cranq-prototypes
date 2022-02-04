@@ -3,10 +3,24 @@
   "description": "Retrieves a list of transfers matching the specified contract and token ID using the Moralis API. Also returns the original API response for additional information.\n\nRequires Moralis account.\n\nAPI key and endpoint documentation can be found at:\nhttps://admin.moralis.io/web3Api",
   "interface": {
     "inputs": {
-      "f10b111d-0ff3-483b-9835-1f114daf107c": {
-        "type": "{\n  \"api_key\": string,\n  \"contract_address\": string,\n  \"token_id\": number,\n  \"chain\": \"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\",\n  \"format\": \"decimal\" or \"hex\",\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
+      "d5fdf6dd-34a8-47ca-98e1-ed9764f48962": {
+        "type": "string",
+        "name": "API key"
+      },
+      "e017d6ad-93cc-42b1-be57-f5d83c395453": {
+        "type": "string",
+        "name": "address",
+        "description": "Receives the contract address for a token."
+      },
+      "fc26c772-e105-4d6b-987b-35255b1b8e76": {
+        "type": "string",
+        "name": "token ID",
+        "description": "Receives the identifier of the token in the context of its governing contract."
+      },
+      "b997d4a4-b81e-49bb-9784-a474fcd18546": {
+        "type": "{\n  \"chain\": \"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\",\n  \"format\": \"decimal\" or \"hex\",\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
         "name": "params",
-        "description": "Receives the parameters identifying the contract / token pair and query preferences.\n\nExample:\n{\n  \"api_key\": \"xxx\",\n  \"contract_address\": \"yyy\",\n  \"token_id\": \"1\",\n  \"chain\": \"ropsten\"\n}"
+        "description": "Receives parameters refining the transfers query.\n\nExample:\n{\n  \"chain\": \"ropsten\"\n}"
       }
     },
     "outputs": {
@@ -32,8 +46,8 @@
       "nodes": {
         "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
           "coordinates": [
-            52.44999999999999,
-            111
+            -13.550000000000011,
+            253
           ],
           "name": "dispatch request",
           "prototype": "2c32b709-466e-4797-a314-2486b20eb190",
@@ -44,8 +58,8 @@
         },
         "89e66c4d-9e78-4c8d-bc87-c06398408e3f": {
           "coordinates": [
-            69.44999999999999,
-            -71
+            -17.55000000000001,
+            49
           ],
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
@@ -55,10 +69,10 @@
         },
         "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
           "coordinates": [
-            -22.55000000000001,
-            -134
+            -16.55000000000001,
+            -117
           ],
-          "name": "build params",
+          "name": "build tpl params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"ADDRESS\",\"TOKEN_ID\",\"QUERY\"]"
@@ -66,49 +80,16 @@
         },
         "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
           "coordinates": [
-            -141.34999999999997,
-            -68
+            -10.349999999999966,
+            -255
           ],
-          "name": "serialize params",
+          "name": "serialize query",
           "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
-        },
-        "71113b5e-8084-44ba-a2de-6721685a5790": {
-          "coordinates": [
-            -180.55,
-            -202
-          ],
-          "name": "extract path params",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
-          "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"contract_address\",\"token_id\"]"
-          }
-        },
-        "70d80f30-af1a-4011-b7f2-16a1c50e398a": {
-          "coordinates": [
-            -199.55,
-            89
-          ],
-          "name": "extract query params",
-          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
-          "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"chain\":\"chain\",\"format\":\"format\",\"offset\":\"offset\",\"limit\":\"limit\",\"order\":\"order\",\"cursor\":\"cursor\"}"
-          }
-        },
-        "3a72509c-054b-453f-9508-db24041ffe8e": {
-          "coordinates": [
-            -234.55,
-            205
-          ],
-          "name": "get API key",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"api_key\""
-          }
         },
         "e92ec3c2-36a2-4669-affd-caa34da52435": {
           "coordinates": [
-            -58.55000000000001,
-            256
+            -195.55,
+            94
           ],
           "name": "add auth",
           "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
@@ -119,8 +100,8 @@
         },
         "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
           "coordinates": [
-            241.45,
-            187
+            178.45,
+            84
           ],
           "name": "get transfers",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -130,14 +111,22 @@
         },
         "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
           "coordinates": [
-            252.45,
-            -143
+            175.45,
+            -112
           ],
           "name": "build response",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"status\",\"headers\",\"data\"]"
           }
+        },
+        "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+          "coordinates": [
+            -195.55,
+            -96
+          ],
+          "name": "forward inputs",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
         }
       },
       "connections": {
@@ -145,13 +134,6 @@
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
             "89e66c4d-9e78-4c8d-bc87-c06398408e3f": {
               "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
-            }
-          }
-        },
-        "70d80f30-af1a-4011-b7f2-16a1c50e398a": {
-          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
-            "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
-              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
             }
           }
         },
@@ -166,25 +148,6 @@
           "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
             "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
               "QUERY": {}
-            }
-          }
-        },
-        "71113b5e-8084-44ba-a2de-6721685a5790": {
-          "contract_address": {
-            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
-              "ADDRESS": {}
-            }
-          },
-          "token_id": {
-            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
-              "TOKEN_ID": {}
-            }
-          }
-        },
-        "3a72509c-054b-453f-9508-db24041ffe8e": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "e92ec3c2-36a2-4669-affd-caa34da52435": {
-              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
             }
           }
         },
@@ -214,19 +177,50 @@
               "headers": {}
             }
           }
+        },
+        "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          },
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "e92ec3c2-36a2-4669-affd-caa34da52435": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+              "ADDRESS": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+              "TOKEN_ID": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
-          "f10b111d-0ff3-483b-9835-1f114daf107c": {
-            "71113b5e-8084-44ba-a2de-6721685a5790": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
-            },
-            "70d80f30-af1a-4011-b7f2-16a1c50e398a": {
-              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
-            },
-            "3a72509c-054b-453f-9508-db24041ffe8e": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+          "e017d6ad-93cc-42b1-be57-f5d83c395453": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "fc26c772-e105-4d6b-987b-35255b1b8e76": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "b997d4a4-b81e-49bb-9784-a474fcd18546": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          },
+          "d5fdf6dd-34a8-47ca-98e1-ed9764f48962": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
             }
           }
         },

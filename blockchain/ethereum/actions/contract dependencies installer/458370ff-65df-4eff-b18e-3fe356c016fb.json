@@ -8,7 +8,7 @@
         "name": "state"
       },
       "49d10d01-556f-4be3-9757-e3305ebe8e5c": {
-        "type": "{\n  \"init-package\": typeof `params` of `initialize package`,\n  \"install-hardhat\": typeof `params` of `install Hardhat`,\n  \"install-dotenv\": typeof `params` of `install dotenv`,\n  \"install-ether\": typeof `params` of `install ether.js`,\n  \"install-contracts\": typeof `params` of `install contracts`,\n}",
+        "type": "{\n  \"init-package\": typeof `params` of `initialize package`,\n  \"install-hardhat\": typeof `params` of `install Hardhat`,\n  \"install-dotenv\": typeof `params` of `install dotenv`,\n  \"install-ether\": typeof `params` of `install ether.js`,\n  \"install-contracts\": typeof `params` of `install contracts`\n}",
         "name": "params",
         "description": ""
       }
@@ -202,14 +202,14 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "action": null,
     "one-time": null,
     "no-code": null,
     "smart contract": null,
     "deployment": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

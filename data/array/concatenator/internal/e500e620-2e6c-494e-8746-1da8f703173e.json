@@ -9,7 +9,7 @@
     },
     "outputs": {
       "0194cd4e-dc2c-4906-94a8-039b255dc494": {
-        "type": "(typeof(a & b)[\"a\"][number] or typeof(a & b)[\"a\"][number])[]",
+        "type": "((typeof `a & b`)[\"a\"][number] or (typeof `a & b`)[\"a\"][number])[]",
         "name": "concatenated"
       }
     }

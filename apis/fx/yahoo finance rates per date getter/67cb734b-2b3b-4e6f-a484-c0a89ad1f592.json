@@ -4,26 +4,30 @@
     "inputs": {
       "9792cc4b-8fe1-4824-8ee4-4e7f9b52c0bd": {
         "type": "string",
-        "name": "symbol"
+        "name": "symbol",
+        "description": "Receives ticker symbol.\n\nExample:\n\"DIS\""
       },
       "c03d6fa3-ecc1-4edd-9307-8d822ba1f070": {
         "type": "number",
-        "name": "from"
+        "name": "from",
+        "description": "Receives start date timestamp for querying data.\n\nExample:\n1486598400"
       },
       "56d00812-0f0a-4567-a901-9b222d966072": {
         "type": "number",
-        "name": "to"
+        "name": "to",
+        "description": "Receives end date timestamp for querying data.\n\nExample:\n1644364800"
       },
       "53d36ecc-ffe2-4d9e-892b-7b4d109db763": {
-        "type": "string",
-        "name": "interval"
+        "type": "\"1d\" or \"5d\" or \"1mo\" or \"3mo\" or  \"6mo\" or \"1y\" or \"2y\" or \"5y\" or \"10y\" or \"ytd\" or \"max\"",
+        "name": "interval",
+        "description": "Receives the interval of the `rates per date` output"
       }
     },
     "outputs": {
       "fe8e8f2f-a74f-48e0-8bfd-3690c2c4de81": {
-        "type": "typeof `rates per date` of `create rates per date format`",
-        "name": "create rates per date format-rates per date",
-        "description": "[Inherited from port `rates per date` of `create rates per date format`] \n[Inherited from port `reduced` of `create rates per date mapping`] \nSends the reduced array.\n\nExample:\n\"ABC\""
+        "type": "{string: number}",
+        "name": "rates per date",
+        "description": "Sent the rates of the symbol per interval"
       }
     }
   },

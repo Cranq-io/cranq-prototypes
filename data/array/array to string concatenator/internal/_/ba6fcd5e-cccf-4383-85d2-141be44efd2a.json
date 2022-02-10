@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "af731d0b-d99f-4684-a399-6342a551d0d0": "const res = data[\"array\"].join(data.delimiter);\noutputs.out(res, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "af731d0b-d99f-4684-a399-6342a551d0d0": {
+        "type": "any",
+        "name": "array & delimiter"
+      }
+    },
+    "outputs": {
+      "bdb6b3bd-e6df-40fb-b0f8-2c055768d03c": {
+        "type": "any",
+        "name": "out"
+      }
+    }
+  },
+  "name": "data/array/Array to string concatenator/Internal/_",
+  "attributes": {
+    "locked": true
+  }
+}

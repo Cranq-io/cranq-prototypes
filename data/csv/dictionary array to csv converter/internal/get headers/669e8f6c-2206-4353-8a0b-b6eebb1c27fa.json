@@ -1,0 +1,85 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bb9848ef-48f3-4139-b319-320d4494990a": {
+          "coordinates": [
+            1,
+            -5.999999999999972
+          ],
+          "name": "keys getter",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "745f7af8-9971-4926-8641-45dda0900650": {
+          "coordinates": [
+            -25,
+            120.33333333333334
+          ],
+          "name": "concat line",
+          "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
+          "params": {
+            "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\",\""
+          }
+        },
+        "97c95484-c3d9-4c2a-914e-0454d9cfb9b8": {
+          "coordinates": [
+            -4,
+            -117.99999999999997
+          ],
+          "name": "first item getter",
+          "prototype": "5bead7ea-5031-4993-a855-dc9ca089802f"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "11f831c8-e6f7-4595-80d2-7ab5ba5a15b5": {
+            "97c95484-c3d9-4c2a-914e-0454d9cfb9b8": {
+              "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {}
+            }
+          }
+        },
+        "outputs": {
+          "1971cdde-1064-4f4e-8016-231b07a940b9": {
+            "745f7af8-9971-4926-8641-45dda0900650": {
+              "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "bb9848ef-48f3-4139-b319-320d4494990a": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "745f7af8-9971-4926-8641-45dda0900650": {
+              "49eb5244-00ab-4326-8877-e08da353bf0b": {}
+            }
+          }
+        },
+        "97c95484-c3d9-4c2a-914e-0454d9cfb9b8": {
+          "f7832747-fb1e-432b-9c10-60ac76c110cc": {
+            "bb9848ef-48f3-4139-b319-320d4494990a": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "11f831c8-e6f7-4595-80d2-7ab5ba5a15b5": {
+        "type": "any",
+        "name": "collection"
+      }
+    },
+    "outputs": {
+      "1971cdde-1064-4f4e-8016-231b07a940b9": {
+        "type": "any",
+        "name": "headers"
+      }
+    }
+  },
+  "name": "data/csv/Dictionary array to csv converter/Internal/Get headers",
+  "attributes": {
+    "locked": true
+  }
+}

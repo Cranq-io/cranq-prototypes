@@ -7,7 +7,7 @@
     },
     "es6-node": {
       "inputFunctions": {
-        "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": "try {\n  outputs.parsed(JSON.parse(data), tag);\n} catch (error) {\n  outputs.bounced(data, tag);\n}"
+        "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": "let output = {}\ntry {\n  output = JSON.parse(data);\n} catch (error) {\n  outputs.bounced(data, tag);\n}\noutputs.parsed(output, tag);"
       }
     }
   },
@@ -31,7 +31,5 @@
   },
   "name": "json/Parser",
   "description": "Parses JSON.",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

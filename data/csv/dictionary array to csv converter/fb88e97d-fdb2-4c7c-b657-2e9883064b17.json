@@ -1,0 +1,168 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6ba1123e-60fa-44f5-b088-a18f30fa4584": {
+          "coordinates": [
+            -116,
+            -112
+          ],
+          "name": "get headers",
+          "prototype": "669e8f6c-2206-4353-8a0b-b6eebb1c27fa"
+        },
+        "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
+          "coordinates": [
+            -120,
+            33
+          ],
+          "name": "get data rows",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
+          "coordinates": [
+            -42,
+            227
+          ],
+          "name": "concat to string",
+          "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
+          "params": {
+            "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\",\""
+          }
+        },
+        "3c6808a6-0093-4064-8548-cadf05587f46": {
+          "coordinates": [
+            113,
+            116
+          ],
+          "name": "flatten lines",
+          "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
+          "params": {
+            "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\"\\n\""
+          }
+        },
+        "0c87daef-a65a-4c67-a50a-d974b7ebf599": {
+          "coordinates": [
+            164,
+            -76
+          ],
+          "name": "merge header",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
+          }
+        },
+        "e540fa88-7d63-420c-925c-5ef6e96d413d": {
+          "coordinates": [
+            325,
+            46
+          ],
+          "name": "flatten to string",
+          "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
+          "params": {
+            "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\"\\n\""
+          }
+        },
+        "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+          "coordinates": [
+            -193,
+            189
+          ],
+          "name": "values getter",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bfa14c74-d222-46da-a23e-01e14233eb03": {
+            "6ba1123e-60fa-44f5-b088-a18f30fa4584": {
+              "11f831c8-e6f7-4595-80d2-7ab5ba5a15b5": {}
+            },
+            "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "1f8459b4-882f-47b9-afaa-4c06cc02c0ba": {
+            "e540fa88-7d63-420c-925c-5ef6e96d413d": {
+              "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "3c6808a6-0093-4064-8548-cadf05587f46": {
+              "49eb5244-00ab-4326-8877-e08da353bf0b": {}
+            }
+          },
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          }
+        },
+        "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
+          "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {
+            "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "6ba1123e-60fa-44f5-b088-a18f30fa4584": {
+          "1971cdde-1064-4f4e-8016-231b07a940b9": {
+            "0c87daef-a65a-4c67-a50a-d974b7ebf599": {
+              "0": {}
+            }
+          }
+        },
+        "3c6808a6-0093-4064-8548-cadf05587f46": {
+          "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {
+            "0c87daef-a65a-4c67-a50a-d974b7ebf599": {
+              "1": {}
+            }
+          }
+        },
+        "0c87daef-a65a-4c67-a50a-d974b7ebf599": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "e540fa88-7d63-420c-925c-5ef6e96d413d": {
+              "49eb5244-00ab-4326-8877-e08da353bf0b": {}
+            }
+          }
+        },
+        "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
+              "49eb5244-00ab-4326-8877-e08da353bf0b": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "bfa14c74-d222-46da-a23e-01e14233eb03": {
+        "type": "{string:string or number or boolean}[]",
+        "name": "array",
+        "description": "Receives the array of dictionaries to format.\n\nExample:\n[\n  {\n    \"a\":1\n    \"b\":2\n  },\n  {\n    \"a\":11\n    \"b\":22\n  },\n]"
+      }
+    },
+    "outputs": {
+      "1f8459b4-882f-47b9-afaa-4c06cc02c0ba": {
+        "type": "string",
+        "name": "csv",
+        "description": "The resulting csv string."
+      }
+    }
+  },
+  "name": "data/csv/Dictionary array to csv converter",
+  "description": "Formats a dictionary array as a csv string. Does not support multi-level dictionaries.\n\nExample:\n1. 'array' receives\n[\n  {\n    \"a\":1\n    \"b\":2\n  },\n  {\n    \"a\":11\n    \"b\":22\n  },\n]\n2. 'csv' sends \n\"a,b\n1,1\n11,11\"",
+  "keywords": {
+    "array dictionary dict csv to convert": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

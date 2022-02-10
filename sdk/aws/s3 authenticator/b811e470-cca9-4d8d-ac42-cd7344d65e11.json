@@ -1,0 +1,146 @@
+{
+  "name": "sdk/AWS/S3 authenticator",
+  "interface": {
+    "inputs": {
+      "b2b3439c-f420-49e9-8880-c7cf457cf907": {
+        "type": "string",
+        "name": "session id",
+        "description": "Receives the id of the S3 session.\n\nExample: \n\"s3-session-id\""
+      },
+      "f3836ba1-6076-4aee-a129-09b05c44c6e6": {
+        "type": "string",
+        "name": "access key id",
+        "description": "Receives the AWS user's access key id.\n\nExample:\n\"23478207027842073230762374023 \""
+      },
+      "bd75aef2-dadf-4d89-9433-e237aabc5ad7": {
+        "type": "string",
+        "name": "secret access key",
+        "description": "Receives the AWS user's secret access key.\n\nExample:\n\"v3QoTTO2fmr5Wbh/v3QoTTO2fmr5Wbh+ASDF\""
+      }
+    },
+    "outputs": {
+      "893e7d27-8c5c-4697-9ca4-e5e436490d41": {
+        "type": "null",
+        "name": "done",
+        "description": "It is triggered if the authentication was successful."
+      },
+      "9c1b971d-6fd8-42eb-8ab9-5b79ecd9ebe1": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the authenticatiomn was not successful."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d3b12b23-93ab-4235-844c-a4d46db0fbae": {
+          "coordinates": [
+            175,
+            110
+          ],
+          "name": "aws s3",
+          "prototype": "a21f935d-6e28-42b4-a23e-563e20b967d3"
+        },
+        "87fb874d-7ac0-4373-a41d-631163435638": {
+          "coordinates": [
+            -8,
+            -163
+          ],
+          "name": "build action parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "type": "\"auth\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sessionid\",\"type\",\"options\"]"
+          }
+        },
+        "ae02e3b7-1a07-4a85-a4fa-8036057b642a": {
+          "coordinates": [
+            -70,
+            -4
+          ],
+          "name": "build authentication options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"accessKeyId\",\"secretAccessKey\"]"
+          }
+        },
+        "3b83e247-d00f-4762-8dba-be2d67dbc665": {
+          "coordinates": [
+            -220,
+            4
+          ],
+          "name": "forwarder inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        }
+      },
+      "connections": {
+        "87fb874d-7ac0-4373-a41d-631163435638": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d3b12b23-93ab-4235-844c-a4d46db0fbae": {
+              "28bb158a-e5ba-434e-817c-f48800f4bbae": {}
+            }
+          }
+        },
+        "ae02e3b7-1a07-4a85-a4fa-8036057b642a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "87fb874d-7ac0-4373-a41d-631163435638": {
+              "options": {}
+            }
+          }
+        },
+        "3b83e247-d00f-4762-8dba-be2d67dbc665": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "87fb874d-7ac0-4373-a41d-631163435638": {
+              "sessionid": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "ae02e3b7-1a07-4a85-a4fa-8036057b642a": {
+              "accessKeyId": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "ae02e3b7-1a07-4a85-a4fa-8036057b642a": {
+              "secretAccessKey": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b2b3439c-f420-49e9-8880-c7cf457cf907": {
+            "3b83e247-d00f-4762-8dba-be2d67dbc665": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "f3836ba1-6076-4aee-a129-09b05c44c6e6": {
+            "3b83e247-d00f-4762-8dba-be2d67dbc665": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "bd75aef2-dadf-4d89-9433-e237aabc5ad7": {
+            "3b83e247-d00f-4762-8dba-be2d67dbc665": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "893e7d27-8c5c-4697-9ca4-e5e436490d41": {
+            "d3b12b23-93ab-4235-844c-a4d46db0fbae": {
+              "bcd1ad43-d35b-46f3-aa81-d6fcb51c54c1": {}
+            }
+          },
+          "9c1b971d-6fd8-42eb-8ab9-5b79ecd9ebe1": {
+            "d3b12b23-93ab-4235-844c-a4d46db0fbae": {
+              "0f149349-b2c1-4393-9f12-7869f5c51f8f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

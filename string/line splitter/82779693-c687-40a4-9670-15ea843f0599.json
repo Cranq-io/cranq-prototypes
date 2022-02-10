@@ -1,0 +1,30 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "4da73e5f-f0b4-4592-a894-bc9c88f4d695": "outputs.lines(data.split(/\\r?\\n/), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "4da73e5f-f0b4-4592-a894-bc9c88f4d695": {
+        "type": "string",
+        "name": "string",
+        "description": "Receives the string to split by lines.\n\nExample:\n\"line1\nline2\nline3\""
+      }
+    },
+    "outputs": {
+      "677bc814-75c3-4960-a99e-e1a1fd174a46": {
+        "type": "string[]",
+        "name": "lines",
+        "description": "Emits the array of lines.\n\nExample:\n[\"line1\",\"line2\",\"line3\"]"
+      }
+    }
+  },
+  "name": "string/Line splitter",
+  "description": "Splits a string by lines.\n\nExample:\n1. 'string' receives \n\"line1\nline2\nline3\"\n2. 'lines' emits\n[\"line1\",\"line2\",\"line3\"]\n",
+  "keywords": {
+    "string split line": null
+  }
+}

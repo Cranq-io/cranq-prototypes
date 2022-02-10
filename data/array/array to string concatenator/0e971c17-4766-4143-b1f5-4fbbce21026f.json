@@ -1,0 +1,86 @@
+{
+  "name": "data/array/Array to string concatenator",
+  "interface": {
+    "inputs": {
+      "49eb5244-00ab-4326-8877-e08da353bf0b": {
+        "type": "typeof `array`",
+        "name": "array",
+        "description": "Receives array to be concatenated.\n\nExample:\n[\"A\", \"B\", \"C\"]"
+      },
+      "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": {
+        "type": "string",
+        "name": "delimiter",
+        "description": "Receives the delimiter to use between array elements.\n\nExample:\n\",\""
+      }
+    },
+    "outputs": {
+      "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {
+        "type": "string",
+        "name": "concatenated",
+        "description": "Sends the concatenated array.\n\nExample:\n\"A,B,C\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4823d07e-6b89-4dd0-9b67-a5d5471272af": {
+          "coordinates": [
+            -5,
+            81.66666666666669
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"array\",\"delimiter\"]"
+          }
+        },
+        "f64c5ef0-4eab-47be-8ec4-36f30dc20df6": {
+          "coordinates": [
+            -13,
+            -54.333333333333314
+          ],
+          "name": "concat",
+          "prototype": "ba6fcd5e-cccf-4383-85d2-141be44efd2a"
+        }
+      },
+      "connections": {
+        "4823d07e-6b89-4dd0-9b67-a5d5471272af": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f64c5ef0-4eab-47be-8ec4-36f30dc20df6": {
+              "af731d0b-d99f-4684-a399-6342a551d0d0": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "49eb5244-00ab-4326-8877-e08da353bf0b": {
+            "4823d07e-6b89-4dd0-9b67-a5d5471272af": {
+              "array": {}
+            }
+          },
+          "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": {
+            "4823d07e-6b89-4dd0-9b67-a5d5471272af": {
+              "delimiter": {}
+            }
+          }
+        },
+        "outputs": {
+          "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {
+            "f64c5ef0-4eab-47be-8ec4-36f30dc20df6": {
+              "bdb6b3bd-e6df-40fb-b0f8-2c055768d03c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Concatenates an array to string, using the specified delimiter.",
+  "keywords": {
+    "array concat delimiter": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

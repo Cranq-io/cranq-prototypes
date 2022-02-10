@@ -1,0 +1,116 @@
+{
+  "name": "apis/fx/Yahoo Finance rates per date getter",
+  "interface": {
+    "inputs": {
+      "9792cc4b-8fe1-4824-8ee4-4e7f9b52c0bd": {
+        "type": "string",
+        "name": "symbol"
+      },
+      "c03d6fa3-ecc1-4edd-9307-8d822ba1f070": {
+        "type": "number",
+        "name": "from"
+      },
+      "56d00812-0f0a-4567-a901-9b222d966072": {
+        "type": "number",
+        "name": "to"
+      },
+      "53d36ecc-ffe2-4d9e-892b-7b4d109db763": {
+        "type": "string",
+        "name": "interval"
+      }
+    },
+    "outputs": {
+      "fe8e8f2f-a74f-48e0-8bfd-3690c2c4de81": {
+        "type": "typeof `rates per date` of `create rates per date format`",
+        "name": "create rates per date format-rates per date",
+        "description": "[Inherited from port `rates per date` of `create rates per date format`] \n[Inherited from port `reduced` of `create rates per date mapping`] \nSends the reduced array.\n\nExample:\n\"ABC\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "615003d0-ab63-447f-adaa-19735d20ef06": {
+          "coordinates": [
+            -202,
+            -0.3333333333333144
+          ],
+          "name": "yahoo finance",
+          "prototype": "87a03548-e8f0-48ec-9f92-59820452e271",
+          "params": {}
+        },
+        "2e2881ff-e371-4790-b168-446292e6a159": {
+          "coordinates": [
+            -8.333333333333329,
+            -4
+          ],
+          "name": "get timestamps & adjustedcloses",
+          "prototype": "845cf037-2a0a-4ad0-bcf8-936a1d329c96"
+        },
+        "214b8de3-44d6-4d43-b44e-441f409e9d01": {
+          "coordinates": [
+            168.33333333333331,
+            -1.6666666666666288
+          ],
+          "name": "create rates per date format",
+          "prototype": "959ec88b-c19e-4b61-8366-d8e226ae0baf"
+        }
+      },
+      "connections": {
+        "615003d0-ab63-447f-adaa-19735d20ef06": {
+          "97e587fb-0703-4183-b5fc-5fc7866c5661": {
+            "2e2881ff-e371-4790-b168-446292e6a159": {
+              "a7ea641b-0442-45d2-94ac-0ac3f9cbb2d5": {}
+            }
+          }
+        },
+        "2e2881ff-e371-4790-b168-446292e6a159": {
+          "8975ae4b-91fd-414e-ae9a-49d2b235fe19": {
+            "214b8de3-44d6-4d43-b44e-441f409e9d01": {
+              "627e5c59-c3c6-4a72-a775-3991e2c97900": {}
+            }
+          },
+          "073f5be4-eb29-48f4-b669-30e62c41a7e2": {
+            "214b8de3-44d6-4d43-b44e-441f409e9d01": {
+              "a6f4f83e-714a-483d-b9df-9f472b55b373": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9792cc4b-8fe1-4824-8ee4-4e7f9b52c0bd": {
+            "615003d0-ab63-447f-adaa-19735d20ef06": {
+              "045fe2de-d612-47da-b91c-4af808edd741": {}
+            }
+          },
+          "c03d6fa3-ecc1-4edd-9307-8d822ba1f070": {
+            "615003d0-ab63-447f-adaa-19735d20ef06": {
+              "17e64595-a483-44ad-9334-938033f94225": {}
+            }
+          },
+          "56d00812-0f0a-4567-a901-9b222d966072": {
+            "615003d0-ab63-447f-adaa-19735d20ef06": {
+              "a8336882-50a2-4cdc-9cc1-c96f0cea3962": {}
+            }
+          },
+          "53d36ecc-ffe2-4d9e-892b-7b4d109db763": {
+            "615003d0-ab63-447f-adaa-19735d20ef06": {
+              "30d67652-2fca-4043-98b1-f9c587bdda07": {}
+            }
+          }
+        },
+        "outputs": {
+          "fe8e8f2f-a74f-48e0-8bfd-3690c2c4de81": {
+            "214b8de3-44d6-4d43-b44e-441f409e9d01": {
+              "87721bc2-107e-4d04-b41e-df0fe726e253": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

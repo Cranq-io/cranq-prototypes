@@ -1,0 +1,123 @@
+{
+  "name": "apis/fx/Yahoo Finance historical adjusted closed price & timpestamp getter",
+  "interface": {
+    "inputs": {
+      "a7ea641b-0442-45d2-94ac-0ac3f9cbb2d5": {
+        "type": "typeof `tree` of `select adjusted prices`",
+        "name": "instrument",
+        "description": "[Inherited from port `tree` of `select adjusted prices`] \nReceives the tree the node is extracted from"
+      }
+    },
+    "outputs": {
+      "8975ae4b-91fd-414e-ae9a-49d2b235fe19": {
+        "type": "typeof `synced` of `syncer`",
+        "name": "timestamps",
+        "description": "[Inherited from port `synced` of `syncer`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+      },
+      "073f5be4-eb29-48f4-b669-30e62c41a7e2": {
+        "type": "any",
+        "name": "adjustedcloses"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ae08a797-bc4f-4b47-a816-5726fc89510e": {
+          "coordinates": [
+            -96.66666666666666,
+            -109.33333333333331
+          ],
+          "name": "select timestamps",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"chart\",\"result\",\"0\",\"timestamp\"]"
+          }
+        },
+        "accdbf29-22e6-4b17-a952-5af38802e970": {
+          "coordinates": [
+            -92.66666666666666,
+            60.666666666666686
+          ],
+          "name": "select adjusted prices",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"chart\",\"result\",\"0\",\"indicators\",\"adjclose\",\"0\",\"adjclose\"]"
+          }
+        },
+        "39aa5271-b667-4618-b431-184e2c177832": {
+          "coordinates": [
+            73.33333333333334,
+            -18.333333333333314
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"timestamps\",\"adjclosedprices\"]"
+          }
+        },
+        "431b57f7-4d47-40cc-9a89-1949024385eb": {
+          "coordinates": [
+            164.33333333333334,
+            -10.333333333333314
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"timestamps\",\"adjclosedprices\"]"
+          }
+        }
+      },
+      "connections": {
+        "39aa5271-b667-4618-b431-184e2c177832": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "431b57f7-4d47-40cc-9a89-1949024385eb": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "ae08a797-bc4f-4b47-a816-5726fc89510e": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "39aa5271-b667-4618-b431-184e2c177832": {
+              "timestamps": {}
+            }
+          }
+        },
+        "accdbf29-22e6-4b17-a952-5af38802e970": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "39aa5271-b667-4618-b431-184e2c177832": {
+              "adjclosedprices": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a7ea641b-0442-45d2-94ac-0ac3f9cbb2d5": {
+            "accdbf29-22e6-4b17-a952-5af38802e970": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            },
+            "ae08a797-bc4f-4b47-a816-5726fc89510e": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "8975ae4b-91fd-414e-ae9a-49d2b235fe19": {
+            "431b57f7-4d47-40cc-9a89-1949024385eb": {
+              "timestamps": {}
+            }
+          },
+          "073f5be4-eb29-48f4-b669-30e62c41a7e2": {
+            "431b57f7-4d47-40cc-9a89-1949024385eb": {
+              "adjclosedprices": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

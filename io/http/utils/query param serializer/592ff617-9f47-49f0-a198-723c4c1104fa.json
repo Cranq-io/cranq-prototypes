@@ -1,6 +1,6 @@
 {
   "name": "io/http/utils/Query param serializer",
-  "description": "Serializes the single query received via `param` as a key-value pair.",
+  "description": "Serializes the single query received via `param` as a key-value pair.\n\nExample:\n1. {\"key\": \"name\", \"value\": \"Sally\"}@1 received via `params`\n2. \"name=Sally\"@1 sent via string",
   "interface": {
     "inputs": {
       "079bef80-71b7-4abe-849d-e9e4f54e0e49": {
@@ -25,7 +25,7 @@
             -195.6,
             -13.799999999999997
           ],
-          "name": "splitter",
+          "name": "split key & value",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"key\",\"value\"]"
@@ -36,7 +36,7 @@
             -57.599999999999994,
             -88.8
           ],
-          "name": "encode name",
+          "name": "encode key",
           "prototype": "be4ab3e0-5744-4223-803e-96519ee81b08"
         },
         "64b78f84-ad9b-457d-906d-06e14959ffa7": {

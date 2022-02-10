@@ -1,0 +1,140 @@
+{
+  "name": "io/http/utils/Query param serializer",
+  "description": "Serializes the single query received via `param` as a key-value pair.\n\nExample:\n1. {\"key\": \"name\", \"value\": \"Sally\"}@1 received via `params`\n2. \"name=Sally\"@1 sent via string",
+  "interface": {
+    "inputs": {
+      "079bef80-71b7-4abe-849d-e9e4f54e0e49": {
+        "type": "{\"key\": string, \"value\": string}",
+        "name": "param",
+        "description": "Receives a single query parameter as key-value pair."
+      }
+    },
+    "outputs": {
+      "19e717dc-a200-4c4d-9515-47e2915a03f7": {
+        "type": "string",
+        "name": "string",
+        "description": "Sends the serialized single query param."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a0ead9d1-2277-4f07-b0ab-5a38bcde733b": {
+          "coordinates": [
+            -195.6,
+            -13.799999999999997
+          ],
+          "name": "split key & value",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"key\",\"value\"]"
+          }
+        },
+        "0e20bfc6-1223-4d49-9abc-744aa396664f": {
+          "coordinates": [
+            -57.599999999999994,
+            -88.8
+          ],
+          "name": "encode key",
+          "prototype": "be4ab3e0-5744-4223-803e-96519ee81b08"
+        },
+        "64b78f84-ad9b-457d-906d-06e14959ffa7": {
+          "coordinates": [
+            228.4,
+            65.2
+          ],
+          "name": "join key & value",
+          "prototype": "63c75fc1-ec00-49a1-a42e-e82a58aa29a2",
+          "params": {
+            "6e8f72af-0e88-49da-88d1-ca8e525e8e9f": "\"=\""
+          }
+        },
+        "bcac8f3b-face-4ec1-ad1f-afa7c0d49dea": {
+          "coordinates": [
+            85.4,
+            -21.799999999999997
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
+          }
+        },
+        "764b3a15-5e6e-440b-bdf9-dc8807df3e16": {
+          "coordinates": [
+            -60.599999999999994,
+            59.2
+          ],
+          "name": "encode value",
+          "prototype": "be4ab3e0-5744-4223-803e-96519ee81b08"
+        }
+      },
+      "connections": {
+        "bcac8f3b-face-4ec1-ad1f-afa7c0d49dea": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "64b78f84-ad9b-457d-906d-06e14959ffa7": {
+              "2c5f0d7f-8f9d-4741-af0b-544aa15406f0": {}
+            }
+          }
+        },
+        "764b3a15-5e6e-440b-bdf9-dc8807df3e16": {
+          "3742aed4-b3ea-4798-8c3a-732c6d863b9f": {
+            "bcac8f3b-face-4ec1-ad1f-afa7c0d49dea": {
+              "1": {}
+            }
+          }
+        },
+        "0e20bfc6-1223-4d49-9abc-744aa396664f": {
+          "3742aed4-b3ea-4798-8c3a-732c6d863b9f": {
+            "bcac8f3b-face-4ec1-ad1f-afa7c0d49dea": {
+              "0": {}
+            }
+          }
+        },
+        "a0ead9d1-2277-4f07-b0ab-5a38bcde733b": {
+          "key": {
+            "0e20bfc6-1223-4d49-9abc-744aa396664f": {
+              "aeeb3184-ccf6-4fce-aa4e-45e9bac8e830": {
+                "description": "undefined\nundefined"
+              }
+            }
+          },
+          "value": {
+            "764b3a15-5e6e-440b-bdf9-dc8807df3e16": {
+              "aeeb3184-ccf6-4fce-aa4e-45e9bac8e830": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "079bef80-71b7-4abe-849d-e9e4f54e0e49": {
+            "a0ead9d1-2277-4f07-b0ab-5a38bcde733b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "19e717dc-a200-4c4d-9515-47e2915a03f7": {
+            "64b78f84-ad9b-457d-906d-06e14959ffa7": {
+              "61fd421d-d6b7-49d3-a63b-ec3e1f0b092f": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "serialize": null,
+    "stringify": null,
+    "build": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

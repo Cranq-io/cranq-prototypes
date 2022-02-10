@@ -1,0 +1,102 @@
+{
+  "name": "io/http/utils/Single param appender",
+  "description": "Appends a single query parameter received via `key` and `value` to the array of single query params received via `params` (input), and sends the result via `params` (output).\n\nExample:\n1. \"Sally\"@1 received via `value`\n2. \"name\"@1 received via `key`\n3. []@1 received via `params`\n4. [{\"key\": \"name\", \"value\": \"Sally\"}]@1 sent via `params` (output)",
+  "interface": {
+    "inputs": {
+      "6e228fb0-0fde-4516-a952-b62f9dd01a9a": {
+        "paramId": "ef31c1e9-cfd5-458b-8d3a-951e3db9c232",
+        "type": "string",
+        "name": "value",
+        "description": "Receives a single query parameter value."
+      },
+      "190f88ba-b553-4e6b-a939-f83424e61e67": {
+        "paramId": "ef31c1e9-cfd5-458b-8d3a-951e3db9c232",
+        "type": "string",
+        "name": "key",
+        "description": "Receives the key part of a key-value pair."
+      },
+      "206684ff-0207-4f9b-8dae-8eec635ec404": {
+        "type": "{\"key\": string, \"value\": string}[]",
+        "name": "params",
+        "description": "Receives an array of single query params as key-value pairs."
+      }
+    },
+    "outputs": {
+      "f1f1b34b-5cc6-46b5-818b-db0e8de08b7a": {
+        "type": "{\"key\": string, \"value\": string}[]",
+        "name": "params",
+        "description": "Sends an array of single query params as key-value pairs."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3f4fbc7c-96a7-4a19-8765-e54baf60da39": {
+          "coordinates": [
+            -90,
+            -62.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"key\",\"value\"]"
+          }
+        },
+        "7c388c07-f2ba-4dcf-a6ff-87640f91b47e": {
+          "coordinates": [
+            90,
+            62.5
+          ],
+          "name": "item appender",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2"
+        }
+      },
+      "connections": {
+        "3f4fbc7c-96a7-4a19-8765-e54baf60da39": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "7c388c07-f2ba-4dcf-a6ff-87640f91b47e": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6e228fb0-0fde-4516-a952-b62f9dd01a9a": {
+            "3f4fbc7c-96a7-4a19-8765-e54baf60da39": {
+              "value": {}
+            }
+          },
+          "190f88ba-b553-4e6b-a939-f83424e61e67": {
+            "3f4fbc7c-96a7-4a19-8765-e54baf60da39": {
+              "key": {}
+            }
+          },
+          "206684ff-0207-4f9b-8dae-8eec635ec404": {
+            "7c388c07-f2ba-4dcf-a6ff-87640f91b47e": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        },
+        "outputs": {
+          "f1f1b34b-5cc6-46b5-818b-db0e8de08b7a": {
+            "7c388c07-f2ba-4dcf-a6ff-87640f91b47e": {
+              "092ca265-7614-4182-9d9f-bd325c094abb": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "key-value pair": null,
+    "append": null,
+    "push": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "io/http/utils/Query string builder",
+  "description": "Builds a query string by serializing the received dictionary as query params.\n\nExample:\n1. {\"name\": \"Jane\", \"height\": \"1.63\"}@1 received via `params`\n2. \"name=Jane&height=1.63\"@1 sent via `query`",
+  "interface": {
+    "inputs": {
+      "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {
+        "type": "{string: string or string[]}",
+        "name": "params",
+        "description": "Receives query parameters to be serialized as a dictionary."
+      }
+    },
+    "outputs": {
+      "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+        "type": "string",
+        "name": "query",
+        "description": "Sends HTTP query string."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4208128b-9128-4a52-ab2d-3754f95e7bf9": {
+          "coordinates": [
+            89.80000000000001,
+            128
+          ],
+          "name": "join params",
+          "prototype": "63c75fc1-ec00-49a1-a42e-e82a58aa29a2",
+          "params": {
+            "6e8f72af-0e88-49da-88d1-ca8e525e8e9f": "\"&\""
+          }
+        },
+        "e548e573-f821-4349-9210-48d9c1285697": {
+          "coordinates": [
+            52.799999999999955,
+            0
+          ],
+          "name": "map params",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "a4a0a6e6-4da2-43b0-9354-8b4e78a58219": {
+          "coordinates": [
+            -114.74545454545455,
+            68
+          ],
+          "name": "flatten query params",
+          "prototype": "783a4627-5063-4b3c-8d64-5f4deb8e1b54"
+        },
+        "4d5a901f-b63a-46b4-b71d-69f9d9810aec": {
+          "coordinates": [
+            -95.6,
+            -68.19999999999999
+          ],
+          "name": "stringify param",
+          "prototype": "592ff617-9f47-49f0-a198-723c4c1104fa"
+        }
+      },
+      "connections": {
+        "e548e573-f821-4349-9210-48d9c1285697": {
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "4208128b-9128-4a52-ab2d-3754f95e7bf9": {
+              "2c5f0d7f-8f9d-4741-af0b-544aa15406f0": {}
+            }
+          },
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "4d5a901f-b63a-46b4-b71d-69f9d9810aec": {
+              "079bef80-71b7-4abe-849d-e9e4f54e0e49": {}
+            }
+          }
+        },
+        "a4a0a6e6-4da2-43b0-9354-8b4e78a58219": {
+          "11ad71dd-5937-405d-be08-c660b696442c": {
+            "e548e573-f821-4349-9210-48d9c1285697": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "4d5a901f-b63a-46b4-b71d-69f9d9810aec": {
+          "19e717dc-a200-4c4d-9515-47e2915a03f7": {
+            "e548e573-f821-4349-9210-48d9c1285697": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {
+            "a4a0a6e6-4da2-43b0-9354-8b4e78a58219": {
+              "f35ba18b-75dc-4258-b811-5eeed7e8189f": {}
+            }
+          }
+        },
+        "outputs": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "4208128b-9128-4a52-ab2d-3754f95e7bf9": {
+              "61fd421d-d6b7-49d3-a63b-ec3e1f0b092f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "query string": null,
+    "GET": null,
+    "request": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

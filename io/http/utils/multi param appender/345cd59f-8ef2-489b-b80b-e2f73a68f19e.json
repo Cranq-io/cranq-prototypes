@@ -1,0 +1,94 @@
+{
+  "name": "io/http/utils/Multi param appender",
+  "description": "Appends a query parameter with multiple values received via `key` and `values` to the array of single query params received via `params` (input), and sends the result via `params` (output).\n\nExample:\n1. \"Sally\"@1 received via `value`\n2. \"name\"@1 received via `key`\n3. []@1 received via `params`\n4. [{\"key\": \"name\", \"value\": \"Sally\"}]@1 sent via `params` (output)",
+  "interface": {
+    "inputs": {
+      "23034d05-ce98-405b-a7ae-2f5bbc89d924": {
+        "type": "string[]",
+        "name": "values",
+        "description": "Receives values associated with the same query parameter."
+      },
+      "4fe37c0e-d6b0-4521-b618-c8f3ab383d77": {
+        "type": "string",
+        "name": "key",
+        "description": "Receives the key part of a key-value pair."
+      },
+      "e43c117e-2b28-452e-af0f-80664cf310b0": {
+        "type": "{\"key\": string, \"value\": string}[]",
+        "name": "params",
+        "description": "Receives an array of single query params as key-value pairs."
+      }
+    },
+    "outputs": {
+      "f521e942-0cb3-4abc-8a1f-c5aede62395f": {
+        "type": "{\"key\": string, \"value\": string}[]",
+        "name": "params",
+        "description": "Sends an array of single query params as key-value pairs."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7b2d445e-ae42-457d-8c65-31a02034b624": {
+          "coordinates": [
+            -42.400000000000006,
+            -67.1
+          ],
+          "name": "build multi params",
+          "prototype": "5e9fdc5a-f49e-43e8-be22-d338dbe4a2ce"
+        },
+        "506fde28-9219-4181-a11c-464e397769a6": {
+          "coordinates": [
+            42.400000000000006,
+            67.1
+          ],
+          "name": "append to params",
+          "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b"
+        }
+      },
+      "connections": {
+        "7b2d445e-ae42-457d-8c65-31a02034b624": {
+          "5c506e07-1f77-4cef-9b9a-81344dec2670": {
+            "506fde28-9219-4181-a11c-464e397769a6": {
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "23034d05-ce98-405b-a7ae-2f5bbc89d924": {
+            "7b2d445e-ae42-457d-8c65-31a02034b624": {
+              "6a3718f9-6fbf-487e-8c4c-8660bfdf2577": {}
+            }
+          },
+          "4fe37c0e-d6b0-4521-b618-c8f3ab383d77": {
+            "7b2d445e-ae42-457d-8c65-31a02034b624": {
+              "67fb8a06-139b-481b-99b8-00669fa41b4a": {}
+            }
+          },
+          "e43c117e-2b28-452e-af0f-80664cf310b0": {
+            "506fde28-9219-4181-a11c-464e397769a6": {
+              "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {}
+            }
+          }
+        },
+        "outputs": {
+          "f521e942-0cb3-4abc-8a1f-c5aede62395f": {
+            "506fde28-9219-4181-a11c-464e397769a6": {
+              "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "key-values pair": null,
+    "concatenate": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "name": "blockchain/moralis/api v2/NFT transfers lister",
+  "description": "Retrieves a list of transfers matching the specified contract and token ID using the Moralis API. Also returns the original API response for additional information.\n\nRequires Moralis account.\n\nAPI key and endpoint documentation can be found at:\nhttps://admin.moralis.io/web3Api",
+  "interface": {
+    "inputs": {
+      "d5fdf6dd-34a8-47ca-98e1-ed9764f48962": {
+        "type": "string",
+        "name": "API key"
+      },
+      "e017d6ad-93cc-42b1-be57-f5d83c395453": {
+        "type": "string",
+        "name": "address",
+        "description": "Receives the contract address for a token."
+      },
+      "fc26c772-e105-4d6b-987b-35255b1b8e76": {
+        "type": "string",
+        "name": "token ID",
+        "description": "Receives the identifier of the token in the context of its governing contract."
+      },
+      "b997d4a4-b81e-49bb-9784-a474fcd18546": {
+        "type": "{\n  \"chain\": \"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\",\n  \"format\": \"decimal\" or \"hex\",\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
+        "name": "params",
+        "description": "Receives parameters refining the transfers query.\n\nExample:\n{\n  \"chain\": \"ropsten\"\n}"
+      }
+    },
+    "outputs": {
+      "c7a5ab3c-ee14-4438-a52f-764a3424f8b6": {
+        "type": "`blockchain/moralis/NFT transfer`[]",
+        "name": "transfers",
+        "description": "Sends a list of NFT transfers as returned by the Moralis API"
+      },
+      "c957f9d8-fa55-499c-8439-7cd42c334413": {
+        "type": "{\"status\": number, \"headers\": {string: string}, \"data\": `blockchain/moralis/NFT transfers response`}",
+        "name": "response",
+        "description": "Sends the entire response from the Moralis API, including status and header."
+      },
+      "a30ca9fa-7a5f-4ca1-829a-3afcbde4a604": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
+          "coordinates": [
+            -13.550000000000011,
+            253
+          ],
+          "name": "dispatch request",
+          "prototype": "2c32b709-466e-4797-a314-2486b20eb190",
+          "params": {
+            "52134df1-fbb5-4df4-99a6-25020abc427e": "\"GET\"",
+            "4e6e787e-0875-4f15-bf9c-a870f41f69bd": "{}"
+          }
+        },
+        "89e66c4d-9e78-4c8d-bc87-c06398408e3f": {
+          "coordinates": [
+            -17.55000000000001,
+            49
+          ],
+          "name": "build URL",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://deep-index.moralis.io/api/v2/nft/{ADDRESS}/{TOKEN_ID}/transfers?{QUERY}\""
+          }
+        },
+        "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+          "coordinates": [
+            -16.55000000000001,
+            -117
+          ],
+          "name": "build tpl params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"ADDRESS\",\"TOKEN_ID\",\"QUERY\"]"
+          }
+        },
+        "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
+          "coordinates": [
+            -10.349999999999966,
+            -255
+          ],
+          "name": "serialize query",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "e92ec3c2-36a2-4669-affd-caa34da52435": {
+          "coordinates": [
+            -195.55,
+            94
+          ],
+          "name": "add auth",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"X-API-KEY\"",
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"accept\":\"application/json\"}"
+          }
+        },
+        "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
+          "coordinates": [
+            178.45,
+            84
+          ],
+          "name": "get transfers",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"result\"]"
+          }
+        },
+        "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+          "coordinates": [
+            175.45,
+            -112
+          ],
+          "name": "build response",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"status\",\"headers\",\"data\"]"
+          }
+        },
+        "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+          "coordinates": [
+            -195.55,
+            -96
+          ],
+          "name": "forward inputs",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        }
+      },
+      "connections": {
+        "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "89e66c4d-9e78-4c8d-bc87-c06398408e3f": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "89e66c4d-9e78-4c8d-bc87-c06398408e3f": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
+              "852731e0-9376-4446-bac0-718d8ca1fcc4": {}
+            }
+          }
+        },
+        "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+              "QUERY": {}
+            }
+          }
+        },
+        "e92ec3c2-36a2-4669-affd-caa34da52435": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
+              "f72ee334-6d61-43db-978f-f31d7d2ff917": {}
+            }
+          }
+        },
+        "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
+          "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
+            "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "data": {}
+            }
+          },
+          "a3c1977b-bff4-4384-902c-fd24f1356beb": {
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "status": {}
+            }
+          },
+          "52cb551e-169b-45a3-ad2d-aacff39506c1": {
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "headers": {}
+            }
+          }
+        },
+        "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "f8c541a2-af97-4fcb-bcc2-18cec7678c89": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          },
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "e92ec3c2-36a2-4669-affd-caa34da52435": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+              "ADDRESS": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "2f2a7ac6-109c-43fe-b937-8bb916e5d949": {
+              "TOKEN_ID": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e017d6ad-93cc-42b1-be57-f5d83c395453": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "fc26c772-e105-4d6b-987b-35255b1b8e76": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "b997d4a4-b81e-49bb-9784-a474fcd18546": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          },
+          "d5fdf6dd-34a8-47ca-98e1-ed9764f48962": {
+            "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          }
+        },
+        "outputs": {
+          "c7a5ab3c-ee14-4438-a52f-764a3424f8b6": {
+            "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
+              "result": {}
+            }
+          },
+          "a30ca9fa-7a5f-4ca1-829a-3afcbde4a604": {
+            "f5d1f66d-9ebf-40ba-95a2-0a3f6128af07": {
+              "b73aa5bf-e098-4b22-b3bb-b921000af484": {}
+            }
+          },
+          "c957f9d8-fa55-499c-8439-7cd42c334413": {
+            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "smart contract": null,
+    "transactions": null,
+    "transfers": null,
+    "nft": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

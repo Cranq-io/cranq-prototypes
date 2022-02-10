@@ -1,0 +1,37 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "aeeb3184-ccf6-4fce-aa4e-45e9bac8e830": "outputs.encoded(encodeURIComponent(data), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "aeeb3184-ccf6-4fce-aa4e-45e9bac8e830": {
+        "type": "any",
+        "name": "string",
+        "description": "Receives a string to be URI component-encoded."
+      }
+    },
+    "outputs": {
+      "3742aed4-b3ea-4798-8c3a-732c6d863b9f": {
+        "type": "string",
+        "name": "encoded",
+        "description": "Sends the URI component-encoded string."
+      }
+    }
+  },
+  "name": "string/URI component encoder",
+  "description": "URI component-encodes the received string.\n\nExample:\n1. \"hello world\"@1 received via `string`\n2. \"hello%20world\"@1 sent via `encoded`",
+  "keywords": {
+    "uri": null,
+    "url": null,
+    "component": null,
+    "encode": null,
+    "encoding": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

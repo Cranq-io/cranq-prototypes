@@ -28,7 +28,7 @@
     "outputs": {
       "207e4ad2-ba4c-4146-98da-1898a56bb067": {
         "description": "",
-        "type": "{typeof(fields):any}",
+        "type": "{\n  \"success\": typeof `success`,\n  \"actual\": typeof `actual`,\n  \"expected\": typeof `expected`,\n  \"type\": typeof `type`\n}",
         "name": "assertion"
       }
     }
@@ -76,8 +76,8 @@
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"type\", \"expected\", \"actual\", \"success\"]",
-            "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "\"equality\""
+            "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "\"equality\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"success\",\"actual\",\"expected\",\"type\"]"
           }
         }
       }

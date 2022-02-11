@@ -29,7 +29,7 @@
     },
     "outputs": {
       "3eba35e7-ff64-42e0-b695-ae250aa052e0": {
-        "type": "{string:typeof(a)[string] or typeof(b)[string]}",
+        "type": "{string: (typeof `a` of `merger`)[string] or (typeof `b` of `merger`)[string]}",
         "name": "params",
         "description": "Measurement Protocol parameters for \"event\" hit type. Key-value pairs, must be serialized to be passed as payload."
       }
@@ -38,13 +38,6 @@
   "implementations": {
     "cranq": {
       "connections": {
-        "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
-          "synced": {
-            "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
-              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
-            }
-          }
-        },
         "8059d1a3-0eca-4dba-971d-26927d28d2e6": {
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
             "d35bed94-661b-4de9-808e-e4e1f66c98e6": {
@@ -66,6 +59,13 @@
           "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
             "d35bed94-661b-4de9-808e-e4e1f66c98e6": {
               "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "6434b940-d6f5-4b0e-bb25-0854bf42eb9c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "2f085f37-af45-4051-9ae3-3e87c45c30c4": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
             }
           }
         }

@@ -8,7 +8,7 @@
         "name": "state"
       },
       "149caba5-e128-4834-96c5-ef8985c865da": {
-        "type": "{\n  \"compile-contract\": typeof `params` of `compile contract`,\n  \"deploy-contract\": `params` of `deploy contract`,\n\"prepare-verify-contract-params\": `mappings` of `prepare verify contract params`\n\"verify-contract\": `params` of `verify contract`\n}",
+        "type": "{\n  \"compile-contract\": typeof `params` of `compile contract`,\n  \"deploy-contract\": typeof `params` of `deploy contract`,\n\"prepare-verify-contract-params\": typeof `mappings` of `prepare verify contract params`,\n\"verify-contract\": typeof `params` of `verify contract`\n}",
         "name": "params"
       }
     },
@@ -162,12 +162,14 @@
       }
     }
   },
-  "attributes": {},
   "keywords": {
     "action": null,
     "one-time": null,
     "no-code": null,
     "smart contract": null
   },
-  "description": "Compiles and deploys a smart contract"
+  "description": "Compiles and deploys a smart contract",
+  "attributes": {
+    "locked": true
+  }
 }

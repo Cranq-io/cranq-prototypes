@@ -8,7 +8,7 @@
         "name": "state"
       },
       "bbfc612d-4b90-4759-9a80-530cdb7dae4f": {
-        "type": "{\n  \"install-dependencies\": typeof `params` of `install dependencies`,\n  \"create-files\": typeof `params` of `create files`,\n  \"run-script\": typeof `params` of `run mint script`,\n}",
+        "type": "{\n  \"install-dependencies\": typeof `params` of `install dependencies`,\n  \"create-files\": typeof `params` of `create files`,\n  \"run-script\": typeof `params` of `run mint script`\n}",
         "name": "params"
       }
     },
@@ -138,9 +138,6 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "scripting": null,
     "action": null,
@@ -148,5 +145,8 @@
     "one-time": null,
     "nft": null,
     "minting": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

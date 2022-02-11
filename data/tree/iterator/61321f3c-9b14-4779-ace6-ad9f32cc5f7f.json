@@ -8,7 +8,7 @@
         "description": "The tree data structure to iterate over on."
       },
       "788366e4-5319-4b4f-a2a6-124672c444f4": {
-        "type": "(string or number or {\"type\": \"wildcard\"} or {\"type:\"options\", \"options\": (string[] or number[])})[]",
+        "type": "(string or number or {\"type\": \"wildcard\"} or {\"type\":\"options\", \"options\": (string[] or number[])})[]",
         "name": "query",
         "description": "Pattern for paths. Array of strings, numbers or expressions.\nStrings look for exact matches, numbers for array indices and expressions describe matching mechanisms.\n\n{\"type\": \"wildcard\"}\nMatches any key in the current node.\n\n{\"type\": \"options\", \"options\":[]}\nMatches the listed keys."
       }

@@ -14,7 +14,7 @@
   "interface": {
     "inputs": {
       "f9494c81-42f8-41eb-8ca3-549f2c2f5a99": {
-        "type": "{\"tree\": {string: any}, \"query\": (string or number or {\"type\": \"wildcard\"} or {\"type:\"options\", \"options\": (string[] or number[])})[]}",
+        "type": "{\"tree\": {string: any}, \"query\": (string or number or {\"type\": \"wildcard\"} or {\"type\":\"options\", \"options\": (string[] or number[])})[]}",
         "name": "tree & query"
       }
     },

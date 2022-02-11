@@ -1,0 +1,140 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "140d4de0-65a6-403d-9e3f-661f9bad8032": {
+          "coordinates": [
+            144,
+            -13
+          ],
+          "name": "fill template",
+          "prototype": "7b8de482-ede2-44b6-83ee-f04e3ddb9513"
+        },
+        "17e43d61-f38c-436e-bbbd-041f16ba7563": {
+          "coordinates": [
+            -9,
+            45
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"template\",\"params\",\"token start\",\"token end\"]"
+          }
+        },
+        "df09be9e-33dd-43f5-8f43-022732a1582d": {
+          "coordinates": [
+            -157,
+            16
+          ],
+          "name": "forward",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        }
+      },
+      "connections": {
+        "17e43d61-f38c-436e-bbbd-041f16ba7563": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "140d4de0-65a6-403d-9e3f-661f9bad8032": {
+              "e327497c-6228-471d-ba94-955c145ccfdc": {}
+            }
+          }
+        },
+        "df09be9e-33dd-43f5-8f43-022732a1582d": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "17e43d61-f38c-436e-bbbd-041f16ba7563": {
+              "template": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "17e43d61-f38c-436e-bbbd-041f16ba7563": {
+              "params": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "17e43d61-f38c-436e-bbbd-041f16ba7563": {
+              "token start": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "17e43d61-f38c-436e-bbbd-041f16ba7563": {
+              "token end": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "07538bcd-7376-4aec-ad93-b4b368ae919c": {
+            "df09be9e-33dd-43f5-8f43-022732a1582d": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "06531082-3e2d-45ab-ba18-527917d0ef5e": {
+            "df09be9e-33dd-43f5-8f43-022732a1582d": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": {
+            "df09be9e-33dd-43f5-8f43-022732a1582d": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": {
+            "df09be9e-33dd-43f5-8f43-022732a1582d": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "949d328e-fa91-41e4-8929-d3cd7a8d4cfc": {
+            "140d4de0-65a6-403d-9e3f-661f9bad8032": {
+              "ae4b344c-7e24-434a-a9ad-d7f5cc260d09": {}
+            }
+          },
+          "b517f1ce-8441-406b-a71b-5741bd38d41f": {
+            "140d4de0-65a6-403d-9e3f-661f9bad8032": {
+              "45c8e624-b725-40b6-8155-2ed9d980f540": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "07538bcd-7376-4aec-ad93-b4b368ae919c": {
+        "type": "string",
+        "name": "template",
+        "description": "Receives the template string to replace parameters in.\n\nExample:\n\"Hello {#subject#}!\""
+      },
+      "06531082-3e2d-45ab-ba18-527917d0ef5e": {
+        "type": "{string: any}",
+        "name": "params",
+        "description": "Receives the parameters to replace in the template.\n\nExample: \n{\"subject\":\"world\"}"
+      },
+      "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": {
+        "type": "string",
+        "name": "token start",
+        "description": "Receives the string that marks the start of the parameter placeholder (token) within the template.\n\nExample:\n\"{#\""
+      },
+      "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": {
+        "type": "string",
+        "name": "token end",
+        "description": "Receives the string that marks the end of the parameter placholder (token) within the template.\n\nExample:\n\"#}\""
+      }
+    },
+    "outputs": {
+      "949d328e-fa91-41e4-8929-d3cd7a8d4cfc": {
+        "type": "typeof `filled` of `fill template`",
+        "name": "filled",
+        "description": "Sends the template string with replaced parameters.\n\nExample:\n\"Hello world!\""
+      },
+      "b517f1ce-8441-406b-a71b-5741bd38d41f": {
+        "type": "typeof `error` of `fill template`",
+        "name": "error",
+        "description": "Sends error in case any occurs during operation.\n\nExample: \n{\"error\": \"Some error message\"}"
+      }
+    }
+  },
+  "name": "string/Custom template filler",
+  "description": "Substitutes parameters into a template. Parameter placeholder's (token) start/end can be customized.\n\nExample:\n\n1. \"Hello {#subject#}!\"@0 is received via `template`\n2. {\"subject\":\"world\"}@0 is received via params\n3. \"{#\"@0 is received via `token start`\n4. \"#}\"@0 is received via `token end`\n5. \"Hello world!\"@0 is sent via `filled`"
+}

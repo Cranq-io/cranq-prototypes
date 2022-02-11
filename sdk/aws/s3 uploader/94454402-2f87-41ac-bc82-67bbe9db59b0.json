@@ -1,0 +1,130 @@
+{
+  "name": "sdk/AWS/S3 uploader",
+  "interface": {
+    "inputs": {
+      "eadb4b40-e792-49ea-a837-ad40fc29a641": {
+        "type": "string",
+        "name": "session id",
+        "description": "Receives the id of the S3 session.\n\nExample: \n\"s3-session-id\""
+      },
+      "8f3cee1e-4418-4398-a17c-668613745f7a": {
+        "type": "string",
+        "name": "bucket name",
+        "description": "Receives the name of the S3 bucket to upload to.\n\nExample: \n\"buckat-name\""
+      },
+      "be4a9a28-9499-4b60-beb0-1557977a6c95": {
+        "type": "any",
+        "name": "file name",
+        "description": "Receives the name of the file  to be uploaded.\n\nExample: \n\"test.tx\""
+      },
+      "45e65f67-6761-4877-9a40-0a32b4a0aaed": {
+        "type": "any",
+        "name": "file content",
+        "description": "Receives the content of the file  to be uploaded.\n\nExample: \n\"test content\""
+      }
+    },
+    "outputs": {
+      "9def3ecf-d9cd-4ea1-81fb-26622b2b0f5f": {
+        "type": "{\n  \"ETag\": string,\n  \"Location\": string,\n  \"key\": string,\n  \"Key\": string,\n  \"Bucket\": string\n} ",
+        "name": "done",
+        "description": "Sent the data about the successful upload.\n\nExample:\n{\n  \"ETag\": \"\\\"7c36f14325954cd6cf996f8ee1261d56\\\"\",\n  \"Location\": \"https://bucket-name.s3.amazonaws.com/test.txt\",\n  \"key\": \"test.txt\",\n  \"Key\": \"test.txt\",\n  \"Bucket\": \"bucket-name\"\n} "
+      },
+      "25c3af35-75e6-46b7-bd00-0555efdcc9b7": {
+        "type": "{\n\"error\": string\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82b8aa42-79a0-4a80-bbce-f6c7204b831b": {
+          "coordinates": [
+            224,
+            -18
+          ],
+          "name": "s3",
+          "prototype": "a21f935d-6e28-42b4-a23e-563e20b967d3"
+        },
+        "a100129d-c840-4b03-853a-382117ff3acb": {
+          "coordinates": [
+            61,
+            -153
+          ],
+          "name": "build action parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sessionid\",\"type\",\"options\"]",
+            "type": "\"upload\""
+          }
+        },
+        "861b4d1d-2783-49c9-9a02-034fe04e4317": {
+          "coordinates": [
+            -76,
+            65
+          ],
+          "name": "build upload options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"bucketName\",\"fileName\",\"fileContent\"]"
+          }
+        }
+      },
+      "connections": {
+        "a100129d-c840-4b03-853a-382117ff3acb": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "82b8aa42-79a0-4a80-bbce-f6c7204b831b": {
+              "28bb158a-e5ba-434e-817c-f48800f4bbae": {}
+            }
+          }
+        },
+        "861b4d1d-2783-49c9-9a02-034fe04e4317": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "a100129d-c840-4b03-853a-382117ff3acb": {
+              "options": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "eadb4b40-e792-49ea-a837-ad40fc29a641": {
+            "a100129d-c840-4b03-853a-382117ff3acb": {
+              "sessionid": {}
+            }
+          },
+          "8f3cee1e-4418-4398-a17c-668613745f7a": {
+            "861b4d1d-2783-49c9-9a02-034fe04e4317": {
+              "bucketName": {}
+            }
+          },
+          "be4a9a28-9499-4b60-beb0-1557977a6c95": {
+            "861b4d1d-2783-49c9-9a02-034fe04e4317": {
+              "fileName": {}
+            }
+          },
+          "45e65f67-6761-4877-9a40-0a32b4a0aaed": {
+            "861b4d1d-2783-49c9-9a02-034fe04e4317": {
+              "fileContent": {}
+            }
+          }
+        },
+        "outputs": {
+          "9def3ecf-d9cd-4ea1-81fb-26622b2b0f5f": {
+            "82b8aa42-79a0-4a80-bbce-f6c7204b831b": {
+              "bcd1ad43-d35b-46f3-aa81-d6fcb51c54c1": {}
+            }
+          },
+          "25c3af35-75e6-46b7-bd00-0555efdcc9b7": {
+            "82b8aa42-79a0-4a80-bbce-f6c7204b831b": {
+              "0f149349-b2c1-4393-9f12-7869f5c51f8f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

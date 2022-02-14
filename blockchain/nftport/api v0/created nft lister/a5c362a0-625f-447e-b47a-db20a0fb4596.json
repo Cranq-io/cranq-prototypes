@@ -30,8 +30,9 @@
         "name": "response"
       },
       "7b7dfd16-5a13-4612-b714-cb9fafa7f3de": {
-        "type": "any",
-        "name": "error"
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": ""
       }
     }
   },
@@ -40,8 +41,8 @@
       "nodes": {
         "bfe248f2-3711-4d4e-a210-6253af6d98be": {
           "coordinates": [
-            69.25,
-            303.5
+            -15.75,
+            325.5
           ],
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
@@ -52,7 +53,7 @@
         "ef5117e9-036e-43a9-bee4-d7c1140e11e1": {
           "coordinates": [
             -91.75,
-            224.5
+            194.5
           ],
           "name": "bulid URL params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -62,16 +63,16 @@
         },
         "74ab1e36-f4a2-405e-adc5-249a03354467": {
           "coordinates": [
-            -91.75,
-            60.5
+            -113.75,
+            -9.5
           ],
           "name": "build query str",
           "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
         },
         "9823572c-0e4d-404b-a6d0-ef28ba8b954d": {
           "coordinates": [
-            -299.75,
-            -0.5
+            -293.75,
+            99.5
           ],
           "name": "forwarder (triple)",
           "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
@@ -98,8 +99,8 @@
         },
         "fa9e16b5-4dd5-4184-bc62-05a1998197c9": {
           "coordinates": [
-            313.25,
-            -106.5
+            318.25,
+            -127.5
           ],
           "name": "extract NFT list",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -109,8 +110,8 @@
         },
         "c01318f5-996e-4518-9e45-f00325434652": {
           "coordinates": [
-            -80.75,
-            -195.5
+            -238.75,
+            -194.5
           ],
           "name": "add authorization",
           "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
@@ -121,11 +122,19 @@
         },
         "4b7789f0-d904-4885-b45d-04138435fd13": {
           "coordinates": [
-            248.25,
-            74.5
+            269.25,
+            58.5
           ],
           "name": "rebuild response",
           "prototype": "d0b45448-d851-4132-8abb-2a1c09347146"
+        },
+        "4d8350e4-f980-4f10-9274-ded38fd5de62": {
+          "coordinates": [
+            267.75,
+            190.75
+          ],
+          "name": "detect error",
+          "prototype": "aec01100-fd47-469c-8562-620283ae83c3"
         }
       },
       "connections": {
@@ -172,6 +181,9 @@
           "09b13a33-348d-458b-b43f-5013a45f4893": {
             "4b7789f0-d904-4885-b45d-04138435fd13": {
               "402286d6-3a51-4842-8c43-5bd757b60445": {}
+            },
+            "4d8350e4-f980-4f10-9274-ded38fd5de62": {
+              "8e3e9053-17d8-469a-9199-0d7f64a0dd9c": {}
             }
           },
           "d057c749-d7a8-4108-adcc-31eb1878349b": {
@@ -191,6 +203,9 @@
           "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {
             "fa9e16b5-4dd5-4184-bc62-05a1998197c9": {
               "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "4d8350e4-f980-4f10-9274-ded38fd5de62": {
+              "14a27eaa-ed01-4803-8591-00ed24f88814": {}
             }
           }
         },
@@ -229,6 +244,9 @@
           "7b7dfd16-5a13-4612-b714-cb9fafa7f3de": {
             "146cf46d-c872-45d4-a5bd-f84fd495004b": {
               "4991414b-16a6-4a01-a988-c841eac995c7": {}
+            },
+            "4d8350e4-f980-4f10-9274-ded38fd5de62": {
+              "3cefda04-7502-4aab-96c8-7b94b1aa13c6": {}
             }
           },
           "6426cdec-ca27-49fb-8c63-9f72c7620a3f": {

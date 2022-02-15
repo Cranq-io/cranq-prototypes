@@ -27,8 +27,8 @@
       "nodes": {
         "15bfb00f-1303-4290-ace3-3cc626528116": {
           "coordinates": [
-            -169.5,
-            -70.25
+            -68.5,
+            98.75
           ],
           "name": "extract resp & error",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -38,8 +38,8 @@
         },
         "2894bb62-c0c9-4f1d-bca4-f6562d1ba5c5": {
           "coordinates": [
-            11.5,
-            -158.25
+            82.5,
+            194.75
           ],
           "name": "response = NOK?",
           "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
@@ -49,8 +49,8 @@
         },
         "b9119389-7381-4489-a20b-1c154cf68304": {
           "coordinates": [
-            198.5,
-            -70.25
+            83.5,
+            -152.25
           ],
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -60,18 +60,18 @@
         },
         "a72931ac-40bd-41dc-ad7b-fa57441e2418": {
           "coordinates": [
-            45.5,
-            8.75
+            87.5,
+            27.75
           ],
           "name": "gate",
           "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
         },
         "b9fe372d-79a3-4d8e-bc7e-0fdd4bedb7c3": {
           "coordinates": [
-            -94.5,
-            159.75
+            -244.5,
+            85.75
           ],
-          "name": "status not 200?",
+          "name": "status 200?",
           "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a",
           "params": {
             "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": "200"
@@ -79,8 +79,8 @@
         },
         "890cd3e2-52e6-42ee-a391-d8b7e74b5091": {
           "coordinates": [
-            47.5,
-            110.75
+            -91.5,
+            -82.25
           ],
           "name": "fork",
           "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
@@ -125,15 +125,17 @@
             "b9119389-7381-4489-a20b-1c154cf68304": {
               "error": {}
             }
+          },
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "15bfb00f-1303-4290-ace3-3cc626528116": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
           }
         }
       },
       "forwards": {
         "inputs": {
           "14a27eaa-ed01-4803-8591-00ed24f88814": {
-            "15bfb00f-1303-4290-ace3-3cc626528116": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
-            },
             "890cd3e2-52e6-42ee-a391-d8b7e74b5091": {
               "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
             }

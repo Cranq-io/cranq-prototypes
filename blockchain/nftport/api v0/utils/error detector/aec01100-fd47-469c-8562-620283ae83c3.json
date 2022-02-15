@@ -1,0 +1,162 @@
+{
+  "name": "blockchain/nftport/api v0/utils/Error detector",
+  "description": "Detects errors in the JSON response of NFTPort API endpoints.\n\nExample A)\n1. {\"response\": \"OK\"}@1 received via `data`\n2. No output\n\nExample B)\n1. {\"response\": \"NOK\", \"error\": \"Invalid creator address.\"}@1 received via `data`\n2. {\"error\": \"Invalid creator address.\"}@1 sent via `error`",
+  "interface": {
+    "inputs": {
+      "14a27eaa-ed01-4803-8591-00ed24f88814": {
+        "type": "{\"response\": \"OK\" or \"NOK\", \"error\": string}",
+        "name": "data",
+        "description": "Receives parsed response body from an NFTPort API endpoint."
+      },
+      "8e3e9053-17d8-469a-9199-0d7f64a0dd9c": {
+        "type": "number",
+        "name": "status",
+        "description": "Receives HTTP status from NFTPort API response."
+      }
+    },
+    "outputs": {
+      "3cefda04-7502-4aab-96c8-7b94b1aa13c6": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "15bfb00f-1303-4290-ace3-3cc626528116": {
+          "coordinates": [
+            -68.5,
+            98.75
+          ],
+          "name": "extract resp & error",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"response\",\"error\"]"
+          }
+        },
+        "2894bb62-c0c9-4f1d-bca4-f6562d1ba5c5": {
+          "coordinates": [
+            82.5,
+            194.75
+          ],
+          "name": "response = NOK?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": "\"NOK\""
+          }
+        },
+        "b9119389-7381-4489-a20b-1c154cf68304": {
+          "coordinates": [
+            83.5,
+            -152.25
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"error\"]"
+          }
+        },
+        "a72931ac-40bd-41dc-ad7b-fa57441e2418": {
+          "coordinates": [
+            87.5,
+            27.75
+          ],
+          "name": "gate",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "b9fe372d-79a3-4d8e-bc7e-0fdd4bedb7c3": {
+          "coordinates": [
+            -244.5,
+            85.75
+          ],
+          "name": "status 200?",
+          "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a",
+          "params": {
+            "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": "200"
+          }
+        },
+        "890cd3e2-52e6-42ee-a391-d8b7e74b5091": {
+          "coordinates": [
+            -91.5,
+            -82.25
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "15bfb00f-1303-4290-ace3-3cc626528116": {
+          "response": {
+            "2894bb62-c0c9-4f1d-bca4-f6562d1ba5c5": {
+              "a0934373-43a4-4cd5-83eb-860bc20d790a": {}
+            }
+          },
+          "error": {
+            "a72931ac-40bd-41dc-ad7b-fa57441e2418": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          }
+        },
+        "2894bb62-c0c9-4f1d-bca4-f6562d1ba5c5": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "a72931ac-40bd-41dc-ad7b-fa57441e2418": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "a72931ac-40bd-41dc-ad7b-fa57441e2418": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "b9119389-7381-4489-a20b-1c154cf68304": {
+              "error": {}
+            }
+          }
+        },
+        "b9fe372d-79a3-4d8e-bc7e-0fdd4bedb7c3": {
+          "66ea4495-b5be-4650-9448-c802141b82cd": {
+            "890cd3e2-52e6-42ee-a391-d8b7e74b5091": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "890cd3e2-52e6-42ee-a391-d8b7e74b5091": {
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "b9119389-7381-4489-a20b-1c154cf68304": {
+              "error": {}
+            }
+          },
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "15bfb00f-1303-4290-ace3-3cc626528116": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "14a27eaa-ed01-4803-8591-00ed24f88814": {
+            "890cd3e2-52e6-42ee-a391-d8b7e74b5091": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          },
+          "8e3e9053-17d8-469a-9199-0d7f64a0dd9c": {
+            "b9fe372d-79a3-4d8e-bc7e-0fdd4bedb7c3": {
+              "50e32f24-30af-4721-9e0a-89e85a9ee240": {}
+            }
+          }
+        },
+        "outputs": {
+          "3cefda04-7502-4aab-96c8-7b94b1aa13c6": {
+            "b9119389-7381-4489-a20b-1c154cf68304": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "name": "blockchain/nftport/api v0/Created NFT lister",
+  "description": "Lists NFTs created by the specified address, using the NFTPort API.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account\n\nExample:",
+  "interface": {
+    "inputs": {
+      "50c7331e-cfbc-447e-b070-744c18cd47c3": {
+        "type": "string",
+        "name": "API key",
+        "description": "Receives the NFTPort API key."
+      },
+      "3ffe2c37-cf2d-4784-b4d9-d44eb8121144": {
+        "type": "string",
+        "name": "creator address",
+        "description": "Receives the address of the NFT creator."
+      },
+      "01d3a100-e09f-4234-b566-739028eee081": {
+        "type": "{\n  \"chain\": \"ethereum\",\n  \"continuation\": string,\n  \"include\": \"default\" or \"metadata\",\n  \"page_size\": number\n}",
+        "name": "params",
+        "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account#Query-Parameters"
+      }
+    },
+    "outputs": {
+      "a03488b1-e915-41be-b239-65b130d78fa7": {
+        "type": "`blockchain/nftport/api v0/CreatorNft`[]",
+        "name": "nfts",
+        "description": "Sends the list of NFTs associated with a given creator."
+      },
+      "6426cdec-ca27-49fb-8c63-9f72c7620a3f": {
+        "type": "any",
+        "name": "response"
+      },
+      "7b7dfd16-5a13-4612-b714-cb9fafa7f3de": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bfe248f2-3711-4d4e-a210-6253af6d98be": {
+          "coordinates": [
+            19.25,
+            -121.5
+          ],
+          "name": "build URL",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/accounts/creators/{ADDRESS}?{QUERY}\""
+          }
+        },
+        "ef5117e9-036e-43a9-bee4-d7c1140e11e1": {
+          "coordinates": [
+            -20.75,
+            -11.5
+          ],
+          "name": "bulid URL params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"ADDRESS\",\"QUERY\"]"
+          }
+        },
+        "74ab1e36-f4a2-405e-adc5-249a03354467": {
+          "coordinates": [
+            -202.75,
+            -114.5
+          ],
+          "name": "build query str",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "9823572c-0e4d-404b-a6d0-ef28ba8b954d": {
+          "coordinates": [
+            -212.75,
+            136.5
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "fa9e16b5-4dd5-4184-bc62-05a1998197c9": {
+          "coordinates": [
+            241.25,
+            -110.5
+          ],
+          "name": "extract NFT list",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"nfts\""
+          }
+        },
+        "5487ea27-5cf4-4b03-9c9b-afc468281671": {
+          "coordinates": [
+            104.15,
+            170.95
+          ],
+          "name": "dispatch request",
+          "prototype": "0fb9e1d1-2e47-4422-9d74-ee7dad457193"
+        }
+      },
+      "connections": {
+        "ef5117e9-036e-43a9-bee4-d7c1140e11e1": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "bfe248f2-3711-4d4e-a210-6253af6d98be": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "74ab1e36-f4a2-405e-adc5-249a03354467": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "ef5117e9-036e-43a9-bee4-d7c1140e11e1": {
+              "QUERY": {}
+            }
+          }
+        },
+        "9823572c-0e4d-404b-a6d0-ef28ba8b954d": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "74ab1e36-f4a2-405e-adc5-249a03354467": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "ef5117e9-036e-43a9-bee4-d7c1140e11e1": {
+              "ADDRESS": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "5487ea27-5cf4-4b03-9c9b-afc468281671": {
+              "26c01f39-b8f3-46bc-86ea-4cab8c415af0": {}
+            }
+          }
+        },
+        "bfe248f2-3711-4d4e-a210-6253af6d98be": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "5487ea27-5cf4-4b03-9c9b-afc468281671": {
+              "1b37a1bb-e1ab-4a70-b5b0-0754dcfc0369": {}
+            }
+          }
+        },
+        "5487ea27-5cf4-4b03-9c9b-afc468281671": {
+          "e0f74877-42e8-42c4-98e5-399afb9cbee9": {
+            "fa9e16b5-4dd5-4184-bc62-05a1998197c9": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "50c7331e-cfbc-447e-b070-744c18cd47c3": {
+            "9823572c-0e4d-404b-a6d0-ef28ba8b954d": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "3ffe2c37-cf2d-4784-b4d9-d44eb8121144": {
+            "9823572c-0e4d-404b-a6d0-ef28ba8b954d": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "01d3a100-e09f-4234-b566-739028eee081": {
+            "9823572c-0e4d-404b-a6d0-ef28ba8b954d": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "a03488b1-e915-41be-b239-65b130d78fa7": {
+            "fa9e16b5-4dd5-4184-bc62-05a1998197c9": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          },
+          "7b7dfd16-5a13-4612-b714-cb9fafa7f3de": {
+            "5487ea27-5cf4-4b03-9c9b-afc468281671": {
+              "790585ea-fa48-41fb-b91e-974303fa4223": {}
+            }
+          },
+          "6426cdec-ca27-49fb-8c63-9f72c7620a3f": {
+            "5487ea27-5cf4-4b03-9c9b-afc468281671": {
+              "e873834d-2b9c-4c5b-a671-2c7bfd823062": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "minter": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

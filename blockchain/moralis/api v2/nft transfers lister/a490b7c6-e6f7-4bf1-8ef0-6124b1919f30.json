@@ -1,11 +1,12 @@
 {
   "name": "blockchain/moralis/api v2/NFT transfers lister",
-  "description": "Retrieves a list of transfers matching the specified contract and token ID using the Moralis API. Also returns the original API response for additional information.\n\nRequires Moralis account.\n\nAPI key and endpoint documentation can be found at:\nhttps://admin.moralis.io/web3Api",
+  "description": "Retrieves a list of transfers matching the specified contract address and token ID using the Moralis API. Also returns the original API response for additional information.\n\nRequires Moralis account.\n\nAPI key and endpoint documentation:\nhttps://docs.moralis.io/introduction/readme",
   "interface": {
     "inputs": {
       "d5fdf6dd-34a8-47ca-98e1-ed9764f48962": {
         "type": "string",
-        "name": "API key"
+        "name": "API key",
+        "description": "Receives the Moralis API key."
       },
       "e017d6ad-93cc-42b1-be57-f5d83c395453": {
         "type": "string",

@@ -1,0 +1,24 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "e7e82586-8d6c-4be8-8dab-c883b0fc9375": "outputs[\"UNIX epoch\"](Math.floor(new Date(data)/1000), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e7e82586-8d6c-4be8-8dab-c883b0fc9375": {
+        "type": "any",
+        "name": "date"
+      }
+    },
+    "outputs": {
+      "34e5c257-1b5e-43e9-baf2-a8c2a7e1430e": {
+        "type": "any",
+        "name": "UNIX epoch"
+      }
+    }
+  },
+  "name": "date/Date to epoch converter"
+}

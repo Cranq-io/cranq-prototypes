@@ -1,0 +1,136 @@
+{
+  "description": "Builds a dictionary based on an array of keys and a single value for all items.\n\nExample:\n1. [ \"first\", \"third\", \"fifth\" ]@0 received via `keys`\n1. 1@0 received via `value`\n2. `dict` sends { \"first\": 1, \"third\": 1, \"fifth\": 1 }@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/2_constructing_data/2_2_builders",
+  "interface": {
+    "inputs": {
+      "4cb1e461-05c1-4454-940e-5b7657cb916e": {
+        "type": "string",
+        "name": "key",
+        "description": "Receives the keys to construct the dictionary from.\n\nExample:\n[\"first\",\"third\",\"fifth\"]"
+      },
+      "8b675c7e-77b3-4fc6-b065-adbedf46b485": {
+        "type": "any",
+        "name": "value",
+        "description": "Receives the value to assign to all items.\n\nExample:\n1"
+      }
+    },
+    "outputs": {
+      "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+        "type": "{string:typeof`value`}",
+        "name": "dict",
+        "description": "Sends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 1, \"fifth\": 1 }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "99c22970-28fc-4709-9089-05ecce7f463c": {
+          "coordinates": [
+            -293,
+            -23
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "name": "forward inputs"
+        },
+        "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+          "coordinates": [
+            -64,
+            -105
+          ],
+          "description": "",
+          "params": {
+            "ed11e46e-595d-4515-8681-ff35c7a555c6": "1"
+          },
+          "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
+          "name": "create values"
+        },
+        "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+          "coordinates": [
+            40,
+            70
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
+          "name": "build dict"
+        },
+        "e150c50f-f29f-47d8-8b77-0a6ae2056e1e": {
+          "coordinates": [
+            -63,
+            178
+          ],
+          "description": "",
+          "params": {
+            "ed11e46e-595d-4515-8681-ff35c7a555c6": "1"
+          },
+          "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
+          "name": "create keys"
+        }
+      },
+      "connections": {
+        "99c22970-28fc-4709-9089-05ecce7f463c": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+              "2813c5a2-d4d6-42ce-a52f-9def6df97814": {
+                "description": ""
+              }
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "e150c50f-f29f-47d8-8b77-0a6ae2056e1e": {
+              "2813c5a2-d4d6-42ce-a52f-9def6df97814": {}
+            }
+          }
+        },
+        "174f8391-66f8-41d4-b331-fae7b9fbf69e": {
+          "c0facb18-50d6-464f-8c91-d6255080b146": {
+            "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "e150c50f-f29f-47d8-8b77-0a6ae2056e1e": {
+          "c0facb18-50d6-464f-8c91-d6255080b146": {
+            "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4cb1e461-05c1-4454-940e-5b7657cb916e": {
+            "99c22970-28fc-4709-9089-05ecce7f463c": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "8b675c7e-77b3-4fc6-b065-adbedf46b485": {
+            "99c22970-28fc-4709-9089-05ecce7f463c": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+            "4f888c25-0c85-4cb0-8caf-cc7028abd29c": {
+              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Builder (key & value)",
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "build": null,
+    "new": null,
+    "create": null
+  },
+  "original": "e28bc4fb-7d10-459a-9037-c48de5aee16c"
+}

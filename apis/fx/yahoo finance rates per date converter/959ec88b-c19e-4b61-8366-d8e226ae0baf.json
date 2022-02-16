@@ -1,0 +1,109 @@
+{
+  "name": "apis/fx/Yahoo Finance rates per date converter",
+  "interface": {
+    "inputs": {
+      "627e5c59-c3c6-4a72-a775-3991e2c97900": {
+        "type": "typeof `array` of `create rates per date mapping`",
+        "name": "timestamps",
+        "description": "[Inherited from port `array` of `create rates per date mapping`] \nReceives array to be reduced.\n\nExample:\n[\"A\", \"B\", \"C\"]"
+      },
+      "a6f4f83e-714a-483d-b9df-9f472b55b373": {
+        "type": "typeof `array` of `iterate over adjusted close prices`",
+        "name": "prices",
+        "description": "[Inherited from port `array` of `iterate over adjusted close prices`] \nRecieves array to be iterated over.\n\nExample:\n[1,2,3]\n"
+      }
+    },
+    "outputs": {
+      "87721bc2-107e-4d04-b41e-df0fe726e253": {
+        "type": "typeof `reduced` of `create rates per date mapping`",
+        "name": "rates per date",
+        "description": "[Inherited from port `reduced` of `create rates per date mapping`] \nSends the reduced array.\n\nExample:\n\"ABC\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "83031110-45a4-4cb2-a1ad-ec2a9bc543f5": {
+          "coordinates": [
+            4.666666666666686,
+            16.333333333333314
+          ],
+          "name": "set pric to timestamp",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57"
+        },
+        "7033c0b5-b16d-4433-9cf0-daa993c54e41": {
+          "coordinates": [
+            125.66666666666669,
+            148.33333333333331
+          ],
+          "name": "iterate over adjusted close prices",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        },
+        "eb9fd45e-4f27-4084-9ecb-f1fb19b5de27": {
+          "coordinates": [
+            -129.33333333333331,
+            -254.66666666666669
+          ],
+          "name": "create rates per date mapping",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "{}"
+          }
+        }
+      },
+      "connections": {
+        "eb9fd45e-4f27-4084-9ecb-f1fb19b5de27": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "83031110-45a4-4cb2-a1ad-ec2a9bc543f5": {
+              "922a1964-91d4-4ad3-a9e4-7d245662a978": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "83031110-45a4-4cb2-a1ad-ec2a9bc543f5": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "83031110-45a4-4cb2-a1ad-ec2a9bc543f5": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "eb9fd45e-4f27-4084-9ecb-f1fb19b5de27": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "7033c0b5-b16d-4433-9cf0-daa993c54e41": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "83031110-45a4-4cb2-a1ad-ec2a9bc543f5": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "627e5c59-c3c6-4a72-a775-3991e2c97900": {
+            "eb9fd45e-4f27-4084-9ecb-f1fb19b5de27": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          },
+          "a6f4f83e-714a-483d-b9df-9f472b55b373": {
+            "7033c0b5-b16d-4433-9cf0-daa993c54e41": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            }
+          }
+        },
+        "outputs": {
+          "87721bc2-107e-4d04-b41e-df0fe726e253": {
+            "eb9fd45e-4f27-4084-9ecb-f1fb19b5de27": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

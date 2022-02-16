@@ -1,0 +1,24 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "0cd343ac-e8c6-43c4-8ef3-932edf844c2e": "let d = new Date(data);\nd.setUTCHours(0,0,0,0);\noutputs.midnight(d, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "0cd343ac-e8c6-43c4-8ef3-932edf844c2e": {
+        "type": "any",
+        "name": "date"
+      }
+    },
+    "outputs": {
+      "f5075269-62aa-4583-9f2e-caf8e7185f5e": {
+        "type": "any",
+        "name": "midnight"
+      }
+    }
+  },
+  "name": "date/Midnight getter"
+}

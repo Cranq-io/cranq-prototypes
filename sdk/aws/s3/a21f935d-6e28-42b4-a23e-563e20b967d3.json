@@ -1,0 +1,45 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "aws-sdk": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "28bb158a-e5ba-434e-817c-f48800f4bbae": "try {\n  const AWS = require('aws-sdk');\n  const {sessionid, type, options = {}} = data;\n  let s3 = shared[sessionid];\n  \n  if (type === \"auth\") {\n    const {accessKeyId, secretAccessKey} = options;\n    s3 = shared[sessionid] = new AWS.S3({\n      accessKeyId,\n      secretAccessKey\n    });\n    outputs.done(null, tag);\n  }\n  \n  switch (type) {\n    case \"upload\": {\n      const {bucketName, fileName, fileContent} = options;\n      const params = {\n        Bucket: bucketName,\n        Key: fileName, // File name you want to save as in S3\n        Body: fileContent\n      }\n      \n      s3.upload(params, function(err, uploadData) {\n        if (err) {\n          outputs.error({error: String(err)}, tag);\n        } else {\n          outputs.done(uploadData, tag)\n        }\n      });\n    }\n  }\n\n  \n} catch (err) {\n  outputs.error({error: String(err)}, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "28bb158a-e5ba-434e-817c-f48800f4bbae": {
+        "type": "{\n\"sessionid\": number,\n\"type\": \"auth\",\n\"options\": {string: any}\n}",
+        "name": "action",
+        "description": "Receives the parameters of the action to execute.\n\nExample: \n{\n  \"id\": \"aws-s3\",\n  \"type\": \"auth\",\n\"options\": {\n    \"accessKeyId\": \"ACCESS_KEY_ID\",\n    \"secretAccessKey\": \"SECRET_ACCES:KEY\"\n  }\n}"
+      }
+    },
+    "outputs": {
+      "bcd1ad43-d35b-46f3-aa81-d6fcb51c54c1": {
+        "type": "any",
+        "name": "done"
+      },
+      "0f149349-b2c1-4393-9f12-7869f5c51f8f": {
+        "type": "{\n\"error\": string\n}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdk/AWS/S3",
+  "description": "Core interface to aws-s3. Use higher level nodes to interact with aws-s3.",
+  "keywords": {
+    "aws": null,
+    "bucket": null,
+    "s3": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "blockchain/nftport/api v0/Created NFT lister",
-  "description": "Lists NFTs created by the specified address, using the NFTPort API.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account\n\nExample:",
+  "description": "Retrieves a list of NFTs created by the specified address, using the NFTPort API.\n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account",
   "interface": {
     "inputs": {
       "50c7331e-cfbc-447e-b070-744c18cd47c3": {
@@ -41,8 +41,8 @@
       "nodes": {
         "bfe248f2-3711-4d4e-a210-6253af6d98be": {
           "coordinates": [
-            19.25,
-            -121.5
+            21.25,
+            -129.5
           ],
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
@@ -52,8 +52,8 @@
         },
         "ef5117e9-036e-43a9-bee4-d7c1140e11e1": {
           "coordinates": [
-            -20.75,
-            -11.5
+            -14.75,
+            -15.5
           ],
           "name": "bulid URL params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -90,8 +90,8 @@
         },
         "5487ea27-5cf4-4b03-9c9b-afc468281671": {
           "coordinates": [
-            104.15,
-            170.95
+            120.15,
+            203.95
           ],
           "name": "dispatch request",
           "prototype": "0fb9e1d1-2e47-4422-9d74-ee7dad457193"

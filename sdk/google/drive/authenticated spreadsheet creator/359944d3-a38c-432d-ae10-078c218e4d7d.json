@@ -1,0 +1,193 @@
+{
+  "name": "sdk/google/drive/Authenticated spreadsheet creator",
+  "interface": {
+    "inputs": {
+      "6a23f27e-846c-424c-b0ee-bd00e02774f6": {
+        "type": "string",
+        "name": "session Id",
+        "description": "Receives the session id of the drive action.\n\nExample: \n\"drive_session\""
+      },
+      "a9c8e0b2-b81a-400a-be8e-d0d73981f2cd": {
+        "type": "{\n  \"email\": string,\n  \"key\": string\n}",
+        "name": "auth data",
+        "description": "Receives the authentication data of service account.\n\nExample: \n{\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}\n"
+      },
+      "74e5d4eb-b876-4809-88f6-36bed9ef4484": {
+        "type": "{\n   \"file meta data\": {string:any},\n   \"supports all drives\": boolean\n}",
+        "name": "create spreadsheet data",
+        "description": "Receives the data of the spreadsheet.\n\n\nExample:\n{\n  \"file meta data\": {\n    \"name\": \"Test!\",\n    \"driveId\": \"0AFITUOLHhs3T_ID\",\n    \"corpora\": \"drive\",\n    \"parents\": [\n      \"1_ghBRrDju9oMNSy8DqqNtOEfDRIVE_Id\"\n    ]\n  },\n  \"supports all drives\": true\n}\n"
+      }
+    },
+    "outputs": {
+      "589cc437-acc9-43e5-80ed-eedac7fd3a99": {
+        "type": "{\"fileid\": string}",
+        "name": "done",
+        "description": "[Inherited from port `done` of `auth drive`] \nSends null if the action was successful.\n\nExample:\nnull"
+      },
+      "b65cd79c-7846-4609-a9b8-5b63fa027e88": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "[Inherited from port `error` of `auth drive`] \nSends the error which happened during the execution of the action.\n\nExample:.\n{error: \"Something went wrong!\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "185b4f54-1a15-4633-9adc-85441f7943d9": {
+          "coordinates": [
+            180.5,
+            -246.5
+          ],
+          "name": "auth drive",
+          "prototype": "b40028bc-c9de-41ea-a183-bfa0c413ebec",
+          "params": {}
+        },
+        "ff7ff022-1dc6-44b7-92fb-af7edc24b28d": {
+          "coordinates": [
+            283.5,
+            68.5
+          ],
+          "name": "create spreadsheet",
+          "prototype": "b6f0d72a-adfc-414c-9700-8a1dfa52a603",
+          "params": {}
+        },
+        "1d1485d1-bfca-407b-aa59-cc7bacb6ecec": {
+          "coordinates": [
+            -149.5,
+            -157.5
+          ],
+          "name": "split auth data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"email\",\"key\"]"
+          }
+        },
+        "94f16a04-0e14-4986-8025-e1fcd4e5c556": {
+          "coordinates": [
+            -14.5,
+            123.5
+          ],
+          "name": "split create spreadsheet data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"file meta data\",\"supports all drives\"]"
+          }
+        },
+        "f3f14e91-b8d7-4f56-8463-73b07762be57": {
+          "coordinates": [
+            -168.5,
+            221.5
+          ],
+          "name": "trigger create spreadsheet",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        },
+        "06fda5d9-059b-4cc8-9e4f-7efa88f3dd14": {
+          "coordinates": [
+            -352.5,
+            -14.5
+          ],
+          "name": "forward inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        }
+      },
+      "connections": {
+        "1d1485d1-bfca-407b-aa59-cc7bacb6ecec": {
+          "email": {
+            "185b4f54-1a15-4633-9adc-85441f7943d9": {
+              "f3258623-3f5d-4236-a1b3-2a62e7db0348": {}
+            }
+          },
+          "key": {
+            "185b4f54-1a15-4633-9adc-85441f7943d9": {
+              "b46836f3-69b5-4669-8590-b6254afc8e87": {}
+            }
+          }
+        },
+        "185b4f54-1a15-4633-9adc-85441f7943d9": {
+          "3595c1c8-dc7d-4a5a-b526-d33543f2a816": {
+            "f3f14e91-b8d7-4f56-8463-73b07762be57": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "f3f14e91-b8d7-4f56-8463-73b07762be57": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "94f16a04-0e14-4986-8025-e1fcd4e5c556": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "94f16a04-0e14-4986-8025-e1fcd4e5c556": {
+          "file meta data": {
+            "ff7ff022-1dc6-44b7-92fb-af7edc24b28d": {
+              "75f0a459-5fd3-4e11-9a8e-ed53837bf815": {}
+            }
+          },
+          "supports all drives": {
+            "ff7ff022-1dc6-44b7-92fb-af7edc24b28d": {
+              "1e44bf09-0522-4a43-b524-3c6fab130d55": {}
+            }
+          }
+        },
+        "06fda5d9-059b-4cc8-9e4f-7efa88f3dd14": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "f3f14e91-b8d7-4f56-8463-73b07762be57": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "185b4f54-1a15-4633-9adc-85441f7943d9": {
+              "5afcefbb-4dab-46b1-9823-deb800e402b5": {}
+            },
+            "ff7ff022-1dc6-44b7-92fb-af7edc24b28d": {
+              "24d1302f-1e73-4840-b148-64249d7df2ec": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "1d1485d1-bfca-407b-aa59-cc7bacb6ecec": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "74e5d4eb-b876-4809-88f6-36bed9ef4484": {
+            "06fda5d9-059b-4cc8-9e4f-7efa88f3dd14": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          },
+          "6a23f27e-846c-424c-b0ee-bd00e02774f6": {
+            "06fda5d9-059b-4cc8-9e4f-7efa88f3dd14": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "a9c8e0b2-b81a-400a-be8e-d0d73981f2cd": {
+            "06fda5d9-059b-4cc8-9e4f-7efa88f3dd14": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        },
+        "outputs": {
+          "b65cd79c-7846-4609-a9b8-5b63fa027e88": {
+            "185b4f54-1a15-4633-9adc-85441f7943d9": {
+              "fa033a9c-7e4a-4082-9421-64e8a163ff7f": {}
+            },
+            "ff7ff022-1dc6-44b7-92fb-af7edc24b28d": {
+              "aea1df37-cfaf-4e6f-84e8-feb357ee766c": {}
+            }
+          },
+          "589cc437-acc9-43e5-80ed-eedac7fd3a99": {
+            "ff7ff022-1dc6-44b7-92fb-af7edc24b28d": {
+              "2a92df1e-487e-4a8f-ae6b-d67b78865f3f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

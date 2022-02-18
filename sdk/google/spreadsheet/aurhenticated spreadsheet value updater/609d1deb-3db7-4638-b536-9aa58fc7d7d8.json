@@ -1,0 +1,207 @@
+{
+  "name": "sdk/google/spreadsheet/Aurhenticated spreadsheet value updater",
+  "interface": {
+    "inputs": {
+      "23ea0957-d27a-456e-86a7-3e6391c12c6a": {
+        "type": "typeof `session Id` of `auth spreadsheet`",
+        "name": "session Id",
+        "description": "[Inherited from port `session Id` of `auth spreadsheet`] \nReceives the session id of the spreadsheet action.\n\nExample: \n\"drive_session\""
+      },
+      "fca2bdd7-409e-4c62-9a88-c9ee2852eb96": {
+        "type": "{\n  \"email\": string,\n  \"key\": string\n}",
+        "name": "auth data",
+        "description": "Receives the authentication data of service account.\n\nExample: \n{\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}\n"
+      },
+      "1fba859c-1314-485f-97a6-55706b6c3069": {
+        "type": "string",
+        "name": "spreadsheet Id",
+        "description": "Receives the id of the spreadsheet to be updated.\n\nExample:\n\"1_ewweewweFileID\""
+      },
+      "4d02f829-1ee7-4d6b-9ee1-78bae9c4895f": {
+        "type": "{\n  \"update meta data\": {   string: any},\n  \"values\": any[][]\n}",
+        "name": "update data",
+        "description": "{\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\n      \"Csaba\",\n      \"Teszt3\"\n    ],\n    [\n      \"Teszt 2\",\n      \"VAAAAA\"\n    ]\n  ]\n}"
+      }
+    },
+    "outputs": {
+      "d762c670-8bda-4cb7-b30e-a879ea42795c": {
+        "type": "typeof `done` of `update spreadsheet values`",
+        "name": "done",
+        "description": "[Inherited from port `done` of `update spreadsheet values`] \nSends null if the action was successful.\n\nExample:\nnull"
+      },
+      "6105a470-b7d7-4238-b6aa-bb2a8741401d": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d2c3267f-b3f7-49c9-b7e1-fbe0fc9e5dea": {
+          "coordinates": [
+            112,
+            -210.5
+          ],
+          "name": "auth spreadsheet",
+          "prototype": "f71cbfd4-054e-484f-a2b4-4ca8d15f4f58",
+          "params": {}
+        },
+        "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+          "coordinates": [
+            167,
+            68.5
+          ],
+          "name": "update spreadsheet values",
+          "prototype": "e54614aa-5347-49c3-9afc-e8202629f876",
+          "params": {}
+        },
+        "db872cf3-88c7-41d6-a502-e0d889331b36": {
+          "coordinates": [
+            -279,
+            -24.5
+          ],
+          "name": "forwarder (quadruple)",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "beade26b-abbd-46c1-b425-9fec24bce151": {
+          "coordinates": [
+            -12,
+            -119.5
+          ],
+          "name": "split auth data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"email\",\"key\"]"
+          }
+        },
+        "12621964-0a5c-4c90-bc2c-8b56bb2e3776": {
+          "coordinates": [
+            -154,
+            208.5
+          ],
+          "name": "trigger spreadsheet update",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        },
+        "fdb6aabc-3f8f-4704-95a4-b31a92627678": {
+          "coordinates": [
+            -35,
+            120.5
+          ],
+          "name": "split update data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"update meta data\",\"values\"]"
+          }
+        }
+      },
+      "connections": {
+        "db872cf3-88c7-41d6-a502-e0d889331b36": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "d2c3267f-b3f7-49c9-b7e1-fbe0fc9e5dea": {
+              "5afcefbb-4dab-46b1-9823-deb800e402b5": {}
+            },
+            "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+              "7e11556a-e70a-4d62-9434-d9ba9f241260": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+              "ffa9bd40-11d8-4a3b-a3f6-4094f05765a0": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "beade26b-abbd-46c1-b425-9fec24bce151": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "12621964-0a5c-4c90-bc2c-8b56bb2e3776": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "beade26b-abbd-46c1-b425-9fec24bce151": {
+          "email": {
+            "d2c3267f-b3f7-49c9-b7e1-fbe0fc9e5dea": {
+              "f3258623-3f5d-4236-a1b3-2a62e7db0348": {}
+            }
+          },
+          "key": {
+            "d2c3267f-b3f7-49c9-b7e1-fbe0fc9e5dea": {
+              "b46836f3-69b5-4669-8590-b6254afc8e87": {}
+            }
+          }
+        },
+        "d2c3267f-b3f7-49c9-b7e1-fbe0fc9e5dea": {
+          "3595c1c8-dc7d-4a5a-b526-d33543f2a816": {
+            "12621964-0a5c-4c90-bc2c-8b56bb2e3776": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "12621964-0a5c-4c90-bc2c-8b56bb2e3776": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "fdb6aabc-3f8f-4704-95a4-b31a92627678": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "fdb6aabc-3f8f-4704-95a4-b31a92627678": {
+          "update meta data": {
+            "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+              "1e5a9466-5429-4551-ab34-b5bf1ddd0bb4": {}
+            }
+          },
+          "values": {
+            "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+              "d94087bb-9a5a-4a29-9887-f296b7928bc1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "23ea0957-d27a-456e-86a7-3e6391c12c6a": {
+            "db872cf3-88c7-41d6-a502-e0d889331b36": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "fca2bdd7-409e-4c62-9a88-c9ee2852eb96": {
+            "db872cf3-88c7-41d6-a502-e0d889331b36": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "1fba859c-1314-485f-97a6-55706b6c3069": {
+            "db872cf3-88c7-41d6-a502-e0d889331b36": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "4d02f829-1ee7-4d6b-9ee1-78bae9c4895f": {
+            "db872cf3-88c7-41d6-a502-e0d889331b36": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "d762c670-8bda-4cb7-b30e-a879ea42795c": {
+            "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+              "f240f2a6-392f-4870-b989-419339e83e12": {}
+            }
+          },
+          "6105a470-b7d7-4238-b6aa-bb2a8741401d": {
+            "0e46280d-e2d6-4962-baaf-f559f5e0ba44": {
+              "509ce9b8-1755-48e2-8a48-00aa5ad9c093": {}
+            },
+            "d2c3267f-b3f7-49c9-b7e1-fbe0fc9e5dea": {
+              "fa033a9c-7e4a-4082-9421-64e8a163ff7f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

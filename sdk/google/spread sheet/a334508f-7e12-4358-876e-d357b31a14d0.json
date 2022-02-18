@@ -1,0 +1,53 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "googleapis": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": "try {\n  const {google} = require('googleapis');\n  const {sessionid, type, options = {}} = data;\n  let jwtClient = shared[sessionid];\n  \n  if (type === \"service_account_auth\") {\n    const {email, keyFile = null, key} = options;\n    jwtClient = shared[sessionid] = new google.auth.JWT(\n         email,\n         keyFile,\n         key,\n         ['https://www.googleapis.com/auth/spreadsheets']);\n         \n    outputs.done(null, tag);\n  }\n\n  const sheets = google.sheets({version: 'v4', auth: jwtClient});\n  \n  switch (type) {\n    case \"update\":\n      const {spreadsheetId, updatemeta, values} = options;\n      const {range, valueInputOption = \"RAW\"} = updatemeta;\n      \n      sheets.spreadsheets.values.update({\n        spreadsheetId: spreadsheetId,\n        range: range,\n        valueInputOption: valueInputOption,\n        resource: {\n          values: values\n        },\n      },function (err, response) {\n        if (err){\n          outputs.error({error: String(err)}, tag);\n        } else {\n          outputs.done(null, tag);\n        }\n      })\n    break;\n  }\n  \n\n}\ncatch (err) {\n  outputs.error({error: String(err)}, tag);\n}"
+      }
+    },
+    "es6": {
+      "inputFunctions": {
+        "7a65d5ba-4c63-4c70-9b4d-41f396a87f9e": "console.log"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": {
+        "type": "{\n\"sessionid\" : string, \n\"type\": \"service_account_auth\" or \"update\", \n\"options\": {string: any}\n}",
+        "name": "action",
+        "description": "Receives the parameters of the google spreadsheet base prototype.\n\nExample: \n{\n  \"sessionid\" : \"drive_session\",\n  \"type\": \"service_account_auth\",\n  \"options\": {\n     \"email\" : \"email@email.com\",\n    \"keyFile\":  null,\n     \"key\": \"TopSecretKey!\" \n  }\n}"
+      }
+    },
+    "outputs": {
+      "143c4b56-07e8-4ede-86b5-d6641f31b927": {
+        "type": "any",
+        "name": "done",
+        "description": "Sends the result fo the action.\n\nExample:\nnull"
+      },
+      "73d008c4-b3e1-47f6-80d0-ebb4e53dd94c": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends the error which happened during the execution of the action.\n\nExample:.\n{error: \"Something went wrong!\"}"
+      }
+    }
+  },
+  "name": "sdk/google/Spread sheet",
+  "original": "1a081f83-66ee-4512-83f5-2142ca4061ae",
+  "description": "Works with google spreadsheet using the googleapis sdk.",
+  "keywords": {
+    "google": null,
+    "api": null,
+    "spreadsheet": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "googleapis": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": "try {\n  const {google} = require('googleapis');\n  const {sessionid, type, options = {}} = data;\n  let jwtClient = shared[sessionid];\n  \n  if (type === \"service_account_auth\") {\n    const {email, keyFile = null, key} = options;\n    jwtClient = shared[sessionid] = new google.auth.JWT(\n         email,\n         keyFile,\n         key,\n         ['https://www.googleapis.com/auth/drive']);\n         \n    outputs.done(null, tag);\n  }\n\n  const drive = google.drive({version: 'v3', auth: jwtClient});\n  \n  switch (type) {\n    case \"create_file\":\n      const {fileMetaData, supportsAllDrives = false} = options;\n      drive.files.create({\n        resource: fileMetaData,\n        supportsAllDrives,\n        fields: ['id','name']\n      },(err, res) => {\n        if (err) {\n          outputs.error({error: String(err)}, tag);\n        } else {\n          const file = res.data;\n          if (file.id) {\n            outputs.done({fileid: file.id}, tag);\n          } else {\n            outputs.error({error: \"File was not created\"}, tag);\n          }\n        }\n      })\n    break;\n  }\n  \n\n}\ncatch (err) {\n  outputs.error({error: String(err)}, tag);\n}"
+      }
+    },
+    "es6": {
+      "inputFunctions": {
+        "7a65d5ba-4c63-4c70-9b4d-41f396a87f9e": "console.log"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": {
+        "type": "{\n\"sessionid\" : string, \n\"type\": \"service_account_auth\" or \"create_file\", \n\"options\": {string: any}\n}",
+        "name": "action",
+        "description": "Receives the parameters of the google drive base prototype.\n\nExample: \n{\n  \"sessionid\" : \"drive_session\",\n  \"type\": \"service_account_auth\",\n  \"options\": {\n     \"email\" : \"email@email.com\",\n    \"keyFile\":  null,\n     \"key\": \"TopSecretKey!\" \n  }\n}"
+      }
+    },
+    "outputs": {
+      "143c4b56-07e8-4ede-86b5-d6641f31b927": {
+        "type": "any",
+        "name": "done",
+        "description": "Sends the result fo the action.\n\nExample:\nnull"
+      },
+      "73d008c4-b3e1-47f6-80d0-ebb4e53dd94c": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends the error which happened during the execution of the action.\n\nExample:.\n{error: \"Something went wrong!\"}"
+      }
+    }
+  },
+  "name": "sdk/google/Drive",
+  "description": "Works with google drive using the googleapis sdk.",
+  "keywords": {
+    "google": null,
+    "api": null,
+    "drive": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,28 +1,33 @@
 {
-  "description": "Stores data and sends it on input to (send).",
+  "description": "Stores data and sends it via `data` when read. When the store is empty, any attempt to read the contents will result in a signal sent out via `not found`.\n\nExample:\n1. `data` set to \"hello\"\n2. null@1 received via `read`\n3. \"hello\"@1 sent via `data` (output)",
   "interface": {
     "inputs": {
       "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
         "type": "any",
-        "name": "data"
+        "name": "data",
+        "description": "Receives contents of the store. San be set as parameter, or received as signal."
       },
       "0b28df10-b056-4666-ae14-2357d747f7b9": {
         "type": "any",
-        "name": "read"
+        "name": "read",
+        "description": "Receives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
       }
     },
     "outputs": {
       "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-        "type": "any",
-        "name": "data"
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Sends store contents."
       },
       "92b91df5-41d7-4e23-aeec-3f459099e659": {
         "type": "null",
-        "name": "written"
+        "name": "written",
+        "description": "Sends signal when contents were set in flow."
       },
       "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
-        "type": "any",
-        "name": "not found"
+        "type": "null",
+        "name": "not found",
+        "description": "Sends signal on read attempt while store has no content."
       }
     }
   },
@@ -47,6 +52,12 @@
     }
   },
   "name": "data/Store",
+  "keywords": {
+    "variable": null,
+    "container": null,
+    "buffer": null,
+    "data": null
+  },
   "attributes": {
     "locked": true
   }

@@ -1,0 +1,30 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "28d6b2e7-af3e-4230-8108-a48a664c8615": "const {buffer} = state;\nconst {length} = buffer;\nif (data && length > 0) {\n  for (let i=0; i<length; i++) {\n    const [data, tag] = buffer[i];\n    outputs.data(data, tag);\n  }\n  state.buffer = [];\n}\nstate.open = data;",
+        "b3ad92db-895d-4b9f-a0cc-3ef42c3d5655": "if (state.open) {\n  outputs.data(data, tag);\n} else {\n  state.buffer.push([data, tag]);\n}"
+      },
+      "initFunction": "state.open = false;\nstate.buffer = [];"
+    }
+  },
+  "interface": {
+    "inputs": {
+      "b3ad92db-895d-4b9f-a0cc-3ef42c3d5655": {
+        "type": "any",
+        "name": "data"
+      },
+      "28d6b2e7-af3e-4230-8108-a48a664c8615": {
+        "type": "any",
+        "name": "open"
+      }
+    },
+    "outputs": {
+      "43093efa-08a3-4e20-a262-095bcfa94fa9": {
+        "type": "any",
+        "name": "data"
+      }
+    }
+  },
+  "name": "flow/Buffering gate (async)"
+}

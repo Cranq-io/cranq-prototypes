@@ -1,0 +1,127 @@
+{
+  "name": "io/http/utils/Response header setter",
+  "interface": {
+    "inputs": {
+      "c740d06e-a415-4c59-97b7-02ba0aa95ad5": {
+        "type": "typeof `unsplit` of `split response`",
+        "name": "response",
+        "description": "[Inherited from port `unsplit` of `split response`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
+      },
+      "2d28841b-bd3c-4705-ba85-9cda6704175e": {
+        "type": "string",
+        "name": "headers"
+      }
+    },
+    "outputs": {
+      "7a706f8f-abba-4719-be33-291aa16104e6": {
+        "type": "typeof `synced` of `syncer B`",
+        "name": "response",
+        "description": "[Inherited from port `synced` of `syncer B`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9cac0095-0ebb-4cd4-af5d-273067c66195": {
+          "coordinates": [
+            91.33333333333334,
+            203.33333333333334
+          ],
+          "name": "split response",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"status\",\"headers\",\"body\"]"
+          }
+        },
+        "a6a3fdde-8344-4b2c-80a2-ef95ba845bfb": {
+          "coordinates": [
+            -77.66666666666666,
+            -156.66666666666666
+          ],
+          "name": "add headers",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {}
+        },
+        "e2524899-bb38-4d2b-aca2-33c5038d6f64": {
+          "coordinates": [
+            128.33333333333334,
+            -68.66666666666666
+          ],
+          "name": "rebuild response",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"status\",\"headers\",\"body\"]"
+          }
+        },
+        "05cdf8ba-7016-407b-9a42-44313500541c": {
+          "coordinates": [
+            -177.66666666666663,
+            107.33333333333337
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "9cac0095-0ebb-4cd4-af5d-273067c66195": {
+          "status": {
+            "e2524899-bb38-4d2b-aca2-33c5038d6f64": {
+              "status": {}
+            }
+          },
+          "body": {
+            "e2524899-bb38-4d2b-aca2-33c5038d6f64": {
+              "body": {}
+            }
+          },
+          "headers": {
+            "a6a3fdde-8344-4b2c-80a2-ef95ba845bfb": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "a6a3fdde-8344-4b2c-80a2-ef95ba845bfb": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "e2524899-bb38-4d2b-aca2-33c5038d6f64": {
+              "headers": {}
+            }
+          }
+        },
+        "05cdf8ba-7016-407b-9a42-44313500541c": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "9cac0095-0ebb-4cd4-af5d-273067c66195": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "a6a3fdde-8344-4b2c-80a2-ef95ba845bfb": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c740d06e-a415-4c59-97b7-02ba0aa95ad5": {
+            "05cdf8ba-7016-407b-9a42-44313500541c": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "2d28841b-bd3c-4705-ba85-9cda6704175e": {
+            "05cdf8ba-7016-407b-9a42-44313500541c": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "7a706f8f-abba-4719-be33-291aa16104e6": {
+            "e2524899-bb38-4d2b-aca2-33c5038d6f64": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

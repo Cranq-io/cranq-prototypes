@@ -1,0 +1,98 @@
+{
+  "name": "data/csv/Naive parser",
+  "description": "Parses CSV naively. (Only commas, all values will be strings, quotes not recognized.)\n\nExample:\n1. \"foo,1\\nbar,2\"@1 received via `csv`\n2. [[\"foo\", \"1\"], [\"bar\", \"2\"]]@1 sent via `2D array`",
+  "interface": {
+    "inputs": {
+      "5d94ad3f-f0d3-4cd4-9454-88ff700de266": {
+        "type": "string",
+        "name": "csv",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "5636ccb5-c08b-490a-8302-b6f57c71e845": {
+        "type": "string[][]",
+        "name": "2D array",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "80194bf6-5940-4dd0-9a40-1dba83190318": {
+          "coordinates": [
+            -107,
+            -15
+          ],
+          "name": "split CSV",
+          "prototype": "e1418571-da49-467a-aefe-0a97394344e9",
+          "params": {
+            "761c44f9-80b3-410c-820f-b004e8787521": "\"\\n\""
+          }
+        },
+        "f1b2d423-55e7-4fe4-85cb-53a785f789ac": {
+          "coordinates": [
+            55,
+            -63
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "a5fb37ec-a49d-40d6-86f2-2b01c25e0f24": {
+          "coordinates": [
+            52,
+            78
+          ],
+          "name": "split line",
+          "prototype": "e1418571-da49-467a-aefe-0a97394344e9",
+          "params": {
+            "761c44f9-80b3-410c-820f-b004e8787521": "\",\""
+          }
+        }
+      },
+      "connections": {
+        "80194bf6-5940-4dd0-9a40-1dba83190318": {
+          "9b8b171b-8873-471d-a7a0-588f5f2340fc": {
+            "f1b2d423-55e7-4fe4-85cb-53a785f789ac": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "f1b2d423-55e7-4fe4-85cb-53a785f789ac": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "a5fb37ec-a49d-40d6-86f2-2b01c25e0f24": {
+              "fe310222-173b-4335-93f7-b17e41eba89e": {}
+            }
+          }
+        },
+        "a5fb37ec-a49d-40d6-86f2-2b01c25e0f24": {
+          "9b8b171b-8873-471d-a7a0-588f5f2340fc": {
+            "f1b2d423-55e7-4fe4-85cb-53a785f789ac": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5d94ad3f-f0d3-4cd4-9454-88ff700de266": {
+            "80194bf6-5940-4dd0-9a40-1dba83190318": {
+              "fe310222-173b-4335-93f7-b17e41eba89e": {}
+            }
+          }
+        },
+        "outputs": {
+          "5636ccb5-c08b-490a-8302-b6f57c71e845": {
+            "f1b2d423-55e7-4fe4-85cb-53a785f789ac": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

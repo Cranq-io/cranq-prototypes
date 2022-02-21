@@ -1,0 +1,193 @@
+{
+  "name": "blockchain/nftport/api v0/NFT details getter",
+  "interface": {
+    "inputs": {
+      "5bf715f6-0b7e-4df3-abb8-f12a8a3a26c5": {
+        "type": "string",
+        "name": "API key"
+      },
+      "85e07ac0-306a-4825-86ca-e27627cab83e": {
+        "type": "string",
+        "name": "contract address"
+      },
+      "2ad27b7c-5118-457f-822b-69a63f81f7c4": {
+        "type": "string",
+        "name": "token ID"
+      },
+      "b8e1782d-2870-4a5d-af32-e27651d69a2a": {
+        "type": "{\n\"chain\": \"ethereum\" or \"polygon\",\n\"refresh_metadata\": boolean\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "e9b7d145-705a-4f2e-9f36-012cea3740a3": {
+        "type": "any",
+        "name": "details"
+      },
+      "ec2bd5e2-1048-4807-863d-c4d8b35f5e4d": {
+        "type": "{\n\"status\": number,\n\"headers\": {string: string},\n\"body\": any\n}",
+        "name": "response"
+      },
+      "bf0ac03c-c1bc-4d4e-94ad-2a2fc86f17df": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "204ceebd-f6e4-4dbf-bb30-7e3592635bac": {
+          "coordinates": [
+            64.6,
+            193.39999999999998
+          ],
+          "name": "dispatch request",
+          "prototype": "0fb9e1d1-2e47-4422-9d74-ee7dad457193"
+        },
+        "c608eaea-296c-458b-b919-0bb4e8331d3b": {
+          "coordinates": [
+            55.599999999999994,
+            -160.60000000000002
+          ],
+          "name": "build URL",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/nfts/{ADDRESS}/{TOKEN_ID}?{QUERY}\""
+          }
+        },
+        "e856d313-1478-4ef6-95f3-acbb0070ea9e": {
+          "coordinates": [
+            -32.400000000000006,
+            -46.60000000000002
+          ],
+          "name": "build URL params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"ADDRESS\", \"TOKEN_ID\", \"QUERY\"]"
+          }
+        },
+        "8538137b-6c7f-484c-ae67-083e5e70cb2f": {
+          "coordinates": [
+            -202.4,
+            -150.60000000000002
+          ],
+          "name": "build query str",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "3da37959-35ad-4c74-b161-f12b8e6d00d9": {
+          "coordinates": [
+            -192.4,
+            133.39999999999998
+          ],
+          "name": "forwarder (quadruple)",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "0243cb60-7a5a-4043-8827-c4065d59f37b": {
+          "coordinates": [
+            248.60000000000002,
+            -110.60000000000002
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"nft\""
+          }
+        }
+      },
+      "connections": {
+        "c608eaea-296c-458b-b919-0bb4e8331d3b": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "204ceebd-f6e4-4dbf-bb30-7e3592635bac": {
+              "1b37a1bb-e1ab-4a70-b5b0-0754dcfc0369": {}
+            }
+          }
+        },
+        "e856d313-1478-4ef6-95f3-acbb0070ea9e": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c608eaea-296c-458b-b919-0bb4e8331d3b": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "8538137b-6c7f-484c-ae67-083e5e70cb2f": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "e856d313-1478-4ef6-95f3-acbb0070ea9e": {
+              "QUERY": {}
+            }
+          }
+        },
+        "3da37959-35ad-4c74-b161-f12b8e6d00d9": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "204ceebd-f6e4-4dbf-bb30-7e3592635bac": {
+              "26c01f39-b8f3-46bc-86ea-4cab8c415af0": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "e856d313-1478-4ef6-95f3-acbb0070ea9e": {
+              "ADDRESS": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "e856d313-1478-4ef6-95f3-acbb0070ea9e": {
+              "TOKEN_ID": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "8538137b-6c7f-484c-ae67-083e5e70cb2f": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "204ceebd-f6e4-4dbf-bb30-7e3592635bac": {
+          "e0f74877-42e8-42c4-98e5-399afb9cbee9": {
+            "0243cb60-7a5a-4043-8827-c4065d59f37b": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5bf715f6-0b7e-4df3-abb8-f12a8a3a26c5": {
+            "3da37959-35ad-4c74-b161-f12b8e6d00d9": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "85e07ac0-306a-4825-86ca-e27627cab83e": {
+            "3da37959-35ad-4c74-b161-f12b8e6d00d9": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "2ad27b7c-5118-457f-822b-69a63f81f7c4": {
+            "3da37959-35ad-4c74-b161-f12b8e6d00d9": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "b8e1782d-2870-4a5d-af32-e27651d69a2a": {
+            "3da37959-35ad-4c74-b161-f12b8e6d00d9": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "ec2bd5e2-1048-4807-863d-c4d8b35f5e4d": {
+            "204ceebd-f6e4-4dbf-bb30-7e3592635bac": {
+              "e873834d-2b9c-4c5b-a671-2c7bfd823062": {}
+            }
+          },
+          "bf0ac03c-c1bc-4d4e-94ad-2a2fc86f17df": {
+            "204ceebd-f6e4-4dbf-bb30-7e3592635bac": {
+              "790585ea-fa48-41fb-b91e-974303fa4223": {}
+            }
+          },
+          "e9b7d145-705a-4f2e-9f36-012cea3740a3": {
+            "0243cb60-7a5a-4043-8827-c4065d59f37b": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

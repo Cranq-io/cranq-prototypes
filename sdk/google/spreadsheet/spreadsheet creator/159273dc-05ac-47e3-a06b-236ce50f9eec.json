@@ -1,0 +1,175 @@
+{
+  "name": "sdk/google/spreadsheet/Spreadsheet creator",
+  "description": "Creates google spreadsheet on the given drive/folder.\n\nExample:\n1. `auth data` receives {\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}@0 \n2. `drive data` {\n  \"file meta data\": {\n    \"name\": \"Test!\",\n    \"driveId\": \"0AFITUOLHhs3T_ID\",\n    \"corpora\": \"drive\",\n    \"parents\": [\n      \"1_ghBRrDju9oMNSy8DqqNtOEfDRIVE_Id\"\n    ]\n  },\n  \"supports all drives\": true\n}\"@0\n3. `spreadsheet data` receives {\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\"A1 value\", \"B1 value\"],\n    [\"A2 value\", \"B2 value\"]\n  ]\n}}@0 \n4. `done` sends null@0 ",
+  "interface": {
+    "inputs": {
+      "90e2012d-d791-4c4d-b65b-a05e7e7b891a": {
+        "type": "{\n  \"email\": string,\n  \"key\": string\n}",
+        "name": "auth data",
+        "description": "Receives the authentication data of service account.\n\nExample: \n{\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}"
+      },
+      "36dad606-38dd-4c0d-94ca-a3fa326a1c81": {
+        "type": "{\n   \"file meta data\": {string:any},\n   \"supports all drives\": boolean\n}",
+        "name": "drive data",
+        "description": "Receives the data of the drive where the spreadsheet is stored.\n\n\nExample:\n{\n  \"file meta data\": {\n    \"name\": \"Test!\",\n    \"driveId\": \"0AFITUOLHhs3T_ID\",\n    \"corpora\": \"drive\",\n    \"parents\": [\n      \"1_ghBRrDju9oMNSy8DqqNtOEfDRIVE_Id\"\n    ]\n  },\n  \"supports all drives\": true\n}"
+      },
+      "32114ed5-c5df-4fea-98fc-7c9a2a305518": {
+        "type": "{\n  \"update meta data\": {   string: any},\n  \"values\": any[][]\n}",
+        "name": "spreadsheet data",
+        "description": "Receives the spreadsheet metadata.\n\n{\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\"A1 value\", \"B1 value\"],\n    [\"A2 value\", \"B2 value\"]\n  ]\n}\n"
+      }
+    },
+    "outputs": {
+      "197d1690-0456-4443-89d1-f3d7b01d4d0f": {
+        "type": "null",
+        "name": "done",
+        "description": "Sends null if the action was successful.\n\nExample:\nnull"
+      },
+      "d848c448-0695-42d9-9fdc-67347ce7424b": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends the error which happened during the execution of the action.\n\nExample:.\n{error: \"Something went wrong!\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c31decd8-9b99-48ff-b31c-39727f708047": {
+          "coordinates": [
+            246.5,
+            0
+          ],
+          "name": "get spreadsheet Id",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"fileid\""
+          }
+        },
+        "7eef9d85-b110-4fd2-8d4b-7559c7bcc3c1": {
+          "coordinates": [
+            144,
+            -209.5
+          ],
+          "name": "create spreadsheet",
+          "prototype": "359944d3-a38c-432d-ae10-078c218e4d7d",
+          "params": {}
+        },
+        "b5e475a7-97b6-405e-9261-4a4219529433": {
+          "coordinates": [
+            305.5,
+            177.5
+          ],
+          "name": "update spreadsheet",
+          "prototype": "609d1deb-3db7-4638-b536-9aa58fc7d7d8",
+          "params": {}
+        },
+        "b0731d87-e52b-4b4b-9b3b-28a48d43373c": {
+          "coordinates": [
+            -321.5,
+            6
+          ],
+          "name": "sync & forward input",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "cfa0752b-b4f8-49da-93b5-999caa7e1b9f": {
+          "coordinates": [
+            -191.5,
+            -275
+          ],
+          "name": "generate session Id",
+          "prototype": "8eb1cd6c-9946-43cf-ae1d-9f726576af53",
+          "params": {}
+        }
+      },
+      "connections": {
+        "7eef9d85-b110-4fd2-8d4b-7559c7bcc3c1": {
+          "589cc437-acc9-43e5-80ed-eedac7fd3a99": {
+            "c31decd8-9b99-48ff-b31c-39727f708047": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "c31decd8-9b99-48ff-b31c-39727f708047": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "b5e475a7-97b6-405e-9261-4a4219529433": {
+              "1fba859c-1314-485f-97a6-55706b6c3069": {}
+            }
+          }
+        },
+        "b0731d87-e52b-4b4b-9b3b-28a48d43373c": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "7eef9d85-b110-4fd2-8d4b-7559c7bcc3c1": {
+              "a9c8e0b2-b81a-400a-be8e-d0d73981f2cd": {}
+            },
+            "b5e475a7-97b6-405e-9261-4a4219529433": {
+              "fca2bdd7-409e-4c62-9a88-c9ee2852eb96": {}
+            },
+            "cfa0752b-b4f8-49da-93b5-999caa7e1b9f": {
+              "4de21880-84de-41dd-ae3e-73f2de15a927": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "b5e475a7-97b6-405e-9261-4a4219529433": {
+              "4d02f829-1ee7-4d6b-9ee1-78bae9c4895f": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "7eef9d85-b110-4fd2-8d4b-7559c7bcc3c1": {
+              "74e5d4eb-b876-4809-88f6-36bed9ef4484": {}
+            }
+          }
+        },
+        "cfa0752b-b4f8-49da-93b5-999caa7e1b9f": {
+          "772b0a51-1a6d-4a2e-b9ad-651a2ff8bfcb": {
+            "7eef9d85-b110-4fd2-8d4b-7559c7bcc3c1": {
+              "6a23f27e-846c-424c-b0ee-bd00e02774f6": {}
+            },
+            "b5e475a7-97b6-405e-9261-4a4219529433": {
+              "23ea0957-d27a-456e-86a7-3e6391c12c6a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "90e2012d-d791-4c4d-b65b-a05e7e7b891a": {
+            "b0731d87-e52b-4b4b-9b3b-28a48d43373c": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "36dad606-38dd-4c0d-94ca-a3fa326a1c81": {
+            "b0731d87-e52b-4b4b-9b3b-28a48d43373c": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "32114ed5-c5df-4fea-98fc-7c9a2a305518": {
+            "b0731d87-e52b-4b4b-9b3b-28a48d43373c": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "197d1690-0456-4443-89d1-f3d7b01d4d0f": {
+            "b5e475a7-97b6-405e-9261-4a4219529433": {
+              "d762c670-8bda-4cb7-b30e-a879ea42795c": {}
+            }
+          },
+          "d848c448-0695-42d9-9fdc-67347ce7424b": {
+            "7eef9d85-b110-4fd2-8d4b-7559c7bcc3c1": {
+              "b65cd79c-7846-4609-a9b8-5b63fa027e88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "google": null,
+    "drive": null,
+    "spreadsheet": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

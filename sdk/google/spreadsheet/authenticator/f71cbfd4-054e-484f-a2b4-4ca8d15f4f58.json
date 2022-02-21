@@ -5,7 +5,7 @@
       "5afcefbb-4dab-46b1-9823-deb800e402b5": {
         "type": "string",
         "name": "session Id",
-        "description": "Receives the session id of the spreadsheet action.\n\nExample: \n\"drive_session\""
+        "description": "Receives the session id of the spreadsheet action.\n\nExample: \n\"spreadhseet_session\""
       },
       "f3258623-3f5d-4236-a1b3-2a62e7db0348": {
         "type": "string",
@@ -142,7 +142,7 @@
     }
   },
   "original": "b40028bc-c9de-41ea-a183-bfa0c413ebec",
-  "description": "Authenticates the service user to use google spreadsheet drive.\n\nExample:\n1. `session Id` receives \"drive_session\"@0 \n2. `email` receives  \"email@email.com\"@0\n3. `key` receives \"TopSecretKey\"@0\n4. `done` sends null@0 ",
+  "description": "Authenticates the service user to use google spreadsheet drive.\n\nExample:\n1. `session Id` receives \"spreadhseet_session\"@0 \n2. `email` receives  \"email@email.com\"@0\n3. `key` receives \"TopSecretKey\"@0\n4. `done` sends null@0 ",
   "keywords": {
     "google": null,
     "drive": null,

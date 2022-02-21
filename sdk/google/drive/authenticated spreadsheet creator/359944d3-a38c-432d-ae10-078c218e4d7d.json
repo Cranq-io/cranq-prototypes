@@ -22,7 +22,7 @@
       "589cc437-acc9-43e5-80ed-eedac7fd3a99": {
         "type": "{\"fileid\": string}",
         "name": "done",
-        "description": "[Inherited from port `done` of `auth drive`] \nSends null if the action was successful.\n\nExample:\nnull"
+        "description": "Sends null if the action was successful.\n\nExample:\nnull"
       },
       "b65cd79c-7846-4609-a9b8-5b63fa027e88": {
         "type": "{\"error\": string}",
@@ -37,7 +37,7 @@
         "185b4f54-1a15-4633-9adc-85441f7943d9": {
           "coordinates": [
             180.5,
-            -246.5
+            -248.5
           ],
           "name": "auth drive",
           "prototype": "b40028bc-c9de-41ea-a183-bfa0c413ebec",
@@ -187,6 +187,16 @@
       }
     }
   },
+  "keywords": {
+    "google": null,
+    "api": null,
+    "sdk": null,
+    "drive": null,
+    "file": null,
+    "create": null,
+    "spreadsheet": null
+  },
+  "description": "Authenticates the service user and creates new spreadsheet on the given shared folder.\n\nExample:\n1. `session Id` receives \"drive_session\"@0 \n2. `auth data` receives {\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}@0 \n3. `create spreadsheet data` receives {\n  \"file meta data\": {\n    \"name\": \"Test!\",\n    \"driveId\": \"0AFITUOLHhs3T_ID\",\n    \"corpora\": \"drive\",\n    \"parents\": [\n      \"1_ghBRrDju9oMNSy8DqqNtOEfDRIVE_Id\"\n    ]\n  },\n  \"supports all drives\": true\n}@0\n4. `done` sends {\"fileid\": \"1_ewweewweFileID\"}@0 ",
   "attributes": {
     "locked": true
   }

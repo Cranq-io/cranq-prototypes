@@ -16,7 +16,7 @@
         "e0b25e52-9336-407b-b47e-696c6e8ff73e": {
           "coordinates": [
             -240,
-            -26
+            -15
           ],
           "name": "forwarder (quadruple)",
           "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
@@ -168,8 +168,8 @@
     },
     "outputs": {
       "b39b88a9-1805-43fa-9e68-f74dc39b309c": {
-        "type": "any",
-        "name": "`blockchain/nftport/api v0/SimilarNft`[]"
+        "type": "`blockchain/nftport/api v0/SimilarNft`[]",
+        "name": "similar NFTs"
       },
       "037762dc-bcf0-4642-99cd-7b47fe1d4333": {
         "type": "{\"error\": string}",
@@ -187,7 +187,5 @@
     "nft": null,
     "duplicated": null
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

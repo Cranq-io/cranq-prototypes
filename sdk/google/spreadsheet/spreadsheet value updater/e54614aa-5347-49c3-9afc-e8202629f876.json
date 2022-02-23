@@ -5,7 +5,7 @@
       "7e11556a-e70a-4d62-9434-d9ba9f241260": {
         "type": "string",
         "name": "session Id",
-        "description": "Receives the session id of the spreadsheet action.\n\nExample: \n\"spreadhseet_session\""
+        "description": "Receives the session id of the spreadsheet action.\n\nExample: \n\"spreadsheet_session\""
       },
       "ffa9bd40-11d8-4a3b-a3f6-4094f05765a0": {
         "type": "string",
@@ -44,7 +44,7 @@
             130,
             -24
           ],
-          "name": "spread sheet",
+          "name": "spreadsheet",
           "prototype": "a334508f-7e12-4358-876e-d357b31a14d0"
         },
         "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
@@ -155,7 +155,7 @@
       }
     }
   },
-  "description": "Writes data to a single range of  a given spreadsheet.\n\nExample:\n1. `session Id` receives \"spreadhseet_session\"@0 \n2. `spreadsheet Id` receives \"1_ewweewweFileID\"@0\n3. `update meta data` receives {\n \"range\": \"Sheet1!A1:B10\"\",\n \"valueInputOption\": \"RAW\" \n}@0\n4. `done` sends null@0 ",
+  "description": "Writes data to a single range of  a given spreadsheet.\n\nExample:\n1. `session Id` receives \"spreadsheet_session\"@0 \n2. `spreadsheet Id` receives \"1_ewweewweFileID\"@0\n3. `update meta data` receives {\n \"range\": \"Sheet1!A1:B10\"\",\n \"valueInputOption\": \"RAW\" \n}@0\n4. `done` sends null@0 ",
   "keywords": {
     "google": null,
     "drive": null,

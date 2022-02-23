@@ -22,7 +22,7 @@
       "589cc437-acc9-43e5-80ed-eedac7fd3a99": {
         "type": "{\"fileid\": string}",
         "name": "done",
-        "description": "Sends null if the action was successful.\n\nExample:\nnull"
+        "description": "Sends the generated fileid.\n\nEg.\n{\"fileid\": \"1_ewweewweFileID\"}"
       },
       "b65cd79c-7846-4609-a9b8-5b63fa027e88": {
         "type": "{\"error\": string}",

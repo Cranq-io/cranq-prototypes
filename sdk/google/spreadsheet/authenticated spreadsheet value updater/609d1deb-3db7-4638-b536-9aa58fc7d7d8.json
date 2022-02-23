@@ -1,5 +1,5 @@
 {
-  "name": "sdk/google/spreadsheet/Aurhenticated spreadsheet value updater",
+  "name": "sdk/google/spreadsheet/Authenticated spreadsheet value updater",
   "interface": {
     "inputs": {
       "23ea0957-d27a-456e-86a7-3e6391c12c6a": {
@@ -202,7 +202,7 @@
       }
     }
   },
-  "description": "Authenticates the service user and  updates dedicated spreadsheet.\n\nExample:\n1. `session Id` receives \"spreadhseet_session\"@0 \n2. `auth data` receives {\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}@0 \n3. `spreadsheet Id` \"1_ewweewweFileID\"@0\n4. `update data` receives {\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\"A1 value\", \"B1 value\"],\n    [\"A2 value\", \"B2 value\"]\n  ]\n}}@0 \n5. `done` sends null@0 ",
+  "description": "Authenticates the service user and  updates dedicated spreadsheet.\n\nExample:\n1. `session Id` receives \"spreadsheet_session\"@0 \n2. `auth data` receives {\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}@0 \n3. `spreadsheet Id` \"1_ewweewweFileID\"@0\n4. `update data` receives {\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\"A1 value\", \"B1 value\"],\n    [\"A2 value\", \"B2 value\"]\n  ]\n}}@0 \n5. `done` sends null@0 ",
   "keywords": {
     "google": null,
     "drive": null,

@@ -15,14 +15,14 @@
       "1e44bf09-0522-4a43-b524-3c6fab130d55": {
         "type": "boolean",
         "name": "supports all drives",
-        "description": "Receives `supportsAllDrives` parameter whether create should support both drives and shared drives.\n\nExample: \n\"true\""
+        "description": "Receives `supports all drives` parameter whether create should support both drives and shared drives.\n\nExample: \n\"true\""
       }
     },
     "outputs": {
       "2a92df1e-487e-4a8f-ae6b-d67b78865f3f": {
         "type": "{\"fileid\": string}",
         "name": "done",
-        "description": "Sends the result fo the action.\n\nEg.\n{\"fileid\": \"1_ewweewweFileID\"}"
+        "description": "Sends the result of the action.\n\nEg.\n{\"fileid\": \"1_ewweewweFileID\"}"
       },
       "aea1df37-cfaf-4e6f-84e8-feb357ee766c": {
         "type": "{\"error\": string}",

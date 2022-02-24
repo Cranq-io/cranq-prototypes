@@ -1,0 +1,134 @@
+{
+  "name": "data/Store (async)",
+  "description": "Stores data and sends it via `data` when read. When the store is empty, read attempts will be buffered until the store gets initialized via `data`.\n\nExample: late initialization\n1. null@1 received via `read`\n2. null@2 received via `read`\n3. \"hello\"@3 received via `data`\n4. \"hello\"@1 sent via `data` (output)\n5. \"hello\"@2 sent via `data` (output)",
+  "interface": {
+    "inputs": {
+      "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives contents of the store. San be set as parameter, or received as signal. When received as a signal, will complete previous read attempts."
+      },
+      "489fadc9-7e62-41fa-b1a5-ddab4403946d": {
+        "type": "any",
+        "name": "read",
+        "description": "Receives a signal that triggers the contents being sent via `data` (output). When store has no content yet, read signals will be buffered until a signal is received via `data`."
+      }
+    },
+    "outputs": {
+      "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Sends store contents."
+      },
+      "5ddc0ec9-44d4-4356-bce6-9c87b3d3e33d": {
+        "type": "null",
+        "name": "written",
+        "description": "Sends signal when contents were set in flow."
+      },
+      "08b8217c-4dbf-4468-83ee-0c4b674b3974": {
+        "type": "null",
+        "name": "not found",
+        "description": "Sends signal on read attempt while store has no content."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+          "coordinates": [
+            -37.666666666666686,
+            -194
+          ],
+          "name": "store data",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "1880f2f1-13b6-4c28-8531-011c7b1e1571": {
+          "coordinates": [
+            -98.66666666666669,
+            65
+          ],
+          "name": "buffer until triggered",
+          "prototype": "e0ddd4f8-2c5a-43c0-85dc-450d13c1b297"
+        },
+        "c9dcd5f3-63e7-4bfb-95a5-a58d27f87040": {
+          "coordinates": [
+            138.33333333333331,
+            65
+          ],
+          "name": "true",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "true"
+          }
+        }
+      },
+      "connections": {
+        "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+          "92b91df5-41d7-4e23-aeec-3f459099e659": {
+            "c9dcd5f3-63e7-4bfb-95a5-a58d27f87040": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "c9dcd5f3-63e7-4bfb-95a5-a58d27f87040": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "1880f2f1-13b6-4c28-8531-011c7b1e1571": {
+              "28d6b2e7-af3e-4230-8108-a48a664c8615": {}
+            }
+          }
+        },
+        "1880f2f1-13b6-4c28-8531-011c7b1e1571": {
+          "43093efa-08a3-4e20-a262-095bcfa94fa9": {
+            "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {
+            "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "489fadc9-7e62-41fa-b1a5-ddab4403946d": {
+            "1880f2f1-13b6-4c28-8531-011c7b1e1571": {
+              "b3ad92db-895d-4b9f-a0cc-3ef42c3d5655": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        },
+        "outputs": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          },
+          "5ddc0ec9-44d4-4356-bce6-9c87b3d3e33d": {
+            "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+              "92b91df5-41d7-4e23-aeec-3f459099e659": {}
+            }
+          },
+          "08b8217c-4dbf-4468-83ee-0c4b674b3974": {
+            "2dc6c79c-0099-4107-aae4-f4dddf93feee": {
+              "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "variable": null,
+    "container": null,
+    "buffer": null,
+    "data": null,
+    "async": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "name": "data/invertible dictionary/Builder (key-value pairs)",
+  "interface": {
+    "inputs": {
+      "83574491-584a-42a6-ba31-ce900c98461b": {
+        "type": "{\"key\": string, \"value\": any}[]",
+        "name": "key-value pairs",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "ee5b11f0-3703-46c7-bfa6-4b92bb4d7fc2": {
+        "type": "{string: typeof `key-value pairs`[number][\"value\"]}",
+        "name": "dict",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8a20c2d0-d6f3-4506-bf89-cf8d4bc81abc": {
+          "coordinates": [
+            -91.66666666666667,
+            -76
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "{}"
+          }
+        },
+        "48ad105b-bf57-41ae-a70c-1a11acfc06de": {
+          "coordinates": [
+            -31.66666666666667,
+            71
+          ],
+          "name": "split attribute",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"key\", \"value\"]"
+          }
+        },
+        "b676c286-ad09-44e7-9b7c-cc9e968c43df": {
+          "coordinates": [
+            123.33333333333333,
+            5
+          ],
+          "name": "add attribute",
+          "prototype": "4e696d6b-953f-4177-94a6-ec3fc58261a2"
+        }
+      },
+      "connections": {
+        "8a20c2d0-d6f3-4506-bf89-cf8d4bc81abc": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "48ad105b-bf57-41ae-a70c-1a11acfc06de": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "b676c286-ad09-44e7-9b7c-cc9e968c43df": {
+              "4c433f96-78ab-4d8f-a1bc-f2ffbdb47faf": {}
+            }
+          }
+        },
+        "b676c286-ad09-44e7-9b7c-cc9e968c43df": {
+          "62fb6595-297f-4294-b147-98816a059506": {
+            "8a20c2d0-d6f3-4506-bf89-cf8d4bc81abc": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "48ad105b-bf57-41ae-a70c-1a11acfc06de": {
+          "key": {
+            "b676c286-ad09-44e7-9b7c-cc9e968c43df": {
+              "2825e2a4-d157-4298-badd-5ae9a9b6bf36": {}
+            }
+          },
+          "value": {
+            "b676c286-ad09-44e7-9b7c-cc9e968c43df": {
+              "7c651e93-e1ba-4248-bae8-3b9d20724983": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "83574491-584a-42a6-ba31-ce900c98461b": {
+            "8a20c2d0-d6f3-4506-bf89-cf8d4bc81abc": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "ee5b11f0-3703-46c7-bfa6-4b92bb4d7fc2": {
+            "8a20c2d0-d6f3-4506-bf89-cf8d4bc81abc": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

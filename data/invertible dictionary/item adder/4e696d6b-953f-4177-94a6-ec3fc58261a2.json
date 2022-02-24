@@ -1,0 +1,86 @@
+{
+  "name": "data/invertible dictionary/Item adder",
+  "description": "Adds an item to an invertible dictionary. Invertible dictionaries can have multiple values assigned to a single key.",
+  "interface": {
+    "inputs": {
+      "4c433f96-78ab-4d8f-a1bc-f2ffbdb47faf": {
+        "type": "{string: any[]}",
+        "name": "dict"
+      },
+      "2825e2a4-d157-4298-badd-5ae9a9b6bf36": {
+        "type": "string",
+        "name": "key"
+      },
+      "7c651e93-e1ba-4248-bae8-3b9d20724983": {
+        "type": "typeof `dict`[string][number]",
+        "name": "value"
+      }
+    },
+    "outputs": {
+      "62fb6595-297f-4294-b147-98816a059506": {
+        "type": "typeof `dict`",
+        "name": "dict"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7cef1c2a-5824-4318-acda-6002b4333f55": {
+          "coordinates": [
+            1,
+            71
+          ],
+          "name": "add item",
+          "prototype": "a5503450-4315-4ada-975e-3ecadd1506f8"
+        },
+        "7e8bd437-f45c-4325-9d7c-1f5d8b0e4ebb": {
+          "coordinates": [
+            2,
+            -68
+          ],
+          "name": "sync inputs",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\", \"key\", \"value\"]"
+          }
+        }
+      },
+      "connections": {
+        "7e8bd437-f45c-4325-9d7c-1f5d8b0e4ebb": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "7cef1c2a-5824-4318-acda-6002b4333f55": {
+              "450d0351-5374-46a4-b143-4753b5f01561": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4c433f96-78ab-4d8f-a1bc-f2ffbdb47faf": {
+            "7e8bd437-f45c-4325-9d7c-1f5d8b0e4ebb": {
+              "dict": {}
+            }
+          },
+          "2825e2a4-d157-4298-badd-5ae9a9b6bf36": {
+            "7e8bd437-f45c-4325-9d7c-1f5d8b0e4ebb": {
+              "key": {}
+            }
+          },
+          "7c651e93-e1ba-4248-bae8-3b9d20724983": {
+            "7e8bd437-f45c-4325-9d7c-1f5d8b0e4ebb": {
+              "value": {}
+            }
+          }
+        },
+        "outputs": {
+          "62fb6595-297f-4294-b147-98816a059506": {
+            "7cef1c2a-5824-4318-acda-6002b4333f55": {
+              "0b9afb11-514c-4728-8f82-f3ce146d7691": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

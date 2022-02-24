@@ -1,0 +1,189 @@
+{
+  "name": "io/http/express/Endpoint listener",
+  "description": "Sets up a listener on an HTTP route. Starts an Express server if one is not started yet.",
+  "interface": {
+    "inputs": {
+      "b791f485-a790-4e63-8c41-867597d4d42c": {
+        "type": "{\n\"status\": number,\n\"headers\": {string:string},\n\"body\": string\n}",
+        "name": "response",
+        "description": ""
+      },
+      "aac93261-9159-4995-ba5e-faf09ebdffd6": {
+        "type": "{\n  \"appId\": string,\n  \"port\": number,\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"bearerToken\": string,\n  \"route\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {
+        "type": "typeof `request body` of `authorization gate`",
+        "name": "request"
+      },
+      "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "23d992fe-29d5-4ada-be32-0edfed577b81": {
+          "coordinates": [
+            -58.75,
+            269
+          ],
+          "name": "start server",
+          "prototype": "571c94c6-38b1-4212-833a-b947f50fadec"
+        },
+        "e434c13b-6333-4964-9d04-3d57ae11b098": {
+          "coordinates": [
+            134.25,
+            83
+          ],
+          "name": "use text middleware",
+          "prototype": "f11e66a5-1a5c-406b-bfe0-d21a5bf6297d",
+          "params": {
+            "10c0aa80-7a63-4647-bebf-2002804b315c": "\"text\"",
+            "22a29733-0a7c-4f27-84cc-bd90a4b53211": "{}"
+          }
+        },
+        "333c87e7-f1df-4986-a231-61c63c6550c7": {
+          "coordinates": [
+            131.25,
+            -164
+          ],
+          "name": "authorized?",
+          "prototype": "be35b9df-13e1-44f4-ad89-6d75f897bcdb",
+          "params": {}
+        },
+        "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
+          "coordinates": [
+            -205.75,
+            57.5
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"appId\",\"port\",\"method\",\"bearerToken\",\"route\"]"
+          }
+        },
+        "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+          "coordinates": [
+            20.25,
+            -301.5
+          ],
+          "name": "handle request",
+          "prototype": "a63f623a-f4b2-4a06-acca-83774cd4ca41"
+        },
+        "434d7344-ebc2-4e85-8725-ec1fd8b96a55": {
+          "coordinates": [
+            -215.08333333333334,
+            -155.83333333333334
+          ],
+          "name": "add response headers",
+          "prototype": "16e06706-c70d-4914-a172-90c87fbf84df",
+          "params": {
+            "2d28841b-bd3c-4705-ba85-9cda6704175e": "{\"Content-Type\":\"application/json\"}"
+          }
+        }
+      },
+      "connections": {
+        "23d992fe-29d5-4ada-be32-0edfed577b81": {
+          "541fc93b-1098-4659-95a2-f75bcf3109b1": {
+            "e434c13b-6333-4964-9d04-3d57ae11b098": {
+              "4caba675-aa86-4d81-82a5-6510f71a708d": {}
+            }
+          }
+        },
+        "e434c13b-6333-4964-9d04-3d57ae11b098": {
+          "af511dbd-294e-4cbf-940a-e81326cb837b": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "91ce9cc7-04d3-43af-81be-39747c4aaf61": {}
+            }
+          }
+        },
+        "434d7344-ebc2-4e85-8725-ec1fd8b96a55": {
+          "7a706f8f-abba-4719-be33-291aa16104e6": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "91981648-5a12-4061-8be8-3c43210193c7": {}
+            }
+          }
+        },
+        "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+          "452b5701-97ed-4e87-b58d-34ea209e802d": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "c97ad031-661f-457d-b4b7-bdfb2d7e7493": {}
+            }
+          }
+        },
+        "333c87e7-f1df-4986-a231-61c63c6550c7": {
+          "392d0a38-21ec-4035-a0da-4712d9cebf3f": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "91981648-5a12-4061-8be8-3c43210193c7": {}
+            }
+          }
+        },
+        "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
+          "appId": {
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "655df4af-25f6-4658-9d19-24bd222f2d29": {}
+            }
+          },
+          "port": {
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "11745554-d9d0-41bb-af77-987d8450ccfe": {}
+            }
+          },
+          "method": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "929caaa1-7ba7-46bb-951d-869e82fd5e47": {}
+            }
+          },
+          "route": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {}
+            }
+          },
+          "bearerToken": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "43bde1b3-75bb-403b-8d3e-cf0baaaa22e9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b791f485-a790-4e63-8c41-867597d4d42c": {
+            "434d7344-ebc2-4e85-8725-ec1fd8b96a55": {
+              "c740d06e-a415-4c59-97b7-02ba0aa95ad5": {}
+            }
+          },
+          "aac93261-9159-4995-ba5e-faf09ebdffd6": {
+            "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "10e32cd9-0ad1-44dc-9472-dbd4acdb9b2a": {}
+            }
+          },
+          "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
+            "e434c13b-6333-4964-9d04-3d57ae11b098": {
+              "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {}
+            },
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {}
+            },
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "12b5e681-073c-47bc-abb3-698530817f66": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {}
+}

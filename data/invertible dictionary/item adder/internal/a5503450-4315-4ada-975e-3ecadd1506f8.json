@@ -1,0 +1,25 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "450d0351-5374-46a4-b143-4753b5f01561": "const {dict, key, value} = data;\nlet values = dict[key];\nif (values) {\n  outputs.dict({...dict, [key]:[...values, value]}, tag);\n} else {\n  outputs.dict({...dict, [key]:[value]}, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "450d0351-5374-46a4-b143-4753b5f01561": {
+        "type": "{\n\"dict\": {string: any[]},\n\"key\": string,\n\"value\": any \n}",
+        "name": "dict & key & value"
+      }
+    },
+    "outputs": {
+      "0b9afb11-514c-4728-8f82-f3ce146d7691": {
+        "type": "{string: any[]}",
+        "name": "dict"
+      }
+    }
+  },
+  "name": "data/invertible dictionary/item adder/Internal",
+  "description": ""
+}

@@ -1,0 +1,173 @@
+{
+  "name": "data/table/Field serializer",
+  "description": "Serializes field values in the table received via `table`.\n\nExample:\n1. [{\"foo\": 1, \"bar\": [1, 2]}]@1 received via `table`\n2. [{\"foo\": 1, \"bar\": \"[1,2]\"}]@1 sent via `table` (output)",
+  "interface": {
+    "inputs": {
+      "c99c7494-f909-437e-8354-1f77c8cf2230": {
+        "type": "{string: any}[]",
+        "name": "table",
+        "description": "[Inherited from port `array` of `mapper`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
+      }
+    },
+    "outputs": {
+      "651a55ef-a887-4940-82df-ea5b2dbf76e1": {
+        "type": "{string: string or number or boolean or null}[]",
+        "name": "table",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d4db9a2a-d759-45a7-83dc-c12281c8f80a": {
+          "coordinates": [
+            130.85714285714286,
+            -451.7142857142857
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "fc7a5682-18ad-4dfc-a3ec-3666ab6e0cd3": {
+          "coordinates": [
+            -24.14285714285714,
+            -102.71428571428572
+          ],
+          "name": "mapper B",
+          "prototype": "90061d99-64eb-4260-ac6d-abdf4c6e9fb1"
+        },
+        "0ce65e84-d118-4dc8-933d-4b1f472a950f": {
+          "coordinates": [
+            109.85714285714286,
+            -7.714285714285722
+          ],
+          "name": "type tester",
+          "prototype": "35c45234-1f7a-41c4-a876-48a6395770b8"
+        },
+        "76a40572-b55f-442d-ada1-e3f61e1091d7": {
+          "coordinates": [
+            82.85714285714286,
+            51.28571428571428
+          ],
+          "name": "type tester B",
+          "prototype": "5f6d16f7-de92-4024-8778-7e53151a5f38"
+        },
+        "596043f3-04fa-4e00-9002-4a003082d036": {
+          "coordinates": [
+            132.85714285714286,
+            177.28571428571428
+          ],
+          "name": "or",
+          "prototype": "39e5f41a-9931-4125-8857-1a0fdf6eba7c"
+        },
+        "c6e6c2bb-5ceb-47dc-bd2c-448887282d74": {
+          "coordinates": [
+            -300.1428571428571,
+            149.28571428571428
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "7c89ae36-6dd5-4cfc-b9ae-dd381bb59787": {
+          "coordinates": [
+            -132.14285714285714,
+            184.28571428571428
+          ],
+          "name": "serializer",
+          "prototype": "3820f096-6216-4049-b374-c98684387fea",
+          "params": {
+            "deb0a917-b393-4326-b573-ec6a6f82ffec": "false"
+          }
+        }
+      },
+      "connections": {
+        "d4db9a2a-d759-45a7-83dc-c12281c8f80a": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "fc7a5682-18ad-4dfc-a3ec-3666ab6e0cd3": {
+              "a7988a90-76f7-46ff-b09b-61858d52be3b": {}
+            }
+          }
+        },
+        "fc7a5682-18ad-4dfc-a3ec-3666ab6e0cd3": {
+          "43dde9dc-1e3f-4784-9311-306e5b37df42": {
+            "0ce65e84-d118-4dc8-933d-4b1f472a950f": {
+              "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {}
+            },
+            "76a40572-b55f-442d-ada1-e3f61e1091d7": {
+              "af6185f2-aefb-453b-a836-99c55cf4e39f": {}
+            },
+            "c6e6c2bb-5ceb-47dc-bd2c-448887282d74": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          },
+          "362372d2-9af3-43b4-8948-e7c80050c1af": {
+            "d4db9a2a-d759-45a7-83dc-c12281c8f80a": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "0ce65e84-d118-4dc8-933d-4b1f472a950f": {
+          "63f3f918-df9f-4037-870b-b5189bea60ad": {
+            "596043f3-04fa-4e00-9002-4a003082d036": {
+              "8ec8a078-5e9b-46bb-81ee-73036e73be39": {}
+            }
+          }
+        },
+        "76a40572-b55f-442d-ada1-e3f61e1091d7": {
+          "c81b5913-e539-4b47-8f78-21ba43ea7058": {
+            "596043f3-04fa-4e00-9002-4a003082d036": {
+              "b14a43ef-20d9-406b-b8df-2ae35ce3cd76": {}
+            }
+          }
+        },
+        "596043f3-04fa-4e00-9002-4a003082d036": {
+          "9f059fac-fb54-456b-a7e3-5f2e22261b7c": {
+            "c6e6c2bb-5ceb-47dc-bd2c-448887282d74": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "c6e6c2bb-5ceb-47dc-bd2c-448887282d74": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "7c89ae36-6dd5-4cfc-b9ae-dd381bb59787": {
+              "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "fc7a5682-18ad-4dfc-a3ec-3666ab6e0cd3": {
+              "04851541-789c-4440-86b2-4006842c7489": {}
+            }
+          }
+        },
+        "7c89ae36-6dd5-4cfc-b9ae-dd381bb59787": {
+          "25650a4f-7e35-4754-bc8f-1a57f538166f": {
+            "fc7a5682-18ad-4dfc-a3ec-3666ab6e0cd3": {
+              "04851541-789c-4440-86b2-4006842c7489": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c99c7494-f909-437e-8354-1f77c8cf2230": {
+            "d4db9a2a-d759-45a7-83dc-c12281c8f80a": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "651a55ef-a887-4940-82df-ea5b2dbf76e1": {
+            "d4db9a2a-d759-45a7-83dc-c12281c8f80a": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "flatten": null,
+    "serialize": null,
+    "sringify": null
+  }
+}

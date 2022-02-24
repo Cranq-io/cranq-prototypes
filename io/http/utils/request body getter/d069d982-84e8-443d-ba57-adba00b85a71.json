@@ -1,0 +1,60 @@
+{
+  "name": "io/http/utils/Request body getter",
+  "description": "Retrieves the 'body' component of an HTTP request.\n\nExample:\n1. {\"headers\": {}, \"body\": \"Hello\"}@1 received via `request`\n2. \"Hello\"@1 sent via `body`",
+  "interface": {
+    "inputs": {
+      "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {
+        "type": "{\n  \"headers\": {string: string},\n  \"body\": any\n}",
+        "name": "request",
+        "description": "Receives an HTTP request that has a body."
+      }
+    },
+    "outputs": {
+      "01a94511-1481-4dea-bc53-ad6c78a53d3a": {
+        "type": "typeof `request`[\"body\"]",
+        "name": "body",
+        "description": "Sends the 'body' component of the received request."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fba61d84-d4f1-4da6-877b-191d8f53ccf8": {
+          "coordinates": [
+            -1,
+            9
+          ],
+          "name": "get body",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"body\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {
+            "fba61d84-d4f1-4da6-877b-191d8f53ccf8": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "01a94511-1481-4dea-bc53-ad6c78a53d3a": {
+            "fba61d84-d4f1-4da6-877b-191d8f53ccf8": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "extract": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

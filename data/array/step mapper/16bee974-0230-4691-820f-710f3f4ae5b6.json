@@ -1,0 +1,152 @@
+{
+  "name": "data/array/Step mapper",
+  "interface": {
+    "inputs": {
+      "d62c3838-0cd0-4df8-a3ef-7928d62a190e": {
+        "type": "any[]",
+        "name": "array"
+      },
+      "1d7fdc57-9bf4-4340-94a7-b4660193fd0d": {
+        "type": "any",
+        "name": "mapped item"
+      }
+    },
+    "outputs": {
+      "b3b9a04f-1a70-4fbc-b8af-bed2737aec32": {
+        "type": "typeof `mapped item`[]",
+        "name": "mapped"
+      },
+      "67d3e61d-5145-4d91-90a9-02fa8015b706": {
+        "type": "typeof `array`[number]",
+        "name": "item"
+      },
+      "782e7bc0-9b9d-438a-915f-43d7c49ecfb6": {
+        "type": "any",
+        "name": "done"
+      },
+      "9c36c827-f107-4404-952d-166b76b455c7": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+          "coordinates": [
+            -72.25,
+            -15.5
+          ],
+          "name": "step iterator",
+          "prototype": "efbace8a-a0c1-4495-932c-7752fcc212d3"
+        },
+        "4e931692-edb2-4651-865c-2132a526e8ce": {
+          "coordinates": [
+            -16.25,
+            172.5
+          ],
+          "name": "aggregate mapped",
+          "prototype": "9f2feb24-d675-4c90-adf2-4fbf4a3cc117"
+        },
+        "a39c723d-52f9-485f-9f90-498f7914a104": {
+          "coordinates": [
+            -111.25,
+            -170.5
+          ],
+          "name": "repeat array",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "e8dd5d63-330c-4cb2-8cfc-3452457f64d3": {
+          "coordinates": [
+            83.75,
+            -102.5
+          ],
+          "name": "last item?",
+          "prototype": "1dbcee5a-4fbf-4aa1-b92a-53bead8afcbb"
+        },
+        "d9af8e92-b698-41c9-bcf9-1a09540a8d8d": {
+          "coordinates": [
+            154.75,
+            70.5
+          ],
+          "name": "tag trimmer",
+          "prototype": "d755b98a-18fb-4ca2-8580-7ad8c426f4b2"
+        }
+      },
+      "connections": {
+        "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+          "0d15a9b9-a708-4b34-b199-51232e59f94b": {
+            "e8dd5d63-330c-4cb2-8cfc-3452457f64d3": {
+              "7480cb53-db90-4057-84c2-65d849004ffa": {}
+            }
+          }
+        },
+        "a39c723d-52f9-485f-9f90-498f7914a104": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "e8dd5d63-330c-4cb2-8cfc-3452457f64d3": {
+              "5b8b2c1a-3bb8-46e5-b7c8-ef7d4d50ae36": {}
+            }
+          }
+        },
+        "e8dd5d63-330c-4cb2-8cfc-3452457f64d3": {
+          "ea810b75-a715-4c5f-883e-399e8eb67f69": {
+            "4e931692-edb2-4651-865c-2132a526e8ce": {
+              "64cdf7c6-6975-404d-a52e-071f865cb41a": {}
+            }
+          }
+        },
+        "4e931692-edb2-4651-865c-2132a526e8ce": {
+          "efbe70db-9685-4636-9ace-906c771fb058": {
+            "d9af8e92-b698-41c9-bcf9-1a09540a8d8d": {
+              "ca54dccf-ed97-4731-8eb0-ef76fe19e844": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d62c3838-0cd0-4df8-a3ef-7928d62a190e": {
+            "a39c723d-52f9-485f-9f90-498f7914a104": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {},
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            },
+            "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+              "d079a46d-16a1-4019-b037-eb25ff63b344": {}
+            }
+          },
+          "1d7fdc57-9bf4-4340-94a7-b4660193fd0d": {
+            "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+              "6724a763-9749-41bb-a3dc-2ec659c8b72b": {}
+            },
+            "4e931692-edb2-4651-865c-2132a526e8ce": {
+              "3357c999-1fc5-4d98-bbfc-0ce9848e95f8": {}
+            }
+          }
+        },
+        "outputs": {
+          "67d3e61d-5145-4d91-90a9-02fa8015b706": {
+            "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+              "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {}
+            }
+          },
+          "b3b9a04f-1a70-4fbc-b8af-bed2737aec32": {
+            "d9af8e92-b698-41c9-bcf9-1a09540a8d8d": {
+              "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {}
+            }
+          },
+          "782e7bc0-9b9d-438a-915f-43d7c49ecfb6": {
+            "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+              "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {}
+            }
+          },
+          "9c36c827-f107-4404-952d-166b76b455c7": {
+            "454adc90-3097-4c6f-b176-93a117b5b8d9": {
+              "5f5589df-af99-4cdf-82f7-2e4d99e6962c": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

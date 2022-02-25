@@ -1,0 +1,170 @@
+{
+  "name": "sdk/google/spreadsheet/Spreadsheet value updater",
+  "interface": {
+    "inputs": {
+      "7e11556a-e70a-4d62-9434-d9ba9f241260": {
+        "type": "string",
+        "name": "session Id",
+        "description": "Receives the session id of the spreadsheet action.\n\nExample: \n\"spreadsheet_session\""
+      },
+      "ffa9bd40-11d8-4a3b-a3f6-4094f05765a0": {
+        "type": "string",
+        "name": "spreadsheet Id",
+        "description": "Receives the id of the spreadsheet to be updated.\n\nExample:\n\"1_ewweewweFileID\""
+      },
+      "1e5a9466-5429-4551-ab34-b5bf1ddd0bb4": {
+        "type": "{\n\"range\": string,\n\"valueInputOption\": \"RAW\" or \"USER_ENTERED\"\n}",
+        "name": "update meta data",
+        "description": "Receives the metadata of the update values.\n\nrange: The A1 notation of the values to update. More: \nhttps://developers.google.com/sheets/api/guides/concepts\n\nvalueInputOption: Determines how input data should be interpreted. More: https://developers.google.com/sheets/api/reference/rest/v4/ValueInputOption\n\nExample:\n{\n \"range\": \"Sheet1!A1:B10\"\",\n \"valueInputOption\": \"RAW\" \n}"
+      },
+      "d94087bb-9a5a-4a29-9887-f296b7928bc1": {
+        "type": "any[][]",
+        "name": "values",
+        "description": "Receives the new cell values to update.\nIt contains arrays of the row values.\n\nExample:\n[\n  [\"A1 value\", \"B1 value\"],\n  [\"A2 value\", \"B2 value\"]\n]"
+      }
+    },
+    "outputs": {
+      "f240f2a6-392f-4870-b989-419339e83e12": {
+        "type": "null",
+        "name": "done",
+        "description": "Sends null if the action was successful.\n\nExample:\nnull"
+      },
+      "509ce9b8-1755-48e2-8a48-00aa5ad9c093": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends the error which happened during the execution of the action.\n\nExample:.\n{error: \"Something went wrong!\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "22682fd2-ea2e-4bf3-b3f6-dea2cb95e29e": {
+          "coordinates": [
+            130,
+            -24
+          ],
+          "name": "spreadsheet",
+          "prototype": "a334508f-7e12-4358-876e-d357b31a14d0"
+        },
+        "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
+          "coordinates": [
+            -257,
+            -30
+          ],
+          "name": "forward input",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "324e09d6-a72b-45f6-925b-e68d79ebd175": {
+          "coordinates": [
+            45,
+            -97
+          ],
+          "name": "create update sheet parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sessionid\",\"type\",\"options\"]",
+            "type": "\"update\""
+          }
+        },
+        "9123f26d-7e6e-49bb-8f14-ccff3e6e3692": {
+          "coordinates": [
+            -112,
+            73
+          ],
+          "name": "create options parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"spreadsheetId\",\"updatemeta\",\"values\"]"
+          }
+        }
+      },
+      "connections": {
+        "324e09d6-a72b-45f6-925b-e68d79ebd175": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "22682fd2-ea2e-4bf3-b3f6-dea2cb95e29e": {
+              "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": {}
+            }
+          }
+        },
+        "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "324e09d6-a72b-45f6-925b-e68d79ebd175": {
+              "sessionid": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "9123f26d-7e6e-49bb-8f14-ccff3e6e3692": {
+              "spreadsheetId": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "9123f26d-7e6e-49bb-8f14-ccff3e6e3692": {
+              "updatemeta": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "9123f26d-7e6e-49bb-8f14-ccff3e6e3692": {
+              "values": {}
+            }
+          }
+        },
+        "9123f26d-7e6e-49bb-8f14-ccff3e6e3692": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "324e09d6-a72b-45f6-925b-e68d79ebd175": {
+              "options": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7e11556a-e70a-4d62-9434-d9ba9f241260": {
+            "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "ffa9bd40-11d8-4a3b-a3f6-4094f05765a0": {
+            "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "1e5a9466-5429-4551-ab34-b5bf1ddd0bb4": {
+            "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "d94087bb-9a5a-4a29-9887-f296b7928bc1": {
+            "abc4322d-420d-45c6-b07b-6d8c2309c24e": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "f240f2a6-392f-4870-b989-419339e83e12": {
+            "22682fd2-ea2e-4bf3-b3f6-dea2cb95e29e": {
+              "143c4b56-07e8-4ede-86b5-d6641f31b927": {}
+            }
+          },
+          "509ce9b8-1755-48e2-8a48-00aa5ad9c093": {
+            "22682fd2-ea2e-4bf3-b3f6-dea2cb95e29e": {
+              "73d008c4-b3e1-47f6-80d0-ebb4e53dd94c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Writes data to a single range of  a given spreadsheet.\n\nExample:\n1. `session Id` receives \"spreadsheet_session\"@0 \n2. `spreadsheet Id` receives \"1_ewweewweFileID\"@0\n3. `update meta data` receives {\n \"range\": \"Sheet1!A1:B10\"\",\n \"valueInputOption\": \"RAW\" \n}@0\n4. `done` sends null@0 ",
+  "keywords": {
+    "google": null,
+    "drive": null,
+    "authentication": null,
+    "sdk": null,
+    "spreadsheet": null,
+    "update": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

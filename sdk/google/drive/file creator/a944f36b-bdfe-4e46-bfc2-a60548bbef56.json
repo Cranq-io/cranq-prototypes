@@ -1,0 +1,156 @@
+{
+  "name": "sdk/google/Drive/File creator",
+  "interface": {
+    "inputs": {
+      "80b2ea3c-ab45-4e08-9a62-83f87b7c5c87": {
+        "type": "string",
+        "name": "session Id",
+        "description": "Receives the session id of the drive action.\n\nExample: \n\"drive_session\""
+      },
+      "67d952ea-512f-4028-8a2f-8f768bfa2e7a": {
+        "type": "{string:any}",
+        "name": "file meta data",
+        "description": "Receives the metadata of the file creation.\n\nExample in case of shared drive:\n\n{\n  \"name\": \"Test from CRANQ dynamic\",\n  \"driveId\": \"0AFITUOLHhs3TUk9PVA\",\n  \"corpora\": \"drive\",\n  \"parents\": [\n    \"FOLDER_ID\"\n  ],\n  \"mimeType\": \"application/vnd.google-apps.spreadsheet\"\n}\n\n\nExample in case of shared folder:\n\n{\n  \"name\": \"Test from CRANQ dynamic\",\n  \"parents\": [\n    \"FOLDER_ID\"\n  ]\n  \"mimeType\": \"application/vnd.google-apps.spreadsheet\"\n}\n"
+      },
+      "2890771f-bac0-4da3-998d-8f9530fcc98d": {
+        "type": "boolean",
+        "name": "supports all drives",
+        "description": "Receives `supportsAllDrives` parameter whether create should support both drives and shared drives.\n\nExample: \n\"true\""
+      }
+    },
+    "outputs": {
+      "d272df99-3d06-4d0e-bfe1-2fef9cf996a7": {
+        "type": "{\"fileid\": string}",
+        "name": "done",
+        "description": "Sends the result fo the action.\n\nEg.\n{\"fileid\": \"1_ewweewweFileID\"}"
+      },
+      "2ac83001-1dd4-4a07-8e61-315b0ecb624b": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends the error which happened during the execution of the action.\n\nEg.\n{error: \"Something went wrong!\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "31c71eb4-5a8c-475d-88e8-8aac05eb915d": {
+          "coordinates": [
+            229,
+            3
+          ],
+          "name": "google drive",
+          "prototype": "1a081f83-66ee-4512-83f5-2142ca4061ae"
+        },
+        "caa8080b-c95e-4511-9c6e-420c16891c17": {
+          "coordinates": [
+            88,
+            -115
+          ],
+          "name": "create create file action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sessionid\",\"type\",\"options\"]",
+            "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "\"create_file\"",
+            "type": "\"create_file\""
+          }
+        },
+        "d6162bd6-3be9-42ca-a4b8-5afd0a03b292": {
+          "coordinates": [
+            17,
+            111
+          ],
+          "name": "create options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"fileMetaData\",\"supportsAllDrives\"]"
+          }
+        },
+        "47e643d0-3326-489a-ab9d-b91d077f3a0a": {
+          "coordinates": [
+            -149,
+            27
+          ],
+          "name": "forward inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        }
+      },
+      "connections": {
+        "caa8080b-c95e-4511-9c6e-420c16891c17": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "31c71eb4-5a8c-475d-88e8-8aac05eb915d": {
+              "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": {}
+            }
+          }
+        },
+        "47e643d0-3326-489a-ab9d-b91d077f3a0a": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "caa8080b-c95e-4511-9c6e-420c16891c17": {
+              "sessionid": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "d6162bd6-3be9-42ca-a4b8-5afd0a03b292": {
+              "fileMetaData": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "d6162bd6-3be9-42ca-a4b8-5afd0a03b292": {
+              "supportsAllDrives": {}
+            }
+          }
+        },
+        "d6162bd6-3be9-42ca-a4b8-5afd0a03b292": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "caa8080b-c95e-4511-9c6e-420c16891c17": {
+              "options": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "80b2ea3c-ab45-4e08-9a62-83f87b7c5c87": {
+            "47e643d0-3326-489a-ab9d-b91d077f3a0a": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "67d952ea-512f-4028-8a2f-8f768bfa2e7a": {
+            "47e643d0-3326-489a-ab9d-b91d077f3a0a": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "2890771f-bac0-4da3-998d-8f9530fcc98d": {
+            "47e643d0-3326-489a-ab9d-b91d077f3a0a": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "d272df99-3d06-4d0e-bfe1-2fef9cf996a7": {
+            "31c71eb4-5a8c-475d-88e8-8aac05eb915d": {
+              "143c4b56-07e8-4ede-86b5-d6641f31b927": {}
+            }
+          },
+          "2ac83001-1dd4-4a07-8e61-315b0ecb624b": {
+            "31c71eb4-5a8c-475d-88e8-8aac05eb915d": {
+              "73d008c4-b3e1-47f6-80d0-ebb4e53dd94c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Creates file on the given shared folder.\n\nExample:\n1. `session Id` receives \"drive_session\"@0 \n2. `file meta data` receives  {\n  \"name\": \"Test from CRANQ dynamic\",\n  \"parents\": [\n    \"FOLDER_ID\"\n  ]\n  \"mimeType\": \"application/vnd.google-apps.spreadsheet\"\n}@0\n3. `supports all drives` receives false@0\n4. `done` sends {\"fileid\": \"1_ewweewweFileID\"}@0 ",
+  "keywords": {
+    "google": null,
+    "api": null,
+    "sdk": null,
+    "drive": null,
+    "file": null,
+    "create": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

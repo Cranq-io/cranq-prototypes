@@ -11,11 +11,6 @@
       "inputFunctions": {
         "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": "try {\n  const {google} = require('googleapis');\n  const {sessionid, type, options = {}} = data;\n  let jwtClient = shared[sessionid];\n  \n  if (type === \"service_account_auth\") {\n    const {email, keyFile = null, key} = options;\n    jwtClient = shared[sessionid] = new google.auth.JWT(\n         email,\n         keyFile,\n         key,\n         ['https://www.googleapis.com/auth/spreadsheets']);\n         \n    outputs.done(null, tag);\n  }\n\n  const sheets = google.sheets({version: 'v4', auth: jwtClient});\n  \n  switch (type) {\n    case \"update\":\n      const {spreadsheetId, updatemeta, values} = options;\n      const {range, valueInputOption = \"RAW\"} = updatemeta;\n      \n      sheets.spreadsheets.values.update({\n        spreadsheetId: spreadsheetId,\n        range: range,\n        valueInputOption: valueInputOption,\n        resource: {\n          values: values\n        },\n      },function (err, response) {\n        if (err){\n          outputs.error({error: String(err)}, tag);\n        } else {\n          outputs.done(null, tag);\n        }\n      })\n    break;\n  }\n  \n\n}\ncatch (err) {\n  outputs.error({error: String(err)}, tag);\n}"
       }
-    },
-    "es6": {
-      "inputFunctions": {
-        "7a65d5ba-4c63-4c70-9b4d-41f396a87f9e": "console.log"
-      }
     }
   },
   "interface": {

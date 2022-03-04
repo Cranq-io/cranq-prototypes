@@ -1,0 +1,35 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "b15a82dc-96a1-4ce2-8a8b-aae98cd533cf": "outputs.trimmed(data.trim(), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "b15a82dc-96a1-4ce2-8a8b-aae98cd533cf": {
+        "type": "string",
+        "name": "string",
+        "description": "Receives string to be trimmed.\n\nExample:\n\"  foo\""
+      }
+    },
+    "outputs": {
+      "b5b9eeb3-9acc-4290-a310-b57544102115": {
+        "type": "string",
+        "name": "trimmed",
+        "description": "Sends trimmed string.\n\nExample\n\"foo\""
+      }
+    }
+  },
+  "name": "string/Trimmer",
+  "original": "0378b5b9-ea39-4fdd-ab73-4d0eda1e35e7",
+  "keywords": {
+    "remove": null,
+    "whitespace": null
+  },
+  "description": "Removes whitespace from both ends of  `string` input.\n\nExample:\n1. \"  foo\"@0 received via `string`\n2. \"foo\"@0 sent via `trimmed`",
+  "attributes": {
+    "locked": true
+  }
+}

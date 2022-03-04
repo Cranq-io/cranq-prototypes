@@ -1,0 +1,172 @@
+{
+  "name": "io/http/HTML post request dispatcher",
+  "interface": {
+    "inputs": {
+      "3a16460c-b25e-40ca-a468-e15baf34c40d": {
+        "type": "string",
+        "name": "URL",
+        "description": "Receives the target of the HTML post.\n\nExample:\n\"https://httpbin.org/post\""
+      },
+      "b3fa6289-8e3a-4047-a72e-226ac0fd596e": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Receives request headers. \n\nExample:\n{}"
+      },
+      "9517a9f8-a280-48ae-8ee3-71acafc2be06": {
+        "type": "{string: string or string[]}",
+        "name": "form data",
+        "description": "Receives the form data to be posted.\n\nExample:\n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n\"size\": \"small\",\n\"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}"
+      }
+    },
+    "outputs": {
+      "e58ea4f2-82c1-41c1-83f2-0a564421c408": {
+        "type": "number",
+        "name": "status",
+        "description": "Sends http response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200"
+      },
+      "af92b0f2-6ae6-438d-a8d9-b375c4e41ec6": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Sends http response headers."
+      },
+      "3979b6f0-d0df-47f5-a3dd-9ea56d973bed": {
+        "type": "string",
+        "name": "body",
+        "description": "Sends http response message body data.\n\nExample:\n\"OK\""
+      },
+      "afd7dbf6-b2ab-4e0a-b209-943dea42613c": {
+        "type": "{\"error\": string}",
+        "name": "errors",
+        "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+          "coordinates": [
+            144,
+            -8
+          ],
+          "name": "dispach request",
+          "prototype": "83ebbf9f-d428-4577-a650-761868a002dc",
+          "params": {
+            "7468e859-6176-4c54-a03a-9039e7024bed": "\"POST\""
+          }
+        },
+        "4c9f039a-4f60-44b2-a8b4-62fde1d7b845": {
+          "coordinates": [
+            -17,
+            -126
+          ],
+          "name": "add content-type header",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"content-type\"",
+            "0ab0c723-793b-48a1-87d5-d64267665bd3": "\"application/x-www-form-urlencoded\""
+          }
+        },
+        "db4e2c5e-0096-44f3-a87a-7dfa86b5d153": {
+          "coordinates": [
+            -186,
+            -3
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "8fc88cba-7a10-47bd-9b64-cd7b4f83f0a4": {
+          "coordinates": [
+            -41,
+            119
+          ],
+          "name": "build post body",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        }
+      },
+      "connections": {
+        "db4e2c5e-0096-44f3-a87a-7dfa86b5d153": {
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "4c9f039a-4f60-44b2-a8b4-62fde1d7b845": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "e69367fe-1abe-4422-a70a-4d67c614f464": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "8fc88cba-7a10-47bd-9b64-cd7b4f83f0a4": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "4c9f039a-4f60-44b2-a8b4-62fde1d7b845": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {}
+            }
+          }
+        },
+        "8fc88cba-7a10-47bd-9b64-cd7b4f83f0a4": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "f11b9873-7a11-4241-9e17-a16496cf783e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3a16460c-b25e-40ca-a468-e15baf34c40d": {
+            "db4e2c5e-0096-44f3-a87a-7dfa86b5d153": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "b3fa6289-8e3a-4047-a72e-226ac0fd596e": {
+            "db4e2c5e-0096-44f3-a87a-7dfa86b5d153": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "9517a9f8-a280-48ae-8ee3-71acafc2be06": {
+            "db4e2c5e-0096-44f3-a87a-7dfa86b5d153": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "e58ea4f2-82c1-41c1-83f2-0a564421c408": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "09b13a33-348d-458b-b43f-5013a45f4893": {}
+            }
+          },
+          "af92b0f2-6ae6-438d-a8d9-b375c4e41ec6": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "d057c749-d7a8-4108-adcc-31eb1878349b": {}
+            }
+          },
+          "3979b6f0-d0df-47f5-a3dd-9ea56d973bed": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "498b10a6-ba52-43d0-a28a-73dc43eaf048": {}
+            }
+          },
+          "afd7dbf6-b2ab-4e0a-b209-943dea42613c": {
+            "a82c13b9-1fe5-4adc-a53a-faa134a2b601": {
+              "4991414b-16a6-4a01-a988-c841eac995c7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "e0e3b248-34ac-461f-ac89-ba3f95ae4ca0",
+  "keywords": {
+    "form": null,
+    "post": null
+  },
+  "description": "Dispatches HTML form post request and outputs response or error.\n\nExample: \n1. \"https://httpbin.org/post\"@0 recieved via `URL` \n2.  {}@0 recieved via `headers` \n3. \n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n  \"size\": \"small\",\n  \"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}@0 recieved via `item` \n4. 200@0 sent via `status`\n5. \"OK\"@0 sent via `body`",
+  "attributes": {
+    "locked": true
+  }
+}

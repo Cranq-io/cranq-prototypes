@@ -4,7 +4,6 @@
     "inputs": {
       "7cfe5751-b2a9-42c1-9105-054322cca813": {
         "description": "Identifies account action in the Google Identity Toolkit API.\n\nPossible values:\n\n\"signInWithCustomToken\"\n\"signUp\"\n\"signInWithPassword\"\n\"signInWithIdp\"\n\"createAuthUri\"\n\"sendOobCode\"\n\"resetPassword\"\n\"update\"\n\"lookup\"\n\"delete\"",
-        "paramId": "fields",
         "type": "any",
         "name": "action"
       },

@@ -1,0 +1,205 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b545d93c-9bad-4c0c-af13-8cca0105a085": {
+          "coordinates": [
+            -112,
+            -137
+          ],
+          "name": "has header?",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"authorization\""
+          }
+        },
+        "bda424bd-4eaf-4fd7-8f8d-9b76c3deae41": {
+          "coordinates": [
+            -6,
+            2
+          ],
+          "name": "correct token?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6"
+        },
+        "f7c6956a-e03e-4d7f-835e-56631a52d2c5": {
+          "coordinates": [
+            -17,
+            250
+          ],
+          "name": "build header",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"Bearer \""
+          }
+        },
+        "72763f58-a6f3-4805-8655-b39587069001": {
+          "coordinates": [
+            106,
+            -65
+          ],
+          "name": "condition",
+          "prototype": "a9ccc258-8320-46cd-a29a-180316401e63"
+        },
+        "35d056a5-1ee1-4d81-b474-6d49791d4bae": {
+          "coordinates": [
+            152,
+            165
+          ],
+          "name": "forward request",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "609404b1-eb1a-415a-beb6-96cd0c0a33da": {
+          "coordinates": [
+            -218,
+            -70.5
+          ],
+          "name": "get headers",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"headers\"]"
+          }
+        },
+        "ee6c1505-00bd-4a16-a554-9bdd889d585c": {
+          "coordinates": [
+            114,
+            -211.5
+          ],
+          "name": "prepare error",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"error\": \"incorrect bearer token\"}"
+          }
+        },
+        "564fe3bf-29fe-4a65-adf5-63cd1f198c27": {
+          "coordinates": [
+            -186.33333333333331,
+            162.5
+          ],
+          "name": "bearer token",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c97ad031-661f-457d-b4b7-bdfb2d7e7493": {
+            "609404b1-eb1a-415a-beb6-96cd0c0a33da": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "35d056a5-1ee1-4d81-b474-6d49791d4bae": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "564fe3bf-29fe-4a65-adf5-63cd1f198c27": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {
+                "description": "undefined\nundefined"
+              }
+            }
+          },
+          "43bde1b3-75bb-403b-8d3e-cf0baaaa22e9": {
+            "564fe3bf-29fe-4a65-adf5-63cd1f198c27": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "10e32cd9-0ad1-44dc-9472-dbd4acdb9b2a": {
+            "35d056a5-1ee1-4d81-b474-6d49791d4bae": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          },
+          "41615356-7284-4969-bdc6-aa93fcac2294": {
+            "ee6c1505-00bd-4a16-a554-9bdd889d585c": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "b545d93c-9bad-4c0c-af13-8cca0105a085": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "bda424bd-4eaf-4fd7-8f8d-9b76c3deae41": {
+              "a0934373-43a4-4cd5-83eb-860bc20d790a": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "ee6c1505-00bd-4a16-a554-9bdd889d585c": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "f7c6956a-e03e-4d7f-835e-56631a52d2c5": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "bda424bd-4eaf-4fd7-8f8d-9b76c3deae41": {
+              "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {}
+            }
+          }
+        },
+        "bda424bd-4eaf-4fd7-8f8d-9b76c3deae41": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "72763f58-a6f3-4805-8655-b39587069001": {
+              "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {}
+            },
+            "35d056a5-1ee1-4d81-b474-6d49791d4bae": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "72763f58-a6f3-4805-8655-b39587069001": {
+          "7cfb1db4-bf11-4d32-b364-4f9281088541": {
+            "ee6c1505-00bd-4a16-a554-9bdd889d585c": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "609404b1-eb1a-415a-beb6-96cd0c0a33da": {
+          "headers": {
+            "b545d93c-9bad-4c0c-af13-8cca0105a085": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "564fe3bf-29fe-4a65-adf5-63cd1f198c27": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "f7c6956a-e03e-4d7f-835e-56631a52d2c5": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "43bde1b3-75bb-403b-8d3e-cf0baaaa22e9": {
+        "type": "string",
+        "name": "bearer token",
+        "description": "Receives the bearer token to be verified."
+      },
+      "c97ad031-661f-457d-b4b7-bdfb2d7e7493": {
+        "type": "{\n\"headers\": {string:string},\n\"body\": string\n}",
+        "name": "request",
+        "description": "Receives the request to be authorized."
+      }
+    },
+    "outputs": {
+      "10e32cd9-0ad1-44dc-9472-dbd4acdb9b2a": {
+        "type": "{\n\"headers\": {string:string},\n\"body\": string\n}",
+        "name": "request"
+      },
+      "41615356-7284-4969-bdc6-aa93fcac2294": {
+        "type": "{\"error\": \"incorrect bearer token\"}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "io/http/utils/Bearer token checker",
+  "description": "Checks for the presence of the specified bearer token in the submitted request headers. Forwards request body only when found.",
+  "keywords": {
+    "filter": null,
+    "stop": null,
+    "authorize": null,
+    "verify": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

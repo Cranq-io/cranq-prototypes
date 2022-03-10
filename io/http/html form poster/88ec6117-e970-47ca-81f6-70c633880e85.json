@@ -1,5 +1,5 @@
 {
-  "name": "io/http/HTML post request dispatcher",
+  "name": "io/http/HTML form poster",
   "interface": {
     "inputs": {
       "3a16460c-b25e-40ca-a468-e15baf34c40d": {
@@ -22,22 +22,22 @@
       "e58ea4f2-82c1-41c1-83f2-0a564421c408": {
         "type": "number",
         "name": "status",
-        "description": "Sends http response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200"
+        "description": "Sends HTTP response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200"
       },
       "af92b0f2-6ae6-438d-a8d9-b375c4e41ec6": {
         "type": "{string:string}",
         "name": "headers",
-        "description": "Sends http response headers."
+        "description": "Sends HTTP response headers."
       },
       "3979b6f0-d0df-47f5-a3dd-9ea56d973bed": {
         "type": "string",
         "name": "body",
-        "description": "Sends http response message body data.\n\nExample:\n\"OK\""
+        "description": "Sends HTTP response message body data.\n\nExample:\n\"OK\""
       },
       "afd7dbf6-b2ab-4e0a-b209-943dea42613c": {
         "type": "{\"error\": string}",
         "name": "errors",
-        "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
+        "description": "Sends HTTP response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
       }
     }
   },
@@ -163,7 +163,8 @@
   "original": "e0e3b248-34ac-461f-ac89-ba3f95ae4ca0",
   "keywords": {
     "form": null,
-    "post": null
+    "post": null,
+    "html": null
   },
   "description": "Dispatches HTML form post request and outputs response or error.\n\nExample: \n1. \"https://httpbin.org/post\"@0 recieved via `URL` \n2.  {}@0 recieved via `headers` \n3. \n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n  \"size\": \"small\",\n  \"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}@0 recieved via `item` \n4. 200@0 sent via `status`\n5. \"OK\"@0 sent via `body`",
   "attributes": {

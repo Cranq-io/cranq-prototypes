@@ -1,11 +1,11 @@
 {
-  "name": "io/http/HTML form poster",
+  "name": "io/http/HTML Form POST request dispatcher",
   "interface": {
     "inputs": {
       "3a16460c-b25e-40ca-a468-e15baf34c40d": {
         "type": "string",
         "name": "URL",
-        "description": "Receives the target of the HTML post.\n\nExample:\n\"https://httpbin.org/post\""
+        "description": "Receives the target of the HTML form post.\n\nExample:\n\"https://httpbin.org/post\""
       },
       "b3fa6289-8e3a-4047-a72e-226ac0fd596e": {
         "type": "{string:string}",
@@ -166,7 +166,7 @@
     "post": null,
     "html": null
   },
-  "description": "Dispatches HTML form post request and outputs response or error.\n\nExample: \n1. \"https://httpbin.org/post\"@0 recieved via `URL` \n2.  {}@0 recieved via `headers` \n3. \n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n  \"size\": \"small\",\n  \"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}@0 recieved via `item` \n4. 200@0 sent via `status`\n5. \"OK\"@0 sent via `body`",
+  "description": "Dispatches HTML form POST request and outputs response or error.\n\nExample: \n1. \"https://httpbin.org/post\"@0 recieved via `URL` \n2.  {}@0 recieved via `headers` \n3. \n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n  \"size\": \"small\",\n  \"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}@0 recieved via `item` \n4. 200@0 sent via `status`\n5. \"OK\"@0 sent via `body`",
   "attributes": {
     "locked": true
   }

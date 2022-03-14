@@ -1,0 +1,75 @@
+{
+  "name": "io/http/utils/Response splitter",
+  "description": "Splits a canonical HTTP response into its components: HTTP status, headers, and body.",
+  "interface": {
+    "inputs": {
+      "f36fdd44-9219-45f8-901b-62995613049f": {
+        "type": "`io/http/Response`",
+        "name": "response",
+        "description": "Receives the canonical HTTP response to be split."
+      }
+    },
+    "outputs": {
+      "2b8e0876-46f2-43d0-922a-d52090dbf136": {
+        "type": "typeof `response`[\"status\"]",
+        "name": "status",
+        "description": ""
+      },
+      "394b48ef-61a7-4b9c-b076-811a0fd5053e": {
+        "type": "typeof `response`[\"headers\"]",
+        "name": "headers"
+      },
+      "2ceb2019-5dae-4c52-930f-ab98e4236ed3": {
+        "type": "typeof `response`[\"body\"]",
+        "name": "body"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a94dbb42-5710-49c5-a3c9-af95af4dfd6a": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "split response",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"status\", \"headers\", \"body\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "f36fdd44-9219-45f8-901b-62995613049f": {
+            "a94dbb42-5710-49c5-a3c9-af95af4dfd6a": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "2ceb2019-5dae-4c52-930f-ab98e4236ed3": {
+            "a94dbb42-5710-49c5-a3c9-af95af4dfd6a": {
+              "body": {}
+            }
+          },
+          "2b8e0876-46f2-43d0-922a-d52090dbf136": {
+            "a94dbb42-5710-49c5-a3c9-af95af4dfd6a": {
+              "status": {}
+            }
+          },
+          "394b48ef-61a7-4b9c-b076-811a0fd5053e": {
+            "a94dbb42-5710-49c5-a3c9-af95af4dfd6a": {
+              "headers": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -101,24 +101,13 @@
         },
         "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
           "coordinates": [
-            178.45,
-            84
+            192.45,
+            19
           ],
           "name": "get transfers",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"result\"]"
-          }
-        },
-        "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
-          "coordinates": [
-            175.45,
-            -112
-          ],
-          "name": "build response",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"status\",\"headers\",\"data\"]"
           }
         },
         "3d5d4bd8-70ba-40c6-a909-f2048af37483": {
@@ -128,6 +117,14 @@
           ],
           "name": "forward inputs",
           "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "e4d15f75-7251-4745-becd-6c759536881c": {
+          "coordinates": [
+            187,
+            -130.3515625
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146"
         }
       },
       "connections": {
@@ -164,18 +161,18 @@
             "fdd2828f-f99d-43b0-b732-d2acc88d815b": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             },
-            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
-              "data": {}
+            "e4d15f75-7251-4745-becd-6c759536881c": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
             }
           },
           "a3c1977b-bff4-4384-902c-fd24f1356beb": {
-            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
-              "status": {}
+            "e4d15f75-7251-4745-becd-6c759536881c": {
+              "402286d6-3a51-4842-8c43-5bd757b60445": {}
             }
           },
           "52cb551e-169b-45a3-ad2d-aacff39506c1": {
-            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
-              "headers": {}
+            "e4d15f75-7251-4745-becd-6c759536881c": {
+              "300852ca-cadf-4b8c-b238-6f257f3039fb": {}
             }
           }
         },
@@ -237,8 +234,8 @@
             }
           },
           "c957f9d8-fa55-499c-8439-7cd42c334413": {
-            "b15e71bc-a56f-4df5-9be9-29f8f68e9f10": {
-              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            "e4d15f75-7251-4745-becd-6c759536881c": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {}
             }
           }
         }

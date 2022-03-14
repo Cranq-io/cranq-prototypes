@@ -94,7 +94,7 @@
         },
         "83e11f7f-a374-4491-b2e6-1b813e426325": {
           "98e5a7d3-3b54-4287-b956-6eb13ead38d7": {
-            "37d2033c-8560-4a57-a26c-98da5ba6c479": {
+            "71dc74b7-d8f7-4aa2-bb8a-92e6733e09ee": {
               "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
@@ -140,11 +140,11 @@
             }
           },
           "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
-            "37d2033c-8560-4a57-a26c-98da5ba6c479": {
-              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
-            },
             "83e11f7f-a374-4491-b2e6-1b813e426325": {
               "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {}
+            },
+            "71dc74b7-d8f7-4aa2-bb8a-92e6733e09ee": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
             }
           }
         }
@@ -167,17 +167,6 @@
           "name": "serialize req. body",
           "prototype": "70e5222f-b0aa-4eca-843c-e0a46fdac803",
           "params": {}
-        },
-        "37d2033c-8560-4a57-a26c-98da5ba6c479": {
-          "coordinates": [
-            105.04761904761904,
-            135.76190476190476
-          ],
-          "name": "default response",
-          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "null"
-          }
         },
         "082a943c-60c1-4850-92b4-c170739a76a4": {
           "coordinates": [
@@ -202,18 +191,26 @@
         },
         "83e11f7f-a374-4491-b2e6-1b813e426325": {
           "coordinates": [
-            107,
-            4
+            106,
+            20
           ],
           "name": "parse JSON",
           "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65",
           "params": {}
+        },
+        "71dc74b7-d8f7-4aa2-bb8a-92e6733e09ee": {
+          "coordinates": [
+            118.04761904761904,
+            153.76190476190476
+          ],
+          "name": "default response",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "null"
+          }
         }
       }
     }
-  },
-  "attributes": {
-    "locked": true
   },
   "description": "Dispatches HTTP request, expects response as JSON, parses it and outputs it as data. Outputs error if failed.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/tree/main/http_request",
   "keywords": {
@@ -224,5 +221,8 @@
     "delete": null,
     "fetch": null,
     "api": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

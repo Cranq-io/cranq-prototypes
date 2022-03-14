@@ -1,0 +1,92 @@
+{
+  "name": "io/http/utils/Response success detector",
+  "description": "Detects whether a HTTP response was successful based on its status code.",
+  "interface": {
+    "inputs": {
+      "391022bc-6387-4d91-a8c7-41ca5b73c12f": {
+        "type": "number",
+        "name": "status",
+        "description": "HTTP response status code."
+      }
+    },
+    "outputs": {
+      "31cb0067-efad-445d-b9e6-84e03b64bd83": {
+        "type": "number",
+        "name": "success",
+        "description": "Forwards the status code on success. (1XX, 2XX, 3XX)"
+      },
+      "a862096e-7ac0-4d3b-b402-200b8bf78d29": {
+        "type": "number",
+        "name": "error",
+        "description": "Forwards the status code on error. (4XX, 5XX)"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6d8add04-634c-4217-8ddb-8a03936d5144": {
+          "coordinates": [
+            -4,
+            -78.50000000000006
+          ],
+          "name": "greater or equal than tester",
+          "prototype": "b963cd0a-c591-4f03-af6f-de0450e84dcf",
+          "params": {
+            "fa70beab-7306-4d15-9aa6-d808755a2a02": "400"
+          }
+        },
+        "1aab95a8-24bf-457d-931a-ac59a86ad3d8": {
+          "coordinates": [
+            13,
+            83.49999999999994
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "6d8add04-634c-4217-8ddb-8a03936d5144": {
+          "16e781b0-5e94-4e62-8c67-8a2aff19e0dc": {
+            "1aab95a8-24bf-457d-931a-ac59a86ad3d8": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "391022bc-6387-4d91-a8c7-41ca5b73c12f": {
+            "6d8add04-634c-4217-8ddb-8a03936d5144": {
+              "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {}
+            },
+            "1aab95a8-24bf-457d-931a-ac59a86ad3d8": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "31cb0067-efad-445d-b9e6-84e03b64bd83": {
+            "1aab95a8-24bf-457d-931a-ac59a86ad3d8": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          },
+          "a862096e-7ac0-4d3b-b402-200b8bf78d29": {
+            "1aab95a8-24bf-457d-931a-ac59a86ad3d8": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "ok": null,
+    "continue": null,
+    "error": null,
+    "bad request": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

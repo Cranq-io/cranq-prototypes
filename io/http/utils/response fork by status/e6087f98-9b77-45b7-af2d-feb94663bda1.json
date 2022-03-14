@@ -1,0 +1,117 @@
+{
+  "name": "io/http/utils/Response fork by status",
+  "description": "Forwards `response` to either `on match` or `on mismatch` depending on whether the response matches the HTTP status received via `status`.",
+  "interface": {
+    "inputs": {
+      "37b1df01-5e61-4d09-b4d1-c5def5c64c54": {
+        "type": "number",
+        "name": "status",
+        "description": "Receives HTTP status code."
+      },
+      "629bb6b0-fd08-4c17-b6e4-47fbe73e72d4": {
+        "type": "`io/http/Response`",
+        "name": "response",
+        "description": "Receives HTTP response."
+      }
+    },
+    "outputs": {
+      "e3d4c04d-d0df-4b7e-adfa-8363c2c617c8": {
+        "type": "`io/http/Response`",
+        "name": "on match",
+        "description": "Forwards received response when it matches the HTTP status received via `status`."
+      },
+      "b8d6a7c9-0c86-4fd3-9d6e-01e11b31aeef": {
+        "type": "`io/http/Response`",
+        "name": "on mismatch",
+        "description": "Forwards received response when it does not match the HTTP status received via `status`."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "95b5dbea-ccee-498a-98e3-5b35bb570b3f": {
+          "coordinates": [
+            12,
+            -109
+          ],
+          "name": "status match?",
+          "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a"
+        },
+        "f4ba5ad5-7be1-4fc0-8ef2-97efc8a217b4": {
+          "coordinates": [
+            136,
+            40
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "3f6ea47c-54fa-4c69-ae46-3a79e1943648": {
+          "coordinates": [
+            -102,
+            87
+          ],
+          "name": "get status",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"status\""
+          }
+        }
+      },
+      "connections": {
+        "95b5dbea-ccee-498a-98e3-5b35bb570b3f": {
+          "66ea4495-b5be-4650-9448-c802141b82cd": {
+            "f4ba5ad5-7be1-4fc0-8ef2-97efc8a217b4": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "3f6ea47c-54fa-4c69-ae46-3a79e1943648": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "95b5dbea-ccee-498a-98e3-5b35bb570b3f": {
+              "50e32f24-30af-4721-9e0a-89e85a9ee240": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "37b1df01-5e61-4d09-b4d1-c5def5c64c54": {
+            "95b5dbea-ccee-498a-98e3-5b35bb570b3f": {
+              "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": {}
+            }
+          },
+          "629bb6b0-fd08-4c17-b6e4-47fbe73e72d4": {
+            "3f6ea47c-54fa-4c69-ae46-3a79e1943648": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "f4ba5ad5-7be1-4fc0-8ef2-97efc8a217b4": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "e3d4c04d-d0df-4b7e-adfa-8363c2c617c8": {
+            "f4ba5ad5-7be1-4fc0-8ef2-97efc8a217b4": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "b8d6a7c9-0c86-4fd3-9d6e-01e11b31aeef": {
+            "f4ba5ad5-7be1-4fc0-8ef2-97efc8a217b4": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "condition": null,
+    "fork": null,
+    "http": null,
+    "request": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

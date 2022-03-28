@@ -8,7 +8,7 @@
         "name": "state"
       },
       "b0c10279-2fdc-48ec-926d-f348e6222553": {
-        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create Hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"prepare-write-deploy-params\": typeof `mappings` of `prepare write deploy params`,\n  \"write-deploy\": typeof `params` of `write deploy.js`\n}",
+        "type": "{\n  \"write-api-url\": typeof `params` of `API URL -> .env`,\n  \"write-private-key\": typeof `params` of `private key -> .env`,\n  \"create-hardhat-config\": typeof `params` of `create hardhat config`,\n  \"create-contract\": typeof `params` of `create contract`,\n  \"prepare-write-deploy-params\": typeof `mapping` of `prepare write deploy params`,\n  \"write-deploy\": typeof `params` of `create deploy script`\n}",
         "name": "params"
       }
     },
@@ -224,12 +224,14 @@
       }
     }
   },
-  "attributes": {},
   "keywords": {
     "action": null,
     "scripting": null,
     "smart contract": null,
     "dependency": null,
     "no-code": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

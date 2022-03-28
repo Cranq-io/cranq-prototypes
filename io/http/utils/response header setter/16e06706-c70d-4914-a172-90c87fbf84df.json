@@ -14,7 +14,7 @@
     },
     "outputs": {
       "7a706f8f-abba-4719-be33-291aa16104e6": {
-        "type": "typeof `synced` of `syncer B`",
+        "type": "typeof `synced` of `rebuild response`",
         "name": "response",
         "description": "[Inherited from port `synced` of `syncer B`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
       }
@@ -123,5 +123,8 @@
         }
       }
     }
+  },
+  "attributes": {
+    "locked": true
   }
 }

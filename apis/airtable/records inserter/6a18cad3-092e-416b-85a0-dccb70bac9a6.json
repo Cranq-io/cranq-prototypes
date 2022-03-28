@@ -26,7 +26,7 @@
     "outputs": {
       "356f6786-9b1b-45fc-b348-ab9b584c7a82": {
         "description": "Outputs the response from AirTable.",
-        "type": "typeof`AirtableResponse`",
+        "type": "typeof `AirtableResponse`",
         "name": "response body"
       }
     }
@@ -266,8 +266,10 @@
     }
   },
   "name": "apis/airtable/Records inserter",
-  "attributes": {},
   "keywords": {
     "airtable insert upload": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

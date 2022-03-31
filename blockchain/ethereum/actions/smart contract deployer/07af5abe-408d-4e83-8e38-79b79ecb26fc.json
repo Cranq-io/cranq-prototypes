@@ -8,7 +8,7 @@
         "name": "state"
       },
       "46aa769a-35f2-4021-8125-3a934c4542a4": {
-        "type": "{\n  \"create-folders\": typeof `params` of `prepare folder structure`,\n  \"install-dependencies\": typeof `params` of `install dependencies`,\n  \"create-files\": typeof `params` of `create files`,\n  \"deploy-contract\": typeof `params` of `compile & deploy contract`\n}",
+        "type": "{ \n  \"create-folders\": typeof `params` of `prepare folder structure`,\n  \"install-dependencies\": typeof `params` of `install dependencies`,\n  \"create-files\": typeof `params` of `create files`,\n  \"deploy-contract\": typeof `params` of `compile & deploy contract`\n}",
         "name": "params"
       }
     },
@@ -160,12 +160,14 @@
       }
     }
   },
-  "attributes": {},
   "keywords": {
     "scripting": null,
     "action": null,
     "no-code": null,
     "one-time": null,
     "smart contract": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

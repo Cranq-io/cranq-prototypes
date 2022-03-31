@@ -16,7 +16,7 @@
     "outputs": {
       "0a75c9fb-12a5-4382-849f-940a23580d61": {
         "description": "Sends signal received via `data` when condition was true.",
-        "type": "typeof `data`",
+        "type": "typeof `on true` of `trial left?`",
         "name": "retry"
       },
       "3dcb91cb-a667-4280-86bf-deb2e4491b33": {
@@ -458,5 +458,8 @@
         }
       }
     }
+  },
+  "attributes": {
+    "locked": true
   }
 }

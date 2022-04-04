@@ -1,0 +1,35 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "eade8436-a4c5-4c37-a4ce-ed309c11e048": "outputs.uppercase(data.toUpperCase(), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "eade8436-a4c5-4c37-a4ce-ed309c11e048": {
+        "type": "string",
+        "name": "string",
+        "description": "Receives string to be converted to uppercase.\n\nExample:\n\"Foo\""
+      }
+    },
+    "outputs": {
+      "4ad7fe3e-7ca1-4d85-a495-3ec910a24d42": {
+        "type": "string",
+        "name": "uppercase",
+        "description": "Sends `string` converted to upper case.\n\nExample:\n\"FOO\""
+      }
+    }
+  },
+  "name": "string/Uppercaser",
+  "keywords": {
+    "convert": null,
+    "toupper": null
+  },
+  "description": "Converts `string`  to uppercase.\n\nExample:\n1. \"Foo\"@0  received via `string`\n2. \"FOO\"@0  sent via `uppercase`",
+  "original": "b2047f76-03e8-4d10-9ba1-f96176004aa4",
+  "attributes": {
+    "locked": true
+  }
+}

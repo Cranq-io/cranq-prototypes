@@ -1,0 +1,97 @@
+{
+  "name": "low-code/io/http/express/Endpoint listener",
+  "description": "Opinionated low-code version of `io/http/express/Endpoint listener`.\n\nSets up a listener on an HTTP route, and handles bad request errors. Starts an Express server if one is not started yet.\n\nPossible error responses:\n* {\n    \"status\": 400,\n    \"headers\": {},\n    \"body\": \"Bad request\"\n  }\n* {\n    \"status\": 403,\n    \"headers\": {},\n    \"body\": \"Unauthorized\"\n  }",
+  "interface": {
+    "inputs": {
+      "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {
+        "type": "typeof `response` of `txns endpoint`",
+        "name": "response"
+      },
+      "43b7c75d-51f5-4220-b36f-353103f6c417": {
+        "type": "typeof `params` of `endpoint`",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+        "type": "typeof `request` of `endpoint`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bd2d4407-0766-4345-83f1-727f1315c1f4": {
+          "coordinates": [
+            -69.5,
+            25.67578125
+          ],
+          "name": "endpoint",
+          "prototype": "3e022fe6-001b-45a9-9d81-14f1581bef8c",
+          "params": {}
+        },
+        "369f98d1-38b4-4bff-b2b6-6fc7026c4eb4": {
+          "coordinates": [
+            95.5,
+            -60.67578125
+          ],
+          "name": "error to 4XX status",
+          "prototype": "4299911c-a68f-44fb-93de-c0319557cd3c"
+        }
+      },
+      "connections": {
+        "bd2d4407-0766-4345-83f1-727f1315c1f4": {
+          "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
+            "369f98d1-38b4-4bff-b2b6-6fc7026c4eb4": {
+              "8a4f7d44-e12d-4640-a0e2-c0339b240709": {}
+            }
+          }
+        },
+        "369f98d1-38b4-4bff-b2b6-6fc7026c4eb4": {
+          "9a048bdf-a9cb-43f3-a514-d88ab0f798a3": {
+            "bd2d4407-0766-4345-83f1-727f1315c1f4": {
+              "b791f485-a790-4e63-8c41-867597d4d42c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {
+            "bd2d4407-0766-4345-83f1-727f1315c1f4": {
+              "b791f485-a790-4e63-8c41-867597d4d42c": {}
+            }
+          },
+          "43b7c75d-51f5-4220-b36f-353103f6c417": {
+            "bd2d4407-0766-4345-83f1-727f1315c1f4": {
+              "aac93261-9159-4995-ba5e-faf09ebdffd6": {}
+            }
+          }
+        },
+        "outputs": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "bd2d4407-0766-4345-83f1-727f1315c1f4": {
+              "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "express": null,
+    "server": null,
+    "endpoint": null,
+    "get": null,
+    "post": null,
+    "put": null,
+    "delete": null,
+    "listen": null,
+    "api": null,
+    "opinionated": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

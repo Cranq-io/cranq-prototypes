@@ -1,0 +1,184 @@
+{
+  "name": "io/http/utils/Content type applicator",
+  "description": "Adds content type header to the received response.",
+  "interface": {
+    "inputs": {
+      "a12287c7-5f64-4ba1-9a30-c60293a28d1e": {
+        "type": "`io/http/Response`",
+        "name": "response",
+        "description": ""
+      },
+      "287c923c-5e36-4c3c-9fca-496631da77c7": {
+        "type": "{optional \"contentType\": \"text\" or \"json\"}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "5e70d38e-8b27-45da-978a-53d9d9ad1e07": {
+        "type": "`io/http/Response`",
+        "name": "response",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "23560567-7791-41e8-8e84-c7046bd23644": {
+          "coordinates": [
+            225.10714285714283,
+            37.928571428571416
+          ],
+          "name": "merge headers",
+          "prototype": "16e06706-c70d-4914-a172-90c87fbf84df"
+        },
+        "ab90a838-52fb-4b4a-bf26-2581ef51fa86": {
+          "coordinates": [
+            -222.89285714285717,
+            89.92857142857142
+          ],
+          "name": "get content type",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"contentType\""
+          }
+        },
+        "f9eb7d6d-d563-4bd1-a5c8-847fc577cf59": {
+          "coordinates": [
+            -11.642857142857167,
+            -211.57142857142858
+          ],
+          "name": "default response",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "c4463999-c239-4586-9731-1b861844e5e2": {
+          "coordinates": [
+            119.35714285714283,
+            -119.57142857142858
+          ],
+          "name": "json res. headers",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"Content-Type\": \"application/json\"}"
+          }
+        },
+        "2b915b4b-b6b6-4af7-b6b3-6e53ed18b3f5": {
+          "coordinates": [
+            -66.64285714285717,
+            214.42857142857142
+          ],
+          "name": "build muxed",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"field\"",
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"data\": true}"
+          }
+        },
+        "4cf738ce-5b62-4826-925a-aaab111c5c56": {
+          "coordinates": [
+            -39.64285714285717,
+            17.428571428571416
+          ],
+          "name": "fork content type",
+          "prototype": "090f60d2-f942-49dc-b0ff-d736f9872988",
+          "params": {
+            "85fde0ba-068b-457d-9003-e29e47af2e38": "[\"json\", \"text\"]"
+          }
+        },
+        "82be92a5-0fec-4ee6-97d3-e7249e11e5e7": {
+          "coordinates": [
+            123.35714285714283,
+            189.42857142857142
+          ],
+          "name": "text res. headers",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"Content-Type\": \"text/plain\"}"
+          }
+        }
+      },
+      "connections": {
+        "ab90a838-52fb-4b4a-bf26-2581ef51fa86": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "2b915b4b-b6b6-4af7-b6b3-6e53ed18b3f5": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "f9eb7d6d-d563-4bd1-a5c8-847fc577cf59": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "2b915b4b-b6b6-4af7-b6b3-6e53ed18b3f5": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "4cf738ce-5b62-4826-925a-aaab111c5c56": {
+              "b9b5fa59-8f22-46df-9305-b2d6f74f4085": {}
+            }
+          }
+        },
+        "c4463999-c239-4586-9731-1b861844e5e2": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "23560567-7791-41e8-8e84-c7046bd23644": {
+              "2d28841b-bd3c-4705-ba85-9cda6704175e": {}
+            }
+          }
+        },
+        "82be92a5-0fec-4ee6-97d3-e7249e11e5e7": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "23560567-7791-41e8-8e84-c7046bd23644": {
+              "2d28841b-bd3c-4705-ba85-9cda6704175e": {}
+            }
+          }
+        },
+        "4cf738ce-5b62-4826-925a-aaab111c5c56": {
+          "json": {
+            "c4463999-c239-4586-9731-1b861844e5e2": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "text": {
+            "82be92a5-0fec-4ee6-97d3-e7249e11e5e7": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "287c923c-5e36-4c3c-9fca-496631da77c7": {
+            "ab90a838-52fb-4b4a-bf26-2581ef51fa86": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          },
+          "a12287c7-5f64-4ba1-9a30-c60293a28d1e": {
+            "23560567-7791-41e8-8e84-c7046bd23644": {
+              "c740d06e-a415-4c59-97b7-02ba0aa95ad5": {}
+            },
+            "f9eb7d6d-d563-4bd1-a5c8-847fc577cf59": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          }
+        },
+        "outputs": {
+          "5e70d38e-8b27-45da-978a-53d9d9ad1e07": {
+            "23560567-7791-41e8-8e84-c7046bd23644": {
+              "7a706f8f-abba-4719-be33-291aa16104e6": {}
+            },
+            "f9eb7d6d-d563-4bd1-a5c8-847fc577cf59": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "add": null,
+    "insert": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

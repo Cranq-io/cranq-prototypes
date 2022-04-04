@@ -1,5 +1,5 @@
 {
-  "name": "apis/fx/Yahoo Finance rates per date getter",
+  "name": "apis/fx/yahoo finance/Daily rates getter",
   "interface": {
     "inputs": {
       "9792cc4b-8fe1-4824-8ee4-4e7f9b52c0bd": {
@@ -28,6 +28,10 @@
         "type": "{string: number}",
         "name": "rates per date",
         "description": "Sent the rates of the symbol per interval"
+      },
+      "afd96529-112a-4aeb-8b85-bd3c996feaae": {
+        "type": "{\n  \"error\": \"Service unavailable\"\n}",
+        "name": "error"
       }
     }
   },
@@ -36,8 +40,8 @@
       "nodes": {
         "615003d0-ab63-447f-adaa-19735d20ef06": {
           "coordinates": [
-            -202,
-            -0.3333333333333144
+            -122,
+            -53.333333333333314
           ],
           "name": "yahoo finance",
           "prototype": "87a03548-e8f0-48ec-9f92-59820452e271",
@@ -45,16 +49,16 @@
         },
         "2e2881ff-e371-4790-b168-446292e6a159": {
           "coordinates": [
-            -8.333333333333329,
-            -4
+            3.6666666666666714,
+            120
           ],
           "name": "get timestamps & adjustedcloses",
           "prototype": "845cf037-2a0a-4ad0-bcf8-936a1d329c96"
         },
         "214b8de3-44d6-4d43-b44e-441f409e9d01": {
           "coordinates": [
-            168.33333333333331,
-            -1.6666666666666288
+            139.33333333333331,
+            -95.66666666666663
           ],
           "name": "create rates per date format",
           "prototype": "959ec88b-c19e-4b61-8366-d8e226ae0baf"
@@ -108,6 +112,11 @@
           "fe8e8f2f-a74f-48e0-8bfd-3690c2c4de81": {
             "214b8de3-44d6-4d43-b44e-441f409e9d01": {
               "87721bc2-107e-4d04-b41e-df0fe726e253": {}
+            }
+          },
+          "afd96529-112a-4aeb-8b85-bd3c996feaae": {
+            "615003d0-ab63-447f-adaa-19735d20ef06": {
+              "ee2d0d12-0a68-42a7-baf1-5a8dab8b0f40": {}
             }
           }
         }

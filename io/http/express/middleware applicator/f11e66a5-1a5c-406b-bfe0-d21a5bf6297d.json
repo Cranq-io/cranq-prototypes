@@ -3,8 +3,9 @@
   "interface": {
     "inputs": {
       "4caba675-aa86-4d81-82a5-6510f71a708d": {
-        "type": "any",
-        "name": "app ID"
+        "type": "string",
+        "name": "app ID",
+        "description": "Identifies the Express app to apply the middleware on."
       },
       "10c0aa80-7a63-4647-bebf-2002804b315c": {
         "type": "\"text\" or \"json\" or \"urlencoded\" or \"cors\"",
@@ -17,9 +18,9 @@
         "name": "done"
       },
       "af511dbd-294e-4cbf-940a-e81326cb837b": {
-        "type": "any",
+        "type": "typeof `app ID`",
         "name": "app ID",
-        "description": "DEPRECATED"
+        "description": ""
       },
       "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {
         "type": "{\"error\": string}",
@@ -154,10 +155,8 @@
     }
   },
   "description": "Applies a known middleware to the specified express app.\n\nAccepted middleware identifiers:\n* \"json\"\n* \"urlencoded\"\n* \"cors\"",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "api": null
-  }
+  },
+  "attributes": {}
 }

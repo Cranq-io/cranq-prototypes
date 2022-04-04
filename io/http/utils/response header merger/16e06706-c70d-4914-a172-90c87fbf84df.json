@@ -1,22 +1,22 @@
 {
-  "name": "io/http/utils/Response header setter",
+  "name": "io/http/utils/Response header merger",
   "interface": {
     "inputs": {
       "c740d06e-a415-4c59-97b7-02ba0aa95ad5": {
-        "type": "typeof `unsplit` of `split response`",
+        "type": "`io/http/Response`",
         "name": "response",
-        "description": "[Inherited from port `unsplit` of `split response`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
+        "description": ""
       },
       "2d28841b-bd3c-4705-ba85-9cda6704175e": {
-        "type": "string",
+        "type": "`io/http/Response headers`",
         "name": "headers"
       }
     },
     "outputs": {
       "7a706f8f-abba-4719-be33-291aa16104e6": {
-        "type": "typeof `synced` of `rebuild response`",
+        "type": "`io/http/Response`",
         "name": "response",
-        "description": "[Inherited from port `synced` of `syncer B`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+        "description": ""
       }
     }
   },
@@ -124,6 +124,7 @@
       }
     }
   },
+  "description": "Merges the specified response headers into the response.",
   "attributes": {
     "locked": true
   }

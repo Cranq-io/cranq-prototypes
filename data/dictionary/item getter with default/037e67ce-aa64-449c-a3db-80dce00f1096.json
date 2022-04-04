@@ -1,0 +1,102 @@
+{
+  "name": "data/dictionary/Item getter with default",
+  "description": "Retrieves an item's value by its key from a dictionary.\nIf the item is not found, the specified default value is sent.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"first\"@0 received via `key`\n3. `value` sends 1@0\n\nExample B:\n1. 2 assigned to `default`\n2. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n3. \"second\"@0 received via `key`\n4. `value` sends 2@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
+  "interface": {
+    "inputs": {
+      "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {
+        "type": "{string: any}",
+        "name": "dict",
+        "description": "Receives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      },
+      "e7d99c83-94bf-45ac-bc40-d58615931d22": {
+        "type": "string",
+        "name": "key",
+        "description": "Receives the key corresponding to the value to get.\n\nExample:\n\"third\""
+      },
+      "09901a8a-16aa-4e9a-a314-d8eb2cec3284": {
+        "type": "typeof `dict`[string]",
+        "name": "default",
+        "description": "Receives the default value to be sent when the requested key is absent.\n\nMust be parameter.\n\nExample:\n2"
+      }
+    },
+    "outputs": {
+      "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+        "type": "typeof `dict`[string]",
+        "name": "value",
+        "description": "Sends the value corresponding to the specified key, or, when not found, the specified default value.\n\nExample:\n1"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1614a3ac-95f3-4f7a-86e8-d6330442a796": {
+          "coordinates": [
+            12,
+            -89
+          ],
+          "name": "request params",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {}
+        },
+        "49ed2186-2360-4724-bfb9-28c97d479d69": {
+          "coordinates": [
+            -24,
+            76
+          ],
+          "name": "default",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        }
+      },
+      "connections": {
+        "1614a3ac-95f3-4f7a-86e8-d6330442a796": {
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "49ed2186-2360-4724-bfb9-28c97d479d69": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {
+            "1614a3ac-95f3-4f7a-86e8-d6330442a796": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          },
+          "e7d99c83-94bf-45ac-bc40-d58615931d22": {
+            "1614a3ac-95f3-4f7a-86e8-d6330442a796": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          },
+          "09901a8a-16aa-4e9a-a314-d8eb2cec3284": {
+            "49ed2186-2360-4724-bfb9-28c97d479d69": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "outputs": {
+          "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+            "1614a3ac-95f3-4f7a-86e8-d6330442a796": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            },
+            "49ed2186-2360-4724-bfb9-28c97d479d69": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "variable": null,
+    "container": null,
+    "buffer": null,
+    "data": null,
+    "default": null,
+    "fallback": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

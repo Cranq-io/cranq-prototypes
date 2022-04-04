@@ -27,15 +27,15 @@
       }
     }
   },
-  "name": "number/to string",
-  "attributes": {
-    "locked": true
-  },
+  "name": "number/Stringifier",
   "description": "Serializes the given number to a string.\n\nExample:\n\n1. 23.45@0 is received via `number`\n2. \"23.45\"@0 is sent via `string`",
   "keywords": {
     "number": null,
     "string": null,
     "serialize": null,
     "stringify": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

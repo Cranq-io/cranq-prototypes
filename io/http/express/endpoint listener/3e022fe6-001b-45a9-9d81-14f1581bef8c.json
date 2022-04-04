@@ -9,8 +9,9 @@
         "description": ""
       },
       "aac93261-9159-4995-ba5e-faf09ebdffd6": {
-        "type": "{\n  \"appId\": string,\n  \"port\": number,\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"bearerToken\": string,\n  \"route\": string\n}",
-        "name": "params"
+        "type": "{\n  \"appId\": string,\n  \"port\": number,\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"route\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": \"text\" or \"json\" or \"urlencoded\"\n  },\n  optional \"response\": { \n   optional \"contentType\": \"text\" or \"json\"\n  }\n}",
+        "name": "params",
+        "description": ""
       }
     },
     "outputs": {
@@ -29,111 +30,97 @@
       "nodes": {
         "23d992fe-29d5-4ada-be32-0edfed577b81": {
           "coordinates": [
-            -58.75,
-            269
+            -23,
+            263.5
           ],
           "name": "start server",
           "prototype": "571c94c6-38b1-4212-833a-b947f50fadec"
         },
-        "e434c13b-6333-4964-9d04-3d57ae11b098": {
-          "coordinates": [
-            134.25,
-            83
-          ],
-          "name": "use text middleware",
-          "prototype": "f11e66a5-1a5c-406b-bfe0-d21a5bf6297d",
-          "params": {
-            "10c0aa80-7a63-4647-bebf-2002804b315c": "\"text\"",
-            "22a29733-0a7c-4f27-84cc-bd90a4b53211": "{}"
-          }
-        },
-        "333c87e7-f1df-4986-a231-61c63c6550c7": {
-          "coordinates": [
-            131.25,
-            -164
-          ],
-          "name": "authorized?",
-          "prototype": "be35b9df-13e1-44f4-ad89-6d75f897bcdb",
-          "params": {}
-        },
         "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
           "coordinates": [
-            -205.75,
-            57.5
+            -267,
+            33
           ],
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"appId\",\"port\",\"method\",\"bearerToken\",\"route\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"appId\",\"port\",\"method\",\"route\"]"
           }
         },
         "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
           "coordinates": [
-            20.25,
-            -301.5
+            21,
+            -126
           ],
           "name": "handle request",
           "prototype": "a63f623a-f4b2-4a06-acca-83774cd4ca41"
         },
-        "434d7344-ebc2-4e85-8725-ec1fd8b96a55": {
+        "43619449-a641-4f60-bd73-d05ddf1882b6": {
           "coordinates": [
-            -215.08333333333334,
-            -155.83333333333334
+            178.33333333333334,
+            -57.734375
           ],
-          "name": "add response headers",
-          "prototype": "16e06706-c70d-4914-a172-90c87fbf84df",
+          "name": "authenticate request",
+          "prototype": "bae8978b-45ee-483a-8e7d-d9b2cfef0b66"
+        },
+        "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+          "coordinates": [
+            9.892857142857167,
+            -281.78013392857144
+          ],
+          "name": "add resp. content type",
+          "prototype": "ad05eb6d-f87c-407b-8906-fef794d28856"
+        },
+        "021f81af-492a-4a7d-b348-36f8f645e103": {
+          "coordinates": [
+            101.83333333333331,
+            81.265625
+          ],
+          "name": "apply req. content middleware",
+          "prototype": "1d2a424f-215d-4dac-a939-b2a9f2d61cf8"
+        },
+        "bfe96f38-ce64-48f0-b656-263d9e3d5346": {
+          "coordinates": [
+            -269.75,
+            139.6484375
+          ],
+          "name": "request params",
+          "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
           "params": {
-            "2d28841b-bd3c-4705-ba85-9cda6704175e": "{\"Content-Type\":\"application/json\"}"
+            "e7d99c83-94bf-45ac-bc40-d58615931d22": "\"request\"",
+            "09901a8a-16aa-4e9a-a314-d8eb2cec3284": "{}"
           }
+        },
+        "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
+          "coordinates": [
+            -169.75,
+            -243.3515625
+          ],
+          "name": "response params",
+          "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
+          "params": {
+            "e7d99c83-94bf-45ac-bc40-d58615931d22": "\"response\"",
+            "09901a8a-16aa-4e9a-a314-d8eb2cec3284": "{}"
+          }
+        },
+        "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+          "coordinates": [
+            -246.4921875,
+            -120.32421875
+          ],
+          "name": "store (async)",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
         }
       },
       "connections": {
-        "23d992fe-29d5-4ada-be32-0edfed577b81": {
-          "541fc93b-1098-4659-95a2-f75bcf3109b1": {
-            "e434c13b-6333-4964-9d04-3d57ae11b098": {
-              "4caba675-aa86-4d81-82a5-6510f71a708d": {}
-            }
-          }
-        },
-        "e434c13b-6333-4964-9d04-3d57ae11b098": {
-          "af511dbd-294e-4cbf-940a-e81326cb837b": {
-            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
-              "91ce9cc7-04d3-43af-81be-39747c4aaf61": {}
-            }
-          }
-        },
-        "434d7344-ebc2-4e85-8725-ec1fd8b96a55": {
-          "7a706f8f-abba-4719-be33-291aa16104e6": {
-            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
-              "91981648-5a12-4061-8be8-3c43210193c7": {}
-            }
-          }
-        },
         "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
           "452b5701-97ed-4e87-b58d-34ea209e802d": {
-            "333c87e7-f1df-4986-a231-61c63c6550c7": {
-              "c97ad031-661f-457d-b4b7-bdfb2d7e7493": {}
-            }
-          }
-        },
-        "333c87e7-f1df-4986-a231-61c63c6550c7": {
-          "392d0a38-21ec-4035-a0da-4712d9cebf3f": {
-            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
-              "91981648-5a12-4061-8be8-3c43210193c7": {}
+            "43619449-a641-4f60-bd73-d05ddf1882b6": {
+              "f62d2761-14db-434f-bbea-7eb1ee3b4d84": {}
             }
           }
         },
         "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
-          "appId": {
-            "23d992fe-29d5-4ada-be32-0edfed577b81": {
-              "655df4af-25f6-4658-9d19-24bd222f2d29": {}
-            }
-          },
-          "port": {
-            "23d992fe-29d5-4ada-be32-0edfed577b81": {
-              "11745554-d9d0-41bb-af77-987d8450ccfe": {}
-            }
-          },
           "method": {
             "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
               "929caaa1-7ba7-46bb-951d-869e82fd5e47": {}
@@ -144,46 +131,119 @@
               "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {}
             }
           },
-          "bearerToken": {
-            "333c87e7-f1df-4986-a231-61c63c6550c7": {
-              "43bde1b3-75bb-403b-8d3e-cf0baaaa22e9": {}
+          "appId": {
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "655df4af-25f6-4658-9d19-24bd222f2d29": {}
+            }
+          },
+          "port": {
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "11745554-d9d0-41bb-af77-987d8450ccfe": {}
+            }
+          }
+        },
+        "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+          "5e70d38e-8b27-45da-978a-53d9d9ad1e07": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "91981648-5a12-4061-8be8-3c43210193c7": {}
+            }
+          }
+        },
+        "23d992fe-29d5-4ada-be32-0edfed577b81": {
+          "541fc93b-1098-4659-95a2-f75bcf3109b1": {
+            "021f81af-492a-4a7d-b348-36f8f645e103": {
+              "8a7a0641-e6d8-4d9a-b3c3-9cd5deeb206d": {}
+            }
+          }
+        },
+        "021f81af-492a-4a7d-b348-36f8f645e103": {
+          "fba0fc6a-96f0-424a-a563-7b153f3056ac": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "91ce9cc7-04d3-43af-81be-39747c4aaf61": {}
+            }
+          }
+        },
+        "bfe96f38-ce64-48f0-b656-263d9e3d5346": {
+          "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+            "021f81af-492a-4a7d-b348-36f8f645e103": {
+              "9510f1fa-b0d8-4047-86ea-48c797c702fc": {}
+            },
+            "43619449-a641-4f60-bd73-d05ddf1882b6": {
+              "46e0d2a7-3be6-42bc-923e-dc769220a7ab": {}
+            }
+          }
+        },
+        "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
+          "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+            "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+              "287c923c-5e36-4c3c-9fca-496631da77c7": {}
+            }
+          }
+        },
+        "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
+              "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {}
             }
           }
         }
       },
       "forwards": {
         "inputs": {
-          "b791f485-a790-4e63-8c41-867597d4d42c": {
-            "434d7344-ebc2-4e85-8725-ec1fd8b96a55": {
-              "c740d06e-a415-4c59-97b7-02ba0aa95ad5": {}
-            }
-          },
           "aac93261-9159-4995-ba5e-faf09ebdffd6": {
             "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "bfe96f38-ce64-48f0-b656-263d9e3d5346": {
+              "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {}
+            },
+            "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          },
+          "b791f485-a790-4e63-8c41-867597d4d42c": {
+            "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+              "a12287c7-5f64-4ba1-9a30-c60293a28d1e": {}
+            },
+            "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
             }
           }
         },
         "outputs": {
-          "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {
-            "333c87e7-f1df-4986-a231-61c63c6550c7": {
-              "10e32cd9-0ad1-44dc-9472-dbd4acdb9b2a": {}
-            }
-          },
           "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
-            "e434c13b-6333-4964-9d04-3d57ae11b098": {
-              "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {}
-            },
             "23d992fe-29d5-4ada-be32-0edfed577b81": {
               "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {}
             },
             "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
               "12b5e681-073c-47bc-abb3-698530817f66": {}
+            },
+            "43619449-a641-4f60-bd73-d05ddf1882b6": {
+              "b4bb5e77-f02d-4c31-9fff-5c76a7b8da85": {}
+            },
+            "021f81af-492a-4a7d-b348-36f8f645e103": {
+              "8f7cb810-8dcf-4cf3-8423-c95409b863d6": {}
+            }
+          },
+          "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {
+            "43619449-a641-4f60-bd73-d05ddf1882b6": {
+              "c652b89b-0773-4e5c-9b0e-e92ccf78e04e": {}
             }
           }
         }
       }
     }
+  },
+  "keywords": {
+    "express": null,
+    "server": null,
+    "endpoint": null,
+    "get": null,
+    "post": null,
+    "put": null,
+    "delete": null,
+    "listen": null,
+    "api": null
   },
   "attributes": {
     "locked": true

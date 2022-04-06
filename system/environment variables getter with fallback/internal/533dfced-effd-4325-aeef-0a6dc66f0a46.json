@@ -1,0 +1,127 @@
+{
+  "name": "system/Environment variables getter with fallback/Internal",
+  "interface": {
+    "inputs": {
+      "7d2aba70-7dd1-4840-8930-6e5cd761f561": {
+        "type": "string[]",
+        "name": "variable names",
+        "description": "Receives a list of variable names to be resolved from the environment.\n\nExample:\n[\"Var1\", \"Var2\"]"
+      }
+    },
+    "outputs": {
+      "1279e81c-1b95-43db-835d-44448b8deff0": {
+        "type": "{string: string}",
+        "name": "resolved variables",
+        "description": "Sends the dictionary of those  environment variables that could be resolved.\n\n\nExample:\n{\n  \"V1\": \"value 1\",\n  \"V2\": \"default value 2\"\n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8c1efd22-0951-482d-af30-b77cb6b1418f": {
+          "coordinates": [
+            -189.79999999999995,
+            -112.19999999999999
+          ],
+          "name": "resolve variables",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "{}"
+          }
+        },
+        "3a8be724-b011-4b3f-99cf-3e76c61da5ee": {
+          "coordinates": [
+            -39.799999999999955,
+            -62.19999999999999
+          ],
+          "name": "try get variable",
+          "prototype": "505f9cf6-92f9-4e19-ad69-62f485b56000"
+        },
+        "5f00e624-cf31-41d1-9af6-6d0fe772f809": {
+          "coordinates": [
+            -29.799999999999955,
+            81.80000000000001
+          ],
+          "name": "do not change dictionary if variable not found",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "5104eadf-a495-4e81-82e1-d6451462ccca": {
+          "coordinates": [
+            163.20000000000005,
+            -113.20000000000005
+          ],
+          "name": "register if exists",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57"
+        }
+      },
+      "connections": {
+        "8c1efd22-0951-482d-af30-b77cb6b1418f": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "3a8be724-b011-4b3f-99cf-3e76c61da5ee": {
+              "a9d77664-8652-4a70-8fef-6f74e9facf57": {}
+            },
+            "5104eadf-a495-4e81-82e1-d6451462ccca": {
+              "922a1964-91d4-4ad3-a9e4-7d245662a978": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "5f00e624-cf31-41d1-9af6-6d0fe772f809": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "5104eadf-a495-4e81-82e1-d6451462ccca": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "3a8be724-b011-4b3f-99cf-3e76c61da5ee": {
+          "edd9ef99-be38-4bae-a302-81e7cdb86636": {
+            "5f00e624-cf31-41d1-9af6-6d0fe772f809": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          },
+          "2886acb1-08d2-41b2-af64-929b44d8b21f": {
+            "5104eadf-a495-4e81-82e1-d6451462ccca": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "5f00e624-cf31-41d1-9af6-6d0fe772f809": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "8c1efd22-0951-482d-af30-b77cb6b1418f": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "5104eadf-a495-4e81-82e1-d6451462ccca": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "8c1efd22-0951-482d-af30-b77cb6b1418f": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7d2aba70-7dd1-4840-8930-6e5cd761f561": {
+            "8c1efd22-0951-482d-af30-b77cb6b1418f": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "1279e81c-1b95-43db-835d-44448b8deff0": {
+            "8c1efd22-0951-482d-af30-b77cb6b1418f": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "6d532e6d-9155-4a68-a0b4-301e3a23124e",
+  "attributes": {
+    "internal": true
+  },
+  "description": "Creates a dictionary from the variable names assigning values from the corresponding environment variables if they are defined. Names with no corresponding environment variables are not included."
+}

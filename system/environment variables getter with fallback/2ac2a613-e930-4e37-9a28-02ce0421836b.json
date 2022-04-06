@@ -1,0 +1,81 @@
+{
+  "name": "system/Environment variables getter with fallback",
+  "interface": {
+    "inputs": {
+      "a51796cd-95b6-43e6-88e8-54ae80e59646": {
+        "type": "string[]",
+        "name": "variable names",
+        "description": "Receives a list of variable names to be resolved from the environment.\n\nExample:\n[\"Var1\", \"Var2\"]"
+      },
+      "2793a39a-95ef-44bd-a075-6554a4c35d0b": {
+        "type": "{string:string}",
+        "name": "default values",
+        "description": "Receives optional default values for undefined environment variables.\n\nExample:\n{ \"var1\": \"value1\" }"
+      }
+    },
+    "outputs": {
+      "25b50086-6321-402e-82e6-8b7879683cc3": {
+        "type": "{string:string}",
+        "name": "resolved variables",
+        "description": "Sends the dictionary of resolved environment variables as a name:value dictionary.\n\nContains the environment value if found, otherwise the specified default value if any.\n\n\nExample:\n{\n  \"V1\": \"value 1\",\n  \"V2\": \"default value 2\"\n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "62e30f6b-d84a-4692-93fb-677b86913806": {
+          "coordinates": [
+            -132.60000000000014,
+            -135.39999999999998
+          ],
+          "name": "get environment variables",
+          "prototype": "533dfced-effd-4325-aeef-0a6dc66f0a46"
+        },
+        "be9ef93f-ceee-41af-ab84-9fcb4c7eff4a": {
+          "coordinates": [
+            94.09999999999991,
+            0.39999999999997726
+          ],
+          "name": "augment with defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        }
+      },
+      "connections": {
+        "62e30f6b-d84a-4692-93fb-677b86913806": {
+          "1279e81c-1b95-43db-835d-44448b8deff0": {
+            "be9ef93f-ceee-41af-ab84-9fcb4c7eff4a": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a51796cd-95b6-43e6-88e8-54ae80e59646": {
+            "62e30f6b-d84a-4692-93fb-677b86913806": {
+              "7d2aba70-7dd1-4840-8930-6e5cd761f561": {}
+            }
+          },
+          "2793a39a-95ef-44bd-a075-6554a4c35d0b": {
+            "be9ef93f-ceee-41af-ab84-9fcb4c7eff4a": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "outputs": {
+          "25b50086-6321-402e-82e6-8b7879683cc3": {
+            "be9ef93f-ceee-41af-ab84-9fcb4c7eff4a": {
+              "8357d165-4753-4d32-8c61-e3baff88d8ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Gets a list variable from either the system environment by name or the provided fallback default values. Sends a dictionary with a dictionary of names that have been resolved either way.",
+  "keywords": {
+    "environment": null,
+    "variable": null
+  }
+}

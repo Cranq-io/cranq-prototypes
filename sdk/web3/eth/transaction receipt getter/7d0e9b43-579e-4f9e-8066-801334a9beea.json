@@ -9,7 +9,7 @@
         }
       },
       "inputFunctions": {
-        "bd95258a-5c14-43b5-b464-6bd778608b05": "const Web3 = require('web3');\r\nconst API_URL_ALCHEMY = 'https://eth-mainnet.alchemyapi.io/v2/71n6GXE_ROLFP-1DELzRWrgsyqqWG2s0';\r\nconst {transaction_hash, provider} = data; \r\n\r\n\r\nvar web3 = new Web3(provider);\r\n\r\nweb3.eth.getTransactionReceipt(transaction_hash)\r\n  .then((tr)=> {\r\n    outputs.transaction_receipt(tr, tag);\r\n  })\r\n  .catch((error)=>{\r\n    outputs.error({error: error}, tag)\r\n})"
+        "bd95258a-5c14-43b5-b464-6bd778608b05": "const Web3 = require('web3');\r\nconst {transaction_hash, provider} = data; \r\n\r\n\r\nvar web3 = new Web3(provider);\r\n\r\nweb3.eth.getTransactionReceipt(transaction_hash)\r\n  .then((tr)=> {\r\n    outputs.transaction_receipt(tr, tag);\r\n  })\r\n  .catch((error)=>{\r\n    outputs.error({error: error.toString()}, tag)\r\n})"
       }
     }
   },

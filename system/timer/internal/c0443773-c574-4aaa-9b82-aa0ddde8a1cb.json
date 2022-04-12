@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "initFunction": "state.timers = new Map();",
+      "inputFunctions": {
+        "f6905ac2-09c6-4613-bd24-b463442430bb": "const {timerId, delay} = data;\nconst {timers} = state;\n\n\nconst timer = setTimeout(function() {\n   timers.delete(timerId);\n   outputs.done(timerId, tag);\n}, delay);\ntimers.set(timerId, timer);\n\n",
+        "abccdf80-1c96-42a7-ab67-7c6614aee920": "const timerId = data;\nconst {timers} = state;\nconst timer = timers.get(timerId);\nconsole.log(\"timerId\", timerId);\n\nif (timer !== undefined) {\n  clearTimeout(timer);\n  timers.delete(timerId);\n  outputs.stopped(timerId, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "f6905ac2-09c6-4613-bd24-b463442430bb": {
+        "type": "{\n  \"timerId\": number or string,\n  \"delay\": number\n}",
+        "name": "start"
+      },
+      "abccdf80-1c96-42a7-ab67-7c6614aee920": {
+        "type": "number or string",
+        "name": "stop"
+      }
+    },
+    "outputs": {
+      "f4ff7b7a-5d9c-41b9-8660-5bc94a9da8a2": {
+        "type": "number or string",
+        "name": "done"
+      },
+      "cdd2d981-8956-45aa-b2ae-a01ec5ea46c6": {
+        "type": "number or string",
+        "name": "stopped"
+      }
+    }
+  },
+  "name": "system/Timer/Internal",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

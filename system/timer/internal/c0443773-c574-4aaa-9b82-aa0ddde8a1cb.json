@@ -4,7 +4,7 @@
       "initFunction": "state.timers = new Map();",
       "inputFunctions": {
         "f6905ac2-09c6-4613-bd24-b463442430bb": "const {timerId, delay} = data;\nconst {timers} = state;\n\n\nconst timer = setTimeout(function() {\n   timers.delete(timerId);\n   outputs.done(timerId, tag);\n}, delay);\ntimers.set(timerId, timer);\n\n",
-        "abccdf80-1c96-42a7-ab67-7c6614aee920": "const timerId = data;\nconst {timers} = state;\nconst timer = timers.get(timerId);\nconsole.log(\"timerId\", timerId);\n\nif (timer !== undefined) {\n  clearTimeout(timer);\n  timers.delete(timerId);\n  outputs.stopped(timerId, tag);\n}"
+        "abccdf80-1c96-42a7-ab67-7c6614aee920": "const timerId = data;\nconst {timers} = state;\nconst timer = timers.get(timerId);\n\nif (timer !== undefined) {\n  clearTimeout(timer);\n  timers.delete(timerId);\n  outputs.stopped(timerId, tag);\n}"
       }
     }
   },

@@ -1,0 +1,105 @@
+{
+  "name": "low-code/io/http/express/Endpoint listener/Timeout parameter getter",
+  "description": "Gets timeout from `params` (input) if it is not found assign default value.",
+  "interface": {
+    "inputs": {
+      "7051eab5-d214-47e4-93ca-932f0b1c80a9": {
+        "type": "any",
+        "name": "request",
+        "description": ""
+      },
+      "654080a4-65dc-4510-b9a6-17c0ce2f96db": {
+        "type": "{\"timeout\": number}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "c04910a0-20f8-4b0a-8325-df40b3d4b00a": {
+        "type": "number",
+        "name": "timeout",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d4345bd5-cb12-41b1-a8a5-8f9695156fa2": {
+          "coordinates": [
+            119,
+            77.66666666666669
+          ],
+          "name": "default timeout: 30000 ms",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "30000"
+          }
+        },
+        "d587b2b5-f451-4739-891a-f1f6946c33dc": {
+          "coordinates": [
+            26,
+            -13.333333333333314
+          ],
+          "name": "get timeout parameter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"timeout\""
+          }
+        },
+        "88d1c4b3-ef96-45c0-a6e1-9a58d1c14ef3": {
+          "coordinates": [
+            -120,
+            -77.33333333333331
+          ],
+          "name": "store (async)",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        }
+      },
+      "connections": {
+        "d587b2b5-f451-4739-891a-f1f6946c33dc": {
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "d4345bd5-cb12-41b1-a8a5-8f9695156fa2": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "88d1c4b3-ef96-45c0-a6e1-9a58d1c14ef3": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "d587b2b5-f451-4739-891a-f1f6946c33dc": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7051eab5-d214-47e4-93ca-932f0b1c80a9": {
+            "88d1c4b3-ef96-45c0-a6e1-9a58d1c14ef3": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            }
+          },
+          "654080a4-65dc-4510-b9a6-17c0ce2f96db": {
+            "88d1c4b3-ef96-45c0-a6e1-9a58d1c14ef3": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "c04910a0-20f8-4b0a-8325-df40b3d4b00a": {
+            "d587b2b5-f451-4739-891a-f1f6946c33dc": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            },
+            "d4345bd5-cb12-41b1-a8a5-8f9695156fa2": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

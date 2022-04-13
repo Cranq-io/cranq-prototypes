@@ -1,0 +1,108 @@
+{
+  "name": "system/Timer",
+  "interface": {
+    "inputs": {
+      "a0ac32d7-eef7-4f43-96d5-17815979d4e9": {
+        "type": "string or number",
+        "name": "start",
+        "description": "Receives the timerId which identifies the timer.\n\nExample:\n\"timer1\""
+      },
+      "97976e7b-b852-4140-b047-35db148ae936": {
+        "type": "string or number",
+        "name": "stop",
+        "description": "Receives the timerId which identifies the timer to be stopped.\n\n\nExample:\n\"timer1\""
+      },
+      "99754d65-be80-4a0a-9597-498a1f214bb0": {
+        "type": "number",
+        "name": "delay",
+        "description": "Receives the time in milliseconds that the timer should wait before the `done` port is triggered.\n\nExample: \n300"
+      }
+    },
+    "outputs": {
+      "23a5647a-8b13-46d6-8d3f-8700f611f8cd": {
+        "type": "typeof `start`",
+        "name": "done",
+        "description": "Sends timerId when the delayed timeout is reached.\n\nExample:\n\"timer1\" "
+      },
+      "08d3f754-31c4-4baa-a02d-125a556da397": {
+        "type": "typeof `stop`",
+        "name": "stopped",
+        "description": "Sends timerId when the timer is stopped.\n\nExample:\n\"timer1\" "
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d3b98c61-cc03-4f74-bf82-730ce81b1550": {
+          "coordinates": [
+            32,
+            45
+          ],
+          "name": "timer",
+          "prototype": "c0443773-c574-4aaa-9b82-aa0ddde8a1cb",
+          "params": {}
+        },
+        "4eacad5f-cc40-4567-a482-56671c35d884": {
+          "coordinates": [
+            -113,
+            -45
+          ],
+          "name": "sync start & delay",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"timerId\", \"delay\"]"
+          }
+        }
+      },
+      "connections": {
+        "4eacad5f-cc40-4567-a482-56671c35d884": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d3b98c61-cc03-4f74-bf82-730ce81b1550": {
+              "f6905ac2-09c6-4613-bd24-b463442430bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "97976e7b-b852-4140-b047-35db148ae936": {
+            "d3b98c61-cc03-4f74-bf82-730ce81b1550": {
+              "abccdf80-1c96-42a7-ab67-7c6614aee920": {}
+            }
+          },
+          "a0ac32d7-eef7-4f43-96d5-17815979d4e9": {
+            "4eacad5f-cc40-4567-a482-56671c35d884": {
+              "timerId": {}
+            }
+          },
+          "99754d65-be80-4a0a-9597-498a1f214bb0": {
+            "4eacad5f-cc40-4567-a482-56671c35d884": {
+              "delay": {}
+            }
+          }
+        },
+        "outputs": {
+          "23a5647a-8b13-46d6-8d3f-8700f611f8cd": {
+            "d3b98c61-cc03-4f74-bf82-730ce81b1550": {
+              "f4ff7b7a-5d9c-41b9-8660-5bc94a9da8a2": {}
+            }
+          },
+          "08d3f754-31c4-4baa-a02d-125a556da397": {
+            "d3b98c61-cc03-4f74-bf82-730ce81b1550": {
+              "cdd2d981-8956-45aa-b2ae-a01ec5ea46c6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Sets a timer which triggers `done` port after as many milliseconds as received or specified by `delay.  Timer can be canceled with ˙stop` (input).\n\nExamples:\n1. \"timer1\"@0 received via `start`\n2. 300@0 received via `delay`\n3. after 300 ms \"timer1\"@0 sent via `done`\n\n1. \"timer1\"@0 received via `start`\n2. `delay` set to 300\n3.. \"timer1\"@0 received via `stop`\n4. \"timer1\"@0 sent via `stopped`\n",
+  "keywords": {
+    "timer": null,
+    "timeout": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

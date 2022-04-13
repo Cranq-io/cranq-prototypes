@@ -39,8 +39,8 @@
         },
         "8eab33db-4cc1-47de-ab40-d85e0d0298ef": {
           "coordinates": [
-            -158.33333333333334,
-            55.8828125
+            6.666666666666657,
+            128.8828125
           ],
           "name": "get bearer token",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -50,11 +50,19 @@
         },
         "808727b4-7b42-476f-9a9c-32794832de31": {
           "coordinates": [
-            80.66666666666666,
-            119.8828125
+            148.66666666666666,
+            45.8828125
           ],
           "name": "no auth necessary",
           "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+          "coordinates": [
+            -124.83333333333334,
+            148.41015625
+          ],
+          "name": "params store",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
         }
       },
       "connections": {
@@ -69,6 +77,13 @@
               "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
             }
           }
+        },
+        "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "8eab33db-4cc1-47de-ab40-d85e0d0298ef": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -79,11 +94,14 @@
             },
             "808727b4-7b42-476f-9a9c-32794832de31": {
               "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
             }
           },
           "46e0d2a7-3be6-42bc-923e-dc769220a7ab": {
-            "8eab33db-4cc1-47de-ab40-d85e0d0298ef": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
             }
           }
         },

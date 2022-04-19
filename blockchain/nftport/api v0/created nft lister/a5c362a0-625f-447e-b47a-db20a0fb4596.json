@@ -30,7 +30,7 @@
         "name": "response"
       },
       "7b7dfd16-5a13-4612-b714-cb9fafa7f3de": {
-        "type": "{\"error\": string}",
+        "type": "{\n  \"error\": {\n    \"response\": string,\n    \"error\": {\n      \"status_code\": number,\n      \"code\": string,\n      \"message\": string\n    }\n  }\n}",
         "name": "error",
         "description": ""
       }

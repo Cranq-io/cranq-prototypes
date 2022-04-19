@@ -1,0 +1,188 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a344d685-8674-4189-926f-f2ae0c0873d2": {
+          "coordinates": [
+            272,
+            78.99999999999994
+          ],
+          "name": "log reponse",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {}
+        },
+        "45f2255b-c4fb-4456-b772-4914d1be1cbb": {
+          "coordinates": [
+            -316,
+            -409.00000000000006
+          ],
+          "name": "get status",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"status\""
+          }
+        },
+        "9a486151-4107-40c7-aa0b-ee0e447973e3": {
+          "coordinates": [
+            -127,
+            -442.00000000000006
+          ],
+          "name": "less than 600",
+          "prototype": "f65af71c-28e0-48e2-ad2c-9c8614672002",
+          "params": {
+            "70e338f7-381a-499f-bf36-e5e4a9a30ab9": "600"
+          }
+        },
+        "ec9d866e-ab61-40c1-ad38-03b7f1b9d1ae": {
+          "coordinates": [
+            -107,
+            -291.00000000000006
+          ],
+          "name": "greater or equal than 400",
+          "prototype": "b963cd0a-c591-4f03-af6f-de0450e84dcf",
+          "params": {
+            "fa70beab-7306-4d15-9aa6-d808755a2a02": "400"
+          }
+        },
+        "dae161f2-657a-4c22-a91d-4416e8459b50": {
+          "coordinates": [
+            113,
+            -291.00000000000006
+          ],
+          "name": "and",
+          "prototype": "f8466ac8-afe7-4931-abac-3e8679e23199"
+        },
+        "82ec4cb8-378b-4030-85e9-26ba33950e0c": {
+          "coordinates": [
+            186,
+            -103.00000000000006
+          ],
+          "name": "status code between 400 and 599?",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "59be14fb-c5c2-4d32-95f6-d524fd7dbd95": {
+          "coordinates": [
+            38,
+            50.99999999999994
+          ],
+          "name": "add UNSUCESSFUL CALL  prefix",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"UNSUCESSFUL CALL \""
+          }
+        },
+        "a0e16128-e97c-4480-b0a3-30579969bdaf": {
+          "coordinates": [
+            -504,
+            0.9999999999999432
+          ],
+          "name": "forward inputs",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "45f2255b-c4fb-4456-b772-4914d1be1cbb": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "9a486151-4107-40c7-aa0b-ee0e447973e3": {
+              "357edd62-41de-4977-83b8-de8edde231d4": {}
+            },
+            "ec9d866e-ab61-40c1-ad38-03b7f1b9d1ae": {
+              "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {}
+            }
+          }
+        },
+        "9a486151-4107-40c7-aa0b-ee0e447973e3": {
+          "2afc6921-7beb-4e8a-aec1-be4a46a2caa0": {
+            "dae161f2-657a-4c22-a91d-4416e8459b50": {
+              "a218ce35-ba8f-40e7-9cee-e4355f5907b1": {}
+            }
+          }
+        },
+        "ec9d866e-ab61-40c1-ad38-03b7f1b9d1ae": {
+          "16e781b0-5e94-4e62-8c67-8a2aff19e0dc": {
+            "dae161f2-657a-4c22-a91d-4416e8459b50": {
+              "5cfcd4a1-9167-4aa4-ad58-061a306fc901": {}
+            }
+          }
+        },
+        "dae161f2-657a-4c22-a91d-4416e8459b50": {
+          "d65617ef-2d6e-4a4e-8e24-5e9434cc234b": {
+            "82ec4cb8-378b-4030-85e9-26ba33950e0c": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "82ec4cb8-378b-4030-85e9-26ba33950e0c": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "a344d685-8674-4189-926f-f2ae0c0873d2": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        },
+        "59be14fb-c5c2-4d32-95f6-d524fd7dbd95": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "a344d685-8674-4189-926f-f2ae0c0873d2": {
+              "5773699e-0819-4c74-8282-fb2a9a77b0cf": {}
+            }
+          }
+        },
+        "a0e16128-e97c-4480-b0a3-30579969bdaf": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "59be14fb-c5c2-4d32-95f6-d524fd7dbd95": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "82ec4cb8-378b-4030-85e9-26ba33950e0c": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            },
+            "45f2255b-c4fb-4456-b772-4914d1be1cbb": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7a5bc607-9d82-4acb-9b3d-47d3e77159b1": {
+            "a0e16128-e97c-4480-b0a3-30579969bdaf": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "f487ec75-4a18-44e9-afab-e0c9b643b24a": {
+            "a0e16128-e97c-4480-b0a3-30579969bdaf": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "f487ec75-4a18-44e9-afab-e0c9b643b24a": {
+        "type": "{\n \"status\": number, \n \"headers\": {string: string}, \n \"body\": string\n}",
+        "name": "response",
+        "description": "Receives request dispatcher response.\n\nExample: \n{\n \"status\": 200, \n \"headers\": {}, \n \"body\": \"OK\"\n}"
+      },
+      "7a5bc607-9d82-4acb-9b3d-47d3e77159b1": {
+        "type": "string",
+        "name": "message",
+        "description": "Receives additional log message.\n\nExample: \n\"unsuccessfull call\""
+      }
+    },
+    "outputs": {}
+  },
+  "name": "debug/Unsuccessfull http response logger",
+  "description": "Logs received 4xx and 5xx responses with a custom message.",
+  "keywords": {
+    "http": null,
+    "api": null,
+    "error": null,
+    "logger": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

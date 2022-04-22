@@ -1,5 +1,5 @@
 {
-  "name": "db/sqlite3/Runner",
+  "name": "db/sqlite3/Runner (deprecated)",
   "interface": {
     "inputs": {
       "2f7e280a-9ba6-4e9d-ad36-cef3aa27e329": {
@@ -202,6 +202,7 @@
   },
   "description": "Runs a single SQL statement on the specified SQLite database, with the specified parameters.",
   "attributes": {
+    "deprecated": true,
     "locked": true
   }
 }

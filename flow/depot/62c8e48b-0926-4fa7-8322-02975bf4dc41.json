@@ -80,11 +80,12 @@
     }
   },
   "description": "Forwards signal received through `data` when corresponding signal was received via `trigger`.\n\nExample:\n1. \"A\"@0 received via `data` (input)\n2. Wait 1s\n3. null@0 received via `trigger`\n4. \"A\"@0 is sent through `data` (output)",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "wait": null,
-    "hold": null
+    "hold": null,
+    "gate": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

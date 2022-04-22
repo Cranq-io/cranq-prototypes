@@ -1,30 +1,30 @@
 {
-  "name": "db/sqlite3/Rows getter",
+  "name": "db/sqlite3/Opener (deprecated)",
   "interface": {
     "inputs": {
-      "9629a85b-4486-452f-97c1-28dce3b10360": {
+      "ca45407c-1dce-46e3-b4ca-a21009fe3b3b": {
         "type": "any",
         "name": "DB ID"
       },
-      "bf474fc4-bba6-4718-bdb5-ca90ddea89f3": {
+      "883b46ac-26be-4848-9a36-d50eea71476d": {
         "type": "any",
-        "name": "SQL"
+        "name": "file name"
       },
-      "9b87e075-2b51-42ed-9986-dfd5e2ecaacc": {
+      "4414b1e1-b6c8-48e5-b0ae-0ea090090119": {
         "type": "any",
-        "name": "params"
+        "name": "mode"
       }
     },
     "outputs": {
-      "67213578-4154-4858-bb12-005b920ca90d": {
+      "801699ce-4ced-4fd5-ab2d-4575a145541a": {
         "type": "any",
-        "name": "rows"
+        "name": "done"
       },
-      "c7a0a512-1bba-489b-b3a9-25db3dde21ab": {
+      "5a099b1d-6580-4277-ab70-dcf1ae261847": {
         "type": "any",
         "name": "error"
       },
-      "5bb35fac-b541-4154-b1b8-0ccc4817fccf": {
+      "20508130-df6c-439c-804f-96ea58c79f34": {
         "type": "any",
         "name": "DB ID"
       }
@@ -33,43 +33,43 @@
   "implementations": {
     "cranq": {
       "connections": {
-        "742bb4b9-11df-4ab7-91db-13bee127c8ee": {
+        "c9855c6f-8464-4d70-93d6-9b09cb918ea5": {
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "2c0855d0-a5af-43b6-be75-edf4dedc50ef": {
+            "3da9fcb5-8aa3-474c-a343-32443f137219": {
               "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {}
             }
           }
         },
-        "8a4b1a5d-e156-41ad-8ef9-91378b86e634": {
+        "c604da93-0217-4ae8-b7c6-4ac48cbc7018": {
           "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-            "742bb4b9-11df-4ab7-91db-13bee127c8ee": {
+            "c9855c6f-8464-4d70-93d6-9b09cb918ea5": {
               "id": {}
             },
-            "aa3bfa66-5dfc-412b-bd26-290c15380303": {
+            "397714c1-c4e2-47e1-ab06-75d9ecae5f8e": {
               "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
             }
           },
           "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
-            "ce06bd74-c2fa-403a-8df5-8beb9757c948": {
-              "sql": {}
+            "2b4ee29c-5039-40b9-b0a7-2042404addb5": {
+              "filename": {}
             }
           },
           "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
-            "ce06bd74-c2fa-403a-8df5-8beb9757c948": {
-              "params": {}
+            "2b4ee29c-5039-40b9-b0a7-2042404addb5": {
+              "mode": {}
             }
           }
         },
-        "2c0855d0-a5af-43b6-be75-edf4dedc50ef": {
+        "3da9fcb5-8aa3-474c-a343-32443f137219": {
           "9ffca0a3-0927-4358-9cfb-28260054ea3f": {
-            "aa3bfa66-5dfc-412b-bd26-290c15380303": {
+            "397714c1-c4e2-47e1-ab06-75d9ecae5f8e": {
               "f58efe33-f70e-4570-ac54-670aaf844385": {}
             }
           }
         },
-        "ce06bd74-c2fa-403a-8df5-8beb9757c948": {
+        "2b4ee29c-5039-40b9-b0a7-2042404addb5": {
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "742bb4b9-11df-4ab7-91db-13bee127c8ee": {
+            "c9855c6f-8464-4d70-93d6-9b09cb918ea5": {
               "options": {}
             }
           }
@@ -77,96 +77,95 @@
       },
       "forwards": {
         "inputs": {
-          "9629a85b-4486-452f-97c1-28dce3b10360": {
-            "8a4b1a5d-e156-41ad-8ef9-91378b86e634": {
+          "ca45407c-1dce-46e3-b4ca-a21009fe3b3b": {
+            "c604da93-0217-4ae8-b7c6-4ac48cbc7018": {
               "70da607a-8976-437b-b9e9-84cc63cd613b": {}
             }
           },
-          "bf474fc4-bba6-4718-bdb5-ca90ddea89f3": {
-            "8a4b1a5d-e156-41ad-8ef9-91378b86e634": {
+          "883b46ac-26be-4848-9a36-d50eea71476d": {
+            "c604da93-0217-4ae8-b7c6-4ac48cbc7018": {
               "54c357a1-045e-4817-beda-0017a586a499": {}
             }
           },
-          "9b87e075-2b51-42ed-9986-dfd5e2ecaacc": {
-            "8a4b1a5d-e156-41ad-8ef9-91378b86e634": {
+          "4414b1e1-b6c8-48e5-b0ae-0ea090090119": {
+            "c604da93-0217-4ae8-b7c6-4ac48cbc7018": {
               "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
             }
           }
         },
         "outputs": {
-          "67213578-4154-4858-bb12-005b920ca90d": {
-            "2c0855d0-a5af-43b6-be75-edf4dedc50ef": {
-              "8cb67ee3-0b71-49a6-9c97-4909670a0177": {}
+          "801699ce-4ced-4fd5-ab2d-4575a145541a": {
+            "3da9fcb5-8aa3-474c-a343-32443f137219": {
+              "9ffca0a3-0927-4358-9cfb-28260054ea3f": {}
             }
           },
-          "c7a0a512-1bba-489b-b3a9-25db3dde21ab": {
-            "2c0855d0-a5af-43b6-be75-edf4dedc50ef": {
+          "5a099b1d-6580-4277-ab70-dcf1ae261847": {
+            "3da9fcb5-8aa3-474c-a343-32443f137219": {
               "8a5f8aaf-0528-4a5b-9305-ba063d5120ba": {}
             }
           },
-          "5bb35fac-b541-4154-b1b8-0ccc4817fccf": {
-            "aa3bfa66-5dfc-412b-bd26-290c15380303": {
+          "20508130-df6c-439c-804f-96ea58c79f34": {
+            "397714c1-c4e2-47e1-ab06-75d9ecae5f8e": {
               "eb4c2873-890f-4780-a895-53e321f3739e": {}
             }
           }
         }
       },
       "nodes": {
-        "2c0855d0-a5af-43b6-be75-edf4dedc50ef": {
+        "3da9fcb5-8aa3-474c-a343-32443f137219": {
           "coordinates": [
-            102.4,
-            -74.6
+            86.53125,
+            -42.9375
           ],
           "name": "sqlite3",
           "prototype": "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
           "params": {}
         },
-        "742bb4b9-11df-4ab7-91db-13bee127c8ee": {
+        "c9855c6f-8464-4d70-93d6-9b09cb918ea5": {
           "coordinates": [
-            -4.600000000000001,
-            -109.6
+            -33.53125,
+            -94.0625
           ],
           "name": "build action",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
-            "type": "\"all\""
+            "type": "\"open\""
           }
         },
-        "ce06bd74-c2fa-403a-8df5-8beb9757c948": {
+        "2b4ee29c-5039-40b9-b0a7-2042404addb5": {
           "coordinates": [
-            -39.599999999999994,
-            63.400000000000006
+            -54.53125,
+            65.9375
           ],
           "name": "build options",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sql\", \"params\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"filename\", \"mode\"]"
           }
         },
-        "8a4b1a5d-e156-41ad-8ef9-91378b86e634": {
+        "c604da93-0217-4ae8-b7c6-4ac48cbc7018": {
           "coordinates": [
-            -130.6,
-            -11.599999999999994
+            -146.53125,
+            0.9375
           ],
           "name": "forwarder/triple",
           "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
           "params": {}
         },
-        "aa3bfa66-5dfc-412b-bd26-290c15380303": {
+        "397714c1-c4e2-47e1-ab06-75d9ecae5f8e": {
           "coordinates": [
-            90.4,
-            79.4
+            93.96875,
+            92.4375
           ],
-          "name": "depot",
-          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
-          "params": {}
+          "name": "ID",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
         }
       }
     }
   },
-  "description": "Retrieves multiple rows as a single array from the specified database.",
+  "description": "Opens the specified SQLite database.\nMode is normally 6.\n(More on modes: https://www.sqlite.org/c3ref/c_open_autoproxy.html)",
   "attributes": {
-    "locked": true
+    "deprecated": true
   }
 }

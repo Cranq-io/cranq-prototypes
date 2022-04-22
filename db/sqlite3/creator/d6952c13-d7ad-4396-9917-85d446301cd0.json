@@ -1,0 +1,167 @@
+{
+  "name": "db/sqlite3/Creator",
+  "description": "Creates a database, opens it, and runs the initialization SQL script.",
+  "interface": {
+    "inputs": {
+      "6e9cfd06-4954-406e-ad7b-357d0fc40e92": {
+        "type": "{\n  \"dbId\": string,\n  \"filename\": string,\n  \"initSql\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "bb97f4bf-d9d5-46f6-a238-4a36ad080cb0": {
+        "type": "null",
+        "name": "done"
+      },
+      "397ee9e5-a910-448d-9748-ce288b54c308": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bb17595c-21cf-430c-aee1-fb1e522fe545": {
+          "coordinates": [
+            69.83333333333334,
+            -98.63888888888894
+          ],
+          "name": "create DB",
+          "prototype": "ca3ee788-a4d2-4ccf-97cb-112ac36fd66c"
+        },
+        "f1b86ce2-9efa-40b9-99b4-cd4479266c54": {
+          "coordinates": [
+            -152.16666666666666,
+            -71.63888888888894
+          ],
+          "name": "split create-params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"dbId\", \"filename\", \"initSql\"]"
+          }
+        },
+        "b1a9cca3-35d8-4d14-9a1c-65084fc8407a": {
+          "coordinates": [
+            -58.16666666666666,
+            -192.63888888888894
+          ],
+          "name": "create-params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "mode": "6",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dbId\", \"filename\", \"mode\"]"
+          }
+        },
+        "0a21a835-c42f-47b8-b4f2-c4e8f35918b0": {
+          "coordinates": [
+            -178.16666666666666,
+            60.361111111111086
+          ],
+          "name": "init-params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dbId\", \"sql\"]"
+          }
+        },
+        "8f01661d-4e44-4b03-88c6-097bd1ce0792": {
+          "coordinates": [
+            32.833333333333336,
+            17.361111111111086
+          ],
+          "name": "hold sql params",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        },
+        "cee13b85-afd8-4d2d-a9a5-b35555e9fb25": {
+          "coordinates": [
+            36.95833333333334,
+            170.3611111111111
+          ],
+          "name": "create tables",
+          "prototype": "cfc47431-0ddf-4f78-a6bd-43826917407a"
+        }
+      },
+      "connections": {
+        "b1a9cca3-35d8-4d14-9a1c-65084fc8407a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "bb17595c-21cf-430c-aee1-fb1e522fe545": {
+              "799d8fe3-8a4c-4926-862f-037357336c6d": {}
+            }
+          }
+        },
+        "0a21a835-c42f-47b8-b4f2-c4e8f35918b0": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "8f01661d-4e44-4b03-88c6-097bd1ce0792": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "bb17595c-21cf-430c-aee1-fb1e522fe545": {
+          "26f439ff-9c4e-4f98-b69f-04c4efd21534": {
+            "8f01661d-4e44-4b03-88c6-097bd1ce0792": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "8f01661d-4e44-4b03-88c6-097bd1ce0792": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "cee13b85-afd8-4d2d-a9a5-b35555e9fb25": {
+              "7e925cba-cdf0-4835-9ab4-047b2d49b5de": {}
+            }
+          }
+        },
+        "f1b86ce2-9efa-40b9-99b4-cd4479266c54": {
+          "dbId": {
+            "b1a9cca3-35d8-4d14-9a1c-65084fc8407a": {
+              "dbId": {}
+            },
+            "0a21a835-c42f-47b8-b4f2-c4e8f35918b0": {
+              "dbId": {}
+            }
+          },
+          "filename": {
+            "b1a9cca3-35d8-4d14-9a1c-65084fc8407a": {
+              "filename": {}
+            }
+          },
+          "initSql": {
+            "0a21a835-c42f-47b8-b4f2-c4e8f35918b0": {
+              "sql": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6e9cfd06-4954-406e-ad7b-357d0fc40e92": {
+            "f1b86ce2-9efa-40b9-99b4-cd4479266c54": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "397ee9e5-a910-448d-9748-ce288b54c308": {
+            "bb17595c-21cf-430c-aee1-fb1e522fe545": {
+              "d6eeb7e2-6f29-4754-ac95-0c82ff85cc60": {}
+            },
+            "cee13b85-afd8-4d2d-a9a5-b35555e9fb25": {
+              "1e71c98e-7a84-4f4f-8781-3d64d621fae6": {}
+            }
+          },
+          "bb97f4bf-d9d5-46f6-a238-4a36ad080cb0": {
+            "cee13b85-afd8-4d2d-a9a5-b35555e9fb25": {
+              "f2656e0b-96fd-4e2b-acb5-aa9bed0015fc": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

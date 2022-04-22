@@ -1,5 +1,5 @@
 {
-  "name": "db/sqlite3/Closer",
+  "name": "db/sqlite3/Closer (deprecated)",
   "interface": {
     "inputs": {
       "60e559a3-f69c-4be8-b944-cff4b9ac7a52": {
@@ -105,6 +105,7 @@
   },
   "description": "Closes the specified SQLite database.",
   "attributes": {
+    "deprecated": true,
     "locked": true
   }
 }

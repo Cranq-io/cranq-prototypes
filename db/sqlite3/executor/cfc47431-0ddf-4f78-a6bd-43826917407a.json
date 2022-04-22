@@ -1,0 +1,136 @@
+{
+  "name": "db/sqlite3/Executor",
+  "description": "Executes all queries in the received SQL script.",
+  "interface": {
+    "inputs": {
+      "7e925cba-cdf0-4835-9ab4-047b2d49b5de": {
+        "type": "{\n  \"dbId\": string,\n  \"sql\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "f2656e0b-96fd-4e2b-acb5-aa9bed0015fc": {
+        "type": "null",
+        "name": "done"
+      },
+      "1e71c98e-7a84-4f4f-8781-3d64d621fae6": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c5db4b22-28f6-4789-a36f-907bd50265d2": {
+          "coordinates": [
+            137.375,
+            -21
+          ],
+          "name": "sqlite3",
+          "prototype": "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
+          "params": {}
+        },
+        "55cdf11d-d1f5-4425-a9c9-ede82584cfd4": {
+          "coordinates": [
+            -1.625,
+            -83
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "\"run\"",
+            "type": "\"exec\""
+          }
+        },
+        "3ca19ead-a470-44a1-86ae-941de9eebd16": {
+          "coordinates": [
+            14.375,
+            96
+          ],
+          "name": "build options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sql\"]"
+          }
+        },
+        "a08680e9-160a-4284-943f-728a19ec7cbf": {
+          "coordinates": [
+            -153.125,
+            7
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"dbId\", \"sql\"]"
+          }
+        }
+      },
+      "connections": {
+        "55cdf11d-d1f5-4425-a9c9-ede82584cfd4": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c5db4b22-28f6-4789-a36f-907bd50265d2": {
+              "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {}
+            }
+          }
+        },
+        "3ca19ead-a470-44a1-86ae-941de9eebd16": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "55cdf11d-d1f5-4425-a9c9-ede82584cfd4": {
+              "options": {}
+            }
+          }
+        },
+        "a08680e9-160a-4284-943f-728a19ec7cbf": {
+          "dbId": {
+            "55cdf11d-d1f5-4425-a9c9-ede82584cfd4": {
+              "id": {}
+            }
+          },
+          "sql": {
+            "3ca19ead-a470-44a1-86ae-941de9eebd16": {
+              "sql": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7e925cba-cdf0-4835-9ab4-047b2d49b5de": {
+            "a08680e9-160a-4284-943f-728a19ec7cbf": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "f2656e0b-96fd-4e2b-acb5-aa9bed0015fc": {
+            "c5db4b22-28f6-4789-a36f-907bd50265d2": {
+              "9ffca0a3-0927-4358-9cfb-28260054ea3f": {
+                "description": "undefined\nundefined"
+              }
+            }
+          },
+          "1e71c98e-7a84-4f4f-8781-3d64d621fae6": {
+            "c5db4b22-28f6-4789-a36f-907bd50265d2": {
+              "8a5f8aaf-0528-4a5b-9305-ba063d5120ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "execute": null,
+    "sql": null,
+    "statements": null,
+    "transaction": null,
+    "insert": null,
+    "update": null,
+    "delete": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

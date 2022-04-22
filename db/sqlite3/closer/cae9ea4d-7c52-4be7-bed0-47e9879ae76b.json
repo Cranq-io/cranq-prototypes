@@ -1,0 +1,106 @@
+{
+  "name": "db/sqlite3/Closer",
+  "description": "Closes the specified SQLite database.",
+  "interface": {
+    "inputs": {
+      "60814984-5abd-40bd-a031-21e786571c01": {
+        "type": "{\n  \"db-id\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "333dd93f-c8e9-4975-bf8b-9f6970b0b687": {
+        "type": "null",
+        "name": "done"
+      },
+      "77722853-bf36-410b-b404-0c44c0ee928d": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4d4d016b-f402-4ed4-bcab-5a2a3ead4f9f": {
+          "coordinates": [
+            63.33333333333333,
+            54.666666666666664
+          ],
+          "name": "sqlite3",
+          "prototype": "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
+          "params": {}
+        },
+        "d4e77124-e4e2-4f25-853b-3cb83e1daabe": {
+          "coordinates": [
+            23.33333333333333,
+            -102.33333333333333
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\"]",
+            "type": "\"close\""
+          }
+        },
+        "7957080d-afe0-4a7b-844c-fb0cf3f96631": {
+          "coordinates": [
+            -125.66666666666669,
+            56.66666666666666
+          ],
+          "name": "get DB ID",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"dbId\"]"
+          }
+        }
+      },
+      "connections": {
+        "d4e77124-e4e2-4f25-853b-3cb83e1daabe": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4d4d016b-f402-4ed4-bcab-5a2a3ead4f9f": {
+              "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {}
+            }
+          }
+        },
+        "7957080d-afe0-4a7b-844c-fb0cf3f96631": {
+          "dbId": {
+            "d4e77124-e4e2-4f25-853b-3cb83e1daabe": {
+              "id": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "60814984-5abd-40bd-a031-21e786571c01": {
+            "7957080d-afe0-4a7b-844c-fb0cf3f96631": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "333dd93f-c8e9-4975-bf8b-9f6970b0b687": {
+            "4d4d016b-f402-4ed4-bcab-5a2a3ead4f9f": {
+              "9ffca0a3-0927-4358-9cfb-28260054ea3f": {}
+            }
+          },
+          "77722853-bf36-410b-b404-0c44c0ee928d": {
+            "4d4d016b-f402-4ed4-bcab-5a2a3ead4f9f": {
+              "8a5f8aaf-0528-4a5b-9305-ba063d5120ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "slq": null,
+    "database": null,
+    "close": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

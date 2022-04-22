@@ -15,7 +15,7 @@
     },
     "outputs": {
       "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-        "type": "{string:typeof`a`[string] or typeof`b`[string]}",
+        "type": "typeof `a` and typeof `b`",
         "name": "merged",
         "description": "Sends the resulting merged dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
@@ -82,13 +82,13 @@
     }
   },
   "name": "data/dictionary/Merger",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "dictionary": null,
     "dict": null,
     "merge": null,
     "union": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

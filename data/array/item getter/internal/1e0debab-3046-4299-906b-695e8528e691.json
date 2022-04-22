@@ -11,6 +11,10 @@
       "1ce84cbc-0aed-4aed-9a98-8d31798a807d": {
         "type": "(typeof`array & index`[\"array\"])[number]",
         "name": "item"
+      },
+      "f6015d48-b42a-4423-9bfc-9c1cc4b607c4": {
+        "type": "typeof `array & index`",
+        "name": "not found"
       }
     }
   },
@@ -28,7 +32,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "3346a405-7273-43cc-acc4-ee2759e35823": "outputs.item(data.array[data.index], tag);"
+        "3346a405-7273-43cc-acc4-ee2759e35823": "const item = data.array[data.index];\n\nif (item !== undefined) {\n  outputs.item(item, tag);\n} else {\n  outputs[\"not found\"](data, tag); \n}"
       }
     }
   },

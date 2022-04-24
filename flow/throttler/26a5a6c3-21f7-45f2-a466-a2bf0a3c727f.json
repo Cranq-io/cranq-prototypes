@@ -1,0 +1,108 @@
+{
+  "name": "flow/Throttler",
+  "description": "Throttles the received signal, forwarding only `count` number of signals in `delay` milliseconds.\n\nReports internal buffer size via `buffer size`.\n\nExample:\n1. `delay` set to 3000, `count` set to 1 \n1. A@1 received via `data`\n2. B@2 received via `data` a second later\n3. B@2 sent immediately via `data`\n4. C@3 received via `data`\n5. 1@3 sent via `buffer size`\n6. C@3 sent via `data` a second later\n6. 0@3 sent via `buffer size`\n",
+  "interface": {
+    "inputs": {
+      "1cbd4b6b-8f43-4e87-960e-39e977cf036b": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives data to be throttled / rate limited."
+      },
+      "893c86f6-8a99-48b7-960c-d7f50c38f7e0": {
+        "type": "number",
+        "name": "delay",
+        "description": "Receives the length of the time window in milliseconds, in which to limit the number of signals.\n\nCan be set as parameter."
+      },
+      "2a121626-b437-48eb-a9a0-65fdddb090b2": {
+        "type": "number",
+        "name": "count",
+        "description": "Receives the maximum number of signals to be forwarded in the specified time window.\n\nCan be set as parameter."
+      }
+    },
+    "outputs": {
+      "21f2bc83-b356-46fe-9d4a-591b5258b338": {
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Forwards the signals received via `data`, throttled."
+      },
+      "46db5141-7cd5-4ddf-8ef7-048cf842a83c": {
+        "type": "number",
+        "name": "buffer size",
+        "description": "Sends the current size of the throttler's internal buffer.\n\nOnly sent when the size changes.\n\nUsed for raising errors related to exceeding allowed buffer size."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f2e34325-155a-4a77-ae40-edd83f309c93": {
+          "coordinates": [
+            4,
+            79.5
+          ],
+          "name": "throttle",
+          "prototype": "e4c908a8-9966-4625-8e0a-6e48ff332f28"
+        },
+        "d16a0f6a-0263-48f2-871b-877647a06af4": {
+          "coordinates": [
+            -5,
+            -69.5
+          ],
+          "name": "sync params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"data\", \"delay\", \"count\"]"
+          }
+        }
+      },
+      "connections": {
+        "d16a0f6a-0263-48f2-871b-877647a06af4": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f2e34325-155a-4a77-ae40-edd83f309c93": {
+              "5de22d8a-8118-401f-a271-352c9285a172": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1cbd4b6b-8f43-4e87-960e-39e977cf036b": {
+            "d16a0f6a-0263-48f2-871b-877647a06af4": {
+              "data": {}
+            }
+          },
+          "893c86f6-8a99-48b7-960c-d7f50c38f7e0": {
+            "d16a0f6a-0263-48f2-871b-877647a06af4": {
+              "delay": {}
+            }
+          },
+          "2a121626-b437-48eb-a9a0-65fdddb090b2": {
+            "d16a0f6a-0263-48f2-871b-877647a06af4": {
+              "count": {}
+            }
+          }
+        },
+        "outputs": {
+          "21f2bc83-b356-46fe-9d4a-591b5258b338": {
+            "f2e34325-155a-4a77-ae40-edd83f309c93": {
+              "c7a64395-5d76-4789-a5d7-a2fdd387ce01": {}
+            }
+          },
+          "46db5141-7cd5-4ddf-8ef7-048cf842a83c": {
+            "f2e34325-155a-4a77-ae40-edd83f309c93": {
+              "1c4892fc-3065-4288-94d7-eea5a2df177a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "throttle": null,
+    "rate limit": null,
+    "": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "implementations": {
+    "es6-node": {
+      "initFunction": "state.index = 0;\nstate.buffer = [];",
+      "inputFunctions": {
+        "5de22d8a-8118-401f-a271-352c9285a172": "const {data: value, delay, count} = data;\nconst {index, buffer} = state;\n\nconst flush = () => {\n  if (!buffer.length) {\n    state.index = 0;\n  } else {\n    setTimeout(flush, delay);\n    const batch = buffer.splice(0, count);\n    const batchSize = batch.length;\n    if (batchSize) {\n      for (let i=0; i<batchSize; i++) {\n        const {data: value, tag} = batch[i]; \n        outputs.data(value, tag);\n      }\n      outputs[\"buffer size\"](buffer.length, batch[0].tag);\n    }\n  }\n}\n\nif (index === 0) {\n  setTimeout(flush, delay);\n  state.index++;\n  outputs.data(value, tag);\n} else if (index < count) {\n  state.index++;\n  outputs.data(value, tag);\n} else {\n  buffer.push({data:value, tag});\n  outputs[\"buffer size\"](buffer.length, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "5de22d8a-8118-401f-a271-352c9285a172": {
+        "type": "{\n  \"data\": any,\n  \"delay\": number,\n  \"count\": number\n}",
+        "name": "data & delay & count"
+      }
+    },
+    "outputs": {
+      "c7a64395-5d76-4789-a5d7-a2fdd387ce01": {
+        "type": "typeof `data & delay & count`[\"data\"]",
+        "name": "data"
+      },
+      "1c4892fc-3065-4288-94d7-eea5a2df177a": {
+        "type": "number",
+        "name": "buffer size"
+      }
+    }
+  },
+  "name": "flow/Throttler (internal)",
+  "description": "See `flow/Throttler`",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

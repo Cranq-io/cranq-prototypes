@@ -21,7 +21,7 @@
     },
     "outputs": {
       "e9b7d145-705a-4f2e-9f36-012cea3740a3": {
-        "type": "any",
+        "type": "{\n  \"chain\": \"ethereum\" or \"polygon\",\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"metadata_url\": string,\n  \"metadata\": {\n    \"attributes\": {\"trait_type\": string, \"value\": string}[],\n    \"description\": string,\n    \"external_url\": string,\n    \"image\": string,\n    \"name\": string,\n    \"properties\": {string: any}\n  },\n  \"file_information\": {string: any},\n  \"file_url\": string,\n  \"cached_file_url\": string,\n  \"mint_date\": string,\n  \"updated_date\": string\n}",
         "name": "details"
       },
       "ec2bd5e2-1048-4807-863d-c4d8b35f5e4d": {
@@ -29,7 +29,7 @@
         "name": "response"
       },
       "bf0ac03c-c1bc-4d4e-94ad-2a2fc86f17df": {
-        "type": "any",
+        "type": "{\"error\": string}",
         "name": "error"
       }
     }
@@ -189,5 +189,8 @@
         }
       }
     }
+  },
+  "attributes": {
+    "locked": true
   }
 }

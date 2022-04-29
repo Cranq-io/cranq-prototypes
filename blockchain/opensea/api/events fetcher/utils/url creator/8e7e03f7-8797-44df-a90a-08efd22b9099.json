@@ -1,0 +1,136 @@
+{
+  "name": "blockchain/opensea/api/events fetcher/utils/URL creator",
+  "description": "Builds url of the Opensea api call.\n\n\nExample:\n1. \"test\"@0 received via `network`\n2. {\"asset_contract_address\":\"0xea3ce3415ac00d101fbf290b65a8793ca739747e\"}@0 received via `query params`\n3. \"https://testnets-api.opensea.io/api/v1/events?asset_contract_address=0xea3ce3415ac00d101fbf290b65a8793ca739747e\"@0 sent via `url`\n",
+  "interface": {
+    "inputs": {
+      "6c059806-7061-4a8d-94c1-254c770e4147": {
+        "type": "{string: string or string[]}",
+        "name": "query params",
+        "description": "Receives query parameters to be serialized as a dictionary.\n\nExample:\n{\"asset_contract_address\":\"0xea3ce3415ac00d101fbf290b65a8793ca739747e\"}"
+      },
+      "ab1b1c1f-9773-4ed4-8059-7142b5a075a2": {
+        "type": "\"main\" or \"test\"",
+        "name": "network",
+        "description": "Example:\n\"test\"\n\nSee:\nhttps://docs.opensea.io/reference/retrieving-asset-events\nhttps://docs.opensea.io/reference/retrieving-events-testnets"
+      }
+    },
+    "outputs": {
+      "2c6b9bd1-3a8c-4f84-8261-c364e01fa2d7": {
+        "type": "string",
+        "name": "url",
+        "description": "Sends the api call url.\n\nExample:\n\"https://testnets-api.opensea.io/api/v1/events?asset_contract_address=0xea3ce3415ac00d101fbf290b65a8793ca739747e\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f7ee79d9-5a35-480b-8606-23996c8fadb9": {
+          "coordinates": [
+            215.3333333333333,
+            -66.33333333333331
+          ],
+          "name": "template url",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {}
+        },
+        "07aa96e9-32a4-464d-972e-b8574194016a": {
+          "coordinates": [
+            -105.66666666666669,
+            82.66666666666669
+          ],
+          "name": "serialize query",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "ab398932-6951-401b-a849-dcb5ec0ff4cb": {
+          "coordinates": [
+            29.333333333333314,
+            10.666666666666686
+          ],
+          "name": "create params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0]"
+          }
+        },
+        "8fff650e-3109-4b03-81dc-0f4e4e9b4709": {
+          "coordinates": [
+            -125.66666666666674,
+            -188.33333333333337
+          ],
+          "name": "store network",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        },
+        "0b5b8f1b-6143-4789-a768-c9bb68b0bab3": {
+          "coordinates": [
+            53.999999999999915,
+            -105.66666666666671
+          ],
+          "name": "build template",
+          "prototype": "fc22711d-ee6e-4216-93aa-fbb53047f039",
+          "params": {
+            "2c748318-2c31-4db3-97d4-686d39b85378": "\"/events?{0}\""
+          }
+        }
+      },
+      "connections": {
+        "07aa96e9-32a4-464d-972e-b8574194016a": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "ab398932-6951-401b-a849-dcb5ec0ff4cb": {
+              "0": {}
+            }
+          }
+        },
+        "ab398932-6951-401b-a849-dcb5ec0ff4cb": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f7ee79d9-5a35-480b-8606-23996c8fadb9": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "8fff650e-3109-4b03-81dc-0f4e4e9b4709": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "0b5b8f1b-6143-4789-a768-c9bb68b0bab3": {
+              "ed61946d-b964-413e-8b88-f83ff393d641": {}
+            }
+          }
+        },
+        "0b5b8f1b-6143-4789-a768-c9bb68b0bab3": {
+          "df6594f1-ca06-498a-bead-944c214efd3a": {
+            "f7ee79d9-5a35-480b-8606-23996c8fadb9": {
+              "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6c059806-7061-4a8d-94c1-254c770e4147": {
+            "07aa96e9-32a4-464d-972e-b8574194016a": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            },
+            "8fff650e-3109-4b03-81dc-0f4e4e9b4709": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            }
+          },
+          "ab1b1c1f-9773-4ed4-8059-7142b5a075a2": {
+            "8fff650e-3109-4b03-81dc-0f4e4e9b4709": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "2c6b9bd1-3a8c-4f84-8261-c364e01fa2d7": {
+            "f7ee79d9-5a35-480b-8606-23996c8fadb9": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

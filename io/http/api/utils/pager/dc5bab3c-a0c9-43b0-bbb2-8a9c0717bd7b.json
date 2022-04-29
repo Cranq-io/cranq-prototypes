@@ -1,0 +1,146 @@
+{
+  "name": "/io/http/api/utils/Pager",
+  "description": "Builds the query parameters for the next page if the cursor is not null.\n\nExample:\n1. {\n  \"next\": \"123456\" \n  \"result\": [{\n    \"userId\": 1, \n    \"id\": 1, \n    \"title\": \"delectus aut autem\",  \n    \"completed\": false\n  }]\n}@0 received via `resposnse`\n2.{ \"companyId\": 1 }@0 received via `query params`\n3. \"cursor\"@0 received via `cursor query param name`\n4. [\"next\"]]@0 received via `cursor path`\n5.  { \n  \"companyId\": 1,\n  \"cursor\": \"123456\"\n}@0 sent via `query params`\n6. true@0 sent via `has cursor`",
+  "interface": {
+    "inputs": {
+      "ef9e63c4-7002-410f-be5a-6696c616537b": {
+        "type": "any",
+        "name": "response",
+        "description": "Receives http response data.\n\nExample:\n{\n  \"next\": \"123456\" \n  \"result\": [{\n    \"userId\": 1, \n    \"id\": 1, \n    \"title\": \"delectus aut autem\",  \n    \"completed\": false\n  }]\n}"
+      },
+      "0bf2c346-28e7-44ab-9062-108bc8b40821": {
+        "type": "{string: string} or {string: string[]}",
+        "name": "query params",
+        "description": "Receives http query parameters.\n\nExample:\n{ \"companyId\": 1 }"
+      },
+      "6145359f-1659-4a80-b4e8-c6172f8f3b60": {
+        "type": "string",
+        "name": "cursor query param name",
+        "description": "Receives name of the cursor query parameter.\n\nExample:\n\"cursor\""
+      },
+      "735521b4-c607-4ca2-b0e1-375590df68b0": {
+        "type": "string []",
+        "name": "cursor path",
+        "description": "Receives path of field Which contains the cursor pointer of the next page.\n\nExample:\n[\"next\"]"
+      }
+    },
+    "outputs": {
+      "5a11a82e-1198-48a9-9147-068fde0f97e4": {
+        "type": "typeof `query params`",
+        "name": "query params",
+        "description": "\nExample:\n{ \n  \"companyId\": 1,\n  \"cursor\": \"123456\"\n}"
+      },
+      "3db2b636-94ca-4da2-866e-ea681b605eaa": {
+        "type": "boolean",
+        "name": "has cursor",
+        "description": "Example: \ntrue"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ec868dae-c3a4-4ed8-8375-812cc4a03a5f": {
+          "coordinates": [
+            57.166666666666686,
+            63.5
+          ],
+          "name": "set cursor query param",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {}
+        },
+        "d75d07d5-409c-4695-861a-ea6e7804b939": {
+          "coordinates": [
+            11.833333333333314,
+            -239.5
+          ],
+          "name": "get cursor",
+          "prototype": "2434c103-11db-4548-967a-db53d0051890",
+          "params": {}
+        },
+        "023d9ce6-af14-4a42-ac19-698fcd4073d0": {
+          "coordinates": [
+            -207.83333333333337,
+            -159.5
+          ],
+          "name": "forward inputs",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        }
+      },
+      "connections": {
+        "d75d07d5-409c-4695-861a-ea6e7804b939": {
+          "c5c01a43-ac24-43e3-a32d-7b35c966e0e1": {
+            "ec868dae-c3a4-4ed8-8375-812cc4a03a5f": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "023d9ce6-af14-4a42-ac19-698fcd4073d0": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "d75d07d5-409c-4695-861a-ea6e7804b939": {
+              "0876bb36-6dcb-4392-8074-88315cf20149": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "ec868dae-c3a4-4ed8-8375-812cc4a03a5f": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "d75d07d5-409c-4695-861a-ea6e7804b939": {
+              "0db3ded1-bea0-489a-a6bd-d94e745d5a5b": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "ec868dae-c3a4-4ed8-8375-812cc4a03a5f": {
+              "922a1964-91d4-4ad3-a9e4-7d245662a978": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ef9e63c4-7002-410f-be5a-6696c616537b": {
+            "023d9ce6-af14-4a42-ac19-698fcd4073d0": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "0bf2c346-28e7-44ab-9062-108bc8b40821": {
+            "023d9ce6-af14-4a42-ac19-698fcd4073d0": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "735521b4-c607-4ca2-b0e1-375590df68b0": {
+            "023d9ce6-af14-4a42-ac19-698fcd4073d0": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "6145359f-1659-4a80-b4e8-c6172f8f3b60": {
+            "023d9ce6-af14-4a42-ac19-698fcd4073d0": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "5a11a82e-1198-48a9-9147-068fde0f97e4": {
+            "ec868dae-c3a4-4ed8-8375-812cc4a03a5f": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          },
+          "3db2b636-94ca-4da2-866e-ea681b605eaa": {
+            "d75d07d5-409c-4695-861a-ea6e7804b939": {
+              "1658ee96-5d8f-4f8b-893e-ecc9a6d3bae7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "api": null,
+    "pager": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

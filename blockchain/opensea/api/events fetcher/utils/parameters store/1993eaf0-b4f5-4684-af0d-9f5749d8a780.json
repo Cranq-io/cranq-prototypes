@@ -1,0 +1,163 @@
+{
+  "name": "blockchain/opensea/api/events fetcher/utils/Parameters store",
+  "interface": {
+    "inputs": {
+      "d0e09c06-986b-45fa-b6af-e94c6a5b51f1": {
+        "type": "{\n  \"only_opensea\": boolean,\n  \"token_id\": number,\n  \"asset_contract_address\": string,\n  \"collection_editor\": string,\n  \"account_address\": string,\n  \"event_type\": \"created\" or \"successful\" or \"cancelled\" or \"bid_entered\" or \"bid_withdrawn\" or \"transfer\" or \"offer_entered\" or \"approve\",\n\"auction_type\": \"english\" or \"dutch\" or \"min-price\",\n\"occurred_before\": number,\n\"occurred_after\": number\n}",
+        "name": "query params",
+        "description": ""
+      },
+      "df0ee608-3948-46c3-8662-7647f787f273": {
+        "type": "typeof `data` of `store api key`",
+        "name": "api key",
+        "description": "[Inherited from port `data` of `store api key`] \nReceives contents of the store. San be set as parameter, or received as signal."
+      },
+      "89a391a1-53ec-4ef5-b9f6-0c2b6d029b11": {
+        "type": "{\n  \"path\": string[],\n  \"param\": string\n}",
+        "name": "cursor params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "220f2250-0efd-4b0d-aec1-c041062ea29c": {
+        "type": "{\"X-API-KEY\": string}",
+        "name": "api header",
+        "description": ""
+      },
+      "838eac56-b782-488b-9346-1ad93b7a9661": {
+        "type": "typeof `query params`",
+        "name": "query params",
+        "description": ""
+      },
+      "748dc787-d23c-4bc9-8432-2831356e6a58": {
+        "type": "string",
+        "name": "cursor param",
+        "description": ""
+      },
+      "ef479513-a1d7-4f8c-b2c2-4402b4cc6e36": {
+        "type": " string[]",
+        "name": "cursor path",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d15671ae-6d5e-43c7-8718-eba1e5abae44": {
+          "coordinates": [
+            109.80000000000007,
+            84.19999999999999
+          ],
+          "name": "split cursor params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"param\", \"path\"]"
+          }
+        },
+        "c5000dfb-9163-473f-a001-7e708f5ca124": {
+          "coordinates": [
+            -85.19999999999993,
+            154.2
+          ],
+          "name": "store cursor params",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        },
+        "f1c76082-2e70-4ab7-a441-1629786ad742": {
+          "coordinates": [
+            -87.19999999999993,
+            -26.80000000000001
+          ],
+          "name": "store api key",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        },
+        "9dee19f6-d416-453b-9c2c-5827bf4e22b2": {
+          "coordinates": [
+            107.80000000000007,
+            8.199999999999989
+          ],
+          "name": "set api key",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"X-API-KEY\"]"
+          }
+        },
+        "9a198471-4376-40b7-a20e-d52621bf3738": {
+          "coordinates": [
+            -90.19999999999993,
+            -181.8
+          ],
+          "name": "forward query params",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        }
+      },
+      "connections": {
+        "c5000dfb-9163-473f-a001-7e708f5ca124": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "d15671ae-6d5e-43c7-8718-eba1e5abae44": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "f1c76082-2e70-4ab7-a441-1629786ad742": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "9dee19f6-d416-453b-9c2c-5827bf4e22b2": {
+              "X-API-KEY": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d0e09c06-986b-45fa-b6af-e94c6a5b51f1": {
+            "c5000dfb-9163-473f-a001-7e708f5ca124": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            },
+            "f1c76082-2e70-4ab7-a441-1629786ad742": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            },
+            "9a198471-4376-40b7-a20e-d52621bf3738": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          },
+          "df0ee608-3948-46c3-8662-7647f787f273": {
+            "f1c76082-2e70-4ab7-a441-1629786ad742": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          },
+          "89a391a1-53ec-4ef5-b9f6-0c2b6d029b11": {
+            "c5000dfb-9163-473f-a001-7e708f5ca124": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "220f2250-0efd-4b0d-aec1-c041062ea29c": {
+            "9dee19f6-d416-453b-9c2c-5827bf4e22b2": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          },
+          "838eac56-b782-488b-9346-1ad93b7a9661": {
+            "9a198471-4376-40b7-a20e-d52621bf3738": {
+              "0a9cd5b0-6de6-4c69-aa04-2816de994173": {}
+            }
+          },
+          "748dc787-d23c-4bc9-8432-2831356e6a58": {
+            "d15671ae-6d5e-43c7-8718-eba1e5abae44": {
+              "param": {}
+            }
+          },
+          "ef479513-a1d7-4f8c-b2c2-4402b4cc6e36": {
+            "d15671ae-6d5e-43c7-8718-eba1e5abae44": {
+              "path": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

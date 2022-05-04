@@ -1,0 +1,119 @@
+{
+  "name": "apis/airtable/Record fetcher/Record fetcher request builder",
+  "interface": {
+    "inputs": {
+      "09b9daba-d673-4cf0-a98b-8e66ff106a77": {
+        "type": "string",
+        "name": "API key",
+        "description": ""
+      },
+      "5ed0846f-207b-4af4-aec6-10cc24b901e5": {
+        "type": "string",
+        "name": "base ID",
+        "description": ""
+      },
+      "9a1b9a24-596c-4334-bc8b-8c5860d3f806": {
+        "type": "string",
+        "name": "table name",
+        "description": ""
+      },
+      "05ce4e69-a953-4799-bea3-77c44d2701e9": {
+        "type": "string",
+        "name": "record ID",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0a380188-a173-4585-ad27-69e1476a2003": {
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string}\n}",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ee0abeec-e313-49c3-bf6d-ff689af8ca70": {
+          "coordinates": [
+            -68,
+            108.33333333333334
+          ],
+          "name": "bulid URL",
+          "prototype": "5afa860f-b8dc-46f0-aa46-1867c04c980d"
+        },
+        "35f67100-0842-4b90-a05d-4835de96e253": {
+          "coordinates": [
+            -72,
+            -121.16666666666669
+          ],
+          "name": "inserter bearer token",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        },
+        "0ddcf094-25be-464a-a415-94b9befa194d": {
+          "coordinates": [
+            91,
+            26.833333333333343
+          ],
+          "name": "bulid request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        }
+      },
+      "connections": {
+        "ee0abeec-e313-49c3-bf6d-ff689af8ca70": {
+          "9ba8b59c-7d3a-4e17-b052-32fdc0d72003": {
+            "0ddcf094-25be-464a-a415-94b9befa194d": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        },
+        "35f67100-0842-4b90-a05d-4835de96e253": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "0ddcf094-25be-464a-a415-94b9befa194d": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "09b9daba-d673-4cf0-a98b-8e66ff106a77": {
+            "35f67100-0842-4b90-a05d-4835de96e253": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          },
+          "5ed0846f-207b-4af4-aec6-10cc24b901e5": {
+            "ee0abeec-e313-49c3-bf6d-ff689af8ca70": {
+              "8ef365da-abb1-4829-8456-2a40e4cf6f42": {}
+            }
+          },
+          "9a1b9a24-596c-4334-bc8b-8c5860d3f806": {
+            "ee0abeec-e313-49c3-bf6d-ff689af8ca70": {
+              "85ca9e02-d5b4-4c34-b12a-39d9169f33e7": {}
+            }
+          },
+          "05ce4e69-a953-4799-bea3-77c44d2701e9": {
+            "ee0abeec-e313-49c3-bf6d-ff689af8ca70": {
+              "82377520-e782-4190-a9c5-bc49967e3751": {}
+            }
+          }
+        },
+        "outputs": {
+          "0a380188-a173-4585-ad27-69e1476a2003": {
+            "0ddcf094-25be-464a-a415-94b9befa194d": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

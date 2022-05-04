@@ -1,0 +1,96 @@
+{
+  "name": "io/http/JSON request dispatcher/Content type applicator",
+  "interface": {
+    "inputs": {
+      "9a597666-3f4f-4aec-92b4-83af37e8b644": {
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "name": "JSON req.",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "847141cc-789b-4f98-8c94-0e9bf477b238": {
+        "type": "typeof `JSON req.`",
+        "name": "JSON req.",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c1514374-f8be-457e-9fc3-1435963bdbde": {
+          "coordinates": [
+            46.452546296296305,
+            -118.52893518518522
+          ],
+          "name": "insert content type",
+          "prototype": "17d400a5-62dc-473e-af74-8bdec95a0460",
+          "params": {
+            "39712071-d20f-4899-96f7-03cf3e3cdd50": "\"application/json\""
+          }
+        },
+        "382f857e-82f3-4ee4-81d1-b35b4dfbb43b": {
+          "coordinates": [
+            33.27372685185185,
+            88.76446759259261
+          ],
+          "name": "item setter B",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"headers\""
+          }
+        },
+        "4ec1c3b8-2c16-4bb4-aec1-26c017d7fbc9": {
+          "coordinates": [
+            -85.72627314814815,
+            -70.23553240740739
+          ],
+          "name": "get headers",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"headers\"]"
+          }
+        }
+      },
+      "connections": {
+        "c1514374-f8be-457e-9fc3-1435963bdbde": {
+          "a806d606-03a3-4918-a004-5069ef4cea06": {
+            "382f857e-82f3-4ee4-81d1-b35b4dfbb43b": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "4ec1c3b8-2c16-4bb4-aec1-26c017d7fbc9": {
+          "headers": {
+            "c1514374-f8be-457e-9fc3-1435963bdbde": {
+              "d3b4259e-7ac5-47a5-8e09-48ea671fe5ee": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9a597666-3f4f-4aec-92b4-83af37e8b644": {
+            "382f857e-82f3-4ee4-81d1-b35b4dfbb43b": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            },
+            "4ec1c3b8-2c16-4bb4-aec1-26c017d7fbc9": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "847141cc-789b-4f98-8c94-0e9bf477b238": {
+            "382f857e-82f3-4ee4-81d1-b35b4dfbb43b": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

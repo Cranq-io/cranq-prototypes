@@ -1,5 +1,5 @@
 {
-  "description": "Splits data received via `unsplit` by fields / indexes.\n\nExample A (record input):\n1.`fields` is set to [\"a\", \"b\"]\n2. Output ports `a` and `b` get created.\n3. {\"a\": \"foo\", \"b\": \"bar\"}@0 received by `unsplit`\n4. \"foo\"@0 is sent via `a`\n5. \"bar\"@0 is sent via `b`\n\nExample B (tuple input):\n1.`fields` is set to [0, 1]\n2. Output ports `0` and `1` get created.\n3. [\"foo\", \"bar\"]@0 received by `unsplit`\n4. \"foo\"@0 is sent via `0`\n5. \"bar\"@0 is sent via `1`\n\nMore: https://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_3_synchronization/README.md#example---synchronizing-node-inputs.",
+  "description": "Splits data received via `unsplit` by fields / indexes.\n\nDo not use splitters to access optional record fields. Opt for a `data/dictionary/Item getter` in those cases instead.\n\nExample A (record input):\n1.`fields` is set to [\"a\", \"b\"]\n2. Output ports `a` and `b` get created.\n3. {\"a\": \"foo\", \"b\": \"bar\"}@0 received by `unsplit`\n4. \"foo\"@0 is sent via `a`\n5. \"bar\"@0 is sent via `b`\n\nExample B (tuple input):\n1.`fields` is set to [0, 1]\n2. Output ports `0` and `1` get created.\n3. [\"foo\", \"bar\"]@0 received by `unsplit`\n4. \"foo\"@0 is sent via `0`\n5. \"bar\"@0 is sent via `1`\n\nMore: https://github.com/Cranq-io/cranq-tutorials/blob/main/reference/1_application_flow/1_3_synchronization/README.md#example---synchronizing-node-inputs.",
   "interface": {
     "inputs": {
       "7b39d568-3d5a-46fe-8670-3355f60c2746": {
@@ -41,9 +41,6 @@
     }
   },
   "name": "flow/Splitter",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "destructure record": null,
     "destructure tuple": null,
@@ -51,5 +48,8 @@
     "distribute": null,
     "synchronization": null,
     "syncing": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

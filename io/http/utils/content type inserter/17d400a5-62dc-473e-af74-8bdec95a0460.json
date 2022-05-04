@@ -1,0 +1,74 @@
+{
+  "name": "io/http/utils/Content type inserter",
+  "description": "Inserts content type into a HTTP request header.\n\nExample:\n1. {}@0 received via `headers`\n2. \"application/json\"@0 received on `content type`\n3. {\"Content-Type\": \"application/json\"}@0 sent via `headers`",
+  "interface": {
+    "inputs": {
+      "d3b4259e-7ac5-47a5-8e09-48ea671fe5ee": {
+        "type": "{string: string}",
+        "name": "headers",
+        "description": "Recieves request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}"
+      },
+      "39712071-d20f-4899-96f7-03cf3e3cdd50": {
+        "type": "string",
+        "name": "content type",
+        "description": "Receives the content type to be inserted into the headers.\n\nExamples:\n* \"application/json\"\n* \"text/plain\"\n\n"
+      }
+    },
+    "outputs": {
+      "a806d606-03a3-4918-a004-5069ef4cea06": {
+        "type": "typeof `headers`",
+        "name": "headers",
+        "description": "Sends the received request headers with the content type header added to it.\n\nExample:\n{\n  \"Content-Type\": \"application/json\"\n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f73f6a61-374d-4072-aae6-ca43d1e77a06": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Content-Type\""
+          },
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "add content type"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "d3b4259e-7ac5-47a5-8e09-48ea671fe5ee": {
+            "f73f6a61-374d-4072-aae6-ca43d1e77a06": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "39712071-d20f-4899-96f7-03cf3e3cdd50": {
+            "f73f6a61-374d-4072-aae6-ca43d1e77a06": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "a806d606-03a3-4918-a004-5069ef4cea06": {
+            "f73f6a61-374d-4072-aae6-ca43d1e77a06": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "header": null,
+    "http": null,
+    "request": null,
+    "response": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

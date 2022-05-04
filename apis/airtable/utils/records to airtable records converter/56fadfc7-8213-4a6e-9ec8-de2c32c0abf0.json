@@ -1,0 +1,83 @@
+{
+  "description": "Converts plain list of records (table) to a list of AirTable records.",
+  "interface": {
+    "inputs": {
+      "d4b3c6b5-8bb6-4ce6-8686-4e6fe768c19e": {
+        "description": "",
+        "type": "{string: any}[]",
+        "name": "records"
+      }
+    },
+    "outputs": {
+      "7fb8ce69-80c0-43af-a17c-c12ee71b7e5b": {
+        "description": "Records as are sent to / received from the AirTable API.",
+        "type": "{\n  \"fields\": typeof `records`[number]\n}[]",
+        "name": "AT records"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1069eb45-8ed0-4747-9666-0c7f7460036a": {
+          "coordinates": [
+            60,
+            -39
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3",
+          "name": "map records"
+        },
+        "830d993c-1aec-44fb-982c-f8ab6fec3b2d": {
+          "coordinates": [
+            -67,
+            54
+          ],
+          "name": "record to AirTable",
+          "prototype": "e419e106-2619-4778-a199-51a92a9f1eac"
+        }
+      },
+      "connections": {
+        "1069eb45-8ed0-4747-9666-0c7f7460036a": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "830d993c-1aec-44fb-982c-f8ab6fec3b2d": {
+              "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "830d993c-1aec-44fb-982c-f8ab6fec3b2d": {
+          "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+            "1069eb45-8ed0-4747-9666-0c7f7460036a": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d4b3c6b5-8bb6-4ce6-8686-4e6fe768c19e": {
+            "1069eb45-8ed0-4747-9666-0c7f7460036a": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "7fb8ce69-80c0-43af-a17c-c12ee71b7e5b": {
+            "1069eb45-8ed0-4747-9666-0c7f7460036a": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "apis/airtable/utils/Records to AirTable records converter",
+  "attributes": {
+    "locked": true
+  }
+}

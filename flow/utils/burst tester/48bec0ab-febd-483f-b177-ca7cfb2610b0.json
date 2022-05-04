@@ -1,0 +1,120 @@
+{
+  "name": "flow/utils/Burst tester",
+  "description": "Sends true on the last signal in bursts of `length` length.\n\nExample:\n1. `length` set to 3\n2. \"A\"@0 received via `data`\n3. false@0 sent via `is last`\n4. \"B\"@1 received via `data`\n5. false@1 sent via `is last`\n6. \"C\"@2 received via `data`\n7. true@2 sent via `is last` ",
+  "interface": {
+    "inputs": {
+      "9d6067a9-b36e-4d03-8250-629d5a1f7510": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives the burst signals."
+      },
+      "bf902bd8-a9c4-4045-be7f-3535bde54b0a": {
+        "type": "number",
+        "name": "length",
+        "description": "Burst length to be detected.\n\nCan be parameter."
+      }
+    },
+    "outputs": {
+      "2e1f6d97-8151-45e7-8b13-e77e27d2ecc0": {
+        "type": "boolean",
+        "name": "is last",
+        "description": "Sends true on the last signal in the burst, false otherwise."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d172c85f-94a4-4fa1-98a2-f72d05d87078": {
+          "coordinates": [
+            -106,
+            -65
+          ],
+          "name": "counter",
+          "prototype": "ee3198c1-89e9-4535-8e52-6bd0fb7af73e"
+        },
+        "a052b7a9-e1f6-4bb3-83c1-60ce9530f082": {
+          "coordinates": [
+            -102,
+            67
+          ],
+          "name": "modulo",
+          "prototype": "c8e41578-a006-4087-914d-9f330e6de05b",
+          "params": {}
+        },
+        "e5e6de72-9e5a-43f9-831d-bbf8b771f9ef": {
+          "coordinates": [
+            90,
+            -67
+          ],
+          "name": "modulo > 0?",
+          "prototype": "81881ae5-e545-4ff2-a9d4-ee8d86980a0f",
+          "params": {
+            "7eef3ae2-2380-4f3e-9f5e-ff0f3e036d76": "0"
+          }
+        },
+        "9c90cf06-3252-49e8-a315-f3a9560ba39a": {
+          "coordinates": [
+            97,
+            72
+          ],
+          "name": "not",
+          "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
+        }
+      },
+      "connections": {
+        "d172c85f-94a4-4fa1-98a2-f72d05d87078": {
+          "d5ac6560-861f-4b65-a373-6588088cb54d": {
+            "a052b7a9-e1f6-4bb3-83c1-60ce9530f082": {
+              "625f4fa9-245e-4bf4-9f76-a5b57c83d3a0": {}
+            }
+          }
+        },
+        "a052b7a9-e1f6-4bb3-83c1-60ce9530f082": {
+          "bf0270dd-fd27-4c94-b02d-d3e08122f1bb": {
+            "e5e6de72-9e5a-43f9-831d-bbf8b771f9ef": {
+              "7b679ba7-414d-4173-8a23-29438816b480": {}
+            }
+          }
+        },
+        "e5e6de72-9e5a-43f9-831d-bbf8b771f9ef": {
+          "5d88b9c8-0961-45fb-b196-03194f84bb36": {
+            "9c90cf06-3252-49e8-a315-f3a9560ba39a": {
+              "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9d6067a9-b36e-4d03-8250-629d5a1f7510": {
+            "d172c85f-94a4-4fa1-98a2-f72d05d87078": {
+              "69d2aa68-6a45-4b2b-8754-6e79aaa239d7": {}
+            }
+          },
+          "bf902bd8-a9c4-4045-be7f-3535bde54b0a": {
+            "a052b7a9-e1f6-4bb3-83c1-60ce9530f082": {
+              "842d2ecd-e864-4c84-9168-32a2233794c0": {}
+            }
+          }
+        },
+        "outputs": {
+          "2e1f6d97-8151-45e7-8b13-e77e27d2ecc0": {
+            "9c90cf06-3252-49e8-a315-f3a9560ba39a": {
+              "442847b6-23b9-4ad6-a3f5-cce6e5159644": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "series": null,
+    "modulo": null,
+    "detect": null,
+    "test": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

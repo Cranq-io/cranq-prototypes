@@ -1,0 +1,237 @@
+{
+  "name": "io/http/JSON request dispatcher (deprecated)",
+  "interface": {
+    "inputs": {
+      "52134df1-fbb5-4df4-99a6-25020abc427e": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "method",
+        "description": "Receives http method. Indicates the desired action to be performed for a given target or resource.\n\nExample:\n\"GET\"\n"
+      },
+      "852731e0-9376-4446-bac0-718d8ca1fcc4": {
+        "type": "string",
+        "name": "URL",
+        "description": "Receives the target of the HTTP request. Also called \"resource\" \n\nExample:\n\"https://jsonplaceholder.typicode.com/todos/1\"\n"
+      },
+      "f72ee334-6d61-43db-978f-f31d7d2ff917": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Receives request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nAny received headers are added to the defaults.\n\nDefault:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}\n\nExample: \n{\n\"Accept\": \"application/json\"\n}\n"
+      },
+      "4e6e787e-0875-4f15-bf9c-a870f41f69bd": {
+        "description": "Receives the http request body as data. Some requests send data to the server in order to update it. In case of GET or DELETE request the body should be empty (will be ignored).\n\nExample:\n{}",
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "a3c1977b-bff4-4384-902c-fd24f1356beb": {
+        "type": "number",
+        "name": "status",
+        "description": "Sends http response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200\n"
+      },
+      "52cb551e-169b-45a3-ad2d-aacff39506c1": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Sends http response headers.\n\nExample:\n{\n\"content-type\": \"application/json; charset=utf-8\",\n\"cache-control\":\"max-age=43200\"\n}"
+      },
+      "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
+        "type": "any",
+        "name": "data",
+        "description": "Sends http response message body as data.\n\nExample:\n{\n  \"userId\": 1, \n  \"id\": 1, \n  \"title\": \"delectus aut autem\",  \n  \"completed\": false\n}\""
+      },
+      "b73aa5bf-e098-4b22-b3bb-b921000af484": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n}"
+      },
+      "6c41f439-dd45-4359-9c14-f18a1c18ea09": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "4a438386-6333-48d1-be76-0748c6300143": {
+          "498b10a6-ba52-43d0-a28a-73dc43eaf048": {
+            "83e11f7f-a374-4491-b2e6-1b813e426325": {
+              "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {}
+            }
+          }
+        },
+        "8f0984a6-532a-4b0a-bb06-b2121d39fcf7": {
+          "af8336f5-ee1a-42a0-a767-580652b56d75": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "f11b9873-7a11-4241-9e17-a16496cf783e": {}
+            }
+          }
+        },
+        "082a943c-60c1-4850-92b4-c170739a76a4": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "aa00a427-fdeb-48d2-a62a-300611939596": {
+              "d3b4259e-7ac5-47a5-8e09-48ea671fe5ee": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "e69367fe-1abe-4422-a70a-4d67c614f464": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "7468e859-6176-4c54-a03a-9039e7024bed": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "8f0984a6-532a-4b0a-bb06-b2121d39fcf7": {
+              "4b1e2817-1235-46ef-9828-1091a48f693f": {}
+            }
+          }
+        },
+        "83e11f7f-a374-4491-b2e6-1b813e426325": {
+          "98e5a7d3-3b54-4287-b956-6eb13ead38d7": {
+            "71dc74b7-d8f7-4aa2-bb8a-92e6733e09ee": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "aa00a427-fdeb-48d2-a62a-300611939596": {
+          "a806d606-03a3-4918-a004-5069ef4cea06": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4e6e787e-0875-4f15-bf9c-a870f41f69bd": {
+            "082a943c-60c1-4850-92b4-c170739a76a4": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          },
+          "52134df1-fbb5-4df4-99a6-25020abc427e": {
+            "082a943c-60c1-4850-92b4-c170739a76a4": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "852731e0-9376-4446-bac0-718d8ca1fcc4": {
+            "082a943c-60c1-4850-92b4-c170739a76a4": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "f72ee334-6d61-43db-978f-f31d7d2ff917": {
+            "082a943c-60c1-4850-92b4-c170739a76a4": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          }
+        },
+        "outputs": {
+          "b73aa5bf-e098-4b22-b3bb-b921000af484": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "4991414b-16a6-4a01-a988-c841eac995c7": {}
+            }
+          },
+          "52cb551e-169b-45a3-ad2d-aacff39506c1": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "d057c749-d7a8-4108-adcc-31eb1878349b": {}
+            }
+          },
+          "a3c1977b-bff4-4384-902c-fd24f1356beb": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "09b13a33-348d-458b-b43f-5013a45f4893": {}
+            }
+          },
+          "d7ada38a-b6ce-469d-8d7d-12a6e2d0f39d": {
+            "83e11f7f-a374-4491-b2e6-1b813e426325": {
+              "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {}
+            },
+            "71dc74b7-d8f7-4aa2-bb8a-92e6733e09ee": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          },
+          "6c41f439-dd45-4359-9c14-f18a1c18ea09": {
+            "4a438386-6333-48d1-be76-0748c6300143": {
+              "665ac8d5-15c4-4988-8bb4-cc65d5a63bf6": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "4a438386-6333-48d1-be76-0748c6300143": {
+          "coordinates": [
+            98.65500992063494,
+            -125.67435515873012
+          ],
+          "name": "dispatch request",
+          "prototype": "83ebbf9f-d428-4577-a650-761868a002dc",
+          "params": {}
+        },
+        "8f0984a6-532a-4b0a-bb06-b2121d39fcf7": {
+          "coordinates": [
+            -75.7735615079365,
+            132.468501984127
+          ],
+          "name": "serialize req. body",
+          "prototype": "70e5222f-b0aa-4eca-843c-e0a46fdac803",
+          "params": {}
+        },
+        "082a943c-60c1-4850-92b4-c170739a76a4": {
+          "coordinates": [
+            -168.7735615079365,
+            0.46850198412698774
+          ],
+          "name": "forwarder/quadruple",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b",
+          "params": {}
+        },
+        "83e11f7f-a374-4491-b2e6-1b813e426325": {
+          "coordinates": [
+            106.17881944444446,
+            16.70659722222223
+          ],
+          "name": "parse JSON",
+          "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65",
+          "params": {}
+        },
+        "71dc74b7-d8f7-4aa2-bb8a-92e6733e09ee": {
+          "coordinates": [
+            118.2264384920635,
+            150.468501984127
+          ],
+          "name": "default response",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "null"
+          }
+        },
+        "aa00a427-fdeb-48d2-a62a-300611939596": {
+          "coordinates": [
+            -78.82118055555554,
+            -172.29340277777783
+          ],
+          "name": "content type inserter",
+          "prototype": "17d400a5-62dc-473e-af74-8bdec95a0460",
+          "params": {
+            "39712071-d20f-4899-96f7-03cf3e3cdd50": "\"application/json\""
+          }
+        }
+      }
+    }
+  },
+  "description": "Dispatches HTTP request, expects response as JSON, parses it and outputs it as data. Outputs error if failed.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/tree/main/http_request",
+  "keywords": {
+    "get": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "delete": null,
+    "fetch": null,
+    "api": null
+  },
+  "attributes": {
+    "deprecated": true,
+    "locked": true
+  }
+}

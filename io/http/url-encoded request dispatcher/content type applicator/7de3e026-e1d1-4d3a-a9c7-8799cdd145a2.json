@@ -1,0 +1,95 @@
+{
+  "name": "io/http/URL-encoded request dispatcher/Content type applicator",
+  "interface": {
+    "inputs": {
+      "c33dc9ac-bc3d-47eb-a9aa-3168c8eee8ec": {
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "name": "URL-enc. req."
+      }
+    },
+    "outputs": {
+      "90034563-7ba0-4059-b2c0-035d2a28ad2c": {
+        "type": "typeof `URL-enc. req.`",
+        "name": "URL-enc. req.",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2fa5ef96-1131-45aa-b2ad-2fb16a8b04b7": {
+          "coordinates": [
+            48.452546296296305,
+            -108.19560185185188
+          ],
+          "name": "insert content type",
+          "prototype": "17d400a5-62dc-473e-af74-8bdec95a0460",
+          "params": {
+            "39712071-d20f-4899-96f7-03cf3e3cdd50": "\"application/x-www-form-urlencoded\""
+          }
+        },
+        "8f669bd7-a87d-4b86-ad2e-0f68029ffad4": {
+          "coordinates": [
+            101.27372685185185,
+            68.09780092592592
+          ],
+          "name": "replace headers",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"headers\""
+          }
+        },
+        "3484d106-16ac-4557-9a56-1fe39a4287a3": {
+          "coordinates": [
+            -101.72627314814815,
+            97.09780092592595
+          ],
+          "name": "get headers",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"headers\"]"
+          }
+        }
+      },
+      "connections": {
+        "2fa5ef96-1131-45aa-b2ad-2fb16a8b04b7": {
+          "a806d606-03a3-4918-a004-5069ef4cea06": {
+            "8f669bd7-a87d-4b86-ad2e-0f68029ffad4": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "3484d106-16ac-4557-9a56-1fe39a4287a3": {
+          "headers": {
+            "2fa5ef96-1131-45aa-b2ad-2fb16a8b04b7": {
+              "d3b4259e-7ac5-47a5-8e09-48ea671fe5ee": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c33dc9ac-bc3d-47eb-a9aa-3168c8eee8ec": {
+            "3484d106-16ac-4557-9a56-1fe39a4287a3": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "8f669bd7-a87d-4b86-ad2e-0f68029ffad4": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "90034563-7ba0-4059-b2c0-035d2a28ad2c": {
+            "8f669bd7-a87d-4b86-ad2e-0f68029ffad4": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

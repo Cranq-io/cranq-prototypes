@@ -1,0 +1,84 @@
+{
+  "name": "io/http/utils/JSON request builder",
+  "description": "Builds a JSON request record with data to be sent as the request's body.\n\nFor body-less requests, see `io/http/utils/Body-less request builder`.",
+  "interface": {
+    "inputs": {
+      "469d89df-1072-4a3e-acc8-8d15e4eb95e5": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "method",
+        "description": ""
+      },
+      "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {
+        "type": "string",
+        "name": "url"
+      },
+      "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
+      "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "42f1fa20-0597-484e-9610-1f9117b5a7f1": {
+        "type": "{\n  \"method\": typeof `method`,\n  \"url\": typeof `url`,\n  \"headers\": typeof `headers`,\n  \"data\": typeof `data`\n}",
+        "name": "JSON req.",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fb962c44-3db5-48f8-b3e1-f8bc0c08c4d9": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "build request",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"method\", \"url\", \"headers\", \"data\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "469d89df-1072-4a3e-acc8-8d15e4eb95e5": {
+            "fb962c44-3db5-48f8-b3e1-f8bc0c08c4d9": {
+              "method": {}
+            }
+          },
+          "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {
+            "fb962c44-3db5-48f8-b3e1-f8bc0c08c4d9": {
+              "url": {}
+            }
+          },
+          "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {
+            "fb962c44-3db5-48f8-b3e1-f8bc0c08c4d9": {
+              "data": {}
+            }
+          },
+          "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {
+            "fb962c44-3db5-48f8-b3e1-f8bc0c08c4d9": {
+              "headers": {}
+            }
+          }
+        },
+        "outputs": {
+          "42f1fa20-0597-484e-9610-1f9117b5a7f1": {
+            "fb962c44-3db5-48f8-b3e1-f8bc0c08c4d9": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

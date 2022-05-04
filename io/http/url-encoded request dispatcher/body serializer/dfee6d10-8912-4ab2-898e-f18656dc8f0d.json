@@ -1,0 +1,140 @@
+{
+  "name": "io/http/URL-encoded request dispatcher/Body serializer",
+  "interface": {
+    "inputs": {
+      "8956fadf-b998-47aa-8a04-725450a974da": {
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "name": "URL-enc. req.",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "3b54c61e-2b4a-4210-86b0-fab0452d1cc5": {
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "request",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "78138eef-d212-4e84-82d7-20adb291dc3a": {
+          "coordinates": [
+            -123.26350308641977,
+            90.13526234567902
+          ],
+          "name": "get data",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"data\""
+          }
+        },
+        "7df2c116-b180-4956-820b-5555b89e3494": {
+          "coordinates": [
+            6.7364969135802255,
+            30.13526234567903
+          ],
+          "name": "forward as is",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        },
+        "f175fc8d-72fb-403d-9fc6-125f34de7150": {
+          "coordinates": [
+            132.39525462962965,
+            -198.20289351851855
+          ],
+          "name": "rebulid request",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"method\", \"url\", \"headers\", \"body\"]"
+          }
+        },
+        "09ed04c8-922a-437e-a486-7f4120b70acc": {
+          "coordinates": [
+            -104.60474537037035,
+            -109.20289351851855
+          ],
+          "name": "split request",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"method\", \"url\", \"headers\"]"
+          }
+        },
+        "b4756153-f9af-40e4-bd55-44e95555eea8": {
+          "coordinates": [
+            56.395254629629676,
+            197.79710648148148
+          ],
+          "name": "serialize data",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        }
+      },
+      "connections": {
+        "78138eef-d212-4e84-82d7-20adb291dc3a": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "b4756153-f9af-40e4-bd55-44e95555eea8": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "7df2c116-b180-4956-820b-5555b89e3494": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "09ed04c8-922a-437e-a486-7f4120b70acc": {
+          "method": {
+            "f175fc8d-72fb-403d-9fc6-125f34de7150": {
+              "method": {}
+            }
+          },
+          "url": {
+            "f175fc8d-72fb-403d-9fc6-125f34de7150": {
+              "url": {}
+            }
+          },
+          "headers": {
+            "f175fc8d-72fb-403d-9fc6-125f34de7150": {
+              "headers": {}
+            }
+          }
+        },
+        "b4756153-f9af-40e4-bd55-44e95555eea8": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "f175fc8d-72fb-403d-9fc6-125f34de7150": {
+              "body": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8956fadf-b998-47aa-8a04-725450a974da": {
+            "7df2c116-b180-4956-820b-5555b89e3494": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            },
+            "09ed04c8-922a-437e-a486-7f4120b70acc": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "78138eef-d212-4e84-82d7-20adb291dc3a": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "3b54c61e-2b4a-4210-86b0-fab0452d1cc5": {
+            "7df2c116-b180-4956-820b-5555b89e3494": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            },
+            "f175fc8d-72fb-403d-9fc6-125f34de7150": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

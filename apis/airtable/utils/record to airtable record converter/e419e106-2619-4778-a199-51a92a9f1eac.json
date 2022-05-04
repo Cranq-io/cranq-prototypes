@@ -1,0 +1,66 @@
+{
+  "name": "apis/airtable/utils/Record to AirTable record converter",
+  "description": "Converts plain record to an AirTable record.",
+  "interface": {
+    "inputs": {
+      "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {
+        "type": "{string: any}",
+        "name": "record",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+        "type": "{\"fields\": typeof `record`}",
+        "name": "AT record",
+        "description": "Record as is sent to / received from the AirTable API."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7c6e59d2-656b-4b8a-b5d6-c2ca15aaf06a": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}",
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"fields\""
+          },
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "wrap record"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {
+            "7c6e59d2-656b-4b8a-b5d6-c2ca15aaf06a": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "outputs": {
+          "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+            "7c6e59d2-656b-4b8a-b5d6-c2ca15aaf06a": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+                "description": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "fields": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

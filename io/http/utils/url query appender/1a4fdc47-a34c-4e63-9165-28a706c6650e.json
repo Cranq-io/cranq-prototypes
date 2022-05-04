@@ -1,0 +1,107 @@
+{
+  "name": "io/http/utils/URL query appender",
+  "description": "Appends a query string based on the query parameters to the specified URLs.",
+  "interface": {
+    "inputs": {
+      "8c89bd87-3843-441c-989b-9b56288453f9": {
+        "type": "string",
+        "name": "URL",
+        "description": "Receives URL without the query component."
+      },
+      "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {
+        "type": "{string: string or string[]}",
+        "name": "query params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+        "type": "string",
+        "name": "URL + query",
+        "description": "Sends URL including the query component."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2e1e104d-fc42-482a-816e-f4aa332d2047": {
+          "coordinates": [
+            -165.33333333333334,
+            -40.66666666666666
+          ],
+          "name": "query string builder",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "63394584-809f-4139-b27e-e37ef57e04ec": {
+          "coordinates": [
+            156.66666666666666,
+            -19.666666666666657
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{URL}?{QUERY}\""
+          }
+        },
+        "de87a84e-dda8-41f4-9c13-4917775d4b79": {
+          "coordinates": [
+            8.666666666666666,
+            60.33333333333334
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"URL\", \"QUERY\"]"
+          }
+        }
+      },
+      "connections": {
+        "de87a84e-dda8-41f4-9c13-4917775d4b79": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "63394584-809f-4139-b27e-e37ef57e04ec": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "2e1e104d-fc42-482a-816e-f4aa332d2047": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "de87a84e-dda8-41f4-9c13-4917775d4b79": {
+              "QUERY": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8c89bd87-3843-441c-989b-9b56288453f9": {
+            "de87a84e-dda8-41f4-9c13-4917775d4b79": {
+              "URL": {}
+            }
+          },
+          "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {
+            "2e1e104d-fc42-482a-816e-f4aa332d2047": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "outputs": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "63394584-809f-4139-b27e-e37ef57e04ec": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "append": null,
+    "add": null,
+    "insert": null,
+    "query": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

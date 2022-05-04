@@ -1,0 +1,95 @@
+{
+  "name": "apis/airtable/utils/Record URL builder",
+  "description": "Builds a URL for record in an AirTable table.",
+  "interface": {
+    "inputs": {
+      "8ef365da-abb1-4829-8456-2a40e4cf6f42": {
+        "type": "any",
+        "name": "base ID",
+        "description": "Receives the ID of an AirTable base."
+      },
+      "85ca9e02-d5b4-4c34-b12a-39d9169f33e7": {
+        "type": "string",
+        "name": "table name",
+        "description": "Receives a table's identifier relative to an AirTable base."
+      },
+      "82377520-e782-4190-a9c5-bc49967e3751": {
+        "type": "string",
+        "name": "record ID",
+        "description": "Receives a record's identifier relative to an AirTable table."
+      }
+    },
+    "outputs": {
+      "9ba8b59c-7d3a-4e17-b052-32fdc0d72003": {
+        "type": "string",
+        "name": "URL"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "80229276-e8a5-4796-a3f4-e0c8b783de44": {
+          "coordinates": [
+            15,
+            62.5
+          ],
+          "name": "build URL",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.airtable.com/v0/{APP_ID}/{TABLE_NAME}/{RECORD_ID}\""
+          }
+        },
+        "372efee9-58bc-4f2f-af18-a76da615d680": {
+          "coordinates": [
+            -15,
+            -62.5
+          ],
+          "name": "build params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"APP_ID\", \"TABLE_NAME\", \"RECORD_ID\"]"
+          }
+        }
+      },
+      "connections": {
+        "372efee9-58bc-4f2f-af18-a76da615d680": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "80229276-e8a5-4796-a3f4-e0c8b783de44": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8ef365da-abb1-4829-8456-2a40e4cf6f42": {
+            "372efee9-58bc-4f2f-af18-a76da615d680": {
+              "APP_ID": {}
+            }
+          },
+          "85ca9e02-d5b4-4c34-b12a-39d9169f33e7": {
+            "372efee9-58bc-4f2f-af18-a76da615d680": {
+              "TABLE_NAME": {}
+            }
+          },
+          "82377520-e782-4190-a9c5-bc49967e3751": {
+            "372efee9-58bc-4f2f-af18-a76da615d680": {
+              "RECORD_ID": {}
+            }
+          }
+        },
+        "outputs": {
+          "9ba8b59c-7d3a-4e17-b052-32fdc0d72003": {
+            "80229276-e8a5-4796-a3f4-e0c8b783de44": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

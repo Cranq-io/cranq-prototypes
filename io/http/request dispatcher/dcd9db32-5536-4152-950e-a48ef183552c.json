@@ -1,0 +1,47 @@
+{
+  "description": "Dispatches HTTP request and outputs response or error.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/tree/main/http_request",
+  "interface": {
+    "inputs": {
+      "b176e769-b2ab-45ad-b333-1886030931e3": {
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"body\": string\n}",
+        "name": "params",
+        "description": "Receives parameters of the HTTP request.\n\nExample:\n\n{\n  \"verb\":\"GET,\n  \"url\": \"https://jsonplaceholder.typicode.com/todos/1\",\n  \"headers\": {\n    \"content-type\": \n  \"application/json; charset=utf-8\"\n  }\n}"
+      }
+    },
+    "outputs": {
+      "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends HTTP response object.\n\nExample:\n\n{\n  \"status\": 200,\n  \"headers\": {\n    \"content-type\": \"application/json; charset=utf-8\",\n    \"cache-control\": \"max-age=43200\"\n  },\n  \"body\": \"{\\\"userId\\\": 1, \\\"id\\\": 1, \\\"title\\\": \\\"delectus aut autem\\\",  \\\"completed\\\": false\n}\"\n}"
+      },
+      "741875aa-5ef2-4704-a593-f26f3eeddbfa": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error on failing to send or receive the request.\n\nExample:\n\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
+      }
+    }
+  },
+  "implementations": {
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "b176e769-b2ab-45ad-b333-1886030931e3": "const {method, url, headers = {}, body} = data;\nconst {port, protocol, hostname, pathname, search} = new URL(url);\nconst isHttps = protocol === \"https:\";\nconst {request} = isHttps ? require(\"https\") : require(\"http\");\nconst options = {\n  hostname,\n  port: port || isHttps ? 443 : 80,\n  path: pathname + search,\n  method,\n  headers: body !== undefined\n    ? {\n      ...headers,\n      \"Content-Length\": Buffer.byteLength(body)\n    }\n    : headers\n};\nconst resultChunks = [];\nconst req = request(options, (response) => {\n  response.on(\"data\", (chunk) => {\n    resultChunks.push(String(chunk));\n  });\n  response.on(\"end\", () => {\n    outputs.response({\n      status: response.statusCode,\n      headers: response.headers,\n      body: resultChunks.join(\"\")\n    }, tag);\n  });\n});\nreq.on(\"error\", (error) => {\n  outputs.error({error: String(error)}, tag);\n});\nif (body !== undefined) {\n  req.write(body);\n}\nreq.end();\n"
+      }
+    }
+  },
+  "name": "io/http/Request dispatcher",
+  "keywords": {
+    "get": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "delete": null,
+    "fetch": null,
+    "api": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

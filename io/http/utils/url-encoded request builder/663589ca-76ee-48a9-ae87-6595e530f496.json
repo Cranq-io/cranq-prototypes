@@ -1,0 +1,82 @@
+{
+  "name": "io/http/utils/URL-encoded request builder",
+  "description": "Builds a URL-encoded request record with data to be sent as the request's body.\n\nFor body-less requests, see `io/http/utils/Body-less request builder`.",
+  "interface": {
+    "inputs": {
+      "df4b6b5b-fc5e-4205-a9bf-562640a349db": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "method"
+      },
+      "97f34b28-8a88-433d-870c-6710cfbffc60": {
+        "type": "string",
+        "name": "url"
+      },
+      "4708ec78-1d26-4cf1-b16a-3fc87e63395c": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
+      "63cb20e0-c747-4891-b8bb-7efedf9097e7": {
+        "type": "{string: string or string[]}",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "fdd1089c-fd96-4534-a1e6-da2902d73bcc": {
+        "type": "{\n  \"method\": typeof `method`,\n  \"url\": typeof `url`,\n  \"headers\": typeof `headers`,\n  \"data\": typeof `data`\n}",
+        "name": "URL-enc. req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "625f6535-1ebf-4e13-b657-e2187a17b5ab": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "build request",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"method\", \"url\", \"headers\", \"data\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "df4b6b5b-fc5e-4205-a9bf-562640a349db": {
+            "625f6535-1ebf-4e13-b657-e2187a17b5ab": {
+              "method": {}
+            }
+          },
+          "97f34b28-8a88-433d-870c-6710cfbffc60": {
+            "625f6535-1ebf-4e13-b657-e2187a17b5ab": {
+              "url": {}
+            }
+          },
+          "4708ec78-1d26-4cf1-b16a-3fc87e63395c": {
+            "625f6535-1ebf-4e13-b657-e2187a17b5ab": {
+              "headers": {}
+            }
+          },
+          "63cb20e0-c747-4891-b8bb-7efedf9097e7": {
+            "625f6535-1ebf-4e13-b657-e2187a17b5ab": {
+              "data": {}
+            }
+          }
+        },
+        "outputs": {
+          "fdd1089c-fd96-4534-a1e6-da2902d73bcc": {
+            "625f6535-1ebf-4e13-b657-e2187a17b5ab": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

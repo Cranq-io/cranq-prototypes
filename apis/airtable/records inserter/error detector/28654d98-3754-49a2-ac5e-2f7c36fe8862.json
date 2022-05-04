@@ -1,0 +1,137 @@
+{
+  "name": "apis/airtable/Records inserter/Error detector",
+  "interface": {
+    "inputs": {
+      "65a2b40d-59cc-49e0-8b61-eb6316449d88": {
+        "type": "{string: any}[]",
+        "name": "records",
+        "description": ""
+      },
+      "e5147482-7585-4b2b-b12a-ab4399681f66": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "1a542d38-0eb9-4f99-864a-bef130cbe1b4": {
+        "type": "any",
+        "name": "data"
+      },
+      "418124c3-bbfa-4098-8412-8ba469ecb063": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1fb9927b-6678-44a4-86a3-777da48c5a5e": {
+          "coordinates": [
+            11.2734375,
+            -114.8515625
+          ],
+          "name": "response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Insertion request failed.\""
+          }
+        },
+        "c56cc7c8-a0e1-4f05-a5ef-5cb4f625314c": {
+          "coordinates": [
+            -101.7265625,
+            13.1484375
+          ],
+          "name": "get batch length",
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b"
+        },
+        "22b36d93-f90d-4eb7-8d7c-a962e1e73040": {
+          "coordinates": [
+            -85.7265625,
+            147.1484375
+          ],
+          "name": "length > 10?",
+          "prototype": "81881ae5-e545-4ff2-a9d4-ee8d86980a0f",
+          "params": {
+            "7eef3ae2-2380-4f3e-9f5e-ff0f3e036d76": "10"
+          }
+        },
+        "4084ed4a-6448-4356-b165-be1f50ad2591": {
+          "coordinates": [
+            92.2734375,
+            152.1484375
+          ],
+          "name": "error",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"error\": \"\"}"
+          }
+        },
+        "19d5a2ab-cd53-4178-b64f-548dd21277d9": {
+          "coordinates": [
+            82.2734375,
+            18.1484375
+          ],
+          "name": "when > 10",
+          "prototype": "a9ccc258-8320-46cd-a29a-180316401e63"
+        }
+      },
+      "connections": {
+        "c56cc7c8-a0e1-4f05-a5ef-5cb4f625314c": {
+          "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
+            "22b36d93-f90d-4eb7-8d7c-a962e1e73040": {
+              "7b679ba7-414d-4173-8a23-29438816b480": {}
+            }
+          }
+        },
+        "22b36d93-f90d-4eb7-8d7c-a962e1e73040": {
+          "5d88b9c8-0961-45fb-b196-03194f84bb36": {
+            "19d5a2ab-cd53-4178-b64f-548dd21277d9": {
+              "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {}
+            }
+          }
+        },
+        "19d5a2ab-cd53-4178-b64f-548dd21277d9": {
+          "d78d9223-eedf-44eb-acb0-244212fc86c5": {
+            "4084ed4a-6448-4356-b165-be1f50ad2591": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "65a2b40d-59cc-49e0-8b61-eb6316449d88": {
+            "c56cc7c8-a0e1-4f05-a5ef-5cb4f625314c": {
+              "3796de71-a230-4869-9963-2c1815242213": {}
+            }
+          },
+          "e5147482-7585-4b2b-b12a-ab4399681f66": {
+            "1fb9927b-6678-44a4-86a3-777da48c5a5e": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "outputs": {
+          "418124c3-bbfa-4098-8412-8ba469ecb063": {
+            "4084ed4a-6448-4356-b165-be1f50ad2591": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            },
+            "1fb9927b-6678-44a4-86a3-777da48c5a5e": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "1a542d38-0eb9-4f99-864a-bef130cbe1b4": {
+            "1fb9927b-6678-44a4-86a3-777da48c5a5e": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

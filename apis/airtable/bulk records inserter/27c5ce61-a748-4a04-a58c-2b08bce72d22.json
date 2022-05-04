@@ -1,0 +1,268 @@
+{
+  "name": "apis/airtable/Bulk records inserter",
+  "description": "Inserts multiple records into the specified AirTable table.\nThe input received on parameter `records` must match the target table schema.\n\nSends records to the AirTable API in batches of 10.\n\nFor detailed parameter information, see the AirTable API documentation:\nhttps://airtable.com/api/meta",
+  "interface": {
+    "inputs": {
+      "95d27238-6a7e-4dc8-a50f-90243dd478fa": {
+        "type": "{string: any}[]",
+        "name": "records",
+        "description": "Receives arbitrary number of records to be inserted into AirTable."
+      },
+      "a44a2205-6893-473d-a500-5d07b6f5ade2": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "add93124-a357-420a-b252-968566c9a4dc": {
+        "type": "typeof `records`",
+        "name": "records",
+        "description": "Sends records that were successfully inserted into AirTable."
+      },
+      "6d0202d3-c04b-469d-9f30-02bfe5e6710e": {
+        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": typeof `records`[number]\n}[]",
+        "name": "AT records",
+        "description": "Sends records that were successfully inserted into AirTable, including metadata like row ID, and date & time of creation."
+      },
+      "e6436f15-ae08-4270-bad3-bd922a77bc8d": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}[]",
+        "name": "responses",
+        "description": "Sends the entire response from the AirTable API without modification."
+      },
+      "70a05304-e0d5-4a37-ac10-717210cb096c": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "59de82af-a7a4-4f43-a5be-6f3905f1cd4a": {
+          "coordinates": [
+            -105.48998842592596,
+            197.46464120370365
+          ],
+          "name": "insert records",
+          "prototype": "14885101-0962-4b6a-aa60-e9b258b0d953"
+        },
+        "25c060b1-1a0b-480b-b4ef-a2fc9e9d755a": {
+          "coordinates": [
+            -327.89807098765436,
+            -50.051466049382725
+          ],
+          "name": "create batches",
+          "prototype": "8771a331-04b7-4612-9953-ecb171f42f50",
+          "params": {
+            "0fa7e71e-c029-4ea2-b69f-063d5a384f40": "10"
+          }
+        },
+        "e295f2e2-d20b-4396-8d03-caa7a570f8b5": {
+          "coordinates": [
+            -288.89807098765436,
+            101.94853395061727
+          ],
+          "name": "repeater",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "076382df-32d1-4204-8601-d7af6c12b6cb": {
+          "coordinates": [
+            230.10192901234575,
+            -166.05146604938273
+          ],
+          "name": "flatten records",
+          "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
+        },
+        "aafb718a-23ea-4d49-b7a4-28959b9149ed": {
+          "coordinates": [
+            229.10192901234575,
+            -42.051466049382725
+          ],
+          "name": "flatten AT records",
+          "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
+        },
+        "5f7e9018-7e76-4781-a4a9-a01baae29b55": {
+          "coordinates": [
+            289.1019290123457,
+            134.94853395061727
+          ],
+          "name": "de-iterate error",
+          "prototype": "d755b98a-18fb-4ca2-8580-7ad8c426f4b2"
+        },
+        "6fb1fd11-8d84-461c-a1e0-2479f4ed03b8": {
+          "coordinates": [
+            -178.39807098765436,
+            -126.05146604938273
+          ],
+          "name": "iterate over batches",
+          "prototype": "0de9bcbb-e9c2-4289-b283-6aae80c9895b"
+        },
+        "348e2d0e-34e3-4078-868b-167328208179": {
+          "coordinates": [
+            95.10192901234569,
+            75.44853395061727
+          ],
+          "name": "collect responses",
+          "prototype": "51952631-9524-4b63-9632-2e1a42144020"
+        },
+        "68a3096c-3d74-42b8-88f8-56983fe375b1": {
+          "coordinates": [
+            64.2734375,
+            -90.8515625
+          ],
+          "name": "collect AT records",
+          "prototype": "51952631-9524-4b63-9632-2e1a42144020"
+        },
+        "651b8e8c-e896-4aa6-872e-1b05144c8611": {
+          "coordinates": [
+            62.2734375,
+            -219.8515625
+          ],
+          "name": "collect records",
+          "prototype": "51952631-9524-4b63-9632-2e1a42144020"
+        },
+        "c383fbbe-3369-40d6-99d1-89ed8ab45502": {
+          "coordinates": [
+            -151.14080825617285,
+            28.748389274691363
+          ],
+          "name": "throttle batches",
+          "prototype": "26a5a6c3-21f7-45f2-a466-a2bf0a3c727f",
+          "params": {
+            "893c86f6-8a99-48b7-960c-d7f50c38f7e0": "1000",
+            "2a121626-b437-48eb-a9a0-65fdddb090b2": "5"
+          }
+        }
+      },
+      "connections": {
+        "25c060b1-1a0b-480b-b4ef-a2fc9e9d755a": {
+          "89a6ec96-e4d0-4d12-8095-e720561a7896": {
+            "e295f2e2-d20b-4396-8d03-caa7a570f8b5": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            },
+            "6fb1fd11-8d84-461c-a1e0-2479f4ed03b8": {
+              "f410099b-f0d3-4745-bc33-e191fbfbe727": {}
+            }
+          }
+        },
+        "e295f2e2-d20b-4396-8d03-caa7a570f8b5": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "59de82af-a7a4-4f43-a5be-6f3905f1cd4a": {
+              "8b367e78-5b4c-4eb0-9f25-2886c5f543fa": {}
+            }
+          }
+        },
+        "59de82af-a7a4-4f43-a5be-6f3905f1cd4a": {
+          "89997704-01b3-4ea5-8b27-44c6de5c3c10": {
+            "348e2d0e-34e3-4078-868b-167328208179": {
+              "5893b05f-d898-4539-babf-54a541f46995": {}
+            }
+          },
+          "76713e02-064f-4937-ae94-f1bcf5c26c56": {
+            "651b8e8c-e896-4aa6-872e-1b05144c8611": {
+              "5893b05f-d898-4539-babf-54a541f46995": {}
+            }
+          },
+          "60c54568-3b44-446e-b64d-c21b7f425c9f": {
+            "68a3096c-3d74-42b8-88f8-56983fe375b1": {
+              "5893b05f-d898-4539-babf-54a541f46995": {}
+            }
+          },
+          "3614a40d-316a-45e9-9676-d6a391f6fc18": {
+            "5f7e9018-7e76-4781-a4a9-a01baae29b55": {
+              "ca54dccf-ed97-4731-8eb0-ef76fe19e844": {}
+            }
+          }
+        },
+        "6fb1fd11-8d84-461c-a1e0-2479f4ed03b8": {
+          "0d55a099-b43b-4220-8b0b-4bb820dac57f": {
+            "348e2d0e-34e3-4078-868b-167328208179": {
+              "c3ac9a23-2d05-4282-bca0-92989d6c081b": {}
+            },
+            "651b8e8c-e896-4aa6-872e-1b05144c8611": {
+              "c3ac9a23-2d05-4282-bca0-92989d6c081b": {}
+            },
+            "68a3096c-3d74-42b8-88f8-56983fe375b1": {
+              "c3ac9a23-2d05-4282-bca0-92989d6c081b": {}
+            }
+          },
+          "4cfebe2a-d2ee-46e4-8b06-3b3fca86e845": {
+            "c383fbbe-3369-40d6-99d1-89ed8ab45502": {
+              "1cbd4b6b-8f43-4e87-960e-39e977cf036b": {}
+            }
+          }
+        },
+        "651b8e8c-e896-4aa6-872e-1b05144c8611": {
+          "7682902c-46ce-4003-b868-8d071450fa4d": {
+            "076382df-32d1-4204-8601-d7af6c12b6cb": {
+              "67681054-c95b-4da1-90d6-1a5461612c4c": {}
+            }
+          }
+        },
+        "68a3096c-3d74-42b8-88f8-56983fe375b1": {
+          "7682902c-46ce-4003-b868-8d071450fa4d": {
+            "aafb718a-23ea-4d49-b7a4-28959b9149ed": {
+              "67681054-c95b-4da1-90d6-1a5461612c4c": {}
+            }
+          }
+        },
+        "c383fbbe-3369-40d6-99d1-89ed8ab45502": {
+          "21f2bc83-b356-46fe-9d4a-591b5258b338": {
+            "59de82af-a7a4-4f43-a5be-6f3905f1cd4a": {
+              "86424a8c-c0f1-4ee9-baac-d0cf604e6d31": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "95d27238-6a7e-4dc8-a50f-90243dd478fa": {
+            "25c060b1-1a0b-480b-b4ef-a2fc9e9d755a": {
+              "bfdf1859-7500-4213-a794-80dc100385c6": {}
+            }
+          },
+          "a44a2205-6893-473d-a500-5d07b6f5ade2": {
+            "e295f2e2-d20b-4396-8d03-caa7a570f8b5": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "outputs": {
+          "70a05304-e0d5-4a37-ac10-717210cb096c": {
+            "5f7e9018-7e76-4781-a4a9-a01baae29b55": {
+              "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {}
+            }
+          },
+          "e6436f15-ae08-4270-bad3-bd922a77bc8d": {
+            "348e2d0e-34e3-4078-868b-167328208179": {
+              "7682902c-46ce-4003-b868-8d071450fa4d": {}
+            }
+          },
+          "add93124-a357-420a-b252-968566c9a4dc": {
+            "076382df-32d1-4204-8601-d7af6c12b6cb": {
+              "f6248b87-3fea-47f5-8cfc-42b33cdba963": {}
+            }
+          },
+          "6d0202d3-c04b-469d-9f30-02bfe5e6710e": {
+            "aafb718a-23ea-4d49-b7a4-28959b9149ed": {
+              "f6248b87-3fea-47f5-8cfc-42b33cdba963": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "insert": null,
+    "upload": null,
+    "create": null,
+    "append": null,
+    "bulk": null,
+    "batch": null,
+    "mass": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

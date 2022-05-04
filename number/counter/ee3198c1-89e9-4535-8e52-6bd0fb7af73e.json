@@ -21,27 +21,27 @@
       "nodes": {
         "c70d76e1-6609-41cc-9ef7-79ad7b61e7e0": {
           "coordinates": [
-            0,
-            0
+            -69,
+            51
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "0"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "value"
+          "name": "current count"
         },
         "29b2a4df-fb66-454a-a500-4f6598e5fb1f": {
           "coordinates": [
-            73,
-            -76
+            74,
+            -42
           ],
           "description": "",
           "params": {
             "824b46d4-6dad-4859-939f-376702e84adb": "1"
           },
           "prototype": "172e2a79-6dd8-450d-9c60-99073c933eeb",
-          "name": "adder"
+          "name": "increment"
         }
       },
       "connections": {

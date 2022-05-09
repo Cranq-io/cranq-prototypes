@@ -1,0 +1,100 @@
+{
+  "name": "apis/googlemaps/staticmaps/utils/Area definition classifier",
+  "interface": {
+    "inputs": {
+      "7cebfd55-e551-42cd-8402-0c47b56f9abd": {
+        "type": "{\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": \"tiny\" or \"mid\" or \"small\",\n    optional \"color\": string,\n    optional \"label\": string\n  }\n}",
+        "name": "area",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "5d4d29fd-5c76-4717-b816-fb7585bfcb66": {
+        "type": "{\n  \"center\": [number, number],\n  \"zoom\": number\n}",
+        "name": "center area",
+        "description": ""
+      },
+      "ab2e2e5e-4622-4e37-82c1-dc9b1b24731b": {
+        "type": "any",
+        "name": "unknown"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "44f0de34-9086-4bc6-94a3-6ea06b5282fb": {
+          "coordinates": [
+            -105.66666666666666,
+            42.33333333333334
+          ],
+          "name": "get type",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"type\"]"
+          }
+        },
+        "995bae88-83fa-4529-aacf-0979c2906ba5": {
+          "coordinates": [
+            54.33333333333334,
+            132.33333333333334
+          ],
+          "name": "route by type",
+          "prototype": "a67196fe-30f3-416b-88e1-0dce2e795621",
+          "params": {
+            "19496f2d-bc15-4a39-886e-727ac434b292": "[\"center\"]"
+          }
+        },
+        "39b70b5d-dd56-4d51-b38a-9e50135a6f15": {
+          "coordinates": [
+            53.33333333333334,
+            -103.66666666666666
+          ],
+          "name": "area by center",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        }
+      },
+      "connections": {
+        "44f0de34-9086-4bc6-94a3-6ea06b5282fb": {
+          "type": {
+            "995bae88-83fa-4529-aacf-0979c2906ba5": {
+              "b4820a76-081c-4307-82a2-bf6cda943f12": {}
+            }
+          }
+        },
+        "995bae88-83fa-4529-aacf-0979c2906ba5": {
+          "center": {
+            "39b70b5d-dd56-4d51-b38a-9e50135a6f15": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7cebfd55-e551-42cd-8402-0c47b56f9abd": {
+            "44f0de34-9086-4bc6-94a3-6ea06b5282fb": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "39b70b5d-dd56-4d51-b38a-9e50135a6f15": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "ab2e2e5e-4622-4e37-82c1-dc9b1b24731b": {
+            "995bae88-83fa-4529-aacf-0979c2906ba5": {
+              "24e2d38d-593a-4417-94d0-acc8cec001b2": {}
+            }
+          },
+          "5d4d29fd-5c76-4717-b816-fb7585bfcb66": {
+            "39b70b5d-dd56-4d51-b38a-9e50135a6f15": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {}
+}

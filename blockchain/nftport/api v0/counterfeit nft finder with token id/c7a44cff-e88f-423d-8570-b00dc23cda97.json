@@ -53,6 +53,28 @@
           "params": {
             "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"similar_nfts\""
           }
+        },
+        "5e684317-4046-4c85-9098-5c2f39f1799a": {
+          "coordinates": [
+            256,
+            102
+          ],
+          "name": "empty list",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[]"
+          }
+        },
+        "0bbfc940-a630-4ccd-b057-9af20b6e07ad": {
+          "coordinates": [
+            -254,
+            146
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
+          }
         }
       },
       "forwards": {
@@ -92,6 +114,9 @@
           "b39b88a9-1805-43fa-9e68-f74dc39b309c": {
             "eef9b6ac-94e9-4346-be9f-27c87ef8e43a": {
               "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            },
+            "5e684317-4046-4c85-9098-5c2f39f1799a": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
             }
           }
         }
@@ -104,8 +129,8 @@
             }
           },
           "a5a46e47-dacb-477b-b823-398e570fe259": {
-            "1a1404ca-f059-4b88-8fbc-a039893a053b": {
-              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            "0bbfc940-a630-4ccd-b057-9af20b6e07ad": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           },
           "34f942cc-96a7-4278-a931-d9194e89dfe1": {
@@ -139,6 +164,20 @@
               "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
           }
+        },
+        "eef9b6ac-94e9-4346-be9f-27c87ef8e43a": {
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "5e684317-4046-4c85-9098-5c2f39f1799a": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "0bbfc940-a630-4ccd-b057-9af20b6e07ad": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "1a1404ca-f059-4b88-8fbc-a039893a053b": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
         }
       }
     }
@@ -161,7 +200,7 @@
         "description": "Receives the token ID of the NFT."
       },
       "18c34e80-b3ad-442a-a3c5-bc19313aefc9": {
-        "type": "{ \n \"chain\": \"ethereum\" or \"polygon\",\n  \"page_number\": number,\n  \"page_size\": number,\n  \"threshold\": number\n}",
+        "type": "{ \n  optional \"chain\": \"ethereum\" or \"polygon\",\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
         "name": "params",
         "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#request-body"
       }
@@ -187,5 +226,7 @@
     "nft": null,
     "duplicated": null
   },
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

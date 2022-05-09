@@ -1,0 +1,66 @@
+{
+  "name": "apis/nftport/utils/File URL extractor",
+  "interface": {
+    "inputs": {
+      "c605040c-0f44-4042-a2d2-cf82a881f92b": {
+        "type": "any",
+        "name": "NFT"
+      }
+    },
+    "outputs": {
+      "dfb31e56-772c-4c00-adb7-c9907161b2f1": {
+        "type": "string",
+        "name": "file URL"
+      },
+      "4d13190b-c967-48a5-a24e-07c6fcf2bb9c": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f2057016-95f5-4bfa-a17e-a4c1afc63b20": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "item getter B",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file_url\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "c605040c-0f44-4042-a2d2-cf82a881f92b": {
+            "f2057016-95f5-4bfa-a17e-a4c1afc63b20": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "dfb31e56-772c-4c00-adb7-c9907161b2f1": {
+            "f2057016-95f5-4bfa-a17e-a4c1afc63b20": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "nft": null,
+    "file": null,
+    "url": null,
+    "extract": null,
+    "get": null,
+    "getter": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "name": "apis/what3words/utils/w3w to canonic coordinates",
+  "interface": {
+    "inputs": {
+      "74f69b5f-b4cc-43d3-a70b-0fc9b6de01da": {
+        "type": "{\n  \"lng\": number,\n  \"lat\": number\n}",
+        "name": "w3w coords",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "b12ce58b-4b80-41ed-868a-d98ec99b93ca": {
+        "type": "[number, number]",
+        "name": "canonic coords",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fe1c2cfd-0f4a-4780-a7a3-86726f648bf9": {
+          "coordinates": [
+            -71,
+            -36.5
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"lat\", \"lng\"]"
+          }
+        },
+        "68d10928-a516-4ffa-841d-7f0649eb8b34": {
+          "coordinates": [
+            71,
+            36.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1]"
+          }
+        }
+      },
+      "connections": {
+        "fe1c2cfd-0f4a-4780-a7a3-86726f648bf9": {
+          "lat": {
+            "68d10928-a516-4ffa-841d-7f0649eb8b34": {
+              "0": {}
+            }
+          },
+          "lng": {
+            "68d10928-a516-4ffa-841d-7f0649eb8b34": {
+              "1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "74f69b5f-b4cc-43d3-a70b-0fc9b6de01da": {
+            "fe1c2cfd-0f4a-4780-a7a3-86726f648bf9": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "b12ce58b-4b80-41ed-868a-d98ec99b93ca": {
+            "68d10928-a516-4ffa-841d-7f0649eb8b34": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "coordinates": null,
+    "convert": null,
+    "simpify": null,
+    "tuple": null,
+    "record": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "io/http/utils/Response error detector",
+  "name": "io/http/utils/JSON response error detector",
   "description": "Wraps failed HTTP response into an error, including a message.\n\nExample A\n1. `message` set to \"Response failed\"\n2. {\"status\": 200, \"headers\": {}, \"body\": \"null\"}@1 received via `response`\n3. null@1 sent via `data`\n\nExample B\n1. `message` set to \"Response failed\"\n2. {\"status\": 400, \"headers\": {}, \"body\": {\"success\": false}}@1 received via `response`\n3. {\"error\": \"Response failed\", \"details\": {\"success\": false}}@1 sent via `error`",
   "interface": {
     "inputs": {
@@ -148,7 +148,8 @@
     "response": null,
     "error": null,
     "identify": null,
-    "detect": null
+    "detect": null,
+    "json": null
   },
   "attributes": {
     "locked": true

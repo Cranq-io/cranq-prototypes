@@ -15,14 +15,14 @@
         "name": "token ID"
       },
       "b8e1782d-2870-4a5d-af32-e27651d69a2a": {
-        "type": "{\n\"chain\": \"ethereum\" or \"polygon\",\n\"refresh_metadata\": boolean\n}",
+        "type": "{\n  optional \"chain\": \"ethereum\" or \"polygon\",\n  optional \"refresh_metadata\": boolean\n}",
         "name": "params"
       }
     },
     "outputs": {
       "e9b7d145-705a-4f2e-9f36-012cea3740a3": {
         "type": "{\n  \"chain\": \"ethereum\" or \"polygon\",\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"metadata_url\": string,\n  \"metadata\": {\n    \"attributes\": {\"trait_type\": string, \"value\": string}[],\n    \"description\": string,\n    \"external_url\": string,\n    \"image\": string,\n    \"name\": string,\n    \"properties\": {string: any}\n  },\n  \"file_information\": {string: any},\n  \"file_url\": string,\n  \"cached_file_url\": string,\n  \"mint_date\": string,\n  \"updated_date\": string\n}",
-        "name": "details"
+        "name": "NFT"
       },
       "ec2bd5e2-1048-4807-863d-c4d8b35f5e4d": {
         "type": "{\n\"status\": number,\n\"headers\": {string: string},\n\"body\": any\n}",
@@ -69,8 +69,8 @@
         },
         "8538137b-6c7f-484c-ae67-083e5e70cb2f": {
           "coordinates": [
-            -202.4,
-            -150.60000000000002
+            -187.4,
+            -187.60000000000002
           ],
           "name": "build query str",
           "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
@@ -92,6 +92,17 @@
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
             "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"nft\""
+          }
+        },
+        "9dc4ae88-7947-4986-ae23-1aa8a3701ba1": {
+          "coordinates": [
+            -198,
+            -27
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
           }
         }
       },
@@ -134,8 +145,8 @@
             }
           },
           "a5a46e47-dacb-477b-b823-398e570fe259": {
-            "8538137b-6c7f-484c-ae67-083e5e70cb2f": {
-              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            "9dc4ae88-7947-4986-ae23-1aa8a3701ba1": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },
@@ -143,6 +154,13 @@
           "e0f74877-42e8-42c4-98e5-399afb9cbee9": {
             "0243cb60-7a5a-4043-8827-c4065d59f37b": {
               "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "9dc4ae88-7947-4986-ae23-1aa8a3701ba1": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "8538137b-6c7f-484c-ae67-083e5e70cb2f": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
             }
           }
         }

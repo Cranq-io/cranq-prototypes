@@ -1,0 +1,187 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "73a12e98-86ec-449d-874c-9e0b31ad60da": {
+          "coordinates": [
+            37.9453125,
+            -195.8515625
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "def47ba0-da9a-4696-aa3e-290aa758614a": {
+          "coordinates": [
+            -63.0546875,
+            154.1484375
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"apiKey\", \"size\"]"
+          }
+        },
+        "79a68637-c7a8-4d37-b177-e81f8df81ad9": {
+          "coordinates": [
+            -216.0546875,
+            67.1484375
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "5b3bdf60-31a9-4d0b-8761-6dcd6145875b": {
+          "coordinates": [
+            -180.0546875,
+            -146.8515625
+          ],
+          "name": "apply area defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"type\": \"center\"}"
+          }
+        },
+        "5fb5af84-bfe4-4a8c-b13a-7b5326f7573f": {
+          "coordinates": [
+            -8.471354166666686,
+            -64.51822916666667
+          ],
+          "name": "build request",
+          "prototype": "0675a7e8-208c-48a3-9ae1-81b035ce1cf6"
+        },
+        "8016e1ca-474a-4514-9344-d510db0a701d": {
+          "coordinates": [
+            157.27864583333326,
+            167.23177083333337
+          ],
+          "name": "detect error",
+          "prototype": "f1bc2eec-3119-4574-a7ae-476631806c5b",
+          "params": {
+            "387fb819-948e-4bce-9542-dd8347977817": "\"Fetching map image failed.\""
+          }
+        }
+      },
+      "connections": {
+        "79a68637-c7a8-4d37-b177-e81f8df81ad9": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "def47ba0-da9a-4696-aa3e-290aa758614a": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "5b3bdf60-31a9-4d0b-8761-6dcd6145875b": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "def47ba0-da9a-4696-aa3e-290aa758614a": {
+          "size": {
+            "5fb5af84-bfe4-4a8c-b13a-7b5326f7573f": {
+              "d790aead-114b-4ab3-9162-04c4e944327c": {}
+            }
+          },
+          "apiKey": {
+            "5fb5af84-bfe4-4a8c-b13a-7b5326f7573f": {
+              "91428699-aa48-4313-aac7-97ce65ded36d": {}
+            }
+          }
+        },
+        "5b3bdf60-31a9-4d0b-8761-6dcd6145875b": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "5fb5af84-bfe4-4a8c-b13a-7b5326f7573f": {
+              "f2ebfb93-683f-49f8-a60c-f05d4ad29b65": {}
+            }
+          }
+        },
+        "5fb5af84-bfe4-4a8c-b13a-7b5326f7573f": {
+          "c975f776-cf0d-4780-9496-bea7f4ed405c": {
+            "73a12e98-86ec-449d-874c-9e0b31ad60da": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "73a12e98-86ec-449d-874c-9e0b31ad60da": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "8016e1ca-474a-4514-9344-d510db0a701d": {
+              "53e51383-6bc2-4759-9921-0dfaf424099c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d2574f8d-3ee8-4a8c-9977-0634e5092c9c": {
+            "79a68637-c7a8-4d37-b177-e81f8df81ad9": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "5a8f796e-f323-4f40-ab8d-bb77bdb42817": {
+            "79a68637-c7a8-4d37-b177-e81f8df81ad9": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "afe577cc-a4c4-4afe-9490-cdded0e3d3a7": {
+            "73a12e98-86ec-449d-874c-9e0b31ad60da": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            },
+            "8016e1ca-474a-4514-9344-d510db0a701d": {
+              "97d4c37a-7e13-4b19-9445-a29762a3966f": {}
+            },
+            "5fb5af84-bfe4-4a8c-b13a-7b5326f7573f": {
+              "6823c259-0032-4e7a-aba0-d73048b48c1e": {}
+            }
+          },
+          "fd9ffc56-30c2-4d1a-a2bc-c803411b0468": {
+            "73a12e98-86ec-449d-874c-9e0b31ad60da": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          },
+          "7927f53c-25d6-43cf-9010-967c462153b6": {
+            "8016e1ca-474a-4514-9344-d510db0a701d": {
+              "fde6f814-83e7-4133-995e-88a7771ed31d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "d2574f8d-3ee8-4a8c-9977-0634e5092c9c": {
+        "type": "{\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": \"tiny\" or \"mid\" or \"small\",\n    optional \"color\": string,\n    optional \"label\": string\n  }\n}",
+        "name": "area",
+        "description": "Defines the area to be captured."
+      },
+      "5a8f796e-f323-4f40-ab8d-bb77bdb42817": {
+        "type": "{\n  \"apiKey\": string,\n  \"size\": [number, number],\n  optional \"scale\": number,\n  optional \"format\": \"png8\" or \"png\" or \"png32\" or \"gif\" or \"jpg\" or \"jpg-baseline\",\n  optional \"mapType\": \"roadmap\" or \"satellite\" or \"hybrid\" or \"terrain\",\n  optional \"language\": string,\n  optional \"region\": string\n}",
+        "name": "params",
+        "description": "Optional params are ignored ATM."
+      }
+    },
+    "outputs": {
+      "7927f53c-25d6-43cf-9010-967c462153b6": {
+        "type": "string",
+        "name": "image"
+      },
+      "fd9ffc56-30c2-4d1a-a2bc-c803411b0468": {
+        "type": "any",
+        "name": "response"
+      },
+      "afe577cc-a4c4-4afe-9490-cdded0e3d3a7": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "apis/googlemaps/staticmaps/Image fetcher",
+  "description": "Fetches image of a specified area on a global map.",
+  "attributes": {},
+  "keywords": {
+    "google maps": null,
+    "map": null,
+    "satellite": null,
+    "terrain": null,
+    "roads": null
+  }
+}

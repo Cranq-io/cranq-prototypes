@@ -19,15 +19,20 @@
     },
     "outputs": {
       "14735345-27b0-4dd2-b333-6545a479405f": {
-        "type": "any",
+        "type": "typeof `data`",
         "name": "output",
         "paramId": "a760fbf3-927c-4c25-80d8-198c096dc4fd"
       },
       "9ea0c017-7eba-4bfc-a3fb-770b2fc8ef3b": {
-        "type": "any",
+        "type": "typeof `data`",
         "name": "bounced"
       }
     }
   },
-  "name": "flow/Switch"
+  "name": "flow/Switch (deprecated)",
+  "description": "Use `flow/Splitter` or `flow/Switch` instead.",
+  "attributes": {
+    "deprecated": true,
+    "locked": true
+  }
 }

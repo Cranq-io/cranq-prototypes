@@ -1,0 +1,70 @@
+{
+  "name": "io/http/utils/API key inserter",
+  "description": "Inserts API key into a HTTP request header.",
+  "interface": {
+    "inputs": {
+      "10c5da79-a40d-4d9b-b698-fbbbcbc6be4a": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
+      "a7ec9bc1-7107-4f80-8a87-4e236e909b8b": {
+        "type": "string",
+        "name": "API key"
+      }
+    },
+    "outputs": {
+      "176dd680-aff1-4d88-8ba7-a03138539d6d": {
+        "type": "typeof `headers` and {\"X-Api-Key\": typeof `API key`}",
+        "name": "headers"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d1d15800-0da5-4d3e-9d2c-60a4120cfd4c": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"X-Api-Key\""
+          },
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "add API key header"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "10c5da79-a40d-4d9b-b698-fbbbcbc6be4a": {
+            "d1d15800-0da5-4d3e-9d2c-60a4120cfd4c": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "a7ec9bc1-7107-4f80-8a87-4e236e909b8b": {
+            "d1d15800-0da5-4d3e-9d2c-60a4120cfd4c": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "176dd680-aff1-4d88-8ba7-a03138539d6d": {
+            "d1d15800-0da5-4d3e-9d2c-60a4120cfd4c": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "authorization": null,
+    "request": null,
+    "headers": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "name": "blockchain/nftport/api v0/Counterfeit NFT URL finder with token ID",
+  "interface": {
+    "inputs": {
+      "a3553aac-f315-428f-9fb0-76b35dd4d3fd": {
+        "type": "{\n  \"contractAddress\": string,\n  \"tokenId\": string\n}",
+        "name": "NFT ID",
+        "description": "[Inherited from port `API key` of `counterfeit nft finder with token id`] \nReceives the NFTPort API key."
+      },
+      "d30168a2-3041-46d4-83cd-f3d9219b8729": {
+        "type": "{\n  \"apiKey\": string,\n  optional \"chain\": \"ethereum\" or \"polygon\",\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
+        "name": "params",
+        "description": "[Inherited from port `token ID` of `counterfeit nft finder with token id`] \nReceives the token ID of the NFT."
+      }
+    },
+    "outputs": {
+      "0da95dfa-56d3-4c33-9edd-31fcf23a2122": {
+        "type": "string[]",
+        "name": "file URLs"
+      },
+      "7560fa9a-38fa-4b61-bcdc-93244c4a21c7": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "92ac0f46-445c-4890-8821-7742b4b4a119": {
+          "coordinates": [
+            21.333333333333343,
+            98
+          ],
+          "name": "counterfeit nft finder with token id",
+          "prototype": "c7a44cff-e88f-423d-8570-b00dc23cda97",
+          "params": {}
+        },
+        "8b278da6-42e0-4437-86ad-7f6d386bcc12": {
+          "coordinates": [
+            157.33333333333334,
+            -57
+          ],
+          "name": "file url extractor",
+          "prototype": "0af4244d-79fa-484f-8de6-e1a889020183"
+        },
+        "005c6cf4-e3bc-4153-8196-f62e3bb5cc6e": {
+          "coordinates": [
+            -1.6666666666666572,
+            -127
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "0b505822-e7fc-4e04-a79f-1f541bb6144a": {
+          "coordinates": [
+            -191.66666666666666,
+            -40
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"contractAddress\", \"tokenId\"]"
+          }
+        },
+        "c4ee4049-1a7c-4a08-bb6f-a8eed0f48728": {
+          "coordinates": [
+            -194.66666666666666,
+            153
+          ],
+          "name": "splitter B",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"apiKey\"]"
+          }
+        },
+        "81fd6672-f53f-4469-858e-84601f933eac": {
+          "coordinates": [
+            -188.66666666666663,
+            -168
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "92ac0f46-445c-4890-8821-7742b4b4a119": {
+          "b39b88a9-1805-43fa-9e68-f74dc39b309c": {
+            "005c6cf4-e3bc-4153-8196-f62e3bb5cc6e": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "005c6cf4-e3bc-4153-8196-f62e3bb5cc6e": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "8b278da6-42e0-4437-86ad-7f6d386bcc12": {
+              "c605040c-0f44-4042-a2d2-cf82a881f92b": {}
+            }
+          }
+        },
+        "8b278da6-42e0-4437-86ad-7f6d386bcc12": {
+          "dfb31e56-772c-4c00-adb7-c9907161b2f1": {
+            "005c6cf4-e3bc-4153-8196-f62e3bb5cc6e": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "c4ee4049-1a7c-4a08-bb6f-a8eed0f48728": {
+          "apiKey": {
+            "92ac0f46-445c-4890-8821-7742b4b4a119": {
+              "2b723d20-9436-43e9-b579-63e74fdf59aa": {}
+            }
+          }
+        },
+        "0b505822-e7fc-4e04-a79f-1f541bb6144a": {
+          "contractAddress": {
+            "92ac0f46-445c-4890-8821-7742b4b4a119": {
+              "cba2e4cb-ad29-416b-85c7-d019bdefdd11": {}
+            }
+          },
+          "tokenId": {
+            "92ac0f46-445c-4890-8821-7742b4b4a119": {
+              "34defe4d-27a8-4412-92bd-12d48728634c": {}
+            }
+          }
+        },
+        "81fd6672-f53f-4469-858e-84601f933eac": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "0b505822-e7fc-4e04-a79f-1f541bb6144a": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "92ac0f46-445c-4890-8821-7742b4b4a119": {
+              "18c34e80-b3ad-442a-a3c5-bc19313aefc9": {}
+            },
+            "c4ee4049-1a7c-4a08-bb6f-a8eed0f48728": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d30168a2-3041-46d4-83cd-f3d9219b8729": {
+            "81fd6672-f53f-4469-858e-84601f933eac": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "a3553aac-f315-428f-9fb0-76b35dd4d3fd": {
+            "81fd6672-f53f-4469-858e-84601f933eac": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "0da95dfa-56d3-4c33-9edd-31fcf23a2122": {
+            "005c6cf4-e3bc-4153-8196-f62e3bb5cc6e": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          },
+          "7560fa9a-38fa-4b61-bcdc-93244c4a21c7": {
+            "92ac0f46-445c-4890-8821-7742b4b4a119": {
+              "037762dc-bcf0-4642-99cd-7b47fe1d4333": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {},
+  "keywords": {
+    "nft": null,
+    "url": null,
+    "counterfeit": null,
+    "duplicate": null
+  }
+}

@@ -221,13 +221,15 @@
     }
   },
   "name": "blockchain/nftport/api v0/Counterfeit NFT finder with token ID",
-  "description": "Rerieves list duplicates (i.e. counterfeits) of NFT token. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id",
+  "description": "Retrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id",
   "keywords": {
     "nft": null,
-    "duplicated": null
+    "duplicate": null,
+    "fake": null,
+    "find": null,
+    "detect": null,
+    "list": null
   },
   "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

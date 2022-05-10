@@ -5,12 +5,12 @@
       "a3553aac-f315-428f-9fb0-76b35dd4d3fd": {
         "type": "{\n  \"contractAddress\": string,\n  \"tokenId\": string\n}",
         "name": "NFT ID",
-        "description": "[Inherited from port `API key` of `counterfeit nft finder with token id`] \nReceives the NFTPort API key."
+        "description": ""
       },
       "d30168a2-3041-46d4-83cd-f3d9219b8729": {
         "type": "{\n  \"apiKey\": string,\n  optional \"chain\": \"ethereum\" or \"polygon\",\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
         "name": "params",
-        "description": "[Inherited from port `token ID` of `counterfeit nft finder with token id`] \nReceives the token ID of the NFT."
+        "description": ""
       }
     },
     "outputs": {
@@ -168,12 +168,16 @@
       }
     }
   },
-  "attributes": {},
   "keywords": {
     "nft": null,
-    "url": null,
-    "counterfeit": null,
-    "duplicate": null
+    "duplicate": null,
+    "fake": null,
+    "find": null,
+    "detect": null,
+    "list": null,
+    "urls": null
   },
-  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342"
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "description": "Retrieves list of file URLs for duplicate (i.e. counterfeit) NFTs.\n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id",
+  "attributes": {}
 }

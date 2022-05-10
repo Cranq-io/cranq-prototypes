@@ -37,14 +37,15 @@
     }
   },
   "name": "flow/Aggregator (async)",
-  "attributes": {
-    "locked": true
-  },
   "description": "Aggregates inputs into an array until released.\n\nThe `release` signal is received and processed independently from those received via `data`. (As opposed to `flow/Aggregator`.)\n\nThe output reflects the order as received through `data`. \n\nExample:\n1. \"a\"@0 is received via `data`\n2. \"b\"@1 is received via `data`\n3. null@2 is received via `release`\n5. [\"a\", \"b\"]@2 is sent via `aggregated`",
   "keywords": {
     "aggregate": null,
     "collect": null,
     "accumulate": null,
     "burst": null
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
   }
 }

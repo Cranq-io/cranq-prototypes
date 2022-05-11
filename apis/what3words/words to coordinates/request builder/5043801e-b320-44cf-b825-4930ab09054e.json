@@ -1,0 +1,145 @@
+{
+  "name": "apis/what3words/Words to coordinates/Request builder",
+  "interface": {
+    "inputs": {
+      "15535736-6380-4313-a397-743e3572d361": {
+        "type": "[string, string, string]",
+        "name": "words"
+      },
+      "3029d5c6-0256-406b-b9bc-51221d71339f": {
+        "type": "string",
+        "name": "API key"
+      },
+      "baf6a876-afdc-45a8-b3fc-a93dde9461ce": {
+        "type": "\"json\" or \"geojson\"",
+        "name": "format"
+      }
+    },
+    "outputs": {
+      "1fd250e7-db3c-4809-80a4-2538e3f9e3d0": {
+        "type": "typeof `request` of `body-less request builder`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c9e4d27f-25d0-4808-bb0e-d34b70de2d50": {
+          "coordinates": [
+            166.2,
+            76.2
+          ],
+          "name": "body-less request builder",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "1b40c07a-2718-4991-9c24-f7ce43643f99": {
+          "coordinates": [
+            123.19999999999999,
+            -76.8
+          ],
+          "name": "url query appender",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://api.what3words.com/v3/convert-to-coordinates\""
+          }
+        },
+        "d5e0e968-f345-4e96-a9f3-cb1ae5cdb3f6": {
+          "coordinates": [
+            -72.80000000000001,
+            157.2
+          ],
+          "name": "insert API key",
+          "prototype": "40288c7d-958f-44ae-95ab-e3768ec28ebe",
+          "params": {
+            "10c5da79-a40d-4d9b-b698-fbbbcbc6be4a": "{}"
+          }
+        },
+        "0504a7d0-45ca-49a0-91af-0fa23b4ea0ca": {
+          "coordinates": [
+            -84.80000000000001,
+            -130.8
+          ],
+          "name": "joiner",
+          "prototype": "63c75fc1-ec00-49a1-a42e-e82a58aa29a2",
+          "params": {
+            "6e8f72af-0e88-49da-88d1-ca8e525e8e9f": "\".\""
+          }
+        },
+        "ca13d74c-0bfe-416e-b8a4-94c47f349d54": {
+          "coordinates": [
+            -51.80000000000001,
+            48.2
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"words\", \"format\"]"
+          }
+        }
+      },
+      "connections": {
+        "1b40c07a-2718-4991-9c24-f7ce43643f99": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "c9e4d27f-25d0-4808-bb0e-d34b70de2d50": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        },
+        "d5e0e968-f345-4e96-a9f3-cb1ae5cdb3f6": {
+          "176dd680-aff1-4d88-8ba7-a03138539d6d": {
+            "c9e4d27f-25d0-4808-bb0e-d34b70de2d50": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        },
+        "ca13d74c-0bfe-416e-b8a4-94c47f349d54": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "1b40c07a-2718-4991-9c24-f7ce43643f99": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "0504a7d0-45ca-49a0-91af-0fa23b4ea0ca": {
+          "61fd421d-d6b7-49d3-a63b-ec3e1f0b092f": {
+            "ca13d74c-0bfe-416e-b8a4-94c47f349d54": {
+              "words": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "15535736-6380-4313-a397-743e3572d361": {
+            "0504a7d0-45ca-49a0-91af-0fa23b4ea0ca": {
+              "2c5f0d7f-8f9d-4741-af0b-544aa15406f0": {}
+            }
+          },
+          "3029d5c6-0256-406b-b9bc-51221d71339f": {
+            "d5e0e968-f345-4e96-a9f3-cb1ae5cdb3f6": {
+              "a7ec9bc1-7107-4f80-8a87-4e236e909b8b": {}
+            }
+          },
+          "baf6a876-afdc-45a8-b3fc-a93dde9461ce": {
+            "ca13d74c-0bfe-416e-b8a4-94c47f349d54": {
+              "format": {}
+            }
+          }
+        },
+        "outputs": {
+          "1fd250e7-db3c-4809-80a4-2538e3f9e3d0": {
+            "c9e4d27f-25d0-4808-bb0e-d34b70de2d50": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

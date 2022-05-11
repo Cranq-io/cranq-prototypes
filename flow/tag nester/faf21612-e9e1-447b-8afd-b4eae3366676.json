@@ -29,13 +29,14 @@
   },
   "name": "flow/Tag nester",
   "description": "Creates a new level of iteration on the received tag, by appending \":0\" to it.\n\nOpposite of `flow/Tag trimmer`.\n\nUsed for lining up signals with iterations. (See eg. `data/array/Iterator`.)\n\nExample:\n1. \"A\"@0 received via `data`\n2. \"A\"@\"0:0\" is sent via `data` (output)\n\nSee also:\n* `flow/Tag incrementer`\n* `flow/Tag trimer`",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "simulate iteration": null,
     "fake iteration": null,
     "synchronization": null,
     "syncing": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
   }
 }

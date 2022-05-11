@@ -1,0 +1,85 @@
+{
+  "name": "apis/airtable/utils/Attachment object list creator",
+  "interface": {
+    "inputs": {
+      "9d9b0ad9-8315-4eae-8fc7-1a4dc23d51b6": {
+        "type": "string[]",
+        "name": "file URLs"
+      }
+    },
+    "outputs": {
+      "8fb00b6b-5cb1-4666-a70a-8f41f28922f8": {
+        "type": "{\"url\": typeof `URLs`[number]}[]",
+        "name": "attachments"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b252191a-b0dd-4a02-9ba2-9989afc47915": {
+          "coordinates": [
+            8.5,
+            76
+          ],
+          "name": "attachment object creator",
+          "prototype": "9cd5f08d-c34e-4629-b356-c4f317ab8085"
+        },
+        "311627b5-f905-479a-8c24-2a4bb404973d": {
+          "coordinates": [
+            5.5,
+            -77
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        }
+      },
+      "connections": {
+        "311627b5-f905-479a-8c24-2a4bb404973d": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "b252191a-b0dd-4a02-9ba2-9989afc47915": {
+              "bf00920f-8c7c-4ee1-9b04-97d5f91a2dd2": {}
+            }
+          }
+        },
+        "b252191a-b0dd-4a02-9ba2-9989afc47915": {
+          "9b3cb989-5b14-4974-9ac2-46963591bbc3": {
+            "311627b5-f905-479a-8c24-2a4bb404973d": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9d9b0ad9-8315-4eae-8fc7-1a4dc23d51b6": {
+            "311627b5-f905-479a-8c24-2a4bb404973d": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "8fb00b6b-5cb1-4666-a70a-8f41f28922f8": {
+            "311627b5-f905-479a-8c24-2a4bb404973d": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "airtable": null,
+    "urls": null,
+    "to": null,
+    "attachments": null,
+    "files": null,
+    "images": null,
+    "wrap": null,
+    "prepare": null
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "attributes": {
+    "locked": true
+  }
+}

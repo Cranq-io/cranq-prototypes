@@ -1,0 +1,113 @@
+{
+  "name": "apis/nftport/utils/Metadata extractor",
+  "interface": {
+    "inputs": {
+      "0e502331-f58d-44d6-9039-29ec8037ea77": {
+        "type": "any",
+        "name": "NFT"
+      },
+      "303f9b9a-c476-4986-9c72-f50f4eca05d8": {
+        "type": "string[]",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "053d4320-7cdb-421e-abd3-02e6d399370f": {
+        "type": "any",
+        "name": "metadata"
+      },
+      "a8c22d6d-e481-42a6-be18-e98d16bcd7d1": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5aebd2e9-92e4-481f-a4ce-300714416b91": {
+          "coordinates": [
+            83,
+            4
+          ],
+          "name": "node getter",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "f1c2dd33-38ff-4da6-b140-0fb796396ee2": {
+          "coordinates": [
+            -24,
+            -57
+          ],
+          "name": "concatenator",
+          "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b",
+          "params": {
+            "a97745d1-5a27-401a-b341-c2efe8d8d5a8": "[\"metadata\"]"
+          }
+        },
+        "bd162a7f-b1a5-481d-9538-e52bf67e74da": {
+          "coordinates": [
+            -60,
+            62
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "f1c2dd33-38ff-4da6-b140-0fb796396ee2": {
+          "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+            "5aebd2e9-92e4-481f-a4ce-300714416b91": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "bd162a7f-b1a5-481d-9538-e52bf67e74da": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "5aebd2e9-92e4-481f-a4ce-300714416b91": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "f1c2dd33-38ff-4da6-b140-0fb796396ee2": {
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0e502331-f58d-44d6-9039-29ec8037ea77": {
+            "bd162a7f-b1a5-481d-9538-e52bf67e74da": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "303f9b9a-c476-4986-9c72-f50f4eca05d8": {
+            "f1c2dd33-38ff-4da6-b140-0fb796396ee2": {
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            },
+            "bd162a7f-b1a5-481d-9538-e52bf67e74da": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "053d4320-7cdb-421e-abd3-02e6d399370f": {
+            "5aebd2e9-92e4-481f-a4ce-300714416b91": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "get": null,
+    "extract": null,
+    "metadata": null,
+    "nft": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "apis/googlemaps/staticmaps/Image fetcher/Request builder/Group 2",
+  "interface": {
+    "inputs": {
+      "fb61e3c7-a60b-4bbe-b3d2-06c7a5a607ca": {
+        "type": "typeof `key` of `build params 2`",
+        "name": "API key",
+        "description": "[Inherited from port `key` of `build params 2`] \nReceives individual item for syncing."
+      },
+      "45a93c14-c25e-4113-935f-86af7feaff02": {
+        "type": "typeof `size` of `prepare img size`",
+        "name": "size"
+      }
+    },
+    "outputs": {
+      "7c33a2d8-3356-44eb-bbab-060831ce068a": {
+        "type": "typeof `synced` of `build params 2`",
+        "name": "other query params",
+        "description": "[Inherited from port `synced` of `build params 2`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d8877703-b811-46fc-aada-f849f602ffc3": {
+          "coordinates": [
+            -32.875,
+            66.5
+          ],
+          "name": "prepare img size",
+          "prototype": "b40443a4-6107-4c82-b732-fce8519c9463"
+        },
+        "2b06ad10-6b89-48c4-960d-1b2371f4ef1d": {
+          "coordinates": [
+            32.874999999999986,
+            -66.50000000000001
+          ],
+          "name": "build params 2",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"key\", \"size\"]"
+          }
+        }
+      },
+      "connections": {
+        "d8877703-b811-46fc-aada-f849f602ffc3": {
+          "acd4bba6-922d-4e34-a79a-eaa867f3253f": {
+            "2b06ad10-6b89-48c4-960d-1b2371f4ef1d": {
+              "size": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "45a93c14-c25e-4113-935f-86af7feaff02": {
+            "d8877703-b811-46fc-aada-f849f602ffc3": {
+              "16bfbb22-ba3f-4e16-9ee7-cae6fed36247": {}
+            }
+          },
+          "fb61e3c7-a60b-4bbe-b3d2-06c7a5a607ca": {
+            "2b06ad10-6b89-48c4-960d-1b2371f4ef1d": {
+              "key": {}
+            }
+          }
+        },
+        "outputs": {
+          "7c33a2d8-3356-44eb-bbab-060831ce068a": {
+            "2b06ad10-6b89-48c4-960d-1b2371f4ef1d": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

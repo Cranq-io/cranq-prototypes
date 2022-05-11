@@ -20,7 +20,7 @@
         "description": "If found, sends the value corresponding to the specified key.\n\nExample:\n1"
       },
       "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
-        "type": "{ \"dict\":typeof`dict`, \"key\":string}",
+        "type": "{\n  \"dict\": typeof `dict`,\n  \"key\": string\n} ",
         "name": "not found",
         "description": "Sends the input values, when the specified key is not found in the dictionary.\n\nExample:\n{ \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }"
       }
@@ -92,13 +92,14 @@
     }
   },
   "name": "data/dictionary/Item getter",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "dictionary": null,
     "dict": null,
     "get": null,
     "value": null
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
   }
 }

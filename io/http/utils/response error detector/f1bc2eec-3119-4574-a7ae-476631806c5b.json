@@ -1,0 +1,141 @@
+{
+  "name": "io/http/utils/Response error detector",
+  "description": "Wraps failed HTTP response into an error, including a message.\n\nExample A\n1. `message` set to \"Response failed\"\n2. {\"status\": 200, \"headers\": {}, \"body\": \"ABC\"}@1 received via `response`\n3. null@1 sent via `body`\n\nExample B\n1. `message` set to \"Response failed\"\n2. {\"status\": 400, \"headers\": {}, \"body\": {\"success\": false}}@1 received via `response`\n3. {\"error\": \"Response failed\", \"details\": {\"success\": false}}@1 sent via `error`",
+  "interface": {
+    "inputs": {
+      "53e51383-6bc2-4759-9921-0dfaf424099c": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Receives response that might contain an error."
+      },
+      "387fb819-948e-4bce-9542-dd8347977817": {
+        "type": "string",
+        "name": "error msg",
+        "description": "Receives error message to appear in `error`."
+      }
+    },
+    "outputs": {
+      "fde6f814-83e7-4133-995e-88a7771ed31d": {
+        "type": "typeof `response`[\"body\"]",
+        "name": "body"
+      },
+      "97d4c37a-7e13-4b19-9445-a29762a3966f": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a1cfea1d-dd7d-4e1e-80b3-79403999de04": {
+          "coordinates": [
+            -85.99999999999994,
+            -133.75000000000003
+          ],
+          "name": "status >= 400?",
+          "prototype": "b963cd0a-c591-4f03-af6f-de0450e84dcf",
+          "params": {
+            "fa70beab-7306-4d15-9aa6-d808755a2a02": "400"
+          }
+        },
+        "8e383171-37c6-447d-8af5-6fda6d2ed01e": {
+          "coordinates": [
+            88,
+            -12.750000000000028
+          ],
+          "name": "route response",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "253de9b2-5fc0-4a4b-8573-10ea5123bf68": {
+          "coordinates": [
+            91,
+            141.25
+          ],
+          "name": "build error",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"error\", \"details\"]"
+          }
+        },
+        "fff32008-18e6-42cc-ba9c-afda89554199": {
+          "coordinates": [
+            -119.99999999999994,
+            109.24999999999997
+          ],
+          "name": "split response",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"status\", \"body\"]"
+          }
+        }
+      },
+      "connections": {
+        "a1cfea1d-dd7d-4e1e-80b3-79403999de04": {
+          "16e781b0-5e94-4e62-8c67-8a2aff19e0dc": {
+            "8e383171-37c6-447d-8af5-6fda6d2ed01e": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "fff32008-18e6-42cc-ba9c-afda89554199": {
+          "status": {
+            "a1cfea1d-dd7d-4e1e-80b3-79403999de04": {
+              "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {}
+            }
+          },
+          "body": {
+            "8e383171-37c6-447d-8af5-6fda6d2ed01e": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "8e383171-37c6-447d-8af5-6fda6d2ed01e": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "253de9b2-5fc0-4a4b-8573-10ea5123bf68": {
+              "details": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "53e51383-6bc2-4759-9921-0dfaf424099c": {
+            "fff32008-18e6-42cc-ba9c-afda89554199": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "387fb819-948e-4bce-9542-dd8347977817": {
+            "253de9b2-5fc0-4a4b-8573-10ea5123bf68": {
+              "error": {}
+            }
+          }
+        },
+        "outputs": {
+          "97d4c37a-7e13-4b19-9445-a29762a3966f": {
+            "253de9b2-5fc0-4a4b-8573-10ea5123bf68": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          },
+          "fde6f814-83e7-4133-995e-88a7771ed31d": {
+            "8e383171-37c6-447d-8af5-6fda6d2ed01e": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "http": null,
+    "request": null,
+    "response": null,
+    "error": null,
+    "identify": null,
+    "detect": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

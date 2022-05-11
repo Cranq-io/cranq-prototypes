@@ -46,6 +46,7 @@
   },
   "name": "data/array/Step iterator (manual tags)",
   "description": "Iterates over the items of an array asynchronously.\n\nOn receiving the array, the node sends out the first item (if any) using the same tag.\n\nSubsequent items will be sent out on receiving signals on `next`, using the same tag.",
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
   "attributes": {
     "locked": true
   }

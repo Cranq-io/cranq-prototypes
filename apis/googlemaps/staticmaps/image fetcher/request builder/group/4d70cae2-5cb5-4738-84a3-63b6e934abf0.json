@@ -1,0 +1,131 @@
+{
+  "name": "apis/googlemaps/staticmaps/Image fetcher/Request builder/Group",
+  "interface": {
+    "inputs": {
+      "46654f1d-e3d7-4d37-a91d-0d0c9e14c9e2": {
+        "type": "{\n  \"center\": [number, number],\n  \"zoom\": number\n}",
+        "name": "center area",
+        "description": "[Inherited from port `unsplit` of `splitter`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
+      }
+    },
+    "outputs": {
+      "6e5f3126-78af-43bf-949f-4b36197e5558": {
+        "type": "{\n  \"center\": string,\n  \"zoom\": string\n}",
+        "name": "area query params",
+        "description": "[Inherited from port `joined` of `build params 1`] \nSends the resulting joined dictionary.\n\nExample:\n{\"first\": 1,\"third\": 3}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "53641d4e-ff5a-4ce8-9c38-70c48742f7a4": {
+          "coordinates": [
+            97.19999999999999,
+            184.71875
+          ],
+          "name": "build params 1",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"center\": \"center\",\n  \"zoom\": \"zoom\"\n}"
+          }
+        },
+        "9426f63f-5e18-4f4c-bb34-d1e4d5daaf2c": {
+          "coordinates": [
+            -173.05,
+            113.5703125
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"center\", \"zoom\"]"
+          }
+        },
+        "7663fdce-3037-48af-83ff-be52f11e81e0": {
+          "coordinates": [
+            -79.05,
+            -60.4296875
+          ],
+          "name": "zoom query param",
+          "prototype": "9b8b959e-3c8c-4e4c-ac8a-7bf59bb50803"
+        },
+        "1da996d8-ca66-4483-ae38-20e0dec69c72": {
+          "coordinates": [
+            89.94999999999999,
+            14.5703125
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"center\", \"zoom\"]"
+          }
+        },
+        "1a1ecde6-01ab-46f6-a981-32219342fe09": {
+          "coordinates": [
+            -88.05,
+            -166.4296875
+          ],
+          "name": "center query param",
+          "prototype": "63c75fc1-ec00-49a1-a42e-e82a58aa29a2",
+          "params": {
+            "6e8f72af-0e88-49da-88d1-ca8e525e8e9f": "\",\""
+          }
+        }
+      },
+      "connections": {
+        "1da996d8-ca66-4483-ae38-20e0dec69c72": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "53641d4e-ff5a-4ce8-9c38-70c48742f7a4": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          }
+        },
+        "9426f63f-5e18-4f4c-bb34-d1e4d5daaf2c": {
+          "center": {
+            "1a1ecde6-01ab-46f6-a981-32219342fe09": {
+              "2c5f0d7f-8f9d-4741-af0b-544aa15406f0": {}
+            }
+          },
+          "zoom": {
+            "7663fdce-3037-48af-83ff-be52f11e81e0": {
+              "607be551-0389-42f8-99bb-088bfd8b1579": {}
+            }
+          }
+        },
+        "1a1ecde6-01ab-46f6-a981-32219342fe09": {
+          "61fd421d-d6b7-49d3-a63b-ec3e1f0b092f": {
+            "1da996d8-ca66-4483-ae38-20e0dec69c72": {
+              "center": {}
+            }
+          }
+        },
+        "7663fdce-3037-48af-83ff-be52f11e81e0": {
+          "60eb7bd0-fd76-48a5-a787-78a6f87d131b": {
+            "1da996d8-ca66-4483-ae38-20e0dec69c72": {
+              "zoom": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "46654f1d-e3d7-4d37-a91d-0d0c9e14c9e2": {
+            "9426f63f-5e18-4f4c-bb34-d1e4d5daaf2c": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "6e5f3126-78af-43bf-949f-4b36197e5558": {
+            "53641d4e-ff5a-4ce8-9c38-70c48742f7a4": {
+              "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  }
+}

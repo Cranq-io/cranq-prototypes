@@ -1,0 +1,183 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "86751e4a-c7ae-438d-bb5b-44c92fde8a0d": {
+          "coordinates": [
+            121.546875,
+            -195.703125
+          ],
+          "name": "json request dispatcher",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "0e65d603-9267-4efc-be6c-438458245ff0": {
+          "coordinates": [
+            -219.453125,
+            138.296875
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "53075ac6-2189-4192-9aa1-64265eabcddd": {
+          "coordinates": [
+            -207.453125,
+            -8.703125
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"language\": \"en\",\n  \"format\": \"json\"\n}"
+          }
+        },
+        "2288281f-c73c-42d5-b091-ef8410217c64": {
+          "coordinates": [
+            172.546875,
+            178.296875
+          ],
+          "name": "detect errors",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Fetching words by coordinates failed.\""
+          }
+        },
+        "5a0d69e0-3172-4772-925e-05a3ca6f3851": {
+          "coordinates": [
+            -159.453125,
+            -125.703125
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"apiKey\", \"language\", \"format\"]"
+          }
+        },
+        "3bb8aac0-210c-4957-a5f6-0cdc73392bfa": {
+          "coordinates": [
+            13.546875,
+            -60.103125000000006
+          ],
+          "name": "build request",
+          "prototype": "eb386bf9-818d-4d9e-9a83-06b895f35649"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bb0d167f-64c3-425f-9a35-fc99474d93e6": {
+            "0e65d603-9267-4efc-be6c-438458245ff0": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "6063c7b0-d06b-4a0a-8746-e839d0e34bee": {
+            "0e65d603-9267-4efc-be6c-438458245ff0": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "480f26de-4ca0-4960-bda9-162480781a86": {
+            "86751e4a-c7ae-438d-bb5b-44c92fde8a0d": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "6c0a336c-dae0-46f6-8852-e3eb143bb456": {
+            "2288281f-c73c-42d5-b091-ef8410217c64": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "047920a4-9412-4a90-a2e7-95b06f9ee533": {
+            "2288281f-c73c-42d5-b091-ef8410217c64": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "86751e4a-c7ae-438d-bb5b-44c92fde8a0d": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "0e65d603-9267-4efc-be6c-438458245ff0": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "53075ac6-2189-4192-9aa1-64265eabcddd": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "3bb8aac0-210c-4957-a5f6-0cdc73392bfa": {
+              "114223e7-b4f0-42dd-83e1-6d311570ffa9": {}
+            }
+          }
+        },
+        "86751e4a-c7ae-438d-bb5b-44c92fde8a0d": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "2288281f-c73c-42d5-b091-ef8410217c64": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "53075ac6-2189-4192-9aa1-64265eabcddd": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "5a0d69e0-3172-4772-925e-05a3ca6f3851": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "3bb8aac0-210c-4957-a5f6-0cdc73392bfa": {
+          "af650916-c22a-4bdc-bc04-8125057c64d5": {
+            "86751e4a-c7ae-438d-bb5b-44c92fde8a0d": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "5a0d69e0-3172-4772-925e-05a3ca6f3851": {
+          "language": {
+            "3bb8aac0-210c-4957-a5f6-0cdc73392bfa": {
+              "b8e03096-e149-46eb-bf4a-6594a5ac230f": {}
+            }
+          },
+          "format": {
+            "3bb8aac0-210c-4957-a5f6-0cdc73392bfa": {
+              "e1e580e6-76a1-4cac-9788-b3be320df401": {}
+            }
+          },
+          "apiKey": {
+            "3bb8aac0-210c-4957-a5f6-0cdc73392bfa": {
+              "dfd8a93d-a086-4ae2-85df-3a84a9a1aacf": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "bb0d167f-64c3-425f-9a35-fc99474d93e6": {
+        "type": "[number, number]",
+        "name": "coordinates",
+        "description": "Receives the coordinates to be converted to what3words.\n\nFormat: [latitude, longitude]"
+      },
+      "6063c7b0-d06b-4a0a-8746-e839d0e34bee": {
+        "type": "{\n  \"apiKey\": string,\n  optional \"language\": string,\n  optional \"format\": \"json\" or \"geojson\"\n}",
+        "name": "params",
+        "description": "Receives what3words API parameters."
+      }
+    },
+    "outputs": {
+      "6c0a336c-dae0-46f6-8852-e3eb143bb456": {
+        "type": "{\n  \"country\": string,\n  \"square\": {\n      \"southwest\": {\n          \"lng\": number,\n          \"lat\": number\n      },\n      \"northeast\": {\n          \"lng\": number,\n          \"lat\": number\n      }\n  },\n  \"nearestPlace\": string,\n  \"coordinates\": {\n      \"lng\": string,\n      \"lat\": string\n  },\n  \"words\": string,\n  \"language\": string,\n  \"map\": string\n}\nor\n{\n  \"features\": [\n      {\n          \"bbox\": [number, number, number, number],\n          \"geometry\": {\n              \"coordinates\": [number, number],\n              \"type\": \"Point\"\n          },\n          \"type\": \"Feature\",\n          \"properties\": {\n              \"country\": string,\n              \"nearestPlace\": string,\n              \"words\": string,\n              \"language\": string,\n              \"map\": string\n          }\n      }\n  ],\n  \"type\": \"FeatureCollection\"\n}",
+        "name": "data",
+        "description": "Sends data structure describing the geographical area identified by the 3-word address."
+      },
+      "480f26de-4ca0-4960-bda9-162480781a86": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "047920a4-9412-4a90-a2e7-95b06f9ee533": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "apis/what3words/Coordinates to words",
+  "attributes": {},
+  "iconId": "699799ad-30e6-41ae-b78f-0ddfc43866cd"
+}

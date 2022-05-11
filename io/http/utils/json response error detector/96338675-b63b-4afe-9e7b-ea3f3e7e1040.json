@@ -1,0 +1,158 @@
+{
+  "name": "io/http/utils/JSON response error detector",
+  "description": "Wraps failed HTTP response into an error, including a message.\n\nExample A\n1. `message` set to \"Response failed\"\n2. {\"status\": 200, \"headers\": {}, \"body\": \"null\"}@1 received via `response`\n3. null@1 sent via `data`\n\nExample B\n1. `message` set to \"Response failed\"\n2. {\"status\": 400, \"headers\": {}, \"body\": {\"success\": false}}@1 received via `response`\n3. {\"error\": \"Response failed\", \"details\": {\"success\": false}}@1 sent via `error`",
+  "interface": {
+    "inputs": {
+      "d063ef8a-843f-4caf-9f7b-ca8a39117333": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Receives JSON response that might contain an error."
+      },
+      "40772bbe-67b9-436e-b2c5-41a9605972ce": {
+        "type": "string",
+        "name": "error msg",
+        "description": "Receives error message to appear in `error`."
+      }
+    },
+    "outputs": {
+      "c7cf1f92-7748-4184-b078-e0eb04851e6f": {
+        "type": "any",
+        "name": "data",
+        "description": "Sends response data, when the response was successful."
+      },
+      "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c8e278b9-a0b0-465f-a672-d54296aa97d9": {
+          "coordinates": [
+            -1.6666666666666856,
+            -230.66666666666666
+          ],
+          "name": "status >= 400?",
+          "prototype": "b963cd0a-c591-4f03-af6f-de0450e84dcf",
+          "params": {
+            "fa70beab-7306-4d15-9aa6-d808755a2a02": "400"
+          }
+        },
+        "6a0d8ea6-0fb4-482c-837c-685db9cc7b5e": {
+          "coordinates": [
+            101.33333333333331,
+            -96.66666666666666
+          ],
+          "name": "route response",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "77817a71-b1db-416c-9608-18de40d7d218": {
+          "coordinates": [
+            94.33333333333331,
+            168.33333333333334
+          ],
+          "name": "build error",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"error\", \"details\"]"
+          }
+        },
+        "f350cfab-71be-4209-950f-66b828108f7f": {
+          "coordinates": [
+            -186.66666666666669,
+            -98.66666666666666
+          ],
+          "name": "split response",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"status\", \"body\"]"
+          }
+        },
+        "ed871c01-8f19-4b13-b7cd-7ae7d96e3efc": {
+          "coordinates": [
+            -39.673437500000006,
+            -26.34843749999999
+          ],
+          "name": "parse JSON",
+          "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65"
+        }
+      },
+      "connections": {
+        "c8e278b9-a0b0-465f-a672-d54296aa97d9": {
+          "16e781b0-5e94-4e62-8c67-8a2aff19e0dc": {
+            "6a0d8ea6-0fb4-482c-837c-685db9cc7b5e": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "f350cfab-71be-4209-950f-66b828108f7f": {
+          "status": {
+            "c8e278b9-a0b0-465f-a672-d54296aa97d9": {
+              "51066c1d-ae64-48f5-8d18-63d9cda9f2ee": {}
+            }
+          },
+          "body": {
+            "ed871c01-8f19-4b13-b7cd-7ae7d96e3efc": {
+              "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {}
+            }
+          }
+        },
+        "ed871c01-8f19-4b13-b7cd-7ae7d96e3efc": {
+          "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {
+            "6a0d8ea6-0fb4-482c-837c-685db9cc7b5e": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "6a0d8ea6-0fb4-482c-837c-685db9cc7b5e": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "77817a71-b1db-416c-9608-18de40d7d218": {
+              "details": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d063ef8a-843f-4caf-9f7b-ca8a39117333": {
+            "f350cfab-71be-4209-950f-66b828108f7f": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "40772bbe-67b9-436e-b2c5-41a9605972ce": {
+            "77817a71-b1db-416c-9608-18de40d7d218": {
+              "error": {}
+            }
+          }
+        },
+        "outputs": {
+          "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {
+            "77817a71-b1db-416c-9608-18de40d7d218": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          },
+          "c7cf1f92-7748-4184-b078-e0eb04851e6f": {
+            "6a0d8ea6-0fb4-482c-837c-685db9cc7b5e": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "http": null,
+    "request": null,
+    "response": null,
+    "error": null,
+    "identify": null,
+    "detect": null,
+    "json": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

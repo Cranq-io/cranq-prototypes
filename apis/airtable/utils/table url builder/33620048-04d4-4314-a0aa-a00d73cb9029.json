@@ -1,0 +1,88 @@
+{
+  "name": "apis/airtable/utils/Table URL builder",
+  "description": "Builds a URL for an AirTable table.",
+  "interface": {
+    "inputs": {
+      "1cb4639b-e7ff-495f-b3d7-cba64f43ed9d": {
+        "type": "string",
+        "name": "base ID",
+        "description": "Receives the ID of an AirTable base."
+      },
+      "141104e6-3441-4b12-ab69-a76b5794cd4a": {
+        "type": "string",
+        "name": "table name",
+        "description": "Receives a table's identifier relative to an AirTable base."
+      }
+    },
+    "outputs": {
+      "ac3f79dc-f520-4670-a920-5f0fedc7d615": {
+        "type": "string",
+        "name": "URL"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "778481e7-efec-4d3e-be7a-84be21f92e03": {
+          "coordinates": [
+            13,
+            59
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.airtable.com/v0/{APP_ID}/{TABLE_NAME}\""
+          }
+        },
+        "d83ab22b-9c13-402d-ad5b-b6912f2562d0": {
+          "coordinates": [
+            -17,
+            -66
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"APP_ID\", \"TABLE_NAME\"]"
+          }
+        }
+      },
+      "connections": {
+        "d83ab22b-9c13-402d-ad5b-b6912f2562d0": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "778481e7-efec-4d3e-be7a-84be21f92e03": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1cb4639b-e7ff-495f-b3d7-cba64f43ed9d": {
+            "d83ab22b-9c13-402d-ad5b-b6912f2562d0": {
+              "APP_ID": {}
+            }
+          },
+          "141104e6-3441-4b12-ab69-a76b5794cd4a": {
+            "d83ab22b-9c13-402d-ad5b-b6912f2562d0": {
+              "TABLE_NAME": {}
+            }
+          }
+        },
+        "outputs": {
+          "ac3f79dc-f520-4670-a920-5f0fedc7d615": {
+            "778481e7-efec-4d3e-be7a-84be21f92e03": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "template": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

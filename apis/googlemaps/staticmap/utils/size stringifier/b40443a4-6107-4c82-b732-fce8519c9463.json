@@ -1,0 +1,124 @@
+{
+  "name": "apis/googlemaps/staticmap/utils/Size stringifier",
+  "interface": {
+    "inputs": {
+      "16bfbb22-ba3f-4e16-9ee7-cae6fed36247": {
+        "type": "[number, number]",
+        "name": "size"
+      }
+    },
+    "outputs": {
+      "acd4bba6-922d-4e34-a79a-eaa867f3253f": {
+        "type": "string",
+        "name": "string"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cd61e3be-c5e6-44c1-8691-9390a676daee": {
+          "coordinates": [
+            133.9453125,
+            -82.8515625
+          ],
+          "name": "join strings",
+          "prototype": "63c75fc1-ec00-49a1-a42e-e82a58aa29a2",
+          "params": {
+            "6e8f72af-0e88-49da-88d1-ca8e525e8e9f": "\"x\""
+          }
+        },
+        "75b7c558-d473-447f-b31c-dfd6bfc28c14": {
+          "coordinates": [
+            82.9453125,
+            67.1484375
+          ],
+          "name": "build substrings",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1]"
+          }
+        },
+        "fc8cdd08-15a6-4593-ab34-c2d4ae629d9f": {
+          "coordinates": [
+            -42.0546875,
+            1.1484375
+          ],
+          "name": "stringify width",
+          "prototype": "9b8b959e-3c8c-4e4c-ac8a-7bf59bb50803"
+        },
+        "935de47b-d726-4b18-96b1-f4b34172fb1f": {
+          "coordinates": [
+            -44.0546875,
+            135.1484375
+          ],
+          "name": "stringify height",
+          "prototype": "9b8b959e-3c8c-4e4c-ac8a-7bf59bb50803"
+        },
+        "601b7508-9078-42d0-83c0-036af6d0a48e": {
+          "coordinates": [
+            -115.0546875,
+            -113.8515625
+          ],
+          "name": "get dimensions",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[0, 1]"
+          }
+        }
+      },
+      "connections": {
+        "75b7c558-d473-447f-b31c-dfd6bfc28c14": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "cd61e3be-c5e6-44c1-8691-9390a676daee": {
+              "2c5f0d7f-8f9d-4741-af0b-544aa15406f0": {}
+            }
+          }
+        },
+        "fc8cdd08-15a6-4593-ab34-c2d4ae629d9f": {
+          "60eb7bd0-fd76-48a5-a787-78a6f87d131b": {
+            "75b7c558-d473-447f-b31c-dfd6bfc28c14": {
+              "0": {}
+            }
+          }
+        },
+        "935de47b-d726-4b18-96b1-f4b34172fb1f": {
+          "60eb7bd0-fd76-48a5-a787-78a6f87d131b": {
+            "75b7c558-d473-447f-b31c-dfd6bfc28c14": {
+              "1": {}
+            }
+          }
+        },
+        "601b7508-9078-42d0-83c0-036af6d0a48e": {
+          "0": {
+            "fc8cdd08-15a6-4593-ab34-c2d4ae629d9f": {
+              "607be551-0389-42f8-99bb-088bfd8b1579": {}
+            }
+          },
+          "1": {
+            "935de47b-d726-4b18-96b1-f4b34172fb1f": {
+              "607be551-0389-42f8-99bb-088bfd8b1579": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "16bfbb22-ba3f-4e16-9ee7-cae6fed36247": {
+            "601b7508-9078-42d0-83c0-036af6d0a48e": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "acd4bba6-922d-4e34-a79a-eaa867f3253f": {
+            "cd61e3be-c5e6-44c1-8691-9390a676daee": {
+              "61fd421d-d6b7-49d3-a63b-ec3e1f0b092f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {}
+}

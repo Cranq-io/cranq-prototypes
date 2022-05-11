@@ -1,0 +1,135 @@
+{
+  "name": "db/sqlite3/Opener",
+  "description": "Opens the specified SQLite database.\nMode is normally 6.\n(More on modes: https://www.sqlite.org/c3ref/c_open_autoproxy.html)",
+  "interface": {
+    "inputs": {
+      "799d8fe3-8a4c-4926-862f-037357336c6d": {
+        "type": "{\n  \"dbId\": string,\n  \"filename\": string,\n  \"mode\": number\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "26f439ff-9c4e-4f98-b69f-04c4efd21534": {
+        "type": "null",
+        "name": "done"
+      },
+      "d6eeb7e2-6f29-4754-ac95-0c82ff85cc60": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9c26c4f0-3e05-4455-9cdb-221ca59f053c": {
+          "coordinates": [
+            136.1640625,
+            1.078125
+          ],
+          "name": "sqlite3",
+          "prototype": "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
+          "params": {}
+        },
+        "b551d04e-8cfc-4ca7-bfb9-6138fb3f9ab8": {
+          "coordinates": [
+            14.1015625,
+            -72.046875
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"open\""
+          }
+        },
+        "7352d28e-acae-4499-af5f-311752280d35": {
+          "coordinates": [
+            -6.8984375,
+            87.953125
+          ],
+          "name": "build options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"filename\", \"mode\"]"
+          }
+        },
+        "69cfac94-16a5-410c-ba9d-742126fe3b81": {
+          "coordinates": [
+            -150.3671875,
+            4.015625
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"dbId\", \"filename\", \"mode\"]"
+          }
+        }
+      },
+      "connections": {
+        "b551d04e-8cfc-4ca7-bfb9-6138fb3f9ab8": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "9c26c4f0-3e05-4455-9cdb-221ca59f053c": {
+              "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {}
+            }
+          }
+        },
+        "7352d28e-acae-4499-af5f-311752280d35": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b551d04e-8cfc-4ca7-bfb9-6138fb3f9ab8": {
+              "options": {}
+            }
+          }
+        },
+        "69cfac94-16a5-410c-ba9d-742126fe3b81": {
+          "dbId": {
+            "b551d04e-8cfc-4ca7-bfb9-6138fb3f9ab8": {
+              "id": {}
+            }
+          },
+          "filename": {
+            "7352d28e-acae-4499-af5f-311752280d35": {
+              "filename": {}
+            }
+          },
+          "mode": {
+            "7352d28e-acae-4499-af5f-311752280d35": {
+              "mode": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "799d8fe3-8a4c-4926-862f-037357336c6d": {
+            "69cfac94-16a5-410c-ba9d-742126fe3b81": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "26f439ff-9c4e-4f98-b69f-04c4efd21534": {
+            "9c26c4f0-3e05-4455-9cdb-221ca59f053c": {
+              "9ffca0a3-0927-4358-9cfb-28260054ea3f": {}
+            }
+          },
+          "d6eeb7e2-6f29-4754-ac95-0c82ff85cc60": {
+            "9c26c4f0-3e05-4455-9cdb-221ca59f053c": {
+              "8a5f8aaf-0528-4a5b-9305-ba063d5120ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "open": null,
+    "database": null,
+    "sql": null
+  },
+  "iconId": "0b2ba8cf-f316-4bcf-8035-82fa89db2445",
+  "attributes": {
+    "locked": true
+  }
+}

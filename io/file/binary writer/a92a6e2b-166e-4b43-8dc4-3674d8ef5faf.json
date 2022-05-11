@@ -1,0 +1,97 @@
+{
+  "name": "io/file/Binary writer",
+  "interface": {
+    "inputs": {
+      "2f960cd2-ce95-47dd-9dfa-7b89eefe48e3": {
+        "type": "string",
+        "name": "path"
+      },
+      "4b68e52a-3d8d-4db6-857c-ae1448dd7eb1": {
+        "type": "string",
+        "name": "base64"
+      }
+    },
+    "outputs": {
+      "0cbefbca-31bc-4056-8b5a-5bf384e91f94": {
+        "type": "null",
+        "name": "written"
+      },
+      "b7f7cfdc-dfaf-4750-b623-cd4fe77b4278": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "435d2c2a-c878-4d00-8a80-7adb1e82e568": {
+          "coordinates": [
+            15,
+            -72.5
+          ],
+          "name": "node 1",
+          "prototype": "ecc611c2-4429-4344-b72c-c52ebbaf1b8a"
+        },
+        "c8e5653f-0523-42c3-8fb0-88118cb8b55b": {
+          "coordinates": [
+            -17,
+            65.5
+          ],
+          "name": "sync params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"path\", \"base64\"]"
+          }
+        }
+      },
+      "connections": {
+        "c8e5653f-0523-42c3-8fb0-88118cb8b55b": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "435d2c2a-c878-4d00-8a80-7adb1e82e568": {
+              "9b36effb-8108-4c7a-a27d-4f3f986ca2bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2f960cd2-ce95-47dd-9dfa-7b89eefe48e3": {
+            "c8e5653f-0523-42c3-8fb0-88118cb8b55b": {
+              "path": {}
+            }
+          },
+          "4b68e52a-3d8d-4db6-857c-ae1448dd7eb1": {
+            "c8e5653f-0523-42c3-8fb0-88118cb8b55b": {
+              "base64": {}
+            }
+          }
+        },
+        "outputs": {
+          "0cbefbca-31bc-4056-8b5a-5bf384e91f94": {
+            "435d2c2a-c878-4d00-8a80-7adb1e82e568": {
+              "ede77453-2e71-4b8f-abc2-c3395754857b": {}
+            }
+          },
+          "b7f7cfdc-dfaf-4750-b623-cd4fe77b4278": {
+            "435d2c2a-c878-4d00-8a80-7adb1e82e568": {
+              "b78360a0-85b0-47ad-94cd-6cb4315802cb": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {},
+  "keywords": {
+    "file": null,
+    "write": null,
+    "create": null,
+    "binary": null,
+    "base64": null,
+    "image": null,
+    "video": null,
+    "audio": null,
+    "media": null
+  }
+}

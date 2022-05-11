@@ -1,0 +1,105 @@
+{
+  "name": "data/array/Aggregation iterator",
+  "description": "Iterates through items of an array, specifically for the purpose of being aggregated later.",
+  "interface": {
+    "inputs": {
+      "f410099b-f0d3-4745-bc33-e191fbfbe727": {
+        "type": "any[]",
+        "name": "array",
+        "description": "Recieves array to be iterated over.\n\nExample:\n[1,2,3]"
+      }
+    },
+    "outputs": {
+      "4cfebe2a-d2ee-46e4-8b06-3b3fca86e845": {
+        "type": "typeof `array`[number]",
+        "name": "item",
+        "description": "Sends current item.\n\nExample:\n1"
+      },
+      "0d55a099-b43b-4220-8b0b-4bb820dac57f": {
+        "type": "boolean",
+        "name": "is last",
+        "description": "Sends flag whether current item is the last one.\n\nTo be connected directly to the `release` input of a `flow/Aggregator`."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "46a78e6d-d048-4ead-8b59-924265e92aea": {
+          "coordinates": [
+            -66.5,
+            153
+          ],
+          "name": "iterator",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        },
+        "53bd1074-13bf-47ad-9032-651529db612d": {
+          "coordinates": [
+            45.5,
+            64
+          ],
+          "name": "last index tester",
+          "prototype": "1dbcee5a-4fbf-4aa1-b92a-53bead8afcbb"
+        },
+        "bf308658-e8b8-409c-830d-e886531e2f81": {
+          "coordinates": [
+            0.2572627314815463,
+            -112.20014467592591
+          ],
+          "name": "repeater",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        }
+      },
+      "connections": {
+        "46a78e6d-d048-4ead-8b59-924265e92aea": {
+          "fd814053-60ce-4e59-b187-cea6f9b8481b": {
+            "53bd1074-13bf-47ad-9032-651529db612d": {
+              "7480cb53-db90-4057-84c2-65d849004ffa": {}
+            }
+          }
+        },
+        "bf308658-e8b8-409c-830d-e886531e2f81": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "53bd1074-13bf-47ad-9032-651529db612d": {
+              "5b8b2c1a-3bb8-46e5-b7c8-ef7d4d50ae36": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f410099b-f0d3-4745-bc33-e191fbfbe727": {
+            "46a78e6d-d048-4ead-8b59-924265e92aea": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            },
+            "bf308658-e8b8-409c-830d-e886531e2f81": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {},
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "outputs": {
+          "4cfebe2a-d2ee-46e4-8b06-3b3fca86e845": {
+            "46a78e6d-d048-4ead-8b59-924265e92aea": {
+              "52e37fc4-95e9-4073-9d76-62e6816bfffe": {}
+            }
+          },
+          "0d55a099-b43b-4220-8b0b-4bb820dac57f": {
+            "53bd1074-13bf-47ad-9032-651529db612d": {
+              "ea810b75-a715-4c5f-883e-399e8eb67f69": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "loop": null,
+    "step": null,
+    "aggregation": null
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "locked": true
+  }
+}

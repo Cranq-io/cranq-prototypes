@@ -1,5 +1,5 @@
 {
-  "description": "Retrieves item from the specified index.\n\nExample:\n1. [1,2]@0  received via `array`\n2. 1@0  recieved via `index`\n3. 2@0  sent via `item`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_1_getters/README.md#getting-array-element-by-index",
+  "description": "Retrieves item from the specified index.\nIf the item is not found, the inputs are sent via `not found`.\n\nExample A:\n1. [1,2]@0  received via `array`\n2. 1@0  recieved via `index`\n3. 2@0  sent via `item`\n\nExample B:\n1. [1,2]@0  received via `array`\n2. 9@0  recieved via `index`\n3. {\"array\":[1,2], \"index\":9}@0  sent via `not found`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_1_getters/README.md#getting-array-element-by-index",
   "interface": {
     "inputs": {
       "352fc29e-79dd-4fa0-8b8b-0ff79ea197d1": {
@@ -18,6 +18,10 @@
         "description": "Sends item at the specified index.\n\nExample:\n2",
         "type": "(typeof `array`)[number]",
         "name": "item"
+      },
+      "01060682-3874-4706-8f0f-65ceccb79585": {
+        "type": "typeof `array & index` of `get item`",
+        "name": "not found"
       }
     }
   },
@@ -26,8 +30,8 @@
       "nodes": {
         "fa0d9f17-ca99-4020-8e1e-8b03a5f67b7f": {
           "coordinates": [
-            -49,
-            -103
+            -48,
+            -74
           ],
           "description": "",
           "params": {
@@ -38,8 +42,8 @@
         },
         "21310ac9-b25f-4439-84d5-680cf436ce20": {
           "coordinates": [
-            59,
-            52
+            43,
+            68
           ],
           "description": "",
           "params": {},
@@ -76,17 +80,24 @@
             "21310ac9-b25f-4439-84d5-680cf436ce20": {
               "1ce84cbc-0aed-4aed-9a98-8d31798a807d": {}
             }
+          },
+          "01060682-3874-4706-8f0f-65ceccb79585": {
+            "21310ac9-b25f-4439-84d5-680cf436ce20": {
+              "f6015d48-b42a-4423-9bfc-9c1cc4b607c4": {}
+            }
           }
         }
       }
     }
   },
   "name": "data/array/Item getter",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "select": null,
-    "retrieve": null
+    "retrieve": null,
+    "access": null
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
   }
 }

@@ -16,7 +16,7 @@
     "outputs": {
       "5d88b9c8-0961-45fb-b196-03194f84bb36": {
         "type": "boolean",
-        "name": "greater",
+        "name": "is greater",
         "description": "Sends true if \"a\" is greater than \"b\""
       }
     }
@@ -82,13 +82,13 @@
     }
   },
   "name": "number/Greater than tester",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "number": null,
     "greater": null,
     "compare": null,
     "gt": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

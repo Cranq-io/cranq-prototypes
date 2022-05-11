@@ -1,0 +1,61 @@
+{
+  "name": "data/array/Wrapper",
+  "description": "Wraps input in a 1-element array",
+  "interface": {
+    "inputs": {
+      "3e97c47b-9e13-48f3-b6a9-95cd8b676a8e": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "51232407-ba2f-430d-b3fe-883a465cedd0": {
+        "type": "[typeof `data`]",
+        "name": "array"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7890d318-1ed9-4fe9-a7b6-6d6e7e683adf": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "syncer B",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "3e97c47b-9e13-48f3-b6a9-95cd8b676a8e": {
+            "7890d318-1ed9-4fe9-a7b6-6d6e7e683adf": {
+              "0": {}
+            }
+          }
+        },
+        "outputs": {
+          "51232407-ba2f-430d-b3fe-883a465cedd0": {
+            "7890d318-1ed9-4fe9-a7b6-6d6e7e683adf": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {},
+  "keywords": {
+    "wrap": null,
+    "element": null,
+    "item": null,
+    "array": null,
+    "tuple": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d"
+}

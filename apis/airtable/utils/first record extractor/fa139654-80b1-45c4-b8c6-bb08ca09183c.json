@@ -1,0 +1,105 @@
+{
+  "name": "apis/airtable/utils/First record extractor",
+  "description": "Extracts the first record from an AirTable API response.",
+  "interface": {
+    "inputs": {
+      "ea527587-25ce-410a-b8c8-cb087d5ada52": {
+        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}",
+        "name": "resp. data",
+        "description": "JSON body of the record insertion response from AirTable."
+      }
+    },
+    "outputs": {
+      "50f56afc-751d-4c88-9555-b76128975e3e": {
+        "type": "typeof `resp. data`[\"records\"][number][\"fields\"]",
+        "name": "record",
+        "description": ""
+      },
+      "d16dd152-06fe-4ba3-98e0-a006c04cc18b": {
+        "type": "typeof `resp. data`[\"records\"]",
+        "name": "AT record",
+        "description": "Record as is sent to / received from the AirTable API."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "eb21251d-5075-4b96-926c-d4c082bb5bac": {
+          "coordinates": [
+            -60.666666666666686,
+            92.66666666666666
+          ],
+          "name": "get \"records\"",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"records\""
+          }
+        },
+        "d9951f3e-1094-4a2a-a817-1bd2c718b5f6": {
+          "coordinates": [
+            106.33333333333331,
+            53.666666666666664
+          ],
+          "name": "get \"fields\"",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"fields\""
+          }
+        },
+        "3e5186ce-f449-4abf-bc5d-377a0b99c726": {
+          "coordinates": [
+            -47.82031249999994,
+            -61.94531249999997
+          ],
+          "name": "item getter",
+          "prototype": "f659815e-3af3-4399-9c7b-dec6cd927b55",
+          "params": {
+            "a6846250-26ed-4240-b65a-fd5eddd57556": "0"
+          }
+        }
+      },
+      "connections": {
+        "eb21251d-5075-4b96-926c-d4c082bb5bac": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "3e5186ce-f449-4abf-bc5d-377a0b99c726": {
+              "352fc29e-79dd-4fa0-8b8b-0ff79ea197d1": {}
+            }
+          }
+        },
+        "3e5186ce-f449-4abf-bc5d-377a0b99c726": {
+          "4a915651-a98d-4ce4-901f-16f958b5b3a9": {
+            "d9951f3e-1094-4a2a-a817-1bd2c718b5f6": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ea527587-25ce-410a-b8c8-cb087d5ada52": {
+            "eb21251d-5075-4b96-926c-d4c082bb5bac": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "d16dd152-06fe-4ba3-98e0-a006c04cc18b": {
+            "3e5186ce-f449-4abf-bc5d-377a0b99c726": {
+              "4a915651-a98d-4ce4-901f-16f958b5b3a9": {}
+            }
+          },
+          "50f56afc-751d-4c88-9555-b76128975e3e": {
+            "d9951f3e-1094-4a2a-a817-1bd2c718b5f6": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

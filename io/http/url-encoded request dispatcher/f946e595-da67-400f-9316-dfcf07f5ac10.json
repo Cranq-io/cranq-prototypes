@@ -1,0 +1,148 @@
+{
+  "name": "io/http/URL-encoded request dispatcher",
+  "description": "Dispatches HTTP request with an URL encoded body, expects response as JSON, parses it and outputs it as data. Outputs error if failed.",
+  "interface": {
+    "inputs": {
+      "8e35c4f4-47d8-4245-8054-6c1f75759a70": {
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "name": "URL-enc. req."
+      }
+    },
+    "outputs": {
+      "f00e5f0f-6faf-4848-963e-f4bf81d01f72": {
+        "type": "any",
+        "name": "data",
+        "description": "Sends HTTP response message body as data.\n\nExample:\n{\n  \"userId\": 1, \n  \"id\": 1, \n  \"title\": \"delectus aut autem\",  \n  \"completed\": false\n}\""
+      },
+      "74fc698e-31af-41e8-a099-342c49e33d17": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends original response."
+      },
+      "dc5b2f35-cf47-4707-9760-7749cdacc114": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6bb97c59-b94e-4e9b-b113-5d5baa6b86c3": {
+          "coordinates": [
+            63.61467978395058,
+            -135.51340663580243
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "ea3d2728-27e2-4252-a096-bd4457600905": {
+          "coordinates": [
+            -128.65904706790127,
+            -85.6112075617284
+          ],
+          "name": "apply content type",
+          "prototype": "7de3e026-e1d1-4d3a-a9c7-8799cdd145a2"
+        },
+        "7a7d9d87-0b15-4a0c-ae68-b44db0ff1cba": {
+          "coordinates": [
+            -111.12181712962968,
+            119.35133101851852
+          ],
+          "name": "serialize data",
+          "prototype": "dfee6d10-8912-4ab2-898e-f18656dc8f0d"
+        },
+        "8332e973-3c79-4ae4-b234-e272b213e0bd": {
+          "coordinates": [
+            97.2734375,
+            -1.8515625
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"body\"]"
+          }
+        },
+        "92e25a49-4c7a-453f-99d4-056c0a330d53": {
+          "coordinates": [
+            119.2734375,
+            146.1484375
+          ],
+          "name": "parser",
+          "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65"
+        }
+      },
+      "connections": {
+        "7a7d9d87-0b15-4a0c-ae68-b44db0ff1cba": {
+          "3b54c61e-2b4a-4210-86b0-fab0452d1cc5": {
+            "6bb97c59-b94e-4e9b-b113-5d5baa6b86c3": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "ea3d2728-27e2-4252-a096-bd4457600905": {
+          "90034563-7ba0-4059-b2c0-035d2a28ad2c": {
+            "7a7d9d87-0b15-4a0c-ae68-b44db0ff1cba": {
+              "8956fadf-b998-47aa-8a04-725450a974da": {}
+            }
+          }
+        },
+        "8332e973-3c79-4ae4-b234-e272b213e0bd": {
+          "body": {
+            "92e25a49-4c7a-453f-99d4-056c0a330d53": {
+              "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {}
+            }
+          }
+        },
+        "6bb97c59-b94e-4e9b-b113-5d5baa6b86c3": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "8332e973-3c79-4ae4-b234-e272b213e0bd": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8e35c4f4-47d8-4245-8054-6c1f75759a70": {
+            "ea3d2728-27e2-4252-a096-bd4457600905": {
+              "c33dc9ac-bc3d-47eb-a9aa-3168c8eee8ec": {}
+            }
+          }
+        },
+        "outputs": {
+          "dc5b2f35-cf47-4707-9760-7749cdacc114": {
+            "6bb97c59-b94e-4e9b-b113-5d5baa6b86c3": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            }
+          },
+          "f00e5f0f-6faf-4848-963e-f4bf81d01f72": {
+            "92e25a49-4c7a-453f-99d4-056c0a330d53": {
+              "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {}
+            }
+          },
+          "74fc698e-31af-41e8-a099-342c49e33d17": {
+            "6bb97c59-b94e-4e9b-b113-5d5baa6b86c3": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "get": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "delete": null,
+    "fetch": null,
+    "api": null,
+    "url": null,
+    "encoding": null,
+    "data": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

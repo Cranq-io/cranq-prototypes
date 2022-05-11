@@ -29,10 +29,11 @@
   },
   "name": "flow/Shifter",
   "description": "Shifts incoming data back in time by releasing the previously received data on each input. \n\nExample:\n1. \"A\"@0 received via `data`.\n2. \"B\"@1 received via `data`.\n3. \"A\"@0 sent via `data` (output).",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "previous signal": null
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
   }
 }

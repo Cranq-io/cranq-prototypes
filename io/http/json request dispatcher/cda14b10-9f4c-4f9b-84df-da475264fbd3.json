@@ -1,0 +1,150 @@
+{
+  "name": "io/http/JSON request dispatcher",
+  "description": "Dispatches HTTP request, expects response as JSON, parses it and outputs it as data. Outputs error if failed.\n\nMore: https://github.com/Cranq-io/cranq-tutorials/tree/main/http_request",
+  "interface": {
+    "inputs": {
+      "3f371a08-e057-48db-bb41-9a66072ae89a": {
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "name": "JSON req.",
+        "description": "Receives request with JSON body."
+      }
+    },
+    "outputs": {
+      "928a6619-42b4-4267-9dd7-416907a3939f": {
+        "type": "any",
+        "name": "data",
+        "description": "Sends HTTP response message body as data.\n\nExample:\n{\n  \"userId\": 1, \n  \"id\": 1, \n  \"title\": \"delectus aut autem\",  \n  \"completed\": false\n}\""
+      },
+      "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends original response."
+      },
+      "787f8eca-e644-4e60-8345-51b6864c68e2": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ff32352e-d35c-4e43-9eef-41181f4edead": {
+          "coordinates": [
+            88.34124228395058,
+            -117.66184413580245
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "b8491df3-94d0-4b19-8cad-95aaf7842e2f": {
+          "coordinates": [
+            -96.93248456790127,
+            -109.42631172839506
+          ],
+          "name": "apply content type",
+          "prototype": "f69b0870-e5ba-4e5f-9ca1-dc0c0fe21c2d"
+        },
+        "b5b2ffb9-7ff3-4174-a973-b69031843042": {
+          "coordinates": [
+            -100.40875771604942,
+            84.08815586419755
+          ],
+          "name": "serialize data",
+          "prototype": "cc810353-35b7-4651-a273-8bffb63de8f6"
+        },
+        "6875eb1a-8408-4bba-9297-238d877c7396": {
+          "coordinates": [
+            140.34124228395058,
+            127.33815586419755
+          ],
+          "name": "parser",
+          "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65"
+        },
+        "5a9e75c4-e7f1-46ed-999f-7855c0353762": {
+          "coordinates": [
+            117.34124228395058,
+            4.338155864197546
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"body\"]"
+          }
+        }
+      },
+      "connections": {
+        "b5b2ffb9-7ff3-4174-a973-b69031843042": {
+          "2569e6b1-cc8d-403f-9c47-1a6fed3c54b1": {
+            "ff32352e-d35c-4e43-9eef-41181f4edead": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "b8491df3-94d0-4b19-8cad-95aaf7842e2f": {
+          "847141cc-789b-4f98-8c94-0e9bf477b238": {
+            "b5b2ffb9-7ff3-4174-a973-b69031843042": {
+              "1de82346-fe83-4b80-9607-eb7cdf52597e": {}
+            }
+          }
+        },
+        "ff32352e-d35c-4e43-9eef-41181f4edead": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "5a9e75c4-e7f1-46ed-999f-7855c0353762": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "5a9e75c4-e7f1-46ed-999f-7855c0353762": {
+          "body": {
+            "6875eb1a-8408-4bba-9297-238d877c7396": {
+              "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3f371a08-e057-48db-bb41-9a66072ae89a": {
+            "b8491df3-94d0-4b19-8cad-95aaf7842e2f": {
+              "9a597666-3f4f-4aec-92b4-83af37e8b644": {}
+            }
+          }
+        },
+        "outputs": {
+          "787f8eca-e644-4e60-8345-51b6864c68e2": {
+            "ff32352e-d35c-4e43-9eef-41181f4edead": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            }
+          },
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "ff32352e-d35c-4e43-9eef-41181f4edead": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          },
+          "928a6619-42b4-4267-9dd7-416907a3939f": {
+            "6875eb1a-8408-4bba-9297-238d877c7396": {
+              "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {},
+              "98e5a7d3-3b54-4287-b956-6eb13ead38d7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "get": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "delete": null,
+    "fetch": null,
+    "api": null,
+    "json": null,
+    "data": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

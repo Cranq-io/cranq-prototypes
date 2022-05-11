@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "02664129-3c8c-42d3-8260-74d10fbdc40d": "Object.entries(data).forEach(([key, value]) => {\n  if(outputs[key]) {\n    outputs[key](value, tag);\n  } else {\n    outputs.bounced({[key]: value}, tag);\n  }\n});"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "a760fbf3-927c-4c25-80d8-198c096dc4fd": {
+        "type": "string[] or number[]",
+        "name": "fields"
+      },
+      "02664129-3c8c-42d3-8260-74d10fbdc40d": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "14735345-27b0-4dd2-b333-6545a479405f": {
+        "type": "typeof `data`",
+        "name": "output",
+        "paramId": "a760fbf3-927c-4c25-80d8-198c096dc4fd"
+      },
+      "9ea0c017-7eba-4bfc-a3fb-770b2fc8ef3b": {
+        "type": "typeof `data`",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "flow/Switch (deprecated)",
+  "description": "Use `flow/Splitter` or `flow/Switch` instead.",
+  "attributes": {
+    "deprecated": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "name": "db/sqlite3/Rows getter",
+  "description": "Retrieves multiple rows as a single array from the specified database.",
+  "interface": {
+    "inputs": {
+      "068f3cc7-b4b9-4560-b552-967541884c10": {
+        "type": "{\n  \"dbId\": string,\n  \"sql\": string,\n  optional \"params\": (string or number)[]\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "a83e684b-c8d8-466b-b616-063f11f2e7b4": {
+        "type": "{string: any}[]",
+        "name": "data"
+      },
+      "ade163af-9d37-485b-95f9-c765db262cdd": {
+        "type": "null",
+        "name": "done"
+      },
+      "51ffe9e3-5fcb-4953-bfc3-6dd9041a74f4": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4c3b04a1-a4e9-4d3d-abd7-e13484c67518": {
+          "coordinates": [
+            136.85000000000002,
+            -35.39999999999998
+          ],
+          "name": "sqlite3",
+          "prototype": "d6499ae4-731f-45a8-bb7a-08e05a4a007a",
+          "params": {}
+        },
+        "3bfc832a-2378-4ef2-9327-0ba9f7d0d3e3": {
+          "coordinates": [
+            65.85000000000002,
+            -138.39999999999998
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"all\""
+          }
+        },
+        "dc640dd8-26fb-4ab7-b4d7-a702285e4a9f": {
+          "coordinates": [
+            82.85000000000002,
+            159.6
+          ],
+          "name": "build options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"sql\", \"params\"]"
+          }
+        },
+        "b1ac9839-22a4-4b56-981f-6c8da91a516b": {
+          "coordinates": [
+            -105.54999999999995,
+            109.20000000000002
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"dbId\", \"sql\", \"params\"]"
+          }
+        },
+        "649f215c-f8df-4bce-8089-6e21366a78e4": {
+          "coordinates": [
+            -123.54999999999995,
+            -80.79999999999995
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"params\": []}"
+          }
+        }
+      },
+      "connections": {
+        "3bfc832a-2378-4ef2-9327-0ba9f7d0d3e3": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4c3b04a1-a4e9-4d3d-abd7-e13484c67518": {
+              "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {}
+            }
+          }
+        },
+        "dc640dd8-26fb-4ab7-b4d7-a702285e4a9f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "3bfc832a-2378-4ef2-9327-0ba9f7d0d3e3": {
+              "options": {}
+            }
+          }
+        },
+        "649f215c-f8df-4bce-8089-6e21366a78e4": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "b1ac9839-22a4-4b56-981f-6c8da91a516b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "b1ac9839-22a4-4b56-981f-6c8da91a516b": {
+          "dbId": {
+            "3bfc832a-2378-4ef2-9327-0ba9f7d0d3e3": {
+              "id": {}
+            }
+          },
+          "sql": {
+            "dc640dd8-26fb-4ab7-b4d7-a702285e4a9f": {
+              "sql": {}
+            }
+          },
+          "params": {
+            "dc640dd8-26fb-4ab7-b4d7-a702285e4a9f": {
+              "params": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "068f3cc7-b4b9-4560-b552-967541884c10": {
+            "649f215c-f8df-4bce-8089-6e21366a78e4": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "a83e684b-c8d8-466b-b616-063f11f2e7b4": {
+            "4c3b04a1-a4e9-4d3d-abd7-e13484c67518": {
+              "8cb67ee3-0b71-49a6-9c97-4909670a0177": {}
+            }
+          },
+          "ade163af-9d37-485b-95f9-c765db262cdd": {
+            "4c3b04a1-a4e9-4d3d-abd7-e13484c67518": {
+              "9ffca0a3-0927-4358-9cfb-28260054ea3f": {}
+            }
+          },
+          "51ffe9e3-5fcb-4953-bfc3-6dd9041a74f4": {
+            "4c3b04a1-a4e9-4d3d-abd7-e13484c67518": {
+              "8a5f8aaf-0528-4a5b-9305-ba063d5120ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "query": null,
+    "get": null,
+    "retrieve": null,
+    "rows": null,
+    "list": null,
+    "records": null
+  },
+  "iconId": "0b2ba8cf-f316-4bcf-8035-82fa89db2445",
+  "attributes": {
+    "locked": true
+  }
+}

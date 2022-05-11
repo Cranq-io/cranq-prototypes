@@ -1,0 +1,62 @@
+{
+  "name": "apis/airtable/utils/Attachment object creator",
+  "interface": {
+    "inputs": {
+      "bf00920f-8c7c-4ee1-9b04-97d5f91a2dd2": {
+        "type": "string",
+        "name": "URL"
+      }
+    },
+    "outputs": {
+      "9b3cb989-5b14-4974-9ac2-46963591bbc3": {
+        "type": "{\"url\": typeof `URL`}",
+        "name": "attachment"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0a9b95b9-3f45-4459-ba78-90e6a45e33d3": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "syncer B",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"url\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "bf00920f-8c7c-4ee1-9b04-97d5f91a2dd2": {
+            "0a9b95b9-3f45-4459-ba78-90e6a45e33d3": {
+              "url": {}
+            }
+          }
+        },
+        "outputs": {
+          "9b3cb989-5b14-4974-9ac2-46963591bbc3": {
+            "0a9b95b9-3f45-4459-ba78-90e6a45e33d3": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "airtable": null,
+    "attachment": null,
+    "file": null,
+    "image": null,
+    "wrap": null,
+    "prepare": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

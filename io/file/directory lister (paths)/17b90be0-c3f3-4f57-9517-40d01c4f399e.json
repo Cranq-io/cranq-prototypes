@@ -153,8 +153,9 @@
       }
     }
   },
+  "description": "Non-recursively lists the paths of files & directories under the specified path.\n\nExample (success): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. [ \"/home/user1/dir1/foo.txt\", \"/home/user1/dir1/bar.txt\" ]@0 sent on `child names`\n\nExample (failure): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. \n- \"/home/user1/dir1\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, scandir '/home/user1/dir1'\"\n}@0 sent on `error`",
+  "iconId": "b63b05e2-5e2f-45a1-a3e3-10a749d05b96",
   "attributes": {
     "locked": true
-  },
-  "description": "Non-recursively lists the paths of files & directories under the specified path.\n\nExample (success): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. [ \"/home/user1/dir1/foo.txt\", \"/home/user1/dir1/bar.txt\" ]@0 sent on `child names`\n\nExample (failure): \n1. \"/home/user1/dir1\"@0 received on `path`\n2. \n- \"/home/user1/dir1\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, scandir '/home/user1/dir1'\"\n}@0 sent on `error`"
+  }
 }

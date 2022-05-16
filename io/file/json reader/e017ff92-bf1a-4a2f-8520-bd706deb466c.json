@@ -109,8 +109,9 @@
       }
     }
   },
+  "description": "Reads a JSON file from the specified path and outputs its content.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"foo\": 1,\n  \"bar\": 2,\n  \"foobar\": [1,2]\n}@0 sent on `text`\n\nExample (failure):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \n- \"/home/user1/dir1/foo.txt\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}@0 sent on `error`",
+  "iconId": "b63b05e2-5e2f-45a1-a3e3-10a749d05b96",
   "attributes": {
     "locked": true
-  },
-  "description": "Reads a JSON file from the specified path and outputs its content.\n\nExample (success):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. {\n  \"foo\": 1,\n  \"bar\": 2,\n  \"foobar\": [1,2]\n}@0 sent on `text`\n\nExample (failure):\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \n- \"/home/user1/dir1/foo.txt\"@0 sent on `bounced`\n- {\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}@0 sent on `error`"
+  }
 }

@@ -1,0 +1,119 @@
+{
+  "name": "data/array/Sorter",
+  "description": "Sorts an array according to the specified reference array (`params`[\"order\"]).",
+  "interface": {
+    "inputs": {
+      "e539bb55-e2e6-40d9-8362-1fe6658f4e41": {
+        "type": "any[]",
+        "name": "array"
+      },
+      "eda5afa9-f2ee-4b9f-a017-1694dd2e03e8": {
+        "type": "{\n  \"order\": any[],\n  optional \"direction\": 1 or -1\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "9917fe31-a446-442e-9f49-df948ec67d34": {
+        "type": "typeof `array`",
+        "name": "sorted"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8461cb53-bdfa-4300-83cb-6c9a920d2e42": {
+          "coordinates": [
+            114.27343750000003,
+            -67.71875
+          ],
+          "name": "sort",
+          "prototype": "636074ac-13b6-49fa-9e01-f20c9d1a511d"
+        },
+        "26e9ceb3-a61d-4966-a7f0-42be8fb751cf": {
+          "coordinates": [
+            50.2734375,
+            134.28124999999997
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"direction\": 1}"
+          }
+        },
+        "bb98a301-f788-4103-a8ec-00ab100d59c2": {
+          "coordinates": [
+            -116.7265625,
+            63.28125
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "a8dab593-367f-4587-94ab-b43f01dd13db": {
+          "coordinates": [
+            -46.7265625,
+            -130.71875
+          ],
+          "name": "add array to params",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"array\""
+          }
+        }
+      },
+      "connections": {
+        "bb98a301-f788-4103-a8ec-00ab100d59c2": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "26e9ceb3-a61d-4966-a7f0-42be8fb751cf": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "a8dab593-367f-4587-94ab-b43f01dd13db": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "a8dab593-367f-4587-94ab-b43f01dd13db": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "8461cb53-bdfa-4300-83cb-6c9a920d2e42": {
+              "649fb596-ac79-4fcd-b8ce-e24e98a3d4f6": {}
+            }
+          }
+        },
+        "26e9ceb3-a61d-4966-a7f0-42be8fb751cf": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "a8dab593-367f-4587-94ab-b43f01dd13db": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "eda5afa9-f2ee-4b9f-a017-1694dd2e03e8": {
+            "bb98a301-f788-4103-a8ec-00ab100d59c2": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "e539bb55-e2e6-40d9-8362-1fe6658f4e41": {
+            "bb98a301-f788-4103-a8ec-00ab100d59c2": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "9917fe31-a446-442e-9f49-df948ec67d34": {
+            "8461cb53-bdfa-4300-83cb-6c9a920d2e42": {
+              "3ccebfd6-8324-4838-9ce5-33d6d7de0621": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

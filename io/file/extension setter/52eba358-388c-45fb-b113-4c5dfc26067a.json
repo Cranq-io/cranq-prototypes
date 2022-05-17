@@ -132,8 +132,9 @@
       }
     }
   },
+  "description": "Sets the extension on the received path.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \".json\"@0 received on `extension`\n3. \"/home/user1/dir1/foo.json\"@0 sent on `path`",
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
     "locked": true
-  },
-  "description": "Sets the extension on the received path.\n\nExample:\n1. \"/home/user1/dir1/foo.txt\"@0 received on `path`\n2. \".json\"@0 received on `extension`\n3. \"/home/user1/dir1/foo.json\"@0 sent on `path`"
+  }
 }

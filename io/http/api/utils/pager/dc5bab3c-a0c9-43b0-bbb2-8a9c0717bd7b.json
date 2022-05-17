@@ -1,5 +1,5 @@
 {
-  "name": "/io/http/api/utils/Pager",
+  "name": "io/http/api/utils/Pager",
   "description": "Builds the query parameters for the next page if the cursor is not null.\n\nExample:\n1. {\n  \"next\": \"123456\" \n  \"result\": [{\n    \"userId\": 1, \n    \"id\": 1, \n    \"title\": \"delectus aut autem\",  \n    \"completed\": false\n  }]\n}@0 received via `resposnse`\n2.{ \"companyId\": 1 }@0 received via `query params`\n3. \"cursor\"@0 received via `cursor query param name`\n4. [\"next\"]]@0 received via `cursor path`\n5.  { \n  \"companyId\": 1,\n  \"cursor\": \"123456\"\n}@0 sent via `query params`\n6. true@0 sent via `has cursor`",
   "interface": {
     "inputs": {

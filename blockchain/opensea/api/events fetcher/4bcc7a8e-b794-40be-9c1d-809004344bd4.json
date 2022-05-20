@@ -23,6 +23,10 @@
         "type": "any[]",
         "name": "result",
         "description": "More: https://docs.opensea.io/reference/event-object"
+      },
+      "71dffe57-ff50-47a0-a7d4-848d88c71200": {
+        "type": "{\"error\": string}",
+        "name": "error"
       }
     }
   },
@@ -106,8 +110,8 @@
         },
         "a98a6ba9-7064-491d-aaf9-3e13e5546ef4": {
           "coordinates": [
-            429.9047619047619,
-            -216.57142857142856
+            471.9047619047619,
+            -243.57142857142856
           ],
           "name": "flatten aggregated result",
           "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
@@ -138,11 +142,22 @@
         },
         "e50c9d9b-6307-416a-be51-ff3a676d6ddb": {
           "coordinates": [
-            173.9047619047619,
-            -304.57142857142856
+            209.9047619047619,
+            -233.57142857142856
           ],
           "name": "not",
           "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
+        },
+        "5645ada0-70ba-4214-bb61-f090b836b023": {
+          "coordinates": [
+            353.00000000000006,
+            -447.9999999999999
+          ],
+          "name": "unsuccessfull http response logger",
+          "prototype": "c86838c8-2f72-4b82-8fdf-2e12db9c8b04",
+          "params": {
+            "7a5bc607-9d82-4acb-9b3d-47d3e77159b1": "\"Opensea events fetcher\""
+          }
         }
       },
       "connections": {
@@ -153,6 +168,11 @@
             },
             "bf6856ca-5265-4a2e-9a63-7137595b63ab": {
               "ef9e63c4-7002-410f-be5a-6696c616537b": {}
+            }
+          },
+          "6c41f439-dd45-4359-9c14-f18a1c18ea09": {
+            "5645ada0-70ba-4214-bb61-f090b836b023": {
+              "f487ec75-4a18-44e9-afab-e0c9b643b24a": {}
             }
           }
         },
@@ -292,6 +312,11 @@
           "7f55da42-ca19-49d8-8e08-e894fa8765db": {
             "df495706-2531-436d-bab8-4c381e572fd4": {
               "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {}
+            }
+          },
+          "71dffe57-ff50-47a0-a7d4-848d88c71200": {
+            "402167bd-0d69-44d7-af0f-054aec37f098": {
+              "b73aa5bf-e098-4b22-b3bb-b921000af484": {}
             }
           }
         }

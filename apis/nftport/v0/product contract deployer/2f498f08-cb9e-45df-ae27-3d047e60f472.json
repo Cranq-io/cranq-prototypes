@@ -1,0 +1,164 @@
+{
+  "name": "apis/nftport/v0/Product contract deployer",
+  "description": "Deploys an ERC721 or ERC1155 smart contract to a proof-of-stake chain for on-demand subsequent minting.",
+  "interface": {
+    "inputs": {
+      "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
+        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"owner_address\": string,\n  optional \"type\": \"erc721\" or \"erc1155\",\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
+        "name": "contract"
+      },
+      "031ade40-fbaa-4c74-b943-205d22e30885": {
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"polygon\" or \"rinkeby\"\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": \"polygon\" or \"rinkeby\",\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": \"erc721\" or \"erc1155\",\n  \"name\": string,\n  \"symbol\": string\n}",
+        "name": "data"
+      },
+      "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "6c7e2a8d-a7e5-4514-a41e-8c3d34c4fe24": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2f3544db-0d37-4fc4-9340-1572acf2befe": {
+          "coordinates": [
+            -174,
+            124
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "a3ebbf50-b917-4542-bca4-b2681ad41de5": {
+          "coordinates": [
+            -156,
+            -168
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"polygon\"}"
+          }
+        },
+        "74e051cf-8bfe-4d49-af80-39b623071e9c": {
+          "coordinates": [
+            83,
+            6
+          ],
+          "name": "json request dispatcher",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "ea530901-12de-4acd-b341-913175cbde5a": {
+          "coordinates": [
+            59.83333333333334,
+            215.16666666666669
+          ],
+          "name": "build request",
+          "prototype": "6bf151f3-1896-4aa1-b9c5-d4504552d11e"
+        },
+        "be26bb23-a98f-47ed-b80e-d97d0809d8ce": {
+          "coordinates": [
+            126,
+            -173
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Contract deployment failed.\""
+          }
+        }
+      },
+      "connections": {
+        "2f3544db-0d37-4fc4-9340-1572acf2befe": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "a3ebbf50-b917-4542-bca4-b2681ad41de5": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "ea530901-12de-4acd-b341-913175cbde5a": {
+              "245b22de-b713-4c11-b7d0-58173ecdad17": {}
+            }
+          }
+        },
+        "a3ebbf50-b917-4542-bca4-b2681ad41de5": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "ea530901-12de-4acd-b341-913175cbde5a": {
+              "4c521523-a827-4aff-b950-4f84d4adb978": {}
+            }
+          }
+        },
+        "ea530901-12de-4acd-b341-913175cbde5a": {
+          "87d84869-b853-4c83-9c25-9f651edc4ca5": {
+            "74e051cf-8bfe-4d49-af80-39b623071e9c": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "74e051cf-8bfe-4d49-af80-39b623071e9c": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "be26bb23-a98f-47ed-b80e-d97d0809d8ce": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
+            "2f3544db-0d37-4fc4-9340-1572acf2befe": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "031ade40-fbaa-4c74-b943-205d22e30885": {
+            "2f3544db-0d37-4fc4-9340-1572acf2befe": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "6c7e2a8d-a7e5-4514-a41e-8c3d34c4fe24": {
+            "74e051cf-8bfe-4d49-af80-39b623071e9c": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "be26bb23-a98f-47ed-b80e-d97d0809d8ce": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
+            "be26bb23-a98f-47ed-b80e-d97d0809d8ce": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
+            "74e051cf-8bfe-4d49-af80-39b623071e9c": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "smart contract": null,
+    "deploy": null,
+    "product": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

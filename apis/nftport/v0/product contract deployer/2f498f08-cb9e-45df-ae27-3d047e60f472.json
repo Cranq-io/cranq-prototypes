@@ -1,6 +1,6 @@
 {
   "name": "apis/nftport/v0/Product contract deployer",
-  "description": "Deploys an ERC721 or ERC1155 smart contract to a proof-of-stake chain for on-demand subsequent minting.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzU-deploy-a-contract-for-nft-products",
+  "description": "Deploys an ERC721 or ERC1155 smart contract to a proof-of-stake chain for on-demand subsequent minting.",
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
@@ -19,8 +19,7 @@
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
-        "name": "response",
-        "description": "Sends the original response."
+        "name": "response"
       },
       "6c7e2a8d-a7e5-4514-a41e-8c3d34c4fe24": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",

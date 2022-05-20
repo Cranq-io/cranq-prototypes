@@ -1,0 +1,68 @@
+{
+  "name": "io/http/utils/Authorization inserter",
+  "description": "Inserts an Authorization header into a HTTP request header.",
+  "interface": {
+    "inputs": {
+      "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": {
+        "type": "{string: string}",
+        "name": "headers",
+        "description": "Recieves request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}"
+      },
+      "1948af2a-570e-450e-b802-61f15f40cf7c": {
+        "type": "string",
+        "name": "authorization"
+      }
+    },
+    "outputs": {
+      "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+        "type": "typeof `headers`",
+        "name": "headers",
+        "description": "Sends the received request headers with the authorization header added to it.\n\nExample:\n{\n  \"content-type\": \"application/json\", \n  \"Authorization\": \"Bearer SomeDummyToken\" \n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c6f7158e-e44c-44a8-ba85-ac81de68bced": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "description": "",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Authorization\""
+          },
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "add auth header"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": {
+            "c6f7158e-e44c-44a8-ba85-ac81de68bced": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "1948af2a-570e-450e-b802-61f15f40cf7c": {
+            "c6f7158e-e44c-44a8-ba85-ac81de68bced": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "c6f7158e-e44c-44a8-ba85-ac81de68bced": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

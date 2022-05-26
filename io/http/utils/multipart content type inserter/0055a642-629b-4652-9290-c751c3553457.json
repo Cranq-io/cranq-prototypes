@@ -1,0 +1,131 @@
+{
+  "name": "io/http/utils/Multipart content type inserter",
+  "description": "Inserts multipart/form-data content type into a HTTP request header.",
+  "interface": {
+    "inputs": {
+      "fd7696f8-12dc-44b1-9473-cbc4c4e8d73f": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
+      "508b3b96-2efc-4679-b471-1f091a24c36d": {
+        "type": "any",
+        "name": "boundary"
+      }
+    },
+    "outputs": {
+      "04c3fdd8-3f26-49ad-9319-4d896dcf6f6d": {
+        "type": "{string: string}",
+        "name": "headers"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "41289868-35f7-43cc-8350-f2da310cd9c0": {
+          "coordinates": [
+            63,
+            22
+          ],
+          "name": "build header value",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"multipart/form-data; boundary={BOUNDARY}\""
+          }
+        },
+        "40565522-f4ae-4bb1-86d0-6eb3842a86ca": {
+          "coordinates": [
+            -3,
+            172
+          ],
+          "name": "prep templ. params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"BOUNDARY\"]"
+          }
+        },
+        "c43f34e4-42a1-40d1-a222-b855db180034": {
+          "coordinates": [
+            90,
+            -138
+          ],
+          "name": "insert header",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Content-Type\""
+          }
+        },
+        "bf0e062a-6e7f-4e48-9778-d3eb22c9816b": {
+          "coordinates": [
+            -152,
+            -55.000000000000014
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "40565522-f4ae-4bb1-86d0-6eb3842a86ca": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "41289868-35f7-43cc-8350-f2da310cd9c0": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "41289868-35f7-43cc-8350-f2da310cd9c0": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "c43f34e4-42a1-40d1-a222-b855db180034": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "bf0e062a-6e7f-4e48-9778-d3eb22c9816b": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "c43f34e4-42a1-40d1-a222-b855db180034": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "40565522-f4ae-4bb1-86d0-6eb3842a86ca": {
+              "BOUNDARY": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "508b3b96-2efc-4679-b471-1f091a24c36d": {
+            "bf0e062a-6e7f-4e48-9778-d3eb22c9816b": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "fd7696f8-12dc-44b1-9473-cbc4c4e8d73f": {
+            "bf0e062a-6e7f-4e48-9778-d3eb22c9816b": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "04c3fdd8-3f26-49ad-9319-4d896dcf6f6d": {
+            "c43f34e4-42a1-40d1-a222-b855db180034": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "keywords": {
+    "header": null,
+    "http": null,
+    "request": null,
+    "response": null,
+    "boundary": null,
+    "form": null,
+    "multipart": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

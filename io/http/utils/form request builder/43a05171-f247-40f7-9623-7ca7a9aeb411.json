@@ -1,0 +1,84 @@
+{
+  "name": "io/http/utils/Form request builder",
+  "description": "Builds a form request record with data to be sent as the request's body.\n\nFor body-less requests, see `io/http/utils/Body-less request builder`.",
+  "interface": {
+    "inputs": {
+      "9168dddc-4945-4165-9b04-7a6ff2d7ce17": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "method"
+      },
+      "e0662105-5801-48a4-b068-62c355e9d670": {
+        "type": "string",
+        "name": "URL"
+      },
+      "cc293bef-ee53-4d55-83e4-7d4ff1d08c3a": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
+      "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {
+        "type": "{\n  \"boundary\": string,\n  \"fields\": {\n    \"name\": string,\n    \"data\": string,\n    optional \"fileName\": string,\n    optional \"contentType\": string\n  }[]\n}",
+        "name": "form"
+      }
+    },
+    "outputs": {
+      "16bd1179-4895-42be-80f8-4d3b3c4478f4": {
+        "type": "{\n  \"method\": typeof `method`,\n  \"url\": typeof `URL`,\n  \"headers\": typeof `headers`,\n  \"form\": typeof `form`\n}",
+        "name": "form req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0e6b0024-2fdf-47a8-9724-9290e0c4f57a": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"method\", \"url\", \"headers\", \"form\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "9168dddc-4945-4165-9b04-7a6ff2d7ce17": {
+            "0e6b0024-2fdf-47a8-9724-9290e0c4f57a": {
+              "method": {}
+            }
+          },
+          "e0662105-5801-48a4-b068-62c355e9d670": {
+            "0e6b0024-2fdf-47a8-9724-9290e0c4f57a": {
+              "url": {}
+            }
+          },
+          "cc293bef-ee53-4d55-83e4-7d4ff1d08c3a": {
+            "0e6b0024-2fdf-47a8-9724-9290e0c4f57a": {
+              "headers": {}
+            }
+          },
+          "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {
+            "0e6b0024-2fdf-47a8-9724-9290e0c4f57a": {
+              "form": {}
+            }
+          }
+        },
+        "outputs": {
+          "16bd1179-4895-42be-80f8-4d3b3c4478f4": {
+            "0e6b0024-2fdf-47a8-9724-9290e0c4f57a": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

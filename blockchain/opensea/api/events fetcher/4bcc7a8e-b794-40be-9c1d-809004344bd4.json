@@ -1,21 +1,22 @@
 {
   "name": "blockchain/opensea/api/Events fetcher",
-  "description": "https://docs.opensea.io/reference/retrieving-asset-events\nhttps://docs.opensea.io/reference/retrieving-events-testnet",
+  "description": "Retrieves OpenSea events filtered by the queryparams. The result contains every API page result.\n\nRequires OpenSea API key..\n\n\nhttps://docs.opensea.io/reference/retrieving-asset-events\nhttps://docs.opensea.io/reference/retrieving-events-testnet",
   "interface": {
     "inputs": {
       "b3d00aaa-6247-4251-b37c-67b5cd3fc5b7": {
-        "type": "typeof `value` of `set api header`",
+        "type": "string",
         "name": "API key",
-        "description": "[Inherited from port `value` of `set api header`] \nReceives the value to set.\n\nExample:\n2"
+        "description": "Receives OpenSea api key.\n\nExample:\n\"API-KEY\""
       },
       "89cc8420-8eb2-4a3a-a2b9-ea1a145fdebe": {
         "type": "{\n  \"only_opensea\": boolean,\n  \"token_id\": number,\n  \"asset_contract_address\": string,\n  \"collection_editor\": string,\n  \"account_address\": string,\n  \"event_type\": \"created\" or \"successful\" or \"cancelled\" or \"bid_entered\" or \"bid_withdrawn\" or \"transfer\" or \"offer_entered\" or \"approve\",\n\"auction_type\": \"english\" or \"dutch\" or \"min-price\",\n\"occurred_before\": number,\n\"occurred_after\": number\n}",
         "name": "query params",
-        "description": ""
+        "description": "Receives the OpenSea events API query params for filtering the result. \n\nExample: \n{\"event_type\": \"successful\"}\n\nMore:\nhttps://docs.opensea.io/reference/retrieving-asset-events\n"
       },
       "1193aa70-5fc9-4121-a218-c4e5c737ae2d": {
         "type": "\"main\" or \"test\"",
-        "name": "network"
+        "name": "network",
+        "description": "Receives which OpenSea network is called.\n\nThe main OpenSea network uses the Ethereum main net. The OpenSea test network uses the Rinkeby net.\n\nExample: \n\"main\"\n\nMore:\nhttps://docs.opensea.io/reference/api-overview\nhttps://docs.opensea.io/reference/rinkeby-api-overview\n\n\n"
       }
     },
     "outputs": {
@@ -26,7 +27,8 @@
       },
       "71dffe57-ff50-47a0-a7d4-848d88c71200": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n}"
       }
     }
   },
@@ -47,8 +49,8 @@
         },
         "004d2f96-a81e-4bd4-bbf1-16cfa2af2ae8": {
           "coordinates": [
-            175.90476190476193,
-            -392.57142857142856
+            202.90476190476193,
+            -340.57142857142856
           ],
           "name": "get \"asset_events\"",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -74,8 +76,8 @@
         },
         "9862e0ed-6d44-4ad5-84e0-530923c29160": {
           "coordinates": [
-            -205.89523809523814,
-            -50.771428571428544
+            -116.89523809523814,
+            -38.771428571428544
           ],
           "name": "store parameters",
           "prototype": "1993eaf0-b4f5-4684-af0d-9f5749d8a780",
@@ -102,7 +104,7 @@
         },
         "e78e3c06-2aa4-43a5-b152-9775093b15a5": {
           "coordinates": [
-            348.9047619047619,
+            288.9047619047619,
             -298.57142857142856
           ],
           "name": "aggregate result",
@@ -110,16 +112,16 @@
         },
         "a98a6ba9-7064-491d-aaf9-3e13e5546ef4": {
           "coordinates": [
-            471.9047619047619,
-            -243.57142857142856
+            433.9047619047619,
+            -223.57142857142856
           ],
           "name": "flatten aggregated result",
           "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
         },
         "2df98a5f-314f-46e2-8cc0-e3cbf6e0ca7b": {
           "coordinates": [
-            -355.0952380952381,
-            -156.57142857142856
+            -343.0952380952381,
+            -153.57142857142856
           ],
           "name": "tag nester",
           "prototype": "faf21612-e9e1-447b-8afd-b4eae3366676"
@@ -134,16 +136,16 @@
         },
         "df495706-2531-436d-bab8-4c381e572fd4": {
           "coordinates": [
-            541.9047619047619,
-            -53.571428571428555
+            579.9047619047619,
+            -56.571428571428555
           ],
           "name": "trim tag",
           "prototype": "d755b98a-18fb-4ca2-8580-7ad8c426f4b2"
         },
         "e50c9d9b-6307-416a-be51-ff3a676d6ddb": {
           "coordinates": [
-            209.9047619047619,
-            -233.57142857142856
+            183.9047619047619,
+            -278.57142857142856
           ],
           "name": "not",
           "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
@@ -157,6 +159,17 @@
           "prototype": "c86838c8-2f72-4b82-8fdf-2e12db9c8b04",
           "params": {
             "7a5bc607-9d82-4acb-9b3d-47d3e77159b1": "\"Opensea events fetcher\""
+          }
+        },
+        "268931ae-ef10-4564-9a2c-fbff88f60956": {
+          "coordinates": [
+            56,
+            78.00000000000011
+          ],
+          "name": "delayer",
+          "prototype": "9e917e4a-68d4-40f5-b47d-ba6de12047aa",
+          "params": {
+            "68d749c7-b1f5-4932-bea8-8489568babb1": "600"
           }
         }
       },
@@ -277,8 +290,8 @@
         },
         "abe1b681-c3f7-41de-8b7f-ca9bb0c2b365": {
           "b9ad661b-2879-4b8f-9335-c223ba010a4b": {
-            "9862e0ed-6d44-4ad5-84e0-530923c29160": {
-              "d0e09c06-986b-45fa-b6af-e94c6a5b51f1": {}
+            "268931ae-ef10-4564-9a2c-fbff88f60956": {
+              "9bb57db0-a8db-452b-9174-24e1da433464": {}
             }
           }
         },
@@ -286,6 +299,13 @@
           "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
             "e78e3c06-2aa4-43a5-b152-9775093b15a5": {
               "64cdf7c6-6975-404d-a52e-071f865cb41a": {}
+            }
+          }
+        },
+        "268931ae-ef10-4564-9a2c-fbff88f60956": {
+          "1f4df6bd-7aec-487b-abcf-95d688b3ccc9": {
+            "9862e0ed-6d44-4ad5-84e0-530923c29160": {
+              "d0e09c06-986b-45fa-b6af-e94c6a5b51f1": {}
             }
           }
         }
@@ -328,6 +348,7 @@
     "ethereum": null,
     "opensea": null
   },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
   "attributes": {
     "locked": true
   }

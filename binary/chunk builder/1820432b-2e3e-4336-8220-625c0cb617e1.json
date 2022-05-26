@@ -1,0 +1,69 @@
+{
+  "name": "binary/Chunk builder",
+  "description": "Creates a binary chunk based on `string` & `encoding`.\n\nChunks are mostly used to construct binary data out of strings that are encoded differently.\n\nSee `binary/Joiner`.",
+  "interface": {
+    "inputs": {
+      "ee62806b-72f5-4d2b-bbc5-540ec97ef63f": {
+        "type": "string",
+        "name": "string"
+      },
+      "812765c2-f97f-422d-95e0-fc1a436a7af8": {
+        "type": "\"base64\" or \"utf8\"",
+        "name": "encoding"
+      }
+    },
+    "outputs": {
+      "004c42ab-1918-45a1-8a56-16978c6e3c31": {
+        "type": "{\n  \"data\": typeof `data`,\n  \"encoding\": typeof `encoding`\n}",
+        "name": "chunk"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "55af3a78-c546-45fb-98aa-2bf7d81c46fc": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "sync inputs",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"encoding\", \"data\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "ee62806b-72f5-4d2b-bbc5-540ec97ef63f": {
+            "55af3a78-c546-45fb-98aa-2bf7d81c46fc": {
+              "data": {}
+            }
+          },
+          "812765c2-f97f-422d-95e0-fc1a436a7af8": {
+            "55af3a78-c546-45fb-98aa-2bf7d81c46fc": {
+              "encoding": {}
+            }
+          }
+        },
+        "outputs": {
+          "004c42ab-1918-45a1-8a56-16978c6e3c31": {
+            "55af3a78-c546-45fb-98aa-2bf7d81c46fc": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "base64": null,
+    "binary": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

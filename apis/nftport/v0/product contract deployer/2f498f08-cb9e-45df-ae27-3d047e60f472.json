@@ -19,7 +19,8 @@
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
-        "name": "response"
+        "name": "response",
+        "description": "Sends the original response."
       },
       "6c7e2a8d-a7e5-4514-a41e-8c3d34c4fe24": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",

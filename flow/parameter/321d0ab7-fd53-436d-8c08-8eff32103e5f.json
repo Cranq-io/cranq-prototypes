@@ -1,0 +1,43 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": "const value = params[\"data\"];\nif (value !== undefined) {\n  outputs.data(value, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": {
+        "type": "any",
+        "name": "data",
+        "description": "Sets the parameter value. Works as static parameter only."
+      },
+      "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {
+        "type": "any",
+        "name": "read",
+        "description": "Receives signal that triggers sending out the stored parameter value."
+      }
+    },
+    "outputs": {
+      "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Sends the stored parameter data."
+      }
+    }
+  },
+  "name": "flow/Parameter",
+  "description": "Stores a parameter and sends it out on receiving a signal to `read`.\n\nDoesn't send anything when `data` is not set.\n\nExample A:\n1. \"foo\" is set on `data`\n2. null@1 received via `read`\n3. \"foo\"@1 sent via `data` (output)\n\nExample B:\n1. no value is set on `data`\n2. \"foo\"@1 received via `read`\n3. No signal sent via `data`",
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "parameter": null,
+    "constant": null,
+    "value": null,
+    "store": null,
+    "variable": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "io/http/utils/Form field header builder",
+  "description": "Builds a header to be included in a multipart/form-data request.",
+  "interface": {
+    "inputs": {
+      "e4633e59-1e7c-41c3-9698-5d72afce7546": {
+        "type": "{\n  \"name\": string\n}",
+        "name": "field"
+      }
+    },
+    "outputs": {
+      "17a6eeca-62f8-451e-9298-2032d45b315f": {
+        "type": "string",
+        "name": "header"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bdbe8fc9-05b7-4c9f-8556-c3d8ed959635": {
+          "coordinates": [
+            121,
+            16
+          ],
+          "name": "build header",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"Content-Disposition: form-data; name=\\\"{NAME}\\\"\""
+          }
+        },
+        "0c1b2e3c-f1a3-45e1-8b95-dfb1483d67d4": {
+          "coordinates": [
+            -41,
+            -99
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"NAME\"]"
+          }
+        },
+        "b17d54e8-30e7-4631-a124-06ccf563e7bf": {
+          "coordinates": [
+            -79,
+            84
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"name\"]"
+          }
+        }
+      },
+      "connections": {
+        "0c1b2e3c-f1a3-45e1-8b95-dfb1483d67d4": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "bdbe8fc9-05b7-4c9f-8556-c3d8ed959635": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "b17d54e8-30e7-4631-a124-06ccf563e7bf": {
+          "name": {
+            "0c1b2e3c-f1a3-45e1-8b95-dfb1483d67d4": {
+              "NAME": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e4633e59-1e7c-41c3-9698-5d72afce7546": {
+            "b17d54e8-30e7-4631-a124-06ccf563e7bf": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "17a6eeca-62f8-451e-9298-2032d45b315f": {
+            "bdbe8fc9-05b7-4c9f-8556-c3d8ed959635": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

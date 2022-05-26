@@ -19,19 +19,19 @@
         "description": "Receives the identifier of the token in the context of its governing contract."
       },
       "b997d4a4-b81e-49bb-9784-a474fcd18546": {
-        "type": "{\n  \"chain\": \"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\",\n  \"format\": \"decimal\" or \"hex\",\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
+        "type": "{\n  \"chain\": \"eth\" or \"ropsten\"  or \"goerli\" or \"polygon\" ,\n  \"format\": \"decimal\" or \"hex\",\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
         "name": "params",
         "description": "Receives parameters refining the transfers query.\n\nExample:\n{\n  \"chain\": \"ropsten\"\n}"
       }
     },
     "outputs": {
       "c7a5ab3c-ee14-4438-a52f-764a3424f8b6": {
-        "type": "`blockchain/moralis/NFT transfer`[]",
+        "type": "any []",
         "name": "transfers",
         "description": "Sends a list of NFT transfers as returned by the Moralis API"
       },
       "c957f9d8-fa55-499c-8439-7cd42c334413": {
-        "type": "{\"status\": number, \"headers\": {string: string}, \"data\": `blockchain/moralis/NFT transfers response`}",
+        "type": "{\"status\": number, \n\"headers\": {string: string}, \"data\": any}",
         "name": "response",
         "description": "Sends the entire response from the Moralis API, including status and header."
       },

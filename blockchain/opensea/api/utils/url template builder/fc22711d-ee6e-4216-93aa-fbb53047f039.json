@@ -1,0 +1,147 @@
+{
+  "name": "blockchain/opensea/api/utils/URL template builder",
+  "description": "Build url template for the Opensea api call.\n\nExample:\n1. \"test\"@0 received via `network`\n2. /events?{0}@0 received via `endpoint template`\n3. \"https://testnets-api.opensea.io/api/v1/events?{0}\"@0 sent via `template`",
+  "interface": {
+    "inputs": {
+      "ed61946d-b964-413e-8b88-f83ff393d641": {
+        "type": "\"main\" or \"test\"",
+        "name": "network",
+        "description": "Receives network type of the Opensea api.\n\nExample:\n\"test\"\n\nSee:\nhttps://docs.opensea.io/reference/retrieving-asset-events\nhttps://docs.opensea.io/reference/retrieving-events-testnets"
+      },
+      "2c748318-2c31-4db3-97d4-686d39b85378": {
+        "type": "string",
+        "name": "endpoint template",
+        "description": "Receives the template of the Opensea api endpoint.\n\nExample:\n\"/events?{0}\"\n\nSee: https://docs.opensea.io/reference/retrieving-asset-events"
+      }
+    },
+    "outputs": {
+      "df6594f1-ca06-498a-bead-944c214efd3a": {
+        "type": "string",
+        "name": "template",
+        "description": "Sends the template of the api call.\n\nExample:\nhttps://testnets-api.opensea.io/api/v1/events?{0}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "54e378bc-b4fd-47be-988e-dfcb4a2c8227": {
+          "coordinates": [
+            50.33333333333334,
+            8.333333333333343
+          ],
+          "name": "get base url",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": "{\n  \"test\": \"https://testnets-api.opensea.io/api/v1\",\n  \"main\": \"https://api.opensea.io/api/v1\"\n}"
+          }
+        },
+        "7cb1058d-600c-4517-85ac-e4be513e7bde": {
+          "coordinates": [
+            -9.666666666666657,
+            -78.66666666666666
+          ],
+          "name": "create array",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": "[0]",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0\n]"
+          }
+        },
+        "d1e3feed-417f-44fc-90ae-67e1042fa66f": {
+          "coordinates": [
+            138.33333333333337,
+            80.33333333333334
+          ],
+          "name": "concatenate endpoint template",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {}
+        },
+        "6ccaa574-3e03-4367-a443-3a786df2a7bb": {
+          "coordinates": [
+            -141.66666666666669,
+            158.33333333333337
+          ],
+          "name": "store endpoint template",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        },
+        "38340b7c-73db-47c2-b7c1-77fea3218615": {
+          "coordinates": [
+            -194.66666666666669,
+            -74.66666666666663
+          ],
+          "name": "forwarder inputs",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "7cb1058d-600c-4517-85ac-e4be513e7bde": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "54e378bc-b4fd-47be-988e-dfcb4a2c8227": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            }
+          }
+        },
+        "54e378bc-b4fd-47be-988e-dfcb4a2c8227": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "d1e3feed-417f-44fc-90ae-67e1042fa66f": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {}
+            }
+          }
+        },
+        "38340b7c-73db-47c2-b7c1-77fea3218615": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "7cb1058d-600c-4517-85ac-e4be513e7bde": {
+              "0": {}
+            },
+            "6ccaa574-3e03-4367-a443-3a786df2a7bb": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "6ccaa574-3e03-4367-a443-3a786df2a7bb": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "6ccaa574-3e03-4367-a443-3a786df2a7bb": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "d1e3feed-417f-44fc-90ae-67e1042fa66f": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ed61946d-b964-413e-8b88-f83ff393d641": {
+            "38340b7c-73db-47c2-b7c1-77fea3218615": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "2c748318-2c31-4db3-97d4-686d39b85378": {
+            "38340b7c-73db-47c2-b7c1-77fea3218615": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "df6594f1-ca06-498a-bead-944c214efd3a": {
+            "d1e3feed-417f-44fc-90ae-67e1042fa66f": {
+              "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "opensea": null,
+    "url": null,
+    "template": null,
+    "blockchain": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

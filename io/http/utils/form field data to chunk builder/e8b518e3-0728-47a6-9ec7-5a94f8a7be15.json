@@ -1,0 +1,130 @@
+{
+  "name": "io/http/utils/Form field data to chunk builder",
+  "description": "Builds a binary chunk for the data of a field in a multipart request.",
+  "interface": {
+    "inputs": {
+      "33209741-c6f9-469c-9900-000fb81203e2": {
+        "type": "{\n  \"data\": string,\n  optional \"fileName\": string\n}",
+        "name": "field"
+      }
+    },
+    "outputs": {
+      "6da9af75-bcd5-4ed1-b4fb-0210c0eb4843": {
+        "type": "{\n  \"data\": string,\n  \"encoding\": \"utf8\" or \"base64\"\n}",
+        "name": "chunk"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cdb7d085-31e9-4581-92e7-0ab2df90cd1c": {
+          "coordinates": [
+            -111,
+            100.00000000000011
+          ],
+          "name": "has file name?",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {
+            "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": "\"fileName\""
+          }
+        },
+        "2ebf7066-c123-4009-bde6-0f3facbebd3e": {
+          "coordinates": [
+            46,
+            4.000000000000057
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "6cd3d7e5-8c05-4b42-b988-978f2edfec02": {
+          "coordinates": [
+            73,
+            159.0000000000001
+          ],
+          "name": "add UTF-8",
+          "prototype": "1820432b-2e3e-4336-8220-625c0cb617e1",
+          "params": {
+            "812765c2-f97f-422d-95e0-fc1a436a7af8": "\"utf8\""
+          }
+        },
+        "06488fdb-94e2-4b18-9bf4-5dcbca390a62": {
+          "coordinates": [
+            98,
+            -162
+          ],
+          "name": "add Base 64",
+          "prototype": "1820432b-2e3e-4336-8220-625c0cb617e1",
+          "params": {
+            "812765c2-f97f-422d-95e0-fc1a436a7af8": "\"base64\""
+          }
+        },
+        "3ad0891e-6e27-4af2-9817-a19ec4264738": {
+          "coordinates": [
+            -107,
+            -103
+          ],
+          "name": "get data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"data\"]"
+          }
+        }
+      },
+      "connections": {
+        "cdb7d085-31e9-4581-92e7-0ab2df90cd1c": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "2ebf7066-c123-4009-bde6-0f3facbebd3e": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "2ebf7066-c123-4009-bde6-0f3facbebd3e": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "06488fdb-94e2-4b18-9bf4-5dcbca390a62": {
+              "ee62806b-72f5-4d2b-bbc5-540ec97ef63f": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "6cd3d7e5-8c05-4b42-b988-978f2edfec02": {
+              "ee62806b-72f5-4d2b-bbc5-540ec97ef63f": {}
+            }
+          }
+        },
+        "3ad0891e-6e27-4af2-9817-a19ec4264738": {
+          "data": {
+            "2ebf7066-c123-4009-bde6-0f3facbebd3e": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "33209741-c6f9-469c-9900-000fb81203e2": {
+            "cdb7d085-31e9-4581-92e7-0ab2df90cd1c": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            },
+            "3ad0891e-6e27-4af2-9817-a19ec4264738": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "6da9af75-bcd5-4ed1-b4fb-0210c0eb4843": {
+            "06488fdb-94e2-4b18-9bf4-5dcbca390a62": {
+              "004c42ab-1918-45a1-8a56-16978c6e3c31": {}
+            },
+            "6cd3d7e5-8c05-4b42-b988-978f2edfec02": {
+              "004c42ab-1918-45a1-8a56-16978c6e3c31": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

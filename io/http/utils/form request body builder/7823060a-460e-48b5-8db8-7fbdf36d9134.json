@@ -1,0 +1,188 @@
+{
+  "name": "io/http/utils/Form request body builder",
+  "description": "Builds the body of a \"multipart/form-data\" request.\n\nForm requests are mostly used for uploading files.",
+  "interface": {
+    "inputs": {
+      "43185963-59a0-4d36-8d29-64e764aa56a9": {
+        "type": "{\n  \"boundary\": string,\n  \"fields\": {\n    \"name\": string,\n    \"data\": string,\n    optional \"fileName\": string,\n    optional \"contentType\": string\n  }[]\n}",
+        "name": "form",
+        "description": "Receives a data structure that describes form values"
+      }
+    },
+    "outputs": {
+      "1a242d18-8cf1-42fa-82e7-a74b4692a820": {
+        "type": "string",
+        "name": "body",
+        "description": "Sends base64-encoded \"multipart/form-data\" request body"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a6219e0d-9686-4b39-811b-fa8a6889c1a8": {
+          "coordinates": [
+            -271.2281057098767,
+            116.02961033950623
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"boundary\", \"fields\"]"
+          }
+        },
+        "e8f7370a-ef55-4ceb-8d20-c7ec9bae753b": {
+          "coordinates": [
+            245.77189429012333,
+            -84.97038966049377
+          ],
+          "name": "join chunks",
+          "prototype": "e7b43c83-f55f-4e1c-a844-dd6fbee1bbbd"
+        },
+        "2bdb1d63-9223-4adf-8131-0dab5d559f21": {
+          "coordinates": [
+            25.771894290123328,
+            -112.97038966049377
+          ],
+          "name": "fields to chunks",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "6651d7ce-f760-4ac6-8be1-d091f3e6bb69": {
+          "coordinates": [
+            -232.22810570987667,
+            -47.970389660493765
+          ],
+          "name": "repeat boundary",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "4da3cab6-adfc-4338-bbce-f784ea3bb308": {
+          "coordinates": [
+            80.77189429012333,
+            5.029610339506235
+          ],
+          "name": "flatten chunks",
+          "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
+        },
+        "bf49d2e1-97e5-4216-92a4-f90436151837": {
+          "coordinates": [
+            -158.94477237654334,
+            -182.08288966049378
+          ],
+          "name": "build next chunk",
+          "prototype": "55d2506a-dddf-4d38-b7a0-e708bd781cd4"
+        },
+        "60a07252-caeb-4446-b6c9-cfe05cf74709": {
+          "coordinates": [
+            229,
+            102
+          ],
+          "name": "add last chunk",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2"
+        },
+        "2ea23964-8ac5-40fc-824b-8548981d3e61": {
+          "coordinates": [
+            78,
+            207.33333333333337
+          ],
+          "name": "last chunk",
+          "prototype": "ac7715b8-a6cc-491c-91a8-ae7ffe3bb201"
+        }
+      },
+      "connections": {
+        "a6219e0d-9686-4b39-811b-fa8a6889c1a8": {
+          "fields": {
+            "2bdb1d63-9223-4adf-8131-0dab5d559f21": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            },
+            "6651d7ce-f760-4ac6-8be1-d091f3e6bb69": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            }
+          },
+          "boundary": {
+            "6651d7ce-f760-4ac6-8be1-d091f3e6bb69": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            },
+            "2ea23964-8ac5-40fc-824b-8548981d3e61": {
+              "2bc825e9-ade2-4835-ae8f-a4b8458cdc62": {}
+            }
+          }
+        },
+        "2bdb1d63-9223-4adf-8131-0dab5d559f21": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "bf49d2e1-97e5-4216-92a4-f90436151837": {
+              "aa0771aa-ae8a-4bc3-a97e-9d84bfad1cee": {}
+            }
+          },
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "4da3cab6-adfc-4338-bbce-f784ea3bb308": {
+              "67681054-c95b-4da1-90d6-1a5461612c4c": {}
+            }
+          }
+        },
+        "6651d7ce-f760-4ac6-8be1-d091f3e6bb69": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "bf49d2e1-97e5-4216-92a4-f90436151837": {
+              "494360a7-a0c3-46f4-b01e-96a18b7abc88": {}
+            }
+          }
+        },
+        "bf49d2e1-97e5-4216-92a4-f90436151837": {
+          "dd15ba48-1ef2-4840-9e8f-cff8e08655bd": {
+            "2bdb1d63-9223-4adf-8131-0dab5d559f21": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "4da3cab6-adfc-4338-bbce-f784ea3bb308": {
+          "f6248b87-3fea-47f5-8cfc-42b33cdba963": {
+            "60a07252-caeb-4446-b6c9-cfe05cf74709": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "60a07252-caeb-4446-b6c9-cfe05cf74709": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "e8f7370a-ef55-4ceb-8d20-c7ec9bae753b": {
+              "9ec2ec0d-0d42-4f25-a7e5-a09a770546b1": {}
+            }
+          }
+        },
+        "2ea23964-8ac5-40fc-824b-8548981d3e61": {
+          "4526e416-38db-4075-a33f-8e0969e030f3": {
+            "60a07252-caeb-4446-b6c9-cfe05cf74709": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "43185963-59a0-4d36-8d29-64e764aa56a9": {
+            "a6219e0d-9686-4b39-811b-fa8a6889c1a8": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "1a242d18-8cf1-42fa-82e7-a74b4692a820": {
+            "e8f7370a-ef55-4ceb-8d20-c7ec9bae753b": {
+              "c4a4f266-3d20-4f47-bda1-6b64660865db": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "multipart": null,
+    "form-data": null,
+    "request": null,
+    "body": null,
+    "payload": null,
+    "upload": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

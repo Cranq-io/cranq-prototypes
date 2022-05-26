@@ -1,0 +1,95 @@
+{
+  "name": "io/http/utils/Form request body builder/Last chunk builder",
+  "interface": {
+    "inputs": {
+      "2bc825e9-ade2-4835-ae8f-a4b8458cdc62": {
+        "type": "string",
+        "name": "boundary",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "4526e416-38db-4075-a33f-8e0969e030f3": {
+        "type": "typeof `dict` of `item setter`",
+        "name": "last line",
+        "description": "[Inherited from port `dict` of `item setter`] \nSends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0a8bbd1a-2f56-421a-9f84-2757dfc753af": {
+          "coordinates": [
+            2,
+            0.6666666666666572
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"\\r\\n--{BOUNDARY}--\""
+          }
+        },
+        "27cc7c29-4770-4fee-a174-0effe1164d4b": {
+          "coordinates": [
+            -125,
+            56.66666666666666
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"BOUNDARY\"]"
+          }
+        },
+        "b51511bd-004a-43be-a1e0-2f03a3f3ce83": {
+          "coordinates": [
+            123,
+            -57.33333333333334
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"encoding\": \"utf8\"}",
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"data\""
+          }
+        }
+      },
+      "connections": {
+        "27cc7c29-4770-4fee-a174-0effe1164d4b": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "0a8bbd1a-2f56-421a-9f84-2757dfc753af": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "0a8bbd1a-2f56-421a-9f84-2757dfc753af": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "b51511bd-004a-43be-a1e0-2f03a3f3ce83": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2bc825e9-ade2-4835-ae8f-a4b8458cdc62": {
+            "27cc7c29-4770-4fee-a174-0effe1164d4b": {
+              "BOUNDARY": {}
+            }
+          }
+        },
+        "outputs": {
+          "4526e416-38db-4075-a33f-8e0969e030f3": {
+            "b51511bd-004a-43be-a1e0-2f03a3f3ce83": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true
+  }
+}

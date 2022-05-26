@@ -10,7 +10,7 @@
       },
       "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {
         "type": "string",
-        "name": "url"
+        "name": "URL"
       },
       "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {
         "type": "{string: string}",
@@ -23,7 +23,7 @@
     },
     "outputs": {
       "42f1fa20-0597-484e-9610-1f9117b5a7f1": {
-        "type": "{\n  \"method\": typeof `method`,\n  \"url\": typeof `url`,\n  \"headers\": typeof `headers`,\n  \"data\": typeof `data`\n}",
+        "type": "{\n  \"method\": typeof `method`,\n  \"url\": typeof `URL`,\n  \"headers\": typeof `headers`,\n  \"data\": typeof `data`\n}",
         "name": "JSON req.",
         "description": ""
       }
@@ -78,6 +78,7 @@
       }
     }
   },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
     "featured": true,
     "locked": true

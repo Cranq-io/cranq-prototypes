@@ -1,0 +1,129 @@
+{
+  "name": "io/http/utils/Form field header to chunk builder",
+  "description": "Builds a binary chunk for the header of a field in a multipart request.",
+  "interface": {
+    "inputs": {
+      "f576663e-5371-4470-9d86-153027e97de5": {
+        "type": "{\n  \"name\": string,\n  \"data\": string,\n  optional \"fileName\": string,\n  optional \"contentType\": string\n}",
+        "name": "field",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0518f1eb-15d2-4e69-b045-30ccdc8f8c1f": {
+        "type": "{\n  \"data\": string,\n  \"encoding\": \"utf8\" or \"base64\"\n}",
+        "name": "chunk"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "448dcdc2-c381-4b0b-ada1-358b5ad1a953": {
+          "coordinates": [
+            53.866666666666674,
+            -108.8
+          ],
+          "name": "build file header",
+          "prototype": "e9bf1243-eba7-46d6-b604-d839189348b0"
+        },
+        "39b64edb-10d2-44a7-a232-e1f6d414f371": {
+          "coordinates": [
+            48.53333333333333,
+            197.7
+          ],
+          "name": "build plain header",
+          "prototype": "20b7f745-80c0-48ac-af0f-9e59fa8a0cda"
+        },
+        "cdfd13f2-ad8d-499e-9761-265d0fc3bd67": {
+          "coordinates": [
+            -154.13333333333333,
+            -141.3
+          ],
+          "name": "has file name?",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {
+            "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": "\"fileName\""
+          }
+        },
+        "ecb32feb-862a-4444-a506-e1da5b3d02c9": {
+          "coordinates": [
+            -172.13333333333333,
+            81.7
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "f4772de9-67ed-4266-bb4e-304c219f8cb3": {
+          "coordinates": [
+            150.86666666666667,
+            50.7
+          ],
+          "name": "create chunk",
+          "prototype": "1820432b-2e3e-4336-8220-625c0cb617e1",
+          "params": {
+            "812765c2-f97f-422d-95e0-fc1a436a7af8": "\"utf8\""
+          }
+        }
+      },
+      "connections": {
+        "cdfd13f2-ad8d-499e-9761-265d0fc3bd67": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "ecb32feb-862a-4444-a506-e1da5b3d02c9": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "ecb32feb-862a-4444-a506-e1da5b3d02c9": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "448dcdc2-c381-4b0b-ada1-358b5ad1a953": {
+              "597a6faf-d884-4337-a280-fed8e91bde37": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "39b64edb-10d2-44a7-a232-e1f6d414f371": {
+              "e4633e59-1e7c-41c3-9698-5d72afce7546": {}
+            }
+          }
+        },
+        "448dcdc2-c381-4b0b-ada1-358b5ad1a953": {
+          "b1ac3e91-f9b6-40d5-9467-80ac1c6e3c75": {
+            "f4772de9-67ed-4266-bb4e-304c219f8cb3": {
+              "ee62806b-72f5-4d2b-bbc5-540ec97ef63f": {}
+            }
+          }
+        },
+        "39b64edb-10d2-44a7-a232-e1f6d414f371": {
+          "17a6eeca-62f8-451e-9298-2032d45b315f": {
+            "f4772de9-67ed-4266-bb4e-304c219f8cb3": {
+              "ee62806b-72f5-4d2b-bbc5-540ec97ef63f": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f576663e-5371-4470-9d86-153027e97de5": {
+            "cdfd13f2-ad8d-499e-9761-265d0fc3bd67": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            },
+            "ecb32feb-862a-4444-a506-e1da5b3d02c9": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "0518f1eb-15d2-4e69-b045-30ccdc8f8c1f": {
+            "f4772de9-67ed-4266-bb4e-304c219f8cb3": {
+              "004c42ab-1918-45a1-8a56-16978c6e3c31": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

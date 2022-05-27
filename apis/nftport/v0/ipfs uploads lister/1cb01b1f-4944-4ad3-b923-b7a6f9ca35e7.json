@@ -1,0 +1,151 @@
+{
+  "name": "apis/nftport/v0/IPFS uploads lister",
+  "description": "Lists IPFS uploads associated with an API key.\n\nResponse is paged.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6NDQ1MDU3MzI-list-all-your-ipfs-uploads",
+  "interface": {
+    "inputs": {
+      "4a333578-e942-49e8-ad65-4b3f688de26b": {
+        "type": "{\n  \"type\": (\"file\" or \"metadata\" or \"metadata_directory\" or \"all\")[],\n  optional \"start_date\": string,\n  optional \"end_date\": string,\n  optional \"page_size\": number,\n  optional \"page_number\": number\n}",
+        "name": "query"
+      },
+      "2668fdd8-ea37-4f6b-9ab6-a18ab279758f": {
+        "type": "{\n  \"api_key\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "6591c184-b6f5-487a-b894-2d549507728b": {
+        "type": "{\n  \"response\": \"OK\",\n  \"storage\": {\n    \"type\": (\"file\" or \"metadata\"),\n    optional \"file_name\": string,\n    \"ipfs_uri\": string,\n    \"ipfs_url\": string,\n    \"uploaded_date\": string,\n    optional \"content_type\": string,\n    optional \"file_size\": number,\n    optional \"file_size_mb\": number\n  }[]\n}",
+        "name": "data",
+        "description": "Sends the retrieved list of OPFS uploads."
+      },
+      "95f5d309-756e-4573-970a-c51d5948593d": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "a9c8bf6b-cf82-4680-a241-7b291ac45394": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "93c907b8-89dc-4c28-a6cd-400b0166c7cc": {
+          "coordinates": [
+            77,
+            110
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "aab39ef4-7c0d-4f5c-98a0-791d599f2ae9": {
+          "coordinates": [
+            116.99999999999997,
+            -89
+          ],
+          "name": "detect errors",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Fetching IPFS uploads failed.\""
+          }
+        },
+        "7728baec-ea4f-4376-9b25-530526cca198": {
+          "coordinates": [
+            -113.00000000000003,
+            110
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "71c83f56-8896-469b-91b3-49d16048121f": {
+          "coordinates": [
+            -93.5,
+            -105.5
+          ],
+          "name": "build request",
+          "prototype": "0e7b0ffb-8652-473b-aa6e-04303688c5bc"
+        }
+      },
+      "connections": {
+        "93c907b8-89dc-4c28-a6cd-400b0166c7cc": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "aab39ef4-7c0d-4f5c-98a0-791d599f2ae9": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "71c83f56-8896-469b-91b3-49d16048121f": {
+          "2eec781c-0cc5-4a79-a26e-b09bd5e067fb": {
+            "93c907b8-89dc-4c28-a6cd-400b0166c7cc": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "7728baec-ea4f-4376-9b25-530526cca198": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "71c83f56-8896-469b-91b3-49d16048121f": {
+              "9a19c08b-a4aa-484b-bafb-ea8a1d033b32": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "71c83f56-8896-469b-91b3-49d16048121f": {
+              "73005cec-7957-48e6-804a-c502d49c8179": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2668fdd8-ea37-4f6b-9ab6-a18ab279758f": {
+            "7728baec-ea4f-4376-9b25-530526cca198": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "4a333578-e942-49e8-ad65-4b3f688de26b": {
+            "7728baec-ea4f-4376-9b25-530526cca198": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "6591c184-b6f5-487a-b894-2d549507728b": {
+            "aab39ef4-7c0d-4f5c-98a0-791d599f2ae9": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "a9c8bf6b-cf82-4680-a241-7b291ac45394": {
+            "aab39ef4-7c0d-4f5c-98a0-791d599f2ae9": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "93c907b8-89dc-4c28-a6cd-400b0166c7cc": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            }
+          },
+          "95f5d309-756e-4573-970a-c51d5948593d": {
+            "93c907b8-89dc-4c28-a6cd-400b0166c7cc": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "ipfs": null,
+    "upload": null,
+    "file": null,
+    "metadata": null,
+    "storage": null,
+    "list": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

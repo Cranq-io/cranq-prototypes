@@ -1,16 +1,16 @@
 {
-  "name": "apis/nftport/v0/list all minted NFTs",
+  "name": "apis/nftport/v0/NFT lister",
   "description": "List all your minted NFTs with a specific API key.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts",
   "interface": {
     "inputs": {
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
-        "type": "{\n  \"api_key\": string\n}",
+        "type": "{\n  \"api_key\": string,\noptional \"chain\" :(\"polygon\" or \"rinkeby\"),\noptional \"page_number\": number,\noptional \"page_size\": number\n\n}",
         "name": "params"
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
-        "type": "{\n\n  \"response\": string,\n\n  \"total\": number,\n\n  \"minted_nfts\": [\n\n    {\n\n      \"chain\": \"polygon\" or \"rinkeby\",\n      \"transaction_hash\": \"string\",\n      \"contract_name\": \"string\",\n      \"contract_address\": \"string\",\n      \"type\": \"string\",\n      \"token_id\": \"string\",\n      \"mint_to_address\": \"string\",\n      \"metadata_uri\": \"string\",\n      \"quantity\": \"string\",\n    \"burned_transferred_amount\": \"string\",\n      \"metadata_frozen\": boolean,\n      \"mint_date\": \"string\"\n    }\n  ]\n}",
+        "type": "{\n\n  \"response\": string,\n  \"total\": number,\n  \"minted_nfts\": [\n    {\n      \"chain\": (\"polygon\" or \"rinkeby\"),\n      \"transaction_hash\": \"string\",\n      \"contract_name\": \"string\",\n      \"contract_address\": \"string\",\n      \"type\": \"string\",\n      \"token_id\": \"string\",\n      \"mint_to_address\": \"string\",\n      \"metadata_uri\": \"string\",\n      \"quantity\": \"string\",\n   \"burned_transferred_amount\": \"string\",\n      \"metadata_frozen\": boolean,\n      \"mint_date\": \"string\"\n    }\n  ]\n}",
         "name": "data",
         "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
       },
@@ -81,6 +81,17 @@
           "params": {
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Listing deployed contracts failed.\""
           }
+        },
+        "a4b21138-c0a6-4e63-a03f-f6407ed1760d": {
+          "coordinates": [
+            -342,
+            38
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"polygon\"}"
+          }
         }
       },
       "connections": {
@@ -111,13 +122,20 @@
               "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
             }
           }
+        },
+        "a4b21138-c0a6-4e63-a03f-f6407ed1760d": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "d9ecfff8-8868-4657-b94c-1a4dd531186d": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
           "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
-            "d9ecfff8-8868-4657-b94c-1a4dd531186d": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            "a4b21138-c0a6-4e63-a03f-f6407ed1760d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },

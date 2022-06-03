@@ -4,7 +4,7 @@
     "inputs": {
       "85fde0ba-068b-457d-9003-e29e47af2e38": {
         "description": "Receives a list of output port names to send multiplexed data payload to.\n\nMust be parameter.",
-        "type": "string[] or number[]",
+        "type": "(string[] or number[])",
         "name": "fields"
       },
       "b9b5fa59-8f22-46df-9305-b2d6f74f4085": {
@@ -17,7 +17,7 @@
       "61f36158-26a5-4c4e-9622-0a673fc47f4c": {
         "description": "Sends demultiplexed payload data.",
         "paramId": "85fde0ba-068b-457d-9003-e29e47af2e38",
-        "type": "(typeof `multiplexed`)[\"data\"]",
+        "type": "typeof `multiplexed`[\"data\"]",
         "name": "demultiplexed"
       }
     }

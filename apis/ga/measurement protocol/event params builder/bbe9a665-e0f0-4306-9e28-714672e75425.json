@@ -29,7 +29,7 @@
     },
     "outputs": {
       "3eba35e7-ff64-42e0-b695-ae250aa052e0": {
-        "type": "{string: (typeof `merged` of `merger`)}",
+        "type": "{string: typeof `merged` of `merger`} ",
         "name": "params",
         "description": "Measurement Protocol parameters for \"event\" hit type. Key-value pairs, must be serialized to be passed as payload."
       }

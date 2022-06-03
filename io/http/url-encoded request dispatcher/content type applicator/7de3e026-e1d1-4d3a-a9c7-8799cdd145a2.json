@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "c33dc9ac-bc3d-47eb-a9aa-3168c8eee8ec": {
-        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: (string or string[])}\n}",
         "name": "URL-enc. req."
       }
     },
@@ -90,6 +90,7 @@
     }
   },
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

@@ -144,7 +144,7 @@
   "interface": {
     "inputs": {
       "bfa14c74-d222-46da-a23e-01e14233eb03": {
-        "type": "{string:string or number or boolean}[]",
+        "type": "{string:(string or number or boolean)}[]",
         "name": "array",
         "description": "Receives the array of dictionaries to format.\n\nExample:\n[\n  {\n    \"a\":1\n    \"b\":2\n  },\n  {\n    \"a\":11\n    \"b\":22\n  },\n]"
       }

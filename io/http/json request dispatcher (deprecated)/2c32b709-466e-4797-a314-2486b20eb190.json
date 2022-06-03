@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "52134df1-fbb5-4df4-99a6-25020abc427e": {
-        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "type": "(\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\")",
         "name": "method",
         "description": "Receives http method. Indicates the desired action to be performed for a given target or resource.\n\nExample:\n\"GET\"\n"
       },

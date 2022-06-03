@@ -25,7 +25,7 @@
     },
     "outputs": {
       "e91e2947-6430-4386-b919-98a9c433a7fe": {
-        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: (string or string[])}\n}",
         "name": "URL-enc. req."
       }
     }

@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "a0ac32d7-eef7-4f43-96d5-17815979d4e9": {
-        "type": "string or number",
+        "type": "(string or number)",
         "name": "start",
         "description": "Receives the timerId which identifies the timer.\n\nExample:\n\"timer1\""
       },
       "97976e7b-b852-4140-b047-35db148ae936": {
-        "type": "string or number",
+        "type": "(string or number)",
         "name": "stop",
         "description": "Receives the timerId which identifies the timer to be stopped.\n\n\nExample:\n\"timer1\""
       },

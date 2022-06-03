@@ -9,7 +9,7 @@
       },
       "02b2f50b-eebc-4f3c-ad76-dafa56d33f69": {
         "description": "The tree data structure to find the `path` within",
-        "type": "any[] or {string: any}",
+        "type": "(any[] or {string: any})",
         "name": "tree"
       }
     },
@@ -102,14 +102,14 @@
     }
   },
   "name": "data/tree/Has path tester",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "path": null,
     "tree": null,
     "key": null,
     "hasOwnProperty": null,
     "exists": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

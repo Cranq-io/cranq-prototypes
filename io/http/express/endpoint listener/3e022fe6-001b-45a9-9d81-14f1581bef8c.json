@@ -9,7 +9,7 @@
         "description": ""
       },
       "aac93261-9159-4995-ba5e-faf09ebdffd6": {
-        "type": "{\n  \"appId\": string,\n  \"port\": number,\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"route\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": \"text\" or \"json\" or \"urlencoded\"\n  },\n  optional \"response\": { \n   optional \"contentType\": \"text\" or \"json\"\n  }\n}",
+        "type": "{\n  \"appId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
         "name": "params",
         "description": ""
       }

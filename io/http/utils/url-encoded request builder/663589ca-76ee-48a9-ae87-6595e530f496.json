@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "df4b6b5b-fc5e-4205-a9bf-562640a349db": {
-        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "type": "(\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\")",
         "name": "method"
       },
       "97f34b28-8a88-433d-870c-6710cfbffc60": {
@@ -16,7 +16,7 @@
         "name": "headers"
       },
       "63cb20e0-c747-4891-b8bb-7efedf9097e7": {
-        "type": "{string: string or string[]}",
+        "type": "{string: (string or string[])}",
         "name": "data"
       }
     },

@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "0410c79a-5ea7-45c8-80ae-417492d414fa": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
         "name": "form req."
       }
     },

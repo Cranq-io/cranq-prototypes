@@ -14,7 +14,7 @@
     },
     "outputs": {
       "44d91318-ce93-42a5-a984-c9f7f1955233": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
         "name": "form req."
       }
     }

@@ -4,20 +4,21 @@
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\" or \"rinkeby\",\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"include\" : (\"default\" or \"contract_information\" or \"metadata\")[],\n  optional \"exclude\": (\"erc721\" or \"erc1155\")[],\n  optional \"contract_address\": string\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"rinkeby\"),\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"include\" : (\"default\" or \"contract_information\" or \"metadata\")[],\n  optional \"exclude\": (\"erc721\" or \"erc1155\")[],\n  optional \"contract_address\": string\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzM-retrieve-nf-ts-owned-by-an-account#Request"
       },
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
         "type": "string",
-        "name": "account address"
+        "name": "account address",
+        "description": "Receives the account address"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"nfts\": \n  {\n    \"contract_address\": string,\n    \"token_id\": string,\n    optional \"name\": string,\n    optional \"description\": string,\n    optional \"file_url\": (string or null),\n    optional \"animation_url\": (string or null),\n    optional \"cached_file_url\": (string or null),\n    optional \"cached_animation_url\": (string or null),\n    optional \"creator_address\": string,\n    optional \"metadata\": (any or null),\n    optional \"metadata_url\": (string or null),\n    optional \"contract\": {\n      optional \"name\": string,\n      optional \"symbol\": string,\n      optional \"type\": string\n    }\n  }[],\n  \"total\": number,\n  optional \"continuation\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzM-retrieve-nf-ts-owned-by-an-account#Responses\n"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -26,7 +27,8 @@
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if any"
       }
     }
   },
@@ -157,10 +159,12 @@
     "blockchain": null,
     "crypto": null,
     "nft": null,
-    "list": null,
+    "owner": null,
     "ethereum": null,
     "polygon": null
   },
   "original": "68899a45-f490-41ba-9326-1024b0ba4aa9",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

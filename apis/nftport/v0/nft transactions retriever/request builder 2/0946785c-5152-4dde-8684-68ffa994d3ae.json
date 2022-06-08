@@ -1,5 +1,5 @@
 {
-  "name": "apis/nftport/v0/Creator NFTs retriever/Request builder",
+  "name": "apis/nftport/v0/NFT transactions retriever/Request builder 2",
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
@@ -7,9 +7,13 @@
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       },
-      "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-        "type": "any",
-        "name": "account address"
+      "cc00b63f-041a-4afd-b2e2-818430773cad": {
+        "type": "string",
+        "name": "contract address"
+      },
+      "1dee9522-8225-47dd-892b-9e424579b969": {
+        "type": "string",
+        "name": "token ID"
       }
     },
     "outputs": {
@@ -46,13 +50,13 @@
         },
         "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
           "coordinates": [
-            -90.19999999999999,
-            167.8
+            -129.2,
+            142.8
           ],
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\",\n  \"include\": \"include\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\",\n  \"type\": \"type\"\n}"
           }
         },
         "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
@@ -68,33 +72,33 @@
         },
         "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
           "coordinates": [
-            126.80000000000001,
-            78.80000000000001
+            65.80000000000001,
+            55.80000000000001
           ],
           "name": "add query params",
           "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
           "params": {}
         },
-        "26cde237-9e97-4353-a793-d9e53a77a576": {
+        "d857e4e8-8faf-4c50-b658-990f837930fd": {
           "coordinates": [
-            -30.19999999999999,
-            -16.19999999999999
+            -65.19999999999999,
+            -71.20000000000005
           ],
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/accounts/creators/{account_address}\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/transactions/nfts/{contract_address}/{token_id}\""
           }
         },
-        "32bb18ba-fac0-4da1-857d-0f16561b8613": {
+        "17388e7b-0097-40a6-9481-5cc46c696e6f": {
           "coordinates": [
             -158.2,
-            44.80000000000001
+            -8.200000000000045
           ],
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"account_address\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract_address\", \"token_id\"]"
           }
         }
       },
@@ -127,17 +131,17 @@
             }
           }
         },
-        "32bb18ba-fac0-4da1-857d-0f16561b8613": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "26cde237-9e97-4353-a793-d9e53a77a576": {
-              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
-            }
-          }
-        },
-        "26cde237-9e97-4353-a793-d9e53a77a576": {
+        "d857e4e8-8faf-4c50-b658-990f837930fd": {
           "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
             "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
               "8c89bd87-3843-441c-989b-9b56288453f9": {}
+            }
+          }
+        },
+        "17388e7b-0097-40a6-9481-5cc46c696e6f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d857e4e8-8faf-4c50-b658-990f837930fd": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
             }
           }
         }
@@ -152,9 +156,14 @@
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           },
-          "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-            "32bb18ba-fac0-4da1-857d-0f16561b8613": {
-              "account_address": {}
+          "cc00b63f-041a-4afd-b2e2-818430773cad": {
+            "17388e7b-0097-40a6-9481-5cc46c696e6f": {
+              "contract_address": {}
+            }
+          },
+          "1dee9522-8225-47dd-892b-9e424579b969": {
+            "17388e7b-0097-40a6-9481-5cc46c696e6f": {
+              "token_id": {}
             }
           }
         },
@@ -169,7 +178,7 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "original": "937436ea-1e42-4215-89c6-879e789d3e09",
+  "original": "abcb6bea-fd10-4a4d-aa00-02bab3222124",
   "attributes": {
     "internal": true
   }

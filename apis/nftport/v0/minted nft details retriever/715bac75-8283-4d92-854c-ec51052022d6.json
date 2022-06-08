@@ -1,23 +1,24 @@
 {
   "name": "apis/nftport/v0/Minted NFT details retriever",
-  "description": "TODO: reference final node names\nReturns the details of a minted NFT, using the NFTPort API. You need to provide transaction_hash which is returned from Easy minting w/URL, Easy minting w/file upload or Customizable minting. Minting is not instantaneous because blockchains take time to verify transactions. Thus, you can poll this endpoint every 5 seconds until you get a response.\nSupport Polygon only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDU-retrieve-a-minted-nft",
+  "description": "Returns the details of a minted NFT, using the NFTPort API. You need to provide transaction_hash which is returned from Easy minting w/URL, Easy minting w/file upload or Customizable minting. Minting is not instantaneous because blockchains take time to verify transactions. Thus, you can poll this node every 5 seconds until you get a response.\nSupports Polygon only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDU-retrieve-a-minted-nft",
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request"
       },
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
         "type": "string",
-        "name": "transaction hash"
+        "name": "transaction hash",
+        "description": "Receives the NFT transaction hash"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"token_id\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -26,7 +27,8 @@
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if any"
       }
     }
   },
@@ -157,14 +159,12 @@
     "blockchain": null,
     "crypto": null,
     "nft": null,
-    "sale": null,
-    "stat": null,
-    "opensea": null,
-    "list": null,
-    "ethereum": null
+    "mint": null,
+    "status": null,
+    "polygon": null
   },
   "original": "58b33266-1f3f-47c9-b8d3-de4bdda73b8f",
   "attributes": {
-    "internal": true
+    "locked": true
   }
 }

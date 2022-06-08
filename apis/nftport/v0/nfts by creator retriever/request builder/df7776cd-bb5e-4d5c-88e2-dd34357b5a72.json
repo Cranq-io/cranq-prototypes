@@ -1,20 +1,20 @@
 {
-  "name": "apis/nftport/v0/NFTs of contracts retriever/Request builder",
+  "name": "apis/nftport/v0/NFTs by creator retriever/Request builder",
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "typeof `b` of `inner joiner`",
+        "type": "{string: string}",
         "name": "params",
-        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "description": ""
       },
       "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-        "type": "any",
-        "name": "contract address"
+        "type": "string",
+        "name": "account address"
       }
     },
     "outputs": {
       "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
-        "type": "typeof `JSON req.` of `json request builder`",
+        "type": "typeof `request` of `body-less request builder`",
         "name": "request"
       }
     }
@@ -52,7 +52,7 @@
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"include\": \"include\",\n  \"page_number\": \"page_number\",\n  \"page_size\": \"page_size\",\n  \"refresh_metadata\": \"refresh_metadata\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\",\n  \"include\": \"include\"\n}"
           }
         },
         "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
@@ -77,24 +77,24 @@
         },
         "26cde237-9e97-4353-a793-d9e53a77a576": {
           "coordinates": [
-            -43.19999999999999,
-            -14.199999999999989
+            -30.19999999999999,
+            -16.19999999999999
           ],
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/nfts/{contract_address}\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/accounts/creators/{account_address}\""
           }
         },
         "32bb18ba-fac0-4da1-857d-0f16561b8613": {
           "coordinates": [
-            -167.2,
-            49.80000000000001
+            -158.2,
+            44.80000000000001
           ],
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract_address\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"account_address\"]"
           }
         }
       },
@@ -154,7 +154,7 @@
           },
           "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
             "32bb18ba-fac0-4da1-857d-0f16561b8613": {
-              "contract_address": {}
+              "account_address": {}
             }
           }
         },
@@ -169,7 +169,7 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "original": "3019b854-3a1b-47df-ae71-8a1165149252",
+  "original": "937436ea-1e42-4215-89c6-879e789d3e09",
   "attributes": {
     "internal": true
   }

@@ -6,18 +6,19 @@
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\",\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"bid\" or \"list\" or \"sale\" or \"all\")[]\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzY-retrieve-transactions-by-contract#Request"
       },
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
         "type": "string",
-        "name": "contract address"
+        "name": "contract address",
+        "description": "Receives the contract address"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"transactions\": \n  ({\n      \"type\": (\"transfer\" or \"mint\" or \"burn\"),\n      optional \"owner_address\": string,\n      optional \"transfer_from\": string,\n      optional \"transfer_to\": string,\n      \"contract_address\": string,\n      \"token_id\": number,\n      \"quantity\": 1,\n      \"transaction_hash\": string,\n      \"block_hash\": string,\n      \"block_number\": number,\n      \"transaction_date\": string\n  } or {\n      \"type\": \"sale\",\n\t  optional \"buyer_address\": string,\n\t  \"seller_address\": string,\n\t  \"nft\": {\n\t\t\"contract_type\": (\"ERC721\" or \"ERC1155\"),\n\t\t\"contract_address\": string,\n\t\t\"token_id\": string,\n\t\toptional \"metadata_url\": (string or null),\n\t\toptional \"creators\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"creator_share\": number\n\t\t}[],\n\t\toptional \"royalties\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"royalty_share\": number\n\t\t}[],\n\t\toptional \"signatures\": string[],\n\t\toptional \"total\": number\n\t  },\n\t  \"quantity\": number,\n\t  \"price_details\": {\n        \"asset_type\": string,\n\t\toptional \"contract_address\": string,\n        \"price\": number,\n        \"price_usd\": number\n      },\n      \"transaction_hash\": string,\n      \"block_hash\": string,\n      \"block_number\": number,\n      \"transaction_date\": string,\n      \"marketplace\": (\"opensea\" or \"rarible\")\n  } or {\n      \"type\": (\"bid\" or \"cancel_bid\"),\n\t  \"bidder_address\": string,\n\t  \"nft\": {\n\t\t\"contract_type\": (\"ERC721\" or \"ERC1155\"),\n\t\t\"contract_address\": string,\n\t\t\"token_id\": string,\n\t\toptional \"metadata_url\": (string or null),\n\t\toptional \"creators\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"creator_share\": number\n\t\t\t}[],\n\t\toptional \"royalties\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"royalty_share\": number\n\t\t}[],\n\t\toptional \"signatures\": string[],\n\t\toptional \"total\": number\n\t  },\n\t  optional \"quantity\": number,\n\t  \"price_details\": {\n        \"asset_type\": string,\n\t\toptional \"contract_address\": string,\n        \"price\": number,\n        \"price_usd\": number\n      },\n      optional \"transaction_hash\": string,\n      optional \"block_hash\": string,\n      optional \"block_number\": number,\n      \"transaction_date\": string,\n      optional \"marketplace\": (\"opensea\" or \"rarible\")\n  } or {\n      \"type\": (\"list\" or \"cancel_list\"),\n\t  \"lister_address\": string,\n\t  \"nft\": {\n\t\t\"contract_type\": (\"ERC721\" or \"ERC1155\"),\n\t\t\"contract_address\": string,\n\t\t\"token_id\": string,\n\t\toptional \"metadata_url\": (string or null),\n\t\toptional \"creators\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"creator_share\": number\n\t\t}[],\n\t\toptional \"royalties\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"royalty_share\": number\n\t\t}[],\n\t\toptional \"signatures\": string[],\n\t\toptional \"total\": number\n\t  },\n\t  optional \"quantity\": number,\n\t  \"price_details\": {\n        \"asset_type\": string,\n\t\toptional \"contract_address\": string,\n        \"price\": number,\n        \"price_usd\": number\n      },\n      optional \"transaction_hash\": string,\n      optional \"block_hash\": string,\n      optional \"block_number\": number,\n      \"transaction_date\": string,\n      optional \"marketplace\": (\"opensea\" or \"rarible\")\n  })[],\n  \"continuation\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzY-retrieve-transactions-by-contract#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -26,7 +27,8 @@
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if any"
       }
     }
   },
@@ -158,14 +160,8 @@
     "crypto": null,
     "nft": null,
     "transaction": null,
-    "mint": null,
-    "burn": null,
-    "bid": null,
-    "buy": null,
-    "transfer": null,
-    "sell": null,
-    "opensea": null,
-    "rarible list": null,
+    "contract": null,
+    "list": null,
     "ethereum": null
   },
   "original": "42c956af-0185-4709-9228-8e963d7bcc24",

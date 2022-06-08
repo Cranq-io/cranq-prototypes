@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "typeof `b` of `inner joiner`",
+        "type": "{string: string}",
         "name": "params",
-        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "description": ""
       }
     },
     "outputs": {
       "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
-        "type": "typeof `JSON req.` of `json request builder`",
+        "type": "typeof `request` of `body-less request builder`",
         "name": "request"
       }
     }

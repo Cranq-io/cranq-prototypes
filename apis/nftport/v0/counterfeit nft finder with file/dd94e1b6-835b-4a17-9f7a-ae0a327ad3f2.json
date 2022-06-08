@@ -1,0 +1,155 @@
+{
+  "name": "apis/nftport/v0/Counterfeit NFT finder with file",
+  "description": "Retrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjUwMzQ3NDQ-find-counterfeit-nf-ts-w-file-upload",
+  "interface": {
+    "inputs": {
+      "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
+        "type": "string",
+        "name": "file",
+        "description": "Receives base64-encoded binary file contents."
+      },
+      "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
+        "type": "{\n\"api_key\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
+        "type": "{\n  \"response\": \"OK\",\n  \"ipfs_url\": string,\n  \"file_name\": string,\n  \"content_type\": string,\n  \"file_size\": number,\n  \"file_size_mb\": number\n}",
+        "name": "data",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzY-upload-a-file-to-ipfs#response-body"
+      },
+      "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "15ee012a-e010-4b7a-b555-435d4e2a85f8": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
+          "coordinates": [
+            73.88594714506166,
+            114.51480516975312
+          ],
+          "name": "dispatch request",
+          "prototype": "989f1602-e857-4d5e-a7af-0905f12a1f45"
+        },
+        "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
+          "coordinates": [
+            -139,
+            120
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "e1ab1d96-f828-4856-bdd9-9a5ce6a0efc9": {
+          "coordinates": [
+            103,
+            -112
+          ],
+          "name": "detect errors",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Uploading file to IPFS failed.\""
+          }
+        },
+        "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+          "coordinates": [
+            -129,
+            -114.66666666666667
+          ],
+          "name": "build request",
+          "prototype": "eddd9d98-a91f-4154-a598-28fa6b207cff"
+        }
+      },
+      "connections": {
+        "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
+          "b823f037-d710-44df-963d-1fa300277739": {
+            "e1ab1d96-f828-4856-bdd9-9a5ce6a0efc9": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+              "ffd19d57-881b-4ac2-9f39-89413e79522c": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+              "beb00f72-a918-4133-93f1-e5826a151d43": {}
+            }
+          }
+        },
+        "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+          "44d91318-ce93-42a5-a984-c9f7f1955233": {
+            "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
+              "0410c79a-5ea7-45c8-80ae-417492d414fa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
+            "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
+            "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
+            "e1ab1d96-f828-4856-bdd9-9a5ce6a0efc9": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "15ee012a-e010-4b7a-b555-435d4e2a85f8": {
+            "e1ab1d96-f828-4856-bdd9-9a5ce6a0efc9": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
+              "19081d3b-87ba-48bd-af9a-84275a718cc3": {}
+            }
+          },
+          "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
+            "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
+              "b823f037-d710-44df-963d-1fa300277739": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "product": null,
+    "dynamic": null,
+    "upload": null,
+    "file": null,
+    "image": null,
+    "video": null,
+    "animation": null,
+    "minting": null
+  },
+  "original": "bc7bbefe-8cb5-4299-96b2-1c75fc221b12",
+  "attributes": {
+    "locked": true
+  }
+}

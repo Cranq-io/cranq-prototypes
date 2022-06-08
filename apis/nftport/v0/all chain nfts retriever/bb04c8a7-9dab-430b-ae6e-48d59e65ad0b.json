@@ -1,0 +1,137 @@
+{
+  "name": "apis/nftport/v0/All chain NFTs retriever",
+  "description": "Returns all ERC721 and ERC1155 NFTs that have been minted on a given chain, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts",
+  "interface": {
+    "inputs": {
+      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\" or \"polygon\" or \"rinkeby\",\n  optional \"continuation\": string,\n  optional \"include\": \"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\",\n   optional \"page_size\": number\n}",
+        "name": "params",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+      }
+    },
+    "outputs": {
+      "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+        "type": "{\n  \"response\": \"OK\",\n  \"nfts\": {\n\t\"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n\t\"contract_address\": string,\n\t\"token_id\": string,\n\toptional \"contract\": {\n\t\t\"name\": string,\n\t\t\"symbol\": string,\n\t\t\"type\": (\"ERC721\" or \"ERC1155\")\n\t},\n\toptional \"metadata\": {string:any},\n\toptional \"metadata_url\": string,\n\toptional \"file_url\": string,\n\toptional \"animation_url\": string,\n\toptional \"cached_file_url\": string,\n\toptional \"cached_animation_url\": string,\n\toptional \"mint_date\": string,\n\toptional \"file_information\": {\n\t\t\"height\": number,\n\t\t\"width\": number,\n\t\t\"file_size\": number\n\t},\n\toptional \"updated_date\": string\n  }[],\n  \"continuation\": string\n}",
+        "name": "data",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+      },
+      "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+          "coordinates": [
+            65,
+            43
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+          "coordinates": [
+            -156,
+            -72
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
+          }
+        },
+        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+          "coordinates": [
+            -74.8,
+            185.2
+          ],
+          "name": "build request",
+          "prototype": "388f24ef-171d-4920-9365-83426a61cfb8"
+        },
+        "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+          "coordinates": [
+            126,
+            -145
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
+          }
+        }
+      },
+      "connections": {
+        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
+            }
+          }
+        },
+        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          },
+          "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "list": null,
+    "ethereum": null,
+    "polygon": null
+  },
+  "original": "ed2aacf5-98ea-4647-a317-9e9c5654d755",
+  "attributes": {}
+}

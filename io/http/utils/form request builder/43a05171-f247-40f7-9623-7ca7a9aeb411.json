@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "9168dddc-4945-4165-9b04-7a6ff2d7ce17": {
-        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "type": "(\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\")",
         "name": "method"
       },
       "e0662105-5801-48a4-b068-62c355e9d670": {
@@ -78,7 +78,6 @@
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
-    "internal": true,
     "locked": true
   }
 }

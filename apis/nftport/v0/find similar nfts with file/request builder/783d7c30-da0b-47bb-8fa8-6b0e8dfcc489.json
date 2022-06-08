@@ -1,5 +1,5 @@
 {
-  "name": "apis/nftport/v0/Counterfeit NFT finder with file/Request builder",
+  "name": "apis/nftport/v0/Find similar NFTs with file/Request builder",
   "interface": {
     "inputs": {
       "ffd19d57-881b-4ac2-9f39-89413e79522c": {
@@ -65,7 +65,7 @@
           "prototype": "43a05171-f247-40f7-9623-7ca7a9aeb411",
           "params": {
             "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\"",
-            "e0662105-5801-48a4-b068-62c355e9d670": "\"https://api.nftport.xyz/v0/duplicates/files\""
+            "e0662105-5801-48a4-b068-62c355e9d670": "\"https://api.nftport.xyz/v0/recommendations/similar_nfts/files\""
           }
         }
       },
@@ -116,9 +116,8 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "original": "ba12c0bb-bc37-4e33-a9be-6bcb57ea5b78",
+  "original": "eddd9d98-a91f-4154-a598-28fa6b207cff",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "apis/nftport/v0/Minted NFT details retriever/Request builder",
+  "name": "apis/nftport/v0/NFT contracts by owner retriever/Request builder",
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
@@ -9,7 +9,7 @@
       },
       "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
         "type": "string",
-        "name": "transaction hash"
+        "name": "account address"
       }
     },
     "outputs": {
@@ -52,7 +52,7 @@
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"type\": \"type\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\"\n}"
           }
         },
         "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
@@ -83,7 +83,7 @@
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/mints/{transaction_hash}\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/accounts/contracts/{account_address}\""
           }
         },
         "32bb18ba-fac0-4da1-857d-0f16561b8613": {
@@ -94,7 +94,7 @@
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"transaction_hash\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"account_address\"]"
           }
         }
       },
@@ -154,7 +154,7 @@
           },
           "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
             "32bb18ba-fac0-4da1-857d-0f16561b8613": {
-              "transaction_hash": {}
+              "account_address": {}
             }
           }
         },
@@ -169,7 +169,7 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "original": "0f76b6fe-15f3-4351-96ed-c2f12024a0d2",
+  "original": "9c3c41d0-db68-4de5-85b6-0609643f3f78",
   "attributes": {
     "internal": true
   }

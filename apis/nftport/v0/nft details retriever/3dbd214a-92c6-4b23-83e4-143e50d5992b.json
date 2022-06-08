@@ -4,24 +4,26 @@
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": \"ethereum\" or \"polygon\" or \"rinkeby\",\n  optional \"refresh_metadata\": boolean\n}",
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n  optional \"refresh_metadata\": boolean\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request"
       },
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
         "type": "string",
-        "name": "contract address"
+        "name": "contract address",
+        "description": "Receives the contract address of the NFT"
       },
       "26c73f26-a162-4c3a-9fa8-06a015f3558e": {
         "type": "string",
-        "name": "token ID"
+        "name": "token ID",
+        "description": "Receives the token ID of the NFT"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"nft\": {\n    \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n    \"contract_address\": string,\n    \"token_id\": string,\n    \"metadata_url\": string,\n    \"metadata\": {string:any},\n    \"file_information\": {\n      \"height\": number,\n      \"width\": number,\n      \"file_size\": number\n    },\n    \"file_url\": string,\n    \"animation_url\": string,\n    \"cached_file_url\": string,\n    \"cached_animation_url\": string,\n    \"mint_date\": string,\n    \"updated_date\": string\n  },\n  \"owner\": string,\n  \"contract\": {\n    \"name\": string,\n    \"symbol\": string,\n    \"type\": (\"ERC721\" or \"ERC1155\")\n  },\n  optional \"status\": string,\n  optional \"status_message\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -30,7 +32,8 @@
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if any"
       }
     }
   },
@@ -171,7 +174,7 @@
     "blockchain": null,
     "crypto": null,
     "nft": null,
-    "list": null,
+    "details": null,
     "ethereum": null,
     "polygon": null
   },

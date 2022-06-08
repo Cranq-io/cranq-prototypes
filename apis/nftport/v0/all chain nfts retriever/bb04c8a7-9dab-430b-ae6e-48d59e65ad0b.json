@@ -4,16 +4,16 @@
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\" or \"polygon\" or \"rinkeby\",\n  optional \"continuation\": string,\n  optional \"include\": \"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\",\n   optional \"page_size\": number\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts#Query-Parameters"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"nfts\": {\n\t\"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n\t\"contract_address\": string,\n\t\"token_id\": string,\n\toptional \"contract\": {\n\t\t\"name\": string,\n\t\t\"symbol\": string,\n\t\t\"type\": (\"ERC721\" or \"ERC1155\")\n\t},\n\toptional \"metadata\": {string:any},\n\toptional \"metadata_url\": string,\n\toptional \"file_url\": string,\n\toptional \"animation_url\": string,\n\toptional \"cached_file_url\": string,\n\toptional \"cached_animation_url\": string,\n\toptional \"mint_date\": string,\n\toptional \"file_information\": {\n\t\t\"height\": number,\n\t\t\"width\": number,\n\t\t\"file_size\": number\n\t},\n\toptional \"updated_date\": string\n  }[],\n  \"continuation\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -22,7 +22,8 @@
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if one occurred."
       }
     }
   },
@@ -133,5 +134,7 @@
     "polygon": null
   },
   "original": "ed2aacf5-98ea-4647-a317-9e9c5654d755",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

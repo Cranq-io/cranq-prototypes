@@ -1,20 +1,20 @@
 {
-  "name": "apis/nftport/v0/Account contracts retriever/Request builder",
+  "name": "apis/nftport/v0/NFTs by owner retriever/Request builder",
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "typeof `b` of `inner joiner`",
+        "type": "{string: string}",
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       },
       "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-        "type": "any",
+        "type": "string",
         "name": "account address"
       }
     },
     "outputs": {
       "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
-        "type": "typeof `JSON req.` of `json request builder`",
+        "type": "typeof `request` of `body-less request builder`",
         "name": "request"
       }
     }
@@ -52,7 +52,7 @@
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"type\": \"type\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\",\n  \"contract_address\": \"contract_address\",\n  \"include\": \"include\",\n  \"exclude\": \"exclude\"\n}"
           }
         },
         "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
@@ -83,7 +83,7 @@
           "name": "build URL",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/accounts/contracts/{account_address}\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/accounts/{account_address}\""
           }
         },
         "32bb18ba-fac0-4da1-857d-0f16561b8613": {
@@ -169,7 +169,7 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "original": "9c3c41d0-db68-4de5-85b6-0609643f3f78",
+  "original": "4a01eee7-e4e1-49d6-ae60-76be3ce8c206",
   "attributes": {
     "internal": true
   }

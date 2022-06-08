@@ -1,0 +1,229 @@
+{
+  "name": "apis/nftport/v0/Easy minter with file upload/Request builder",
+  "interface": {
+    "inputs": {
+      "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
+        "type": "typeof `a` of `build data`",
+        "name": "file",
+        "description": "[Inherited from port `a` of `merger`] \nReceives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
+      },
+      "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+        "type": "{\n  \"api_key\": string,\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "name": "params",
+        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+      }
+    },
+    "outputs": {
+      "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+        "type": "typeof `form req.` of `build form request`",
+        "name": "form request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "coordinates": [
+            -124.2,
+            -131.2
+          ],
+          "name": "insert API key",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "coordinates": [
+            -284.2,
+            -136.2
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        },
+        "3f251277-30f8-451a-9eaa-affae2029a93": {
+          "coordinates": [
+            -230.2,
+            62.799999999999955
+          ],
+          "name": "set form daa",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\n  \"boundary\": \"foo\",\n  \"fields\": [{\n    \"name\": \"file\",\n    \"fileName\": \"upload.png\",\n    \"contentType\": \"image/png\"\n  }]\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0, \"data\"]"
+          }
+        },
+        "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
+          "coordinates": [
+            236.8,
+            -192.20000000000005
+          ],
+          "name": "build url",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/mints/easy/files?{QUERY}\""
+          }
+        },
+        "b8bf6748-1ecb-4ae3-be5a-e81a4eff4065": {
+          "coordinates": [
+            -7.199999999999989,
+            -291.20000000000005
+          ],
+          "name": "build query string",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
+          "coordinates": [
+            -309.2,
+            -446.20000000000005
+          ],
+          "name": "get query param values from params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"name\", \"description\", \"chain\", \"mint_to_address\"]"
+          }
+        },
+        "fc67767a-193f-4985-8218-7e768b44ee5f": {
+          "coordinates": [
+            -140.2,
+            -364.20000000000005
+          ],
+          "name": "set key-values of query string",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"name\", \"description\", \"chain\", \"mint_to_address\"]"
+          }
+        },
+        "2066faf8-a9cf-4b87-a269-b4e96a3815c7": {
+          "coordinates": [
+            123.80000000000001,
+            -243.20000000000005
+          ],
+          "name": "build query string param",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"QUERY\"]"
+          }
+        },
+        "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+          "coordinates": [
+            440.8,
+            -79.20000000000005
+          ],
+          "name": "build form request",
+          "prototype": "43a05171-f247-40f7-9623-7ca7a9aeb411",
+          "params": {
+            "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\""
+          }
+        }
+      },
+      "connections": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "cc293bef-ee53-4d55-83e4-7d4ff1d08c3a": {}
+            }
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "api_key": {
+            "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        },
+        "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
+          "name": {
+            "fc67767a-193f-4985-8218-7e768b44ee5f": {
+              "name": {}
+            }
+          },
+          "description": {
+            "fc67767a-193f-4985-8218-7e768b44ee5f": {
+              "description": {}
+            }
+          },
+          "chain": {
+            "fc67767a-193f-4985-8218-7e768b44ee5f": {
+              "chain": {}
+            }
+          },
+          "mint_to_address": {
+            "fc67767a-193f-4985-8218-7e768b44ee5f": {
+              "mint_to_address": {}
+            }
+          }
+        },
+        "fc67767a-193f-4985-8218-7e768b44ee5f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b8bf6748-1ecb-4ae3-be5a-e81a4eff4065": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "e0662105-5801-48a4-b068-62c355e9d670": {}
+            }
+          }
+        },
+        "2066faf8-a9cf-4b87-a269-b4e96a3815c7": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "b8bf6748-1ecb-4ae3-be5a-e81a4eff4065": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "2066faf8-a9cf-4b87-a269-b4e96a3815c7": {
+              "QUERY": {}
+            }
+          }
+        },
+        "3f251277-30f8-451a-9eaa-affae2029a93": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+            "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
+            "3f251277-30f8-451a-9eaa-affae2029a93": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        },
+        "outputs": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "16bd1179-4895-42be-80f8-4d3b3c4478f4": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "2e447844-0f7a-426a-93ac-dbcec5e33716",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

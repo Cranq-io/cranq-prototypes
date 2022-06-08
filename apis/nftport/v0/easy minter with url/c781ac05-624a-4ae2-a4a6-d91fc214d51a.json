@@ -1,24 +1,24 @@
 {
-  "name": "apis/nftport/v0/Customizable batch NFT minter",
-  "description": "Batch mints NFTs to your previously deployed ERC1155 NFT product contract. \n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTk-batch-customizable-minting-erc-1155",
+  "name": "apis/nftport/v0/Easy minter with URL",
+  "description": "With Easy mint, you can turn anything into an NFT in less than 5 minutes using one simple API call.\n\nEasy minting w/URL: \nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url",
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-        "type": "{\n  \"contract_address\": string,\n  \"tokens\": {\n     \"mint_to_address\": string,\n     \"metadata_uri\": string,\n     \"token_id\": string,\n      \"quantity\":  number\n  }[]\n}",
+        "type": "{\n  \"name\": string,\n  \"description\": string,\n  \"file_url\": string,\n  \"mint_to_address\": string\n}",
         "name": "NFT",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTk-batch-customizable-minting-erc-1155#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n   optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTk-batch-customizable-minting-erc-1155#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#request-body"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"tokens\": {\n     \"mint_to_address\": string,\n     \"token_id\": string,\n     \"metadata_uri\": string,\n      \"quantity\":  number\n  }[]\n}",
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"mint_to_address\": string,\n  \"name\": string,\n  \"description\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTk-batch-customizable-minting-erc-1155#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#response-body"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -36,8 +36,8 @@
       "nodes": {
         "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
           "coordinates": [
-            137,
-            20
+            65,
+            43
           ],
           "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
@@ -52,8 +52,8 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -107,
-            -159
+            -174,
+            -164
           ],
           "name": "apply defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
@@ -63,11 +63,11 @@
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            35.2,
-            152.2
+            4.200000000000003,
+            246.2
           ],
           "name": "build request",
-          "prototype": "ce43c5b8-7e26-4489-a0e5-a39653645545"
+          "prototype": "2e447844-0f7a-426a-93ac-dbcec5e33716"
         },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
           "coordinates": [
@@ -161,8 +161,7 @@
     "product": null,
     "dynamic": null,
     "mint": null,
-    "batch": null,
-    "customisable": null
+    "easy": null
   },
   "original": "ed2aacf5-98ea-4647-a317-9e9c5654d755",
   "attributes": {

@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "f31b205d-f076-4f29-a03e-fa2140ad1c7f": {
-        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "type": "(\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\")",
         "name": "method"
       },
       "c375d741-c7d3-4d82-a258-9efce9b40060": {
@@ -18,7 +18,7 @@
     },
     "outputs": {
       "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string}\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string}\n}",
         "name": "request"
       }
     }

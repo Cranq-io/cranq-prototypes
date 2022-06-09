@@ -121,12 +121,12 @@
   "interface": {
     "inputs": {
       "2a9ca66c-22e3-4478-b06b-c1da6e93eeac": {
-        "type": "any[] or {string: any}",
+        "type": "(any[] or {string: any})",
         "name": "tree",
         "description": "The tree to test for equality with `reference`"
       },
       "3878ff33-ee0b-4ec7-a9aa-76ea242941bf": {
-        "type": "any[] or {string: any}",
+        "type": "(any[] or {string: any})",
         "name": "reference",
         "description": "The reference tree structure"
       }
@@ -141,13 +141,13 @@
   },
   "name": "data/tree/Equality tester",
   "description": "Tests whether the tree equals the reference (same structure and same values).\n\nExample:\n1. { \"a\":1, \"b\":1 }@0 is received via `tree`\n2. { \"a\":1, \"b\":1 }@0 is received via `reference`\n3. true@0 is sent via `equals`",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "tree": null,
     "struct": null,
     "object": null,
     "deep equality": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

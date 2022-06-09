@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "7cebfd55-e551-42cd-8402-0c47b56f9abd": {
-        "type": "{\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": \"tiny\" or \"mid\" or \"small\",\n    optional \"color\": string,\n    optional \"label\": string\n  }\n}",
+        "type": "(\n{\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": (\"tiny\" or \"mid\" or \"small\"),\n    optional \"color\": string,\n    optional \"label\": string\n  }\n}\n)",
         "name": "area",
         "description": ""
       }
@@ -96,6 +96,8 @@
       }
     }
   },
-  "attributes": {},
-  "iconId": "f6d69700-d4a2-4570-97b3-9ad508f8b155"
+  "iconId": "f6d69700-d4a2-4570-97b3-9ad508f8b155",
+  "attributes": {
+    "locked": true
+  }
 }

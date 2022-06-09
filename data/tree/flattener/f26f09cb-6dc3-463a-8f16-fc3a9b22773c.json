@@ -4,7 +4,7 @@
     "inputs": {
       "5eacb3f2-0e3d-4944-b933-4a119cdcdb59": {
         "description": "The tree to flatten",
-        "type": "any[] or {string: any}",
+        "type": "(any[] or {string: any})",
         "name": "tree"
       },
       "3a97b9dd-4dc6-41d2-9072-ed7f4074edd5": {
@@ -46,7 +46,5 @@
     "transform": null
   },
   "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

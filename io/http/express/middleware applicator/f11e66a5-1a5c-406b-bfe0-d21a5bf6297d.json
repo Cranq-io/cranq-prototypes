@@ -8,7 +8,7 @@
         "description": "Identifies the Express app to apply the middleware on."
       },
       "10c0aa80-7a63-4647-bebf-2002804b315c": {
-        "type": "\"text\" or \"json\" or \"urlencoded\" or \"cors\"",
+        "type": "(\"text\" or \"json\" or \"urlencoded\" or \"cors\")",
         "name": "middleware"
       }
     },
@@ -158,5 +158,7 @@
   "keywords": {
     "api": null
   },
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

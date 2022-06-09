@@ -13,7 +13,7 @@
         "description": "Receives the contract address for a token."
       },
       "a21940cc-c7a9-4a3c-befb-0293d05e156b": {
-        "type": "{\n  \"chain\": \"ethereum\",\n  \"continuation\": string,\n  \"include\": \"default\" or \"metadata\",\n  \"page_size\": number\n}",
+        "type": "{\n  \"chain\": \"ethereum\",\n  \"continuation\": string,\n  \"include\": (\"default\" or \"metadata\"),\n  \"page_size\": number\n}",
         "name": "params",
         "description": "Receives parameters that customize the result transfer list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzY-retrieve-transactions-by-contract#Query-Parameters"
       },
@@ -203,7 +203,5 @@
     "transactions": null,
     "contract": null
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

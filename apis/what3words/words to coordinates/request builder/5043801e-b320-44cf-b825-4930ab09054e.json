@@ -11,7 +11,7 @@
         "name": "API key"
       },
       "baf6a876-afdc-45a8-b3fc-a93dde9461ce": {
-        "type": "\"json\" or \"geojson\"",
+        "type": "(\"json\" or \"geojson\")",
         "name": "format"
       }
     },
@@ -140,6 +140,7 @@
     }
   },
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

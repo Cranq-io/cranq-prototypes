@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "1de82346-fe83-4b80-9607-eb7cdf52597e": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
         "name": "JSON req.",
         "description": ""
       }
     },
     "outputs": {
       "2569e6b1-cc8d-403f-9c47-1a6fed3c54b1": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"body\": string\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"body\": string\n}",
         "name": "request",
         "description": ""
       }
@@ -137,8 +137,9 @@
       }
     }
   },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
   "attributes": {
-    "internal": true
-  },
-  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d"
+    "internal": true,
+    "locked": true
+  }
 }

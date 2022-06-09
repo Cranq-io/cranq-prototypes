@@ -9,7 +9,7 @@
   "interface": {
     "inputs": {
       "06633f68-69b6-4d84-a0b6-e3a3dc409689": {
-        "type": "{string: any} or [string, any][]",
+        "type": "({string: any} or [string, any][])",
         "name": "params",
         "description": "Received URL search parameters.\n\nExample:\n1. { \"term1\": \"foo\", \"term2\": \"bar\"}\n2. [[\"term1\", \"foo\"], [\"term2\", \"bar\"]]"
       }
@@ -23,8 +23,8 @@
     }
   },
   "name": "io/http/URL search params serializer",
+  "description": "Serializes URL search parameters.\n\nExample:\n1. { \"term1\": \"foo\", \"term2\": \"bar\"}@0 received on `params`\n2. \"term1=foo&term2=bar\"@0 sent on `serialized`\n\n1.[[\"term1\", \"foo\"], [\"term2\", \"bar\"]]@0 received on `params`\n2. \"term1=foo&term2=bar\"@0 sent on `serialized`",
   "attributes": {
     "locked": true
-  },
-  "description": "Serializes URL search parameters.\n\nExample:\n1. { \"term1\": \"foo\", \"term2\": \"bar\"}@0 received on `params`\n2. \"term1=foo&term2=bar\"@0 sent on `serialized`\n\n1.[[\"term1\", \"foo\"], [\"term2\", \"bar\"]]@0 received on `params`\n2. \"term1=foo&term2=bar\"@0 sent on `serialized`"
+  }
 }

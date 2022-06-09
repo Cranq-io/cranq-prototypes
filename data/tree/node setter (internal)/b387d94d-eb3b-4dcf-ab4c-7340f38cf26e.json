@@ -14,7 +14,7 @@
   "interface": {
     "inputs": {
       "a3746e5d-5a79-4943-8318-db69cd8f92fa": {
-        "type": "{\n\"tree\": any[] or {string: any},\n\"path\": (string or number)[],\n\"node\": any\n}",
+        "type": "{\n\"tree\": (any[] or {string: any}),\n\"path\": (string or number)[],\n\"node\": any\n}",
         "name": "tree & path & node"
       }
     },

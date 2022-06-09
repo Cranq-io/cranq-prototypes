@@ -4,7 +4,7 @@
     "inputs": {
       "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": {
         "description": "Sets a list of inupt port names matching property names in the data sent via `synced`.\n\nMust be parameter.\n\nExample values:\n* [\"a\", \"b\"] will result in record output\n* [0, 1] will result in a tuple output",
-        "type": "string[] or number[]",
+        "type": "(string[] or number[])",
         "name": "fields"
       },
       "eaadc9a9-28f4-48f0-b7d3-0c811b515f4a": {
@@ -17,7 +17,7 @@
     "outputs": {
       "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
         "description": "Sends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}",
-        "type": "{string: typeof `unsynced`} or typeof `unsynced`[]",
+        "type": "({string: typeof `unsynced`} or typeof `unsynced`[])",
         "name": "synced"
       }
     }

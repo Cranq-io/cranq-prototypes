@@ -149,12 +149,12 @@
   "interface": {
     "inputs": {
       "d2574f8d-3ee8-4a8c-9977-0634e5092c9c": {
-        "type": "{\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": \"tiny\" or \"mid\" or \"small\",\n    optional \"color\": string,\n    optional \"label\": string\n  }\n}",
+        "type": "({\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": (\"tiny\" or \"mid\" or \"small\"),\n    optional \"color\": string,\n    optional \"label\": string\n  }\n})",
         "name": "area",
         "description": "Defines the area to be captured."
       },
       "5a8f796e-f323-4f40-ab8d-bb77bdb42817": {
-        "type": "{\n  \"apiKey\": string,\n  \"size\": [number, number],\n  optional \"scale\": number,\n  optional \"format\": \"png8\" or \"png\" or \"png32\" or \"gif\" or \"jpg\" or \"jpg-baseline\",\n  optional \"mapType\": \"roadmap\" or \"satellite\" or \"hybrid\" or \"terrain\",\n  optional \"language\": string,\n  optional \"region\": string\n}",
+        "type": "{\n  \"apiKey\": string,\n  \"size\": [number, number],\n  optional \"scale\": number,\n  optional \"format\": (\"png8\" or \"png\" or \"png32\" or \"gif\" or \"jpg\" or \"jpg-baseline\"),\n  optional \"mapType\": (\"roadmap\" or \"satellite\" or \"hybrid\" or \"terrain\"),\n  optional \"language\": string,\n  optional \"region\": string\n}",
         "name": "params",
         "description": "Optional params are ignored ATM."
       }
@@ -176,7 +176,6 @@
   },
   "name": "apis/googlemaps/staticmaps/Image fetcher",
   "description": "Fetches image of a specified area on a global map.",
-  "attributes": {},
   "keywords": {
     "google maps": null,
     "map": null,
@@ -184,5 +183,8 @@
     "terrain": null,
     "roads": null
   },
-  "iconId": "f6d69700-d4a2-4570-97b3-9ad508f8b155"
+  "iconId": "f6d69700-d4a2-4570-97b3-9ad508f8b155",
+  "attributes": {
+    "locked": true
+  }
 }

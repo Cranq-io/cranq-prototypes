@@ -9,7 +9,7 @@
     },
     "outputs": {
       "ca5f3c12-33fa-4548-997c-d8e006c5dc0b": {
-        "type": "{string: (typeof `a & b`)[\"a\"][string] or (typeof `a & b`)[\"b\"][string]}",
+        "type": "{\nstring: (typeof `a & b`[\"a\"][string] or typeof `a & b`[\"b\"][string])\n}",
         "name": "merged"
       }
     }

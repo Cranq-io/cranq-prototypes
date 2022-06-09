@@ -9,7 +9,7 @@
         "name": "state"
       },
       "c420500b-0c32-4243-b897-d33ce151aeff": {
-        "type": "{\n  \"cwd\": string,\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"route\": string,\n  \"app-id\": string\n}",
+        "type": "{\n  \"cwd\": string,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\n  \"app-id\": string\n}",
         "name": "params",
         "description": "Receives method and route to match incoming requests against. Also specifies which running Express server instance to use via 'app-id'. The parameter 'app-id' must match the ID of a previously started Express server."
       },
@@ -26,7 +26,7 @@
         "name": "state"
       },
       "d13ae17b-419d-43ac-85df-970969900426": {
-        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\", \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": \"http\" or \"https\", \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": (\"http\" or \"https\"), \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
         "name": "request",
         "description": "Sends incoming requests matching the route and method received via `params`."
       }

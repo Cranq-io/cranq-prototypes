@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "b176e769-b2ab-45ad-b333-1886030931e3": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"body\": string\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"body\": string\n}",
         "name": "params",
         "description": "Receives parameters of the HTTP request.\n\nExample:\n\n{\n  \"verb\":\"GET,\n  \"url\": \"https://jsonplaceholder.typicode.com/todos/1\",\n  \"headers\": {\n    \"content-type\": \n  \"application/json; charset=utf-8\"\n  }\n}"
       }

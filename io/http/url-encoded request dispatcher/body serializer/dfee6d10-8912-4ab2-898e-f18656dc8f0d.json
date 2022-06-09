@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "8956fadf-b998-47aa-8a04-725450a974da": {
-        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: (string or string[])}\n}",
         "name": "URL-enc. req.",
         "description": ""
       }
     },
     "outputs": {
       "3b54c61e-2b4a-4210-86b0-fab0452d1cc5": {
-        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"body\": string\n}",
         "name": "request",
         "description": ""
       }
@@ -135,6 +135,7 @@
     }
   },
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

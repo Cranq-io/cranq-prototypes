@@ -1,6 +1,6 @@
 {
   "name": "apis/nftport/v0/Counterfeit NFT finder with url",
-  "description": "Retrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url",
+  "description": "Analyzes the input image passed with url and returns duplicates (i.e. counterfeits) against it. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url",
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
@@ -10,13 +10,15 @@
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
         "type": "{\n\"api_key\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url#Request"
       }
     },
     "outputs": {
       "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": \"polygon\" or \"rinkeby\",\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": \"erc721\" or \"erc1155\",\n  \"name\": string,\n  \"symbol\": string\n}",
-        "name": "data"
+        "type": "{\n\"response\": \"OK\",\n \"is_similar\": boolean,\n  \"similar_nfts\": [\n    {\n      \"contract_address\": string,\n      \"token_id\": string,\n      \"chain\":(\"ethereum\" or \"polygon\"),\n      \"similarity\": number,\n      optional \"file_url\": string,\n      optional \"metadata_url\": string,\n      optional \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string,\n        \"name\": string,\n        \"animation_url\": string\n      },\n      optional \"mint_date\": string\n    }\n  ]\n}",
+        "name": "data",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url#Responses"
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

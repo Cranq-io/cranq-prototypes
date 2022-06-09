@@ -13,7 +13,7 @@
         "description": "Receives request headers. \n\nExample:\n{}"
       },
       "9517a9f8-a280-48ae-8ee3-71acafc2be06": {
-        "type": "{string: string or string[]}",
+        "type": "{\nstring: (string or string[])\n}",
         "name": "form data",
         "description": "Receives the form data to be posted.\n\nExample:\n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n\"size\": \"small\",\n\"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}"
       }

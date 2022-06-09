@@ -11,7 +11,7 @@
     },
     "outputs": {
       "651a55ef-a887-4940-82df-ea5b2dbf76e1": {
-        "type": "{string: string or number or boolean or null}[]",
+        "type": "{\nstring: (string or number or boolean or null)\n}[]",
         "name": "table",
         "description": ""
       }
@@ -169,5 +169,8 @@
     "flatten": null,
     "serialize": null,
     "sringify": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

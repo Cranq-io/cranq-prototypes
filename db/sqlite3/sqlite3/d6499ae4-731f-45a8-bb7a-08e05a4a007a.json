@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "b3ce4ca4-4138-4aea-8e53-c651ae333a07": {
-        "type": "{\n  \"id\": string,\n  \"type\": \"open\" or \"run\" or \"get\" or \"all\" or \"each\" or \"close\",\n  \"options\":{\n    \"sql\": string,\n    optional \"options\": {string: any}\n  }\n}",
+        "type": "{\n  \"id\": string,\n  \"type\": (\"open\" or \"run\" or \"get\" or \"all\" or \"each\" or \"close\"),\n  \"options\":{\n    \"sql\": string,\n    optional \"options\": {string: any}\n  }\n}",
         "name": "action"
       }
     },

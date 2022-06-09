@@ -5,12 +5,12 @@
     "inputs": {
       "e468b571-c70a-453c-a6d9-6532e7ac947a": {
         "description": "The tree to test",
-        "type": "any[] or {string: any}",
+        "type": "(any[] or {string: any})",
         "name": "tree"
       },
       "255ee603-d7a4-4c1a-9379-98324a6d66ad": {
         "description": "The reference tree structure",
-        "type": "any[] or {string: any}",
+        "type": "(any[] or {string: any})",
         "name": "reference"
       }
     },
@@ -214,12 +214,12 @@
       }
     }
   },
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "equal": null,
     "tree": null,
     "deep equal": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

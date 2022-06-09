@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "f251b239-b3e9-43f6-b38a-63cebdf134ba": {
-        "type": "{\"key\": string, \"value\": string or string[]}",
+        "type": "{\n\"key\": string, \n\"value\": (string or string[])\n}",
         "name": "param",
         "description": "Receives a query parameter as a key-value pair. The query parameter may be a single value or an array."
       },

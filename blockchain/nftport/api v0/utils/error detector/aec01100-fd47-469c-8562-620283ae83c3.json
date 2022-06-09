@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "14a27eaa-ed01-4803-8591-00ed24f88814": {
-        "type": "{\"response\": \"OK\" or \"NOK\", \"error\": string}",
+        "type": "{\"response\": (\"OK\" or \"NOK\"), \"error\": string}",
         "name": "data",
         "description": "Receives parsed response body from an NFTPort API endpoint."
       },

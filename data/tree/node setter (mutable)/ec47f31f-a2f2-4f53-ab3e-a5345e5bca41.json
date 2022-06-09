@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "0d7e3081-01f4-41bf-b4b3-822ee0990aa3": {
-        "type": "any[] or {string:any}",
+        "type": "(any[] or {string:any})",
         "name": "tree",
         "description": "Tree data structure in which to store a node.\n\nWill be mutated."
       },
@@ -20,7 +20,7 @@
     },
     "outputs": {
       "eb1f3b40-bfd7-4343-acd9-2adcdd6d5a8c": {
-        "type": "any[] or {string:any}",
+        "type": "typeof `tree`",
         "name": "modified tree",
         "description": "Sends the modified tree"
       }

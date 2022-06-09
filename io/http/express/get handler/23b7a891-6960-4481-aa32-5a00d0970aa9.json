@@ -8,7 +8,7 @@
         "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "f532eb6f-572b-41fd-bcc9-b010f9149040": {
-        "type": "string or string[]",
+        "type": "(string or string[])",
         "name": "route",
         "description": "Receives the route(s) to handle requests for. Route be specified as exact match (1) or as pattern match (2).\n\nExample:\n1) \"/status\" will just match \"/status\"\n2) \"/s*s\" will match \"status\", \"shoes\", etc.."
       },
@@ -148,12 +148,12 @@
     }
   },
   "description": "Receives GET requests on the specified route and dispatches the corresponding response.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. \"/status/\"@0 received on `route`\n3. a client GET request received by express with URL \"http://api.mydomain.com/status?q=1&p=2\"\n4. the following signals are sent to other node(s) processing the request\n- {\n \"accept\": \"application/json\"\n}@0 sent on `headers`\n- { \"q\": \"1\", \"p\": \"2\" }@0 sent `query`\n5. The following signals are received back from processing nodes and sent out to the client:\n- 200@0 on `status`,\n- {\n    \"content-type\": \"application/json\" \n  }@0 on `headers`,\n- { status: \"OK\" }@0 on `body`\n7. null@0 sent on `done`\n",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "api": null,
     "request": null,
     "response": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

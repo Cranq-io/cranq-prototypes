@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "0a8cbbb5-48dd-4daf-8324-c9e10439cfad": {
-        "type": "{\n\"sessionid\" : string, \n\"type\": \"service_account_auth\" or \"update\", \n\"options\": {string: any}\n}",
+        "type": "{\n\"sessionid\" : string, \n\"type\": (\"service_account_auth\" or \"update\"), \n\"options\": {string: any}\n}",
         "name": "action",
         "description": "Receives the parameters of the google spreadsheet base prototype.\n\nExample: \n{\n  \"sessionid\" : \"drive_session\",\n  \"type\": \"service_account_auth\",\n  \"options\": {\n     \"email\" : \"email@email.com\",\n    \"keyFile\":  null,\n     \"key\": \"TopSecretKey!\" \n  }\n}"
       }

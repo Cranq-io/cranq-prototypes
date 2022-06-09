@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "8e35c4f4-47d8-4245-8054-6c1f75759a70": {
-        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: string or string[]}\n}",
+        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: (string or string[])}\n}",
         "name": "URL-enc. req."
       }
     },

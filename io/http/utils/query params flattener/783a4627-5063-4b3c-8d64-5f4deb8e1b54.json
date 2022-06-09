@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "f35ba18b-75dc-4258-b811-5eeed7e8189f": {
-        "type": "{string: string or string[]}",
+        "type": "{\nstring: (string or string[])\n}",
         "name": "params",
         "description": "Receives query parameters as dictionary."
       }

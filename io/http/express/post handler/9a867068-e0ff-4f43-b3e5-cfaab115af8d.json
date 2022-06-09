@@ -8,7 +8,7 @@
         "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "c1e70d32-dff9-4e07-966a-9790f79a866e": {
-        "type": "string or string[]",
+        "type": "(string or string[])",
         "name": "route",
         "description": "Receives the route(s) to handle requests for. Route be specified as exact match (1) or as pattern match (2).\n\nExample:\n1) \"/status\" will just match \"/status\"\n2) \"/s*s\" will match \"status\", \"shoes\", etc.."
       },
@@ -158,12 +158,12 @@
     }
   },
   "description": "Receives POST requests on the specified route and dispatches the corresponding response.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. \"/users/\"@0 received on `route`\n3. a client POST request received by express with URL \"http://api.mydomain.com/users/\n4. the following signals are sent to other node(s) processing the request\n- {\n \"accept\": \"application/json\"\n}@0 sent on `headers`\n- { \"name\": \"John Doe\", \"age\": 27 }@0 sent `body`\n5. The following signals are received back from processing nodes and sent out to the client:\n- 200@0 on `status`,\n- {\n    \"content-type\": \"application/json\" \n  }@0 on `headers`,\n-  { id:2, \"name\": \"John Doe\", \"age\": 27 }@0 on `body`\n6. null@0 sent on `done`\n",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "api": null,
     "request": null,
     "response": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

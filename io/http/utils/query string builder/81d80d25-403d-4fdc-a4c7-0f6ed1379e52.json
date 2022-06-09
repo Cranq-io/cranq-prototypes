@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {
-        "type": "{string: string or string[]}",
+        "type": "{string: (string or string[])}",
         "name": "params",
         "description": "Receives query parameters to be serialized as a dictionary."
       }

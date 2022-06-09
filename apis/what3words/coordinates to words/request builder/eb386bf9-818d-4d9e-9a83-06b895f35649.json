@@ -13,7 +13,7 @@
         "description": ""
       },
       "e1e580e6-76a1-4cac-9788-b3be320df401": {
-        "type": "\"json\" or \"geojson\"",
+        "type": "(\"json\" or \"geojson\")",
         "name": "format",
         "description": ""
       },
@@ -152,6 +152,7 @@
     }
   },
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

@@ -1,11 +1,11 @@
 {
-  "name": "apis/nftport/v0/Find similar NFTs with file",
-  "description": "Returns visually and contextually similar images to the uploaded image with file.\n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload",
+  "name": "apis/nftport/v0/Find similar NFTs with url",
+  "description": "Returns visually and contextually similar images to the uploaded image with url.\n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzI-find-similar-nf-ts-w-url",
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
         "type": "string",
-        "name": "file",
+        "name": "url",
         "description": "Receives base64-encoded binary file contents."
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
@@ -148,8 +148,8 @@
     "animation": null,
     "minting": null
   },
-  "original": "dd94e1b6-835b-4a17-9f7a-ae0a327ad3f2",
+  "original": "82808e2d-f463-4b21-8e1d-087cccb15688",
   "attributes": {
-    "locked": true
+    "internal": true
   }
 }

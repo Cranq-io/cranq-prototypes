@@ -1,21 +1,22 @@
 {
-  "name": "apis/nftport/v0/multi-chain NFT searcher",
+  "name": "apis/nftport/v0/Multi-chain NFT searcher",
   "description": "Searches NFTs across multiple chains using a text query, specifically the name and description fields from the metadata. \n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search",
   "interface": {
     "inputs": {
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
         "type": "{\n\"api_key\": string,\noptional \"chain\" :(\"polygon\" or \"ethereum\" or \"all\"),\noptional \"filter_by_contract_address\" : string,\noptional \"order_by\": (\"relevance\" or \"mint_date\"),\noptional \"page_number\": number,\noptional \"page_size\": number,\noptional \"sort_order\": (\"desc\" or \"asc\")\n}",
         "name": "params",
-        "description": "api_key: string\n\nchain: string\nBlockchain from which to query NFTs.\nAllowed values:\npolygon | ethereum | all\nDefault:\nall\n\nfilter_by_contract_address: string\nResults will only include NFTs from this contract \naddress\n\norder_by: string\nResults ordering criteria. Deafult ordering criteria is search relevance.\nAllowed values:\nrelevance | mint_date\n\npage_number: integer\nThe page number of the results to return. The first page is 1.\n>= 1\nDefault:\n1\n\npage_size: integer\nThe number of results returned per page. Limit can range between 1 and 50, and the default is 50.\n>= 1<= 50\nDefault:\n50\n\nsort_order: string\nResults will be sorted in this order (ascending/descending).\nAllowed values:\ndesc | asc"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search#Request"
       },
       "a4507c2e-9c5a-4bc9-9ed8-cfc67217139e": {
         "type": "string",
-        "name": "search text"
+        "name": "text",
+        "description": "Search query."
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
-        "type": "{\n\n  \"response\": string,\n  \"total\": number,\n  \"minted_nfts\": [\n    {\n      \"chain\": (\"polygon\" or \"rinkeby\"),\n      \"transaction_hash\": \"string\",\n      \"contract_name\": \"string\",\n      \"contract_address\": \"string\",\n      \"type\": \"string\",\n      \"token_id\": \"string\",\n      \"mint_to_address\": \"string\",\n      \"metadata_uri\": \"string\",\n      \"quantity\": \"string\",\n   \"burned_transferred_amount\": \"string\",\n      \"metadata_frozen\": boolean,\n      \"mint_date\": \"string\"\n    }\n  ]\n}",
+        "type": "{\n\n  \"response\":\"OK\",\n  \"search_results\": [\n    {\n      \"chain\": (\"polygon\" or \"ethereum\"),\n      \"contract_address\": \"string\",\n      \"token_id\": string,\n      \"name\": string,\n      \"description\": string,\n       optional \"mint_date\": string\n    }\n  ]\n}",
         "name": "data",
         "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
       },
@@ -86,24 +87,55 @@
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Listing deployed contracts failed.\""
           }
         },
-        "e2a51619-6458-4b3d-9c76-c81884079c18": {
-          "coordinates": [
-            -98,
-            -208
-          ],
-          "name": "search url",
-          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
-          "params": {
-            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"https://api.nftport.xyz/v0/search?text=\""
-          }
-        },
         "309b9d0f-9dda-4571-af6d-edb7a631decc": {
           "coordinates": [
-            -176,
-            -23
+            -399,
+            26
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "da50707b-7e4b-466b-a20b-1a6ad470c722": {
+          "coordinates": [
+            -501,
+            -354
+          ],
+          "name": "query string builder",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52",
+          "params": {}
+        },
+        "a8f536c3-d133-42a5-86ac-fd9ab7b00860": {
+          "coordinates": [
+            -481,
+            -150
+          ],
+          "name": "build query string params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"text\"]"
+          }
+        },
+        "29dc7348-1127-4ff3-9c40-2973dfa41683": {
+          "coordinates": [
+            -83,
+            -359
+          ],
+          "name": "build url",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/search?{query}\""
+          }
+        },
+        "b99a4fe3-8d6b-4632-a31c-e5393ec83bcf": {
+          "coordinates": [
+            -287,
+            -354
+          ],
+          "name": "create url template param",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"query\"]"
+          }
         }
       },
       "connections": {
@@ -135,13 +167,6 @@
             }
           }
         },
-        "e2a51619-6458-4b3d-9c76-c81884079c18": {
-          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
-            "1534870d-786d-4e09-9546-3397e662eed8": {
-              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
-            }
-          }
-        },
         "309b9d0f-9dda-4571-af6d-edb7a631decc": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
             "d9ecfff8-8868-4657-b94c-1a4dd531186d": {
@@ -149,8 +174,36 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "e2a51619-6458-4b3d-9c76-c81884079c18": {
-              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            "a8f536c3-d133-42a5-86ac-fd9ab7b00860": {
+              "text": {}
+            }
+          }
+        },
+        "a8f536c3-d133-42a5-86ac-fd9ab7b00860": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "da50707b-7e4b-466b-a20b-1a6ad470c722": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "da50707b-7e4b-466b-a20b-1a6ad470c722": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "b99a4fe3-8d6b-4632-a31c-e5393ec83bcf": {
+              "query": {}
+            }
+          }
+        },
+        "b99a4fe3-8d6b-4632-a31c-e5393ec83bcf": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "29dc7348-1127-4ff3-9c40-2973dfa41683": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "29dc7348-1127-4ff3-9c40-2973dfa41683": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "1534870d-786d-4e09-9546-3397e662eed8": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
             }
           }
         }

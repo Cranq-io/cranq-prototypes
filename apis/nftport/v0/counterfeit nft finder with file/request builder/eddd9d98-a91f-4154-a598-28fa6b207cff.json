@@ -64,8 +64,48 @@
           "name": "build request",
           "prototype": "43a05171-f247-40f7-9623-7ca7a9aeb411",
           "params": {
-            "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\"",
-            "e0662105-5801-48a4-b068-62c355e9d670": "\"https://api.nftport.xyz/v0/duplicates/files\""
+            "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\""
+          }
+        },
+        "40f64a39-cacc-491e-9225-b22d39f5874b": {
+          "coordinates": [
+            -185,
+            -202.33333333333331
+          ],
+          "name": "item deleter",
+          "prototype": "73a9fd6e-d594-4efc-a0ae-acf4ab89b577",
+          "params": {
+            "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": "\"api_key\""
+          }
+        },
+        "646daa97-3d74-4e37-8d1e-05814292e4bc": {
+          "coordinates": [
+            -78,
+            -228.33333333333331
+          ],
+          "name": "query string builder",
+          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
+        },
+        "c63d1586-a2bb-40f5-9da0-f08b56185c8a": {
+          "coordinates": [
+            182,
+            -199.33333333333331
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/duplicates?{query}\""
+          }
+        },
+        "9a374336-a710-41c7-9630-9dcc344d735f": {
+          "coordinates": [
+            77,
+            -267.3333333333333
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"query\"]"
           }
         }
       },
@@ -90,6 +130,34 @@
               "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
             }
           }
+        },
+        "40f64a39-cacc-491e-9225-b22d39f5874b": {
+          "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+            "646daa97-3d74-4e37-8d1e-05814292e4bc": {
+              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "646daa97-3d74-4e37-8d1e-05814292e4bc": {
+          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
+            "9a374336-a710-41c7-9630-9dcc344d735f": {
+              "query": {}
+            }
+          }
+        },
+        "c63d1586-a2bb-40f5-9da0-f08b56185c8a": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
+              "e0662105-5801-48a4-b068-62c355e9d670": {}
+            }
+          }
+        },
+        "9a374336-a710-41c7-9630-9dcc344d735f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c63d1586-a2bb-40f5-9da0-f08b56185c8a": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -97,6 +165,9 @@
           "beb00f72-a918-4133-93f1-e5826a151d43": {
             "7d8eb4ff-14fb-4507-ac3f-7305479494b1": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "40f64a39-cacc-491e-9225-b22d39f5874b": {
+              "af51c64a-620a-42e7-83e4-0497df3f0a65": {}
             }
           },
           "ffd19d57-881b-4ac2-9f39-89413e79522c": {

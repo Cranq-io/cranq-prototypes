@@ -1,5 +1,5 @@
 {
-  "name": "apis/nftport/v0/similar NFTs finder with file",
+  "name": "apis/nftport/v0/Similar NFTs finder with file",
   "description": "Returns visually and contextually similar images to the uploaded image with file.\n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload",
   "interface": {
     "inputs": {
@@ -10,14 +10,15 @@
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
         "type": "{\n\"api_key\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number\n}",
-        "name": "params"
+        "name": "params",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Request"
       }
     },
     "outputs": {
       "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
-        "type": "{\n  \"response\": \"OK\",\n  \"ipfs_url\": string,\n  \"file_name\": string,\n  \"content_type\": string,\n  \"file_size\": number,\n  \"file_size_mb\": number\n}",
+        "type": "{\n  \"response\": \"OK\",\n   \"nfts\": [\n    {\n      \"chain\": (\"ethereum\" or \"polygon\"),\n      \"contract_address\": string,\n      \"token_id\": string,\n      optional \"cached_file_url\": string,\n     optional  \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string\n      }\n    }\n  ]\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzY-upload-a-file-to-ipfs#response-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Responses"
       },
       "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -43,8 +44,8 @@
         },
         "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
           "coordinates": [
-            -139,
-            120
+            -169,
+            60
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"

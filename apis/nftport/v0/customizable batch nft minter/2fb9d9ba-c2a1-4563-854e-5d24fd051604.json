@@ -5,7 +5,7 @@
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
         "type": "{\n  \"contract_address\": string,\n  \"tokens\": {\n     \"mint_to_address\": string,\n     \"metadata_uri\": string,\n     \"token_id\": string,\n      \"quantity\":  number\n  }[]\n}",
-        "name": "NFTs",
+        "name": "minting",
         "description": "Receives the data of the NFTs to be minted.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTk-batch-customizable-minting-erc-1155#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {

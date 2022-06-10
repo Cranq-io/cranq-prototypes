@@ -8,6 +8,10 @@
         "name": "file",
         "description": "Receives Base64 representation of the file which will be minted.\n\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDQ-easy-minting-w-file-upload#request-body"
       },
+      "f425554c-70b1-44cd-8620-7044af9e50a9": {
+        "type": "{\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
+        "name": "minting"
+      },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
@@ -34,14 +38,6 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "b080b559-8cee-4c37-9dcc-b6dd9805d4cb": {
-          "coordinates": [
-            -198,
-            38
-          ],
-          "name": "forwarder (double)",
-          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
-        },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
             -174,
@@ -55,8 +51,8 @@
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            48.2,
-            166.2
+            137.2,
+            147.2
           ],
           "name": "build request",
           "prototype": "f2cd0772-8eef-4190-967d-4afd3db6f355"
@@ -79,21 +75,17 @@
           ],
           "name": "dispatch form-data request",
           "prototype": "989f1602-e857-4d5e-a7af-0905f12a1f45"
+        },
+        "02d8f800-ae57-4134-ab5f-4507411d79fd": {
+          "coordinates": [
+            -185,
+            124
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
         }
       },
       "connections": {
-        "b080b559-8cee-4c37-9dcc-b6dd9805d4cb": {
-          "d1295197-1962-4680-a037-5890f2175bb9": {
-            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
-            }
-          },
-          "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {}
-            }
-          }
-        },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
@@ -114,18 +106,40 @@
               "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
             }
           }
+        },
+        "02d8f800-ae57-4134-ab5f-4507411d79fd": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "945a6afc-dd19-467f-be54-c9bf69190c09": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
           "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-            "b080b559-8cee-4c37-9dcc-b6dd9805d4cb": {
-              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            "02d8f800-ae57-4134-ab5f-4507411d79fd": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
             }
           },
           "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-            "b080b559-8cee-4c37-9dcc-b6dd9805d4cb": {
-              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            "02d8f800-ae57-4134-ab5f-4507411d79fd": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          },
+          "f425554c-70b1-44cd-8620-7044af9e50a9": {
+            "02d8f800-ae57-4134-ab5f-4507411d79fd": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
             }
           }
         },

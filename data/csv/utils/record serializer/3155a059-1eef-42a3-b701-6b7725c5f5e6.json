@@ -1,0 +1,118 @@
+{
+  "name": "data/csv/utils/Record serializer",
+  "description": "Serializes a single record into a CSV line",
+  "interface": {
+    "inputs": {
+      "34458275-1b9c-4460-899b-5721f5003e6a": {
+        "type": "{string: (string or number or boolean)}",
+        "name": "record",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "9752b288-5d3f-4092-b13a-0ca39582f338": {
+        "type": "string",
+        "name": "CSV line",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
+          "coordinates": [
+            -73.25,
+            73.54166666666667
+          ],
+          "name": "concat to string",
+          "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
+          "params": {
+            "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\",\""
+          }
+        },
+        "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+          "coordinates": [
+            129.75,
+            76.54166666666667
+          ],
+          "name": "values getter",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+        },
+        "3aa609eb-6c09-4fe1-974b-5ea823e77695": {
+          "coordinates": [
+            40.75,
+            -48.45833333333333
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "73298d3c-384b-4d2e-a4bb-f0ca07b81d1a": {
+          "coordinates": [
+            -97.25,
+            -101.62500000000001
+          ],
+          "name": "wrap in quotes",
+          "prototype": "3c1c66bc-f925-4eb2-8d44-0b02c9fd835d"
+        }
+      },
+      "connections": {
+        "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "3aa609eb-6c09-4fe1-974b-5ea823e77695": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "3aa609eb-6c09-4fe1-974b-5ea823e77695": {
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
+              "49eb5244-00ab-4326-8877-e08da353bf0b": {}
+            }
+          },
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "73298d3c-384b-4d2e-a4bb-f0ca07b81d1a": {
+              "da4b1490-a6d2-4172-95fc-783da5ddc5d4": {}
+            }
+          }
+        },
+        "73298d3c-384b-4d2e-a4bb-f0ca07b81d1a": {
+          "fbd234f9-0f93-445c-b15f-b27b1eba64ea": {
+            "3aa609eb-6c09-4fe1-974b-5ea823e77695": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "34458275-1b9c-4460-899b-5721f5003e6a": {
+            "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          }
+        },
+        "outputs": {
+          "9752b288-5d3f-4092-b13a-0ca39582f338": {
+            "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
+              "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "serialize": null,
+    "stringify": null,
+    "row": null,
+    "record": null,
+    "line": null,
+    "csv": null,
+    "table": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

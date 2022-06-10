@@ -67,20 +67,26 @@
   "interface": {
     "inputs": {
       "11f831c8-e6f7-4595-80d2-7ab5ba5a15b5": {
-        "type": "any",
-        "name": "collection"
+        "type": "{string: any}[]",
+        "name": "table"
       }
     },
     "outputs": {
       "1971cdde-1064-4f4e-8016-231b07a940b9": {
-        "type": "any",
-        "name": "headers"
+        "type": "string[]",
+        "name": "fields"
       }
     }
   },
-  "name": "data/csv/Dictionary array to csv converter/Internal/Get headers",
+  "name": "data/table/utils/Fields extractor",
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "description": "Extracts fields from a table based on the first record.",
+  "keywords": {
+    "extract": null,
+    "header": null,
+    "fields": null
+  },
   "attributes": {
-    "internal": true,
     "locked": true
   }
 }

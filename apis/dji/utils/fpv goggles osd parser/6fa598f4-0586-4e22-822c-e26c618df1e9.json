@@ -1,0 +1,122 @@
+{
+  "name": "apis/dji/utils/FPV Goggles OSD parser",
+  "description": "Expands the received subtitle entries, extracting OSD data and adding them to each record.",
+  "interface": {
+    "inputs": {
+      "baa45348-2c58-4678-b37e-23b4d47035a5": {
+        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"subtitle\": string\n}[]",
+        "name": "subtitles",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "ec2ff3ca-60f2-4f40-ae53-fa91fd828781": {
+        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"signal\": string,\n  \"ch\": string,\n  \"flightTime\": string,\n  \"uavBat\": string,\n  \"glsBat\": string,\n  \"uavBatCells\": string,\n  \"glsBatCells\": string,\n  \"delay\": string,\n  \"bitrate\": string,\n  \"rcSignal\": string\n}[]",
+        "name": "OSD samples",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a759c2ae-c257-44a9-80d0-227cb18c7e83": {
+          "coordinates": [
+            -25,
+            -182.75
+          ],
+          "name": "extract metadata",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"position\": \"position\",\n  \"start\": \"start\",\n  \"end\": \"end\"\n}"
+          }
+        },
+        "16b053f1-da80-43e4-9b2d-62b886455094": {
+          "coordinates": [
+            -111,
+            33.25
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "7e708e6b-7bca-4975-9bd6-cbb028745d1c": {
+          "coordinates": [
+            160,
+            -104.75
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "ac2f11c1-90b6-4bb6-a027-c1ae2a81cc63": {
+          "coordinates": [
+            -24,
+            252.75
+          ],
+          "name": "extract sample",
+          "prototype": "e50e0520-45ae-4d58-aa37-dce86100bc40"
+        }
+      },
+      "connections": {
+        "16b053f1-da80-43e4-9b2d-62b886455094": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "a759c2ae-c257-44a9-80d0-227cb18c7e83": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "ac2f11c1-90b6-4bb6-a027-c1ae2a81cc63": {
+              "c3888579-c396-41c1-8e35-3aa6fce1b112": {}
+            }
+          }
+        },
+        "a759c2ae-c257-44a9-80d0-227cb18c7e83": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "7e708e6b-7bca-4975-9bd6-cbb028745d1c": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "7e708e6b-7bca-4975-9bd6-cbb028745d1c": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "16b053f1-da80-43e4-9b2d-62b886455094": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "ac2f11c1-90b6-4bb6-a027-c1ae2a81cc63": {
+          "0c024a5f-b618-4f87-8407-a57c6b7bef1f": {
+            "7e708e6b-7bca-4975-9bd6-cbb028745d1c": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "baa45348-2c58-4678-b37e-23b4d47035a5": {
+            "16b053f1-da80-43e4-9b2d-62b886455094": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "ec2ff3ca-60f2-4f40-ae53-fa91fd828781": {
+            "16b053f1-da80-43e4-9b2d-62b886455094": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "64c698ac-b7a6-4af2-bb7d-489d49098743",
+  "keywords": {
+    "dji": null,
+    "fpv": null,
+    "srt": null,
+    "osd": null,
+    "goggles": null,
+    "subtitles": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

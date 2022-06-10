@@ -1,0 +1,135 @@
+{
+  "name": "data/csv/utils/Double quotes wrapper",
+  "description": "Wraps the received CSV value in double quotes if it's a string, escaping internal double quotes.",
+  "interface": {
+    "inputs": {
+      "da4b1490-a6d2-4172-95fc-783da5ddc5d4": {
+        "type": "(string or number or boolean)",
+        "name": "value"
+      }
+    },
+    "outputs": {
+      "fbd234f9-0f93-445c-b15f-b27b1eba64ea": {
+        "type": "string",
+        "name": "wrapped",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cc9b3f34-8cd0-4816-9428-32c681cfdc3d": {
+          "coordinates": [
+            143,
+            153.16666666666669
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"\\\"{ESCAPED_STRING}\\\"\""
+          }
+        },
+        "34c6bea8-69e8-4864-b5cd-965bb869d4bf": {
+          "coordinates": [
+            101,
+            -13.833333333333314
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"ESCAPED_STRING\"]"
+          }
+        },
+        "6c49e042-8275-4fcc-b333-84f09da71fbf": {
+          "coordinates": [
+            84,
+            -194.33333333333331
+          ],
+          "name": "escape double quotes",
+          "prototype": "5719fd66-d597-45ee-bff8-64106b48879e",
+          "params": {
+            "d1118ac0-749b-46e9-81af-8fc74dc14e10": "\"\\\"\"",
+            "3490f391-9b3b-441e-b4a2-b078669cf5b4": "\"\\\"\\\"\""
+          }
+        },
+        "fdab1224-3521-47f0-82f1-82dd6c446736": {
+          "coordinates": [
+            -121,
+            -107.83333333333331
+          ],
+          "name": "type tester",
+          "prototype": "622ddf45-9067-4c20-bed0-45fb79f02050"
+        },
+        "949a0e48-c521-4523-81e2-931d0c3b76cf": {
+          "coordinates": [
+            -143,
+            105.16666666666669
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "34c6bea8-69e8-4864-b5cd-965bb869d4bf": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "cc9b3f34-8cd0-4816-9428-32c681cfdc3d": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "6c49e042-8275-4fcc-b333-84f09da71fbf": {
+          "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
+            "34c6bea8-69e8-4864-b5cd-965bb869d4bf": {
+              "ESCAPED_STRING": {}
+            }
+          }
+        },
+        "fdab1224-3521-47f0-82f1-82dd6c446736": {
+          "8ba76f0d-0adc-43b6-b2f1-18b88b24db41": {
+            "949a0e48-c521-4523-81e2-931d0c3b76cf": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "949a0e48-c521-4523-81e2-931d0c3b76cf": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "6c49e042-8275-4fcc-b333-84f09da71fbf": {
+              "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "da4b1490-a6d2-4172-95fc-783da5ddc5d4": {
+            "fdab1224-3521-47f0-82f1-82dd6c446736": {
+              "6a3c089d-b056-4f4d-991c-a8a8112d3659": {}
+            },
+            "949a0e48-c521-4523-81e2-931d0c3b76cf": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "fbd234f9-0f93-445c-b15f-b27b1eba64ea": {
+            "cc9b3f34-8cd0-4816-9428-32c681cfdc3d": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            },
+            "949a0e48-c521-4523-81e2-931d0c3b76cf": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "double quotes": null,
+    "wrap": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

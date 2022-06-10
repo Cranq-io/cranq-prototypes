@@ -1,0 +1,80 @@
+{
+  "name": "io/file/formats/srt/To CSV converter",
+  "interface": {
+    "inputs": {
+      "8b2bb365-2639-499f-b752-d0c0b1b6c810": {
+        "type": "string",
+        "name": "SRT",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0e852827-b940-40c8-8d56-7e9d5559ea1b": {
+        "type": "string",
+        "name": "CSV",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0f52e9b5-c057-40fe-a309-8221186253ae": {
+          "coordinates": [
+            -96.58333333333334,
+            57.41666666666666
+          ],
+          "name": "parse SRT",
+          "prototype": "d4fc9f25-3c32-4462-aed4-6f477ba83ead"
+        },
+        "31c681d9-1099-474f-83bf-441793481cda": {
+          "coordinates": [
+            96,
+            -57.5
+          ],
+          "name": "table to CSV",
+          "prototype": "fb88e97d-fdb2-4c7c-b657-2e9883064b17"
+        }
+      },
+      "connections": {
+        "0f52e9b5-c057-40fe-a309-8221186253ae": {
+          "a78aab3b-a0bc-43fd-bf60-1cbaefbc6377": {
+            "31c681d9-1099-474f-83bf-441793481cda": {
+              "bfa14c74-d222-46da-a23e-01e14233eb03": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8b2bb365-2639-499f-b752-d0c0b1b6c810": {
+            "0f52e9b5-c057-40fe-a309-8221186253ae": {
+              "89794a4b-bc07-42c9-98d3-45a60158a5d2": {}
+            }
+          }
+        },
+        "outputs": {
+          "0e852827-b940-40c8-8d56-7e9d5559ea1b": {
+            "31c681d9-1099-474f-83bf-441793481cda": {
+              "1f8459b4-882f-47b9-afaa-4c06cc02c0ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "description": "Converts SRT file contents to CSV.",
+  "keywords": {
+    "srt": null,
+    "csv": null,
+    "subtitles": null,
+    "table": null,
+    "spreadsheet": null,
+    "convert": null,
+    "transform": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "5b23079f-b416-4586-8d97-f19585fe22b8": "outputs.replaced(data.string.replace(new RegExp(data.regex, \"g\"), data.new), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "5b23079f-b416-4586-8d97-f19585fe22b8": {
+        "type": "{\n  \"string\": string,\n  \"regex\": string,\n  \"new\": string\n}",
+        "name": "string & regex & new"
+      }
+    },
+    "outputs": {
+      "8d627a3a-01c0-41e0-8c78-3c53f620d9b6": {
+        "type": "string",
+        "name": "replaced"
+      }
+    }
+  },
+  "name": "string/Global regex replacer/Internal",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "e493a695-64e2-494f-a619-65fd206ab585": "outputs.substrings(data.string.split(new RegExp(data.regex)), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e493a695-64e2-494f-a619-65fd206ab585": {
+        "type": "{\"string\": string, \"regex\": string}",
+        "name": "string & regex"
+      }
+    },
+    "outputs": {
+      "a4b47f8d-a0b7-45ed-8a53-d4552b6d9b90": {
+        "type": "any",
+        "name": "substrings"
+      }
+    }
+  },
+  "name": "string/Regex splitter/Internal",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

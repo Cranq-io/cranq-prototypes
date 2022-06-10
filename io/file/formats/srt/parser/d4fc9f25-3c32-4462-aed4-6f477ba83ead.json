@@ -1,0 +1,161 @@
+{
+  "name": "io/file/formats/srt/Parser",
+  "description": "Parses SRT file format.",
+  "interface": {
+    "inputs": {
+      "89794a4b-bc07-42c9-98d3-45a60158a5d2": {
+        "type": "string",
+        "name": "SRT",
+        "description": "Receives SRT subtitles file contents."
+      }
+    },
+    "outputs": {
+      "a78aab3b-a0bc-43fd-bf60-1cbaefbc6377": {
+        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"subtitle\": string\n}[]",
+        "name": "table",
+        "description": "Sends parsed subtitles as JSON table."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e9d52db0-0cfc-4471-a195-304b2542965c": {
+          "coordinates": [
+            100,
+            -128.5
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "c0613165-b7f4-4e9e-8c85-58dffef2cc4c": {
+          "coordinates": [
+            -191,
+            -90.5
+          ],
+          "name": "trim string",
+          "prototype": "64e6e4b1-d50f-47b6-b1d2-6e707f8d73bc"
+        },
+        "221b3dc5-a06b-4135-9cd8-f0a476d96deb": {
+          "coordinates": [
+            -26.5,
+            -205
+          ],
+          "name": "split subtitles",
+          "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
+          "params": {
+            "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"\\\\n\\\\n+(?=\\\\d+\\\\n)\""
+          }
+        },
+        "47ee2127-7cc3-49c6-8335-fa54e92575d3": {
+          "coordinates": [
+            155,
+            31.5
+          ],
+          "name": "extract",
+          "prototype": "c9b76fa0-7428-4b19-8b09-63bf023088c9",
+          "params": {
+            "2c82a6df-0eee-4ef1-a9b0-b795c338f9c8": "\"(\\\\d+)\\\\s+([\\\\d:,]+)\\\\s+-->\\\\s+([\\\\d:,]+)\\\\s+(.*)$\""
+          }
+        },
+        "b75db4d0-5683-43bd-a272-a7d2e5d109cb": {
+          "coordinates": [
+            -68,
+            111.50000000000003
+          ],
+          "name": "build record",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"position\": 1,\n  \"start\": 2,\n  \"end\": 3,\n  \"subtitle\": 4\n}"
+          }
+        },
+        "890fdf89-0939-4706-b88f-082f4c140a17": {
+          "coordinates": [
+            -140,
+            43.50000000000003
+          ],
+          "name": "empty record",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{}"
+          }
+        }
+      },
+      "connections": {
+        "c0613165-b7f4-4e9e-8c85-58dffef2cc4c": {
+          "b5b9eeb3-9acc-4290-a310-b57544102115": {
+            "221b3dc5-a06b-4135-9cd8-f0a476d96deb": {
+              "aeed0ec7-7761-4612-b575-7b0c8858f57f": {}
+            }
+          }
+        },
+        "221b3dc5-a06b-4135-9cd8-f0a476d96deb": {
+          "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "e9d52db0-0cfc-4471-a195-304b2542965c": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "47ee2127-7cc3-49c6-8335-fa54e92575d3": {
+              "85025d96-fe7b-4714-a6cb-a52ae7f4aa6e": {}
+            }
+          }
+        },
+        "47ee2127-7cc3-49c6-8335-fa54e92575d3": {
+          "f6986868-ad47-431b-80d9-e68b4a199710": {
+            "b75db4d0-5683-43bd-a272-a7d2e5d109cb": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          },
+          "28491fbe-c349-461b-adad-f33fa7c6ecab": {
+            "890fdf89-0939-4706-b88f-082f4c140a17": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "b75db4d0-5683-43bd-a272-a7d2e5d109cb": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "890fdf89-0939-4706-b88f-082f4c140a17": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "89794a4b-bc07-42c9-98d3-45a60158a5d2": {
+            "c0613165-b7f4-4e9e-8c85-58dffef2cc4c": {
+              "b15a82dc-96a1-4ce2-8a8b-aae98cd533cf": {}
+            }
+          }
+        },
+        "outputs": {
+          "a78aab3b-a0bc-43fd-bf60-1cbaefbc6377": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "srt": null,
+    "subtitles": null,
+    "split": null,
+    "parse": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

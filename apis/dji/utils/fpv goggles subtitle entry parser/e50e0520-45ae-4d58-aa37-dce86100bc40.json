@@ -25,7 +25,7 @@
             -366,
             -31.5
           ],
-          "name": "item getter",
+          "name": "get subtitle",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
             "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"subtitle\""
@@ -36,7 +36,7 @@
             -239,
             51.5
           ],
-          "name": "regex splitter",
+          "name": "split OSD items",
           "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
           "params": {
             "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"\\\\s+\""
@@ -47,7 +47,7 @@
             -22,
             14.5
           ],
-          "name": "mapper B",
+          "name": "build OSD keys & values",
           "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
         },
         "465f5f27-6214-4117-a4f9-ecd5184048e9": {
@@ -55,7 +55,7 @@
             155,
             -44.5
           ],
-          "name": "splitter",
+          "name": "split key & value",
           "prototype": "e1418571-da49-467a-aefe-0a97394344e9",
           "params": {
             "761c44f9-80b3-410c-820f-b004e8787521": "\":\""
@@ -63,10 +63,10 @@
         },
         "c2bf03a9-3e6c-4aad-8e54-ff33ac80b84d": {
           "coordinates": [
-            338,
-            162.5
+            109,
+            212.5
           ],
-          "name": "inner joiner B",
+          "name": "tuple to key-value pair",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
             "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"key\": 0, \"value\": 1}"
@@ -74,11 +74,22 @@
         },
         "a10a1487-51aa-49fe-9b4e-1dcb04830c95": {
           "coordinates": [
-            134,
-            -152.5
+            121,
+            -145.5
           ],
-          "name": "builder (key-value pairs)",
+          "name": "build OSD sample",
           "prototype": "9c4ba861-295c-4b59-be22-fc4482fde20c"
+        },
+        "a6eccfed-1f70-4447-9eac-ccb5621fad17": {
+          "coordinates": [
+            246.18148148148154,
+            -236.94351851851852
+          ],
+          "name": "values parser",
+          "prototype": "0198ce3f-99c1-4386-b53e-f7366327f80c",
+          "params": {
+            "2ebdb819-7e21-4d19-8aae-2eb0b51c1b6f": "{\n  \"signal\": \"number\",\n  \"ch\": \"number\",\n  \"flightTime\": \"number\",\n  \"uavBat\": \"number\",\n  \"glsBat\": \"number\",\n  \"uavBatCells\": \"number\",\n  \"glsBatCells\": \"number\",\n  \"delay\": \"number\",\n  \"bitrate\": \"number\",\n  \"rcSignal\": \"number\"\n}"
+          }
         }
       },
       "connections": {
@@ -121,6 +132,13 @@
               "246b2ba5-761d-44bc-932b-9ee909b00258": {}
             }
           }
+        },
+        "a10a1487-51aa-49fe-9b4e-1dcb04830c95": {
+          "647899b9-8122-4a5b-a622-c9763e51d0c1": {
+            "a6eccfed-1f70-4447-9eac-ccb5621fad17": {
+              "d1b99cad-e623-4ec9-99b3-7c8c9e3f0464": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -133,8 +151,8 @@
         },
         "outputs": {
           "0c024a5f-b618-4f87-8407-a57c6b7bef1f": {
-            "a10a1487-51aa-49fe-9b4e-1dcb04830c95": {
-              "647899b9-8122-4a5b-a622-c9763e51d0c1": {}
+            "a6eccfed-1f70-4447-9eac-ccb5621fad17": {
+              "9b0972e2-13ee-4669-bf9e-4fb620ffcdd8": {}
             }
           }
         }

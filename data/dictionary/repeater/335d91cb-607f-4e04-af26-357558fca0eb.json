@@ -75,6 +75,12 @@
     }
   },
   "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "description": "Repeats the received `data` for each item in the dictionary.\n\nExample:\n1. {\"foo\": 1, \"bar\": 2}@0 receiced via `dict`\n2. \"A\"@0 received via `data`\n3. \"A\"@0:0\n    \"A\"@0:1\nsent via `data`",
+  "keywords": {
+    "repeat": null,
+    "for": null,
+    "loop": null
+  },
   "attributes": {
     "locked": true
   }

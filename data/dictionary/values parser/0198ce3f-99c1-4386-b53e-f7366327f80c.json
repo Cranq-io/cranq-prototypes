@@ -1,0 +1,139 @@
+{
+  "name": "data/dictionary/Values parser",
+  "description": "Parses the values of the dictionary received via `string dict` according to the types specified in `types`.",
+  "interface": {
+    "inputs": {
+      "d1b99cad-e623-4ec9-99b3-7c8c9e3f0464": {
+        "type": "{string: string}",
+        "name": "string dict"
+      },
+      "2ebdb819-7e21-4d19-8aae-2eb0b51c1b6f": {
+        "type": "{\n  string: \"number\" or \"json\"\n}",
+        "name": "types"
+      }
+    },
+    "outputs": {
+      "9b0972e2-13ee-4669-bf9e-4fb620ffcdd8": {
+        "type": "typeof `mapped` of `mapper`",
+        "name": "parsed"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "93e023f2-0c52-44a3-a137-d2db6f79490e": {
+          "coordinates": [
+            -46,
+            -86
+          ],
+          "name": "mapper",
+          "prototype": "90061d99-64eb-4260-ac6d-abdf4c6e9fb1"
+        },
+        "1bebd84a-8c41-4ccf-8a46-a81c612f03c2": {
+          "coordinates": [
+            -122,
+            104
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "f366ab09-5da5-46fb-943a-f2efcab7f911": {
+          "coordinates": [
+            66,
+            158
+          ],
+          "name": "repeater",
+          "prototype": "335d91cb-607f-4e04-af26-357558fca0eb"
+        },
+        "8f527b76-6ebd-4738-914f-a98ade2c29b4": {
+          "coordinates": [
+            146.625,
+            9.4375
+          ],
+          "name": "parse value",
+          "prototype": "86f945ff-9d36-4566-a537-d4f4038b097d"
+        }
+      },
+      "connections": {
+        "1bebd84a-8c41-4ccf-8a46-a81c612f03c2": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "93e023f2-0c52-44a3-a137-d2db6f79490e": {
+              "a7988a90-76f7-46ff-b09b-61858d52be3b": {}
+            },
+            "f366ab09-5da5-46fb-943a-f2efcab7f911": {
+              "6aeaf7e6-b523-4247-a7e6-bb15dd0bb0e9": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "f366ab09-5da5-46fb-943a-f2efcab7f911": {
+              "c929159c-7b75-455d-bad0-0dd020626367": {}
+            }
+          }
+        },
+        "93e023f2-0c52-44a3-a137-d2db6f79490e": {
+          "73321c81-c9fe-4d65-8843-8e038f0b02af": {
+            "8f527b76-6ebd-4738-914f-a98ade2c29b4": {
+              "07eb9415-4f82-4fc7-bc31-1cad509b5197": {}
+            }
+          },
+          "43dde9dc-1e3f-4784-9311-306e5b37df42": {
+            "8f527b76-6ebd-4738-914f-a98ade2c29b4": {
+              "99c5f7b1-4b92-46bc-8698-63062a885051": {}
+            }
+          }
+        },
+        "f366ab09-5da5-46fb-943a-f2efcab7f911": {
+          "1a918fd9-bb0b-47ce-8f11-1a6d4353a79d": {
+            "8f527b76-6ebd-4738-914f-a98ade2c29b4": {
+              "fc816a9b-2a1f-4ab0-8d89-7a7971368b98": {}
+            }
+          }
+        },
+        "8f527b76-6ebd-4738-914f-a98ade2c29b4": {
+          "89c3bf52-a27b-4a6c-a648-9b06dad1c62c": {
+            "93e023f2-0c52-44a3-a137-d2db6f79490e": {
+              "04851541-789c-4440-86b2-4006842c7489": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d1b99cad-e623-4ec9-99b3-7c8c9e3f0464": {
+            "1bebd84a-8c41-4ccf-8a46-a81c612f03c2": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "2ebdb819-7e21-4d19-8aae-2eb0b51c1b6f": {
+            "1bebd84a-8c41-4ccf-8a46-a81c612f03c2": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "9b0972e2-13ee-4669-bf9e-4fb620ffcdd8": {
+            "93e023f2-0c52-44a3-a137-d2db6f79490e": {
+              "362372d2-9af3-43b4-8948-e7c80050c1af": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "parse": null,
+    "dictionary": null,
+    "record": null,
+    "lookup": null,
+    "items": null,
+    "values": null,
+    "string": null,
+    "number": null,
+    "json": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

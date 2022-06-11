@@ -1,0 +1,113 @@
+{
+  "name": "io/file/formats/srt/Entry parser",
+  "description": "Parses a single SRT file entry.",
+  "interface": {
+    "inputs": {
+      "903af3e5-ee78-40dc-8a25-c19e90705fdc": {
+        "type": "string",
+        "name": "subtitle"
+      }
+    },
+    "outputs": {
+      "078c60ce-8537-4e38-b755-4ab285128314": {
+        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"subtitle\": string\n}",
+        "name": "record",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "47ee2127-7cc3-49c6-8335-fa54e92575d3": {
+          "coordinates": [
+            -136.46620370370374,
+            -96.71620370370374
+          ],
+          "name": "extract subtitle details",
+          "prototype": "c9b76fa0-7428-4b19-8b09-63bf023088c9",
+          "params": {
+            "2c82a6df-0eee-4ef1-a9b0-b795c338f9c8": "\"(\\\\d+)\\\\s+([\\\\d:,]+)\\\\s+-->\\\\s+([\\\\d:,]+)\\\\s+(.*)$\""
+          }
+        },
+        "b75db4d0-5683-43bd-a272-a7d2e5d109cb": {
+          "coordinates": [
+            -103.46620370370374,
+            69.28379629629629
+          ],
+          "name": "build record",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"position\": 1,\n  \"start\": 2,\n  \"end\": 3,\n  \"subtitle\": 4\n}"
+          }
+        },
+        "890fdf89-0939-4706-b88f-082f4c140a17": {
+          "coordinates": [
+            67.53379629629626,
+            -143.7162037037037
+          ],
+          "name": "empty record",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{}"
+          }
+        },
+        "cff7eb83-e1f8-44f1-9426-25630e889037": {
+          "coordinates": [
+            93.3986111111112,
+            132.14861111111114
+          ],
+          "name": "parse position",
+          "prototype": "0198ce3f-99c1-4386-b53e-f7366327f80c",
+          "params": {
+            "2ebdb819-7e21-4d19-8aae-2eb0b51c1b6f": "{\"position\": \"number\"}"
+          }
+        }
+      },
+      "connections": {
+        "47ee2127-7cc3-49c6-8335-fa54e92575d3": {
+          "f6986868-ad47-431b-80d9-e68b4a199710": {
+            "b75db4d0-5683-43bd-a272-a7d2e5d109cb": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          },
+          "28491fbe-c349-461b-adad-f33fa7c6ecab": {
+            "890fdf89-0939-4706-b88f-082f4c140a17": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "b75db4d0-5683-43bd-a272-a7d2e5d109cb": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "cff7eb83-e1f8-44f1-9426-25630e889037": {
+              "d1b99cad-e623-4ec9-99b3-7c8c9e3f0464": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "903af3e5-ee78-40dc-8a25-c19e90705fdc": {
+            "47ee2127-7cc3-49c6-8335-fa54e92575d3": {
+              "85025d96-fe7b-4714-a6cb-a52ae7f4aa6e": {}
+            }
+          }
+        },
+        "outputs": {
+          "078c60ce-8537-4e38-b755-4ab285128314": {
+            "890fdf89-0939-4706-b88f-082f4c140a17": {
+              "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {}
+            },
+            "cff7eb83-e1f8-44f1-9426-25630e889037": {
+              "9b0972e2-13ee-4669-bf9e-4fb620ffcdd8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

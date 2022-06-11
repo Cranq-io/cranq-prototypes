@@ -18,8 +18,12 @@
         "name": "mapped"
       },
       "43dde9dc-1e3f-4784-9311-306e5b37df42": {
-        "type": "any",
+        "type": "typeof `dict`[string]",
         "name": "value"
+      },
+      "73321c81-c9fe-4d65-8843-8e038f0b02af": {
+        "type": "string",
+        "name": "key"
       }
     }
   },
@@ -28,10 +32,10 @@
       "nodes": {
         "dc08a41e-b889-4105-8957-2f6da910d03f": {
           "coordinates": [
-            -76.4,
-            23
+            -245.4,
+            68
           ],
-          "name": "keys getter",
+          "name": "get keys",
           "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a",
           "params": {}
         },
@@ -46,21 +50,37 @@
         },
         "a4d7a966-0b34-4dfa-94e4-e2f73f2f575b": {
           "coordinates": [
-            81.6,
-            98
+            17.599999999999994,
+            31
           ],
-          "name": "builder/keys & values",
+          "name": "build dict",
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
           "params": {}
         },
         "cf67256f-7385-44df-82e4-121193eb2fc0": {
           "coordinates": [
-            -74.4,
-            -84
+            -238.4,
+            -104
           ],
-          "name": "values getter",
+          "name": "get values",
           "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0",
           "params": {}
+        },
+        "cbb96772-4855-44f1-b5dc-da35382ccee9": {
+          "coordinates": [
+            -62,
+            199
+          ],
+          "name": "repeat keys",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "2e037f40-16b6-4acb-82c7-72904ec6b034": {
+          "coordinates": [
+            171,
+            124
+          ],
+          "name": "get key for index",
+          "prototype": "f659815e-3af3-4399-9c7b-dec6cd927b55"
         }
       },
       "connections": {
@@ -68,6 +88,10 @@
           "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
             "a4d7a966-0b34-4dfa-94e4-e2f73f2f575b": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            },
+            "cbb96772-4855-44f1-b5dc-da35382ccee9": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {},
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
             }
           }
         },
@@ -76,12 +100,24 @@
             "a4d7a966-0b34-4dfa-94e4-e2f73f2f575b": {
               "e77e7439-84f9-414f-b45b-356ea70ce445": {}
             }
+          },
+          "f6bfa0c4-5143-491d-ac1c-bc56d32ab41d": {
+            "2e037f40-16b6-4acb-82c7-72904ec6b034": {
+              "a6846250-26ed-4240-b65a-fd5eddd57556": {}
+            }
           }
         },
         "cf67256f-7385-44df-82e4-121193eb2fc0": {
           "807f86ec-082e-4a9a-a304-021a397dca4c": {
             "257eb971-0c2a-4768-b61c-85bd8efccfe7": {
               "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "cbb96772-4855-44f1-b5dc-da35382ccee9": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "2e037f40-16b6-4acb-82c7-72904ec6b034": {
+              "352fc29e-79dd-4fa0-8b8b-0ff79ea197d1": {}
             }
           }
         }
@@ -112,12 +148,26 @@
             "a4d7a966-0b34-4dfa-94e4-e2f73f2f575b": {
               "852cd030-0794-42cc-b448-0886fb787cf2": {}
             }
+          },
+          "73321c81-c9fe-4d65-8843-8e038f0b02af": {
+            "2e037f40-16b6-4acb-82c7-72904ec6b034": {
+              "4a915651-a98d-4ce4-901f-16f958b5b3a9": {}
+            }
           }
         }
       }
     }
   },
   "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "description": "Maps dictionary values to new values. External node(s) receive each value and send back a mapped value.",
+  "keywords": {
+    "map": null,
+    "project": null,
+    "values": null,
+    "key-value pairs": null,
+    "record": null,
+    "dictionary": null
+  },
   "attributes": {
     "locked": true
   }

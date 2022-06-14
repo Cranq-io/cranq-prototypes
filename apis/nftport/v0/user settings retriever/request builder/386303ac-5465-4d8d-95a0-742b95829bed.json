@@ -1,0 +1,115 @@
+{
+  "name": "apis/nftport/v0/User settings retriever/Request builder",
+  "interface": {
+    "inputs": {
+      "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+        "type": "{string: string}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+        "type": "typeof `request` of `body-less request builder`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "coordinates": [
+            69.8,
+            -124.19999999999999
+          ],
+          "name": "insert API key",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "coordinates": [
+            -87.19999999999999,
+            -212.2
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        },
+        "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+          "coordinates": [
+            230.8,
+            -80.19999999999999
+          ],
+          "name": "body-less request builder",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "afa58593-4794-4997-ac7a-9945d2535ead": {
+          "coordinates": [
+            -9.199999999999989,
+            123.80000000000018
+          ],
+          "name": "url",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"https://api.nftport.xyz/v0/me/settings\""
+          }
+        }
+      },
+      "connections": {
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "api_key": {
+            "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        },
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        },
+        "afa58593-4794-4997-ac7a-9945d2535ead": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+            "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "afa58593-4794-4997-ac7a-9945d2535ead": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "abcb6bea-fd10-4a4d-aa00-02bab3222124",
+  "attributes": {
+    "internal": true
+  }
+}

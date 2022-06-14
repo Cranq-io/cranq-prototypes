@@ -1,0 +1,116 @@
+{
+  "name": "apis/nftport/v0/User settings retriever",
+  "description": "Retrieve your NFTPort settings to check your usage and limits.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzQ2MDk3ODI-user-settings",
+  "interface": {
+    "inputs": {
+      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+        "type": "{\n  \"api_key\": string\n}",
+        "name": "params",
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzQ2MDk3ODI-user-settings#Request"
+      }
+    },
+    "outputs": {
+      "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+        "type": "{\n  \"response\": \"OK\",\n  \"profile\": {\n    \"name\": string,\n    \"email\": string,\n    \"joined_date\": string\n  },\n  \"subscription_period\": {\n\t\"start_date\": string,\n\t\"end_date\": string\n  },\n  \"data_usage_and_limits\": {\n    \"data_usage\": {\n\t\toptional \"subscription_data_requests_made\": number\n\t},\n    \"data_limits\": {\n\t  optional \"subscription_data_requests_included\": number,\n      \"max_data_requests_per_second\": number,\n      \"max_data_requests_per_month\": number\n    }\n  },\n  \"minting_usage_and_limits\": {\n    \"polygon\": {\n      \"minting_usage\": {\n        \"total_nfts_minted\": number,\n\t\toptional \"subscription_nfts_minted\": number\n      },\n      \"minting_limits\": {\n        \"max_mints\": number,\n\t\toptional \"subscription_mints_included\": number\n      },\n      \"contract_deployment_usage\": {\n        \"total_contracts_deployed\": number,\n\t\toptional \"subscription_contracts_deployed\": number\n      },\n      \"contract_deployment_limits\": {\n        \"max_contracts\": number,\n\t\toptional \"subscription_contracts_included\": number\n      }\n    },\n    \"rinkeby\": {\n      \"minting_usage\": {\n        \"total_nfts_minted\": number,\n\t\toptional \"subscription_nfts_minted\": number\n      },\n      \"minting_limits\": {\n        \"max_mints\": number,\n\t\toptional \"subscription_mints_included\": number\n      },\n      \"contract_deployment_usage\": {\n        \"total_contracts_deployed\": number,\n\t\toptional \"subscription_contracts_deployed\": number\n      },\n      \"contract_deployment_limits\": {\n        \"max_contracts\": number,\n\t\toptional \"subscription_contracts_included\": number\n      }\n    }\n  }\n}",
+        "name": "data",
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzQ2MDk3ODI-user-settings#Responses"
+      },
+      "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error",
+        "description": "Sends the error, if any"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+          "coordinates": [
+            -4,
+            15
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+          "coordinates": [
+            -118.80000000000001,
+            158.2
+          ],
+          "name": "build request",
+          "prototype": "386303ac-5465-4d8d-95a0-742b95829bed"
+        },
+        "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+          "coordinates": [
+            136,
+            -148
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
+          }
+        }
+      },
+      "connections": {
+        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
+            }
+          }
+        },
+        "outputs": {
+          "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          },
+          "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "nftport": null,
+    "settings": null,
+    "quota": null
+  },
+  "original": "9feb114d-5cd8-4d8b-8a27-25c7797c67e6",
+  "attributes": {}
+}

@@ -1,24 +1,24 @@
 {
-  "name": "apis/nftport/v0/Customizable NFT minter",
-  "description": "Mints a product (dynamic) NFT.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting",
+  "name": "apis/nftport/v0/Easy minter with URL",
+  "description": "With Easy mint, you can turn anything into an NFT in less than 5 minutes using one simple API call.\n\nEasy minting w/URL: \nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url",
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-        "type": "{\n  \"contract_address\": string,\n  \"metadata_uri\": string,\n  optional \"token_id\": string\n}",
-        "name": "NFT",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "type": "{\n  \"name\": string,\n  \"description\": string,\n  \"file_url\": string,\n  \"mint_to_address\": string\n}",
+        "name": "minting",
+        "description": "Receives the data of the NFT to be minted.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"mint_to_address\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#request-body"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": \"polygon\" or \"rinkeby\",\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"metadata_url\": string,\n  \"mint_to_address\": string\n}",
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"mint_to_address\": string,\n  \"name\": string,\n  \"description\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends contract address and the transaction hash which can be used in Return minted NFT to receive the token ID and confirm that the minting was successful (minting can take up to a few minutes depending on how congested the network is).\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#response-body"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -67,7 +67,7 @@
             246.2
           ],
           "name": "build request",
-          "prototype": "b06521ae-7e68-4c6a-abdb-52a70c556611"
+          "prototype": "2e447844-0f7a-426a-93ac-dbcec5e33716"
         },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
           "coordinates": [
@@ -161,8 +161,11 @@
     "product": null,
     "dynamic": null,
     "mint": null,
-    "customisable": null
+    "easy": null,
+    "polygon": null,
+    "rinkeby": null
   },
+  "original": "ed2aacf5-98ea-4647-a317-9e9c5654d755",
   "attributes": {
     "locked": true
   }

@@ -1,24 +1,24 @@
 {
-  "name": "apis/nftport/v0/Customizable NFT minter",
-  "description": "Mints a product (dynamic) NFT.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting",
+  "name": "apis/nftport/v0/NFT transferer",
+  "description": "Transfers an NFT which has been previously minted.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft",
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-        "type": "{\n  \"contract_address\": string,\n  \"metadata_uri\": string,\n  optional \"token_id\": string\n}",
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"transfer_to_address\": string\n}",
         "name": "NFT",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"mint_to_address\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#request-body"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": \"polygon\" or \"rinkeby\",\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"metadata_url\": string,\n  \"mint_to_address\": string\n}",
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\":  (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,  \n\"transaction_external_url\":string \n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#response-body"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -36,8 +36,8 @@
       "nodes": {
         "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
           "coordinates": [
-            65,
-            43
+            113,
+            -18
           ],
           "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
@@ -63,21 +63,21 @@
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            4.200000000000003,
-            246.2
+            0.20000000000000284,
+            132.2
           ],
           "name": "build request",
-          "prototype": "b06521ae-7e68-4c6a-abdb-52a70c556611"
+          "prototype": "55dcdee5-3125-41d4-9d04-72d2f9fcea88"
         },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
           "coordinates": [
-            126,
+            159,
             -145
           ],
           "name": "json response error detector",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
           "params": {
-            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT transfer failed.\""
           }
         }
       },
@@ -161,8 +161,11 @@
     "product": null,
     "dynamic": null,
     "mint": null,
-    "customisable": null
+    "transfer": null,
+    "polygon": null,
+    "rinkeby": null
   },
+  "original": "ed2aacf5-98ea-4647-a317-9e9c5654d755",
   "attributes": {
     "locked": true
   }

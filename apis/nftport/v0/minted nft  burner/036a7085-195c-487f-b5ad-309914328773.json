@@ -1,24 +1,24 @@
 {
-  "name": "apis/nftport/v0/Customizable NFT minter",
-  "description": "Mints a product (dynamic) NFT.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting",
+  "name": "apis/nftport/v0/Minted NFT  burner",
+  "description": "Burns an NFT which has been previously minted with Customizable minting. Burning an NFT means destroying it by sending it to a null (un-spendable) address. Transactions leading up to the burn will remain on the blockchain.\n\nNote: Burning is possible only if the token is owned by the contract owner and the token has not been transferred/sold yet.\n\n\nBurn a minted NFT:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTg-burn-a-minted-nft",
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-        "type": "{\n  \"contract_address\": string,\n  \"metadata_uri\": string,\n  optional \"token_id\": string\n}",
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "NFT",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "Receives the data of the NFT to be burnt.\n\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTg-burn-a-minted-nft#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"mint_to_address\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\n  \"api_key\": string\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTg-burn-a-minted-nft#Request"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": \"polygon\" or \"rinkeby\",\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"metadata_url\": string,\n  \"mint_to_address\": string\n}",
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#response-body"
+        "description": "Sends  transaction hash which can be used to confirm that the transaction was successful (blockchain transactions can take up to a few minutes depending on how congested the network is).\n\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAwOTg-burn-a-minted-nft#Request"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -44,30 +44,19 @@
         },
         "b080b559-8cee-4c37-9dcc-b6dd9805d4cb": {
           "coordinates": [
-            -219,
-            78
+            -202,
+            -43
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
-        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
-          "coordinates": [
-            -174,
-            -164
-          ],
-          "name": "apply defaults",
-          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
-          "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"polygon\"}"
-          }
-        },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            4.200000000000003,
-            246.2
+            -32.8,
+            225.2
           ],
           "name": "build request",
-          "prototype": "b06521ae-7e68-4c6a-abdb-52a70c556611"
+          "prototype": "7021583e-5905-4e2d-9895-82f026cf5734"
         },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
           "coordinates": [
@@ -84,20 +73,13 @@
       "connections": {
         "b080b559-8cee-4c37-9dcc-b6dd9805d4cb": {
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
             }
           },
           "069a212d-9cea-4987-be45-e0079a13d96f": {
             "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
               "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {}
-            }
-          }
-        },
-        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
-          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
             }
           }
         },
@@ -158,12 +140,17 @@
     "blockchain": null,
     "crypto": null,
     "nft": null,
-    "product": null,
     "dynamic": null,
     "mint": null,
-    "customisable": null
+    "update": null,
+    "customisable": null,
+    "burn": null,
+    "polygon": null,
+    "rinkeby": null
   },
+  "original": "0c84f42b-3543-454a-9d3c-aed6a42cc879",
   "attributes": {
+    "internal": true,
     "locked": true
   }
 }

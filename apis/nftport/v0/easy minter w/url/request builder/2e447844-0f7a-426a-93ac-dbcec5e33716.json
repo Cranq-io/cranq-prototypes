@@ -1,0 +1,142 @@
+{
+  "name": "apis/nftport/v0/Easy minter w/URL/Request builder",
+  "interface": {
+    "inputs": {
+      "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
+        "type": "typeof `a` of `build data`",
+        "name": "minting",
+        "description": "[Inherited from port `a` of `merger`] \nReceives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
+      },
+      "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+        "type": "typeof `b` of `extract API params`",
+        "name": "params",
+        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+      }
+    },
+    "outputs": {
+      "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+        "type": "typeof `JSON req.` of `json request builder`",
+        "name": "json request builder-JSON req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6fb14c46-c93e-41b6-aeb7-1f30ebd73b23": {
+          "coordinates": [
+            108.80000000000001,
+            -120.2
+          ],
+          "name": "json request builder",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\"",
+            "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": "\"https://api.nftport.xyz/v0/mints/easy/urls\""
+          }
+        },
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "coordinates": [
+            -36.2,
+            -59.2
+          ],
+          "name": "insert API key",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "coordinates": [
+            -136.2,
+            -184.2
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        },
+        "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+          "coordinates": [
+            -52.2,
+            165.8
+          ],
+          "name": "extract API params",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\"\n}"
+          }
+        },
+        "d0debc73-0f7b-498b-88f7-9232e17d22a7": {
+          "coordinates": [
+            107.8,
+            91.8
+          ],
+          "name": "build data",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        }
+      },
+      "connections": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "6fb14c46-c93e-41b6-aeb7-1f30ebd73b23": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "api_key": {
+            "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        },
+        "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "d0debc73-0f7b-498b-88f7-9232e17d22a7": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "d0debc73-0f7b-498b-88f7-9232e17d22a7": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "6fb14c46-c93e-41b6-aeb7-1f30ebd73b23": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
+            "d0debc73-0f7b-498b-88f7-9232e17d22a7": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          },
+          "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+            "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "6fb14c46-c93e-41b6-aeb7-1f30ebd73b23": {
+              "42f1fa20-0597-484e-9610-1f9117b5a7f1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "b06521ae-7e68-4c6a-abdb-52a70c556611",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

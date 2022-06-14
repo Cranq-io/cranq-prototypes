@@ -14,7 +14,7 @@
     },
     "outputs": {
       "2eec781c-0cc5-4a79-a26e-b09bd5e067fb": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string}\n}",
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string}\n}",
         "name": "request"
       }
     }
@@ -115,7 +115,6 @@
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

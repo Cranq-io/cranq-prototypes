@@ -1,0 +1,185 @@
+{
+  "name": "apis/nftport/v0/NFT details retriever",
+  "description": "Returns details for a given NFT, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details",
+  "interface": {
+    "inputs": {
+      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n  optional \"refresh_metadata\": boolean\n}",
+        "name": "params",
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request"
+      },
+      "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
+        "type": "string",
+        "name": "contract address",
+        "description": "Receives the contract address of the NFT"
+      },
+      "26c73f26-a162-4c3a-9fa8-06a015f3558e": {
+        "type": "string",
+        "name": "token ID",
+        "description": "Receives the token ID of the NFT"
+      }
+    },
+    "outputs": {
+      "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+        "type": "{\n  \"response\": \"OK\",\n  \"nft\": {\n    \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n    \"contract_address\": string,\n    \"token_id\": string,\n    \"metadata_url\": string,\n    \"metadata\": {string:any},\n    \"file_information\": {\n      \"height\": number,\n      \"width\": number,\n      \"file_size\": number\n    },\n    \"file_url\": string,\n    \"animation_url\": string,\n    \"cached_file_url\": string,\n    \"cached_animation_url\": string,\n    \"mint_date\": string,\n    \"updated_date\": string\n  },\n  \"owner\": string,\n  \"contract\": {\n    \"name\": string,\n    \"symbol\": string,\n    \"type\": (\"ERC721\" or \"ERC1155\")\n  },\n  optional \"status\": string,\n  optional \"status_message\": string\n}",
+        "name": "data",
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Responses"
+      },
+      "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error",
+        "description": "Sends the error, if any"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+          "coordinates": [
+            80,
+            15
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+          "coordinates": [
+            -139,
+            -117
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
+          }
+        },
+        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+          "coordinates": [
+            -58.8,
+            191.2
+          ],
+          "name": "build request",
+          "prototype": "3019b854-3a1b-47df-ae71-8a1165149252"
+        },
+        "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+          "coordinates": [
+            136,
+            -148
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
+          }
+        },
+        "67749303-a529-4f3d-881b-1dfbfe96357b": {
+          "coordinates": [
+            -292,
+            -7
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        }
+      },
+      "connections": {
+        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
+            }
+          }
+        },
+        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "67749303-a529-4f3d-881b-1dfbfe96357b": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "40dbd718-1c3a-42d6-813c-8148459b50cd": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+            "67749303-a529-4f3d-881b-1dfbfe96357b": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
+            "67749303-a529-4f3d-881b-1dfbfe96357b": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "26c73f26-a162-4c3a-9fa8-06a015f3558e": {
+            "67749303-a529-4f3d-881b-1dfbfe96357b": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          },
+          "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+            "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "details": null,
+    "ethereum": null,
+    "polygon": null
+  },
+  "original": "bb04c8a7-9dab-430b-ae6e-48d59e65ad0b",
+  "attributes": {
+    "locked": true
+  }
+}

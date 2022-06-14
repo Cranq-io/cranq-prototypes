@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
-        "type": "{\"url\": string}",
+        "type": "string",
         "name": "url",
         "description": "URL that points to the image that returns a Content-Length and Content-Type header or contains the file extension. Supports .JPG, .JPEG, .PNG, .WebP, .PPM, .BMP, .PGM, .TIF, .TIFF file formats."
       },

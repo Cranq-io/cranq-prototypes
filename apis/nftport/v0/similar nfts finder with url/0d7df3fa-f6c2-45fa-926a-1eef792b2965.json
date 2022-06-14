@@ -6,7 +6,7 @@
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
         "type": "string",
         "name": "url",
-        "description": "Image URL. Supports .JPG, .JPEG, .PNG, .WebP file formats."
+        "description": "URL that points to the image that returns a Content-Length and Content-Type header or contains the file extension. Supports .JPG, .JPEG, .PNG, .WebP, .PPM, .BMP, .PGM, .TIF, .TIFF file formats."
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
         "type": "{\n\"api_key\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number\n}",
@@ -145,7 +145,5 @@
     "product": null
   },
   "original": "06fdeaf8-bb7a-48c6-9881-b493e127dc49",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

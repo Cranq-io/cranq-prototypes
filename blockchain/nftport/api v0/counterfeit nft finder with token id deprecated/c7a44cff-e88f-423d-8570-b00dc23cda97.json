@@ -79,6 +79,21 @@
       },
       "forwards": {
         "inputs": {
+          "2b723d20-9436-43e9-b579-63e74fdf59aa": {
+            "e0b25e52-9336-407b-b47e-696c6e8ff73e": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "cba2e4cb-ad29-416b-85c7-d019bdefdd11": {
+            "e0b25e52-9336-407b-b47e-696c6e8ff73e": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "34defe4d-27a8-4412-92bd-12d48728634c": {
+            "e0b25e52-9336-407b-b47e-696c6e8ff73e": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
           "18c34e80-b3ad-442a-a3c5-bc19313aefc9": {
             "e0b25e52-9336-407b-b47e-696c6e8ff73e": {
               "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
@@ -169,14 +184,24 @@
   },
   "interface": {
     "inputs": {
-      "18c34e80-b3ad-442a-a3c5-bc19313aefc9": {
-        "type": "{ \n\"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\")\n}",
-        "name": "params",
-        "description": "chain default: ethereum;\n\nReceives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#request-body"
+      "2b723d20-9436-43e9-b579-63e74fdf59aa": {
+        "type": "string",
+        "name": "API key",
+        "description": "Receives the NFTPort API key."
       },
-      "e195a17e-d56d-4ab1-a555-b0491a3a930c": {
-        "type": "{\n\"contract_address\": string,\n\"token_id\": string,\noptional \"page_number\": number,\noptional \"page_size\": number,\noptional \"threshold\": number }",
-        "name": "query",
+      "cba2e4cb-ad29-416b-85c7-d019bdefdd11": {
+        "type": "string",
+        "name": "contract address",
+        "description": "Receives the address of the NFT."
+      },
+      "34defe4d-27a8-4412-92bd-12d48728634c": {
+        "type": "any",
+        "name": "token ID",
+        "description": "Receives the token ID of the NFT."
+      },
+      "18c34e80-b3ad-442a-a3c5-bc19313aefc9": {
+        "type": "{ \n  optional \"chain\": (\"ethereum\" or \"polygon\"),\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
+        "name": "params",
         "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#request-body"
       }
     },
@@ -195,8 +220,8 @@
       }
     }
   },
-  "name": "apis/nftport/v0/Counterfeit NFT finder with token id WIP",
-  "description": "Find counterfeit NFTs w/token ID\n\nRetrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id",
+  "name": "blockchain/nftport/api v0/Counterfeit NFT finder with token ID DEPRECATED",
+  "description": "Retrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id",
   "keywords": {
     "nft": null,
     "duplicate": null,
@@ -206,6 +231,8 @@
     "list": null
   },
   "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
-  "original": "c7a44cff-e88f-423d-8570-b00dc23cda97",
-  "attributes": {}
+  "attributes": {
+    "deprecated": true,
+    "locked": true
+  }
 }

@@ -1,23 +1,24 @@
 {
   "name": "apis/nftport/v0/Collection contract deployer",
-  "description": "Deploys a fixed-supply ERC721 smart contract to a proof-of-stake chain for on-demand subsequent minting.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract",
+  "description": "Deploys a fixed-supply ERC721 smart contract to a proof-of-stake chain for on-demand subsequent minting.\n\nDeploy an NFT collection contract:\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract",
   "interface": {
     "inputs": {
       "6a0b4927-4e32-4f46-9917-bb55eba79aea": {
         "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"max_supply\": number,\n  \"mint_price\": number,\n  \"tokens_per_mint\": number,\n  \"owner_address\": string,\n  \"treasury_address\": string,\n  \"public_mint_start_date\": string,\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"prereveal_token_uri\": string,\n  optional \"presale_mint_start_date\": string,\n  optional \"presale_whitelisted_addresses\": string[],\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
         "name": "contract",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#request-body"
+        "description": "Receives details of the cotract to be deployed.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#request-body"
       },
       "55e933ac-c051-439a-9695-c6a5d0c0940e": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"polygon\" or \"rinkeby\"\n}",
-        "name": "params"
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\")\n}",
+        "name": "params",
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#request-body\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {
       "284d7025-55ce-4d59-ae7b-9e14b37904d5": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": \"polygon\" or \"rinkeby\",\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": \"erc721\" or \"erc1155\",\n  \"name\": string,\n  \"symbol\": string\n}",
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\"),\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": (\"erc721\" or \"erc1155\"),\n  \"name\": string,\n  \"symbol\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#response-body"
+        "description": "Sends details of the deployed contract.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#response-body"
       },
       "42bad89e-6d6f-4548-8d77-a87368a34e85": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -160,7 +161,10 @@
     "nft": null,
     "smart contract": null,
     "deploy": null,
-    "collection": null
+    "collection": null,
+    "polygon": null,
+    "rinkeby": null,
+    "ethereum": null
   },
   "attributes": {
     "locked": true

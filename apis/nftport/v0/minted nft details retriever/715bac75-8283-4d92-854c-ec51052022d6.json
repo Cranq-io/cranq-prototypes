@@ -1,17 +1,17 @@
 {
   "name": "apis/nftport/v0/Minted NFT details retriever",
-  "description": "Returns the details of a minted NFT, using the NFTPort API. You need to provide transaction_hash which is returned from Easy minting w/URL, Easy minting w/file upload or Customizable minting. Minting is not instantaneous because blockchains take time to verify transactions. Thus, you can poll this node every 5 seconds until you get a response.\nSupports Polygon only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDU-retrieve-a-minted-nft",
+  "description": "Returns the details of a minted NFT, using the NFTPort API. You need to provide transaction_hash which is returned from Easy minting w/URL, Easy minting w/file upload or Customizable minting. Minting is not instantaneous because blockchains take time to verify transactions. Thus, you can poll this node every 5 seconds until you get a response.\nSupports Polygon only.\n\n\nRetrieve a minted NFT:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDU-retrieve-a-minted-nft",
   "interface": {
     "inputs": {
-      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
-        "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request"
-      },
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
         "type": "string",
         "name": "transaction hash",
         "description": "Receives the NFT transaction hash"
+      },
+      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
+        "name": "params",
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {

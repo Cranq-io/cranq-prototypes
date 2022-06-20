@@ -2,11 +2,6 @@
   "name": "apis/nftport/v0/Easy minter with file upload/Request builder",
   "interface": {
     "inputs": {
-      "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
-        "type": "typeof `a` of `build data`",
-        "name": "file",
-        "description": "[Inherited from port `a` of `merger`] \nReceives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
-      },
       "945a6afc-dd19-467f-be54-c9bf69190c09": {
         "type": " {\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
         "name": "minting"
@@ -51,8 +46,8 @@
         },
         "3f251277-30f8-451a-9eaa-affae2029a93": {
           "coordinates": [
-            -230.2,
-            62.799999999999955
+            -197.2,
+            42.799999999999955
           ],
           "name": "set form daa",
           "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
@@ -131,6 +126,17 @@
           ],
           "name": "merge NFT data & params",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "a795f632-1ae5-4ac6-bd49-b642a638a77e": {
+          "coordinates": [
+            -339.2,
+            19.799999999999955
+          ],
+          "name": "get file data",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
+          }
         }
       },
       "connections": {
@@ -211,6 +217,13 @@
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           }
+        },
+        "a795f632-1ae5-4ac6-bd49-b642a638a77e": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "3f251277-30f8-451a-9eaa-affae2029a93": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -223,14 +236,12 @@
               "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           },
-          "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
-            "3f251277-30f8-451a-9eaa-affae2029a93": {
-              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
-            }
-          },
           "945a6afc-dd19-467f-be54-c9bf69190c09": {
             "9d3be9fc-2926-4d49-93d6-b96296e30730": {
               "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            },
+            "a795f632-1ae5-4ac6-bd49-b642a638a77e": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
           }
         },
@@ -247,7 +258,6 @@
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "original": "2e447844-0f7a-426a-93ac-dbcec5e33716",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

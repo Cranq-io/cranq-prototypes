@@ -11,7 +11,7 @@
       "af69ae31-f9c6-43a1-b184-41de1f19d0b2": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"rinkeby\" or \"polygon\") \n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#Query-Parameters"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#Query-Parameters\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {
@@ -159,7 +159,9 @@
     "nft": null,
     "smart contract": null,
     "batch": null,
-    "mint": null
+    "mint": null,
+    "polygon": null,
+    "rinkeby": null
   },
   "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
   "original": "40ac74d0-81f4-449d-904f-4e8f1c98d65f",

@@ -1,12 +1,12 @@
 {
   "name": "apis/nftport/v0/All chain NFT transactions retriever",
-  "description": "Returns all on-chain transactions for the whole chain, using the NFTPort API. Can be set to include transactions such as transfer, mint, burn, sale or all which includes all transactions.\nSupports Ethereum only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions",
+  "description": "Returns all on-chain transactions for the whole chain, using the NFTPort API. Can be set to include transactions such as transfer, mint, burn, sale or all which includes all transactions.\nSupports Ethereum only.\n\nRetrieve all transactions:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions",
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\",\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[],\n  optional \"from_block\": number,\n  optional \"to_block\": number\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request"
+        "description": "Receives the query parameters.\n\nDefault chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request"
       }
     },
     "outputs": {

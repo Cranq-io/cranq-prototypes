@@ -1,12 +1,12 @@
 {
   "name": "apis/nftport/v0/All chain NFTs retriever",
-  "description": "Returns all ERC721 and ERC1155 NFTs that have been minted on a given chain, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts",
+  "description": "Returns all ERC721 and ERC1155 NFTs that have been minted on a given chain, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve all NFTs:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts",
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts#Query-Parameters"
+        "description": "Receives the query parameters.\n\nDefault chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts#Query-Parameters"
       }
     },
     "outputs": {
@@ -32,8 +32,8 @@
       "nodes": {
         "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
           "coordinates": [
-            65,
-            43
+            121,
+            33
           ],
           "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
@@ -51,8 +51,8 @@
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            -74.8,
-            185.2
+            -49.8,
+            179.2
           ],
           "name": "build request",
           "prototype": "388f24ef-171d-4920-9365-83426a61cfb8"

@@ -1,12 +1,12 @@
 {
   "name": "apis/nftport/v0/Metadata uploader",
-  "description": "Uploads NFT metadata to IPFS, and returns the metadata URL and the metadata that was uploaded.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs",
+  "description": "Uploads NFT metadata to IPFS, and returns the metadata URL and the metadata that was uploaded.\n\nUpload metadata to IPFS:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs",
   "interface": {
     "inputs": {
       "c38d1e3d-7725-42e8-964a-23325bd31fa1": {
-        "type": "{\n  \"name\": string,\n  \"description\": string,\n  \"file_url\": string,\n  optional \"external_url\": string,\n  optional \"animation_url\": string,\n  optional \"custom_fields\": {string: string},\n  optional \"attributes\": {\n    \"trait_type\": string,\n    \"value\": string or number,\n    optional \"max_value\": number,\n    optional \"display_type\": \"boost_number\" or \"boost_percentage\" or \"number\" or \"date\"\n  }[]\n}",
+        "type": "{\n  \"name\": string,\n  \"description\": string,\n  \"file_url\": string,\n  optional \"external_url\": string,\n  optional \"animation_url\": string,\n  optional \"custom_fields\": {string: string},\n  optional \"attributes\": {\n    \"trait_type\": string,\n    \"value\": (string or number),\n    optional \"max_value\": number,\n    optional \"display_type\": (\"boost_number\" or \"boost_percentage\" or \"number\" or \"date\")\n  }[]\n}",
         "name": "metadata",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#request-body"
+        "description": "Receives NFT metadata.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#request-body"
       },
       "28dfe668-dd22-4be8-98a0-66f2b0629770": {
         "type": "{\n  \"api_key\": string\n}",
@@ -15,9 +15,9 @@
     },
     "outputs": {
       "dc8a37be-9264-4259-b56d-57708f058eba": {
-        "type": "{\n  \"response\": \"OK\",\n  \"metadata_uri\": string,\n  optional \"name\": string,\n  optional \"description\": string,\n  optional \"file_url\": string,\n  optional \"external_url\": string,\n  optional \"animation_url\": string,\n  optional \"custom_fields\": {string: string},\n  optional \"attributes\": {\n    \"trait_type\": string,\n    \"value\": string or number,\n    optional \"max_value\": number,\n    optional \"display_type\": \"boost_number\" or \"boost_percentage\" or \"number\" or \"date\"\n  }[]\n}",
+        "type": "{\n  \"response\": \"OK\",\n  \"metadata_uri\": string,\n  optional \"name\": string,\n  optional \"description\": string,\n  optional \"file_url\": string,\n  optional \"external_url\": string,\n  optional \"animation_url\": string,\n  optional \"custom_fields\": {string: string},\n  optional \"attributes\": {\n    \"trait_type\": string,\n    \"value\": (string or number),\n    optional \"max_value\": number,\n    optional \"display_type\": (\"boost_number\" or \"boost_percentage\" or \"number\" or \"date\")\n  }[]\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#response-body"
+        "description": "Sends the details of the NFT metadata and the uploaded metadata URI which you can use in Customizable minting.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#response-body"
       },
       "72ee2241-000a-470e-a5b6-4f1223d53678": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

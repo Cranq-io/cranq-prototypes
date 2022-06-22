@@ -1,22 +1,17 @@
 {
   "name": "apis/nftport/v0/NFT details retriever",
-  "description": "Returns details for a given NFT, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details",
+  "description": "Returns details for a given NFT, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve NFT details:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details",
   "interface": {
     "inputs": {
+      "b4254959-5f3f-4e98-9460-ad3c3a2032a1": {
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"refresh_metadata\": boolean\n}",
+        "name": "query",
+        "description": "Receives search query.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request\n\nDefault refresh_metadata value is false."
+      },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n  optional \"refresh_metadata\": boolean\n}",
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request"
-      },
-      "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
-        "type": "string",
-        "name": "contract address",
-        "description": "Receives the contract address of the NFT"
-      },
-      "26c73f26-a162-4c3a-9fa8-06a015f3558e": {
-        "type": "string",
-        "name": "token ID",
-        "description": "Receives the token ID of the NFT"
+        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
@@ -50,10 +45,10 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -139,
-            -117
+            -128,
+            -194
           ],
-          "name": "apply defaults",
+          "name": "apply default param",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
             "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
@@ -61,8 +56,8 @@
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            -58.8,
-            191.2
+            65.2,
+            167.2
           ],
           "name": "build request",
           "prototype": "3019b854-3a1b-47df-ae71-8a1165149252"
@@ -78,13 +73,24 @@
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
           }
         },
-        "67749303-a529-4f3d-881b-1dfbfe96357b": {
+        "93ff3e86-e56a-4c5d-840f-561b5d17868d": {
           "coordinates": [
-            -292,
-            -7
+            -174,
+            69
           ],
-          "name": "forwarder (triple)",
-          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+          "name": "apply default query",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"refresh_metadata\": \"false\"}"
+          }
+        },
+        "6e142eb7-d6d2-424f-a8a1-300ff8be9abc": {
+          "coordinates": [
+            -360,
+            -19
+          ],
+          "name": "forward inputs",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         }
       },
       "connections": {
@@ -109,20 +115,22 @@
             }
           }
         },
-        "67749303-a529-4f3d-881b-1dfbfe96357b": {
-          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+        "6e142eb7-d6d2-424f-a8a1-300ff8be9abc": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "93ff3e86-e56a-4c5d-840f-561b5d17868d": {
               "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           },
-          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {}
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
-          },
-          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+          }
+        },
+        "93ff3e86-e56a-4c5d-840f-561b5d17868d": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "40dbd718-1c3a-42d6-813c-8148459b50cd": {}
+              "b2308e42-ac2d-4591-892a-e8c392dd8935": {}
             }
           }
         }
@@ -130,18 +138,13 @@
       "forwards": {
         "inputs": {
           "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-            "67749303-a529-4f3d-881b-1dfbfe96357b": {
-              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            "6e142eb7-d6d2-424f-a8a1-300ff8be9abc": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
           },
-          "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
-            "67749303-a529-4f3d-881b-1dfbfe96357b": {
-              "54c357a1-045e-4817-beda-0017a586a499": {}
-            }
-          },
-          "26c73f26-a162-4c3a-9fa8-06a015f3558e": {
-            "67749303-a529-4f3d-881b-1dfbfe96357b": {
-              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+          "b4254959-5f3f-4e98-9460-ad3c3a2032a1": {
+            "6e142eb7-d6d2-424f-a8a1-300ff8be9abc": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           }
         },
@@ -176,7 +179,8 @@
     "nft": null,
     "details": null,
     "ethereum": null,
-    "polygon": null
+    "polygon": null,
+    "rinkeby": null
   },
   "original": "bb04c8a7-9dab-430b-ae6e-48d59e65ad0b",
   "attributes": {

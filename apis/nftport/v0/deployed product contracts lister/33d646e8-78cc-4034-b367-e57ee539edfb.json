@@ -6,14 +6,14 @@
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
         "type": "{\n  \"api_key\": string\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODE-list-all-your-deployed-contracts#Request"
+        "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODE-list-all-your-deployed-contracts#Request"
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
         "type": "{\n  \"response\": \"OK\",\n  \"contracts\": {\n    \"name\": string,\n    \"symbol\": string,\n    \"transaction_hash\": string,\n    \"chain\": (\"polygon\" or \"rinkeby\"),\n    \"address\": string,\n    \"owner_address\": string,\n    \"creation_date\": string,\n    \"metadata_frozen\": boolean,\n    \"tokens_burnable\": boolean,\n    \"tokens_transferable\": \n boolean,\n    \"type\": (\"erc721\" or \"erc1155\"),\n    optional \"royalties_share\": number,\n    optional \"royalties_address\": string\n  }[]\n}",
         "name": "data",
-        "description": "Sends details of the deployed contracts.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODE-list-all-your-deployed-contracts#response-body"
+        "description": "Sends details of the deployed contracts.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODE-list-all-your-deployed-contracts#response-body"
       },
       "384bbd6b-c13e-4fed-9724-336637c51b87": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",

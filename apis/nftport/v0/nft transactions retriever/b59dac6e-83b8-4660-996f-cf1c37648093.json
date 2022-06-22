@@ -1,22 +1,17 @@
 {
   "name": "apis/nftport/v0/NFT transactions retriever",
-  "description": "Returns all on-chain transactions for the specified NFT token, using the NFTPort API. Can be set to include transactions such as transfer, burn, mint, and sale, or all which includes all transactions. \nSupports Ethereum only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft",
+  "description": "Returns all on-chain transactions for the specified NFT token, using the NFTPort API. Can be set to include transactions such as transfer, burn, mint, and sale, or all which includes all transactions. \nSupports Ethereum only.\n\nRetrieve transactions by NFT:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft",
   "interface": {
     "inputs": {
+      "d6176d1f-fbe4-4da3-8727-618b627dff92": {
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n    optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[]\n}",
+        "name": "query",
+        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft#Request\n\nDefault type value: \"all\""
+      },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\",\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[]\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft#Request"
-      },
-      "2f798879-b9ab-4284-84b1-c4042f19f622": {
-        "type": "string",
-        "name": "contract address",
-        "description": "Receives the contract address"
-      },
-      "45c780f1-d704-4e21-b03a-6aad5eec0032": {
-        "type": "string",
-        "name": "token ID",
-        "description": "Receives the token ID"
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
@@ -50,19 +45,19 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -139,
-            -117
+            -106,
+            -123
           ],
-          "name": "apply defaults",
+          "name": "apply params defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\", \"type\": \"all\"}"
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
           }
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            -45.8,
-            213.2
+            48.2,
+            174.2
           ],
           "name": "build request",
           "prototype": "0946785c-5152-4dde-8684-68ffa994d3ae"
@@ -78,13 +73,24 @@
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
           }
         },
-        "af7e0f6c-bdf7-4687-8a5c-921e52ab3a9e": {
+        "da93a56f-2954-49d8-8baf-39b0d158ab67": {
           "coordinates": [
-            -267,
-            -12
+            -120,
+            201
           ],
-          "name": "forwarder (triple)",
-          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+          "name": "apply query defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"type\": \"all\"}"
+          }
+        },
+        "78889bbf-1184-4958-b80a-fa732a936ebb": {
+          "coordinates": [
+            -253,
+            -10
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         }
       },
       "connections": {
@@ -109,39 +115,36 @@
             }
           }
         },
-        "af7e0f6c-bdf7-4687-8a5c-921e52ab3a9e": {
-          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+        "78889bbf-1184-4958-b80a-fa732a936ebb": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "da93a56f-2954-49d8-8baf-39b0d158ab67": {
               "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           },
-          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "cc00b63f-041a-4afd-b2e2-818430773cad": {}
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
-          },
-          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+          }
+        },
+        "da93a56f-2954-49d8-8baf-39b0d158ab67": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "1dee9522-8225-47dd-892b-9e424579b969": {}
+              "ae5c933e-9982-4178-8a66-e7434d34db57": {}
             }
           }
         }
       },
       "forwards": {
         "inputs": {
+          "d6176d1f-fbe4-4da3-8727-618b627dff92": {
+            "78889bbf-1184-4958-b80a-fa732a936ebb": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
           "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-            "af7e0f6c-bdf7-4687-8a5c-921e52ab3a9e": {
-              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
-            }
-          },
-          "2f798879-b9ab-4284-84b1-c4042f19f622": {
-            "af7e0f6c-bdf7-4687-8a5c-921e52ab3a9e": {
-              "54c357a1-045e-4817-beda-0017a586a499": {}
-            }
-          },
-          "45c780f1-d704-4e21-b03a-6aad5eec0032": {
-            "af7e0f6c-bdf7-4687-8a5c-921e52ab3a9e": {
-              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            "78889bbf-1184-4958-b80a-fa732a936ebb": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
           }
         },

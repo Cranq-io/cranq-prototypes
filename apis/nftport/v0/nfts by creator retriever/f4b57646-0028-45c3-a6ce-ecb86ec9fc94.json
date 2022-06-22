@@ -1,17 +1,17 @@
 {
   "name": "apis/nftport/v0/NFTs by creator retriever",
-  "description": "Returns NFTs created (i.e. minted) by a given account (i.e. wallet) address, using the NFTPort API. Can also return each NFT metadata with include parameter.\nSupports Ethereum only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account",
+  "description": "Returns NFTs created (i.e. minted) by a given account (i.e. wallet) address, using the NFTPort API. Can also return each NFT metadata with include parameter.\nSupports Ethereum only.\n\nRetrieve NFTs created by an account:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account",
   "interface": {
     "inputs": {
+      "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
+        "type": "{\n  \"account_address\": string,\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"contract_information\"),\n optional \"page_size\" : number\n}",
+        "name": "query",
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account#Request\n"
+      },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\",\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"include\" : (\"default\" or \"contract_information\" or \"metadata\")[]\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account#Request"
-      },
-      "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
-        "type": "string",
-        "name": "account address",
-        "description": "Receives the account address"
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzA2ODYzMjM-retrieve-nf-ts-created-by-an-account#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {

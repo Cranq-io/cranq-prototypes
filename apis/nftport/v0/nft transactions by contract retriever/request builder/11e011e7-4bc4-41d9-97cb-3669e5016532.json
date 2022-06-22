@@ -2,14 +2,14 @@
   "name": "apis/nftport/v0/NFT transactions by contract retriever/Request builder",
   "interface": {
     "inputs": {
+      "93e238d0-b7a5-4537-8084-0f90d59c1f6b": {
+        "type": "{\n  \"contract_address\": string,\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"bid\" or \"list\" or \"sale\" or \"all\")[]\n}",
+        "name": "query"
+      },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
         "type": "{string: string}",
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
-      },
-      "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-        "type": "string",
-        "name": "contract address"
       }
     },
     "outputs": {
@@ -46,8 +46,8 @@
         },
         "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
           "coordinates": [
-            -90.19999999999999,
-            167.8
+            -20.19999999999999,
+            162.8
           ],
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
@@ -86,16 +86,13 @@
             "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/transactions/nfts/{contract_address}\""
           }
         },
-        "32bb18ba-fac0-4da1-857d-0f16561b8613": {
+        "ef526199-0af1-4840-bf25-79feba8442e3": {
           "coordinates": [
-            -158.2,
-            44.80000000000001
+            -139.2,
+            69.79999999999995
           ],
-          "name": "syncer",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract_address\"]"
-          }
+          "name": "merge query & params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         }
       },
       "connections": {
@@ -127,17 +124,17 @@
             }
           }
         },
-        "32bb18ba-fac0-4da1-857d-0f16561b8613": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "26cde237-9e97-4353-a793-d9e53a77a576": {
-              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
-            }
-          }
-        },
         "26cde237-9e97-4353-a793-d9e53a77a576": {
           "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
             "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
               "8c89bd87-3843-441c-989b-9b56288453f9": {}
+            }
+          }
+        },
+        "ef526199-0af1-4840-bf25-79feba8442e3": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
             }
           }
         }
@@ -145,16 +142,19 @@
       "forwards": {
         "inputs": {
           "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-            "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
-              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
-            },
             "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "ef526199-0af1-4840-bf25-79feba8442e3": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           },
-          "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-            "32bb18ba-fac0-4da1-857d-0f16561b8613": {
-              "contract_address": {}
+          "93e238d0-b7a5-4537-8084-0f90d59c1f6b": {
+            "26cde237-9e97-4353-a793-d9e53a77a576": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            },
+            "ef526199-0af1-4840-bf25-79feba8442e3": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
             }
           }
         },
@@ -171,6 +171,7 @@
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "original": "b750624b-06cb-4ee1-b171-027a08bf459b",
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

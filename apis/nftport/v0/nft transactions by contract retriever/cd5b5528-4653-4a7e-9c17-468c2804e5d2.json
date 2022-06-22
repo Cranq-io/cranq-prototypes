@@ -1,17 +1,16 @@
 {
   "name": "apis/nftport/v0/NFT transactions by contract retriever",
-  "description": "Returns all on-chain transactions as well as OpenSea and Rarible order book data for the specified contract, using the NFTPort API. Can be set to include transactions such as transfer, burn, mint, bid, list and sale, or all which includes all transactions. \nSupports Ethereum only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzY-retrieve-transactions-by-contract",
+  "description": "Returns all on-chain transactions as well as OpenSea and Rarible order book data for the specified contract, using the NFTPort API. Can be set to include transactions such as transfer, burn, mint, bid, list and sale, or all which includes all transactions. \nSupports Ethereum only.\n\nRetrieve transactions by contract:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzY-retrieve-transactions-by-contract",
   "interface": {
     "inputs": {
+      "3f44bc1c-5857-448a-8fab-6c8587daea74": {
+        "type": "{\n  \"contract_address\": string,\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"bid\" or \"list\" or \"sale\" or \"all\")[]\n}",
+        "name": "query"
+      },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\",\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"bid\" or \"list\" or \"sale\" or \"all\")[]\n}",
         "name": "params",
         "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzY-retrieve-transactions-by-contract#Request"
-      },
-      "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
-        "type": "string",
-        "name": "contract address",
-        "description": "Receives the contract address"
       }
     },
     "outputs": {
@@ -45,21 +44,21 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -139,
-            -117
+            -124,
+            -165
           ],
-          "name": "apply defaults",
+          "name": "apply params defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\", \"type\": \"all\"}"
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
           }
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            -45.8,
-            213.2
+            40.2,
+            176.2
           ],
-          "name": "build request clone",
+          "name": "build request",
           "prototype": "11e011e7-4bc4-41d9-97cb-3669e5016532"
         },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
@@ -80,6 +79,17 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "db5530f3-a0cb-4a6b-8033-b3a8cfe23e30": {
+          "coordinates": [
+            -178,
+            116
+          ],
+          "name": "apply query defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"type\": \"all\"}"
+          }
         }
       },
       "connections": {
@@ -111,8 +121,15 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
+            "db5530f3-a0cb-4a6b-8033-b3a8cfe23e30": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "db5530f3-a0cb-4a6b-8033-b3a8cfe23e30": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {}
+              "93e238d0-b7a5-4537-8084-0f90d59c1f6b": {}
             }
           }
         }
@@ -124,7 +141,7 @@
               "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           },
-          "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
+          "3f44bc1c-5857-448a-8fab-6c8587daea74": {
             "471e5958-4699-46f7-8854-59c133958cc7": {
               "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }

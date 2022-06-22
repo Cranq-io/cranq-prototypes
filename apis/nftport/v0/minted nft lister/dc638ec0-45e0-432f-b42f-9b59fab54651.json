@@ -6,14 +6,14 @@
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
         "type": "{\n  \"api_key\": string,\noptional \"chain\" :(\"polygon\" or \"rinkeby\"),\noptional \"page_number\": number,\noptional \"page_size\": number\n\n}",
         "name": "params",
-        "description": "Recives query params.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Request"
+        "description": "Recives query params.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Request"
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
         "type": "{\n\n  \"response\": \"OK\",\n  \"total\": number,\n  \"minted_nfts\": [\n    {\n      \"chain\": (\"polygon\" or \"rinkeby\"),\n      \"transaction_hash\": string,\n      \"contract_name\": \"string\",\n      \"contract_address\": string,\n      \"type\": \"string\",\n      optional \"token_id\": \"string\",\n      \"mint_to_address\": \"string\",\n      optional \"metadata_uri\": \"string\",\n      \"quantity\": string,\n  \"num_burned_transferred_amount\": number,\n      \"metadata_frozen\": boolean,\n      \"mint_date\": string\n    }\n  ]\n}",
         "name": "data",
-        "description": "Sends list of all the NFTs minted by you.\n\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
+        "description": "Sends list of all the NFTs minted by you.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
       },
       "384bbd6b-c13e-4fed-9724-336637c51b87": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",

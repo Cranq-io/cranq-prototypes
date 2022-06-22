@@ -6,19 +6,19 @@
       "0ca6cf73-3922-45b4-bc45-e257cf6d5047": {
         "type": "string",
         "name": "transaction_hash",
-        "description": "Receives the hash for the transaction that minted the NFTs.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#Path-Parameters"
+        "description": "Receives the hash for the transaction that minted the NFTs.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#Path-Parameters"
       },
       "af69ae31-f9c6-43a1-b184-41de1f19d0b2": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"rinkeby\" or \"polygon\") \n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#Query-Parameters\n\nDefault chain value: \"polygon\""
+        "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#Query-Parameters\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {
       "6a557de8-cac3-4a74-8a33-25c2fca5f4f5": {
         "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"token_ids\": string[]\n}\n\n",
         "name": "data",
-        "description": "Sends the data of the NFTs which were minted in the specified transaction.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#response-body"
+        "description": "Sends the data of the NFTs which were minted in the specified transaction.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzU4MTIzODM-retrieve-batch-minted-nf-ts#response-body"
       },
       "5445f777-9824-43a6-8306-dcb941471807": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

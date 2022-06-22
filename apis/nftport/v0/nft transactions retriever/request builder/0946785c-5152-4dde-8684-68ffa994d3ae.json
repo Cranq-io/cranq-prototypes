@@ -1,5 +1,5 @@
 {
-  "name": "apis/nftport/v0/NFT transactions retriever/Request builder 2",
+  "name": "apis/nftport/v0/NFT transactions retriever/Request builder",
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
@@ -7,13 +7,9 @@
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       },
-      "cc00b63f-041a-4afd-b2e2-818430773cad": {
-        "type": "string",
-        "name": "contract address"
-      },
-      "1dee9522-8225-47dd-892b-9e424579b969": {
-        "type": "string",
-        "name": "token ID"
+      "ae5c933e-9982-4178-8a66-e7434d34db57": {
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n    optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[]\n}",
+        "name": "query"
       }
     },
     "outputs": {
@@ -50,8 +46,8 @@
         },
         "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
           "coordinates": [
-            -129.2,
-            142.8
+            -48.19999999999999,
+            153.8
           ],
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
@@ -90,16 +86,13 @@
             "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/transactions/nfts/{contract_address}/{token_id}\""
           }
         },
-        "17388e7b-0097-40a6-9481-5cc46c696e6f": {
+        "25948210-e69c-4393-a29b-7798dc03f311": {
           "coordinates": [
-            -158.2,
-            -8.200000000000045
+            -196.2,
+            83.79999999999995
           ],
-          "name": "syncer",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract_address\", \"token_id\"]"
-          }
+          "name": "merge query & params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         }
       },
       "connections": {
@@ -138,10 +131,10 @@
             }
           }
         },
-        "17388e7b-0097-40a6-9481-5cc46c696e6f": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "d857e4e8-8faf-4c50-b658-990f837930fd": {
-              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+        "25948210-e69c-4393-a29b-7798dc03f311": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
             }
           }
         }
@@ -149,21 +142,19 @@
       "forwards": {
         "inputs": {
           "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-            "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
-              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
-            },
             "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "25948210-e69c-4393-a29b-7798dc03f311": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
             }
           },
-          "cc00b63f-041a-4afd-b2e2-818430773cad": {
-            "17388e7b-0097-40a6-9481-5cc46c696e6f": {
-              "contract_address": {}
-            }
-          },
-          "1dee9522-8225-47dd-892b-9e424579b969": {
-            "17388e7b-0097-40a6-9481-5cc46c696e6f": {
-              "token_id": {}
+          "ae5c933e-9982-4178-8a66-e7434d34db57": {
+            "d857e4e8-8faf-4c50-b658-990f837930fd": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            },
+            "25948210-e69c-4393-a29b-7798dc03f311": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },
@@ -180,6 +171,7 @@
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "original": "abcb6bea-fd10-4a4d-aa00-02bab3222124",
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

@@ -1,17 +1,17 @@
 {
   "name": "apis/nftport/v0/NFT transferer",
-  "description": "Transfers an NFT which has been previously minted.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft",
+  "description": "Transfers an NFT which has been previously minted.\n\nTransfer a minted NFT:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft",
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
         "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"transfer_to_address\": string\n}",
         "name": "NFT",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#request-body"
+        "description": "Receives the data of the NFT to be transfered.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#request-body"
+        "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzIxMzAxMDE-transfer-a-minted-nft#request-body\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {

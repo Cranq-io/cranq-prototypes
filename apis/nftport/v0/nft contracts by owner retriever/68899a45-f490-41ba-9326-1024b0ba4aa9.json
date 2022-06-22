@@ -1,17 +1,17 @@
 {
   "name": "apis/nftport/v0/NFT contracts by owner retriever",
-  "description": "Returns a list of contracts (i.e. collections) where the given account (wallet) address owns at least one NFT, using the NFTPort API.\nSupports Ethereum only.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account",
+  "description": "Returns a list of contracts (i.e. collections) where the given account (wallet) address owns at least one NFT, using the NFTPort API.\nSupports Ethereum only.\n\nRetrieve contracts owned by an account:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account",
   "interface": {
     "inputs": {
-      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"rinkeby\")[],\n  optional \"continuation\": string,\n   optional \"page_size\": number,\n  optional \"type\" : \"owns_contract_nfts\"\n}",
-        "name": "params",
+      "945d8d4a-cfea-4d6e-9f8d-fc965be6f064": {
+        "type": "{  \n \"account_address\": string,\noptional \"continuation\": string,\n   optional \"page_size\": number,\n  optional \"type\" : \"owns_contract_nfts\"\n}",
+        "name": "query",
         "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account#Request"
       },
-      "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
-        "type": "string",
-        "name": "account address",
-        "description": "Receives the account address"
+      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"rinkeby\")\n}",
+        "name": "params",
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account#Request\n\nDefault chain value: \"ethereum\"\n"
       }
     },
     "outputs": {
@@ -45,19 +45,19 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -139,
-            -117
+            -69,
+            -180
           ],
-          "name": "apply defaults",
+          "name": "apply param defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\", \"type\": \"owns_contract_nfts\"}"
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
           }
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            -45.8,
-            213.2
+            102.2,
+            176.2
           ],
           "name": "build request",
           "prototype": "4a01eee7-e4e1-49d6-ae60-76be3ce8c206"
@@ -80,6 +80,17 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "98dae569-fbef-4ed8-a44c-c63a3c7cf1c2": {
+          "coordinates": [
+            -136,
+            177
+          ],
+          "name": "apply query defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"type\": \"owns_contract_nfts\"}"
+          }
         }
       },
       "connections": {
@@ -111,8 +122,15 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
+            "98dae569-fbef-4ed8-a44c-c63a3c7cf1c2": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "98dae569-fbef-4ed8-a44c-c63a3c7cf1c2": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {}
+              "2438d8d0-99a7-4b38-ae31-e76d9d92245a": {}
             }
           }
         }
@@ -124,7 +142,7 @@
               "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           },
-          "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
+          "945d8d4a-cfea-4d6e-9f8d-fc965be6f064": {
             "471e5958-4699-46f7-8854-59c133958cc7": {
               "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
@@ -161,7 +179,8 @@
     "nft": null,
     "contract": null,
     "owner": null,
-    "ethereum": null
+    "ethereum": null,
+    "rinkeby": null
   },
   "original": "dac18483-fc40-49fa-8d1e-52c32419f44a",
   "attributes": {

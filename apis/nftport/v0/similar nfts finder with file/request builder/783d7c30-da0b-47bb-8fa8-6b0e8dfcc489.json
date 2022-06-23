@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-        "type": "typeof `body` of `build request`",
-        "name": "file"
+        "type": "{\"file\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number\n}",
+        "name": "query"
       },
       "beb00f72-a918-4133-93f1-e5826a151d43": {
-        "type": "typeof `unsplit` of `get API key`",
+        "type": "{\n\"api_key\": string\n}",
         "name": "params",
         "description": ""
       }
@@ -24,8 +24,8 @@
       "nodes": {
         "c6e09506-4631-4d32-9016-e40cac678fe8": {
           "coordinates": [
-            42,
-            -59.33333333333333
+            -15,
+            -43.33333333333333
           ],
           "name": "authorization inserter",
           "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
@@ -35,8 +35,8 @@
         },
         "7d8eb4ff-14fb-4507-ac3f-7305479494b1": {
           "coordinates": [
-            -97,
-            -13.333333333333329
+            -240,
+            -33.33333333333333
           ],
           "name": "get API key",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -57,8 +57,8 @@
         },
         "6531f8ee-8e3c-4741-b176-da4b1580f0ba": {
           "coordinates": [
-            -79,
-            165.66666666666669
+            -88,
+            112.66666666666669
           ],
           "name": "node setter",
           "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
@@ -97,15 +97,26 @@
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"query\"]"
           }
         },
-        "232db23e-a363-4673-a7e1-1a0f563f6aa0": {
+        "5c16c8c7-3fec-44b6-ad83-ae64d51a60e1": {
           "coordinates": [
-            -446,
-            -172.33333333333326
+            -347,
+            173.66666666666674
           ],
-          "name": "item deleter",
-          "prototype": "73a9fd6e-d594-4efc-a0ae-acf4ab89b577",
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
-            "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": "\"api_key\""
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
+          }
+        },
+        "71a47ad8-9cb6-412f-87c6-34ed1cff81b8": {
+          "coordinates": [
+            -430,
+            -183.33333333333326
+          ],
+          "name": "items deleter",
+          "prototype": "812d7cc1-2fe3-4134-b9e8-8ea3ea0afb34",
+          "params": {
+            "892cbf3b-88a0-4983-bf33-bac00e9dd8f5": "[\"api_key\", \"file\"]"
           }
         }
       },
@@ -152,8 +163,15 @@
             }
           }
         },
-        "232db23e-a363-4673-a7e1-1a0f563f6aa0": {
-          "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+        "5c16c8c7-3fec-44b6-ad83-ae64d51a60e1": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "6531f8ee-8e3c-4741-b176-da4b1580f0ba": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        },
+        "71a47ad8-9cb6-412f-87c6-34ed1cff81b8": {
+          "6f52bf8b-c578-46ca-8231-6a6186fba2a3": {
             "659c91fb-0882-4c57-a1b9-4fec628432f1": {
               "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
             }
@@ -165,14 +183,14 @@
           "beb00f72-a918-4133-93f1-e5826a151d43": {
             "7d8eb4ff-14fb-4507-ac3f-7305479494b1": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
-            },
-            "232db23e-a363-4673-a7e1-1a0f563f6aa0": {
-              "af51c64a-620a-42e7-83e4-0497df3f0a65": {}
             }
           },
           "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-            "6531f8ee-8e3c-4741-b176-da4b1580f0ba": {
-              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            "5c16c8c7-3fec-44b6-ad83-ae64d51a60e1": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "71a47ad8-9cb6-412f-87c6-34ed1cff81b8": {
+              "6c876470-1823-4ec1-80a3-e848e85b0e08": {}
             }
           }
         },

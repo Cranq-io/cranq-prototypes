@@ -1,15 +1,15 @@
 {
   "name": "apis/nftport/v0/Similar NFTs finder with file",
-  "description": "Returns visually and contextually similar images to the uploaded image with file.\n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload",
+  "description": "Returns visually and contextually similar images to the uploaded image with file.\n\nRequires NFTPort account.\n\nFind similar NFTs w/file upload\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload",
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
-        "type": "string",
-        "name": "file",
-        "description": "Receives base64-encoded binary file contents."
+        "type": "{\"file\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number\n}",
+        "name": "query",
+        "description": "File receives base64-encoded binary file contents.\npage_number and page_size are optional. \n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Request"
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
-        "type": "{\n\"api_key\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number\n}",
+        "type": "{\n\"api_key\": string\n}",
         "name": "params",
         "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Request"
       }
@@ -44,8 +44,8 @@
         },
         "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
           "coordinates": [
-            -169,
-            60
+            -212,
+            -9
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
@@ -63,8 +63,8 @@
         },
         "97c01bf1-31ed-4f02-8032-39c26bd48163": {
           "coordinates": [
-            -129,
-            -114.66666666666667
+            -82,
+            218.33333333333331
           ],
           "name": "build request",
           "prototype": "783d7c30-da0b-47bb-8fa8-6b0e8dfcc489"
@@ -147,7 +147,9 @@
     "image": null,
     "video": null,
     "animation": null,
-    "minting": null
+    "minting": null,
+    "ethereum": null,
+    "polygon": null
   },
   "original": "dd94e1b6-835b-4a17-9f7a-ae0a327ad3f2",
   "attributes": {

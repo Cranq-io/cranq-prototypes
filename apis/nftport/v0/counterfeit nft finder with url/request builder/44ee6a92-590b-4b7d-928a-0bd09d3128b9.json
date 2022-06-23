@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "245b22de-b713-4c11-b7d0-58173ecdad17": {
-        "type": "typeof `b` of `map contract params`",
-        "name": "url",
-        "description": "[Inherited from port `b` of `map contract params`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "type": "{\n\"url\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
+        "name": "query",
+        "description": ""
       },
       "4c521523-a827-4aff-b950-4f84d4adb978": {
-        "type": "typeof `b` of `map API params`",
+        "type": "{\n\"api_key\": string\n}",
         "name": "params",
-        "description": "[Inherited from port `b` of `map API params`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "description": ""
       }
     },
     "outputs": {
@@ -25,8 +25,8 @@
       "nodes": {
         "36b34c59-1d48-4937-86cb-29ad416583b9": {
           "coordinates": [
-            220.16666666666666,
-            -79.16666666666667
+            39.16666666666666,
+            183.83333333333331
           ],
           "name": "json request builder",
           "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
@@ -45,14 +45,6 @@
           "params": {
             "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
           }
-        },
-        "008d5045-b34f-4e17-aaa6-8b69e6c42c43": {
-          "coordinates": [
-            -118.83333333333331,
-            255.83333333333331
-          ],
-          "name": "merge all params",
-          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         },
         "3b6d3a58-2502-4b73-ab83-8a3b600db66e": {
           "coordinates": [
@@ -74,13 +66,6 @@
             }
           }
         },
-        "008d5045-b34f-4e17-aaa6-8b69e6c42c43": {
-          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "36b34c59-1d48-4937-86cb-29ad416583b9": {
-              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
-            }
-          }
-        },
         "3b6d3a58-2502-4b73-ab83-8a3b600db66e": {
           "api_key": {
             "852b833a-0cf6-403c-b3c5-5e16983b82db": {
@@ -94,9 +79,11 @@
           "4c521523-a827-4aff-b950-4f84d4adb978": {
             "3b6d3a58-2502-4b73-ab83-8a3b600db66e": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
-            },
-            "008d5045-b34f-4e17-aaa6-8b69e6c42c43": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "245b22de-b713-4c11-b7d0-58173ecdad17": {
+            "36b34c59-1d48-4937-86cb-29ad416583b9": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
             }
           }
         },

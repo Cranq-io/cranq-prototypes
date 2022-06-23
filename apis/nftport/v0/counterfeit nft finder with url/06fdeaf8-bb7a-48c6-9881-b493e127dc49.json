@@ -1,15 +1,15 @@
 {
   "name": "apis/nftport/v0/Counterfeit NFT finder with url",
-  "description": "Analyzes the input image passed with url and returns duplicates (i.e. counterfeits) against it. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url",
+  "description": "Analyzes the input image passed with url and returns duplicates (i.e. counterfeits) against it. \n\nRequires NFTPort account.\n\nFind counterfeit NFTs w/url\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url",
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
-        "type": "string",
-        "name": "url",
+        "type": "{\n\"url\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
+        "name": "query",
         "description": "URL that points to the image that returns a Content-Length and Content-Type header or contains the file extension. Supports .JPG, .JPEG, .PNG, .WebP, .PPM, .BMP, .PGM, .TIF, .TIFF file formats."
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
-        "type": "{\n\"api_key\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
+        "type": "{\n\"api_key\": string\n}",
         "name": "params",
         "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjQzMjIyNzk-find-counterfeit-nf-ts-w-url#Request"
       }
@@ -142,7 +142,9 @@
     "nft": null,
     "smart contract": null,
     "deploy": null,
-    "product": null
+    "product": null,
+    "ethereum": null,
+    "polygon": null
   },
   "original": "2f498f08-cb9e-45df-ae27-3d047e60f472",
   "attributes": {

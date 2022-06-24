@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"content-type\": string,\n   optional \"page_number\" :number, \n  optional \"page_size\" :number\n}",
+        "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n   optional \"page_number\" :number, \n  optional \"page_size\" :number\n}",
         "name": "query"
       },
       "beb00f72-a918-4133-93f1-e5826a151d43": {
-        "type": "{\n\"api_key\": string\n}",
+        "type": "{\n  \"api_key\": string\n}",
         "name": "params",
         "description": ""
       }
@@ -24,8 +24,8 @@
       "nodes": {
         "c6e09506-4631-4d32-9016-e40cac678fe8": {
           "coordinates": [
-            -15,
-            -43.33333333333333
+            101,
+            7.666666666666671
           ],
           "name": "authorization inserter",
           "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
@@ -35,8 +35,8 @@
         },
         "7d8eb4ff-14fb-4507-ac3f-7305479494b1": {
           "coordinates": [
-            -240,
-            -33.33333333333333
+            -71,
+            63.66666666666667
           ],
           "name": "get API key",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -55,79 +55,49 @@
             "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\""
           }
         },
-        "60870f80-ef44-424d-8ae6-acc32162c0e1": {
+        "e823fac9-c072-4710-82bf-49f10aa24503": {
           "coordinates": [
-            38,
-            -228.33333333333331
+            171,
+            -219.33333333333331
           ],
-          "name": "template filler",
-          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "name": "build query params",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/recommendations/similar_nfts/files?{query}\""
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://api.nftport.xyz/v0/recommendations/similar_nfts/files\""
           }
         },
-        "659c91fb-0882-4c57-a1b9-4fec628432f1": {
+        "b0638df5-91f2-44ed-bf8f-3527ab60625f": {
           "coordinates": [
-            -281,
-            -183.33333333333326
+            -51,
+            -137.33333333333331
           ],
-          "name": "query string builder",
-          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
-        },
-        "76c8be07-1900-41b2-9401-ed2cc36a4683": {
-          "coordinates": [
-            -116,
-            -287.33333333333326
-          ],
-          "name": "syncer",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "inner joiner",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"query\"]"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"page_number\": \"page_number\",\n  \"page_size\": \"page_size\"\n}"
           }
         },
-        "71a47ad8-9cb6-412f-87c6-34ed1cff81b8": {
+        "7d53faa6-557f-4eef-bd3f-d6f17b5d24fc": {
           "coordinates": [
-            -430,
-            -183.33333333333326
-          ],
-          "name": "items deleter",
-          "prototype": "812d7cc1-2fe3-4134-b9e8-8ea3ea0afb34",
-          "params": {
-            "892cbf3b-88a0-4983-bf33-bac00e9dd8f5": "[\"api_key\", \"file\", \"name\", \"content-type\"]"
-          }
-        },
-        "936821c0-186b-404a-8307-bbd091454975": {
-          "coordinates": [
-            47,
-            226.66666666666652
+            170,
+            232.66666666666669
           ],
           "name": "build form",
-          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {
-            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"boundary\": \"foo\",\r\n  \"fields\": [{\r\n    \"name\": \"file\",\r\n    \"fileName\": \"upload.png\",\r\n    \"contentType\": \"image/png\"\r\n  }]\r\n}",
-            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]"
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"boundary\": \"002f019a-4b40-4446-8ef8-cd53e879892a\",\r\n  \"fields\": []\r\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0]"
           }
         },
-        "1437f7b4-f361-4641-a9f5-e2da0d432532": {
+        "d6e780ae-7e70-4a33-af02-e4e4bda31cf3": {
           "coordinates": [
-            -327,
-            97.66666666666652
+            -61,
+            166.66666666666669
           ],
-          "name": "get form values",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "name": "get file details",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"file\", \"name\", \"content-type\"]"
-          }
-        },
-        "7bfbc59a-4851-4a5a-9893-9db541a0e280": {
-          "coordinates": [
-            -165,
-            173.66666666666652
-          ],
-          "name": "set node values",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
           }
         }
       },
@@ -146,60 +116,29 @@
             }
           }
         },
-        "659c91fb-0882-4c57-a1b9-4fec628432f1": {
-          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
-            "76c8be07-1900-41b2-9401-ed2cc36a4683": {
-              "query": {}
-            }
-          }
-        },
-        "76c8be07-1900-41b2-9401-ed2cc36a4683": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "60870f80-ef44-424d-8ae6-acc32162c0e1": {
-              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
-            }
-          }
-        },
-        "60870f80-ef44-424d-8ae6-acc32162c0e1": {
-          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+        "e823fac9-c072-4710-82bf-49f10aa24503": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
             "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
               "e0662105-5801-48a4-b068-62c355e9d670": {}
             }
           }
         },
-        "71a47ad8-9cb6-412f-87c6-34ed1cff81b8": {
-          "6f52bf8b-c578-46ca-8231-6a6186fba2a3": {
-            "659c91fb-0882-4c57-a1b9-4fec628432f1": {
-              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+        "b0638df5-91f2-44ed-bf8f-3527ab60625f": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "e823fac9-c072-4710-82bf-49f10aa24503": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
             }
           }
         },
-        "1437f7b4-f361-4641-a9f5-e2da0d432532": {
-          "file": {
-            "7bfbc59a-4851-4a5a-9893-9db541a0e280": {
-              "0": {}
-            }
-          },
-          "name": {
-            "7bfbc59a-4851-4a5a-9893-9db541a0e280": {
-              "1": {}
-            }
-          },
-          "content-type": {
-            "7bfbc59a-4851-4a5a-9893-9db541a0e280": {
-              "2": {}
+        "d6e780ae-7e70-4a33-af02-e4e4bda31cf3": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "7d53faa6-557f-4eef-bd3f-d6f17b5d24fc": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
             }
           }
         },
-        "7bfbc59a-4851-4a5a-9893-9db541a0e280": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "936821c0-186b-404a-8307-bbd091454975": {
-              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
-            }
-          }
-        },
-        "936821c0-186b-404a-8307-bbd091454975": {
-          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+        "7d53faa6-557f-4eef-bd3f-d6f17b5d24fc": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
             "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
               "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
             }
@@ -214,11 +153,11 @@
             }
           },
           "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-            "71a47ad8-9cb6-412f-87c6-34ed1cff81b8": {
-              "6c876470-1823-4ec1-80a3-e848e85b0e08": {}
+            "b0638df5-91f2-44ed-bf8f-3527ab60625f": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
             },
-            "1437f7b4-f361-4641-a9f5-e2da0d432532": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            "d6e780ae-7e70-4a33-af02-e4e4bda31cf3": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
           }
         },

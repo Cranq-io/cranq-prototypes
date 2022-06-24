@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
-        "type": "{\n\"contract_address\": string,\n\"token_id\": string,\noptional \"page_number\": number,\noptional \"page_size\": number,\noptional \"threshold\": number }",
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
         "name": "query",
         "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#request-body"
       },
@@ -36,37 +36,48 @@
       "nodes": {
         "2f3544db-0d37-4fc4-9340-1572acf2befe": {
           "coordinates": [
-            -190,
-            -14
+            -181.5,
+            85.5
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "74e051cf-8bfe-4d49-af80-39b623071e9c": {
           "coordinates": [
-            83,
-            6
+            101.5,
+            11.5
           ],
           "name": "json request dispatcher",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
         },
         "ea530901-12de-4acd-b341-913175cbde5a": {
           "coordinates": [
-            59.83333333333334,
-            215.16666666666669
+            42.33333333333334,
+            185.66666666666669
           ],
           "name": "build request",
           "prototype": "8151df01-80a3-4fde-bd25-221fa12dc03a"
         },
         "be26bb23-a98f-47ed-b80e-d97d0809d8ce": {
           "coordinates": [
-            126,
-            -173
+            178.5,
+            -168.5
           ],
           "name": "json response error detector",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
           "params": {
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Contract deployment failed.\""
+          }
+        },
+        "f6585f15-dc3e-40e6-9ab6-93cd7d8dff22": {
+          "coordinates": [
+            -140.5,
+            -115.5
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
           }
         }
       },
@@ -78,8 +89,8 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "ea530901-12de-4acd-b341-913175cbde5a": {
-              "4c521523-a827-4aff-b950-4f84d4adb978": {}
+            "f6585f15-dc3e-40e6-9ab6-93cd7d8dff22": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },
@@ -94,6 +105,13 @@
           "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
             "be26bb23-a98f-47ed-b80e-d97d0809d8ce": {
               "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "f6585f15-dc3e-40e6-9ab6-93cd7d8dff22": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "ea530901-12de-4acd-b341-913175cbde5a": {
+              "4c521523-a827-4aff-b950-4f84d4adb978": {}
             }
           }
         }

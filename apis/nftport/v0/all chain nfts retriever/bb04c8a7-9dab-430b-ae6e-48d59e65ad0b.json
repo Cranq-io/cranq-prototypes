@@ -3,6 +3,10 @@
   "description": "Returns all ERC721 and ERC1155 NFTs that have been minted on a given chain, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve all NFTs:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts",
   "interface": {
     "inputs": {
+      "c502541e-0be6-4faa-89c0-b14d3c9b76e0": {
+        "type": "{\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
+        "name": "query"
+      },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
         "name": "params",
@@ -40,8 +44,8 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -156,
-            -72
+            -85,
+            -111
           ],
           "name": "apply defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
@@ -51,8 +55,8 @@
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            -49.8,
-            179.2
+            17.200000000000003,
+            198.2
           ],
           "name": "build request",
           "prototype": "388f24ef-171d-4920-9365-83426a61cfb8"
@@ -67,6 +71,14 @@
           "params": {
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
           }
+        },
+        "bc347630-be9f-4946-a232-f064271bf034": {
+          "coordinates": [
+            -202,
+            42
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         }
       },
       "connections": {
@@ -90,13 +102,30 @@
               "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
             }
           }
+        },
+        "bc347630-be9f-4946-a232-f064271bf034": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "f80327aa-1222-4b02-8b37-060eb135e2e4": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
           "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            "bc347630-be9f-4946-a232-f064271bf034": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "c502541e-0be6-4faa-89c0-b14d3c9b76e0": {
+            "bc347630-be9f-4946-a232-f064271bf034": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
           }
         },

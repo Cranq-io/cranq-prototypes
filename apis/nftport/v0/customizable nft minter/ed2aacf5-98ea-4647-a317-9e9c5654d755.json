@@ -4,12 +4,12 @@
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-        "type": "{\n  \"contract_address\": string,\n  \"metadata_uri\": string,\n  optional \"token_id\": string\n}",
+        "type": "{\n  \"contract_address\": string,\n  \"metadata_uri\": string,\n  \"mint_to_address\": string,\n  optional \"token_id\": string\n}",
         "name": "minting details",
         "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"mint_to_address\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
         "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDI-customizable-minting#request-body"
       }

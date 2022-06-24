@@ -24,8 +24,8 @@
       "nodes": {
         "c6e09506-4631-4d32-9016-e40cac678fe8": {
           "coordinates": [
-            42,
-            -59.33333333333333
+            -11,
+            149.66666666666669
           ],
           "name": "authorization inserter",
           "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
@@ -35,8 +35,8 @@
         },
         "7d8eb4ff-14fb-4507-ac3f-7305479494b1": {
           "coordinates": [
-            -95,
-            -118.33333333333333
+            -157,
+            63.66666666666667
           ],
           "name": "get API key",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -46,8 +46,8 @@
         },
         "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
           "coordinates": [
-            139.11405285493834,
-            130.15186149691357
+            191.11405285493834,
+            41.15186149691357
           ],
           "name": "build request",
           "prototype": "43a05171-f247-40f7-9623-7ca7a9aeb411",
@@ -56,38 +56,16 @@
             "e0662105-5801-48a4-b068-62c355e9d670": "\"https://api.nftport.xyz/v0/files\""
           }
         },
-        "bd7e7e64-00c7-4e6d-9579-f10f3b7367fd": {
+        "9515e68f-9ce3-49c1-8851-bc5631efa188": {
           "coordinates": [
-            14,
-            198.66666666666674
+            2,
+            -90
           ],
           "name": "build form",
-          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {
-            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]",
-            "e080c294-84b6-4587-b31c-a04e230f632e": "{\n  \"boundary\": \"foo\",\n  \"fields\": [{\n    \"name\": \"file\"\n  }]\n}"
-          }
-        },
-        "56264743-9f8e-4925-a36d-03044289d507": {
-          "coordinates": [
-            -373,
-            103.66666666666674
-          ],
-          "name": "get form values",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
-          "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"content\", \"name\", \"content-type\"]"
-          }
-        },
-        "c05f2d5a-5f71-49b2-af71-93a2a8f56ae7": {
-          "coordinates": [
-            -171,
-            140.66666666666674
-          ],
-          "name": "set node values",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\n  \"boundary\": \"de7c247b-b024-4855-876d-c5eb38d88042\",\n  \"fields\": []\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0]"
           }
         }
       },
@@ -106,34 +84,10 @@
             }
           }
         },
-        "c05f2d5a-5f71-49b2-af71-93a2a8f56ae7": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "bd7e7e64-00c7-4e6d-9579-f10f3b7367fd": {
-              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
-            }
-          }
-        },
-        "bd7e7e64-00c7-4e6d-9579-f10f3b7367fd": {
-          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+        "9515e68f-9ce3-49c1-8851-bc5631efa188": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
             "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
               "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
-            }
-          }
-        },
-        "56264743-9f8e-4925-a36d-03044289d507": {
-          "content": {
-            "c05f2d5a-5f71-49b2-af71-93a2a8f56ae7": {
-              "0": {}
-            }
-          },
-          "name": {
-            "c05f2d5a-5f71-49b2-af71-93a2a8f56ae7": {
-              "1": {}
-            }
-          },
-          "content-type": {
-            "c05f2d5a-5f71-49b2-af71-93a2a8f56ae7": {
-              "2": {}
             }
           }
         }
@@ -146,8 +100,8 @@
             }
           },
           "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-            "56264743-9f8e-4925-a36d-03044289d507": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            "9515e68f-9ce3-49c1-8851-bc5631efa188": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
             }
           }
         },

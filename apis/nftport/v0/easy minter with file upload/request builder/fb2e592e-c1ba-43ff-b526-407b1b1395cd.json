@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "945a6afc-dd19-467f-be54-c9bf69190c09": {
-        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"description\": string,\n  \"content-type\": string,\n  \"mint_to_address\": string\n}",
-        "name": "minting"
+        "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
+        "name": "minting details"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{\n  \"api_key\": string,\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "description": ""
       }
     },
     "outputs": {
@@ -24,8 +24,8 @@
       "nodes": {
         "4e58da6a-36d5-4342-ad24-e7deb473893b": {
           "coordinates": [
-            -124.2,
-            -131.2
+            89.30000000000001,
+            150.3
           ],
           "name": "insert API key",
           "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
@@ -35,8 +35,8 @@
         },
         "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
           "coordinates": [
-            -284.2,
-            -136.2
+            -89.69999999999999,
+            216.3
           ],
           "name": "get API key",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -44,62 +44,10 @@
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
           }
         },
-        "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
-          "coordinates": [
-            236.8,
-            -192.20000000000005
-          ],
-          "name": "build url",
-          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
-          "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/mints/easy/files?{QUERY}\""
-          }
-        },
-        "b8bf6748-1ecb-4ae3-be5a-e81a4eff4065": {
-          "coordinates": [
-            -7.199999999999989,
-            -291.20000000000005
-          ],
-          "name": "build query string",
-          "prototype": "81d80d25-403d-4fdc-a4c7-0f6ed1379e52"
-        },
-        "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
-          "coordinates": [
-            -338.2,
-            -380.20000000000005
-          ],
-          "name": "get query param values from params",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
-          "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"name\", \"description\", \"chain\", \"mint_to_address\"]"
-          }
-        },
-        "fc67767a-193f-4985-8218-7e768b44ee5f": {
-          "coordinates": [
-            -140.2,
-            -364.20000000000005
-          ],
-          "name": "set key-values of query string",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"name\", \"description\", \"chain\", \"mint_to_address\"]"
-          }
-        },
-        "2066faf8-a9cf-4b87-a269-b4e96a3815c7": {
-          "coordinates": [
-            123.80000000000001,
-            -243.20000000000005
-          ],
-          "name": "build query string param",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"QUERY\"]"
-          }
-        },
         "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
           "coordinates": [
-            440.8,
-            -79.20000000000005
+            373.3,
+            15.299999999999955
           ],
           "name": "build form request",
           "prototype": "43a05171-f247-40f7-9623-7ca7a9aeb411",
@@ -109,44 +57,66 @@
         },
         "9d3be9fc-2926-4d49-93d6-b96296e30730": {
           "coordinates": [
-            -365.2,
-            -225.20000000000005
+            4.300000000000011,
+            -180.70000000000005
           ],
-          "name": "merge NFT data & params",
+          "name": "build query params",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         },
-        "4b902352-85cd-47ab-b90b-b99704c72968": {
+        "9a5c5e10-de41-4f2d-a988-50faee4ceca6": {
           "coordinates": [
-            32.799999999999955,
-            166.80000000000018
+            240.5,
+            -140.5
+          ],
+          "name": "build URL",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://api.nftport.xyz/v0/mints/easy/files\""
+          }
+        },
+        "c65e10b9-7a2e-4a23-a0e1-11912d82a158": {
+          "coordinates": [
+            -216.5,
+            -131.5
+          ],
+          "name": "get chain",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"chain\": \"chain\"}"
+          }
+        },
+        "82fb6f57-667e-43ce-8391-89077bb022e6": {
+          "coordinates": [
+            -220.5,
+            -223.5
+          ],
+          "name": "get query params",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"name\": \"name\",\n  \"description\": \"description\",\n  \"mint_to_address\": \"mint_to_address\"\n}"
+          }
+        },
+        "11906f1f-6f66-4e1b-a85c-33bf537c87db": {
+          "coordinates": [
+            -88.5,
+            14.5
+          ],
+          "name": "get file details",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
+          }
+        },
+        "aeecf65e-6d86-4d86-be5b-a8cf3cbb7e07": {
+          "coordinates": [
+            75.5,
+            -62.5
           ],
           "name": "build form",
-          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {
-            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]",
-            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"boundary\": \"foo\",\r\n  \"fields\": [{\r\n    \"name\": \"file\",\r\n    \"fileName\": \"upload.png\",\r\n    \"contentType\": \"image/png\"\r\n  }]\r\n}"
-          }
-        },
-        "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
-          "coordinates": [
-            -156.20000000000005,
-            114.80000000000018
-          ],
-          "name": "set node values",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
-          }
-        },
-        "e2dd9634-637e-4f31-930d-dea62b98a628": {
-          "coordinates": [
-            -315.20000000000005,
-            71.80000000000018
-          ],
-          "name": "get  form values",
-          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
-          "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"file\", \"name\", \"content-type\"]"
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0]",
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"boundary\": \"5d205dc5-dc22-44c0-9fb8-04abb17c6964\",\r\n  \"fields\": []\r\n}"
           }
         }
       },
@@ -165,89 +135,43 @@
             }
           }
         },
-        "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
-          "name": {
-            "fc67767a-193f-4985-8218-7e768b44ee5f": {
-              "name": {}
-            }
-          },
-          "description": {
-            "fc67767a-193f-4985-8218-7e768b44ee5f": {
-              "description": {}
-            }
-          },
-          "chain": {
-            "fc67767a-193f-4985-8218-7e768b44ee5f": {
-              "chain": {}
-            }
-          },
-          "mint_to_address": {
-            "fc67767a-193f-4985-8218-7e768b44ee5f": {
-              "mint_to_address": {}
-            }
-          }
-        },
-        "fc67767a-193f-4985-8218-7e768b44ee5f": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "b8bf6748-1ecb-4ae3-be5a-e81a4eff4065": {
-              "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
-            }
-          }
-        },
-        "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
-          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+        "9a5c5e10-de41-4f2d-a988-50faee4ceca6": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
             "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
               "e0662105-5801-48a4-b068-62c355e9d670": {}
             }
           }
         },
-        "2066faf8-a9cf-4b87-a269-b4e96a3815c7": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
-              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+        "c65e10b9-7a2e-4a23-a0e1-11912d82a158": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "9d3be9fc-2926-4d49-93d6-b96296e30730": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },
-        "b8bf6748-1ecb-4ae3-be5a-e81a4eff4065": {
-          "746ac0ca-ad7a-4395-a82b-e638b0823b2d": {
-            "2066faf8-a9cf-4b87-a269-b4e96a3815c7": {
-              "QUERY": {}
+        "82fb6f57-667e-43ce-8391-89077bb022e6": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "9d3be9fc-2926-4d49-93d6-b96296e30730": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
             }
           }
         },
         "9d3be9fc-2926-4d49-93d6-b96296e30730": {
           "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            "9a5c5e10-de41-4f2d-a988-50faee4ceca6": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
             }
           }
         },
-        "e2dd9634-637e-4f31-930d-dea62b98a628": {
-          "file": {
-            "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
-              "0": {}
-            }
-          },
-          "name": {
-            "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
-              "1": {}
-            }
-          },
-          "content-type": {
-            "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
-              "2": {}
+        "11906f1f-6f66-4e1b-a85c-33bf537c87db": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "aeecf65e-6d86-4d86-be5b-a8cf3cbb7e07": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
             }
           }
         },
-        "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "4b902352-85cd-47ab-b90b-b99704c72968": {
-              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
-            }
-          }
-        },
-        "4b902352-85cd-47ab-b90b-b99704c72968": {
-          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+        "aeecf65e-6d86-4d86-be5b-a8cf3cbb7e07": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
             "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
               "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
             }
@@ -260,16 +184,16 @@
             "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             },
-            "9d3be9fc-2926-4d49-93d6-b96296e30730": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            "c65e10b9-7a2e-4a23-a0e1-11912d82a158": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
             }
           },
           "945a6afc-dd19-467f-be54-c9bf69190c09": {
-            "9d3be9fc-2926-4d49-93d6-b96296e30730": {
-              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            "82fb6f57-667e-43ce-8391-89077bb022e6": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
             },
-            "e2dd9634-637e-4f31-930d-dea62b98a628": {
-              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            "11906f1f-6f66-4e1b-a85c-33bf537c87db": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
           }
         },
@@ -286,6 +210,7 @@
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "original": "f2cd0772-8eef-4190-967d-4afd3db6f355",
   "attributes": {
+    "internal": true,
     "locked": true
   }
 }

@@ -7,7 +7,7 @@
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{string: string}",
+        "type": "{\n  \"api_key\": string,\n  \"chain\": \"ethereum\"\n}",
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       }

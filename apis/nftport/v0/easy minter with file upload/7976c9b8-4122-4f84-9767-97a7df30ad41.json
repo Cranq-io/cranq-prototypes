@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "f425554c-70b1-44cd-8620-7044af9e50a9": {
-        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"description\": string,\n  \"content-type\": string,\n  \"mint_to_address\": string\n}",
+        "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
         "name": "minting details",
         "description": "Receives the details of the minting.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDQ-easy-minting-w-file-upload#request-body"
       },
@@ -36,8 +36,8 @@
       "nodes": {
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -174,
-            -164
+            -126,
+            -140
           ],
           "name": "apply defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
@@ -47,8 +47,8 @@
         },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
           "coordinates": [
-            314,
-            -144
+            207,
+            -125
           ],
           "name": "json response error detector",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
@@ -58,24 +58,24 @@
         },
         "25187c96-d706-4d05-9035-3cc8d43b9887": {
           "coordinates": [
-            136,
-            -24
+            100,
+            12
           ],
           "name": "dispatch form-data request",
           "prototype": "989f1602-e857-4d5e-a7af-0905f12a1f45"
         },
         "1fae076c-af9e-4f45-a963-b7cd6bb70f75": {
           "coordinates": [
-            -211,
-            116
+            -234,
+            69
           ],
           "name": "forward inputs",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
           "coordinates": [
-            -25,
-            -80
+            45,
+            188
           ],
           "name": "build request",
           "prototype": "fb2e592e-c1ba-43ff-b526-407b1b1395cd"

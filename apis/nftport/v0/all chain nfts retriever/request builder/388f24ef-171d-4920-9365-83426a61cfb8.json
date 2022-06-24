@@ -2,8 +2,12 @@
   "name": "apis/nftport/v0/All chain NFTs retriever/Request builder",
   "interface": {
     "inputs": {
+      "f80327aa-1222-4b02-8b37-060eb135e2e4": {
+        "type": "{\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
+        "name": "query"
+      },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{string:string}",
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
         "name": "params",
         "description": ""
       }
@@ -20,8 +24,8 @@
       "nodes": {
         "4e58da6a-36d5-4342-ad24-e7deb473893b": {
           "coordinates": [
-            70.8,
-            -97.2
+            125.5,
+            -175.5
           ],
           "name": "insert API key",
           "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
@@ -31,8 +35,8 @@
         },
         "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
           "coordinates": [
-            -114.19999999999999,
-            -137.2
+            -99.5,
+            -129.5
           ],
           "name": "get API key",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -42,19 +46,19 @@
         },
         "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
           "coordinates": [
-            -155.2,
-            180.8
+            -84.5,
+            146.5
           ],
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"continuation\": \"continuation\",\n  \"include\": \"include\",\n  \"page_size\": \"page_size\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\"\n}"
           }
         },
         "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
           "coordinates": [
-            231.8,
-            -45.19999999999999
+            191.5,
+            -4.5
           ],
           "name": "body-less request builder",
           "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
@@ -64,14 +68,22 @@
         },
         "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
           "coordinates": [
-            65.80000000000001,
-            58.80000000000001
+            140.5,
+            148.5
           ],
           "name": "parse request URL",
           "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
           "params": {
             "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://api.nftport.xyz/v0/nfts\""
           }
+        },
+        "3ff12430-04cd-41f4-8454-d4e91260dc93": {
+          "coordinates": [
+            -39.499999999999986,
+            -46.5
+          ],
+          "name": "merge query params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         }
       },
       "connections": {
@@ -98,6 +110,13 @@
         },
         "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
           "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "3ff12430-04cd-41f4-8454-d4e91260dc93": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "3ff12430-04cd-41f4-8454-d4e91260dc93": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
               "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
             }
@@ -112,6 +131,11 @@
             },
             "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "f80327aa-1222-4b02-8b37-060eb135e2e4": {
+            "3ff12430-04cd-41f4-8454-d4e91260dc93": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },

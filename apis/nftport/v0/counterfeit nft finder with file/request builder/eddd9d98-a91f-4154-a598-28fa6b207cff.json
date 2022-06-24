@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-        "type": "{\n\"file\": string,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string,\noptional \"limit\" :number\n}",
+        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"content-type\": string,\n  optional \"threshold\" :number,\n  optional \"filter_out_contract_address\" :string,\n  optional \"limit\" :number\n}",
         "name": "query"
       },
       "beb00f72-a918-4133-93f1-e5826a151d43": {
@@ -42,18 +42,6 @@
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
-          }
-        },
-        "ed8b4586-cc66-400b-84b5-38363681eca9": {
-          "coordinates": [
-            -102.88594714506166,
-            143.15186149691357
-          ],
-          "name": "node setter",
-          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
-          "params": {
-            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\n  \"boundary\": \"foo\",\n  \"fields\": [{\n    \"name\": \"file\",\n    \"fileName\": \"upload.png\",\n    \"contentType\": \"image/png\"\n  }]\n}",
-            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0, \"data\"]"
           }
         },
         "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
@@ -97,17 +85,6 @@
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"query\"]"
           }
         },
-        "13b2d59e-9ac0-469a-b56b-be6fee0ab5f5": {
-          "coordinates": [
-            -223,
-            58.66666666666663
-          ],
-          "name": "item getter",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
-          }
-        },
         "d4bd6519-2c56-4bff-9c06-144f183c6147": {
           "coordinates": [
             -212,
@@ -116,7 +93,41 @@
           "name": "items deleter",
           "prototype": "812d7cc1-2fe3-4134-b9e8-8ea3ea0afb34",
           "params": {
-            "892cbf3b-88a0-4983-bf33-bac00e9dd8f5": "[\"api_key\", \"file\"]"
+            "892cbf3b-88a0-4983-bf33-bac00e9dd8f5": "[\"api_key\", \"file\", \"name\", \"content-type\"]"
+          }
+        },
+        "4cb31452-0a55-4670-98a0-a144d3e5184c": {
+          "coordinates": [
+            46,
+            153.66666666666652
+          ],
+          "name": "build form",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"boundary\": \"foo\",\r\n  \"fields\": [{\r\n    \"name\": \"file\",\r\n    \"fileName\": \"upload.png\",\r\n    \"contentType\": \"image/png\"\r\n  }]\r\n}",
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]"
+          }
+        },
+        "80015c8c-d1fd-456c-a09e-a28a76cd6a94": {
+          "coordinates": [
+            -258,
+            46.666666666666515
+          ],
+          "name": "get form values",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"file\", \"name\", \"content-type\"]"
+          }
+        },
+        "feb59bd1-dc56-4a9d-a28a-6083f97f5975": {
+          "coordinates": [
+            -100,
+            90.66666666666652
+          ],
+          "name": "set node values",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
           }
         }
       },
@@ -132,13 +143,6 @@
           "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
             "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
               "cc293bef-ee53-4d55-83e4-7d4ff1d08c3a": {}
-            }
-          }
-        },
-        "ed8b4586-cc66-400b-84b5-38363681eca9": {
-          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
-            "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
-              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
             }
           }
         },
@@ -163,17 +167,41 @@
             }
           }
         },
-        "13b2d59e-9ac0-469a-b56b-be6fee0ab5f5": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "ed8b4586-cc66-400b-84b5-38363681eca9": {
-              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
-            }
-          }
-        },
         "d4bd6519-2c56-4bff-9c06-144f183c6147": {
           "6f52bf8b-c578-46ca-8231-6a6186fba2a3": {
             "646daa97-3d74-4e37-8d1e-05814292e4bc": {
               "d7db61e9-fa4b-4374-93d4-0d496e1aad2e": {}
+            }
+          }
+        },
+        "80015c8c-d1fd-456c-a09e-a28a76cd6a94": {
+          "file": {
+            "feb59bd1-dc56-4a9d-a28a-6083f97f5975": {
+              "0": {}
+            }
+          },
+          "name": {
+            "feb59bd1-dc56-4a9d-a28a-6083f97f5975": {
+              "1": {}
+            }
+          },
+          "content-type": {
+            "feb59bd1-dc56-4a9d-a28a-6083f97f5975": {
+              "2": {}
+            }
+          }
+        },
+        "feb59bd1-dc56-4a9d-a28a-6083f97f5975": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4cb31452-0a55-4670-98a0-a144d3e5184c": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "4cb31452-0a55-4670-98a0-a144d3e5184c": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
+              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
             }
           }
         }
@@ -186,11 +214,11 @@
             }
           },
           "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-            "13b2d59e-9ac0-469a-b56b-be6fee0ab5f5": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
             "d4bd6519-2c56-4bff-9c06-144f183c6147": {
               "6c876470-1823-4ec1-80a3-e848e85b0e08": {}
+            },
+            "80015c8c-d1fd-456c-a09e-a28a76cd6a94": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           }
         },

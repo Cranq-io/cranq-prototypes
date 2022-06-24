@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
-        "type": "{\"file\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number\n}",
+        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"content-type\": string,\n   optional \"page_number\" :number, \n  optional \"page_size\" :number\n}",
         "name": "query",
         "description": "File receives base64-encoded binary file contents.\npage_number and page_size are optional. \n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Request"
       },
@@ -36,8 +36,8 @@
       "nodes": {
         "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
           "coordinates": [
-            73.88594714506166,
-            114.51480516975312
+            91.88594714506166,
+            105.51480516975312
           ],
           "name": "dispatch request",
           "prototype": "989f1602-e857-4d5e-a7af-0905f12a1f45"
@@ -63,8 +63,8 @@
         },
         "97c01bf1-31ed-4f02-8032-39c26bd48163": {
           "coordinates": [
-            -82,
-            218.33333333333331
+            -53,
+            190.33333333333331
           ],
           "name": "build request",
           "prototype": "783d7c30-da0b-47bb-8fa8-6b0e8dfcc489"
@@ -145,7 +145,6 @@
     "upload": null,
     "file": null,
     "image": null,
-    "video": null,
     "animation": null,
     "minting": null,
     "ethereum": null,

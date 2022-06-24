@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
-        "type": "{\n\"file\": string,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string,\noptional \"limit\" :number\n}",
+        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"content-type\": string,\n  optional \"threshold\" :number,\n  optional \"filter_out_contract_address\" :string,\n  optional \"limit\" :number\n}",
         "name": "query",
         "description": "File receives base64-encoded binary file contents value. \nThe other params are optional. \nhttps://docs.nftport.xyz/docs/nftport/b3A6MjEyNTYxNDI-find-counterfeit-nf-ts-w-file-upload#Request"
       },
@@ -145,7 +145,6 @@
     "upload": null,
     "file": null,
     "image": null,
-    "video": null,
     "animation": null,
     "minting": null
   },

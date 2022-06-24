@@ -1,5 +1,5 @@
 {
-  "description": "",
+  "description": "Fetches chart data and other financial data for recent history of the received symbol.",
   "interface": {
     "inputs": {
       "045fe2de-d612-47da-b91c-4af808edd741": {
@@ -19,24 +19,10 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "a489811f-63b0-4b66-8d02-6e4ed2e8459e": {
-          "coordinates": [
-            64,
-            -49
-          ],
-          "description": "",
-          "params": {
-            "7468e859-6176-4c54-a03a-9039e7024bed": "\"GET\"",
-            "50a82f4b-f270-470f-872e-f7f6f2f0fc36": "{}",
-            "f11b9873-7a11-4241-9e17-a16496cf783e": "\"\""
-          },
-          "prototype": "83ebbf9f-d428-4577-a650-761868a002dc",
-          "name": "dispatch request"
-        },
         "be735d5c-ce4b-4f5d-9473-01c007e9bf9b": {
           "coordinates": [
-            -69,
-            -101
+            -147,
+            -125
           ],
           "description": "",
           "params": {
@@ -47,8 +33,8 @@
         },
         "179512b9-5cb6-47db-990e-8f138e68b87e": {
           "coordinates": [
-            -77,
-            64
+            -179,
+            92
           ],
           "description": "",
           "params": {
@@ -57,15 +43,25 @@
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "name": "wrap symbol"
         },
-        "9a25d28f-ace7-434c-8975-949675a1f725": {
+        "e8da330e-d4dc-4d84-9988-ba6c0d192ab6": {
           "coordinates": [
-            112,
-            88
+            95,
+            -118
           ],
-          "description": "",
-          "params": {},
-          "prototype": "6470bc83-fb15-4801-942a-6f6dbc46a908",
-          "name": "parse response"
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "9f47e37d-f57f-4e8c-89d0-39cfd7f56689": {
+          "coordinates": [
+            59,
+            92
+          ],
+          "name": "body-less request builder",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\"",
+            "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": "{}"
+          }
         }
       },
       "connections": {
@@ -80,19 +76,15 @@
         },
         "be735d5c-ce4b-4f5d-9473-01c007e9bf9b": {
           "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
-            "a489811f-63b0-4b66-8d02-6e4ed2e8459e": {
-              "e69367fe-1abe-4422-a70a-4d67c614f464": {
-                "description": ""
-              }
+            "9f47e37d-f57f-4e8c-89d0-39cfd7f56689": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
             }
           }
         },
-        "a489811f-63b0-4b66-8d02-6e4ed2e8459e": {
-          "498b10a6-ba52-43d0-a28a-73dc43eaf048": {
-            "9a25d28f-ace7-434c-8975-949675a1f725": {
-              "612de880-6653-4097-b917-aabc4f6aceb2": {
-                "description": ""
-              }
+        "9f47e37d-f57f-4e8c-89d0-39cfd7f56689": {
+          "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {
+            "e8da330e-d4dc-4d84-9988-ba6c0d192ab6": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
             }
           }
         }
@@ -107,15 +99,19 @@
         },
         "outputs": {
           "97e587fb-0703-4183-b5fc-5fc7866c5661": {
-            "9a25d28f-ace7-434c-8975-949675a1f725": {
-              "6cdc0c38-5098-4ffd-a5d8-ee18d077dda3": {}
+            "e8da330e-d4dc-4d84-9988-ba6c0d192ab6": {
+              "928a6619-42b4-4267-9dd7-416907a3939f": {}
             }
           }
         }
       }
     }
   },
-  "name": "apis/fx/Yahoo Finance",
+  "name": "apis/fx/yahoo finance/v8/Chart getter",
+  "keywords": {
+    "chart": null,
+    "price": null
+  },
   "attributes": {
     "locked": true
   }

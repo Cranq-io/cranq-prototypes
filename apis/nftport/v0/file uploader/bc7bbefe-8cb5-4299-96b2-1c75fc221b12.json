@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
-        "type": "string",
+        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"description\": string,\n  \"content-type\": string,\n  \"mint_to_address\": string\n}",
         "name": "file",
         "description": "Receives base64-encoded binary file contents."
       },
@@ -43,8 +43,8 @@
         },
         "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
           "coordinates": [
-            -139,
-            120
+            -330,
+            52
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
@@ -60,13 +60,13 @@
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Uploading file to IPFS failed.\""
           }
         },
-        "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+        "e55cc0c5-0ce6-4dbb-b724-fade2c3b4537": {
           "coordinates": [
-            -129,
-            -114.66666666666667
+            -139,
+            -129
           ],
           "name": "build request",
-          "prototype": "ba12c0bb-bc37-4e33-a9be-6bcb57ea5b78"
+          "prototype": "387791fd-c3fa-46fb-8fb4-79979e70ad15"
         }
       },
       "connections": {
@@ -79,17 +79,17 @@
         },
         "aa3cd50e-4179-4feb-92e7-a51ea7f48f5a": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+            "e55cc0c5-0ce6-4dbb-b724-fade2c3b4537": {
               "ffd19d57-881b-4ac2-9f39-89413e79522c": {}
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+            "e55cc0c5-0ce6-4dbb-b724-fade2c3b4537": {
               "beb00f72-a918-4133-93f1-e5826a151d43": {}
             }
           }
         },
-        "97c01bf1-31ed-4f02-8032-39c26bd48163": {
+        "e55cc0c5-0ce6-4dbb-b724-fade2c3b4537": {
           "44d91318-ce93-42a5-a984-c9f7f1955233": {
             "3e0567d1-9c28-4c8e-b3f3-683b2e800b61": {
               "0410c79a-5ea7-45c8-80ae-417492d414fa": {}

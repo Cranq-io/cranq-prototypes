@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "945a6afc-dd19-467f-be54-c9bf69190c09": {
-        "type": " {\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
+        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"description\": string,\n  \"content-type\": string,\n  \"mint_to_address\": string\n}",
         "name": "minting"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
@@ -42,18 +42,6 @@
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
-          }
-        },
-        "3f251277-30f8-451a-9eaa-affae2029a93": {
-          "coordinates": [
-            -197.2,
-            42.799999999999955
-          ],
-          "name": "set form daa",
-          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
-          "params": {
-            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\n  \"boundary\": \"foo\",\n  \"fields\": [{\n    \"name\": \"file\",\n    \"fileName\": \"upload.png\",\n    \"contentType\": \"image/png\"\n  }]\n}",
-            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0, \"data\"]"
           }
         },
         "f0739c7b-c679-4b7c-95d2-e48150879bc1": {
@@ -127,15 +115,38 @@
           "name": "merge NFT data & params",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         },
-        "a795f632-1ae5-4ac6-bd49-b642a638a77e": {
+        "4b902352-85cd-47ab-b90b-b99704c72968": {
           "coordinates": [
-            -339.2,
-            19.799999999999955
+            32.799999999999955,
+            166.80000000000018
           ],
-          "name": "get file data",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "name": "build form",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
           "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]",
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"boundary\": \"foo\",\r\n  \"fields\": [{\r\n    \"name\": \"file\",\r\n    \"fileName\": \"upload.png\",\r\n    \"contentType\": \"image/png\"\r\n  }]\r\n}"
+          }
+        },
+        "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
+          "coordinates": [
+            -156.20000000000005,
+            114.80000000000018
+          ],
+          "name": "set node values",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
+          }
+        },
+        "e2dd9634-637e-4f31-930d-dea62b98a628": {
+          "coordinates": [
+            -315.20000000000005,
+            71.80000000000018
+          ],
+          "name": "get  form values",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"file\", \"name\", \"content-type\"]"
           }
         }
       },
@@ -204,13 +215,6 @@
             }
           }
         },
-        "3f251277-30f8-451a-9eaa-affae2029a93": {
-          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
-            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
-              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
-            }
-          }
-        },
         "9d3be9fc-2926-4d49-93d6-b96296e30730": {
           "8357d165-4753-4d32-8c61-e3baff88d8ba": {
             "8025fb41-f99a-49af-9f4c-6d15f93a6fed": {
@@ -218,10 +222,34 @@
             }
           }
         },
-        "a795f632-1ae5-4ac6-bd49-b642a638a77e": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "3f251277-30f8-451a-9eaa-affae2029a93": {
-              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+        "e2dd9634-637e-4f31-930d-dea62b98a628": {
+          "file": {
+            "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
+              "0": {}
+            }
+          },
+          "name": {
+            "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
+              "1": {}
+            }
+          },
+          "content-type": {
+            "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
+              "2": {}
+            }
+          }
+        },
+        "750e4878-6bc7-412f-a2d5-e28ad3c3a9e8": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4b902352-85cd-47ab-b90b-b99704c72968": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "4b902352-85cd-47ab-b90b-b99704c72968": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
             }
           }
         }
@@ -240,8 +268,8 @@
             "9d3be9fc-2926-4d49-93d6-b96296e30730": {
               "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
             },
-            "a795f632-1ae5-4ac6-bd49-b642a638a77e": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            "e2dd9634-637e-4f31-930d-dea62b98a628": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           }
         },
@@ -256,8 +284,8 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "original": "2e447844-0f7a-426a-93ac-dbcec5e33716",
+  "original": "f2cd0772-8eef-4190-967d-4afd3db6f355",
   "attributes": {
-    "internal": true
+    "locked": true
   }
 }

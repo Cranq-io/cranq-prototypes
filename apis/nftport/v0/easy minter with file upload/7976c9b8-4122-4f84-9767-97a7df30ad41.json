@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "f425554c-70b1-44cd-8620-7044af9e50a9": {
-        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
+        "type": "{\n  \"file\": string,\n  \"name\": string,\n  \"description\": string,\n  \"content-type\": string,\n  \"mint_to_address\": string\n}",
         "name": "minting details",
         "description": "Receives the details of the minting.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDQ-easy-minting-w-file-upload#request-body"
       },
@@ -45,14 +45,6 @@
             "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"polygon\"}"
           }
         },
-        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-          "coordinates": [
-            77.19999999999999,
-            128.2
-          ],
-          "name": "build request",
-          "prototype": "f2cd0772-8eef-4190-967d-4afd3db6f355"
-        },
         "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
           "coordinates": [
             314,
@@ -79,20 +71,21 @@
           ],
           "name": "forward inputs",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
+          "coordinates": [
+            -25,
+            -80
+          ],
+          "name": "build request",
+          "prototype": "fb2e592e-c1ba-43ff-b526-407b1b1395cd"
         }
       },
       "connections": {
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+            "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
               "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
-            }
-          }
-        },
-        "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
-            "25187c96-d706-4d05-9035-3cc8d43b9887": {
-              "0410c79a-5ea7-45c8-80ae-417492d414fa": {}
             }
           }
         },
@@ -105,13 +98,20 @@
         },
         "1fae076c-af9e-4f45-a963-b7cd6bb70f75": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+            "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
               "945a6afc-dd19-467f-be54-c9bf69190c09": {}
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
               "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "25187c96-d706-4d05-9035-3cc8d43b9887": {
+              "0410c79a-5ea7-45c8-80ae-417492d414fa": {}
             }
           }
         }
@@ -171,7 +171,5 @@
     "rinkeby": null
   },
   "original": "c781ac05-624a-4ae2-a4a6-d91fc214d51a",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

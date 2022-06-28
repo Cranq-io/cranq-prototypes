@@ -55,29 +55,6 @@
             "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\""
           }
         },
-        "803d2758-f732-4873-945e-9a4e98fd09a9": {
-          "coordinates": [
-            -16,
-            205.66666666666669
-          ],
-          "name": "bulid form",
-          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
-          "params": {
-            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"fields\", 0]",
-            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"boundary\": \"297e1133-cf78-43bc-b17f-448da3f966ec\",\r\n  \"fields\": []\r\n}"
-          }
-        },
-        "b2524bce-c386-47e9-b97b-98b25dd87fb7": {
-          "coordinates": [
-            -174,
-            101.66666666666669
-          ],
-          "name": "get file details",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"file\""
-          }
-        },
         "da5d9d26-b1ea-4177-bad5-95e2cb293dbb": {
           "coordinates": [
             119,
@@ -99,6 +76,29 @@
           "params": {
             "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"threshold\": \"threshold\",\n  \"filter_out_contract_address\": \"filter_out_contract_address\",\n  \"limit\": \"limit\"\n}"
           }
+        },
+        "965277a6-3a85-4798-8de3-bc1f2462e3ca": {
+          "coordinates": [
+            -190,
+            144.66666666666652
+          ],
+          "name": "get form values",
+          "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1",
+          "params": {
+            "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": "[\r\n  [\"file\", \"data\"],\r\n  [\"file\", \"fileName\"],\r\n  [\"file\", \"contentType\"]\r\n]"
+          }
+        },
+        "61350f2e-b020-4fde-a187-acb9a200364d": {
+          "coordinates": [
+            3,
+            251.66666666666652
+          ],
+          "name": "build form",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]",
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"boundary\": \"297e1133-cf78-43bc-b17f-448da3f966ec\",\r\n  \"fields\": [{\r\n    \"name\": \"file\"\r\n  }]\r\n}"
+          }
         }
       },
       "connections": {
@@ -116,20 +116,6 @@
             }
           }
         },
-        "b2524bce-c386-47e9-b97b-98b25dd87fb7": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "803d2758-f732-4873-945e-9a4e98fd09a9": {
-              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
-            }
-          }
-        },
-        "803d2758-f732-4873-945e-9a4e98fd09a9": {
-          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
-            "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
-              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
-            }
-          }
-        },
         "1896fd4d-14b3-4bc9-8b9c-99ecae57e012": {
           "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
             "da5d9d26-b1ea-4177-bad5-95e2cb293dbb": {
@@ -143,6 +129,20 @@
               "e0662105-5801-48a4-b068-62c355e9d670": {}
             }
           }
+        },
+        "965277a6-3a85-4798-8de3-bc1f2462e3ca": {
+          "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
+            "61350f2e-b020-4fde-a187-acb9a200364d": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "61350f2e-b020-4fde-a187-acb9a200364d": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "63cdf10b-559b-4fdf-bd83-347f2bb34967": {
+              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -153,11 +153,11 @@
             }
           },
           "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-            "b2524bce-c386-47e9-b97b-98b25dd87fb7": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
             "1896fd4d-14b3-4bc9-8b9c-99ecae57e012": {
               "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "965277a6-3a85-4798-8de3-bc1f2462e3ca": {
+              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
             }
           }
         },

@@ -5,12 +5,13 @@
     "inputs": {
       "90b3ffac-f931-426b-a5ba-777a656065bd": {
         "type": "{\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[],\n  optional \"from_block\": number,\n  optional \"to_block\": number\n}",
-        "name": "query"
+        "name": "query",
+        "description": "Receives search query.\n\nDefault type value: \"all\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request\n"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nDefault chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request"
+        "description": "Default chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTE4MzQ-retrieve-all-transactions#Request"
       }
     },
     "outputs": {
@@ -44,19 +45,19 @@
         },
         "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
           "coordinates": [
-            -140,
-            -129
+            -118,
+            207
           ],
-          "name": "apply defaults",
+          "name": "apply param defaults",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
           "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\", \"type\": \"all\"}"
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"ethereum\"}"
           }
         },
         "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
           "coordinates": [
-            23.19999999999999,
-            218.2
+            1.1999999999999886,
+            157.2
           ],
           "name": "build request",
           "prototype": "abcb6bea-fd10-4a4d-aa00-02bab3222124"
@@ -79,6 +80,17 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "59a6f952-b19e-42aa-8835-e1c91f135290": {
+          "coordinates": [
+            -70,
+            -86
+          ],
+          "name": "apply query defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"type\": \"all\"}"
+          }
         }
       },
       "connections": {
@@ -103,8 +115,8 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
-              "af43dd8f-6144-41c3-a8fd-cbaf792c3589": {}
+            "59a6f952-b19e-42aa-8835-e1c91f135290": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
             }
           }
         },
@@ -112,6 +124,13 @@
           "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
             "1025ba3f-b7d9-4bbc-980e-5b2431e3ed21": {
               "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "59a6f952-b19e-42aa-8835-e1c91f135290": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "c95f2dd2-8187-4d8b-a79e-fd5c90b975f9": {
+              "af43dd8f-6144-41c3-a8fd-cbaf792c3589": {}
             }
           }
         }

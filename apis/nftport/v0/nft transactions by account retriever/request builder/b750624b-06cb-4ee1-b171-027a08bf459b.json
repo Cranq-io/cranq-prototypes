@@ -1,0 +1,177 @@
+{
+  "name": "apis/nftport/v0/NFT transactions by account retriever/Request builder",
+  "interface": {
+    "inputs": {
+      "2368b69a-6b88-493e-bece-823e126c008a": {
+        "type": "{\n\"account_address\": string,\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer_from\" or \"transfer_to\" or \"mint\" or \"burn\" or \"make_bid\" or \"get_bid\" or \"list\" or \"buy\" or \"sell\" or \"all\")[]\n}",
+        "name": "query"
+      },
+      "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+        "type": "{string: string}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+        "type": "typeof `request` of `body-less request builder`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "coordinates": [
+            69.8,
+            -124.19999999999999
+          ],
+          "name": "insert API key",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "coordinates": [
+            -87.19999999999999,
+            -212.2
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        },
+        "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+          "coordinates": [
+            -5.199999999999989,
+            128.8
+          ],
+          "name": "extract API params",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\",\n  \"page_size\": \"page_size\",\n  \"continuation\": \"continuation\",\n  \"type\": \"type\"\n}"
+          }
+        },
+        "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+          "coordinates": [
+            230.8,
+            -80.19999999999999
+          ],
+          "name": "body-less request builder",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
+          "coordinates": [
+            126.80000000000001,
+            78.80000000000001
+          ],
+          "name": "add query params",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {}
+        },
+        "26cde237-9e97-4353-a793-d9e53a77a576": {
+          "coordinates": [
+            -57.19999999999999,
+            -57.19999999999999
+          ],
+          "name": "build URL",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/transactions/accounts/{account_address}\""
+          }
+        },
+        "d2aa53ef-ff78-47bf-8d31-ad8369b510d4": {
+          "coordinates": [
+            -146.2,
+            74.80000000000001
+          ],
+          "name": "merge query & params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        }
+      },
+      "connections": {
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "api_key": {
+            "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        },
+        "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        },
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        },
+        "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "26cde237-9e97-4353-a793-d9e53a77a576": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "e847018a-17d9-431c-a3a2-ea10ad60fa26": {
+              "8c89bd87-3843-441c-989b-9b56288453f9": {}
+            }
+          }
+        },
+        "d2aa53ef-ff78-47bf-8d31-ad8369b510d4": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "2ad0b9e9-b53a-4e72-ae2b-be024fdf5625": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+            "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "d2aa53ef-ff78-47bf-8d31-ad8369b510d4": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          },
+          "2368b69a-6b88-493e-bece-823e126c008a": {
+            "26cde237-9e97-4353-a793-d9e53a77a576": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            },
+            "d2aa53ef-ff78-47bf-8d31-ad8369b510d4": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "d162a683-f6c1-4dc2-87db-b4c0c7ae788b": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "df7776cd-bb5e-4d5c-88e2-dd34357b5a72",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

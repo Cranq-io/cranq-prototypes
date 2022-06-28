@@ -1,0 +1,173 @@
+{
+  "name": "apis/nftport/v0/Multi-chain NFT searcher",
+  "description": "Searches NFTs across multiple chains using a text query, specifically the name and description fields from the metadata. \n\nMulti-chain NFT search:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search",
+  "interface": {
+    "inputs": {
+      "a4507c2e-9c5a-4bc9-9ed8-cfc67217139e": {
+        "type": "{\n\"text\": string,\noptional \"filter_by_contract_address\" : string,\noptional \"order_by\": (\"relevance\" or \"mint_date\"),\noptional \"page_number\": number,\noptional \"page_size\": number,\noptional \"sort_order\": (\"desc\" or \"asc\")\n}",
+        "name": "query",
+        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search#Request"
+      },
+      "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
+        "type": "{\n\"api_key\": string,\noptional \"chain\" :(\"polygon\" or \"ethereum\" or \"all\")\n}",
+        "name": "params",
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search#Request\n\nDefault chain value: \"all\""
+      }
+    },
+    "outputs": {
+      "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
+        "type": "{\n\n  \"response\":\"OK\",\n  \"search_results\": [\n    {\n      \"chain\": (\"polygon\" or \"ethereum\"),\n      \"contract_address\": \"string\",\n      \"token_id\": string,\n      \"name\": string,\n      \"description\": string,\n       optional \"mint_date\": string\n    }\n  ]\n}",
+        "name": "data",
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
+      },
+      "384bbd6b-c13e-4fed-9724-336637c51b87": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "e14e707e-19d7-4c5a-8408-dca6b0227725": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e29b8f44-e586-4c1b-8b3b-a3452bea23ca": {
+          "coordinates": [
+            92.19999999999999,
+            -179
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "224c2171-82f3-40cf-b0b6-26bd469c6bba": {
+          "coordinates": [
+            220.2,
+            -338
+          ],
+          "name": "detect error",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Listing deployed contracts failed.\""
+          }
+        },
+        "309b9d0f-9dda-4571-af6d-edb7a631decc": {
+          "coordinates": [
+            -452,
+            -48
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
+          "coordinates": [
+            -58.799999999999955,
+            -236.25
+          ],
+          "name": "build request",
+          "prototype": "4e2bcaa4-2e1d-4744-b670-96f5d24eb463",
+          "params": {}
+        },
+        "3f8b60aa-dd00-4a6e-9e44-822853471af1": {
+          "coordinates": [
+            -201,
+            14
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"all\"}"
+          }
+        }
+      },
+      "connections": {
+        "e29b8f44-e586-4c1b-8b3b-a3452bea23ca": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "224c2171-82f3-40cf-b0b6-26bd469c6bba": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
+          "1a2311cb-b54c-4a38-b9a1-a43467383a21": {
+            "e29b8f44-e586-4c1b-8b3b-a3452bea23ca": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "309b9d0f-9dda-4571-af6d-edb7a631decc": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "3f8b60aa-dd00-4a6e-9e44-822853471af1": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
+              "3a8c7c11-c9e1-4e85-9ede-1cd9d6574d4c": {}
+            }
+          }
+        },
+        "3f8b60aa-dd00-4a6e-9e44-822853471af1": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
+              "67410fcd-d816-4546-b91c-06d9d955e2b5": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
+            "309b9d0f-9dda-4571-af6d-edb7a631decc": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "a4507c2e-9c5a-4bc9-9ed8-cfc67217139e": {
+            "309b9d0f-9dda-4571-af6d-edb7a631decc": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "e14e707e-19d7-4c5a-8408-dca6b0227725": {
+            "e29b8f44-e586-4c1b-8b3b-a3452bea23ca": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            },
+            "224c2171-82f3-40cf-b0b6-26bd469c6bba": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "384bbd6b-c13e-4fed-9724-336637c51b87": {
+            "e29b8f44-e586-4c1b-8b3b-a3452bea23ca": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          },
+          "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
+            "224c2171-82f3-40cf-b0b6-26bd469c6bba": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "smart contract": null,
+    "list": null,
+    "polygon": null,
+    "rinkeby": null,
+    "ethereum": null
+  },
+  "original": "dc638ec0-45e0-432f-b42f-9b59fab54651",
+  "attributes": {
+    "locked": true
+  }
+}

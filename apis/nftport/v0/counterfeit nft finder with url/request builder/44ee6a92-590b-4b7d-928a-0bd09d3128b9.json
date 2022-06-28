@@ -1,0 +1,106 @@
+{
+  "name": "apis/nftport/v0/Counterfeit NFT finder with url/Request builder",
+  "interface": {
+    "inputs": {
+      "245b22de-b713-4c11-b7d0-58173ecdad17": {
+        "type": "{\n\"url\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
+        "name": "query",
+        "description": ""
+      },
+      "4c521523-a827-4aff-b950-4f84d4adb978": {
+        "type": "{\n\"api_key\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "87d84869-b853-4c83-9c25-9f651edc4ca5": {
+        "type": "typeof `JSON req.` of `json request builder`",
+        "name": "JSON req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "36b34c59-1d48-4937-86cb-29ad416583b9": {
+          "coordinates": [
+            39.16666666666666,
+            183.83333333333331
+          ],
+          "name": "json request builder",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\"",
+            "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": "\"https://api.nftport.xyz/v0/duplicates/urls\""
+          }
+        },
+        "852b833a-0cf6-403c-b3c5-5e16983b82db": {
+          "coordinates": [
+            70.16666666666667,
+            -212.16666666666666
+          ],
+          "name": "authorization inserter",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "3b6d3a58-2502-4b73-ab83-8a3b600db66e": {
+          "coordinates": [
+            -130.83333333333334,
+            -80.16666666666667
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        }
+      },
+      "connections": {
+        "852b833a-0cf6-403c-b3c5-5e16983b82db": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "36b34c59-1d48-4937-86cb-29ad416583b9": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "3b6d3a58-2502-4b73-ab83-8a3b600db66e": {
+          "api_key": {
+            "852b833a-0cf6-403c-b3c5-5e16983b82db": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4c521523-a827-4aff-b950-4f84d4adb978": {
+            "3b6d3a58-2502-4b73-ab83-8a3b600db66e": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "245b22de-b713-4c11-b7d0-58173ecdad17": {
+            "36b34c59-1d48-4937-86cb-29ad416583b9": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          }
+        },
+        "outputs": {
+          "87d84869-b853-4c83-9c25-9f651edc4ca5": {
+            "36b34c59-1d48-4937-86cb-29ad416583b9": {
+              "42f1fa20-0597-484e-9610-1f9117b5a7f1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "original": "6bf151f3-1896-4aa1-b9c5-d4504552d11e",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

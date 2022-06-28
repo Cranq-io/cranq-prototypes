@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "c605040c-0f44-4042-a2d2-cf82a881f92b": {
-        "type": "any",
+        "type": "{\n  \"file_url\": string\n}",
         "name": "NFT"
       }
     },
@@ -60,6 +60,9 @@
     "get": null,
     "getter": null
   },
-  "attributes": {},
-  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d"
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "description": "Extracts file URL from an NFT record.",
+  "attributes": {
+    "locked": true
+  }
 }

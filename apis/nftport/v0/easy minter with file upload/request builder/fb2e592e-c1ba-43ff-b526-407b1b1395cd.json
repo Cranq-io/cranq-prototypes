@@ -1,0 +1,216 @@
+{
+  "name": "apis/nftport/v0/Easy minter with file upload/Request builder",
+  "interface": {
+    "inputs": {
+      "945a6afc-dd19-467f-be54-c9bf69190c09": {
+        "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
+        "name": "minting details"
+      },
+      "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+        "type": "typeof `form req.` of `build form request`",
+        "name": "form request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "coordinates": [
+            89.30000000000001,
+            150.3
+          ],
+          "name": "insert API key",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "coordinates": [
+            -89.69999999999999,
+            216.3
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        },
+        "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+          "coordinates": [
+            373.3,
+            15.299999999999955
+          ],
+          "name": "build form request",
+          "prototype": "43a05171-f247-40f7-9623-7ca7a9aeb411",
+          "params": {
+            "9168dddc-4945-4165-9b04-7a6ff2d7ce17": "\"POST\""
+          }
+        },
+        "9d3be9fc-2926-4d49-93d6-b96296e30730": {
+          "coordinates": [
+            20.30000000000001,
+            -219.70000000000005
+          ],
+          "name": "build query params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "9a5c5e10-de41-4f2d-a988-50faee4ceca6": {
+          "coordinates": [
+            240.5,
+            -140.5
+          ],
+          "name": "build URL",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://api.nftport.xyz/v0/mints/easy/files\""
+          }
+        },
+        "c65e10b9-7a2e-4a23-a0e1-11912d82a158": {
+          "coordinates": [
+            -214.5,
+            -149.5
+          ],
+          "name": "get chain",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"chain\": \"chain\"}"
+          }
+        },
+        "82fb6f57-667e-43ce-8391-89077bb022e6": {
+          "coordinates": [
+            -197.5,
+            -284.5
+          ],
+          "name": "get query params",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"name\": \"name\",\n  \"description\": \"description\",\n  \"mint_to_address\": \"mint_to_address\"\n}"
+          }
+        },
+        "64cc2d0f-c2de-47bd-bcce-c67cdbe57eac": {
+          "coordinates": [
+            100,
+            17
+          ],
+          "name": "build form",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"fields\", 0, \"data\"],\r\n  [\"fields\", 0, \"fileName\"],\r\n  [\"fields\", 0, \"contentType\"]\r\n]",
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"boundary\": \"5d205dc5-dc22-44c0-9fb8-04abb17c6964\",\r\n  \"fields\": [{\r\n    \"name\": \"file\"\r\n  }]\r\n}"
+          }
+        },
+        "a790ece7-3ce1-46c1-9620-5a9b894d0945": {
+          "coordinates": [
+            -186,
+            -16
+          ],
+          "name": "get form values",
+          "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1",
+          "params": {
+            "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": "[\n  [\"file\", \"data\"],\n  [\"file\", \"fileName\"],\n  [\"file\", \"contentType\"]\n]"
+          }
+        }
+      },
+      "connections": {
+        "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "cc293bef-ee53-4d55-83e4-7d4ff1d08c3a": {}
+            }
+          }
+        },
+        "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+          "api_key": {
+            "4e58da6a-36d5-4342-ad24-e7deb473893b": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        },
+        "9a5c5e10-de41-4f2d-a988-50faee4ceca6": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "e0662105-5801-48a4-b068-62c355e9d670": {}
+            }
+          }
+        },
+        "c65e10b9-7a2e-4a23-a0e1-11912d82a158": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "9d3be9fc-2926-4d49-93d6-b96296e30730": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "82fb6f57-667e-43ce-8391-89077bb022e6": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "9d3be9fc-2926-4d49-93d6-b96296e30730": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "9d3be9fc-2926-4d49-93d6-b96296e30730": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "9a5c5e10-de41-4f2d-a988-50faee4ceca6": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "a790ece7-3ce1-46c1-9620-5a9b894d0945": {
+          "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
+            "64cc2d0f-c2de-47bd-bcce-c67cdbe57eac": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "64cc2d0f-c2de-47bd-bcce-c67cdbe57eac": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
+            "e76f1bf6-dd3b-401c-bec7-f08b80094eef": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "c65e10b9-7a2e-4a23-a0e1-11912d82a158": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          },
+          "945a6afc-dd19-467f-be54-c9bf69190c09": {
+            "82fb6f57-667e-43ce-8391-89077bb022e6": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "a790ece7-3ce1-46c1-9620-5a9b894d0945": {
+              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
+            }
+          }
+        },
+        "outputs": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "d8d724d4-9626-4360-8392-b4f0ea3a3e89": {
+              "16bd1179-4895-42be-80f8-4d3b3c4478f4": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "f2cd0772-8eef-4190-967d-4afd3db6f355",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

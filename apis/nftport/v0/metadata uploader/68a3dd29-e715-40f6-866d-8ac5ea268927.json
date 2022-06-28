@@ -1,0 +1,151 @@
+{
+  "name": "apis/nftport/v0/Metadata uploader",
+  "description": "Uploads NFT metadata to IPFS, and returns the metadata URL and the metadata that was uploaded.\n\nUpload metadata to IPFS:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs",
+  "interface": {
+    "inputs": {
+      "c38d1e3d-7725-42e8-964a-23325bd31fa1": {
+        "type": "{\n  \"name\": string,\n  \"description\": string,\n  \"file_url\": string,\n  optional \"external_url\": string,\n  optional \"animation_url\": string,\n  optional \"custom_fields\": {string: string},\n  optional \"attributes\": {\n    \"trait_type\": string,\n    \"value\": (string or number),\n    optional \"max_value\": number,\n    optional \"display_type\": (\"boost_number\" or \"boost_percentage\" or \"number\" or \"date\")\n  }[]\n}",
+        "name": "metadata",
+        "description": "Receives NFT metadata.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#request-body"
+      },
+      "28dfe668-dd22-4be8-98a0-66f2b0629770": {
+        "type": "{\n  \"api_key\": string\n}",
+        "name": "params",
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#request-body"
+      }
+    },
+    "outputs": {
+      "dc8a37be-9264-4259-b56d-57708f058eba": {
+        "type": "{\n  \"response\": \"OK\",\n  \"metadata_uri\": string,\n  optional \"name\": string,\n  optional \"description\": string,\n  optional \"file_url\": string,\n  optional \"external_url\": string,\n  optional \"animation_url\": string,\n  optional \"custom_fields\": {string: string},\n  optional \"attributes\": {\n    \"trait_type\": string,\n    \"value\": (string or number),\n    optional \"max_value\": number,\n    optional \"display_type\": (\"boost_number\" or \"boost_percentage\" or \"number\" or \"date\")\n  }[]\n}",
+        "name": "data",
+        "description": "Sends the details of the NFT metadata and the uploaded metadata URI which you can use in Customizable minting.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzc-upload-metadata-to-ipfs#response-body"
+      },
+      "72ee2241-000a-470e-a5b6-4f1223d53678": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "4f69a47a-a9b2-429f-8b9d-bdfdfda2c338": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5a29175c-d3c1-415c-92b9-a428e2c63408": {
+          "coordinates": [
+            71,
+            127
+          ],
+          "name": "json request dispatcher",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "9b09ebd0-e350-4c79-9c91-74b301edc729": {
+          "coordinates": [
+            -158,
+            130
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "a72e7c2d-d741-4e3d-8723-6494fb897951": {
+          "coordinates": [
+            -134.66666666666666,
+            -112.33333333333333
+          ],
+          "name": "build request",
+          "prototype": "b9e030c4-94a7-4b06-a603-2ac893ee89a9"
+        },
+        "6e01395d-e417-4ec7-9abc-3c2b8ba993ea": {
+          "coordinates": [
+            99,
+            -113
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Metadata upload to IPFS failed.\""
+          }
+        }
+      },
+      "connections": {
+        "9b09ebd0-e350-4c79-9c91-74b301edc729": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "a72e7c2d-d741-4e3d-8723-6494fb897951": {
+              "715462d6-372f-47bb-b32e-d6ee4a4869ce": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "a72e7c2d-d741-4e3d-8723-6494fb897951": {
+              "c7f901a5-c0d0-485d-852c-8daf7185bb4f": {}
+            }
+          }
+        },
+        "a72e7c2d-d741-4e3d-8723-6494fb897951": {
+          "e5a5911a-56a7-4be4-a672-ee5f8651f137": {
+            "5a29175c-d3c1-415c-92b9-a428e2c63408": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "5a29175c-d3c1-415c-92b9-a428e2c63408": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "6e01395d-e417-4ec7-9abc-3c2b8ba993ea": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c38d1e3d-7725-42e8-964a-23325bd31fa1": {
+            "9b09ebd0-e350-4c79-9c91-74b301edc729": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "28dfe668-dd22-4be8-98a0-66f2b0629770": {
+            "9b09ebd0-e350-4c79-9c91-74b301edc729": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "4f69a47a-a9b2-429f-8b9d-bdfdfda2c338": {
+            "5a29175c-d3c1-415c-92b9-a428e2c63408": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "6e01395d-e417-4ec7-9abc-3c2b8ba993ea": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "dc8a37be-9264-4259-b56d-57708f058eba": {
+            "6e01395d-e417-4ec7-9abc-3c2b8ba993ea": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "72ee2241-000a-470e-a5b6-4f1223d53678": {
+            "5a29175c-d3c1-415c-92b9-a428e2c63408": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "product": null,
+    "dynamic": null,
+    "upload": null,
+    "minting": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

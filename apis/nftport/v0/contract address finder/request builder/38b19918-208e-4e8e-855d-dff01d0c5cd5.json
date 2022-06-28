@@ -1,0 +1,176 @@
+{
+  "name": "apis/nftport/v0/Contract address finder/Request builder",
+  "interface": {
+    "inputs": {
+      "5410f5b2-4bd6-4ce1-be0c-6618f75ac983": {
+        "type": "string",
+        "name": "txn hash",
+        "description": "[Inherited from port `TXN_HASH` of `syncer`] \nReceives individual item for syncing."
+      },
+      "97f20d42-6bb1-4513-9a81-d078a0e69106": {
+        "type": "any",
+        "name": "params",
+        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+      }
+    },
+    "outputs": {
+      "ce28416d-fe34-4d5b-bea9-2c7c7a719580": {
+        "type": "{\n  \"method\": \"GET\",\n  \"url\": string,\n  \"headers\": {\n    \"Authorization\": string\n  }\n}",
+        "name": "JSON req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "30cd2ffa-95b7-48fb-90ea-e07b2dd9d24d": {
+          "coordinates": [
+            -14.142857142857146,
+            -168.28571428571428
+          ],
+          "name": "build URL",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.nftport.xyz/v0/contracts/{TXN_HASH}\""
+          }
+        },
+        "efc21daa-9b64-4694-b765-32867e7853f7": {
+          "coordinates": [
+            -178.14285714285714,
+            -114.28571428571429
+          ],
+          "name": "build template params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"TXN_HASH\"]"
+          }
+        },
+        "9d03d958-f52b-426d-99e1-0daeb8abe8c5": {
+          "coordinates": [
+            250.85714285714286,
+            36.714285714285715
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "006d23f3-43cb-413b-90c7-5a616ccbdbea": {
+          "coordinates": [
+            -61.142857142857146,
+            -6.2857142857142865
+          ],
+          "name": "group",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e",
+          "params": {
+            "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": "{}"
+          }
+        },
+        "3b32490e-ce37-453a-8d93-fa6cf2724a75": {
+          "coordinates": [
+            -128.14285714285714,
+            132.71428571428572
+          ],
+          "name": "get API key",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"api_key\"]"
+          }
+        },
+        "ef9a406f-f715-46b8-8e13-66a63b431974": {
+          "coordinates": [
+            -15.142857142857146,
+            236.71428571428572
+          ],
+          "name": "extract query params",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"chain\": \"chain\"}"
+          }
+        },
+        "9fc4ba0a-4a4e-4165-a428-489a97379560": {
+          "coordinates": [
+            121.85714285714286,
+            -82.28571428571428
+          ],
+          "name": "add query to URL",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e"
+        }
+      },
+      "connections": {
+        "efc21daa-9b64-4694-b765-32867e7853f7": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "30cd2ffa-95b7-48fb-90ea-e07b2dd9d24d": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "006d23f3-43cb-413b-90c7-5a616ccbdbea": {
+          "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {
+            "9d03d958-f52b-426d-99e1-0daeb8abe8c5": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        },
+        "ef9a406f-f715-46b8-8e13-66a63b431974": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "9fc4ba0a-4a4e-4165-a428-489a97379560": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "30cd2ffa-95b7-48fb-90ea-e07b2dd9d24d": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "9fc4ba0a-4a4e-4165-a428-489a97379560": {
+              "8c89bd87-3843-441c-989b-9b56288453f9": {}
+            }
+          }
+        },
+        "9fc4ba0a-4a4e-4165-a428-489a97379560": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "9d03d958-f52b-426d-99e1-0daeb8abe8c5": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        },
+        "3b32490e-ce37-453a-8d93-fa6cf2724a75": {
+          "api_key": {
+            "006d23f3-43cb-413b-90c7-5a616ccbdbea": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5410f5b2-4bd6-4ce1-be0c-6618f75ac983": {
+            "efc21daa-9b64-4694-b765-32867e7853f7": {
+              "TXN_HASH": {}
+            }
+          },
+          "97f20d42-6bb1-4513-9a81-d078a0e69106": {
+            "ef9a406f-f715-46b8-8e13-66a63b431974": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "3b32490e-ce37-453a-8d93-fa6cf2724a75": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "ce28416d-fe34-4d5b-bea9-2c7c7a719580": {
+            "9d03d958-f52b-426d-99e1-0daeb8abe8c5": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "name": "apis/nftport/v0/Collection contract deployer",
+  "description": "Deploys a fixed-supply ERC721 smart contract to a proof-of-stake chain for on-demand subsequent minting.\n\nDeploy an NFT collection contract:\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract",
+  "interface": {
+    "inputs": {
+      "6a0b4927-4e32-4f46-9917-bb55eba79aea": {
+        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"max_supply\": number,\n  \"mint_price\": number,\n  \"tokens_per_mint\": number,\n  \"owner_address\": string,\n  \"treasury_address\": string,\n  \"public_mint_start_date\": string,\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"prereveal_token_uri\": string,\n  optional \"presale_mint_start_date\": string,\n  optional \"presale_whitelisted_addresses\": string[],\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
+        "name": "contract",
+        "description": "Receives details of the cotract to be deployed.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#request-body"
+      },
+      "55e933ac-c051-439a-9695-c6a5d0c0940e": {
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\")\n}",
+        "name": "params",
+        "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#request-body\n\nDefault chain value: \"polygon\""
+      }
+    },
+    "outputs": {
+      "284d7025-55ce-4d59-ae7b-9e14b37904d5": {
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\"),\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": (\"erc721\" or \"erc1155\"),\n  \"name\": string,\n  \"symbol\": string\n}",
+        "name": "data",
+        "description": "Sends details of the deployed contract.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6Mzk2MjA1MzQ-deploy-an-nft-collection-contract#response-body"
+      },
+      "42bad89e-6d6f-4548-8d77-a87368a34e85": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "b1034bc0-1f04-4162-98a8-ad466658d145": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6fa5e587-5fab-4d05-8f9b-59a8d1091f6a": {
+          "coordinates": [
+            31,
+            20
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "ad6773a6-4093-42e1-abd0-158df0cddb7f": {
+          "coordinates": [
+            115,
+            -196
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Deploying collection contract failed.\""
+          }
+        },
+        "8656eb3e-703f-40ad-b5e3-a63787352e50": {
+          "coordinates": [
+            -219,
+            165
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "0e618d6a-be81-4bc2-b438-9dc8a0a7ad6a": {
+          "coordinates": [
+            -134,
+            -195
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"polygon\"}"
+          }
+        },
+        "82aa0896-e6bd-494c-adc3-e8aaaecf3274": {
+          "coordinates": [
+            -46.2,
+            245.6
+          ],
+          "name": "build request",
+          "prototype": "b66f4f35-d8d5-41c1-a443-4241602d7bff",
+          "params": {}
+        }
+      },
+      "connections": {
+        "6fa5e587-5fab-4d05-8f9b-59a8d1091f6a": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "ad6773a6-4093-42e1-abd0-158df0cddb7f": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "8656eb3e-703f-40ad-b5e3-a63787352e50": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "0e618d6a-be81-4bc2-b438-9dc8a0a7ad6a": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "82aa0896-e6bd-494c-adc3-e8aaaecf3274": {
+              "e2a7b1a3-82a7-412d-aa95-a7ede386e225": {}
+            }
+          }
+        },
+        "82aa0896-e6bd-494c-adc3-e8aaaecf3274": {
+          "3f0553b8-0170-45e2-9624-963209b45f71": {
+            "6fa5e587-5fab-4d05-8f9b-59a8d1091f6a": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "0e618d6a-be81-4bc2-b438-9dc8a0a7ad6a": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "82aa0896-e6bd-494c-adc3-e8aaaecf3274": {
+              "679f7d97-9d3d-46ca-85af-a4d0e2bbf5a9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6a0b4927-4e32-4f46-9917-bb55eba79aea": {
+            "8656eb3e-703f-40ad-b5e3-a63787352e50": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "55e933ac-c051-439a-9695-c6a5d0c0940e": {
+            "8656eb3e-703f-40ad-b5e3-a63787352e50": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "42bad89e-6d6f-4548-8d77-a87368a34e85": {
+            "6fa5e587-5fab-4d05-8f9b-59a8d1091f6a": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "b1034bc0-1f04-4162-98a8-ad466658d145": {
+            "6fa5e587-5fab-4d05-8f9b-59a8d1091f6a": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "ad6773a6-4093-42e1-abd0-158df0cddb7f": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "284d7025-55ce-4d59-ae7b-9e14b37904d5": {
+            "ad6773a6-4093-42e1-abd0-158df0cddb7f": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "smart contract": null,
+    "deploy": null,
+    "collection": null,
+    "polygon": null,
+    "rinkeby": null,
+    "ethereum": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -17,7 +17,7 @@
         "name": "written"
       },
       "b7f7cfdc-dfaf-4750-b623-cd4fe77b4278": {
-        "type": "{\"error\": string}",
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
         "name": "error"
       }
     }
@@ -30,7 +30,7 @@
             15,
             -72.5
           ],
-          "name": "node 1",
+          "name": "write file",
           "prototype": "ecc611c2-4429-4344-b72c-c52ebbaf1b8a"
         },
         "c8e5653f-0523-42c3-8fb0-88118cb8b55b": {

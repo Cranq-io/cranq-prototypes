@@ -1,0 +1,121 @@
+{
+  "name": "io/http/utils/File form field header builder",
+  "description": "Builds a header to be included in a multipart/form-data request.",
+  "interface": {
+    "inputs": {
+      "597a6faf-d884-4337-a280-fed8e91bde37": {
+        "type": "{\n  \"name\": string,\n  \"fileName\": string,\n  optional \"contentType\": string\n}",
+        "name": "field"
+      }
+    },
+    "outputs": {
+      "b1ac3e91-f9b6-40d5-9467-80ac1c6e3c75": {
+        "type": "string",
+        "name": "header"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4ee9fae8-2d98-4b30-9f44-7952dcfa7d25": {
+          "coordinates": [
+            117,
+            -97
+          ],
+          "name": "build header",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"Content-Disposition: form-data; name=\\\"{NAME}\\\"; filename=\\\"{FILE_NAME}\\\"\\r\\nContent-Type: {CONTENT_TYPE}\""
+          }
+        },
+        "26b614f5-0a3c-4d98-ae34-7c940a3068d4": {
+          "coordinates": [
+            101,
+            72
+          ],
+          "name": "build params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"NAME\", \"FILE_NAME\", \"CONTENT_TYPE\"]"
+          }
+        },
+        "f3d78cf1-3fc5-4842-a02b-a41c4060d8ff": {
+          "coordinates": [
+            -90,
+            -94
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"name\", \"fileName\", \"contentType\"]"
+          }
+        },
+        "0d0c003e-9b71-4c09-85dc-1f0f25b22513": {
+          "coordinates": [
+            -109,
+            73
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"contentType\": \"text/plain\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "26b614f5-0a3c-4d98-ae34-7c940a3068d4": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4ee9fae8-2d98-4b30-9f44-7952dcfa7d25": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "f3d78cf1-3fc5-4842-a02b-a41c4060d8ff": {
+          "name": {
+            "26b614f5-0a3c-4d98-ae34-7c940a3068d4": {
+              "NAME": {}
+            }
+          },
+          "fileName": {
+            "26b614f5-0a3c-4d98-ae34-7c940a3068d4": {
+              "FILE_NAME": {}
+            }
+          },
+          "contentType": {
+            "26b614f5-0a3c-4d98-ae34-7c940a3068d4": {
+              "CONTENT_TYPE": {}
+            }
+          }
+        },
+        "0d0c003e-9b71-4c09-85dc-1f0f25b22513": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "f3d78cf1-3fc5-4842-a02b-a41c4060d8ff": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "597a6faf-d884-4337-a280-fed8e91bde37": {
+            "0d0c003e-9b71-4c09-85dc-1f0f25b22513": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "b1ac3e91-f9b6-40d5-9467-80ac1c6e3c75": {
+            "4ee9fae8-2d98-4b30-9f44-7952dcfa7d25": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

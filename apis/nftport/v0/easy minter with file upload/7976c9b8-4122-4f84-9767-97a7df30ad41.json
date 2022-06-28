@@ -1,0 +1,176 @@
+{
+  "name": "apis/nftport/v0/Easy minter with file upload",
+  "description": "With Easy mint, you can turn anything into an NFT in less than 5 minutes using one simple API call.\n\nEasy minting w/file upload:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDQ-easy-minting-w-file-upload",
+  "interface": {
+    "inputs": {
+      "f425554c-70b1-44cd-8620-7044af9e50a9": {
+        "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n  \"name\": string,\n  \"description\": string,\n  \"mint_to_address\": string\n}",
+        "name": "minting details",
+        "description": "Receives the details of the minting.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDQ-easy-minting-w-file-upload#request-body"
+      },
+      "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "name": "params",
+        "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDQ-easy-minting-w-file-upload#request-body\n\nDefault chain value: \"polygon\""
+      }
+    },
+    "outputs": {
+      "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"mint_to_address\": string,\n  \"name\": string,\n  \"description\": string\n}",
+        "name": "data",
+        "description": "Sends minting details e.g  contract address and the transaction hash which can be used in Return minted NFT to receive the token ID and confirm that the minting was successful (minting can take up to a few minutes depending on how congested the network is).\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM5MDM-easy-minting-w-url#response-body"
+      },
+      "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original response."
+      },
+      "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+          "coordinates": [
+            -126,
+            -140
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"polygon\"}"
+          }
+        },
+        "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+          "coordinates": [
+            207,
+            -125
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"NFT minting failed.\""
+          }
+        },
+        "25187c96-d706-4d05-9035-3cc8d43b9887": {
+          "coordinates": [
+            100,
+            12
+          ],
+          "name": "dispatch form-data request",
+          "prototype": "989f1602-e857-4d5e-a7af-0905f12a1f45"
+        },
+        "1fae076c-af9e-4f45-a963-b7cd6bb70f75": {
+          "coordinates": [
+            -234,
+            69
+          ],
+          "name": "forward inputs",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
+          "coordinates": [
+            45,
+            188
+          ],
+          "name": "build request",
+          "prototype": "fb2e592e-c1ba-43ff-b526-407b1b1395cd"
+        }
+      },
+      "connections": {
+        "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
+              "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {}
+            }
+          }
+        },
+        "25187c96-d706-4d05-9035-3cc8d43b9887": {
+          "b823f037-d710-44df-963d-1fa300277739": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "1fae076c-af9e-4f45-a963-b7cd6bb70f75": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
+              "945a6afc-dd19-467f-be54-c9bf69190c09": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "f20b95fb-3054-421a-bb02-6f3a6ca43a3d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "823f816f-ee00-4f98-8f73-5ab3df5b4a4e": {
+          "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
+            "25187c96-d706-4d05-9035-3cc8d43b9887": {
+              "0410c79a-5ea7-45c8-80ae-417492d414fa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "df450167-1afc-4494-b1c3-afa5c07b3f69": {
+            "1fae076c-af9e-4f45-a963-b7cd6bb70f75": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "f425554c-70b1-44cd-8620-7044af9e50a9": {
+            "1fae076c-af9e-4f45-a963-b7cd6bb70f75": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
+            "cca1db47-3ef0-4af9-a686-2bf0c901606e": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "25187c96-d706-4d05-9035-3cc8d43b9887": {
+              "19081d3b-87ba-48bd-af9a-84275a718cc3": {}
+            }
+          },
+          "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
+            "25187c96-d706-4d05-9035-3cc8d43b9887": {
+              "b823f037-d710-44df-963d-1fa300277739": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "352b98b2-6df6-4a21-93e1-a31cf5b9311d",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "crypto": null,
+    "nft": null,
+    "product": null,
+    "dynamic": null,
+    "mint": null,
+    "easy": null,
+    "upload": null,
+    "file": null,
+    "image": null,
+    "animation": null,
+    "polygon": null,
+    "rinkeby": null
+  },
+  "original": "c781ac05-624a-4ae2-a4a6-d91fc214d51a",
+  "attributes": {
+    "locked": true
+  }
+}

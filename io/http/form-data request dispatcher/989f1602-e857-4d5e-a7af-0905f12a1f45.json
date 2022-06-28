@@ -1,0 +1,206 @@
+{
+  "name": "io/http/Form-data request dispatcher",
+  "description": "Dispatches requests with content type \"multipart/form-data\".\n\nExpects the request body to be base64-encoded.",
+  "interface": {
+    "inputs": {
+      "0410c79a-5ea7-45c8-80ae-417492d414fa": {
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
+        "name": "form req."
+      }
+    },
+    "outputs": {
+      "b823f037-d710-44df-963d-1fa300277739": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "19081d3b-87ba-48bd-af9a-84275a718cc3": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1a404785-c7ed-4c80-a28d-b62112207731": {
+          "coordinates": [
+            321.22718942901224,
+            2.8529610339506917
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "93538081-8716-4534-adcb-b96dd5d76eea": {
+          "coordinates": [
+            -214,
+            114
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"headers\", \"form\"]"
+          }
+        },
+        "626289c0-fdf4-4fc2-82cb-65ea2eb4578c": {
+          "coordinates": [
+            134,
+            130
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"headers\", \"body\"]"
+          }
+        },
+        "4107a892-3c16-4177-ad6b-cc2aa1043575": {
+          "coordinates": [
+            144,
+            -156
+          ],
+          "name": "merge req. params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "152f3451-e042-4197-96ec-59d95d1bccdd": {
+          "coordinates": [
+            -39,
+            276
+          ],
+          "name": "form request body builder",
+          "prototype": "7823060a-460e-48b5-8db8-7fbdf36d9134"
+        },
+        "fc9ae376-8c25-45a6-bb66-a6b0a59c76e3": {
+          "coordinates": [
+            -80,
+            -232
+          ],
+          "name": "filter fields",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"method\": \"method\", \"url\": \"url\"}"
+          }
+        },
+        "bc425148-1f80-4082-b7bf-baab197fe2f8": {
+          "coordinates": [
+            -45.66666666666666,
+            -3.3333333333333144
+          ],
+          "name": "insert content type",
+          "prototype": "0055a642-629b-4652-9290-c751c3553457"
+        },
+        "c7f0db8e-221a-457f-a4d9-4cf5b09ef3e3": {
+          "coordinates": [
+            -223,
+            -133
+          ],
+          "name": "get boundary",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"form\", \"boundary\"]"
+          }
+        }
+      },
+      "connections": {
+        "4107a892-3c16-4177-ad6b-cc2aa1043575": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "1a404785-c7ed-4c80-a28d-b62112207731": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "626289c0-fdf4-4fc2-82cb-65ea2eb4578c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4107a892-3c16-4177-ad6b-cc2aa1043575": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "93538081-8716-4534-adcb-b96dd5d76eea": {
+          "form": {
+            "152f3451-e042-4197-96ec-59d95d1bccdd": {
+              "43185963-59a0-4d36-8d29-64e764aa56a9": {}
+            }
+          },
+          "headers": {
+            "bc425148-1f80-4082-b7bf-baab197fe2f8": {
+              "fd7696f8-12dc-44b1-9473-cbc4c4e8d73f": {}
+            }
+          }
+        },
+        "152f3451-e042-4197-96ec-59d95d1bccdd": {
+          "1a242d18-8cf1-42fa-82e7-a74b4692a820": {
+            "626289c0-fdf4-4fc2-82cb-65ea2eb4578c": {
+              "body": {}
+            }
+          }
+        },
+        "fc9ae376-8c25-45a6-bb66-a6b0a59c76e3": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "4107a892-3c16-4177-ad6b-cc2aa1043575": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "c7f0db8e-221a-457f-a4d9-4cf5b09ef3e3": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "bc425148-1f80-4082-b7bf-baab197fe2f8": {
+              "508b3b96-2efc-4679-b471-1f091a24c36d": {}
+            }
+          }
+        },
+        "bc425148-1f80-4082-b7bf-baab197fe2f8": {
+          "04c3fdd8-3f26-49ad-9319-4d896dcf6f6d": {
+            "626289c0-fdf4-4fc2-82cb-65ea2eb4578c": {
+              "headers": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0410c79a-5ea7-45c8-80ae-417492d414fa": {
+            "93538081-8716-4534-adcb-b96dd5d76eea": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "fc9ae376-8c25-45a6-bb66-a6b0a59c76e3": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "c7f0db8e-221a-457f-a4d9-4cf5b09ef3e3": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "b823f037-d710-44df-963d-1fa300277739": {
+            "1a404785-c7ed-4c80-a28d-b62112207731": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          },
+          "19081d3b-87ba-48bd-af9a-84275a718cc3": {
+            "1a404785-c7ed-4c80-a28d-b62112207731": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "keywords": {
+    "file": null,
+    "image": null,
+    "video": null,
+    "upload": null,
+    "post": null,
+    "put": null,
+    "patch": null,
+    "fetch": null,
+    "api": null,
+    "data": null,
+    "multipart": null,
+    "form-data": null,
+    "base64": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -5,7 +5,7 @@
       "5893b05f-d898-4539-babf-54a541f46995": {
         "type": "any",
         "name": "data",
-        "description": "Receives data items to be aggregated.\n\nSignal tag is expected to have an index. (From iteration)"
+        "description": "Receives data items to be aggregated.\n\nSignal tag is expected to be nested. (Have an index from an iteration)"
       },
       "c3ac9a23-2d05-4282-bca0-92989d6c081b": {
         "type": "boolean",
@@ -73,6 +73,17 @@
       }
     }
   },
-  "attributes": {},
-  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3"
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "description": "Aggregates signals originating from an iteration. Expects signals to have nested tags.\nTrims nested tag on releasing the aggregated signal. ",
+  "keywords": {
+    "collect": null,
+    "iterate": null,
+    "loop": null,
+    "aggregate": null,
+    "accumulate": null,
+    "buffer": null
+  },
+  "attributes": {
+    "locked": true
+  }
 }

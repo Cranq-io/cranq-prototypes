@@ -1,0 +1,35 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "9ec2ec0d-0d42-4f25-a7e5-a09a770546b1": "const buffers = [];\nfor (const chunk of data)\n  buffers.push(Buffer.from(chunk.data, chunk.encoding));\noutputs.joined(Buffer.concat(buffers).toString(\"base64\"), tag);\n"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "9ec2ec0d-0d42-4f25-a7e5-a09a770546b1": {
+        "type": "{\n  \"encoding\": \"utf8\" or \"base64\",\n  \"data\": string\n}[]",
+        "name": "chunks",
+        "description": "Receives the chunks to be joined."
+      }
+    },
+    "outputs": {
+      "c4a4f266-3d20-4f47-bda1-6b64660865db": {
+        "type": "string",
+        "name": "joined",
+        "description": "Sends the Base 64-encoded joined chunks."
+      }
+    }
+  },
+  "name": "binary/Joiner",
+  "description": "Joins differently encoded chunks into a base64-encoded string.\n\nSupports UTF-8 and Base 64 for input chunks.\n\nSee `binary/Chunk builder` for generating input for `chunks`.",
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "base64": null,
+    "utf8": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

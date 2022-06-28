@@ -17,7 +17,7 @@
     "outputs": {
       "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
         "description": "Sends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}",
-        "type": "({string: typeof `unsynced`} or typeof `unsynced`[])",
+        "type": "({string: typeof `unsynced`} or typeof `unsynced`)[]",
         "name": "synced"
       }
     }

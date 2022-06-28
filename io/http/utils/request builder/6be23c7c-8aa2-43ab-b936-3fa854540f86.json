@@ -1,0 +1,83 @@
+{
+  "name": "io/http/utils/Request builder",
+  "description": "Builds a basic HTTP request.",
+  "interface": {
+    "inputs": {
+      "1c16f412-ea81-4fec-a93a-8503a7204c53": {
+        "type": "\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"",
+        "name": "method"
+      },
+      "60f77b8e-946d-4bdd-a060-2206297faab6": {
+        "type": "string",
+        "name": "URL"
+      },
+      "aee08884-61a6-4292-a1eb-431d701771e6": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
+      "7e5208f0-6079-4b7b-b673-3a420affc7a3": {
+        "type": "string",
+        "name": "body"
+      }
+    },
+    "outputs": {
+      "d1692afa-7953-4b5b-87c9-6d75c06364ef": {
+        "type": "{\n  \"method\": \"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e0d5449d-073d-4ec3-8144-af5ead4b80c2": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "build request",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"method\", \"url\", \"headers\", \"body\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "1c16f412-ea81-4fec-a93a-8503a7204c53": {
+            "e0d5449d-073d-4ec3-8144-af5ead4b80c2": {
+              "method": {}
+            }
+          },
+          "60f77b8e-946d-4bdd-a060-2206297faab6": {
+            "e0d5449d-073d-4ec3-8144-af5ead4b80c2": {
+              "url": {}
+            }
+          },
+          "aee08884-61a6-4292-a1eb-431d701771e6": {
+            "e0d5449d-073d-4ec3-8144-af5ead4b80c2": {
+              "headers": {}
+            }
+          },
+          "7e5208f0-6079-4b7b-b673-3a420affc7a3": {
+            "e0d5449d-073d-4ec3-8144-af5ead4b80c2": {
+              "body": {}
+            }
+          }
+        },
+        "outputs": {
+          "d1692afa-7953-4b5b-87c9-6d75c06364ef": {
+            "e0d5449d-073d-4ec3-8144-af5ead4b80c2": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

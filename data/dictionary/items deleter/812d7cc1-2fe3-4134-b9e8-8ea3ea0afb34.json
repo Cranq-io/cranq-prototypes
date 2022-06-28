@@ -1,0 +1,89 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "510a0792-0ecf-4872-974b-f2b5e0f229da": {
+          "coordinates": [
+            -48,
+            -8
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8"
+        },
+        "0575a577-b771-40b6-a8bc-2d807c7730c2": {
+          "coordinates": [
+            68,
+            28
+          ],
+          "name": "item deleter",
+          "prototype": "73a9fd6e-d594-4efc-a0ae-acf4ab89b577"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6c876470-1823-4ec1-80a3-e848e85b0e08": {
+            "510a0792-0ecf-4872-974b-f2b5e0f229da": {
+              "ec095128-e720-45fc-9b4f-b87a130d9249": {}
+            }
+          },
+          "892cbf3b-88a0-4983-bf33-bac00e9dd8f5": {
+            "510a0792-0ecf-4872-974b-f2b5e0f229da": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "6f52bf8b-c578-46ca-8231-6a6186fba2a3": {
+            "510a0792-0ecf-4872-974b-f2b5e0f229da": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "510a0792-0ecf-4872-974b-f2b5e0f229da": {
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "0575a577-b771-40b6-a8bc-2d807c7730c2": {
+              "af51c64a-620a-42e7-83e4-0497df3f0a65": {}
+            }
+          },
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "0575a577-b771-40b6-a8bc-2d807c7730c2": {
+              "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": {}
+            }
+          }
+        },
+        "0575a577-b771-40b6-a8bc-2d807c7730c2": {
+          "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+            "510a0792-0ecf-4872-974b-f2b5e0f229da": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "6c876470-1823-4ec1-80a3-e848e85b0e08": {
+        "type": "{string:any}",
+        "name": "dict"
+      },
+      "892cbf3b-88a0-4983-bf33-bac00e9dd8f5": {
+        "type": "string[]",
+        "name": "keys"
+      }
+    },
+    "outputs": {
+      "6f52bf8b-c578-46ca-8231-6a6186fba2a3": {
+        "type": "{string:any}",
+        "name": "dict"
+      }
+    }
+  },
+  "name": "data/dictionary/Items deleter",
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "attributes": {
+    "locked": true
+  }
+}

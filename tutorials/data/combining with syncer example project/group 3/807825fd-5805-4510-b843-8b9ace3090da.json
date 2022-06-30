@@ -1,42 +1,48 @@
 {
-  "description": "Example node, that demonstrates the building of arrays with the flow/Syncer. Provides the \"depts\" dataset for further examples.",
+  "name": "tutorials/data/Combining with syncer example project/Group 3",
   "interface": {
     "inputs": {
-      "0bcc9e0a-3dcc-41d2-b0b2-69d30a3f5370": {
-        "description": "",
-        "type": "any",
-        "name": "build"
+      "d3bc9a07-7f45-4bd4-b828-abdb13b726d2": {
+        "type": "typeof `data` of `forwarder B`",
+        "name": "forwarder B-data",
+        "description": "[Inherited from port `data` of `forwarder B`] \nReceives data to be forwarded."
       },
-      "1af73e99-9200-4d24-b08f-55ba17ae62f9": {
-        "type": "any",
-        "name": "in"
+      "8c9f67be-077a-48ae-80c3-43dc1b10cca3": {
+        "type": "typeof `values` of `build_2`",
+        "name": "build_2-values",
+        "description": "[Inherited from port `values` of `build_2`] \nReceives the values to construct the dictionary from.\n\nExample:\n[1, 3, 5]"
       }
     },
     "outputs": {
-      "d5d391b2-4325-4306-84e9-67de5d649964": {
-        "description": "",
-        "type": "any",
-        "name": "array"
+      "05f3e498-0a77-4071-b828-87cff28ee2ce": {
+        "type": "typeof `data` of `forwarder B`",
+        "name": "forwarder B-data",
+        "description": "[Inherited from port `data` of `forwarder B`] \nSends forwarded data."
+      },
+      "c234cb45-2420-4101-a6c8-26a7950328e5": {
+        "type": "typeof `synced` of `syncer B`",
+        "name": "syncer B-synced",
+        "description": "[Inherited from port `synced` of `syncer B`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
       }
     }
   },
   "implementations": {
     "cranq": {
       "nodes": {
-        "70e3354c-fa06-4098-83d3-07c4bd606e0d": {
+        "d667fc3b-7a50-49e6-80bd-2c6ae5b7995c": {
           "coordinates": [
-            -133,
-            -11
+            -258.125,
+            -56.75
           ],
           "description": "",
           "params": {},
           "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
-          "name": "forwarder"
+          "name": "forwarder B"
         },
-        "77a20656-a9e6-4e73-aad0-e06b36c75620": {
+        "76f94829-5e39-45f4-8eb6-b373ae4bcb45": {
           "coordinates": [
-            43,
-            -65
+            -82.125,
+            -110.75
           ],
           "description": "",
           "params": {
@@ -45,10 +51,10 @@
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
           "name": "schema"
         },
-        "4ab1222d-f183-46b5-a843-045222cc263e": {
+        "722ccc85-14c8-489a-986d-a04e578d5608": {
           "coordinates": [
-            42,
-            18
+            -83.125,
+            -27.75
           ],
           "description": "",
           "params": {
@@ -57,22 +63,10 @@
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
           "name": "record_1"
         },
-        "04ad8e74-4277-40ae-8632-e7df0b8d9bc5": {
+        "66740dd2-474a-4242-a4e6-e39aa20c45bd": {
           "coordinates": [
-            40,
-            95
-          ],
-          "description": "",
-          "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Facilities\",\"Frank\"]"
-          },
-          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "record_2"
-        },
-        "5f6cf1d4-1d7b-453a-8f8f-195fea98a8fc": {
-          "coordinates": [
-            39,
-            182
+            -86.125,
+            136.25
           ],
           "description": "",
           "params": {
@@ -81,123 +75,113 @@
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
           "name": "record_3"
         },
-        "228d1bd0-87de-48e7-9623-57d3d28cf32f": {
+        "d3ab4c80-effa-4bd2-9844-4ad8881edf66": {
           "coordinates": [
-            216,
-            -10
+            90.875,
+            -55.75
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
           "name": "build_1"
         },
-        "54ef9284-506d-46e4-bb0a-87e275bcdca7": {
+        "206cc647-431d-4f87-9cc0-57305368f4f7": {
           "coordinates": [
-            218,
-            69
+            92.875,
+            23.25
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
           "name": "build_2"
         },
-        "80d40320-b81b-4252-bc5f-1be4177dad52": {
+        "1398a520-9442-47c9-9b6c-9abd264ecf37": {
           "coordinates": [
-            220,
-            152
+            94.875,
+            106.25
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
           "name": "build_3"
         },
-        "f0a6e892-16ed-449a-bb9f-573d7ac0d2df": {
+        "d92e76b3-6608-47af-b06b-dc04174ad5c5": {
           "coordinates": [
-            356,
-            31
+            230.875,
+            -14.75
           ],
           "description": "",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "syncer"
+          "name": "syncer B"
         }
       },
       "connections": {
-        "77a20656-a9e6-4e73-aad0-e06b36c75620": {
+        "76f94829-5e39-45f4-8eb6-b373ae4bcb45": {
           "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "228d1bd0-87de-48e7-9623-57d3d28cf32f": {
+            "d3ab4c80-effa-4bd2-9844-4ad8881edf66": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {
                 "description": ""
               }
             },
-            "80d40320-b81b-4252-bc5f-1be4177dad52": {
+            "1398a520-9442-47c9-9b6c-9abd264ecf37": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
             },
-            "54ef9284-506d-46e4-bb0a-87e275bcdca7": {
+            "206cc647-431d-4f87-9cc0-57305368f4f7": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
             }
           }
         },
-        "70e3354c-fa06-4098-83d3-07c4bd606e0d": {
+        "d667fc3b-7a50-49e6-80bd-2c6ae5b7995c": {
           "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
-            "77a20656-a9e6-4e73-aad0-e06b36c75620": {
+            "76f94829-5e39-45f4-8eb6-b373ae4bcb45": {
               "0b28df10-b056-4666-ae14-2357d747f7b9": {
                 "description": ""
               }
             },
-            "4ab1222d-f183-46b5-a843-045222cc263e": {
+            "722ccc85-14c8-489a-986d-a04e578d5608": {
               "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             },
-            "04ad8e74-4277-40ae-8632-e7df0b8d9bc5": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
-            },
-            "5f6cf1d4-1d7b-453a-8f8f-195fea98a8fc": {
+            "66740dd2-474a-4242-a4e6-e39aa20c45bd": {
               "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
-        "228d1bd0-87de-48e7-9623-57d3d28cf32f": {
+        "d3ab4c80-effa-4bd2-9844-4ad8881edf66": {
           "852cd030-0794-42cc-b448-0886fb787cf2": {
-            "f0a6e892-16ed-449a-bb9f-573d7ac0d2df": {
+            "d92e76b3-6608-47af-b06b-dc04174ad5c5": {
               "0": {
                 "description": ""
               }
             }
           }
         },
-        "4ab1222d-f183-46b5-a843-045222cc263e": {
+        "722ccc85-14c8-489a-986d-a04e578d5608": {
           "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "228d1bd0-87de-48e7-9623-57d3d28cf32f": {
+            "d3ab4c80-effa-4bd2-9844-4ad8881edf66": {
               "e77e7439-84f9-414f-b45b-356ea70ce445": {}
             }
           }
         },
-        "04ad8e74-4277-40ae-8632-e7df0b8d9bc5": {
+        "66740dd2-474a-4242-a4e6-e39aa20c45bd": {
           "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "54ef9284-506d-46e4-bb0a-87e275bcdca7": {
+            "1398a520-9442-47c9-9b6c-9abd264ecf37": {
               "e77e7439-84f9-414f-b45b-356ea70ce445": {}
             }
           }
         },
-        "5f6cf1d4-1d7b-453a-8f8f-195fea98a8fc": {
-          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "80d40320-b81b-4252-bc5f-1be4177dad52": {
-              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
-            }
-          }
-        },
-        "54ef9284-506d-46e4-bb0a-87e275bcdca7": {
+        "206cc647-431d-4f87-9cc0-57305368f4f7": {
           "852cd030-0794-42cc-b448-0886fb787cf2": {
-            "f0a6e892-16ed-449a-bb9f-573d7ac0d2df": {
+            "d92e76b3-6608-47af-b06b-dc04174ad5c5": {
               "1": {}
             }
           }
         },
-        "80d40320-b81b-4252-bc5f-1be4177dad52": {
+        "1398a520-9442-47c9-9b6c-9abd264ecf37": {
           "852cd030-0794-42cc-b448-0886fb787cf2": {
-            "f0a6e892-16ed-449a-bb9f-573d7ac0d2df": {
+            "d92e76b3-6608-47af-b06b-dc04174ad5c5": {
               "2": {}
             }
           }
@@ -205,15 +189,25 @@
       },
       "forwards": {
         "inputs": {
-          "0bcc9e0a-3dcc-41d2-b0b2-69d30a3f5370": {
-            "70e3354c-fa06-4098-83d3-07c4bd606e0d": {
+          "d3bc9a07-7f45-4bd4-b828-abdb13b726d2": {
+            "d667fc3b-7a50-49e6-80bd-2c6ae5b7995c": {
               "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          },
+          "8c9f67be-077a-48ae-80c3-43dc1b10cca3": {
+            "206cc647-431d-4f87-9cc0-57305368f4f7": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
             }
           }
         },
         "outputs": {
-          "d5d391b2-4325-4306-84e9-67de5d649964": {
-            "f0a6e892-16ed-449a-bb9f-573d7ac0d2df": {
+          "05f3e498-0a77-4071-b828-87cff28ee2ce": {
+            "d667fc3b-7a50-49e6-80bd-2c6ae5b7995c": {
+              "0a9cd5b0-6de6-4c69-aa04-2816de994173": {}
+            }
+          },
+          "c234cb45-2420-4101-a6c8-26a7950328e5": {
+            "d92e76b3-6608-47af-b06b-dc04174ad5c5": {
               "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
             }
           }
@@ -221,7 +215,7 @@
       }
     }
   },
-  "name": "tutorials/data/Syncer (build depts array) example",
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
   "attributes": {
     "internal": true
   }

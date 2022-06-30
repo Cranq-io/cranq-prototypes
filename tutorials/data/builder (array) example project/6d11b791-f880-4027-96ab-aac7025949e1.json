@@ -1,0 +1,110 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "Project root",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -476,
+            -114
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            303,
+            -142
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "e7a6ee06-6518-48bd-afaa-dd3da1bf1399": {
+          "coordinates": [
+            -142,
+            -292
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "0"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "0"
+        },
+        "c6a3f1a2-849b-4280-8dca-c6b68d2711c0": {
+          "coordinates": [
+            -158,
+            -89
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "4"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "4"
+        },
+        "15440aec-b012-4f0d-8a19-503509be8d51": {
+          "coordinates": [
+            72,
+            -142
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
+          "name": "Builder A"
+        }
+      },
+      "connections": {
+        "e7a6ee06-6518-48bd-afaa-dd3da1bf1399": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "15440aec-b012-4f0d-8a19-503509be8d51": {
+              "2813c5a2-d4d6-42ce-a52f-9def6df97814": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "c6a3f1a2-849b-4280-8dca-c6b68d2711c0": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "e7a6ee06-6518-48bd-afaa-dd3da1bf1399": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "15440aec-b012-4f0d-8a19-503509be8d51": {
+              "ed11e46e-595d-4515-8681-ff35c7a555c6": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "c6a3f1a2-849b-4280-8dca-c6b68d2711c0": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "15440aec-b012-4f0d-8a19-503509be8d51": {
+          "c0facb18-50d6-464f-8c91-d6255080b146": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/data/Builder (array) example project"
+}

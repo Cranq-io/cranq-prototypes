@@ -1,0 +1,106 @@
+{
+  "name": "tutorials/data/Combining with syncer example project/Group",
+  "interface": {
+    "inputs": {
+      "4653df36-8d2b-4e92-bdf8-e147b526f9dd": {
+        "type": "typeof `data` of `forwarder`",
+        "name": "forwarder-data",
+        "description": "[Inherited from port `data` of `forwarder`] \nReceives data to be forwarded."
+      }
+    },
+    "outputs": {
+      "ae7e4c7b-f54b-4d36-baaa-f16fdcc8e07b": {
+        "type": "typeof `synced` of `syncer`",
+        "name": "syncer-synced",
+        "description": "[Inherited from port `synced` of `syncer`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5a984e25-4b98-47ad-a0d1-9fc9bcc986a7": {
+          "coordinates": [
+            -21.75,
+            -159.75
+          ],
+          "name": "syncer (build emps array) example",
+          "prototype": "da897a3d-d49a-470b-a7b4-606697a885e1"
+        },
+        "9e7c1b56-60c4-4384-9a06-805c0613a7cc": {
+          "coordinates": [
+            -9.75,
+            131.25
+          ],
+          "name": "syncer (build depts array) example",
+          "prototype": "19e94fcf-e899-4231-bbc4-d80c10e0a001"
+        },
+        "2498bc38-4074-424c-b1f8-a40f834b3a96": {
+          "coordinates": [
+            215.25,
+            -14.75
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"Employees\",\"Departments\"]"
+          }
+        },
+        "da685682-949b-4771-956e-ab91895552f3": {
+          "coordinates": [
+            -183.75,
+            43.25
+          ],
+          "name": "forwarder",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        }
+      },
+      "connections": {
+        "5a984e25-4b98-47ad-a0d1-9fc9bcc986a7": {
+          "8ba1e7be-fd21-4063-9a86-ae5042616b78": {
+            "2498bc38-4074-424c-b1f8-a40f834b3a96": {
+              "Employees": {}
+            }
+          }
+        },
+        "9e7c1b56-60c4-4384-9a06-805c0613a7cc": {
+          "d5d391b2-4325-4306-84e9-67de5d649964": {
+            "2498bc38-4074-424c-b1f8-a40f834b3a96": {
+              "Departments": {}
+            }
+          }
+        },
+        "da685682-949b-4771-956e-ab91895552f3": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "5a984e25-4b98-47ad-a0d1-9fc9bcc986a7": {
+              "68298fb0-ad64-4e98-9606-4c6b75ac090f": {}
+            },
+            "9e7c1b56-60c4-4384-9a06-805c0613a7cc": {
+              "0bcc9e0a-3dcc-41d2-b0b2-69d30a3f5370": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4653df36-8d2b-4e92-bdf8-e147b526f9dd": {
+            "da685682-949b-4771-956e-ab91895552f3": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "outputs": {
+          "ae7e4c7b-f54b-4d36-baaa-f16fdcc8e07b": {
+            "2498bc38-4074-424c-b1f8-a40f834b3a96": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

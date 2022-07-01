@@ -1,5 +1,5 @@
 {
-  "description": "Retrieves multiple items' values from the dictionary by their keys, in the order of the keys provided.\nIf any of the items are not found in the dictionary, a 'null' value will be sent in its place.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [ \"first\", \"third\" ]@0 received via `key`\n3. `values` sends  [ 1, 3 ]@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. \"second\"@0 received via `key`\n3. `values` sends  [ 1, null ]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
+  "description": "Retrieves multiple items' values from the dictionary by their keys, in the order of the keys provided.\nIf any of the items are not found in the dictionary, a 'null' value will be sent in its place.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [ \"first\", \"third\" ]@0 received via `key`\n3. `values` sends  [ 1, 3 ]@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\",\"second\"]@0 received via `key`\n3. `values` sends  [ 1, null ]@0\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/tree/main/reference/3_querying_data/3_1_getters",
   "interface": {
     "inputs": {
       "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
@@ -26,7 +26,7 @@
       "nodes": {
         "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
           "coordinates": [
-            0,
+            -27,
             0
           ],
           "description": "",
@@ -38,8 +38,8 @@
         },
         "638de552-beea-4ce8-9c11-c3341ceec70a": {
           "coordinates": [
-            2,
-            -47
+            86,
+            -34
           ],
           "description": "",
           "params": {},

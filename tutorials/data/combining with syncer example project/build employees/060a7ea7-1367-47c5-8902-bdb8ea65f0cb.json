@@ -3,16 +3,16 @@
   "interface": {
     "inputs": {
       "c9d27768-7e9c-494b-8e04-aa304d4e25c6": {
-        "type": "typeof `data` of `forwarder B`",
-        "name": "in",
-        "description": "[Inherited from port `data` of `forwarder B`] \nReceives data to be forwarded."
+        "type": "",
+        "name": "start",
+        "description": ""
       }
     },
     "outputs": {
       "d23f7c0f-3fb8-4b70-b970-843ac97d5390": {
-        "type": "typeof `synced` of `Syncer A`",
-        "name": "out",
-        "description": "[Inherited from port `synced` of `Syncer A`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+        "type": "",
+        "name": "employees result",
+        "description": ""
       }
     }
   },
@@ -29,7 +29,7 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"EmpID\",\"Name\",\"Dept\",\"HireDate\",\"Salary\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_keys"
+          "name": "Keys of employee data"
         },
         "9782ac9a-99fe-4bfb-acdb-95c2f33213f9": {
           "coordinates": [
@@ -41,7 +41,7 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[101,\"Sue\",\"Facilities\",\"2019-02-13\",1500]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_1"
+          "name": "Sue value list"
         },
         "0a56ee98-e966-4890-b42d-96edc9835d23": {
           "coordinates": [
@@ -53,17 +53,7 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[100,\"Ted\",\"Accounting\",\"2020-11-08\",1500]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_2"
-        },
-        "e4ff9f75-9dc9-4be7-bc42-0d77697ba627": {
-          "coordinates": [
-            -246,
-            -13.857142857142861
-          ],
-          "description": "",
-          "params": {},
-          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
-          "name": "forwarder"
+          "name": "Ted value list"
         },
         "f459f650-fb4c-45d6-bc11-823402e08ca7": {
           "coordinates": [
@@ -75,7 +65,7 @@
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "Syncer"
+          "name": "Merge dictionaries with Syncer"
         },
         "ca822672-bbcc-4d65-a5d1-d309b46bfda5": {
           "coordinates": [
@@ -85,17 +75,17 @@
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_1"
+          "name": "Build employee dictionary of Sue"
         },
         "ffb15af3-fd97-427d-9815-cb62b1dae058": {
           "coordinates": [
-            112,
-            168.14285714285714
+            145,
+            169.14285714285714
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_2"
+          "name": "Build employee dictionary of Ted"
         }
       },
       "connections": {
@@ -108,21 +98,6 @@
             },
             "ffb15af3-fd97-427d-9815-cb62b1dae058": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
-            }
-          }
-        },
-        "e4ff9f75-9dc9-4be7-bc42-0d77697ba627": {
-          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
-            "b7ffd726-165c-422c-8443-e933c9b4fbf8": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {
-                "description": ""
-              }
-            },
-            "9782ac9a-99fe-4bfb-acdb-95c2f33213f9": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
-            },
-            "0a56ee98-e966-4890-b42d-96edc9835d23": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
@@ -160,8 +135,14 @@
       "forwards": {
         "inputs": {
           "c9d27768-7e9c-494b-8e04-aa304d4e25c6": {
-            "e4ff9f75-9dc9-4be7-bc42-0d77697ba627": {
-              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            "9782ac9a-99fe-4bfb-acdb-95c2f33213f9": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "b7ffd726-165c-422c-8443-e933c9b4fbf8": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "0a56ee98-e966-4890-b42d-96edc9835d23": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },

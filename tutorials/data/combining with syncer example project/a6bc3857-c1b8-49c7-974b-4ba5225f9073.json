@@ -31,28 +31,20 @@
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"Employees\",\"Departments\"]"
           }
         },
-        "78a015f4-ae61-4404-8e27-4f41a2ff873c": {
-          "coordinates": [
-            -390,
-            -12.5
-          ],
-          "name": "forwarder",
-          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
-        },
         "c2f876a1-04e9-49df-a94a-287521f59692": {
           "coordinates": [
-            -67,
-            -168.64285714285714
+            -255,
+            -170.64285714285714
           ],
-          "name": "employees_builder",
+          "name": "build employees data",
           "prototype": "060a7ea7-1367-47c5-8902-bdb8ea65f0cb"
         },
         "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
           "coordinates": [
-            -63,
-            189.94444444444446
+            -278,
+            179.94444444444446
           ],
-          "name": "departments_builder",
+          "name": "build departments data",
           "prototype": "034d016f-a8b1-41c7-9099-86deec1540ae"
         },
         "e44aeb67-1810-4445-a3e1-1ad3fc36affd": {
@@ -65,23 +57,6 @@
         }
       },
       "connections": {
-        "78a015f4-ae61-4404-8e27-4f41a2ff873c": {
-          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
-            "c2f876a1-04e9-49df-a94a-287521f59692": {
-              "c9d27768-7e9c-494b-8e04-aa304d4e25c6": {}
-            },
-            "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
-              "db308570-2e92-48bc-8aa2-d1cd0d4ffc7f": {}
-            }
-          }
-        },
-        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
-          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
-            "78a015f4-ae61-4404-8e27-4f41a2ff873c": {
-              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
-            }
-          }
-        },
         "c2f876a1-04e9-49df-a94a-287521f59692": {
           "d23f7c0f-3fb8-4b70-b970-843ac97d5390": {
             "acfb3eec-7d83-4b02-a285-286eadd06f49": {
@@ -100,6 +75,16 @@
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
             "e44aeb67-1810-4445-a3e1-1ad3fc36affd": {
               "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "c2f876a1-04e9-49df-a94a-287521f59692": {
+              "c9d27768-7e9c-494b-8e04-aa304d4e25c6": {}
+            },
+            "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
+              "db308570-2e92-48bc-8aa2-d1cd0d4ffc7f": {}
             }
           }
         }

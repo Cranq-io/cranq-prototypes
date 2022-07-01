@@ -40,7 +40,7 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"EmpID\",\"Name\",\"Dept\",\"HireDate\",\"Salary\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_keys"
+          "name": "Keys of employee data"
         },
         "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
           "coordinates": [
@@ -52,7 +52,7 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[101,\"Sue\",\"Facilities\",\"2019-02-13\",1500]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_1"
+          "name": "Sue value list"
         },
         "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
           "coordinates": [
@@ -64,17 +64,7 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[100,\"Ted\",\"Accounting\",\"2020-11-08\",1500]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_2"
-        },
-        "a393ce00-063b-4926-a83a-ea54c6c91878": {
-          "coordinates": [
-            -206,
-            -224
-          ],
-          "description": "",
-          "params": {},
-          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
-          "name": "forwarder"
+          "name": "Ted value list"
         },
         "5a8be136-885b-4e77-99d8-08456c6f0e76": {
           "coordinates": [
@@ -86,7 +76,7 @@
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "Syncer"
+          "name": "Merge dictionaries to list"
         },
         "5f09c87a-1545-416c-b140-a28fb5292de0": {
           "coordinates": [
@@ -96,7 +86,7 @@
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_1"
+          "name": "build Sue dictionary"
         },
         "19475d91-0ba2-44fa-814d-d167c409fa3c": {
           "coordinates": [
@@ -106,7 +96,7 @@
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_2"
+          "name": "build Ted dictionary"
         }
       },
       "connections": {
@@ -119,21 +109,6 @@
             },
             "19475d91-0ba2-44fa-814d-d167c409fa3c": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
-            }
-          }
-        },
-        "a393ce00-063b-4926-a83a-ea54c6c91878": {
-          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
-            "583ac9c2-c0df-45ef-badf-cffc997f725c": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {
-                "description": ""
-              }
-            },
-            "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
-            },
-            "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
@@ -167,17 +142,23 @@
             }
           }
         },
-        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
-          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
-            "a393ce00-063b-4926-a83a-ea54c6c91878": {
-              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
-            }
-          }
-        },
         "5a8be136-885b-4e77-99d8-08456c6f0e76": {
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
             "79688e50-8550-40b8-afea-3c7497fcb9f3": {
               "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "583ac9c2-c0df-45ef-badf-cffc997f725c": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         }

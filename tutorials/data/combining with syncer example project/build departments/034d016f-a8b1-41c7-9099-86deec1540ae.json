@@ -3,16 +3,16 @@
   "interface": {
     "inputs": {
       "db308570-2e92-48bc-8aa2-d1cd0d4ffc7f": {
-        "type": "typeof `data` of `forwarder B`",
-        "name": "in",
-        "description": "[Inherited from port `data` of `forwarder B`] \nReceives data to be forwarded."
+        "type": "",
+        "name": "start",
+        "description": ""
       }
     },
     "outputs": {
       "9e06d4c2-a41d-4563-8354-ddab364455b4": {
-        "type": "typeof `synced` of `syncer B`",
-        "name": "out",
-        "description": "[Inherited from port `synced` of `syncer B`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+        "type": "",
+        "name": "departments result",
+        "description": ""
       }
     }
   },
@@ -21,71 +21,61 @@
       "nodes": {
         "88d51d99-fb0b-46bf-ac9b-35ef53c22ef1": {
           "coordinates": [
-            -184,
-            215.55555555555554
+            -255,
+            201.55555555555554
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Facilities\",\"Frank\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_2"
-        },
-        "2e18af77-dac9-4055-8605-61cdc769a166": {
-          "coordinates": [
-            -274,
-            -114.44444444444446
-          ],
-          "description": "",
-          "params": {},
-          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
-          "name": "forwarder"
+          "name": "facilities value list"
         },
         "c8669193-3736-435b-9c7b-a614dce239c5": {
           "coordinates": [
-            -98,
-            -168.44444444444446
+            -239,
+            -223.44444444444446
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Dept\",\"Head\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_keys"
+          "name": "Keys of department data"
         },
         "1a3c9dbd-2f94-40d0-9717-26981baa867a": {
           "coordinates": [
-            -108,
-            27.555555555555543
+            -258,
+            16.555555555555543
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Accounting\",\"Joan\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_1"
+          "name": "accounting value list"
         },
         "0a8e5c57-afb4-4a01-af3e-e2bb9e4d901f": {
           "coordinates": [
-            -289,
-            373.55555555555554
+            -246,
+            393.55555555555554
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Legal\",\"Louis\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "data_values_3"
+          "name": "legal value list"
         },
         "34fc9e47-7e16-4d98-b10b-a393c60f16cd": {
           "coordinates": [
-            150,
-            26.555555555555543
+            141,
+            32.55555555555554
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_1"
+          "name": "build accounting dictionary"
         },
         "35b28b8c-d3df-4489-a9f8-36f1d9753d18": {
           "coordinates": [
@@ -95,7 +85,7 @@
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_2"
+          "name": "build facilities dictionary"
         },
         "2b06c277-a2b7-42d6-ac70-30c9d187b488": {
           "coordinates": [
@@ -105,19 +95,19 @@
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "dictionary_builder_3"
+          "name": "build legal dictionary"
         },
         "bef738c5-89c0-4bfe-8aa5-160777b5ab61": {
           "coordinates": [
-            581,
-            -59.44444444444446
+            542,
+            -30.444444444444457
           ],
           "description": "",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "syncer"
+          "name": "Merge dictionaries with Syncer"
         }
       },
       "connections": {
@@ -133,24 +123,6 @@
             },
             "35b28b8c-d3df-4489-a9f8-36f1d9753d18": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
-            }
-          }
-        },
-        "2e18af77-dac9-4055-8605-61cdc769a166": {
-          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
-            "c8669193-3736-435b-9c7b-a614dce239c5": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {
-                "description": ""
-              }
-            },
-            "1a3c9dbd-2f94-40d0-9717-26981baa867a": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
-            },
-            "0a8e5c57-afb4-4a01-af3e-e2bb9e4d901f": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
-            },
-            "88d51d99-fb0b-46bf-ac9b-35ef53c22ef1": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
@@ -202,8 +174,17 @@
       "forwards": {
         "inputs": {
           "db308570-2e92-48bc-8aa2-d1cd0d4ffc7f": {
-            "2e18af77-dac9-4055-8605-61cdc769a166": {
-              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            "c8669193-3736-435b-9c7b-a614dce239c5": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "1a3c9dbd-2f94-40d0-9717-26981baa867a": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "88d51d99-fb0b-46bf-ac9b-35ef53c22ef1": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "0a8e5c57-afb4-4a01-af3e-e2bb9e4d901f": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },

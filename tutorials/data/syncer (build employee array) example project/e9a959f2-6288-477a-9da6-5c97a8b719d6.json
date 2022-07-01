@@ -22,8 +22,8 @@
         },
         "79688e50-8550-40b8-afea-3c7497fcb9f3": {
           "coordinates": [
-            408,
-            -71
+            550,
+            -218
           ],
           "description": "",
           "params": {},
@@ -32,7 +32,7 @@
         },
         "583ac9c2-c0df-45ef-badf-cffc997f725c": {
           "coordinates": [
-            -9,
+            -27,
             -207
           ],
           "description": "",
@@ -40,31 +40,31 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"EmpID\",\"Name\",\"Dept\",\"HireDate\",\"Salary\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "schema"
+          "name": "data_keys"
         },
         "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
           "coordinates": [
-            -26,
-            -337
+            -27,
+            -435
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[101,\"Sue\",\"Facilities\",\"2019-02-13\",1500]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "record_1"
+          "name": "data_values_1"
         },
         "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
           "coordinates": [
-            -32,
-            -61
+            -29,
+            81
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[100,\"Ted\",\"Accounting\",\"2020-11-08\",1500]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "record_2"
+          "name": "data_values_2"
         },
         "a393ce00-063b-4926-a83a-ea54c6c91878": {
           "coordinates": [
@@ -78,35 +78,35 @@
         },
         "5a8be136-885b-4e77-99d8-08456c6f0e76": {
           "coordinates": [
-            280,
-            -222
+            353,
+            -221
           ],
           "description": "",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "Syncer A"
+          "name": "Syncer"
         },
         "5f09c87a-1545-416c-b140-a28fb5292de0": {
           "coordinates": [
-            136,
-            -255
+            159,
+            -314
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "build_1"
+          "name": "dictionary_builder_1"
         },
         "19475d91-0ba2-44fa-814d-d167c409fa3c": {
           "coordinates": [
-            137,
-            -165
+            163,
+            -73
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "build_2"
+          "name": "dictionary_builder_2"
         }
       },
       "connections": {
@@ -188,5 +188,5 @@
       }
     }
   },
-  "name": "tutorials/data/Syncer (build emps array) example project"
+  "name": "tutorials/data/Syncer (build employee array) example project"
 }

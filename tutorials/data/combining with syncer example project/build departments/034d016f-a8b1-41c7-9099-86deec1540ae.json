@@ -1,17 +1,17 @@
 {
-  "name": "tutorials/data/Combining with syncer example project/Group 4",
+  "name": "tutorials/data/Combining with syncer example project/build departments",
   "interface": {
     "inputs": {
       "db308570-2e92-48bc-8aa2-d1cd0d4ffc7f": {
         "type": "typeof `data` of `forwarder B`",
-        "name": "forwarder B-data",
+        "name": "in",
         "description": "[Inherited from port `data` of `forwarder B`] \nReceives data to be forwarded."
       }
     },
     "outputs": {
       "9e06d4c2-a41d-4563-8354-ddab364455b4": {
         "type": "typeof `synced` of `syncer B`",
-        "name": "syncer B-synced",
+        "name": "out",
         "description": "[Inherited from port `synced` of `syncer B`] \nSends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
       }
     }
@@ -21,15 +21,15 @@
       "nodes": {
         "88d51d99-fb0b-46bf-ac9b-35ef53c22ef1": {
           "coordinates": [
-            -91,
-            56.55555555555554
+            -184,
+            215.55555555555554
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Facilities\",\"Frank\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "record_2"
+          "name": "data_values_2"
         },
         "2e18af77-dac9-4055-8605-61cdc769a166": {
           "coordinates": [
@@ -39,7 +39,7 @@
           "description": "",
           "params": {},
           "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0",
-          "name": "forwarder B"
+          "name": "forwarder"
         },
         "c8669193-3736-435b-9c7b-a614dce239c5": {
           "coordinates": [
@@ -51,73 +51,73 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Dept\",\"Head\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "schema"
+          "name": "data_keys"
         },
         "1a3c9dbd-2f94-40d0-9717-26981baa867a": {
           "coordinates": [
-            -99,
-            -85.44444444444446
+            -108,
+            27.555555555555543
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Accounting\",\"Joan\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "record_1"
+          "name": "data_values_1"
         },
         "0a8e5c57-afb4-4a01-af3e-e2bb9e4d901f": {
           "coordinates": [
-            -102,
-            148.55555555555554
+            -289,
+            373.55555555555554
           ],
           "description": "",
           "params": {
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"Legal\",\"Louis\"]"
           },
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "name": "record_3"
+          "name": "data_values_3"
         },
         "34fc9e47-7e16-4d98-b10b-a393c60f16cd": {
           "coordinates": [
-            75,
-            -113.44444444444446
+            150,
+            26.555555555555543
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "build_1"
+          "name": "dictionary_builder_1"
         },
         "35b28b8c-d3df-4489-a9f8-36f1d9753d18": {
           "coordinates": [
-            136,
-            112.55555555555554
+            158,
+            203.55555555555554
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "build_2"
+          "name": "dictionary_builder_2"
         },
         "2b06c277-a2b7-42d6-ac70-30c9d187b488": {
           "coordinates": [
-            238,
-            236.55555555555554
+            158,
+            354.55555555555554
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "build_3"
+          "name": "dictionary_builder_3"
         },
         "bef738c5-89c0-4bfe-8aa5-160777b5ab61": {
           "coordinates": [
-            215,
-            -72.44444444444446
+            581,
+            -59.44444444444446
           ],
           "description": "",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "syncer B"
+          "name": "syncer"
         }
       },
       "connections": {

@@ -28,7 +28,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "9af21210-8f9c-4067-986a-f29fe11cede0": "const {dict, keys} = data;\noutputs.values(keys.map(key => dict[key]), tag);"
+        "9af21210-8f9c-4067-986a-f29fe11cede0": "const {dict, keys} = data;\noutputs.values(keys.map(key => { \n  const value = dict[key];\n  if (value === undefined) {\n    return null;\n  }\n  \n  return value;\n}), tag);"
       }
     }
   },

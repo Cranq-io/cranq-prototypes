@@ -11,6 +11,10 @@
       "9e6164b8-807d-4f53-9a1b-2c8654bdcbbd": {
         "type": "(typeof `dict & keys`)[\"dict\"][string][]",
         "name": "values"
+      },
+      "ab3fd02c-4e36-4df3-89cb-6cd199426950": {
+        "type": "string[]",
+        "name": "not found keys"
       }
     }
   },
@@ -28,7 +32,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "9af21210-8f9c-4067-986a-f29fe11cede0": "const {dict, keys} = data;\noutputs.values(keys.map(key => { \n  const value = dict[key];\n  if (value === undefined) {\n    return null;\n  }\n  \n  return value;\n}), tag);"
+        "9af21210-8f9c-4067-986a-f29fe11cede0": "const {dict, keys} = data;\n\nconst result = keys.reduce((previousResults, currentKey) => {\n  const value = dict[currentKey];\n  \n  if (value === undefined) {\n     previousResults[1].push(currentKey);\n     previousResults[0].push(null);\n  } else {\n    previousResults[0].push(value);\n  } \n  \n return previousResults;\n}, [[],[]]);\n\noutputs.values(result[0], tag);\noutputs[\"not found keys\"](result[1], tag);\n"
       }
     }
   },

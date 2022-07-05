@@ -1,0 +1,173 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "Project root",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -365,
+            -46
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            491,
+            -40
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "583ac9c2-c0df-45ef-badf-cffc997f725c": {
+          "coordinates": [
+            -64,
+            -213
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"EmpID\",\"Name\",\"Dept\",\"HireDate\",\"Salary\"]"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "Keys of employee data"
+        },
+        "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
+          "coordinates": [
+            -76,
+            -437
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[101,\"Sue\",\"Facilities\",\"2019-02-13\",1500]"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "Sue value array"
+        },
+        "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
+          "coordinates": [
+            -72,
+            81
+          ],
+          "description": "",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[100,\"Ted\",\"Accounting\",\"2020-11-08\",1500]"
+          },
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "name": "Ted value array"
+        },
+        "5a8be136-885b-4e77-99d8-08456c6f0e76": {
+          "coordinates": [
+            353,
+            -221
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "Merge dictionaries to array"
+        },
+        "5f09c87a-1545-416c-b140-a28fb5292de0": {
+          "coordinates": [
+            159,
+            -314
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
+          "name": "build Sue dictionary"
+        },
+        "19475d91-0ba2-44fa-814d-d167c409fa3c": {
+          "coordinates": [
+            163,
+            -73
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
+          "name": "build Ted dictionary"
+        }
+      },
+      "connections": {
+        "583ac9c2-c0df-45ef-badf-cffc997f725c": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "5f09c87a-1545-416c-b140-a28fb5292de0": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {
+                "description": ""
+              }
+            },
+            "19475d91-0ba2-44fa-814d-d167c409fa3c": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            }
+          }
+        },
+        "5f09c87a-1545-416c-b140-a28fb5292de0": {
+          "852cd030-0794-42cc-b448-0886fb787cf2": {
+            "5a8be136-885b-4e77-99d8-08456c6f0e76": {
+              "0": {
+                "description": ""
+              }
+            }
+          }
+        },
+        "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "5f09c87a-1545-416c-b140-a28fb5292de0": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          }
+        },
+        "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "19475d91-0ba2-44fa-814d-d167c409fa3c": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          }
+        },
+        "19475d91-0ba2-44fa-814d-d167c409fa3c": {
+          "852cd030-0794-42cc-b448-0886fb787cf2": {
+            "5a8be136-885b-4e77-99d8-08456c6f0e76": {
+              "1": {}
+            }
+          }
+        },
+        "5a8be136-885b-4e77-99d8-08456c6f0e76": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "c1da5c4a-7c1e-4f92-acbc-16b341f5163b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "583ac9c2-c0df-45ef-badf-cffc997f725c": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "7142f987-0755-4add-9b7b-7ea9484ec4fd": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/data/Syncer (build employee array) example project"
+}

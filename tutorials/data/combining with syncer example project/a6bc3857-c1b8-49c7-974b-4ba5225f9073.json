@@ -1,0 +1,99 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "Project root",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -724,
+            -2
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "acfb3eec-7d83-4b02-a285-286eadd06f49": {
+          "coordinates": [
+            123,
+            6.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"Employees\",\"Departments\"]"
+          }
+        },
+        "c2f876a1-04e9-49df-a94a-287521f59692": {
+          "coordinates": [
+            -255,
+            -170.64285714285714
+          ],
+          "name": "build employees data",
+          "prototype": "060a7ea7-1367-47c5-8902-bdb8ea65f0cb"
+        },
+        "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
+          "coordinates": [
+            -278,
+            179.94444444444446
+          ],
+          "name": "build departments data",
+          "prototype": "034d016f-a8b1-41c7-9099-86deec1540ae"
+        },
+        "e44aeb67-1810-4445-a3e1-1ad3fc36affd": {
+          "coordinates": [
+            346,
+            6
+          ],
+          "name": "logger",
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
+        }
+      },
+      "connections": {
+        "c2f876a1-04e9-49df-a94a-287521f59692": {
+          "d23f7c0f-3fb8-4b70-b970-843ac97d5390": {
+            "acfb3eec-7d83-4b02-a285-286eadd06f49": {
+              "Employees": {}
+            }
+          }
+        },
+        "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
+          "9e06d4c2-a41d-4563-8354-ddab364455b4": {
+            "acfb3eec-7d83-4b02-a285-286eadd06f49": {
+              "Departments": {}
+            }
+          }
+        },
+        "acfb3eec-7d83-4b02-a285-286eadd06f49": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "e44aeb67-1810-4445-a3e1-1ad3fc36affd": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "c2f876a1-04e9-49df-a94a-287521f59692": {
+              "c9d27768-7e9c-494b-8e04-aa304d4e25c6": {}
+            },
+            "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
+              "db308570-2e92-48bc-8aa2-d1cd0d4ffc7f": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/data/Combining with syncer example project"
+}

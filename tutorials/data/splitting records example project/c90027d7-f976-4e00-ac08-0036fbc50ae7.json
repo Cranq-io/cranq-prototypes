@@ -25,7 +25,7 @@
             123,
             6.5
           ],
-          "name": "merge lists to dictionary with syncer",
+          "name": "merge employees and departments data",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"Employees\",\"Departments\"]"
@@ -33,26 +33,26 @@
         },
         "c2f876a1-04e9-49df-a94a-287521f59692": {
           "coordinates": [
-            -67,
-            -168.64285714285714
+            -228,
+            -174.64285714285714
           ],
-          "name": "build employee list",
+          "name": "build employee array",
           "prototype": "060a7ea7-1367-47c5-8902-bdb8ea65f0cb"
         },
         "fc8d17ed-3db1-4cf5-b15d-b61fc68ba3ae": {
           "coordinates": [
-            -63,
-            189.94444444444446
+            -222,
+            186.94444444444446
           ],
-          "name": "build departments list",
+          "name": "build departments array",
           "prototype": "034d016f-a8b1-41c7-9099-86deec1540ae"
         },
         "d48c14cf-eb48-4f85-b288-357ba40d0436": {
           "coordinates": [
             314,
-            -4
+            84
           ],
-          "name": "split dictionary to lists with splitter",
+          "name": "split dictionary to arrays with splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"Employees\",\"Departments\"]"
@@ -60,16 +60,16 @@
         },
         "7326d405-42ec-4ce2-98d7-c096ad55e727": {
           "coordinates": [
-            520,
-            -79
+            567,
+            -107
           ],
           "name": "employees logger",
           "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
         },
         "cc8f85ce-0a03-4f80-8f3e-382610c2cfa9": {
           "coordinates": [
-            505,
-            86
+            555,
+            200
           ],
           "name": "departments logger",
           "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"

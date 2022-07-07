@@ -13,6 +13,10 @@
         "description": "",
         "type": "number",
         "name": "price"
+      },
+      "dc2a2791-0c9b-4066-b33a-b7e96f0dcd72": {
+        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "name": "error"
       }
     }
   },
@@ -71,11 +75,14 @@
       }
     }
   },
-  "name": "apis/fx/yahoo finance/v8/Market price getter",
+  "name": "apis/fx/yahoo finance/v8/Market price sampler",
   "iconId": "9e22c21d-aa86-4f06-9f00-4f3ec0863f02",
   "keywords": {
     "price": null,
-    "index": null
+    "index": null,
+    "exchange": null,
+    "rate": null,
+    "get": null
   },
   "attributes": {
     "locked": true

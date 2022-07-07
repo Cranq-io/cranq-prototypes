@@ -1,0 +1,174 @@
+{
+  "name": "apis/dji/utils/FPV Goggles subtitle entry parser",
+  "description": "Parses a single SRT entry from the OSD data recorded by the DJI FVP Goggles.",
+  "interface": {
+    "inputs": {
+      "c3888579-c396-41c1-8e35-3aa6fce1b112": {
+        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"subtitle\": string\n}",
+        "name": "subtitle",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0c024a5f-b618-4f87-8407-a57c6b7bef1f": {
+        "type": "{\n  \"signal\": string,\n  \"ch\": string,\n  \"flightTime\": string,\n  \"uavBat\": string,\n  \"glsBat\": string,\n  \"uavBatCells\": string,\n  \"glsBatCells\": string,\n  \"delay\": string,\n  \"bitrate\": string,\n  \"rcSignal\": string\n}",
+        "name": "OSD sample",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cd748b05-ef4f-4542-a7c9-25153e7daa32": {
+          "coordinates": [
+            -366,
+            -31.5
+          ],
+          "name": "get subtitle",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"subtitle\""
+          }
+        },
+        "2eac2f03-f7c0-4f26-8c31-6c5bc4c83bc9": {
+          "coordinates": [
+            -239,
+            51.5
+          ],
+          "name": "split OSD items",
+          "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
+          "params": {
+            "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"\\\\s+\""
+          }
+        },
+        "bbb35e2a-cbf0-4c02-a01c-835ecdf68258": {
+          "coordinates": [
+            -22,
+            14.5
+          ],
+          "name": "build OSD keys & values",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "465f5f27-6214-4117-a4f9-ecd5184048e9": {
+          "coordinates": [
+            155,
+            -44.5
+          ],
+          "name": "split key & value",
+          "prototype": "e1418571-da49-467a-aefe-0a97394344e9",
+          "params": {
+            "761c44f9-80b3-410c-820f-b004e8787521": "\":\""
+          }
+        },
+        "c2bf03a9-3e6c-4aad-8e54-ff33ac80b84d": {
+          "coordinates": [
+            109,
+            212.5
+          ],
+          "name": "tuple to key-value pair",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"key\": 0, \"value\": 1}"
+          }
+        },
+        "a10a1487-51aa-49fe-9b4e-1dcb04830c95": {
+          "coordinates": [
+            121,
+            -145.5
+          ],
+          "name": "build OSD sample",
+          "prototype": "9c4ba861-295c-4b59-be22-fc4482fde20c"
+        },
+        "a6eccfed-1f70-4447-9eac-ccb5621fad17": {
+          "coordinates": [
+            246.18148148148154,
+            -236.94351851851852
+          ],
+          "name": "values parser",
+          "prototype": "0198ce3f-99c1-4386-b53e-f7366327f80c",
+          "params": {
+            "2ebdb819-7e21-4d19-8aae-2eb0b51c1b6f": "{\n  \"signal\": \"number\",\n  \"ch\": \"number\",\n  \"flightTime\": \"number\",\n  \"uavBat\": \"number\",\n  \"glsBat\": \"number\",\n  \"uavBatCells\": \"number\",\n  \"glsBatCells\": \"number\",\n  \"delay\": \"number\",\n  \"bitrate\": \"number\",\n  \"rcSignal\": \"number\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "cd748b05-ef4f-4542-a7c9-25153e7daa32": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "2eac2f03-f7c0-4f26-8c31-6c5bc4c83bc9": {
+              "aeed0ec7-7761-4612-b575-7b0c8858f57f": {}
+            }
+          }
+        },
+        "2eac2f03-f7c0-4f26-8c31-6c5bc4c83bc9": {
+          "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+            "bbb35e2a-cbf0-4c02-a01c-835ecdf68258": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "bbb35e2a-cbf0-4c02-a01c-835ecdf68258": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "465f5f27-6214-4117-a4f9-ecd5184048e9": {
+              "fe310222-173b-4335-93f7-b17e41eba89e": {}
+            }
+          },
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "a10a1487-51aa-49fe-9b4e-1dcb04830c95": {
+              "6a7d3e96-88ec-43b5-a8ae-eab6206748b3": {}
+            }
+          }
+        },
+        "465f5f27-6214-4117-a4f9-ecd5184048e9": {
+          "9b8b171b-8873-471d-a7a0-588f5f2340fc": {
+            "c2bf03a9-3e6c-4aad-8e54-ff33ac80b84d": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          }
+        },
+        "c2bf03a9-3e6c-4aad-8e54-ff33ac80b84d": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "bbb35e2a-cbf0-4c02-a01c-835ecdf68258": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "a10a1487-51aa-49fe-9b4e-1dcb04830c95": {
+          "647899b9-8122-4a5b-a622-c9763e51d0c1": {
+            "a6eccfed-1f70-4447-9eac-ccb5621fad17": {
+              "d1b99cad-e623-4ec9-99b3-7c8c9e3f0464": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c3888579-c396-41c1-8e35-3aa6fce1b112": {
+            "cd748b05-ef4f-4542-a7c9-25153e7daa32": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "0c024a5f-b618-4f87-8407-a57c6b7bef1f": {
+            "a6eccfed-1f70-4447-9eac-ccb5621fad17": {
+              "9b0972e2-13ee-4669-bf9e-4fb620ffcdd8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "64c698ac-b7a6-4af2-bb7d-489d49098743",
+  "keywords": {
+    "dji": null,
+    "fpv": null,
+    "srt": null,
+    "osd": null,
+    "goggles": null,
+    "subtitles": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

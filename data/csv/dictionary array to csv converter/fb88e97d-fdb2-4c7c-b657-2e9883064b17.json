@@ -4,35 +4,24 @@
       "nodes": {
         "6ba1123e-60fa-44f5-b088-a18f30fa4584": {
           "coordinates": [
-            -116,
-            -112
+            -100,
+            -124
           ],
-          "name": "get headers",
+          "name": "get field names",
           "prototype": "669e8f6c-2206-4353-8a0b-b6eebb1c27fa"
         },
         "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
           "coordinates": [
-            -120,
-            33
+            -176,
+            105
           ],
-          "name": "get data rows",
+          "name": "get records",
           "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
-        },
-        "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
-          "coordinates": [
-            -42,
-            227
-          ],
-          "name": "concat to string",
-          "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
-          "params": {
-            "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\",\""
-          }
         },
         "3c6808a6-0093-4064-8548-cadf05587f46": {
           "coordinates": [
-            113,
-            116
+            5,
+            -2
           ],
           "name": "flatten lines",
           "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
@@ -42,7 +31,7 @@
         },
         "0c87daef-a65a-4c67-a50a-d974b7ebf599": {
           "coordinates": [
-            164,
+            224,
             -76
           ],
           "name": "merge header",
@@ -53,8 +42,8 @@
         },
         "e540fa88-7d63-420c-925c-5ef6e96d413d": {
           "coordinates": [
-            325,
-            46
+            268,
+            99
           ],
           "name": "flatten to string",
           "prototype": "0e971c17-4766-4143-b1f5-4fbbce21026f",
@@ -62,13 +51,13 @@
             "0fb0a363-a564-4f97-aa3e-6bf049fa08ea": "\"\\n\""
           }
         },
-        "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
+        "d5a396e7-bf76-42bd-9691-38479bebbf49": {
           "coordinates": [
-            -193,
-            189
+            30.25,
+            181.45833333333331
           ],
-          "name": "values getter",
-          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+          "name": "serialize record",
+          "prototype": "3155a059-1eef-42a3-b701-6b7725c5f5e6"
         }
       },
       "forwards": {
@@ -98,15 +87,8 @@
             }
           },
           "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
-            "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
-              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
-            }
-          }
-        },
-        "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
-          "46a7aa5d-8b2f-446e-89fc-f3b6ca6f047f": {
-            "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
-              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            "d5a396e7-bf76-42bd-9691-38479bebbf49": {
+              "34458275-1b9c-4460-899b-5721f5003e6a": {}
             }
           }
         },
@@ -131,10 +113,10 @@
             }
           }
         },
-        "44fc73bd-4df3-4723-a31c-dce0e9022f14": {
-          "807f86ec-082e-4a9a-a304-021a397dca4c": {
-            "2d2016f2-f68a-41b9-b6e7-578facf28f2d": {
-              "49eb5244-00ab-4326-8877-e08da353bf0b": {}
+        "d5a396e7-bf76-42bd-9691-38479bebbf49": {
+          "9752b288-5d3f-4092-b13a-0ca39582f338": {
+            "d4473c0f-5dd4-48b2-8d92-dbebf66c3857": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
             }
           }
         }
@@ -144,15 +126,15 @@
   "interface": {
     "inputs": {
       "bfa14c74-d222-46da-a23e-01e14233eb03": {
-        "type": "{string:(string or number or boolean)}[]",
-        "name": "array",
+        "type": "{\n  string: (string or number or boolean)\n}[]",
+        "name": "table",
         "description": "Receives the array of dictionaries to format.\n\nExample:\n[\n  {\n    \"a\":1\n    \"b\":2\n  },\n  {\n    \"a\":11\n    \"b\":22\n  },\n]"
       }
     },
     "outputs": {
       "1f8459b4-882f-47b9-afaa-4c06cc02c0ba": {
         "type": "string",
-        "name": "csv",
+        "name": "CSV",
         "description": "The resulting csv string."
       }
     }
@@ -160,8 +142,14 @@
   "name": "data/csv/Dictionary array to csv converter",
   "description": "Formats a dictionary array as a csv string. Does not support multi-level dictionaries.\n\nExample:\n1. 'array' receives\n[\n  {\n    \"a\":1\n    \"b\":2\n  },\n  {\n    \"a\":11\n    \"b\":22\n  },\n]\n2. 'csv' sends \n\"a,b\n1,1\n11,11\"",
   "keywords": {
-    "array dictionary dict csv to convert": null
+    "array": null,
+    "dictionary": null,
+    "csv": null,
+    "convert": null,
+    "stringify": null,
+    "serialize": null
   },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
   "attributes": {
     "locked": true
   }

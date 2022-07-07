@@ -1,0 +1,138 @@
+{
+  "name": "data/dictionary/Value parser",
+  "description": "Parses a single value in a dictionary based on a type definition dictionary.",
+  "interface": {
+    "inputs": {
+      "07eb9415-4f82-4fc7-bc31-1cad509b5197": {
+        "type": "string",
+        "name": "key",
+        "description": "Receives the key for the value to be parsed"
+      },
+      "fc816a9b-2a1f-4ab0-8d89-7a7971368b98": {
+        "type": "{string: \"number\" or \"json\"}",
+        "name": "types",
+        "description": "Receives the type definition dictionary.\n\nExample:\n{\n  \"height\": \"number\",\n  \"data\": \"json\"\n}"
+      },
+      "99c5f7b1-4b92-46bc-8698-63062a885051": {
+        "type": "string",
+        "name": "value",
+        "description": "Receives the dictionary value to be parsed."
+      }
+    },
+    "outputs": {
+      "89c3bf52-a27b-4a6c-a648-9b06dad1c62c": {
+        "type": "string or any",
+        "name": "parsed",
+        "description": "Sends the parsed value."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2467373f-ab3a-4a0b-a55f-cc9b838d5df8": {
+          "coordinates": [
+            153,
+            73.5
+          ],
+          "name": "get type",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f"
+        },
+        "3c0e97aa-51be-46a0-8c91-ddcf3db7d265": {
+          "coordinates": [
+            -109,
+            94.5
+          ],
+          "name": "reverse condition",
+          "prototype": "73b8273f-ef86-4797-8443-ab5662dda5d5"
+        },
+        "974085ed-fa6e-4ce1-87bf-cdfa90184a97": {
+          "coordinates": [
+            -75,
+            -191.5
+          ],
+          "name": "has type?",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "aec8669e-1a55-4c95-a20d-d9718fe72cef": {
+          "coordinates": [
+            132.5,
+            -120.75
+          ],
+          "name": "parse value",
+          "prototype": "bb5ddc63-3a97-4584-ac9c-076cb48f1cde"
+        }
+      },
+      "connections": {
+        "2467373f-ab3a-4a0b-a55f-cc9b838d5df8": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "3c0e97aa-51be-46a0-8c91-ddcf3db7d265": {
+              "7d8a1e5c-fe55-4483-8604-d8198c09f05e": {}
+            },
+            "aec8669e-1a55-4c95-a20d-d9718fe72cef": {
+              "e0c71542-059d-42b6-84e1-324dae2c4a81": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "3c0e97aa-51be-46a0-8c91-ddcf3db7d265": {
+              "71b2d8f8-8c04-4e7d-8f46-049cee8da304": {}
+            }
+          }
+        },
+        "3c0e97aa-51be-46a0-8c91-ddcf3db7d265": {
+          "5d478d32-ae8f-4f2b-8f32-9d3cf14db437": {
+            "974085ed-fa6e-4ce1-87bf-cdfa90184a97": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "974085ed-fa6e-4ce1-87bf-cdfa90184a97": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "aec8669e-1a55-4c95-a20d-d9718fe72cef": {
+              "df70c18e-bab9-4adc-82cd-30c8e635c459": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "07eb9415-4f82-4fc7-bc31-1cad509b5197": {
+            "2467373f-ab3a-4a0b-a55f-cc9b838d5df8": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          },
+          "99c5f7b1-4b92-46bc-8698-63062a885051": {
+            "974085ed-fa6e-4ce1-87bf-cdfa90184a97": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          },
+          "fc816a9b-2a1f-4ab0-8d89-7a7971368b98": {
+            "2467373f-ab3a-4a0b-a55f-cc9b838d5df8": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "89c3bf52-a27b-4a6c-a648-9b06dad1c62c": {
+            "974085ed-fa6e-4ce1-87bf-cdfa90184a97": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            },
+            "aec8669e-1a55-4c95-a20d-d9718fe72cef": {
+              "6cc1c186-b732-4462-9a94-547c82b8d556": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "parse": null,
+    "dictionary": null,
+    "item": null,
+    "value": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

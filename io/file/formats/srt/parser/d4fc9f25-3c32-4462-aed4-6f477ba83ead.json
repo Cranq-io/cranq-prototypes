@@ -1,0 +1,117 @@
+{
+  "name": "io/file/formats/srt/Parser",
+  "description": "Parses SRT file format.",
+  "interface": {
+    "inputs": {
+      "89794a4b-bc07-42c9-98d3-45a60158a5d2": {
+        "type": "string",
+        "name": "SRT",
+        "description": "Receives SRT subtitles file contents."
+      }
+    },
+    "outputs": {
+      "a78aab3b-a0bc-43fd-bf60-1cbaefbc6377": {
+        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"subtitle\": string\n}[]",
+        "name": "table",
+        "description": "Sends parsed subtitles as JSON table."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e9d52db0-0cfc-4471-a195-304b2542965c": {
+          "coordinates": [
+            116.13518518518507,
+            -22.364814814814878
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "c0613165-b7f4-4e9e-8c85-58dffef2cc4c": {
+          "coordinates": [
+            -154.86481481481496,
+            -59.36481481481488
+          ],
+          "name": "trim string",
+          "prototype": "64e6e4b1-d50f-47b6-b1d2-6e707f8d73bc"
+        },
+        "221b3dc5-a06b-4135-9cd8-f0a476d96deb": {
+          "coordinates": [
+            -6.364814814814935,
+            -155.86481481481488
+          ],
+          "name": "split subtitles",
+          "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
+          "params": {
+            "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"\\\\n\\\\n+(?=\\\\d+\\\\n)\""
+          }
+        },
+        "ba5668c5-2e5a-4591-b353-c2942b16df19": {
+          "coordinates": [
+            -96.3986111111112,
+            67.35138888888886
+          ],
+          "name": "parse entry",
+          "prototype": "08118b2f-c242-4f9d-8c70-4a9b908c506d"
+        }
+      },
+      "connections": {
+        "c0613165-b7f4-4e9e-8c85-58dffef2cc4c": {
+          "b5b9eeb3-9acc-4290-a310-b57544102115": {
+            "221b3dc5-a06b-4135-9cd8-f0a476d96deb": {
+              "aeed0ec7-7761-4612-b575-7b0c8858f57f": {}
+            }
+          }
+        },
+        "221b3dc5-a06b-4135-9cd8-f0a476d96deb": {
+          "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "e9d52db0-0cfc-4471-a195-304b2542965c": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "ba5668c5-2e5a-4591-b353-c2942b16df19": {
+              "903af3e5-ee78-40dc-8a25-c19e90705fdc": {}
+            }
+          }
+        },
+        "ba5668c5-2e5a-4591-b353-c2942b16df19": {
+          "078c60ce-8537-4e38-b755-4ab285128314": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "89794a4b-bc07-42c9-98d3-45a60158a5d2": {
+            "c0613165-b7f4-4e9e-8c85-58dffef2cc4c": {
+              "b15a82dc-96a1-4ce2-8a8b-aae98cd533cf": {}
+            }
+          }
+        },
+        "outputs": {
+          "a78aab3b-a0bc-43fd-bf60-1cbaefbc6377": {
+            "e9d52db0-0cfc-4471-a195-304b2542965c": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "srt": null,
+    "subtitles": null,
+    "split": null,
+    "parse": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

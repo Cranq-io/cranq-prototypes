@@ -1,0 +1,116 @@
+{
+  "name": "data/Dynamic parser",
+  "description": "Parses string dynamically",
+  "interface": {
+    "inputs": {
+      "e0c71542-059d-42b6-84e1-324dae2c4a81": {
+        "type": "\"number\" or \"json\"",
+        "name": "type",
+        "description": ""
+      },
+      "df70c18e-bab9-4adc-82cd-30c8e635c459": {
+        "type": "typeof `data` of `syncer`",
+        "name": "string",
+        "description": "[Inherited from port `data` of `syncer`] \nReceives individual item for syncing."
+      }
+    },
+    "outputs": {
+      "6cc1c186-b732-4462-9a94-547c82b8d556": {
+        "type": "number or any",
+        "name": "parsed",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6263ca58-d775-49af-bc65-7afbf0f4bcc7": {
+          "coordinates": [
+            59.5,
+            71.25
+          ],
+          "name": "parse JSON",
+          "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65"
+        },
+        "a811b79f-ec4b-45db-a17f-081f66465557": {
+          "coordinates": [
+            57.5,
+            -128.75
+          ],
+          "name": "parse number",
+          "prototype": "55d5a31a-4e9e-4d06-9875-86fa88e0033d"
+        },
+        "8ee55f76-39fd-4b71-87ba-e0b8f018ddd8": {
+          "coordinates": [
+            -120.5,
+            -43.75
+          ],
+          "name": "demultiplexer",
+          "prototype": "090f60d2-f942-49dc-b0ff-d736f9872988",
+          "params": {
+            "85fde0ba-068b-457d-9003-e29e47af2e38": "[\"number\", \"json\"]"
+          }
+        },
+        "c61192a6-899d-49af-a296-2757853a5212": {
+          "coordinates": [
+            -265.5,
+            60.25
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"field\", \"data\"]"
+          }
+        }
+      },
+      "connections": {
+        "8ee55f76-39fd-4b71-87ba-e0b8f018ddd8": {
+          "number": {
+            "a811b79f-ec4b-45db-a17f-081f66465557": {
+              "68e94af3-1532-4b7d-a7e3-ceafacdccbfd": {}
+            }
+          },
+          "json": {
+            "6263ca58-d775-49af-bc65-7afbf0f4bcc7": {
+              "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {}
+            }
+          }
+        },
+        "c61192a6-899d-49af-a296-2757853a5212": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "8ee55f76-39fd-4b71-87ba-e0b8f018ddd8": {
+              "b9b5fa59-8f22-46df-9305-b2d6f74f4085": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e0c71542-059d-42b6-84e1-324dae2c4a81": {
+            "c61192a6-899d-49af-a296-2757853a5212": {
+              "field": {}
+            }
+          },
+          "df70c18e-bab9-4adc-82cd-30c8e635c459": {
+            "c61192a6-899d-49af-a296-2757853a5212": {
+              "data": {}
+            }
+          }
+        },
+        "outputs": {
+          "6cc1c186-b732-4462-9a94-547c82b8d556": {
+            "a811b79f-ec4b-45db-a17f-081f66465557": {
+              "72bad116-28e0-4288-b294-07824385a4b8": {}
+            },
+            "6263ca58-d775-49af-bc65-7afbf0f4bcc7": {
+              "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {}
+}

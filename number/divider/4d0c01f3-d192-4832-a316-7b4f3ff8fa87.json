@@ -1,23 +1,23 @@
 {
-  "description": "Divides the received inputs. Bounces synced operands on division by zero.\n\nExample (valid division):\n\n1. 1@0 is received via `a`\n2. 2@0 is received via `b`\n3. 0.5@0 is sent via `fraction`\n\nExample (divide by zero):\n\n1. 13@0 is received via `a`\n2. 0@0 is received via `b`\n3. {\"a\":13, \"b\":0}@0 is sent via `bounced`",
+  "description": "Divides the received `dividend` by the received `divisor` and sends the quotient via `quotient`. Bounces synced operands on division by zero.\n\nExample (valid division):\n\n1. 1@0 is received via `dividend`\n2. 2@0 is received via `divisor`\n3. 0.5@0 is sent via `quotient`\n\nExample (divide by zero):\n\n1. 13@0 is received via `dividend`\n2. 0@0 is received via `divisor`\n3. {\"dividend\":13, \"divisor\":0}@0 is sent via `bounced`",
   "interface": {
     "inputs": {
       "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {
         "type": "number",
-        "name": "a",
-        "description": "The counter part of the fraction."
+        "name": "dividend",
+        "description": "Receives the dividend or numerator."
       },
       "10bc95fb-d41f-4590-9390-6459c6644108": {
         "type": "number",
-        "name": "b",
-        "description": "Denominator part of the fraction."
+        "name": "divisor",
+        "description": "Receives the divisor or denominator."
       }
     },
     "outputs": {
       "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {
         "type": "number",
-        "name": "fraction",
-        "description": "The fraction of the received numbers."
+        "name": "quotient",
+        "description": "Sends the quotient or fraction."
       },
       "009847de-abe7-45d4-968a-779b22f4e98e": {
         "description": "Sends synced inputs on error.",
@@ -31,20 +31,20 @@
       "nodes": {
         "21041d94-731f-400b-a080-4ea5cde5440a": {
           "coordinates": [
-            0,
-            0
+            -39,
+            77
           ],
           "description": "",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\",\"b\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dividend\",\"divisor\"]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "name": "sync a & b"
         },
         "b2c1ec87-6ebd-4937-953c-ec6654d56892": {
           "coordinates": [
-            0,
-            0
+            36,
+            -48
           ],
           "description": "",
           "params": {},
@@ -67,12 +67,12 @@
         "inputs": {
           "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {
             "21041d94-731f-400b-a080-4ea5cde5440a": {
-              "a": {}
+              "dividend": {}
             }
           },
           "10bc95fb-d41f-4590-9390-6459c6644108": {
             "21041d94-731f-400b-a080-4ea5cde5440a": {
-              "b": {}
+              "divisor": {}
             }
           }
         },
@@ -92,12 +92,20 @@
     }
   },
   "name": "number/Divider",
-  "attributes": {
-    "locked": true
-  },
   "keywords": {
     "number": null,
     "division": null,
-    "operator": null
+    "operator": null,
+    "dividend": null,
+    "divisor": null,
+    "numerator": null,
+    "denominator": null,
+    "fraction": null,
+    "quotient": null,
+    "ratio": null
+  },
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "attributes": {
+    "locked": true
   }
 }

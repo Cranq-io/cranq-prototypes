@@ -1,0 +1,88 @@
+{
+  "name": "string/Regex splitter",
+  "description": "Splits the  value received on `string` by the regular expression received on `regex`.\n\nExample:\n\n1. \"foo.bar,baz\"@0 is received via `string`\n2. \"[.,]\"@0 is received via `regex`\n3. [\"foo\", \"bar\", \"baz\"]@0 is sent via `substrings`",
+  "interface": {
+    "inputs": {
+      "aeed0ec7-7761-4612-b575-7b0c8858f57f": {
+        "type": "string",
+        "name": "string",
+        "description": "Receives the string to be split."
+      },
+      "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": {
+        "type": "string",
+        "name": "regex",
+        "description": "Receives the regular expression to split by."
+      }
+    },
+    "outputs": {
+      "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+        "type": "string[]",
+        "name": "substrings",
+        "description": "Sends the split string."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a64fbe88-9641-4de0-acef-3e4992a96c1f": {
+          "coordinates": [
+            -63,
+            22.5
+          ],
+          "name": "sync params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"string\", \"regex\"]"
+          }
+        },
+        "cce16a86-a5d0-417d-9b49-30217cf4cae1": {
+          "coordinates": [
+            62,
+            -22.5
+          ],
+          "name": "split",
+          "prototype": "919180cb-8c06-4898-aa07-15bc972838e5"
+        }
+      },
+      "connections": {
+        "a64fbe88-9641-4de0-acef-3e4992a96c1f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "cce16a86-a5d0-417d-9b49-30217cf4cae1": {
+              "e493a695-64e2-494f-a619-65fd206ab585": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "aeed0ec7-7761-4612-b575-7b0c8858f57f": {
+            "a64fbe88-9641-4de0-acef-3e4992a96c1f": {
+              "string": {}
+            }
+          },
+          "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": {
+            "a64fbe88-9641-4de0-acef-3e4992a96c1f": {
+              "regex": {}
+            }
+          }
+        },
+        "outputs": {
+          "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+            "cce16a86-a5d0-417d-9b49-30217cf4cae1": {
+              "a4b47f8d-a0b7-45ed-8a53-d4552b6d9b90": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "keywords": {
+    "split": null,
+    "regex": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

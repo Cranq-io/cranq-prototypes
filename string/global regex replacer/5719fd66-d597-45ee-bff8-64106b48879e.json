@@ -1,0 +1,97 @@
+{
+  "name": "string/Global regex replacer",
+  "description": "Replaces all occurrences of `regex` in `string` with `new`.",
+  "interface": {
+    "inputs": {
+      "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {
+        "type": "string",
+        "name": "string"
+      },
+      "d1118ac0-749b-46e9-81af-8fc74dc14e10": {
+        "type": "string",
+        "name": "regex"
+      },
+      "3490f391-9b3b-441e-b4a2-b078669cf5b4": {
+        "type": "string",
+        "name": "new"
+      }
+    },
+    "outputs": {
+      "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
+        "type": "string",
+        "name": "replaced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5d8da719-7c13-49cd-b225-0bc502c942c1": {
+          "coordinates": [
+            71,
+            -38.5
+          ],
+          "name": "replace",
+          "prototype": "8a20c904-0681-4e9f-9afa-5b2f3828c500"
+        },
+        "969f1628-0c52-4bc2-b5d2-4113b047b7cf": {
+          "coordinates": [
+            -71,
+            38.5
+          ],
+          "name": "sync params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"string\", \"regex\", \"new\"]"
+          }
+        }
+      },
+      "connections": {
+        "969f1628-0c52-4bc2-b5d2-4113b047b7cf": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "5d8da719-7c13-49cd-b225-0bc502c942c1": {
+              "5b23079f-b416-4586-8d97-f19585fe22b8": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {
+            "969f1628-0c52-4bc2-b5d2-4113b047b7cf": {
+              "string": {}
+            }
+          },
+          "d1118ac0-749b-46e9-81af-8fc74dc14e10": {
+            "969f1628-0c52-4bc2-b5d2-4113b047b7cf": {
+              "regex": {}
+            }
+          },
+          "3490f391-9b3b-441e-b4a2-b078669cf5b4": {
+            "969f1628-0c52-4bc2-b5d2-4113b047b7cf": {
+              "new": {}
+            }
+          }
+        },
+        "outputs": {
+          "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
+            "5d8da719-7c13-49cd-b225-0bc502c942c1": {
+              "8d627a3a-01c0-41e0-8c78-3c53f620d9b6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "replace": null,
+    "string": null,
+    "search": null,
+    "regex": null,
+    "regular expression": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

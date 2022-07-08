@@ -1,0 +1,13 @@
+{
+  "name": "@cranq/prototype-validation",
+  "scripts": {
+    "start": "ts-node node_modules/@cranq/node-descriptor/src/bin/validate-repository.ts '../'"
+  },
+  "dependencies": {
+    "@cranq/node-descriptor": "*",
+    "@types/uuid": "^8.0.0",
+    "ajv": "^6.12.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^3.9.5"
+  }
+}

@@ -4,19 +4,19 @@
   "interface": {
     "inputs": {
       "e0c71542-059d-42b6-84e1-324dae2c4a81": {
-        "type": "\"number\" or \"json\"",
+        "type": "(\"number\" or \"json\")",
         "name": "type",
         "description": ""
       },
       "df70c18e-bab9-4adc-82cd-30c8e635c459": {
-        "type": "typeof `data` of `syncer`",
+        "type": "string",
         "name": "string",
         "description": "[Inherited from port `data` of `syncer`] \nReceives individual item for syncing."
       }
     },
     "outputs": {
       "6cc1c186-b732-4462-9a94-547c82b8d556": {
-        "type": "number or any",
+        "type": "(number or any)",
         "name": "parsed",
         "description": ""
       }
@@ -112,5 +112,7 @@
     }
   },
   "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

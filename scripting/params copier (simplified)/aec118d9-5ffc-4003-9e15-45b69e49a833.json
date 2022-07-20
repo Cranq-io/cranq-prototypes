@@ -1,0 +1,114 @@
+{
+  "name": "scripting/Params copier (simplified)",
+  "interface": {
+    "inputs": {
+      "41087308-662d-4122-9083-e9bce9ec4ee9": {
+        "type": "any",
+        "name": "source"
+      },
+      "7487c3dd-503c-455d-be9f-8b289d30f96b": {
+        "description": "",
+        "type": "{\n  \"params\": any,\n  \"mapping\": {string: string}\n}",
+        "name": "params & mapping"
+      }
+    },
+    "outputs": {
+      "f2f68a0c-c5d0-41fb-ab2d-3a12b3e414f2": {
+        "type": "typeof `params & mapping`[\"params\"]",
+        "name": "params"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "86d09ebd-421e-43e2-977f-61e44a972e15": {
+          "coordinates": [
+            118.69140625,
+            25.5
+          ],
+          "name": "copy params from state",
+          "prototype": "359e8070-aed1-459b-a6d8-722f1d27378b",
+          "params": {}
+        },
+        "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
+          "coordinates": [
+            -64.69140625,
+            -96.5
+          ],
+          "name": "split params & mapping",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"params\", \"mapping\"]"
+          }
+        },
+        "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
+          "coordinates": [
+            -65.69140625,
+            114.5
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "86d09ebd-421e-43e2-977f-61e44a972e15": {
+              "29b0d82b-2f8d-432c-81a5-b0cdf2c4f383": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "cec9b68b-fc78-4416-85a5-6faa14388d0b": {
+          "params": {
+            "86d09ebd-421e-43e2-977f-61e44a972e15": {
+              "9bd88c07-0858-4ead-b615-069284f0db34": {}
+            }
+          },
+          "mapping": {
+            "86d09ebd-421e-43e2-977f-61e44a972e15": {
+              "71ef594f-2661-492f-b6e6-278e6ce94c3d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "41087308-662d-4122-9083-e9bce9ec4ee9": {
+            "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "7487c3dd-503c-455d-be9f-8b289d30f96b": {
+            "4bc32ddc-6bbd-4774-9e84-2ee12480a297": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "f2f68a0c-c5d0-41fb-ab2d-3a12b3e414f2": {
+            "86d09ebd-421e-43e2-977f-61e44a972e15": {
+              "016df9f6-e555-4594-b84f-ca1e9401fae8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "state": null,
+    "params": null,
+    "low-code": null,
+    "nocode": null,
+    "map": null,
+    "copy": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

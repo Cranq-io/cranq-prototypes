@@ -1,0 +1,108 @@
+{
+  "name": "scripting/Config reader",
+  "interface": {
+    "inputs": {
+      "17ccec0b-6794-4f7f-a4aa-03d0184a1e1f": {
+        "type": "string",
+        "name": "path"
+      }
+    },
+    "outputs": {
+      "10e132f4-f324-4989-b7a1-8a69a7eeebbb": {
+        "type": "{string: any}",
+        "name": "config"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "988a6cff-fc9c-4c98-8240-88d58fb95309": {
+          "coordinates": [
+            -10.75,
+            -26.5
+          ],
+          "name": "build full path",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"ERROR: Config file ({PATH}) not found.\""
+          }
+        },
+        "dff25064-cb2d-42da-9682-acf84600d4c5": {
+          "coordinates": [
+            -100.75,
+            -72.5
+          ],
+          "name": "prepare params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"PATH\"]"
+          }
+        },
+        "66750c1e-ecb1-46ff-9f54-7ccf1c4047b5": {
+          "coordinates": [
+            -4.75,
+            131.5
+          ],
+          "name": "read config",
+          "prototype": "e017ff92-bf1a-4a2f-8520-bd706deb466c",
+          "params": {}
+        },
+        "c5443db6-16c6-404d-ad13-a0715c78e36c": {
+          "coordinates": [
+            98.25,
+            49.5
+          ],
+          "name": "log error",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {}
+        }
+      },
+      "connections": {
+        "dff25064-cb2d-42da-9682-acf84600d4c5": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "988a6cff-fc9c-4c98-8240-88d58fb95309": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "988a6cff-fc9c-4c98-8240-88d58fb95309": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "c5443db6-16c6-404d-ad13-a0715c78e36c": {
+              "a47305ec-75e3-43d6-84cf-54f5d04fa823": {}
+            }
+          }
+        },
+        "66750c1e-ecb1-46ff-9f54-7ccf1c4047b5": {
+          "8c073c0a-c7fe-4c28-901f-717ab7df4f65": {
+            "c5443db6-16c6-404d-ad13-a0715c78e36c": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "17ccec0b-6794-4f7f-a4aa-03d0184a1e1f": {
+            "66750c1e-ecb1-46ff-9f54-7ccf1c4047b5": {
+              "e487bf74-1211-44a4-80b7-9bb4b29f94c0": {}
+            },
+            "dff25064-cb2d-42da-9682-acf84600d4c5": {
+              "PATH": {}
+            }
+          }
+        },
+        "outputs": {
+          "10e132f4-f324-4989-b7a1-8a69a7eeebbb": {
+            "66750c1e-ecb1-46ff-9f54-7ccf1c4047b5": {
+              "a858b493-c881-476d-89af-688826173640": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

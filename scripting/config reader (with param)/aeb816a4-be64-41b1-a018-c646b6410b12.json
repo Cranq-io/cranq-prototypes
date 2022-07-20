@@ -1,0 +1,78 @@
+{
+  "name": "scripting/Config reader (with param)",
+  "interface": {
+    "inputs": {
+      "23c318c4-3997-4329-9a32-5319cd3f3309": {
+        "type": "string",
+        "name": "path"
+      },
+      "417d81b5-990d-4707-8e58-b29183ef8803": {
+        "type": "any",
+        "name": "start"
+      }
+    },
+    "outputs": {
+      "cdc15dc2-7bfd-44e7-acbc-1d948558b139": {
+        "type": "{\n\"api-url\": string,\n\"private-key\": string,\n\"public-key\": string,\n\"token-uri\": string\n}",
+        "name": "config"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1809d8bf-9744-4c5f-9ef5-8389f2389ae7": {
+          "coordinates": [
+            35,
+            -59
+          ],
+          "name": "read config",
+          "prototype": "f8d0dc26-b6cb-475d-87ee-feaca6eadec0",
+          "params": {}
+        },
+        "dda0bc52-d098-4898-9160-b08f59721df9": {
+          "coordinates": [
+            -15.75,
+            73.5
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      },
+      "connections": {
+        "dda0bc52-d098-4898-9160-b08f59721df9": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "1809d8bf-9744-4c5f-9ef5-8389f2389ae7": {
+              "17ccec0b-6794-4f7f-a4aa-03d0184a1e1f": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "417d81b5-990d-4707-8e58-b29183ef8803": {
+            "dda0bc52-d098-4898-9160-b08f59721df9": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          },
+          "23c318c4-3997-4329-9a32-5319cd3f3309": {
+            "dda0bc52-d098-4898-9160-b08f59721df9": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "outputs": {
+          "cdc15dc2-7bfd-44e7-acbc-1d948558b139": {
+            "1809d8bf-9744-4c5f-9ef5-8389f2389ae7": {
+              "10e132f4-f324-4989-b7a1-8a69a7eeebbb": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "locked": true
+  }
+}

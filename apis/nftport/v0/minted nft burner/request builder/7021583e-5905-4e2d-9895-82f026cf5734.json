@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"mint_to_address\": string,\n  optional \"metadata_uri\": string,\n  optional \"freeze_metadata\": boolean\n}",
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string\n}",
         "name": "NFT",
-        "description": "[Inherited from port `a` of `merger`] \nReceives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
+        "description": ""
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "any",
+        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
+        "description": ""
       }
     },
     "outputs": {
@@ -65,13 +65,13 @@
           "name": "extract API params",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"metadata_uri\": \"metadata_uri\",\n  \"freeze_metadata\": \"freeze_metadata\"\n}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\n  \"chain\": \"chain\"\n}"
           }
         },
         "d0debc73-0f7b-498b-88f7-9232e17d22a7": {
           "coordinates": [
-            139.8,
-            86.8
+            115.79999999999995,
+            108.79999999999995
           ],
           "name": "build data",
           "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"

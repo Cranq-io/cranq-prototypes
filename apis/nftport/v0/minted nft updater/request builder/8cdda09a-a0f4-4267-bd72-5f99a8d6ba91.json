@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
-        "type": "typeof `a` of `merger`",
+        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  \"mint_to_address\": string,\n  optional \"metadata_uri\": string,\n  optional \"freeze_metadata\": boolean\n}",
         "name": "NFT",
         "description": "[Inherited from port `a` of `merger`] \nReceives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
       },

@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "typeof `b` of `inner joiner`",
+        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       },
@@ -14,7 +14,7 @@
     },
     "outputs": {
       "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
-        "type": "typeof `JSON req.` of `json request builder`",
+        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
         "name": "request"
       }
     }
@@ -171,7 +171,6 @@
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "original": "abcb6bea-fd10-4a4d-aa00-02bab3222124",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

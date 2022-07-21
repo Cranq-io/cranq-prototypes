@@ -8,13 +8,13 @@
         "name": "string"
       },
       "812765c2-f97f-422d-95e0-fc1a436a7af8": {
-        "type": "\"base64\" or \"utf8\"",
+        "type": "(\"base64\" or \"utf8\")",
         "name": "encoding"
       }
     },
     "outputs": {
       "004c42ab-1918-45a1-8a56-16978c6e3c31": {
-        "type": "{\n  \"data\": typeof `data`,\n  \"encoding\": typeof `encoding`\n}",
+        "type": "{\n  \"data\": typeof `string`,\n  \"encoding\": typeof `encoding`\n}",
         "name": "chunk"
       }
     }

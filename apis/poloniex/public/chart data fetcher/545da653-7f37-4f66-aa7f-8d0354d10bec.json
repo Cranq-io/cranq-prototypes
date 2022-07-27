@@ -1,0 +1,136 @@
+{
+  "name": "apis/poloniex/public/Chart data fetcher",
+  "description": "Returns candlestick chart data. Required GET parameters are \"currencyPair\", \"period\" (candlestick period in seconds; valid values are 300, 900, 1800, 7200, 14400, and 86400), \"start\", and \"end\". \"Start\" and \"end\" are given in UNIX timestamp format and used to specify the date range for the data returned.\n\nhttps://docs.poloniex.com/#returntradehistory-public",
+  "interface": {
+    "inputs": {
+      "b5c40467-b8f0-496e-99cf-1742a385d73e": {
+        "type": "{\n  \"currencyPair\": string,\n  \"start\": number,\n  \"end\": number,\n  \"period\": number\n}",
+        "name": "query",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0796ac8c-c88f-41ee-ac7e-266b7f87bb3c": {
+        "type": "{\n    \"date\": number,\n    \"high\": number,\n    \"low\": number,\n    \"open\": number,\n    \"close\": number,\n    \"volume\": number,\n    \"quoteVolume\": number,\n    \"weightedAverage\": number\n}[]",
+        "name": "data"
+      },
+      "8ed11487-4a37-481b-aee6-91e30470b250": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "e751c313-a92a-458c-bf63-a5fcd3645cb7": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4611ad14-e04e-4ce1-91e6-db398740b9ab": {
+          "coordinates": [
+            97.69999999999999,
+            -86.29999999999995
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "3a3734de-a4f8-445e-9e0a-01ec33490a75": {
+          "coordinates": [
+            -128.3,
+            -94.29999999999995
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"command\": \"returnChartData\"\n}"
+          }
+        },
+        "1650bf42-16e8-4afe-ae07-2dae622b0c7c": {
+          "coordinates": [
+            138.70000000000005,
+            87.70000000000005
+          ],
+          "name": "detect error",
+          "prototype": "b74cd6c7-0291-4c1b-bb70-e5fbb62fad85"
+        },
+        "11a24284-e8ae-4073-8608-12e71378aee7": {
+          "coordinates": [
+            -106.30000000000001,
+            88.70000000000005
+          ],
+          "name": "build request",
+          "prototype": "c964581d-48dc-4e48-b80d-46eeb51deaef"
+        }
+      },
+      "connections": {
+        "4611ad14-e04e-4ce1-91e6-db398740b9ab": {
+          "928a6619-42b4-4267-9dd7-416907a3939f": {
+            "1650bf42-16e8-4afe-ae07-2dae622b0c7c": {
+              "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {}
+            }
+          }
+        },
+        "11a24284-e8ae-4073-8608-12e71378aee7": {
+          "c74b6ddc-278a-4091-9c31-0af5dc130db5": {
+            "4611ad14-e04e-4ce1-91e6-db398740b9ab": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "3a3734de-a4f8-445e-9e0a-01ec33490a75": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "11a24284-e8ae-4073-8608-12e71378aee7": {
+              "6eced0bd-f886-4d03-b083-20b4bd06c0b8": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b5c40467-b8f0-496e-99cf-1742a385d73e": {
+            "3a3734de-a4f8-445e-9e0a-01ec33490a75": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "0796ac8c-c88f-41ee-ac7e-266b7f87bb3c": {
+            "1650bf42-16e8-4afe-ae07-2dae622b0c7c": {
+              "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {}
+            }
+          },
+          "e751c313-a92a-458c-bf63-a5fcd3645cb7": {
+            "1650bf42-16e8-4afe-ae07-2dae622b0c7c": {
+              "3acfc099-6290-4678-b6a1-44368ba3ca84": {}
+            },
+            "4611ad14-e04e-4ce1-91e6-db398740b9ab": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          },
+          "8ed11487-4a37-481b-aee6-91e30470b250": {
+            "4611ad14-e04e-4ce1-91e6-db398740b9ab": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "history": null,
+    "historical": null,
+    "trade": null,
+    "currency": null,
+    "pair": null,
+    "query": null,
+    "fetch": null,
+    "retrieve": null,
+    "chart": null,
+    "candlestick": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

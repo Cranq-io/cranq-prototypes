@@ -1,0 +1,76 @@
+{
+  "name": "apis/poloniex/public/Trade history query/Request builder",
+  "interface": {
+    "inputs": {
+      "55b201f2-00f5-40a3-8aa2-42411ed7f88d": {
+        "type": "{\n  \"command\": string,\n  \"currencyPair\": string,\n  optional \"start\": number,\n  optional \"end\": number\n}",
+        "name": "query params"
+      }
+    },
+    "outputs": {
+      "6c0aace8-b346-4099-9da2-d43557f7d0e8": {
+        "type": "typeof `request` of `build request`",
+        "name": "build request-request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ca74a1af-a581-46b0-a635-01f83260d4d3": {
+          "coordinates": [
+            29.499999999999986,
+            94
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\"",
+            "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": "{}"
+          }
+        },
+        "2059bdf4-811f-4091-8783-08af4caa3bb5": {
+          "coordinates": [
+            -29.499999999999986,
+            -94
+          ],
+          "name": "build URL",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://poloniex.com/public\""
+          }
+        }
+      },
+      "connections": {
+        "2059bdf4-811f-4091-8783-08af4caa3bb5": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "ca74a1af-a581-46b0-a635-01f83260d4d3": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "55b201f2-00f5-40a3-8aa2-42411ed7f88d": {
+            "2059bdf4-811f-4091-8783-08af4caa3bb5": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "outputs": {
+          "6c0aace8-b346-4099-9da2-d43557f7d0e8": {
+            "ca74a1af-a581-46b0-a635-01f83260d4d3": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

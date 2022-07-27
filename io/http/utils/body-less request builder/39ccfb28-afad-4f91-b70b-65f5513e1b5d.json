@@ -1,6 +1,6 @@
 {
   "name": "io/http/utils/Body-less request builder",
-  "description": "Builds a HTTP request that has no body.",
+  "description": "Builds a HTTP request that has no body.\n\nUsually used for building GET requests, though not exclusively.",
   "interface": {
     "inputs": {
       "f31b205d-f076-4f29-a03e-fa2140ad1c7f": {
@@ -68,6 +68,12 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "bodyless": null,
+    "bodiless": null,
+    "get": null,
+    "request": null
+  },
   "attributes": {
     "locked": true
   }

@@ -1,0 +1,120 @@
+{
+  "name": "apis/poloniex/public/Summary sampler",
+  "description": "Retrieves summary information for each currency pair listed on the exchange. \n\nhttps://docs.poloniex.com/#returnticker",
+  "interface": {
+    "inputs": {
+      "60c8a344-21ea-44a4-aaaa-926da9245d6c": {
+        "type": "any",
+        "name": "start",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "26e81849-111c-450a-a756-0f5feb2fd0b7": {
+        "type": "{\n  string: {\n    \"id\": number,\n    \"last\": string,\n    \"lowestAsk\": string,\n    \"highestBid\": string,\n    \"percentChange\": string,\n    \"baseVolume\": string,\n    \"quoteVolume\": string,\n    \"isFrozen\": string,\n    \"postOnly\": string,\n    \"marginTradingEnabled\": string,\n    \"high24hr\": string,\n    \"low24hr\": string\n  }\n}",
+        "name": "data",
+        "description": ""
+      },
+      "170070b9-b575-4db6-ad0b-d00e56479585": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "a5f6a4bd-f8a9-47b4-bb33-4ae6e2ea5e4a": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "354c6681-a109-45ab-b6d5-6f8a68ea3821": {
+          "coordinates": [
+            156.33333333333334,
+            -60
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "0c74635c-2a93-4562-9656-48b89a0b2a3b": {
+          "coordinates": [
+            -33.66666666666666,
+            128
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\"",
+            "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": "{}"
+          }
+        },
+        "b462abdd-b144-4275-b0c6-586557c03176": {
+          "coordinates": [
+            -123.66666666666666,
+            -68
+          ],
+          "name": "URL",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"https://poloniex.com/public?command=returnTicker\""
+          }
+        }
+      },
+      "connections": {
+        "0c74635c-2a93-4562-9656-48b89a0b2a3b": {
+          "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {
+            "354c6681-a109-45ab-b6d5-6f8a68ea3821": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "b462abdd-b144-4275-b0c6-586557c03176": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "0c74635c-2a93-4562-9656-48b89a0b2a3b": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "60c8a344-21ea-44a4-aaaa-926da9245d6c": {
+            "b462abdd-b144-4275-b0c6-586557c03176": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "26e81849-111c-450a-a756-0f5feb2fd0b7": {
+            "354c6681-a109-45ab-b6d5-6f8a68ea3821": {
+              "928a6619-42b4-4267-9dd7-416907a3939f": {}
+            }
+          },
+          "170070b9-b575-4db6-ad0b-d00e56479585": {
+            "354c6681-a109-45ab-b6d5-6f8a68ea3821": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "a5f6a4bd-f8a9-47b4-bb33-4ae6e2ea5e4a": {
+            "354c6681-a109-45ab-b6d5-6f8a68ea3821": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "price": null,
+    "token": null,
+    "currency": null,
+    "pair": null,
+    "sample": null,
+    "fetch": null,
+    "retrieve": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "name": "apis/poloniex/public/Currencies fetcher",
+  "description": "Returns information about currencies.\n\nhttps://docs.poloniex.com/#returncurrencies",
+  "interface": {
+    "inputs": {
+      "30168da8-b242-48ac-a79e-a79ce8f0880a": {
+        "type": "{\n  optional \"includeMultiChainCurrencies\": boolean\n}",
+        "name": "query",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "9d13fc9f-fe60-4575-8b64-67e6cd282a88": {
+        "type": "{\n  \"id\": 1,\n  \"name\": string,\n  \"humanType\": string,\n  \"currencyType\": string,\n  \"txFee\": string,\n  \"minConf\": number,\n  \"depositAddress\": null,\n  \"disabled\": number,\n  \"frozen\": number,\n  \"hexColor\": string,\n  \"blockchain\": string,\n  \"delisted\": number,\n  \"isGeofenced\": number\n}",
+        "name": "data"
+      },
+      "8a524d61-82ff-4edd-aef4-51abee5e950f": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "f268cdaa-f0c2-4988-bd79-882080ab3ff9": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4f92d10f-0982-48a8-b591-3f5f01617020": {
+          "coordinates": [
+            107.5,
+            -98.5
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "9816b39d-1e98-444d-a0d5-ec1eb693dfcb": {
+          "coordinates": [
+            -145.5,
+            -107.5
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"command\": \"returnCurrencies\"}"
+          }
+        },
+        "42ae29a1-cb01-4af0-b398-f2fcd41de34f": {
+          "coordinates": [
+            134.5,
+            106.5
+          ],
+          "name": "detect error",
+          "prototype": "b74cd6c7-0291-4c1b-bb70-e5fbb62fad85"
+        },
+        "cf157760-e2d8-4f36-a519-1e6501f8d340": {
+          "coordinates": [
+            -98,
+            99.5
+          ],
+          "name": "build request",
+          "prototype": "6ff99b11-813d-4fdc-9885-eb0dadc49e75"
+        }
+      },
+      "connections": {
+        "4f92d10f-0982-48a8-b591-3f5f01617020": {
+          "928a6619-42b4-4267-9dd7-416907a3939f": {
+            "42ae29a1-cb01-4af0-b398-f2fcd41de34f": {
+              "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {}
+            }
+          }
+        },
+        "cf157760-e2d8-4f36-a519-1e6501f8d340": {
+          "a62f22ca-5056-4c2f-b632-5e172b3394d3": {
+            "4f92d10f-0982-48a8-b591-3f5f01617020": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "9816b39d-1e98-444d-a0d5-ec1eb693dfcb": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "cf157760-e2d8-4f36-a519-1e6501f8d340": {
+              "131f73e5-af72-4aea-b06e-7918bfb16428": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "30168da8-b242-48ac-a79e-a79ce8f0880a": {
+            "9816b39d-1e98-444d-a0d5-ec1eb693dfcb": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "9d13fc9f-fe60-4575-8b64-67e6cd282a88": {
+            "42ae29a1-cb01-4af0-b398-f2fcd41de34f": {
+              "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {}
+            }
+          },
+          "f268cdaa-f0c2-4988-bd79-882080ab3ff9": {
+            "42ae29a1-cb01-4af0-b398-f2fcd41de34f": {
+              "3acfc099-6290-4678-b6a1-44368ba3ca84": {}
+            },
+            "4f92d10f-0982-48a8-b591-3f5f01617020": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          },
+          "8a524d61-82ff-4edd-aef4-51abee5e950f": {
+            "4f92d10f-0982-48a8-b591-3f5f01617020": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "currency": null,
+    "query": null,
+    "fetch": null,
+    "retrieve": null,
+    "list": null,
+    "details": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

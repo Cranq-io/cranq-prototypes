@@ -1,0 +1,132 @@
+{
+  "name": "apis/poloniex/public/Trade history fetcher",
+  "description": "Returns the past 200 trades for a given market, or up to 1,000 trades between a range specified in UNIX timestamps by the \"start\" and \"end\" GET parameters.\n\nhttps://docs.poloniex.com/#returntradehistory-public",
+  "interface": {
+    "inputs": {
+      "866e87d8-3ad7-44f7-8ee8-14701e30cd2d": {
+        "type": "{\n  \"currencyPair\": string,\n  optional \"start\": number,\n  optional \"end\": number\n}",
+        "name": "query",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "baf30abf-b032-4ab6-93c8-085aea1ba9bb": {
+        "type": "{\n    \"globalTradeID\": number,\n    \"tradeID\": number,\n    \"date\": string,\n    \"type\": string,\n    \"rate\": string,\n    \"amount\": string,\n    \"total\": string,\n    \"orderNumber\": number\n}[]",
+        "name": "data",
+        "description": ""
+      },
+      "c743c320-fec2-425f-a503-e0aa00a810b0": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "f7c8d9b8-111f-4699-9632-f1f7994745e6": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "11533a31-fb4f-4d15-b512-c58403d16cd5": {
+          "coordinates": [
+            80.64285714285711,
+            -90.42857142857144
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "90ab83d3-02e5-4511-9802-349c670dd5d3": {
+          "coordinates": [
+            -152.35714285714286,
+            -93.42857142857144
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"command\": \"returnTradeHistory\"\n}"
+          }
+        },
+        "f819ac77-bc4e-4040-ae03-b3856a6fdf96": {
+          "coordinates": [
+            158.1428571428571,
+            93.57142857142856
+          ],
+          "name": "detect error",
+          "prototype": "b74cd6c7-0291-4c1b-bb70-e5fbb62fad85"
+        },
+        "33cbf2c9-c601-4d20-800c-3d761cb21eba": {
+          "coordinates": [
+            -85.85714285714283,
+            90.57142857142856
+          ],
+          "name": "build request",
+          "prototype": "0b4a0fb0-f1fc-4aea-b888-63d65a437d9d"
+        }
+      },
+      "connections": {
+        "11533a31-fb4f-4d15-b512-c58403d16cd5": {
+          "928a6619-42b4-4267-9dd7-416907a3939f": {
+            "f819ac77-bc4e-4040-ae03-b3856a6fdf96": {
+              "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {}
+            }
+          }
+        },
+        "33cbf2c9-c601-4d20-800c-3d761cb21eba": {
+          "6c0aace8-b346-4099-9da2-d43557f7d0e8": {
+            "11533a31-fb4f-4d15-b512-c58403d16cd5": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "90ab83d3-02e5-4511-9802-349c670dd5d3": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "33cbf2c9-c601-4d20-800c-3d761cb21eba": {
+              "55b201f2-00f5-40a3-8aa2-42411ed7f88d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "866e87d8-3ad7-44f7-8ee8-14701e30cd2d": {
+            "90ab83d3-02e5-4511-9802-349c670dd5d3": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "c743c320-fec2-425f-a503-e0aa00a810b0": {
+            "11533a31-fb4f-4d15-b512-c58403d16cd5": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "baf30abf-b032-4ab6-93c8-085aea1ba9bb": {
+            "f819ac77-bc4e-4040-ae03-b3856a6fdf96": {
+              "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {}
+            }
+          },
+          "f7c8d9b8-111f-4699-9632-f1f7994745e6": {
+            "f819ac77-bc4e-4040-ae03-b3856a6fdf96": {
+              "3acfc099-6290-4678-b6a1-44368ba3ca84": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "history": null,
+    "historical": null,
+    "trade": null,
+    "currency": null,
+    "pair": null,
+    "query": null,
+    "fetch": null,
+    "retrieve": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

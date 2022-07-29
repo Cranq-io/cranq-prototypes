@@ -1,0 +1,137 @@
+{
+  "name": "apis/poloniex/public/Order book fetcher",
+  "description": "Returns the order book for a given market, as well as a sequence number used by websockets for synchronization of book updates and an indicator specifying whether the market is frozen. You may set currencyPair to \"all\" to get the order books of all markets.\n\nhttps://docs.poloniex.com/#returnorderbook",
+  "interface": {
+    "inputs": {
+      "5486ea8d-2ceb-4645-8086-54ab6c3108f7": {
+        "type": "{\n  \"currencyPair\": string,\n  optional \"depth\": number\n}",
+        "name": "query",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "4280d0c5-e89f-4a50-9193-3dad04b066f9": {
+        "type": "{\n  \"asks\": [string, number][],\n  \"bids\": [string, number][],\n  \"isFrozen\": string,\n  \"postOnly\": string,\n  \"seq\": number\n}",
+        "name": "data",
+        "description": ""
+      },
+      "f1d017b6-2d2e-46c0-a541-2404068691c3": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "55813496-c674-4e60-ae80-57d3484d56ce": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6b23b0b9-1c6e-4da2-b5f1-ef833cea37d5": {
+          "coordinates": [
+            83.5,
+            -89
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "debfadc4-e117-4d54-bf26-a994c27442cc": {
+          "coordinates": [
+            -125.5,
+            -98
+          ],
+          "name": "apply defaults / static",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"command\": \"returnOrderBook\",\n  \"depth\": 50\n}"
+          }
+        },
+        "3d5c4b2f-4682-4d18-bda0-4b67df95280b": {
+          "coordinates": [
+            -91.5,
+            98
+          ],
+          "name": "build request",
+          "prototype": "2dc58f85-6d4d-4f4c-a115-156ce6560b0d"
+        },
+        "df47f31c-70e0-42cf-b522-55cafb226621": {
+          "coordinates": [
+            135.25,
+            89.25
+          ],
+          "name": "detect error",
+          "prototype": "b74cd6c7-0291-4c1b-bb70-e5fbb62fad85"
+        }
+      },
+      "connections": {
+        "3d5c4b2f-4682-4d18-bda0-4b67df95280b": {
+          "f0a61e53-7082-4732-902b-6ff391f2d24b": {
+            "6b23b0b9-1c6e-4da2-b5f1-ef833cea37d5": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "debfadc4-e117-4d54-bf26-a994c27442cc": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "3d5c4b2f-4682-4d18-bda0-4b67df95280b": {
+              "ebc858c2-1218-4d53-906f-4114be6b32c0": {}
+            }
+          }
+        },
+        "6b23b0b9-1c6e-4da2-b5f1-ef833cea37d5": {
+          "928a6619-42b4-4267-9dd7-416907a3939f": {
+            "df47f31c-70e0-42cf-b522-55cafb226621": {
+              "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5486ea8d-2ceb-4645-8086-54ab6c3108f7": {
+            "debfadc4-e117-4d54-bf26-a994c27442cc": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "4280d0c5-e89f-4a50-9193-3dad04b066f9": {
+            "df47f31c-70e0-42cf-b522-55cafb226621": {
+              "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {}
+            }
+          },
+          "f1d017b6-2d2e-46c0-a541-2404068691c3": {
+            "6b23b0b9-1c6e-4da2-b5f1-ef833cea37d5": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "55813496-c674-4e60-ae80-57d3484d56ce": {
+            "6b23b0b9-1c6e-4da2-b5f1-ef833cea37d5": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "df47f31c-70e0-42cf-b522-55cafb226621": {
+              "3acfc099-6290-4678-b6a1-44368ba3ca84": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "order book": null,
+    "asks": null,
+    "bids": null,
+    "price": null,
+    "token": null,
+    "currency": null,
+    "pair": null,
+    "sample": null,
+    "fetch": null,
+    "retrieve": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

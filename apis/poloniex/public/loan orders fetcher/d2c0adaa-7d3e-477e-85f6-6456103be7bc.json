@@ -1,0 +1,134 @@
+{
+  "name": "apis/poloniex/public/Loan orders fetcher",
+  "description": "Returns the list of loan offers and demands for a given currency, specified by the \"currency\" GET parameter.\n\nhttps://docs.poloniex.com/#returnloanorders",
+  "interface": {
+    "inputs": {
+      "44e2c567-49e9-4ef1-aa29-9d8f2d80d688": {
+        "type": "{\n  \"currency\": string\n}",
+        "name": "query",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "340e2092-612e-4a02-9465-dc59d92a64ba": {
+        "type": "{\n  \"offers\": {\n      \"rate\": string,\n      \"amount\": string,\n      \"rangeMin\": number,\n      \"rangeMax\": number\n    }[],\n  \"demands\": {\n      \"rate\": string,\n      \"amount\": string,\n      \"rangeMin\": number,\n      \"rangeMax\": number\n    }[]\n}",
+        "name": "data"
+      },
+      "47c4d3a8-0eb6-4e47-a618-01d0048b0a84": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "4b811632-bc1d-432d-bfe3-92339132ac9c": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5d5205ad-5b85-4a75-b4e5-c232e6edfe60": {
+          "coordinates": [
+            83.5,
+            -100.5
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "dc4f0359-97ee-436e-ad9f-737540f7fbea": {
+          "coordinates": [
+            177.5,
+            103.5
+          ],
+          "name": "detect error",
+          "prototype": "b74cd6c7-0291-4c1b-bb70-e5fbb62fad85"
+        },
+        "66b36190-04aa-4a8a-833c-57ae0932f392": {
+          "coordinates": [
+            -158.5,
+            -104.5
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"command\": \"returnLoanOrders\"\n}"
+          }
+        },
+        "c29e2d41-3645-4687-a109-5fd30ee835ce": {
+          "coordinates": [
+            -102,
+            106
+          ],
+          "name": "build request",
+          "prototype": "b85d92e9-9d95-4368-a466-96b5d48ee4e2"
+        }
+      },
+      "connections": {
+        "5d5205ad-5b85-4a75-b4e5-c232e6edfe60": {
+          "928a6619-42b4-4267-9dd7-416907a3939f": {
+            "dc4f0359-97ee-436e-ad9f-737540f7fbea": {
+              "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {}
+            }
+          }
+        },
+        "c29e2d41-3645-4687-a109-5fd30ee835ce": {
+          "b0b87047-f3db-463e-bd4c-c320379eb022": {
+            "5d5205ad-5b85-4a75-b4e5-c232e6edfe60": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "66b36190-04aa-4a8a-833c-57ae0932f392": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "c29e2d41-3645-4687-a109-5fd30ee835ce": {
+              "f3ca66d2-f8de-4372-93ac-5b0e3c266ac1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "44e2c567-49e9-4ef1-aa29-9d8f2d80d688": {
+            "66b36190-04aa-4a8a-833c-57ae0932f392": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "340e2092-612e-4a02-9465-dc59d92a64ba": {
+            "dc4f0359-97ee-436e-ad9f-737540f7fbea": {
+              "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {}
+            }
+          },
+          "47c4d3a8-0eb6-4e47-a618-01d0048b0a84": {
+            "5d5205ad-5b85-4a75-b4e5-c232e6edfe60": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "4b811632-bc1d-432d-bfe3-92339132ac9c": {
+            "5d5205ad-5b85-4a75-b4e5-c232e6edfe60": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "dc4f0359-97ee-436e-ad9f-737540f7fbea": {
+              "3acfc099-6290-4678-b6a1-44368ba3ca84": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "currency": null,
+    "loan order": null,
+    "query": null,
+    "fetch": null,
+    "retrieve": null,
+    "list": null,
+    "offers": null,
+    "demands": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

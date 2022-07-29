@@ -1,0 +1,76 @@
+{
+  "name": "apis/poloniex/public/Loan orders fetcher/Request builder",
+  "interface": {
+    "inputs": {
+      "f3ca66d2-f8de-4372-93ac-5b0e3c266ac1": {
+        "type": "typeof `query params` of `bulid URL`",
+        "name": "query params"
+      }
+    },
+    "outputs": {
+      "b0b87047-f3db-463e-bd4c-c320379eb022": {
+        "type": "typeof `request` of `build request`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4cccaa02-9168-47f6-8541-5f08cd3f767f": {
+          "coordinates": [
+            54.49999999999999,
+            71.5
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\"",
+            "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": "{}"
+          }
+        },
+        "357a4a60-564e-4c23-bc7e-1791645ee0e3": {
+          "coordinates": [
+            -54.5,
+            -71.5
+          ],
+          "name": "bulid URL",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://poloniex.com/public\""
+          }
+        }
+      },
+      "connections": {
+        "357a4a60-564e-4c23-bc7e-1791645ee0e3": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "4cccaa02-9168-47f6-8541-5f08cd3f767f": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f3ca66d2-f8de-4372-93ac-5b0e3c266ac1": {
+            "357a4a60-564e-4c23-bc7e-1791645ee0e3": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "outputs": {
+          "b0b87047-f3db-463e-bd4c-c320379eb022": {
+            "4cccaa02-9168-47f6-8541-5f08cd3f767f": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

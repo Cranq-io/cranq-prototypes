@@ -1,0 +1,76 @@
+{
+  "name": "apis/poloniex/public/Order book fetcher/Request builder",
+  "interface": {
+    "inputs": {
+      "ebc858c2-1218-4d53-906f-4114be6b32c0": {
+        "type": "typeof `query params` of `append query params`",
+        "name": "query params"
+      }
+    },
+    "outputs": {
+      "f0a61e53-7082-4732-902b-6ff391f2d24b": {
+        "type": "{\n  \"method\": \"GET\",\n  \"url\": string,\n  \"headers\": {string: string}\n}",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0e74e9d0-e06c-4891-8fe4-ab4246f44875": {
+          "coordinates": [
+            52,
+            72
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\"",
+            "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": "{}"
+          }
+        },
+        "0dce8273-ba1a-4006-a0ca-e04536982864": {
+          "coordinates": [
+            -52,
+            -72
+          ],
+          "name": "append query params",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://poloniex.com/public\""
+          }
+        }
+      },
+      "connections": {
+        "0dce8273-ba1a-4006-a0ca-e04536982864": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "0e74e9d0-e06c-4891-8fe4-ab4246f44875": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ebc858c2-1218-4d53-906f-4114be6b32c0": {
+            "0dce8273-ba1a-4006-a0ca-e04536982864": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "outputs": {
+          "f0a61e53-7082-4732-902b-6ff391f2d24b": {
+            "0e74e9d0-e06c-4891-8fe4-ab4246f44875": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

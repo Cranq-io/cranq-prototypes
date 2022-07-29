@@ -1,0 +1,76 @@
+{
+  "name": "apis/poloniex/public/Currencies fetcher/Request builder",
+  "interface": {
+    "inputs": {
+      "131f73e5-af72-4aea-b06e-7918bfb16428": {
+        "type": "{\n  \"command\": string,\n  optional \"includeMultiChainCurrencies\": boolean\n}",
+        "name": "query params"
+      }
+    },
+    "outputs": {
+      "a62f22ca-5056-4c2f-b632-5e172b3394d3": {
+        "type": "typeof `request` of `build request`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "47d2f74b-135a-4ca3-9c54-cd0b0b545d87": {
+          "coordinates": [
+            76.5,
+            76
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\"",
+            "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": "{}"
+          }
+        },
+        "3b699004-07ee-464f-9e2d-064c45758896": {
+          "coordinates": [
+            -76.5,
+            -76
+          ],
+          "name": "build URL",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e",
+          "params": {
+            "8c89bd87-3843-441c-989b-9b56288453f9": "\"https://poloniex.com/public\""
+          }
+        }
+      },
+      "connections": {
+        "3b699004-07ee-464f-9e2d-064c45758896": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "47d2f74b-135a-4ca3-9c54-cd0b0b545d87": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "131f73e5-af72-4aea-b06e-7918bfb16428": {
+            "3b699004-07ee-464f-9e2d-064c45758896": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "outputs": {
+          "a62f22ca-5056-4c2f-b632-5e172b3394d3": {
+            "47d2f74b-135a-4ca3-9c54-cd0b0b545d87": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

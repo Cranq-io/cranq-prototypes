@@ -1,0 +1,110 @@
+{
+  "name": "apis/poloniex/public/Response error detector",
+  "description": "Detects errors in responses from public Poloniex API calls.",
+  "interface": {
+    "inputs": {
+      "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {
+        "type": "{\n  optional \"error\": any\n}",
+        "name": "resp. data",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "3acfc099-6290-4678-b6a1-44368ba3ca84": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": ""
+      },
+      "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {
+        "type": "any",
+        "name": "data",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "92ab30c9-ff25-455c-9fe1-dacd25421c11": {
+          "coordinates": [
+            -47,
+            29
+          ],
+          "name": "has error?",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"error\""
+          }
+        },
+        "92b1e960-d780-4d8e-a580-887bc919ec6c": {
+          "coordinates": [
+            25,
+            -147
+          ],
+          "name": "forward error",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "353d47b2-53e5-49e9-a4fa-31ab4f13c370": {
+          "coordinates": [
+            31,
+            163
+          ],
+          "name": "forward data",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        }
+      },
+      "connections": {
+        "92ab30c9-ff25-455c-9fe1-dacd25421c11": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "92b1e960-d780-4d8e-a580-887bc919ec6c": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "353d47b2-53e5-49e9-a4fa-31ab4f13c370": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "31f6ae7e-e4af-4a63-8862-a2ec06bb4065": {
+            "92ab30c9-ff25-455c-9fe1-dacd25421c11": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "92b1e960-d780-4d8e-a580-887bc919ec6c": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "353d47b2-53e5-49e9-a4fa-31ab4f13c370": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          }
+        },
+        "outputs": {
+          "30c5bf51-4f9f-4edb-bf38-f98498cb2921": {
+            "353d47b2-53e5-49e9-a4fa-31ab4f13c370": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          },
+          "3acfc099-6290-4678-b6a1-44368ba3ca84": {
+            "92b1e960-d780-4d8e-a580-887bc919ec6c": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "ploniex": null,
+    "API": null,
+    "request": null,
+    "response": null,
+    "error": null
+  },
+  "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
+  "attributes": {
+    "locked": true
+  }
+}

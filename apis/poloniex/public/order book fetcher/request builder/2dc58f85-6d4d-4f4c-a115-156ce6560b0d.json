@@ -1,5 +1,5 @@
 {
-  "name": "apis/poloniex/public/Order book sampler/Request builder",
+  "name": "apis/poloniex/public/Order book fetcher/Request builder",
   "interface": {
     "inputs": {
       "ebc858c2-1218-4d53-906f-4114be6b32c0": {
@@ -68,8 +68,9 @@
       }
     }
   },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
   "attributes": {
-    "internal": true
-  },
-  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d"
+    "internal": true,
+    "locked": true
+  }
 }

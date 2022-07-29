@@ -1,6 +1,6 @@
 {
   "name": "apis/poloniex/public/Chart data fetcher",
-  "description": "Returns candlestick chart data. Required GET parameters are \"currencyPair\", \"period\" (candlestick period in seconds; valid values are 300, 900, 1800, 7200, 14400, and 86400), \"start\", and \"end\". \"Start\" and \"end\" are given in UNIX timestamp format and used to specify the date range for the data returned.\n\nhttps://docs.poloniex.com/#returntradehistory-public",
+  "description": "Returns candlestick chart data. Required GET parameters are \"currencyPair\", \"period\" (candlestick period in seconds; valid values are 300, 900, 1800, 7200, 14400, and 86400), \"start\", and \"end\". \"Start\" and \"end\" are given in UNIX timestamp format and used to specify the date range for the data returned.\n\nhttps://docs.poloniex.com/#returnchartdata",
   "interface": {
     "inputs": {
       "b5c40467-b8f0-496e-99cf-1742a385d73e": {

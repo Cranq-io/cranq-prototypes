@@ -1,0 +1,132 @@
+{
+  "name": "fx/utils/Currency pair lookup generator",
+  "description": "Generates a lookup of currency pairs indexed by the individual currencies of the pair.\n\nUseful for checking whether any two currencies make a currency pair.",
+  "interface": {
+    "inputs": {
+      "b4d815c4-ce87-4754-b62e-3a33f265f72e": {
+        "type": "string[]",
+        "name": "ccy pairs",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "daeb25a4-c0f6-4c08-9d7c-c92bc8b5e59d": {
+        "type": "{\n  string: {\n    string: string\n  }\n}",
+        "name": "lookup",
+        "description": "Explanation of type:\n\n{\n  ccy1: {\n    ccy2: pair\n  }\n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a7e18f56-f553-4bbd-978e-60d89cf84f95": {
+          "coordinates": [
+            58.5,
+            -87.5
+          ],
+          "name": "join orig. & reversed",
+          "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b"
+        },
+        "e9a9051f-c25c-46e3-a89a-aa039a3c5863": {
+          "coordinates": [
+            217.5,
+            46.5
+          ],
+          "name": "build lookup",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "e080c294-84b6-4587-b31c-a04e230f632e": "[]"
+          }
+        },
+        "433b977d-9abd-48ed-b863-a2fa0545e903": {
+          "coordinates": [
+            -63.5,
+            194.5
+          ],
+          "name": "double symbols",
+          "prototype": "b1f7e4b1-2ab4-4a0d-b717-ddb5989e514b"
+        },
+        "70cf9f4f-1062-4a2a-81ab-c6bcc8e4469c": {
+          "coordinates": [
+            -106.5,
+            -183.5
+          ],
+          "name": "create pair paths",
+          "prototype": "7b1ead69-32f9-41ab-b61d-f8c0eb422e10"
+        },
+        "dabd1b55-de8d-4aec-b2b0-75988072651e": {
+          "coordinates": [
+            -104.5,
+            29
+          ],
+          "name": "reverse path paths",
+          "prototype": "f7dc4d02-0977-4ff0-b833-3f79334cff1e"
+        }
+      },
+      "connections": {
+        "a7e18f56-f553-4bbd-978e-60d89cf84f95": {
+          "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+            "e9a9051f-c25c-46e3-a89a-aa039a3c5863": {
+              "2cb4d528-cacc-4d46-97a2-eee2143be1c1": {}
+            }
+          }
+        },
+        "433b977d-9abd-48ed-b863-a2fa0545e903": {
+          "dadf3db5-6b20-4edd-81cf-fb8fa4a1cc13": {
+            "e9a9051f-c25c-46e3-a89a-aa039a3c5863": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "70cf9f4f-1062-4a2a-81ab-c6bcc8e4469c": {
+          "e1df33c3-3b50-4dae-bec6-b0662570ccfc": {
+            "a7e18f56-f553-4bbd-978e-60d89cf84f95": {
+              "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {}
+            },
+            "dabd1b55-de8d-4aec-b2b0-75988072651e": {
+              "cad04c4d-bb6c-427b-ba58-00f82bc15df6": {}
+            }
+          }
+        },
+        "dabd1b55-de8d-4aec-b2b0-75988072651e": {
+          "25ce931a-e125-4081-b98a-bfeb34ba715b": {
+            "a7e18f56-f553-4bbd-978e-60d89cf84f95": {
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b4d815c4-ce87-4754-b62e-3a33f265f72e": {
+            "433b977d-9abd-48ed-b863-a2fa0545e903": {
+              "a97745d1-5a27-401a-b341-c2efe8d8d5a8": {},
+              "a0cfd90a-1120-454d-99de-077ea55fede2": {}
+            },
+            "70cf9f4f-1062-4a2a-81ab-c6bcc8e4469c": {
+              "5b6030dd-4e79-4df1-ad68-e218133c4bf6": {}
+            }
+          }
+        },
+        "outputs": {
+          "daeb25a4-c0f6-4c08-9d7c-c92bc8b5e59d": {
+            "e9a9051f-c25c-46e3-a89a-aa039a3c5863": {
+              "55f973dd-3c9f-4299-b0cc-b970b5f14193": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "currency pair": null,
+    "lookup": null,
+    "generate": null,
+    "create": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

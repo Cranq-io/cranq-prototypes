@@ -1,0 +1,66 @@
+{
+  "name": "fx/utils/Currency pair splitter",
+  "description": "Splits an individual currency pair into a double of base and quote currency.",
+  "interface": {
+    "inputs": {
+      "52ba0973-a0cc-41fa-96a4-19032745f59a": {
+        "type": "string",
+        "name": "symbol",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "efcedba0-8255-4df3-bffe-afbc8d38eb6e": {
+        "type": "[string, string]",
+        "name": "ccy double",
+        "description": "Sends parsed currency pair as a tuple."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0b6636a6-18c5-457b-95cc-7b4fb16ed0f1": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "split currencies",
+          "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
+          "params": {
+            "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"[^A-Za-z0-9]\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "52ba0973-a0cc-41fa-96a4-19032745f59a": {
+            "0b6636a6-18c5-457b-95cc-7b4fb16ed0f1": {
+              "aeed0ec7-7761-4612-b575-7b0c8858f57f": {}
+            }
+          }
+        },
+        "outputs": {
+          "efcedba0-8255-4df3-bffe-afbc8d38eb6e": {
+            "0b6636a6-18c5-457b-95cc-7b4fb16ed0f1": {
+              "9556e9e9-e13f-44d0-a648-f58013e3ff27": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "keywords": {
+    "split": null,
+    "extract": null,
+    "deconstruct": null,
+    "currency pair": null,
+    "double": null,
+    "tuple": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

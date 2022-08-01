@@ -1,0 +1,86 @@
+{
+  "name": "fx/utils/Currency pairs splitter",
+  "interface": {
+    "inputs": {
+      "5b6030dd-4e79-4df1-ad68-e218133c4bf6": {
+        "type": "string[]",
+        "name": "symbols",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "e1df33c3-3b50-4dae-bec6-b0662570ccfc": {
+        "type": "[string, string][]",
+        "name": "ccy doubles",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e41afbab-13b6-4163-84ef-ce3a17fc4d1c": {
+          "coordinates": [
+            -67.5,
+            -39.5
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "128184ce-5673-4084-a2c3-d21280fa7544": {
+          "coordinates": [
+            66.5,
+            39.5
+          ],
+          "name": "split pair",
+          "prototype": "8caf46a8-a0f8-4144-a955-9c2478169871"
+        }
+      },
+      "connections": {
+        "e41afbab-13b6-4163-84ef-ce3a17fc4d1c": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "128184ce-5673-4084-a2c3-d21280fa7544": {
+              "52ba0973-a0cc-41fa-96a4-19032745f59a": {}
+            }
+          }
+        },
+        "128184ce-5673-4084-a2c3-d21280fa7544": {
+          "efcedba0-8255-4df3-bffe-afbc8d38eb6e": {
+            "e41afbab-13b6-4163-84ef-ce3a17fc4d1c": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5b6030dd-4e79-4df1-ad68-e218133c4bf6": {
+            "e41afbab-13b6-4163-84ef-ce3a17fc4d1c": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "e1df33c3-3b50-4dae-bec6-b0662570ccfc": {
+            "e41afbab-13b6-4163-84ef-ce3a17fc4d1c": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Splits a list of currency pairs into doubles of base and quote currencies.",
+  "keywords": {
+    "split": null,
+    "extract": null,
+    "deconstruct": null,
+    "currency pair": null,
+    "double": null,
+    "tuple": null
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "locked": true
+  }
+}

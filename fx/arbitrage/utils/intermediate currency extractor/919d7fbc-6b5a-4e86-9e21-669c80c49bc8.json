@@ -1,0 +1,205 @@
+{
+  "name": "fx/arbitrage/utils/Intermediate currency extractor",
+  "description": "Extracts intermediate currencies for a list of currency pairs.",
+  "interface": {
+    "inputs": {
+      "0c3ea450-bf32-47bf-acc8-909db0dd1d0e": {
+        "type": "string[]",
+        "name": "pair symbols",
+        "description": ""
+      },
+      "6155e20f-944e-498a-bcf7-d22e572de939": {
+        "type": "{\n  string: {\n    string: string\n  }\n}",
+        "name": "ccy pair lookup",
+        "description": "Explanation of type:\n\n{ ccy1: { ccy2: pair } }"
+      }
+    },
+    "outputs": {
+      "502d65e3-2829-4b06-83f4-04dd276718cf": {
+        "type": "{string:string[]}",
+        "name": "interm. ccies",
+        "description": "Sends lists of intermediate currencies indexed by the corresponding currency pair.\n\nThe currencies in each list are potential opportunities for triangular arbitrage."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "785fb117-7e8e-4c17-bbfa-fe906c774785": {
+          "coordinates": [
+            -318.5,
+            -137.5
+          ],
+          "name": "map ccy pairs",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "d38c0dd6-78d8-4768-8918-648b5cddd798": {
+          "coordinates": [
+            -153.5,
+            -15.5
+          ],
+          "name": "split pair",
+          "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
+          "params": {
+            "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"[^A-Za-z0-9]\""
+          }
+        },
+        "4015f4da-ebbc-4c14-9770-6127f07b02bf": {
+          "coordinates": [
+            7.5,
+            37.5
+          ],
+          "name": "get individual ccies",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[0, 1]"
+          }
+        },
+        "48bdeed7-6015-439e-a0ef-5e2a51cac2a9": {
+          "coordinates": [
+            -261.5,
+            163.5
+          ],
+          "name": "store lookup",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        },
+        "ef454e47-a011-44c4-9dd9-09ab066721f3": {
+          "coordinates": [
+            189,
+            -64.5
+          ],
+          "name": "get base matches",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f"
+        },
+        "e986630e-68c6-4983-897f-6d1361dfa209": {
+          "coordinates": [
+            188,
+            124.5
+          ],
+          "name": "get quote matches",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f"
+        },
+        "d98e97fa-42a7-42eb-869d-4ae1bfbc1926": {
+          "coordinates": [
+            352,
+            -109.5
+          ],
+          "name": "extract common matches",
+          "prototype": "ac0878c7-a869-43b4-899a-9258d840104d"
+        },
+        "ef7eac04-37d3-48b1-bf9e-07a0b56941ab": {
+          "coordinates": [
+            217,
+            -279.1428571428571
+          ],
+          "name": "associate interm. to pairs",
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead"
+        }
+      },
+      "connections": {
+        "785fb117-7e8e-4c17-bbfa-fe906c774785": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "d38c0dd6-78d8-4768-8918-648b5cddd798": {
+              "aeed0ec7-7761-4612-b575-7b0c8858f57f": {}
+            },
+            "48bdeed7-6015-439e-a0ef-5e2a51cac2a9": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            }
+          },
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "ef7eac04-37d3-48b1-bf9e-07a0b56941ab": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          }
+        },
+        "d38c0dd6-78d8-4768-8918-648b5cddd798": {
+          "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+            "4015f4da-ebbc-4c14-9770-6127f07b02bf": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "4015f4da-ebbc-4c14-9770-6127f07b02bf": {
+          "0": {
+            "ef454e47-a011-44c4-9dd9-09ab066721f3": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          },
+          "1": {
+            "e986630e-68c6-4983-897f-6d1361dfa209": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          }
+        },
+        "48bdeed7-6015-439e-a0ef-5e2a51cac2a9": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "ef454e47-a011-44c4-9dd9-09ab066721f3": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "e986630e-68c6-4983-897f-6d1361dfa209": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "ef454e47-a011-44c4-9dd9-09ab066721f3": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "d98e97fa-42a7-42eb-869d-4ae1bfbc1926": {
+              "1a1cdc67-af48-4854-8759-60704930e041": {}
+            }
+          }
+        },
+        "e986630e-68c6-4983-897f-6d1361dfa209": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "d98e97fa-42a7-42eb-869d-4ae1bfbc1926": {
+              "7a83ef6b-1827-4238-a644-b50a667636b9": {}
+            }
+          }
+        },
+        "d98e97fa-42a7-42eb-869d-4ae1bfbc1926": {
+          "bbf06111-7a87-46a0-8a76-3bd687337e2a": {
+            "785fb117-7e8e-4c17-bbfa-fe906c774785": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0c3ea450-bf32-47bf-acc8-909db0dd1d0e": {
+            "785fb117-7e8e-4c17-bbfa-fe906c774785": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            },
+            "ef7eac04-37d3-48b1-bf9e-07a0b56941ab": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            }
+          },
+          "6155e20f-944e-498a-bcf7-d22e572de939": {
+            "48bdeed7-6015-439e-a0ef-5e2a51cac2a9": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "502d65e3-2829-4b06-83f4-04dd276718cf": {
+            "ef7eac04-37d3-48b1-bf9e-07a0b56941ab": {
+              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "intermediate": null,
+    "middle": null,
+    "triplet": null,
+    "triangle": null,
+    "currency": null,
+    "get": null,
+    "calculate": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

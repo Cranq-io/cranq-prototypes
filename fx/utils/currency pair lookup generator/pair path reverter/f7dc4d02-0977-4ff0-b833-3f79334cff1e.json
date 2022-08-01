@@ -1,0 +1,78 @@
+{
+  "name": "fx/utils/Currency pair lookup generator/Pair path reverter",
+  "interface": {
+    "inputs": {
+      "cad04c4d-bb6c-427b-ba58-00f82bc15df6": {
+        "type": "[string, string][]",
+        "name": "pair paths",
+        "description": "[Inherited from port `array` of `mapper B`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
+      }
+    },
+    "outputs": {
+      "25ce931a-e125-4081-b98a-bfeb34ba715b": {
+        "type": "typeof `pair paths`",
+        "name": "reversed paths",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0dedc16b-f744-4d48-aa9d-2a4f416cedaf": {
+          "coordinates": [
+            -76.14285714285711,
+            -46.14285714285714
+          ],
+          "name": "reverse paths",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "cbd2b1b9-e39c-4370-a5a3-14bee231553e": {
+          "coordinates": [
+            77,
+            46.5
+          ],
+          "name": "reverse path",
+          "prototype": "dcbd165f-6a8c-4ba4-b92c-4e8550fd83aa"
+        }
+      },
+      "connections": {
+        "0dedc16b-f744-4d48-aa9d-2a4f416cedaf": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "cbd2b1b9-e39c-4370-a5a3-14bee231553e": {
+              "cb587440-9da6-489a-af44-06cc7855989b": {}
+            }
+          }
+        },
+        "cbd2b1b9-e39c-4370-a5a3-14bee231553e": {
+          "7f07403c-1b20-47bc-9554-52c2b27f1545": {
+            "0dedc16b-f744-4d48-aa9d-2a4f416cedaf": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cad04c4d-bb6c-427b-ba58-00f82bc15df6": {
+            "0dedc16b-f744-4d48-aa9d-2a4f416cedaf": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "25ce931a-e125-4081-b98a-bfeb34ba715b": {
+            "0dedc16b-f744-4d48-aa9d-2a4f416cedaf": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

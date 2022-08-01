@@ -1,0 +1,225 @@
+{
+  "name": "fx/arbitrage/utils/Intermediate currency pairs resolver",
+  "description": "Resolves lists of intermediate currencies assigned to currency pairs to lists of tradable currency pairs.",
+  "interface": {
+    "inputs": {
+      "19fe858b-f443-4e53-918d-295f8be75664": {
+        "type": "typeof `ccy lookup` of `triangulate ccy pair`",
+        "name": "ccy lookup"
+      },
+      "34916190-104d-47a6-9c74-10192d53cb5f": {
+        "type": "{string: string[]}",
+        "name": "interm. ccies",
+        "description": "Example:\n```json\n{\n  \"BTC_DASH\": [\n    \"USDT\",\n    \"USDC\"\n  ],\n  \"BTC_DOGE\": [\n    \"USDT\",\n    \"USDC\",\n    \"USDD\"\n  ]\n}\n```"
+      }
+    },
+    "outputs": {
+      "03b10e06-8e9a-402d-bf30-2fb5d1490334": {
+        "type": "{string: [string, string][]}",
+        "name": "interm. pairs",
+        "description": "Example:\n```json\n{\n  \"BTC_DASH\": [\n    [\n      \"USDT_BTC\",\n      \"USDT_DASH\"\n    ],\n    [\n      \"USDC_BTC\",\n      \"USDC_DASH\"\n    ]\n  ],\n  \"BTC_DOGE\": [\n    [\n      \"USDT_BTC\",\n      \"USDT_DOGE\"\n    ],\n    [\n      \"USDC_BTC\",\n      \"USDC_DOGE\"\n    ],\n    [\n      \"USDD_BTC\",\n      \"USDD_DOGE\"\n    ]\n  ]\n}\n```"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bcff55b5-769a-4aa1-8e68-a14f00a0f2c5": {
+          "coordinates": [
+            -66.89999999999998,
+            -218.3666666666667
+          ],
+          "name": "loop thru interm. ccy lists",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        },
+        "d4e2e81f-825d-4672-a344-ccf43329ce3a": {
+          "coordinates": [
+            -391.9,
+            166.63333333333333
+          ],
+          "name": "get pairs",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "4eb6502d-5a47-467b-ab13-eb6ff00895d5": {
+          "coordinates": [
+            -393.9,
+            -130.3666666666667
+          ],
+          "name": "get interm. ccies",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+        },
+        "8f8ea076-535e-4cbc-9ca0-03768711bf03": {
+          "coordinates": [
+            244.10000000000002,
+            -269.3666666666667
+          ],
+          "name": "interm. ccy -> interm. pairs",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "486d0bd8-f383-414e-b286-b36b14e41a19": {
+          "coordinates": [
+            -20.899999999999977,
+            162.63333333333333
+          ],
+          "name": "ccy doubles -> interm. pairs",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "7e86cd7d-eae3-4906-b00e-7162a06e6cf1": {
+          "coordinates": [
+            -19.899999999999977,
+            364.6333333333333
+          ],
+          "name": "rebuild dictionary",
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead"
+        },
+        "edbc15aa-a2e7-4506-b5d4-e3b5b8078102": {
+          "coordinates": [
+            -245.89999999999998,
+            15.633333333333326
+          ],
+          "name": "currency pairs splitter",
+          "prototype": "7b1ead69-32f9-41ab-b61d-f8c0eb422e10"
+        },
+        "198b4d51-b022-4573-a85d-856c75bc36de": {
+          "coordinates": [
+            40.10000000000002,
+            -139.3666666666667
+          ],
+          "name": "get interm. ccy count",
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b"
+        },
+        "face22f5-c0a6-4ef5-8e12-5b1fd29c6116": {
+          "coordinates": [
+            505.1,
+            -351.70000000000005
+          ],
+          "name": "triangulate ccy pair",
+          "prototype": "e8df4ac0-1874-4614-bd60-36ff0aebe72e"
+        },
+        "681ee1dd-9222-4a66-82b2-60a8cd32f4a7": {
+          "coordinates": [
+            217.10000000000002,
+            24.633333333333326
+          ],
+          "name": "repeat ccy double",
+          "prototype": "79b67425-0224-45da-bdcd-3adbe2a1812f",
+          "description": "Repeats currency double to match up with intermediary currency list for pairwise operation."
+        }
+      },
+      "connections": {
+        "4eb6502d-5a47-467b-ab13-eb6ff00895d5": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "bcff55b5-769a-4aa1-8e68-a14f00a0f2c5": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            }
+          }
+        },
+        "bcff55b5-769a-4aa1-8e68-a14f00a0f2c5": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "8f8ea076-535e-4cbc-9ca0-03768711bf03": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            },
+            "198b4d51-b022-4573-a85d-856c75bc36de": {
+              "3796de71-a230-4869-9963-2c1815242213": {}
+            }
+          }
+        },
+        "8f8ea076-535e-4cbc-9ca0-03768711bf03": {
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "486d0bd8-f383-414e-b286-b36b14e41a19": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          },
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "face22f5-c0a6-4ef5-8e12-5b1fd29c6116": {
+              "22c00958-01ca-4a26-a1e8-5c7a1e3b7fd0": {}
+            }
+          }
+        },
+        "d4e2e81f-825d-4672-a344-ccf43329ce3a": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "7e86cd7d-eae3-4906-b00e-7162a06e6cf1": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            },
+            "edbc15aa-a2e7-4506-b5d4-e3b5b8078102": {
+              "5b6030dd-4e79-4df1-ad68-e218133c4bf6": {}
+            }
+          }
+        },
+        "486d0bd8-f383-414e-b286-b36b14e41a19": {
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "7e86cd7d-eae3-4906-b00e-7162a06e6cf1": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          },
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "681ee1dd-9222-4a66-82b2-60a8cd32f4a7": {
+              "20b11cff-e0f4-415a-9a82-7d5f6d7e4a5f": {}
+            }
+          }
+        },
+        "edbc15aa-a2e7-4506-b5d4-e3b5b8078102": {
+          "e1df33c3-3b50-4dae-bec6-b0662570ccfc": {
+            "486d0bd8-f383-414e-b286-b36b14e41a19": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "198b4d51-b022-4573-a85d-856c75bc36de": {
+          "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
+            "681ee1dd-9222-4a66-82b2-60a8cd32f4a7": {
+              "8e1d3a32-366a-4829-9cad-5559dac5fba1": {}
+            }
+          }
+        },
+        "face22f5-c0a6-4ef5-8e12-5b1fd29c6116": {
+          "c56824bd-41c8-4f10-a608-bf7b3b633aed": {
+            "8f8ea076-535e-4cbc-9ca0-03768711bf03": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "681ee1dd-9222-4a66-82b2-60a8cd32f4a7": {
+          "fda3e580-c396-4439-a59d-f7cf0fac24a8": {
+            "face22f5-c0a6-4ef5-8e12-5b1fd29c6116": {
+              "830b8f7a-f675-42c4-9a0b-25be6adde36f": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "19fe858b-f443-4e53-918d-295f8be75664": {
+            "face22f5-c0a6-4ef5-8e12-5b1fd29c6116": {
+              "0ca2086a-6d61-4f92-8062-276a795e6236": {}
+            }
+          },
+          "34916190-104d-47a6-9c74-10192d53cb5f": {
+            "d4e2e81f-825d-4672-a344-ccf43329ce3a": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            },
+            "4eb6502d-5a47-467b-ab13-eb6ff00895d5": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          }
+        },
+        "outputs": {
+          "03b10e06-8e9a-402d-bf30-2fb5d1490334": {
+            "7e86cd7d-eae3-4906-b00e-7162a06e6cf1": {
+              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "intermediate": null,
+    "transitional": null,
+    "triangular arbitrage": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

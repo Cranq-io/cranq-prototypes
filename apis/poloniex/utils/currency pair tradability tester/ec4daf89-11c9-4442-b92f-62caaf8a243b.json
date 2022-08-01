@@ -1,0 +1,121 @@
+{
+  "name": "apis/poloniex/utils/Currency pair tradability tester",
+  "interface": {
+    "inputs": {
+      "adfae202-da97-4648-bc03-f9d20c9453a7": {
+        "type": "{\n  \"isFrozen\": string,\n  \"postOnly\": string\n}",
+        "name": "ccy pair",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0480a1cf-70a8-45e8-a040-a7b0f9935176": {
+        "type": "boolean",
+        "name": "is tradable?",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "626aa716-7d64-46cb-b9f6-ad182d8d387b": {
+          "coordinates": [
+            -143.5,
+            -3.75
+          ],
+          "name": "get ccy pair properties",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"isFrozen\", \"postOnly\"]"
+          }
+        },
+        "55704323-0ba8-43ce-812e-ccc6701ebf6b": {
+          "coordinates": [
+            0.5,
+            -71.75
+          ],
+          "name": "is frozen?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "a0934373-43a4-4cd5-83eb-860bc20d790a": "\"0\""
+          }
+        },
+        "54a91d27-82e2-4e3c-b0c7-db2e91f18044": {
+          "coordinates": [
+            1.5,
+            77.25
+          ],
+          "name": "post only?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "a0934373-43a4-4cd5-83eb-860bc20d790a": "\"0\""
+          }
+        },
+        "867f8553-b0af-4d2e-9823-6d8470f6ab9f": {
+          "coordinates": [
+            141.5,
+            -1.75
+          ],
+          "name": "and",
+          "prototype": "f8466ac8-afe7-4931-abac-3e8679e23199"
+        }
+      },
+      "connections": {
+        "626aa716-7d64-46cb-b9f6-ad182d8d387b": {
+          "isFrozen": {
+            "55704323-0ba8-43ce-812e-ccc6701ebf6b": {
+              "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {}
+            }
+          },
+          "postOnly": {
+            "54a91d27-82e2-4e3c-b0c7-db2e91f18044": {
+              "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {}
+            }
+          }
+        },
+        "55704323-0ba8-43ce-812e-ccc6701ebf6b": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "867f8553-b0af-4d2e-9823-6d8470f6ab9f": {
+              "a218ce35-ba8f-40e7-9cee-e4355f5907b1": {}
+            }
+          }
+        },
+        "54a91d27-82e2-4e3c-b0c7-db2e91f18044": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "867f8553-b0af-4d2e-9823-6d8470f6ab9f": {
+              "5cfcd4a1-9167-4aa4-ad58-061a306fc901": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "adfae202-da97-4648-bc03-f9d20c9453a7": {
+            "626aa716-7d64-46cb-b9f6-ad182d8d387b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "0480a1cf-70a8-45e8-a040-a7b0f9935176": {
+            "867f8553-b0af-4d2e-9823-6d8470f6ab9f": {
+              "d65617ef-2d6e-4a4e-8e24-5e9434cc234b": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Tells whether the specified currency pair is tradable.",
+  "keywords": {
+    "tradable": null,
+    "tradeable": null,
+    "frozen": null,
+    "post only": null
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "attributes": {
+    "locked": true
+  }
+}

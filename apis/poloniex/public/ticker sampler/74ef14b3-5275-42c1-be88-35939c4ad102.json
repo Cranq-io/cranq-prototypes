@@ -1,5 +1,5 @@
 {
-  "name": "apis/poloniex/public/Summary sampler",
+  "name": "apis/poloniex/public/Ticker sampler",
   "description": "Retrieves summary information for each currency pair listed on the exchange. \n\nhttps://docs.poloniex.com/#returnticker",
   "interface": {
     "inputs": {
@@ -111,7 +111,8 @@
     "pair": null,
     "sample": null,
     "fetch": null,
-    "retrieve": null
+    "retrieve": null,
+    "ticker": null
   },
   "iconId": "33d6ca66-d216-4c2b-b2ae-87685c291a6f",
   "attributes": {

@@ -1,0 +1,36 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "1f5190ca-77ec-44e7-a67f-0978b55b9ab0": "const {tree, depth} = data;\nlet i = 0;\nfunction next(path, node) {\n  if (depth && path.length === depth) {\n    outputs.path(path, `${tag}:${i}`);\n    outputs.node(node, `${tag}:${i}`);\n    i++;\n  } else if (node instanceof Array) {\n    for (let i=0, {length} = node; i<length; i++) {\n      next([...path, i], node[i]);\n    }\n  } else if (node instanceof Object) {\n    for (const key in node) {\n      next([...path, key], node[key]);\n    }\n  } else {\n    outputs.path(path, `${tag}:${i}`);\n    outputs.node(node, `${tag}:${i}`);\n    i++;\n  }\n}\nnext([], tree);\noutputs.done(null, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1f5190ca-77ec-44e7-a67f-0978b55b9ab0": {
+        "type": "{\n  \"tree\": any,\n  \"depth\": number\n}",
+        "name": "tree & depth"
+      }
+    },
+    "outputs": {
+      "b1ef73f8-d594-4a26-ba25-b31398a8f3b0": {
+        "type": "(string or number)[]",
+        "name": "path"
+      },
+      "06a3f346-36d8-47b6-b511-146412e614cf": {
+        "type": "any",
+        "name": "node"
+      },
+      "44bab0cb-29a6-4679-8d3f-4cf9c7913341": {
+        "type": "null",
+        "name": "done"
+      }
+    }
+  },
+  "name": "data/tree/Depth traverser/Internal",
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "internal": true
+  }
+}

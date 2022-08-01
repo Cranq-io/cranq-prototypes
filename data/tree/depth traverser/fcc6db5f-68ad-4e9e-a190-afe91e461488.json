@@ -1,0 +1,107 @@
+{
+  "name": "data/tree/Depth traverser",
+  "description": "Traverses every path in the received tree to the specified depth.",
+  "interface": {
+    "inputs": {
+      "1186f4ae-684c-4574-b0d9-fb9b3040fdb1": {
+        "type": "any",
+        "name": "tree",
+        "description": ""
+      },
+      "b9081c9c-38f6-48f6-8cdb-383b65118fd6": {
+        "type": "number",
+        "name": "depth"
+      }
+    },
+    "outputs": {
+      "16f959da-478c-4fd3-9bc6-8dbf970a91a5": {
+        "type": "(string or number)[]",
+        "name": "path"
+      },
+      "7fcb6ad6-4f01-4c05-90d3-9e203af4d16a": {
+        "type": "any",
+        "name": "node"
+      },
+      "3710a822-debd-4020-ae8e-fd427df84416": {
+        "type": "null",
+        "name": "done"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4f4c33e5-8981-4cb7-98bf-24b4d5c4e0d3": {
+          "coordinates": [
+            41.5,
+            -62
+          ],
+          "name": "node 1",
+          "prototype": "afa95f95-38b4-4fde-9671-2fc033e2c1c3"
+        },
+        "7413091b-b8dd-40fd-9785-de3851a81d8a": {
+          "coordinates": [
+            -41.5,
+            62
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"tree\", \"depth\"]"
+          }
+        }
+      },
+      "connections": {
+        "7413091b-b8dd-40fd-9785-de3851a81d8a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "4f4c33e5-8981-4cb7-98bf-24b4d5c4e0d3": {
+              "1f5190ca-77ec-44e7-a67f-0978b55b9ab0": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1186f4ae-684c-4574-b0d9-fb9b3040fdb1": {
+            "7413091b-b8dd-40fd-9785-de3851a81d8a": {
+              "tree": {}
+            }
+          },
+          "b9081c9c-38f6-48f6-8cdb-383b65118fd6": {
+            "7413091b-b8dd-40fd-9785-de3851a81d8a": {
+              "depth": {}
+            }
+          }
+        },
+        "outputs": {
+          "16f959da-478c-4fd3-9bc6-8dbf970a91a5": {
+            "4f4c33e5-8981-4cb7-98bf-24b4d5c4e0d3": {
+              "b1ef73f8-d594-4a26-ba25-b31398a8f3b0": {}
+            }
+          },
+          "7fcb6ad6-4f01-4c05-90d3-9e203af4d16a": {
+            "4f4c33e5-8981-4cb7-98bf-24b4d5c4e0d3": {
+              "06a3f346-36d8-47b6-b511-146412e614cf": {}
+            }
+          },
+          "3710a822-debd-4020-ae8e-fd427df84416": {
+            "4f4c33e5-8981-4cb7-98bf-24b4d5c4e0d3": {
+              "44bab0cb-29a6-4679-8d3f-4cf9c7913341": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "keywords": {
+    "traverse": null,
+    "iterate": null,
+    "loop": null,
+    "for": null,
+    "paths": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

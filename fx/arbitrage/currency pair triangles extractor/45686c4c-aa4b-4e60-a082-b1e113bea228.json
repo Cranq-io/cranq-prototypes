@@ -1,0 +1,166 @@
+{
+  "name": "fx/arbitrage/Currency pair triangles extractor",
+  "description": "Extracts currency pair triangles from a list of currency pair symbols that are potential arbitrage opportunities.",
+  "interface": {
+    "inputs": {
+      "1e3215d6-ec34-47a7-9370-de8d73d05023": {
+        "type": "string[]",
+        "name": "ccy pairs",
+        "description": "Receives array of currency pair symbols.\n\nExample:\n```json\n[\n  \"BTC_BTS\",\n  \"BTC_DASH\",\n  \"BTC_DOGE\",\n  \"BTC_LTC\",\n  \"BTC_NXT\",\n  \"BTC_STR\",\n  \"BTC_XEM\",\n  \"BTC_XMR\",\n  \"BTC_XRP\"\n]\n```"
+      }
+    },
+    "outputs": {
+      "9ec551f2-91a6-4a04-9315-71f5b2eeb507": {
+        "type": "[string, string, string][]",
+        "name": "ccy pair triangles",
+        "description": "Example:\n\n```json\n[\n  [\n    \"USDT_BTC\",\n    \"USDT_DASH\",\n    \"BTC_DASH\"\n  ],\n  [\n    \"USDC_BTC\",\n    \"USDC_DASH\",\n    \"BTC_DASH\"\n  ]\n]\n```"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "54102907-e2af-4a74-98c1-50cf5ec53b31": {
+          "coordinates": [
+            -230.67495590828935,
+            106.13492063492063
+          ],
+          "name": "create ccy pair lookup",
+          "prototype": "c290a606-30e8-4a0f-9eb7-43306872b4a5"
+        },
+        "b3ad205d-ccb8-43cf-a76d-a5c6e8fb97e4": {
+          "coordinates": [
+            -206.03209876543224,
+            -135.5793650793651
+          ],
+          "name": "extract interm. ccies",
+          "prototype": "919d7fbc-6b5a-4e86-9e21-669c80c49bc8"
+        },
+        "45cb2b6b-2dbc-4f3a-ba9f-c596e4904e0f": {
+          "coordinates": [
+            229.96790123456776,
+            -145.72222222222223
+          ],
+          "name": "get ccy count",
+          "prototype": "ed50d3dd-e850-434d-a4da-90d05fc35e8b"
+        },
+        "67527d11-7c88-44a8-b183-eec23932a268": {
+          "coordinates": [
+            -22.032098765432238,
+            -203.72222222222223
+          ],
+          "name": "> 0?",
+          "prototype": "81881ae5-e545-4ff2-a9d4-ee8d86980a0f",
+          "params": {
+            "7eef3ae2-2380-4f3e-9f5e-ff0f3e036d76": "0"
+          }
+        },
+        "cb55cd11-cdbc-43cb-8a63-3154614bf231": {
+          "coordinates": [
+            39.36790123456774,
+            -5.922222222222217
+          ],
+          "name": "remove non-arbitrage pairs",
+          "prototype": "54dd8437-a9f5-43fc-a815-9becb5a90c48"
+        },
+        "f3d54860-ccd8-4e19-9afd-37091ba2c847": {
+          "coordinates": [
+            -2.1320987654322607,
+            228.6444444444445
+          ],
+          "name": "interm. ccies to pairs",
+          "prototype": "c2136499-cf3d-4044-8102-ec06b5e10041"
+        },
+        "8841b3e7-0a2b-4106-a59e-218afb9b625e": {
+          "coordinates": [
+            190.61075837742487,
+            159.2777777777778
+          ],
+          "name": "build triangles",
+          "prototype": "672e6658-a73c-4e27-8a1b-10f12857ba1e"
+        }
+      },
+      "connections": {
+        "54102907-e2af-4a74-98c1-50cf5ec53b31": {
+          "daeb25a4-c0f6-4c08-9d7c-c92bc8b5e59d": {
+            "b3ad205d-ccb8-43cf-a76d-a5c6e8fb97e4": {
+              "6155e20f-944e-498a-bcf7-d22e572de939": {}
+            },
+            "f3d54860-ccd8-4e19-9afd-37091ba2c847": {
+              "19fe858b-f443-4e53-918d-295f8be75664": {}
+            }
+          }
+        },
+        "45cb2b6b-2dbc-4f3a-ba9f-c596e4904e0f": {
+          "90dc3844-70bc-4a25-a7f4-3d281c97e5fc": {
+            "67527d11-7c88-44a8-b183-eec23932a268": {
+              "7b679ba7-414d-4173-8a23-29438816b480": {}
+            }
+          }
+        },
+        "b3ad205d-ccb8-43cf-a76d-a5c6e8fb97e4": {
+          "502d65e3-2829-4b06-83f4-04dd276718cf": {
+            "cb55cd11-cdbc-43cb-8a63-3154614bf231": {
+              "b9028ed1-f559-45d0-a038-a67cc8f81455": {}
+            }
+          }
+        },
+        "cb55cd11-cdbc-43cb-8a63-3154614bf231": {
+          "c46672f0-7343-4e60-86b6-73e3e048cc36": {
+            "45cb2b6b-2dbc-4f3a-ba9f-c596e4904e0f": {
+              "3796de71-a230-4869-9963-2c1815242213": {}
+            }
+          },
+          "aae23c0e-0461-43fa-95f6-6857fa747dfa": {
+            "f3d54860-ccd8-4e19-9afd-37091ba2c847": {
+              "34916190-104d-47a6-9c74-10192d53cb5f": {}
+            }
+          }
+        },
+        "67527d11-7c88-44a8-b183-eec23932a268": {
+          "5d88b9c8-0961-45fb-b196-03194f84bb36": {
+            "cb55cd11-cdbc-43cb-8a63-3154614bf231": {
+              "daed7f05-10a0-4431-9637-d5034f0fa556": {}
+            }
+          }
+        },
+        "f3d54860-ccd8-4e19-9afd-37091ba2c847": {
+          "03b10e06-8e9a-402d-bf30-2fb5d1490334": {
+            "8841b3e7-0a2b-4106-a59e-218afb9b625e": {
+              "ff5dcb02-44bc-4c52-a73b-ca5914075230": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1e3215d6-ec34-47a7-9370-de8d73d05023": {
+            "54102907-e2af-4a74-98c1-50cf5ec53b31": {
+              "b4d815c4-ce87-4754-b62e-3a33f265f72e": {}
+            },
+            "b3ad205d-ccb8-43cf-a76d-a5c6e8fb97e4": {
+              "0c3ea450-bf32-47bf-acc8-909db0dd1d0e": {}
+            }
+          }
+        },
+        "outputs": {
+          "9ec551f2-91a6-4a04-9315-71f5b2eeb507": {
+            "8841b3e7-0a2b-4106-a59e-218afb9b625e": {
+              "3ce1e364-a65a-4160-8891-0c98c1a77380": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "triangular arbitrage": null,
+    "triangle": null,
+    "triplet": null,
+    "currency pairs": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

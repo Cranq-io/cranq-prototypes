@@ -1,0 +1,150 @@
+{
+  "name": "apis/poloniex/utils/Tradeable currency pairs extractor",
+  "description": "Extracts tradable currency pairs from a Poloniex ticker sample received via `ticker sample`.\n\nSee `apis/poloniex/public/Ticker sampler`.",
+  "interface": {
+    "inputs": {
+      "4f899f0c-da28-4fc8-b152-89e62ae56292": {
+        "type": "{\n  string: {\n    \"isFrozen\": string,\n    \"postOnly\": string\n  }\n}",
+        "name": "ticker sample",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "3af00d9c-c476-46a8-99b6-1cc6e32de9f8": {
+        "type": "typeof `ticker sample`",
+        "name": "tradable ticker sample",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "67950303-4f54-4dfd-b597-a8e80de99f5f": {
+          "coordinates": [
+            4.5,
+            44.5
+          ],
+          "name": "filter pair records",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
+        },
+        "d3f32776-783b-4539-9d45-f6b4d42cb911": {
+          "coordinates": [
+            -184.5,
+            -63.5
+          ],
+          "name": "get symbols",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "33d71ce7-4521-4f53-bdaa-6ba830a9e93b": {
+          "coordinates": [
+            -183.5,
+            115.5
+          ],
+          "name": "get pair records",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+        },
+        "0058878e-fc6e-457e-a8bf-f78ddce62ffa": {
+          "coordinates": [
+            9.5,
+            -145.5
+          ],
+          "name": "filter symbols",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
+        },
+        "e0ab889d-3386-4e1e-8f35-6e0d56d420aa": {
+          "coordinates": [
+            252.5,
+            -64.5
+          ],
+          "name": "reconstruct dictionary",
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead"
+        },
+        "1b7f8d02-66b0-4619-b5de-5f1923086ba4": {
+          "coordinates": [
+            115,
+            121.25
+          ],
+          "name": "is tradable?",
+          "prototype": "ec4daf89-11c9-4442-b92f-62caaf8a243b"
+        }
+      },
+      "connections": {
+        "33d71ce7-4521-4f53-bdaa-6ba830a9e93b": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "67950303-4f54-4dfd-b597-a8e80de99f5f": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        },
+        "67950303-4f54-4dfd-b597-a8e80de99f5f": {
+          "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
+            "e0ab889d-3386-4e1e-8f35-6e0d56d420aa": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          },
+          "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
+            "1b7f8d02-66b0-4619-b5de-5f1923086ba4": {
+              "adfae202-da97-4648-bc03-f9d20c9453a7": {}
+            }
+          }
+        },
+        "d3f32776-783b-4539-9d45-f6b4d42cb911": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "0058878e-fc6e-457e-a8bf-f78ddce62ffa": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        },
+        "0058878e-fc6e-457e-a8bf-f78ddce62ffa": {
+          "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
+            "e0ab889d-3386-4e1e-8f35-6e0d56d420aa": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            }
+          }
+        },
+        "1b7f8d02-66b0-4619-b5de-5f1923086ba4": {
+          "0480a1cf-70a8-45e8-a040-a7b0f9935176": {
+            "67950303-4f54-4dfd-b597-a8e80de99f5f": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            },
+            "0058878e-fc6e-457e-a8bf-f78ddce62ffa": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4f899f0c-da28-4fc8-b152-89e62ae56292": {
+            "d3f32776-783b-4539-9d45-f6b4d42cb911": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            },
+            "33d71ce7-4521-4f53-bdaa-6ba830a9e93b": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          }
+        },
+        "outputs": {
+          "3af00d9c-c476-46a8-99b6-1cc6e32de9f8": {
+            "e0ab889d-3386-4e1e-8f35-6e0d56d420aa": {
+              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "search": null,
+    "extract": null,
+    "tradabe": null,
+    "tradeable": null,
+    "frozen": null,
+    "post only": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

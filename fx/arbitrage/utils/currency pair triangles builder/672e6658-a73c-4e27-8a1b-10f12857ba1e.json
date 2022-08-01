@@ -1,0 +1,176 @@
+{
+  "name": "fx/arbitrage/utils/Currency pair triangles builder",
+  "description": "Builds currency pair triangles based on intermediate pair doubles indexed by original currency pair.",
+  "interface": {
+    "inputs": {
+      "ff5dcb02-44bc-4c52-a73b-ca5914075230": {
+        "type": "{string: [string, string][]}",
+        "name": "interm. pairs lookup",
+        "description": "Example:\n\n```json\n{\n  \"BTC_DASH\": [\n    [\n      \"USDT_BTC\",\n      \"USDT_DASH\"\n    ],\n    [\n      \"USDC_BTC\",\n      \"USDC_DASH\"\n    ]\n  ],\n  \"BTC_DOGE\": [\n    [\n      \"USDT_BTC\",\n      \"USDT_DOGE\"\n    ],\n    [\n      \"USDC_BTC\",\n      \"USDC_DOGE\"\n    ],\n    [\n      \"USDD_BTC\",\n      \"USDD_DOGE\"\n    ]\n  ]\n}\n```"
+      }
+    },
+    "outputs": {
+      "3ce1e364-a65a-4160-8891-0c98c1a77380": {
+        "type": "[string, string, string][]",
+        "name": "ccy pair triangles",
+        "description": "Example:\n\n```json\n[\n  [\n    \"USDT_BTC\",\n    \"USDT_DASH\",\n    \"BTC_DASH\"\n  ],\n  [\n    \"USDC_BTC\",\n    \"USDC_DASH\",\n    \"BTC_DASH\"\n  ]\n]\n```"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "78132b4a-1539-4047-8fa6-b91de8198d94": {
+          "coordinates": [
+            -345.1428571428571,
+            -24
+          ],
+          "name": "traverse interm. pairs",
+          "prototype": "fcc6db5f-68ad-4e9e-a190-afe91e461488",
+          "params": {
+            "b9081c9c-38f6-48f6-8cdb-383b65118fd6": "2"
+          }
+        },
+        "32ca143f-334c-4479-bd10-27df435c3675": {
+          "coordinates": [
+            -133.6428571428571,
+            -110
+          ],
+          "name": "collect paths",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "ac7ba848-a42d-4085-89ee-f75724167e6e": {
+          "coordinates": [
+            -133.6428571428571,
+            71
+          ],
+          "name": "collect pairs",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "238128b9-e640-4260-9a57-55d806537f06": {
+          "coordinates": [
+            239.3571428571429,
+            -176
+          ],
+          "name": "get orig. ccy pair",
+          "prototype": "5bead7ea-5031-4993-a855-dc9ca089802f"
+        },
+        "5fd10091-b539-4771-9afb-a5b80f97e7e0": {
+          "coordinates": [
+            55.35714285714289,
+            159
+          ],
+          "name": "build ccy pair triangles",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "8d27cce2-7ff2-4363-b784-5f414d14c89e": {
+          "coordinates": [
+            257.3571428571429,
+            104
+          ],
+          "name": "append orig. to interm. pairs",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2"
+        },
+        "b5caeeb8-46d6-4023-b0d1-e699f4567e11": {
+          "coordinates": [
+            60.35714285714289,
+            -24
+          ],
+          "name": "loop thru paths",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        }
+      },
+      "connections": {
+        "78132b4a-1539-4047-8fa6-b91de8198d94": {
+          "16f959da-478c-4fd3-9bc6-8dbf970a91a5": {
+            "32ca143f-334c-4479-bd10-27df435c3675": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          },
+          "3710a822-debd-4020-ae8e-fd427df84416": {
+            "32ca143f-334c-4479-bd10-27df435c3675": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            },
+            "ac7ba848-a42d-4085-89ee-f75724167e6e": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            }
+          },
+          "7fcb6ad6-4f01-4c05-90d3-9e203af4d16a": {
+            "ac7ba848-a42d-4085-89ee-f75724167e6e": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          }
+        },
+        "ac7ba848-a42d-4085-89ee-f75724167e6e": {
+          "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {
+            "5fd10091-b539-4771-9afb-a5b80f97e7e0": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "5fd10091-b539-4771-9afb-a5b80f97e7e0": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "8d27cce2-7ff2-4363-b784-5f414d14c89e": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "32ca143f-334c-4479-bd10-27df435c3675": {
+          "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {
+            "b5caeeb8-46d6-4023-b0d1-e699f4567e11": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            }
+          }
+        },
+        "b5caeeb8-46d6-4023-b0d1-e699f4567e11": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "238128b9-e640-4260-9a57-55d806537f06": {
+              "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {}
+            }
+          }
+        },
+        "238128b9-e640-4260-9a57-55d806537f06": {
+          "f7832747-fb1e-432b-9c10-60ac76c110cc": {
+            "8d27cce2-7ff2-4363-b784-5f414d14c89e": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "8d27cce2-7ff2-4363-b784-5f414d14c89e": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "5fd10091-b539-4771-9afb-a5b80f97e7e0": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ff5dcb02-44bc-4c52-a73b-ca5914075230": {
+            "78132b4a-1539-4047-8fa6-b91de8198d94": {
+              "1186f4ae-684c-4574-b0d9-fb9b3040fdb1": {}
+            }
+          }
+        },
+        "outputs": {
+          "3ce1e364-a65a-4160-8891-0c98c1a77380": {
+            "5fd10091-b539-4771-9afb-a5b80f97e7e0": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "triangle": null,
+    "triplet": null,
+    "generate": null,
+    "build": null,
+    "transform": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

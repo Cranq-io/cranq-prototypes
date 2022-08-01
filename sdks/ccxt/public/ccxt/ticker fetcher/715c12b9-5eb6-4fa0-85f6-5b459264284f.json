@@ -1,0 +1,96 @@
+{
+  "name": "sdks/ccxt/public/ccxt/Ticker fetcher",
+  "interface": {
+    "inputs": {
+      "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+        "type": "{\n  \"id\": string\n}",
+        "name": "exchange",
+        "description": "Received the exchange to be load.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n{\"id\": \"aax\"}"
+      },
+      "958e1641-dd76-41a7-a436-92290000eb61": {
+        "type": "{\n  \"symbol\": string,\n  optional \"params\": {string: any}\n}",
+        "name": "query",
+        "description": "Received the ticker parameters to be fetched.\n\nExample:\n{\n  \"symbol\": \"BTC/USDT\"\n}"
+      }
+    },
+    "outputs": {
+      "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+        "type": "{\n    \"symbol\": string,\n    \"info\": any,\n    optional \"timestamp\": number, \n    optional \"datetime\": string,\n    optional \"high\": number, \n    optional \"low\": number, \n    optional  \"bid\":  number, \n    optional \"bidVolume\": number, \n    optional  \"ask\": number, \n    optional \"askVolume\": number, \n    optional \"vwap\": number, \n    optional \"open\": number, \n    \"close\": number, \n    \"last\": number, \n    optional \"previousClose\": number, \n    optional \"change\": number, \n    optional \"percentage\": number, \n    optional \"average\": number, \n    optional \"baseVolume\": number, \n    optional \"quoteVolume\": number \n}",
+        "name": "data",
+        "description": "Sends statistical calculation with the information calculated over the past 24 hours for a specific market.\n\nExample:\n{\n  \"symbol\": \"BTC/USDT\",\n  \"timestamp\": 1659105907361,\n  \"high\": 24398,\n  \"low\": 22996.84,\n  \"open\": 22997.99,\n  \"close\": 24103.57,\n  \"last\": 24103.57,\n  \"change\": 1105.58,\n  \"percentage\": 4.807289680532951,\n  \"average\": 23550.78,\n  \"quoteVolume\": 1552289875.7780151,\n  \"info\": {\n    \"a\": \"0.00000000\",\n    \"c\": \"24103.57000000\",\n    \"d\": \"4.80728968\",\n    \"h\": \"24398.00000000\",\n    \"l\": \"22996.84000000\",\n    \"o\": \"22997.99000000\",\n    \"q\": \"65051.088090\",\n    \"s\": \"BTCUSDT\",\n    \"v\": \"1552289875.77801514\",\n    \"t\": 1659105907361\n  }\n}\n\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#price-tickers"
+      },
+      "e776d410-3c57-4114-8189-1ed584a01974": {
+        "type": "typeof `error`of `ccxt`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+          "coordinates": [
+            84,
+            -68
+          ],
+          "name": "ccxt",
+          "prototype": "78a1eeb7-4555-465a-adb5-227c31799f63"
+        },
+        "39f1bae0-8738-4490-904c-3360728bdf22": {
+          "coordinates": [
+            -65,
+            -42
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"apiId\", \"exchange\", \"query\"]",
+            "apiId": "\"fetchTicker\""
+          }
+        }
+      },
+      "connections": {
+        "39f1bae0-8738-4490-904c-3360728bdf22": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "faa04647-7b0d-4187-86ff-d39034e4b0c4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+            "39f1bae0-8738-4490-904c-3360728bdf22": {
+              "exchange": {}
+            }
+          },
+          "958e1641-dd76-41a7-a436-92290000eb61": {
+            "39f1bae0-8738-4490-904c-3360728bdf22": {
+              "query": {}
+            }
+          }
+        },
+        "outputs": {
+          "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "a9ed491a-2114-43b4-bb91-45b4b56c3bbb": {}
+            }
+          },
+          "e776d410-3c57-4114-8189-1ed584a01974": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "de97ff64-6274-4fd2-af01-2a8e652a2188": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "description": "Loads statistics for a particular market/symbol for some period of time in recent past, usually last 24 hours.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#price-tickers\n\nExample:\n1. {\"id\": \"aax\"}@0 received via `exchange`\n2. {\n  \"symbol\": \"BTC/USDT\"\n}@0 received via `query`\n3. {\n  \"symbol\": \"BTC/USDT\",\n  \"timestamp\": 1659357154942,\n  \"high\": 24207.39,\n  \"low\": 22950.5,\n  \"open\": 23751.54,\n  \"close\": 23246.93,\n  \"last\": 23246.93,\n  \"change\": -504.61,\n  \"percentage\": -2.124535924828453,\n  \"average\": 23499.235,\n  \"quoteVolume\": 912693366.7110586,\n  \"info\": {\n    \"a\": \"0.00000000\",\n    \"c\": \"23246.93000000\",\n    \"d\": \"-2.12453592\",\n    \"h\": \"24207.39000000\",\n    \"l\": \"22950.50000000\",\n    \"o\": \"23751.54000000\",\n    \"q\": \"38923.969718\",\n    \"s\": \"BTCUSDT\",\n    \"v\": \"912693366.71105862\",\n    \"t\": 1659357154942\n  }\n}@0 sent via `data",
+  "original": "f6aed3c7-759e-49e1-8abc-7ab511fc6a81",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -5,7 +5,7 @@
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
         "type": "{\n  \"id\": string\n}",
         "name": "exchange",
-        "description": "Received the exchange to be load.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n{\"id\": \"aax\"}"
+        "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n{\"id\": \"aax\"}"
       },
       "958e1641-dd76-41a7-a436-92290000eb61": {
         "type": "{\n  \"symbol\": string,\n  optional \"params\": {string: any}\n}",
@@ -90,7 +90,6 @@
   "description": "Loads statistics for a particular market/symbol for some period of time in recent past, usually last 24 hours.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#price-tickers\n\nExample:\n1. {\"id\": \"aax\"}@0 received via `exchange`\n2. {\n  \"symbol\": \"BTC/USDT\"\n}@0 received via `query`\n3. {\n  \"symbol\": \"BTC/USDT\",\n  \"timestamp\": 1659357154942,\n  \"high\": 24207.39,\n  \"low\": 22950.5,\n  \"open\": 23751.54,\n  \"close\": 23246.93,\n  \"last\": 23246.93,\n  \"change\": -504.61,\n  \"percentage\": -2.124535924828453,\n  \"average\": 23499.235,\n  \"quoteVolume\": 912693366.7110586,\n  \"info\": {\n    \"a\": \"0.00000000\",\n    \"c\": \"23246.93000000\",\n    \"d\": \"-2.12453592\",\n    \"h\": \"24207.39000000\",\n    \"l\": \"22950.50000000\",\n    \"o\": \"23751.54000000\",\n    \"q\": \"38923.969718\",\n    \"s\": \"BTCUSDT\",\n    \"v\": \"912693366.71105862\",\n    \"t\": 1659357154942\n  }\n}@0 sent via `data",
   "original": "f6aed3c7-759e-49e1-8abc-7ab511fc6a81",
   "attributes": {
-    "internal": true,
     "locked": true
   }
 }

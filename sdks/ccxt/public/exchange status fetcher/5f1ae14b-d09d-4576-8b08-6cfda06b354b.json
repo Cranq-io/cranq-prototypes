@@ -1,0 +1,114 @@
+{
+  "name": "sdks/ccxt/public/Exchange status fetcher",
+  "interface": {
+    "inputs": {
+      "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+        "type": "{\n  \"id\": string\n}",
+        "name": "exchange",
+        "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n{\"id\": \"upbit\"}\n```"
+      },
+      "958e1641-dd76-41a7-a436-92290000eb61": {
+        "type": "{\n  optional \"params\": {string: any}\n}",
+        "name": "query",
+        "description": "Received the orderbooks parameters to be fetched.\n\nExample:\n```\n{\n}\n```"
+      }
+    },
+    "outputs": {
+      "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+        "type": "{\n    \"status\": (\"ok\" or \"shutdown\" or \"error\" or \"maintenance\"),\n    optional \"updated\": number,\n    optional \"eta\": string,\n    optional \"url\": string\n}",
+        "name": "data",
+        "description": "Sends the latest known information on the availability of the exchange API.\n\nExample:\n```\n{\n  \"status\": \"ok\"\n}\n```\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#exchange-status-structure"
+      },
+      "e776d410-3c57-4114-8189-1ed584a01974": {
+        "type": "typeof `error`of `ccxt`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+          "coordinates": [
+            104,
+            -5.5
+          ],
+          "name": "ccxt",
+          "prototype": "78a1eeb7-4555-465a-adb5-227c31799f63"
+        },
+        "39f1bae0-8738-4490-904c-3360728bdf22": {
+          "coordinates": [
+            -73,
+            -72.5
+          ],
+          "name": "sync parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "apiId": "\"fetchStatus\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"exchange\", \"query\"]"
+          }
+        },
+        "6a01e2ab-75eb-43fc-8b91-752cb9775058": {
+          "coordinates": [
+            -32,
+            78.5
+          ],
+          "name": "build fetchStatus action",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"name\": \"fetchStatus\",\r\n  \"parameters\": {\r\n    \"exchange\": {\"id\": \"\"},\r\n    \"query\": {}\r\n  }\r\n}\r\n",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"parameters\"]"
+          }
+        }
+      },
+      "connections": {
+        "39f1bae0-8738-4490-904c-3360728bdf22": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6a01e2ab-75eb-43fc-8b91-752cb9775058": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        },
+        "6a01e2ab-75eb-43fc-8b91-752cb9775058": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "faa04647-7b0d-4187-86ff-d39034e4b0c4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+            "39f1bae0-8738-4490-904c-3360728bdf22": {
+              "exchange": {}
+            }
+          },
+          "958e1641-dd76-41a7-a436-92290000eb61": {
+            "39f1bae0-8738-4490-904c-3360728bdf22": {
+              "query": {}
+            }
+          }
+        },
+        "outputs": {
+          "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "a9ed491a-2114-43b4-bb91-45b4b56c3bbb": {}
+            }
+          },
+          "e776d410-3c57-4114-8189-1ed584a01974": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "de97ff64-6274-4fd2-af01-2a8e652a2188": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "The exchange status describes the latest known information on the availability of the exchange API. This information is either hardcoded into the exchange class or fetched live directly from the exchange API. \n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#exchange-status\n\nExample:\n```\n1. {\"id\": \"upbit\"}@0 received via `exchange`\n2. {}@0 received via `query`\n3. {\n  \"status\": \"ok\"\n}@0 sent via `data`\n```",
+  "original": "380e7dea-f9f4-43e1-9a48-351efa8df448",
+  "iconId": "7d4b9ff9-dbdc-44e1-a901-cd9d869db931",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "name": "sdks/ccxt/public/Orderbook fetcher",
+  "interface": {
+    "inputs": {
+      "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+        "type": "{\n  \"id\": string\n}",
+        "name": "exchange",
+        "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n{\"id\": \"upbit\"}\n```"
+      },
+      "958e1641-dd76-41a7-a436-92290000eb61": {
+        "type": "{\n  \"symbol\": string,\n  optional \"limit\": number,\n  optional \"params\": {string: any}\n}",
+        "name": "query",
+        "description": "Received the orderbook parameters to be fetched.\n\nExample:\n```\n{\n  \"symbol\": \"BTC/USDT\"\n}\n```"
+      }
+    },
+    "outputs": {
+      "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+        "type": " {\n      \"bids\": [number, number][],\n      \"asks\": [number, number][],\n      \"symbol\": string,\n      optional  \"timestamp\": number,\n      optional \"datetime\": string,\n      optional \"nonce\": number\n  }",
+        "name": "data",
+        "description": "Sends information on open orders with bid (buy) and ask (sell) prices.\n\nExample:\n```\n{\n  \"symbol\": \"BTC/USDT\",\n  \"bids\": [\n    [\n      23340.881,\n      1.07108207\n    ],\n    [\n      23320.59700001,\n      0.00238276\n    ],\n    [\n      23320.597,\n      0.00127999\n    ],\n    [\n      23315.3649803,\n      0.00003501\n    ],\n    [\n      23302.07806294,\n      0.00013228\n    ],\n    [\n      23298.08462788,\n      0.00000951\n    ],\n    [\n      23281.21445401,\n      0.00038168\n    ],\n    [\n      23281.11,\n      0.00006959\n    ],\n    [\n      23250.503,\n      0.0308213\n    ],\n    [\n      23246.0481615,\n      0.10754516\n    ],\n    [\n      23241.06615375,\n      0.21513642\n    ],\n    [\n      23224.176,\n      2.49919148\n    ],\n    [\n      23087.5730675,\n      0.00476805\n    ],\n    [\n      22982.00175076,\n      0.00047025\n    ],\n    [\n      22938.00000001,\n      0.0001613\n    ]\n  ],\n  \"asks\": [\n    [\n      23411.01,\n      1.06787363\n    ],\n    [\n      23429.07818475,\n      0.1\n    ],\n    [\n      23508.38496241,\n      0.00568306\n    ],\n    [\n      23528.0658,\n      0.00004972\n    ],\n    [\n      23528.066,\n      1.86310435\n    ],\n    [\n      23658.76724138,\n      0.05370671\n    ],\n    [\n      23659.00383142,\n      0.05047722\n    ],\n    [\n      23659.77011495,\n      0.0194021\n    ],\n    [\n      23668.19923372,\n      0.17716542\n    ],\n    [\n      23750.00000001,\n      0.00388776\n    ],\n    [\n      23829,\n      0.00767275\n    ],\n    [\n      23838.46153847,\n      0.00809952\n    ],\n    [\n      23943.41085272,\n      0.00351427\n    ],\n    [\n      24000,\n      0.0327\n    ],\n    [\n      24180.902,\n      0.00644413\n    ]\n  ],\n  \"timestamp\": 1659364372388,\n  \"datetime\": \"2022-08-01T14:32:52.388Z\"\n}\n```\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#order-book-structure"
+      },
+      "e776d410-3c57-4114-8189-1ed584a01974": {
+        "type": "typeof `error`of `ccxt`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+          "coordinates": [
+            129,
+            -151
+          ],
+          "name": "ccxt",
+          "prototype": "78a1eeb7-4555-465a-adb5-227c31799f63"
+        },
+        "39f1bae0-8738-4490-904c-3360728bdf22": {
+          "coordinates": [
+            -158,
+            25
+          ],
+          "name": "sync parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "apiId": "\"fetchOrderBook\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"exchange\", \"query\"]"
+          }
+        },
+        "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+          "coordinates": [
+            -19,
+            -49
+          ],
+          "name": "build fetchOrderBook action",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"name\": \"fetchOrderBook\",\r\n  \"parameters\": {\r\n    \"exchange\": {\"id\": \"\"},\r\n    \"query\": {}\r\n  }\r\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"parameters\"]"
+          }
+        }
+      },
+      "connections": {
+        "39f1bae0-8738-4490-904c-3360728bdf22": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        },
+        "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "faa04647-7b0d-4187-86ff-d39034e4b0c4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+            "39f1bae0-8738-4490-904c-3360728bdf22": {
+              "exchange": {}
+            }
+          },
+          "958e1641-dd76-41a7-a436-92290000eb61": {
+            "39f1bae0-8738-4490-904c-3360728bdf22": {
+              "query": {}
+            }
+          }
+        },
+        "outputs": {
+          "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "a9ed491a-2114-43b4-bb91-45b4b56c3bbb": {}
+            }
+          },
+          "e776d410-3c57-4114-8189-1ed584a01974": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "de97ff64-6274-4fd2-af01-2a8e652a2188": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Lists the orderbook of the specified symbol.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#order-book\n\nExample:\n```\n1. {\"id\": \"upbit\"}@0 received via `exchange`\n2. {\n  \"symbol\": \"BTC/USDT\"\n}@0 received via `query`\n3. {\n  \"symbol\": \"BTC/USDT\",\n  \"bids\": [\n    [\n      23340.881,\n      1.07108207\n    ],\n    [\n      23320.59700001,\n      0.00238276\n    ],\n    [\n      23320.597,\n      0.00127999\n    ],\n    [\n      23315.3649803,\n      0.00003501\n    ],\n    [\n      23302.07806294,\n      0.00013228\n    ],\n    [\n      23298.08462788,\n      0.00000951\n    ],\n    [\n      23281.21445401,\n      0.00038168\n    ],\n    [\n      23281.11,\n      0.00006959\n    ],\n    [\n      23250.503,\n      0.0308213\n    ],\n    [\n      23246.0481615,\n      0.10754516\n    ],\n    [\n      23241.06615375,\n      0.21513642\n    ],\n    [\n      23224.176,\n      2.49919148\n    ],\n    [\n      23087.5730675,\n      0.00476805\n    ],\n    [\n      22982.00175076,\n      0.00047025\n    ],\n    [\n      22938.00000001,\n      0.0001613\n    ]\n  ],\n  \"asks\": [\n    [\n      23411.01,\n      1.06787363\n    ],\n    [\n      23429.07818475,\n      0.1\n    ],\n    [\n      23508.38496241,\n      0.00568306\n    ],\n    [\n      23528.0658,\n      0.00004972\n    ],\n    [\n      23528.066,\n      1.86310435\n    ],\n    [\n      23658.76724138,\n      0.05370671\n    ],\n    [\n      23659.00383142,\n      0.05047722\n    ],\n    [\n      23659.77011495,\n      0.0194021\n    ],\n    [\n      23668.19923372,\n      0.17716542\n    ],\n    [\n      23750.00000001,\n      0.00388776\n    ],\n    [\n      23829,\n      0.00767275\n    ],\n    [\n      23838.46153847,\n      0.00809952\n    ],\n    [\n      23943.41085272,\n      0.00351427\n    ],\n    [\n      24000,\n      0.0327\n    ],\n    [\n      24180.902,\n      0.00644413\n    ]\n  ],\n  \"timestamp\": 1659364372388,\n  \"datetime\": \"2022-08-01T14:32:52.388Z\"\n}@0 sent via `data`\n```",
+  "original": "715c12b9-5eb6-4fa0-85f6-5b459264284f",
+  "iconId": "7d4b9ff9-dbdc-44e1-a901-cd9d869db931",
+  "attributes": {
+    "locked": true
+  }
+}

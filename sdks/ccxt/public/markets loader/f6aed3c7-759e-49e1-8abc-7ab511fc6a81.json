@@ -1,11 +1,11 @@
 {
-  "name": "sdks/ccxt/public/ccxt/Markets loader",
+  "name": "sdks/ccxt/public/Markets loader",
   "interface": {
     "inputs": {
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
         "type": "{\n  \"id\": string\n}",
         "name": "exchange",
-        "description": "Received the exchange to be load.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n{\"id\": \"aax\"}"
+        "description": "Received the exchange to be load.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n{\"id\": \"aax\"}\n```"
       }
     },
     "outputs": {
@@ -31,22 +31,22 @@
           "name": "ccxt",
           "prototype": "78a1eeb7-4555-465a-adb5-227c31799f63"
         },
-        "eb6cd18c-e8f1-470a-9e3c-fef063985af3": {
+        "3c302968-9945-4593-823a-93c0410d31b9": {
           "coordinates": [
-            -39,
-            35
+            -83,
+            56
           ],
-          "name": "build action",
-          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "name": "build loadMarkets action",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
           "params": {
-            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\r\n  \"apiId\": \"loadMarkets\",\r\n  \"query\": {}\r\n}",
-            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"exchange\""
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"name\": \"loadMarkets\",\r\n  \"parameters\": {\r\n    \"exchange\": {\"id\": \"\"},\r\n    \"query\": {}\r\n  }\r\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"parameters\", \"exchange\"]"
           }
         }
       },
       "connections": {
-        "eb6cd18c-e8f1-470a-9e3c-fef063985af3": {
-          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+        "3c302968-9945-4593-823a-93c0410d31b9": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
             "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
               "faa04647-7b0d-4187-86ff-d39034e4b0c4": {}
             }
@@ -56,8 +56,8 @@
       "forwards": {
         "inputs": {
           "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
-            "eb6cd18c-e8f1-470a-9e3c-fef063985af3": {
-              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            "3c302968-9945-4593-823a-93c0410d31b9": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
             }
           }
         },
@@ -76,8 +76,8 @@
       }
     }
   },
-  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
-  "description": "Loads the list of markets and trading symbols for a particular exchange.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#loading-markets\n\nExample:\n1. {\"id\": \"aax\"}@0 received via `exchange`\n2. {\n  \"BTS/BTC\": {\n    \"id\": \"BTC_BTS\",\n    \"symbol\": \"BTS/BTC\",\n    \"base\": \"BTS\",\n    \"quote\": \"BTC\",\n    \"baseId\": \"BTS\",\n    \"quoteId\": \"BTC\",\n    \"active\": true,\n    \"type\": \"spot\",\n    \"spot\": true,\n    \"swap\": false,\n    \"future\": false,\n    \"option\": false,\n    \"margin\": false,\n    \"contract\": false,\n    \"precision\": {\n      \"amount\": 1e-8,\n      \"price\": 1e-8\n    },\n    \"limits\": {\n      \"amount\": {\n        \"min\": 0.000001\n      },\n      \"price\": {\n        \"min\": 1e-8\n      },\n      \"cost\": {\n        \"min\": 0.0001\n      },\n      \"leverage\": {}\n    },\n    \"info\": {\n      \"id\": \"14\",\n      \"last\": \"0.00000048\",\n      \"lowestAsk\": \"0.00000050\",\n      \"highestBid\": \"0.00000047\",\n      \"percentChange\": \"-0.04000000\",\n      \"baseVolume\": \"0.00836150\",\n      \"quoteVolume\": \"17241.72065796\",\n      \"isFrozen\": \"0\",\n      \"postOnly\": \"0\",\n      \"marginTradingEnabled\": \"0\",\n      \"high24hr\": \"0.00000050\",\n      \"low24hr\": \"0.00000048\"\n    },\n    \"taker\": 0.0009,\n...}@0 sent via `data`\n    \"maker\": 0.0009,\n    \"feeSide\": \"get\",\n    \"numericId\": 14\n  }@0 sent via `data` ",
+  "description": "Loads the list of markets and trading symbols for a particular exchange.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#loading-markets\n\nExample:\n```\n1. {\"id\": \"aax\"}@0 received via `exchange`\n2. {\n  \"BTS/BTC\": {\n    \"id\": \"BTC_BTS\",\n    \"symbol\": \"BTS/BTC\",\n    \"base\": \"BTS\",\n    \"quote\": \"BTC\",\n    \"baseId\": \"BTS\",\n    \"quoteId\": \"BTC\",\n    \"active\": true,\n    \"type\": \"spot\",\n    \"spot\": true,\n    \"swap\": false,\n    \"future\": false,\n    \"option\": false,\n    \"margin\": false,\n    \"contract\": false,\n    \"precision\": {\n      \"amount\": 1e-8,\n      \"price\": 1e-8\n    },\n    \"limits\": {\n      \"amount\": {\n        \"min\": 0.000001\n      },\n      \"price\": {\n        \"min\": 1e-8\n      },\n      \"cost\": {\n        \"min\": 0.0001\n      },\n      \"leverage\": {}\n    },\n    \"info\": {\n      \"id\": \"14\",\n      \"last\": \"0.00000048\",\n      \"lowestAsk\": \"0.00000050\",\n      \"highestBid\": \"0.00000047\",\n      \"percentChange\": \"-0.04000000\",\n      \"baseVolume\": \"0.00836150\",\n      \"quoteVolume\": \"17241.72065796\",\n      \"isFrozen\": \"0\",\n      \"postOnly\": \"0\",\n      \"marginTradingEnabled\": \"0\",\n      \"high24hr\": \"0.00000050\",\n      \"low24hr\": \"0.00000048\"\n    },\n    \"taker\": 0.0009,\n...}@0 sent via `data`\n    \"maker\": 0.0009,\n    \"feeSide\": \"get\",\n    \"numericId\": 14\n  }@0 sent via `data` \n  ```",
+  "iconId": "7d4b9ff9-dbdc-44e1-a901-cd9d869db931",
   "attributes": {
     "locked": true
   }

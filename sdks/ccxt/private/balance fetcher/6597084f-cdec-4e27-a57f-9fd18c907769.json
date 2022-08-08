@@ -1,0 +1,114 @@
+{
+  "name": "sdks/ccxt/private/Balance fetcher",
+  "interface": {
+    "inputs": {
+      "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+        "type": " {\n       \"id\": string,\n       optional \"credentials\": {\n         \"apiKey\": string,\n         \"secret\": string,\n         optional \"uid\": string,\n         optional \"password\": string\n       },\n       optional \"sandboxMode\": boolean\n    }",
+        "name": "exchange",
+        "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n {\n     \"id\": \"coinbasepro\",\n       \"credentials\": {\n        \"apiKey\": \"API_KEY\",\n        \"secret\": \"SECRET\",\n        \"password\": \"PASSWORD\"\n      },\n      \"sandboxMode\": true\n}\n```"
+      },
+      "958e1641-dd76-41a7-a436-92290000eb61": {
+        "type": "{\n  optional \"params\": {string: any}\n}",
+        "name": "query",
+        "description": "Received the account balance parameters to be fetched.\n\nExample:\n```\n  {  \n  }\n```"
+      }
+    },
+    "outputs": {
+      "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+        "type": "{string: any}",
+        "name": "data",
+        "description": "Sends information about the account balance.\n\nExample:\n```\n{\n  \"info\": [\n    {\n      \"id\": \"b4a8e61c-5a17-4f13-b9eb-c55ce83b09bd\",\n      \"currency\": \"BAT\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"6f52651c-8857-4aa7-a95f-462d2775e430\",\n      \"currency\": \"BTC\",\n      \"balance\": \"0.0044732000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0.0044732\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"1787661d-e3a0-46a5-91a2-6c26fb5b45f0\",\n      \"currency\": \"ETH\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"5b3129ec-4797-4829-9d2a-d7d3a271d07c\",\n      \"currency\": \"EUR\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"db4af18b-2880-4a67-9708-58305222acc7\",\n      \"currency\": \"GBP\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"729535e7-f396-4ff6-9cf9-483ff19576c4\",\n      \"currency\": \"LINK\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"899132f0-77a4-405b-9c19-e7919e48f141\",\n      \"currency\": \"USD\",\n      \"balance\": \"9900.0001288976000000\",\n      \"hold\": \"1609.6000000000000000\",\n      \"available\": \"8290.4001288976\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"4292f4e4-9888-44a9-8688-9f3d298858e4\",\n      \"currency\": \"USDC\",\n      \"balance\": \"10000.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"10000\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    }\n  ],\n  \"BAT\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"BTC\": {\n    \"free\": 0.0044732,\n    \"used\": 0,\n    \"total\": 0.0044732\n  },\n  \"ETH\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"EUR\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"GBP\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"LINK\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"USD\": {\n    \"free\": 8290.4001288976,\n    \"used\": 1609.6,\n    \"total\": 9900.0001288976\n  },\n  \"USDC\": {\n    \"free\": 10000,\n    \"used\": 0,\n    \"total\": 10000\n  },\n  \"free\": {\n    \"BAT\": 0,\n    \"BTC\": 0.0044732,\n    \"ETH\": 0,\n    \"EUR\": 0,\n    \"GBP\": 0,\n    \"LINK\": 0,\n    \"USD\": 8290.4001288976,\n    \"USDC\": 10000\n  },\n  \"used\": {\n    \"BAT\": 0,\n    \"BTC\": 0,\n    \"ETH\": 0,\n    \"EUR\": 0,\n    \"GBP\": 0,\n    \"LINK\": 0,\n    \"USD\": 1609.6,\n    \"USDC\": 0\n  },\n  \"total\": {\n    \"BAT\": 0,\n    \"BTC\": 0.0044732,\n    \"ETH\": 0,\n    \"EUR\": 0,\n    \"GBP\": 0,\n    \"LINK\": 0,\n    \"USD\": 9900.0001288976,\n    \"USDC\": 10000\n  }\n}\n```\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#balance-structure"
+      },
+      "e776d410-3c57-4114-8189-1ed584a01974": {
+        "type": "typeof `error`of `ccxt`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+          "coordinates": [
+            124,
+            21.5
+          ],
+          "name": "ccxt",
+          "prototype": "78a1eeb7-4555-465a-adb5-227c31799f63"
+        },
+        "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+          "coordinates": [
+            -147,
+            -135.5
+          ],
+          "name": "build createOrder action",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"parameters\"]",
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"name\": \"fetchBalance\",\r\n  \"parameters\": {\r\n  }\r\n}"
+          }
+        },
+        "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+          "coordinates": [
+            -120,
+            69
+          ],
+          "name": "merge exchange & parameters",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"exchange\""
+          }
+        }
+      },
+      "connections": {
+        "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "faa04647-7b0d-4187-86ff-d39034e4b0c4": {}
+            }
+          }
+        },
+        "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+            "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "958e1641-dd76-41a7-a436-92290000eb61": {
+            "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "a9ed491a-2114-43b4-bb91-45b4b56c3bbb": {}
+            }
+          },
+          "e776d410-3c57-4114-8189-1ed584a01974": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "de97ff64-6274-4fd2-af01-2a8e652a2188": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Places a new order.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#account-balance\n\nExample:\n```\n1. \n {\n     \"id\": \"coinbasepro\",\n       \"credentials\": {\n        \"apiKey\": \"API_KEY\",\n        \"secret\": \"SECRET\",\n        \"password\": \"PASSWORD\"\n      },\n      \"sandboxMode\": true\n}@0 received via `exchange`\n2. {}@0 received via `query`\n3. \n{\n  \"info\": [\n    {\n      \"id\": \"b4a8e61c-5a17-4f13-b9eb-c55ce83b09bd\",\n      \"currency\": \"BAT\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"6f52651c-8857-4aa7-a95f-462d2775e430\",\n      \"currency\": \"BTC\",\n      \"balance\": \"0.0044732000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0.0044732\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"1787661d-e3a0-46a5-91a2-6c26fb5b45f0\",\n      \"currency\": \"ETH\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"5b3129ec-4797-4829-9d2a-d7d3a271d07c\",\n      \"currency\": \"EUR\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"db4af18b-2880-4a67-9708-58305222acc7\",\n      \"currency\": \"GBP\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"729535e7-f396-4ff6-9cf9-483ff19576c4\",\n      \"currency\": \"LINK\",\n      \"balance\": \"0.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"0\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"899132f0-77a4-405b-9c19-e7919e48f141\",\n      \"currency\": \"USD\",\n      \"balance\": \"9900.0001288976000000\",\n      \"hold\": \"1609.6000000000000000\",\n      \"available\": \"8290.4001288976\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    },\n    {\n      \"id\": \"4292f4e4-9888-44a9-8688-9f3d298858e4\",\n      \"currency\": \"USDC\",\n      \"balance\": \"10000.0000000000000000\",\n      \"hold\": \"0.0000000000000000\",\n      \"available\": \"10000\",\n      \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n      \"trading_enabled\": true\n    }\n  ],\n  \"BAT\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"BTC\": {\n    \"free\": 0.0044732,\n    \"used\": 0,\n    \"total\": 0.0044732\n  },\n  \"ETH\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"EUR\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"GBP\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"LINK\": {\n    \"free\": 0,\n    \"used\": 0,\n    \"total\": 0\n  },\n  \"USD\": {\n    \"free\": 8290.4001288976,\n    \"used\": 1609.6,\n    \"total\": 9900.0001288976\n  },\n  \"USDC\": {\n    \"free\": 10000,\n    \"used\": 0,\n    \"total\": 10000\n  },\n  \"free\": {\n    \"BAT\": 0,\n    \"BTC\": 0.0044732,\n    \"ETH\": 0,\n    \"EUR\": 0,\n    \"GBP\": 0,\n    \"LINK\": 0,\n    \"USD\": 8290.4001288976,\n    \"USDC\": 10000\n  },\n  \"used\": {\n    \"BAT\": 0,\n    \"BTC\": 0,\n    \"ETH\": 0,\n    \"EUR\": 0,\n    \"GBP\": 0,\n    \"LINK\": 0,\n    \"USD\": 1609.6,\n    \"USDC\": 0\n  },\n  \"total\": {\n    \"BAT\": 0,\n    \"BTC\": 0.0044732,\n    \"ETH\": 0,\n    \"EUR\": 0,\n    \"GBP\": 0,\n    \"LINK\": 0,\n    \"USD\": 9900.0001288976,\n    \"USDC\": 10000\n  }\n}@0 sent via `data`\n```",
+  "original": "04f19991-fc9a-4ed7-803f-a35a9948dbaf",
+  "iconId": "7d4b9ff9-dbdc-44e1-a901-cd9d869db931",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

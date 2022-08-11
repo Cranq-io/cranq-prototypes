@@ -9,8 +9,8 @@
       },
       "958e1641-dd76-41a7-a436-92290000eb61": {
         "type": "{\n  \"id\": string,\n  \"symbol\": string,\n  optional \"params\": {string: any}\n}",
-        "name": "query",
-        "description": "Received the account balance parameters to be fetched.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#canceling-orders\n\nExample:\n```\n  {  \n      \"id\": \"4bba5198-9aac-4e3e-8e07-8c200daad567\",\n      \"symbol\": \"BTC/USDT\"\n  }\n```"
+        "name": "parameters",
+        "description": "Received the order parameters to be cancelled.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#canceling-orders\n\nExample:\n```\n  {  \n      \"id\": \"4bba5198-9aac-4e3e-8e07-8c200daad567\",\n      \"symbol\": \"BTC/USDT\"\n  }\n```"
       }
     },
     "outputs": {

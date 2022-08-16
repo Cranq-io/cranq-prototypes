@@ -32,16 +32,16 @@
       "nodes": {
         "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
           "coordinates": [
-            194,
-            -145.5
+            213,
+            -52.5
           ],
           "name": "insert authorization header",
           "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e"
         },
         "4e13e8ec-4e0b-409d-9992-471c1b2a96fa": {
           "coordinates": [
-            -43,
-            68.5
+            -8,
+            73.5
           ],
           "name": "encode to base64",
           "prototype": "48f75a7a-2cd8-4340-b96b-e096bee97ed3",
@@ -51,8 +51,8 @@
         },
         "d82c94f7-9639-4dd7-8d20-a4a269ac9542": {
           "coordinates": [
-            -177,
-            166.5
+            -139,
+            171.5
           ],
           "name": "create credential pair",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
@@ -62,8 +62,8 @@
         },
         "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
           "coordinates": [
-            -248,
-            2.5
+            -223,
+            104.5
           ],
           "name": "build parameters",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -73,14 +73,22 @@
         },
         "a71da780-e468-4f0e-8f60-b2345e2fcb36": {
           "coordinates": [
-            74,
-            11.5
+            99,
+            24.5
           ],
           "name": "set basic auth header value",
           "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
           "params": {
             "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"Basic \""
           }
+        },
+        "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+          "coordinates": [
+            -206,
+            -66.5
+          ],
+          "name": "forward inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
         }
       },
       "connections": {
@@ -111,23 +119,40 @@
               "1948af2a-570e-450e-b802-61f15f40cf7c": {}
             }
           }
+        },
+        "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
+              "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
+              "USERID": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
+              "PASSWORD": {}
+            }
+          }
         }
       },
       "forwards": {
         "inputs": {
           "a6b22162-d4e6-48ff-96bd-eb18b5753273": {
-            "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
-              "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": {}
+            "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
             }
           },
           "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {
-            "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
-              "USERID": {}
+            "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
             }
           },
           "23a1504c-0710-4791-bc67-cc280d056ea3": {
-            "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
-              "PASSWORD": {}
+            "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
             }
           }
         },

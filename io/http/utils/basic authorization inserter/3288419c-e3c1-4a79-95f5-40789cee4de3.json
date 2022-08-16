@@ -1,0 +1,178 @@
+{
+  "name": "io/http/utils/Basic authorization inserter",
+  "description": "Inserts an Basic Authorization header into a HTTP request header.\r\n\r\nExample:\r\n```\r\n1.\r\n{ \r\n\"content-type\": \"application/json; charset=utf-8\" \r\n}` set to \"headers\"\r\n2. \"John01\"@0 received via `user id`\r\n3. \"P@ssw0rd\"@0 received via `password`\r\n4. \r\n{ \"content-type\": \"application/json\", \"Authorization\": \"Basic \"Zm9v\" \r\n}@0 sent via `headers`\r\n\r\n```",
+  "interface": {
+    "inputs": {
+      "a6b22162-d4e6-48ff-96bd-eb18b5753273": {
+        "type": "typeof `headers` of `insert authorization header`",
+        "name": "headers",
+        "description": "Recieves request headers. It is used to describe a resource, or the behavior of the server or the client.\r\n\r\nExample: \r\n```\r\n{ \"content-type\": \"application/json; charset=utf-8\" \r\n}\r\n```"
+      },
+      "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {
+        "type": "string",
+        "name": "user id",
+        "description": "Recieves user id.\n\nExample:\n```\n\"John01\"\n```"
+      },
+      "23a1504c-0710-4791-bc67-cc280d056ea3": {
+        "type": "string",
+        "name": "password",
+        "description": "Recieves user password.\n\nExample:\n```\n\"P@ssw0rd\"\n```"
+      }
+    },
+    "outputs": {
+      "a81a2b55-ac4e-4e72-ba40-5f5179c77362": {
+        "type": "typeof `headers` of `insert authorization header`",
+        "name": "headers",
+        "description": "Sends the received request headers with the authorization header added to it.\r\n\r\nExample: \r\n```\r\n{ \"content-type\": \"application/json\", \"Authorization\": \"Basic \"Zm9v\" \r\n}\r\n```"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
+          "coordinates": [
+            213,
+            -52.5
+          ],
+          "name": "insert authorization header",
+          "prototype": "3b11f6f4-2fb1-4007-b81a-eddb43938b8e"
+        },
+        "4e13e8ec-4e0b-409d-9992-471c1b2a96fa": {
+          "coordinates": [
+            -8,
+            73.5
+          ],
+          "name": "encode to base64",
+          "prototype": "48f75a7a-2cd8-4340-b96b-e096bee97ed3",
+          "params": {
+            "1fb6db28-dd21-402f-9ceb-3ba42a3e7b36": "\"utf8\""
+          }
+        },
+        "d82c94f7-9639-4dd7-8d20-a4a269ac9542": {
+          "coordinates": [
+            -139,
+            171.5
+          ],
+          "name": "create credential pair",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{USERID}:{PASSWORD}\""
+          }
+        },
+        "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
+          "coordinates": [
+            -223,
+            104.5
+          ],
+          "name": "build parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"USERID\", \"PASSWORD\"]"
+          }
+        },
+        "a71da780-e468-4f0e-8f60-b2345e2fcb36": {
+          "coordinates": [
+            99,
+            24.5
+          ],
+          "name": "set basic auth header value",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"Basic \""
+          }
+        },
+        "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+          "coordinates": [
+            -206,
+            -66.5
+          ],
+          "name": "forward inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        }
+      },
+      "connections": {
+        "d82c94f7-9639-4dd7-8d20-a4a269ac9542": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "4e13e8ec-4e0b-409d-9992-471c1b2a96fa": {
+              "206b312c-9a00-45ea-9967-cd535aeb83b4": {}
+            }
+          }
+        },
+        "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d82c94f7-9639-4dd7-8d20-a4a269ac9542": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "4e13e8ec-4e0b-409d-9992-471c1b2a96fa": {
+          "0fed474b-36c4-46c0-9175-eb84c83671b9": {
+            "a71da780-e468-4f0e-8f60-b2345e2fcb36": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          }
+        },
+        "a71da780-e468-4f0e-8f60-b2345e2fcb36": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
+              "1948af2a-570e-450e-b802-61f15f40cf7c": {}
+            }
+          }
+        },
+        "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
+              "9a427f14-b9fd-4f5d-b0ac-85bb46b841fa": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
+              "USERID": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "8f58a6b8-ba8e-42c0-a188-a8e93ba226ad": {
+              "PASSWORD": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a6b22162-d4e6-48ff-96bd-eb18b5753273": {
+            "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {
+            "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "23a1504c-0710-4791-bc67-cc280d056ea3": {
+            "672f485f-1e51-4db8-a4fb-fabf6283c443": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "a81a2b55-ac4e-4e72-ba40-5f5179c77362": {
+            "5ba5a7c9-2dce-4e0e-9746-5c16e8b8fe1f": {
+              "0d3a0efa-cdd8-4fd6-bcf2-e501d55246bc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "http": null,
+    "authentication": null,
+    "authorization": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

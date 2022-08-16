@@ -1,0 +1,85 @@
+{
+  "name": "string/Base64 Decoder",
+  "description": "Decodes the base64 string.\n\nExample:\n```\n1. `encoding` set to \"utf8\"\n2. \"Zm9v\"@0 received via `base64`\n3. \"foo\"@0 sent via `string`\n\n```",
+  "interface": {
+    "inputs": {
+      "206b312c-9a00-45ea-9967-cd535aeb83b4": {
+        "type": "string",
+        "name": "base64",
+        "description": "Receives base64 string to be decoded.\n\n\nExample:\n```\n\"Zm9v\"\n```"
+      },
+      "1fb6db28-dd21-402f-9ceb-3ba42a3e7b36": {
+        "type": "string",
+        "name": "encoding",
+        "description": "Receives character encoding of the string to be decoded.\n\nExample:\n```\n\"utf8\"\n```"
+      }
+    },
+    "outputs": {
+      "0fed474b-36c4-46c0-9175-eb84c83671b9": {
+        "type": "string",
+        "name": "string",
+        "description": "Sends decoded string.\n\nExample:\n```\n\"foo\"\n```"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8b411181-a15f-4bc1-9180-aee0a79c110f": {
+          "coordinates": [
+            51,
+            70
+          ],
+          "name": "encode  to base64 clone",
+          "prototype": "fc68b2eb-8261-48c6-843d-fea22426521b"
+        },
+        "3cb83709-6849-46a7-8bdd-cf3ebeb24241": {
+          "coordinates": [
+            -90,
+            -50
+          ],
+          "name": "sync inputs",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"base64\", \"encoding\"]"
+          }
+        }
+      },
+      "connections": {
+        "3cb83709-6849-46a7-8bdd-cf3ebeb24241": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "8b411181-a15f-4bc1-9180-aee0a79c110f": {
+              "9986fa5f-2282-414d-91aa-8189ea5fa119": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "206b312c-9a00-45ea-9967-cd535aeb83b4": {
+            "3cb83709-6849-46a7-8bdd-cf3ebeb24241": {
+              "base64": {}
+            }
+          },
+          "1fb6db28-dd21-402f-9ceb-3ba42a3e7b36": {
+            "3cb83709-6849-46a7-8bdd-cf3ebeb24241": {
+              "encoding": {}
+            }
+          }
+        },
+        "outputs": {
+          "0fed474b-36c4-46c0-9175-eb84c83671b9": {
+            "8b411181-a15f-4bc1-9180-aee0a79c110f": {
+              "d40bc1a6-60eb-40e7-8600-2364ef15d5e8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "original": "48f75a7a-2cd8-4340-b96b-e096bee97ed3",
+  "attributes": {
+    "locked": true
+  }
+}

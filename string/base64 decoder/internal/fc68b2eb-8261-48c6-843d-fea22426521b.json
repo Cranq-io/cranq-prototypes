@@ -1,0 +1,30 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "9986fa5f-2282-414d-91aa-8189ea5fa119": "const {base64, encoding} = data;\nconst decoded = Buffer.from(base64, \"base64\").toString(encoding) \n\noutputs.string(decoded, tag)"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "9986fa5f-2282-414d-91aa-8189ea5fa119": {
+        "type": "string",
+        "name": "base64 & encoding"
+      }
+    },
+    "outputs": {
+      "d40bc1a6-60eb-40e7-8600-2364ef15d5e8": {
+        "type": "string",
+        "name": "string"
+      }
+    }
+  },
+  "name": "string/Base64 Decoder/Internal",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "original": "627bc587-2d64-4f38-9ef3-8658fe86caf6",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "name": "apis/airtable/convert to record id path",
+  "interface": {
+    "inputs": {
+      "e2ed87bb-9e59-4b1d-b561-9f13dda3846a": {
+        "type": "typeof `array` of `mapper`",
+        "name": "mapper-array",
+        "description": "[Inherited from port `array` of `mapper`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
+      }
+    },
+    "outputs": {
+      "7fc0d664-c738-4ecc-b93a-b494b1f9c436": {
+        "type": "typeof `mapped` of `mapper`",
+        "name": "mapper-mapped",
+        "description": "[Inherited from port `mapped` of `mapper`] \nSends the mapped array.\n\nExample:\n[\"Foo A\", \"Bar A\"]"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "37b236c5-fbaa-4761-b294-8ac017ff02b7": {
+          "coordinates": [
+            -130.66666666666666,
+            -15.666666666666671
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "bd8e273b-e52d-446f-ae71-4926c1710a5a": {
+          "coordinates": [
+            -6.666666666666664,
+            -8.666666666666671
+          ],
+          "name": "slicer",
+          "prototype": "c5b1e9d0-963f-4aed-8d2f-a042b3cf6ca3",
+          "params": {
+            "e8b61a56-314f-4ac7-a7ba-28207aa3c6a7": "0",
+            "08b4d532-f026-4a3e-8938-be30410e5339": "2"
+          }
+        },
+        "fcd2794a-9399-40eb-af09-c1aa4fb97d2c": {
+          "coordinates": [
+            137.33333333333334,
+            24.33333333333333
+          ],
+          "name": "item appender",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2",
+          "params": {
+            "2d02022b-c114-4207-935e-11490a6c2926": "\"id\""
+          }
+        }
+      },
+      "connections": {
+        "37b236c5-fbaa-4761-b294-8ac017ff02b7": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "bd8e273b-e52d-446f-ae71-4926c1710a5a": {
+              "a1f90e89-d800-44de-a283-cb70ee5aa269": {}
+            }
+          }
+        },
+        "bd8e273b-e52d-446f-ae71-4926c1710a5a": {
+          "f424fd04-bfba-4088-972e-77ba5d7e613e": {
+            "fcd2794a-9399-40eb-af09-c1aa4fb97d2c": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "fcd2794a-9399-40eb-af09-c1aa4fb97d2c": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "37b236c5-fbaa-4761-b294-8ac017ff02b7": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e2ed87bb-9e59-4b1d-b561-9f13dda3846a": {
+            "37b236c5-fbaa-4761-b294-8ac017ff02b7": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "7fc0d664-c738-4ecc-b93a-b494b1f9c436": {
+            "37b236c5-fbaa-4761-b294-8ac017ff02b7": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {}
+}

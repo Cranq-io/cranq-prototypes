@@ -1,0 +1,96 @@
+{
+  "name": "apis/airtable/Get currency exchange rates",
+  "interface": {
+    "inputs": {
+      "41392f9f-8591-4094-91a8-89c6aa701ee1": {
+        "type": "string",
+        "name": "exchange pairs"
+      }
+    },
+    "outputs": {
+      "703c57d2-de9f-44ee-99a0-2451dee44824": {
+        "type": "[\n  {\n    \"exchange pair\": string,\n    \"rate\": number\n  }\n]",
+        "name": "exchange records"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5455a6ff-7dfe-472a-b23e-2391f0cc6274": {
+          "coordinates": [
+            21,
+            62.66666666666666
+          ],
+          "name": "market price sampler",
+          "prototype": "f6076d3e-cc6f-44a8-ad3f-6ed670208357"
+        },
+        "70cf196b-aa8d-4f01-9477-1e46bee89138": {
+          "coordinates": [
+            -236,
+            18.666666666666657
+          ],
+          "name": "step mapper",
+          "prototype": "16bee974-0230-4691-820f-710f3f4ae5b6"
+        },
+        "08b4ca93-b102-416f-abf3-26413b3445d8": {
+          "coordinates": [
+            215,
+            -81.33333333333334
+          ],
+          "name": "create fields",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"exchange pair\", \"rate\"]"
+          }
+        }
+      },
+      "connections": {
+        "70cf196b-aa8d-4f01-9477-1e46bee89138": {
+          "67d3e61d-5145-4d91-90a9-02fa8015b706": {
+            "5455a6ff-7dfe-472a-b23e-2391f0cc6274": {
+              "7d2a81f4-b69d-42fe-82b5-bdc045b081de": {}
+            },
+            "08b4ca93-b102-416f-abf3-26413b3445d8": {
+              "exchange pair": {}
+            }
+          }
+        },
+        "08b4ca93-b102-416f-abf3-26413b3445d8": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "70cf196b-aa8d-4f01-9477-1e46bee89138": {
+              "1d7fdc57-9bf4-4340-94a7-b4660193fd0d": {}
+            }
+          }
+        },
+        "5455a6ff-7dfe-472a-b23e-2391f0cc6274": {
+          "17973189-7d68-4fd2-a5dc-d9ff0af3a366": {
+            "08b4ca93-b102-416f-abf3-26413b3445d8": {
+              "rate": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "41392f9f-8591-4094-91a8-89c6aa701ee1": {
+            "70cf196b-aa8d-4f01-9477-1e46bee89138": {
+              "d62c3838-0cd0-4df8-a3ef-7928d62a190e": {}
+            }
+          }
+        },
+        "outputs": {
+          "703c57d2-de9f-44ee-99a0-2451dee44824": {
+            "70cf196b-aa8d-4f01-9477-1e46bee89138": {
+              "b3b9a04f-1a70-4fbc-b8af-bed2737aec32": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "locked": true
+  }
+}

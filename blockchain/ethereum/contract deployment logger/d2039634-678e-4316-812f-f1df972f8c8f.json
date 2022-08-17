@@ -1,0 +1,127 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "945bb694-ca15-4433-b3d8-546d83deecb8": {
+          "coordinates": [
+            -241,
+            -9
+          ],
+          "name": "demultiplexer",
+          "prototype": "090f60d2-f942-49dc-b0ff-d736f9872988",
+          "params": {
+            "85fde0ba-068b-457d-9003-e29e47af2e38": "[\"transaction hash\", \"receipt\", \"confirmation\", \"contract\" , \"error\"]"
+          }
+        },
+        "fc59dbd4-a617-44cf-a44f-8466819e852e": {
+          "coordinates": [
+            174,
+            -269
+          ],
+          "name": "log transaction hash",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"transaction hash\""
+          }
+        },
+        "60a398c3-a988-4bda-978d-b3cefafc86dd": {
+          "coordinates": [
+            186,
+            -132
+          ],
+          "name": "log receipt",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"receipt\""
+          }
+        },
+        "d247c07e-9e98-4bc4-8ba2-154ea53f592a": {
+          "coordinates": [
+            183,
+            81
+          ],
+          "name": "log confirmation",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"confirmation\""
+          }
+        },
+        "35bdb552-59fe-40c5-828b-69c4559536af": {
+          "coordinates": [
+            175,
+            256
+          ],
+          "name": "log contract",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"contract\""
+          }
+        },
+        "588778e8-b48a-4193-9bb6-b43d84309faf": {
+          "coordinates": [
+            -179,
+            -269
+          ],
+          "name": "log error",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"error\""
+          }
+        }
+      },
+      "connections": {
+        "945bb694-ca15-4433-b3d8-546d83deecb8": {
+          "error": {
+            "588778e8-b48a-4193-9bb6-b43d84309faf": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "contract": {
+            "35bdb552-59fe-40c5-828b-69c4559536af": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "confirmation": {
+            "d247c07e-9e98-4bc4-8ba2-154ea53f592a": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "receipt": {
+            "60a398c3-a988-4bda-978d-b3cefafc86dd": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "transaction hash": {
+            "fc59dbd4-a617-44cf-a44f-8466819e852e": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ad76a43c-2d59-4007-a362-d44ef757ea74": {
+            "945bb694-ca15-4433-b3d8-546d83deecb8": {
+              "b9b5fa59-8f22-46df-9305-b2d6f74f4085": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "ad76a43c-2d59-4007-a362-d44ef757ea74": {
+        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n    or \"error\"\n  ),\n  \"data\": any\n}",
+        "name": "events"
+      }
+    },
+    "outputs": {}
+  },
+  "name": "blockchain/ethereum/Contract deployment logger",
+  "description": "Logs contract deployment events.",
+  "attributes": {
+    "locked": true
+  }
+}

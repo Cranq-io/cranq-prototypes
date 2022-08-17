@@ -1,0 +1,154 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Periphery compiler",
+  "interface": {
+    "inputs": {
+      "eaa9ae98-4f1e-4cd7-a7ac-6168540dbd12": {
+        "type": "typeof `read` of `contracts periphery`",
+        "name": "factory init hash",
+        "description": "[Inherited from port `read` of `contracts periphery`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+      }
+    },
+    "outputs": {
+      "d52dc2ed-e787-456a-aa02-c9aec0cc1858": {
+        "type": "typeof `compiled contracts` of `compile periphery`",
+        "name": "compiled contracts"
+      },
+      "de6d47c9-a9f9-46fb-875d-7b16dd5cf777": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6553a678-11a6-4472-85c7-1487c934dfc2": {
+          "coordinates": [
+            -60.38411458333337,
+            5.015625
+          ],
+          "name": "output list periphery",
+          "prototype": "4a0f37dc-2d7e-4480-b847-2fe8e8043359",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\n\"v2-periphery/contracts/UniswapV2Migrator.sol\",\n  \"v2-periphery/contracts/UniswapV2Router01.sol\",\n  \"v2-periphery/contracts/UniswapV2Router02.sol\"\n]"
+          }
+        },
+        "d72d52e5-956b-49a0-8edf-c6c7fd5417b7": {
+          "coordinates": [
+            -59.38411458333337,
+            140.015625
+          ],
+          "name": "compile settings periphery",
+          "prototype": "f75d263f-c008-4586-b83f-b27c165abe93",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n    \"includeRoots\": [\n      \"v2-periphery/contracts\",\n      \"v2-periphery/node_modules\"\n    ],\n    \"solidityVersion\": \"v0.6.6+commit.6c089d02\",\n    \"compileOptions\": {\n      \"evmVersion\": \"istanbul\",\n      \"optimizer\": {\"enabled\": true, \"runs\": 999999}\n    }\n  }"
+          }
+        },
+        "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+          "coordinates": [
+            503.11588541666663,
+            13.515625
+          ],
+          "name": "compile periphery",
+          "prototype": "d28a1a63-e489-489d-be4d-4b03c33aa2b1",
+          "params": {}
+        },
+        "051646a2-d6a9-440a-9792-a876bb6f1aa9": {
+          "coordinates": [
+            -495.3841145833335,
+            -185.78125
+          ],
+          "name": "forwarder",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        },
+        "0af3dded-37eb-4e94-b814-f1b7c8e16a98": {
+          "coordinates": [
+            -301.88411458333337,
+            -311.984375
+          ],
+          "name": "periphery source code",
+          "prototype": "f1ba6849-b8d1-44be-9bce-860cabb016f0"
+        },
+        "0c7ef0e8-33dc-43fa-9fcf-f22933bfbf0b": {
+          "coordinates": [
+            85.81588541666656,
+            -249.484375
+          ],
+          "name": "instrument source",
+          "prototype": "0eb7a913-b7a6-4d90-ab67-1f836959ed97"
+        }
+      },
+      "connections": {
+        "6553a678-11a6-4472-85c7-1487c934dfc2": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+              "60fd9fa4-1462-4c91-915b-11b325c0d479": {}
+            }
+          }
+        },
+        "d72d52e5-956b-49a0-8edf-c6c7fd5417b7": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+              "eb554de7-b398-413f-8ff0-99dd34a7580a": {}
+            }
+          }
+        },
+        "051646a2-d6a9-440a-9792-a876bb6f1aa9": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "0af3dded-37eb-4e94-b814-f1b7c8e16a98": {
+              "2a182932-ca45-4c09-8753-a9a4f355c219": {}
+            },
+            "0c7ef0e8-33dc-43fa-9fcf-f22933bfbf0b": {
+              "83b88c0c-d67b-42b4-982a-acd8c0779455": {}
+            }
+          }
+        },
+        "0af3dded-37eb-4e94-b814-f1b7c8e16a98": {
+          "0cf791d5-e2f9-456e-b8df-40c776f03f0f": {
+            "0c7ef0e8-33dc-43fa-9fcf-f22933bfbf0b": {
+              "c417cbe1-6e5c-4f6a-9bd9-e9329f6bae7f": {}
+            }
+          }
+        },
+        "0c7ef0e8-33dc-43fa-9fcf-f22933bfbf0b": {
+          "3d2487c4-3842-460a-aa49-c5afb7502621": {
+            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+              "7654e398-a401-4115-98b8-c2b8eba66ed4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "eaa9ae98-4f1e-4cd7-a7ac-6168540dbd12": {
+            "6553a678-11a6-4472-85c7-1487c934dfc2": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "d72d52e5-956b-49a0-8edf-c6c7fd5417b7": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "051646a2-d6a9-440a-9792-a876bb6f1aa9": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "outputs": {
+          "d52dc2ed-e787-456a-aa02-c9aec0cc1858": {
+            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+              "58f95201-dc73-469a-8503-ce955c514032": {}
+            }
+          },
+          "de6d47c9-a9f9-46fb-875d-7b16dd5cf777": {
+            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+              "d00232d5-3801-4820-92ed-43ae75ccb626": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "039a941e-2161-4685-aab8-f8686a733b51",
+  "attributes": {
+    "internal": true
+  }
+}

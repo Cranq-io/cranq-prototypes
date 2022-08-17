@@ -1,0 +1,121 @@
+{
+  "name": "flow/Parameter with default",
+  "description": "Stores a parameter and sends it out on receiving a signal to `read`.\n\nSends the default value when `data` is not set.\n\nExample A:\n1. \"foo\" is set or received on `data`\n2. \"bar\" is set on `default`\n3. null@1 received via `read`\n4. \"foo\"@1 sent via `data` (output)\n\nExample B:\n1. no value is set on `data`\n2. \"bar\" is set on `default`\n3. null@1 received via `read`\n4. \"bar\" is sent via `data` (output)",
+  "interface": {
+    "inputs": {
+      "01ef7f62-ecc9-4fd2-8f70-980a2d25795a": {
+        "type": "any",
+        "name": "data",
+        "description": "Sets the parameter value."
+      },
+      "5d570fcf-b8db-4a62-8b84-4953a92d517f": {
+        "type": "typeof `data`",
+        "name": "default",
+        "description": "Sets the default value for the parameter. \n\nWorks as static parameter only."
+      },
+      "dae97765-6472-42e4-b129-749784e976f6": {
+        "type": "any",
+        "name": "read",
+        "description": "Receives signal that triggers sending out the stored parameter value or the default in case the prior is not set."
+      }
+    },
+    "outputs": {
+      "9da98005-545d-4036-a36e-0f354a84cb50": {
+        "type": "any",
+        "name": "data",
+        "description": "Sends the stored parameter data or the default in case the prior is not set."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "85cd0e81-1f9c-4a27-a32f-c0397133409b": {
+          "coordinates": [
+            11,
+            -101
+          ],
+          "name": "store",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "be8ed238-12f0-4326-8d68-0b912f7657ee": {
+          "coordinates": [
+            -38,
+            68
+          ],
+          "name": "default",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "80e986d3-2297-4f5a-a8a0-da569beb2e7d": {
+          "coordinates": [
+            132,
+            51
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        }
+      },
+      "connections": {
+        "be8ed238-12f0-4326-8d68-0b912f7657ee": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "80e986d3-2297-4f5a-a8a0-da569beb2e7d": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "85cd0e81-1f9c-4a27-a32f-c0397133409b": {
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "80e986d3-2297-4f5a-a8a0-da569beb2e7d": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "01ef7f62-ecc9-4fd2-8f70-980a2d25795a": {
+            "85cd0e81-1f9c-4a27-a32f-c0397133409b": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "dae97765-6472-42e4-b129-749784e976f6": {
+            "85cd0e81-1f9c-4a27-a32f-c0397133409b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "be8ed238-12f0-4326-8d68-0b912f7657ee": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "5d570fcf-b8db-4a62-8b84-4953a92d517f": {
+            "be8ed238-12f0-4326-8d68-0b912f7657ee": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "outputs": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "85cd0e81-1f9c-4a27-a32f-c0397133409b": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            },
+            "80e986d3-2297-4f5a-a8a0-da569beb2e7d": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "fallback": null,
+    "default": null,
+    "parameter": null,
+    "constant": null,
+    "value": null,
+    "store": null,
+    "variable": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

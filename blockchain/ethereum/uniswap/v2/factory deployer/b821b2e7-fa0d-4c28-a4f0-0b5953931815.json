@@ -1,0 +1,148 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Factory deployer",
+  "description": "Deployes UniswapV2Factory contract to the chain",
+  "interface": {
+    "inputs": {
+      "ae906061-5695-4e79-aa79-a30b6ab50ca3": {
+        "type": "string",
+        "name": "fee setter address",
+        "description": "Optional. Account address of fee setter.\n\nSee: https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/#UniswapV2Factory"
+      },
+      "3d76105d-d387-4ebf-8751-5060aadc4c54": {
+        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string,\n    \"accountAddress\": string\n}",
+        "name": "config"
+      },
+      "1be1c7f6-ec26-496e-98a6-10b5a8b9b3f9": {
+        "type": "typeof `contract` of `deploy factory contract`",
+        "name": "factory contract"
+      }
+    },
+    "outputs": {
+      "ff61a589-bab9-48de-997f-300f29073deb": {
+        "type": "typeof `events` of `deploy factory contract`",
+        "name": "events",
+        "description": "Muliplexed events.\nUse a Demultiplexer to separate them if needed."
+      },
+      "43026ea7-55a5-4af6-a937-272c8bfaba2a": {
+        "type": "typeof `error` of `deploy factory contract`",
+        "name": "error"
+      },
+      "7863188d-de92-41cc-b5c3-f5326b24ec02": {
+        "type": "{\n\"confirmationNumber\": number\n}",
+        "name": "confirmation"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+          "coordinates": [
+            128,
+            -2
+          ],
+          "name": "deploy factory contract",
+          "prototype": "cf8402d8-2801-4b12-9d91-c0edf557f2d9",
+          "params": {
+            "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": "{\"gas\": 3150623}",
+            "6a44b0aa-dd80-42a5-ba19-15a130f0206a": "false"
+          }
+        },
+        "b3f8212b-2d52-42de-b3bf-2e6f4612c407": {
+          "coordinates": [
+            -309.8046875,
+            -218.90625
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"accountAddress\""
+          }
+        },
+        "0cc6ed66-8a7c-428c-b9c2-98eee354bff6": {
+          "coordinates": [
+            -26.8046875,
+            -110.90625
+          ],
+          "name": "wrapper",
+          "prototype": "46f037ec-7586-4653-bcc8-363b7e769c41"
+        },
+        "657b8bbb-65eb-4111-9f13-dd8fdc14c678": {
+          "coordinates": [
+            -147,
+            -146
+          ],
+          "name": "parameter with default",
+          "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41"
+        }
+      },
+      "connections": {
+        "0cc6ed66-8a7c-428c-b9c2-98eee354bff6": {
+          "51232407-ba2f-430d-b3fe-883a465cedd0": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "0618062e-aa1f-4a81-9727-fa078f93332f": {}
+            }
+          }
+        },
+        "b3f8212b-2d52-42de-b3bf-2e6f4612c407": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "657b8bbb-65eb-4111-9f13-dd8fdc14c678": {
+              "5d570fcf-b8db-4a62-8b84-4953a92d517f": {}
+            }
+          }
+        },
+        "657b8bbb-65eb-4111-9f13-dd8fdc14c678": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "0cc6ed66-8a7c-428c-b9c2-98eee354bff6": {
+              "3e97c47b-9e13-48f3-b6a9-95cd8b676a8e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3d76105d-d387-4ebf-8751-5060aadc4c54": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "21dc533c-92b5-4354-9d81-1cfd46f095c8": {}
+            },
+            "b3f8212b-2d52-42de-b3bf-2e6f4612c407": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "657b8bbb-65eb-4111-9f13-dd8fdc14c678": {
+              "dae97765-6472-42e4-b129-749784e976f6": {}
+            }
+          },
+          "1be1c7f6-ec26-496e-98a6-10b5a8b9b3f9": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {}
+            }
+          },
+          "ae906061-5695-4e79-aa79-a30b6ab50ca3": {
+            "657b8bbb-65eb-4111-9f13-dd8fdc14c678": {
+              "01ef7f62-ecc9-4fd2-8f70-980a2d25795a": {}
+            }
+          }
+        },
+        "outputs": {
+          "43026ea7-55a5-4af6-a937-272c8bfaba2a": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "c8505107-dfeb-4ad6-a08c-2543a30b2887": {}
+            }
+          },
+          "7863188d-de92-41cc-b5c3-f5326b24ec02": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "a6fdcbf5-7937-47f1-89db-2807b758842f": {}
+            }
+          },
+          "ff61a589-bab9-48de-997f-300f29073deb": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "3483ab3b-5295-4761-8832-ec968f7399d9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {},
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c"
+}

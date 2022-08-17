@@ -1,0 +1,66 @@
+{
+  "name": "debug/Multiplexed event logger",
+  "interface": {
+    "inputs": {
+      "36268fed-37a0-40c5-bd24-79fab399251e": {
+        "type": "{\n\"field\": string,\n\"data\": any\n}",
+        "name": "multiplexed event",
+        "description": "[Inherited from port `unsplit` of `splitter`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cf33122c-5e22-4a95-8bec-5da349dc1bf7": {
+          "coordinates": [
+            -61.5,
+            -3
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"field\", \"data\"]"
+          }
+        },
+        "c9e7b74a-271e-45c9-a297-6bcb1a666de8": {
+          "coordinates": [
+            61.5,
+            3
+          ],
+          "name": "logger (with message)",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07"
+        }
+      },
+      "connections": {
+        "cf33122c-5e22-4a95-8bec-5da349dc1bf7": {
+          "field": {
+            "c9e7b74a-271e-45c9-a297-6bcb1a666de8": {
+              "5773699e-0819-4c74-8282-fb2a9a77b0cf": {}
+            }
+          },
+          "data": {
+            "c9e7b74a-271e-45c9-a297-6bcb1a666de8": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "36268fed-37a0-40c5-bd24-79fab399251e": {
+            "cf33122c-5e22-4a95-8bec-5da349dc1bf7": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "internal": true
+  }
+}

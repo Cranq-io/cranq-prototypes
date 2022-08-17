@@ -1,0 +1,144 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Periphery source code instrumenter",
+  "interface": {
+    "inputs": {
+      "83b88c0c-d67b-42b4-982a-acd8c0779455": {
+        "type": "string",
+        "name": "factory init hash",
+        "description": ""
+      },
+      "c417cbe1-6e5c-4f6a-9bd9-e9329f6bae7f": {
+        "type": "{string: any}",
+        "name": "v2-periphery source",
+        "description": "Structured source of Uniswap v2 periphery"
+      }
+    },
+    "outputs": {
+      "3d2487c4-3842-460a-aa49-c5afb7502621": {
+        "type": "typeof `tree` of `set instrumented contract`",
+        "name": "set instrumented contract-tree"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c746adec-1911-43a9-930e-738e63902fcc": {
+          "coordinates": [
+            117.80000000000001,
+            13
+          ],
+          "name": "replace placeholder",
+          "prototype": "04db51a6-0278-4937-9483-7406f96de641",
+          "params": {
+            "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": "\"###\"",
+            "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": "\"###\""
+          }
+        },
+        "d0a321f3-15f0-4768-8678-aa455e236214": {
+          "coordinates": [
+            -64.20000000000005,
+            -33
+          ],
+          "name": "get contract to instrument",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {}
+        },
+        "e91a57e9-05df-4e1b-bc38-97c7689a41b2": {
+          "coordinates": [
+            -46.200000000000045,
+            -152
+          ],
+          "name": "prepare params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"PLACEHOLDER_FOR_FACTORY_INIT_HASH\"]"
+          }
+        },
+        "4dbfa54e-c049-4c12-8463-c82cab55cf71": {
+          "coordinates": [
+            -220.20000000000005,
+            166
+          ],
+          "name": "path  to contract to instrument",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\n  \"v2-periphery\", \n  \"contracts\",\n  \"libraries\",\n  \"UniswapV2Library.sol\"\n]"
+          }
+        },
+        "e3ffaba8-df0f-4868-ac53-525186a12841": {
+          "coordinates": [
+            295.8,
+            77
+          ],
+          "name": "set instrumented contract",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403"
+        }
+      },
+      "connections": {
+        "d0a321f3-15f0-4768-8678-aa455e236214": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "c746adec-1911-43a9-930e-738e63902fcc": {
+              "07538bcd-7376-4aec-ad93-b4b368ae919c": {}
+            }
+          }
+        },
+        "e91a57e9-05df-4e1b-bc38-97c7689a41b2": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c746adec-1911-43a9-930e-738e63902fcc": {
+              "06531082-3e2d-45ab-ba18-527917d0ef5e": {}
+            }
+          }
+        },
+        "4dbfa54e-c049-4c12-8463-c82cab55cf71": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d0a321f3-15f0-4768-8678-aa455e236214": {
+              "927e6b17-97e0-44de-887f-57204b7a1f9b": {}
+            },
+            "e3ffaba8-df0f-4868-ac53-525186a12841": {
+              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
+            }
+          }
+        },
+        "c746adec-1911-43a9-930e-738e63902fcc": {
+          "949d328e-fa91-41e4-8929-d3cd7a8d4cfc": {
+            "e3ffaba8-df0f-4868-ac53-525186a12841": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "83b88c0c-d67b-42b4-982a-acd8c0779455": {
+            "e91a57e9-05df-4e1b-bc38-97c7689a41b2": {
+              "PLACEHOLDER_FOR_FACTORY_INIT_HASH": {}
+            },
+            "4dbfa54e-c049-4c12-8463-c82cab55cf71": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "c417cbe1-6e5c-4f6a-9bd9-e9329f6bae7f": {
+            "d0a321f3-15f0-4768-8678-aa455e236214": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            },
+            "e3ffaba8-df0f-4868-ac53-525186a12841": {
+              "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            }
+          }
+        },
+        "outputs": {
+          "3d2487c4-3842-460a-aa49-c5afb7502621": {
+            "e3ffaba8-df0f-4868-ac53-525186a12841": {
+              "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

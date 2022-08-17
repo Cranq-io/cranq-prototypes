@@ -1,0 +1,77 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/WETH addresses",
+  "description": "Holds WETH addresses on different supported networks",
+  "interface": {
+    "inputs": {
+      "b398713c-c8ff-4a98-9d77-5ad8023a43a5": {
+        "type": "(\n  \"mainnet\" \n  or \"ropsten\" \n  or   \"rinkeby\" \n  or  \"goerli\" \n  or  \"kovan\"\n)",
+        "name": "network",
+        "description": "The name of the Ethereum network to use"
+      }
+    },
+    "outputs": {
+      "f5711708-f236-47e0-b84a-aa3bc1b88196": {
+        "type": "string",
+        "name": "WETH address",
+        "description": "Sends out the WETH address on the specified network."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "084622c0-5d4b-4aca-a257-9b19a9256b3b": {
+          "coordinates": [
+            -98,
+            -85
+          ],
+          "name": "WETH address",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"mainnet\": \"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2\",\n  \"ropsten\": \"0xc778417E063141139Fce010982780140Aa0cD5Ab\",\n  \"rinkeby\": \"0xc778417E063141139Fce010982780140Aa0cD5Ab\",\n  \"goerli\":\t\"0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6\",\n  \"kovan\": \"0xd0A1E359811322d97991E03f863a0C30C2cF029C\"\n}"
+          }
+        },
+        "b473d654-fc0c-46d7-97bf-3aa0b0896b1f": {
+          "coordinates": [
+            78.1953125,
+            -3.90625
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f"
+        }
+      },
+      "connections": {
+        "084622c0-5d4b-4aca-a257-9b19a9256b3b": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "b473d654-fc0c-46d7-97bf-3aa0b0896b1f": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b398713c-c8ff-4a98-9d77-5ad8023a43a5": {
+            "084622c0-5d4b-4aca-a257-9b19a9256b3b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "b473d654-fc0c-46d7-97bf-3aa0b0896b1f": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          }
+        },
+        "outputs": {
+          "f5711708-f236-47e0-b84a-aa3bc1b88196": {
+            "b473d654-fc0c-46d7-97bf-3aa0b0896b1f": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "locked": true
+  }
+}

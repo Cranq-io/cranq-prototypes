@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "3a55b8dd-6eec-44c8-acae-4b1e60f90d7a": "\nconst solc = require('solc');\n\nconst {contracts, outputList, compileSettings} = data;\nconst {includeRoots, solidityVersion, compileOptions} = compileSettings;\nconst rootPrefix = \"root_file__\";\n\n//  Create input(s) for the compiler\n//  Note: The keys of the dictionary MUST NOT match the file name of any dependency because the compiler fails.\n//    (It will insert all compiled dependencies to the same level under the \"contracts\" note using its filename as a key.)\nconst sources = Object.fromEntries(\n  outputList.map((item)=>{\n    const {file} = splitPath(item);\n    return [\n      `${rootPrefix}${file}`,\n      {\n        content: getContractByPath(item)\n      }];\n  })\n);\n\nsolc.loadRemoteVersion(solidityVersion, function (err, solcSnapshot) {\n  if (!err) {\n    const settings = {\n      outputSelection: {\n      \"*\": {\n        \"*\": [\n          \"evm.bytecode.object\",\n          \"evm.deployedBytecode.object\",\n          \"abi\",\n          \"evm.bytecode.sourceMap\",\n          \"evm.deployedBytecode.sourceMap\",\n          \"metadata\"\n        ],\n        \"\": [\"ast\"]\n      }\n    },\n      ...compileOptions\n    };\n\n    // Solidity Compiler's expected format\n    const input = {\n      language: 'Solidity',\n      sources: sources,\n      settings: settings\n    };\n    \n    // Parse the compiler output to retrieve the ABI and Bytecode\n    const output = solcSnapshot.compile(JSON.stringify(input), { import: findImports });\n    const outputParsed = JSON.parse(output);\n   \n    //  Ignore the intermediate compile results\n    const filtered = Object.fromEntries(Object.entries(outputParsed.contracts).filter(([key, _value])=>key.startsWith(rootPrefix)));\n    //  Elevate the results one level: use contract names as keys\n    const compiledContracts = Object.entries(filtered).reduce((acc, [key, value])=>({...acc, ...value}), {});\n\n    outputs[\"compiled contracts\"](compiledContracts, tag);\n  } else {\n    outputs[\"error\"](err, tag);\n  }\n});\n\nfunction getContractByPath(path){\n  return path.split('/').reduce((p,c)=>p?.[c], contracts);\n}\n\n//  does not use node.js only path functions\nfunction splitPath(fullPath){\n  const route = fullPath.split('/');\n  const file = route.pop();\n  const path = route.join('/');\n  return {file: file, path: path, fullPath: fullPath};\n}\n\n//  see:\n//  https://github.com/ethereum/solc-js/blob/master/README.md\n//  https://www.npmjs.com/package/solc4\nfunction findImports(path) {\n  for (const i in includeRoots) {\n    const fullPath = `${includeRoots[i]}/${path}`;\n    const res = getContractByPath(fullPath);\n    if (res) {\n      return {\n        contents: res\n      };\n    }\n  }\n}"
+      },
+      "dependencies": {
+        "npm": {
+          "solc": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "3a55b8dd-6eec-44c8-acae-4b1e60f90d7a": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "6e0ac013-ee3c-4e0e-8b72-8eeb2419795c": {
+        "type": "{\n  \"abi\": any[],\n  \"evm\": {\n    \"bytecode\": {\n      \"object\": string\n    }\n  }\n}",
+        "name": "compiled contracts"
+      },
+      "b73438f2-808b-4980-9902-c63866012a5d": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Contracts compiler/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Periphery compiler/Internal",
+  "interface": {
+    "inputs": {
+      "7654e398-a401-4115-98b8-c2b8eba66ed4": {
+        "type": "any",
+        "name": "contracts"
+      },
+      "60fd9fa4-1462-4c91-915b-11b325c0d479": {
+        "type": "any",
+        "name": "output list",
+        "description": "The selected files from the contracts dictionary that are should be passed to the SOlidity compiler as 'root' sources. The other entries in 'contracts' should contain the dependencies."
+      },
+      "eb554de7-b398-413f-8ff0-99dd34a7580a": {
+        "type": "any",
+        "name": "compile settings"
+      }
+    },
+    "outputs": {
+      "58f95201-dc73-469a-8503-ce955c514032": {
+        "type": "typeof `compiled contracts` of `compile contracts`",
+        "name": "compiled contracts"
+      },
+      "d00232d5-3801-4820-92ed-43ae75ccb626": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cd1268c4-7b29-45a3-b095-a623fe3f27ae": {
+          "coordinates": [
+            150,
+            -8
+          ],
+          "name": "compile contracts",
+          "prototype": "76d4f3bd-268a-4d5a-ba69-b1a815750ecf"
+        },
+        "0624083d-5d20-4068-bcc5-510b4cc6c711": {
+          "coordinates": [
+            -35.5,
+            -17
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contracts\", \"outputList\", \"compileSettings\"]"
+          }
+        }
+      },
+      "connections": {
+        "0624083d-5d20-4068-bcc5-510b4cc6c711": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "cd1268c4-7b29-45a3-b095-a623fe3f27ae": {
+              "3a55b8dd-6eec-44c8-acae-4b1e60f90d7a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7654e398-a401-4115-98b8-c2b8eba66ed4": {
+            "0624083d-5d20-4068-bcc5-510b4cc6c711": {
+              "contracts": {}
+            }
+          },
+          "eb554de7-b398-413f-8ff0-99dd34a7580a": {
+            "0624083d-5d20-4068-bcc5-510b4cc6c711": {
+              "compileSettings": {}
+            }
+          },
+          "60fd9fa4-1462-4c91-915b-11b325c0d479": {
+            "0624083d-5d20-4068-bcc5-510b4cc6c711": {
+              "outputList": {}
+            }
+          }
+        },
+        "outputs": {
+          "58f95201-dc73-469a-8503-ce955c514032": {
+            "cd1268c4-7b29-45a3-b095-a623fe3f27ae": {
+              "6e0ac013-ee3c-4e0e-8b72-8eeb2419795c": {}
+            }
+          },
+          "d00232d5-3801-4820-92ed-43ae75ccb626": {
+            "cd1268c4-7b29-45a3-b095-a623fe3f27ae": {
+              "b73438f2-808b-4980-9902-c63866012a5d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "ee6685bc-3c36-41fa-941e-ef77c217e998",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

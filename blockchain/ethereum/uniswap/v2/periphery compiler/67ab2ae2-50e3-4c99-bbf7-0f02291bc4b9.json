@@ -3,9 +3,9 @@
   "interface": {
     "inputs": {
       "eaa9ae98-4f1e-4cd7-a7ac-6168540dbd12": {
-        "type": "typeof `read` of `contracts periphery`",
+        "type": "typeof `factory init hash` of `instrument source`",
         "name": "factory init hash",
-        "description": "[Inherited from port `read` of `contracts periphery`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+        "description": "A value called 'INIT_HASH_CODE' that is shared between the Factory and the Router.\nThis value can be get from the Factory."
       }
     },
     "outputs": {

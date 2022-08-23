@@ -3,9 +3,9 @@
   "interface": {
     "inputs": {
       "5199b9b1-7f03-4665-862a-613a23a8691a": {
-        "type": "typeof `factory init hash` of `compile periphery-v2 a`",
+        "type": "typeof `factory init hash` of `compile periphery-v2`",
         "name": "factory init hash",
-        "description": "[Inherited from port `factory init hash` of `compile periphery-v2 a`] \n[Inherited from port `read` of `contracts periphery`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+        "description": "A value called 'INIT_HASH_CODE' that is shared between the Factory and the Router.\nThis value can be get from the Factory."
       }
     },
     "outputs": {

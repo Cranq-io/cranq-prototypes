@@ -44,15 +44,6 @@
             "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n    \"includeRoots\": [\n      \"v2-periphery/contracts\",\n      \"v2-periphery/node_modules\"\n    ],\n    \"solidityVersion\": \"v0.6.6+commit.6c089d02\",\n    \"compileOptions\": {\n      \"evmVersion\": \"istanbul\",\n      \"optimizer\": {\"enabled\": true, \"runs\": 999999}\n    }\n  }"
           }
         },
-        "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
-          "coordinates": [
-            503.11588541666663,
-            13.515625
-          ],
-          "name": "compile periphery",
-          "prototype": "d28a1a63-e489-489d-be4d-4b03c33aa2b1",
-          "params": {}
-        },
         "051646a2-d6a9-440a-9792-a876bb6f1aa9": {
           "coordinates": [
             -495.3841145833335,
@@ -63,8 +54,8 @@
         },
         "0af3dded-37eb-4e94-b814-f1b7c8e16a98": {
           "coordinates": [
-            -301.88411458333337,
-            -311.984375
+            -299.88411458333337,
+            -310.984375
           ],
           "name": "periphery source code",
           "prototype": "f1ba6849-b8d1-44be-9bce-860cabb016f0"
@@ -76,23 +67,17 @@
           ],
           "name": "instrument source",
           "prototype": "0eb7a913-b7a6-4d90-ab67-1f836959ed97"
+        },
+        "90cc2f29-a201-42d1-8b8b-b65d3315276a": {
+          "coordinates": [
+            490.5,
+            -15.625
+          ],
+          "name": "contracts compiler",
+          "prototype": "8b0df39b-8337-4107-8211-565d56429b0f"
         }
       },
       "connections": {
-        "6553a678-11a6-4472-85c7-1487c934dfc2": {
-          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
-              "60fd9fa4-1462-4c91-915b-11b325c0d479": {}
-            }
-          }
-        },
-        "d72d52e5-956b-49a0-8edf-c6c7fd5417b7": {
-          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
-              "eb554de7-b398-413f-8ff0-99dd34a7580a": {}
-            }
-          }
-        },
         "051646a2-d6a9-440a-9792-a876bb6f1aa9": {
           "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
             "0af3dded-37eb-4e94-b814-f1b7c8e16a98": {
@@ -112,8 +97,22 @@
         },
         "0c7ef0e8-33dc-43fa-9fcf-f22933bfbf0b": {
           "3d2487c4-3842-460a-aa49-c5afb7502621": {
-            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+            "90cc2f29-a201-42d1-8b8b-b65d3315276a": {
               "7654e398-a401-4115-98b8-c2b8eba66ed4": {}
+            }
+          }
+        },
+        "6553a678-11a6-4472-85c7-1487c934dfc2": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "90cc2f29-a201-42d1-8b8b-b65d3315276a": {
+              "60fd9fa4-1462-4c91-915b-11b325c0d479": {}
+            }
+          }
+        },
+        "d72d52e5-956b-49a0-8edf-c6c7fd5417b7": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "90cc2f29-a201-42d1-8b8b-b65d3315276a": {
+              "eb554de7-b398-413f-8ff0-99dd34a7580a": {}
             }
           }
         }
@@ -134,12 +133,12 @@
         },
         "outputs": {
           "d52dc2ed-e787-456a-aa02-c9aec0cc1858": {
-            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+            "90cc2f29-a201-42d1-8b8b-b65d3315276a": {
               "58f95201-dc73-469a-8503-ce955c514032": {}
             }
           },
           "de6d47c9-a9f9-46fb-875d-7b16dd5cf777": {
-            "16e779c5-6c84-460a-a5fd-9d7f9e7c6b3d": {
+            "90cc2f29-a201-42d1-8b8b-b65d3315276a": {
               "d00232d5-3801-4820-92ed-43ae75ccb626": {}
             }
           }

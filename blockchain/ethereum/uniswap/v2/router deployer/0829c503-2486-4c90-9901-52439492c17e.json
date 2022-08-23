@@ -1,0 +1,153 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Router deployer",
+  "description": "Deployes UniswapV2Router02 contract to the chain",
+  "interface": {
+    "inputs": {
+      "ae906061-5695-4e79-aa79-a30b6ab50ca3": {
+        "type": "string",
+        "name": "factory address",
+        "description": "Address of the deployed UniswapV2Factory contract"
+      },
+      "1be1c7f6-ec26-496e-98a6-10b5a8b9b3f9": {
+        "type": "string",
+        "name": "WETH address",
+        "description": "Address of the WETH token on the targetet network"
+      },
+      "c6f7b167-e6a9-490e-95a5-509caa485269": {
+        "type": "typeof `connect credentials` of `deploy router contract`",
+        "name": "config"
+      },
+      "a6645263-ae6f-4a41-825f-cf10bad0e98c": {
+        "type": "any",
+        "name": "router contract",
+        "description": "The compiled UniswapV2Router02 contract"
+      }
+    },
+    "outputs": {
+      "ff61a589-bab9-48de-997f-300f29073deb": {
+        "type": "typeof `events` of `deploy factory contract`",
+        "name": "events",
+        "description": "Muliplexed events.\nUse a Demultiplexer to separate them if needed."
+      },
+      "43026ea7-55a5-4af6-a937-272c8bfaba2a": {
+        "type": "typeof `error` of `deploy factory contract`",
+        "name": "error"
+      },
+      "7863188d-de92-41cc-b5c3-f5326b24ec02": {
+        "type": "{\n\"confirmationNumber\": number\n}",
+        "name": "confirmation"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+          "coordinates": [
+            158,
+            36
+          ],
+          "name": "deploy router contract",
+          "prototype": "cf8402d8-2801-4b12-9d91-c0edf557f2d9",
+          "params": {
+            "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": "{\"gas\": 6000000}",
+            "6a44b0aa-dd80-42a5-ba19-15a130f0206a": "false"
+          }
+        },
+        "6772e7a4-b7d6-42fc-abd2-21f32fdf3681": {
+          "coordinates": [
+            -138.8046875,
+            -147.90625
+          ],
+          "name": "wrapper",
+          "prototype": "46f037ec-7586-4653-bcc8-363b7e769c41"
+        },
+        "5f82a8dc-297d-4ebc-b82c-85f0fa5a300a": {
+          "coordinates": [
+            -25.8046875,
+            -70.90625
+          ],
+          "name": "item appender",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2"
+        },
+        "9d4b4335-4c39-44a5-a04d-6639efce9278": {
+          "coordinates": [
+            389.1953125,
+            145.71875
+          ],
+          "name": "logger",
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
+        }
+      },
+      "connections": {
+        "6772e7a4-b7d6-42fc-abd2-21f32fdf3681": {
+          "51232407-ba2f-430d-b3fe-883a465cedd0": {
+            "5f82a8dc-297d-4ebc-b82c-85f0fa5a300a": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "5f82a8dc-297d-4ebc-b82c-85f0fa5a300a": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "0618062e-aa1f-4a81-9727-fa078f93332f": {}
+            }
+          }
+        },
+        "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+          "b94ccca9-9434-47e1-8382-6b615b5f3f47": {
+            "9d4b4335-4c39-44a5-a04d-6639efce9278": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c6f7b167-e6a9-490e-95a5-509caa485269": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "21dc533c-92b5-4354-9d81-1cfd46f095c8": {}
+            }
+          },
+          "a6645263-ae6f-4a41-825f-cf10bad0e98c": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {}
+            }
+          },
+          "ae906061-5695-4e79-aa79-a30b6ab50ca3": {
+            "6772e7a4-b7d6-42fc-abd2-21f32fdf3681": {
+              "3e97c47b-9e13-48f3-b6a9-95cd8b676a8e": {}
+            }
+          },
+          "1be1c7f6-ec26-496e-98a6-10b5a8b9b3f9": {
+            "5f82a8dc-297d-4ebc-b82c-85f0fa5a300a": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "outputs": {
+          "43026ea7-55a5-4af6-a937-272c8bfaba2a": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "c8505107-dfeb-4ad6-a08c-2543a30b2887": {}
+            }
+          },
+          "7863188d-de92-41cc-b5c3-f5326b24ec02": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "a6fdcbf5-7937-47f1-89db-2807b758842f": {}
+            }
+          },
+          "ff61a589-bab9-48de-997f-300f29073deb": {
+            "9d688e36-c761-45b7-b5a6-156c56048fa0": {
+              "3483ab3b-5295-4761-8832-ec968f7399d9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "original": "1977f20f-6789-411a-a898-1de7a530a08a",
+  "attributes": {
+    "locked": true
+  }
+}

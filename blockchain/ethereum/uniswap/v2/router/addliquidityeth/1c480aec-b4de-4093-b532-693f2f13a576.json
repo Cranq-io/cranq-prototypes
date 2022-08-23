@@ -1,0 +1,354 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Router/AddLiquidityETH",
+  "interface": {
+    "inputs": {
+      "3988660b-8398-4a78-8889-e5cc8506394e": {
+        "type": "typeof `1` of `tokens`",
+        "name": "tokenA",
+        "description": "[Inherited from port `1` of `tokens`] \nReceives individual item for syncing."
+      },
+      "8d57999d-148b-4eff-9e4d-ca00f36e10ea": {
+        "type": "{\n\"desiredAmount\": number,\noptional \"minimalAmount\": number\n}",
+        "name": "ETH",
+        "description": "[Inherited from port `2` of `tokens`] \nReceives individual item for syncing."
+      },
+      "78fb26c0-e46e-490b-a5d7-ff880ac745da": {
+        "type": "typeof `item` of `item appender`",
+        "name": "liquidity token to",
+        "description": "[Inherited from port `item` of `item appender`] \nReceives item to append to the array.\n\nExample:\n1"
+      },
+      "04df0153-0ab3-410d-9054-44b0965cfce2": {
+        "type": "typeof `item` of `item appender copy`",
+        "name": "deadline",
+        "description": "[Inherited from port `item` of `item appender copy`] \nReceives item to append to the array.\n\nExample:\n1"
+      },
+      "4e3e4f4a-2e69-4af0-9799-b0a12f0a9499": {
+        "type": "{\n\"address\": string,\n\"abi\": {string:any}\n}",
+        "name": "router contract"
+      },
+      "48cc93ef-ab76-4081-8f58-3fbcc626599c": {
+        "type": "typeof `credentials` of `execute contract`",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "44d775fe-b109-427a-8d30-2fb70ec3b250": {
+        "type": "any",
+        "name": "result"
+      },
+      "6dacdfe2-fc10-4f08-9919-2f198cda89f4": {
+        "type": "typeof `error` of `contract caller`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
+          "coordinates": [
+            -109.40000000000009,
+            -131
+          ],
+          "name": "tokenA min amount",
+          "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
+          "params": {
+            "5d570fcf-b8db-4a62-8b84-4953a92d517f": "0"
+          }
+        },
+        "c835bdca-271b-4e71-86f8-ab72f5efd377": {
+          "coordinates": [
+            -335.4,
+            -340.375
+          ],
+          "name": "tokenA info",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"address\",\"desiredAmount\", \"minimalAmount\"]"
+          }
+        },
+        "e3e81fb6-1f53-4199-896b-5ceedf297c97": {
+          "coordinates": [
+            -321.4,
+            -181.375
+          ],
+          "name": "ETH info",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"desiredAmount\", \"minimalAmount\"]"
+          }
+        },
+        "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+          "coordinates": [
+            402.5999999999999,
+            9
+          ],
+          "name": "execute contract",
+          "prototype": "228b10ab-9b15-4317-8700-f5ddac476c25",
+          "params": {
+            "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"addLiquidityETH\""
+          }
+        },
+        "4bffa1d2-efc3-4fe0-a9aa-693fda567d9e": {
+          "coordinates": [
+            -6.400000000000091,
+            183.625
+          ],
+          "name": "router contract data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"address\", \"abi\"]"
+          }
+        },
+        "9d66d7a8-2928-441d-8586-0d10834887aa": {
+          "coordinates": [
+            170.5999999999999,
+            -200.375
+          ],
+          "name": "build contract parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2,3,4,5]"
+          },
+          "description": "addLiquidity parameters as array:\n  address tokenA,\n  uint amountADesired,\n  uint amountAMin,\n  uint amountETHMin,\n  address to,\n  uint deadline"
+        },
+        "38b4e4ae-3fc7-4dfa-99e5-ea74d2a379f1": {
+          "coordinates": [
+            -469.4000000000001,
+            -30
+          ],
+          "name": "contract call params",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "29dbff4f-9603-4f57-b51c-65207e8c8b7c": {
+          "coordinates": [
+            -463.4000000000001,
+            70
+          ],
+          "name": "operation params",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "56c1fe60-e438-44c5-b719-25ba23097ed0": {
+          "coordinates": [
+            -28.40000000000009,
+            66
+          ],
+          "name": "liquidity to & deadline",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "5053c784-80b1-47ed-acf8-3c128b464911": {
+          "coordinates": [
+            62.59999999999991,
+            318
+          ],
+          "name": "credentials",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        },
+        "dbe3ffd9-aaf6-4b13-a966-960749ec04e3": {
+          "coordinates": [
+            174.5999999999999,
+            -98
+          ],
+          "name": "build transaction parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"gas\", \"value\"]",
+            "gas": "9999999"
+          }
+        },
+        "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
+          "coordinates": [
+            -104.40000000000009,
+            -37
+          ],
+          "name": "ETH min amount",
+          "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
+          "params": {
+            "5d570fcf-b8db-4a62-8b84-4953a92d517f": "0"
+          }
+        }
+      },
+      "connections": {
+        "4bffa1d2-efc3-4fe0-a9aa-693fda567d9e": {
+          "address": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {}
+            }
+          },
+          "abi": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "39a06197-ca9b-4ada-ab8e-6de9bd241529": {}
+            }
+          }
+        },
+        "c835bdca-271b-4e71-86f8-ab72f5efd377": {
+          "minimalAmount": {
+            "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
+              "01ef7f62-ecc9-4fd2-8f70-980a2d25795a": {}
+            }
+          },
+          "desiredAmount": {
+            "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
+              "dae97765-6472-42e4-b129-749784e976f6": {}
+            },
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "1": {}
+            }
+          },
+          "address": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "0": {}
+            }
+          }
+        },
+        "9d66d7a8-2928-441d-8586-0d10834887aa": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {}
+            }
+          }
+        },
+        "38b4e4ae-3fc7-4dfa-99e5-ea74d2a379f1": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "c835bdca-271b-4e71-86f8-ab72f5efd377": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "e3e81fb6-1f53-4199-896b-5ceedf297c97": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "56c1fe60-e438-44c5-b719-25ba23097ed0": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "56c1fe60-e438-44c5-b719-25ba23097ed0": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "29dbff4f-9603-4f57-b51c-65207e8c8b7c": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "4bffa1d2-efc3-4fe0-a9aa-693fda567d9e": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "5053c784-80b1-47ed-acf8-3c128b464911": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "5053c784-80b1-47ed-acf8-3c128b464911": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "5e721c7e-2b06-494f-a65e-6b527531cddc": {}
+            }
+          }
+        },
+        "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "2": {}
+            }
+          }
+        },
+        "56c1fe60-e438-44c5-b719-25ba23097ed0": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "4": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "5": {}
+            }
+          }
+        },
+        "e3e81fb6-1f53-4199-896b-5ceedf297c97": {
+          "minimalAmount": {
+            "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
+              "01ef7f62-ecc9-4fd2-8f70-980a2d25795a": {}
+            }
+          },
+          "desiredAmount": {
+            "dbe3ffd9-aaf6-4b13-a966-960749ec04e3": {
+              "value": {}
+            },
+            "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
+              "dae97765-6472-42e4-b129-749784e976f6": {}
+            }
+          }
+        },
+        "dbe3ffd9-aaf6-4b13-a966-960749ec04e3": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "a1d2a03b-c119-442d-b464-d3aeeab20f1e": {}
+            }
+          }
+        },
+        "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3988660b-8398-4a78-8889-e5cc8506394e": {
+            "38b4e4ae-3fc7-4dfa-99e5-ea74d2a379f1": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "8d57999d-148b-4eff-9e4d-ca00f36e10ea": {
+            "38b4e4ae-3fc7-4dfa-99e5-ea74d2a379f1": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "78fb26c0-e46e-490b-a5d7-ff880ac745da": {
+            "38b4e4ae-3fc7-4dfa-99e5-ea74d2a379f1": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "04df0153-0ab3-410d-9054-44b0965cfce2": {
+            "38b4e4ae-3fc7-4dfa-99e5-ea74d2a379f1": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          },
+          "4e3e4f4a-2e69-4af0-9799-b0a12f0a9499": {
+            "29dbff4f-9603-4f57-b51c-65207e8c8b7c": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "48cc93ef-ab76-4081-8f58-3fbcc626599c": {
+            "29dbff4f-9603-4f57-b51c-65207e8c8b7c": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "44d775fe-b109-427a-8d30-2fb70ec3b250": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "87606a66-0567-440c-9686-f02bf52462e4": {}
+            }
+          },
+          "6dacdfe2-fc10-4f08-9919-2f198cda89f4": {
+            "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
+              "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "original": "634d2024-2796-4288-b986-d6fb62336270",
+  "attributes": {
+    "locked": true
+  }
+}

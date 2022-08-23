@@ -1,0 +1,55 @@
+{
+  "name": "blockchain/ethereum/contracts/ERC20",
+  "interface": {
+    "inputs": {
+      "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {
+        "type": "any",
+        "name": "read"
+      }
+    },
+    "outputs": {
+      "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+        "type": "{string: any}",
+        "name": "abi"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1884d640-c3e3-4e07-b325-229996f11bec": {
+          "coordinates": [
+            12,
+            -47
+          ],
+          "name": "abi",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\r\n  {\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"_amount\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"nonpayable\",\r\n    \"type\": \"constructor\"\r\n  },\r\n  {\r\n    \"anonymous\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"indexed\": true,\r\n        \"internalType\": \"address\",\r\n        \"name\": \"owner\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"indexed\": true,\r\n        \"internalType\": \"address\",\r\n        \"name\": \"spender\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"indexed\": false,\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"value\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"Approval\",\r\n    \"type\": \"event\"\r\n  },\r\n  {\r\n    \"anonymous\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"indexed\": true,\r\n        \"internalType\": \"address\",\r\n        \"name\": \"from\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"indexed\": true,\r\n        \"internalType\": \"address\",\r\n        \"name\": \"to\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"indexed\": false,\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"value\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"Transfer\",\r\n    \"type\": \"event\"\r\n  },\r\n  {\r\n    \"constant\": true,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"owner\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"spender\",\r\n        \"type\": \"address\"\r\n      }\r\n    ],\r\n    \"name\": \"allowance\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"view\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"spender\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"amount\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"approve\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"bool\",\r\n        \"name\": \"\",\r\n        \"type\": \"bool\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"nonpayable\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": true,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"account\",\r\n        \"type\": \"address\"\r\n      }\r\n    ],\r\n    \"name\": \"balanceOf\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"view\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": true,\r\n    \"inputs\": [],\r\n    \"name\": \"decimals\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"uint8\",\r\n        \"name\": \"\",\r\n        \"type\": \"uint8\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"view\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"spender\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"subtractedValue\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"decreaseAllowance\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"bool\",\r\n        \"name\": \"\",\r\n        \"type\": \"bool\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"nonpayable\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"spender\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"addedValue\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"increaseAllowance\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"bool\",\r\n        \"name\": \"\",\r\n        \"type\": \"bool\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"nonpayable\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": true,\r\n    \"inputs\": [],\r\n    \"name\": \"name\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"string\",\r\n        \"name\": \"\",\r\n        \"type\": \"string\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"view\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": true,\r\n    \"inputs\": [],\r\n    \"name\": \"symbol\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"string\",\r\n        \"name\": \"\",\r\n        \"type\": \"string\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"view\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": true,\r\n    \"inputs\": [],\r\n    \"name\": \"totalSupply\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"view\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"recipient\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"amount\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"transfer\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"bool\",\r\n        \"name\": \"\",\r\n        \"type\": \"bool\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"nonpayable\",\r\n    \"type\": \"function\"\r\n  },\r\n  {\r\n    \"constant\": false,\r\n    \"inputs\": [\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"sender\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"address\",\r\n        \"name\": \"recipient\",\r\n        \"type\": \"address\"\r\n      },\r\n      {\r\n        \"internalType\": \"uint256\",\r\n        \"name\": \"amount\",\r\n        \"type\": \"uint256\"\r\n      }\r\n    ],\r\n    \"name\": \"transferFrom\",\r\n    \"outputs\": [\r\n      {\r\n        \"internalType\": \"bool\",\r\n        \"name\": \"\",\r\n        \"type\": \"bool\"\r\n      }\r\n    ],\r\n    \"payable\": false,\r\n    \"stateMutability\": \"nonpayable\",\r\n    \"type\": \"function\"\r\n  }\r\n]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {
+            "1884d640-c3e3-4e07-b325-229996f11bec": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+            "1884d640-c3e3-4e07-b325-229996f11bec": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -47,8 +47,8 @@
       "nodes": {
         "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
           "coordinates": [
-            -109.40000000000009,
-            -131
+            -112.40000000000009,
+            -114
           ],
           "name": "tokenA min amount",
           "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
@@ -58,8 +58,8 @@
         },
         "c835bdca-271b-4e71-86f8-ab72f5efd377": {
           "coordinates": [
-            -335.4,
-            -340.375
+            -256.4,
+            -443.375
           ],
           "name": "tokenA info",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -69,8 +69,8 @@
         },
         "e3e81fb6-1f53-4199-896b-5ceedf297c97": {
           "coordinates": [
-            -321.4,
-            -181.375
+            -298.4,
+            -212.375
           ],
           "name": "ETH info",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -80,8 +80,8 @@
         },
         "dffb3e51-6ffc-4a24-875e-79927f4e78e8": {
           "coordinates": [
-            402.5999999999999,
-            9
+            505.5999999999999,
+            6
           ],
           "name": "execute contract",
           "prototype": "228b10ab-9b15-4317-8700-f5ddac476c25",
@@ -91,8 +91,8 @@
         },
         "4bffa1d2-efc3-4fe0-a9aa-693fda567d9e": {
           "coordinates": [
-            -6.400000000000091,
-            183.625
+            14.599999999999909,
+            245.625
           ],
           "name": "router contract data",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -102,8 +102,8 @@
         },
         "9d66d7a8-2928-441d-8586-0d10834887aa": {
           "coordinates": [
-            170.5999999999999,
-            -200.375
+            341.5999999999999,
+            -261.375
           ],
           "name": "build contract parameters",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -130,24 +130,24 @@
         },
         "56c1fe60-e438-44c5-b719-25ba23097ed0": {
           "coordinates": [
-            -28.40000000000009,
-            66
+            23.59999999999991,
+            102
           ],
           "name": "liquidity to & deadline",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "5053c784-80b1-47ed-acf8-3c128b464911": {
           "coordinates": [
-            62.59999999999991,
-            318
+            8.599999999999909,
+            340
           ],
           "name": "credentials",
           "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
         },
         "dbe3ffd9-aaf6-4b13-a966-960749ec04e3": {
           "coordinates": [
-            174.5999999999999,
-            -98
+            344.5999999999999,
+            -85
           ],
           "name": "build transaction parameters",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -158,14 +158,46 @@
         },
         "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
           "coordinates": [
-            -104.40000000000009,
-            -37
+            -114.40000000000009,
+            -10
           ],
           "name": "ETH min amount",
           "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
           "params": {
             "5d570fcf-b8db-4a62-8b84-4953a92d517f": "0"
           }
+        },
+        "ce278617-a354-4332-a2f9-e994a8542ec5": {
+          "coordinates": [
+            -80.90000000000009,
+            -382
+          ],
+          "name": "convert to units desiredAmountA",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        },
+        "eac44e68-4316-4f25-8883-4e96d35fd14c": {
+          "coordinates": [
+            -74.90000000000009,
+            -247
+          ],
+          "name": "convert  to units desiredAmountEth",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        },
+        "ff10a3bb-e85d-44b5-b517-fce6ec7a7a98": {
+          "coordinates": [
+            28.09999999999991,
+            -115
+          ],
+          "name": "convert  to units tokenA min amount",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        },
+        "ac1a0c09-9aae-4f23-a038-60da20618b97": {
+          "coordinates": [
+            61.09999999999991,
+            -3
+          ],
+          "name": "convert  to units eth min amount",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
         }
       },
       "connections": {
@@ -191,8 +223,8 @@
             "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
               "dae97765-6472-42e4-b129-749784e976f6": {}
             },
-            "9d66d7a8-2928-441d-8586-0d10834887aa": {
-              "1": {}
+            "ce278617-a354-4332-a2f9-e994a8542ec5": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
             }
           },
           "address": {
@@ -249,13 +281,6 @@
             }
           }
         },
-        "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
-          "9da98005-545d-4036-a36e-0f354a84cb50": {
-            "9d66d7a8-2928-441d-8586-0d10834887aa": {
-              "2": {}
-            }
-          }
-        },
         "56c1fe60-e438-44c5-b719-25ba23097ed0": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
             "9d66d7a8-2928-441d-8586-0d10834887aa": {
@@ -275,11 +300,11 @@
             }
           },
           "desiredAmount": {
-            "dbe3ffd9-aaf6-4b13-a966-960749ec04e3": {
-              "value": {}
-            },
             "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
               "dae97765-6472-42e4-b129-749784e976f6": {}
+            },
+            "eac44e68-4316-4f25-8883-4e96d35fd14c": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
             }
           }
         },
@@ -290,8 +315,43 @@
             }
           }
         },
+        "ce278617-a354-4332-a2f9-e994a8542ec5": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "1": {}
+            }
+          }
+        },
+        "eac44e68-4316-4f25-8883-4e96d35fd14c": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "dbe3ffd9-aaf6-4b13-a966-960749ec04e3": {
+              "value": {}
+            }
+          }
+        },
+        "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "ff10a3bb-e85d-44b5-b517-fce6ec7a7a98": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "ff10a3bb-e85d-44b5-b517-fce6ec7a7a98": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "2": {}
+            }
+          }
+        },
         "16e4c2b9-c2dc-4262-b6b5-1688865d2b93": {
           "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "ac1a0c09-9aae-4f23-a038-60da20618b97": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "ac1a0c09-9aae-4f23-a038-60da20618b97": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
             "9d66d7a8-2928-441d-8586-0d10834887aa": {
               "3": {}
             }

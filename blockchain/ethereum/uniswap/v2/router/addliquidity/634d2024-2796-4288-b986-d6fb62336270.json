@@ -47,10 +47,10 @@
       "nodes": {
         "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
           "coordinates": [
-            -109.40000000000009,
-            -131
+            -150.4000000000001,
+            -119
           ],
-          "name": "parameter with default",
+          "name": "tokenA min amount with default",
           "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
           "params": {
             "5d570fcf-b8db-4a62-8b84-4953a92d517f": "0"
@@ -58,10 +58,10 @@
         },
         "66275e94-414c-4fba-883f-5fc59fa26be2": {
           "coordinates": [
-            -136.4000000000001,
-            -47
+            -146.4000000000001,
+            -22
           ],
-          "name": "parameter with default copy",
+          "name": "tokenaB min amount with default",
           "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
           "params": {
             "5d570fcf-b8db-4a62-8b84-4953a92d517f": "0"
@@ -91,8 +91,8 @@
         },
         "4bffa1d2-efc3-4fe0-a9aa-693fda567d9e": {
           "coordinates": [
-            -6.400000000000091,
-            183.625
+            71.59999999999991,
+            220.625
           ],
           "name": "router contract data",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -102,8 +102,8 @@
         },
         "9d66d7a8-2928-441d-8586-0d10834887aa": {
           "coordinates": [
-            169.5999999999999,
-            -201.375
+            265.5999999999999,
+            -180.375
           ],
           "name": "build parameters",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -130,24 +130,24 @@
         },
         "56c1fe60-e438-44c5-b719-25ba23097ed0": {
           "coordinates": [
-            -28.40000000000009,
-            66
+            62.59999999999991,
+            116
           ],
           "name": "liquidity to & deadline",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "5053c784-80b1-47ed-acf8-3c128b464911": {
           "coordinates": [
-            62.59999999999991,
-            318
+            73.59999999999991,
+            333
           ],
           "name": "credentials",
           "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
         },
         "45c6dc20-b4b7-44c1-b3cd-122da513973b": {
           "coordinates": [
-            381.5999999999999,
-            -12
+            462.5999999999999,
+            -3
           ],
           "name": "contract executor",
           "prototype": "228b10ab-9b15-4317-8700-f5ddac476c25",
@@ -155,6 +155,38 @@
             "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"addLiquidity\"",
             "a1d2a03b-c119-442d-b464-d3aeeab20f1e": "{\n  \"gas\": 9999999\n}"
           }
+        },
+        "a605a6e6-3188-48b6-b2ef-c8137eb2ee99": {
+          "coordinates": [
+            -102.90000000000009,
+            -291
+          ],
+          "name": "to units tokenA amount",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        },
+        "217bb35c-f4d5-4cde-8012-eb0cc8f57832": {
+          "coordinates": [
+            -82.90000000000009,
+            -200
+          ],
+          "name": "to units tokenB amount",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        },
+        "a01f5b1b-fa4d-47cb-9143-fb868e472b11": {
+          "coordinates": [
+            5.099999999999909,
+            -126
+          ],
+          "name": "to unit tokenA min amount",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        },
+        "a2943213-f51f-4fad-a615-1753c8b0743f": {
+          "coordinates": [
+            10.099999999999909,
+            -28
+          ],
+          "name": "to units tokenB min amount",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
         }
       },
       "connections": {
@@ -170,11 +202,11 @@
             }
           },
           "desiredAmount": {
-            "9d66d7a8-2928-441d-8586-0d10834887aa": {
-              "3": {}
-            },
             "66275e94-414c-4fba-883f-5fc59fa26be2": {
               "dae97765-6472-42e4-b129-749784e976f6": {}
+            },
+            "217bb35c-f4d5-4cde-8012-eb0cc8f57832": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
             }
           }
         },
@@ -190,11 +222,11 @@
             }
           },
           "desiredAmount": {
-            "9d66d7a8-2928-441d-8586-0d10834887aa": {
-              "2": {}
-            },
             "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
               "dae97765-6472-42e4-b129-749784e976f6": {}
+            },
+            "a605a6e6-3188-48b6-b2ef-c8137eb2ee99": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
             }
           }
         },
@@ -229,20 +261,6 @@
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "5053c784-80b1-47ed-acf8-3c128b464911": {
               "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
-            }
-          }
-        },
-        "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
-          "9da98005-545d-4036-a36e-0f354a84cb50": {
-            "9d66d7a8-2928-441d-8586-0d10834887aa": {
-              "4": {}
-            }
-          }
-        },
-        "66275e94-414c-4fba-883f-5fc59fa26be2": {
-          "9da98005-545d-4036-a36e-0f354a84cb50": {
-            "9d66d7a8-2928-441d-8586-0d10834887aa": {
-              "5": {}
             }
           }
         },
@@ -281,6 +299,48 @@
           "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
             "45c6dc20-b4b7-44c1-b3cd-122da513973b": {
               "5e721c7e-2b06-494f-a65e-6b527531cddc": {}
+            }
+          }
+        },
+        "a605a6e6-3188-48b6-b2ef-c8137eb2ee99": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "2": {}
+            }
+          }
+        },
+        "217bb35c-f4d5-4cde-8012-eb0cc8f57832": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "3": {}
+            }
+          }
+        },
+        "6a46d9ee-484c-4644-a7e9-8e7ded5e2d22": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "a01f5b1b-fa4d-47cb-9143-fb868e472b11": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "a01f5b1b-fa4d-47cb-9143-fb868e472b11": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "4": {}
+            }
+          }
+        },
+        "66275e94-414c-4fba-883f-5fc59fa26be2": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "a2943213-f51f-4fad-a615-1753c8b0743f": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "a2943213-f51f-4fad-a615-1753c8b0743f": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "9d66d7a8-2928-441d-8586-0d10834887aa": {
+              "5": {}
             }
           }
         }

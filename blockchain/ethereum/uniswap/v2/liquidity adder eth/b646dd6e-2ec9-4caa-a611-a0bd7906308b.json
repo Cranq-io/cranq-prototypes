@@ -23,8 +23,8 @@
         },
         "55ca1580-e573-4f63-bb8f-2306a0776468": {
           "coordinates": [
-            361.4000000000001,
-            -8
+            304.4000000000001,
+            28
           ],
           "name": "add liquidity ETH",
           "prototype": "1c480aec-b4de-4093-b532-693f2f13a576"
@@ -115,6 +115,9 @@
           "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {
             "55ca1580-e573-4f63-bb8f-2306a0776468": {
               "6dacdfe2-fc10-4f08-9919-2f198cda89f4": {}
+            },
+            "2505b99d-e535-49cf-8793-02ff8c957157": {
+              "91b4a65a-6da8-4469-a63e-bc64c18b0d78": {}
             }
           }
         }
@@ -234,7 +237,7 @@
         "description": "Unix timestamp of the deadline until the operation should be completed or will be reverted."
       },
       "9ab46954-d296-43b4-a18a-377cc168128d": {
-        "type": "typeof `router contract` of `add liquidity`",
+        "type": "typeof `router contract` of `add liquidity ETH`",
         "name": "router contract"
       },
       "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {

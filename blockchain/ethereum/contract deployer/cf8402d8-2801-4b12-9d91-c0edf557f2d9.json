@@ -10,15 +10,15 @@
       "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
         "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
         "name": "connect credentials",
-        "description": "[Inherited from port `settings` of `syncer`] \nReceives individual item for syncing."
+        "description": ""
       },
       "0618062e-aa1f-4a81-9727-fa078f93332f": {
-        "type": "typeof `parameters` of `deploy contract`[\"contractParams\"]",
+        "type": "string[]",
         "name": "contract params",
-        "description": "[Inherited from port `contractParams` of `syncer`] \nReceives individual item for syncing."
+        "description": ""
       },
       "6a44b0aa-dd80-42a5-ba19-15a130f0206a": {
-        "type": "typeof `parameters` of `deploy contract`[\"estimatedGas\"]",
+        "type": "boolean",
         "name": "only estimate gas"
       },
       "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": {
@@ -187,5 +187,7 @@
   "original": "f4ae07d3-ca68-4c27-840c-b388162834c6",
   "attributes": {
     "locked": true
-  }
+  },
+  "description": "Deploys a smart contract on an ethereum network",
+  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721"
 }

@@ -170,6 +170,12 @@
   "name": "blockchain/ethereum/Contract deployment waiter",
   "original": "8cbb443e-0aef-405a-9327-8bbade4446dc",
   "iconId": "5e431e82-f53c-441f-8721-f5b6e0257a4d",
+  "description": "Waits for the specified number of confirmation events after a contract deployment then emits the deployed contract address.",
+  "keywords": {
+    "confirmation": null,
+    "deploy": null,
+    "smart contract": null
+  },
   "attributes": {
     "locked": true
   }

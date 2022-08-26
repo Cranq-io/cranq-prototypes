@@ -16,8 +16,8 @@
   "interface": {
     "inputs": {
       "d4d6f2e9-1a7a-4bc8-8d8c-c0c8d0eacc68": {
-        "type": "any",
-        "name": "in"
+        "type": "{\n  \"contract\": {\n    \"abi\": any[],\n    \"evm\": {\n      \"bytecode\": {\n        \"object\": string\n      }\n    }\n  }\n}",
+        "name": "parameters"
       }
     },
     "outputs": {

@@ -1,0 +1,82 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Router compiler",
+  "interface": {
+    "inputs": {
+      "5199b9b1-7f03-4665-862a-613a23a8691a": {
+        "type": "typeof `factory init hash` of `compile periphery-v2`",
+        "name": "factory init hash",
+        "description": "A value called 'INIT_HASH_CODE' that is shared between the Factory and the Router.\nThis value can be get from the Factory."
+      }
+    },
+    "outputs": {
+      "f6250a09-cd0c-49c2-af3c-aab4032750b4": {
+        "type": "typeof `compiled contracts` of `compile periphery-v2`[\"abi\"]",
+        "name": "compiled Router contract"
+      },
+      "aa4575fc-d7b8-4205-944b-b87227acc8ea": {
+        "type": "typeof `error` of `compile periphery-v2`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b60a494d-271b-4075-9001-8398d281de1c": {
+          "coordinates": [
+            1,
+            1
+          ],
+          "name": "compile periphery-v2",
+          "prototype": "67ab2ae2-50e3-4c99-bbf7-0f02291bc4b9"
+        },
+        "b7e27645-449a-4b81-9702-053b820d6f27": {
+          "coordinates": [
+            169.61588541666652,
+            -101.484375
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"UniswapV2Router02\""
+          }
+        }
+      },
+      "connections": {
+        "b60a494d-271b-4075-9001-8398d281de1c": {
+          "d52dc2ed-e787-456a-aa02-c9aec0cc1858": {
+            "b7e27645-449a-4b81-9702-053b820d6f27": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5199b9b1-7f03-4665-862a-613a23a8691a": {
+            "b60a494d-271b-4075-9001-8398d281de1c": {
+              "eaa9ae98-4f1e-4cd7-a7ac-6168540dbd12": {}
+            }
+          }
+        },
+        "outputs": {
+          "f6250a09-cd0c-49c2-af3c-aab4032750b4": {
+            "b7e27645-449a-4b81-9702-053b820d6f27": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          },
+          "aa4575fc-d7b8-4205-944b-b87227acc8ea": {
+            "b60a494d-271b-4075-9001-8398d281de1c": {
+              "de6d47c9-a9f9-46fb-875d-7b16dd5cf777": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "description": "Compiles UniswapV2Router02 contract",
+  "attributes": {
+    "locked": true
+  }
+}

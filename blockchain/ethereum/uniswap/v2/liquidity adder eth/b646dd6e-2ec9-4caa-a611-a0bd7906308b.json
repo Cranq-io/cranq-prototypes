@@ -1,0 +1,266 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bab278f9-92f3-4313-9363-6ad084394c0c": {
+          "coordinates": [
+            -253,
+            -303
+          ],
+          "name": "tokenA data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"address\",\"desiredAmount\", \"minimalAmount\"]"
+          }
+        },
+        "2505b99d-e535-49cf-8793-02ff8c957157": {
+          "coordinates": [
+            200.33333333333326,
+            -252.33333333333326
+          ],
+          "name": "approve tokenA",
+          "prototype": "55c96c0b-170d-4b6a-93a2-d56894a89afc"
+        },
+        "55ca1580-e573-4f63-bb8f-2306a0776468": {
+          "coordinates": [
+            304.4000000000001,
+            28
+          ],
+          "name": "add liquidity ETH",
+          "prototype": "1c480aec-b4de-4093-b532-693f2f13a576"
+        },
+        "c3a856a1-4bff-48dd-8683-4e5300f0a987": {
+          "coordinates": [
+            -405,
+            -51
+          ],
+          "name": "addLiquidity params",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "9598eafb-20d4-4a27-8513-aba3797511b1": {
+          "coordinates": [
+            -402,
+            62
+          ],
+          "name": "operation params",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "23a03b65-cf8a-483a-8f9b-692e1472b900": {
+          "coordinates": [
+            -25,
+            -183
+          ],
+          "name": "router address, credentials",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "6a229973-3f50-4f6d-ab83-c2ec02f8ae5d": {
+          "coordinates": [
+            -244,
+            -9
+          ],
+          "name": "router contract data",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"address\", \"abi\"]"
+          }
+        },
+        "6f4a6090-083a-4df4-a8af-67978a7a5ff9": {
+          "coordinates": [
+            183,
+            123
+          ],
+          "name": "wait for approvals",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4602e6ff-ae72-46bd-bddb-2065b4f4895a": {
+            "c3a856a1-4bff-48dd-8683-4e5300f0a987": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "e971b0f8-3982-4b6e-98d7-22f8409f3817": {
+            "c3a856a1-4bff-48dd-8683-4e5300f0a987": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "46368936-c937-4d59-9cf5-943b756ace58": {
+            "c3a856a1-4bff-48dd-8683-4e5300f0a987": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "642a80c9-e59e-4e40-98e0-842ce385e544": {
+            "c3a856a1-4bff-48dd-8683-4e5300f0a987": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          },
+          "9ab46954-d296-43b4-a18a-377cc168128d": {
+            "9598eafb-20d4-4a27-8513-aba3797511b1": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {
+            "9598eafb-20d4-4a27-8513-aba3797511b1": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "60a037e1-67e3-4d3b-9606-3398163f27af": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "44d775fe-b109-427a-8d30-2fb70ec3b250": {}
+            }
+          },
+          "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "6dacdfe2-fc10-4f08-9919-2f198cda89f4": {}
+            },
+            "2505b99d-e535-49cf-8793-02ff8c957157": {
+              "91b4a65a-6da8-4469-a63e-bc64c18b0d78": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "bab278f9-92f3-4313-9363-6ad084394c0c": {
+          "address": {
+            "2505b99d-e535-49cf-8793-02ff8c957157": {
+              "3eb6ccfa-35e8-4704-947b-89c795ea6871": {}
+            }
+          },
+          "desiredAmount": {
+            "2505b99d-e535-49cf-8793-02ff8c957157": {
+              "86a67e4f-9f7d-4924-b1b8-9e9b17c5c8cf": {}
+            }
+          }
+        },
+        "c3a856a1-4bff-48dd-8683-4e5300f0a987": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "bab278f9-92f3-4313-9363-6ad084394c0c": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "3988660b-8398-4a78-8889-e5cc8506394e": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "8d57999d-148b-4eff-9e4d-ca00f36e10ea": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "78fb26c0-e46e-490b-a5d7-ff880ac745da": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "04df0153-0ab3-410d-9054-44b0965cfce2": {}
+            }
+          }
+        },
+        "9598eafb-20d4-4a27-8513-aba3797511b1": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "4e3e4f4a-2e69-4af0-9799-b0a12f0a9499": {}
+            },
+            "6a229973-3f50-4f6d-ab83-c2ec02f8ae5d": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "23a03b65-cf8a-483a-8f9b-692e1472b900": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            },
+            "6f4a6090-083a-4df4-a8af-67978a7a5ff9": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "23a03b65-cf8a-483a-8f9b-692e1472b900": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "2505b99d-e535-49cf-8793-02ff8c957157": {
+              "8af36cde-8a26-4e21-938d-066a5e5742bd": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "2505b99d-e535-49cf-8793-02ff8c957157": {
+              "82b16f00-66eb-49b7-8f6d-afa56a77f4c9": {}
+            }
+          }
+        },
+        "6a229973-3f50-4f6d-ab83-c2ec02f8ae5d": {
+          "address": {
+            "23a03b65-cf8a-483a-8f9b-692e1472b900": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "6f4a6090-083a-4df4-a8af-67978a7a5ff9": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "55ca1580-e573-4f63-bb8f-2306a0776468": {
+              "48cc93ef-ab76-4081-8f58-3fbcc626599c": {}
+            }
+          }
+        },
+        "2505b99d-e535-49cf-8793-02ff8c957157": {
+          "74f19ab3-291b-479d-98b0-52ac9cd6affe": {
+            "6f4a6090-083a-4df4-a8af-67978a7a5ff9": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "4602e6ff-ae72-46bd-bddb-2065b4f4895a": {
+        "type": "{\n  \"address\": string,\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
+        "name": "tokenA",
+        "description": ""
+      },
+      "e971b0f8-3982-4b6e-98d7-22f8409f3817": {
+        "type": "{\n\"desiredAmount\": number,\noptional \"minimalAmount\": number\n}",
+        "name": "ETH",
+        "description": ""
+      },
+      "46368936-c937-4d59-9cf5-943b756ace58": {
+        "type": "string",
+        "name": "to address",
+        "description": "The address that will get the minted liquidity token."
+      },
+      "642a80c9-e59e-4e40-98e0-842ce385e544": {
+        "type": "number",
+        "name": "deadline",
+        "description": "Unix timestamp of the deadline until the operation should be completed or will be reverted."
+      },
+      "9ab46954-d296-43b4-a18a-377cc168128d": {
+        "type": "typeof `router contract` of `add liquidity ETH`",
+        "name": "router contract"
+      },
+      "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {
+        "type": "typeof `credentials` of `add liquidity ETH`",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "60a037e1-67e3-4d3b-9606-3398163f27af": {
+        "type": "any",
+        "name": "result"
+      },
+      "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {
+        "type": "typeof `error` of `add liquidity`",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Uniswap/v2/Liquidity adder ETH",
+  "description": "Add liquidity to a pool.\nIf the pool doesn't exists it will be created.",
+  "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703",
+  "original": "0979c75a-e817-4ed7-83a3-bb2570613cac",
+  "attributes": {
+    "locked": true
+  }
+}

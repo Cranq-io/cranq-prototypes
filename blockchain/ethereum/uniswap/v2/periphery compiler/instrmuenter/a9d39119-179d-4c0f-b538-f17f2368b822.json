@@ -1,0 +1,29 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "82b9eefe-f7e5-4de5-8f2c-a17c74e80e80": "  const sources = data[\"peripherySources\"];\r\n  const factoryInitHash = data[\"factoryInitHash\"];\r\n\r\n\r\n  const V2LibOriginal = sources[\"v2-periphery\"][\"contracts\"][\"libraries\"][\"UniswapV2Library.sol\"];\r\n  const V2LibHashInjected = V2LibOriginal.replace('PLACEHOLDER_FOR_FACTORY_INIT_HASH', factoryInitHash);\r\n  sources[\"v2-periphery\"][\"contracts\"][\"libraries\"][\"UniswapV2Library.sol\"] = V2LibHashInjected;\r\n\r\n  outputs[\"periphery contracts with init hash\"](sources, tag)"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "82b9eefe-f7e5-4de5-8f2c-a17c74e80e80": {
+        "type": "any",
+        "name": "periphery data"
+      }
+    },
+    "outputs": {
+      "481317d5-07ab-4e37-aaf1-2909ac595699": {
+        "type": "any",
+        "name": "periphery contracts with init hash"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Uniswap/v2/Periphery compiler/Instrmuenter",
+  "original": "b9216733-41f8-4744-9037-7fbf7119fb95",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

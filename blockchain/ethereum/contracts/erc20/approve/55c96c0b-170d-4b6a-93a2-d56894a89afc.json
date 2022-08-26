@@ -1,0 +1,183 @@
+{
+  "name": "blockchain/ethereum/contracts/ERC20/Approve",
+  "interface": {
+    "inputs": {
+      "8af36cde-8a26-4e21-938d-066a5e5742bd": {
+        "type": "string",
+        "name": "router address",
+        "description": ""
+      },
+      "86a67e4f-9f7d-4924-b1b8-9e9b17c5c8cf": {
+        "type": "typeof `item` of `item appender`",
+        "name": "amount",
+        "description": "[Inherited from port `item` of `item appender`] \nReceives item to append to the array.\n\nExample:\n1"
+      },
+      "3eb6ccfa-35e8-4704-947b-89c795ea6871": {
+        "type": "typeof `contract address` of `contract call clone`",
+        "name": "token address"
+      },
+      "82b16f00-66eb-49b7-8f6d-afa56a77f4c9": {
+        "type": "any",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "74f19ab3-291b-479d-98b0-52ac9cd6affe": {
+        "type": "any",
+        "name": "result"
+      },
+      "91b4a65a-6da8-4469-a63e-bc64c18b0d78": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "868ee981-e9cc-4677-a04b-cd8ab1b12053": {
+          "coordinates": [
+            -65.33333333333334,
+            100.33333333333333
+          ],
+          "name": "ERC20",
+          "prototype": "5ef2bbbc-fcfb-4573-8e12-e414dd5968c9"
+        },
+        "c5b4fef7-6cc6-4424-b37c-c1d9c1488fb3": {
+          "coordinates": [
+            -226.33333333333326,
+            -0.6666666666666856
+          ],
+          "name": "forwarder (quadruple)",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "85bc5fb8-b3ca-4a5f-a4fa-3cc4d3552792": {
+          "coordinates": [
+            41.66666666666674,
+            -155.66666666666669
+          ],
+          "name": "build parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
+          }
+        },
+        "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+          "coordinates": [
+            211.66666666666674,
+            12.333333333333258
+          ],
+          "name": "contract executor",
+          "prototype": "228b10ab-9b15-4317-8700-f5ddac476c25",
+          "params": {
+            "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"approve\"",
+            "a1d2a03b-c119-442d-b464-d3aeeab20f1e": "{\n  \"gas\": 2000000\n}"
+          }
+        },
+        "105c12ac-463a-47f8-98be-669d614d3ca5": {
+          "coordinates": [
+            -48.83333333333326,
+            -73.66666666666674
+          ],
+          "name": "unit parser",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"
+        }
+      },
+      "connections": {
+        "c5b4fef7-6cc6-4424-b37c-c1d9c1488fb3": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "85bc5fb8-b3ca-4a5f-a4fa-3cc4d3552792": {
+              "0": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "868ee981-e9cc-4677-a04b-cd8ab1b12053": {
+              "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {}
+            },
+            "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+              "5e721c7e-2b06-494f-a65e-6b527531cddc": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+              "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "105c12ac-463a-47f8-98be-669d614d3ca5": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "85bc5fb8-b3ca-4a5f-a4fa-3cc4d3552792": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+              "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {}
+            }
+          }
+        },
+        "868ee981-e9cc-4677-a04b-cd8ab1b12053": {
+          "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+            "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+              "39a06197-ca9b-4ada-ab8e-6de9bd241529": {}
+            }
+          }
+        },
+        "105c12ac-463a-47f8-98be-669d614d3ca5": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "85bc5fb8-b3ca-4a5f-a4fa-3cc4d3552792": {
+              "1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8af36cde-8a26-4e21-938d-066a5e5742bd": {
+            "c5b4fef7-6cc6-4424-b37c-c1d9c1488fb3": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "86a67e4f-9f7d-4924-b1b8-9e9b17c5c8cf": {
+            "c5b4fef7-6cc6-4424-b37c-c1d9c1488fb3": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "3eb6ccfa-35e8-4704-947b-89c795ea6871": {
+            "c5b4fef7-6cc6-4424-b37c-c1d9c1488fb3": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "82b16f00-66eb-49b7-8f6d-afa56a77f4c9": {
+            "c5b4fef7-6cc6-4424-b37c-c1d9c1488fb3": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "74f19ab3-291b-479d-98b0-52ac9cd6affe": {
+            "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+              "87606a66-0567-440c-9686-f02bf52462e4": {}
+            }
+          },
+          "91b4a65a-6da8-4469-a63e-bc64c18b0d78": {
+            "5be21e78-dfb5-4901-b015-91030d73ccb7": {
+              "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Calls the \"approve\" method on the ERC20 token contract",
+  "iconId": "f7d13a1a-3ec0-4bdd-8d61-e449c79398da",
+  "keywords": {
+    "erc20": null,
+    "smart contract": null,
+    "token": null,
+    "swap": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

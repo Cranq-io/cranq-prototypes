@@ -1,0 +1,39 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "ethers": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "b3cea331-0e22-4273-be38-3a574b507611": "const ethers = require(\"ethers\");\nconst {units, decimals = 18} = data;\n\nconst result = ethers.utils.parseUnits(units.toString(), decimals);\n\noutputs[\"result\"](result, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "b3cea331-0e22-4273-be38-3a574b507611": {
+        "type": "number",
+        "name": "units & deximals",
+        "description": "The number to convert to BigNumber"
+      }
+    },
+    "outputs": {
+      "9efa481d-63ea-4735-b8df-06add0d6d1bc": {
+        "type": "EtherBigNumber",
+        "name": "result",
+        "description": "The number converted to BigNumber"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Unit parser/Internal",
+  "description": "Creates BigNumber representation of number units useing the specified amount of decimals.\n\n",
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

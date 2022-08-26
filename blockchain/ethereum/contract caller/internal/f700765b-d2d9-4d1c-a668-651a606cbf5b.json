@@ -1,0 +1,32 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "244fb79b-f74f-4ba9-ad9b-9d4bbfb66d96": "// Scotty(data, tag, outputs); return;\n\n\nconst contractParameters = data[\"contract parameters\"];\nconst defaultTransactionParameters = { gas: 2200 };\nconst transactionParameters = {\n  ...defaultTransactionParameters,\n  ...data[\"transaction parameters\"]\n};\n\nconst contractAddress = contractParameters[\"contract address\"];\nconst methodName = contractParameters[\"method name\"];\nconst parameters = Array.isArray(contractParameters[\"parameters\"]) \n? contractParameters[\"parameters\"] \n: [contractParameters[\"parameters\"]];\nconst alters = !!contractParameters[\"alters\"];\nconst abi = contractParameters[\"abi\"];\n\nif(\n  !contractAddress \n  || !Array.isArray(parameters) \n  || !abi\n  ) {\n    throw new Error(\"Contract parameters are not complete.\")\n}\nconst web3Credentials = data[\"web3 credentials\"];\nconst providerUrl = web3Credentials[\"providerUrl\"];\nconst privateKey = web3Credentials[\"privateKey\"];\nif(\n  !providerUrl \n  || !privateKey\n  ) {\n    throw new Error(\"Web3 credentials are not complete.\")\n}\n\nconst Web3 = require(\"web3\");\nconst provider = new Web3.providers.HttpProvider(providerUrl);\nconst web3 = new Web3(provider);\nconst signer = web3.eth.accounts.privateKeyToAccount(privateKey);\nweb3.eth.accounts.wallet.add(signer);\nconst contract = new web3.eth.Contract(abi, contractAddress, {from: signer.address});\n\nasync function main() {\n  let res;\n  if (!Array.isArray(parameters))\n    parameters = [parameters];\n\n  if (alters) {\n    //  More sophisticated gas estimation algorythm\n    // FIXME: gas should come from settings\n    res = await contract.methods[methodName](...parameters).send(transactionParameters);\n  } else {\n    res = await contract.methods[methodName](...parameters).call();\n  }\n  outputs[\"result\"](res, tag);\n}\n\nmain().catch((e) => {\n  outputs[\"error\"](\n    {error: e.toString()},\n    tag\n  );\n});"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "244fb79b-f74f-4ba9-ad9b-9d4bbfb66d96": {
+        "type": "{\n  \"contract parameters\": any[],\n  \"web3_credentials\": {\n    \"providerUrl\": string,\n    \"privateKey\": string\n  },\n  \"transaction parameters\": {string:any}\n}",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "a8910f08-11f8-4764-817b-ea55ea851dd5": {
+        "type": "any",
+        "name": "result"
+      },
+      "00cbcc07-f756-4b6f-a21e-4e7ddcaa2b9b": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Contract caller/Internal",
+  "original": "ca43b3b3-b12a-4bf7-b628-6c1c0524048f",
+  "attributes": {
+    "internal": true
+  }
+}

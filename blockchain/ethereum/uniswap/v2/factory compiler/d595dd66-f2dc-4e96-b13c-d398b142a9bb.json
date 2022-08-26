@@ -1,0 +1,81 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Factory compiler",
+  "description": "Compiles UniswapV2Factory contract",
+  "interface": {
+    "inputs": {
+      "3dd8b80c-d01f-4d47-abff-104f98782ec6": {
+        "type": "typeof `start` of `core compiler`",
+        "name": "start"
+      }
+    },
+    "outputs": {
+      "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+        "type": "typeof `compile core-compiled contracts` of `core compiler`[string]",
+        "name": "compiled Factory contract"
+      },
+      "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
+        "type": "typeof `error` of `core compiler`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+          "coordinates": [
+            0,
+            12
+          ],
+          "name": "core compiler",
+          "prototype": "e0f819d4-ec36-45a0-a772-252e08986fdd"
+        },
+        "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+          "coordinates": [
+            117,
+            -68
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"UniswapV2Factory\""
+          }
+        }
+      },
+      "connections": {
+        "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+          "2b981481-b683-4dfd-9738-febe673b08fa": {
+            "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3dd8b80c-d01f-4d47-abff-104f98782ec6": {
+            "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+              "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {}
+            }
+          }
+        },
+        "outputs": {
+          "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+            "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          },
+          "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
+            "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+              "c56db654-2db7-4cb2-ac28-2213dae50128": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "attributes": {
+    "locked": true
+  }
+}

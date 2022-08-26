@@ -1,0 +1,54 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "web3": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "d4d6f2e9-1a7a-4bc8-8d8c-c0c8d0eacc68": "const Web3 = require(\"web3\");\r\nconst {TransactionReceipt} = require(\"web3-core\");\r\nconst {contract, contractParams, settings, estimateGas} = data;\r\nconst {providerUrl, privateKey, gas, gasPrice} = settings;\r\n\r\nconst abi = contract.abi;\r\nconst bytecode = contract.evm.bytecode.object;\r\n\r\nconst web3 = new Web3(new Web3.providers.HttpProvider(providerUrl));\r\nconst signer = web3.eth.accounts.privateKeyToAccount(privateKey);\r\nweb3.eth.accounts.wallet.add(signer);\r\nconst ethContract = new web3.eth.Contract(abi, {from: signer.address});\r\nethContract.options.data = bytecode;\r\n\r\nconst deployTx = ethContract.deploy({data: bytecode, arguments: contractParams});\r\n\r\nasync function main() {\r\n\r\n  if (estimateGas === true) {\r\n    outputs[\"estimated gas\"](await deployTx.estimateGas(), tag);\r\n  } else {\r\n    try {\r\n      shared.nonces = shared.nonces || {};\r\n      const observedNonce = await web3.eth.getTransactionCount(signer.address);\r\n      const stateNonce = shared.nonces[signer.address];\r\n      const nonce = (stateNonce) ? Math.max(stateNonce, observedNonce) : observedNonce;\r\n      shared.nonces[signer.address] = nonce + 1;\r\n      const newContractInstance = await deploy(nonce);\r\n      outputs[\"contract\"](newContractInstance, tag);\r\n    } catch (error) {\r\n      outputs[\"error\"](error.message, tag);\r\n    }\r\n  }\r\n}\r\n\r\nasync function deploy(nonce) {\r\n  return deployTx.send({\r\n    gas: gas,\r\n    gasPrice: gasPrice,\r\n    nonce: nonce\r\n  })\r\n  .once(\"transactionHash\", (txhash) => {\r\n    outputs[\"transaction hash\"](txhash, tag);\r\n  })\r\n  .once(\"receipt\", (receipt) => {\r\n    outputs[\"receipt\"](receipt, tag);\r\n  })\r\n  .on(\"confirmation\", (confirmationNumber, receipt, latestBlockHash) => {\r\n    outputs[\"confirmation\"](\r\n      {\r\n        confirmationNumber: confirmationNumber,\r\n        receipt: receipt,\r\n        latestBlockHash: latestBlockHash\r\n      },\r\n      tag\r\n    );\r\n  });\r\n}\r\n\r\nmain();"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "d4d6f2e9-1a7a-4bc8-8d8c-c0c8d0eacc68": {
+        "type": "{\n  \"contract\": {\n    \"abi\": any[],\n    \"evm\": {\n      \"bytecode\": {\n        \"object\": string\n      }\n    }\n  }\n}",
+        "name": "parameters"
+      }
+    },
+    "outputs": {
+      "e7f5a7aa-c9d8-48d5-a248-3b2cac4262f1": {
+        "type": "any",
+        "name": "transaction hash"
+      },
+      "b81cd0dc-f7c4-43c4-8579-7e2c38cff351": {
+        "type": "any",
+        "name": "receipt"
+      },
+      "64e1ca3c-3e06-4ed5-9563-d71098ea99f4": {
+        "type": "any",
+        "name": "confirmation"
+      },
+      "dc68467f-bdb9-4d16-9eb7-0d4d366b95ff": {
+        "type": "any",
+        "name": "contract"
+      },
+      "96043b1f-6b74-408f-a93b-c6b7abc603d5": {
+        "type": "any",
+        "name": "estimated gas"
+      },
+      "0eb501ee-6d8f-4ef6-bdb9-95d3ebdce818": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Contract deployer/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

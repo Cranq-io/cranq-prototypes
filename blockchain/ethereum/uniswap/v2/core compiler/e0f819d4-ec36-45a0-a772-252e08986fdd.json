@@ -1,0 +1,122 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Core compiler",
+  "interface": {
+    "inputs": {
+      "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {
+        "type": "any",
+        "name": "start",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "2b981481-b683-4dfd-9738-febe673b08fa": {
+        "type": "typeof `compiled contracts` of `compile`",
+        "name": "compile core-compiled contracts"
+      },
+      "c56db654-2db7-4cb2-ac28-2213dae50128": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c4bd90e6-58a3-4311-860d-c393b02014a2": {
+          "coordinates": [
+            -215.81696428571433,
+            10.696428571428555
+          ],
+          "name": "output list core",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\n  \"v2-core/contracts/UniswapV2Factory.sol\",\n  \"v2-core/contracts/UniswapV2ERC20.sol\",\n  \"v2-core/contracts/UniswapV2Pair.sol\",\n  \"v2-core/contracts/interfaces/IERC20.sol\",\n  \"v2-core/contracts/interfaces/IUniswapV2Callee.sol\",\n  \"v2-core/contracts/interfaces/IUniswapV2ERC20.sol\",\n  \"v2-core/contracts/interfaces/IUniswapV2Factory.sol\",\n  \"v2-core/contracts/interfaces/IUniswapV2Pair.sol\",\n  \"v2-core/contracts/libraries/Math.sol\",\n  \"v2-core/contracts/libraries/SafeMath.sol\",\n  \"v2-core/contracts/libraries/UQ112x112.sol\"\n]"
+          }
+        },
+        "80e26d21-bc67-4e97-aca2-078911414e45": {
+          "coordinates": [
+            -213.81696428571433,
+            -93.30357142857144
+          ],
+          "name": "compile settings",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"includeRoots\": [\n    \"v2-core/contracts\",\n    \"libs\"\n  ],\n  \"solidityVersion\": \"v0.5.16+commit.9c3226ce\",\n    \"compileOptions\": {\n      \"evmVersion\": \"istanbul\",\n      \"optimizer\": {\"enabled\": true, \"runs\": 999999}\n    }\n}"
+          }
+        },
+        "d7171c51-e89b-4504-bc72-6b1edbad818b": {
+          "coordinates": [
+            160.68303571428567,
+            -9.803571428571445
+          ],
+          "name": "compile",
+          "prototype": "8b0df39b-8337-4107-8211-565d56429b0f",
+          "params": {}
+        },
+        "3f5ab142-e534-4422-818d-a21322798476": {
+          "coordinates": [
+            -212.51227678571433,
+            155.10267857142856
+          ],
+          "name": "core-v2 sources clone",
+          "prototype": "d68f7858-17ef-4a8b-8cde-008cf54de6af"
+        }
+      },
+      "connections": {
+        "c4bd90e6-58a3-4311-860d-c393b02014a2": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d7171c51-e89b-4504-bc72-6b1edbad818b": {
+              "60fd9fa4-1462-4c91-915b-11b325c0d479": {}
+            }
+          }
+        },
+        "80e26d21-bc67-4e97-aca2-078911414e45": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d7171c51-e89b-4504-bc72-6b1edbad818b": {
+              "eb554de7-b398-413f-8ff0-99dd34a7580a": {}
+            }
+          }
+        },
+        "3f5ab142-e534-4422-818d-a21322798476": {
+          "8db497a4-cf26-4b44-bb99-0a6266736222": {
+            "d7171c51-e89b-4504-bc72-6b1edbad818b": {
+              "7654e398-a401-4115-98b8-c2b8eba66ed4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {
+            "80e26d21-bc67-4e97-aca2-078911414e45": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "c4bd90e6-58a3-4311-860d-c393b02014a2": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "3f5ab142-e534-4422-818d-a21322798476": {
+              "858f2cdf-e216-49be-9910-aa483d782f62": {}
+            }
+          }
+        },
+        "outputs": {
+          "2b981481-b683-4dfd-9738-febe673b08fa": {
+            "d7171c51-e89b-4504-bc72-6b1edbad818b": {
+              "58f95201-dc73-469a-8503-ce955c514032": {}
+            }
+          },
+          "c56db654-2db7-4cb2-ac28-2213dae50128": {
+            "d7171c51-e89b-4504-bc72-6b1edbad818b": {
+              "d00232d5-3801-4820-92ed-43ae75ccb626": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "8a9dd936-b46f-49bf-b886-cd336ef4c867",
+  "description": "Compiles Uniswap V2 core contracts",
+  "attributes": {
+    "locked": true
+  }
+}

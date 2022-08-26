@@ -1,0 +1,193 @@
+{
+  "name": "blockchain/ethereum/Contract deployer",
+  "interface": {
+    "inputs": {
+      "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
+        "type": "typeof `parameters` of `deploy contract`[\"contract\"]",
+        "name": "contract",
+        "description": ""
+      },
+      "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
+        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "name": "connect credentials",
+        "description": ""
+      },
+      "0618062e-aa1f-4a81-9727-fa078f93332f": {
+        "type": "string[]",
+        "name": "contract params",
+        "description": ""
+      },
+      "6a44b0aa-dd80-42a5-ba19-15a130f0206a": {
+        "type": "boolean",
+        "name": "only estimate gas"
+      },
+      "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": {
+        "type": " {\n    \"gas\": number, \n    optional \"gasPrice\": string\n  }",
+        "name": "settings"
+      }
+    },
+    "outputs": {
+      "3483ab3b-5295-4761-8832-ec968f7399d9": {
+        "type": "{ \n  \"field\": (\n    \"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\" or \"error\"\n  ),\n\"data\": any\n}",
+        "name": "events",
+        "description": "Multiplexed events. Useful for monitoring progress.\nUse Demultiplexer to separate them."
+      },
+      "a6fdcbf5-7937-47f1-89db-2807b758842f": {
+        "type": "typeof `confirmation` of `deploy contract`",
+        "name": "confirmation"
+      },
+      "b94ccca9-9434-47e1-8382-6b615b5f3f47": {
+        "type": "typeof `estimated gas` of `deploy contract`",
+        "name": "estimated gas"
+      },
+      "c8505107-dfeb-4ad6-a08c-2543a30b2887": {
+        "type": "typeof `error` of `deploy contract`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "523f713b-c414-43f6-9179-db27247c01af": {
+          "coordinates": [
+            148.75,
+            -25.75
+          ],
+          "name": "deploy contract",
+          "prototype": "c635f5fd-7397-4f0e-8c99-609257c430ab"
+        },
+        "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+          "coordinates": [
+            -89,
+            -30
+          ],
+          "name": "build parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract\",\"settings\", \"contractParams\", \"estimateGas\"]"
+          }
+        },
+        "2b93ff24-0dc3-41d8-8f34-13b5556a492e": {
+          "coordinates": [
+            -284,
+            50
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+          "coordinates": [
+            388,
+            -127
+          ],
+          "name": "multiplexer",
+          "prototype": "69f0d61a-989b-45f0-a2ca-a148c5e58323",
+          "params": {
+            "812fd3c6-a75b-486e-9bd1-3f2a1ee28f0c": "[\"transaction hash\", \"receipt\", \"confirmation\", \"contract\", \"error\"]"
+          }
+        }
+      },
+      "connections": {
+        "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "523f713b-c414-43f6-9179-db27247c01af": {
+              "d4d6f2e9-1a7a-4bc8-8d8c-c0c8d0eacc68": {}
+            }
+          }
+        },
+        "2b93ff24-0dc3-41d8-8f34-13b5556a492e": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "settings": {}
+            }
+          }
+        },
+        "523f713b-c414-43f6-9179-db27247c01af": {
+          "e7f5a7aa-c9d8-48d5-a248-3b2cac4262f1": {
+            "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+              "transaction hash": {}
+            }
+          },
+          "b81cd0dc-f7c4-43c4-8579-7e2c38cff351": {
+            "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+              "receipt": {}
+            }
+          },
+          "64e1ca3c-3e06-4ed5-9563-d71098ea99f4": {
+            "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+              "confirmation": {}
+            }
+          },
+          "dc68467f-bdb9-4d16-9eb7-0d4d366b95ff": {
+            "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+              "contract": {}
+            }
+          },
+          "0eb501ee-6d8f-4ef6-bdb9-95d3ebdce818": {
+            "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+              "error": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "contract": {}
+            }
+          },
+          "0618062e-aa1f-4a81-9727-fa078f93332f": {
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "contractParams": {}
+            }
+          },
+          "6a44b0aa-dd80-42a5-ba19-15a130f0206a": {
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "estimateGas": {}
+            }
+          },
+          "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": {
+            "2b93ff24-0dc3-41d8-8f34-13b5556a492e": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
+            "2b93ff24-0dc3-41d8-8f34-13b5556a492e": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "outputs": {
+          "a6fdcbf5-7937-47f1-89db-2807b758842f": {
+            "523f713b-c414-43f6-9179-db27247c01af": {
+              "64e1ca3c-3e06-4ed5-9563-d71098ea99f4": {}
+            }
+          },
+          "b94ccca9-9434-47e1-8382-6b615b5f3f47": {
+            "523f713b-c414-43f6-9179-db27247c01af": {
+              "96043b1f-6b74-408f-a93b-c6b7abc603d5": {}
+            }
+          },
+          "c8505107-dfeb-4ad6-a08c-2543a30b2887": {
+            "523f713b-c414-43f6-9179-db27247c01af": {
+              "0eb501ee-6d8f-4ef6-bdb9-95d3ebdce818": {}
+            }
+          },
+          "3483ab3b-5295-4761-8832-ec968f7399d9": {
+            "333f5c4c-6c23-47c4-8b0b-cef235c7eaa2": {
+              "b20b339d-6c7a-4f30-87c4-d600b4452103": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "f4ae07d3-ca68-4c27-840c-b388162834c6",
+  "attributes": {
+    "locked": true
+  },
+  "description": "Deploys a smart contract on an ethereum network",
+  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721"
+}

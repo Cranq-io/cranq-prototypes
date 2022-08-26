@@ -1,0 +1,226 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Liquidities adder",
+  "description": "Add liquidity to multiple pools.",
+  "interface": {
+    "inputs": {
+      "a710bb66-7d75-4a4b-8a7a-657cb4328897": {
+        "type": "[typeof `tokenA` of `add liquidity`, typeof `tokenB or ETH` of `add liquidity`][]",
+        "name": "pairs"
+      },
+      "3c09e73b-ae71-4668-95fc-8fb9041ab544": {
+        "type": "string",
+        "name": "to address"
+      },
+      "b8628829-12f1-4e72-8d6f-c49372d6a081": {
+        "type": "number",
+        "name": "deadline"
+      },
+      "1a3a20cd-3619-4f71-80e3-991b67aa633c": {
+        "type": "typeof `router contract` of `add liquidity`",
+        "name": "router contract"
+      },
+      "0cea3ff4-443d-449c-9db2-05fb3815264b": {
+        "type": "typeof `credentials` of `add liquidity`",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "b69fb11c-5508-4a80-837d-3976f69f9cd2": {
+        "type": "typeof `result` of `add liquidity`",
+        "name": "result"
+      },
+      "0f7509cf-9bf3-4774-b97a-35ad0bc0904d": {
+        "type": "typeof `error` of `add liquidity`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+          "coordinates": [
+            35,
+            -19
+          ],
+          "name": "add liquidity",
+          "prototype": "5cc08991-9e11-460e-bbbd-82b4d4b685f4"
+        },
+        "c7ad3b00-3c53-4fbe-8d3f-b2a50b16fb71": {
+          "coordinates": [
+            -78.5,
+            -86.5
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[0,1]"
+          }
+        },
+        "1b19ef0f-612d-4130-91be-ad385babbc37": {
+          "coordinates": [
+            -230.5,
+            -23.5
+          ],
+          "name": "repeater",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "4e19d8fa-49f6-480f-aa06-e21ddce741db": {
+          "coordinates": [
+            -334.5,
+            -59.5
+          ],
+          "name": "forwarder",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        },
+        "ae2166c0-60cb-4583-b23c-7c334eb588bc": {
+          "coordinates": [
+            -342.5,
+            3.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2,3]"
+          }
+        },
+        "4dc742fa-11d3-41b7-b97b-c22c22af8a87": {
+          "coordinates": [
+            -108.5,
+            -24.5
+          ],
+          "name": "splitter B",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[0,1,2,3]"
+          }
+        },
+        "f15b0853-85a0-49f1-ad88-0f063d6f39b2": {
+          "coordinates": [
+            136.5,
+            -276.5
+          ],
+          "name": "step iterator",
+          "prototype": "efbace8a-a0c1-4495-932c-7752fcc212d3"
+        }
+      },
+      "connections": {
+        "c7ad3b00-3c53-4fbe-8d3f-b2a50b16fb71": {
+          "0": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "ca036788-5f7a-4d08-a4cf-f4223b4ce604": {}
+            }
+          },
+          "1": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "78d8f5a9-17e7-45e2-b778-f46cda29a80a": {}
+            }
+          }
+        },
+        "4e19d8fa-49f6-480f-aa06-e21ddce741db": {
+          "0a9cd5b0-6de6-4c69-aa04-2816de994173": {
+            "1b19ef0f-612d-4130-91be-ad385babbc37": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            }
+          }
+        },
+        "ae2166c0-60cb-4583-b23c-7c334eb588bc": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "1b19ef0f-612d-4130-91be-ad385babbc37": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "1b19ef0f-612d-4130-91be-ad385babbc37": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "4dc742fa-11d3-41b7-b97b-c22c22af8a87": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "4dc742fa-11d3-41b7-b97b-c22c22af8a87": {
+          "0": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "7de50776-c33c-49fd-ae41-bb85b3da0501": {}
+            }
+          },
+          "1": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "76512fec-78df-43fd-a9fd-20e33817bb49": {}
+            }
+          },
+          "2": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "a1a9f3b2-f3b9-4917-b77a-bf507b19f47f": {}
+            }
+          },
+          "3": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "77827705-1577-47c3-904c-8dff54475e8d": {}
+            }
+          }
+        },
+        "f15b0853-85a0-49f1-ad88-0f063d6f39b2": {
+          "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {
+            "c7ad3b00-3c53-4fbe-8d3f-b2a50b16fb71": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+          "ca296aaa-e80e-4141-8a2c-2be8aad5dec2": {
+            "f15b0853-85a0-49f1-ad88-0f063d6f39b2": {
+              "6724a763-9749-41bb-a3dc-2ec659c8b72b": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a710bb66-7d75-4a4b-8a7a-657cb4328897": {
+            "4e19d8fa-49f6-480f-aa06-e21ddce741db": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            },
+            "f15b0853-85a0-49f1-ad88-0f063d6f39b2": {
+              "d079a46d-16a1-4019-b037-eb25ff63b344": {}
+            }
+          },
+          "3c09e73b-ae71-4668-95fc-8fb9041ab544": {
+            "ae2166c0-60cb-4583-b23c-7c334eb588bc": {
+              "0": {}
+            }
+          },
+          "b8628829-12f1-4e72-8d6f-c49372d6a081": {
+            "ae2166c0-60cb-4583-b23c-7c334eb588bc": {
+              "1": {}
+            }
+          },
+          "1a3a20cd-3619-4f71-80e3-991b67aa633c": {
+            "ae2166c0-60cb-4583-b23c-7c334eb588bc": {
+              "2": {}
+            }
+          },
+          "0cea3ff4-443d-449c-9db2-05fb3815264b": {
+            "ae2166c0-60cb-4583-b23c-7c334eb588bc": {
+              "3": {}
+            }
+          }
+        },
+        "outputs": {
+          "0f7509cf-9bf3-4774-b97a-35ad0bc0904d": {
+            "d9a30d41-2946-4cb3-a3b7-23cb197db9fe": {
+              "4fbce32e-7012-4bde-bdc5-052501a3efde": {}
+            }
+          },
+          "b69fb11c-5508-4a80-837d-3976f69f9cd2": {
+            "f15b0853-85a0-49f1-ad88-0f063d6f39b2": {
+              "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703",
+  "attributes": {}
+}

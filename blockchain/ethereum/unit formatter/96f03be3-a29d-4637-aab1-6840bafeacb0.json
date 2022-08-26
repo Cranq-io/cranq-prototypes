@@ -1,0 +1,111 @@
+{
+  "name": "blockchain/ethereum/Unit formatter",
+  "description": "Returns a string representation of value formatted with unit digits .\n\nSee: https://docs.ethers.io/v5/api/utils/display-logic/#utils-formatUnits",
+  "interface": {
+    "inputs": {
+      "0d455460-c659-44c5-afd7-bdba5211c32d": {
+        "type": "EthersBigNumber",
+        "name": "units",
+        "description": "The value as BigNumber"
+      },
+      "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {
+        "type": "number",
+        "name": "decimals",
+        "description": "The number of decimals to represent the unit.\nDefaults to 18."
+      }
+    },
+    "outputs": {
+      "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+        "type": "typeof `big number` of `convert to BigNumber`",
+        "name": "result",
+        "description": "The string representation of value formatted with unit digits."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ff670edc-99bd-4d12-bf66-b86f0d5ccf3b": {
+          "coordinates": [
+            208,
+            3
+          ],
+          "name": "convert to BigNumber clone",
+          "prototype": "d2d49fe9-90aa-4f9b-acb1-6d42845412f9"
+        },
+        "46a4d777-9d35-452d-95da-5d27eea22923": {
+          "coordinates": [
+            61,
+            -69
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"units\", \"decimals\"]"
+          }
+        },
+        "0eee9868-aa74-4170-84e0-f4b73756f378": {
+          "coordinates": [
+            -80,
+            15
+          ],
+          "name": "parameter with default",
+          "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
+          "params": {
+            "5d570fcf-b8db-4a62-8b84-4953a92d517f": "18"
+          }
+        }
+      },
+      "connections": {
+        "46a4d777-9d35-452d-95da-5d27eea22923": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "ff670edc-99bd-4d12-bf66-b86f0d5ccf3b": {
+              "b3cea331-0e22-4273-be38-3a574b507611": {}
+            }
+          }
+        },
+        "0eee9868-aa74-4170-84e0-f4b73756f378": {
+          "9da98005-545d-4036-a36e-0f354a84cb50": {
+            "46a4d777-9d35-452d-95da-5d27eea22923": {
+              "decimals": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0d455460-c659-44c5-afd7-bdba5211c32d": {
+            "0eee9868-aa74-4170-84e0-f4b73756f378": {
+              "dae97765-6472-42e4-b129-749784e976f6": {}
+            },
+            "46a4d777-9d35-452d-95da-5d27eea22923": {
+              "units": {}
+            }
+          },
+          "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {
+            "0eee9868-aa74-4170-84e0-f4b73756f378": {
+              "01ef7f62-ecc9-4fd2-8f70-980a2d25795a": {}
+            }
+          }
+        },
+        "outputs": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "ff670edc-99bd-4d12-bf66-b86f0d5ccf3b": {
+              "9efa481d-63ea-4735-b8df-06add0d6d1bc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "ethers": null,
+    "decimals": null,
+    "BigNumber": null
+  },
+  "original": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5",
+  "attributes": {
+    "locked": true
+  }
+}

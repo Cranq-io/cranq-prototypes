@@ -1,0 +1,153 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+          "coordinates": [
+            -269,
+            -40
+          ],
+          "name": "build contract parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "alters": "true",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n  \"contract address\", \n  \"method name\", \n  \"parameters\", \n  \"alters\",\n  \"abi\"\n]"
+          }
+        },
+        "b9a448ac-f405-4f0e-8c59-1b721cc14472": {
+          "coordinates": [
+            148,
+            4
+          ],
+          "name": "method call",
+          "prototype": "f700765b-d2d9-4d1c-a668-651a606cbf5b"
+        },
+        "28d8e85d-b1ed-42e2-a385-78eeed02f55e": {
+          "coordinates": [
+            -89.8046875,
+            15.796875
+          ],
+          "name": "build data",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"contract parameters\", \"transaction parameters\", \"web3 credentials\"]"
+          }
+        }
+      },
+      "connections": {
+        "28d8e85d-b1ed-42e2-a385-78eeed02f55e": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b9a448ac-f405-4f0e-8c59-1b721cc14472": {
+              "244fb79b-f74f-4ba9-ad9b-9d4bbfb66d96": {}
+            }
+          }
+        },
+        "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "28d8e85d-b1ed-42e2-a385-78eeed02f55e": {
+              "contract parameters": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "contract address": {}
+            }
+          },
+          "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "method name": {}
+            }
+          },
+          "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "parameters": {}
+            }
+          },
+          "39a06197-ca9b-4ada-ab8e-6de9bd241529": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "abi": {}
+            }
+          },
+          "a1d2a03b-c119-442d-b464-d3aeeab20f1e": {
+            "28d8e85d-b1ed-42e2-a385-78eeed02f55e": {
+              "transaction parameters": {}
+            }
+          },
+          "5e721c7e-2b06-494f-a65e-6b527531cddc": {
+            "28d8e85d-b1ed-42e2-a385-78eeed02f55e": {
+              "web3 credentials": {}
+            }
+          }
+        },
+        "outputs": {
+          "87606a66-0567-440c-9686-f02bf52462e4": {
+            "b9a448ac-f405-4f0e-8c59-1b721cc14472": {
+              "a8910f08-11f8-4764-817b-ea55ea851dd5": {}
+            }
+          },
+          "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {
+            "b9a448ac-f405-4f0e-8c59-1b721cc14472": {
+              "00cbcc07-f756-4b6f-a21e-4e7ddcaa2b9b": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {
+        "type": "any",
+        "name": "contract address"
+      },
+      "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": {
+        "type": "any",
+        "name": "method name"
+      },
+      "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {
+        "type": "any[]",
+        "name": "parameters",
+        "description": "Parameters as array"
+      },
+      "a1d2a03b-c119-442d-b464-d3aeeab20f1e": {
+        "type": "{string:any}",
+        "name": "transaction parameters",
+        "description": "Example: \n{\n  \"gas\": 2000000,\n  \"value\": \"foobar\"\n}"
+      },
+      "39a06197-ca9b-4ada-ab8e-6de9bd241529": {
+        "type": "any",
+        "name": "abi"
+      },
+      "5e721c7e-2b06-494f-a65e-6b527531cddc": {
+        "type": "typeof `data` of `method call`[\"web3 credentials\"]",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "87606a66-0567-440c-9686-f02bf52462e4": {
+        "type": "any",
+        "name": "out"
+      },
+      "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {
+        "type": "typeof `error` of `method call`",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Contract executor",
+  "original": "d0c40c17-a70f-46da-b735-5d6fb7a364d9",
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "description": "Calls an altering method on a smart contract.",
+  "keywords": {
+    "smart contract": null,
+    "call": null,
+    "alters": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

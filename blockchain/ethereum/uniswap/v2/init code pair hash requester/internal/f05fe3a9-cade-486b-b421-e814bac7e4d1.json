@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "2513d1ad-d856-4c98-9e44-7ac1aab94fb4": "const Web3 = require(\"web3\");\r\n  const providerUrl = data[\"providerUrl\"];\r\n  const provider = new Web3.providers.HttpProvider(providerUrl);\r\n  const web3 = new Web3(provider);\r\n\r\n  const contractAddress = data[\"contract address\"];\r\n  const factoryAbi = data[\"V2Factory Abi\"];\r\n\r\n  const factory = new web3.eth.Contract(factoryAbi, contractAddress);\r\n\r\n  async function queryInitHash(){\r\n    let initHash = await factory.methods.INIT_CODE_PAIR_HASH().call();\r\n    \r\n    if (initHash.startsWith('0x')){\r\n      initHash = initHash.substring(2);\r\n    }\r\n    \r\n    outputs[\"init hash\"](initHash, tag);\r\n  }\r\n  \r\n  queryInitHash();"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "2513d1ad-d856-4c98-9e44-7ac1aab94fb4": {
+        "type": "{\n   \"providerUrl\": string,\n  \"contract address\": string,\n  \"V2Factory Abi\": any\n}",
+        "name": "V2Factory data"
+      }
+    },
+    "outputs": {
+      "420181c4-34a5-4a36-aa50-7de8a799af90": {
+        "type": "any",
+        "name": "init hash"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Uniswap/v2/Init code pair hash requester/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

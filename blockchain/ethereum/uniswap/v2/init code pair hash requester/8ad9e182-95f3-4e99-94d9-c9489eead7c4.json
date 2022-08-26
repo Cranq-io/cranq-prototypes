@@ -1,0 +1,92 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Init code pair hash requester",
+  "interface": {
+    "inputs": {
+      "14a6e991-cb90-4f42-b1df-3ea7d58d895b": {
+        "type": "any",
+        "name": "factory ABI"
+      },
+      "202dbb68-350c-4df4-a992-85352f7e692c": {
+        "type": "string",
+        "name": "factory address"
+      },
+      "9cd53ac0-f4b8-4082-9f7e-0d509cf18101": {
+        "type": "string",
+        "name": "web3 provider URL"
+      }
+    },
+    "outputs": {
+      "a42c8f8d-11c4-4b8b-96b9-3a801f3e7fb6": {
+        "type": "any",
+        "name": "init hash"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "55a4cf2e-74c6-4b5a-8593-cd9650bdadd4": {
+          "coordinates": [
+            142,
+            -6
+          ],
+          "name": "query init hash",
+          "prototype": "f05fe3a9-cade-486b-b421-e814bac7e4d1",
+          "params": {}
+        },
+        "c14af7ee-f774-48d9-ac23-95dd3fd3f0ae": {
+          "coordinates": [
+            -64,
+            -23
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"V2Factory Abi\", \"contract address\", \"providerUrl\"]"
+          }
+        }
+      },
+      "connections": {
+        "c14af7ee-f774-48d9-ac23-95dd3fd3f0ae": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "55a4cf2e-74c6-4b5a-8593-cd9650bdadd4": {
+              "2513d1ad-d856-4c98-9e44-7ac1aab94fb4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9cd53ac0-f4b8-4082-9f7e-0d509cf18101": {
+            "c14af7ee-f774-48d9-ac23-95dd3fd3f0ae": {
+              "providerUrl": {}
+            }
+          },
+          "202dbb68-350c-4df4-a992-85352f7e692c": {
+            "c14af7ee-f774-48d9-ac23-95dd3fd3f0ae": {
+              "contract address": {}
+            }
+          },
+          "14a6e991-cb90-4f42-b1df-3ea7d58d895b": {
+            "c14af7ee-f774-48d9-ac23-95dd3fd3f0ae": {
+              "V2Factory Abi": {}
+            }
+          }
+        },
+        "outputs": {
+          "a42c8f8d-11c4-4b8b-96b9-3a801f3e7fb6": {
+            "55a4cf2e-74c6-4b5a-8593-cd9650bdadd4": {
+              "420181c4-34a5-4a36-aa50-7de8a799af90": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "4fa819d8-9949-442e-84f5-00d890224c0c",
+  "description": "Queries the init code hash from the deployed UniswapV2Factory",
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "locked": true
+  }
+}

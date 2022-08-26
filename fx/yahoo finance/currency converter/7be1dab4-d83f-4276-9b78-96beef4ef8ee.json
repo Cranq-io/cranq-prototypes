@@ -1,0 +1,83 @@
+{
+  "name": "fx/yahoo finance/Currency converter",
+  "description": "Converts one currency to another",
+  "interface": {
+    "inputs": {
+      "18176848-2994-4cd5-9206-91baa311ab4a": {
+        "type": "typeof `symbol` of `market price sampler`",
+        "name": "currency pair"
+      },
+      "a7ba53f5-30cd-44e8-98c1-ed01061ac7ce": {
+        "type": "typeof `dividend` of `divider`",
+        "name": "quote currency",
+        "description": "[Inherited from port `dividend` of `divider`] \nReceives the dividend or numerator."
+      }
+    },
+    "outputs": {
+      "95efae04-5834-47dd-b587-18a142ea4b34": {
+        "type": "typeof `quotient` of `divider`",
+        "name": "base currency",
+        "description": "[Inherited from port `quotient` of `divider`] \nSends the quotient or fraction."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2f7259ed-24cd-4db4-9150-51e26d273d34": {
+          "coordinates": [
+            -3,
+            -88.5
+          ],
+          "name": "market price sampler",
+          "prototype": "f6076d3e-cc6f-44a8-ad3f-6ed670208357"
+        },
+        "36c5ef27-892e-4b33-8ba2-f83a0541e6ec": {
+          "coordinates": [
+            3,
+            88.5
+          ],
+          "name": "divider",
+          "prototype": "4d0c01f3-d192-4832-a316-7b4f3ff8fa87"
+        }
+      },
+      "connections": {
+        "2f7259ed-24cd-4db4-9150-51e26d273d34": {
+          "17973189-7d68-4fd2-a5dc-d9ff0af3a366": {
+            "36c5ef27-892e-4b33-8ba2-f83a0541e6ec": {
+              "10bc95fb-d41f-4590-9390-6459c6644108": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "18176848-2994-4cd5-9206-91baa311ab4a": {
+            "2f7259ed-24cd-4db4-9150-51e26d273d34": {
+              "7d2a81f4-b69d-42fe-82b5-bdc045b081de": {}
+            }
+          },
+          "a7ba53f5-30cd-44e8-98c1-ed01061ac7ce": {
+            "36c5ef27-892e-4b33-8ba2-f83a0541e6ec": {
+              "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {}
+            }
+          }
+        },
+        "outputs": {
+          "95efae04-5834-47dd-b587-18a142ea4b34": {
+            "36c5ef27-892e-4b33-8ba2-f83a0541e6ec": {
+              "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "exchange": null
+  },
+  "iconId": "9e22c21d-aa86-4f06-9f00-4f3ec0863f02",
+  "attributes": {
+    "locked": true
+  }
+}

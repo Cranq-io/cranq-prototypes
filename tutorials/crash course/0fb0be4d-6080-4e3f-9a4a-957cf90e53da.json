@@ -1,0 +1,200 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "Project root",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -522,
+            -42
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            380,
+            -160
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "1af2d7ba-9156-4f57-8f72-d85e01d897eb": {
+          "coordinates": [
+            -298,
+            -171
+          ],
+          "name": "ETH",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"ETH-USD\""
+          }
+        },
+        "b8ab613c-2ba5-453e-b74e-53a9792dba38": {
+          "coordinates": [
+            -274,
+            62
+          ],
+          "name": "parameter B",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "100"
+          }
+        },
+        "b5741cc5-b2a4-44a8-aa0b-6ff9e80772aa": {
+          "coordinates": [
+            -36,
+            -83.5
+          ],
+          "name": "group",
+          "prototype": "7be1dab4-d83f-4276-9b78-96beef4ef8ee"
+        },
+        "9fe855fa-ee90-4ff9-b01f-349274d2a561": {
+          "coordinates": [
+            -34,
+            -240
+          ],
+          "name": "currency converter",
+          "prototype": "7be1dab4-d83f-4276-9b78-96beef4ef8ee"
+        },
+        "1b41da63-e7b1-4300-adbd-ec9d167952dc": {
+          "coordinates": [
+            -10,
+            -473
+          ],
+          "name": "currency converter B",
+          "prototype": "7be1dab4-d83f-4276-9b78-96beef4ef8ee"
+        },
+        "97fa9f20-86c1-484b-9b90-6793904d29ce": {
+          "coordinates": [
+            -302,
+            -314
+          ],
+          "name": "SOL",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"SOL-USD\""
+          }
+        },
+        "bad89bb0-e632-482b-b90a-66800e66f287": {
+          "coordinates": [
+            -294,
+            -486
+          ],
+          "name": "UNI",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"UNI1-USD\""
+          }
+        },
+        "6e69bc5d-8080-43f1-b5f5-981d4109b17a": {
+          "coordinates": [
+            241,
+            -307
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"UNI\", \"SOL\", \"ETH\"]"
+          }
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "1af2d7ba-9156-4f57-8f72-d85e01d897eb": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "b8ab613c-2ba5-453e-b74e-53a9792dba38": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "97fa9f20-86c1-484b-9b90-6793904d29ce": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "bad89bb0-e632-482b-b90a-66800e66f287": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "1af2d7ba-9156-4f57-8f72-d85e01d897eb": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "b5741cc5-b2a4-44a8-aa0b-6ff9e80772aa": {
+              "18176848-2994-4cd5-9206-91baa311ab4a": {}
+            }
+          }
+        },
+        "b8ab613c-2ba5-453e-b74e-53a9792dba38": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "b5741cc5-b2a4-44a8-aa0b-6ff9e80772aa": {
+              "a7ba53f5-30cd-44e8-98c1-ed01061ac7ce": {}
+            },
+            "9fe855fa-ee90-4ff9-b01f-349274d2a561": {
+              "a7ba53f5-30cd-44e8-98c1-ed01061ac7ce": {}
+            },
+            "1b41da63-e7b1-4300-adbd-ec9d167952dc": {
+              "a7ba53f5-30cd-44e8-98c1-ed01061ac7ce": {}
+            }
+          }
+        },
+        "97fa9f20-86c1-484b-9b90-6793904d29ce": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "9fe855fa-ee90-4ff9-b01f-349274d2a561": {
+              "18176848-2994-4cd5-9206-91baa311ab4a": {}
+            }
+          }
+        },
+        "bad89bb0-e632-482b-b90a-66800e66f287": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "1b41da63-e7b1-4300-adbd-ec9d167952dc": {
+              "18176848-2994-4cd5-9206-91baa311ab4a": {}
+            }
+          }
+        },
+        "b5741cc5-b2a4-44a8-aa0b-6ff9e80772aa": {
+          "95efae04-5834-47dd-b587-18a142ea4b34": {
+            "6e69bc5d-8080-43f1-b5f5-981d4109b17a": {
+              "ETH": {}
+            }
+          }
+        },
+        "9fe855fa-ee90-4ff9-b01f-349274d2a561": {
+          "95efae04-5834-47dd-b587-18a142ea4b34": {
+            "6e69bc5d-8080-43f1-b5f5-981d4109b17a": {
+              "SOL": {}
+            }
+          }
+        },
+        "1b41da63-e7b1-4300-adbd-ec9d167952dc": {
+          "95efae04-5834-47dd-b587-18a142ea4b34": {
+            "6e69bc5d-8080-43f1-b5f5-981d4109b17a": {
+              "UNI": {}
+            }
+          }
+        },
+        "6e69bc5d-8080-43f1-b5f5-981d4109b17a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/Crash course"
+}

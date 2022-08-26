@@ -10,7 +10,7 @@
       "958e1641-dd76-41a7-a436-92290000eb61": {
         "type": "{\n  optional \"symbols\": string[],\n  optional \"params\": {string: any}\n}",
         "name": "query",
-        "description": "Received the tickers parameters to be fetched.\n\nExample:\n```\n{\n  \"symbols\": [\"BTC/USDT\", \"ETH/USDT\"]\n}\n```"
+        "description": "Received the tickers parameters to be fetched.\n\nExample:\n```\n{\n  \"symbols\": [\n    \"BTC/USDT\",\n    \"ETH/USDT\"\n  ]\n}\n```"
       }
     },
     "outputs": {

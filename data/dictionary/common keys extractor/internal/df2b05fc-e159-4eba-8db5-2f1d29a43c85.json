@@ -1,0 +1,30 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "a28d9fc9-916b-4b73-9c31-b5de67d4a589": "const {a, b} = data;\nconst result = [];\nfor (const key in a) {\n  if (key in b) {\n    result.push(key);\n  }\n}\noutputs[\"common keys\"](result, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "a28d9fc9-916b-4b73-9c31-b5de67d4a589": {
+        "type": "{\"a\": {string: any}, \"b\": {string: any}}",
+        "name": "dicts"
+      }
+    },
+    "outputs": {
+      "4b72f590-46a5-4b38-bec0-a0f0957ee98c": {
+        "type": "string[]",
+        "name": "common keys"
+      }
+    }
+  },
+  "name": "data/dictionary/Common keys extractor/Internal",
+  "description": "See `data/dictionary/Keys intersection`.",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

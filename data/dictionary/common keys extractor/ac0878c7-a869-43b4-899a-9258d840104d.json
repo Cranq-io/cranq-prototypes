@@ -1,0 +1,94 @@
+{
+  "name": "data/dictionary/Common keys extractor",
+  "description": "Calculates intersection of dictionaries received via `a` and `b`.\n\nThe intersection will include all keys that are present in both dictionaries, with values matching those from `b`.\n\nExample:\n1. {\"foo\": 1, \"bar\": 2}@0 received via `a`\n2. {\"bar\": 3, \"baz\": 4}@0 received via `b`\n3. {\"bar\": 3}@0 sent via `intersection`",
+  "interface": {
+    "inputs": {
+      "1a1cdc67-af48-4854-8759-60704930e041": {
+        "type": "{string: any}",
+        "name": "a"
+      },
+      "7a83ef6b-1827-4238-a644-b50a667636b9": {
+        "type": "{string: any}",
+        "name": "b"
+      }
+    },
+    "outputs": {
+      "bbf06111-7a87-46a0-8a76-3bd687337e2a": {
+        "type": "{string: any}",
+        "name": "common keys"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "06f3838e-f990-4532-b6cb-e9881e4b3364": {
+          "coordinates": [
+            38,
+            68.5
+          ],
+          "name": "intersect",
+          "prototype": "df2b05fc-e159-4eba-8db5-2f1d29a43c85",
+          "params": {}
+        },
+        "45ab0a0c-bdcc-4b09-99cc-9af49e5adc8c": {
+          "coordinates": [
+            -39,
+            -69.5
+          ],
+          "name": "sync operands",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\", \"b\"]"
+          }
+        }
+      },
+      "connections": {
+        "45ab0a0c-bdcc-4b09-99cc-9af49e5adc8c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "06f3838e-f990-4532-b6cb-e9881e4b3364": {
+              "a28d9fc9-916b-4b73-9c31-b5de67d4a589": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1a1cdc67-af48-4854-8759-60704930e041": {
+            "45ab0a0c-bdcc-4b09-99cc-9af49e5adc8c": {
+              "a": {}
+            }
+          },
+          "7a83ef6b-1827-4238-a644-b50a667636b9": {
+            "45ab0a0c-bdcc-4b09-99cc-9af49e5adc8c": {
+              "b": {}
+            }
+          }
+        },
+        "outputs": {
+          "bbf06111-7a87-46a0-8a76-3bd687337e2a": {
+            "06f3838e-f990-4532-b6cb-e9881e4b3364": {
+              "4b72f590-46a5-4b38-bec0-a0f0957ee98c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "extract": null,
+    "common": null,
+    "keys": null,
+    "fields": null,
+    "properties": null,
+    "intersection": null,
+    "dictionary": null,
+    "record": null,
+    "lookup": null,
+    "set": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

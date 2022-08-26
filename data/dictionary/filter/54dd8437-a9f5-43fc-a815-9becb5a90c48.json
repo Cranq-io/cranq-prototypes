@@ -1,0 +1,153 @@
+{
+  "name": "data/dictionary/Filter",
+  "description": "Filters dictionary. External node(s) receive each item (key & value) and decide whether to include the item in the result.",
+  "interface": {
+    "inputs": {
+      "b9028ed1-f559-45d0-a038-a67cc8f81455": {
+        "type": "{string: any}",
+        "name": "dict"
+      },
+      "daed7f05-10a0-4431-9637-d5034f0fa556": {
+        "type": "boolean",
+        "name": "include item"
+      }
+    },
+    "outputs": {
+      "aae23c0e-0461-43fa-95f6-6857fa747dfa": {
+        "type": "typeof `dict`",
+        "name": "filtered"
+      },
+      "c46672f0-7343-4e60-86b6-73e3e048cc36": {
+        "type": "typeof `dict`[string]",
+        "name": "value"
+      },
+      "72c3563b-7b77-48a6-ab16-73759d5e3d5c": {
+        "type": "string",
+        "name": "key"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1ff36a34-47ef-4313-9656-202222edeb66": {
+          "coordinates": [
+            36.80000000000001,
+            87.10000000000002
+          ],
+          "name": "filter keys",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
+        },
+        "1ff97f46-ddfa-439c-9b60-517a9c2fcd68": {
+          "coordinates": [
+            29.80000000000001,
+            -90.89999999999998
+          ],
+          "name": "filter values",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
+        },
+        "45c09fa4-ebce-43f2-b23b-8dc15f76ca8f": {
+          "coordinates": [
+            156.80000000000004,
+            5.100000000000023
+          ],
+          "name": "build filtered dict",
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead"
+        },
+        "a19baf09-639e-4af2-9c59-b73eee8f7380": {
+          "coordinates": [
+            -113.20000000000002,
+            158.10000000000002
+          ],
+          "name": "extract keys",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "3983f81c-a230-4132-be27-285041a23583": {
+          "coordinates": [
+            -108.20000000000002,
+            -160.89999999999998
+          ],
+          "name": "extract values",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+        }
+      },
+      "connections": {
+        "1ff97f46-ddfa-439c-9b60-517a9c2fcd68": {
+          "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
+            "45c09fa4-ebce-43f2-b23b-8dc15f76ca8f": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          }
+        },
+        "1ff36a34-47ef-4313-9656-202222edeb66": {
+          "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {
+            "45c09fa4-ebce-43f2-b23b-8dc15f76ca8f": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+            }
+          }
+        },
+        "a19baf09-639e-4af2-9c59-b73eee8f7380": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "1ff36a34-47ef-4313-9656-202222edeb66": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        },
+        "3983f81c-a230-4132-be27-285041a23583": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "1ff97f46-ddfa-439c-9b60-517a9c2fcd68": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b9028ed1-f559-45d0-a038-a67cc8f81455": {
+            "a19baf09-639e-4af2-9c59-b73eee8f7380": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            },
+            "3983f81c-a230-4132-be27-285041a23583": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          },
+          "daed7f05-10a0-4431-9637-d5034f0fa556": {
+            "1ff36a34-47ef-4313-9656-202222edeb66": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            },
+            "1ff97f46-ddfa-439c-9b60-517a9c2fcd68": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            }
+          }
+        },
+        "outputs": {
+          "72c3563b-7b77-48a6-ab16-73759d5e3d5c": {
+            "1ff36a34-47ef-4313-9656-202222edeb66": {
+              "c117ad5f-d261-409a-a6dc-cbae80af10a5": {}
+            }
+          },
+          "c46672f0-7343-4e60-86b6-73e3e048cc36": {
+            "1ff97f46-ddfa-439c-9b60-517a9c2fcd68": {
+              "c117ad5f-d261-409a-a6dc-cbae80af10a5": {}
+            }
+          },
+          "aae23c0e-0461-43fa-95f6-6857fa747dfa": {
+            "45c09fa4-ebce-43f2-b23b-8dc15f76ca8f": {
+              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "select": null,
+    "dictionary": null,
+    "lookup": null,
+    "map": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

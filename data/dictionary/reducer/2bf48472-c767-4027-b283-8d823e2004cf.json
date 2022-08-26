@@ -1,0 +1,172 @@
+{
+  "name": "data/dictionary/Reducer",
+  "description": "Reduces dictionary. External node(s) receive the partial result and each key & value and send back a new partial result.",
+  "interface": {
+    "inputs": {
+      "113d4c4d-fbca-4208-a860-0d4ce7e74f96": {
+        "type": "{string: any}",
+        "name": "dict",
+        "description": "Receives dictionary to be reduced.\n\nExample:\n```json\n{\n  \"a\": \"A\",\n  \"b\": \"B\",\n  \"c\": \"C\"\n}\n```"
+      },
+      "41b23f84-84c6-4a60-818a-6d2d73b398f5": {
+        "type": "any",
+        "name": "initial",
+        "description": "Receives initial value for the reduced dictionary.\n\nExample: `\"\"`"
+      },
+      "5daec729-4816-4caf-8303-dd0c02b059bd": {
+        "type": "typeof `initial`",
+        "name": "part reduced",
+        "description": "Receives reduced dictionary before the current (by tag) item.\n\nExample: `\"AB\"`"
+      }
+    },
+    "outputs": {
+      "72a72278-006d-4794-8481-444f348b7488": {
+        "type": "typeof `initial`",
+        "name": "reduced",
+        "description": "Sends the reduced dictionary.\n\nExample: `\"ABC\"`"
+      },
+      "fe0ece64-c3f9-40a0-bf75-3353ebcf9358": {
+        "type": "typeof `dict`[string]",
+        "name": "value",
+        "description": "Sends the current value.\n\nExample: `\"C\"`"
+      },
+      "2e6cf288-afdf-4f0d-a52a-57640c60e164": {
+        "type": "string",
+        "name": "key",
+        "description": "Sends the current key.\n\nExample: `\"c\"`"
+      },
+      "40fc1007-0fb1-4125-803d-eb62c1e4a3ec": {
+        "type": "typeof `initial`",
+        "name": "part reduced",
+        "description": "Sends reduced dictionary after the current (by tag) item.\n\nExample: `\"A\"`"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+          "coordinates": [
+            69,
+            -35.25
+          ],
+          "name": "reduce keys",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8"
+        },
+        "562d114d-79d3-4006-ba27-99f27a749c13": {
+          "coordinates": [
+            -28,
+            -203.25
+          ],
+          "name": "get keys",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "02957c61-b63f-4b86-b352-6c1a4863c775": {
+          "coordinates": [
+            -8,
+            41.75
+          ],
+          "name": "get values",
+          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+        },
+        "530a64e1-b0ee-4f90-8694-aae069723aeb": {
+          "coordinates": [
+            145,
+            122.75
+          ],
+          "name": "iterate over values",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        },
+        "4ab51926-93df-4ef5-9863-d419a7d1ddfe": {
+          "coordinates": [
+            -182,
+            -94.25
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "562d114d-79d3-4006-ba27-99f27a749c13": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "02957c61-b63f-4b86-b352-6c1a4863c775": {
+          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+            "530a64e1-b0ee-4f90-8694-aae069723aeb": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            }
+          }
+        },
+        "4ab51926-93df-4ef5-9863-d419a7d1ddfe": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "562d114d-79d3-4006-ba27-99f27a749c13": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            },
+            "02957c61-b63f-4b86-b352-6c1a4863c775": {
+              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+              "ec095128-e720-45fc-9b4f-b87a130d9249": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "113d4c4d-fbca-4208-a860-0d4ce7e74f96": {
+            "4ab51926-93df-4ef5-9863-d419a7d1ddfe": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "41b23f84-84c6-4a60-818a-6d2d73b398f5": {
+            "4ab51926-93df-4ef5-9863-d419a7d1ddfe": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "5daec729-4816-4caf-8303-dd0c02b059bd": {
+            "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "outputs": {
+          "40fc1007-0fb1-4125-803d-eb62c1e4a3ec": {
+            "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+              "b4087af0-fa79-4961-b9dc-964592eb007b": {}
+            }
+          },
+          "2e6cf288-afdf-4f0d-a52a-57640c60e164": {
+            "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+              "7e9f3838-b5d2-409b-ace3-9748bcff4346": {}
+            }
+          },
+          "fe0ece64-c3f9-40a0-bf75-3353ebcf9358": {
+            "530a64e1-b0ee-4f90-8694-aae069723aeb": {
+              "52e37fc4-95e9-4073-9d76-62e6816bfffe": {}
+            }
+          },
+          "72a72278-006d-4794-8481-444f348b7488": {
+            "9453fe31-de4e-49bb-9d08-b204f5a2f6ef": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "keywords": {
+    "iterate": null,
+    "fold": null,
+    "aggregate": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "cb587440-9da6-489a-af44-06cc7855989b": "outputs.reversed([...data].reverse(), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "cb587440-9da6-489a-af44-06cc7855989b": {
+        "type": "any[]",
+        "name": "array"
+      }
+    },
+    "outputs": {
+      "7f07403c-1b20-47bc-9554-52c2b27f1545": {
+        "type": "typeof `array`",
+        "name": "reversed"
+      }
+    }
+  },
+  "name": "data/array/Order reverser",
+  "description": "Reverses the order of items in the received array.\n\nExample:\n1. [1,2,3]@0 received via `array`\n2. [3,2,1]@0 sent via `reversed`",
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "reverse": null,
+    "order": null,
+    "backwards": null,
+    "flip": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

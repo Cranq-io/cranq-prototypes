@@ -1,0 +1,246 @@
+{
+  "name": "blockchain/ethereum/Uniswap/v2/Liquidity adder",
+  "description": "Add liquidity to the pool.\nIf pool doesn't exist it will be created.\nTokenB can be ETH also.",
+  "interface": {
+    "inputs": {
+      "ca036788-5f7a-4d08-a4cf-f4223b4ce604": {
+        "type": "{\n  \"address\": string,\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
+        "name": "tokenA"
+      },
+      "78d8f5a9-17e7-45e2-b778-f46cda29a80a": {
+        "type": "{\n  \"address\": (string or \"ETH\"),\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
+        "name": "tokenB or ETH"
+      },
+      "7de50776-c33c-49fd-ae41-bb85b3da0501": {
+        "type": "string",
+        "name": "to addres"
+      },
+      "76512fec-78df-43fd-a9fd-20e33817bb49": {
+        "type": "number",
+        "name": "deadline"
+      },
+      "a1a9f3b2-f3b9-4917-b77a-bf507b19f47f": {
+        "type": "{\n\"address\": string,\n\"abi\": {string: any}\n}",
+        "name": "router contract"
+      },
+      "77827705-1577-47c3-904c-8dff54475e8d": {
+        "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "ca296aaa-e80e-4141-8a2c-2be8aad5dec2": {
+        "type": "any",
+        "name": "result"
+      },
+      "4fbce32e-7012-4bde-bdc5-052501a3efde": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+          "coordinates": [
+            209.5,
+            114.5
+          ],
+          "name": "liquidity adder",
+          "prototype": "0979c75a-e817-4ed7-83a3-bb2570613cac"
+        },
+        "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+          "coordinates": [
+            206.5,
+            -49.5
+          ],
+          "name": "liquidity adder eth",
+          "prototype": "b646dd6e-2ec9-4caa-a611-a0bd7906308b"
+        },
+        "2d481479-6d1b-42bc-83b1-d8543e9150e7": {
+          "coordinates": [
+            -336.5,
+            -39.5
+          ],
+          "name": "contract parameters",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "abfddba8-b87f-401c-a5ef-b1477ad429ec": {
+          "coordinates": [
+            -343.5,
+            67.5
+          ],
+          "name": "operation parameters",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "85bbd70b-bfe5-4d5a-8643-c7cb4055e9ad": {
+          "coordinates": [
+            -259.5,
+            -168.5
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"address\""
+          }
+        },
+        "b9d1e760-b53f-4cae-a27d-da6411509a5d": {
+          "coordinates": [
+            -155.5,
+            -248.5
+          ],
+          "name": "equality tester",
+          "prototype": "1e9c7987-c42c-4980-81ca-381002c302a1",
+          "params": {
+            "100c6612-03e8-49fb-96c3-676047ed9e5c": "\"ETH\""
+          }
+        },
+        "439ba717-afcf-4844-aba4-830279e33b17": {
+          "coordinates": [
+            -7.5,
+            -218.5
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "2d481479-6d1b-42bc-83b1-d8543e9150e7": {
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "85bbd70b-bfe5-4d5a-8643-c7cb4055e9ad": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "439ba717-afcf-4844-aba4-830279e33b17": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          },
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "4602e6ff-ae72-46bd-bddb-2065b4f4895a": {}
+            },
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "4602e6ff-ae72-46bd-bddb-2065b4f4895a": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "46368936-c937-4d59-9cf5-943b756ace58": {}
+            },
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "46368936-c937-4d59-9cf5-943b756ace58": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "642a80c9-e59e-4e40-98e0-842ce385e544": {}
+            },
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "642a80c9-e59e-4e40-98e0-842ce385e544": {}
+            }
+          }
+        },
+        "85bbd70b-bfe5-4d5a-8643-c7cb4055e9ad": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "b9d1e760-b53f-4cae-a27d-da6411509a5d": {
+              "c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea": {}
+            }
+          }
+        },
+        "b9d1e760-b53f-4cae-a27d-da6411509a5d": {
+          "9f08a7ac-1742-4de2-8683-fa5a7f6f3867": {
+            "439ba717-afcf-4844-aba4-830279e33b17": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "439ba717-afcf-4844-aba4-830279e33b17": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "e971b0f8-3982-4b6e-98d7-22f8409f3817": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "e971b0f8-3982-4b6e-98d7-22f8409f3817": {}
+            }
+          }
+        },
+        "abfddba8-b87f-401c-a5ef-b1477ad429ec": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "9ab46954-d296-43b4-a18a-377cc168128d": {}
+            },
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "9ab46954-d296-43b4-a18a-377cc168128d": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {}
+            },
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ca036788-5f7a-4d08-a4cf-f4223b4ce604": {
+            "2d481479-6d1b-42bc-83b1-d8543e9150e7": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "78d8f5a9-17e7-45e2-b778-f46cda29a80a": {
+            "2d481479-6d1b-42bc-83b1-d8543e9150e7": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "7de50776-c33c-49fd-ae41-bb85b3da0501": {
+            "2d481479-6d1b-42bc-83b1-d8543e9150e7": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "76512fec-78df-43fd-a9fd-20e33817bb49": {
+            "2d481479-6d1b-42bc-83b1-d8543e9150e7": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          },
+          "a1a9f3b2-f3b9-4917-b77a-bf507b19f47f": {
+            "abfddba8-b87f-401c-a5ef-b1477ad429ec": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "77827705-1577-47c3-904c-8dff54475e8d": {
+            "abfddba8-b87f-401c-a5ef-b1477ad429ec": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "ca296aaa-e80e-4141-8a2c-2be8aad5dec2": {
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "60a037e1-67e3-4d3b-9606-3398163f27af": {}
+            },
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "60a037e1-67e3-4d3b-9606-3398163f27af": {}
+            }
+          },
+          "4fbce32e-7012-4bde-bdc5-052501a3efde": {
+            "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
+              "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {}
+            },
+            "2e379074-d1a2-45d3-b8a6-8f0d1c900838": {
+              "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703",
+  "attributes": {
+    "locked": true
+  }
+}

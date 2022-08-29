@@ -1,0 +1,33 @@
+{
+  "description": "",
+  "interface": {
+    "inputs": {
+      "9af21210-8f9c-4067-986a-f29fe11cede0": {
+        "type": "{\"dict\":{string:any},\"keys\":string[]}",
+        "name": "dict & keys"
+      }
+    },
+    "outputs": {
+      "9e6164b8-807d-4f53-9a1b-2c8654bdcbbd": {
+        "type": "{string: any}",
+        "name": "items"
+      }
+    }
+  },
+  "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "9af21210-8f9c-4067-986a-f29fe11cede0": "const {dict, keys} = data;\nconst values = keys.map(key => dict[key]);\nlet validItems = {};\n\nvalues.forEach((value, index)=>{\n  if (value !== undefined){\n    validItems[index] = value;\n  }\n})\n\n\noutputs.items(validItems, tag);\n"
+      }
+    }
+  },
+  "name": "data/dictionary/Items getter/Internal",
+  "original": "9ad1bd95-4658-4d01-a241-ce3fe0e9e9b2",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

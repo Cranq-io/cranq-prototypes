@@ -1,5 +1,5 @@
 {
-  "description": "Retrieves multiple items' value from the dictionary with the proper index of the keys used for querying, in the order of the keys provided.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [ \"first\", \"third\" ]@0 received via `key`\n3. `items` sends  \n{\n  \"0\": 1,\n  \"2\": 3\n}@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\",\"second\"]@0 received via `key`\n3. `items` sends  \n{\"0\": 1}@0\n\n",
+  "description": "Retrieves multiple items' value from the dictionary with the proper index of the keys used for querying, in the order of the keys provided.\n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [ \"first\", \"third\" ]@0 received via `keys`\n3. `items` sends  \n{\n  \"0\": 1,\n  \"2\": 3\n}@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\",\"second\"]@0 received via `keys`\n3. `items` sends  \n{\"0\": 1}@0\n\n",
   "interface": {
     "inputs": {
       "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
@@ -17,7 +17,7 @@
       "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
         "type": "{string: any}",
         "name": "items",
-        "description": "Sends the values with the index of the corresponding to the received keys.\n\nExample:\n{\n  \"0\": 1,\n  \"2\": 3\n}\n"
+        "description": "Sends the values with the index corresponding to the received keys.\n\nExample:\n{\n  \"0\": 1,\n  \"2\": 3\n}\n"
       }
     }
   },

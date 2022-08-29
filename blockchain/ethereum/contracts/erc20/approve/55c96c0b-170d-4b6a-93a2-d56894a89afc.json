@@ -5,20 +5,20 @@
       "8af36cde-8a26-4e21-938d-066a5e5742bd": {
         "type": "string",
         "name": "router address",
-        "description": ""
+        "description": "The address of a router contract that receives the approval for the given token."
       },
       "86a67e4f-9f7d-4924-b1b8-9e9b17c5c8cf": {
-        "type": "typeof `item` of `item appender`",
+        "type": "typeof `units` of `unit parser`",
         "name": "amount",
-        "description": "[Inherited from port `item` of `item appender`] \nReceives item to append to the array.\n\nExample:\n1"
+        "description": "The amount of the selected token that should be added to the liquidity pool."
       },
       "3eb6ccfa-35e8-4704-947b-89c795ea6871": {
-        "type": "typeof `contract address` of `contract call clone`",
+        "type": "typeof `contract address` of `contract executor`",
         "name": "token address"
       },
       "82b16f00-66eb-49b7-8f6d-afa56a77f4c9": {
         "type": "any",
-        "name": "credentials"
+        "name": "typeof `credentials` of `contract executor`"
       }
     },
     "outputs": {
@@ -76,8 +76,8 @@
         },
         "105c12ac-463a-47f8-98be-669d614d3ca5": {
           "coordinates": [
-            -48.83333333333326,
-            -73.66666666666674
+            -46.83333333333326,
+            -71.66666666666674
           ],
           "name": "unit parser",
           "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5"

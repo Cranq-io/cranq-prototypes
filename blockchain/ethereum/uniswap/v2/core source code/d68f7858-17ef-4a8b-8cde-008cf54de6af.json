@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "858f2cdf-e216-49be-9910-aa483d782f62": {
-        "type": "",
+        "type": "any",
         "name": "start",
         "description": ""
       }
     },
     "outputs": {
       "8db497a4-cf26-4b44-bb99-0a6266736222": {
-        "type": "typeof `data` of `uniswap v2-core sources`",
+        "type": "typeof `data` of `uniswap v2-core instrumented source`",
         "name": "v2-core sources",
         "description": "[Inherited from port `data` of `uniswap v2-core sources`] \nSends store contents."
       }

@@ -3,22 +3,22 @@
   "interface": {
     "inputs": {
       "3988660b-8398-4a78-8889-e5cc8506394e": {
-        "type": "typeof `1` of `tokens`",
+        "type": "{\n  \"address\": string,\n  \"desiredAmount\": number\n}",
         "name": "tokenA",
         "description": "[Inherited from port `1` of `tokens`] \nReceives individual item for syncing."
       },
       "8d57999d-148b-4eff-9e4d-ca00f36e10ea": {
-        "type": "typeof `2` of `tokens`",
+        "type": "{\n  \"address\": string,\n  \"desiredAmount\": number\n}",
         "name": "tokenB",
         "description": "[Inherited from port `2` of `tokens`] \nReceives individual item for syncing."
       },
       "78fb26c0-e46e-490b-a5d7-ff880ac745da": {
-        "type": "typeof `item` of `item appender`",
+        "type": "string",
         "name": "liquidity token to",
         "description": "[Inherited from port `item` of `item appender`] \nReceives item to append to the array.\n\nExample:\n1"
       },
       "04df0153-0ab3-410d-9054-44b0965cfce2": {
-        "type": "typeof `item` of `item appender copy`",
+        "type": "number",
         "name": "deadline",
         "description": "[Inherited from port `item` of `item appender copy`] \nReceives item to append to the array.\n\nExample:\n1"
       },
@@ -37,7 +37,7 @@
         "name": "result"
       },
       "6dacdfe2-fc10-4f08-9919-2f198cda89f4": {
-        "type": "typeof `error` of `contract caller`",
+        "type": "typeof `error` of `contract executor`",
         "name": "error"
       }
     }

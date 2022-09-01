@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "0d455460-c659-44c5-afd7-bdba5211c32d": {
-        "type": "EthersBigNumber",
+        "type": "{string: any}",
         "name": "units",
         "description": "The value as BigNumber"
       },
@@ -16,7 +16,7 @@
     },
     "outputs": {
       "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
-        "type": "typeof `big number` of `convert to BigNumber`",
+        "type": "typeof `result` of `format BigNumber to string`",
         "name": "result",
         "description": "The string representation of value formatted with unit digits."
       }
@@ -30,7 +30,7 @@
             208,
             3
           ],
-          "name": "convert to BigNumber clone",
+          "name": "format BigNumber to string",
           "prototype": "d2d49fe9-90aa-4f9b-acb1-6d42845412f9"
         },
         "46a4d777-9d35-452d-95da-5d27eea22923": {

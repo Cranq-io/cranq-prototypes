@@ -63,7 +63,7 @@
             18.17857142857143,
             -138.37142857142857
           ],
-          "name": "Build Request",
+          "name": "build request",
           "prototype": "a775d1ff-7699-4523-8317-06bd1a1df1d3"
         },
         "621757c5-a78d-4fe0-b0db-eb91e9afeec0": {
@@ -71,7 +71,7 @@
             192.55357142857144,
             -133.62142857142857
           ],
-          "name": "json request dispatcher",
+          "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
         },
         "e8d1e861-b427-4057-9d1c-c4b8edf228fa": {
@@ -79,7 +79,7 @@
             316.55357142857144,
             104.37857142857143
           ],
-          "name": "records extractor",
+          "name": "extract records",
           "prototype": "c78453a1-9ea5-42b7-8680-1f45629ca7d9"
         },
         "c29f3d71-a017-410c-aa22-36e1fcd5bae8": {
@@ -87,7 +87,7 @@
             88.55357142857144,
             89.37857142857143
           ],
-          "name": "json response error detector",
+          "name": "detect errors",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
           "params": {
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Updating records failed\""
@@ -187,7 +187,8 @@
       }
     }
   },
-  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "description": "Updates multiple specific records in the specified AirTable table. The input received on parameter records must match the target table schema.\r\n\r\nMaximum record count is 10.\r\n\r\nFor detailed parameter information, see the AirTable API documentation:\r\nhttps://airtable.com/api/meta",
   "attributes": {
     "locked": true
   }

@@ -1,6 +1,6 @@
 {
   "name": "apis/airtable/Record deleter",
-  "description": "Deletes a single record from an AirTable table.",
+  "description": "Deletes a single record from an AirTable table.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
   "interface": {
     "inputs": {
       "7c66e865-9f03-477c-9a0c-cd1c797de6c8": {
@@ -45,7 +45,7 @@
             2.2734375,
             -194.8515625
           ],
-          "name": "body-less request builder",
+          "name": "build request",
           "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
           "params": {
             "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"DELETE\""
@@ -56,7 +56,7 @@
             -161.7265625,
             -115.8515625
           ],
-          "name": "record url builder",
+          "name": "build url",
           "prototype": "5afa860f-b8dc-46f0-aa46-1867c04c980d"
         },
         "2392b23a-7c8d-492d-bb49-c792dceb4ee6": {
@@ -64,7 +64,7 @@
             26.2734375,
             -34.8515625
           ],
-          "name": "bearer token inserter",
+          "name": "insert bearer token",
           "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
           "params": {
             "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
@@ -75,7 +75,7 @@
             193.2734375,
             106.1484375
           ],
-          "name": "response error detector",
+          "name": "detect error",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
           "params": {
             "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Record deletion failed.\""

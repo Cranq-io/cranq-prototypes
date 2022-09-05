@@ -1,0 +1,83 @@
+{
+  "name": "apis/airtable/Record updater/Build request/Build URL",
+  "interface": {
+    "inputs": {
+      "84cb04bf-e6b1-47ac-b924-659579d1021b": {
+        "type": "any",
+        "name": "baseId"
+      },
+      "a9f2d2b7-95c3-4d63-9772-90642070254c": {
+        "type": "any",
+        "name": "tableName"
+      }
+    },
+    "outputs": {
+      "d4a2a3a5-0fc9-44ba-89c5-b1bf72ba9c4e": {
+        "type": "any",
+        "name": "URL"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "09e62a2f-3b60-434c-b2d9-a21c10e72ccc": {
+          "coordinates": [
+            -81.5,
+            6
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"APP_ID\", \"TABLE_NAME\"]"
+          }
+        },
+        "80ea0645-6995-405a-a7c7-3ef74d4dec93": {
+          "coordinates": [
+            81.5,
+            -6
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.airtable.com/v0/{APP_ID}/{TABLE_NAME}\""
+          }
+        }
+      },
+      "connections": {
+        "09e62a2f-3b60-434c-b2d9-a21c10e72ccc": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "80ea0645-6995-405a-a7c7-3ef74d4dec93": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "84cb04bf-e6b1-47ac-b924-659579d1021b": {
+            "09e62a2f-3b60-434c-b2d9-a21c10e72ccc": {
+              "APP_ID": {}
+            }
+          },
+          "a9f2d2b7-95c3-4d63-9772-90642070254c": {
+            "09e62a2f-3b60-434c-b2d9-a21c10e72ccc": {
+              "TABLE_NAME": {}
+            }
+          }
+        },
+        "outputs": {
+          "d4a2a3a5-0fc9-44ba-89c5-b1bf72ba9c4e": {
+            "80ea0645-6995-405a-a7c7-3ef74d4dec93": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "name": "apis/airtable/bulk records updater",
+  "name": "apis/airtable/Bulk records updater",
   "description": "Updates multiple specific records in the specified AirTable table. The input received on parameter records must match the target table schema.\r\n\r\nSends records to the AirTable API in batches of 10.\r\n\r\nFor detailed parameter information, see the AirTable API documentation: \r\nhttps://airtable.com/api/meta",
   "interface": {
     "inputs": {
       "0b5512e3-e4e1-418d-97fb-82aa6fff413c": {
-        "type": "[\n  {\n    \"id\" : \"\",\n    \"fields\" : {\n      \"field\" : \"\"\n    }\n  }\n]",
+        "type": "{string: any}[]",
         "name": "records",
         "description": "Receives arbitrary number of records to be inserted into AirTable. Number of records inserted must be greater than 1."
       },
@@ -16,18 +16,18 @@
     },
     "outputs": {
       "217fdce8-4a09-4f9f-b429-5096aec6140c": {
-        "type": "[\n  {\n    \"field\": \"\",\n    \"Calculation\": \"record id\"\n  }\n]",
+        "type": "[\n  {\n    \"field\": string,\n    \"Calculation\": number\n  }\n]",
         "name": "records",
         "description": "The original changes to be updated in the AirTable.\r\n\r\nIncludes updated record values and record IDs."
       },
       "c2dbd9ed-e12e-454a-a6a7-3258856e92a8": {
-        "type": "[\n  {\n    \"id\": \"\",\n    \"createdTime\": \"\",\n    \"fields\": {\n      \"\": \"\",\n      \"Calculation\": \"\"\n    }\n  }\n]",
+        "type": "[\n  {\n    \"id\": number,\n    \"createdTime\": string,\n    \"fields\": {\n      \"field\": string,\n      \"Calculation\": any\n    }\n  }\n]",
         "name": "AT records",
         "description": "Updated records as is sent to the AirTable API.\r\n\r\nIncludes record IDs, created times of records and updated record values"
       },
       "13f44ddb-a5bb-4047-924c-98273b574724": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
-        "name": "responses",
+        "name": "response",
         "description": "Sends the entire response from the AirTable API without modification.\r\n\r\nSee link for correct formats of request and response 'update record' messages:\r\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs#curl/table:projects:update"
       },
       "2deb0dba-02fc-4fb2-87c2-0889ae38140a": {
@@ -253,7 +253,7 @@
       }
     }
   },
-  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
   "attributes": {
     "locked": true
   }

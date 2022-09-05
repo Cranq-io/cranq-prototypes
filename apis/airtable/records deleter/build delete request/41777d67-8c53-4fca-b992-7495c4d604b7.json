@@ -1,0 +1,134 @@
+{
+  "name": "apis/airtable/Records deleter/Build delete request",
+  "interface": {
+    "inputs": {
+      "7d2577fc-7ef7-4b17-8726-cd7c90e0c6f1": {
+        "type": "any",
+        "name": "apiKey"
+      },
+      "5337b8ed-163f-4ad2-a14d-ac91118ea343": {
+        "type": "any",
+        "name": "baseId"
+      },
+      "2ace9c8b-8e81-46fa-b900-5ef92bd19c79": {
+        "type": "any",
+        "name": "tableName"
+      },
+      "a0da86e0-8312-4bac-94a2-48f022c1401b": {
+        "type": "any",
+        "name": "records"
+      }
+    },
+    "outputs": {
+      "6fae9f21-2a07-4365-80e0-12868a0aeddd": {
+        "type": "any",
+        "name": "URL-enc. req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6496f472-e2d9-44d0-b4f2-931e1fe86570": {
+          "coordinates": [
+            -57.75,
+            -129.25
+          ],
+          "name": "build url",
+          "prototype": "13f759f2-e4b4-426d-8c67-53e6861b080a"
+        },
+        "20dd1336-5b2d-48fb-9698-73011e538c23": {
+          "coordinates": [
+            -50.75,
+            -4.25
+          ],
+          "name": "bearer token inserter",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        },
+        "e786c660-a2c1-4f0d-9fe7-4434f1cc497a": {
+          "coordinates": [
+            -81.75,
+            120.25
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"records[]\"]"
+          }
+        },
+        "ba1e5b15-66f6-45d6-8801-847eef8410e5": {
+          "coordinates": [
+            124.25,
+            13.25
+          ],
+          "name": "url-encoded request builder",
+          "prototype": "663589ca-76ee-48a9-ae87-6595e530f496",
+          "params": {
+            "df4b6b5b-fc5e-4205-a9bf-562640a349db": "\"DELETE\""
+          }
+        }
+      },
+      "connections": {
+        "6496f472-e2d9-44d0-b4f2-931e1fe86570": {
+          "d4a2a3a5-0fc9-44ba-89c5-b1bf72ba9c4e": {
+            "ba1e5b15-66f6-45d6-8801-847eef8410e5": {
+              "97f34b28-8a88-433d-870c-6710cfbffc60": {}
+            }
+          }
+        },
+        "20dd1336-5b2d-48fb-9698-73011e538c23": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "ba1e5b15-66f6-45d6-8801-847eef8410e5": {
+              "4708ec78-1d26-4cf1-b16a-3fc87e63395c": {}
+            }
+          }
+        },
+        "e786c660-a2c1-4f0d-9fe7-4434f1cc497a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "ba1e5b15-66f6-45d6-8801-847eef8410e5": {
+              "63cb20e0-c747-4891-b8bb-7efedf9097e7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5337b8ed-163f-4ad2-a14d-ac91118ea343": {
+            "6496f472-e2d9-44d0-b4f2-931e1fe86570": {
+              "84cb04bf-e6b1-47ac-b924-659579d1021b": {}
+            }
+          },
+          "2ace9c8b-8e81-46fa-b900-5ef92bd19c79": {
+            "6496f472-e2d9-44d0-b4f2-931e1fe86570": {
+              "a9f2d2b7-95c3-4d63-9772-90642070254c": {}
+            }
+          },
+          "7d2577fc-7ef7-4b17-8726-cd7c90e0c6f1": {
+            "20dd1336-5b2d-48fb-9698-73011e538c23": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          },
+          "a0da86e0-8312-4bac-94a2-48f022c1401b": {
+            "e786c660-a2c1-4f0d-9fe7-4434f1cc497a": {
+              "records[]": {}
+            }
+          }
+        },
+        "outputs": {
+          "6fae9f21-2a07-4365-80e0-12868a0aeddd": {
+            "ba1e5b15-66f6-45d6-8801-847eef8410e5": {
+              "fdd1089c-fd96-4534-a1e6-da2902d73bcc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

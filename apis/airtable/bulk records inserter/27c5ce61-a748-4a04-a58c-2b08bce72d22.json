@@ -11,7 +11,7 @@
       "a44a2205-6893-473d-a500-5d07b6f5ade2": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
         "name": "params",
-        "description": ""
+        "description": "API Key, Base ID and Table Name all extracted from AirTable\r\n\r\nAPI Key: Go into AirTable account and scroll to '<>API'to find the\r\n\r\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\r\n\r\nTable Name: Use the table name located on the tab of the spreadsheet"
       }
     },
     "outputs": {

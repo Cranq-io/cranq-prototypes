@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "fd17c7a6-833e-4585-abf6-933387a0a47a": {
-        "type": "{string: any}",
+        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}",
         "name": "record",
         "description": "Receives a single record to be inserted into AirTable."
       },
@@ -20,7 +20,7 @@
         "description": "Sends the record that was successfully inserted into AirTable."
       },
       "338a9a02-27e7-463c-bc5d-17603b0f796a": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": typeof `record`\n}",
+        "type": "{\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n}",
         "name": "AT record",
         "description": "Sends the record that was successfully inserted into AirTable, including metadata like row ID, and date & time of creation."
       },
@@ -202,10 +202,13 @@
     }
   },
   "keywords": {
+    "airtable": null,
     "insert": null,
     "upload": null,
     "create": null,
-    "append": null
+    "append": null,
+    "record": null,
+    "row": null
   },
   "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
   "attributes": {

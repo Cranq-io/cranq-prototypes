@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "86424a8c-c0f1-4ee9-baac-d0cf604e6d31": {
-        "type": "{string: any}[]",
+        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}[]",
         "name": "records",
         "description": "Receives up to 10 records to be inserted into AirTable."
       },
@@ -20,7 +20,7 @@
         "description": "Sends records that were successfully inserted into AirTable."
       },
       "60c54568-3b44-446e-b64d-c21b7f425c9f": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": typeof `records`[number]\n}[]",
+        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}[\"records\"][]",
         "name": "AT records",
         "description": "Sends records that were successfully inserted into AirTable, including metadata like row ID, and date & time of creation."
       },
@@ -40,8 +40,8 @@
       "nodes": {
         "e644b6ae-f8bd-4c8e-9e06-486f57af09e1": {
           "coordinates": [
-            -175.68402777777777,
-            -78.29513888888891
+            -199.68402777777777,
+            -93.29513888888891
           ],
           "name": "splitter",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -51,8 +51,8 @@
         },
         "e79ab5da-a692-4ebe-8ef2-c0d68996141f": {
           "coordinates": [
-            -176.68402777777777,
-            101.70486111111109
+            -182.68402777777777,
+            78.70486111111109
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
@@ -64,14 +64,6 @@
           ],
           "name": "records to airtable",
           "prototype": "56fadfc7-8213-4a6e-9ec8-de2c32c0abf0"
-        },
-        "d2fb3025-649c-445f-a441-067c8e113702": {
-          "coordinates": [
-            -11.434027777777771,
-            -202.79513888888889
-          ],
-          "name": "build request",
-          "prototype": "5841b4de-1a66-47c0-806c-5dcc593498a5"
         },
         "0fbd3ab3-f0e9-42e1-91a1-bb4a32bd73d8": {
           "coordinates": [
@@ -91,11 +83,19 @@
         },
         "166baffb-e06f-485d-bd27-03115f54a379": {
           "coordinates": [
-            128,
-            -165
+            132,
+            -178
           ],
-          "name": "json request dispatcher B",
+          "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "ca79a738-b0ba-4342-bcb7-917587a96018": {
+          "coordinates": [
+            -14,
+            -234
+          ],
+          "name": "build request",
+          "prototype": "5841b4de-1a66-47c0-806c-5dcc593498a5"
         }
       },
       "connections": {
@@ -111,29 +111,8 @@
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "95cf4573-d87d-4a98-8e7d-6b5f53f01825": {
               "d4b3c6b5-8bb6-4ce6-8686-4e6fe768c19e": {}
-            }
-          }
-        },
-        "e644b6ae-f8bd-4c8e-9e06-486f57af09e1": {
-          "baseId": {
-            "d2fb3025-649c-445f-a441-067c8e113702": {
-              "21daa219-b0d3-48f7-8faa-036510c524b6": {}
-            }
-          },
-          "tableName": {
-            "d2fb3025-649c-445f-a441-067c8e113702": {
-              "18a207d6-432d-4f1a-8c71-e27e0a8f6cb7": {}
-            }
-          },
-          "apiKey": {
-            "d2fb3025-649c-445f-a441-067c8e113702": {
-              "c2b87fdf-b7bc-4612-8db2-287615746770": {}
-            }
-          }
-        },
-        "95cf4573-d87d-4a98-8e7d-6b5f53f01825": {
-          "7fb8ce69-80c0-43af-a17c-c12ee71b7e5b": {
-            "d2fb3025-649c-445f-a441-067c8e113702": {
+            },
+            "ca79a738-b0ba-4342-bcb7-917587a96018": {
               "f44789b1-8a2d-400c-bac4-22c2897175c4": {}
             }
           }
@@ -152,7 +131,24 @@
             }
           }
         },
-        "d2fb3025-649c-445f-a441-067c8e113702": {
+        "e644b6ae-f8bd-4c8e-9e06-486f57af09e1": {
+          "baseId": {
+            "ca79a738-b0ba-4342-bcb7-917587a96018": {
+              "21daa219-b0d3-48f7-8faa-036510c524b6": {}
+            }
+          },
+          "tableName": {
+            "ca79a738-b0ba-4342-bcb7-917587a96018": {
+              "18a207d6-432d-4f1a-8c71-e27e0a8f6cb7": {}
+            }
+          },
+          "apiKey": {
+            "ca79a738-b0ba-4342-bcb7-917587a96018": {
+              "c2b87fdf-b7bc-4612-8db2-287615746770": {}
+            }
+          }
+        },
+        "ca79a738-b0ba-4342-bcb7-917587a96018": {
           "4cdde0a4-4828-4393-b0d1-6186d643a5a9": {
             "166baffb-e06f-485d-bd27-03115f54a379": {
               "3f371a08-e057-48db-bb41-9a66072ae89a": {}
@@ -202,10 +198,13 @@
     }
   },
   "keywords": {
+    "airtable": null,
     "insert": null,
     "upload": null,
     "create": null,
-    "append": null
+    "append": null,
+    "record": null,
+    "rows": null
   },
   "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
   "attributes": {

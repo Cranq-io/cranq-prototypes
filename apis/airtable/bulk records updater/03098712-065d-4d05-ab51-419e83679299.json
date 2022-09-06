@@ -1,0 +1,268 @@
+{
+  "name": "apis/airtable/Bulk records updater",
+  "description": "Updates multiple specific records in the specified AirTable table. The input received on parameter records must match the target table schema.\r\n\r\nSends records to the AirTable API in batches of 10.\r\n\r\nFor detailed parameter information, see the AirTable API documentation: \r\nhttps://airtable.com/api/meta",
+  "interface": {
+    "inputs": {
+      "0b5512e3-e4e1-418d-97fb-82aa6fff413c": {
+        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}[]",
+        "name": "records",
+        "description": "Receives arbitrary number of records to be inserted into AirTable. Number of records inserted must be greater than 1."
+      },
+      "ae700e3b-8a74-4562-ab82-64d9c6e1cdea": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "params",
+        "description": "API Key, Base ID and Table Name all extracted from AirTable\r\n\r\nAPI Key: Go into AirTable account and scroll to '<>API'to find the\r\n\r\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\r\n\r\nTable Name: Use the table name located on the tab of the spreadsheet"
+      }
+    },
+    "outputs": {
+      "217fdce8-4a09-4f9f-b429-5096aec6140c": {
+        "type": "typeof `records`",
+        "name": "records",
+        "description": "The original changes to be updated in the AirTable.\r\n\r\nIncludes updated record values and record IDs."
+      },
+      "c2dbd9ed-e12e-454a-a6a7-3258856e92a8": {
+        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}[\"records\"][]",
+        "name": "AT records",
+        "description": "Updated records as is sent to the AirTable API.\r\n\r\nIncludes record IDs, created times of records and updated record values"
+      },
+      "13f44ddb-a5bb-4047-924c-98273b574724": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "responses",
+        "description": "Sends the entire response from the AirTable API without modification.\r\n\r\nSee link for correct formats of request and response 'update record' messages:\r\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs#curl/table:projects:update"
+      },
+      "2deb0dba-02fc-4fb2-87c2-0889ae38140a": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e40fb68e-65a2-4fae-a293-ef8bce28c74e": {
+          "coordinates": [
+            -456.5454545454545,
+            -59.18181818181813
+          ],
+          "name": "create batches",
+          "prototype": "8771a331-04b7-4612-9953-ecb171f42f50",
+          "params": {
+            "0fa7e71e-c029-4ea2-b69f-063d5a384f40": "10"
+          }
+        },
+        "f528bada-7502-49cb-8c3a-6479320ac09f": {
+          "coordinates": [
+            -230.54545454545453,
+            -170.18181818181813
+          ],
+          "name": "iterate over batches",
+          "prototype": "0de9bcbb-e9c2-4289-b283-6aae80c9895b"
+        },
+        "da9ca5a2-06d9-4f19-881e-deff5a7d91ba": {
+          "coordinates": [
+            -203.54545454545453,
+            -6.18181818181813
+          ],
+          "name": "throttler",
+          "prototype": "26a5a6c3-21f7-45f2-a466-a2bf0a3c727f",
+          "params": {
+            "893c86f6-8a99-48b7-960c-d7f50c38f7e0": "1000",
+            "2a121626-b437-48eb-a9a0-65fdddb090b2": "5"
+          }
+        },
+        "d31b14d9-b209-4909-984e-eb8faba2f416": {
+          "coordinates": [
+            -131.54545454545453,
+            140.81818181818187
+          ],
+          "name": "records updater",
+          "prototype": "99138b64-1a35-4634-b2d7-12c403fc8529"
+        },
+        "5be4d340-ef40-41de-a795-44a3bc3b91e6": {
+          "coordinates": [
+            -339.5454545454545,
+            134.81818181818187
+          ],
+          "name": "repeater",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        },
+        "ea4902dc-fecc-43cd-9c01-9a4420a43992": {
+          "coordinates": [
+            63.45454545454547,
+            -163.18181818181813
+          ],
+          "name": "collect records",
+          "prototype": "51952631-9524-4b63-9632-2e1a42144020"
+        },
+        "262bdae7-4fcb-4171-885e-f3825e08b636": {
+          "coordinates": [
+            116.45454545454547,
+            -12.18181818181813
+          ],
+          "name": "collect AT records",
+          "prototype": "51952631-9524-4b63-9632-2e1a42144020"
+        },
+        "dd4b131c-a1f5-44a3-9eb7-4f068925858d": {
+          "coordinates": [
+            208.45454545454547,
+            99.81818181818187
+          ],
+          "name": "collect responses",
+          "prototype": "51952631-9524-4b63-9632-2e1a42144020"
+        },
+        "a8c09a17-54ac-4f78-b367-cb41fb5db05a": {
+          "coordinates": [
+            293.4545454545455,
+            -162.18181818181813
+          ],
+          "name": "flatten records",
+          "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
+        },
+        "acb5217d-1dab-4976-82e3-761678df2b12": {
+          "coordinates": [
+            313.4545454545455,
+            -12.18181818181813
+          ],
+          "name": "flatten AT records",
+          "prototype": "1833c846-f3b9-430a-9b20-c564d5f65c3f"
+        },
+        "b041702c-5bf0-481d-ac06-dea615981c94": {
+          "coordinates": [
+            366.4545454545455,
+            209.81818181818187
+          ],
+          "name": "de-iterate error",
+          "prototype": "d755b98a-18fb-4ca2-8580-7ad8c426f4b2"
+        }
+      },
+      "connections": {
+        "e40fb68e-65a2-4fae-a293-ef8bce28c74e": {
+          "89a6ec96-e4d0-4d12-8095-e720561a7896": {
+            "f528bada-7502-49cb-8c3a-6479320ac09f": {
+              "f410099b-f0d3-4745-bc33-e191fbfbe727": {}
+            },
+            "5be4d340-ef40-41de-a795-44a3bc3b91e6": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            }
+          }
+        },
+        "f528bada-7502-49cb-8c3a-6479320ac09f": {
+          "4cfebe2a-d2ee-46e4-8b06-3b3fca86e845": {
+            "da9ca5a2-06d9-4f19-881e-deff5a7d91ba": {
+              "1cbd4b6b-8f43-4e87-960e-39e977cf036b": {}
+            }
+          },
+          "0d55a099-b43b-4220-8b0b-4bb820dac57f": {
+            "ea4902dc-fecc-43cd-9c01-9a4420a43992": {
+              "c3ac9a23-2d05-4282-bca0-92989d6c081b": {}
+            },
+            "262bdae7-4fcb-4171-885e-f3825e08b636": {
+              "c3ac9a23-2d05-4282-bca0-92989d6c081b": {}
+            },
+            "dd4b131c-a1f5-44a3-9eb7-4f068925858d": {
+              "c3ac9a23-2d05-4282-bca0-92989d6c081b": {}
+            }
+          }
+        },
+        "da9ca5a2-06d9-4f19-881e-deff5a7d91ba": {
+          "21f2bc83-b356-46fe-9d4a-591b5258b338": {
+            "d31b14d9-b209-4909-984e-eb8faba2f416": {
+              "0edf5607-74ae-461d-bc5c-229b5d5dae1c": {}
+            }
+          }
+        },
+        "5be4d340-ef40-41de-a795-44a3bc3b91e6": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "d31b14d9-b209-4909-984e-eb8faba2f416": {
+              "369d160b-3fd4-4c71-9648-e801719817ca": {}
+            }
+          }
+        },
+        "d31b14d9-b209-4909-984e-eb8faba2f416": {
+          "03e1931c-8be9-4518-948a-54d2314cfc36": {
+            "ea4902dc-fecc-43cd-9c01-9a4420a43992": {
+              "5893b05f-d898-4539-babf-54a541f46995": {}
+            }
+          },
+          "43783563-c3ec-426c-bed1-481528e08d45": {
+            "262bdae7-4fcb-4171-885e-f3825e08b636": {
+              "5893b05f-d898-4539-babf-54a541f46995": {}
+            }
+          },
+          "15f45584-05fa-49a5-b7b1-1b3a53e36411": {
+            "dd4b131c-a1f5-44a3-9eb7-4f068925858d": {
+              "5893b05f-d898-4539-babf-54a541f46995": {}
+            }
+          },
+          "35fee6a9-8685-4886-9e8b-8f5643636d4d": {
+            "b041702c-5bf0-481d-ac06-dea615981c94": {
+              "ca54dccf-ed97-4731-8eb0-ef76fe19e844": {}
+            }
+          }
+        },
+        "ea4902dc-fecc-43cd-9c01-9a4420a43992": {
+          "7682902c-46ce-4003-b868-8d071450fa4d": {
+            "a8c09a17-54ac-4f78-b367-cb41fb5db05a": {
+              "67681054-c95b-4da1-90d6-1a5461612c4c": {}
+            }
+          }
+        },
+        "262bdae7-4fcb-4171-885e-f3825e08b636": {
+          "7682902c-46ce-4003-b868-8d071450fa4d": {
+            "acb5217d-1dab-4976-82e3-761678df2b12": {
+              "67681054-c95b-4da1-90d6-1a5461612c4c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0b5512e3-e4e1-418d-97fb-82aa6fff413c": {
+            "e40fb68e-65a2-4fae-a293-ef8bce28c74e": {
+              "bfdf1859-7500-4213-a794-80dc100385c6": {}
+            }
+          },
+          "ae700e3b-8a74-4562-ab82-64d9c6e1cdea": {
+            "5be4d340-ef40-41de-a795-44a3bc3b91e6": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "outputs": {
+          "2deb0dba-02fc-4fb2-87c2-0889ae38140a": {
+            "b041702c-5bf0-481d-ac06-dea615981c94": {
+              "c1927e5c-f5ca-42e1-aedd-78efd6748dfe": {}
+            }
+          },
+          "13f44ddb-a5bb-4047-924c-98273b574724": {
+            "dd4b131c-a1f5-44a3-9eb7-4f068925858d": {
+              "7682902c-46ce-4003-b868-8d071450fa4d": {}
+            }
+          },
+          "c2dbd9ed-e12e-454a-a6a7-3258856e92a8": {
+            "acb5217d-1dab-4976-82e3-761678df2b12": {
+              "f6248b87-3fea-47f5-8cfc-42b33cdba963": {}
+            }
+          },
+          "217fdce8-4a09-4f9f-b429-5096aec6140c": {
+            "a8c09a17-54ac-4f78-b367-cb41fb5db05a": {
+              "f6248b87-3fea-47f5-8cfc-42b33cdba963": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "keywords": {
+    "airtable": null,
+    "update": null,
+    "append": null,
+    "bulk": null,
+    "batch": null,
+    "mass": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

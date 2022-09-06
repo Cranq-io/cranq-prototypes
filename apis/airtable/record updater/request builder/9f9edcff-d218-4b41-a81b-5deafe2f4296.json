@@ -1,0 +1,149 @@
+{
+  "name": "apis/airtable/Record updater/Request builder",
+  "interface": {
+    "inputs": {
+      "af075d64-81ac-403b-98ce-e6fe6cba119e": {
+        "type": "any",
+        "name": "apiKey"
+      },
+      "b804805d-25aa-4fcb-a260-ff8f0b9ed200": {
+        "type": "any",
+        "name": "baseID"
+      },
+      "aeb1914d-38c6-45e0-8731-eff7a09c9cd5": {
+        "type": "any",
+        "name": "tableName"
+      },
+      "37898af8-d864-4ad4-8c12-531a76428834": {
+        "type": "any",
+        "name": "record"
+      }
+    },
+    "outputs": {
+      "9375cdda-1780-40fe-aa51-8bc3c2e2441f": {
+        "type": "any",
+        "name": "JSON req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "eef3f3ed-3ea3-4acb-b658-6f2b5ba4bc23": {
+          "coordinates": [
+            -12.199999999999989,
+            -118.79999999999995
+          ],
+          "name": "build url",
+          "prototype": "13f759f2-e4b4-426d-8c67-53e6861b080a"
+        },
+        "f83b7bec-8c88-4e07-810f-339b15f83191": {
+          "coordinates": [
+            -96.19999999999999,
+            -5.7999999999999545
+          ],
+          "name": "wrapper",
+          "prototype": "46f037ec-7586-4653-bcc8-363b7e769c41"
+        },
+        "ca3dbf4f-cc2a-42dc-8843-c952c6cefba4": {
+          "coordinates": [
+            -27.19999999999999,
+            148.20000000000005
+          ],
+          "name": "bearer token inserter",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        },
+        "f27c33c6-cffc-40e9-83f1-1e904056c58e": {
+          "coordinates": [
+            220.8,
+            -9.799999999999955
+          ],
+          "name": "json request builder",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"PATCH\""
+          }
+        },
+        "07fc3a9d-c473-4898-ad59-785e9be4541d": {
+          "coordinates": [
+            12.800000000000011,
+            -6.7999999999999545
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"records\"]"
+          }
+        }
+      },
+      "connections": {
+        "eef3f3ed-3ea3-4acb-b658-6f2b5ba4bc23": {
+          "d4a2a3a5-0fc9-44ba-89c5-b1bf72ba9c4e": {
+            "f27c33c6-cffc-40e9-83f1-1e904056c58e": {
+              "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {}
+            }
+          }
+        },
+        "ca3dbf4f-cc2a-42dc-8843-c952c6cefba4": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "f27c33c6-cffc-40e9-83f1-1e904056c58e": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "f83b7bec-8c88-4e07-810f-339b15f83191": {
+          "51232407-ba2f-430d-b3fe-883a465cedd0": {
+            "07fc3a9d-c473-4898-ad59-785e9be4541d": {
+              "records": {}
+            }
+          }
+        },
+        "07fc3a9d-c473-4898-ad59-785e9be4541d": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f27c33c6-cffc-40e9-83f1-1e904056c58e": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b804805d-25aa-4fcb-a260-ff8f0b9ed200": {
+            "eef3f3ed-3ea3-4acb-b658-6f2b5ba4bc23": {
+              "84cb04bf-e6b1-47ac-b924-659579d1021b": {}
+            }
+          },
+          "aeb1914d-38c6-45e0-8731-eff7a09c9cd5": {
+            "eef3f3ed-3ea3-4acb-b658-6f2b5ba4bc23": {
+              "a9f2d2b7-95c3-4d63-9772-90642070254c": {}
+            }
+          },
+          "af075d64-81ac-403b-98ce-e6fe6cba119e": {
+            "ca3dbf4f-cc2a-42dc-8843-c952c6cefba4": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          },
+          "37898af8-d864-4ad4-8c12-531a76428834": {
+            "f83b7bec-8c88-4e07-810f-339b15f83191": {
+              "3e97c47b-9e13-48f3-b6a9-95cd8b676a8e": {}
+            }
+          }
+        },
+        "outputs": {
+          "9375cdda-1780-40fe-aa51-8bc3c2e2441f": {
+            "f27c33c6-cffc-40e9-83f1-1e904056c58e": {
+              "42f1fa20-0597-484e-9610-1f9117b5a7f1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true
+  }
+}

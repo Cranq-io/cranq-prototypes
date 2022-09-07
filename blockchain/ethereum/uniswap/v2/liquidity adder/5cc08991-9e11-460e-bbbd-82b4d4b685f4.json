@@ -79,30 +79,30 @@
             -259.5,
             -168.5
           ],
-          "name": "item getter",
+          "name": "get \"address\"",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
             "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"address\""
           }
         },
-        "b9d1e760-b53f-4cae-a27d-da6411509a5d": {
-          "coordinates": [
-            -155.5,
-            -248.5
-          ],
-          "name": "equality tester",
-          "prototype": "1e9c7987-c42c-4980-81ca-381002c302a1",
-          "params": {
-            "100c6612-03e8-49fb-96c3-676047ed9e5c": "\"ETH\""
-          }
-        },
         "439ba717-afcf-4844-aba4-830279e33b17": {
           "coordinates": [
-            -7.5,
-            -218.5
+            34.5,
+            -189.5
           ],
-          "name": "fork",
+          "name": "if \"ETH\"",
           "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "fb076c2f-8805-4fc1-96e1-3da223d1887b": {
+          "coordinates": [
+            -113,
+            -278
+          ],
+          "name": "is \"ETH\"?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": "\"ETH\""
+          }
         }
       },
       "connections": {
@@ -142,15 +142,8 @@
         },
         "85bbd70b-bfe5-4d5a-8643-c7cb4055e9ad": {
           "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "b9d1e760-b53f-4cae-a27d-da6411509a5d": {
-              "c3f46af8-a447-46a1-b4a4-b2eb0c4b4cea": {}
-            }
-          }
-        },
-        "b9d1e760-b53f-4cae-a27d-da6411509a5d": {
-          "9f08a7ac-1742-4de2-8683-fa5a7f6f3867": {
-            "439ba717-afcf-4844-aba4-830279e33b17": {
-              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            "fb076c2f-8805-4fc1-96e1-3da223d1887b": {
+              "a0934373-43a4-4cd5-83eb-860bc20d790a": {}
             }
           }
         },
@@ -181,6 +174,13 @@
             },
             "353417a4-ceb9-46aa-9d38-1bfdcb794220": {
               "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {}
+            }
+          }
+        },
+        "fb076c2f-8805-4fc1-96e1-3da223d1887b": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "439ba717-afcf-4844-aba4-830279e33b17": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
             }
           }
         }

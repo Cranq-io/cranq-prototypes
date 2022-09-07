@@ -9,7 +9,7 @@
         "description": "Receives tree data structure in which to store a node.\n\nExample:\n{\"a\": \"a\"}"
       },
       "2cb4d528-cacc-4d46-97a2-eee2143be1c1": {
-        "type": "(string[] or number[])[]",
+        "type": "(string or number)[][]",
         "name": "paths",
         "description": "Receives the location of the nodes.\n\nExample:\n[\n  [\"a\", \"b\"],\n  [\"a\", \"c\"]\n]"
       },

@@ -1,11 +1,7 @@
 {
-  "name": "apis/airtable/utils/Records insert request builder",
+  "name": "apis/airtable/Records inserter/Records insert request builder",
   "interface": {
     "inputs": {
-      "c2b87fdf-b7bc-4612-8db2-287615746770": {
-        "type": "string",
-        "name": "API key"
-      },
       "21daa219-b0d3-48f7-8faa-036510c524b6": {
         "type": "any",
         "name": "base ID"
@@ -13,6 +9,10 @@
       "18a207d6-432d-4f1a-8c71-e27e0a8f6cb7": {
         "type": "string",
         "name": "table name"
+      },
+      "c2b87fdf-b7bc-4612-8db2-287615746770": {
+        "type": "string",
+        "name": "API key"
       },
       "f44789b1-8a2d-400c-bac4-22c2897175c4": {
         "type": "{\"fields\": {string: any}}[]",

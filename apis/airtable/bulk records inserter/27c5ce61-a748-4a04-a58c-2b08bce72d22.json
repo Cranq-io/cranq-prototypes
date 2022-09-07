@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "95d27238-6a7e-4dc8-a50f-90243dd478fa": {
-        "type": "{string: any}[]",
+        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}[]",
         "name": "records",
         "description": "Receives arbitrary number of records to be inserted into AirTable."
       },
@@ -21,7 +21,7 @@
         "description": "Sends records that were successfully inserted into AirTable."
       },
       "6d0202d3-c04b-469d-9f30-02bfe5e6710e": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": typeof `records`[number]\n}[]",
+        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": {string: any}\n}[]",
         "name": "AT records",
         "description": "Sends records that were successfully inserted into AirTable, including metadata like row ID, and date & time of creation."
       },
@@ -254,6 +254,7 @@
     }
   },
   "keywords": {
+    "airtable": null,
     "insert": null,
     "upload": null,
     "create": null,

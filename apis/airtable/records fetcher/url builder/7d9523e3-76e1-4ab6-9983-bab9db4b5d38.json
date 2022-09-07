@@ -1,0 +1,83 @@
+{
+  "name": "apis/airtable/Records fetcher/Url builder",
+  "interface": {
+    "inputs": {
+      "e3c21581-baed-402b-9807-d93e9f3dc257": {
+        "type": "any",
+        "name": "baseId"
+      },
+      "d57799bf-3c19-4606-b1ee-9a1f8e660c3d": {
+        "type": "any",
+        "name": "tableName"
+      }
+    },
+    "outputs": {
+      "0ff0bbf1-112a-4cb3-9f89-ace640b11fe0": {
+        "type": "any",
+        "name": "URL"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a385e916-8906-4df6-a3a4-51bfb3b2ee69": {
+          "coordinates": [
+            -74.5,
+            -20.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"APP_ID\", \"TABLE_NAME\"]"
+          }
+        },
+        "e6b20289-e923-4a84-8ed6-920810e297ef": {
+          "coordinates": [
+            74.5,
+            20.5
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.airtable.com/v0/{APP_ID}/{TABLE_NAME}\""
+          }
+        }
+      },
+      "connections": {
+        "a385e916-8906-4df6-a3a4-51bfb3b2ee69": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "e6b20289-e923-4a84-8ed6-920810e297ef": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e3c21581-baed-402b-9807-d93e9f3dc257": {
+            "a385e916-8906-4df6-a3a4-51bfb3b2ee69": {
+              "APP_ID": {}
+            }
+          },
+          "d57799bf-3c19-4606-b1ee-9a1f8e660c3d": {
+            "a385e916-8906-4df6-a3a4-51bfb3b2ee69": {
+              "TABLE_NAME": {}
+            }
+          }
+        },
+        "outputs": {
+          "0ff0bbf1-112a-4cb3-9f89-ace640b11fe0": {
+            "e6b20289-e923-4a84-8ed6-920810e297ef": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

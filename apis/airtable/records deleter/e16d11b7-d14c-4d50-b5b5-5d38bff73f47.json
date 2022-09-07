@@ -1,0 +1,200 @@
+{
+  "name": "apis/AirTable/Records deleter",
+  "interface": {
+    "inputs": {
+      "6be4a66d-3bba-455b-9835-55ca7aea9b1f": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "params",
+        "description": "API Key, Base ID and Table Name all extracted from AirTable\r\n\r\nAPI Key: Go into AirTable account and scroll to '<>API'to find the\r\n\r\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\r\n\r\nTable Name: Use the table name located on the tab of the spreadsheet"
+      },
+      "5a8cd373-f211-4d04-816e-6b062a03b008": {
+        "type": "string[]",
+        "name": "record IDs",
+        "description": "Record IDs of all records to be deleted"
+      }
+    },
+    "outputs": {
+      "51944511-eeed-417c-8bc3-8e4b12ed2385": {
+        "type": "typeof `records` of `extract records`",
+        "name": "records"
+      },
+      "54e0ebd3-3906-4cdb-9bc6-51c7fcaa5bc0": {
+        "type": "typeof `record IDs`",
+        "name": "AT record ids",
+        "description": "Shows the ID of each record wanted to be deleted and whether the deletion was successful"
+      },
+      "0a220faf-20ca-4d84-b7eb-89440968b029": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the entire response from the AirTable API without modification.\r\n\r\nSee link for correct formats of request and response 'delete record' messages: \r\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs"
+      },
+      "533b48dd-fc81-4c9c-890f-a714f0974bc2": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+          "coordinates": [
+            14.599999999999994,
+            -197.79999999999995
+          ],
+          "name": "build request",
+          "prototype": "41777d67-8c53-4fca-b992-7495c4d604b7"
+        },
+        "f2ad5171-5cec-4321-87b5-62a2e0aa96c0": {
+          "coordinates": [
+            -336.15,
+            90.94999999999999
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "4a188d77-4a60-413b-896d-32aa9745e62f": {
+          "coordinates": [
+            -203.15,
+            -53.05000000000001
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"baseId\", \"apiKey\", \"tableName\"]"
+          }
+        },
+        "34891468-cd08-408e-bde9-f989e621f6df": {
+          "coordinates": [
+            115.85000000000002,
+            150.95
+          ],
+          "name": "detect errors",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Deleting records failed\""
+          }
+        },
+        "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
+          "coordinates": [
+            344.85,
+            166.95
+          ],
+          "name": "extract records",
+          "prototype": "c78453a1-9ea5-42b7-8680-1f45629ca7d9"
+        },
+        "3631b09b-7f31-47e7-8681-3180ec5250b7": {
+          "coordinates": [
+            130,
+            -31.5
+          ],
+          "name": "dispatch request",
+          "prototype": "f946e595-da67-400f-9316-dfcf07f5ac10"
+        }
+      },
+      "connections": {
+        "4a188d77-4a60-413b-896d-32aa9745e62f": {
+          "baseId": {
+            "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+              "5337b8ed-163f-4ad2-a14d-ac91118ea343": {}
+            }
+          },
+          "apiKey": {
+            "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+              "7d2577fc-7ef7-4b17-8726-cd7c90e0c6f1": {}
+            }
+          },
+          "tableName": {
+            "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+              "2ace9c8b-8e81-46fa-b900-5ef92bd19c79": {}
+            }
+          }
+        },
+        "f2ad5171-5cec-4321-87b5-62a2e0aa96c0": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "4a188d77-4a60-413b-896d-32aa9745e62f": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+              "a0da86e0-8312-4bac-94a2-48f022c1401b": {}
+            }
+          }
+        },
+        "34891468-cd08-408e-bde9-f989e621f6df": {
+          "c7cf1f92-7748-4184-b078-e0eb04851e6f": {
+            "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
+              "4f228730-0de6-431e-b706-f0ea78ea3be0": {}
+            }
+          }
+        },
+        "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+          "6fae9f21-2a07-4365-80e0-12868a0aeddd": {
+            "3631b09b-7f31-47e7-8681-3180ec5250b7": {
+              "8e35c4f4-47d8-4245-8054-6c1f75759a70": {}
+            }
+          }
+        },
+        "3631b09b-7f31-47e7-8681-3180ec5250b7": {
+          "74fc698e-31af-41e8-a099-342c49e33d17": {
+            "34891468-cd08-408e-bde9-f989e621f6df": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5a8cd373-f211-4d04-816e-6b062a03b008": {
+            "f2ad5171-5cec-4321-87b5-62a2e0aa96c0": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "6be4a66d-3bba-455b-9835-55ca7aea9b1f": {
+            "f2ad5171-5cec-4321-87b5-62a2e0aa96c0": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "51944511-eeed-417c-8bc3-8e4b12ed2385": {
+            "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
+              "9d27a0c0-8a44-4d32-89cf-d8a44e3ea19e": {}
+            }
+          },
+          "54e0ebd3-3906-4cdb-9bc6-51c7fcaa5bc0": {
+            "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
+              "0a7d3758-b2a6-478f-a8d6-c97d591ac9af": {}
+            }
+          },
+          "533b48dd-fc81-4c9c-890f-a714f0974bc2": {
+            "34891468-cd08-408e-bde9-f989e621f6df": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "3631b09b-7f31-47e7-8681-3180ec5250b7": {
+              "dc5b2f35-cf47-4707-9760-7749cdacc114": {}
+            }
+          },
+          "0a220faf-20ca-4d84-b7eb-89440968b029": {
+            "3631b09b-7f31-47e7-8681-3180ec5250b7": {
+              "74fc698e-31af-41e8-a099-342c49e33d17": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Receives up to 10 records to be deleted from an AirTable table.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "keywords": {
+    "airtable": null,
+    "delete": null,
+    "remove": null,
+    "records": null,
+    "rows": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

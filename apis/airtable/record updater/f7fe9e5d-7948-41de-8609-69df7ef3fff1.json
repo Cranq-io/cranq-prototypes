@@ -1,0 +1,201 @@
+{
+  "name": "apis/airtable/Record updater",
+  "description": "Receives a single record to be updated in AirTable.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
+  "interface": {
+    "inputs": {
+      "9b88e435-4f58-4c07-926e-94baf6e9c340": {
+        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}",
+        "name": "record",
+        "description": "Receives the identifier of one record relative to an AirTable table. \n\nRecord ID with the fields and their values that want to be updated.\n\nRecord ID:\nAdd a new field to table with field type 'formula'. Then in the formula field type 'RECORD_ID()'. The record ID appears in the table on the row of the record in this field."
+      },
+      "37fc2924-0221-44ab-a325-07df2836bc1f": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}\n",
+        "name": "params",
+        "description": "API Key, Base ID and Table Name all extracted from AirTable\n\nAPI Key: \nGo into AirTable account and scroll to '<>API'to find the \n\nBase ID:\nIn AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name:\nUse the table name located on the tab of the spreadsheet\n"
+      }
+    },
+    "outputs": {
+      "d75e369c-d474-482e-a47b-e7068a6d3ae4": {
+        "type": "typeof `record`",
+        "name": "record",
+        "description": "The original change to be updated in the AirTable.\n\nIncludes updated record values and record ID."
+      },
+      "7aff9429-65a9-4455-ae0a-ad5c5241ee38": {
+        "type": "{\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n}",
+        "name": "AT record",
+        "description": "Updated record as is sent to the AirTable API.\n\nIncludes record IDs, created times of records and updated record values"
+      },
+      "903e6cfd-269e-4888-902a-7d5338ac2f56": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the entire response from the AirTable API without modification.\n\nSee link for correct formats of request and response 'update record' messages:\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs"
+      },
+      "26ddc458-32eb-472a-8902-62e05c154332": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fc24dcdf-8e58-4b88-b651-5fd59c7eaf3e": {
+          "coordinates": [
+            -242.03333333333336,
+            -68.4666666666667
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"baseId\", \"apiKey\", \"tableName\", \"recordId\"]"
+          }
+        },
+        "10034678-89ef-4e53-b353-35e6a8dbe2a8": {
+          "coordinates": [
+            1.1666666666666288,
+            -180.66666666666674
+          ],
+          "name": "build request",
+          "prototype": "9f9edcff-d218-4b41-a81b-5deafe2f4296"
+        },
+        "799d1fbe-3f10-4728-86b2-7079682eca3c": {
+          "coordinates": [
+            138.96666666666664,
+            -29.466666666666697
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "2d374f61-0b2f-4d11-8f4c-49b671c7a236": {
+          "coordinates": [
+            -30.03333333333336,
+            153.5333333333333
+          ],
+          "name": "detect errors",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Updating record failed\""
+          }
+        },
+        "7db6d2ed-6887-4322-b451-5c846110d127": {
+          "coordinates": [
+            222.96666666666664,
+            203.5333333333333
+          ],
+          "name": "extract records",
+          "prototype": "c78453a1-9ea5-42b7-8680-1f45629ca7d9"
+        },
+        "92201653-be3d-428d-93d2-8c595e8904e7": {
+          "coordinates": [
+            -334.03333333333336,
+            47.5333333333333
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "92201653-be3d-428d-93d2-8c595e8904e7": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "fc24dcdf-8e58-4b88-b651-5fd59c7eaf3e": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "10034678-89ef-4e53-b353-35e6a8dbe2a8": {
+              "37898af8-d864-4ad4-8c12-531a76428834": {}
+            }
+          }
+        },
+        "10034678-89ef-4e53-b353-35e6a8dbe2a8": {
+          "9375cdda-1780-40fe-aa51-8bc3c2e2441f": {
+            "799d1fbe-3f10-4728-86b2-7079682eca3c": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "799d1fbe-3f10-4728-86b2-7079682eca3c": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "2d374f61-0b2f-4d11-8f4c-49b671c7a236": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "2d374f61-0b2f-4d11-8f4c-49b671c7a236": {
+          "c7cf1f92-7748-4184-b078-e0eb04851e6f": {
+            "7db6d2ed-6887-4322-b451-5c846110d127": {
+              "4f228730-0de6-431e-b706-f0ea78ea3be0": {}
+            }
+          }
+        },
+        "fc24dcdf-8e58-4b88-b651-5fd59c7eaf3e": {
+          "baseId": {
+            "10034678-89ef-4e53-b353-35e6a8dbe2a8": {
+              "b804805d-25aa-4fcb-a260-ff8f0b9ed200": {}
+            }
+          },
+          "apiKey": {
+            "10034678-89ef-4e53-b353-35e6a8dbe2a8": {
+              "af075d64-81ac-403b-98ce-e6fe6cba119e": {}
+            }
+          },
+          "tableName": {
+            "10034678-89ef-4e53-b353-35e6a8dbe2a8": {
+              "aeb1914d-38c6-45e0-8731-eff7a09c9cd5": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9b88e435-4f58-4c07-926e-94baf6e9c340": {
+            "92201653-be3d-428d-93d2-8c595e8904e7": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "37fc2924-0221-44ab-a325-07df2836bc1f": {
+            "92201653-be3d-428d-93d2-8c595e8904e7": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "outputs": {
+          "903e6cfd-269e-4888-902a-7d5338ac2f56": {
+            "799d1fbe-3f10-4728-86b2-7079682eca3c": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "26ddc458-32eb-472a-8902-62e05c154332": {
+            "799d1fbe-3f10-4728-86b2-7079682eca3c": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "2d374f61-0b2f-4d11-8f4c-49b671c7a236": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "d75e369c-d474-482e-a47b-e7068a6d3ae4": {
+            "7db6d2ed-6887-4322-b451-5c846110d127": {
+              "9d27a0c0-8a44-4d32-89cf-d8a44e3ea19e": {}
+            }
+          },
+          "7aff9429-65a9-4455-ae0a-ad5c5241ee38": {
+            "7db6d2ed-6887-4322-b451-5c846110d127": {
+              "0a7d3758-b2a6-478f-a8d6-c97d591ac9af": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "keywords": {
+    "airtable": null,
+    "update": null,
+    "append": null,
+    "record": null,
+    "row": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "name": "apis/airtable/Records updater",
+  "interface": {
+    "inputs": {
+      "0edf5607-74ae-461d-bc5c-229b5d5dae1c": {
+        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}[]",
+        "name": "records",
+        "description": "Receives the identifier of up to 10 records relative to an AirTable table. \n\nAll record IDs with the fields and their values that want to be updated.\n\nRecord ID:\nAdd a new field to table with field type 'formula'. Then in the formula field type 'RECORD_ID()'. The record ID appears in the table on the row of the record in this field."
+      },
+      "369d160b-3fd4-4c71-9648-e801719817ca": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}\n",
+        "name": "params",
+        "description": "API Key, Base ID and Table Name all extracted from AirTable\n\nAPI Key: \nGo into AirTable account and scroll to '<>API'to find the \n\nBase ID:\nIn AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name:\nUse the table name located on the tab of the spreadsheet\n"
+      }
+    },
+    "outputs": {
+      "03e1931c-8be9-4518-948a-54d2314cfc36": {
+        "type": "typeof `records`",
+        "name": "records",
+        "description": "The original changes to be updated in the AirTable.\n\nIncludes updated record values and record IDs"
+      },
+      "43783563-c3ec-426c-bed1-481528e08d45": {
+        "type": "typeof `records` of `extract records`",
+        "name": "AT records",
+        "description": "Updated record as is sent to the AirTable API.\n\nIncludes record IDs, created times of records and updated record values"
+      },
+      "15f45584-05fa-49a5-b7b1-1b3a53e36411": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the entire response from the AirTable API without modification.\n\nSee link for correct formats of request and response 'update record' messages:\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs"
+      },
+      "35fee6a9-8685-4886-9e8b-8f5643636d4d": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "81e17b91-fd70-4f5f-b7dd-a5c0037e4bf7": {
+          "coordinates": [
+            -208.44642857142856,
+            -37.62142857142857
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"baseId\", \"apiKey\", \"tableName\", \"recordId\"]\n"
+          }
+        },
+        "81ffe3e3-33ce-4c46-8c76-39f7512f54a3": {
+          "coordinates": [
+            -380.44642857142856,
+            39.37857142857143
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "a24c8575-edaf-466a-bc13-6f159b9190c1": {
+          "coordinates": [
+            18.17857142857143,
+            -138.37142857142857
+          ],
+          "name": "build Request",
+          "prototype": "a775d1ff-7699-4523-8317-06bd1a1df1d3"
+        },
+        "621757c5-a78d-4fe0-b0db-eb91e9afeec0": {
+          "coordinates": [
+            192.55357142857144,
+            -133.62142857142857
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "e8d1e861-b427-4057-9d1c-c4b8edf228fa": {
+          "coordinates": [
+            318.55357142857144,
+            136.37857142857143
+          ],
+          "name": "extract records",
+          "prototype": "c78453a1-9ea5-42b7-8680-1f45629ca7d9"
+        },
+        "c29f3d71-a017-410c-aa22-36e1fcd5bae8": {
+          "coordinates": [
+            88.55357142857144,
+            89.37857142857143
+          ],
+          "name": "detect errors",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Updating records failed\""
+          }
+        }
+      },
+      "connections": {
+        "a24c8575-edaf-466a-bc13-6f159b9190c1": {
+          "af843efd-ac70-49cf-b488-90a420669e7b": {
+            "621757c5-a78d-4fe0-b0db-eb91e9afeec0": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "81ffe3e3-33ce-4c46-8c76-39f7512f54a3": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "81e17b91-fd70-4f5f-b7dd-a5c0037e4bf7": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "a24c8575-edaf-466a-bc13-6f159b9190c1": {
+              "b6480dfb-fc59-4e2b-bcf3-48cf81ae29b3": {}
+            }
+          }
+        },
+        "621757c5-a78d-4fe0-b0db-eb91e9afeec0": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "c29f3d71-a017-410c-aa22-36e1fcd5bae8": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "81e17b91-fd70-4f5f-b7dd-a5c0037e4bf7": {
+          "tableName": {
+            "a24c8575-edaf-466a-bc13-6f159b9190c1": {
+              "691d287d-a5d2-4461-b877-7c8a6c51145c": {}
+            }
+          },
+          "apiKey": {
+            "a24c8575-edaf-466a-bc13-6f159b9190c1": {
+              "b253858e-fbef-4737-979a-aecc39e6373e": {}
+            }
+          },
+          "baseId": {
+            "a24c8575-edaf-466a-bc13-6f159b9190c1": {
+              "2d081eaf-888c-4007-8e34-46ad8d0d5d31": {}
+            }
+          }
+        },
+        "c29f3d71-a017-410c-aa22-36e1fcd5bae8": {
+          "c7cf1f92-7748-4184-b078-e0eb04851e6f": {
+            "e8d1e861-b427-4057-9d1c-c4b8edf228fa": {
+              "4f228730-0de6-431e-b706-f0ea78ea3be0": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "369d160b-3fd4-4c71-9648-e801719817ca": {
+            "81ffe3e3-33ce-4c46-8c76-39f7512f54a3": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "0edf5607-74ae-461d-bc5c-229b5d5dae1c": {
+            "81ffe3e3-33ce-4c46-8c76-39f7512f54a3": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "03e1931c-8be9-4518-948a-54d2314cfc36": {
+            "e8d1e861-b427-4057-9d1c-c4b8edf228fa": {
+              "9d27a0c0-8a44-4d32-89cf-d8a44e3ea19e": {}
+            }
+          },
+          "35fee6a9-8685-4886-9e8b-8f5643636d4d": {
+            "621757c5-a78d-4fe0-b0db-eb91e9afeec0": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "c29f3d71-a017-410c-aa22-36e1fcd5bae8": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "15f45584-05fa-49a5-b7b1-1b3a53e36411": {
+            "621757c5-a78d-4fe0-b0db-eb91e9afeec0": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "43783563-c3ec-426c-bed1-481528e08d45": {
+            "e8d1e861-b427-4057-9d1c-c4b8edf228fa": {
+              "0a7d3758-b2a6-478f-a8d6-c97d591ac9af": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "description": "Updates multiple specific records in the specified AirTable table. The input received on parameter records must match the target table schema.\r\n\r\nMaximum record count is 10.\r\n\r\nFor detailed parameter information, see the AirTable API documentation: \r\nhttps://airtable.com/api/meta",
+  "keywords": {
+    "airtable": null,
+    "update": null,
+    "append": null,
+    "record": null,
+    "rows": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

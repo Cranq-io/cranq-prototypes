@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "4f228730-0de6-431e-b706-f0ea78ea3be0": {
-        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}",
+        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }[]\n}",
         "name": "resp. data",
         "description": "JSON body of the record insertion response from AirTable."
       }
@@ -15,7 +15,7 @@
         "name": "records"
       },
       "0a7d3758-b2a6-478f-a8d6-c97d591ac9af": {
-        "type": "typeof `resp. data`[\"records\"][]",
+        "type": "typeof `resp. data`[\"records\"]",
         "name": "AT records",
         "description": "Record as are sent to / received from the AirTable API."
       }
@@ -100,6 +100,12 @@
         }
       }
     }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "keywords": {
+    "airtable": null,
+    "records": null,
+    "extract": null
   },
   "attributes": {
     "locked": true

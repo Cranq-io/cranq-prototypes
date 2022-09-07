@@ -1,0 +1,184 @@
+{
+  "name": "apis/airtable/Records fetcher",
+  "interface": {
+    "inputs": {
+      "52e7a985-0c5d-4271-8f94-105b3fc1ebe7": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "params",
+        "description": "API Key, Base ID and Table Name all extracted from AirTable\r\n\r\nAPI Key: Go into AirTable account and scroll to '<>API'to find the\r\n\r\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\r\n\r\nTable Name: Use the table name located on the tab of the spreadsheet"
+      }
+    },
+    "outputs": {
+      "2a6d695f-1300-482f-b730-7a51945b9efe": {
+        "type": "{\n  \"records\": {\n     \"id\": \"\",\n     \"createdTime\": \"\",\n     \"fields\": {string: any}\n  }[]\n}",
+        "name": "data",
+        "description": "Lists all the information currently in the AirTable table"
+      },
+      "c3328b14-8977-4fae-8f60-0a45928ec295": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the entire response from the AirTable API without modification."
+      },
+      "9ee7f6d0-3fff-4cb4-9297-3b3d4a4c490a": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "aaf210b4-527e-4c64-90b0-9bb4d7492210": {
+          "coordinates": [
+            27.416666666666664,
+            -73.08333333333333
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "4be0f3d3-8e77-4954-9ebe-d6b1815677c2": {
+          "coordinates": [
+            188.41666666666666,
+            -72.08333333333333
+          ],
+          "name": "json request dispatcher",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "f92dab3d-1914-4fdc-8186-7ff307bf8a86": {
+          "coordinates": [
+            -301.5833333333333,
+            7.916666666666666
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"baseId\", \"apiKey\", \"tableName\"]"
+          }
+        },
+        "4c881f25-4d00-4306-ad37-6a8628e85d66": {
+          "coordinates": [
+            -96.58333333333334,
+            100.91666666666667
+          ],
+          "name": "bearer token inserter",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        },
+        "ddb45503-b7b4-41b2-9ea1-5fdd98ef5932": {
+          "coordinates": [
+            314.4166666666667,
+            108.91666666666667
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"List retrieval failed\""
+          }
+        },
+        "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+          "coordinates": [
+            -142.5,
+            -102
+          ],
+          "name": "build url",
+          "prototype": "33620048-04d4-4314-a0aa-a00d73cb9029"
+        }
+      },
+      "connections": {
+        "aaf210b4-527e-4c64-90b0-9bb4d7492210": {
+          "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {
+            "4be0f3d3-8e77-4954-9ebe-d6b1815677c2": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "4c881f25-4d00-4306-ad37-6a8628e85d66": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "aaf210b4-527e-4c64-90b0-9bb4d7492210": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        },
+        "f92dab3d-1914-4fdc-8186-7ff307bf8a86": {
+          "apiKey": {
+            "4c881f25-4d00-4306-ad37-6a8628e85d66": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          },
+          "baseId": {
+            "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+              "1cb4639b-e7ff-495f-b3d7-cba64f43ed9d": {}
+            }
+          },
+          "tableName": {
+            "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+              "141104e6-3441-4b12-ab69-a76b5794cd4a": {}
+            }
+          }
+        },
+        "4be0f3d3-8e77-4954-9ebe-d6b1815677c2": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "ddb45503-b7b4-41b2-9ea1-5fdd98ef5932": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+          "ac3f79dc-f520-4670-a920-5f0fedc7d615": {
+            "aaf210b4-527e-4c64-90b0-9bb4d7492210": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "52e7a985-0c5d-4271-8f94-105b3fc1ebe7": {
+            "f92dab3d-1914-4fdc-8186-7ff307bf8a86": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "2a6d695f-1300-482f-b730-7a51945b9efe": {
+            "ddb45503-b7b4-41b2-9ea1-5fdd98ef5932": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "c3328b14-8977-4fae-8f60-0a45928ec295": {
+            "4be0f3d3-8e77-4954-9ebe-d6b1815677c2": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "9ee7f6d0-3fff-4cb4-9297-3b3d4a4c490a": {
+            "ddb45503-b7b4-41b2-9ea1-5fdd98ef5932": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            },
+            "4be0f3d3-8e77-4954-9ebe-d6b1815677c2": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Retrieves a list of all records in an AirTable",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "keywords": {
+    "airtable": null,
+    "select": null,
+    "get": null,
+    "fetch": null,
+    "records": null,
+    "rows": null,
+    "table": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

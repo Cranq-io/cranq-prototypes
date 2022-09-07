@@ -15,12 +15,12 @@
     },
     "outputs": {
       "259eb6ca-e141-4210-b26e-ec0694b98b55": {
-        "type": "{string: any}",
+        "type": "{\n  \"id\": \"string\",\n  \"fields\": {string: any}\n}",
         "name": "record",
         "description": "Sends the retrieved AirTable record."
       },
       "c5c9c9f5-e48a-43f8-97f8-d65e79ff6177": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": {string: any}\n}",
+        "type": "{\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n}",
         "name": "AT record",
         "description": "Sends the retrieved AirTable record, including metadata like row ID, and date & time of creation."
       },
@@ -190,11 +190,12 @@
     }
   },
   "keywords": {
+    "airtable": null,
+    "select": null,
+    "get": null,
     "fetch": null,
-    "retrieve": null,
-    "query": null,
-    "row": null,
-    "record": null
+    "record": null,
+    "row": null
   },
   "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
   "attributes": {

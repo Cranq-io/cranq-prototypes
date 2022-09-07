@@ -20,7 +20,7 @@
         "description": "The original changes to be updated in the AirTable.\n\nIncludes updated record values and record IDs"
       },
       "43783563-c3ec-426c-bed1-481528e08d45": {
-        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}[\"records\"][]",
+        "type": "typeof `records` of `extract records`",
         "name": "AT records",
         "description": "Updated record as is sent to the AirTable API.\n\nIncludes record IDs, created times of records and updated record values"
       },

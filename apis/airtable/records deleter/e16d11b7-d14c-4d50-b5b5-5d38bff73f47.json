@@ -9,17 +9,17 @@
       },
       "5a8cd373-f211-4d04-816e-6b062a03b008": {
         "type": "string[]",
-        "name": "record ids",
-        "description": "Record Ids of all records to be deleted"
+        "name": "record IDs",
+        "description": "Record IDs of all records to be deleted"
       }
     },
     "outputs": {
       "51944511-eeed-417c-8bc3-8e4b12ed2385": {
-        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}[\"records\"][number][\"fields\"][]",
+        "type": "typeof `records` of `extract records`",
         "name": "records"
       },
       "54e0ebd3-3906-4cdb-9bc6-51c7fcaa5bc0": {
-        "type": "typeof `record ids`",
+        "type": "typeof `record IDs`",
         "name": "AT record ids",
         "description": "Shows the ID of each record wanted to be deleted and whether the deletion was successful"
       },

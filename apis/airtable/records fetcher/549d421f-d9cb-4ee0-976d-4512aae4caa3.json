@@ -10,7 +10,7 @@
     },
     "outputs": {
       "2a6d695f-1300-482f-b730-7a51945b9efe": {
-        "type": "{\n  \"records\": \n    {\n      \"id\": \"\",\n      \"createdTime\": \"\",\n      \"fields\": {\n        \"field\": \"string\"\n         }\n    }[]\n}",
+        "type": "{\n  \"records\": {\n     \"id\": \"\",\n     \"createdTime\": \"\",\n     \"fields\": {string: any}\n  }[]\n}",
         "name": "data",
         "description": "Lists all the information currently in the AirTable table"
       },

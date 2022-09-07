@@ -20,7 +20,7 @@
         "description": "Sends records that were successfully inserted into AirTable."
       },
       "60c54568-3b44-446e-b64d-c21b7f425c9f": {
-        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }\n}[\"records\"][]",
+        "type": "typeof `records` of `extract records`",
         "name": "AT records",
         "description": "Sends records that were successfully inserted into AirTable, including metadata like row ID, and date & time of creation."
       },

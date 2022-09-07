@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "9b36effb-8108-4c7a-a27d-4f3f986ca2bb": "const {createWriteStream} = require(\"fs\");\nconst {Readable} = require(\"stream\");\nconst {path, base64} = data;\nconst buffer = Buffer.from(base64, 'base64');\nconst readable = new Readable();\nreadable.push(buffer);   \nreadable.push(null);\nconst writeStream = createWriteStream(path);\nwriteStream.on(\"finish\", ()=>\n  outputs.written(null, tag));\nwriteStream.on(\"error\", (e)=>\n  outputs.error({\"error\": \"Writing file failed.\", \"details\": e.toString()}, tag));\nreadable.pipe(writeStream);"
+        "9b36effb-8108-4c7a-a27d-4f3f986ca2bb": "const {createWriteStream} = require(\"fs\");\nconst {Readable} = require(\"stream\");\nconst {path, base64} = data;\nconst buffer = Buffer.from(base64, 'base64');\nconst readable = new Readable();\nreadable.push(buffer);   \nreadable.push(null);\nconst writeStream = createWriteStream(path);\nwriteStream.on(\"finish\", ()=>\n  outputs.written(path, tag));\nwriteStream.on(\"error\", (e)=>\n  outputs.error({\"error\": \"Writing file failed.\", \"details\": e.toString()}, tag));\nreadable.pipe(writeStream);"
       }
     }
   },
@@ -15,7 +15,7 @@
     },
     "outputs": {
       "ede77453-2e71-4b8f-abc2-c3395754857b": {
-        "type": "null",
+        "type": "string",
         "name": "written"
       },
       "b78360a0-85b0-47ad-94cd-6cb4315802cb": {

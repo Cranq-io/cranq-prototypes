@@ -4,21 +4,25 @@
     "inputs": {
       "2f960cd2-ce95-47dd-9dfa-7b89eefe48e3": {
         "type": "string",
-        "name": "path"
+        "name": "path",
+        "description": "Receives the path of the generated binary file.\n\nExample:\n\"c:/image.png\"@1"
       },
       "4b68e52a-3d8d-4db6-857c-ae1448dd7eb1": {
         "type": "string",
-        "name": "base64"
+        "name": "base64",
+        "description": "Receives the base64 string to be written as binary file.\n\nExample:\n\"VGhlIGJhc2tldCBpcyBmdWxsIG9mIGdyYXBlcy4=\"@1"
       }
     },
     "outputs": {
       "0cbefbca-31bc-4056-8b5a-5bf384e91f94": {
-        "type": "null",
-        "name": "written"
+        "type": "string",
+        "name": "written",
+        "description": "Sends file path if the file writting was successful.\n\nExample:\n\"c:/image.png\"@1"
       },
       "b7f7cfdc-dfaf-4750-b623-cd4fe77b4278": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if any.\n\nExample:\n{\n  \"error\": \"Writing file failed.\",\n  \"details\": \"Error: ENOENT: no such file or directory, open 'j:\\\\test.png'\"\n}@1"
       }
     }
   },
@@ -94,6 +98,7 @@
     "media": null
   },
   "iconId": "b63b05e2-5e2f-45a1-a3e3-10a749d05b96",
+  "description": "Writes a baseb64 string to a binnary file.\n\n(To keep the application portable use \"/\" as path separator.)\n\nExample A:\n1. \"c:/image.png\"@1 received via `path`\n2. \"VGhlIGJhc2tldCBpcyBmdWxsIG9mIGdyYXBlcy4=\"@1received via `base64`\n3. `written` sends \"c:/image.png\"@1\n\nExample B:\n1. \"j:/test.png\"@1 received via `path`\n2. \"VGhlIGJhc2tldCBpcyBmdWxsIG9mIGdyYXBlcy4=\"@1received via `base64`\n3. `error` sends {\n  \"error\": \"Writing file failed.\",\n  \"details\": \"Error: ENOENT: no such file or directory, open 'j:\\\\test.png'\"\n}@1\n",
   "attributes": {
     "locked": true
   }

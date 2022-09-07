@@ -1,0 +1,105 @@
+{
+  "description": "Retrieves multiple items' values from the dictionary by their keys, in the order of the keys provided.\nIf any of the items are not found in the dictionary, a 'null' value will be sent in its place. \n\nExample A:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [ \"first\", \"third\" ]@0 received via `keys`\n3. `values` sends  [ 1, 3 ]@0\n\nExample B:\n1. { \"first\": 1, \"third\": 3, \"fifth\": 5 } @0 received via `dict`\n2. [\"first\",\"second\"]@0 received via `keys`\n3. `values` sends  [ 1, null ]@0\n4. `not found keys` sends ['second']@0\n\n",
+  "interface": {
+    "inputs": {
+      "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
+        "type": "{string:any}",
+        "name": "dict",
+        "description": "Receives the dictionary to get the values from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      },
+      "72550b19-9434-43d7-a6af-468a19288808": {
+        "type": "string[]",
+        "name": "keys",
+        "description": "Receives the keys corresponding to the values to get.\n\nExample:\n[\"first\", \"third\"]"
+      }
+    },
+    "outputs": {
+      "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
+        "type": "typeof`dict`[string][]",
+        "name": "values",
+        "description": "Sends the values corresponding to the received keys.\n\nExample:\n[1, 3]"
+      },
+      "47906a4f-9a5c-422f-a88f-f8b58331cade": {
+        "type": "string[]",
+        "name": "not found keys",
+        "description": "Sends the not found keys.\n\nExample:\n[\"second\"]"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+          "coordinates": [
+            -27,
+            0
+          ],
+          "description": "",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"dict\",\"keys\"]"
+          },
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "name": "sync dict & keys"
+        },
+        "638de552-beea-4ce8-9c11-c3341ceec70a": {
+          "coordinates": [
+            86,
+            -34
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "b6d7b23b-3795-4dbc-bee0-ffd139641f13",
+          "name": "get items"
+        }
+      },
+      "connections": {
+        "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "638de552-beea-4ce8-9c11-c3341ceec70a": {
+              "9af21210-8f9c-4067-986a-f29fe11cede0": {
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
+            "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+              "dict": {}
+            }
+          },
+          "72550b19-9434-43d7-a6af-468a19288808": {
+            "80cf6f87-077e-4816-8dde-dc2e87ae9ece": {
+              "keys": {}
+            }
+          }
+        },
+        "outputs": {
+          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
+            "638de552-beea-4ce8-9c11-c3341ceec70a": {
+              "9e6164b8-807d-4f53-9a1b-2c8654bdcbbd": {}
+            }
+          },
+          "47906a4f-9a5c-422f-a88f-f8b58331cade": {
+            "638de552-beea-4ce8-9c11-c3341ceec70a": {
+              "ab3fd02c-4e36-4df3-89cb-6cd199426950": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "data/dictionary/Values getter by keys",
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "get": null,
+    "values": null
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "locked": true
+  }
+}

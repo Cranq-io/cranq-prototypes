@@ -1,0 +1,113 @@
+{
+  "name": "sdks/ccxt/private/My trades fetcher",
+  "interface": {
+    "inputs": {
+      "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+        "type": " {\n       \"id\": string,\n       optional \"credentials\": {\n         \"apiKey\": string,\n         \"secret\": string,\n         optional \"uid\": string,\n         optional \"password\": string\n       },\n       optional \"sandboxMode\": boolean\n    }",
+        "name": "exchange",
+        "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n {\n     \"id\": \"coinbasepro\",\n       \"credentials\": {\n        \"apiKey\": \"API_KEY\",\n        \"secret\": \"SECRET\",\n        \"password\": \"PASSWORD\"\n      },\n      \"sandboxMode\": true\n}\n```"
+      },
+      "958e1641-dd76-41a7-a436-92290000eb61": {
+        "type": "{\n  \"symbol\": string,\n  optional  \"since\": number,\n  optional  \"limit\": number,\n  optional \"params\": {string: any}\n}",
+        "name": "query",
+        "description": "Received the trades parameters to be fetched.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#personal-trades\n\nExample:\n```\n  {  \n      \"symbol\": \"BTC/USDT\"\n  }\n```"
+      }
+    },
+    "outputs": {
+      "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+        "type": "{\n  \"info\": any,\n  \"id\": string,\n  optional \"datetime\": string,\n  optional \"timestamp\": number,\n  \"symbol\": string,\n  optional \"order\": string,\n  optional \"type\": (\"limit\"or \"market\"),\n  \"side\": (\"buy\" or \"sell\"),\n  \"takerOrMaker\": (\"taker\" or \"maker\"),\n  optional \"price\": number,\n  optional \"amount\": number,\n  \"cost\": number,\n  optional \"fee\": {\n\t\"currency\": string,\n\t\"cost\": number,\n\t\"rate\": number\n  }\n}[]",
+        "name": "data",
+        "description": "Sends historical trades.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#trade-structure\n\nExample:\n```\n[\n  {\n    \"info\": {\n      \"symbol\": \"BTCUSDT\",\n      \"id\": \"994046\",\n      \"orderId\": \"3383621\",\n      \"orderListId\": \"-1\",\n      \"price\": \"24496.40000000\",\n      \"qty\": \"0.06694900\",\n      \"quoteQty\": \"1640.00948360\",\n      \"commission\": \"0.00000000\",\n      \"commissionAsset\": \"USDT\",\n      \"time\": \"1660208141103\",\n      \"isBuyer\": false,\n      \"isMaker\": false,\n      \"isBestMatch\": true\n    },\n    \"timestamp\": 1660208141103,\n    \"datetime\": \"2022-08-11T08:55:41.103Z\",\n    \"symbol\": \"BTC/USDT\",\n    \"id\": \"994046\",\n    \"order\": \"3383621\",\n    \"side\": \"sell\",\n    \"takerOrMaker\": \"taker\",\n    \"price\": 24496.4,\n    \"amount\": 0.066949,\n    \"cost\": 1640.0094836,\n    \"fee\": {\n      \"cost\": 0,\n      \"currency\": \"USDT\"\n    },\n    \"fees\": [\n      {\n        \"cost\": 0,\n        \"currency\": \"USDT\"\n      }\n    ]\n  }\n]\n```\n"
+      },
+      "e776d410-3c57-4114-8189-1ed584a01974": {
+        "type": "typeof `error`of `ccxt`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+          "coordinates": [
+            124,
+            21.5
+          ],
+          "name": "ccxt",
+          "prototype": "78a1eeb7-4555-465a-adb5-227c31799f63"
+        },
+        "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+          "coordinates": [
+            -147,
+            -135.5
+          ],
+          "name": "build fetchMyTrades action",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"parameters\"]",
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\r\n  \"name\": \"fetchMyTrades\",\r\n  \"parameters\": {\r\n  }\r\n}"
+          }
+        },
+        "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+          "coordinates": [
+            -120,
+            69
+          ],
+          "name": "merge exchange & parameters",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"exchange\""
+          }
+        }
+      },
+      "connections": {
+        "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "faa04647-7b0d-4187-86ff-d39034e4b0c4": {}
+            }
+          }
+        },
+        "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "69c27ba2-27a4-45f9-b6d9-4cd76e3fbd86": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
+            "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "958e1641-dd76-41a7-a436-92290000eb61": {
+            "6f254181-fccd-4324-8eda-ebeeb999b0fd": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "a9ed491a-2114-43b4-bb91-45b4b56c3bbb": {}
+            }
+          },
+          "e776d410-3c57-4114-8189-1ed584a01974": {
+            "82ad73ee-4a33-46db-bba9-4ae1777895c6": {
+              "de97ff64-6274-4fd2-af01-2a8e652a2188": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Loads historical trades.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#personal-trades\n\n**YOU CANNOT GET ALL OBJECTS SINCE THE BEGINNING OF TIME TO THE PRESENT MOMENT IN JUST ONE CALL.**\n\nPractically, very few exchanges will tolerate or allow that.\n\nExample:\n1. Received via `exchange`:\n```\n{\n  \"id\":\"coinbasepro\",\n  \"credentials\": {\n    \"apiKey\": \"API_KEY\",\n    \"secret\": \"SECRET\",\n    \"password\": \"PASSWORD\"\n  },\n  \"sandboxMode\": true\n}@0\n```\n2. Received via `query`:\n```\n{  \n  \"symbol\": \"BTC/USDT\"\n}@0\n```\n3. Sent via `data`:\n```\n[{\n  \"id\": \"4bba5198-9aac-4e3e-8e07-8c200daad567\",\n  \"info\": {\n    \"id\": \"4bba5198-9aac-4e3e-8e07-8c200daad567\",\n    \"price\": \"100.00000000\",\n    \"size\": \"1.00000000\",\n    \"product_id\": \"BTC-USD\",\n    \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n    \"side\": \"buy\",\n    \"type\": \"limit\",\n    \"time_in_force\": \"GTC\",\n    \"post_only\": false,\n    \"created_at\": \"2022-08-08T09:30:41.374971Z\",\n    \"fill_fees\": \"0.0000000000000000\",\n    \"filled_size\": \"0.00000000\",\n    \"executed_value\": \"0.0000000000000000\",\n    \"status\": \"open\",\n    \"settled\": false\n  },\n  \"timestamp\": 1659951041374,\n  \"datetime\": \"2022-08-08T09:30:41.374Z\",\n  \"status\": \"open\",\n  \"symbol\": \"BTC/USD\",\n  \"type\": \"limit\",\n  \"timeInForce\": \"GTC\",\n  \"postOnly\": false,\n  \"side\": \"buy\",\n  \"price\": 100,\n  \"cost\": 0,\n  \"amount\": 1,\n  \"filled\": 0,\n  \"remaining\": 1,\n  \"fee\": {\n    \"cost\": 0,\n    \"currency\": \"USD\"\n  },\n  \"trades\": [],\n  \"fees\": [\n    {\n      \"cost\": 0,\n      \"currency\": \"USD\"\n    }\n  ]\n}]@0 \n```",
+  "original": "5a3c2175-64d7-49fe-ae26-395afc923fa0",
+  "iconId": "7d4b9ff9-dbdc-44e1-a901-cd9d869db931",
+  "attributes": {
+    "locked": true
+  }
+}

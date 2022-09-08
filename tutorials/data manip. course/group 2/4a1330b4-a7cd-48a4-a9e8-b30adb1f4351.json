@@ -1,0 +1,95 @@
+{
+  "name": "tutorials/Data manip. course/Group 2",
+  "interface": {
+    "inputs": {
+      "70b03f73-7ae8-46f9-9bcd-cef4acf9d996": {
+        "type": "typeof `array` of `filter`",
+        "name": "paths",
+        "description": "[Inherited from port `array` of `filter`] \nReceives array to be filtered.\n\nExample:\n[1,2,3,4]"
+      }
+    },
+    "outputs": {
+      "7aa5c64a-e587-41f3-94f8-edee66743412": {
+        "type": "typeof `filtered` of `filter`",
+        "name": "filtered paths",
+        "description": "[Inherited from port `filtered` of `filter`] \nSends the filtered array.\n\nExample:\n[1,2]"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "13dbaafc-42a5-4aff-aa97-3b6d4b6fc4a0": {
+          "coordinates": [
+            5.333333333333343,
+            -124.33333333333333
+          ],
+          "name": "filter",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
+        },
+        "97336ea5-0963-4142-aefb-b15b87dbb4ab": {
+          "coordinates": [
+            -47.66666666666666,
+            18.66666666666667
+          ],
+          "name": "last item getter",
+          "prototype": "4a0c6a02-1411-407f-93a5-636b942968d8"
+        },
+        "05cc4d27-bee0-45bc-be19-ec5a31cfee5f": {
+          "coordinates": [
+            42.33333333333334,
+            105.66666666666667
+          ],
+          "name": "equality tester",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": "\"pair\""
+          }
+        }
+      },
+      "connections": {
+        "13dbaafc-42a5-4aff-aa97-3b6d4b6fc4a0": {
+          "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
+            "97336ea5-0963-4142-aefb-b15b87dbb4ab": {
+              "e4936450-3660-45ac-8cb5-7699ba69ba66": {}
+            }
+          }
+        },
+        "97336ea5-0963-4142-aefb-b15b87dbb4ab": {
+          "e6cf79e7-8084-402e-a28c-82b50b07e0ec": {
+            "05cc4d27-bee0-45bc-be19-ec5a31cfee5f": {
+              "a0934373-43a4-4cd5-83eb-860bc20d790a": {}
+            }
+          }
+        },
+        "05cc4d27-bee0-45bc-be19-ec5a31cfee5f": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "13dbaafc-42a5-4aff-aa97-3b6d4b6fc4a0": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "70b03f73-7ae8-46f9-9bcd-cef4acf9d996": {
+            "13dbaafc-42a5-4aff-aa97-3b6d4b6fc4a0": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        },
+        "outputs": {
+          "7aa5c64a-e587-41f3-94f8-edee66743412": {
+            "13dbaafc-42a5-4aff-aa97-3b6d4b6fc4a0": {
+              "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "attributes": {
+    "internal": true
+  }
+}

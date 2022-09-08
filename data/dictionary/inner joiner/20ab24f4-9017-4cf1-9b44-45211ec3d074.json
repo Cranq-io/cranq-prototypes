@@ -26,8 +26,8 @@
       "nodes": {
         "d11de262-a094-4063-af55-000ff66fb9bb": {
           "coordinates": [
-            -463,
-            76
+            -303.5,
+            184.5
           ],
           "description": "",
           "params": {},
@@ -36,66 +36,63 @@
         },
         "2fd9703c-5c6f-4f01-b5f9-3c5214b21e83": {
           "coordinates": [
-            -190,
-            -64
+            -266.5,
+            -37.5
           ],
           "description": "",
           "params": {},
           "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0",
-          "name": "get values of 'a'"
+          "name": "get values of A"
         },
         "284145d5-b048-4961-bd42-d6170e3eb8e2": {
           "coordinates": [
-            535,
-            -11
+            390.5,
+            11.5
           ],
           "description": "",
           "params": {},
           "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
           "name": "build joined"
         },
-        "880370dc-0f5c-4e91-a752-310058191207": {
+        "1a8b1623-99b9-4afb-8ae0-658ac2e10655": {
           "coordinates": [
-            -128,
-            342
+            -265.5,
+            -153.5
           ],
-          "name": "get valid items for values of  `b`",
-          "prototype": "29a6f0f8-3472-4f31-8363-a9cdd575913d"
-        },
-        "ed2b8909-131c-4c72-a6d7-7cdf7a6c9850": {
-          "coordinates": [
-            367,
-            -110
-          ],
-          "name": "get valid values",
-          "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1"
-        },
-        "df3e2486-8c25-4ef7-b479-9ba73ac11ef9": {
-          "coordinates": [
-            44,
-            175
-          ],
-          "name": "get valid keys",
+          "name": "get keys of A",
           "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
         },
-        "520f2126-cccd-47d5-85e7-142afa5b10e8": {
+        "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
           "coordinates": [
-            189,
-            67
+            -57.5,
+            -88.5
           ],
-          "name": "build node paths",
-          "prototype": "8771a331-04b7-4612-9953-ecb171f42f50",
-          "params": {
-            "0fa7e71e-c029-4ea2-b69f-063d5a384f40": "1"
-          }
+          "name": "build inverted A",
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead"
         },
-        "94c8f466-97e4-4b74-91c0-c5d510452ed8": {
+        "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
           "coordinates": [
-            260,
-            270
+            10.5,
+            62.5
           ],
-          "name": "get indexes of valid keys",
-          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0"
+          "name": "get matching keys",
+          "prototype": "ac0878c7-a869-43b4-899a-9258d840104d"
+        },
+        "61742eeb-029a-409f-8e18-ecdcb68858c1": {
+          "coordinates": [
+            248.5,
+            -137.5
+          ],
+          "name": "get dest. keys",
+          "prototype": "83ac4d5d-9ac9-48d0-ae17-a5a77b18cfb6"
+        },
+        "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
+          "coordinates": [
+            246.5,
+            157.5
+          ],
+          "name": "get dest. values",
+          "prototype": "83ac4d5d-9ac9-48d0-ae17-a5a77b18cfb6"
         }
       },
       "connections": {
@@ -105,59 +102,65 @@
               "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {
                 "description": ""
               }
+            },
+            "1a8b1623-99b9-4afb-8ae0-658ac2e10655": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "880370dc-0f5c-4e91-a752-310058191207": {
+            "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
+              "7a83ef6b-1827-4238-a644-b50a667636b9": {}
+            },
+            "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
               "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {}
             }
           }
         },
         "2fd9703c-5c6f-4f01-b5f9-3c5214b21e83": {
           "807f86ec-082e-4a9a-a304-021a397dca4c": {
-            "880370dc-0f5c-4e91-a752-310058191207": {
-              "72550b19-9434-43d7-a6af-468a19288808": {}
-            },
-            "ed2b8909-131c-4c72-a6d7-7cdf7a6c9850": {
-              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
-            }
-          }
-        },
-        "880370dc-0f5c-4e91-a752-310058191207": {
-          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
-            "df3e2486-8c25-4ef7-b479-9ba73ac11ef9": {
-              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
-            },
-            "94c8f466-97e4-4b74-91c0-c5d510452ed8": {
-              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {}
-            }
-          }
-        },
-        "df3e2486-8c25-4ef7-b479-9ba73ac11ef9": {
-          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
-            "520f2126-cccd-47d5-85e7-142afa5b10e8": {
-              "bfdf1859-7500-4213-a794-80dc100385c6": {}
-            }
-          }
-        },
-        "520f2126-cccd-47d5-85e7-142afa5b10e8": {
-          "89a6ec96-e4d0-4d12-8095-e720561a7896": {
-            "ed2b8909-131c-4c72-a6d7-7cdf7a6c9850": {
-              "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": {}
-            }
-          }
-        },
-        "ed2b8909-131c-4c72-a6d7-7cdf7a6c9850": {
-          "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
-            "284145d5-b048-4961-bd42-d6170e3eb8e2": {
+            "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
             }
           }
         },
-        "94c8f466-97e4-4b74-91c0-c5d510452ed8": {
-          "807f86ec-082e-4a9a-a304-021a397dca4c": {
+        "1a8b1623-99b9-4afb-8ae0-658ac2e10655": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          }
+        },
+        "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
+          "852cd030-0794-42cc-b448-0886fb787cf2": {
+            "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
+              "1a1cdc67-af48-4854-8759-60704930e041": {}
+            },
+            "61742eeb-029a-409f-8e18-ecdcb68858c1": {
+              "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {}
+            }
+          }
+        },
+        "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
+          "bbf06111-7a87-46a0-8a76-3bd687337e2a": {
+            "61742eeb-029a-409f-8e18-ecdcb68858c1": {
+              "72550b19-9434-43d7-a6af-468a19288808": {}
+            },
+            "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
+              "72550b19-9434-43d7-a6af-468a19288808": {}
+            }
+          }
+        },
+        "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
+          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
             "284145d5-b048-4961-bd42-d6170e3eb8e2": {
               "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          }
+        },
+        "61742eeb-029a-409f-8e18-ecdcb68858c1": {
+          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
+            "284145d5-b048-4961-bd42-d6170e3eb8e2": {
+              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
             }
           }
         }
@@ -197,7 +200,6 @@
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
-    "featured": true,
-    "locked": true
+    "featured": true
   }
 }

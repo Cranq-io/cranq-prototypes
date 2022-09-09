@@ -1,22 +1,17 @@
 {
-  "name": "tutorials/Data manip. course/Group 3",
+  "name": "tutorials/Cleaned up data manip. course/Group 3",
   "interface": {
     "inputs": {
       "6acd1478-8ea6-413b-a46a-73a6b3d3e495": {
         "type": "typeof `array` of `mapper`",
-        "name": "mapper-array",
+        "name": "ccy symbols",
         "description": "[Inherited from port `array` of `mapper`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
-      },
-      "5db42e06-ddb8-4f92-a31f-ac6eecfa23e8": {
-        "type": "typeof `keys` of `builder (keys & values)`",
-        "name": "builder (keys & values)-keys",
-        "description": "[Inherited from port `keys` of `builder (keys & values)`] \nReceives the keys to construct the dictionary from.\n\nExample:\n[\"first\",\"third\",\"fifth\"]"
       }
     },
     "outputs": {
       "22c118ba-5ce9-440a-b9a4-5f9fb4ef2e70": {
         "type": "typeof `joined` of `inner joiner`",
-        "name": "inner joiner-joined",
+        "name": "prices",
         "description": "[Inherited from port `joined` of `inner joiner`] \nSends the resulting joined dictionary.\n\nExample:\n{\"first\": 1,\"third\": 3}"
       }
     }
@@ -170,9 +165,7 @@
           "6acd1478-8ea6-413b-a46a-73a6b3d3e495": {
             "38982d6c-b903-426b-9fc7-da102c0751de": {
               "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
-            }
-          },
-          "5db42e06-ddb8-4f92-a31f-ac6eecfa23e8": {
+            },
             "2f7403ee-bb89-4631-a01c-a2272312a5c1": {
               "33848016-8ca0-4d05-ae94-0666dc207a34": {}
             }

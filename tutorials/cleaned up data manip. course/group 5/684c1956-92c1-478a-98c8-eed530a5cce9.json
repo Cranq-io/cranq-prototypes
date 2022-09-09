@@ -1,0 +1,123 @@
+{
+  "name": "tutorials/Cleaned up data manip. course/Group 5",
+  "interface": {
+    "inputs": {
+      "e76c2545-0095-436c-a034-b3e069b8a232": {
+        "type": "typeof `data` of `repeat wallet`",
+        "name": "wallet",
+        "description": "[Inherited from port `data` of `repeat wallet`] \nData to be repeated"
+      },
+      "35a357ad-ee12-42e6-ae56-c25c430f4f41": {
+        "type": "typeof `dict` of `repeat wallet`",
+        "name": "ccy unit prices"
+      }
+    },
+    "outputs": {
+      "8820f4d7-949f-4b47-9153-86800caac81c": {
+        "type": "typeof `mapped` of `calculate USDT per ccy`",
+        "name": "converted wallet"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "960a7fc7-9c17-40ee-acbe-bcfcef795f9f": {
+          "coordinates": [
+            185.5,
+            2.75
+          ],
+          "name": "amount * rate",
+          "prototype": "f9e5eb98-196f-4a7d-890e-d447468f70e8"
+        },
+        "5268e6c8-0c07-4bff-b457-619d7c64a660": {
+          "coordinates": [
+            -37.5,
+            -72.25
+          ],
+          "name": "calculate USDT per ccy",
+          "prototype": "90061d99-64eb-4260-ac6d-abdf4c6e9fb1"
+        },
+        "a06259f8-f65b-460d-bd8d-5743c4f153e2": {
+          "coordinates": [
+            81.5,
+            70.75
+          ],
+          "name": "get crypto amt for ccy",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f"
+        },
+        "5bb26412-31e6-48fe-95b0-263e6d675f79": {
+          "coordinates": [
+            -229.5,
+            -1.25
+          ],
+          "name": "repeat wallet",
+          "prototype": "335d91cb-607f-4e04-af26-357558fca0eb"
+        }
+      },
+      "connections": {
+        "5268e6c8-0c07-4bff-b457-619d7c64a660": {
+          "43dde9dc-1e3f-4784-9311-306e5b37df42": {
+            "960a7fc7-9c17-40ee-acbe-bcfcef795f9f": {
+              "b157e0fc-052f-441b-be01-206f10ca8725": {}
+            }
+          },
+          "73321c81-c9fe-4d65-8843-8e038f0b02af": {
+            "a06259f8-f65b-460d-bd8d-5743c4f153e2": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          }
+        },
+        "a06259f8-f65b-460d-bd8d-5743c4f153e2": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "960a7fc7-9c17-40ee-acbe-bcfcef795f9f": {
+              "4c8ebaff-e1e3-4485-aabf-c225128ff951": {}
+            }
+          }
+        },
+        "960a7fc7-9c17-40ee-acbe-bcfcef795f9f": {
+          "0cdb5d84-8bbf-4078-8193-d0d13bf76f29": {
+            "5268e6c8-0c07-4bff-b457-619d7c64a660": {
+              "04851541-789c-4440-86b2-4006842c7489": {}
+            }
+          }
+        },
+        "5bb26412-31e6-48fe-95b0-263e6d675f79": {
+          "1a918fd9-bb0b-47ce-8f11-1a6d4353a79d": {
+            "a06259f8-f65b-460d-bd8d-5743c4f153e2": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e76c2545-0095-436c-a034-b3e069b8a232": {
+            "5bb26412-31e6-48fe-95b0-263e6d675f79": {
+              "c929159c-7b75-455d-bad0-0dd020626367": {}
+            }
+          },
+          "35a357ad-ee12-42e6-ae56-c25c430f4f41": {
+            "5bb26412-31e6-48fe-95b0-263e6d675f79": {
+              "6aeaf7e6-b523-4247-a7e6-bb15dd0bb0e9": {}
+            },
+            "5268e6c8-0c07-4bff-b457-619d7c64a660": {
+              "a7988a90-76f7-46ff-b09b-61858d52be3b": {}
+            }
+          }
+        },
+        "outputs": {
+          "8820f4d7-949f-4b47-9153-86800caac81c": {
+            "5268e6c8-0c07-4bff-b457-619d7c64a660": {
+              "362372d2-9af3-43b4-8948-e7c80050c1af": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "internal": true
+  }
+}

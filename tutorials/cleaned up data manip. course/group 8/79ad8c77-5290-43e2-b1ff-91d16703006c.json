@@ -1,0 +1,135 @@
+{
+  "name": "tutorials/Cleaned up data manip. course/Group 8",
+  "interface": {
+    "inputs": {
+      "ebd83868-7514-4ac6-8a64-9b65b2a4e8a7": {
+        "type": "typeof `wallet` of `remove USDT from wallet`",
+        "name": "wallet"
+      }
+    },
+    "outputs": {
+      "9a05afb1-e897-4c34-955d-eda1fb2608a7": {
+        "type": "typeof `USDT total` of `add orig. USDT`",
+        "name": "USDT total",
+        "description": "[Inherited from port `USDT total` of `add orig. USDT`] \n[Inherited from port `sum` of `add orig. USDT to sum`] \nThe sum of the two operands."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d0957ecf-6cb5-486d-a6c6-518150b58d1e": {
+          "coordinates": [
+            -202.68055555555554,
+            -254.00694444444446
+          ],
+          "name": "get ccy symbols",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "743746d3-2cb3-4713-87bf-dad421cf7717": {
+          "coordinates": [
+            -63.93055555555556,
+            -163.38194444444446
+          ],
+          "name": "get prices",
+          "prototype": "20b805e3-d936-4fe7-b8ae-e4d8a483deb3"
+        },
+        "553a1812-7a3b-4975-a374-0f9bbdd1cd57": {
+          "coordinates": [
+            -276.3472222222222,
+            -105.34027777777779
+          ],
+          "name": "remove USDT from wallet",
+          "prototype": "beb32060-158b-407c-bfb2-96db8107efaa"
+        },
+        "f867c949-c31b-40bd-a303-5c6119a01eb7": {
+          "coordinates": [
+            110.81944444444444,
+            -50.75694444444444
+          ],
+          "name": "convert wallet to USDT",
+          "prototype": "684c1956-92c1-478a-98c8-eed530a5cce9"
+        },
+        "8471d92a-b951-447e-a82b-d632feb2b073": {
+          "coordinates": [
+            285.81944444444446,
+            -140.50694444444446
+          ],
+          "name": "sum USDT",
+          "prototype": "19823457-5e9a-4959-863e-b0a08025c7b1"
+        },
+        "cae5198a-64af-47d3-ab8a-78290fa99a4b": {
+          "coordinates": [
+            296.31944444444446,
+            147.99305555555554
+          ],
+          "name": "add orig. USDT",
+          "prototype": "76cd2705-c5ba-43d0-a81f-0748db3648d8"
+        }
+      },
+      "connections": {
+        "d0957ecf-6cb5-486d-a6c6-518150b58d1e": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "743746d3-2cb3-4713-87bf-dad421cf7717": {
+              "6acd1478-8ea6-413b-a46a-73a6b3d3e495": {}
+            }
+          }
+        },
+        "553a1812-7a3b-4975-a374-0f9bbdd1cd57": {
+          "b78a44e4-7ba3-43f5-8b97-6b6576a59b9c": {
+            "d0957ecf-6cb5-486d-a6c6-518150b58d1e": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            }
+          }
+        },
+        "743746d3-2cb3-4713-87bf-dad421cf7717": {
+          "22c118ba-5ce9-440a-b9a4-5f9fb4ef2e70": {
+            "f867c949-c31b-40bd-a303-5c6119a01eb7": {
+              "35a357ad-ee12-42e6-ae56-c25c430f4f41": {}
+            }
+          }
+        },
+        "f867c949-c31b-40bd-a303-5c6119a01eb7": {
+          "8820f4d7-949f-4b47-9153-86800caac81c": {
+            "8471d92a-b951-447e-a82b-d632feb2b073": {
+              "95c7ea03-a6a2-499a-8b15-4da0f4d24c2b": {}
+            }
+          }
+        },
+        "8471d92a-b951-447e-a82b-d632feb2b073": {
+          "85ac26bf-e2d6-4f10-b222-4ac2864ea70c": {
+            "cae5198a-64af-47d3-ab8a-78290fa99a4b": {
+              "dfea34ce-a193-4aa4-b1cc-09648a9f088b": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ebd83868-7514-4ac6-8a64-9b65b2a4e8a7": {
+            "553a1812-7a3b-4975-a374-0f9bbdd1cd57": {
+              "e584a8a8-f95b-4e60-9206-fcf1f6fb9821": {}
+            },
+            "f867c949-c31b-40bd-a303-5c6119a01eb7": {
+              "e76c2545-0095-436c-a034-b3e069b8a232": {}
+            },
+            "cae5198a-64af-47d3-ab8a-78290fa99a4b": {
+              "e69bf5fa-3156-4a62-b2d9-1a811d32a223": {}
+            }
+          }
+        },
+        "outputs": {
+          "9a05afb1-e897-4c34-955d-eda1fb2608a7": {
+            "cae5198a-64af-47d3-ab8a-78290fa99a4b": {
+              "5a059ff5-c216-413e-ac2d-a9047265a6dc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -1,21 +1,21 @@
 {
-  "description": "Joins dictionary 'b' to dictionary `a`, by matching the values of `a` to the keys of `b`.\n\nItems from `b` with no matching value in `a` are excluded from the result.\n\nItems from `a` with no matching key in `b` are excluded from the result.\n\nExample:\n1. {\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}@0 received via `a`\n2. {\"first_id\":1, \"second_id\":2, \"third_id\":3}@0 received via `b`\n3. `joined` sends {\"first\": 1,\"third\": 3}@0",
+  "description": "Joins dictionary 'b' to dictionary `a`, by matching the values of `a` to the keys of `b`.\n\nItems from `b` with no matching value in `a` are excluded from the result.\n\nItems from `a` with no matching key in `b` are excluded from the result.\n\nExample:\n1. Received via `a`:\n```json\n{\n  \"first\":\"first_id\",\n  \"third\":\"third_id\",\n  \"fifth\":\"fifth_id\"\n}@0\n```\n2. Received via `b`:\n```json\n{\n  \"first_id\":1,\n  \"second_id\":2,\n  \"third_id\":3\n}@0\n```\n3. Sent via `joined`:\n```json\n{\n  \"first\": 1,\n  \"third\": 3\n}@0\n```",
   "interface": {
     "inputs": {
       "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
-        "type": "({string:string} or {string: number})",
+        "type": "(\n{string:string}\nor {string: number}\nor string[]\nor number[]\n)",
         "name": "a",
         "description": "Receives the dictionary containing the keys to join and the values to join by.\n\nExample:\n{\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}"
       },
       "be713809-1c65-4abb-9525-87ee9f75e9be": {
-        "type": "({string:any} or any[])",
+        "type": "(\n{string:any}\nor any[]\n)",
         "name": "b",
         "description": "Receives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       }
     },
     "outputs": {
       "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
-        "type": "({string: typeof `b`[string]} or {string: typeof `b`[number]})",
+        "type": "(\n{string: typeof `b`[string]}\nor {string: typeof `b`[number]}\n)",
         "name": "joined",
         "description": "Sends the resulting joined dictionary.\n\nExample:\n{\"first\": 1,\"third\": 3}"
       }
@@ -24,143 +24,31 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "d11de262-a094-4063-af55-000ff66fb9bb": {
+        "4395193c-1c2f-47b1-94d4-90022f3d90d3": {
           "coordinates": [
-            -303.5,
-            184.5
+            -31.5,
+            -78
           ],
-          "description": "",
-          "params": {},
-          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
-          "name": "forward inputs"
+          "name": "sync a & b",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"a\", \"b\"]"
+          }
         },
-        "2fd9703c-5c6f-4f01-b5f9-3c5214b21e83": {
+        "646b14a6-3937-490d-b3ec-f9aa264e4721": {
           "coordinates": [
-            -266.5,
-            -37.5
+            5.5,
+            76
           ],
-          "description": "",
-          "params": {},
-          "prototype": "3419d082-1bea-4e6b-8dfb-47eabfe792b0",
-          "name": "get values of A"
-        },
-        "284145d5-b048-4961-bd42-d6170e3eb8e2": {
-          "coordinates": [
-            390.5,
-            11.5
-          ],
-          "description": "",
-          "params": {},
-          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "name": "build joined"
-        },
-        "1a8b1623-99b9-4afb-8ae0-658ac2e10655": {
-          "coordinates": [
-            -265.5,
-            -153.5
-          ],
-          "name": "get keys of A",
-          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
-        },
-        "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
-          "coordinates": [
-            -57.5,
-            -88.5
-          ],
-          "name": "build inverted A",
-          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead"
-        },
-        "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
-          "coordinates": [
-            10.5,
-            62.5
-          ],
-          "name": "get matching keys",
-          "prototype": "ac0878c7-a869-43b4-899a-9258d840104d"
-        },
-        "61742eeb-029a-409f-8e18-ecdcb68858c1": {
-          "coordinates": [
-            248.5,
-            -137.5
-          ],
-          "name": "get dest. keys",
-          "prototype": "83ac4d5d-9ac9-48d0-ae17-a5a77b18cfb6"
-        },
-        "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
-          "coordinates": [
-            246.5,
-            157.5
-          ],
-          "name": "get dest. values",
-          "prototype": "83ac4d5d-9ac9-48d0-ae17-a5a77b18cfb6"
+          "name": "node 1",
+          "prototype": "d54bae16-044e-4f3b-a12f-41cb110db191"
         }
       },
       "connections": {
-        "d11de262-a094-4063-af55-000ff66fb9bb": {
-          "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "2fd9703c-5c6f-4f01-b5f9-3c5214b21e83": {
-              "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {
-                "description": ""
-              }
-            },
-            "1a8b1623-99b9-4afb-8ae0-658ac2e10655": {
-              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
-            }
-          },
-          "d1295197-1962-4680-a037-5890f2175bb9": {
-            "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
-              "7a83ef6b-1827-4238-a644-b50a667636b9": {}
-            },
-            "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
-              "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {}
-            }
-          }
-        },
-        "2fd9703c-5c6f-4f01-b5f9-3c5214b21e83": {
-          "807f86ec-082e-4a9a-a304-021a397dca4c": {
-            "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
-              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
-            }
-          }
-        },
-        "1a8b1623-99b9-4afb-8ae0-658ac2e10655": {
-          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
-            "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
-              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
-            }
-          }
-        },
-        "8e1eba9b-6f9d-485e-be13-b68a6f673e4e": {
-          "852cd030-0794-42cc-b448-0886fb787cf2": {
-            "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
-              "1a1cdc67-af48-4854-8759-60704930e041": {}
-            },
-            "61742eeb-029a-409f-8e18-ecdcb68858c1": {
-              "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {}
-            }
-          }
-        },
-        "93a8e8cb-2a54-454e-9a0f-f69476fa2dd6": {
-          "bbf06111-7a87-46a0-8a76-3bd687337e2a": {
-            "61742eeb-029a-409f-8e18-ecdcb68858c1": {
-              "72550b19-9434-43d7-a6af-468a19288808": {}
-            },
-            "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
-              "72550b19-9434-43d7-a6af-468a19288808": {}
-            }
-          }
-        },
-        "77481406-6fa0-459e-b5dd-46c6bbb275cf": {
-          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
-            "284145d5-b048-4961-bd42-d6170e3eb8e2": {
-              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
-            }
-          }
-        },
-        "61742eeb-029a-409f-8e18-ecdcb68858c1": {
-          "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
-            "284145d5-b048-4961-bd42-d6170e3eb8e2": {
-              "33848016-8ca0-4d05-ae94-0666dc207a34": {}
+        "4395193c-1c2f-47b1-94d4-90022f3d90d3": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "646b14a6-3937-490d-b3ec-f9aa264e4721": {
+              "e80684cd-6d93-411e-ab82-6b53436ccd32": {}
             }
           }
         }
@@ -168,20 +56,20 @@
       "forwards": {
         "inputs": {
           "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
-            "d11de262-a094-4063-af55-000ff66fb9bb": {
-              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            "4395193c-1c2f-47b1-94d4-90022f3d90d3": {
+              "a": {}
             }
           },
           "be713809-1c65-4abb-9525-87ee9f75e9be": {
-            "d11de262-a094-4063-af55-000ff66fb9bb": {
-              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            "4395193c-1c2f-47b1-94d4-90022f3d90d3": {
+              "b": {}
             }
           }
         },
         "outputs": {
           "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
-            "284145d5-b048-4961-bd42-d6170e3eb8e2": {
-              "852cd030-0794-42cc-b448-0886fb787cf2": {}
+            "646b14a6-3937-490d-b3ec-f9aa264e4721": {
+              "687f1676-31d6-423b-a0cc-34fb9a3a686a": {}
             }
           }
         }
@@ -200,6 +88,7 @@
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
-    "featured": true
+    "featured": true,
+    "locked": true
   }
 }

@@ -1,0 +1,30 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "e80684cd-6d93-411e-ab82-6b53436ccd32": "const {a, b} = data;\nconst result = {};\nif (a instanceof Array) {\n  for (let i=0, length=a.length; i<length; i++) {\n    const bkey = a[i];\n    const value = b[bkey];\n    if (value !== undefined) {\n      result[i] = value;\n    }\n  }\n} else {\n  for (const key in a) {\n    const bkey = a[key];\n    const value = b[bkey];\n    if (value !== undefined) {\n      result[key] = value;\n    }\n  }\n}\noutputs.joined(result, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e80684cd-6d93-411e-ab82-6b53436ccd32": {
+        "type": "({\n  \"a\": {string: string},\n  \"b\": {string: any}\n} or {\n  \"a\": {string: number},\n  \"b\": any[]\n} or {\n  \"a\": string[],\n  \"b\": {string: any}\n} or {\n  \"a\": number[],\n  \"b\": any[]\n})",
+        "name": "a & b"
+      }
+    },
+    "outputs": {
+      "687f1676-31d6-423b-a0cc-34fb9a3a686a": {
+        "type": "(\n{string: typeof `a & b`[string]}\nor {string: typeof `a & b`[number]}\n)",
+        "name": "joined"
+      }
+    }
+  },
+  "name": "data/dictionary/Inner joiner/Internal",
+  "description": "See `data/dictionary/Inner joiner`",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

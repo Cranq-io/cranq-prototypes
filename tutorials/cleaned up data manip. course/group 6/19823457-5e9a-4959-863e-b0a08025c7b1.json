@@ -1,0 +1,85 @@
+{
+  "name": "tutorials/Cleaned up data manip. course/Group 6",
+  "interface": {
+    "inputs": {
+      "95c7ea03-a6a2-499a-8b15-4da0f4d24c2b": {
+        "type": "typeof `dict` of `sum up USDT values`",
+        "name": "converted wallet",
+        "description": "[Inherited from port `dict` of `sum up USDT values`] \nReceives dictionary to be reduced.\n\nExample:\n```json\n{\n  \"a\": \"A\",\n  \"b\": \"B\",\n  \"c\": \"C\"\n}\n```"
+      }
+    },
+    "outputs": {
+      "85ac26bf-e2d6-4f10-b222-4ac2864ea70c": {
+        "type": "typeof `reduced` of `sum up USDT values`",
+        "name": "USDT total",
+        "description": "[Inherited from port `reduced` of `sum up USDT values`] \nSends the reduced dictionary.\n\nExample: `\"ABC\"`"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0a338d6c-59e0-4f24-976b-182a0a2bfef8": {
+          "coordinates": [
+            -78.5,
+            -26.5
+          ],
+          "name": "sum up USDT values",
+          "prototype": "2bf48472-c767-4027-b283-8d823e2004cf",
+          "params": {
+            "41b23f84-84c6-4a60-818a-6d2d73b398f5": "0"
+          }
+        },
+        "b1790f72-9273-447b-8fe2-f655d8208e1d": {
+          "coordinates": [
+            78.5,
+            26.5
+          ],
+          "name": "add next USDT value",
+          "prototype": "172e2a79-6dd8-450d-9c60-99073c933eeb"
+        }
+      },
+      "connections": {
+        "0a338d6c-59e0-4f24-976b-182a0a2bfef8": {
+          "fe0ece64-c3f9-40a0-bf75-3353ebcf9358": {
+            "b1790f72-9273-447b-8fe2-f655d8208e1d": {
+              "824b46d4-6dad-4859-939f-376702e84adb": {}
+            }
+          },
+          "40fc1007-0fb1-4125-803d-eb62c1e4a3ec": {
+            "b1790f72-9273-447b-8fe2-f655d8208e1d": {
+              "f8db2394-8b73-41b1-8cee-570acf0ca976": {}
+            }
+          }
+        },
+        "b1790f72-9273-447b-8fe2-f655d8208e1d": {
+          "3157073c-40d2-44fd-a94b-ea3adcce3440": {
+            "0a338d6c-59e0-4f24-976b-182a0a2bfef8": {
+              "5daec729-4816-4caf-8303-dd0c02b059bd": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "95c7ea03-a6a2-499a-8b15-4da0f4d24c2b": {
+            "0a338d6c-59e0-4f24-976b-182a0a2bfef8": {
+              "113d4c4d-fbca-4208-a860-0d4ce7e74f96": {}
+            }
+          }
+        },
+        "outputs": {
+          "85ac26bf-e2d6-4f10-b222-4ac2864ea70c": {
+            "0a338d6c-59e0-4f24-976b-182a0a2bfef8": {
+              "72a72278-006d-4794-8481-444f348b7488": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "internal": true
+  }
+}

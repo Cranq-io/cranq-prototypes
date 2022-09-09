@@ -1,0 +1,83 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "Project root",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -294,
+            52
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            298,
+            -52
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+          "coordinates": [
+            -95,
+            -50.5
+          ],
+          "name": "wallet",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"ETH\": 0.1,\n  \"BTC\": 0.01,\n  \"SOL\": 10,\n  \"DOGE\": 1000,\n  \"USDT\": 100\n}"
+          }
+        },
+        "988b36ea-d69c-40bb-844b-5f1746d10bcc": {
+          "coordinates": [
+            91.68055555555556,
+            48.50694444444444
+          ],
+          "name": "get total USDT value",
+          "prototype": "79ad8c77-5290-43e2-b1ff-91d16703006c"
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "988b36ea-d69c-40bb-844b-5f1746d10bcc": {
+              "ebd83868-7514-4ac6-8a64-9b65b2a4e8a7": {}
+            }
+          }
+        },
+        "988b36ea-d69c-40bb-844b-5f1746d10bcc": {
+          "9a05afb1-e897-4c34-955d-eda1fb2608a7": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/Cleaned up data manip. course"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "tutorials/Cleaned up data manip. course/Group 7",
+  "interface": {
+    "inputs": {
+      "e69bf5fa-3156-4a62-b2d9-1a811d32a223": {
+        "type": "typeof `dict` of `extract orig. USDT from wallet`",
+        "name": "wallet",
+        "description": "[Inherited from port `dict` of `extract orig. USDT from wallet`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      },
+      "dfea34ce-a193-4aa4-b1cc-09648a9f088b": {
+        "type": "typeof `b` of `add orig. USDT to sum`",
+        "name": "USDT subtotal",
+        "description": "[Inherited from port `b` of `add orig. USDT to sum`] \nSecond operand"
+      }
+    },
+    "outputs": {
+      "5a059ff5-c216-413e-ac2d-a9047265a6dc": {
+        "type": "typeof `sum` of `add orig. USDT to sum`",
+        "name": "USDT total",
+        "description": "[Inherited from port `sum` of `add orig. USDT to sum`] \nThe sum of the two operands."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "40f98d0f-2df1-4db2-a5fa-8b84975a7913": {
+          "coordinates": [
+            -72,
+            -2
+          ],
+          "name": "extract orig. USDT from wallet",
+          "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
+          "params": {
+            "e7d99c83-94bf-45ac-bc40-d58615931d22": "\"USDT\"",
+            "09901a8a-16aa-4e9a-a314-d8eb2cec3284": "0"
+          }
+        },
+        "c13edba9-221e-4bb8-b52f-3a2beb76cc06": {
+          "coordinates": [
+            72,
+            2
+          ],
+          "name": "add orig. USDT to sum",
+          "prototype": "172e2a79-6dd8-450d-9c60-99073c933eeb"
+        }
+      },
+      "connections": {
+        "40f98d0f-2df1-4db2-a5fa-8b84975a7913": {
+          "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+            "c13edba9-221e-4bb8-b52f-3a2beb76cc06": {
+              "f8db2394-8b73-41b1-8cee-570acf0ca976": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e69bf5fa-3156-4a62-b2d9-1a811d32a223": {
+            "40f98d0f-2df1-4db2-a5fa-8b84975a7913": {
+              "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {}
+            }
+          },
+          "dfea34ce-a193-4aa4-b1cc-09648a9f088b": {
+            "c13edba9-221e-4bb8-b52f-3a2beb76cc06": {
+              "824b46d4-6dad-4859-939f-376702e84adb": {}
+            }
+          }
+        },
+        "outputs": {
+          "5a059ff5-c216-413e-ac2d-a9047265a6dc": {
+            "c13edba9-221e-4bb8-b52f-3a2beb76cc06": {
+              "3157073c-40d2-44fd-a94b-ea3adcce3440": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true
+  }
+}

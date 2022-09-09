@@ -1,0 +1,93 @@
+{
+  "name": "tutorials/Cleaned up data manip. course/Group 4",
+  "interface": {
+    "inputs": {
+      "e584a8a8-f95b-4e60-9206-fcf1f6fb9821": {
+        "type": "typeof `dict` of `reomve USDT from wallet`",
+        "name": "wallet"
+      }
+    },
+    "outputs": {
+      "b78a44e4-7ba3-43f5-8b97-6b6576a59b9c": {
+        "type": "typeof `filtered` of `reomve USDT from wallet`",
+        "name": "USDT-less wallet"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f2612109-1b7b-4bf7-93aa-37c8363444a0": {
+          "coordinates": [
+            -12.333333333333343,
+            -61.66666666666666
+          ],
+          "name": "reomve USDT from wallet",
+          "prototype": "54dd8437-a9f5-43fc-a815-9becb5a90c48"
+        },
+        "0fe81616-4530-4c8e-96b2-023f1edec83a": {
+          "coordinates": [
+            125.66666666666666,
+            21.333333333333343
+          ],
+          "name": "is USDT?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "a0934373-43a4-4cd5-83eb-860bc20d790a": "\"USDT\""
+          }
+        },
+        "166c694d-214b-41f9-bc8b-1fa0239fa7f9": {
+          "coordinates": [
+            -113.33333333333334,
+            40.33333333333334
+          ],
+          "name": "is NOT USDT?",
+          "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
+        }
+      },
+      "connections": {
+        "f2612109-1b7b-4bf7-93aa-37c8363444a0": {
+          "72c3563b-7b77-48a6-ab16-73759d5e3d5c": {
+            "0fe81616-4530-4c8e-96b2-023f1edec83a": {
+              "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {}
+            }
+          }
+        },
+        "0fe81616-4530-4c8e-96b2-023f1edec83a": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "166c694d-214b-41f9-bc8b-1fa0239fa7f9": {
+              "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {}
+            }
+          }
+        },
+        "166c694d-214b-41f9-bc8b-1fa0239fa7f9": {
+          "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
+            "f2612109-1b7b-4bf7-93aa-37c8363444a0": {
+              "daed7f05-10a0-4431-9637-d5034f0fa556": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e584a8a8-f95b-4e60-9206-fcf1f6fb9821": {
+            "f2612109-1b7b-4bf7-93aa-37c8363444a0": {
+              "b9028ed1-f559-45d0-a038-a67cc8f81455": {}
+            }
+          }
+        },
+        "outputs": {
+          "b78a44e4-7ba3-43f5-8b97-6b6576a59b9c": {
+            "f2612109-1b7b-4bf7-93aa-37c8363444a0": {
+              "aae23c0e-0461-43fa-95f6-6857fa747dfa": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "attributes": {
+    "internal": true
+  }
+}

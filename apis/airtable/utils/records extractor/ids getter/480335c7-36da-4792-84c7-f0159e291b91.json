@@ -1,0 +1,80 @@
+{
+  "name": "apis/airtable/utils/Records extractor/IDs getter",
+  "interface": {
+    "inputs": {
+      "183d9543-40f3-4de3-86d6-45ba7bdcc7b1": {
+        "type": "typeof `array` of `mapper B`",
+        "name": "array",
+        "description": "[Inherited from port `array` of `mapper B`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
+      }
+    },
+    "outputs": {
+      "2a9baf89-5a8e-45a8-b280-391eb95cdd39": {
+        "type": "typeof `mapped` of `mapper B`",
+        "name": "record ids",
+        "description": "[Inherited from port `mapped` of `mapper B`] \nSends the mapped array.\n\nExample:\n[\"Foo A\", \"Bar A\"]"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f6cdc618-cf49-4652-834f-5ffbdb6af47e": {
+          "coordinates": [
+            -54,
+            -48
+          ],
+          "name": "mapper B",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "0a4ec9e3-e835-4ae6-bf96-080432eafffa": {
+          "coordinates": [
+            54,
+            48
+          ],
+          "name": "get \"id\"",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"id\""
+          }
+        }
+      },
+      "connections": {
+        "f6cdc618-cf49-4652-834f-5ffbdb6af47e": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "0a4ec9e3-e835-4ae6-bf96-080432eafffa": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "0a4ec9e3-e835-4ae6-bf96-080432eafffa": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "f6cdc618-cf49-4652-834f-5ffbdb6af47e": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "183d9543-40f3-4de3-86d6-45ba7bdcc7b1": {
+            "f6cdc618-cf49-4652-834f-5ffbdb6af47e": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "2a9baf89-5a8e-45a8-b280-391eb95cdd39": {
+            "f6cdc618-cf49-4652-834f-5ffbdb6af47e": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "internal": true
+  }
+}

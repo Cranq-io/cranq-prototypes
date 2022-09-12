@@ -1,0 +1,93 @@
+{
+  "name": "data/array/Distinct items filter/Contains fork",
+  "interface": {
+    "inputs": {
+      "b95b6aa6-b71f-4f8e-aa2d-09ff30aae240": {
+        "type": "typeof `array` of `contains tester`",
+        "name": "array",
+        "description": "[Inherited from port `array` of `contains tester`] \nRecieves array look for the item in.\n\nExample:\n[1,2]"
+      },
+      "27a2f054-d3d1-4762-8043-4178ede6c654": {
+        "type": "typeof `item` of `contains tester`",
+        "name": "item",
+        "description": "[Inherited from port `item` of `contains tester`] \nRecieves item to find in the array.\n\nExample:\n 1"
+      }
+    },
+    "outputs": {
+      "03316760-cbe6-4431-9feb-97433d7cf787": {
+        "type": "typeof `on true` of `fork`",
+        "name": "on true",
+        "description": "[Inherited from port `on true` of `fork`] \nSends signal received via `data` when condition was true."
+      },
+      "09a8dafc-bbd3-41c6-9e70-09cd68e87dc4": {
+        "type": "typeof `on false` of `fork`",
+        "name": "on false",
+        "description": "[Inherited from port `on false` of `fork`] \nSends signal received via `data` when condition was false."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a0491679-40e1-428c-bcf8-101200a4bb2e": {
+          "coordinates": [
+            -51,
+            42
+          ],
+          "name": "contains tester",
+          "prototype": "93c95651-caf0-43d0-9967-b45f143837a0"
+        },
+        "4e5eb927-e25e-450b-b6a0-b9ed6a595818": {
+          "coordinates": [
+            62,
+            -33
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "a0491679-40e1-428c-bcf8-101200a4bb2e": {
+          "08d49cf0-efe3-42d3-8099-5d9d22f7f492": {
+            "4e5eb927-e25e-450b-b6a0-b9ed6a595818": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b95b6aa6-b71f-4f8e-aa2d-09ff30aae240": {
+            "a0491679-40e1-428c-bcf8-101200a4bb2e": {
+              "8d132e63-efb4-44cc-951e-37339e2018eb": {}
+            }
+          },
+          "27a2f054-d3d1-4762-8043-4178ede6c654": {
+            "a0491679-40e1-428c-bcf8-101200a4bb2e": {
+              "79658fd3-0926-46a2-ac24-76023f522dec": {}
+            },
+            "4e5eb927-e25e-450b-b6a0-b9ed6a595818": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "03316760-cbe6-4431-9feb-97433d7cf787": {
+            "4e5eb927-e25e-450b-b6a0-b9ed6a595818": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "09a8dafc-bbd3-41c6-9e70-09cd68e87dc4": {
+            "4e5eb927-e25e-450b-b6a0-b9ed6a595818": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "internal": true
+  }
+}

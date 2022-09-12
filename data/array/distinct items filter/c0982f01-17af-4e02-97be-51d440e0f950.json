@@ -1,0 +1,132 @@
+{
+  "name": "data/array/Distinct items filter",
+  "description": "Collects the distinct elements from an array.",
+  "interface": {
+    "inputs": {
+      "18487b98-0e3c-4d8c-8f34-8111edd24db1": {
+        "type": "any[]",
+        "name": "array",
+        "description": "Receives the array to perform the operation on."
+      }
+    },
+    "outputs": {
+      "42e797db-ab36-413e-b31e-c44b074ff39d": {
+        "type": "typeof `array`",
+        "name": "array",
+        "description": "Sends the array containing the distinct values."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bbdf8aac-6474-42be-81b3-0f228b8ee303": {
+          "coordinates": [
+            -32.39999999999998,
+            -38.799999999999955
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "[]"
+          }
+        },
+        "24a0233d-c71a-450c-a5f0-34a62b49b3e7": {
+          "coordinates": [
+            0.6000000000000227,
+            217.20000000000005
+          ],
+          "name": "append",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2"
+        },
+        "b21d1763-594f-48bd-87cf-0ff4930a92c9": {
+          "coordinates": [
+            -144.39999999999998,
+            186.20000000000005
+          ],
+          "name": "already contains?",
+          "prototype": "e207d340-5ecb-4dd8-b7eb-06267d992e8e"
+        },
+        "1e73b863-c94e-48b6-90f6-4ec92856502e": {
+          "coordinates": [
+            1.8000000000000114,
+            146.60000000000002
+          ],
+          "name": "default",
+          "prototype": "3e4db61a-55dc-4c70-924f-6eb5788efcba"
+        }
+      },
+      "connections": {
+        "bbdf8aac-6474-42be-81b3-0f228b8ee303": {
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "24a0233d-c71a-450c-a5f0-34a62b49b3e7": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            },
+            "b21d1763-594f-48bd-87cf-0ff4930a92c9": {
+              "b95b6aa6-b71f-4f8e-aa2d-09ff30aae240": {}
+            },
+            "1e73b863-c94e-48b6-90f6-4ec92856502e": {
+              "1711a812-6023-4dcd-86ad-2323387e39a8": {}
+            }
+          },
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "b21d1763-594f-48bd-87cf-0ff4930a92c9": {
+              "27a2f054-d3d1-4762-8043-4178ede6c654": {}
+            }
+          }
+        },
+        "24a0233d-c71a-450c-a5f0-34a62b49b3e7": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "bbdf8aac-6474-42be-81b3-0f228b8ee303": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "b21d1763-594f-48bd-87cf-0ff4930a92c9": {
+          "09a8dafc-bbd3-41c6-9e70-09cd68e87dc4": {
+            "24a0233d-c71a-450c-a5f0-34a62b49b3e7": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          },
+          "03316760-cbe6-4431-9feb-97433d7cf787": {
+            "1e73b863-c94e-48b6-90f6-4ec92856502e": {
+              "956023cd-7060-47f8-85d2-1a67feea78f6": {}
+            }
+          }
+        },
+        "1e73b863-c94e-48b6-90f6-4ec92856502e": {
+          "0935c761-2e5f-4f12-869a-424d92860721": {
+            "bbdf8aac-6474-42be-81b3-0f228b8ee303": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "18487b98-0e3c-4d8c-8f34-8111edd24db1": {
+            "bbdf8aac-6474-42be-81b3-0f228b8ee303": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "42e797db-ab36-413e-b31e-c44b074ff39d": {
+            "bbdf8aac-6474-42be-81b3-0f228b8ee303": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "array": null,
+    "distinct": null,
+    "ns": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

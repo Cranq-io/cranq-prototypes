@@ -1,0 +1,83 @@
+{
+  "name": "data/array/Distinct items filter/Group",
+  "interface": {
+    "inputs": {
+      "1711a812-6023-4dcd-86ad-2323387e39a8": {
+        "type": "typeof `data` of `leave unchanged`",
+        "name": "part reduced",
+        "description": ""
+      },
+      "956023cd-7060-47f8-85d2-1a67feea78f6": {
+        "type": "typeof `read` of `true`",
+        "name": "read",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0935c761-2e5f-4f12-869a-424d92860721": {
+        "type": "typeof `data` of `leave unchanged`",
+        "name": "data",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5206aec1-ec89-4c72-8084-e1410e7d21fc": {
+          "coordinates": [
+            71.80000000000001,
+            24.600000000000023
+          ],
+          "name": "leave unchanged",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "a73070ca-d331-4f97-bde4-1b8debd3b5f3": {
+          "coordinates": [
+            -71.80000000000001,
+            -24.600000000000023
+          ],
+          "name": "true",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "true"
+          }
+        }
+      },
+      "connections": {
+        "a73070ca-d331-4f97-bde4-1b8debd3b5f3": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "5206aec1-ec89-4c72-8084-e1410e7d21fc": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1711a812-6023-4dcd-86ad-2323387e39a8": {
+            "5206aec1-ec89-4c72-8084-e1410e7d21fc": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          },
+          "956023cd-7060-47f8-85d2-1a67feea78f6": {
+            "a73070ca-d331-4f97-bde4-1b8debd3b5f3": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "0935c761-2e5f-4f12-869a-424d92860721": {
+            "5206aec1-ec89-4c72-8084-e1410e7d21fc": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

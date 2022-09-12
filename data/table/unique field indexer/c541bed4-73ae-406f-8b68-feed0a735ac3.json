@@ -1,0 +1,103 @@
+{
+  "name": "data/table/Unique field indexer",
+  "interface": {
+    "inputs": {
+      "3d53f2cb-f279-4905-a217-6041575bfadf": {
+        "type": "{string:any}[]",
+        "name": "table",
+        "description": "Receives the table to perform the indexing on."
+      },
+      "7f7e9879-6f48-4b2f-b607-33e47eba9ff7": {
+        "type": "string",
+        "name": "by",
+        "description": "Receives the column name the indexing should be performed against. Column values should be unique."
+      }
+    },
+    "outputs": {
+      "7076305e-25bd-4569-a3cf-1810026ade1f": {
+        "type": "{string:any}",
+        "name": "grouped",
+        "description": "Sends the resulting tree."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3132280f-52e4-494d-9b19-3c85e72c0426": {
+          "coordinates": [
+            141.5,
+            -41.25
+          ],
+          "name": "reduce to dict",
+          "prototype": "e1b1b5aa-19c4-45d8-8fb6-6d7a07f9bc31"
+        },
+        "b94f6c55-51ca-4343-aebb-71bd3896e40a": {
+          "coordinates": [
+            0.25,
+            94.5
+          ],
+          "name": "filter empty",
+          "prototype": "e6114e19-a1d0-4034-ad31-ce936aa2d12d"
+        },
+        "11eb83ec-b96d-42c5-930d-d082120b9bca": {
+          "coordinates": [
+            -68,
+            -84.35000000000002
+          ],
+          "name": "group by key",
+          "prototype": "06b5011b-5131-4447-a051-6c4ab05a2693"
+        }
+      },
+      "connections": {
+        "b94f6c55-51ca-4343-aebb-71bd3896e40a": {
+          "3f420936-1595-4b5e-a740-8263054d8052": {
+            "3132280f-52e4-494d-9b19-3c85e72c0426": {
+              "a4bdb700-f2e5-4e47-b763-7ce734380e03": {}
+            }
+          }
+        },
+        "11eb83ec-b96d-42c5-930d-d082120b9bca": {
+          "89ccb221-9a57-44b3-8a30-365533d4218c": {
+            "b94f6c55-51ca-4343-aebb-71bd3896e40a": {
+              "573fdc4b-06ec-4864-bc1d-3d9085470ef1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3d53f2cb-f279-4905-a217-6041575bfadf": {
+            "11eb83ec-b96d-42c5-930d-d082120b9bca": {
+              "d1533968-7e74-4d08-95d4-e3d8b7a8f139": {}
+            }
+          },
+          "7f7e9879-6f48-4b2f-b607-33e47eba9ff7": {
+            "11eb83ec-b96d-42c5-930d-d082120b9bca": {
+              "c6ab20f7-67bc-4d00-ba6a-b6eb5d83d15f": {}
+            }
+          }
+        },
+        "outputs": {
+          "7076305e-25bd-4569-a3cf-1810026ade1f": {
+            "3132280f-52e4-494d-9b19-3c85e72c0426": {
+              "4d852e82-35bc-463e-b3b5-4c1b8b924787": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "table": null,
+    "group": null,
+    "dict": null,
+    "dictionary": null,
+    "tree": null
+  },
+  "description": "Indexes the specified table by the specified column, resulting in a tree. The specified column values should be distinct, the last value will be taken otherwise.",
+  "attributes": {
+    "locked": true
+  }
+}

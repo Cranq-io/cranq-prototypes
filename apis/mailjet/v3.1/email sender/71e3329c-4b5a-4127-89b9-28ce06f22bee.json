@@ -1,0 +1,193 @@
+{
+  "name": "apis/mailjet/v3.1/Email sender",
+  "interface": {
+    "inputs": {
+      "04c08c2f-2ac0-4726-ac4f-10db51886248": {
+        "type": "{\n  \"user id\": string,\n  \"password\": string\n}",
+        "name": "params",
+        "description": "Receives the parameters to invoke the Mailjet API with.\nFor more information, please refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/#authentication"
+      },
+      "b19a6b56-f7c3-4aed-a0d8-f45d3bc8c599": {
+        "type": "{\n  \"Messages\": {\n    \"From\": {\n      \"Email\": string,\n      \"Name\": string\n    },\n    \"To\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    optional \"Cc\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    optional \"Bcc\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    \"Subject\": string,\n    \"TextPart\": string,\n    \"HTMLPart\": string,\n    optional \"Attachments\": {\n      \"ContentType\": string,\n      \"Filename\": string,\n      \"Base64Content\": string\n    }[],\n    optional \"InlinedAttachments\": {\n      \"ContentType\": string,\n      \"Filename\": string,\n      \"ContentID\": string,\n      \"Base64Content\": string\n    }[],\n    optional \"Variables\": {string: string},\n    optional \"TemplateLanguage\": true,\n    optional \"TemplateID\": number,\n    optional \"Headers\": {string: string},\n    optional \"CustomID\": string,\n    optional \"EventPayload\": string,\n    optional \"CustomCampaign\": string,\n    optional \"DeduplicateCampaign\": boolean,\n    optional \"URLTags\": string\n  }[],\n  optional \"SandboxMode\": true\n}",
+        "name": "request",
+        "description": "Receives the request to dispatch.\nTo easily construct one, use node `apis/mailjet/v3.1/Simple email sender request builder`.\n\nFor more information, refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/send-api-v31/"
+      }
+    },
+    "outputs": {
+      "7f42b0ef-c7eb-4507-9557-ca0e7a9cbc6d": {
+        "type": "{\n  \"Messages\": {\n    \"Status\": (\"success\" or \"error\"),\n    \"To\": {\n        \"Email\": string,\n        \"MessageUUID\": string,\n        \"MessageID\": number,\n        \"MessageHref\": string\n    }[],\n    optional \"Cc\": {\n        \"Email\": string,\n        \"MessageUUID\": string,\n        \"MessageID\": number,\n        \"MessageHref\": string\n    }[],\n\toptional \"Bcc\": {\n        \"Email\": string,\n        \"MessageUUID\": string,\n        \"MessageID\": number,\n        \"MessageHref\": string\n    }[],\n    optional \"Errors\": {\n      \"ErrorIdentifier\": string,\n      \"ErrorCode\": string,\n      \"StatusCode\": number,\n      \"ErrorMessage\": string,\n      \"ErrorRelatedTo\": string[]\n    }[]\n  }[]\n}",
+        "name": "messages sent",
+        "description": "Sends information about the messages sent, and any errors, if one occurred.\n\nFor more information, refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/send-api-v31/"
+      },
+      "addb397c-d9dc-48a0-9115-1750ae123dfb": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the raw API response."
+      },
+      "c48df05a-4244-43db-b7b8-6022f60d30b0": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error",
+        "description": "Sends the error, if one occurred."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "45e1c8f7-60de-46b4-bfc8-2c57afcd88d6": {
+          "coordinates": [
+            151.25,
+            -51.375
+          ],
+          "name": "json request dispatcher",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "dc7215ce-4840-49e7-864e-bff477c0542e": {
+          "coordinates": [
+            9.25,
+            127.625
+          ],
+          "name": "json request builder",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\"",
+            "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": "\"https://api.mailjet.com/v3.1/send\""
+          }
+        },
+        "6aeb2a29-eeee-4ade-91af-8a1283d00031": {
+          "coordinates": [
+            -26.75,
+            -232.875
+          ],
+          "name": "insert basic auth",
+          "prototype": "3288419c-e3c1-4a79-95f5-40789cee4de3",
+          "params": {
+            "a6b22162-d4e6-48ff-96bd-eb18b5753273": "{ \r\n  \"content-type\": \"application/json; charset=utf-8\" \r\n}"
+          }
+        },
+        "cd87965b-ac81-4f35-b311-17ea7de74864": {
+          "coordinates": [
+            -247.07142857142856,
+            55.39285714285717
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "7c8937d6-45c0-41eb-9693-a350f8096916": {
+          "coordinates": [
+            -183.07142857142856,
+            -129.60714285714283
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"user id\", \"password\"]"
+          }
+        },
+        "350b6cdd-5a48-46e9-90a7-3cbf2ea01771": {
+          "coordinates": [
+            259.92857142857144,
+            145.39285714285717
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Failure while invoking Mailjet API\""
+          }
+        }
+      },
+      "connections": {
+        "dc7215ce-4840-49e7-864e-bff477c0542e": {
+          "42f1fa20-0597-484e-9610-1f9117b5a7f1": {
+            "45e1c8f7-60de-46b4-bfc8-2c57afcd88d6": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "6aeb2a29-eeee-4ade-91af-8a1283d00031": {
+          "a81a2b55-ac4e-4e72-ba40-5f5179c77362": {
+            "dc7215ce-4840-49e7-864e-bff477c0542e": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "7c8937d6-45c0-41eb-9693-a350f8096916": {
+          "user id": {
+            "6aeb2a29-eeee-4ade-91af-8a1283d00031": {
+              "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {}
+            }
+          },
+          "password": {
+            "6aeb2a29-eeee-4ade-91af-8a1283d00031": {
+              "23a1504c-0710-4791-bc67-cc280d056ea3": {}
+            }
+          }
+        },
+        "cd87965b-ac81-4f35-b311-17ea7de74864": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "7c8937d6-45c0-41eb-9693-a350f8096916": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "dc7215ce-4840-49e7-864e-bff477c0542e": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          }
+        },
+        "45e1c8f7-60de-46b4-bfc8-2c57afcd88d6": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "350b6cdd-5a48-46e9-90a7-3cbf2ea01771": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "04c08c2f-2ac0-4726-ac4f-10db51886248": {
+            "cd87965b-ac81-4f35-b311-17ea7de74864": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "b19a6b56-f7c3-4aed-a0d8-f45d3bc8c599": {
+            "cd87965b-ac81-4f35-b311-17ea7de74864": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "7f42b0ef-c7eb-4507-9557-ca0e7a9cbc6d": {
+            "350b6cdd-5a48-46e9-90a7-3cbf2ea01771": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          },
+          "addb397c-d9dc-48a0-9115-1750ae123dfb": {
+            "45e1c8f7-60de-46b4-bfc8-2c57afcd88d6": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "c48df05a-4244-43db-b7b8-6022f60d30b0": {
+            "45e1c8f7-60de-46b4-bfc8-2c57afcd88d6": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "350b6cdd-5a48-46e9-90a7-3cbf2ea01771": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "b625ef15-10fb-42c7-8177-242d8d7ef6e9",
+  "description": "Invokes the Mailjet Send API V3.1 with the request received.\n\nFor more information, refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/send-api-v31/",
+  "keywords": {
+    "email": null,
+    "send": null,
+    "mailjet": null,
+    "message": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

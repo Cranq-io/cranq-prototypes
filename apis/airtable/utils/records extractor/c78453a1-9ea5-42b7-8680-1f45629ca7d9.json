@@ -12,11 +12,13 @@
     "outputs": {
       "9d27a0c0-8a44-4d32-89cf-d8a44e3ea19e": {
         "type": "typeof `resp. data`[\"records\"][number][\"fields\"][]",
-        "name": "records"
+        "name": "records",
+        "description": "Sends the extracted records."
       },
       "f48e3659-0620-4b9a-952f-a78e6f109a23": {
-        "type": "any",
-        "name": "record ids"
+        "type": "string[]",
+        "name": "record ids",
+        "description": "Sends the IDs of the records extracted."
       },
       "0a7d3758-b2a6-478f-a8d6-c97d591ac9af": {
         "type": "typeof `resp. data`[\"records\"]",

@@ -21,7 +21,7 @@
     },
     "outputs": {
       "842b51ef-83f3-477a-97e8-aa37e00ac19d": {
-        "type": "{string:any}[]",
+        "type": "{string: (typeof `table`[number][string] or `column data`[number])}[]",
         "name": "table",
         "description": "Sends the resulting table."
       }

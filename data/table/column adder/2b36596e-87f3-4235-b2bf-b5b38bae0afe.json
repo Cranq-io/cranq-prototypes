@@ -1,0 +1,137 @@
+{
+  "name": "data/table/Column adder",
+  "description": "Adds a column with the specified `column name` and `column data` to a `table`. On conflict, the affected column will be overwritten.",
+  "interface": {
+    "inputs": {
+      "6cc51629-40ef-416a-b31b-e6977f689f92": {
+        "type": "{string:any}[]",
+        "name": "table",
+        "description": "Receives the table to add the column to."
+      },
+      "eea5889b-e991-423b-b746-082a05081a3f": {
+        "type": "string",
+        "name": "column name",
+        "description": "Receives the name of the new column."
+      },
+      "72885dc6-9000-410f-9394-13a635153e1d": {
+        "type": "any[]",
+        "name": "column data",
+        "description": "Receives the column data."
+      }
+    },
+    "outputs": {
+      "842b51ef-83f3-477a-97e8-aa37e00ac19d": {
+        "type": "{string: (typeof `table`[number][string] or `column data`[number])}[]",
+        "name": "table",
+        "description": "Sends the resulting table."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "83aa2656-83f3-4922-bd16-3cac8230b45f": {
+          "coordinates": [
+            2.333333333333343,
+            -122
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "8f554417-3c33-4bc8-a836-746ccdea21f1": {
+          "coordinates": [
+            -179.66666666666666,
+            108
+          ],
+          "name": "column data",
+          "prototype": "2e883a44-e1bf-43f9-a100-31ace39f7117"
+        },
+        "82c012a1-4fea-4cb1-ad67-bf4707652f66": {
+          "coordinates": [
+            -11.666666666666657,
+            54
+          ],
+          "name": "set cell value",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {}
+        },
+        "ac572ef9-2e43-4d45-a42c-13777bbcb158": {
+          "coordinates": [
+            -174.66666666666666,
+            11
+          ],
+          "name": "column name",
+          "prototype": "384a63e5-dbde-4312-99d1-257fa935c2fe"
+        }
+      },
+      "connections": {
+        "83aa2656-83f3-4922-bd16-3cac8230b45f": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "82c012a1-4fea-4cb1-ad67-bf4707652f66": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "8f554417-3c33-4bc8-a836-746ccdea21f1": {
+          "52e37fc4-95e9-4073-9d76-62e6816bfffe": {
+            "82c012a1-4fea-4cb1-ad67-bf4707652f66": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "82c012a1-4fea-4cb1-ad67-bf4707652f66": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "83aa2656-83f3-4922-bd16-3cac8230b45f": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        },
+        "ac572ef9-2e43-4d45-a42c-13777bbcb158": {
+          "987cc1f0-ddda-4f01-8358-d32676a0861e": {
+            "82c012a1-4fea-4cb1-ad67-bf4707652f66": {
+              "922a1964-91d4-4ad3-a9e4-7d245662a978": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "72885dc6-9000-410f-9394-13a635153e1d": {
+            "8f554417-3c33-4bc8-a836-746ccdea21f1": {
+              "b5dfa5ed-a8e5-4857-9c12-4b934cb7f687": {}
+            },
+            "ac572ef9-2e43-4d45-a42c-13777bbcb158": {
+              "eacfcdd3-c907-40b3-86a5-15855a7b4caf": {}
+            }
+          },
+          "6cc51629-40ef-416a-b31b-e6977f689f92": {
+            "83aa2656-83f3-4922-bd16-3cac8230b45f": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          },
+          "eea5889b-e991-423b-b746-082a05081a3f": {
+            "ac572ef9-2e43-4d45-a42c-13777bbcb158": {
+              "c2471c2d-1ad7-4738-a3d8-87ebc566aa64": {}
+            }
+          }
+        },
+        "outputs": {
+          "842b51ef-83f3-477a-97e8-aa37e00ac19d": {
+            "83aa2656-83f3-4922-bd16-3cac8230b45f": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "table": null,
+    "add": null,
+    "column": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

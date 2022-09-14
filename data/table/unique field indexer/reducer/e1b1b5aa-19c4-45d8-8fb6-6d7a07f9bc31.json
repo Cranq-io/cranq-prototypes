@@ -1,0 +1,86 @@
+{
+  "name": "data/table/Unique field indexer/Reducer",
+  "interface": {
+    "inputs": {
+      "a4bdb700-f2e5-4e47-b763-7ce734380e03": {
+        "type": "typeof `array` of `reducer`",
+        "name": "array",
+        "description": "[Inherited from port `array` of `reducer`] \nReceives array to be reduced.\n\nExample:\n[\"A\", \"B\", \"C\"]"
+      }
+    },
+    "outputs": {
+      "4d852e82-35bc-463e-b3b5-4c1b8b924787": {
+        "type": "typeof `reduced` of `reducer`",
+        "name": "dict",
+        "description": "[Inherited from port `reduced` of `reducer`] \nSends the reduced array.\n\nExample:\n\"ABC\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "941a4adf-eadd-4362-a081-0b932414becb": {
+          "coordinates": [
+            0.5,
+            -81
+          ],
+          "name": "reducer",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "{}"
+          }
+        },
+        "137162f8-ea33-43fd-8f7f-305333ddd358": {
+          "coordinates": [
+            -0.5,
+            81
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        }
+      },
+      "connections": {
+        "941a4adf-eadd-4362-a081-0b932414becb": {
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "137162f8-ea33-43fd-8f7f-305333ddd358": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          },
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "137162f8-ea33-43fd-8f7f-305333ddd358": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "137162f8-ea33-43fd-8f7f-305333ddd358": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "941a4adf-eadd-4362-a081-0b932414becb": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a4bdb700-f2e5-4e47-b763-7ce734380e03": {
+            "941a4adf-eadd-4362-a081-0b932414becb": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "4d852e82-35bc-463e-b3b5-4c1b8b924787": {
+            "941a4adf-eadd-4362-a081-0b932414becb": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "d1c7639e-bdd6-4846-b494-1c303a532da5",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

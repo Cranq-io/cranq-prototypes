@@ -1,0 +1,76 @@
+{
+  "name": "data/dictionary/Emptiness tester",
+  "interface": {
+    "inputs": {
+      "ecc0c82c-4ef0-429c-beab-b92e5a787dd9": {
+        "type": "{string:any}",
+        "name": "dict",
+        "description": "Receives the dictionary to test."
+      }
+    },
+    "outputs": {
+      "eb063bc7-8499-41fc-8d72-c6cc9bc1ed5a": {
+        "type": "boolean",
+        "name": "empty",
+        "description": "Sends whether the input dictionary is empty."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d3cf8681-dc4e-4ca7-85de-0d6a9a857f9f": {
+          "coordinates": [
+            -4.333333333333314,
+            -67
+          ],
+          "name": "keys getter",
+          "prototype": "39c76f61-a0f8-498f-9b94-94e0194ad51a"
+        },
+        "a87511d6-023a-44af-9265-228d3ca96419": {
+          "coordinates": [
+            -5.333333333333343,
+            75
+          ],
+          "name": "emptiness tester",
+          "prototype": "4100c620-45a7-4e36-b3d6-4252cc616d1e"
+        }
+      },
+      "connections": {
+        "d3cf8681-dc4e-4ca7-85de-0d6a9a857f9f": {
+          "6f0b0618-c0fc-4aa9-8ae7-c95363b048c4": {
+            "a87511d6-023a-44af-9265-228d3ca96419": {
+              "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ecc0c82c-4ef0-429c-beab-b92e5a787dd9": {
+            "d3cf8681-dc4e-4ca7-85de-0d6a9a857f9f": {
+              "e7596126-da2e-4451-b534-4043dfc13bf2": {}
+            }
+          }
+        },
+        "outputs": {
+          "eb063bc7-8499-41fc-8d72-c6cc9bc1ed5a": {
+            "a87511d6-023a-44af-9265-228d3ca96419": {
+              "dbb99a85-ea24-4922-b098-994987c8a10f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Tests whether the specified dictionary is empty.",
+  "keywords": {
+    "dictionary": null,
+    "dict": null,
+    "is": null,
+    "empty": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

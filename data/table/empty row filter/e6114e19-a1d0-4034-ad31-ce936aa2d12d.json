@@ -1,0 +1,100 @@
+{
+  "name": "data/table/Empty row filter",
+  "description": "Removes the empty rows from the specified table.",
+  "interface": {
+    "inputs": {
+      "573fdc4b-06ec-4864-bc1d-3d9085470ef1": {
+        "type": "{string:any}[]",
+        "name": "table",
+        "description": "Receives the table to filter."
+      }
+    },
+    "outputs": {
+      "3f420936-1595-4b5e-a740-8263054d8052": {
+        "type": "typeof `table`",
+        "name": "filtered",
+        "description": "Sends the filtered table."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b1a9af99-ddcf-4435-8a06-d5a695c589c5": {
+          "coordinates": [
+            -19.25,
+            -119.5
+          ],
+          "name": "filter",
+          "prototype": "a3f6c365-be00-4e30-9772-877f6c38c4f3"
+        },
+        "db0e084c-d200-480b-828f-6d221ea8954c": {
+          "coordinates": [
+            -34.916666666666686,
+            49.5
+          ],
+          "name": "is empty",
+          "prototype": "8ea559b1-145b-4baf-8a27-64b654d81763"
+        },
+        "68fbad13-829d-4e0e-9795-34d1428ada5b": {
+          "coordinates": [
+            51.75,
+            138.25
+          ],
+          "name": "not",
+          "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
+        }
+      },
+      "connections": {
+        "b1a9af99-ddcf-4435-8a06-d5a695c589c5": {
+          "c117ad5f-d261-409a-a6dc-cbae80af10a5": {
+            "db0e084c-d200-480b-828f-6d221ea8954c": {
+              "ecc0c82c-4ef0-429c-beab-b92e5a787dd9": {}
+            }
+          }
+        },
+        "db0e084c-d200-480b-828f-6d221ea8954c": {
+          "eb063bc7-8499-41fc-8d72-c6cc9bc1ed5a": {
+            "68fbad13-829d-4e0e-9795-34d1428ada5b": {
+              "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {}
+            }
+          }
+        },
+        "68fbad13-829d-4e0e-9795-34d1428ada5b": {
+          "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
+            "b1a9af99-ddcf-4435-8a06-d5a695c589c5": {
+              "ff3a8fe6-f8de-43df-ae32-fa0a27bb6ba3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "573fdc4b-06ec-4864-bc1d-3d9085470ef1": {
+            "b1a9af99-ddcf-4435-8a06-d5a695c589c5": {
+              "07c8d06d-f187-4600-8bfe-7ab740adebb8": {}
+            }
+          }
+        },
+        "outputs": {
+          "3f420936-1595-4b5e-a740-8263054d8052": {
+            "b1a9af99-ddcf-4435-8a06-d5a695c589c5": {
+              "55ab5b64-88bf-4e73-80eb-cd1cc8c20412": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "table": null,
+    "filter": null,
+    "empty": null,
+    "clean": null,
+    "ns": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

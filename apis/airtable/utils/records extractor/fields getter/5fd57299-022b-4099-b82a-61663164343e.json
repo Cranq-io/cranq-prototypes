@@ -1,0 +1,81 @@
+{
+  "name": "apis/airtable/utils/Records extractor/Fields getter",
+  "interface": {
+    "inputs": {
+      "a263bf14-16b8-4818-bad1-1f704f47620b": {
+        "type": "typeof `array` of `mapper`",
+        "name": "array",
+        "description": "[Inherited from port `array` of `mapper`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
+      }
+    },
+    "outputs": {
+      "8b76f23a-3d27-415b-b49c-b90e49eb656b": {
+        "type": "typeof `mapped` of `mapper`",
+        "name": "records",
+        "description": "[Inherited from port `mapped` of `mapper`] \nSends the mapped array.\n\nExample:\n[\"Foo A\", \"Bar A\"]"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c615c403-53a5-479c-af3f-080f47775df6": {
+          "coordinates": [
+            58.52126736111106,
+            27.278211805555543
+          ],
+          "name": "get \"fields\"",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"fields\""
+          }
+        },
+        "20b9ce70-38dc-4cdc-a7e1-7bc030baf60f": {
+          "coordinates": [
+            -58.52126736111106,
+            -27.278211805555543
+          ],
+          "name": "mapper",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        }
+      },
+      "connections": {
+        "20b9ce70-38dc-4cdc-a7e1-7bc030baf60f": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "c615c403-53a5-479c-af3f-080f47775df6": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "c615c403-53a5-479c-af3f-080f47775df6": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "20b9ce70-38dc-4cdc-a7e1-7bc030baf60f": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a263bf14-16b8-4818-bad1-1f704f47620b": {
+            "20b9ce70-38dc-4cdc-a7e1-7bc030baf60f": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "outputs": {
+          "8b76f23a-3d27-415b-b49c-b90e49eb656b": {
+            "20b9ce70-38dc-4cdc-a7e1-7bc030baf60f": {
+              "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

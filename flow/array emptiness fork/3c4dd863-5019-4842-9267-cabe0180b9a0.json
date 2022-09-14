@@ -1,0 +1,91 @@
+{
+  "name": "flow/Array emptiness fork",
+  "interface": {
+    "inputs": {
+      "50869472-16cb-461c-b9dd-c2907bbdb018": {
+        "type": "any[]",
+        "name": "array",
+        "description": "Receives the array to inspect."
+      }
+    },
+    "outputs": {
+      "68e8a523-ff1c-4fbe-95af-508d6deb63c2": {
+        "type": "typeof `array`",
+        "name": "on empty",
+        "description": "Sends `array` if it's empty."
+      },
+      "b5e877ae-0a50-4f7f-9028-af120c22fe32": {
+        "type": "typeof `array`",
+        "name": "on not empty",
+        "description": "Sends `array` if it's not empty"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "770af0a2-d65b-4eca-acac-93fe06354886": {
+          "coordinates": [
+            16.333333333333258,
+            -94
+          ],
+          "name": "emptiness tester",
+          "prototype": "4100c620-45a7-4e36-b3d6-4252cc616d1e"
+        },
+        "1c40e2d1-7a2c-42d1-929b-1d286aaef483": {
+          "coordinates": [
+            28.333333333333258,
+            61
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "770af0a2-d65b-4eca-acac-93fe06354886": {
+          "dbb99a85-ea24-4922-b098-994987c8a10f": {
+            "1c40e2d1-7a2c-42d1-929b-1d286aaef483": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "50869472-16cb-461c-b9dd-c2907bbdb018": {
+            "770af0a2-d65b-4eca-acac-93fe06354886": {
+              "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {}
+            },
+            "1c40e2d1-7a2c-42d1-929b-1d286aaef483": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "68e8a523-ff1c-4fbe-95af-508d6deb63c2": {
+            "1c40e2d1-7a2c-42d1-929b-1d286aaef483": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "b5e877ae-0a50-4f7f-9028-af120c22fe32": {
+            "1c40e2d1-7a2c-42d1-929b-1d286aaef483": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "array": null,
+    "fork": null,
+    "empty": null,
+    "emptiness": null,
+    "length": null
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "description": "Checks whether the input `array` is empty & sends it on the appropriate output.",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -5,15 +5,15 @@
     "inputs": {
       "2a182932-ca45-4c09-8753-a9a4f355c219": {
         "type": "any",
-        "name": "start",
-        "description": "[Inherited from port `read` of `contracts periphery instrumented`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+        "name": "read",
+        "description": "Receives a signal that triggers the Unicode V2 Periphery source code being sent via `v2-periphery sources` output port."
       }
     },
     "outputs": {
       "0cf791d5-e2f9-456e-b8df-40c776f03f0f": {
-        "type": "typeof `data` of `contracts periphery instrumented`",
+        "type": "{\n  \"v2-periphery\": {\n    \"contracts\": {\n      \"interfaces\": {\n        \"IERC20.sol\": string,\n        \"IUniswapV2Migrator.sol\": string,\n        \"IUniswapV2Router01.sol\": string,\n        \"IUniswapV2Router02.sol\": string,\n        \"IWETH.sol\": string,\n        \"V1\": {\n          \"IUniswapV1Exchange.sol\": string,\n          \"IUniswapV1Factory.sol\": string\n        }\n      },\n      \"libraries\": {\n        \"SafeMath.sol\": string,\n        \"UniswapV2Library.sol\": string,\n        \"UniswapV2LiquidityMathLibrary.sol\": string,\n        \"UniswapV2OracleLibrary.sol\": string\n      },\n      \"test\": {\n        \"DeflatingERC20.sol\": string,\n        \"ERC20.sol\": string,\n        \"RouterEventEmitter.sol\": string,\n        \"WETH9.sol\": string\n      },\n      \"UniswapV2Migrator.sol\": string,\n      \"UniswapV2Router01.sol\": string,\n      \"UniswapV2Router02.sol\": string\n    },\n    \"node_modules\": {\n      \"@uniswap\": {\n        \"lib\": {\n          \"contracts\": {\n            \"libraries\": {\n              \"AddressStringUtil.sol\": string,\n              \"Babylonian.sol\": string,\n              \"BitMath.sol\": string,\n              \"FixedPoint.sol\": string,\n              \"FullMath.sol\": string,\n              \"SafeERC20Namer.sol\": string,\n              \"TransferHelper.sol\": string\n            }\n          }\n        },\n        \"v2-core\": {\n          \"contracts\": {\n            \"interfaces\": {\n              \"IERC20.sol\": string,\n              \"IUniswapV2Callee.sol\": string,\n              \"IUniswapV2ERC20.sol\": string,\n              \"IUniswapV2Factory.sol\": string,\n              \"IUniswapV2Pair.sol\": string\n            },\n            \"libraries\": {\n              \"Math.sol\": string,\n              \"SafeMath.sol\": string,\n              \"UQ112x112.sol\": string\n            },\n            \"test\": {\n              \"ERC20.sol\": string\n            },\n            \"UniswapV2ERC20.sol\": string,\n            \"UniswapV2Factory.sol\": string,\n            \"UniswapV2Pair.sol\": string\n          }\n        }\n      }\n    }\n  }\n}",
         "name": "v2-periphery source",
-        "description": "[Inherited from port `data` of `contracts periphery instrumented`] \nSends store contents."
+        "description": "Sends out the Uniswap V2 Periphery source code."
       }
     }
   },

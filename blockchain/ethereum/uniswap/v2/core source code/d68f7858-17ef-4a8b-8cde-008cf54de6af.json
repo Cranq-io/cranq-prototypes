@@ -4,15 +4,15 @@
     "inputs": {
       "858f2cdf-e216-49be-9910-aa483d782f62": {
         "type": "any",
-        "name": "start",
-        "description": ""
+        "name": "read",
+        "description": "Receives a signal that triggers the Unicode V2 Core source code being sent via `v2-core sources` output port."
       }
     },
     "outputs": {
       "8db497a4-cf26-4b44-bb99-0a6266736222": {
-        "type": "typeof `data` of `uniswap v2-core instrumented source`",
+        "type": "{\n  \"v2-core\": {\n    \"contracts\": {\n      \"interfaces\": {\n        \"IERC20.sol\": string,\n        \"IUniswapV2Callee.sol\": string,\n        \"IUniswapV2ERC20.sol\": string,\n        \"IUniswapV2Factory.sol\": string,\n        \"IUniswapV2Pair.sol\": string\n      },\n      \"libraries\": {\n        \"Math.sol\": string,\n        \"SafeMath.sol\": string,\n        \"UQ112x112.sol\": string\n      },\n      \"test\": {\n        \"ERC20.sol\": string\n      },\n      \"UniswapV2ERC20.sol\": string,\n      \"UniswapV2Factory.sol\": string,\n      \"UniswapV2Pair.sol\": string\n    }\n  }\n}",
         "name": "v2-core sources",
-        "description": "[Inherited from port `data` of `uniswap v2-core sources`] \nSends store contents."
+        "description": "Sends out the Uniswap V2 Core source code."
       }
     }
   },
@@ -53,6 +53,11 @@
   "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
   "original": "27f1c9dd-20b0-43f7-b088-85f4afbc52d0",
   "description": "Holds the Uniswap V2 Core source code in a structured way.",
+  "keywords": {
+    "uniswap": null,
+    "core": null,
+    "source code": null
+  },
   "attributes": {
     "locked": true
   }

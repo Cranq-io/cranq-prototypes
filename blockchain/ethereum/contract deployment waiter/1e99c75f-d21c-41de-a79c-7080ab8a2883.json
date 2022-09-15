@@ -166,19 +166,21 @@
   "interface": {
     "inputs": {
       "67c68864-f37a-4967-9ddd-3a87617ac325": {
-        "type": "any",
-        "name": "confirmation"
+        "type": "{\n  \"confirmationNumber\": number,\n  \"receipt\": {\n\"contractAddress\": string}\n}",
+        "name": "confirmation",
+        "description": "Receives the confirmation(s) of the deployment as received from the chain."
       },
       "465fe590-d79e-4987-b1c6-a414e01773e2": {
         "type": "number",
         "name": "number required",
-        "description": "Optional. The number of confirmations required to accept the contract as deployed."
+        "description": "Optional. The number of confirmations required to accept the contract as deployed. Defaults to 24."
       }
     },
     "outputs": {
       "eadf732a-e84a-47e0-a825-95574d2f25ee": {
-        "type": "any",
-        "name": "contract address"
+        "type": "string",
+        "name": "contract address",
+        "description": "Sends out the deployed contract address after the required number of confirmations got reached."
       }
     }
   },

@@ -5,33 +5,40 @@
     "inputs": {
       "a710bb66-7d75-4a4b-8a7a-657cb4328897": {
         "type": "[typeof `tokenA` of `add liquidity`, typeof `tokenB or ETH` of `add liquidity`][]",
-        "name": "pairs"
+        "name": "pairs",
+        "description": "Receives a list of parameters for the liquidity pools.\n\nEach list item consists of a pair of tokens to be added to the liquidity pool:\n - tokenA\n - tokenB or ETH\n\nFor tokenA the paramters are:\n- address: the address of the token\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenA\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail\n\nFor tokenB or ETH the parameters are:\n- address: the address of the token or \"ETH\"\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenB/ETH\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenB/ETH, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "3c09e73b-ae71-4668-95fc-8fb9041ab544": {
         "type": "string",
-        "name": "to address"
+        "name": "to address",
+        "description": "Receives the address that will get the minted liquidity token."
       },
       "b8628829-12f1-4e72-8d6f-c49372d6a081": {
         "type": "number",
-        "name": "deadline"
+        "name": "deadline",
+        "description": "Receives the unix timestamp of the deadline until the operation should be completed or will be reverted."
       },
       "1a3a20cd-3619-4f71-80e3-991b67aa633c": {
         "type": "typeof `router contract` of `add liquidity`",
-        "name": "router contract"
+        "name": "router contract",
+        "description": "Receives parameters of the Uniswap V2 Router contract to interact with"
       },
       "0cea3ff4-443d-449c-9db2-05fb3815264b": {
         "type": "typeof `credentials` of `add liquidity`",
-        "name": "credentials"
+        "name": "credentials",
+        "description": "Receives credentials for the operation"
       }
     },
     "outputs": {
       "b69fb11c-5508-4a80-837d-3976f69f9cd2": {
         "type": "typeof `result` of `add liquidity`",
-        "name": "result"
+        "name": "result",
+        "description": "Sends out the result of the operation in case of success"
       },
       "0f7509cf-9bf3-4774-b97a-35ad0bc0904d": {
         "type": "typeof `error` of `add liquidity`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that occured during the liquidity addition process."
       }
     }
   },

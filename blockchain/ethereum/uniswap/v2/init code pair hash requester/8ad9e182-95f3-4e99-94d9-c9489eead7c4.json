@@ -3,22 +3,26 @@
   "interface": {
     "inputs": {
       "14a6e991-cb90-4f42-b1df-3ea7d58d895b": {
-        "type": "any",
-        "name": "factory ABI"
+        "type": "any[]",
+        "name": "factory ABI",
+        "description": "Receives the ABI of the compiled Uniswap V2 Factory contract"
       },
       "202dbb68-350c-4df4-a992-85352f7e692c": {
         "type": "string",
-        "name": "factory address"
+        "name": "factory address",
+        "description": "Receives the address of the deployed Uniswap V2 Factory contract."
       },
       "9cd53ac0-f4b8-4082-9f7e-0d509cf18101": {
         "type": "string",
-        "name": "web3 provider URL"
+        "name": "web3 provider URL",
+        "description": "Receives the provider URL to use to connect to the chain"
       }
     },
     "outputs": {
       "a42c8f8d-11c4-4b8b-96b9-3a801f3e7fb6": {
-        "type": "any",
-        "name": "init hash"
+        "type": "string",
+        "name": "init hash",
+        "description": "Sends out the init code hash retrieved from the Uniswap V2 Factory contract"
       }
     }
   },

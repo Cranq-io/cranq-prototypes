@@ -34,15 +34,18 @@
       },
       "a6fdcbf5-7937-47f1-89db-2807b758842f": {
         "type": "typeof `confirmation` of `deploy contract`",
-        "name": "confirmation"
+        "name": "confirmation",
+        "description": "Sends out the confirmation(s) of the deployment as received from the chain."
       },
       "b94ccca9-9434-47e1-8382-6b615b5f3f47": {
         "type": "typeof `estimated gas` of `deploy contract`",
-        "name": "estimated gas"
+        "name": "estimated gas",
+        "description": "Sends out the estimated amount of gas required for the deployment.\n\n"
       },
       "c8505107-dfeb-4ad6-a08c-2543a30b2887": {
         "type": "typeof `error` of `deploy contract`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that happened during deployment\n\n"
       }
     }
   },
@@ -185,9 +188,9 @@
     }
   },
   "original": "f4ae07d3-ca68-4c27-840c-b388162834c6",
+  "description": "Deploys a smart contract on an ethereum network",
+  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721",
   "attributes": {
     "locked": true
-  },
-  "description": "Deploys a smart contract on an ethereum network",
-  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721"
+  }
 }

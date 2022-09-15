@@ -3,27 +3,31 @@
   "interface": {
     "inputs": {
       "7654e398-a401-4115-98b8-c2b8eba66ed4": {
-        "type": "any",
-        "name": "contracts"
+        "type": "typeof `data` of `compile contracts`[\"contracts\"]",
+        "name": "contracts",
+        "description": "Receives the source code of the contracts to compile."
       },
       "60fd9fa4-1462-4c91-915b-11b325c0d479": {
-        "type": "any",
+        "type": "typeof `data` of `compile contracts`[\"outputList\"]",
         "name": "output list",
-        "description": "The selected files from the contracts dictionary that are should be passed to the SOlidity compiler as 'root' sources. The other entries in 'contracts' should contain the dependencies."
+        "description": "Receives the list of selected files from the contracts dictionary that should be passed to the Solidity compiler as 'root' sources. The other entries in 'contracts' should contain the dependencies."
       },
       "eb554de7-b398-413f-8ff0-99dd34a7580a": {
-        "type": "any",
-        "name": "compile settings"
+        "type": "typeof `data` of `compile contracts`[\"compileSettings\"]",
+        "name": "compile settings",
+        "description": "Receives the settings for the compilation."
       }
     },
     "outputs": {
       "58f95201-dc73-469a-8503-ce955c514032": {
         "type": "typeof `compiled contracts` of `compile contracts`",
-        "name": "compiled contracts"
+        "name": "compiled contracts",
+        "description": "Sends out the compiled artifacts (abi, evm bytecode) of the compiled contracts."
       },
       "d00232d5-3801-4820-92ed-43ae75ccb626": {
-        "type": "any",
-        "name": "error"
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends out any error that happened during compilation."
       }
     }
   },

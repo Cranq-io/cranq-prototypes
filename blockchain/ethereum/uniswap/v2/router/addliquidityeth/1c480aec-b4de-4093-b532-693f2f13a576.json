@@ -5,40 +5,44 @@
       "3988660b-8398-4a78-8889-e5cc8506394e": {
         "type": "{\n  \"address\": string,\n  \"desiredAmount\": number,\n   optional \"minimalAmount\": number\n}",
         "name": "tokenA",
-        "description": "[Inherited from port `1` of `tokens`] \nReceives individual item for syncing."
+        "description": "Receives parameters for tokenA.\n- address: the address of the token\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenA\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "8d57999d-148b-4eff-9e4d-ca00f36e10ea": {
         "type": "{\n\"desiredAmount\": number,\noptional \"minimalAmount\": number\n}",
         "name": "ETH",
-        "description": "[Inherited from port `2` of `tokens`] \nReceives individual item for syncing."
+        "description": "Receives parameters for ETH.\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in ETH\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "78fb26c0-e46e-490b-a5d7-ff880ac745da": {
         "type": "string",
         "name": "liquidity token to",
-        "description": "[Inherited from port `item` of `item appender`] \nReceives item to append to the array.\n\nExample:\n1"
+        "description": "Receives address to send liquidity tokens to"
       },
       "04df0153-0ab3-410d-9054-44b0965cfce2": {
         "type": "number",
         "name": "deadline",
-        "description": "[Inherited from port `item` of `item appender copy`] \nReceives item to append to the array.\n\nExample:\n1"
+        "description": "Receives deadline for the transaction (future unix timestamp)"
       },
       "4e3e4f4a-2e69-4af0-9799-b0a12f0a9499": {
-        "type": "{\n\"address\": string,\n\"abi\": {string:any}\n}",
-        "name": "router contract"
+        "type": "{\n\"address\": string,\n\"abi\": {string:any}[]\n}",
+        "name": "router contract",
+        "description": "Receives parameters of the Uniswap V2 Router contract to interact with"
       },
       "48cc93ef-ab76-4081-8f58-3fbcc626599c": {
         "type": "typeof `credentials` of `execute contract`",
-        "name": "credentials"
+        "name": "credentials",
+        "description": "Receives credentials for the operation"
       }
     },
     "outputs": {
       "44d775fe-b109-427a-8d30-2fb70ec3b250": {
         "type": "any",
-        "name": "result"
+        "name": "result",
+        "description": "Sends out the result of addLiquiditiyETH call."
       },
       "6dacdfe2-fc10-4f08-9919-2f198cda89f4": {
         "type": "typeof `error` of `execute contract`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that happened during addLiquidityETH call."
       }
     }
   },
@@ -409,7 +413,5 @@
   "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
   "original": "634d2024-2796-4288-b986-d6fb62336270",
   "description": "Calls \"addLiquidityETH\" method on Uniswap V2 Router contract",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

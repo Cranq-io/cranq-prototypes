@@ -25,11 +25,13 @@
       },
       "43026ea7-55a5-4af6-a937-272c8bfaba2a": {
         "type": "typeof `error` of `deploy factory contract`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that happened during deployment"
       },
       "7863188d-de92-41cc-b5c3-f5326b24ec02": {
-        "type": "{\n\"confirmationNumber\": number\n}",
-        "name": "confirmation"
+        "type": "typeof `confirmation` of `deploy factory contract`",
+        "name": "confirmation",
+        "description": "Sends out the confirmation(s) of the deployment as received from the chain."
       }
     }
   },

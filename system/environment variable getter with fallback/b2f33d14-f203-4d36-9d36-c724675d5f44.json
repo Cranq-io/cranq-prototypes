@@ -1,21 +1,21 @@
 {
-  "description": "Gets a variable from the system environment by name or the provided fallback if not found",
+  "description": "Gets the value for a **single** variable from the system environment by name or the provided default when not found.",
   "interface": {
     "inputs": {
       "9e041472-8463-46a0-9684-0d3a05512a05": {
-        "description": "The name of the environment variable to get",
+        "description": "Receives the name of the environment variable.",
         "type": "string",
         "name": "name"
       },
       "bc15cf09-7e9d-48ef-b044-b61f88fa1fbc": {
-        "description": "The fallback value in case the variable is not found in the environment",
+        "description": "Receives the default value in case the variable is not found in the environment.",
         "type": "string",
-        "name": "fallback"
+        "name": "default"
       }
     },
     "outputs": {
       "1a6d54ca-ca83-47bf-9fe7-38efd41ccea5": {
-        "description": "The value of the environment variable or the fallback value if not found",
+        "description": "Sends the value of the environment variable or the default value when not found.",
         "type": "string",
         "name": "value"
       }
@@ -127,6 +127,11 @@
     }
   },
   "name": "system/Environment variable getter with fallback",
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "environment": null,
+    "variable": null
+  },
   "attributes": {
     "locked": true
   }

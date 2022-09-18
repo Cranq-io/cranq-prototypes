@@ -1,0 +1,159 @@
+{
+  "name": "system/Environment variables getter",
+  "description": "Retrieves values for a list of environment variables, and collects the ones that were missing in an output list.",
+  "interface": {
+    "inputs": {
+      "792013f3-4e43-4047-97e3-f7e4df0e08cb": {
+        "type": "string[]",
+        "name": "variable names",
+        "description": "Receives a list of environment variable names."
+      }
+    },
+    "outputs": {
+      "299c4c0e-ad44-48c1-a77f-a3849ddc7d1e": {
+        "type": "{string: string}",
+        "name": "values",
+        "description": "[Inherited from port `reduced` of `get env variables`] \nSends the reduced array.\n\nExample:\n\"ABC\""
+      },
+      "de71284c-df99-4f10-a614-903d9777e6dd": {
+        "type": "string[]",
+        "name": "not found",
+        "description": "Sends a list of variable names for wich no values were found in the environment."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cf3cdc3f-28a7-4275-97da-a10d1cc69ba4": {
+          "coordinates": [
+            -139,
+            111
+          ],
+          "name": "get env variable",
+          "prototype": "505f9cf6-92f9-4e19-ad69-62f485b56000"
+        },
+        "84f55422-d580-4fb7-9971-10d3308a50ee": {
+          "coordinates": [
+            -70.00000000000001,
+            -95
+          ],
+          "name": "get env variables",
+          "prototype": "e52eeb07-83b7-46c6-bdc1-87cb8bd8afe8",
+          "params": {
+            "ec095128-e720-45fc-9b4f-b87a130d9249": "{}"
+          }
+        },
+        "d48e7d6d-78ab-427a-aeff-a13aaf0aac3a": {
+          "coordinates": [
+            227,
+            -27
+          ],
+          "name": "add env var to dict",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57"
+        },
+        "50ee4db7-5030-4927-90c2-d17ff714b493": {
+          "coordinates": [
+            215.5,
+            182.5
+          ],
+          "name": "collect missing",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "80be3290-1d96-482a-887c-e983be9b5363": {
+          "coordinates": [
+            -233.5,
+            -169.5
+          ],
+          "name": "skip iteration",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        }
+      },
+      "connections": {
+        "84f55422-d580-4fb7-9971-10d3308a50ee": {
+          "7e9f3838-b5d2-409b-ace3-9748bcff4346": {
+            "cf3cdc3f-28a7-4275-97da-a10d1cc69ba4": {
+              "a9d77664-8652-4a70-8fef-6f74e9facf57": {}
+            },
+            "d48e7d6d-78ab-427a-aeff-a13aaf0aac3a": {
+              "922a1964-91d4-4ad3-a9e4-7d245662a978": {}
+            }
+          },
+          "b4087af0-fa79-4961-b9dc-964592eb007b": {
+            "d48e7d6d-78ab-427a-aeff-a13aaf0aac3a": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            },
+            "80be3290-1d96-482a-887c-e983be9b5363": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          },
+          "75ea5be5-4e79-425e-87f4-930e8d21983d": {
+            "50ee4db7-5030-4927-90c2-d17ff714b493": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            }
+          }
+        },
+        "cf3cdc3f-28a7-4275-97da-a10d1cc69ba4": {
+          "2886acb1-08d2-41b2-af64-929b44d8b21f": {
+            "d48e7d6d-78ab-427a-aeff-a13aaf0aac3a": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "edd9ef99-be38-4bae-a302-81e7cdb86636": {
+            "50ee4db7-5030-4927-90c2-d17ff714b493": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            },
+            "80be3290-1d96-482a-887c-e983be9b5363": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "d48e7d6d-78ab-427a-aeff-a13aaf0aac3a": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "84f55422-d580-4fb7-9971-10d3308a50ee": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        },
+        "80be3290-1d96-482a-887c-e983be9b5363": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "84f55422-d580-4fb7-9971-10d3308a50ee": {
+              "64f451de-50c9-44b4-b99c-03d58b2582bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "792013f3-4e43-4047-97e3-f7e4df0e08cb": {
+            "84f55422-d580-4fb7-9971-10d3308a50ee": {
+              "9be15225-0044-4514-b2f1-5f8c1542ee87": {}
+            }
+          }
+        },
+        "outputs": {
+          "299c4c0e-ad44-48c1-a77f-a3849ddc7d1e": {
+            "84f55422-d580-4fb7-9971-10d3308a50ee": {
+              "75ea5be5-4e79-425e-87f4-930e8d21983d": {}
+            }
+          },
+          "de71284c-df99-4f10-a614-903d9777e6dd": {
+            "50ee4db7-5030-4927-90c2-d17ff714b493": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "environment": null,
+    "variables": null,
+    "missing": null,
+    "absent": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

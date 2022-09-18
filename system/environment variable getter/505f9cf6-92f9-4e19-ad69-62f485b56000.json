@@ -1,11 +1,11 @@
 {
-  "description": "Gets a variable from the system environment by name",
+  "description": "Retrieves the value of the environment variable received via `name`.\n\nWhen the environment variable does not exist,is sends the origingal input (name) via `not found`.\n\nExample A:\n1. \"API_KEY\"@0 received via `name`\n2. \"somevalue\"@0 sent via `value`\n\nExample B:\n1. \"API_KEY\"@0 received via `name`\n2. \"API_KEY\"@0 sent via `not found`",
   "interface": {
     "inputs": {
       "a9d77664-8652-4a70-8fef-6f74e9facf57": {
         "description": "The name of the environment variable to get",
         "type": "string",
-        "name": "name"
+        "name": "variable name"
       }
     },
     "outputs": {
@@ -15,8 +15,8 @@
         "name": "value"
       },
       "edd9ef99-be38-4bae-a302-81e7cdb86636": {
-        "description": "The name of the environment variable that was not found",
-        "type": "string",
+        "description": "The name of the environment variable that was not found.",
+        "type": "typeof `variable name`",
         "name": "not found"
       }
     }
@@ -32,6 +32,10 @@
     }
   },
   "name": "system/Environment variable getter",
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "environment variable": null
+  },
   "attributes": {
     "locked": true
   }

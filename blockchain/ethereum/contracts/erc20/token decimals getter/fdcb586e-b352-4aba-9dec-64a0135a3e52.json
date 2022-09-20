@@ -1,0 +1,85 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3ff95ed6-aeef-4c9d-931d-c887ef0ddc5c": {
+          "coordinates": [
+            166,
+            -15
+          ],
+          "name": "contract caller",
+          "prototype": "d0c40c17-a70f-46da-b735-5d6fb7a364d9",
+          "params": {
+            "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"decimals\"",
+            "9ff09a73-b892-48f2-b976-2cd7de67dcbd": "[]",
+            "a1d2a03b-c119-442d-b464-d3aeeab20f1e": "false"
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "64bd2724-9df1-4dec-80e8-17fbd6eccabe": {
+            "3ff95ed6-aeef-4c9d-931d-c887ef0ddc5c": {
+              "5e721c7e-2b06-494f-a65e-6b527531cddc": {}
+            }
+          },
+          "05c28111-eaad-440b-810b-b2561ae589ec": {
+            "3ff95ed6-aeef-4c9d-931d-c887ef0ddc5c": {
+              "39a06197-ca9b-4ada-ab8e-6de9bd241529": {}
+            }
+          },
+          "1cc891cc-daa9-41fc-a606-bec075179054": {
+            "3ff95ed6-aeef-4c9d-931d-c887ef0ddc5c": {
+              "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {}
+            }
+          }
+        },
+        "outputs": {
+          "1ddfded7-0b73-4656-a26b-de98bc4fe078": {
+            "3ff95ed6-aeef-4c9d-931d-c887ef0ddc5c": {
+              "87606a66-0567-440c-9686-f02bf52462e4": {}
+            }
+          },
+          "aa286300-9af1-400d-9c1c-0ce351555edc": {
+            "3ff95ed6-aeef-4c9d-931d-c887ef0ddc5c": {
+              "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {}
+            }
+          }
+        }
+      },
+      "connections": {}
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1cc891cc-daa9-41fc-a606-bec075179054": {
+        "type": "string",
+        "name": "token address",
+        "description": "The address of the token contract from which the user wants to transfer."
+      },
+      "05c28111-eaad-440b-810b-b2561ae589ec": {
+        "type": "{string: any}",
+        "name": "token abi"
+      },
+      "64bd2724-9df1-4dec-80e8-17fbd6eccabe": {
+        "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "1ddfded7-0b73-4656-a26b-de98bc4fe078": {
+        "type": "number",
+        "name": "decimals",
+        "description": "The decimals field of the ERC20 contract."
+      },
+      "aa286300-9af1-400d-9c1c-0ce351555edc": {
+        "type": "typeof `error` of `contract caller`",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/contracts/erc20/token decimals getter",
+  "attributes": {
+    "internal": true
+  }
+}

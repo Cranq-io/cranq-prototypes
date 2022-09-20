@@ -1,0 +1,237 @@
+{
+  "name": "blockchain/ethereum/contracts/erc20/token transferer",
+  "interface": {
+    "inputs": {
+      "e44eab12-986b-4add-ad32-ad867762c4dc": {
+        "type": "string",
+        "name": "token address",
+        "description": "The address of the token contract from which the user wants to transfer."
+      },
+      "a6d5f70b-d0ca-4a1c-baf4-27b64ef7ac20": {
+        "type": "string",
+        "name": "target address",
+        "description": "The recipient's address for the transaction."
+      },
+      "fcbb5049-d92f-4382-a1c9-f41db75933ff": {
+        "type": "number",
+        "name": "token amount",
+        "description": "The number of tokens to be transferred."
+      },
+      "72dd5e22-5f73-4591-8709-004e1b200909": {
+        "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "fa4149fe-53dd-413f-ae2a-282d867d509d": {
+        "type": "typeof `out` of `contract executor`",
+        "name": "result"
+      },
+      "c713bc3e-fe6f-4c0a-84ac-ca2641cba484": {
+        "type": "typeof `error` of `contract executor`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+          "coordinates": [
+            575,
+            -110
+          ],
+          "name": "contract executor",
+          "prototype": "228b10ab-9b15-4317-8700-f5ddac476c25",
+          "params": {
+            "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"transfer\"",
+            "a1d2a03b-c119-442d-b464-d3aeeab20f1e": "{ \"gas\": 200000 }"
+          }
+        },
+        "f59fc70d-d237-4ddb-9d4a-079e47c8270f": {
+          "coordinates": [
+            -482,
+            -114
+          ],
+          "name": "erc20",
+          "prototype": "5ef2bbbc-fcfb-4573-8e12-e414dd5968c9"
+        },
+        "c5be3514-e3eb-47c0-96a2-bdff57362003": {
+          "coordinates": [
+            424.1953125,
+            -10.90625
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1]"
+          }
+        },
+        "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
+          "coordinates": [
+            -649.8046875,
+            -26.90625
+          ],
+          "name": "forwarder (quadruple)",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        },
+        "57187db6-805e-4f33-a4e9-35a91dfd0b18": {
+          "coordinates": [
+            88,
+            60
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "d8a6848b-6727-4cb3-baed-1a23cdf549bf": {
+          "coordinates": [
+            577,
+            154
+          ],
+          "name": "forwarder",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        },
+        "977b2020-959a-4c6c-80cb-a85854732d18": {
+          "coordinates": [
+            -135,
+            151
+          ],
+          "name": "token decimals getter",
+          "prototype": "fdcb586e-b352-4aba-9dec-64a0135a3e52"
+        },
+        "9bd538e9-1509-4712-849e-7338c078329e": {
+          "coordinates": [
+            283,
+            61
+          ],
+          "name": "unit parser",
+          "prototype": "b7a630c0-f773-4e94-b1fa-cdf45b09db27"
+        }
+      },
+      "connections": {
+        "f59fc70d-d237-4ddb-9d4a-079e47c8270f": {
+          "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+            "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+              "39a06197-ca9b-4ada-ab8e-6de9bd241529": {}
+            },
+            "977b2020-959a-4c6c-80cb-a85854732d18": {
+              "05c28111-eaad-440b-810b-b2561ae589ec": {}
+            }
+          }
+        },
+        "c5be3514-e3eb-47c0-96a2-bdff57362003": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+              "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {}
+            }
+          }
+        },
+        "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+              "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {}
+            },
+            "977b2020-959a-4c6c-80cb-a85854732d18": {
+              "1cc891cc-daa9-41fc-a606-bec075179054": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "c5be3514-e3eb-47c0-96a2-bdff57362003": {
+              "0": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+              "5e721c7e-2b06-494f-a65e-6b527531cddc": {}
+            },
+            "977b2020-959a-4c6c-80cb-a85854732d18": {
+              "64bd2724-9df1-4dec-80e8-17fbd6eccabe": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "f59fc70d-d237-4ddb-9d4a-079e47c8270f": {
+              "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {}
+            },
+            "57187db6-805e-4f33-a4e9-35a91dfd0b18": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          }
+        },
+        "977b2020-959a-4c6c-80cb-a85854732d18": {
+          "1ddfded7-0b73-4656-a26b-de98bc4fe078": {
+            "57187db6-805e-4f33-a4e9-35a91dfd0b18": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          },
+          "aa286300-9af1-400d-9c1c-0ce351555edc": {
+            "d8a6848b-6727-4cb3-baed-1a23cdf549bf": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "57187db6-805e-4f33-a4e9-35a91dfd0b18": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "9bd538e9-1509-4712-849e-7338c078329e": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "9bd538e9-1509-4712-849e-7338c078329e": {
+              "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {}
+            }
+          }
+        },
+        "9bd538e9-1509-4712-849e-7338c078329e": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "c5be3514-e3eb-47c0-96a2-bdff57362003": {
+              "1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e44eab12-986b-4add-ad32-ad867762c4dc": {
+            "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "fcbb5049-d92f-4382-a1c9-f41db75933ff": {
+            "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "a6d5f70b-d0ca-4a1c-baf4-27b64ef7ac20": {
+            "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "72dd5e22-5f73-4591-8709-004e1b200909": {
+            "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "fa4149fe-53dd-413f-ae2a-282d867d509d": {
+            "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+              "87606a66-0567-440c-9686-f02bf52462e4": {}
+            }
+          },
+          "c713bc3e-fe6f-4c0a-84ac-ca2641cba484": {
+            "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
+              "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {}
+            },
+            "d8a6848b-6727-4cb3-baed-1a23cdf549bf": {
+              "0a9cd5b0-6de6-4c69-aa04-2816de994173": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  },
+  "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703"
+}

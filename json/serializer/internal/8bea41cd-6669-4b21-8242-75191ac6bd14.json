@@ -4,7 +4,7 @@
     "inputs": {
       "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": {
         "description": "",
-        "type": "any",
+        "type": "{\"data\": any, \"pretty\": boolean}",
         "name": "data & pretty"
       }
     },
@@ -13,6 +13,11 @@
         "description": "",
         "type": "any",
         "name": "json"
+      },
+      "c5932291-88af-4e61-b46a-6eebe806ab06": {
+        "type": "string",
+        "name": "error",
+        "description": "Sends error about unserializable JSON."
       }
     }
   },
@@ -22,7 +27,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": "outputs.json(JSON.stringify(data.data, null, data.pretty ? 2 : 0), tag);"
+        "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": "try {\n  outputs.json(\n    JSON.stringify(data.data, null, data.pretty ? 2 : 0),\n    tag);\n} catch (err) {\n  outputs.error(\"Can't serialize JSON.\", tag);\n}"
       }
     },
     "es6-node": {
@@ -30,11 +35,12 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": "outputs.json(JSON.stringify(data.data, null, data.pretty ? 2 : 0), tag);"
+        "03b51ad2-3cd3-4a9a-bd5a-5fdee3a1b4d7": "try {\n  outputs.json(\n    JSON.stringify(data.data, null, data.pretty ? 2 : 0),\n    tag);\n} catch (err) {\n  const {inspect} = require(\"util\");\n  outputs.error(`Can't serialize JSON.\\n${inspect(data.data)}`, tag);\n}"
       }
     }
   },
   "name": "json/Serializer/Internal",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
   "attributes": {
     "internal": true,
     "locked": true

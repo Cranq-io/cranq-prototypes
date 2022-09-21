@@ -1,23 +1,28 @@
 {
-  "description": "",
+  "description": "Serializes JSON into string.",
   "interface": {
     "inputs": {
       "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {
-        "description": "",
+        "description": "Receives the data to be serialized.",
         "type": "any",
         "name": "data"
       },
       "deb0a917-b393-4326-b573-ec6a6f82ffec": {
-        "description": "",
-        "type": "any",
+        "description": "Whether to pretty-format the output string. (Indented with 2 spaces.)",
+        "type": "boolean",
         "name": "pretty"
       }
     },
     "outputs": {
       "25650a4f-7e35-4754-bc8f-1a57f538166f": {
-        "description": "",
-        "type": "any",
+        "description": "Sends the serialized JSON.",
+        "type": "string",
         "name": "json"
+      },
+      "96bf3401-ac68-46e7-b86b-371758d5543a": {
+        "type": "string",
+        "name": "error",
+        "description": "Sends error about unserializable JSON."
       }
     }
   },
@@ -76,12 +81,24 @@
             "186f22d0-90f7-4e41-a9ca-1c23036528f7": {
               "1c2473e9-843e-43f8-bcf4-53c157aa7b80": {}
             }
+          },
+          "96bf3401-ac68-46e7-b86b-371758d5543a": {
+            "186f22d0-90f7-4e41-a9ca-1c23036528f7": {
+              "c5932291-88af-4e61-b46a-6eebe806ab06": {}
+            }
           }
         }
       }
     }
   },
   "name": "json/Serializer",
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "stringify": null,
+    "serialize": null,
+    "convert": null,
+    "JSON": null
+  },
   "attributes": {
     "locked": true
   }

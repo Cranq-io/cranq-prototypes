@@ -1,5 +1,5 @@
 {
-  "name": "io/http/utils/Query params getter",
+  "name": "io/http/server/utils/Query params getter",
   "description": "Retrieves the 'query' component of an HTTP request.\n\nExample:\n1. {\"headers\": {}, \"query\": {\"message\": \"Hello\"}}@1 received via `request`\n2. {\"message\": \"Hello\"}@1 sent via `query`",
   "interface": {
     "inputs": {
@@ -57,6 +57,7 @@
     "get": null,
     "request": null
   },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
   "attributes": {
     "locked": true
   }

@@ -1,5 +1,5 @@
 {
-  "name": "io/http/utils/Response builder",
+  "name": "io/http/server/utils/Response builder",
   "description": "Builds a response structure out of its components: HTTP status, headers, and body.\n\nExample:\n1. 200@1 received via `status`\n2. {\"Content-Type\": \"text/plain\"}@1 received via `headers`\n3. \"OK\"@1 received via `body`\n4. {\"status\": 200, \"headers\": {\"Content-Type\": \"text/plain\"}, \"body\": \"OK\"}@1 sent via `response`",
   "interface": {
     "inputs": {
@@ -73,9 +73,14 @@
   },
   "keywords": {
     "construct": null,
+    "build": null,
+    "response": null,
+    "http": null,
+    "API": null,
     "text": null,
     "REST": null
   },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
     "locked": true
   }

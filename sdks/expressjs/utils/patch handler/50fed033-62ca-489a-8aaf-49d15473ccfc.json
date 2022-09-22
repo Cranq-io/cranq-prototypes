@@ -1,0 +1,160 @@
+{
+  "name": "sdks/expressjs/utils/PATCH handler",
+  "interface": {
+    "inputs": {
+      "fc347bce-a793-41dc-9496-b0cb07c3c0a0": {
+        "type": "string",
+        "name": "app ID",
+        "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
+      },
+      "c4079233-0d96-402d-921f-1b152014b588": {
+        "type": "(string or string[])",
+        "name": "route",
+        "description": "Receives the route(s) to handle requests for. Route be specified as exact match (1) or as pattern match (2).\n\nExample:\n1) \"/status\" will just match \"/status\"\n2) \"/s*s\" will match \"status\", \"shoes\", etc.."
+      },
+      "60c2eb0f-4ff3-4a97-b7b2-4acd1b11e007": {
+        "type": "number",
+        "name": "status",
+        "description": "Receives the HTTP status code to be sent with the response to the client.\n\nExample: \n200"
+      },
+      "e759abb7-8a7e-4364-ad98-b1838e4ec0d3": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": "Receives the HTTP headers to be sent with the response to the client.\n\nExample: \n{\n  \"content-type\": \"application/json\"\n}"
+      },
+      "33af8234-0a43-467a-a27e-088a8ee2210d": {
+        "type": "any",
+        "name": "body",
+        "description": "Receives the content to send to the client as response body.\n\nExample:\n- \"OK\"\n- 3.14\n- { \"status\": \"OK\" }"
+      }
+    },
+    "outputs": {
+      "34f49dea-5d57-462d-964b-19ec7c8c6cab": {
+        "type": "typeof `headers`",
+        "name": "headers",
+        "description": "Forwards  the headers of the request to be processed.\n\nExample: \n{\n  \"content-type\": \"application/json\"\n}"
+      },
+      "bcfb101f-bdf1-4f10-94c6-b6aa3c227caa": {
+        "type": "any",
+        "name": "body",
+        "description": "Forwards the body of the request to be processed.\n\nExample:\n- \"OK\"\n- 3.14\n- { \"status\": \"OK\" }"
+      },
+      "25c7748d-2c70-4a11-a872-3d0716e25056": {
+        "type": "any",
+        "name": "done",
+        "description": "Event triggered when the request has been processed."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "9073eab7-0c6b-4129-8964-3826f3776079": {
+          "452b5701-97ed-4e87-b58d-34ea209e802d": {
+            "fafa864e-cd3f-4e5b-ab05-c61941dc40c6": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "48df0728-161a-4106-bc32-4d52591a87ba": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "9073eab7-0c6b-4129-8964-3826f3776079": {
+              "91981648-5a12-4061-8be8-3c43210193c7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "fc347bce-a793-41dc-9496-b0cb07c3c0a0": {
+            "9073eab7-0c6b-4129-8964-3826f3776079": {
+              "91ce9cc7-04d3-43af-81be-39747c4aaf61": {}
+            }
+          },
+          "c4079233-0d96-402d-921f-1b152014b588": {
+            "9073eab7-0c6b-4129-8964-3826f3776079": {
+              "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {}
+            }
+          },
+          "60c2eb0f-4ff3-4a97-b7b2-4acd1b11e007": {
+            "48df0728-161a-4106-bc32-4d52591a87ba": {
+              "status": {}
+            }
+          },
+          "e759abb7-8a7e-4364-ad98-b1838e4ec0d3": {
+            "48df0728-161a-4106-bc32-4d52591a87ba": {
+              "headers": {}
+            }
+          },
+          "33af8234-0a43-467a-a27e-088a8ee2210d": {
+            "48df0728-161a-4106-bc32-4d52591a87ba": {
+              "body": {}
+            }
+          }
+        },
+        "outputs": {
+          "34f49dea-5d57-462d-964b-19ec7c8c6cab": {
+            "fafa864e-cd3f-4e5b-ab05-c61941dc40c6": {
+              "headers": {}
+            }
+          },
+          "bcfb101f-bdf1-4f10-94c6-b6aa3c227caa": {
+            "fafa864e-cd3f-4e5b-ab05-c61941dc40c6": {
+              "body": {}
+            }
+          },
+          "25c7748d-2c70-4a11-a872-3d0716e25056": {
+            "9073eab7-0c6b-4129-8964-3826f3776079": {
+              "38bfa33c-cddf-478d-bf52-0f4ec611e800": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "9073eab7-0c6b-4129-8964-3826f3776079": {
+          "coordinates": [
+            1.6666666666666572,
+            -49
+          ],
+          "name": "route handler",
+          "prototype": "a63f623a-f4b2-4a06-acca-83774cd4ca41",
+          "params": {
+            "929caaa1-7ba7-46bb-951d-869e82fd5e47": "\"PATCH\""
+          }
+        },
+        "fafa864e-cd3f-4e5b-ab05-c61941dc40c6": {
+          "coordinates": [
+            118.66666666666666,
+            22
+          ],
+          "name": "split request",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"headers\", \"body\"]"
+          }
+        },
+        "48df0728-161a-4106-bc32-4d52591a87ba": {
+          "coordinates": [
+            -120.33333333333334,
+            27
+          ],
+          "name": "build response",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"status\", \"headers\", \"body\"]"
+          }
+        }
+      }
+    }
+  },
+  "description": "Receives PATCH requests on the specified route and dispatches the corresponding response.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. \"/users/\"@0 received on `route`\n3. a client PATCH request received by express with URL \"http://api.mydomain.com/users/2\n4. the following signals are sent to other node(s) processing the request\n- {\n \"accept\": \"application/json\"\n}@0 sent on `headers`\n- { \"age\": 29 }@0 sent `body`\n5. The following signals are received back from processing nodes and sent out to the client:\n- 200@0 on `status`,\n- {\n    \"content-type\": \"application/json\" \n  }@0 on `headers`,\n-  { id:2, \"name\": \"John Doe\", \"age\": 29 }@0 on `body`\n6. null@0 sent on `done`",
+  "keywords": {
+    "api": null,
+    "request": null,
+    "response": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "name": "io/http/server/Error response generator",
+  "description": "Generates a default error response based on the error received from an `io/http/express/Endpoint listener`.",
+  "interface": {
+    "inputs": {
+      "8a4f7d44-e12d-4640-a0e2-c0339b240709": {
+        "type": "{\n  \"error\": \"incorrect bearer token\"\n}",
+        "name": "error",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "9a048bdf-a9cb-43f3-a514-d88ab0f798a3": {
+        "type": "({\n  \"status\": 400,\n  \"headers\": {string: string},\n  \"body\": \"Bad request\"\n} or {\n  \"status\": 403,\n  \"headers\": {string: string},\n  \"body\": \"Unauthorized\"\n})",
+        "name": "response"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1de833ba-f907-407b-a3a4-13e330e1a565": {
+          "coordinates": [
+            107.25,
+            -133
+          ],
+          "name": "\"unauthorized\" resp.",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"status\": 403,\n  \"headers\": {},\n  \"body\": \"Unauthorized\"\n}"
+          }
+        },
+        "a460e905-3b7b-4b75-b8ec-2e26f0e4b4e8": {
+          "coordinates": [
+            -88.75,
+            -57
+          ],
+          "name": "item getter with default",
+          "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
+          "params": {
+            "e7d99c83-94bf-45ac-bc40-d58615931d22": "\"error\"",
+            "09901a8a-16aa-4e9a-a314-d8eb2cec3284": "null"
+          }
+        },
+        "25c04a0d-4e0f-4624-8b16-60dfc44e05e0": {
+          "coordinates": [
+            -105.75,
+            104
+          ],
+          "name": "unauthorized errors",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "47c56035-5bed-4f91-b7a9-606dedd7a13c": "{\"incorrect bearer token\": true}"
+          }
+        },
+        "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
+          "coordinates": [
+            111.25,
+            48
+          ],
+          "name": "\"bad request\" resp.",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"status\": 400,\n  \"headers\": {},\n  \"body\": \"Bad request\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "a460e905-3b7b-4b75-b8ec-2e26f0e4b4e8": {
+          "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+            "25c04a0d-4e0f-4624-8b16-60dfc44e05e0": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          }
+        },
+        "25c04a0d-4e0f-4624-8b16-60dfc44e05e0": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "1de833ba-f907-407b-a3a4-13e330e1a565": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8a4f7d44-e12d-4640-a0e2-c0339b240709": {
+            "a460e905-3b7b-4b75-b8ec-2e26f0e4b4e8": {
+              "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {}
+            }
+          }
+        },
+        "outputs": {
+          "9a048bdf-a9cb-43f3-a514-d88ab0f798a3": {
+            "1de833ba-f907-407b-a3a4-13e330e1a565": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            },
+            "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "default": null,
+    "standard": null,
+    "failure": null,
+    "error": null,
+    "response": null,
+    "automatic": null
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "locked": true
+  }
+}

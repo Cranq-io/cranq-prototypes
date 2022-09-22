@@ -1,0 +1,123 @@
+{
+  "name": "sdks/expressjs/Middlewares applicator",
+  "interface": {
+    "inputs": {
+      "61c9c665-4f1f-4cc7-bb80-d62178907edd": {
+        "type": "string",
+        "name": "app ID"
+      },
+      "c25c69ad-ca69-4751-a265-81dab60504b7": {
+        "type": "(\"text\" or \"json\" or \"urlencoded\" or \"cors\")[]",
+        "name": "middlewares"
+      }
+    },
+    "outputs": {
+      "775533fa-5012-4384-a88b-7130156e1fd4": {
+        "type": "any",
+        "name": "done"
+      },
+      "cffbdc9b-3a76-4675-b92c-88a190da92c2": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case any of the specified the middlewares could not be applied."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2fe54328-61ac-47af-850a-3951536f5dd7": {
+          "coordinates": [
+            -43.5,
+            -133
+          ],
+          "name": "apply middleware",
+          "prototype": "f11e66a5-1a5c-406b-bfe0-d21a5bf6297d"
+        },
+        "ddba8eef-792a-4c01-941d-e07fdadf326c": {
+          "coordinates": [
+            132.5,
+            87
+          ],
+          "name": "iterate over middlewares",
+          "prototype": "efbace8a-a0c1-4495-932c-7752fcc212d3"
+        },
+        "3ca6858f-907a-4680-8a3d-d9cefc2b9693": {
+          "coordinates": [
+            -126.5,
+            132
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "ddba8eef-792a-4c01-941d-e07fdadf326c": {
+          "da78f0ed-be96-41f5-90e5-bf31ef6fd262": {
+            "2fe54328-61ac-47af-850a-3951536f5dd7": {
+              "10c0aa80-7a63-4647-bebf-2002804b315c": {}
+            }
+          }
+        },
+        "2fe54328-61ac-47af-850a-3951536f5dd7": {
+          "760e37e0-47dc-45b6-993e-06363b08b45f": {
+            "ddba8eef-792a-4c01-941d-e07fdadf326c": {
+              "6724a763-9749-41bb-a3dc-2ec659c8b72b": {}
+            }
+          }
+        },
+        "3ca6858f-907a-4680-8a3d-d9cefc2b9693": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "2fe54328-61ac-47af-850a-3951536f5dd7": {
+              "4caba675-aa86-4d81-82a5-6510f71a708d": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "ddba8eef-792a-4c01-941d-e07fdadf326c": {
+              "d079a46d-16a1-4019-b037-eb25ff63b344": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "61c9c665-4f1f-4cc7-bb80-d62178907edd": {
+            "3ca6858f-907a-4680-8a3d-d9cefc2b9693": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "c25c69ad-ca69-4751-a265-81dab60504b7": {
+            "3ca6858f-907a-4680-8a3d-d9cefc2b9693": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "775533fa-5012-4384-a88b-7130156e1fd4": {
+            "ddba8eef-792a-4c01-941d-e07fdadf326c": {
+              "ed7be79a-f008-4d37-8d43-faf2607e6ef5": {}
+            }
+          },
+          "cffbdc9b-3a76-4675-b92c-88a190da92c2": {
+            "2fe54328-61ac-47af-850a-3951536f5dd7": {
+              "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Applies multiple Express middlewares.",
+  "keywords": {
+    "middlewares": null,
+    "multiple": null,
+    "apply": null,
+    "http": null,
+    "server": null,
+    "expressjs": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

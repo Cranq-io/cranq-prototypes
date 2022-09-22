@@ -1,0 +1,169 @@
+{
+  "name": "sdks/expressjs/Middleware applicator",
+  "interface": {
+    "inputs": {
+      "4caba675-aa86-4d81-82a5-6510f71a708d": {
+        "type": "string",
+        "name": "app ID",
+        "description": "Identifies the Express app to apply the middleware on."
+      },
+      "10c0aa80-7a63-4647-bebf-2002804b315c": {
+        "type": "(\"text\" or \"json\" or \"urlencoded\" or \"cors\")",
+        "name": "middleware"
+      }
+    },
+    "outputs": {
+      "760e37e0-47dc-45b6-993e-06363b08b45f": {
+        "type": "any",
+        "name": "done"
+      },
+      "af511dbd-294e-4cbf-940a-e81326cb837b": {
+        "type": "typeof `app ID`",
+        "name": "app ID",
+        "description": ""
+      },
+      "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the middleware could not be applied."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "8c7b91c6-23fe-4ad2-91a9-d357041195d4": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
+              "816628e2-c7f2-41f6-8cf2-27d752eff31c": {}
+            }
+          }
+        },
+        "fbcece11-91ec-46af-a227-2a255fc8233f": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "8c7b91c6-23fe-4ad2-91a9-d357041195d4": {
+              "id": {}
+            },
+            "fe4c67d6-42f4-4258-8d83-ce30e3eba445": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "c751a39c-acb3-4f6b-8b39-d20386af6993": {
+              "middleware": {}
+            }
+          }
+        },
+        "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
+          "2d59f4f5-da3a-4e88-b071-f863cda4e553": {
+            "fe4c67d6-42f4-4258-8d83-ce30e3eba445": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "c751a39c-acb3-4f6b-8b39-d20386af6993": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "8c7b91c6-23fe-4ad2-91a9-d357041195d4": {
+              "options": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4caba675-aa86-4d81-82a5-6510f71a708d": {
+            "fbcece11-91ec-46af-a227-2a255fc8233f": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "10c0aa80-7a63-4647-bebf-2002804b315c": {
+            "fbcece11-91ec-46af-a227-2a255fc8233f": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "af511dbd-294e-4cbf-940a-e81326cb837b": {
+            "fe4c67d6-42f4-4258-8d83-ce30e3eba445": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          },
+          "760e37e0-47dc-45b6-993e-06363b08b45f": {
+            "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
+              "2d59f4f5-da3a-4e88-b071-f863cda4e553": {}
+            }
+          },
+          "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {
+            "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
+              "1eb10a35-5039-4196-b3b5-e59757befe88": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "6ea2a159-01bd-4627-92b5-bddfa0d29223": {
+          "coordinates": [
+            94,
+            -37.599999999999994
+          ],
+          "name": "express",
+          "prototype": "ed69232f-75e0-4633-b602-9159d8f3c841",
+          "params": {}
+        },
+        "8c7b91c6-23fe-4ad2-91a9-d357041195d4": {
+          "coordinates": [
+            -7,
+            -85.6
+          ],
+          "name": "action builder",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"use\""
+          }
+        },
+        "c751a39c-acb3-4f6b-8b39-d20386af6993": {
+          "coordinates": [
+            -50,
+            58.400000000000006
+          ],
+          "name": "options builder",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"middleware\"]"
+          }
+        },
+        "fbcece11-91ec-46af-a227-2a255fc8233f": {
+          "coordinates": [
+            -147,
+            -8.599999999999994
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "fe4c67d6-42f4-4258-8d83-ce30e3eba445": {
+          "coordinates": [
+            110,
+            73.4
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Applies a known middleware to the specified express app.\n\nAccepted middleware identifiers:\n* \"json\"\n* \"urlencoded\"\n* \"cors\"",
+  "keywords": {
+    "api": null,
+    "express": null,
+    "middleware": null,
+    "apply": null,
+    "set": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

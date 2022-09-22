@@ -1,0 +1,210 @@
+{
+  "name": "sdks/expressjs/Route handler",
+  "interface": {
+    "inputs": {
+      "91ce9cc7-04d3-43af-81be-39747c4aaf61": {
+        "type": "string",
+        "name": "app ID",
+        "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
+      },
+      "929caaa1-7ba7-46bb-951d-869e82fd5e47": {
+        "type": "(\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\")",
+        "name": "method",
+        "description": "Receives the method to handle request for. \n\nExample:\n\"GET\""
+      },
+      "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {
+        "type": "(string or string[])",
+        "name": "route",
+        "description": "Receives the route(s) to handle requests for. Route be specified as exact match (1) or as pattern match (2).\n\nExample:\n1) \"/status\" will just match \"/status\"\n2) \"/s*s\" will match \"status\", \"shoes\", etc..\n"
+      },
+      "91981648-5a12-4061-8be8-3c43210193c7": {
+        "type": "{\n\"status\": number,\n\"headers\": {string:string},\n\"body\": any\n}",
+        "name": "response",
+        "description": "Receives the response to be sent out to the client.\n\nExample:\n{\n  \"status\": 200,\n  \"headers\": {\n    \"content-type\": \"application/json\" \n  },\n  \"body\": \"Done\"\n}"
+      }
+    },
+    "outputs": {
+      "452b5701-97ed-4e87-b58d-34ea209e802d": {
+        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": (\"http\" or \"https\"), \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "name": "request",
+        "description": "Forwards the request to be processed."
+      },
+      "38bfa33c-cddf-478d-bf52-0f4ec611e800": {
+        "type": "null",
+        "name": "done",
+        "description": "Event triggered when the specified action has been executed."
+      },
+      "794e50a8-d799-4d02-8446-ed7ba43a44ef": {
+        "type": "typeof `app ID`",
+        "name": "app ID",
+        "description": "The id of the express instance the action was executed on. Emitted when the action was executed.\nTo be used when chaining multiple actions on the same express instance.\n\nExample: \n\"my-express-server\""
+      },
+      "12b5e681-073c-47bc-abb3-698530817f66": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the request could not be handled."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "41cfa8cb-fc29-42a7-8be2-5ad07c983191": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "f64a7161-6452-424c-b242-8d5ac9b46c22": {
+              "id": {}
+            },
+            "2e97d466-9a9c-41b8-a79d-c90e37c4fb84": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "1dc4ca0e-ed95-4301-b01c-ee7ef76f82c6": {
+              "method": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "1dc4ca0e-ed95-4301-b01c-ee7ef76f82c6": {
+              "route": {}
+            }
+          }
+        },
+        "f64a7161-6452-424c-b242-8d5ac9b46c22": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+              "816628e2-c7f2-41f6-8cf2-27d752eff31c": {}
+            }
+          }
+        },
+        "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+          "2d59f4f5-da3a-4e88-b071-f863cda4e553": {
+            "2e97d466-9a9c-41b8-a79d-c90e37c4fb84": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "1dc4ca0e-ed95-4301-b01c-ee7ef76f82c6": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f64a7161-6452-424c-b242-8d5ac9b46c22": {
+              "options": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "91ce9cc7-04d3-43af-81be-39747c4aaf61": {
+            "41cfa8cb-fc29-42a7-8be2-5ad07c983191": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "929caaa1-7ba7-46bb-951d-869e82fd5e47": {
+            "41cfa8cb-fc29-42a7-8be2-5ad07c983191": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {
+            "41cfa8cb-fc29-42a7-8be2-5ad07c983191": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          },
+          "91981648-5a12-4061-8be8-3c43210193c7": {
+            "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+              "a6b8ed07-3298-4bc7-acee-4c18f2399ffd": {}
+            }
+          }
+        },
+        "outputs": {
+          "452b5701-97ed-4e87-b58d-34ea209e802d": {
+            "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+              "38ea8704-dc28-470e-b30f-f1eee9adaafd": {}
+            }
+          },
+          "794e50a8-d799-4d02-8446-ed7ba43a44ef": {
+            "2e97d466-9a9c-41b8-a79d-c90e37c4fb84": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          },
+          "38bfa33c-cddf-478d-bf52-0f4ec611e800": {
+            "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+              "2d59f4f5-da3a-4e88-b071-f863cda4e553": {}
+            }
+          },
+          "12b5e681-073c-47bc-abb3-698530817f66": {
+            "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+              "1eb10a35-5039-4196-b3b5-e59757befe88": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "5f292487-2eae-451f-aa64-1cb2dbce3ebf": {
+          "coordinates": [
+            149,
+            -52
+          ],
+          "name": "express",
+          "prototype": "ed69232f-75e0-4633-b602-9159d8f3c841",
+          "params": {}
+        },
+        "41cfa8cb-fc29-42a7-8be2-5ad07c983191": {
+          "coordinates": [
+            -166,
+            -10
+          ],
+          "name": "forwarder/triple",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380",
+          "params": {}
+        },
+        "f64a7161-6452-424c-b242-8d5ac9b46c22": {
+          "coordinates": [
+            -8,
+            117
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"method\""
+          }
+        },
+        "1dc4ca0e-ed95-4301-b01c-ee7ef76f82c6": {
+          "coordinates": [
+            -17,
+            -126
+          ],
+          "name": "build options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"method\", \"route\"]"
+          }
+        },
+        "2e97d466-9a9c-41b8-a79d-c90e37c4fb84": {
+          "coordinates": [
+            164,
+            104
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Receives requests on the specified route and dispatches the corresponding response.\nYou may also consider method specific route handlers for easier use.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. \"GET\"@0 received on `method`\n3. \"/status/\"@0 received on `route`\n4. a client GET request received by express with URL \"http://api.mydomain.com/status\"\n5. {\n\"body\": \"\", \n\"hostname\": \"api.mydomain.com\", \n\"method\": \"GET\", \n\"path\": \"/status\", \n\"protocol\": \"http\", \n}@0 sent on `request`to other node for processing\n6. {\n  \"status\": 200,\n  \"headers\": {\n    \"content-type\": \"application/json\" \n  },\n  \"body\": { status: \"OK\" } \n}@0 received back on `response` from processing nodes and sent out to the client\n7.\n- null@0 sent on `done`\n- \"my-express-server\"@0 sent on `app ID`",
+  "keywords": {
+    "http": null,
+    "server": null,
+    "express": null,
+    "rest": null,
+    "api": null,
+    "route": null,
+    "request": null,
+    "handler": null,
+    "process": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

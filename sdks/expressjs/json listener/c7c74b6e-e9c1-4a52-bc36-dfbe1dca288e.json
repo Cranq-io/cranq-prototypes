@@ -1,0 +1,139 @@
+{
+  "name": "sdks/expressjs/JSON listener",
+  "description": "Starts an express server set up for handling requests and also responding with JSON bodies.",
+  "interface": {
+    "inputs": {
+      "f530f87b-bcc8-443b-848e-bda748c6a223": {
+        "type": "string",
+        "name": "app ID",
+        "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
+      },
+      "30dee79b-69c4-4554-8fa0-268e44841b34": {
+        "type": "number",
+        "name": "port",
+        "description": "The port number express should listen to.\n\nExample: \n3000"
+      }
+    },
+    "outputs": {
+      "0f974415-666a-46f4-95ec-1224ceaa86e2": {
+        "type": "any",
+        "name": "done"
+      },
+      "f649a37a-3d60-43a8-ba55-6d8cd47d66ad": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the server could not be started or a middleware could not be applied."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d005f5b4-4a35-4dc8-9ae0-d266accfe89e": {
+          "coordinates": [
+            41.25,
+            177
+          ],
+          "name": "start server",
+          "prototype": "571c94c6-38b1-4212-833a-b947f50fadec",
+          "params": {}
+        },
+        "075bd039-ae17-4572-9bea-3be1f06312a9": {
+          "coordinates": [
+            118.25,
+            -75
+          ],
+          "name": "apply text middleware",
+          "prototype": "f11e66a5-1a5c-406b-bfe0-d21a5bf6297d",
+          "params": {
+            "10c0aa80-7a63-4647-bebf-2002804b315c": "\"json\""
+          }
+        },
+        "cc6db2e6-0b2e-4be6-a6ba-43610d34cb4a": {
+          "coordinates": [
+            -132.75,
+            54
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "2adfaf58-b0fa-4341-b0bd-0b8c8b746567": {
+          "coordinates": [
+            -26.75,
+            -156
+          ],
+          "name": "hold app ID",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        }
+      },
+      "connections": {
+        "cc6db2e6-0b2e-4be6-a6ba-43610d34cb4a": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "d005f5b4-4a35-4dc8-9ae0-d266accfe89e": {
+              "655df4af-25f6-4658-9d19-24bd222f2d29": {}
+            },
+            "2adfaf58-b0fa-4341-b0bd-0b8c8b746567": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "d005f5b4-4a35-4dc8-9ae0-d266accfe89e": {
+              "11745554-d9d0-41bb-af77-987d8450ccfe": {}
+            }
+          }
+        },
+        "d005f5b4-4a35-4dc8-9ae0-d266accfe89e": {
+          "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
+            "2adfaf58-b0fa-4341-b0bd-0b8c8b746567": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "2adfaf58-b0fa-4341-b0bd-0b8c8b746567": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "075bd039-ae17-4572-9bea-3be1f06312a9": {
+              "4caba675-aa86-4d81-82a5-6510f71a708d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f530f87b-bcc8-443b-848e-bda748c6a223": {
+            "cc6db2e6-0b2e-4be6-a6ba-43610d34cb4a": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "30dee79b-69c4-4554-8fa0-268e44841b34": {
+            "cc6db2e6-0b2e-4be6-a6ba-43610d34cb4a": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "0f974415-666a-46f4-95ec-1224ceaa86e2": {
+            "075bd039-ae17-4572-9bea-3be1f06312a9": {
+              "760e37e0-47dc-45b6-993e-06363b08b45f": {}
+            }
+          },
+          "f649a37a-3d60-43a8-ba55-6d8cd47d66ad": {
+            "075bd039-ae17-4572-9bea-3be1f06312a9": {
+              "4b537a2f-1cd7-48dc-a1d7-a644d38349c9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "express": null,
+    "http": null,
+    "server": null,
+    "start": null,
+    "json": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

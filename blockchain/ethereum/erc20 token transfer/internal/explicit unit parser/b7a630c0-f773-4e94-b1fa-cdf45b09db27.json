@@ -1,0 +1,91 @@
+{
+  "name": "blockchain/ethereum/ERC20 token transfer/internal/Explicit Unit Parser",
+  "description": "Creates BigNumber representation of number units useing the specified amount of decimals.\n\nExplicit unit parser does NOT have default value for Token's decimal value, it expects every time explicitely given.\n\nSee: https://docs.ethers.io/v5/api/utils/display-logic/#utils-parseUnits",
+  "interface": {
+    "inputs": {
+      "0d455460-c659-44c5-afd7-bdba5211c32d": {
+        "type": "number",
+        "name": "units",
+        "description": "The number of units"
+      },
+      "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {
+        "type": "number",
+        "name": "decimals",
+        "description": "The number of decimals to represent the unit"
+      }
+    },
+    "outputs": {
+      "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+        "type": "typeof `result` of `convert to BigNumber`",
+        "name": "result",
+        "description": "The BigNumber representation of value, parsed with unit digits."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ff670edc-99bd-4d12-bf66-b86f0d5ccf3b": {
+          "coordinates": [
+            28,
+            -14
+          ],
+          "name": "convert to BigNumber",
+          "prototype": "d81d132f-a682-42ab-b17e-436701e3974c"
+        },
+        "46a4d777-9d35-452d-95da-5d27eea22923": {
+          "coordinates": [
+            -162,
+            -16
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"units\", \"decimals\"]"
+          }
+        }
+      },
+      "connections": {
+        "46a4d777-9d35-452d-95da-5d27eea22923": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "ff670edc-99bd-4d12-bf66-b86f0d5ccf3b": {
+              "b3cea331-0e22-4273-be38-3a574b507611": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0d455460-c659-44c5-afd7-bdba5211c32d": {
+            "46a4d777-9d35-452d-95da-5d27eea22923": {
+              "units": {}
+            }
+          },
+          "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {
+            "46a4d777-9d35-452d-95da-5d27eea22923": {
+              "decimals": {}
+            }
+          }
+        },
+        "outputs": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "ff670edc-99bd-4d12-bf66-b86f0d5ccf3b": {
+              "9efa481d-63ea-4735-b8df-06add0d6d1bc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "keywords": {
+    "ethers": null,
+    "decimals": null,
+    "BigNumber": null
+  },
+  "original": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Stores data describing a contract like the standard store node, but its data port is strictly typed. It describes a contract template source and the parameters to rename, compile and deploy it.\n\nAlso describes the init parameters expected by the deployed contract in a strictly typed port.",
+  "interface": {
+    "inputs": {
+      "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
+        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
+        "name": "data",
+        "description": "Receives contents of the store. San be set as parameter, or received as signal."
+      },
+      "0b28df10-b056-4666-ae14-2357d747f7b9": {
+        "type": "any",
+        "name": "read",
+        "description": "Receives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+      },
+      "5c2df9e2-9902-488b-9381-5474fb89b84b": {
+        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"baseTokenURI\": string\n}",
+        "name": "init parameters",
+        "description": "The arguments to be passed to the contract's constructor when deployed.\n"
+      }
+    },
+    "outputs": {
+      "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+        "type": "typeof `data`",
+        "name": "data",
+        "description": "Sends store contents."
+      },
+      "92b91df5-41d7-4e23-aeec-3f459099e659": {
+        "type": "null",
+        "name": "written",
+        "description": "Sends signal when contents were set in flow."
+      },
+      "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+        "type": "null",
+        "name": "not found",
+        "description": "Sends signal on read attempt while store has no content."
+      },
+      "db25229f-2c05-4616-b3ae-7799d5bed32d": {
+        "type": "string[]",
+        "name": "init parameters array"
+      }
+    }
+  },
+  "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "state.data = data;\noutputs.written(null, tag);",
+        "0b28df10-b056-4666-ae14-2357d747f7b9": "const value = state.data || params.data;\nif (value !== undefined)\n  outputs.data(value, tag);\nelse\n  outputs[\"not found\"](null, tag);"
+      }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "state.data = data;\noutputs.written(null, tag);",
+        "0b28df10-b056-4666-ae14-2357d747f7b9": "const value = state.data !== undefined \n  ? state.data\n  : params.data;\nif (value !== undefined)\n  outputs.data(value, tag);\nelse\n  outputs[\"not found\"](null, tag);",
+        "5c2df9e2-9902-488b-9381-5474fb89b84b": "//  number-like keys are not allowed since they\n/// do not preserve the strict key order\nif (Object.keys(data).some((x)=>!isNaN(x))){\n  throw new Error(\"number-like key names are not allowed\");\n}\n\nconst initArray = Object.values(data).map((value)=>`${value}`);\noutputs[\"init parameters array\"](initArray, tag);\n"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/contracts/erc721/presets/ERC721PresetMinterPauserAutoId deployer/contract preset",
+  "keywords": {
+    "": null
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "original": "fc754eb6-25d1-40c9-b6dd-1367502c4307",
+  "attributes": {
+    "internal": true
+  }
+}

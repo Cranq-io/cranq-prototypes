@@ -1,0 +1,165 @@
+{
+  "name": "blockchain/ethereum/contracts/internal/deploy contract preset",
+  "interface": {
+    "inputs": {
+      "b53990d6-c237-4d59-9dbf-b2fa712181a7": {
+        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
+        "name": "contract description",
+        "description": "Expects a contract preset description containing a flattened, single source file, the settings to be sent to the "
+      },
+      "741d010c-14a6-4dd1-b528-0d5386187bb7": {
+        "type": "string",
+        "name": "new contract name",
+        "description": ""
+      },
+      "67510810-61e0-4c9d-b06d-10fbe7c4a740": {
+        "type": "typeof `contract params` of `deploy contract`",
+        "name": "contract params"
+      },
+      "11c0a845-1293-4670-9390-0a0586122a6f": {
+        "type": "typeof `connect credentials` of `deploy contract`",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "147727db-184c-41df-90e3-e4ab656781a2": {
+        "type": "typeof `compile settings` of `split contract preset`",
+        "name": "compile settings",
+        "description": "[Inherited from port `compile settings` of `splitter B`] \nSends input data split into individual fields."
+      },
+      "2acecfad-46ec-48f8-80ea-332931523eef": {
+        "type": "typeof `events` of `deploy contract`",
+        "name": "events",
+        "description": "[Inherited from port `events` of `contract deployer`] \nMultiplexed events. Useful for monitoring progress.\nUse Demultiplexer to separate them."
+      },
+      "41ca2dbd-2701-45d8-8411-8dea422e9563": {
+        "type": "typeof `source` of `compile preset`",
+        "name": "source"
+      },
+      "b771d246-9110-4c33-82bf-dfb979e66235": {
+        "type": "typeof `error` of `deploy contract`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+          "coordinates": [
+            367.4487847222231,
+            88.84895833333371
+          ],
+          "name": "deploy contract",
+          "prototype": "cf8402d8-2801-4b12-9d91-c0edf557f2d9",
+          "params": {
+            "6a44b0aa-dd80-42a5-ba19-15a130f0206a": "false"
+          }
+        },
+        "316946e9-0f95-4f0e-9f60-4e4e509ef8d2": {
+          "coordinates": [
+            -250.5512152777768,
+            -104.1510416666656
+          ],
+          "name": "split contract preset",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"contract template\",\"name to replace\",\"compile settings\",\"deploy settings\"]"
+          }
+        },
+        "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+          "coordinates": [
+            124.31076388889016,
+            -20.822916666666515
+          ],
+          "name": "compile preset",
+          "prototype": "bf676a5e-7de7-47bb-9a9e-d9b15bedebe3"
+        }
+      },
+      "connections": {
+        "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+          "b20e6376-18be-4b40-9f7c-9dfcc5382497": {
+            "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+              "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {}
+            }
+          }
+        },
+        "316946e9-0f95-4f0e-9f60-4e4e509ef8d2": {
+          "contract template": {
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "8a735946-6aa4-49c6-a438-185dab2ac5e6": {}
+            }
+          },
+          "name to replace": {
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "b9a63070-7027-4a73-8e97-d011ab811b45": {}
+            }
+          },
+          "compile settings": {
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "2f58e67b-36ae-4452-b0d3-74858ac029ad": {}
+            }
+          },
+          "deploy settings": {
+            "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+              "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b53990d6-c237-4d59-9dbf-b2fa712181a7": {
+            "316946e9-0f95-4f0e-9f60-4e4e509ef8d2": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "67510810-61e0-4c9d-b06d-10fbe7c4a740": {
+            "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+              "0618062e-aa1f-4a81-9727-fa078f93332f": {}
+            }
+          },
+          "11c0a845-1293-4670-9390-0a0586122a6f": {
+            "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+              "21dc533c-92b5-4354-9d81-1cfd46f095c8": {}
+            }
+          },
+          "741d010c-14a6-4dd1-b528-0d5386187bb7": {
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "f786e334-d043-4a52-a1dd-6cfcf0ab6b4d": {}
+            }
+          }
+        },
+        "outputs": {
+          "b771d246-9110-4c33-82bf-dfb979e66235": {
+            "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+              "c8505107-dfeb-4ad6-a08c-2543a30b2887": {}
+            },
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "045b95a2-34e1-4a7b-b0a8-620459cf14f4": {}
+            }
+          },
+          "2acecfad-46ec-48f8-80ea-332931523eef": {
+            "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
+              "3483ab3b-5295-4761-8832-ec968f7399d9": {}
+            }
+          },
+          "41ca2dbd-2701-45d8-8411-8dea422e9563": {
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "56f735aa-b88e-49f7-a923-ba0681d05ec5": {}
+            }
+          },
+          "147727db-184c-41df-90e3-e4ab656781a2": {
+            "316946e9-0f95-4f0e-9f60-4e4e509ef8d2": {
+              "compile settings": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "internal": true
+  }
+}

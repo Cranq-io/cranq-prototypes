@@ -1,35 +1,38 @@
 {
-  "name": "blockchain/ethereum/contracts/erc20/token transferer",
+  "name": "blockchain/ethereum/contracts/erc20/Token transferer",
   "interface": {
     "inputs": {
       "e44eab12-986b-4add-ad32-ad867762c4dc": {
         "type": "string",
         "name": "token address",
-        "description": "The address of the token contract from which the user wants to transfer."
+        "description": "Receives the address of the token contract from which the user wants to transfer.\n\nExample:\n\"0xb794f5ea0ba39494ce839613fffba74279579268\""
       },
       "a6d5f70b-d0ca-4a1c-baf4-27b64ef7ac20": {
         "type": "string",
         "name": "target address",
-        "description": "The recipient's address for the transaction."
+        "description": "Receives recipient's address for the transaction.\n\nExample:\n\"0xc794f5ea0ba39494ce839613fffba74279579269\""
       },
       "fcbb5049-d92f-4382-a1c9-f41db75933ff": {
         "type": "number",
         "name": "token amount",
-        "description": "The number of tokens to be transferred."
+        "description": "Receives the number of tokens to be transferred.\n\nExample:\n1\n"
       },
       "72dd5e22-5f73-4591-8709-004e1b200909": {
         "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
-        "name": "credentials"
+        "name": "credentials",
+        "description": "Recives the node provider url and the wallet private key.\n\n```\n{\n  \"providerUrl\": \"https://eth-goerli.alchemyapi.io/v2/71n6GXE_ROLFP-1DELzRWrgsyqqWXXXXX\",\n  \"privateKey\": \"XXXXXXXXXXXXXXXXXXXXXX\"\n}\n```"
       }
     },
     "outputs": {
       "fa4149fe-53dd-413f-ae2a-282d867d509d": {
         "type": "typeof `out` of `contract executor`",
-        "name": "result"
+        "name": "result",
+        "description": "Sends the transaction receipt."
       },
       "c713bc3e-fe6f-4c0a-84ac-ca2641cba484": {
         "type": "typeof `error` of `contract executor`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if any."
       }
     }
   },
@@ -38,8 +41,8 @@
       "nodes": {
         "c28b7a86-1cb3-408c-bad1-62bd5a8233f3": {
           "coordinates": [
-            575,
-            -110
+            454,
+            -117
           ],
           "name": "contract executor",
           "prototype": "228b10ab-9b15-4317-8700-f5ddac476c25",
@@ -50,18 +53,18 @@
         },
         "f59fc70d-d237-4ddb-9d4a-079e47c8270f": {
           "coordinates": [
-            -482,
-            -114
+            -363,
+            -184
           ],
           "name": "erc20",
           "prototype": "5ef2bbbc-fcfb-4573-8e12-e414dd5968c9"
         },
         "c5be3514-e3eb-47c0-96a2-bdff57362003": {
           "coordinates": [
-            424.1953125,
-            -10.90625
+            305.1953125,
+            -9.90625
           ],
-          "name": "syncer",
+          "name": "build contract executor parameters",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1]"
@@ -69,42 +72,42 @@
         },
         "9f1e9ed5-5854-4fe3-9f05-89ec23a6c7ed": {
           "coordinates": [
-            -649.8046875,
+            -579.8046875,
             -26.90625
           ],
-          "name": "forwarder (quadruple)",
+          "name": "forward inputs",
           "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
         },
         "57187db6-805e-4f33-a4e9-35a91dfd0b18": {
           "coordinates": [
-            88,
-            60
+            -44,
+            44
           ],
-          "name": "forwarder (double)",
+          "name": "forward token amount & token decimals",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
         "d8a6848b-6727-4cb3-baed-1a23cdf549bf": {
           "coordinates": [
-            577,
-            154
+            389,
+            158
           ],
-          "name": "forwarder",
+          "name": "forward error",
           "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
         },
         "977b2020-959a-4c6c-80cb-a85854732d18": {
           "coordinates": [
-            -135,
-            151
+            -209,
+            164
           ],
-          "name": "token decimals getter",
+          "name": "get token decimals",
           "prototype": "fdcb586e-b352-4aba-9dec-64a0135a3e52"
         },
         "9bd538e9-1509-4712-849e-7338c078329e": {
           "coordinates": [
-            283,
-            61
+            138,
+            47
           ],
-          "name": "unit parser",
+          "name": "parse unit",
           "prototype": "b7a630c0-f773-4e94-b1fa-cdf45b09db27"
         }
       },
@@ -229,6 +232,13 @@
         }
       }
     }
+  },
+  "description": "Transfers erc20 token to the target address.\n\n\nMore:\nhttps://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-Transfer-address-address-uint256-",
+  "keywords": {
+    "ethereum": null,
+    "blockchain": null,
+    "erc20": null,
+    "token transfer.": null
   },
   "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703",
   "attributes": {

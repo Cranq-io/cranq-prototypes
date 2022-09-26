@@ -13,7 +13,7 @@
         "description": "Receives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
       },
       "5c2df9e2-9902-488b-9381-5474fb89b84b": {
-        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"baseTokenURI\": string\n}",
+        "type": "{\n  \"uri\": string\n}",
         "name": "init parameters",
         "description": "The arguments to be passed to the contract's constructor when deployed.\n"
       }

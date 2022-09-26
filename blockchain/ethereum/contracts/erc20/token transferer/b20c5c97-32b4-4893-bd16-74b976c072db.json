@@ -20,7 +20,7 @@
       "72dd5e22-5f73-4591-8709-004e1b200909": {
         "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
         "name": "credentials",
-        "description": "Recives the node provider url and the wallet private key.\n\n```\n{\n  \"providerUrl\": \"https://eth-goerli.alchemyapi.io/v2/71n6GXE_ROLFP-1DELzRWrgsyqqWXXXXX\",\n  \"privateKey\": \"XXXXXXXXXXXXXXXXXXXXXX\"\n}\n```"
+        "description": "Recives the node provider URL and the wallet private key.\n\n```\n{\n  \"providerUrl\": \"https://eth-goerli.alchemyapi.io/v2/71n6GXE_ROLFP-1DELzRWrgsyqqWXXXXX\",\n  \"privateKey\": \"XXXXXXXXXXXXXXXXXXXXXX\"\n}\n```"
       }
     },
     "outputs": {
@@ -56,7 +56,7 @@
             -363,
             -184
           ],
-          "name": "erc20",
+          "name": "ERC20",
           "prototype": "5ef2bbbc-fcfb-4573-8e12-e414dd5968c9"
         },
         "c5be3514-e3eb-47c0-96a2-bdff57362003": {
@@ -233,7 +233,7 @@
       }
     }
   },
-  "description": "Transfers erc20 token to the target address.\n\n\nMore:\nhttps://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-Transfer-address-address-uint256-",
+  "description": "Transfers ERC20 token to the target address.\n\n\nMore:\nhttps://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-Transfer-address-address-uint256-",
   "keywords": {
     "ethereum": null,
     "blockchain": null,

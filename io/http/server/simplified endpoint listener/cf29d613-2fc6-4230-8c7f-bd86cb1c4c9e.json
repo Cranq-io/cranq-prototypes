@@ -1,6 +1,6 @@
 {
   "name": "io/http/server/Simplified endpoint listener",
-  "description": "Opinionated version of `io/http/express/Endpoint listener`.\n\nSets up a listener on an HTTP route, and handles bad request errors. Starts an Express server if one is not started yet.\n\nPossible error responses:\n* {\n    \"status\": 400,\n    \"headers\": {},\n    \"body\": \"Bad request\"\n  }\n* {\n    \"status\": 403,\n    \"headers\": {},\n    \"body\": \"Unauthorized\"\n  }",
+  "description": "Opinionated version of `io/http/server/Endpoint listener`.\n\nSets up a listener on an HTTP route, and handles bad request errors. Starts an Express server if one is not started yet.\n\nPossible error responses:\n* {\n    \"status\": 400,\n    \"headers\": {},\n    \"body\": \"Bad request\"\n  }\n* {\n    \"status\": 403,\n    \"headers\": {},\n    \"body\": \"Unauthorized\"\n  }",
   "interface": {
     "inputs": {
       "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {

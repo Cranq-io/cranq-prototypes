@@ -190,7 +190,6 @@
     }
   },
   "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
-  "attributes": {},
   "description": "Compiles and deploys single file (flattened) Solidity contracts according to settings specified in a contract preset structure.",
   "keywords": {
     "Solidity": null,
@@ -198,5 +197,8 @@
     "compile": null,
     "deploy": null,
     "Ethereum.": null
+  },
+  "attributes": {
+    "locked": true
   }
 }

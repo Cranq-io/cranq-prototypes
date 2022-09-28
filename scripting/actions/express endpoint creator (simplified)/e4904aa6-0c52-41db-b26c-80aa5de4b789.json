@@ -1,6 +1,6 @@
 {
   "name": "scripting/actions/Express endpoint creator (simplified)",
-  "description": "Sets up a route for Express to receive requests on. Routes are expected to follow a format as per Express documentation.\n\nReceiving `state` and `params` inputs initializes the route. Once the route is inialized, incoming requests will be sent out on `request`, and corresponding responses will be expected on `response`, bearing the same tag.\n\nExample:\n1. {}@0 received via state\n2. {\n  \"cwd\": \"express\",\n  \"method\": \"GET\",\n  \"route\": \"/status\"\n}@0 is received via `params`\n3. State with route information added is sent via `state`\n4. An arbitrary GET request comes in via `request`\n5. {\"status\": 200, \"headers\": {}, \"body\": \"OK\"}@1 is received via `response`\n6. The received response is sent to the client.\n\nLinks:\n* https://expressjs.com/en/guide/routing.html",
+  "description": "USE `io/http/server/Simplified endpoint listener` INSTEAD.\n\nSets up a route for Express to receive requests on. Routes are expected to follow a format as per Express documentation.\n\nReceiving `state` and `params` inputs initializes the route. Once the route is inialized, incoming requests will be sent out on `request`, and corresponding responses will be expected on `response`, bearing the same tag.\n\nExample:\n1. {}@0 received via state\n2. {\n  \"cwd\": \"express\",\n  \"method\": \"GET\",\n  \"route\": \"/status\"\n}@0 is received via `params`\n3. State with route information added is sent via `state`\n4. An arbitrary GET request comes in via `request`\n5. {\"status\": 200, \"headers\": {}, \"body\": \"OK\"}@1 is received via `response`\n6. The received response is sent to the client.\n\nLinks:\n* https://expressjs.com/en/guide/routing.html",
   "interface": {
     "inputs": {
       "f972074f-e9cd-4196-8cec-102a3faf77b7": {
@@ -236,6 +236,7 @@
     }
   },
   "attributes": {
+    "deprecated": true,
     "locked": true
   }
 }

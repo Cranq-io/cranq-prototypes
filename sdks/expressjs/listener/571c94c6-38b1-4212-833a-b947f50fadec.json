@@ -1,0 +1,170 @@
+{
+  "name": "sdks/expressjs/Listener",
+  "interface": {
+    "inputs": {
+      "655df4af-25f6-4658-9d19-24bd222f2d29": {
+        "type": "string",
+        "name": "app ID",
+        "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
+      },
+      "11745554-d9d0-41bb-af77-987d8450ccfe": {
+        "type": "number",
+        "name": "port",
+        "description": "The port number express should listen to.\n\nExample: \n3000"
+      }
+    },
+    "outputs": {
+      "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
+        "type": "null",
+        "name": "done",
+        "description": "Event triggered when the action has been executed."
+      },
+      "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error information in case the specified action could not be successfully executed.\n\nExample:\n{\n  \"code\": \"EADDRINUSE\",\n  \"errno\": -98,\n  \"syscall\": \"listen\",\n  \"address\": \"::\",\n  \"port\": 3000\n}"
+      },
+      "541fc93b-1098-4659-95a2-f75bcf3109b1": {
+        "type": "typeof `app ID`",
+        "name": "app ID",
+        "description": "DEPRECATED\n\nThe id of the express instance the action was executed on. Emitted when the action was executed.\nTo be used when chaining multiple actions on the same express instance.\n\nExample: \n\"my-express-server\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "connections": {
+        "33303022-6273-40a5-aeec-2699f2b78d38": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "47256e94-2f64-4488-92cd-ee7aabebeff7": {
+              "816628e2-c7f2-41f6-8cf2-27d752eff31c": {}
+            }
+          }
+        },
+        "a2965b53-ca20-48fa-bca4-e0a4cc8b1422": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "33303022-6273-40a5-aeec-2699f2b78d38": {
+              "id": {}
+            },
+            "72b289ed-028b-4315-af9e-878bfee3857a": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
+              "port": {}
+            }
+          }
+        },
+        "47256e94-2f64-4488-92cd-ee7aabebeff7": {
+          "2d59f4f5-da3a-4e88-b071-f863cda4e553": {
+            "72b289ed-028b-4315-af9e-878bfee3857a": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "33303022-6273-40a5-aeec-2699f2b78d38": {
+              "options": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "655df4af-25f6-4658-9d19-24bd222f2d29": {
+            "a2965b53-ca20-48fa-bca4-e0a4cc8b1422": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "11745554-d9d0-41bb-af77-987d8450ccfe": {
+            "a2965b53-ca20-48fa-bca4-e0a4cc8b1422": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "541fc93b-1098-4659-95a2-f75bcf3109b1": {
+            "72b289ed-028b-4315-af9e-878bfee3857a": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          },
+          "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
+            "47256e94-2f64-4488-92cd-ee7aabebeff7": {
+              "2d59f4f5-da3a-4e88-b071-f863cda4e553": {}
+            }
+          },
+          "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {
+            "47256e94-2f64-4488-92cd-ee7aabebeff7": {
+              "1eb10a35-5039-4196-b3b5-e59757befe88": {}
+            }
+          }
+        }
+      },
+      "nodes": {
+        "47256e94-2f64-4488-92cd-ee7aabebeff7": {
+          "coordinates": [
+            106.80000000000001,
+            -83.19999999999999
+          ],
+          "name": "express",
+          "prototype": "ed69232f-75e0-4633-b602-9159d8f3c841",
+          "params": {}
+        },
+        "33303022-6273-40a5-aeec-2699f2b78d38": {
+          "coordinates": [
+            -53.19999999999999,
+            95.80000000000001
+          ],
+          "name": "build action",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"listen\""
+          }
+        },
+        "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
+          "coordinates": [
+            -78.19999999999999,
+            -90.19999999999999
+          ],
+          "name": "build options",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"port\"]"
+          }
+        },
+        "a2965b53-ca20-48fa-bca4-e0a4cc8b1422": {
+          "coordinates": [
+            -185.2,
+            -0.19999999999998863
+          ],
+          "name": "forwarder/double",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
+          "params": {}
+        },
+        "72b289ed-028b-4315-af9e-878bfee3857a": {
+          "coordinates": [
+            142.8,
+            89.80000000000001
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
+          "params": {}
+        }
+      }
+    }
+  },
+  "description": "Sets up the specified Express server to listen on the specified port.\n\nExample:\n1. \"my-express-server\"@0 received on `app ID`\n2. 3000@0 received on `port`\n3. Express server is started to listen on http//localhost:3000\n4/a. In case of success\n-  null@0 sent on `done`\n- \"my-express-server\"@0 sent on `app iD`\n4/b. In case of failure\n-  {\n  \"code\": \"EADDRINUSE\",\n  \"errno\": -98,\n  \"syscall\": \"listen\",\n  \"address\": \"::\",\n  \"port\": 3000\n}@0 sent on `error`\n",
+  "keywords": {
+    "express": null,
+    "http": null,
+    "server": null,
+    "start": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

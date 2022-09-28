@@ -1,0 +1,135 @@
+{
+  "name": "io/http/server/utils/Request authenticator",
+  "description": "Authenticates request using the provided authentication method.",
+  "interface": {
+    "inputs": {
+      "f62d2761-14db-434f-bbea-7eb1ee3b4d84": {
+        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": (\"http\" or \"https\"), \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "name": "request",
+        "description": "Receives request to be authenticated"
+      },
+      "46e0d2a7-3be6-42bc-923e-dc769220a7ab": {
+        "type": "{\n  optional \"bearerToken\": string\n}",
+        "name": "params",
+        "description": "Receives authentication parameters."
+      }
+    },
+    "outputs": {
+      "c652b89b-0773-4e5c-9b0e-e92ccf78e04e": {
+        "type": "typeof `request`",
+        "name": "request",
+        "description": "Sends request appended with authentication parameters."
+      },
+      "b4bb5e77-f02d-4c31-9fff-5c76a7b8da85": {
+        "type": "{\n  \"error\": \"incorrect bearer token\"\n}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "333c87e7-f1df-4986-a231-61c63c6550c7": {
+          "coordinates": [
+            81.66666666666667,
+            -122.765625
+          ],
+          "name": "test bearer token",
+          "prototype": "be35b9df-13e1-44f4-ad89-6d75f897bcdb",
+          "params": {}
+        },
+        "8eab33db-4cc1-47de-ab40-d85e0d0298ef": {
+          "coordinates": [
+            6.666666666666657,
+            128.8828125
+          ],
+          "name": "get bearer token",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"bearerToken\""
+          }
+        },
+        "808727b4-7b42-476f-9a9c-32794832de31": {
+          "coordinates": [
+            148.66666666666666,
+            45.8828125
+          ],
+          "name": "no auth necessary",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+          "coordinates": [
+            -124.83333333333334,
+            148.41015625
+          ],
+          "name": "params store",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        }
+      },
+      "connections": {
+        "8eab33db-4cc1-47de-ab40-d85e0d0298ef": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "43bde1b3-75bb-403b-8d3e-cf0baaaa22e9": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "808727b4-7b42-476f-9a9c-32794832de31": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "8eab33db-4cc1-47de-ab40-d85e0d0298ef": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f62d2761-14db-434f-bbea-7eb1ee3b4d84": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "c97ad031-661f-457d-b4b7-bdfb2d7e7493": {}
+            },
+            "808727b4-7b42-476f-9a9c-32794832de31": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            }
+          },
+          "46e0d2a7-3be6-42bc-923e-dc769220a7ab": {
+            "cb244f39-8406-45bf-a90d-b045358bd3c1": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "c652b89b-0773-4e5c-9b0e-e92ccf78e04e": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "10e32cd9-0ad1-44dc-9472-dbd4acdb9b2a": {}
+            },
+            "808727b4-7b42-476f-9a9c-32794832de31": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          },
+          "b4bb5e77-f02d-4c31-9fff-5c76a7b8da85": {
+            "333c87e7-f1df-4986-a231-61c63c6550c7": {
+              "41615356-7284-4969-bdc6-aa93fcac2294": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "authenticate": null,
+    "bearer token": null
+  },
+  "iconId": "f7d13a1a-3ec0-4bdd-8d61-e449c79398da",
+  "attributes": {
+    "locked": true
+  }
+}

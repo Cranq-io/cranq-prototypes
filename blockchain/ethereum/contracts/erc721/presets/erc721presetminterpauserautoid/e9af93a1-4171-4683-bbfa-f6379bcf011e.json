@@ -10,7 +10,8 @@
       },
       "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {
         "type": "string[]",
-        "name": "init parameters"
+        "name": "init parameters",
+        "description": "Receives the array of parameters to be given to the contract's constructor when deployed.\n\nThe parameters in strict order are:\n\n[name, symbol, baseTokenURI]\n\nReference:\nSee the constructor of the contract in\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/presets/ERC721PresetMinterPauserAutoId.sol)\n"
       },
       "c7708f4f-1b7d-4292-bdf6-a607378707b4": {
         "type": "typeof `credentials` of `deploy contract preset`",

@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "b53990d6-c237-4d59-9dbf-b2fa712181a7": {
-        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            op\"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
+        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            optional \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
         "name": "contract description",
         "description": "Receives a contract preset description."
       },
@@ -48,8 +48,8 @@
       "nodes": {
         "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
           "coordinates": [
-            185.44878472222308,
-            38.84895833333371
+            200.44878472222308,
+            76.84895833333371
           ],
           "name": "deploy contract",
           "prototype": "cf8402d8-2801-4b12-9d91-c0edf557f2d9",
@@ -70,8 +70,8 @@
         },
         "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
           "coordinates": [
-            -3.6892361111098353,
-            -49.822916666666515
+            43.310763888890165,
+            -37.822916666666515
           ],
           "name": "compile preset",
           "prototype": "bf676a5e-7de7-47bb-9a9e-d9b15bedebe3"

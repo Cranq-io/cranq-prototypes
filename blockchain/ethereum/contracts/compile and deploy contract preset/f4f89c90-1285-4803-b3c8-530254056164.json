@@ -1,20 +1,21 @@
 {
-  "name": "blockchain/ethereum/contracts/internal/deploy contract preset",
+  "name": "blockchain/ethereum/contracts/compile and deploy contract preset",
   "interface": {
     "inputs": {
       "b53990d6-c237-4d59-9dbf-b2fa712181a7": {
-        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
+        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            op\"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
         "name": "contract description",
-        "description": "Expects a contract preset description containing a flattened, single source file, the settings to be sent to the "
+        "description": "Receives a contract preset description."
       },
       "741d010c-14a6-4dd1-b528-0d5386187bb7": {
         "type": "string",
-        "name": "new contract name",
-        "description": ""
+        "name": "contract name",
+        "description": "Receives the desired contract name to be inserted into the contract preset template."
       },
       "67510810-61e0-4c9d-b06d-10fbe7c4a740": {
-        "type": "typeof `contract params` of `deploy contract`",
-        "name": "contract params"
+        "type": "string[]",
+        "name": "contract params",
+        "description": "An array of arguments to be passed to the deployed contract's constructor when deployed."
       },
       "11c0a845-1293-4670-9390-0a0586122a6f": {
         "type": "typeof `connect credentials` of `deploy contract`",
@@ -22,11 +23,6 @@
       }
     },
     "outputs": {
-      "147727db-184c-41df-90e3-e4ab656781a2": {
-        "type": "typeof `compile settings` of `split contract preset`",
-        "name": "compile settings",
-        "description": "[Inherited from port `compile settings` of `splitter B`] \nSends input data split into individual fields."
-      },
       "2acecfad-46ec-48f8-80ea-332931523eef": {
         "type": "typeof `events` of `deploy contract`",
         "name": "events",
@@ -35,6 +31,11 @@
       "41ca2dbd-2701-45d8-8411-8dea422e9563": {
         "type": "typeof `source` of `compile preset`",
         "name": "source"
+      },
+      "147727db-184c-41df-90e3-e4ab656781a2": {
+        "type": "typeof `compile settings` of `split contract preset`",
+        "name": "compile settings",
+        "description": "[Inherited from port `compile settings` of `splitter B`] \nSends input data split into individual fields."
       },
       "b771d246-9110-4c33-82bf-dfb979e66235": {
         "type": "typeof `error` of `deploy contract`",
@@ -47,8 +48,8 @@
       "nodes": {
         "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
           "coordinates": [
-            181.44878472222308,
-            74.84895833333371
+            185.44878472222308,
+            38.84895833333371
           ],
           "name": "deploy contract",
           "prototype": "cf8402d8-2801-4b12-9d91-c0edf557f2d9",
@@ -58,8 +59,8 @@
         },
         "316946e9-0f95-4f0e-9f60-4e4e509ef8d2": {
           "coordinates": [
-            -250.5512152777768,
-            -104.1510416666656
+            -218.5512152777768,
+            -105.1510416666656
           ],
           "name": "split contract preset",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -69,11 +70,19 @@
         },
         "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
           "coordinates": [
-            124.31076388889016,
-            -20.822916666666515
+            -3.6892361111098353,
+            -49.822916666666515
           ],
           "name": "compile preset",
           "prototype": "bf676a5e-7de7-47bb-9a9e-d9b15bedebe3"
+        },
+        "f2119974-ed54-4c1f-9c33-f45aa1b02650": {
+          "coordinates": [
+            -360.373263888889,
+            -1.200520833333485
+          ],
+          "name": "forward contract parameters",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
         }
       },
       "connections": {
@@ -105,28 +114,50 @@
               "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": {}
             }
           }
-        }
-      },
-      "forwards": {
-        "inputs": {
-          "b53990d6-c237-4d59-9dbf-b2fa712181a7": {
+        },
+        "f2119974-ed54-4c1f-9c33-f45aa1b02650": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
             "316946e9-0f95-4f0e-9f60-4e4e509ef8d2": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
           },
-          "67510810-61e0-4c9d-b06d-10fbe7c4a740": {
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
+              "f786e334-d043-4a52-a1dd-6cfcf0ab6b4d": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
             "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
               "0618062e-aa1f-4a81-9727-fa078f93332f": {}
             }
           },
-          "11c0a845-1293-4670-9390-0a0586122a6f": {
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
             "72ccdf6d-f41c-4288-9fcc-4c3258c5b518": {
               "21dc533c-92b5-4354-9d81-1cfd46f095c8": {}
             }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "67510810-61e0-4c9d-b06d-10fbe7c4a740": {
+            "f2119974-ed54-4c1f-9c33-f45aa1b02650": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "11c0a845-1293-4670-9390-0a0586122a6f": {
+            "f2119974-ed54-4c1f-9c33-f45aa1b02650": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
           },
           "741d010c-14a6-4dd1-b528-0d5386187bb7": {
-            "dba3cbba-8b1f-442e-a18b-b2b5bdd9cfb6": {
-              "f786e334-d043-4a52-a1dd-6cfcf0ab6b4d": {}
+            "f2119974-ed54-4c1f-9c33-f45aa1b02650": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "b53990d6-c237-4d59-9dbf-b2fa712181a7": {
+            "f2119974-ed54-4c1f-9c33-f45aa1b02650": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
             }
           }
         },
@@ -159,7 +190,13 @@
     }
   },
   "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
-  "attributes": {
-    "internal": true
+  "attributes": {},
+  "description": "Compiles and deploys single file (flattened) Solidity contracts according to settings specified in a contract preset structure.",
+  "keywords": {
+    "Solidity": null,
+    "contract": null,
+    "compile": null,
+    "deploy": null,
+    "Ethereum.": null
   }
 }

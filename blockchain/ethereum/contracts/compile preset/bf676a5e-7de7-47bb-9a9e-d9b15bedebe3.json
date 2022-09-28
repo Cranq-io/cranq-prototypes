@@ -1,0 +1,159 @@
+{
+  "name": "blockchain/ethereum/contracts/compile preset",
+  "interface": {
+    "inputs": {
+      "8a735946-6aa4-49c6-a438-185dab2ac5e6": {
+        "type": "string",
+        "name": "contract template"
+      },
+      "b9a63070-7027-4a73-8e97-d011ab811b45": {
+        "type": "string",
+        "name": "template name",
+        "description": "The contract's name in the template that is to be replaced."
+      },
+      "f786e334-d043-4a52-a1dd-6cfcf0ab6b4d": {
+        "type": "string",
+        "name": "new contract name",
+        "description": "The contract new name after in the template that is to be replaced."
+      },
+      "2f58e67b-36ae-4452-b0d3-74858ac029ad": {
+        "type": "typeof `compile settings` of `flat compiler`",
+        "name": "compile settings"
+      }
+    },
+    "outputs": {
+      "b20e6376-18be-4b40-9f7c-9dfcc5382497": {
+        "type": "typeof `value` of `item getter`",
+        "name": "compiled contract",
+        "description": "[Inherited from port `value` of `item getter`] \nIf found, sends the value corresponding to the specified key.\n\nExample:\n1"
+      },
+      "56f735aa-b88e-49f7-a923-ba0681d05ec5": {
+        "type": "any",
+        "name": "source"
+      },
+      "045b95a2-34e1-4a7b-b0a8-620459cf14f4": {
+        "type": "typeof `error` of `flat compiler`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+          "coordinates": [
+            -44.66666666666697,
+            28.765625
+          ],
+          "name": "flat compiler",
+          "prototype": "0823d223-40ba-4e1a-b408-91f620a4b543",
+          "description": "Offers simplified interface for the solidity compiler for flattened (single file) contracts. "
+        },
+        "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+          "coordinates": [
+            101.33333333333303,
+            54.765625
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {}
+        },
+        "0d45da51-50af-4f3a-b3ca-f7697b3b74e7": {
+          "coordinates": [
+            -203.66666666666697,
+            -23.53125
+          ],
+          "name": "replace template name",
+          "prototype": "5719fd66-d597-45ee-bff8-64106b48879e",
+          "params": {}
+        },
+        "aac6bde7-a60a-424c-9970-f953d4e90704": {
+          "coordinates": [
+            268.13802083333303,
+            76.671875
+          ],
+          "name": "store",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"Error: Expected contract not found in cmpilation artifacts\""
+          }
+        }
+      },
+      "connections": {
+        "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+          "2b981481-b683-4dfd-9738-febe673b08fa": {
+            "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "0d45da51-50af-4f3a-b3ca-f7697b3b74e7": {
+          "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
+            "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+              "4736dfee-986a-43d9-9788-34c0f4c8dcb7": {}
+            }
+          }
+        },
+        "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "aac6bde7-a60a-424c-9970-f953d4e90704": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8a735946-6aa4-49c6-a438-185dab2ac5e6": {
+            "0d45da51-50af-4f3a-b3ca-f7697b3b74e7": {
+              "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {}
+            }
+          },
+          "b9a63070-7027-4a73-8e97-d011ab811b45": {
+            "0d45da51-50af-4f3a-b3ca-f7697b3b74e7": {
+              "d1118ac0-749b-46e9-81af-8fc74dc14e10": {}
+            }
+          },
+          "2f58e67b-36ae-4452-b0d3-74858ac029ad": {
+            "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+              "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {}
+            }
+          },
+          "f786e334-d043-4a52-a1dd-6cfcf0ab6b4d": {
+            "0d45da51-50af-4f3a-b3ca-f7697b3b74e7": {
+              "3490f391-9b3b-441e-b4a2-b078669cf5b4": {}
+            },
+            "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            }
+          }
+        },
+        "outputs": {
+          "b20e6376-18be-4b40-9f7c-9dfcc5382497": {
+            "eb643b73-30d8-4ff9-a1f9-be0e01289d0b": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          },
+          "045b95a2-34e1-4a7b-b0a8-620459cf14f4": {
+            "9e4aeeba-4b6a-4a93-8d0a-58480fdcea3f": {
+              "c56db654-2db7-4cb2-ac28-2213dae50128": {}
+            },
+            "aac6bde7-a60a-424c-9970-f953d4e90704": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          },
+          "56f735aa-b88e-49f7-a923-ba0681d05ec5": {
+            "0d45da51-50af-4f3a-b3ca-f7697b3b74e7": {
+              "de479f5a-4a4f-4edc-9419-a79e46fef91c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

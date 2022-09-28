@@ -1,11 +1,11 @@
 {
-  "description": "Stores data describing a contract like the standard store node, but its data port is strictly typed. It describes a contract template source and the parameters to rename, compile and deploy it.\n\nAlso describes the init parameters expected by the deployed contract in a strictly typed port.",
+  "description": "Stores data describing a contract like the standard store node, but its data port is strictly typed. It describes a contract template source and the parameters to rename, compile and deploy it.\n\n",
   "interface": {
     "inputs": {
       "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
-        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
+        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            optional \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
         "name": "data",
-        "description": "Receives contents of the store. San be set as parameter, or received as signal."
+        "description": "Receives contents of the store. Can be set as parameter, or received as signal."
       },
       "0b28df10-b056-4666-ae14-2357d747f7b9": {
         "type": "any",
@@ -51,13 +51,11 @@
       }
     }
   },
-  "name": "blockchain/ethereum/contracts/erc20/presets/ERC20PresetFixedSupply deployer/contract preset",
+  "name": "blockchain/ethereum/contracts/contract preset",
   "keywords": {
     "": null
   },
   "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
-  "original": "c8f076ed-faf9-4108-b499-a1d2ca448c2f",
-  "attributes": {
-    "internal": true
-  }
+  "original": "a146eef9-b442-42f6-b31c-c19bfc1ee593",
+  "attributes": {}
 }

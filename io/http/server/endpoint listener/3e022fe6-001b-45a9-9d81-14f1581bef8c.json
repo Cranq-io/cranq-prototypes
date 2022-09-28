@@ -9,7 +9,7 @@
         "description": ""
       },
       "aac93261-9159-4995-ba5e-faf09ebdffd6": {
-        "type": "{\n  \"appId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
+        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
         "name": "params",
         "description": ""
       }
@@ -46,7 +46,7 @@
           "name": "split params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"appId\",\"port\",\"method\",\"route\"]"
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"serverId\",\"port\",\"method\",\"route\"]"
           }
         },
         "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
@@ -122,28 +122,6 @@
             }
           }
         },
-        "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
-          "method": {
-            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
-              "929caaa1-7ba7-46bb-951d-869e82fd5e47": {}
-            }
-          },
-          "route": {
-            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
-              "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {}
-            }
-          },
-          "appId": {
-            "23d992fe-29d5-4ada-be32-0edfed577b81": {
-              "655df4af-25f6-4658-9d19-24bd222f2d29": {}
-            }
-          },
-          "port": {
-            "23d992fe-29d5-4ada-be32-0edfed577b81": {
-              "11745554-d9d0-41bb-af77-987d8450ccfe": {}
-            }
-          }
-        },
         "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
           "5e70d38e-8b27-45da-978a-53d9d9ad1e07": {
             "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
@@ -186,6 +164,28 @@
           "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
             "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
               "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {}
+            }
+          }
+        },
+        "775ab6eb-dd79-4d54-ad94-bb3025b75bb8": {
+          "serverId": {
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "655df4af-25f6-4658-9d19-24bd222f2d29": {}
+            }
+          },
+          "port": {
+            "23d992fe-29d5-4ada-be32-0edfed577b81": {
+              "11745554-d9d0-41bb-af77-987d8450ccfe": {}
+            }
+          },
+          "method": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "929caaa1-7ba7-46bb-951d-869e82fd5e47": {}
+            }
+          },
+          "route": {
+            "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
+              "fe5ec9de-a1f8-459c-bc69-e2fbf17c722b": {}
             }
           }
         }

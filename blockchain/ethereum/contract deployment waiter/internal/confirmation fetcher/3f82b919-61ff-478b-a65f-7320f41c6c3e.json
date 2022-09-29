@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "6ee9ed3a-0d16-4b51-b377-517e9ad882b8": {
-        "type": "typeof `dict` of `has key tester`",
+        "type": "any",
         "name": "dict",
         "description": "[Inherited from port `dict` of `has key tester`] \nReceives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
@@ -20,8 +20,8 @@
       "nodes": {
         "58b8b6dc-c3a0-4eb6-a2bb-e80501858a4d": {
           "coordinates": [
-            -428.8,
-            22.19999999999999
+            -424.79999999999995,
+            49.19999999999999
           ],
           "name": "check if dict has confirmationNumber",
           "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",

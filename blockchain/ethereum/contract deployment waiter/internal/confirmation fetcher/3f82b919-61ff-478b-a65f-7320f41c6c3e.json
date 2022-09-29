@@ -1,0 +1,162 @@
+{
+  "name": "blockchain/ethereum/Contract deployment waiter/internal/confirmation fetcher",
+  "interface": {
+    "inputs": {
+      "6ee9ed3a-0d16-4b51-b377-517e9ad882b8": {
+        "type": "typeof `dict` of `has key tester`",
+        "name": "dict",
+        "description": "[Inherited from port `dict` of `has key tester`] \nReceives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    },
+    "outputs": {
+      "a22eb79b-2432-4640-8f0c-7de0dcc5778a": {
+        "type": "any",
+        "name": "confirmation"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "58b8b6dc-c3a0-4eb6-a2bb-e80501858a4d": {
+          "coordinates": [
+            -428.8,
+            22.19999999999999
+          ],
+          "name": "check if dict has confirmationNumber",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {
+            "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": "\"confirmationNumber\""
+          }
+        },
+        "82ad6712-a1db-46fb-9ae5-a26c3c814f8a": {
+          "coordinates": [
+            25.19999999999999,
+            -61.80000000000001
+          ],
+          "name": "forward dictionary",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "a57a4a52-9c76-49cf-b589-994c0dbc9fdb": {
+          "coordinates": [
+            -184.8,
+            132.2
+          ],
+          "name": "not",
+          "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
+        },
+        "cb9b5ae2-df31-4e8e-ac2b-b5427b925b40": {
+          "coordinates": [
+            98.19999999999999,
+            117.19999999999999
+          ],
+          "name": "extract data field if present",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"data\""
+          }
+        },
+        "7ecca89e-13ba-473b-9971-052274cff030": {
+          "coordinates": [
+            -45.80000000000001,
+            114.19999999999999
+          ],
+          "name": "forward dictionary for extraction",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "ed14805b-8dfa-4e13-8531-aa6766d37640": {
+          "coordinates": [
+            509.2,
+            25.19999999999999
+          ],
+          "name": "gate",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "293bf535-e0ad-4be3-bc2d-1790e6a30090": {
+          "coordinates": [
+            363.2,
+            132.2
+          ],
+          "name": "check if dict has confirmationNumber copy",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {
+            "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": "\"confirmationNumber\""
+          }
+        }
+      },
+      "connections": {
+        "58b8b6dc-c3a0-4eb6-a2bb-e80501858a4d": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "82ad6712-a1db-46fb-9ae5-a26c3c814f8a": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            },
+            "a57a4a52-9c76-49cf-b589-994c0dbc9fdb": {
+              "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {}
+            }
+          }
+        },
+        "a57a4a52-9c76-49cf-b589-994c0dbc9fdb": {
+          "442847b6-23b9-4ad6-a3f5-cce6e5159644": {
+            "7ecca89e-13ba-473b-9971-052274cff030": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        },
+        "7ecca89e-13ba-473b-9971-052274cff030": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "cb9b5ae2-df31-4e8e-ac2b-b5427b925b40": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "cb9b5ae2-df31-4e8e-ac2b-b5427b925b40": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "ed14805b-8dfa-4e13-8531-aa6766d37640": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "293bf535-e0ad-4be3-bc2d-1790e6a30090": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            }
+          }
+        },
+        "293bf535-e0ad-4be3-bc2d-1790e6a30090": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "ed14805b-8dfa-4e13-8531-aa6766d37640": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6ee9ed3a-0d16-4b51-b377-517e9ad882b8": {
+            "58b8b6dc-c3a0-4eb6-a2bb-e80501858a4d": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            },
+            "7ecca89e-13ba-473b-9971-052274cff030": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "82ad6712-a1db-46fb-9ae5-a26c3c814f8a": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          }
+        },
+        "outputs": {
+          "a22eb79b-2432-4640-8f0c-7de0dcc5778a": {
+            "82ad6712-a1db-46fb-9ae5-a26c3c814f8a": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            },
+            "ed14805b-8dfa-4e13-8531-aa6766d37640": {
+              "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

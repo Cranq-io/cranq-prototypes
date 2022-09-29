@@ -4,8 +4,8 @@
       "nodes": {
         "3a804a8b-9202-4993-b998-8714f0cd2b2e": {
           "coordinates": [
-            -147,
-            102
+            -115,
+            89
           ],
           "name": "is confirmation is enough",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -15,16 +15,16 @@
         },
         "93e7e84f-1e55-4c1b-b1d9-fbd4ba848f87": {
           "coordinates": [
-            127,
-            -2
+            509,
+            -19
           ],
           "name": "gate",
           "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
         },
         "12d9ad6d-4b4c-4a5a-b014-82fd94938c53": {
           "coordinates": [
-            35,
-            146
+            196,
+            81
           ],
           "name": "equality tester",
           "prototype": "0497ba12-7946-4103-b58b-5e24cee0d46a",
@@ -32,8 +32,8 @@
         },
         "5d06bee6-4f6b-411f-a9c5-91894a8b3af8": {
           "coordinates": [
-            293,
-            11
+            703,
+            -9
           ],
           "name": "get receipt",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -43,8 +43,8 @@
         },
         "21054f2f-6b39-4989-bf2c-9e172a48783a": {
           "coordinates": [
-            452,
-            6
+            881,
+            -10
           ],
           "name": "get contract address",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -54,8 +54,8 @@
         },
         "6f38a834-1679-4350-8034-b5dfbdc1c209": {
           "coordinates": [
-            -179,
-            200
+            -274,
+            209
           ],
           "name": "parameter with default",
           "prototype": "a6599b7b-502d-437b-9c84-0f504921bb41",
@@ -65,27 +65,32 @@
         },
         "7b899f7c-3ea1-45bf-af7d-99ec6cd6b373": {
           "coordinates": [
-            8,
-            279
+            -5,
+            206
           ],
           "name": "cap value at 24",
           "prototype": "018aabfe-8e71-4e63-b09d-d5b2a0c71836",
           "params": {
             "4f9a7be2-f54a-4447-bc3c-c813adf0051b": "24"
           }
+        },
+        "013f5628-ad92-4245-82f2-5d359b46c1d3": {
+          "coordinates": [
+            -472.39531250000005,
+            4.706250000000011
+          ],
+          "name": "fetch confirmation",
+          "prototype": "3f82b919-61ff-478b-a65f-7320f41c6c3e"
         }
       },
       "forwards": {
         "inputs": {
           "67c68864-f37a-4967-9ddd-3a87617ac325": {
-            "93e7e84f-1e55-4c1b-b1d9-fbd4ba848f87": {
-              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
-            },
-            "3a804a8b-9202-4993-b998-8714f0cd2b2e": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
             "6f38a834-1679-4350-8034-b5dfbdc1c209": {
               "dae97765-6472-42e4-b129-749784e976f6": {}
+            },
+            "013f5628-ad92-4245-82f2-5d359b46c1d3": {
+              "6ee9ed3a-0d16-4b51-b377-517e9ad882b8": {}
             }
           },
           "465fe590-d79e-4987-b1c6-a414e01773e2": {
@@ -142,6 +147,16 @@
           "0c5489c9-f28d-4ca4-b93f-3c2bb821a2ae": {
             "12d9ad6d-4b4c-4a5a-b014-82fd94938c53": {
               "2a91d8d8-a748-4135-9f8f-a7f200d97e6d": {}
+            }
+          }
+        },
+        "013f5628-ad92-4245-82f2-5d359b46c1d3": {
+          "a22eb79b-2432-4640-8f0c-7de0dcc5778a": {
+            "93e7e84f-1e55-4c1b-b1d9-fbd4ba848f87": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            },
+            "3a804a8b-9202-4993-b998-8714f0cd2b2e": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
           }
         }

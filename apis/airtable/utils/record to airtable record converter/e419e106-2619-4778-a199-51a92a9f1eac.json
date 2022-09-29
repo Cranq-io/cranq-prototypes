@@ -1,19 +1,19 @@
 {
   "name": "apis/airtable/utils/Record to AirTable record converter",
-  "description": "Converts plain record to an AirTable record.",
+  "description": "Converts a plain record to an AirTable record.\n\nExample:\n1. `record` receives:\n```json\n{\n  \"string column\": \"value0\",\n  \"number column\": 0,\n  \"bool column\": false\n}\n```\n2. `AT record` sends:\n```json\n{\n  \"fields\": {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  }\n}\n```",
   "interface": {
     "inputs": {
       "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {
         "type": "{string: any}",
         "name": "record",
-        "description": ""
+        "description": "Receives the record to convert.\n\nExample:\n```json\n{\n  \"string column\": \"value0\",\n  \"number column\": 0,\n  \"bool column\": false\n}"
       }
     },
     "outputs": {
       "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
         "type": "{\"fields\": typeof `record`}",
         "name": "AT record",
-        "description": "Record as is sent to / received from the AirTable API."
+        "description": "Sends the converted record.\n\nExample:\n```json\n{\n  \"fields\": {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  }\n}\n```"
       }
     }
   },

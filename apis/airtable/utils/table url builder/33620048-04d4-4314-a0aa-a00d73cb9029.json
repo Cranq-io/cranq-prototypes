@@ -6,18 +6,19 @@
       "1cb4639b-e7ff-495f-b3d7-cba64f43ed9d": {
         "type": "string",
         "name": "base ID",
-        "description": "Receives the ID of an AirTable base."
+        "description": "Receives the ID of an AirTable base.\n\nExample:\n```\n\"app...\",\n```"
       },
       "141104e6-3441-4b12-ab69-a76b5794cd4a": {
         "type": "string",
         "name": "table name",
-        "description": "Receives a table's identifier relative to an AirTable base."
+        "description": "Receives a table's identifier relative to an AirTable base.\n\nExample:\n```\n\"...\",\n```"
       }
     },
     "outputs": {
       "ac3f79dc-f520-4670-a920-5f0fedc7d615": {
         "type": "string",
-        "name": "URL"
+        "name": "URL",
+        "description": "Sends the constructed URL."
       }
     }
   },

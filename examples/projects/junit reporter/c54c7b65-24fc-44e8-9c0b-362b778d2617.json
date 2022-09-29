@@ -1,8 +1,4 @@
 {
-  "attributes": {
-    "root": true,
-    "locked": true
-  },
   "description": "This example CRANQ program runs tests on a mock API endpoint and collects the results in JUnint XML format.",
   "interface": {
     "inputs": {},
@@ -28,5 +24,8 @@
       }
     }
   },
-  "name": "examples/projects/JUnit reporter"
+  "name": "examples/projects/JUnit reporter",
+  "attributes": {
+    "root": true
+  }
 }

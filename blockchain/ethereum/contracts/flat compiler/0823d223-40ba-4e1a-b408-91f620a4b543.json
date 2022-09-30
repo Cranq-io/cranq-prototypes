@@ -1,0 +1,96 @@
+{
+  "name": "blockchain/ethereum/contracts/Flat compiler",
+  "interface": {
+    "inputs": {
+      "4736dfee-986a-43d9-9788-34c0f4c8dcb7": {
+        "type": "string",
+        "name": "flat source",
+        "description": "Flattened solidity source."
+      },
+      "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {
+        "type": "typeof `compile settings` of `contracts compiler`",
+        "name": "compile settings",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "2b981481-b683-4dfd-9738-febe673b08fa": {
+        "type": "typeof `compiled contracts` of `contracts compiler`",
+        "name": "compiled ERC20 token contract"
+      },
+      "c56db654-2db7-4cb2-ac28-2213dae50128": {
+        "type": "typeof `error` of `contracts compiler`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0694bb2b-0768-4834-b083-ee0604869dea": {
+          "coordinates": [
+            286,
+            -7
+          ],
+          "name": "contracts compiler",
+          "prototype": "8b0df39b-8337-4107-8211-565d56429b0f",
+          "params": {
+            "60fd9fa4-1462-4c91-915b-11b325c0d479": "[\n  \"source.sol\"\n]"
+          }
+        },
+        "b284ccf5-61d6-4b2b-9f4f-98af1ba6720c": {
+          "coordinates": [
+            -79,
+            -136.5
+          ],
+          "name": "prepare for contract compiler",
+          "prototype": "ad0c8e3a-6cd9-4a4e-b056-26d730fecf28",
+          "params": {
+            "4cb1e461-05c1-4454-940e-5b7657cb916e": "\"source.sol\""
+          }
+        }
+      },
+      "connections": {
+        "b284ccf5-61d6-4b2b-9f4f-98af1ba6720c": {
+          "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+            "0694bb2b-0768-4834-b083-ee0604869dea": {
+              "7654e398-a401-4115-98b8-c2b8eba66ed4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {
+            "0694bb2b-0768-4834-b083-ee0604869dea": {
+              "eb554de7-b398-413f-8ff0-99dd34a7580a": {}
+            }
+          },
+          "4736dfee-986a-43d9-9788-34c0f4c8dcb7": {
+            "b284ccf5-61d6-4b2b-9f4f-98af1ba6720c": {
+              "8b675c7e-77b3-4fc6-b065-adbedf46b485": {}
+            }
+          }
+        },
+        "outputs": {
+          "2b981481-b683-4dfd-9738-febe673b08fa": {
+            "0694bb2b-0768-4834-b083-ee0604869dea": {
+              "58f95201-dc73-469a-8503-ce955c514032": {}
+            }
+          },
+          "c56db654-2db7-4cb2-ac28-2213dae50128": {
+            "0694bb2b-0768-4834-b083-ee0604869dea": {
+              "d00232d5-3801-4820-92ed-43ae75ccb626": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "e0f819d4-ec36-45a0-a772-252e08986fdd",
+  "description": "Compiles specified Solidity contracts using the specified compiler settings and outputs the selected compiled contract data",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

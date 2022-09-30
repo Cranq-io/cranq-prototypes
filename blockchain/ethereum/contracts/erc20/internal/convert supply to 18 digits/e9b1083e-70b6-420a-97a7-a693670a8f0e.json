@@ -1,0 +1,113 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ea2b6c57-22b5-4da9-873c-24368e071ae1": {
+          "coordinates": [
+            -362,
+            47
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"initial supply\""
+          }
+        },
+        "4372ffc9-2f9f-4492-9101-9d67b6c64df2": {
+          "coordinates": [
+            340,
+            -4
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"initial supply\""
+          }
+        },
+        "ee8ac308-39c2-4f68-b26c-8119ca9e23b5": {
+          "coordinates": [
+            -195,
+            114
+          ],
+          "name": "unit parser",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5",
+          "params": {
+            "6ffb69e8-3e06-43ed-b449-83880fdcedcf": "18"
+          }
+        },
+        "b19bc7fa-803c-4adc-a030-9dba1bdc8722": {
+          "coordinates": [
+            -28,
+            123
+          ],
+          "name": "unit formatter",
+          "prototype": "96f03be3-a29d-4637-aab1-6840bafeacb0",
+          "params": {
+            "6ffb69e8-3e06-43ed-b449-83880fdcedcf": "0"
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "60469e46-d1c1-453b-898e-cbcab2fdd926": {
+            "ea2b6c57-22b5-4da9-873c-24368e071ae1": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "4372ffc9-2f9f-4492-9101-9d67b6c64df2": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "0ceedb30-3431-403e-a4fd-e4d534fe457a": {
+            "4372ffc9-2f9f-4492-9101-9d67b6c64df2": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "ea2b6c57-22b5-4da9-873c-24368e071ae1": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "ee8ac308-39c2-4f68-b26c-8119ca9e23b5": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "ee8ac308-39c2-4f68-b26c-8119ca9e23b5": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "b19bc7fa-803c-4adc-a030-9dba1bdc8722": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "b19bc7fa-803c-4adc-a030-9dba1bdc8722": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "4372ffc9-2f9f-4492-9101-9d67b6c64df2": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "60469e46-d1c1-453b-898e-cbcab2fdd926": {
+        "type": "any",
+        "name": "dict"
+      }
+    },
+    "outputs": {
+      "0ceedb30-3431-403e-a4fd-e4d534fe457a": {
+        "type": "any",
+        "name": "out"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/contracts/erc20/internal/convert supply to 18 digits",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

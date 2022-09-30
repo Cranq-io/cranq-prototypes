@@ -11,7 +11,7 @@
       "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {
         "type": "{\n   \"name\": string, \n   \"symbol\": string, \n   \"initialSupply\": string,\n   \"owner\": string\n}",
         "name": "init parameters",
-        "description": "Receives the parameters to be given to the contract's constructor when deployed.\n\nThe parameters in strict order are:\n\n[name, symbol, initialSupply,owner]\n\nReference:\nSee the constructor of the contract in\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/presets/ERC20PresetFixedSupply.sol)\n"
+        "description": "Receives the parameters to be given to the contract's constructor when deployed.\n\nReference:\nSee the constructor of the contract in\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/presets/ERC20PresetFixedSupply.sol)\n"
       },
       "c7708f4f-1b7d-4292-bdf6-a607378707b4": {
         "type": "typeof `credentials` of `deploy contract preset`",

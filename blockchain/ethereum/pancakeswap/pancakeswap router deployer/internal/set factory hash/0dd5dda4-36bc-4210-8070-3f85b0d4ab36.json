@@ -1,0 +1,139 @@
+{
+  "name": "blockchain/ethereum/pancakeswap/pancakeswap router deployer/internal/set factory hash",
+  "interface": {
+    "inputs": {
+      "e2a196eb-09a1-4255-bdd9-ce89d7ac39e4": {
+        "type": "typeof `read` of `pancakeswap factory abi`",
+        "name": "read"
+      },
+      "5ebda09c-cdfa-4eaf-b77d-325996db15bc": {
+        "type": "typeof `dict` of `get factory address`",
+        "name": "factory address",
+        "description": "[Inherited from port `dict` of `get factory address`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      },
+      "17634380-22cc-4134-9592-c54fba9f1016": {
+        "type": "string",
+        "name": "contract"
+      },
+      "3378e6eb-1e25-4cd0-b3b7-8ddc88c0a6ac": {
+        "type": "typeof `credentials` of `contract caller`",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "4ea9dfb5-386e-4b5f-afa0-6c6dc1115ff3": {
+        "type": "typeof `replaced` of `strip the '0x' prefix`",
+        "name": "replaced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f6144491-09bb-44d5-8d0b-2f64da8c2567": {
+          "coordinates": [
+            -31.399999999999977,
+            -161.2
+          ],
+          "name": "Get",
+          "prototype": "d0c40c17-a70f-46da-b735-5d6fb7a364d9",
+          "params": {
+            "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"INIT_CODE_PAIR_HASH\"",
+            "9ff09a73-b892-48f2-b976-2cd7de67dcbd": "[]",
+            "a1d2a03b-c119-442d-b464-d3aeeab20f1e": "false"
+          }
+        },
+        "683529da-18bb-4348-b5d1-e7a89e1b0117": {
+          "coordinates": [
+            -167.4,
+            74.80000000000001
+          ],
+          "name": "pancakeswap factory abi",
+          "prototype": "dec01468-3e77-4936-b464-8c8a91b18e7b"
+        },
+        "0ba9cd38-56f7-4459-b652-e94af2fbc699": {
+          "coordinates": [
+            151.60000000000002,
+            -142.2
+          ],
+          "name": "strip the '0x' prefix",
+          "prototype": "5719fd66-d597-45ee-bff8-64106b48879e",
+          "params": {
+            "d1118ac0-749b-46e9-81af-8fc74dc14e10": "\"0x\"",
+            "3490f391-9b3b-441e-b4a2-b078669cf5b4": "\"\""
+          }
+        },
+        "13c33b29-612a-4376-838d-bafcfaed02e4": {
+          "coordinates": [
+            259.6,
+            5.800000000000011
+          ],
+          "name": "replace init hash constant",
+          "prototype": "5719fd66-d597-45ee-bff8-64106b48879e",
+          "params": {
+            "d1118ac0-749b-46e9-81af-8fc74dc14e10": "\"4b44833e97725c93184a451507cb80e8f77d3f37de988b5ca8a0662affd859d6\""
+          }
+        }
+      },
+      "connections": {
+        "683529da-18bb-4348-b5d1-e7a89e1b0117": {
+          "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+            "f6144491-09bb-44d5-8d0b-2f64da8c2567": {
+              "39a06197-ca9b-4ada-ab8e-6de9bd241529": {}
+            }
+          }
+        },
+        "f6144491-09bb-44d5-8d0b-2f64da8c2567": {
+          "87606a66-0567-440c-9686-f02bf52462e4": {
+            "0ba9cd38-56f7-4459-b652-e94af2fbc699": {
+              "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {}
+            }
+          }
+        },
+        "0ba9cd38-56f7-4459-b652-e94af2fbc699": {
+          "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
+            "13c33b29-612a-4376-838d-bafcfaed02e4": {
+              "3490f391-9b3b-441e-b4a2-b078669cf5b4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e2a196eb-09a1-4255-bdd9-ce89d7ac39e4": {
+            "683529da-18bb-4348-b5d1-e7a89e1b0117": {
+              "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {}
+            }
+          },
+          "17634380-22cc-4134-9592-c54fba9f1016": {
+            "13c33b29-612a-4376-838d-bafcfaed02e4": {
+              "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {}
+            }
+          },
+          "3378e6eb-1e25-4cd0-b3b7-8ddc88c0a6ac": {
+            "f6144491-09bb-44d5-8d0b-2f64da8c2567": {
+              "5e721c7e-2b06-494f-a65e-6b527531cddc": {}
+            }
+          },
+          "5ebda09c-cdfa-4eaf-b77d-325996db15bc": {
+            "f6144491-09bb-44d5-8d0b-2f64da8c2567": {
+              "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {}
+            }
+          }
+        },
+        "outputs": {
+          "4ea9dfb5-386e-4b5f-afa0-6c6dc1115ff3": {
+            "13c33b29-612a-4376-838d-bafcfaed02e4": {
+              "de479f5a-4a4f-4edc-9419-a79e46fef91c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

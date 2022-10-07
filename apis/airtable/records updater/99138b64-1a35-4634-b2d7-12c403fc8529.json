@@ -20,7 +20,7 @@
         "description": "Sends the records that were successfully updated in AirTable.\r\n\r\nExample:\r\n```json\r\n[\r\n  {\r\n    \"number column\": 0,\r\n    \"string column\": \"value0\"\r\n  },\r\n  {\r\n    \"number column\": 1,\r\n    \"string column\": \"value1\",\r\n    \"bool column\": true\r\n  }\r\n]\r\n```\r\n"
       },
       "43783563-c3ec-426c-bed1-481528e08d45": {
-        "type": "typeof `records` of `extract records`",
+        "type": "{\n  \"id\": string,\n  \"createdTime\": \"string\",\n  \"fields\": typeof `AT records`[number][\"fields\"][]\n}[]",
         "name": "AT records",
         "description": "Sends records that were successfully updated in AirTable, in the format returned by AirTable, including metadata like row ID.\r\n\r\nExample:\r\n```json\r\n[\r\n  {\r\n    \"id\": \"rect1iBB9su0rT0JI\",\r\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\r\n    \"fields\": {\r\n      \"number column\": 0,\r\n      \"string column\": \"value0\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"recpIPBXdPlv5wv7D\",\r\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\r\n    \"fields\": {\r\n      \"number column\": 1,\r\n      \"string column\": \"value1\",\r\n      \"bool column\": true\r\n    }\r\n  }\r\n]\r\n```\r\n"
       },

@@ -4,9 +4,9 @@
   "interface": {
     "inputs": {
       "86424a8c-c0f1-4ee9-baac-d0cf604e6d31": {
-        "type": "{string:any}[]",
-        "name": "records",
-        "description": "Receives up to 10 number of records to be inserted into AirTable. Number of records inserted must be greater than 1.\n\nExample:\n```json\n[\n  {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  },\n  {\n    \"string column\": \"value1\",\n    \"number column\": 1,\n    \"bool column\": true\n  }\n]\n```"
+        "type": "{\n  \"fields\" : {string:any}\n}[]",
+        "name": "AT records",
+        "description": "Receives up to 10 number of records to be inserted into AirTable. Number of records inserted must be greater than 1.\n\nExample:\n```json\n[\n  {\n    \"fields\": {\n      \"number column\": 0,\n      \"string column\": \"value0\"\n    }\n  },\n  {\n    \"fields\": {\n      \"number column\": 1,\n      \"string column\": \"value1\",\n      \"bool column\": true\n    }\n  }\n]\n```"
       },
       "8b367e78-5b4c-4eb0-9f25-2886c5f543fa": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
@@ -16,12 +16,12 @@
     },
     "outputs": {
       "76713e02-064f-4937-ae94-f1bcf5c26c56": {
-        "type": "typeof `records`",
+        "type": "typeof `AT records`[number][\"fields\"][]",
         "name": "records",
         "description": "Sends records that were successfully inserted into AirTable.\n\nExample:\n```json\n[\n  {\n    \"number column\": 0,\n    \"string column\": \"value0\"\n  },\n  {\n    \"number column\": 1,\n    \"string column\": \"value1\",\n    \"bool column\": true\n  }\n]\n```"
       },
       "60c54568-3b44-446e-b64d-c21b7f425c9f": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": typeof `records`\n}[]",
+        "type": "{\n  \"id\": string,\n  \"createdTime\": \"string\",\n  \"fields\": typeof `AT records`[number][\"fields\"][]\n}[]",
         "name": "AT records",
         "description": "Sends records that were successfully inserted into AirTable, in the format returned by AirTable, including metadata like row ID, and date & time of creation.\n\nExample:\n```json\n[\n  {\n    \"id\": \"rect1iBB9su0rT0JI\",\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\n    \"fields\": {\n      \"number column\": 0,\n      \"string column\": \"value0\"\n    }\n  },\n  {\n    \"id\": \"recpIPBXdPlv5wv7D\",\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\n    \"fields\": {\n      \"number column\": 1,\n      \"string column\": \"value1\",\n      \"bool column\": true\n    }\n  }\n]\n```"
       },
@@ -58,14 +58,6 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
-        },
-        "95cf4573-d87d-4a98-8e7d-6b5f53f01825": {
-          "coordinates": [
-            -50.7265625,
-            247.1484375
-          ],
-          "name": "records to airtable",
-          "prototype": "56fadfc7-8213-4a6e-9ec8-de2c32c0abf0"
         },
         "0fbd3ab3-f0e9-42e1-91a1-bb4a32bd73d8": {
           "coordinates": [
@@ -111,8 +103,8 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "95cf4573-d87d-4a98-8e7d-6b5f53f01825": {
-              "d4b3c6b5-8bb6-4ce6-8686-4e6fe768c19e": {}
+            "ca79a738-b0ba-4342-bcb7-917587a96018": {
+              "f44789b1-8a2d-400c-bac4-22c2897175c4": {}
             }
           }
         },
@@ -151,13 +143,6 @@
           "4cdde0a4-4828-4393-b0d1-6186d643a5a9": {
             "166baffb-e06f-485d-bd27-03115f54a379": {
               "3f371a08-e057-48db-bb41-9a66072ae89a": {}
-            }
-          }
-        },
-        "95cf4573-d87d-4a98-8e7d-6b5f53f01825": {
-          "7fb8ce69-80c0-43af-a17c-c12ee71b7e5b": {
-            "ca79a738-b0ba-4342-bcb7-917587a96018": {
-              "f44789b1-8a2d-400c-bac4-22c2897175c4": {}
             }
           }
         }

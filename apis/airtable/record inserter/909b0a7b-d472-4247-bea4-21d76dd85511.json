@@ -4,9 +4,9 @@
   "interface": {
     "inputs": {
       "fd17c7a6-833e-4585-abf6-933387a0a47a": {
-        "type": "{string:any}",
-        "name": "record",
-        "description": "Receives the record to insert into AirTable.\r\n\r\nExample:\r\n```json\r\n{\r\n  \"string column\": \"value0\",\r\n  \"number column\": 0,\r\n  \"bool column\": false\r\n}\r\n```"
+        "type": "{\n  \"fields\" : {string:any}\n}",
+        "name": "AT record",
+        "description": "Receives the record to insert into AirTable.\r\n\r\nExample:\r\n```json\r\n{\r\n  \"fields\": {\r\n    \"number column\": 0,\r\n    \"string column\": \"value0\"\r\n  }\r\n}\r\n```"
       },
       "a9ed6b36-3134-42ce-b478-f84a0e013f88": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
@@ -16,12 +16,12 @@
     },
     "outputs": {
       "1adf578c-ed11-4554-935d-90eb0fbdf966": {
-        "type": "typeof `record`",
+        "type": "typeof `AT record`[\"fields\"]",
         "name": "record",
         "description": "Sends the record that was successfully inserted into AirTable.\n\nExample:\n```json\n{\n  \"string column\": \"value0\",\n  \"number column\": 0,\n  \"bool column\": false\n}\n```"
       },
       "338a9a02-27e7-463c-bc5d-17603b0f796a": {
-        "type": "{\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": typeof `record`\n}",
+        "type": "{\n  \"id\": string,\n  \"createdTime\": \"string\",\n  \"fields\": typeof `AT record`[\"fields\"]\n}",
         "name": "AT record",
         "description": "Sends the record that was successfully inserted into AirTable, including metadata like row ID, and date & time of creation.\n\nExample:\n```json\n{\n  \"id\": \"recCz4d3k2DzDAZjx\",\n  \"createdTime\": \"2022-09-29T08:15:51.000Z\",\n  \"fields\": {\n    \"number column\": 0,\n    \"string column\": \"value0\"\n  }\n}\n```"
       },

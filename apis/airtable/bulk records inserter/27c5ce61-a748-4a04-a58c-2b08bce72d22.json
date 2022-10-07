@@ -4,9 +4,9 @@
   "interface": {
     "inputs": {
       "95d27238-6a7e-4dc8-a50f-90243dd478fa": {
-        "type": "{string:any}[]",
-        "name": "records",
-        "description": "Receives arbitrary number of records to be inserted into AirTable.\n\nExample:\n```json\n[\n  {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  },\n  {\n    \"string column\": \"value1\",\n    \"number column\": 1,\n    \"bool column\": true\n  }\n]\n```"
+        "type": "{\n  \"fields\" : {string:any}\n}[]",
+        "name": "AT records",
+        "description": "Receives arbitrary number of records to be inserted into AirTable.\n\nExample:\n```json\n[\n  {\n    \"fields\": {\n      \"number column\": 0,\n      \"string column\": \"value0\"\n    }\n  },\n  {\n    \"fields\": {\n      \"number column\": 1,\n      \"string column\": \"value1\",\n      \"bool column\": true\n    }\n  }\n]\n```"
       },
       "a44a2205-6893-473d-a500-5d07b6f5ade2": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
@@ -16,12 +16,12 @@
     },
     "outputs": {
       "add93124-a357-420a-b252-968566c9a4dc": {
-        "type": "typeof `records`",
+        "type": "typeof `AT records`[number][\"fields\"][]",
         "name": "records",
         "description": "Sends records that were successfully inserted into AirTable.\n\nExample:\n```json\n[\n  {\n    \"number column\": 0,\n    \"string column\": \"value0\"\n  },\n  {\n    \"number column\": 1,\n    \"string column\": \"value1\",\n    \"bool column\": true\n  }\n]\n```"
       },
       "6d0202d3-c04b-469d-9f30-02bfe5e6710e": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": string,\n  \"fields\": typeof `records`\n}[]",
+        "type": "{\n  \"id\": string,\n  \"createdTime\": \"string\",\n  \"fields\": typeof `AT records`[number][\"fields\"][]\n}[]",
         "name": "AT records",
         "description": "Sends records that were successfully inserted into AirTable, in the format returned by AirTable, including metadata like row ID, and date & time of creation.\n\nExample:\n```json\n[\n  {\n    \"id\": \"rect1iBB9su0rT0JI\",\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\n    \"fields\": {\n      \"number column\": 0,\n      \"string column\": \"value0\"\n    }\n  },\n  {\n    \"id\": \"recpIPBXdPlv5wv7D\",\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\n    \"fields\": {\n      \"number column\": 1,\n      \"string column\": \"value1\",\n      \"bool column\": true\n    }\n  }\n]\n```"
       },

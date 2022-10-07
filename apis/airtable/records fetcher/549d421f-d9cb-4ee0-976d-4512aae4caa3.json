@@ -11,7 +11,7 @@
     "outputs": {
       "2a6d695f-1300-482f-b730-7a51945b9efe": {
         "type": "{\n  \"records\": {\n     \"id\": \"\",\n     \"createdTime\": \"\",\n     \"fields\": {string: any}\n  }[]\n}",
-        "name": "AT records",
+        "name": "data",
         "description": "Sends the records retrieved from AirTable.\n\nExample:\n```json\n{\n  \"records\": [\n    {\n      \"id\": \"recCz4d3k2DzDAZjx\",\n      \"createdTime\": \"2022-09-29T08:15:51.000Z\",\n      \"fields\": {\n        \"number column\": 0,\n        \"string column\": \"value0\"\n      }\n    },\n    {\n      \"id\": \"recDbWgh8YnNo3LJa\",\n      \"createdTime\": \"2022-09-28T11:20:20.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    }\n  ]\n}\n```\n"
       },
       "c3328b14-8977-4fae-8f60-0a45928ec295": {

@@ -1,28 +1,29 @@
 {
   "name": "apis/airtable/Record fetcher",
-  "description": "Fetches a single record from an AirTable table.",
+  "description": "Fetches a single record from an AirTable table by it's ID.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
   "interface": {
     "inputs": {
       "7955da23-0bb0-4594-bec7-ffb3c57db736": {
         "type": "string",
         "name": "record ID",
-        "description": "Receives the identifier of the record relative to an AirTable table."
+        "description": "Receives the identifier of the record relative to an AirTable table.\n\nExample:\n```json\n\"rec...\"\n```"
       },
       "3c42d89a-b8aa-48e5-a05d-badd08a9703e": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
     },
     "outputs": {
       "259eb6ca-e141-4210-b26e-ec0694b98b55": {
-        "type": "{\n  \"id\": \"string\",\n  \"fields\": {string: any}\n}",
+        "type": "{string:any}",
         "name": "record",
-        "description": "Sends the retrieved AirTable record."
+        "description": "Sends the retrieved AirTable record.\n\nExample:\n```json\n{\n  \"number column\": 0,\n  \"string column\": \"value0\"\n}\n```\n"
       },
       "c5c9c9f5-e48a-43f8-97f8-d65e79ff6177": {
         "type": "{\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n}",
         "name": "AT record",
-        "description": "Sends the retrieved AirTable record, including metadata like row ID, and date & time of creation."
+        "description": "Sends the retrieved AirTable record, including metadata like row ID, and date & time of creation.\n\nExample:\n```json\n{\n  \"id\": \"recCz4d3k2DzDAZjx\",\n  \"createdTime\": \"2022-09-29T08:15:51.000Z\",\n  \"fields\": {\n    \"number column\": 0,\n    \"string column\": \"value0\"\n  }\n}\n```\n"
       },
       "aaf99a62-3d64-485c-9de7-88b7949206c3": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -31,7 +32,8 @@
       },
       "344e4a75-f943-488a-b4b0-132fb7d1cec5": {
         "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if one occurred."
       }
     }
   },

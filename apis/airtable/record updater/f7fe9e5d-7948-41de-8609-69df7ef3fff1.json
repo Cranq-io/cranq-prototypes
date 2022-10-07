@@ -1,38 +1,39 @@
 {
   "name": "apis/airtable/Record updater",
-  "description": "Receives a single record to be updated in AirTable.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
+  "description": "Updates a single record in the specified AirTable table. The input received on parameter records must match the target table schema.\r\n\r\nFor detailed parameter information, see the AirTable API documentation: \r\nhttps://airtable.com/api/meta",
   "interface": {
     "inputs": {
       "9b88e435-4f58-4c07-926e-94baf6e9c340": {
         "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}",
-        "name": "record",
-        "description": "Receives the identifier of one record relative to an AirTable table. \n\nRecord ID with the fields and their values that want to be updated.\n\nRecord ID:\nAdd a new field to table with field type 'formula'. Then in the formula field type 'RECORD_ID()'. The record ID appears in the table on the row of the record in this field."
+        "name": "AT record",
+        "description": "Receives a single record to be updated in AirTable.\n\nExample:\n```json\n{\n  \"id\": \"rect1iBB9su0rT0JI\",\n  \"fields\": {\n    \"number column\": 0,\n    \"string column\": \"value0\"\n  }\n}\n```"
       },
       "37fc2924-0221-44ab-a325-07df2836bc1f": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}\n",
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
         "name": "params",
-        "description": "API Key, Base ID and Table Name all extracted from AirTable\n\nAPI Key: \nGo into AirTable account and scroll to '<>API'to find the \n\nBase ID:\nIn AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name:\nUse the table name located on the tab of the spreadsheet\n"
+        "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
     },
     "outputs": {
       "d75e369c-d474-482e-a47b-e7068a6d3ae4": {
-        "type": "typeof `record`",
-        "name": "record",
-        "description": "The original change to be updated in the AirTable.\n\nIncludes updated record values and record ID."
+        "type": "typeof `AT record`[\"fields\"][]",
+        "name": "records",
+        "description": "Sends the records that were successfully updated in AirTable.\r\n\r\nExample:\r\n```json\r\n[\r\n  {\r\n    \"number column\": 0,\r\n    \"string column\": \"value0\"\r\n  },\r\n  {\r\n    \"number column\": 1,\r\n    \"string column\": \"value1\",\r\n    \"bool column\": true\r\n  }\r\n]\r\n```\r\n"
       },
       "7aff9429-65a9-4455-ae0a-ad5c5241ee38": {
-        "type": "{\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n}",
-        "name": "AT record",
-        "description": "Updated record as is sent to the AirTable API.\n\nIncludes record IDs, created times of records and updated record values"
+        "type": "{\n  \"id\": string,\n  \"createdTime\": \"string\",\n  \"fields\": typeof `AT record`[\"fields\"][]\n}[]",
+        "name": "AT records",
+        "description": "Sends records that were successfully updated in AirTable, in the format returned by AirTable, including metadata like row ID.\r\n\r\nExample:\r\n```json\r\n[\r\n  {\r\n    \"id\": \"rect1iBB9su0rT0JI\",\r\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\r\n    \"fields\": {\r\n      \"number column\": 0,\r\n      \"string column\": \"value0\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"recpIPBXdPlv5wv7D\",\r\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\r\n    \"fields\": {\r\n      \"number column\": 1,\r\n      \"string column\": \"value1\",\r\n      \"bool column\": true\r\n    }\r\n  }\r\n]\r\n```\r\n"
       },
       "903e6cfd-269e-4888-902a-7d5338ac2f56": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
         "name": "response",
-        "description": "Sends the entire response from the AirTable API without modification.\n\nSee link for correct formats of request and response 'update record' messages:\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs"
+        "description": "Sends the entire response from the AirTable API without modification."
       },
       "26ddc458-32eb-472a-8902-62e05c154332": {
         "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if one occurred."
       }
     }
   },

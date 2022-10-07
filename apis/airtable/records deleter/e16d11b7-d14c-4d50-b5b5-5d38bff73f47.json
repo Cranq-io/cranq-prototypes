@@ -2,26 +2,27 @@
   "name": "apis/AirTable/Records deleter",
   "interface": {
     "inputs": {
-      "6be4a66d-3bba-455b-9835-55ca7aea9b1f": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
-        "name": "params",
-        "description": "API Key, Base ID and Table Name all extracted from AirTable\r\n\r\nAPI Key: Go into AirTable account and scroll to '<>API'to find the\r\n\r\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\r\n\r\nTable Name: Use the table name located on the tab of the spreadsheet"
-      },
       "5a8cd373-f211-4d04-816e-6b062a03b008": {
         "type": "string[]",
         "name": "record IDs",
-        "description": "Record IDs of all records to be deleted"
+        "description": "Receives the IDs of the records to be deleted from AirTable.\n\nExample:\n```json\n[\n  \"rec32C7MUspwlCGaY\",\n  \"rec5F6YjCMk4ajxgQ\"\n]\n```"
+      },
+      "6be4a66d-3bba-455b-9835-55ca7aea9b1f": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "params",
+        "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
     },
     "outputs": {
       "51944511-eeed-417c-8bc3-8e4b12ed2385": {
-        "type": "typeof `records` of `extract records`",
-        "name": "records"
+        "type": "typeof `record IDs`",
+        "name": "record ids",
+        "description": "Sends the IDs corresponding to the deleted records.\n\nExample:\n```json\n[\n  \"rec32C7MUspwlCGaY\",\n  \"rec5F6YjCMk4ajxgQ\"\n]\n```"
       },
       "54e0ebd3-3906-4cdb-9bc6-51c7fcaa5bc0": {
-        "type": "typeof `record IDs`",
-        "name": "AT record ids",
-        "description": "Shows the ID of each record wanted to be deleted and whether the deletion was successful"
+        "type": "{\n  \"id\": string,\n  \"deleted\": boolean\n}",
+        "name": "AT records",
+        "description": "Sends the ID of each record to be deleted, and whether the deletion was successful, as returned by AirTable.\n\nExample:\n```json\n[\n  {\n    \"deleted\": true,\n    \"id\": \"rec32C7MUspwlCGaY\"\n  },\n  {\n    \"deleted\": true,\n    \"id\": \"rec5F6YjCMk4ajxgQ\"\n  }\n]\n```"
       },
       "0a220faf-20ca-4d84-b7eb-89440968b029": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -30,7 +31,8 @@
       },
       "533b48dd-fc81-4c9c-890f-a714f0974bc2": {
         "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if one occurred."
       }
     }
   },
@@ -77,16 +79,16 @@
         },
         "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
           "coordinates": [
-            344.85,
-            166.95
+            345.85,
+            215.95000000000005
           ],
           "name": "extract records",
           "prototype": "c78453a1-9ea5-42b7-8680-1f45629ca7d9"
         },
         "3631b09b-7f31-47e7-8681-3180ec5250b7": {
           "coordinates": [
-            130,
-            -31.5
+            120,
+            -55.5
           ],
           "name": "dispatch request",
           "prototype": "f946e595-da67-400f-9316-dfcf07f5ac10"
@@ -129,17 +131,17 @@
             }
           }
         },
-        "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
-          "6fae9f21-2a07-4365-80e0-12868a0aeddd": {
-            "3631b09b-7f31-47e7-8681-3180ec5250b7": {
-              "8e35c4f4-47d8-4245-8054-6c1f75759a70": {}
-            }
-          }
-        },
         "3631b09b-7f31-47e7-8681-3180ec5250b7": {
           "74fc698e-31af-41e8-a099-342c49e33d17": {
             "34891468-cd08-408e-bde9-f989e621f6df": {
               "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "50450abb-4096-4ab7-a6c5-eddd9fc95bab": {
+          "6fae9f21-2a07-4365-80e0-12868a0aeddd": {
+            "3631b09b-7f31-47e7-8681-3180ec5250b7": {
+              "8e35c4f4-47d8-4245-8054-6c1f75759a70": {}
             }
           }
         }
@@ -158,11 +160,6 @@
           }
         },
         "outputs": {
-          "51944511-eeed-417c-8bc3-8e4b12ed2385": {
-            "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
-              "9d27a0c0-8a44-4d32-89cf-d8a44e3ea19e": {}
-            }
-          },
           "54e0ebd3-3906-4cdb-9bc6-51c7fcaa5bc0": {
             "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
               "0a7d3758-b2a6-478f-a8d6-c97d591ac9af": {}
@@ -180,12 +177,17 @@
             "3631b09b-7f31-47e7-8681-3180ec5250b7": {
               "74fc698e-31af-41e8-a099-342c49e33d17": {}
             }
+          },
+          "51944511-eeed-417c-8bc3-8e4b12ed2385": {
+            "6622f420-1c9e-41dd-b7bf-2f0bdf8ac720": {
+              "f48e3659-0620-4b9a-952f-a78e6f109a23": {}
+            }
           }
         }
       }
     }
   },
-  "description": "Receives up to 10 records to be deleted from an AirTable table.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
+  "description": "Deletes up to 10 records  from an AirTable table, by their IDs.\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
   "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
   "keywords": {
     "airtable": null,

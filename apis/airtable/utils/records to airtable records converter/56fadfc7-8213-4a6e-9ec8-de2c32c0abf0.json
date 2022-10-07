@@ -1,16 +1,16 @@
 {
-  "description": "Converts plain list of records (table) to a list of AirTable records.",
+  "description": "Converts plain list of records (table) to a list of AirTable records.\n\nExample:\n1. `records` receives:\n```json\n[\n  {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  },\n  {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  }\n]\n```\n2. AT records sends:\n```json\n[\n  {\n    \"fields\": {\n      \"string column\": \"value0\",\n      \"number column\": 0,\n      \"bool column\": false\n    }\n  },\n  {\n    \"fields\": {\n      \"string column\": \"value1\",\n      \"number column\": 1,\n      \"bool column\": true\n    }\n  }\n]\n```",
   "interface": {
     "inputs": {
       "d4b3c6b5-8bb6-4ce6-8686-4e6fe768c19e": {
-        "description": "",
+        "description": "Receives the records to convert.\n\nExample:\n\n```json\n[\n  {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  },\n  {\n    \"string column\": \"value0\",\n    \"number column\": 0,\n    \"bool column\": false\n  }\n]\n```",
         "type": "{string: any}[]",
         "name": "records"
       }
     },
     "outputs": {
       "7fb8ce69-80c0-43af-a17c-c12ee71b7e5b": {
-        "description": "Records as are sent to / received from the AirTable API.",
+        "description": "Sends the converted records.\n\n```json\n[\n  {\n    \"fields\": {\n      \"string column\": \"value0\",\n      \"number column\": 0,\n      \"bool column\": false\n    }\n  },\n  {\n    \"fields\": {\n      \"string column\": \"value1\",\n      \"number column\": 1,\n      \"bool column\": true\n    }\n  }\n]\n```",
         "type": "{\n  \"fields\": typeof `records`[number]\n}[]",
         "name": "AT records"
       }

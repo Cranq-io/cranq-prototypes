@@ -6,17 +6,24 @@
       "7c66e865-9f03-477c-9a0c-cd1c797de6c8": {
         "type": "string",
         "name": "record ID",
-        "description": "Receives the identifier of the record relative to an AirTable table."
+        "description": "Receives the identifier of the record to be deleted.\n\nExample:\n```json\n\"rec32C7MUspwlCGaY\"\n```"
       },
       "c6345eab-aa9c-4ba9-ae15-e516f446350b": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
     },
     "outputs": {
+      "d670e1bb-2dc0-481b-9cbe-895a7ee492fe": {
+        "type": "string",
+        "name": "record ID",
+        "description": "Sends the ID of the deleted record.\n\nExample:\n```json\n\"rec32C7MUspwlCGaY\"\n```"
+      },
       "e62d5284-1d0d-4f5f-8301-3daa6fbc49db": {
-        "type": "{\n  \"deleted\": boolean,\n  \"id\": typeof `record ID`\n}",
-        "name": "data"
+        "type": "{\n  \"deleted\": boolean,\n  \"id\": string\n}",
+        "name": "AT record",
+        "description": "Sends the ID of the record requested for deletion, as returned from AirTable.\n\nExample:\n```json\n{\n  \"deleted\": true,\n  \"id\": \"rec7Ytz8K2GiRMUdQ\"\n}\n```"
       },
       "d948f797-1fbc-4db7-b901-771d62961643": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -25,7 +32,8 @@
       },
       "60c437e9-73a3-4982-b6fa-89a21511479d": {
         "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends the error, if one occurred."
       }
     }
   },
@@ -34,16 +42,16 @@
       "nodes": {
         "6353ed19-f12c-4e91-801f-6ca19dafdfaa": {
           "coordinates": [
-            188.2734375,
-            -116.8515625
+            138.2734375,
+            -186.8515625
           ],
           "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
         },
         "069475d4-cd8e-4169-b219-86b9e0d557e5": {
           "coordinates": [
-            2.2734375,
-            -194.8515625
+            -15.7265625,
+            -267.8515625
           ],
           "name": "build request",
           "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
@@ -61,8 +69,8 @@
         },
         "2392b23a-7c8d-492d-bb49-c792dceb4ee6": {
           "coordinates": [
-            26.2734375,
-            -34.8515625
+            -17.7265625,
+            -71.8515625
           ],
           "name": "insert bearer token",
           "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
@@ -72,8 +80,8 @@
         },
         "ad5df117-d459-4f16-9b66-db538723c3af": {
           "coordinates": [
-            193.2734375,
-            106.1484375
+            90.2734375,
+            192.1484375
           ],
           "name": "detect errors",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
@@ -99,6 +107,17 @@
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "95181500-d1df-466f-8434-a59b5f414ad9": {
+          "coordinates": [
+            162,
+            64
+          ],
+          "name": "get id",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"id\""
+          }
         }
       },
       "connections": {
@@ -158,6 +177,13 @@
               "82377520-e782-4190-a9c5-bc49967e3751": {}
             }
           }
+        },
+        "ad5df117-d459-4f16-9b66-db538723c3af": {
+          "c7cf1f92-7748-4184-b078-e0eb04851e6f": {
+            "95181500-d1df-466f-8434-a59b5f414ad9": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -190,6 +216,11 @@
             },
             "ad5df117-d459-4f16-9b66-db538723c3af": {
               "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "d670e1bb-2dc0-481b-9cbe-895a7ee492fe": {
+            "95181500-d1df-466f-8434-a59b5f414ad9": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
             }
           }
         }

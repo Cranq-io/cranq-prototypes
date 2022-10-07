@@ -1,0 +1,83 @@
+{
+  "name": "io/http/URL-encoded request dispatcher/Body serializer/Query string appender",
+  "interface": {
+    "inputs": {
+      "97dbb6f2-7dd3-477d-a89c-e2d4f1bbe777": {
+        "type": "string",
+        "name": "a",
+        "description": ""
+      },
+      "ded052e0-d23a-44ed-a43e-ae0a36390400": {
+        "type": "string",
+        "name": "b",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "27035660-1cca-435f-a4de-a6ea28c55f41": {
+        "type": "string",
+        "name": "concatenated",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e267a3be-538c-4c73-ad4e-6e35c3e9243a": {
+          "coordinates": [
+            -60,
+            -25.5
+          ],
+          "name": "url and ?",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "6b3b4622-93d9-49c8-ac1e-89af0e30731d": "\"?\""
+          }
+        },
+        "0b44e7ab-3923-408e-88ba-d4932683bb4c": {
+          "coordinates": [
+            60,
+            25.5
+          ],
+          "name": "append query string",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062"
+        }
+      },
+      "connections": {
+        "e267a3be-538c-4c73-ad4e-6e35c3e9243a": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "0b44e7ab-3923-408e-88ba-d4932683bb4c": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "97dbb6f2-7dd3-477d-a89c-e2d4f1bbe777": {
+            "e267a3be-538c-4c73-ad4e-6e35c3e9243a": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {}
+            }
+          },
+          "ded052e0-d23a-44ed-a43e-ae0a36390400": {
+            "0b44e7ab-3923-408e-88ba-d4932683bb4c": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          }
+        },
+        "outputs": {
+          "27035660-1cca-435f-a4de-a6ea28c55f41": {
+            "0b44e7ab-3923-408e-88ba-d4932683bb4c": {
+              "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -1,28 +1,29 @@
 {
   "name": "apis/airtable/utils/Record URL builder",
-  "description": "Builds a URL for record in an AirTable table.",
+  "description": "Builds a URL for an AirTable record.",
   "interface": {
     "inputs": {
       "8ef365da-abb1-4829-8456-2a40e4cf6f42": {
-        "type": "any",
+        "type": "string",
         "name": "base ID",
-        "description": "Receives the ID of an AirTable base."
+        "description": "Receives the ID of an AirTable base.\n\nExample:\n```\n\"app...\",\n```"
       },
       "85ca9e02-d5b4-4c34-b12a-39d9169f33e7": {
         "type": "string",
         "name": "table name",
-        "description": "Receives a table's identifier relative to an AirTable base."
+        "description": "Receives a table's identifier relative to an AirTable base.\n\nExample:\n```\n\"...\",\n```"
       },
       "82377520-e782-4190-a9c5-bc49967e3751": {
         "type": "string",
         "name": "record ID",
-        "description": "Receives a record's identifier relative to an AirTable table."
+        "description": "Receives a record's identifier relative to an AirTable table.\n\n```\n\"rec...\",\n```"
       }
     },
     "outputs": {
       "9ba8b59c-7d3a-4e17-b052-32fdc0d72003": {
         "type": "string",
-        "name": "URL"
+        "name": "URL",
+        "description": "Sends the constructed URL."
       }
     }
   },

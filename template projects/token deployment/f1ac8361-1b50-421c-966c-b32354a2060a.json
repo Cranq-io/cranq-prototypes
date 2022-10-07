@@ -1,0 +1,248 @@
+{
+  "attributes": {
+    "root": true,
+    "template": true
+  },
+  "description": "Deploy a basic ERC20 contract.",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -486,
+            -44
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "6370334a-d4bb-448b-9766-38cd763bfdb2": {
+          "coordinates": [
+            126,
+            -69.5
+          ],
+          "name": "deploy ERC20 contract",
+          "prototype": "6a8ac46e-756f-4028-bf83-e5fd7fdd8788",
+          "params": {
+            "2dd1939f-cbcf-4bfd-9076-1bcf32623d5c": "\"TestContract\""
+          }
+        },
+        "bf422d8c-d78c-4d9a-a2a5-a3fd2a1cbc98": {
+          "coordinates": [
+            -220,
+            -138.5
+          ],
+          "name": "parse to bignumber",
+          "prototype": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5",
+          "params": {
+            "6ffb69e8-3e06-43ed-b449-83880fdcedcf": "18"
+          }
+        },
+        "e02ee6f3-b7f0-4b11-bd6f-063bc8cbbde3": {
+          "coordinates": [
+            -342,
+            -89.5
+          ],
+          "name": "inital supply",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "1000000"
+          }
+        },
+        "d66d136e-f730-4581-9225-e23291267963": {
+          "coordinates": [
+            -54,
+            -194.5
+          ],
+          "name": "build parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": " [\"name\",\"symbol\", \"initialSupply\",\"ownerAddress\"]",
+            "name": "\"Test token\"",
+            "symbol": "\"TT\"",
+            "ownerAddress": "\"0x71EbA80C86D4515cECcE0ec22D4b34dD2F772B80\""
+          },
+          "description": "Important: set the ownerAddress parameter!"
+        },
+        "d45ac27d-2f2f-46c5-8555-46e86d73059b": {
+          "coordinates": [
+            -178,
+            73.5
+          ],
+          "name": "get credentials",
+          "prototype": "6fef4921-1b64-4155-b4f5-9da367b90103",
+          "params": {},
+          "description": "Pre-condtion: set providerUrl and privateKey environment variables.\n\nMore:\nhttps://docs.cranq.io/how-to/using-environment-variables"
+        },
+        "d509222f-71ce-43c0-8602-b0dae2976f74": {
+          "coordinates": [
+            -361,
+            108.5
+          ],
+          "name": "enviroment variable names",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"providerUrl\", \"privateKey\"]"
+          }
+        },
+        "c36daacb-eb66-4866-9c2c-d9f5895c020e": {
+          "coordinates": [
+            232,
+            248.5
+          ],
+          "name": "write solidity source",
+          "prototype": "c4812ed9-c9c7-42ba-8e7f-4b8721090de0",
+          "description": "If you want to write the source code to file you need to set the path parameter."
+        },
+        "ae4bf936-d013-4571-9ecd-7e016ef756fd": {
+          "coordinates": [
+            -21,
+            199.5
+          ],
+          "name": "log not found environment variables",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"NOT FOUND ENV. VARIABLES\""
+          }
+        },
+        "0fdd1875-5e52-4b45-8dca-e366a00e55c2": {
+          "coordinates": [
+            356,
+            -200.5
+          ],
+          "name": "log events",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"EVENTS\""
+          }
+        },
+        "b4c2f836-e356-4dec-bfa7-b9c8cd63070b": {
+          "coordinates": [
+            372,
+            -84.5
+          ],
+          "name": "log source",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"SOURCE\""
+          }
+        },
+        "d66aa906-b4b7-48be-8b13-0f17a470b352": {
+          "coordinates": [
+            366,
+            11.5
+          ],
+          "name": "log compile settings",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"COMPILE SETTINGS\""
+          }
+        },
+        "49581063-ef1e-4d5f-85d0-47288e25fdea": {
+          "coordinates": [
+            373,
+            117.5
+          ],
+          "name": "log error",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"ERROR\""
+          }
+        }
+      },
+      "connections": {
+        "e02ee6f3-b7f0-4b11-bd6f-063bc8cbbde3": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "bf422d8c-d78c-4d9a-a2a5-a3fd2a1cbc98": {
+              "0d455460-c659-44c5-afd7-bdba5211c32d": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "e02ee6f3-b7f0-4b11-bd6f-063bc8cbbde3": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "d509222f-71ce-43c0-8602-b0dae2976f74": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "bf422d8c-d78c-4d9a-a2a5-a3fd2a1cbc98": {
+          "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
+            "d66d136e-f730-4581-9225-e23291267963": {
+              "initialSupply": {}
+            }
+          }
+        },
+        "d66d136e-f730-4581-9225-e23291267963": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6370334a-d4bb-448b-9766-38cd763bfdb2": {
+              "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {}
+            }
+          }
+        },
+        "6370334a-d4bb-448b-9766-38cd763bfdb2": {
+          "c756affd-6db5-4293-920b-ed329630f3c6": {
+            "c36daacb-eb66-4866-9c2c-d9f5895c020e": {
+              "aad67a3a-6f75-4fb8-9ddd-f7ea549b1491": {}
+            },
+            "b4c2f836-e356-4dec-bfa7-b9c8cd63070b": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+            "0fdd1875-5e52-4b45-8dca-e366a00e55c2": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
+            "d66aa906-b4b7-48be-8b13-0f17a470b352": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          },
+          "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
+            "49581063-ef1e-4d5f-85d0-47288e25fdea": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        },
+        "d509222f-71ce-43c0-8602-b0dae2976f74": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "d45ac27d-2f2f-46c5-8555-46e86d73059b": {
+              "792013f3-4e43-4047-97e3-f7e4df0e08cb": {}
+            }
+          }
+        },
+        "d45ac27d-2f2f-46c5-8555-46e86d73059b": {
+          "299c4c0e-ad44-48c1-a77f-a3849ddc7d1e": {
+            "6370334a-d4bb-448b-9766-38cd763bfdb2": {
+              "c7708f4f-1b7d-4292-bdf6-a607378707b4": {}
+            }
+          },
+          "de71284c-df99-4f10-a614-903d9777e6dd": {
+            "ae4bf936-d013-4571-9ecd-7e016ef756fd": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "template projects/Token deployment",
+  "keywords": {
+    "ethereum": null,
+    "binance": null,
+    "deployer": null,
+    "blockchain": null
+  }
+}

@@ -9,7 +9,7 @@
         "description": "The name of the created contract. It must be a valid Solidity contract name (no spaces, special characters)."
       },
       "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {
-        "type": "{\n   \"name\": string, \n   \"symbol\": string, \n   \"initialSupply\": string,\n   \"owner\": string\n}",
+        "type": "{\n   \"name\": string, \n   \"symbol\": string, \n   \"initialSupply\": string,\n   \"ownerAddress\": string\n}",
         "name": "init parameters",
         "description": "Receives the parameters to be given to the contract's constructor when deployed.\n\nReference:\nSee the constructor of the contract in\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/presets/ERC20PresetFixedSupply.sol)\n"
       },
@@ -75,7 +75,7 @@
           "name": "maps init parameters values to array",
           "prototype": "83ac4d5d-9ac9-48d0-ae17-a5a77b18cfb6",
           "params": {
-            "72550b19-9434-43d7-a6af-468a19288808": "[\"name\", \"symbol\", \"initialSupply\",\"owner\"]"
+            "72550b19-9434-43d7-a6af-468a19288808": "[\"name\", \"symbol\", \"initialSupply\",\"ownerAddress\"]"
           }
         }
       },

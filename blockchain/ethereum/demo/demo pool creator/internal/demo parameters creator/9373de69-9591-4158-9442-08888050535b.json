@@ -1,0 +1,121 @@
+{
+  "name": "blockchain/ethereum/demo/demo pool creator/internal/demo parameters creator",
+  "interface": {
+    "inputs": {
+      "2ee8e2c2-82b8-442d-a5f8-ff33bacbfcdb": {
+        "type": "string",
+        "name": "ownerAddress",
+        "description": "[Inherited from port `owner` of `syncer`] \nReceives individual item for syncing."
+      }
+    },
+    "outputs": {
+      "ce51f40a-0935-4c34-98c6-a76ea57e525d": {
+        "type": "{ \n  \"name\": string, \n  \"symbol\": string, \n  \"initialSupply\": string, \n  \"owner\": string\n}",
+        "name": "gold",
+        "description": ""
+      },
+      "1c6131d1-f75c-4b3d-8e4d-9c1069357c23": {
+        "type": "{ \n  \"name\": string, \n  \"symbol\": string, \n  \"initialSupply\": string, \n  \"owner\": string\n}",
+        "name": "silver"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "009ea232-b225-4e79-be52-2e213041bdcb": {
+          "coordinates": [
+            74,
+            -133.25
+          ],
+          "name": "settings for gold",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "name": "\"Demo Gold\"",
+            "symbol": "\"DG\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"name\", \"symbol\", \"initialSupply\", \"ownerAddress\"]"
+          }
+        },
+        "69c12282-b582-4f73-be95-a4d92c9f25cd": {
+          "coordinates": [
+            -264,
+            136.25
+          ],
+          "name": "1million x 10^18",
+          "prototype": "4c8d32b2-586e-445b-a1ba-ea3ef0abb431"
+        },
+        "1244c94c-aebf-4756-bcd5-4e468fa20604": {
+          "coordinates": [
+            64,
+            87.75
+          ],
+          "name": "settings for silver",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "name": "\"Demo Silver\"",
+            "symbol": "\"DS\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"name\", \"symbol\", \"initialSupply\", \"ownerAddress\"]"
+          }
+        },
+        "64edc4a0-9179-4d53-b761-9621b8a239ec": {
+          "coordinates": [
+            -273,
+            -171.75
+          ],
+          "name": "100 thousand x 10^18",
+          "prototype": "f2c2b6c4-ddb5-451d-945e-f37457ccf2e6"
+        }
+      },
+      "connections": {
+        "64edc4a0-9179-4d53-b761-9621b8a239ec": {
+          "9f26e143-8353-4342-80ea-ce4f1043c96a": {
+            "009ea232-b225-4e79-be52-2e213041bdcb": {
+              "initialSupply": {}
+            }
+          }
+        },
+        "69c12282-b582-4f73-be95-a4d92c9f25cd": {
+          "9f26e143-8353-4342-80ea-ce4f1043c96a": {
+            "1244c94c-aebf-4756-bcd5-4e468fa20604": {
+              "initialSupply": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "2ee8e2c2-82b8-442d-a5f8-ff33bacbfcdb": {
+            "69c12282-b582-4f73-be95-a4d92c9f25cd": {
+              "63b84b80-602e-4ee9-89ae-fb78ff0c5adf": {}
+            },
+            "64edc4a0-9179-4d53-b761-9621b8a239ec": {
+              "63b84b80-602e-4ee9-89ae-fb78ff0c5adf": {}
+            },
+            "009ea232-b225-4e79-be52-2e213041bdcb": {
+              "ownerAddress": {}
+            },
+            "1244c94c-aebf-4756-bcd5-4e468fa20604": {
+              "ownerAddress": {}
+            }
+          }
+        },
+        "outputs": {
+          "ce51f40a-0935-4c34-98c6-a76ea57e525d": {
+            "009ea232-b225-4e79-be52-2e213041bdcb": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          },
+          "1c6131d1-f75c-4b3d-8e4d-9c1069357c23": {
+            "1244c94c-aebf-4756-bcd5-4e468fa20604": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true
+  }
+}

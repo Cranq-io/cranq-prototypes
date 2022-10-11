@@ -5,17 +5,19 @@
       "6847d4a5-3a0a-429b-bf8f-410f4da7e1ab": {
         "type": "any",
         "name": "start",
-        "description": ""
+        "description": "Receives a signal that triggers the compilation of the Uniswap V2 Core code."
       }
     },
     "outputs": {
       "2b981481-b683-4dfd-9738-febe673b08fa": {
         "type": "typeof `compiled contracts` of `compile`",
-        "name": "compile core-compiled contracts"
+        "name": "compile core-compiled contracts",
+        "description": "Sends out the compiled artifacts (abi, evm bytecode) of Uniswap V2 Core entities (contracts, library, interfaces, ...)."
       },
       "c56db654-2db7-4cb2-ac28-2213dae50128": {
-        "type": "any",
-        "name": "error"
+        "type": "typeof `error` of `compile`",
+        "name": "error",
+        "description": "Sends out any error that happened during compilation."
       }
     }
   },

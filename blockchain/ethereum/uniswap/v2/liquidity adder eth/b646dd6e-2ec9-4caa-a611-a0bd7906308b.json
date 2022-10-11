@@ -219,40 +219,44 @@
       "4602e6ff-ae72-46bd-bddb-2065b4f4895a": {
         "type": "{\n  \"address\": string,\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
         "name": "tokenA",
-        "description": ""
+        "description": "Receives parameters for tokenA.\n- address: the address of the token\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenA\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "e971b0f8-3982-4b6e-98d7-22f8409f3817": {
         "type": "{\n\"desiredAmount\": number,\noptional \"minimalAmount\": number\n}",
         "name": "ETH",
-        "description": ""
+        "description": "Receives parameters for ETH.\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in ETH\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "46368936-c937-4d59-9cf5-943b756ace58": {
         "type": "string",
         "name": "to address",
-        "description": "The address that will get the minted liquidity token."
+        "description": "Receives the address that will get the minted liquidity token."
       },
       "642a80c9-e59e-4e40-98e0-842ce385e544": {
         "type": "number",
         "name": "deadline",
-        "description": "Unix timestamp of the deadline until the operation should be completed or will be reverted."
+        "description": "Receives the unix timestamp of the deadline until the operation should be completed or will be reverted."
       },
       "9ab46954-d296-43b4-a18a-377cc168128d": {
         "type": "typeof `router contract` of `add liquidity ETH`",
-        "name": "router contract"
+        "name": "router contract",
+        "description": "Receives parameters of the Uniswap V2 Router contract to interact with"
       },
       "8c3157b3-36b1-4b1f-a20d-202a622dc38c": {
         "type": "typeof `credentials` of `add liquidity ETH`",
-        "name": "credentials"
+        "name": "credentials",
+        "description": "Receives credentials for the operation"
       }
     },
     "outputs": {
       "60a037e1-67e3-4d3b-9606-3398163f27af": {
         "type": "any",
-        "name": "result"
+        "name": "result",
+        "description": "Sends out the result of the operation in case of success"
       },
       "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {
         "type": "typeof `error` of `add liquidity ETH`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that occured during the liquidity addition process."
       }
     }
   },

@@ -5,17 +5,19 @@
       "eaa9ae98-4f1e-4cd7-a7ac-6168540dbd12": {
         "type": "typeof `factory init hash` of `instrument source`",
         "name": "factory init hash",
-        "description": "A value called 'INIT_HASH_CODE' that is shared between the Factory and the Router.\nThis value can be get from the Factory."
+        "description": "Receives the value called 'INIT_HASH_CODE' that is shared between the Factory and the Router.\nThis value can be retrieved from the Factory."
       }
     },
     "outputs": {
       "d52dc2ed-e787-456a-aa02-c9aec0cc1858": {
         "type": "typeof `compiled contracts` of `compile periphery`",
-        "name": "compiled contracts"
+        "name": "compiled contracts",
+        "description": "Sends out the compiled artifacts (abi, evm bytecode) of Uniswap V2 Periphery entities (contracts, library, interfaces, ...)."
       },
       "de6d47c9-a9f9-46fb-875d-7b16dd5cf777": {
-        "type": "any",
-        "name": "error"
+        "type": "typeof `error` of `compile periphery`",
+        "name": "error",
+        "description": "Sends out any error that happened during compilation."
       }
     }
   },

@@ -5,37 +5,45 @@
     "inputs": {
       "ca036788-5f7a-4d08-a4cf-f4223b4ce604": {
         "type": "{\n  \"address\": string,\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
-        "name": "tokenA"
+        "name": "tokenA",
+        "description": "Receives parameters for tokenA.\n- address: the address of the token\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenA\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "78d8f5a9-17e7-45e2-b778-f46cda29a80a": {
         "type": "{\n  \"address\": (string or \"ETH\"),\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
-        "name": "tokenB or ETH"
+        "name": "tokenB or ETH",
+        "description": "Receives parameters for tokenB/ETH.\n- address: the address of the token or \"ETH\"\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenB/ETH\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenB/ETH, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "7de50776-c33c-49fd-ae41-bb85b3da0501": {
         "type": "string",
-        "name": "to addres"
+        "name": "to addres",
+        "description": "Receives the address that will get the minted liquidity token."
       },
       "76512fec-78df-43fd-a9fd-20e33817bb49": {
         "type": "number",
-        "name": "deadline"
+        "name": "deadline",
+        "description": "Receives the unix timestamp of the deadline until the operation should be completed or will be reverted."
       },
       "a1a9f3b2-f3b9-4917-b77a-bf507b19f47f": {
-        "type": "{\n\"address\": string,\n\"abi\": {string: any}\n}",
-        "name": "router contract"
+        "type": "typeof `router contract` of `liquidity adder`",
+        "name": "router contract",
+        "description": "Receives parameters of the Uniswap V2 Router contract to interact with"
       },
       "77827705-1577-47c3-904c-8dff54475e8d": {
         "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
-        "name": "credentials"
+        "name": "credentials",
+        "description": "Receives credentials for the operation"
       }
     },
     "outputs": {
       "ca296aaa-e80e-4141-8a2c-2be8aad5dec2": {
-        "type": "any",
-        "name": "result"
+        "type": "(typeof `result` of `liquidity adder eth` or typeof `result` of `liquidity adder`) ",
+        "name": "result",
+        "description": "Sends out the result of the operation in case of success"
       },
       "4fbce32e-7012-4bde-bdc5-052501a3efde": {
-        "type": "any",
-        "name": "error"
+        "type": "(typeof `error` of `liquidity adder eth` or typeof `error` of `liquidity adder`) ",
+        "name": "error",
+        "description": "Sends out any error that occured during the liquidity addition process."
       }
     }
   },

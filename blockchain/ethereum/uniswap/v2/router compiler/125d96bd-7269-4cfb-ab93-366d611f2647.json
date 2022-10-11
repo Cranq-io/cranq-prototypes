@@ -5,13 +5,14 @@
       "5199b9b1-7f03-4665-862a-613a23a8691a": {
         "type": "typeof `factory init hash` of `compile periphery-v2`",
         "name": "factory init hash",
-        "description": "A value called 'INIT_HASH_CODE' that is shared between the Factory and the Router.\nThis value can be get from the Factory."
+        "description": "Receives the value called 'INIT_HASH_CODE' that is shared between the Factory and the Router. This value can be retrieved from the Factory."
       }
     },
     "outputs": {
       "f6250a09-cd0c-49c2-af3c-aab4032750b4": {
-        "type": "typeof `compiled contracts` of `compile periphery-v2`[\"abi\"]",
-        "name": "compiled Router contract"
+        "type": "typeof `compiled contracts` of `compile periphery-v2`[\"UniswapV2Router02\"]",
+        "name": "compiled Router contract",
+        "description": "Sends out the artifacts (abi, evm bytecode) of the copmiled Uniswap V2 Router contract."
       },
       "aa4575fc-d7b8-4205-944b-b87227acc8ea": {
         "type": "typeof `error` of `compile periphery-v2`",

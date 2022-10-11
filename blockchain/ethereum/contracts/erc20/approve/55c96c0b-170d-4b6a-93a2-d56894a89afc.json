@@ -5,30 +5,34 @@
       "8af36cde-8a26-4e21-938d-066a5e5742bd": {
         "type": "string",
         "name": "router address",
-        "description": "The address of a router contract that receives the approval for the given token."
+        "description": "Receives the address of the router contract that is given the approval for the specified token."
       },
       "86a67e4f-9f7d-4924-b1b8-9e9b17c5c8cf": {
         "type": "typeof `units` of `unit parser`",
         "name": "amount",
-        "description": "The amount of the selected token that should be added to the liquidity pool."
+        "description": "Receives the amount of  tokens to be approved"
       },
       "3eb6ccfa-35e8-4704-947b-89c795ea6871": {
         "type": "typeof `contract address` of `contract executor`",
-        "name": "token address"
+        "name": "token address",
+        "description": "Receives the address of  the token to be approved"
       },
       "82b16f00-66eb-49b7-8f6d-afa56a77f4c9": {
-        "type": "any",
-        "name": "typeof `credentials` of `contract executor`"
+        "type": "typeof `credentials` of `contract executor`",
+        "name": "credentials",
+        "description": "Receives the credentials required to interact with the chain."
       }
     },
     "outputs": {
       "74f19ab3-291b-479d-98b0-52ac9cd6affe": {
         "type": "any",
-        "name": "result"
+        "name": "result",
+        "description": "Sends out the result of approve call."
       },
       "91b4a65a-6da8-4469-a63e-bc64c18b0d78": {
-        "type": "any",
-        "name": "error"
+        "type": "typeof `error` of `contract executor`",
+        "name": "error",
+        "description": "Sends out any error that happened during approve call."
       }
     }
   },

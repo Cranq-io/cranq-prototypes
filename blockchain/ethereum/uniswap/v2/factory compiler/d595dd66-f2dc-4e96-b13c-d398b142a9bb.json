@@ -1,21 +1,24 @@
 {
   "name": "blockchain/ethereum/Uniswap/v2/Factory compiler",
-  "description": "Compiles UniswapV2Factory contract",
+  "description": "Compiles Uniswap V2 Factory contract",
   "interface": {
     "inputs": {
       "3dd8b80c-d01f-4d47-abff-104f98782ec6": {
         "type": "typeof `start` of `core compiler`",
-        "name": "start"
+        "name": "start",
+        "description": "Receives a signal that triggers the compilation of the Uniswap V2 Factory contract."
       }
     },
     "outputs": {
       "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
-        "type": "typeof `compile core-compiled contracts` of `core compiler`[string]",
-        "name": "compiled Factory contract"
+        "type": "typeof `compile core-compiled contracts` of `core compiler`[\"UniswapV2Factory\"]",
+        "name": "compiled Factory contract",
+        "description": "Sends out the artifacts (abi, evm bytecode) of the copmiled Uniswap V2 Factory contract."
       },
       "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
         "type": "typeof `error` of `core compiler`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that happened during compilation."
       }
     }
   },

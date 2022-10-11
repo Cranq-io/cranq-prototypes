@@ -291,9 +291,9 @@
     }
   },
   "name": "blockchain/ethereum/demo/demo pool creator",
-  "attributes": {
-    "internal": true
-  },
   "description": "For experiments only!\n\nIt creates an initial , fixed scenario for newly deployed Uniswap compatible DEX deployments to make them quickly up and running by filling with initial demo data.\n\nCan be used either on Ethereum, Binance smart chain or local chain (e.g. Ganache) environments. The provider url must be set accordingly in credentials. \n\nSolely for demos and experiments, not for production use.\n",
-  "iconId": "d6c7d254-d4ea-4185-a98a-29b8942d39cc"
+  "iconId": "d6c7d254-d4ea-4185-a98a-29b8942d39cc",
+  "attributes": {
+    "locked": true
+  }
 }

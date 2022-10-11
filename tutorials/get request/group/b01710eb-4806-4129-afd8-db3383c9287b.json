@@ -1,0 +1,175 @@
+{
+  "name": "tutorials/GET request/Group",
+  "interface": {
+    "inputs": {
+      "8df3824a-7e4c-442a-b8b1-32e54cfdb5aa": {
+        "type": "typeof `request` of `query params getter`",
+        "name": "request",
+        "description": "[Inherited from port `request` of `query params getter`] \nReceives an HTTP request that has query params."
+      }
+    },
+    "outputs": {
+      "7bd0c2ea-e8ea-46a4-b272-cc7a5bb66e1a": {
+        "type": "typeof `response` of `response builder`",
+        "name": "response",
+        "description": "[Inherited from port `response` of `response builder`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "988b36ea-d69c-40bb-844b-5f1746d10bcc": {
+          "coordinates": [
+            72.03298611111109,
+            282.3185763888889
+          ],
+          "name": "get total USDT value",
+          "prototype": "79ad8c77-5290-43e2-b1ff-91d16703006c"
+        },
+        "8f115052-19fb-436e-b594-19a99d5331c3": {
+          "coordinates": [
+            -289.14756944444446,
+            -90.18836805555554
+          ],
+          "name": "get query",
+          "prototype": "3c2b2b2d-0790-4dd2-83a6-21b15c09c223"
+        },
+        "00e63185-548e-4e4a-96c1-e1f759f1f5e3": {
+          "coordinates": [
+            297.85243055555554,
+            -37.18836805555554
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146",
+          "params": {
+            "402286d6-3a51-4842-8c43-5bd757b60445": "200",
+            "300852ca-cadf-4b8c-b238-6f257f3039fb": "{}"
+          }
+        },
+        "dec99881-c214-42a8-bb9c-8bb1ce736ec4": {
+          "coordinates": [
+            -150.14756944444446,
+            -228.18836805555554
+          ],
+          "name": "remove lists",
+          "prototype": "54dd8437-a9f5-43fc-a815-9becb5a90c48"
+        },
+        "58d90358-2509-43da-ac46-4629a7acd9f1": {
+          "coordinates": [
+            -150.14756944444446,
+            -22.188368055555543
+          ],
+          "name": "parse numbers",
+          "prototype": "90061d99-64eb-4260-ac6d-abdf4c6e9fb1"
+        },
+        "6666c1e5-db17-4101-91ed-691d0e416b00": {
+          "coordinates": [
+            10.852430555555543,
+            -138.18836805555554
+          ],
+          "name": "is string?",
+          "prototype": "622ddf45-9067-4c20-bed0-45fb79f02050"
+        },
+        "3413fee9-be3d-46ec-a22c-cd1724597bb2": {
+          "coordinates": [
+            23.852430555555543,
+            61.81163194444446
+          ],
+          "name": "parse number",
+          "prototype": "55d5a31a-4e9e-4d06-9875-86fa88e0033d"
+        },
+        "2ed49c71-92d2-4a52-ba6d-3db88d6e32fe": {
+          "coordinates": [
+            163.85243055555554,
+            84.81163194444446
+          ],
+          "name": "serialize result",
+          "prototype": "9b8b959e-3c8c-4e4c-ac8a-7bf59bb50803"
+        }
+      },
+      "connections": {
+        "8f115052-19fb-436e-b594-19a99d5331c3": {
+          "99ebb5db-866c-45a2-a3cd-ffa969dbd08f": {
+            "dec99881-c214-42a8-bb9c-8bb1ce736ec4": {
+              "b9028ed1-f559-45d0-a038-a67cc8f81455": {}
+            }
+          }
+        },
+        "dec99881-c214-42a8-bb9c-8bb1ce736ec4": {
+          "c46672f0-7343-4e60-86b6-73e3e048cc36": {
+            "6666c1e5-db17-4101-91ed-691d0e416b00": {
+              "6a3c089d-b056-4f4d-991c-a8a8112d3659": {}
+            }
+          },
+          "aae23c0e-0461-43fa-95f6-6857fa747dfa": {
+            "58d90358-2509-43da-ac46-4629a7acd9f1": {
+              "a7988a90-76f7-46ff-b09b-61858d52be3b": {}
+            }
+          }
+        },
+        "6666c1e5-db17-4101-91ed-691d0e416b00": {
+          "8ba76f0d-0adc-43b6-b2f1-18b88b24db41": {
+            "dec99881-c214-42a8-bb9c-8bb1ce736ec4": {
+              "daed7f05-10a0-4431-9637-d5034f0fa556": {}
+            }
+          }
+        },
+        "58d90358-2509-43da-ac46-4629a7acd9f1": {
+          "43dde9dc-1e3f-4784-9311-306e5b37df42": {
+            "3413fee9-be3d-46ec-a22c-cd1724597bb2": {
+              "68e94af3-1532-4b7d-a7e3-ceafacdccbfd": {}
+            }
+          },
+          "362372d2-9af3-43b4-8948-e7c80050c1af": {
+            "988b36ea-d69c-40bb-844b-5f1746d10bcc": {
+              "ebd83868-7514-4ac6-8a64-9b65b2a4e8a7": {}
+            }
+          }
+        },
+        "3413fee9-be3d-46ec-a22c-cd1724597bb2": {
+          "72bad116-28e0-4288-b294-07824385a4b8": {
+            "58d90358-2509-43da-ac46-4629a7acd9f1": {
+              "04851541-789c-4440-86b2-4006842c7489": {}
+            }
+          }
+        },
+        "988b36ea-d69c-40bb-844b-5f1746d10bcc": {
+          "9a05afb1-e897-4c34-955d-eda1fb2608a7": {
+            "2ed49c71-92d2-4a52-ba6d-3db88d6e32fe": {
+              "607be551-0389-42f8-99bb-088bfd8b1579": {}
+            }
+          }
+        },
+        "2ed49c71-92d2-4a52-ba6d-3db88d6e32fe": {
+          "60eb7bd0-fd76-48a5-a787-78a6f87d131b": {
+            "00e63185-548e-4e4a-96c1-e1f759f1f5e3": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8df3824a-7e4c-442a-b8b1-32e54cfdb5aa": {
+            "8f115052-19fb-436e-b594-19a99d5331c3": {
+              "bc400528-fea0-4547-ad9a-7b78f47c70dd": {}
+            }
+          }
+        },
+        "outputs": {
+          "7bd0c2ea-e8ea-46a4-b272-cc7a5bb66e1a": {
+            "00e63185-548e-4e4a-96c1-e1f759f1f5e3": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

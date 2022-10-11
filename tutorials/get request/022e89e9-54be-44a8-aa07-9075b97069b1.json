@@ -1,0 +1,88 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "This is the finish checkpoint for lesson 1 of the REST API tutorial. (https://docs.cranq.io)",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -237,
+            -77
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+          "coordinates": [
+            -57,
+            149.5
+          ],
+          "name": "endpoint params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\n{\n  \"serverId\": \"server\",\n    \"port\": 8080,\n    \"method\": \"GET\",\n    \"route\": \"/wallet_sum\"\n}"
+          }
+        },
+        "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+          "coordinates": [
+            -2.5,
+            -5
+          ],
+          "name": "GET /wallet_sum",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e"
+        },
+        "c1a26b51-d34c-4723-9d4b-01d33375c5f7": {
+          "coordinates": [
+            297.64756944444446,
+            -68.81163194444446
+          ],
+          "name": "calculate wallet sum",
+          "prototype": "b01710eb-4806-4129-afd8-db3383c9287b"
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        },
+        "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "c1a26b51-d34c-4723-9d4b-01d33375c5f7": {
+              "8df3824a-7e4c-442a-b8b1-32e54cfdb5aa": {}
+            }
+          }
+        },
+        "c1a26b51-d34c-4723-9d4b-01d33375c5f7": {
+          "7bd0c2ea-e8ea-46a4-b272-cc7a5bb66e1a": {
+            "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/GET request"
+}

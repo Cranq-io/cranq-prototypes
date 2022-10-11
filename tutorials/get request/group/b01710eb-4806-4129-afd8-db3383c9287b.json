@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "8df3824a-7e4c-442a-b8b1-32e54cfdb5aa": {
-        "type": "typeof `request` of `query params getter`",
+        "type": "typeof `request` of `get query`",
         "name": "request",
         "description": "[Inherited from port `request` of `query params getter`] \nReceives an HTTP request that has query params."
       }
     },
     "outputs": {
       "7bd0c2ea-e8ea-46a4-b272-cc7a5bb66e1a": {
-        "type": "typeof `response` of `response builder`",
+        "type": "typeof `response` of `build responser`",
         "name": "response",
         "description": "[Inherited from port `response` of `response builder`] \nSends the constructed HTTP response."
       }

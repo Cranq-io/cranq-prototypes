@@ -1,5 +1,5 @@
 {
-  "name": "blockchain/ethereum/pancakeswap/wbnb",
+  "name": "blockchain/ethereum/pancakeswap/wbnb deployer",
   "description": "Compiles and deploys a wrapped BNB contract. \n\n(WBNB is sometimes required by other contracts, like Pancakeswap for example. You need to deploy your own WBNB contract when it is not available, e.g. when running contracts in a local ganache environment.)",
   "interface": {
     "inputs": {

@@ -93,28 +93,6 @@
           ],
           "name": "forward silver address",
           "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
-        },
-        "b9d4cbc0-0bd5-445f-b2a5-f1226b980542": {
-          "coordinates": [
-            -47.833333333333314,
-            -325.04166666666663
-          ],
-          "name": "text writer",
-          "prototype": "c4812ed9-c9c7-42ba-8e7f-4b8721090de0",
-          "params": {
-            "e93c06b9-6b79-4f39-b74c-606a85e80b4f": "\"/Users/george/demo/binance/DemoSilver.sol\""
-          }
-        },
-        "c76411b4-ee0e-44ba-84a3-835dbce4d3e3": {
-          "coordinates": [
-            335.1666666666667,
-            -363.04166666666663
-          ],
-          "name": "text writer copy",
-          "prototype": "c4812ed9-c9c7-42ba-8e7f-4b8721090de0",
-          "params": {
-            "e93c06b9-6b79-4f39-b74c-606a85e80b4f": "\"/Users/george/demo/binance/DemoGold.sol\""
-          }
         }
       },
       "connections": {
@@ -122,11 +100,6 @@
           "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
             "c0c0ca2c-3fc6-4ddd-a1cd-715f67ceac15": {
               "67c68864-f37a-4967-9ddd-3a87617ac325": {}
-            }
-          },
-          "c756affd-6db5-4293-920b-ed329630f3c6": {
-            "b9d4cbc0-0bd5-445f-b2a5-f1226b980542": {
-              "aad67a3a-6f75-4fb8-9ddd-f7ea549b1491": {}
             }
           }
         },
@@ -163,11 +136,6 @@
           "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
             "52b97519-da18-43bd-b0be-2635d1a3193a": {
               "67c68864-f37a-4967-9ddd-3a87617ac325": {}
-            }
-          },
-          "c756affd-6db5-4293-920b-ed329630f3c6": {
-            "c76411b4-ee0e-44ba-84a3-835dbce4d3e3": {
-              "aad67a3a-6f75-4fb8-9ddd-f7ea549b1491": {}
             }
           }
         }

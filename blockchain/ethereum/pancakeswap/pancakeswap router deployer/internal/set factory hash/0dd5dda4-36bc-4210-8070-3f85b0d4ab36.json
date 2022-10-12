@@ -1,5 +1,5 @@
 {
-  "name": "blockchain/ethereum/pancakeswap/pancakeswap router deployer/internal/set factory hash",
+  "name": "blockchain/ethereum/pancakeswap/pancakeswap router deployer/internal/Set factory hash",
   "interface": {
     "inputs": {
       "e2a196eb-09a1-4255-bdd9-ce89d7ac39e4": {
@@ -7,16 +7,16 @@
         "name": "read"
       },
       "5ebda09c-cdfa-4eaf-b77d-325996db15bc": {
-        "type": "typeof `dict` of `get factory address`",
+        "type": "string",
         "name": "factory address",
-        "description": "[Inherited from port `dict` of `get factory address`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+        "description": ""
       },
       "17634380-22cc-4134-9592-c54fba9f1016": {
         "type": "string",
         "name": "contract"
       },
       "3378e6eb-1e25-4cd0-b3b7-8ddc88c0a6ac": {
-        "type": "typeof `credentials` of `contract caller`",
+        "type": "typeof `credentials` of `get init code pair hash`",
         "name": "credentials"
       }
     },
@@ -32,10 +32,10 @@
       "nodes": {
         "f6144491-09bb-44d5-8d0b-2f64da8c2567": {
           "coordinates": [
-            -31.399999999999977,
-            -161.2
+            -30.399999999999977,
+            -160.2
           ],
-          "name": "Get",
+          "name": "get init code pair hash",
           "prototype": "d0c40c17-a70f-46da-b735-5d6fb7a364d9",
           "params": {
             "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": "\"INIT_CODE_PAIR_HASH\"",

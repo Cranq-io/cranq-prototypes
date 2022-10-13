@@ -1,0 +1,93 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "82427d65-bcaf-4d75-90ab-4196b652126e": {
+          "coordinates": [
+            -12,
+            -101
+          ],
+          "name": "regex tester",
+          "prototype": "98f4e330-2578-4a0f-89c2-e90e8fff7ec4",
+          "params": {
+            "4ad33973-93b5-42cd-b485-76c517507786": "\"^[\\\\w-\\\\.]+@([\\\\w-]+\\\\.)+[\\\\w-]{2,4}$\""
+          }
+        },
+        "84bd38e7-be57-46f4-855c-8438c1ab2b6b": {
+          "coordinates": [
+            5,
+            59
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1241504c-0928-4b05-b945-d3f2c7c6940c": {
+            "82427d65-bcaf-4d75-90ab-4196b652126e": {
+              "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {}
+            },
+            "84bd38e7-be57-46f4-855c-8438c1ab2b6b": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "414e95c3-4b44-4f91-b0a5-94a314316d4d": {
+            "84bd38e7-be57-46f4-855c-8438c1ab2b6b": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "3fa5162c-8bee-4f83-8f50-4233c26ebde8": {
+            "84bd38e7-be57-46f4-855c-8438c1ab2b6b": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "82427d65-bcaf-4d75-90ab-4196b652126e": {
+          "b3b69745-686f-4978-a5cf-ef61c31da582": {
+            "84bd38e7-be57-46f4-855c-8438c1ab2b6b": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1241504c-0928-4b05-b945-d3f2c7c6940c": {
+        "type": "string",
+        "name": "input",
+        "description": "Receives the string to be validated."
+      }
+    },
+    "outputs": {
+      "3fa5162c-8bee-4f83-8f50-4233c26ebde8": {
+        "type": "typeof `input`",
+        "name": "on not email",
+        "description": "Sends the input if it's not a semantically valid email address."
+      },
+      "414e95c3-4b44-4f91-b0a5-94a314316d4d": {
+        "type": "string",
+        "name": "on email",
+        "description": "Sends the input if it's a semantically valid email address."
+      }
+    }
+  },
+  "name": "string/Email address validator fork",
+  "description": "Checks whether the input string is a semantically valid e-mail address & sends in on the appropriate output.",
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "keywords": {
+    "email": null,
+    "address": null,
+    "validate": null,
+    "fork": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

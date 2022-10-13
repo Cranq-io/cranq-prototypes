@@ -1,0 +1,99 @@
+{
+  "name": "data/Shared store setter",
+  "description": "Sets the contents of the shared store specified by `store ID` to `data`.\n\nWorks like a database, in that it acts like a key-value store of global shared variables, and thus it's important to watch out for race conditions, etc.",
+  "interface": {
+    "inputs": {
+      "25c7ef7d-f03e-4d11-8795-a841ff078903": {
+        "type": "string",
+        "name": "store ID"
+      },
+      "b27da556-2371-4233-822d-a60a129aaf03": {
+        "type": "any",
+        "name": "data"
+      }
+    },
+    "outputs": {
+      "736aaec0-1f5f-4284-99c0-149ace93aeb3": {
+        "type": "{\"storeId\": typeof `store ID`, \"data\": typeof `data`}",
+        "name": "written"
+      },
+      "3274d211-e6c2-48b7-908b-08932a7ba446": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7a9d5357-5054-4b24-a432-390378af7e07": {
+          "coordinates": [
+            25,
+            60
+          ],
+          "name": "set store",
+          "prototype": "98a9e940-ff79-4331-b30e-ce1970390ad0"
+        },
+        "64cdfd66-4f68-431a-b86d-17cd13c8dea0": {
+          "coordinates": [
+            -31,
+            -66
+          ],
+          "name": "sync inputs",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"storeId\", \"data\"]"
+          }
+        }
+      },
+      "connections": {
+        "64cdfd66-4f68-431a-b86d-17cd13c8dea0": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "7a9d5357-5054-4b24-a432-390378af7e07": {
+              "df286b60-2beb-4138-a6b2-667612bccc17": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "25c7ef7d-f03e-4d11-8795-a841ff078903": {
+            "64cdfd66-4f68-431a-b86d-17cd13c8dea0": {
+              "storeId": {}
+            }
+          },
+          "b27da556-2371-4233-822d-a60a129aaf03": {
+            "64cdfd66-4f68-431a-b86d-17cd13c8dea0": {
+              "data": {}
+            }
+          }
+        },
+        "outputs": {
+          "736aaec0-1f5f-4284-99c0-149ace93aeb3": {
+            "7a9d5357-5054-4b24-a432-390378af7e07": {
+              "4c2b33e6-e35f-4ae3-bd76-b9f092b9f136": {}
+            }
+          },
+          "3274d211-e6c2-48b7-908b-08932a7ba446": {
+            "7a9d5357-5054-4b24-a432-390378af7e07": {
+              "d5aa2548-b108-4d3e-ab60-8de0dfdb52c6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "shared": null,
+    "stateful": null,
+    "global": null,
+    "memory": null,
+    "variable": null,
+    "set": null,
+    "write": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

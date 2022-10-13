@@ -1,0 +1,90 @@
+{
+  "name": "data/Shared store getter",
+  "description": "Retrieves the shared store specified by `store ID`.\n\nWorks like a database, in that it acts like a key-value store of global shared variables, and thus it's important to watch out for race conditions, etc.",
+  "interface": {
+    "inputs": {
+      "f2701c1a-1edf-4401-a2c5-3b7f2305f188": {
+        "type": "string",
+        "name": "store ID"
+      }
+    },
+    "outputs": {
+      "084b014c-2a5f-40d2-86dc-7a7544c77024": {
+        "type": "any",
+        "name": "data"
+      },
+      "489f39d2-2cd6-4471-9f9f-08e89509359d": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "267175aa-ac66-4c5d-a64f-d75f725ef5ca": {
+          "coordinates": [
+            22.5,
+            60.5
+          ],
+          "name": "get store",
+          "prototype": "98a9e940-ff79-4331-b30e-ce1970390ad0"
+        },
+        "167e9a7d-7941-4359-b36f-3ee3ce0ae9d3": {
+          "coordinates": [
+            -23.5,
+            -61.5
+          ],
+          "name": "wrap store ID",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"storeId\"]"
+          }
+        }
+      },
+      "connections": {
+        "167e9a7d-7941-4359-b36f-3ee3ce0ae9d3": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "267175aa-ac66-4c5d-a64f-d75f725ef5ca": {
+              "df286b60-2beb-4138-a6b2-667612bccc17": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f2701c1a-1edf-4401-a2c5-3b7f2305f188": {
+            "167e9a7d-7941-4359-b36f-3ee3ce0ae9d3": {
+              "storeId": {}
+            }
+          }
+        },
+        "outputs": {
+          "084b014c-2a5f-40d2-86dc-7a7544c77024": {
+            "267175aa-ac66-4c5d-a64f-d75f725ef5ca": {
+              "3354cb5a-4b5d-4dd6-ad37-6b0c2ef4c7ca": {}
+            }
+          },
+          "489f39d2-2cd6-4471-9f9f-08e89509359d": {
+            "267175aa-ac66-4c5d-a64f-d75f725ef5ca": {
+              "d5aa2548-b108-4d3e-ab60-8de0dfdb52c6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "keywords": {
+    "shared": null,
+    "stateful": null,
+    "global": null,
+    "memory": null,
+    "variable": null,
+    "get": null,
+    "read": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

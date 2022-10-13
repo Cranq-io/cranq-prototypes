@@ -1,0 +1,81 @@
+{
+  "name": "io/http/server/utils/JSON request body parser",
+  "description": "Parses the body of an HTTP request as JSON.",
+  "interface": {
+    "inputs": {
+      "f522d573-49d0-45ab-ac2a-e8d4e576d60b": {
+        "type": "{\"body\": \"string\"}",
+        "name": "request",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "c76bd5f3-cbf0-414e-85f2-125c06e2ca12": {
+        "type": "any",
+        "name": "data"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "68e922d0-4956-4c62-b096-ffa7c9c27b69": {
+          "coordinates": [
+            -74.5,
+            -62.5
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"body\"]"
+          }
+        },
+        "6e57eb8d-e474-4c8f-b813-1389289df115": {
+          "coordinates": [
+            74.5,
+            62.5
+          ],
+          "name": "parser",
+          "prototype": "810387ec-2121-49e7-a4ba-56f8fc782e65"
+        }
+      },
+      "connections": {
+        "68e922d0-4956-4c62-b096-ffa7c9c27b69": {
+          "body": {
+            "6e57eb8d-e474-4c8f-b813-1389289df115": {
+              "2d0dc7bc-cdf4-46c8-9378-92040e214b7c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f522d573-49d0-45ab-ac2a-e8d4e576d60b": {
+            "68e922d0-4956-4c62-b096-ffa7c9c27b69": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "c76bd5f3-cbf0-414e-85f2-125c06e2ca12": {
+            "6e57eb8d-e474-4c8f-b813-1389289df115": {
+              "5ea58322-0ae4-4556-9dc7-5a1d6c16e755": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "keywords": {
+    "json": null,
+    "http": null,
+    "request": null,
+    "body": null,
+    "parse": null,
+    "extract": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

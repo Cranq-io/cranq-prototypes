@@ -40,14 +40,6 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "d767a6f9-36d5-4a2a-b839-dacd6a9610ec": {
-          "coordinates": [
-            -66.95746527777777,
-            179.5564236111111
-          ],
-          "name": "record to airtable",
-          "prototype": "e419e106-2619-4778-a199-51a92a9f1eac"
-        },
         "f1259c8a-372d-438a-92b5-dbe40be757cc": {
           "coordinates": [
             -226.95746527777777,
@@ -61,8 +53,8 @@
         },
         "daaab3c3-97ec-469c-af80-fd53ba83b83f": {
           "coordinates": [
-            -202.95746527777777,
-            92.55642361111109
+            -203.95746527777777,
+            71.55642361111109
           ],
           "name": "forwarder (double)",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
@@ -105,19 +97,12 @@
       },
       "connections": {
         "daaab3c3-97ec-469c-af80-fd53ba83b83f": {
-          "d1295197-1962-4680-a037-5890f2175bb9": {
-            "d767a6f9-36d5-4a2a-b839-dacd6a9610ec": {
-              "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {}
-            }
-          },
           "069a212d-9cea-4987-be45-e0079a13d96f": {
             "f1259c8a-372d-438a-92b5-dbe40be757cc": {
               "6ad86184-6890-4323-8021-3496a682c98e": {}
             }
-          }
-        },
-        "d767a6f9-36d5-4a2a-b839-dacd6a9610ec": {
-          "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
             "249e9e7c-4c8e-42db-81df-6511d2e15666": {
               "c17d78bf-f31f-4d80-b732-3e5cab9a13da": {}
             }

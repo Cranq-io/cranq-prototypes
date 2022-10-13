@@ -91,12 +91,12 @@
   "interface": {
     "inputs": {
       "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": {
-        "type": "{\n  \"Name\": string,\n  \"Email\": string\n}",
+        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}",
         "name": "from",
         "description": "Receives the sender."
       },
       "2b455e13-9320-4dac-a64c-f963ab2aeb3c": {
-        "type": "{\n  \"Name\": string,\n  \"Email\": string\n}[]",
+        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}[]",
         "name": "to",
         "description": "Receives the recipients."
       },

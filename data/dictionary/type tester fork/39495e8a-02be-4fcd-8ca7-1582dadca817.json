@@ -1,0 +1,90 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "93ab11c4-6637-4bcc-8e49-7e980af35f0e": {
+          "coordinates": [
+            -34,
+            -62
+          ],
+          "name": "type tester",
+          "prototype": "5f6d16f7-de92-4024-8778-7e53151a5f38"
+        },
+        "7527dcc8-b5fc-489f-b068-2d19b59489bc": {
+          "coordinates": [
+            47,
+            33
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3590c1f2-90e4-41a0-a73d-57add9bce379": {
+            "93ab11c4-6637-4bcc-8e49-7e980af35f0e": {
+              "af6185f2-aefb-453b-a836-99c55cf4e39f": {}
+            },
+            "7527dcc8-b5fc-489f-b068-2d19b59489bc": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "904e5d46-7aa4-414a-ba2c-112ccd118184": {
+            "7527dcc8-b5fc-489f-b068-2d19b59489bc": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "bf35d41f-fa1c-4308-bbb8-aac17efa9756": {
+            "7527dcc8-b5fc-489f-b068-2d19b59489bc": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "93ab11c4-6637-4bcc-8e49-7e980af35f0e": {
+          "c81b5913-e539-4b47-8f78-21ba43ea7058": {
+            "7527dcc8-b5fc-489f-b068-2d19b59489bc": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "3590c1f2-90e4-41a0-a73d-57add9bce379": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives the data to be forwarded."
+      }
+    },
+    "outputs": {
+      "904e5d46-7aa4-414a-ba2c-112ccd118184": {
+        "type": "{string:any}",
+        "name": "on dict",
+        "description": "Sends the original data, if it's a dictionary."
+      },
+      "bf35d41f-fa1c-4308-bbb8-aac17efa9756": {
+        "type": "typeof `data`",
+        "name": "on not dict",
+        "description": "Sends the original data, if it's not a dictionary."
+      }
+    }
+  },
+  "name": "data/dictionary/Type tester fork",
+  "description": "Forwards input data to one of two outputs, depending on whether the input data is a dictionary.",
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "keywords": {
+    "dict": null,
+    "is": null,
+    "fork": null,
+    "type": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

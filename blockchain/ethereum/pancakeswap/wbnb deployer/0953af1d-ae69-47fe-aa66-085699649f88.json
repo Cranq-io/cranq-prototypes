@@ -1,0 +1,113 @@
+{
+  "name": "blockchain/ethereum/pancakeswap/WBNB deployer",
+  "description": "Compiles and deploys a wrapped BNB contract. \n\n(WBNB is sometimes required by other contracts, like Pancakeswap for example. You need to deploy your own WBNB contract when it is not available, e.g. when running contracts in a local ganache environment.)",
+  "interface": {
+    "inputs": {
+      "c7708f4f-1b7d-4292-bdf6-a607378707b4": {
+        "type": "typeof `credentials` of `deploy contract preset`",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+        "type": "typeof `events` of `deploy contract preset`",
+        "name": "events"
+      },
+      "c756affd-6db5-4293-920b-ed329630f3c6": {
+        "type": "typeof `source` of `deploy contract preset`",
+        "name": "source"
+      },
+      "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
+        "type": "{\n    optional \"evmVersion\": string,\n    \"optimizer\": {\n        \"enabled\": boolean,\n        \"runs\": number\n    }\n}",
+        "name": "compile settings"
+      },
+      "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
+        "type": "typeof `error` of `deploy contract preset`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+          "coordinates": [
+            135.09201388888903,
+            4.348958333333485
+          ],
+          "name": "deploy contract preset",
+          "prototype": "f4f89c90-1285-4803-b3c8-530254056164",
+          "params": {
+            "741d010c-14a6-4dd1-b528-0d5386187bb7": "\"WBNB\"",
+            "67510810-61e0-4c9d-b06d-10fbe7c4a740": "[]"
+          }
+        },
+        "c1867a7f-b8ce-4691-8cbb-98342bfdfc4d": {
+          "coordinates": [
+            -11.28125,
+            -80.8515625
+          ],
+          "name": "contract preset (WBNB)",
+          "prototype": "c791825d-ced0-4354-b066-d8488511dd4b",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"name to replace\": \"WBNB\",\n  \"compile settings\": {\n  \"includeRoots\": [],\n  \"solidityVersion\": \"v0.4.26+commit.4563c3fc\",\n    \"compileOptions\": {\n      \"optimizer\": {\"enabled\": true, \"runs\": 999999}\n    }\n},\n\"deploy settings\": {\n        \"gas\": 4000000\n    },\n  \"contract template\": \"\\r\\n\\/\\/ File: projects\\/exchange-protocol\\/contracts\\/libraries\\/WBNB.sol\\r\\n\\r\\n\\r\\npragma solidity ^0.4.18;\\r\\n\\r\\ncontract WBNB {\\r\\n    string public name = \\\"Wrapped BNB\\\";\\r\\n    string public symbol = \\\"WBNB\\\";\\r\\n    uint8 public decimals = 18;\\r\\n\\r\\n    event Approval(address indexed src, address indexed guy, uint256 wad);\\r\\n    event Transfer(address indexed src, address indexed dst, uint256 wad);\\r\\n    event Deposit(address indexed dst, uint256 wad);\\r\\n    event Withdrawal(address indexed src, uint256 wad);\\r\\n\\r\\n    mapping(address => uint256) public balanceOf;\\r\\n    mapping(address => mapping(address => uint256)) public allowance;\\r\\n\\r\\n    function() public payable {\\r\\n        deposit();\\r\\n    }\\r\\n\\r\\n    function deposit() public payable {\\r\\n        balanceOf[msg.sender] += msg.value;\\r\\n        Deposit(msg.sender, msg.value);\\r\\n    }\\r\\n\\r\\n    function withdraw(uint256 wad) public {\\r\\n        require(balanceOf[msg.sender] >= wad);\\r\\n        balanceOf[msg.sender] -= wad;\\r\\n        msg.sender.transfer(wad);\\r\\n        Withdrawal(msg.sender, wad);\\r\\n    }\\r\\n\\r\\n    function totalSupply() public view returns (uint256) {\\r\\n        return this.balance;\\r\\n    }\\r\\n\\r\\n    function approve(address guy, uint256 wad) public returns (bool) {\\r\\n        allowance[msg.sender][guy] = wad;\\r\\n        Approval(msg.sender, guy, wad);\\r\\n        return true;\\r\\n    }\\r\\n\\r\\n    function transfer(address dst, uint256 wad) public returns (bool) {\\r\\n        return transferFrom(msg.sender, dst, wad);\\r\\n    }\\r\\n\\r\\n    function transferFrom(\\r\\n        address src,\\r\\n        address dst,\\r\\n        uint256 wad\\r\\n    ) public returns (bool) {\\r\\n        require(balanceOf[src] >= wad);\\r\\n\\r\\n        if (src != msg.sender && allowance[src][msg.sender] != uint256(-1)) {\\r\\n            require(allowance[src][msg.sender] >= wad);\\r\\n            allowance[src][msg.sender] -= wad;\\r\\n        }\\r\\n\\r\\n        balanceOf[src] -= wad;\\r\\n        balanceOf[dst] += wad;\\r\\n\\r\\n        Transfer(src, dst, wad);\\r\\n\\r\\n        return true;\\r\\n    }\\r\\n}\\r\\n\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "c1867a7f-b8ce-4691-8cbb-98342bfdfc4d": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+              "b53990d6-c237-4d59-9dbf-b2fa712181a7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c7708f4f-1b7d-4292-bdf6-a607378707b4": {
+            "c1867a7f-b8ce-4691-8cbb-98342bfdfc4d": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+              "11c0a845-1293-4670-9390-0a0586122a6f": {}
+            }
+          }
+        },
+        "outputs": {
+          "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
+            "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+              "b771d246-9110-4c33-82bf-dfb979e66235": {}
+            }
+          },
+          "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+            "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+              "2acecfad-46ec-48f8-80ea-332931523eef": {}
+            }
+          },
+          "c756affd-6db5-4293-920b-ed329630f3c6": {
+            "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+              "41ca2dbd-2701-45d8-8411-8dea422e9563": {}
+            }
+          },
+          "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
+            "ada60902-1af2-444c-9767-d3aae9f9e29e": {
+              "147727db-184c-41df-90e3-e4ab656781a2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "original": "6a8ac46e-756f-4028-bf83-e5fd7fdd8788",
+  "keywords": {
+    "token": null,
+    "Binance": null,
+    "BNB": null,
+    "Pancake": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "name": "blockchain/ethereum/demo/demo pool creator/internal/Demo tokens creator",
+  "interface": {
+    "inputs": {
+      "ce632f39-a9be-433f-98b7-ebb609fcf558": {
+        "type": "string",
+        "name": "ownerAddress",
+        "description": ""
+      },
+      "be2e4f8f-31e7-44e1-bbd0-538164a4493e": {
+        "type": "{\n  \"providerUrl\": string,\n  \"privateKey\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "329de9d4-538d-4921-9db5-17fdf280fd86": {
+        "type": "string",
+        "name": "gold address"
+      },
+      "3628c1fb-3c7c-4235-9e5e-06bd37f811be": {
+        "type": "string",
+        "name": "silver address"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "78286d1b-efb9-4d64-8d14-c2d33c136d17": {
+          "coordinates": [
+            -166.83333333333331,
+            -85.04166666666663
+          ],
+          "name": "erc20 silver",
+          "prototype": "6a8ac46e-756f-4028-bf83-e5fd7fdd8788",
+          "params": {
+            "2dd1939f-cbcf-4bfd-9076-1bcf32623d5c": "\"DemoSilver\""
+          }
+        },
+        "8967b7d8-e41c-4d61-83b2-17e5d79b9abe": {
+          "coordinates": [
+            -357.8333333333333,
+            -186.79166666666663
+          ],
+          "name": "create tokens' parameters",
+          "prototype": "9373de69-9591-4158-9442-08888050535b"
+        },
+        "5f7759a0-3e63-4c83-8b8d-c25e2fa3ed90": {
+          "coordinates": [
+            280.16666666666663,
+            -24.041666666666657
+          ],
+          "name": "erc20 gold",
+          "prototype": "6a8ac46e-756f-4028-bf83-e5fd7fdd8788",
+          "params": {
+            "2dd1939f-cbcf-4bfd-9076-1bcf32623d5c": "\"DemoGold\""
+          }
+        },
+        "c0c0ca2c-3fc6-4ddd-a1cd-715f67ceac15": {
+          "coordinates": [
+            83.16666666666669,
+            -61.04166666666663
+          ],
+          "name": "wait for silver",
+          "prototype": "1e99c75f-d21c-41de-a79c-7080ab8a2883",
+          "params": {
+            "465fe590-d79e-4987-b1c6-a414e01773e2": "2"
+          }
+        },
+        "ed5c19c9-3749-4023-9d5d-63b1512f003b": {
+          "coordinates": [
+            192.16666666666669,
+            -178.04166666666663
+          ],
+          "name": "gate",
+          "prototype": "40a2e145-0193-461f-978a-d6aaf4a7ea09"
+        },
+        "52b97519-da18-43bd-b0be-2635d1a3193a": {
+          "coordinates": [
+            444.1666666666667,
+            -99.04166666666663
+          ],
+          "name": "contract deployment waiter",
+          "prototype": "1e99c75f-d21c-41de-a79c-7080ab8a2883",
+          "params": {
+            "465fe590-d79e-4987-b1c6-a414e01773e2": "2"
+          }
+        },
+        "6fea2a57-5f29-4373-bf9f-09e05d234c9b": {
+          "coordinates": [
+            293.1666666666667,
+            105.95833333333334
+          ],
+          "name": "forward silver address",
+          "prototype": "420bb3c5-79a9-4b4d-934e-ee04d07f92b0"
+        }
+      },
+      "connections": {
+        "78286d1b-efb9-4d64-8d14-c2d33c136d17": {
+          "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+            "c0c0ca2c-3fc6-4ddd-a1cd-715f67ceac15": {
+              "67c68864-f37a-4967-9ddd-3a87617ac325": {}
+            }
+          }
+        },
+        "c0c0ca2c-3fc6-4ddd-a1cd-715f67ceac15": {
+          "eadf732a-e84a-47e0-a825-95574d2f25ee": {
+            "ed5c19c9-3749-4023-9d5d-63b1512f003b": {
+              "0e7419a5-ec56-4a97-8f11-6add5ff3ae1e": {}
+            },
+            "6fea2a57-5f29-4373-bf9f-09e05d234c9b": {
+              "b0fb4a37-09d5-462e-952a-c3ab29a47e82": {}
+            }
+          }
+        },
+        "8967b7d8-e41c-4d61-83b2-17e5d79b9abe": {
+          "1c6131d1-f75c-4b3d-8e4d-9c1069357c23": {
+            "78286d1b-efb9-4d64-8d14-c2d33c136d17": {
+              "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {}
+            }
+          },
+          "ce51f40a-0935-4c34-98c6-a76ea57e525d": {
+            "ed5c19c9-3749-4023-9d5d-63b1512f003b": {
+              "87d3064e-5a44-4029-bea8-ba632449f2f5": {}
+            }
+          }
+        },
+        "ed5c19c9-3749-4023-9d5d-63b1512f003b": {
+          "7fe23af1-29bf-4cc5-810c-5b91dea1b61a": {
+            "5f7759a0-3e63-4c83-8b8d-c25e2fa3ed90": {
+              "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {}
+            }
+          }
+        },
+        "5f7759a0-3e63-4c83-8b8d-c25e2fa3ed90": {
+          "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
+            "52b97519-da18-43bd-b0be-2635d1a3193a": {
+              "67c68864-f37a-4967-9ddd-3a87617ac325": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "be2e4f8f-31e7-44e1-bbd0-538164a4493e": {
+            "78286d1b-efb9-4d64-8d14-c2d33c136d17": {
+              "c7708f4f-1b7d-4292-bdf6-a607378707b4": {}
+            },
+            "5f7759a0-3e63-4c83-8b8d-c25e2fa3ed90": {
+              "c7708f4f-1b7d-4292-bdf6-a607378707b4": {}
+            }
+          },
+          "ce632f39-a9be-433f-98b7-ebb609fcf558": {
+            "8967b7d8-e41c-4d61-83b2-17e5d79b9abe": {
+              "2ee8e2c2-82b8-442d-a5f8-ff33bacbfcdb": {}
+            }
+          }
+        },
+        "outputs": {
+          "329de9d4-538d-4921-9db5-17fdf280fd86": {
+            "52b97519-da18-43bd-b0be-2635d1a3193a": {
+              "eadf732a-e84a-47e0-a825-95574d2f25ee": {}
+            }
+          },
+          "3628c1fb-3c7c-4235-9e5e-06bd37f811be": {
+            "6fea2a57-5f29-4373-bf9f-09e05d234c9b": {
+              "0a9cd5b0-6de6-4c69-aa04-2816de994173": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

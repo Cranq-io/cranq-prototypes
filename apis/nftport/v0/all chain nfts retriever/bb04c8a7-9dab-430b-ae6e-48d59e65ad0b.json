@@ -1,6 +1,6 @@
 {
   "name": "apis/nftport/v0/All chain NFTs retriever",
-  "description": "Returns all ERC721 and ERC1155 NFTs that have been minted on a given chain, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve all NFTs:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts",
+  "description": "Returns all ERC721 and ERC1155 NFTs that have been minted on a given chain, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve all NFTs:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-all-nf-ts",
   "interface": {
     "inputs": {
       "c502541e-0be6-4faa-89c0-b14d3c9b76e0": {
@@ -10,14 +10,14 @@
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nDefault chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts#Query-Parameters"
+        "description": "Receives the query parameters.\n\nDefault chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-all-nf-ts#Query-Parameters"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"nfts\": {\n\t\"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n\t\"contract_address\": string,\n\t\"token_id\": string,\n\toptional \"contract\": {\n\t\t\"name\": string,\n\t\t\"symbol\": string,\n\t\t\"type\": (\"ERC721\" or \"ERC1155\")\n\t},\n\toptional \"metadata\": {string:any},\n\toptional \"metadata_url\": string,\n\toptional \"file_url\": string,\n\toptional \"animation_url\": string,\n\toptional \"cached_file_url\": string,\n\toptional \"cached_animation_url\": string,\n\toptional \"mint_date\": string,\n\toptional \"file_information\": {\n\t\t\"height\": number,\n\t\t\"width\": number,\n\t\t\"file_size\": number\n\t},\n\toptional \"updated_date\": string\n  }[],\n  \"continuation\": string\n}",
         "name": "data",
-        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTI-retrieve-all-nf-ts#Responses"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-all-nf-ts#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

@@ -1,17 +1,17 @@
 {
   "name": "apis/nftport/v0/Product contract deployer",
-  "description": "Deploys an ERC721 or ERC1155 smart contract to a proof-of-stake chain for on-demand subsequent minting.\n\nDeploy a contract for NFT products:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzU-deploy-a-contract-for-nft-products",
+  "description": "Deploys an ERC721 or ERC1155 smart contract to a proof-of-stake chain for on-demand subsequent minting.\n\nDeploy a contract for NFT products:\nhttps://docs.nftport.xyz/docs/nftport/?search=deploy-a-contract-for-nft-products",
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
         "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"owner_address\": string,\n  optional \"type\": (\"erc721\" or \"erc1155\"),\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
         "name": "contract",
-        "description": "Receives the data of the contract to be deployed.\n\nReference: https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzU-deploy-a-contract-for-nft-products#Request"
+        "description": "Receives the data of the contract to be deployed.\n\nReference: https://docs.nftport.xyz/docs/nftport/?search=deploy-a-contract-for-nft-products#Request"
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "Reference: https://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzNzU-deploy-a-contract-for-nft-products#Request\n\nDefault chain value: \"polygon\""
+        "description": "Reference: https://docs.nftport.xyz/docs/nftport/?search=deploy-a-contract-for-nft-products#Request\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {

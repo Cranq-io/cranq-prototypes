@@ -1,6 +1,6 @@
 {
   "name": "apis/nftport/v0/Minted NFT lister",
-  "description": "List all your minted NFTs with a specific API key.\n\nList all your minted NFTs:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts\n\nDefault chain value: \"polygon\"",
+  "description": "List all your minted NFTs with a specific API key.\n\nList all your minted NFTs:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-minted-nf-ts\n\nDefault chain value: \"polygon\"",
   "interface": {
     "inputs": {
       "71961b30-2c7f-450a-a4f5-da04e317795a": {
@@ -10,14 +10,14 @@
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\" :(\"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "Recives query params.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Request"
+        "description": "Recives query params.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-minted-nf-ts#Request"
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
         "type": "{\n\n  \"response\": \"OK\",\n  \"total\": number,\n  \"minted_nfts\": [\n    {\n      \"chain\": (\"polygon\" or \"rinkeby\"),\n      \"transaction_hash\": string,\n      \"contract_name\": \"string\",\n      \"contract_address\": string,\n      \"type\": \"string\",\n      optional \"token_id\": \"string\",\n      \"mint_to_address\": \"string\",\n      optional \"metadata_uri\": \"string\",\n      \"quantity\": string,\n  \"num_burned_transferred_amount\": number,\n      \"metadata_frozen\": boolean,\n      \"mint_date\": string\n    }\n  ]\n}",
         "name": "data",
-        "description": "Sends list of all the NFTs minted by you.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
+        "description": "Sends list of all the NFTs minted by you.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-minted-nf-ts#Responses"
       },
       "384bbd6b-c13e-4fed-9724-336637c51b87": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",

@@ -1,24 +1,24 @@
 {
   "name": "apis/nftport/v0/NFT details retriever",
-  "description": "Returns details for a given NFT, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve NFT details:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details",
+  "description": "Returns details for a given NFT, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve NFT details:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-nft-details",
   "interface": {
     "inputs": {
       "b4254959-5f3f-4e98-9460-ad3c3a2032a1": {
         "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"refresh_metadata\": boolean\n}",
         "name": "query",
-        "description": "Receives search query.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request\n\nDefault refresh_metadata value is false."
+        "description": "Receives search query.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-nft-details#Request\n\nDefault refresh_metadata value is false."
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Request\n\nDefault chain value: \"ethereum\""
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=retrieve-nft-details#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"nft\": {\n    \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n    \"contract_address\": string,\n    \"token_id\": string,\n    \"metadata_url\": string,\n    \"metadata\": {string:any},\n    \"file_information\": {\n      \"height\": number,\n      \"width\": number,\n      \"file_size\": number\n    },\n    \"file_url\": string,\n    \"animation_url\": string,\n    \"cached_file_url\": string,\n    \"cached_animation_url\": string,\n    \"mint_date\": string,\n    \"updated_date\": string\n  },\n  \"owner\": string,\n  \"contract\": {\n    \"name\": string,\n    \"symbol\": string,\n    \"type\": (\"ERC721\" or \"ERC1155\")\n  },\n  optional \"status\": string,\n  optional \"status_message\": string\n}",
         "name": "data",
-        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTM-retrieve-nft-details#Responses"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-nft-details#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

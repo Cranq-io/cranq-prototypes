@@ -1,24 +1,24 @@
 {
   "name": "apis/nftport/v0/NFT contracts by owner retriever",
-  "description": "Returns a list of contracts (i.e. collections) where the given account (wallet) address owns at least one NFT, using the NFTPort API.\nSupports Ethereum only.\n\nRetrieve contracts owned by an account:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account",
+  "description": "Returns a list of contracts (i.e. collections) where the given account (wallet) address owns at least one NFT, using the NFTPort API.\nSupports Ethereum only.\n\nRetrieve contracts owned by an account:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account",
   "interface": {
     "inputs": {
       "945d8d4a-cfea-4d6e-9f8d-fc965be6f064": {
         "type": "{  \n \"account_address\": string,\noptional \"continuation\": string,\n   optional \"page_size\": number,\n  optional \"type\" : \"owns_contract_nfts\"\n}",
         "name": "query",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account#Request"
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account#Request"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account#Request\n\nDefault chain value: \"ethereum\"\n"
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account#Request\n\nDefault chain value: \"ethereum\"\n"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"contracts\": \n  {\n    \"name\": string,\n    \"symbol\": string,\n    \"type\": (\"ERC721\" or \"ERC1155\"),\n    \"address\": string,\n    \"num_nfts_owned\": number\n  }[],\n  \"total\": number,\n  optional \"continuation\": string\n}",
         "name": "data",
-        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6NjExMTc5ODY-retrieve-contracts-owned-by-an-account#Responses"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

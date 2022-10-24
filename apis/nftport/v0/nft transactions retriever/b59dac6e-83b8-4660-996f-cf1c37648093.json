@@ -1,29 +1,29 @@
 {
   "name": "apis/nftport/v0/NFT transactions retriever",
-  "description": "Returns all on-chain transactions for the specified NFT token, using the NFTPort API. Can be set to include transactions such as transfer, burn, mint, and sale, or all which includes all transactions. \nSupports Ethereum only.\n\nRetrieve transactions by NFT:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft",
+  "description": "Returns all on-chain transactions for the specified NFT token, using the NFTPort API. Can be set to include transactions such as transfer, burn, mint, and sale, or all which includes all transactions. \nSupports Ethereum only.\n\nRetrieve transactions by NFT:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-transactions-by-nft",
   "interface": {
     "inputs": {
       "d6176d1f-fbe4-4da3-8727-618b627dff92": {
         "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n    optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[]\n}",
         "name": "query",
-        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft#Request\n\nDefault type value: \"all\""
+        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-transactions-by-nft#Request\n\nDefault type value: \"all\""
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
         "name": "params",
-        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzAxNDQ3NzU-retrieve-transactions-by-nft#Request\n\nDefault chain value: \"ethereum\""
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-transactions-by-nft#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"transactions\": \n  ({\n      \"type\": (\"transfer\" or \"mint\" or \"burn\"),\n\t  optional \"owner_address\": string,\n      optional \"transfer_from\": string,\n      optional \"transfer_to\": string,\n      \"contract_address\": string,\n      \"token_id\": number,\n      \"quantity\": 1,\n      \"transaction_hash\": string,\n      \"block_hash\": string,\n      \"block_number\": number,\n      \"transaction_date\": string\n  } or {\n      \"type\": \"sale\",\n\t  optional \"buyer_address\": string,\n\t  \"seller_address\": string,\n\t  \"nft\": {\n\t\t\"contract_type\": (\"ERC721\" or \"ERC1155\"),\n\t\t\"contract_address\": string,\n\t\t\"token_id\": string,\n\t\toptional \"metadata_url\": (string or null),\n\t\toptional \"creators\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"creator_share\": number\n\t\t}[],\n\t\toptional \"royalties\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"royalty_share\": number\n\t\t}[],\n\t\toptional \"signatures\": string[],\n\t\toptional \"total\": number\n\t  },\n\t  \"quantity\": number,\n\t  \"price_details\": {\n        \"asset_type\": string,\n\t\toptional \"contract_address\": string,\n        \"price\": number,\n        \"price_usd\": number\n      },\n      \"transaction_hash\": string,\n      \"block_hash\": string,\n      \"block_number\": number,\n      \"transaction_date\": string,\n      \"marketplace\": (\"opensea\" or \"rarible\")\n  } or {\n      \"type\": (\"bid\" or \"cancel_bid\"),\n\t  \"bidder_address\": string,\n\t  \"nft\": {\n\t\t\"contract_type\": (\"ERC721\" or \"ERC1155\"),\n\t\t\"contract_address\": string,\n\t\t\"token_id\": string,\n\t\toptional \"metadata_url\": (string or null),\n\t\toptional \"creators\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"creator_share\": number\n\t\t\t}[],\n\t\toptional \"royalties\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"royalty_share\": number\n\t\t}[],\n\t\toptional \"signatures\": string[],\n\t\toptional \"total\": number\n\t  },\n\t  optional \"quantity\": number,\n\t  \"price_details\": {\n        \"asset_type\": string,\n\t\toptional \"contract_address\": string,\n        \"price\": number,\n        \"price_usd\": number\n      },\n      optional \"transaction_hash\": string,\n      optional \"block_hash\": string,\n      optional \"block_number\": number,\n      \"transaction_date\": string,\n      optional \"marketplace\": (\"opensea\" or \"rarible\")\n  } or {\n      \"type\": (\"list\" or \"cancel_list\"),\n\t  \"lister_address\": string,\n\t  \"nft\": {\n\t\t\"contract_type\": (\"ERC721\" or \"ERC1155\"),\n\t\t\"contract_address\": string,\n\t\t\"token_id\": string,\n\t\toptional \"metadata_url\": (string or null),\n\t\toptional \"creators\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"creator_share\": number\n\t\t}[],\n\t\toptional \"royalties\": {\n\t\t\t\"account_address\": string,\n\t\t\t\"royalty_share\": number\n\t\t}[],\n\t\toptional \"signatures\": string[],\n\t\toptional \"total\": number\n\t  },\n\t  optional \"quantity\": number,\n\t  \"price_details\": {\n        \"asset_type\": string,\n\t\toptional \"contract_address\": string,\n        \"price\": number,\n        \"price_usd\": number\n      },\n      optional \"transaction_hash\": string,\n      optional \"block_hash\": string,\n      optional \"block_number\": number,\n      \"transaction_date\": string,\n      optional \"marketplace\": (\"opensea\" or \"rarible\")\n  })[],\n  \"continuation\": string\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6Njg1NTI0MzY-multi-chain-nft-search#Responses"
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
         "name": "response",
-        "description": "Sends the original response.\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6Njg1NTI0MzY-multi-chain-nft-search#Responses"
+        "description": "Sends the original response.\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Responses"
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",

@@ -8,8 +8,8 @@
         "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "11745554-d9d0-41bb-af77-987d8450ccfe": {
-        "type": "number",
-        "name": "port",
+        "type": "(number or [number, string])",
+        "name": "port & opt host",
         "description": "The port number express should listen to.\n\nExample: \n3000"
       }
     },
@@ -51,8 +51,11 @@
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
-              "port": {}
+            "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            },
+            "2b7e8c0c-3c85-40d3-a2e1-bb615d99e68f": {
+              "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {}
             }
           }
         },
@@ -63,10 +66,36 @@
             }
           }
         },
-        "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+        "4e2565c2-8d3c-41f3-9f02-dcc2a4168864": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
             "33303022-6273-40a5-aeec-2699f2b78d38": {
               "options": {}
+            }
+          }
+        },
+        "f6cad485-144d-491f-bcdd-952f54bb4c27": {
+          "852cd030-0794-42cc-b448-0886fb787cf2": {
+            "33303022-6273-40a5-aeec-2699f2b78d38": {
+              "options": {}
+            }
+          }
+        },
+        "2b7e8c0c-3c85-40d3-a2e1-bb615d99e68f": {
+          "63f3f918-df9f-4037-870b-b5189bea60ad": {
+            "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "f6cad485-144d-491f-bcdd-952f54bb4c27": {
+              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            }
+          },
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "4e2565c2-8d3c-41f3-9f02-dcc2a4168864": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
             }
           }
         }
@@ -124,17 +153,6 @@
             "type": "\"listen\""
           }
         },
-        "d0b1af21-883c-465d-80a4-6b376dd2d3c6": {
-          "coordinates": [
-            -78.19999999999999,
-            -90.19999999999999
-          ],
-          "name": "build options",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"port\"]"
-          }
-        },
         "a2965b53-ca20-48fa-bca4-e0a4cc8b1422": {
           "coordinates": [
             -185.2,
@@ -152,6 +170,45 @@
           "name": "depot",
           "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41",
           "params": {}
+        },
+        "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
+          "coordinates": [
+            -293.75,
+            -375
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "4e2565c2-8d3c-41f3-9f02-dcc2a4168864": {
+          "coordinates": [
+            -141.75,
+            -470
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"port\"",
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"host\": \"127.0.0.1\"}"
+          }
+        },
+        "f6cad485-144d-491f-bcdd-952f54bb4c27": {
+          "coordinates": [
+            -118.75,
+            -308
+          ],
+          "name": "builder (keys & values)",
+          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
+          "params": {
+            "33848016-8ca0-4d05-ae94-0666dc207a34": "[\"port\", \"host\"]"
+          }
+        },
+        "2b7e8c0c-3c85-40d3-a2e1-bb615d99e68f": {
+          "coordinates": [
+            -444.75,
+            -175
+          ],
+          "name": "is host added",
+          "prototype": "35c45234-1f7a-41c4-a876-48a6395770b8"
         }
       }
     }

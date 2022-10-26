@@ -59,8 +59,8 @@
         },
         "43619449-a641-4f60-bd73-d05ddf1882b6": {
           "coordinates": [
-            178.33333333333334,
-            -57.734375
+            269.33333333333337,
+            -60.734375
           ],
           "name": "authenticate request",
           "prototype": "bae8978b-45ee-483a-8e7d-d9b2cfef0b66"
@@ -83,8 +83,8 @@
         },
         "bfe96f38-ce64-48f0-b656-263d9e3d5346": {
           "coordinates": [
-            -222.75,
-            397.6484375
+            -241.75,
+            446.6484375
           ],
           "name": "request params",
           "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
@@ -115,8 +115,8 @@
         },
         "5064d22b-adf0-455f-9f63-885ff5c4070b": {
           "coordinates": [
-            -321.25,
-            229.5
+            -346.25,
+            351.5
           ],
           "name": "item getter with default",
           "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
@@ -127,8 +127,8 @@
         },
         "db9ac535-8426-4920-a2ae-71bf12ddd334": {
           "coordinates": [
-            -275.75,
-            127.5
+            -355.75,
+            170.5
           ],
           "name": "builder",
           "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
@@ -149,16 +149,16 @@
         },
         "64d6c278-442c-4f2c-bbd0-6e0931c20ad8": {
           "coordinates": [
-            169.25,
-            357.5
+            243.25,
+            145.5
           ],
           "name": "logger",
           "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
         },
         "0e7c338c-0617-4730-826e-d759232294b7": {
           "coordinates": [
-            417.25,
-            338.5
+            322.25,
+            322.5
           ],
           "name": "logger (with message)",
           "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
@@ -168,8 +168,8 @@
         },
         "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
           "coordinates": [
-            264.25,
-            212.5
+            196.25,
+            417.5
           ],
           "name": "server error checker",
           "prototype": "0faadab5-12bc-4bd8-b7e1-0bd8ddf21a43"
@@ -350,5 +350,7 @@
     "api": null
   },
   "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
-  "attributes": {}
+  "attributes": {
+    "locked": true
+  }
 }

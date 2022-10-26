@@ -154,6 +154,25 @@
           ],
           "name": "logger",
           "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
+        },
+        "0e7c338c-0617-4730-826e-d759232294b7": {
+          "coordinates": [
+            417.25,
+            338.5
+          ],
+          "name": "logger (with message)",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"[SERVER ERROR]\""
+          }
+        },
+        "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
+          "coordinates": [
+            264.25,
+            212.5
+          ],
+          "name": "server error checker",
+          "prototype": "0faadab5-12bc-4bd8-b7e1-0bd8ddf21a43"
         }
       },
       "connections": {
@@ -180,6 +199,11 @@
           "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
             "64d6c278-442c-4f2c-bbd0-6e0931c20ad8": {
               "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          },
+          "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {
+            "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
+              "8978272a-83da-48fd-b253-ca7585916edc": {}
             }
           }
         },
@@ -256,6 +280,13 @@
               "11745554-d9d0-41bb-af77-987d8450ccfe": {}
             }
           }
+        },
+        "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
+          "e7b7f2c0-4e3f-4630-83d6-f5c18f170947": {
+            "0e7c338c-0617-4730-826e-d759232294b7": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -285,9 +316,6 @@
         },
         "outputs": {
           "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
-            "23d992fe-29d5-4ada-be32-0edfed577b81": {
-              "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {}
-            },
             "4bab3d3e-8fa7-4b47-af92-a3fb23d4ff31": {
               "12b5e681-073c-47bc-abb3-698530817f66": {}
             },
@@ -296,6 +324,9 @@
             },
             "021f81af-492a-4a7d-b348-36f8f645e103": {
               "8f7cb810-8dcf-4cf3-8423-c95409b863d6": {}
+            },
+            "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
+              "bfb24c70-24af-457b-bc18-d945b3f65b3a": {}
             }
           },
           "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {

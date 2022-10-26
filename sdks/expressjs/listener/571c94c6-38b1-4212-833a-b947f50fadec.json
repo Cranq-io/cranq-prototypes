@@ -20,9 +20,9 @@
         "description": "Event triggered when the action has been executed."
       },
       "786b99f3-5457-46d2-8a6b-e5fcdd2240ec": {
-        "type": "{\"error\": string}",
+        "type": "typeof `error` of `express`",
         "name": "error",
-        "description": "Sends error information in case the specified action could not be successfully executed.\n\nExample:\n{\n  \"code\": \"EADDRINUSE\",\n  \"errno\": -98,\n  \"syscall\": \"listen\",\n  \"address\": \"::\",\n  \"port\": 3000\n}"
+        "description": "Sends error information in case the specified action could not be successfully executed.\n\nExample:\n{\n  \"error\": \"listen EADDRINUSE: address already in use 127.0.0.1:8080\",\n  \"origin\": \"server\"\n}"
       },
       "541fc93b-1098-4659-95a2-f75bcf3109b1": {
         "type": "typeof `app ID`",

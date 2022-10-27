@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "a68f4b04-0a0d-4388-adda-7557bbb9fa3f": {
-        "type": "typeof `item` of `builder`",
+        "type": "number",
         "name": "item",
         "description": "[Inherited from port `item` of `builder`] \nReceives item to be added to the array.\n\nExample:\n\"Foo\""
       },
       "6c56929c-0fc1-40bb-bee1-272948dedc70": {
-        "type": "typeof `dict` of `item getter with default`",
+        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\noptional \"host\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
         "name": "dict",
         "description": "[Inherited from port `dict` of `item getter with default`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
@@ -76,6 +76,7 @@
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

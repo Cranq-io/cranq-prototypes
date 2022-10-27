@@ -1,0 +1,101 @@
+{
+  "name": "io/http/server/Endpoint listener/set resp. content type type",
+  "interface": {
+    "inputs": {
+      "ce88a000-ea68-4fce-9c40-7c3b1ad9645b": {
+        "type": "typeof `response` of `add resp. content type`",
+        "name": "response"
+      },
+      "5704c0a6-55bd-4c29-b7d7-46daf5dbd235": {
+        "type": "{\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0f613912-18f1-4e41-9cb6-e0df3343e0c1": {
+        "type": "typeof `response` of `add resp. content type`",
+        "name": "response"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+          "coordinates": [
+            147.67596726190476,
+            -93.62816220238096
+          ],
+          "name": "add resp. content type",
+          "prototype": "ad05eb6d-f87c-407b-8906-fef794d28856"
+        },
+        "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
+          "coordinates": [
+            -28.966889880952394,
+            -22.19959077380952
+          ],
+          "name": "response params",
+          "prototype": "037e67ce-aa64-449c-a3db-80dce00f1096",
+          "params": {
+            "e7d99c83-94bf-45ac-bc40-d58615931d22": "\"response\"",
+            "09901a8a-16aa-4e9a-a314-d8eb2cec3284": "{}"
+          }
+        },
+        "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+          "coordinates": [
+            -118.7090773809524,
+            115.82775297619048
+          ],
+          "name": "store (async)",
+          "prototype": "aa5f3cb3-2506-4ac8-93cc-cf7d20b36688"
+        }
+      },
+      "connections": {
+        "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
+          "5be5d6b9-b0d0-4a0c-a6e5-4e0a4446e704": {
+            "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+              "287c923c-5e36-4c3c-9fca-496631da77c7": {}
+            }
+          }
+        },
+        "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+          "cdc900e3-d41b-4e51-be78-8d2855df7b6e": {
+            "ace8ab2f-e0f2-486f-a581-5f136d6f2a91": {
+              "eb9d9abd-576e-422e-ae18-e8ac48241ccd": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ce88a000-ea68-4fce-9c40-7c3b1ad9645b": {
+            "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+              "a12287c7-5f64-4ba1-9a30-c60293a28d1e": {}
+            },
+            "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+              "489fadc9-7e62-41fa-b1a5-ddab4403946d": {}
+            }
+          },
+          "5704c0a6-55bd-4c29-b7d7-46daf5dbd235": {
+            "547994c1-695c-40eb-8ec2-8aaf908e3f2f": {
+              "ae7e82ee-76a5-4759-a1b6-7b1accd1b290": {}
+            }
+          }
+        },
+        "outputs": {
+          "0f613912-18f1-4e41-9cb6-e0df3343e0c1": {
+            "e79d2120-cd2d-434d-b2b6-2aeeefd7c044": {
+              "5e70d38e-8b27-45da-978a-53d9d9ad1e07": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

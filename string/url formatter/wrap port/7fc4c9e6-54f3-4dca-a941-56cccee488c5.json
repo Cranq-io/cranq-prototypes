@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "4b6155cf-c1f6-4810-b886-84216bcc461c": {
-        "type": "typeof `string` of `contains tester`",
+        "type": "(string or number)",
         "name": "port"
       }
     },
     "outputs": {
       "9687c159-403c-4c4b-8579-14f15db2cfbf": {
-        "type": "typeof `on false` of `fork`",
+        "type": "string",
         "name": ":port"
       }
     }

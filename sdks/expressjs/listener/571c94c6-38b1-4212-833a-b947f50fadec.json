@@ -8,14 +8,14 @@
         "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "11745554-d9d0-41bb-af77-987d8450ccfe": {
-        "type": "(number or [number, string])",
-        "name": "port & opt host",
+        "type": "(\n  {\n    \"port\": number,\n    \"host\": string\n  }\n  or number\n)",
+        "name": "params",
         "description": "The port number express should listen to.\n\nExample: \n3000"
       }
     },
     "outputs": {
       "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
-        "type": "null",
+        "type": "(null or\n \n{\n  \"port\": number,  \n  \"hostname\": string \n}) ",
         "name": "done",
         "description": "Event triggered when the action has been executed."
       },
@@ -54,8 +54,8 @@
             "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
               "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
             },
-            "2b7e8c0c-3c85-40d3-a2e1-bb615d99e68f": {
-              "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {}
+            "4b71623e-68db-4ecf-92fe-c5a33f36394d": {
+              "644fec41-e452-4867-ad43-2d718d30dd22": {}
             }
           }
         },
@@ -73,15 +73,8 @@
             }
           }
         },
-        "f6cad485-144d-491f-bcdd-952f54bb4c27": {
-          "852cd030-0794-42cc-b448-0886fb787cf2": {
-            "33303022-6273-40a5-aeec-2699f2b78d38": {
-              "options": {}
-            }
-          }
-        },
-        "2b7e8c0c-3c85-40d3-a2e1-bb615d99e68f": {
-          "63f3f918-df9f-4037-870b-b5189bea60ad": {
+        "4b71623e-68db-4ecf-92fe-c5a33f36394d": {
+          "755231fe-f438-4017-aeab-753b07ccb260": {
             "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
               "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
             }
@@ -89,13 +82,13 @@
         },
         "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
           "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
-            "f6cad485-144d-491f-bcdd-952f54bb4c27": {
-              "e77e7439-84f9-414f-b45b-356ea70ce445": {}
+            "4e2565c2-8d3c-41f3-9f02-dcc2a4168864": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
             }
           },
           "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
-            "4e2565c2-8d3c-41f3-9f02-dcc2a4168864": {
-              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            "33303022-6273-40a5-aeec-2699f2b78d38": {
+              "options": {}
             }
           }
         }
@@ -143,8 +136,8 @@
         },
         "33303022-6273-40a5-aeec-2699f2b78d38": {
           "coordinates": [
-            -53.19999999999999,
-            95.80000000000001
+            -44.19999999999999,
+            -206.2
           ],
           "name": "build action",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
@@ -155,8 +148,8 @@
         },
         "a2965b53-ca20-48fa-bca4-e0a4cc8b1422": {
           "coordinates": [
-            -185.2,
-            -0.19999999999998863
+            -483.2,
+            39.80000000000001
           ],
           "name": "forwarder/double",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418",
@@ -173,16 +166,16 @@
         },
         "e157fded-c18e-4cf9-8ab1-465b30a6ef45": {
           "coordinates": [
-            -293.75,
-            -375
+            -159.75,
+            359
           ],
           "name": "fork",
           "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
         },
         "4e2565c2-8d3c-41f3-9f02-dcc2a4168864": {
           "coordinates": [
-            -141.75,
-            -470
+            -201.75,
+            159
           ],
           "name": "item setter",
           "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
@@ -191,24 +184,13 @@
             "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"host\": \"127.0.0.1\"}"
           }
         },
-        "f6cad485-144d-491f-bcdd-952f54bb4c27": {
+        "4b71623e-68db-4ecf-92fe-c5a33f36394d": {
           "coordinates": [
-            -118.75,
-            -308
+            -486.25,
+            194
           ],
-          "name": "builder (keys & values)",
-          "prototype": "a1f5e88b-1a03-464d-a797-0e678404eead",
-          "params": {
-            "33848016-8ca0-4d05-ae94-0666dc207a34": "[\"port\", \"host\"]"
-          }
-        },
-        "2b7e8c0c-3c85-40d3-a2e1-bb615d99e68f": {
-          "coordinates": [
-            -444.75,
-            -175
-          ],
-          "name": "is host added",
-          "prototype": "35c45234-1f7a-41c4-a876-48a6395770b8"
+          "name": "is port only",
+          "prototype": "98efa6c3-b4e9-4864-ae43-077182c04c86"
         }
       }
     }

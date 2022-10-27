@@ -1,0 +1,200 @@
+{
+  "name": "string/url formatter",
+  "description": "format records to url. \n",
+  "interface": {
+    "inputs": {
+      "7e1c79f2-3603-41bc-bfdb-e4e64d27b0a2": {
+        "type": "{\noptional \"protocol\": (\"http\" or \"https\" or \"ws\" or \"wss\"), \n\"hostname\": string,\noptional \"port\": number,\noptional \"path\": string,\noptional \"query\": string,\noptional \"hash\": string\n}",
+        "name": "params",
+        "description": "[Inherited from port `params` of `template filler`] \nThe actual parameters used for filling the template"
+      }
+    },
+    "outputs": {
+      "b07917f3-ec1b-484d-96c2-abb9dfb5b041": {
+        "type": "any",
+        "name": "url"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2a1aca15-e0fa-4fd4-b8fa-f091b1990f2a": {
+          "coordinates": [
+            266.3333333333333,
+            -182.33333333333337
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{protocol}://{hostname}{port}{path}{query}{hash}\""
+          }
+        },
+        "91eefd1f-8a4a-4b99-a4f1-ddefb141d165": {
+          "coordinates": [
+            -335.6666666666667,
+            -131.33333333333337
+          ],
+          "name": "apply default",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n\"protocol\":\"http\",\n\"port\": \"\",\n\"path\": \"\",\n\"query\": \"\",\n\"hash\": \"\"\n}"
+          }
+        },
+        "7131d44d-c93c-4f08-89ca-d75c781851de": {
+          "coordinates": [
+            -234.66666666666669,
+            -83.33333333333337
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\n  \"protocol\",\n  \"hostname\",\n  \"port\", \n  \"path\",\n  \"query\",\n  \"hash\"\n]"
+          }
+        },
+        "74b9f043-24c4-4229-a93a-0b477d7edd0d": {
+          "coordinates": [
+            -60.26666666666671,
+            -295.3333333333335
+          ],
+          "name": "wrap hostnam if ipv6",
+          "prototype": "3de24890-3a09-4df0-893c-75c34d68af1c"
+        },
+        "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+          "coordinates": [
+            160.33333333333331,
+            -5.333333333333371
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n  \"protocol\",\n  \"hostname\",\n  \"port\", \n  \"path\",\n  \"query\",\n  \"hash\"\n]"
+          }
+        },
+        "6ff6f8b2-19dc-4e1b-a844-898bf71ea835": {
+          "coordinates": [
+            -57.26666666666671,
+            31.666666666666515
+          ],
+          "name": "add : to port if port",
+          "prototype": "7fc4c9e6-54f3-4dca-a941-56cccee488c5"
+        },
+        "2c6d6b83-6efe-4534-8748-10d7b4ed2501": {
+          "coordinates": [
+            -49.26666666666671,
+            170.66666666666643
+          ],
+          "name": "start path with /",
+          "prototype": "e01fb846-ecbb-4195-a53e-9e8db8733cc7"
+        },
+        "43babe5a-f17f-40c8-ac8e-89392cfe6bf6": {
+          "coordinates": [
+            -44.26666666666671,
+            284.6666666666664
+          ],
+          "name": "start query with ? mark",
+          "prototype": "bc39224a-5d92-48dd-a5af-d85c26d540f3"
+        }
+      },
+      "connections": {
+        "91eefd1f-8a4a-4b99-a4f1-ddefb141d165": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "7131d44d-c93c-4f08-89ca-d75c781851de": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "7131d44d-c93c-4f08-89ca-d75c781851de": {
+          "hostname": {
+            "74b9f043-24c4-4229-a93a-0b477d7edd0d": {
+              "4b6155cf-c1f6-4810-b886-84216bcc461c": {}
+            }
+          },
+          "protocol": {
+            "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+              "protocol": {}
+            }
+          },
+          "port": {
+            "6ff6f8b2-19dc-4e1b-a844-898bf71ea835": {
+              "4b6155cf-c1f6-4810-b886-84216bcc461c": {}
+            }
+          },
+          "path": {
+            "2c6d6b83-6efe-4534-8748-10d7b4ed2501": {
+              "4b6155cf-c1f6-4810-b886-84216bcc461c": {}
+            }
+          },
+          "query": {
+            "43babe5a-f17f-40c8-ac8e-89392cfe6bf6": {
+              "4b6155cf-c1f6-4810-b886-84216bcc461c": {}
+            }
+          },
+          "hash": {
+            "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+              "hash": {}
+            }
+          }
+        },
+        "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "2a1aca15-e0fa-4fd4-b8fa-f091b1990f2a": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "74b9f043-24c4-4229-a93a-0b477d7edd0d": {
+          "9687c159-403c-4c4b-8579-14f15db2cfbf": {
+            "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+              "hostname": {}
+            }
+          }
+        },
+        "6ff6f8b2-19dc-4e1b-a844-898bf71ea835": {
+          "9687c159-403c-4c4b-8579-14f15db2cfbf": {
+            "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+              "port": {}
+            }
+          }
+        },
+        "2c6d6b83-6efe-4534-8748-10d7b4ed2501": {
+          "9687c159-403c-4c4b-8579-14f15db2cfbf": {
+            "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+              "path": {}
+            }
+          }
+        },
+        "43babe5a-f17f-40c8-ac8e-89392cfe6bf6": {
+          "9687c159-403c-4c4b-8579-14f15db2cfbf": {
+            "f7e2d933-978a-4bd7-b7c7-7d9a03c64c6d": {
+              "query": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7e1c79f2-3603-41bc-bfdb-e4e64d27b0a2": {
+            "91eefd1f-8a4a-4b99-a4f1-ddefb141d165": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "b07917f3-ec1b-484d-96c2-abb9dfb5b041": {
+            "2a1aca15-e0fa-4fd4-b8fa-f091b1990f2a": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "url": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

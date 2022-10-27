@@ -155,21 +155,10 @@
           "name": "logger",
           "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
         },
-        "0e7c338c-0617-4730-826e-d759232294b7": {
-          "coordinates": [
-            322.25,
-            322.5
-          ],
-          "name": "logger (with message)",
-          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
-          "params": {
-            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"[SERVER ERROR]\""
-          }
-        },
         "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
           "coordinates": [
-            196.25,
-            417.5
+            240.25,
+            308.5
           ],
           "name": "server error checker",
           "prototype": "0faadab5-12bc-4bd8-b7e1-0bd8ddf21a43"
@@ -280,13 +269,6 @@
               "11745554-d9d0-41bb-af77-987d8450ccfe": {}
             }
           }
-        },
-        "a29f80cb-98d0-4cbb-a311-94a41cca28db": {
-          "e7b7f2c0-4e3f-4630-83d6-f5c18f170947": {
-            "0e7c338c-0617-4730-826e-d759232294b7": {
-              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
-            }
-          }
         }
       },
       "forwards": {
@@ -350,7 +332,5 @@
     "api": null
   },
   "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

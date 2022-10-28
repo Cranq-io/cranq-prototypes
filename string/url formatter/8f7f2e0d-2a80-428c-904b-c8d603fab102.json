@@ -1,17 +1,17 @@
 {
-  "name": "string/url formatter",
-  "description": "format records to url. \n",
+  "name": "string/Url formatter",
+  "description": "format url related parameters to url string. \n",
   "interface": {
     "inputs": {
       "7e1c79f2-3603-41bc-bfdb-e4e64d27b0a2": {
         "type": "{\noptional \"protocol\": (\"http\" or \"https\" or \"ws\" or \"wss\"), \n\"hostname\": string,\noptional \"port\": number,\noptional \"path\": string,\noptional \"query\": string,\noptional \"hash\": string\n}",
         "name": "params",
-        "description": "[Inherited from port `params` of `template filler`] \nThe actual parameters used for filling the template"
+        "description": "The url parameters used for create an url string."
       }
     },
     "outputs": {
       "b07917f3-ec1b-484d-96c2-abb9dfb5b041": {
-        "type": "any",
+        "type": "string",
         "name": "url"
       }
     }
@@ -24,7 +24,7 @@
             266.3333333333333,
             -182.33333333333337
           ],
-          "name": "template filler",
+          "name": "create url",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
             "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{protocol}://{hostname}{port}{path}{query}{hash}\""
@@ -46,7 +46,7 @@
             -234.66666666666669,
             -83.33333333333337
           ],
-          "name": "splitter",
+          "name": "split url params",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\n  \"protocol\",\n  \"hostname\",\n  \"port\", \n  \"path\",\n  \"query\",\n  \"hash\"\n]"
@@ -65,7 +65,7 @@
             160.33333333333331,
             -5.333333333333371
           ],
-          "name": "syncer",
+          "name": "create formatted params",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n  \"protocol\",\n  \"hostname\",\n  \"port\", \n  \"path\",\n  \"query\",\n  \"hash\"\n]"

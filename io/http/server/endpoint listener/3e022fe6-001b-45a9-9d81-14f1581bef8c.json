@@ -21,7 +21,7 @@
         "description": "Sends request received via HTTP."
       },
       "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
-        "type": "{\"error\": string}",
+        "type": "{\n  \"error\": string,\n  optional \"origin\": string\n}",
         "name": "error",
         "description": "Sends error about incoming request."
       },

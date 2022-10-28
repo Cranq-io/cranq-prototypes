@@ -3,21 +3,21 @@
   "interface": {
     "inputs": {
       "8978272a-83da-48fd-b253-ca7585916edc": {
-        "type": "typeof `unsplit` of `splitter`",
-        "name": "unsplit",
-        "description": "[Inherited from port `unsplit` of `splitter`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
+        "type": "{\n  \"error\": string,\n  optional \"origin\": string\n}",
+        "name": "error",
+        "description": "Recive error data."
       }
     },
     "outputs": {
       "e7b7f2c0-4e3f-4630-83d6-f5c18f170947": {
         "type": "typeof `on true` of `fork`",
-        "name": "on true",
-        "description": "[Inherited from port `on true` of `fork`] \nSends signal received via `data` when condition was true."
+        "name": "server error",
+        "description": ""
       },
       "bfb24c70-24af-457b-bc18-d945b3f65b3a": {
         "type": "typeof `on false` of `fork`",
-        "name": "on false",
-        "description": "[Inherited from port `on false` of `fork`] \nSends signal received via `data` when condition was false."
+        "name": "runtime error",
+        "description": ""
       }
     }
   },
@@ -100,6 +100,10 @@
     }
   },
   "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "description": "Check is error server related, based on the recived origin.",
+  "keywords": {
+    "fork error": null
+  },
   "attributes": {
     "locked": true
   }

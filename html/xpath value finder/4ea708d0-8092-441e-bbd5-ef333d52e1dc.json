@@ -7,7 +7,7 @@
             -60,
             -5
           ],
-          "name": "syncer",
+          "name": "build parameters",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"document\", \"query\"]"
@@ -15,8 +15,8 @@
         },
         "e33b2196-8a80-4060-9b69-a6c95b967956": {
           "coordinates": [
-            62,
-            -5
+            80,
+            45
           ],
           "name": "execute xpath",
           "prototype": "35629a5f-aad8-4c08-8946-7a46af449595",
@@ -50,6 +50,11 @@
             "e33b2196-8a80-4060-9b69-a6c95b967956": {
               "25eed9f7-7c3f-45f6-890e-0bbd32ab803a": {}
             }
+          },
+          "39868688-9f5a-44f9-af18-6a624918b71a": {
+            "e33b2196-8a80-4060-9b69-a6c95b967956": {
+              "61377e56-b50f-47cc-9ffa-87dd33250c10": {}
+            }
           }
         }
       }
@@ -60,23 +65,35 @@
       "7f7f8a7a-95e6-40de-b5e6-10f0c4c6abb2": {
         "type": "string",
         "name": "document",
-        "description": "The HTML document as string we'd like run xpath queries on"
+        "description": "The HTML document as string we'd like run xpath queries on.\n\nExample:\n```\n\"<!doctype html>\n<html lang=\\\"en\\\">\n<head>\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1, shrink-to-fit=no\\\"> \n...\n</html>\n\"\n```"
       },
       "b58d202a-2e20-4711-b12d-eb0d2e3cd60f": {
         "type": "string",
         "name": "query",
-        "description": "The XPath query"
+        "description": "Receives the XPath expression to select nodes or node-sets in the documment.\n\nMore: https://www.w3schools.com/xml/xpath_syntax.asp\n\nExample:\n\n\"//div[@id='maindiv']\""
       }
     },
     "outputs": {
       "a2deb91f-4903-4e5b-b4fa-235e713d5cd8": {
         "type": "string[]",
         "name": "values",
-        "description": "Values of the nodes matching the specified query"
+        "description": "Values of the nodes matching the specified query.\n\nExample:\n\n[\"Content\"]"
+      },
+      "39868688-9f5a-44f9-af18-6a624918b71a": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends the error, if an"
       }
     }
   },
   "name": "html/XPath value finder",
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "description": "Retrieve html element values from the given document.",
+  "keywords": {
+    "html": null,
+    "xml": null,
+    "xpath": null
+  },
   "attributes": {
     "locked": true
   }

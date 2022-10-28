@@ -1,23 +1,23 @@
 {
-  "description": "Tests whether the input string matches a regular expression.",
+  "description": "Tests whether the input string matches a regular expression.\n\nExample: \"(?<animal>fox|cat) jumps over\"",
   "interface": {
     "inputs": {
       "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {
         "type": "string",
         "name": "string",
-        "description": "String to be tested against the specified RegEx."
+        "description": "String to be tested against the specified RegEx.\n\nExample:\n\n\"The quick brown fox jumps over the lazy dog. It barked.\""
       },
       "4ad33973-93b5-42cd-b485-76c517507786": {
         "type": "string",
         "name": "regex",
-        "description": "Regular expression to test the specified string against.\n\nFlavour depends on the running environment."
+        "description": "Regular expression to test the specified string against.\n\nFlavour depends on the running environment.\n\nExample: \n\n\"(?<animal>fox|cat) jumps over1\""
       }
     },
     "outputs": {
       "b3b69745-686f-4978-a5cf-ef61c31da582": {
         "type": "boolean",
-        "name": "matches",
-        "description": "Whether the received string matched the RegEx."
+        "name": "matched",
+        "description": "Whether the received string matched the RegEx.\n\nExample:\n\ntrue"
       }
     }
   },

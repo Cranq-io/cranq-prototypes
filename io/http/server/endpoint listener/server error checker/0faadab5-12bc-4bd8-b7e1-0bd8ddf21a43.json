@@ -10,14 +10,14 @@
     },
     "outputs": {
       "e7b7f2c0-4e3f-4630-83d6-f5c18f170947": {
-        "type": "typeof `on true` of `fork`",
+        "type": "string",
         "name": "server error",
-        "description": ""
+        "description": "Error message."
       },
       "bfb24c70-24af-457b-bc18-d945b3f65b3a": {
-        "type": "typeof `on false` of `fork`",
+        "type": "string",
         "name": "runtime error",
-        "description": ""
+        "description": "Error message."
       }
     }
   },
@@ -40,7 +40,7 @@
             45,
             106
           ],
-          "name": "is application error",
+          "name": "is server error",
           "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
           "params": {
             "a0934373-43a4-4cd5-83eb-860bc20d790a": "\"server\""

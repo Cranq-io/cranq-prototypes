@@ -1,6 +1,6 @@
 {
-  "name": "string/Url formatter",
-  "description": "format url related parameters to url string. \n",
+  "name": "string/URL formatter",
+  "description": "Format url related parameters to url string. \n",
   "interface": {
     "inputs": {
       "7e1c79f2-3603-41bc-bfdb-e4e64d27b0a2": {
@@ -12,7 +12,7 @@
     "outputs": {
       "b07917f3-ec1b-484d-96c2-abb9dfb5b041": {
         "type": "string",
-        "name": "url"
+        "name": "URL"
       }
     }
   },
@@ -192,9 +192,7 @@
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
   "keywords": {
-    "url": null
+    "url string": null
   },
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

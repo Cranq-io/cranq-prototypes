@@ -1,25 +1,29 @@
 {
-  "name": "string/Regex matcher",
-  "description": "Matches a string to a non-global regular expression, and returns substrings that match the regular expression's groups.",
+  "name": "string/Regex matcher - DEPRECATED",
+  "description": "DEPRECATED!\n\nMatches a string to a non-global regular expression, and returns substrings that match the regular expression's groups.",
   "interface": {
     "inputs": {
       "2c82a6df-0eee-4ef1-a9b0-b795c338f9c8": {
         "type": "string",
-        "name": "regex"
+        "name": "regex",
+        "description": "Receives the regular expression.\n\nExample:\n\n\"(?<animal>fox|cat) jumps over\""
       },
       "85025d96-fe7b-4714-a6cb-a52ae7f4aa6e": {
         "type": "string",
-        "name": "string"
+        "name": "string",
+        "description": "Receives the string to be matched.\n\nExample:\n\n\"The quick brown fox jumps over the lazy dog. It barked.\""
       }
     },
     "outputs": {
       "f6986868-ad47-431b-80d9-e68b4a199710": {
         "type": "(string[] or null)",
-        "name": "groups"
+        "name": "groups",
+        "description": "Sends the matched groups.\r\n\r\nExample:\r\n```\r\n[\r\n  \"fox jumps over\",\r\n  \"fox\"\r\n]\r\n```"
       },
       "28491fbe-c349-461b-adad-f33fa7c6ecab": {
-        "type": "any",
-        "name": "not found"
+        "type": "null",
+        "name": "not found",
+        "description": "Sends null if there is no match in the string.\n\nExample:\nnull"
       }
     }
   },
@@ -129,6 +133,7 @@
   },
   "iconId": "73998790-4b3b-4bba-b5b9-99d4e55e0534",
   "attributes": {
+    "deprecated": true,
     "locked": true
   }
 }

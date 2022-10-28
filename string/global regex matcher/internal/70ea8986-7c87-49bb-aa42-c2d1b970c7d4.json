@@ -12,13 +12,17 @@
         "type": "boolean",
         "name": "matches"
       },
+      "dd49cf66-19bb-4546-8f30-ccc742b66d73": {
+        "type": "string",
+        "name": "matched"
+      },
       "7866a8a3-a295-4bed-832f-e5c901996c42": {
         "type": "any",
         "name": "groups"
       },
-      "239820df-8fbf-4dfa-ae34-274add25bbd4": {
-        "type": "any",
-        "name": "result"
+      "96ab5b34-0713-4813-abee-efe06f4bb9ab": {
+        "type": "({string: string} or null)",
+        "name": "named groups"
       }
     }
   },
@@ -28,22 +32,13 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex, 'g').exec(data.string);\nconst [matched, ...groups] = result || [];\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);"
-      }
-    },
-    "es6-node": {
-      "cleanupFunction": "",
-      "dependencies": {},
-      "initFunction": "",
-      "inputFunctions": {
-        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex, 'g').exec(data.string);\nconst [matched, ...groups] = result || [];\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);"
+        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex).exec(data.string);\nconst [matched, ...groups] = result || [];\nconst namedgroups = result.groups || null;\noutputs.matched(matched, tag);\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);\noutputs[\"named groups\"](namedgroups, tag);"
       }
     }
   },
   "name": "string/Global regex matcher/Internal",
   "original": "d7c7f894-f692-4452-b2b0-70fb743f0d47",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

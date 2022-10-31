@@ -1,0 +1,62 @@
+{
+  "name": "blockchain/ethereum/contracts/erc1155/ERC1155 abi",
+  "interface": {
+    "inputs": {
+      "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {
+        "type": "any",
+        "name": "read"
+      }
+    },
+    "outputs": {
+      "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+        "type": "{string: any}",
+        "name": "abi"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1884d640-c3e3-4e07-b325-229996f11bec": {
+          "coordinates": [
+            12,
+            -47
+          ],
+          "name": "abi",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\n\t\t{\n\t\t\t\"anonymous\": false,\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"account\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"operator\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": false,\n\t\t\t\t\t\"internalType\": \"bool\",\n\t\t\t\t\t\"name\": \"approved\",\n\t\t\t\t\t\"type\": \"bool\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"ApprovalForAll\",\n\t\t\t\"type\": \"event\"\n\t\t},\n\t\t{\n\t\t\t\"anonymous\": false,\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"operator\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"from\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"to\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": false,\n\t\t\t\t\t\"internalType\": \"uint256[]\",\n\t\t\t\t\t\"name\": \"ids\",\n\t\t\t\t\t\"type\": \"uint256[]\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": false,\n\t\t\t\t\t\"internalType\": \"uint256[]\",\n\t\t\t\t\t\"name\": \"values\",\n\t\t\t\t\t\"type\": \"uint256[]\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"TransferBatch\",\n\t\t\t\"type\": \"event\"\n\t\t},\n\t\t{\n\t\t\t\"anonymous\": false,\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"operator\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"from\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"to\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": false,\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"id\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": false,\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"value\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"TransferSingle\",\n\t\t\t\"type\": \"event\"\n\t\t},\n\t\t{\n\t\t\t\"anonymous\": false,\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": false,\n\t\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\t\"name\": \"value\",\n\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"indexed\": true,\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"id\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"URI\",\n\t\t\t\"type\": \"event\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"account\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"id\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"balanceOf\",\n\t\t\t\"outputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"stateMutability\": \"view\",\n\t\t\t\"type\": \"function\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address[]\",\n\t\t\t\t\t\"name\": \"accounts\",\n\t\t\t\t\t\"type\": \"address[]\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256[]\",\n\t\t\t\t\t\"name\": \"ids\",\n\t\t\t\t\t\"type\": \"uint256[]\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"balanceOfBatch\",\n\t\t\t\"outputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256[]\",\n\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\"type\": \"uint256[]\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"stateMutability\": \"view\",\n\t\t\t\"type\": \"function\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"account\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"operator\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"isApprovedForAll\",\n\t\t\t\"outputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"bool\",\n\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\"type\": \"bool\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"stateMutability\": \"view\",\n\t\t\t\"type\": \"function\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"from\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"to\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256[]\",\n\t\t\t\t\t\"name\": \"ids\",\n\t\t\t\t\t\"type\": \"uint256[]\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256[]\",\n\t\t\t\t\t\"name\": \"amounts\",\n\t\t\t\t\t\"type\": \"uint256[]\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"bytes\",\n\t\t\t\t\t\"name\": \"data\",\n\t\t\t\t\t\"type\": \"bytes\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"safeBatchTransferFrom\",\n\t\t\t\"outputs\": [],\n\t\t\t\"stateMutability\": \"nonpayable\",\n\t\t\t\"type\": \"function\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"from\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"to\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"id\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\t\"name\": \"amount\",\n\t\t\t\t\t\"type\": \"uint256\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"bytes\",\n\t\t\t\t\t\"name\": \"data\",\n\t\t\t\t\t\"type\": \"bytes\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"safeTransferFrom\",\n\t\t\t\"outputs\": [],\n\t\t\t\"stateMutability\": \"nonpayable\",\n\t\t\t\"type\": \"function\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"address\",\n\t\t\t\t\t\"name\": \"operator\",\n\t\t\t\t\t\"type\": \"address\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"bool\",\n\t\t\t\t\t\"name\": \"approved\",\n\t\t\t\t\t\"type\": \"bool\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"setApprovalForAll\",\n\t\t\t\"outputs\": [],\n\t\t\t\"stateMutability\": \"nonpayable\",\n\t\t\t\"type\": \"function\"\n\t\t},\n\t\t{\n\t\t\t\"inputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"bytes4\",\n\t\t\t\t\t\"name\": \"interfaceId\",\n\t\t\t\t\t\"type\": \"bytes4\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"name\": \"supportsInterface\",\n\t\t\t\"outputs\": [\n\t\t\t\t{\n\t\t\t\t\t\"internalType\": \"bool\",\n\t\t\t\t\t\"name\": \"\",\n\t\t\t\t\t\"type\": \"bool\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"stateMutability\": \"view\",\n\t\t\t\"type\": \"function\"\n\t\t}\n\t]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {
+            "1884d640-c3e3-4e07-b325-229996f11bec": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "a7efbc77-d51f-43df-9c45-273de73aafb7": {
+            "1884d640-c3e3-4e07-b325-229996f11bec": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "description": "Holds the ABI of the ERC721 contract.",
+  "keywords": {
+    "erc1155": null,
+    "abi": null,
+    "token": null
+  },
+  "original": "0746f330-4f64-49b5-9cb4-ed7572a3cefa",
+  "attributes": {
+    "locked": true
+  }
+}

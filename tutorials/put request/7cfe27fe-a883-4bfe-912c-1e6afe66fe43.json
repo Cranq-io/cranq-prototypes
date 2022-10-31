@@ -1,0 +1,171 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "This is the finish checkpoint for lesson 2 of the REST API tutorial. (PUT request)\n\nThe lesson walks you through creating endpoints that change data on the backend. Beyond that, this\nvideo introduces the concept of shared resources in CRANQ, and a really useful node - the “depot” -\nwhich helps you control the order in which signals are transmitted.\n\nFurther info:\nhttps://docs.cranq.io",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -325,
+            -108
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+          "coordinates": [
+            -145,
+            118.5
+          ],
+          "name": "GET endpoint params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\n{\n  \"serverId\": \"server\",\n    \"port\": 8080,\n    \"method\": \"GET\",\n    \"route\": \"/usdt_balance\"\n}"
+          }
+        },
+        "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+          "coordinates": [
+            29.5,
+            8
+          ],
+          "name": "GET /usdt_balance",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e"
+        },
+        "a17aeac8-4ff4-4666-a8df-0731f5929a2f": {
+          "coordinates": [
+            -139,
+            -260.5
+          ],
+          "name": "initial wallet",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{}"
+          }
+        },
+        "640ba7a0-4bda-4e79-9cf9-65f2b2864d7e": {
+          "coordinates": [
+            46,
+            -311.5
+          ],
+          "name": "initalize wallet",
+          "prototype": "13f860ae-0d8b-462a-98dc-29835c4de357",
+          "params": {
+            "25c7ef7d-f03e-4d11-8795-a841ff078903": "\"wallet\""
+          }
+        },
+        "2b3d2636-f12f-4704-a90c-94b03200a179": {
+          "coordinates": [
+            313.3361111111111,
+            -70.09861111111111
+          ],
+          "name": "handle /usdt_balance",
+          "prototype": "45e20f72-9709-4b81-897f-c21ee6be09fa"
+        },
+        "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
+          "coordinates": [
+            40.5,
+            192
+          ],
+          "name": "PUT /wallet",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e"
+        },
+        "01065fed-549f-4981-bf7c-d3b2f336e547": {
+          "coordinates": [
+            -137,
+            302.5
+          ],
+          "name": "PUT endpoint params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"serverId\": \"server\",\n  \"port\": 8080,\n  \"method\": \"PUT\",\n  \"route\": \"/wallet\",\n  \"request\": {\n    \"contentType\": \"json\"\n  },\n  \"response\": {\n    \"contentType\": \"json\"\n  }\n}"
+          }
+        },
+        "8595ab71-83da-491e-b850-caa83d8c1940": {
+          "coordinates": [
+            317.25,
+            133.5
+          ],
+          "name": "handle PUT /wallet",
+          "prototype": "ea4e5ae6-eb25-4f1b-9649-58299c28ff11"
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "a17aeac8-4ff4-4666-a8df-0731f5929a2f": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "01065fed-549f-4981-bf7c-d3b2f336e547": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "99a02905-e540-40d5-9cdc-ce7670cfbe70": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        },
+        "a17aeac8-4ff4-4666-a8df-0731f5929a2f": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "640ba7a0-4bda-4e79-9cf9-65f2b2864d7e": {
+              "b27da556-2371-4233-822d-a60a129aaf03": {}
+            }
+          }
+        },
+        "2b3d2636-f12f-4704-a90c-94b03200a179": {
+          "0fe4488f-dafc-47f0-b824-06a9c14a7703": {
+            "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "0e1b89b3-0fc3-4567-8657-897fabfaa3e2": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "2b3d2636-f12f-4704-a90c-94b03200a179": {
+              "27e08851-a679-4257-8c39-90880368c41c": {}
+            }
+          }
+        },
+        "01065fed-549f-4981-bf7c-d3b2f336e547": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        },
+        "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "8595ab71-83da-491e-b850-caa83d8c1940": {
+              "4118e64c-bd53-4dd3-b6f5-349f6141bc8d": {}
+            }
+          }
+        },
+        "8595ab71-83da-491e-b850-caa83d8c1940": {
+          "54c0e270-f5dc-460b-98d2-83c49eb95e1b": {
+            "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/PUT request"
+}

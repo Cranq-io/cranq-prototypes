@@ -94,7 +94,8 @@
             133.5
           ],
           "name": "handle PUT /wallet",
-          "prototype": "ea4e5ae6-eb25-4f1b-9649-58299c28ff11"
+          "prototype": "ea4e5ae6-eb25-4f1b-9649-58299c28ff11",
+          "params": {}
         }
       },
       "connections": {
@@ -146,17 +147,17 @@
             }
           }
         },
-        "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
-          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
-            "8595ab71-83da-491e-b850-caa83d8c1940": {
-              "4118e64c-bd53-4dd3-b6f5-349f6141bc8d": {}
-            }
-          }
-        },
         "8595ab71-83da-491e-b850-caa83d8c1940": {
           "54c0e270-f5dc-460b-98d2-83c49eb95e1b": {
             "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
               "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "d552f7c7-0cc6-4277-8af8-05de28aabdb8": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "8595ab71-83da-491e-b850-caa83d8c1940": {
+              "4118e64c-bd53-4dd3-b6f5-349f6141bc8d": {}
             }
           }
         }

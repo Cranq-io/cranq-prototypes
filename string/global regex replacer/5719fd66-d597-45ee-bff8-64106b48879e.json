@@ -6,24 +6,24 @@
       "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {
         "type": "string",
         "name": "string",
-        "description": "Receives the string to be replaced.\n\nExample:\n\n\"dog cat rain dog\""
+        "description": "Receives the string to be replaced.\n\nExample:\n\n\"dog cat rain Dog\"\n\n\nBackreference example:\n\n\"Jane Smith\""
       },
       "d1118ac0-749b-46e9-81af-8fc74dc14e10": {
         "type": "string",
         "name": "regex",
-        "description": "Receives regular expression to test the specified string against.\n\nExample: \n\n\"dog\""
+        "description": "Receives regular expression to test the specified string against.\n\nExample:\n\n\"[Dd]og\"\n\nBackreference example:\n\n\"(\\\\w+)\\\\s(\\\\w+)\""
       },
       "3490f391-9b3b-441e-b4a2-b078669cf5b4": {
         "type": "string",
         "name": "new",
-        "description": "Receives the replacement string.\n\nExample:\n\n\"cat\""
+        "description": "Receives the replacement string. In the replacement you can use backreference. More: \n\nExample:\n\n\"cat\"\n\nBackreference example: \n\n\"$2, $1\""
       }
     },
     "outputs": {
       "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
         "type": "string",
         "name": "replaced",
-        "description": "Sends the replaced string.\n\nExample:\n\n\"cat cat rain cat\""
+        "description": "Sends the replaced string.\n\nExample:\n\n\"cat cat rain cat\"\n\nBackreference example:\n\n\"Smith, Jane\""
       }
     }
   },

@@ -1,5 +1,5 @@
 {
-  "description": "Matches a string to a non-global regular expression, and returns substrings that match the regular expression's groups.\n\n",
+  "description": "Matches a string to a non-global regular expression. \n\n",
   "interface": {
     "inputs": {
       "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {
@@ -30,7 +30,7 @@
         "description": "Sends the capturing groups matched by the given regex pattern.\n\nExample:\n```\n[ \"fox\" ]\n```"
       },
       "856b46c6-6d81-4023-989e-3e312f051e02": {
-        "type": "({string: string} or null)",
+        "type": "{string: string}",
         "name": "named groups",
         "description": "Sends the named capturing groups matched by the given regex pattern.\nKeys are the names and values are the capturing group or null if no named capturing groups were defined.\n\nExample:\n```\n{\n  \"animal\": \"fox\"\n}\n```"
       }

@@ -1,12 +1,12 @@
 {
   "name": "apis/nftport/v0/Similar NFTs finder with file",
-  "description": "Returns visually and contextually similar images to the uploaded image with file.\n\nRequires NFTPort account.\n\nFind similar NFTs w/file upload\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload",
+  "description": "Returns visually and contextually similar images to the uploaded image with file.\n\nRequires NFTPort account.\n\nFind similar NFTs w/file upload\nhttps://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-file-upload",
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
         "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n   optional \"page_number\" :number, \n  optional \"page_size\" :number\n}",
         "name": "query",
-        "description": "File receives base64-encoded binary file contents.\npage_number and page_size are optional. \n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Request"
+        "description": "File receives base64-encoded binary file contents.\npage_number and page_size are optional. \n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-file-upload#Request"
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
         "type": "{\n  \"api_key\": string\n}",
@@ -18,7 +18,7 @@
       "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
         "type": "{\n  \"response\": \"OK\",\n   \"nfts\": [\n    {\n      \"chain\": (\"ethereum\" or \"polygon\"),\n      \"contract_address\": string,\n      \"token_id\": string,\n      optional \"cached_file_url\": string,\n     optional  \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string\n      }\n    }\n  ]\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzM-find-similar-nf-ts-w-file-upload#Responses"
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-file-upload#Responses"
       },
       "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

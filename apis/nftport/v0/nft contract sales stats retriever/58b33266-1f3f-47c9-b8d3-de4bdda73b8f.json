@@ -1,6 +1,6 @@
 {
   "name": "apis/nftport/v0/NFT contract sales stats retriever",
-  "description": "Retrieve in-depth sales statistics about a contract from OpenSea, using the NFTPort API. Includes statistics such as floor price, total volume, sales, etc. Updated with 1-hour interval.\nSupports Ethereum only.\n\n\nRetrieve contract sales statistics:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzEyODQ1MTc-retrieve-contract-sales-statistics",
+  "description": "Retrieve in-depth sales statistics about a contract from OpenSea, using the NFTPort API. Includes statistics such as floor price, total volume, sales, etc. Updated with 1-hour interval.\nSupports Ethereum only.\n\n\nRetrieve contract sales statistics:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-sales-statistics",
   "interface": {
     "inputs": {
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
@@ -11,14 +11,14 @@
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\")\n}",
         "name": "params",
-        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzEyODQ1MTc-retrieve-contract-sales-statistics#Request\n\nDefault chain value: \"ethereum\""
+        "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-sales-statistics#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  optional \"statistics\": {\n    \"one_day_volume\": number,\n    \"one_day_change\": number,\n    \"one_day_sales\": number,\n    \"one_day_average_price\": number,\n    \"seven_day_volume\": number,\n    \"seven_day_change\": number,\n    \"seven_day_sales\": number,\n    \"seven_day_average_price\": number,\n    \"thirty_day_volume\": number,\n    \"thirty_day_change\": number,\n    \"thirty_day_sales\": number,\n    \"thirty_day_average_price\": number,\n    \"total_volume\": number,\n    \"total_sales\": number,\n    \"total_supply\": number,\n    \"total_minted\": number,\n    \"num_owners\": number,\n    \"average_price\": number,\n    \"market_cap\": number,\n    \"floor_price\": number,\n    \"updated_date\": string\n  }\n}",
         "name": "data",
-        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MzEyODQ1MTc-retrieve-contract-sales-statistics#Responses"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-sales-statistics#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

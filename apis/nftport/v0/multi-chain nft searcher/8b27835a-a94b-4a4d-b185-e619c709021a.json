@@ -1,29 +1,29 @@
 {
   "name": "apis/nftport/v0/Multi-chain NFT searcher",
-  "description": "Searches NFTs across multiple chains using a text query, specifically the name and description fields from the metadata. \n\nMulti-chain NFT search:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search",
+  "description": "Searches NFTs across multiple chains using a text query, specifically the name and description fields from the metadata. \n\nMulti-chain NFT search:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search",
   "interface": {
     "inputs": {
       "a4507c2e-9c5a-4bc9-9ed8-cfc67217139e": {
         "type": "{\n\"text\": string,\noptional \"filter_by_contract_address\" : string,\noptional \"order_by\": (\"relevance\" or \"mint_date\"),\noptional \"page_number\": number,\noptional \"page_size\": number,\noptional \"sort_order\": (\"desc\" or \"asc\")\n}",
         "name": "query",
-        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search#Request"
+        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Request"
       },
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
         "type": "{\n\"api_key\": string,\noptional \"chain\" :(\"polygon\" or \"ethereum\" or \"all\")\n}",
         "name": "params",
-        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjA0MjY5MjE-multi-chain-nft-search#Request\n\nDefault chain value: \"all\""
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Request\n\nDefault chain value: \"all\""
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
         "type": "{\n\n  \"response\":\"OK\",\n  \"search_results\": [\n    {\n      \"chain\": (\"polygon\" or \"ethereum\"),\n      \"contract_address\": \"string\",\n      \"token_id\": string,\n      \"name\": string,\n      \"description\": string,\n       optional \"mint_date\": string\n    }\n  ]\n}",
         "name": "data",
-        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE0MDYzODI-list-all-your-minted-nf-ts#Responses"
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Responses"
       },
       "384bbd6b-c13e-4fed-9724-336637c51b87": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
         "name": "response",
-        "description": "Sends the original response."
+        "description": "Sends the original response.\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Responses"
       },
       "e14e707e-19d7-4c5a-8408-dca6b0227725": {
         "type": "{\n  \"error\": string,\n  \"details\": any\n}",
@@ -64,23 +64,12 @@
         },
         "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
           "coordinates": [
-            -58.799999999999955,
-            -236.25
+            -54.799999999999955,
+            82.75
           ],
           "name": "build request",
           "prototype": "4e2bcaa4-2e1d-4744-b670-96f5d24eb463",
           "params": {}
-        },
-        "3f8b60aa-dd00-4a6e-9e44-822853471af1": {
-          "coordinates": [
-            -201,
-            14
-          ],
-          "name": "apply defaults",
-          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
-          "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"chain\": \"all\"}"
-          }
         }
       },
       "connections": {
@@ -100,20 +89,13 @@
         },
         "309b9d0f-9dda-4571-af6d-edb7a631decc": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "3f8b60aa-dd00-4a6e-9e44-822853471af1": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
+              "67410fcd-d816-4546-b91c-06d9d955e2b5": {}
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
               "3a8c7c11-c9e1-4e85-9ede-1cd9d6574d4c": {}
-            }
-          }
-        },
-        "3f8b60aa-dd00-4a6e-9e44-822853471af1": {
-          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "1206c23a-6a8a-41ae-b1db-2509abf8a05e": {
-              "67410fcd-d816-4546-b91c-06d9d955e2b5": {}
             }
           }
         }

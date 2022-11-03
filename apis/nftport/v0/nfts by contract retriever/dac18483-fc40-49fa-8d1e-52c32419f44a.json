@@ -1,24 +1,24 @@
 {
   "name": "apis/nftport/v0/NFTs by contract retriever",
-  "description": "Returns all NFTs for a given contract address, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve contract NFTs:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTQ-retrieve-contract-nf-ts",
+  "description": "Returns all NFTs for a given contract address, using the NFTPort API.\nSupports Ethereum & Polygon.\n\nRetrieve contract NFTs:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-nf-ts",
   "interface": {
     "inputs": {
       "9b86b582-5b9d-46f7-831f-e9faca4b8064": {
         "type": "{\n  \"contract_address\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"all\"),\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \n \"refresh_metadata\": boolean\n}",
         "name": "query",
-        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTQ-retrieve-contract-nf-ts#Request\n"
+        "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-nf-ts#Request\n"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
         "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
         "name": "params",
-        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTQ-retrieve-contract-nf-ts#Request\n\nDefault chain value: \"ethereum\""
+        "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-nf-ts#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
         "type": "{\n  \"response\": \"OK\",\n  \"nft\": {\n    \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n    \"contract_address\": string,\n    \"token_id\": string,\n    \"metadata_url\": string,\n    \"metadata\": {string:any},\n    \"file_information\": {\n      \"height\": number,\n      \"width\": number,\n      \"file_size\": number\n    },\n    \"file_url\": string,\n    \"animation_url\": string,\n    \"cached_file_url\": string,\n    \"cached_animation_url\": string,\n    \"mint_date\": string,\n    \"updated_date\": string\n  },\n  \"owner\": string,\n  \"contract\": {\n    \"name\": string,\n    \"symbol\": string,\n    \"type\": (\"ERC721\" or \"ERC1155\")\n  },\n  optional \"status\": string,\n  optional \"status_message\": string\n}",
         "name": "data",
-        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjAzNDUzNTQ-retrieve-contract-nf-ts#Responses"
+        "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contract-nf-ts#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

@@ -1,6 +1,6 @@
 {
   "name": "apis/nftport/v0/Similar NFTs finder with url",
-  "description": "Returns visually and contextually similar images to the input image passed with url.\n\nRequires NFTPort account.\n\nFind similar NFTs w/URL:\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzI-find-similar-nf-ts-w-url",
+  "description": "Returns visually and contextually similar images to the input image passed with url.\n\nRequires NFTPort account.\n\nFind similar NFTs w/URL:\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-url",
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
@@ -11,14 +11,14 @@
       "031ade40-fbaa-4c74-b943-205d22e30885": {
         "type": "{\n\"api_key\": string\n}",
         "name": "params",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzI-find-similar-nf-ts-w-url#Request"
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-url#Request"
       }
     },
     "outputs": {
       "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
         "type": "{\n  \"response\": \"OK\",\n   \"nfts\": [\n    {\n      \"chain\": (\"ethereum\" or \"polygon\"),\n      \"contract_address\": string,\n      \"token_id\": string,\n      optional \"cached_file_url\": string,\n     optional  \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string\n      }\n    }\n  ]\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjE2NjM4MzI-find-similar-nf-ts-w-url#Responses"
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-url#Responses"
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

@@ -1,12 +1,12 @@
 {
   "name": "apis/nftport/v0/Counterfeit NFT finder with file",
-  "description": "Analyzes the input image passed with file and returns duplicates (i.e. counterfeits) against it. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjUwMzQ3NDQ-find-counterfeit-nf-ts-w-file-upload",
+  "description": "Analyzes the input image passed with file and returns duplicates (i.e. counterfeits) against it. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-file-upload",
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
         "type": "{\n  \"file\":{\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n  optional \"threshold\" :number,\n  optional \"filter_out_contract_address\" :string,\n  optional \"limit\" :number\n}",
         "name": "query",
-        "description": "File receives base64-encoded binary file contents value. \nThe other params are optional. \nhttps://docs.nftport.xyz/docs/nftport/b3A6MjEyNTYxNDI-find-counterfeit-nf-ts-w-file-upload#Request"
+        "description": "File receives base64-encoded binary file contents value. \nThe other params are optional. \nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-file-upload#Request"
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
         "type": "{\n  \"api_key\": string\n}",
@@ -18,7 +18,7 @@
       "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
         "type": "{\n\"response\": \"OK\",\n \"is_similar\": boolean,\n  \"similar_nfts\": [\n    {\n      \"contract_address\": string,\n      \"token_id\": string,\n      \"chain\":(\"ethereum\" or \"polygon\"),\n      \"similarity\": number,\n      optional \"file_url\": string,\n      optional \"metadata_url\": string,\n      optional \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string,\n        \"name\": string,\n        \"animation_url\": string\n      },\n      optional \"mint_date\": string\n    }\n  ]\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjEyNTYxNDI-find-counterfeit-nf-ts-w-file-upload#Responses"
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-file-upload#Responses"
       },
       "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

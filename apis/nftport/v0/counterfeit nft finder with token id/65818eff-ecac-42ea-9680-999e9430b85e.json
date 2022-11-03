@@ -1,24 +1,24 @@
 {
   "name": "apis/nftport/v0/Counterfeit NFT finder with token id",
-  "description": "Find counterfeit NFTs w/token ID.\n\nRetrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id",
+  "description": "Find counterfeit NFTs w/token ID.\n\nRetrieves list of duplicate (i.e. counterfeit) NFTs. \n\nRequires NFTPort account.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id",
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
         "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
         "name": "query",
-        "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#request-body"
+        "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id#request-body"
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
         "type": "{ \n\"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\")\n}",
         "name": "params",
-        "description": "chain default: ethereum;\n\nReceives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#request-body"
+        "description": "chain default: ethereum;\n\nReceives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id#request-body"
       }
     },
     "outputs": {
       "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
         "type": "{\n\"response\": \"OK\",\n \"is_similar\": boolean,\n  \"similar_nfts\": [\n    {\n      \"contract_address\": string,\n      \"token_id\": string,\n      \"chain\":(\"ethereum\" or \"polygon\"),\n      \"similarity\": number,\n      optional \"file_url\": string,\n      optional \"metadata_url\": string,\n      optional \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string,\n        \"name\": string,\n        \"animation_url\": string\n      },\n      optional \"mint_date\": string\n    }\n  ]\n}",
         "name": "data",
-        "description": "https://docs.nftport.xyz/docs/nftport/b3A6MjQ1OTQxMDc-find-counterfeit-nf-ts-w-token-id#Responses"
+        "description": "https://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id#Responses"
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",

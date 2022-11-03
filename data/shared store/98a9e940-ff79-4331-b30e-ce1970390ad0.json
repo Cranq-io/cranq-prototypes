@@ -2,14 +2,14 @@
   "implementations": {
     "es6": {
       "inputFunctions": {
-        "df286b60-2beb-4138-a6b2-667612bccc17": "const {storeId, data: value} = data;\nif (value === undefined) {\n  // reading\n  const store = shared[storeId];\n  if (store === undefined) {\n    outputs.error({\"error\": `Store ${storeId} not found.`}, tag);\n  } else {\n    outputs.data(store, tag);\n  }\n} else {\n  // writing\n  shared[storeId] = value;\n  outputs.written(null, tag);\n}"
+        "df286b60-2beb-4138-a6b2-667612bccc17": "const {storeId, data: value} = data;\nif (value === undefined) {\n  // reading\n  const store = shared[storeId];\n  if (store === undefined) {\n    outputs.error({\"error\": `Store ${storeId} not found.`}, tag);\n  } else {\n    outputs.data(store, tag);\n  }\n} else {\n  // writing\n  shared[storeId] = value;\n  outputs.written({storeId, data: value}, tag);\n}"
       }
     }
   },
   "interface": {
     "inputs": {
       "df286b60-2beb-4138-a6b2-667612bccc17": {
-        "type": "{\"storeId\": string, \"data\": any}",
+        "type": "{\n  \"storeId\": string,\n  optional \"data\": any\n}",
         "name": "storeId & data"
       }
     },

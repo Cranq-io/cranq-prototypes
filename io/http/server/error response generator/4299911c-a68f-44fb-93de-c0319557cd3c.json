@@ -55,13 +55,35 @@
         },
         "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
           "coordinates": [
-            111.25,
-            48
+            85.25,
+            259
           ],
-          "name": "\"bad request\" resp.",
+          "name": "partial response",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
           "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"status\": 400,\n  \"headers\": {},\n  \"body\": \"Bad request\"\n}"
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"status\": 400,\n  \"headers\": {}\n}"
+          }
+        },
+        "9c4b3b68-f307-48e5-a840-3ababf5b2071": {
+          "coordinates": [
+            74.25,
+            84.8515625
+          ],
+          "name": "other error message",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"key\""
+          }
+        },
+        "41e4e64d-c445-4b84-a7d0-08e987496dc2": {
+          "coordinates": [
+            252.25,
+            76.8515625
+          ],
+          "name": "\"bad request\" resp.",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"body\""
           }
         }
       },
@@ -82,6 +104,23 @@
           "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
             "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
               "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "9c4b3b68-f307-48e5-a840-3ababf5b2071": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "9c4b3b68-f307-48e5-a840-3ababf5b2071": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "41e4e64d-c445-4b84-a7d0-08e987496dc2": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "41e4e64d-c445-4b84-a7d0-08e987496dc2": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
             }
           }
         }
@@ -99,8 +138,8 @@
             "1de833ba-f907-407b-a3a4-13e330e1a565": {
               "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
             },
-            "7dfb562f-68af-4e1d-a56a-da465bf7151a": {
-              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            "41e4e64d-c445-4b84-a7d0-08e987496dc2": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
             }
           }
         }

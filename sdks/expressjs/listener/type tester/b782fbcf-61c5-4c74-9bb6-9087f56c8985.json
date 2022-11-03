@@ -1,0 +1,49 @@
+{
+  "description": "Tells whether the input is a string.",
+  "interface": {
+    "inputs": {
+      "6a3c089d-b056-4f4d-991c-a8a8112d3659": {
+        "type": "any",
+        "name": "data",
+        "description": "The value to be tested."
+      }
+    },
+    "outputs": {
+      "8ba76f0d-0adc-43b6-b2f1-18b88b24db41": {
+        "type": "boolean",
+        "name": "is string",
+        "description": "Sends true if the data is a string, false otherwise."
+      }
+    }
+  },
+  "implementations": {
+    "es6": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6a3c089d-b056-4f4d-991c-a8a8112d3659": "outputs[\"is string\"](typeof data === \"string\", tag);"
+      }
+    },
+    "es6-node": {
+      "cleanupFunction": "",
+      "dependencies": {},
+      "initFunction": "",
+      "inputFunctions": {
+        "6a3c089d-b056-4f4d-991c-a8a8112d3659": "outputs[\"is string\"](typeof data === \"string\", tag);"
+      }
+    }
+  },
+  "name": "sdks/expressjs/Listener/Type tester",
+  "keywords": {
+    "string": null,
+    "tester": null,
+    "is string": null
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "original": "622ddf45-9067-4c20-bed0-45fb79f02050",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

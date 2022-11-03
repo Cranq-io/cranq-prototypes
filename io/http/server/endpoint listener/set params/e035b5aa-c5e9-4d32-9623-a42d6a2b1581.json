@@ -1,0 +1,82 @@
+{
+  "name": "io/http/server/Endpoint listener/Set params",
+  "interface": {
+    "inputs": {
+      "a68f4b04-0a0d-4388-adda-7557bbb9fa3f": {
+        "type": "number",
+        "name": "item",
+        "description": "[Inherited from port `item` of `builder`] \nReceives item to be added to the array.\n\nExample:\n\"Foo\""
+      },
+      "6c56929c-0fc1-40bb-bee1-272948dedc70": {
+        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\noptional \"host\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
+        "name": "dict",
+        "description": "[Inherited from port `dict` of `item getter with default`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    },
+    "outputs": {
+      "1ea4dc7d-b20d-4c33-a15d-f40e69b55d09": {
+        "type": "{\"port\": number,\n\"host\": string }",
+        "name": "server params",
+        "description": "[Inherited from port `array` of `item inserter`] \nSends array with specified item inserted.\n\nExample:\n[1,1,2,3]"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "de9aeba2-76c9-48c2-b962-bae7f3c5e6ac": {
+          "coordinates": [
+            -181,
+            -67.33333333333331
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"host\": \"127.0.0.1\"}"
+          }
+        },
+        "6631ce2d-a405-47d5-83f0-f6230945a312": {
+          "coordinates": [
+            49,
+            17.666666666666686
+          ],
+          "name": "inner joiner",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"host\": \"host\",\n  \"port\": \"port\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "de9aeba2-76c9-48c2-b962-bae7f3c5e6ac": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "6631ce2d-a405-47d5-83f0-f6230945a312": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6c56929c-0fc1-40bb-bee1-272948dedc70": {
+            "de9aeba2-76c9-48c2-b962-bae7f3c5e6ac": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "1ea4dc7d-b20d-4c33-a15d-f40e69b55d09": {
+            "6631ce2d-a405-47d5-83f0-f6230945a312": {
+              "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

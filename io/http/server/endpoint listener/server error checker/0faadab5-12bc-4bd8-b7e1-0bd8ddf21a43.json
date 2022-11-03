@@ -1,0 +1,110 @@
+{
+  "name": "io/http/server/Endpoint listener/Server error checker",
+  "interface": {
+    "inputs": {
+      "8978272a-83da-48fd-b253-ca7585916edc": {
+        "type": "{\n  \"error\": string,\n  optional \"origin\": string\n}",
+        "name": "error",
+        "description": "Recive error data."
+      }
+    },
+    "outputs": {
+      "e7b7f2c0-4e3f-4630-83d6-f5c18f170947": {
+        "type": "string",
+        "name": "server error",
+        "description": "Error message."
+      },
+      "bfb24c70-24af-457b-bc18-d945b3f65b3a": {
+        "type": "string",
+        "name": "runtime error",
+        "description": "Error message."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d6d7c6a5-d2c3-44f7-a132-61b0de37192b": {
+          "coordinates": [
+            -121,
+            37
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"error\", \"origin\"]"
+          }
+        },
+        "d365c1e4-9785-4817-8313-dc81c63a2240": {
+          "coordinates": [
+            45,
+            106
+          ],
+          "name": "is server error",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "a0934373-43a4-4cd5-83eb-860bc20d790a": "\"server\""
+          }
+        },
+        "de68df72-8961-4795-9780-a87069679dcc": {
+          "coordinates": [
+            48,
+            -85
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "d365c1e4-9785-4817-8313-dc81c63a2240": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "de68df72-8961-4795-9780-a87069679dcc": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "d6d7c6a5-d2c3-44f7-a132-61b0de37192b": {
+          "origin": {
+            "d365c1e4-9785-4817-8313-dc81c63a2240": {
+              "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {}
+            }
+          },
+          "error": {
+            "de68df72-8961-4795-9780-a87069679dcc": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8978272a-83da-48fd-b253-ca7585916edc": {
+            "d6d7c6a5-d2c3-44f7-a132-61b0de37192b": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "e7b7f2c0-4e3f-4630-83d6-f5c18f170947": {
+            "de68df72-8961-4795-9780-a87069679dcc": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "bfb24c70-24af-457b-bc18-d945b3f65b3a": {
+            "de68df72-8961-4795-9780-a87069679dcc": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "description": "Check is error server related, based on the recived origin.",
+  "keywords": {
+    "fork error": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

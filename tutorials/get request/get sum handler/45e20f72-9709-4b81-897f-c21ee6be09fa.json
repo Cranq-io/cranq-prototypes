@@ -1,0 +1,123 @@
+{
+  "name": "tutorials/GET request/GET sum handler",
+  "interface": {
+    "inputs": {
+      "27e08851-a679-4257-8c39-90880368c41c": {
+        "type": "any",
+        "name": "read",
+        "description": "[Inherited from port `read` of `parameter`] \nReceives signal that triggers sending out the stored parameter value."
+      }
+    },
+    "outputs": {
+      "0fe4488f-dafc-47f0-b824-06a9c14a7703": {
+        "type": "typeof `response` of `build response`",
+        "name": "response",
+        "description": "[Inherited from port `response` of `build response`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e400ac14-1754-4ef7-a1e7-d3a4cd659a18": {
+          "coordinates": [
+            -48.655555555555566,
+            137.60555555555555
+          ],
+          "name": "get total USDT value",
+          "prototype": "79ad8c77-5290-43e2-b1ff-91d16703006c"
+        },
+        "100a2592-f9f5-4c30-9bcd-90c786858d93": {
+          "coordinates": [
+            285.1638888888889,
+            -74.90138888888889
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146",
+          "params": {
+            "402286d6-3a51-4842-8c43-5bd757b60445": "200",
+            "300852ca-cadf-4b8c-b238-6f257f3039fb": "{}"
+          }
+        },
+        "448b0165-31a1-436f-84cb-3e2680382ca9": {
+          "coordinates": [
+            137.1638888888889,
+            17.09861111111111
+          ],
+          "name": "serialize result",
+          "prototype": "9b8b959e-3c8c-4e4c-ac8a-7bf59bb50803"
+        },
+        "92f1e333-1617-45a1-b0ae-c798a4b4d816": {
+          "coordinates": [
+            -128.3361111111111,
+            -2.4013888888888886
+          ],
+          "name": "retrieve wallet",
+          "prototype": "2d7fd69e-e92a-485d-844d-51d64861c68f"
+        },
+        "63b256da-f10c-45a9-b3bc-bc89dc04c9bb": {
+          "coordinates": [
+            -245.3361111111111,
+            -77.40138888888889
+          ],
+          "name": "\"wallet\"",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"wallet\""
+          }
+        }
+      },
+      "connections": {
+        "e400ac14-1754-4ef7-a1e7-d3a4cd659a18": {
+          "9a05afb1-e897-4c34-955d-eda1fb2608a7": {
+            "448b0165-31a1-436f-84cb-3e2680382ca9": {
+              "607be551-0389-42f8-99bb-088bfd8b1579": {}
+            }
+          }
+        },
+        "448b0165-31a1-436f-84cb-3e2680382ca9": {
+          "60eb7bd0-fd76-48a5-a787-78a6f87d131b": {
+            "100a2592-f9f5-4c30-9bcd-90c786858d93": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
+            }
+          }
+        },
+        "63b256da-f10c-45a9-b3bc-bc89dc04c9bb": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "92f1e333-1617-45a1-b0ae-c798a4b4d816": {
+              "f2701c1a-1edf-4401-a2c5-3b7f2305f188": {}
+            }
+          }
+        },
+        "92f1e333-1617-45a1-b0ae-c798a4b4d816": {
+          "084b014c-2a5f-40d2-86dc-7a7544c77024": {
+            "e400ac14-1754-4ef7-a1e7-d3a4cd659a18": {
+              "ebd83868-7514-4ac6-8a64-9b65b2a4e8a7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "27e08851-a679-4257-8c39-90880368c41c": {
+            "63b256da-f10c-45a9-b3bc-bc89dc04c9bb": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "0fe4488f-dafc-47f0-b824-06a9c14a7703": {
+            "100a2592-f9f5-4c30-9bcd-90c786858d93": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

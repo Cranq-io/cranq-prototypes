@@ -1,0 +1,111 @@
+{
+  "name": "tutorials/PUT request/PUT wallet handler",
+  "interface": {
+    "inputs": {
+      "4118e64c-bd53-4dd3-b6f5-349f6141bc8d": {
+        "type": "{\n  \"baseUrl\": string,\n  \"body\": any,\n  \"cookies\": any,\n  \"hostname\": string,\n  \"headers\": {string: string},\n  \"ip\": string,\n  \"ips\": string[],\n  \"method\": (\n    \"GET\"\n    or \"POST\"\n    or \"PUT\"\n    or \"PATCH\"\n    or \"DELETE\"\n  ),\n  \"originalUrl\": string,\n  \"params\": {string: string},\n  \"path\": string,\n  \"protocol\": (\n    \"http\"\n    or \"https\"\n  ),\n  \"query\": {string: any},\n  \"route\": string,\n  \"secure\": boolean,\n  \"signedCookies\": any,\n  \"stale\": boolean,\n  \"subdomains\": string[],\n  \"xhr\": boolean\n}",
+        "name": "request",
+        "description": "[Inherited from port `request` of `request body getter`] \nReceives an HTTP request that has a body."
+      }
+    },
+    "outputs": {
+      "54c0e270-f5dc-460b-98d2-83c49eb95e1b": {
+        "type": "\n{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "[Inherited from port `response` of `response builder`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2ca67032-8f1f-402e-87ca-6cd41ec102ba": {
+          "coordinates": [
+            -180.25,
+            16
+          ],
+          "name": "extract request body",
+          "prototype": "d069d982-84e8-443d-ba57-adba00b85a71"
+        },
+        "789edf9b-bdbd-4a7e-a2d7-0e4bbb37b6d0": {
+          "coordinates": [
+            3.75,
+            119
+          ],
+          "name": "store wallet contents",
+          "prototype": "13f860ae-0d8b-462a-98dc-29835c4de357",
+          "params": {
+            "25c7ef7d-f03e-4d11-8795-a841ff078903": "\"wallet\""
+          }
+        },
+        "8d3c30fd-6aab-445f-970b-f2cde6c594f8": {
+          "coordinates": [
+            2.75,
+            -84
+          ],
+          "name": "hold wallet until written",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        },
+        "9dbe4938-c569-458e-97b2-1dfaa9b6573a": {
+          "coordinates": [
+            173.75,
+            -51
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146",
+          "params": {
+            "402286d6-3a51-4842-8c43-5bd757b60445": "200",
+            "300852ca-cadf-4b8c-b238-6f257f3039fb": "{}"
+          }
+        }
+      },
+      "connections": {
+        "2ca67032-8f1f-402e-87ca-6cd41ec102ba": {
+          "01a94511-1481-4dea-bc53-ad6c78a53d3a": {
+            "789edf9b-bdbd-4a7e-a2d7-0e4bbb37b6d0": {
+              "b27da556-2371-4233-822d-a60a129aaf03": {}
+            },
+            "8d3c30fd-6aab-445f-970b-f2cde6c594f8": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "789edf9b-bdbd-4a7e-a2d7-0e4bbb37b6d0": {
+          "736aaec0-1f5f-4284-99c0-149ace93aeb3": {
+            "8d3c30fd-6aab-445f-970b-f2cde6c594f8": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        },
+        "8d3c30fd-6aab-445f-970b-f2cde6c594f8": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "9dbe4938-c569-458e-97b2-1dfaa9b6573a": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4118e64c-bd53-4dd3-b6f5-349f6141bc8d": {
+            "2ca67032-8f1f-402e-87ca-6cd41ec102ba": {
+              "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {}
+            }
+          }
+        },
+        "outputs": {
+          "54c0e270-f5dc-460b-98d2-83c49eb95e1b": {
+            "9dbe4938-c569-458e-97b2-1dfaa9b6573a": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

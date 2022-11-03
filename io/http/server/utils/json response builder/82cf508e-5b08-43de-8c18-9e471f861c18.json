@@ -1,0 +1,155 @@
+{
+  "name": "io/http/server/utils/JSON response builder",
+  "description": "Builds a JSON response structure out of its components: HTTP status, headers, and JSON data.\n\nExample:\n1. 200@1 received via `status`\n2. {\"Content-Type\": \"text/plain\"}@1 received via `headers`\n3. {\"result\": OK\"}@1 received via `data`\n4. Sent out via `response`:\n```\n{\n  \"status\": 200, \"headers\": {\n    \"Content-Type\": \"text/plain\"\n  },\n  \"body\": \"{\\\"result\\\": \\\"OK\\\"}\"\n}@1\n```",
+  "interface": {
+    "inputs": {
+      "0d360a28-ed3a-4cc4-955a-2323b13b7378": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives the JSON body of the response.\n\nExample: {\"result\": \"OK\"}"
+      },
+      "3dc7c85c-32fc-4a1f-844f-b04f9cfe58a5": {
+        "type": "number",
+        "name": "status",
+        "description": "Receives a HTTP status code.\n\nExample: `200`"
+      },
+      "556eb4c9-5de3-4464-825a-5d563ee509cd": {
+        "type": "{string: string}",
+        "name": "headers",
+        "description": "Receives a record of HTTP headers.\n\nExample:\n```\n{\"Contanet-Type\": \"text/plain\"}\n```"
+      }
+    },
+    "outputs": {
+      "586c53e2-1fb7-4e93-a022-1b0aca6833d9": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "[Inherited from port `response` of `response builder`] \nSends the constructed HTTP response."
+      },
+      "0528502a-9f6a-4397-b02f-a68af54f187f": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error when JSON serialization failed."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4570a9d4-ecc0-450b-ad3b-8507f73a97b3": {
+          "coordinates": [
+            16,
+            127.16666666666674
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146"
+        },
+        "fae698a1-11a3-4a1b-8fe5-62ac1cd5f150": {
+          "coordinates": [
+            29,
+            -125.83333333333326
+          ],
+          "name": "serialize response body",
+          "prototype": "3820f096-6216-4049-b374-c98684387fea",
+          "params": {
+            "deb0a917-b393-4326-b573-ec6a6f82ffec": "false"
+          }
+        },
+        "adbabcbd-85e5-4ae4-984a-f0963f104fd8": {
+          "coordinates": [
+            -134,
+            -44.83333333333326
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "a6e14e29-5a15-4f41-8a53-12f6ff8d97f3": {
+          "coordinates": [
+            87,
+            44.33333333333337
+          ],
+          "name": "wrap error",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"error\"]"
+          }
+        }
+      },
+      "connections": {
+        "fae698a1-11a3-4a1b-8fe5-62ac1cd5f150": {
+          "25650a4f-7e35-4754-bc8f-1a57f538166f": {
+            "4570a9d4-ecc0-450b-ad3b-8507f73a97b3": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
+            }
+          },
+          "96bf3401-ac68-46e7-b86b-371758d5543a": {
+            "a6e14e29-5a15-4f41-8a53-12f6ff8d97f3": {
+              "error": {}
+            }
+          }
+        },
+        "adbabcbd-85e5-4ae4-984a-f0963f104fd8": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "fae698a1-11a3-4a1b-8fe5-62ac1cd5f150": {
+              "cc00cc18-d6ce-4661-8dd5-eb3140a3acae": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "4570a9d4-ecc0-450b-ad3b-8507f73a97b3": {
+              "402286d6-3a51-4842-8c43-5bd757b60445": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "4570a9d4-ecc0-450b-ad3b-8507f73a97b3": {
+              "300852ca-cadf-4b8c-b238-6f257f3039fb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0d360a28-ed3a-4cc4-955a-2323b13b7378": {
+            "adbabcbd-85e5-4ae4-984a-f0963f104fd8": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "3dc7c85c-32fc-4a1f-844f-b04f9cfe58a5": {
+            "adbabcbd-85e5-4ae4-984a-f0963f104fd8": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "556eb4c9-5de3-4464-825a-5d563ee509cd": {
+            "adbabcbd-85e5-4ae4-984a-f0963f104fd8": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "586c53e2-1fb7-4e93-a022-1b0aca6833d9": {
+            "4570a9d4-ecc0-450b-ad3b-8507f73a97b3": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {}
+            }
+          },
+          "0528502a-9f6a-4397-b02f-a68af54f187f": {
+            "a6e14e29-5a15-4f41-8a53-12f6ff8d97f3": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "keywords": {
+    "construct": null,
+    "build": null,
+    "response": null,
+    "http": null,
+    "API": null,
+    "text": null,
+    "REST": null,
+    "JSON": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

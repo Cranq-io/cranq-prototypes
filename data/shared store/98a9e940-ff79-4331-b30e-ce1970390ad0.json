@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6": {
+      "inputFunctions": {
+        "df286b60-2beb-4138-a6b2-667612bccc17": "const {storeId, data: value} = data;\nif (value === undefined) {\n  // reading\n  const store = shared[storeId];\n  if (store === undefined) {\n    outputs.error({\"error\": `Store ${storeId} not found.`}, tag);\n  } else {\n    outputs.data(store, tag);\n  }\n} else {\n  // writing\n  shared[storeId] = value;\n  outputs.written({storeId, data: value}, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "df286b60-2beb-4138-a6b2-667612bccc17": {
+        "type": "{\n  \"storeId\": string,\n  optional \"data\": any\n}",
+        "name": "storeId & data"
+      }
+    },
+    "outputs": {
+      "3354cb5a-4b5d-4dd6-ad37-6b0c2ef4c7ca": {
+        "type": "typeof `storeId & data`[\"data\"]",
+        "name": "data"
+      },
+      "4c2b33e6-e35f-4ae3-bd76-b9f092b9f136": {
+        "type": "typeof `storeId & data`",
+        "name": "written"
+      },
+      "d5aa2548-b108-4d3e-ab60-8de0dfdb52c6": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "data/Shared store",
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "description": "See `data/Shared store setter` and `data/Shared store getter`.",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

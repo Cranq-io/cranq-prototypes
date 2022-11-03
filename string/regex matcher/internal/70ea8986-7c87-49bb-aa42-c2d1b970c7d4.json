@@ -17,11 +17,11 @@
         "name": "matched"
       },
       "7866a8a3-a295-4bed-832f-e5c901996c42": {
-        "type": "any",
+        "type": "string[]",
         "name": "groups"
       },
       "96ab5b34-0713-4813-abee-efe06f4bb9ab": {
-        "type": "({string: string} or null)",
+        "type": "{string: string}",
         "name": "named groups"
       }
     }
@@ -32,12 +32,13 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex).exec(data.string);\nconst [matched, ...groups] = result || [];\nconst namedgroups = result.groups || null;\noutputs.matched(matched, tag);\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);\noutputs[\"named groups\"](namedgroups, tag);"
+        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex).exec(data.string);\nconst [matched, ...groups] = result || [];\nconst namedgroups = result.groups || {};\noutputs.matched(matched, tag);\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);\noutputs[\"named groups\"](namedgroups, tag);"
       }
     }
   },
   "name": "string/Regex matcher/Internal",
   "original": "d7c7f894-f692-4452-b2b0-70fb743f0d47",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
   "attributes": {
     "internal": true,
     "locked": true

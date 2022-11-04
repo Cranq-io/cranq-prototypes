@@ -4,13 +4,15 @@
     "inputs": {
       "6760b665-131e-4ec5-b2f7-12bbfa1f60d9": {
         "type": "any",
-        "name": "read"
+        "name": "read",
+        "description": "Receives a signal that triggers the contents being sent via abi (output)."
       }
     },
     "outputs": {
       "a7efbc77-d51f-43df-9c45-273de73aafb7": {
         "type": "{string: any}",
-        "name": "abi"
+        "name": "abi",
+        "description": "Sends the stored ABI."
       }
     }
   },
@@ -49,7 +51,7 @@
     }
   },
   "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
-  "description": "Holds the ABI of the IPancakeFactory interface.",
+  "description": "Holds the ABI of the IPancakePair interface.",
   "keywords": {
     "pancake factory": null,
     "abi": null,

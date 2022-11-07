@@ -32,7 +32,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex).exec(data.string);\nconst [matched, ...groups] = result || [];\nconst namedgroups = result.groups || {};\noutputs.matched(matched, tag);\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);\noutputs[\"named groups\"](namedgroups, tag);"
+        "19476252-601a-47a3-bb8e-78e5b6661233": "const result = new RegExp(data.regex).exec(data.string);\nconst [matched, ...groups] = result || [];\nconst namedgroups = result && result.groups || {};\noutputs.matched(matched || null, tag);\noutputs.matches(!!matched, tag);\noutputs.groups(groups, tag);\noutputs[\"named groups\"](namedgroups, tag);"
       }
     }
   },

@@ -20,7 +20,7 @@
         "description": "Whether the given regex matches the given string;\n\nExample: \n\ntrue"
       },
       "8619dc0b-682c-475e-9820-b0a9a5274eed": {
-        "type": "string",
+        "type": "(string or null)",
         "name": "matched",
         "description": "Sends the matched text.\n\nExample: \n\n\"fox jumps over\""
       },
@@ -53,8 +53,8 @@
         },
         "ba1f2ca1-6018-4ff6-afd6-8b599c01748c": {
           "coordinates": [
-            90,
-            14
+            42,
+            34
           ],
           "description": "",
           "params": {},

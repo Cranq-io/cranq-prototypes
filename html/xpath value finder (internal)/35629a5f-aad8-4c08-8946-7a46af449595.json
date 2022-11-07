@@ -18,7 +18,7 @@
         }
       },
       "inputFunctions": {
-        "6c326055-5409-47ab-8197-305240922f8e": "const xpath = require(\"xpath\");\nconst parse5 = require(\"parse5\");\nconst xmlser = require(\"xmlserializer\");\nconst dom = require(\"xmldom\").DOMParser;\n\nconst { document, query } = data;\nconst doc = new dom({ \n  errorHandler: {\n    warning: () => {},\n    error: (e) => {outputs.error({\"error\": e.toString()}, tag)}\n  }\n}).parseFromString(document);\n\nconst select = xpath.useNamespaces({ \"x\": \"http://www.w3.org/1999/xhtml\" });\nconst nodes = select(query, doc);\n\nconst values = nodes.map((node) => node.toString());\n\noutputs.results(values, tag)"
+        "6c326055-5409-47ab-8197-305240922f8e": "const xpath = require(\"xpath\");\nconst parse5 = require(\"parse5\");\nconst xmlser = require(\"xmlserializer\");\nconst dom = require(\"xmldom\").DOMParser;\n\nconst { document, query } = data;\nconst doc = new dom({ \n  errorHandler: {\n    warning: () => {},\n    error: (e) => {outputs.error({\"error\": e.toString()}, tag)}\n  }\n}).parseFromString(document);\n\ntry {\n  const select = xpath.useNamespaces({ \"x\": \"http://www.w3.org/1999/xhtml\" });\n  const nodes = select(query, doc);\n  const values = nodes.map((node) => node.toString());\n  outputs.results(values, tag)\n} catch(e) {\n  outputs.error({\"error\": e.toString()}, tag)\n}"
       }
     }
   },

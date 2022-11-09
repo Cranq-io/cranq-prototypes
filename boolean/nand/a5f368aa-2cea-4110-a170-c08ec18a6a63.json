@@ -4,18 +4,21 @@
   "interface": {
     "inputs": {
       "ad9e2497-ee64-46bc-ae85-86ce71a33bd9": {
-        "type": "boolean\n",
-        "name": "a"
+        "type": "boolean",
+        "name": "a",
+        "description": "Must be a boolean eg true or false"
       },
       "be8c4674-102e-4f03-a086-5ed02f3c41b6": {
         "type": "boolean",
-        "name": "b"
+        "name": "b",
+        "description": "Must be a boolean eg true or false"
       }
     },
     "outputs": {
       "a3f3a3a4-3151-4d1f-ad3d-51a4592cf219": {
-        "type": "any",
-        "name": "nand"
+        "type": "boolean",
+        "name": "nand",
+        "description": "Output will either be true or false"
       }
     }
   },

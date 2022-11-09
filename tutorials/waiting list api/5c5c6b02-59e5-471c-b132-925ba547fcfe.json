@@ -1,0 +1,234 @@
+{
+  "attributes": {
+    "root": true
+  },
+  "description": "A single-resource API that takes an e-mail address, puts it into AirTable & sends a confirmation message through MailJet.\n\nMake sure to fill the \"*params\" nodes with your credentials!\n\nExplanation & instructions on YouTube.\n\nhttps://www.youtube.com/channel/UCHo5rmiu9J3V8r8eS_m71vA",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -268,
+            -13
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "cf7d9c92-0496-4326-864d-f602c9601dad": {
+          "coordinates": [
+            -25,
+            -67.5
+          ],
+          "name": "POST /subscribe",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e",
+          "params": {}
+        },
+        "f4970f71-0085-408b-a316-ffc8694c5341": {
+          "coordinates": [
+            -113,
+            91.5
+          ],
+          "name": "API params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"serverId\": \"server\",\n  \"port\": 8080,\n  \"method\": \"POST\",\n  \"route\": \"/subscribe\",\n  \"request\": {\n    \"contentType\": \"json\"\n  },\n  \"response\": {\n    \"contentType\": \"json\"\n  }\n}"
+          }
+        },
+        "7182fd88-01a1-4844-9374-a1c5b43991da": {
+          "coordinates": [
+            466,
+            -38.5
+          ],
+          "name": "build response",
+          "prototype": "ffe26f46-9ee8-47ab-b383-0b605b9c7da6"
+        },
+        "0aa62af1-699c-4d81-b697-2c5a39078a3a": {
+          "coordinates": [
+            102.3359375,
+            31.588541666666686
+          ],
+          "name": "get email from req",
+          "prototype": "94c5d9ed-01f3-401a-9d6b-97a4cccecb07"
+        },
+        "e7ad3bca-60bc-43c0-a374-39b2b5fb0999": {
+          "coordinates": [
+            177.5,
+            302.171875
+          ],
+          "name": "AT params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\r\n  \"apiKey\": \"\",\r\n  \"baseId\": \"\",\r\n  \"tableName\": \"\"\r\n}"
+          }
+        },
+        "01bab025-1355-46ce-990b-a54461f6952b": {
+          "coordinates": [
+            342.5,
+            411.171875
+          ],
+          "name": "log AT error",
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
+        },
+        "ff034167-03a0-4e53-b2d7-b29ace343939": {
+          "coordinates": [
+            378.75,
+            263.171875
+          ],
+          "name": "insert into AT",
+          "prototype": "742bda5b-9e2c-48fa-8f70-b198f63875a8"
+        },
+        "97c425a4-43a7-4599-b531-dd927c90abce": {
+          "coordinates": [
+            494.5,
+            444.171875
+          ],
+          "name": "MailJet params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\r\n  \"user id\": \"\",\r\n  \"password\": \"\",\r\n  \"from\": {\r\n    \"Email\": \"\"\r\n  }\r\n}"
+          }
+        },
+        "cff93352-12aa-4c48-abee-617262d5d184": {
+          "coordinates": [
+            709.5,
+            521.171875
+          ],
+          "name": "log Mailjet error",
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348"
+        },
+        "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+          "coordinates": [
+            652.75,
+            380.671875
+          ],
+          "name": "send confirmation",
+          "prototype": "4f78efd0-01de-423c-afff-8c6816c0d779"
+        },
+        "42774e2b-a988-449c-b8ee-d787a9876139": {
+          "coordinates": [
+            233.5,
+            108.171875
+          ],
+          "name": "validate email address",
+          "prototype": "4a636338-5740-4fa4-868d-b8af8d2f5ff3"
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "f4970f71-0085-408b-a316-ffc8694c5341": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "f4970f71-0085-408b-a316-ffc8694c5341": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "cf7d9c92-0496-4326-864d-f602c9601dad": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        },
+        "7182fd88-01a1-4844-9374-a1c5b43991da": {
+          "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+            "cf7d9c92-0496-4326-864d-f602c9601dad": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "cf7d9c92-0496-4326-864d-f602c9601dad": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "0aa62af1-699c-4d81-b697-2c5a39078a3a": {
+              "925f29d4-cc38-48e9-8e38-b0f82e3b5fe2": {}
+            }
+          }
+        },
+        "0aa62af1-699c-4d81-b697-2c5a39078a3a": {
+          "f5c1015d-de86-4e9c-8eed-67b790b0fb6e": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {}
+            }
+          },
+          "323982f5-d872-42e8-b6ca-36893eec676a": {
+            "42774e2b-a988-449c-b8ee-d787a9876139": {
+              "1241504c-0928-4b05-b945-d3f2c7c6940c": {}
+            }
+          }
+        },
+        "e7ad3bca-60bc-43c0-a374-39b2b5fb0999": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "ff034167-03a0-4e53-b2d7-b29ace343939": {
+              "3af901df-f037-4be3-bd9c-7de6f186b98f": {}
+            }
+          }
+        },
+        "ff034167-03a0-4e53-b2d7-b29ace343939": {
+          "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "e1444412-e063-4500-aa81-929ef4c4d84a": {}
+            },
+            "01bab025-1355-46ce-990b-a54461f6952b": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          },
+          "7b151a8d-7870-4e11-972a-fb845dd793d5": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {}
+            },
+            "97c425a4-43a7-4599-b531-dd927c90abce": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+              "6560601a-ab0f-472e-9db3-627bbfc74141": {}
+            }
+          }
+        },
+        "97c425a4-43a7-4599-b531-dd927c90abce": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+              "419ad717-f9c6-4623-8766-eb4e0422d44c": {}
+            }
+          }
+        },
+        "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+          "ea56e8ae-b993-4cd0-a5cc-3176d0037b59": {
+            "cff93352-12aa-4c48-abee-617262d5d184": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "42774e2b-a988-449c-b8ee-d787a9876139": {
+          "414e95c3-4b44-4f91-b0a5-94a314316d4d": {
+            "ff034167-03a0-4e53-b2d7-b29ace343939": {
+              "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {}
+            },
+            "e7ad3bca-60bc-43c0-a374-39b2b5fb0999": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          },
+          "3fa5162c-8bee-4f83-8f50-4233c26ebde8": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "tutorials/Waiting list API",
+  "keywords": {
+    "API": null,
+    "MailJet": null,
+    "AirTable": null,
+    "tutorial": null
+  }
+}

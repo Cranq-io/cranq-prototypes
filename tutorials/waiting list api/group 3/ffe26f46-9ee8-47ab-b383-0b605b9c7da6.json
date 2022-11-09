@@ -1,0 +1,95 @@
+{
+  "name": "tutorials/Waiting list API/Group 3",
+  "interface": {
+    "inputs": {
+      "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
+        "type": "typeof `build OK` of `build OK`",
+        "name": "build OK",
+        "description": "[Inherited from port `build OK` of `build OK`] \n[Inherited from port `read` of `body`] \nReceives signal that triggers sending out the stored parameter value."
+      },
+      "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {
+        "type": "typeof `build 400` of `build 400`",
+        "name": "build 400",
+        "description": "[Inherited from port `build 400` of `build 400`] \n[Inherited from port `read` of `body`] \nReceives signal that triggers sending out the stored parameter value."
+      },
+      "e1444412-e063-4500-aa81-929ef4c4d84a": {
+        "type": "any",
+        "name": "build 500"
+      }
+    },
+    "outputs": {
+      "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+        "type": "typeof `response` of `build OK`",
+        "name": "response",
+        "description": "[Inherited from port `response` of `build OK`] \n[Inherited from port `response` of `build response`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
+          "coordinates": [
+            0,
+            -48.5
+          ],
+          "name": "build OK",
+          "prototype": "a1949b00-e16d-4881-a027-47c9f5f6dae9"
+        },
+        "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
+          "coordinates": [
+            0,
+            48.5
+          ],
+          "name": "build 400",
+          "prototype": "b1cda9b3-9d70-427a-86aa-328c450fa9e7"
+        },
+        "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
+          "coordinates": [
+            -3,
+            157.5
+          ],
+          "name": "build 500",
+          "prototype": "3ec1b772-14cc-4794-b9ab-787e8d1da6cf"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {
+            "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          },
+          "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
+            "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          },
+          "e1444412-e063-4500-aa81-929ef4c4d84a": {
+            "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          }
+        },
+        "outputs": {
+          "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+            "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            },
+            "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            },
+            "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

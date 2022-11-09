@@ -1,0 +1,126 @@
+{
+  "name": "tutorials/Waiting list API/Group 5",
+  "interface": {
+    "inputs": {
+      "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {
+        "type": "typeof `data` of `email address`",
+        "name": "email address",
+        "description": "[Inherited from port `data` of `email address`] \nReceives contents of the store. San be set as parameter, or received as signal."
+      },
+      "3af901df-f037-4be3-bd9c-7de6f186b98f": {
+        "type": "typeof `params` of `record inserter`",
+        "name": "params",
+        "description": "[Inherited from port `params` of `record inserter`] \nReceives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
+      }
+    },
+    "outputs": {
+      "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {
+        "type": "typeof `error` of `record inserter`",
+        "name": "error",
+        "description": "[Inherited from port `error` of `record inserter`] \nSends the error, if one occurred."
+      },
+      "7b151a8d-7870-4e11-972a-fb845dd793d5": {
+        "type": "typeof `data` of `email address`",
+        "name": "email address",
+        "description": "[Inherited from port `data` of `email address`] \nSends store contents."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+          "coordinates": [
+            101.75,
+            164
+          ],
+          "name": "record inserter",
+          "prototype": "909b0a7b-d472-4247-bea4-21d76dd85511"
+        },
+        "cda3b54a-9b43-435d-b850-7efc6016da1b": {
+          "coordinates": [
+            -41.25,
+            20
+          ],
+          "name": "record to airtable record converter",
+          "prototype": "e419e106-2619-4778-a199-51a92a9f1eac"
+        },
+        "ea396202-fa96-467e-9925-b658c6e1dad7": {
+          "coordinates": [
+            -212.25,
+            -69
+          ],
+          "name": "builder (key & value)",
+          "prototype": "ad0c8e3a-6cd9-4a4e-b056-26d730fecf28",
+          "params": {
+            "4cb1e461-05c1-4454-940e-5b7657cb916e": "\"email\""
+          }
+        },
+        "790295f9-4781-44a6-aa49-6096c8a83abe": {
+          "coordinates": [
+            151.75,
+            -115
+          ],
+          "name": "email address",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        }
+      },
+      "connections": {
+        "cda3b54a-9b43-435d-b850-7efc6016da1b": {
+          "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+            "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+              "fd17c7a6-833e-4585-abf6-933387a0a47a": {}
+            }
+          }
+        },
+        "ea396202-fa96-467e-9925-b658c6e1dad7": {
+          "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+            "cda3b54a-9b43-435d-b850-7efc6016da1b": {
+              "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {}
+            }
+          }
+        },
+        "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+          "1adf578c-ed11-4554-935d-90eb0fbdf966": {
+            "790295f9-4781-44a6-aa49-6096c8a83abe": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {
+            "790295f9-4781-44a6-aa49-6096c8a83abe": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            },
+            "ea396202-fa96-467e-9925-b658c6e1dad7": {
+              "8b675c7e-77b3-4fc6-b065-adbedf46b485": {}
+            }
+          },
+          "3af901df-f037-4be3-bd9c-7de6f186b98f": {
+            "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+              "a9ed6b36-3134-42ce-b478-f84a0e013f88": {}
+            }
+          }
+        },
+        "outputs": {
+          "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {
+            "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+              "038fb87a-68af-4081-9487-c8439a1f9954": {}
+            }
+          },
+          "7b151a8d-7870-4e11-972a-fb845dd793d5": {
+            "790295f9-4781-44a6-aa49-6096c8a83abe": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df"
+}

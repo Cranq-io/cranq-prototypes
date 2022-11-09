@@ -1,0 +1,101 @@
+{
+  "name": "tutorials/Waiting list API/Group 4",
+  "interface": {
+    "inputs": {
+      "925f29d4-cc38-48e9-8e38-b0f82e3b5fe2": {
+        "type": "typeof `request` of `request body getter`",
+        "name": "request",
+        "description": "[Inherited from port `request` of `request body getter`] \nReceives an HTTP request that has a body."
+      }
+    },
+    "outputs": {
+      "f5c1015d-de86-4e9c-8eed-67b790b0fb6e": {
+        "type": "typeof `not found` of `item getter`",
+        "name": "not found",
+        "description": "[Inherited from port `not found` of `item getter`] \nSends the input values, when the specified key is not found in the dictionary.\n\nExample:\n{ \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }"
+      },
+      "323982f5-d872-42e8-b6ca-36893eec676a": {
+        "type": "typeof `value` of `item getter`",
+        "name": "email address",
+        "description": "[Inherited from port `value` of `item getter`] \nIf found, sends the value corresponding to the specified key.\n\nExample:\n1"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6a9237fa-25f7-4850-9ca9-12a28814cdbe": {
+          "coordinates": [
+            -86,
+            -141.66666666666669
+          ],
+          "name": "request body getter",
+          "prototype": "d069d982-84e8-443d-ba57-adba00b85a71"
+        },
+        "2e3e998e-c422-4609-91ab-ad31ccaab0f6": {
+          "coordinates": [
+            6,
+            -0.6666666666666856
+          ],
+          "name": "type tester fork",
+          "prototype": "39495e8a-02be-4fcd-8ca7-1582dadca817"
+        },
+        "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+          "coordinates": [
+            80,
+            142.33333333333331
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"email\""
+          }
+        }
+      },
+      "connections": {
+        "6a9237fa-25f7-4850-9ca9-12a28814cdbe": {
+          "01a94511-1481-4dea-bc53-ad6c78a53d3a": {
+            "2e3e998e-c422-4609-91ab-ad31ccaab0f6": {
+              "3590c1f2-90e4-41a0-a73d-57add9bce379": {}
+            }
+          }
+        },
+        "2e3e998e-c422-4609-91ab-ad31ccaab0f6": {
+          "904e5d46-7aa4-414a-ba2c-112ccd118184": {
+            "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "925f29d4-cc38-48e9-8e38-b0f82e3b5fe2": {
+            "6a9237fa-25f7-4850-9ca9-12a28814cdbe": {
+              "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {}
+            }
+          }
+        },
+        "outputs": {
+          "f5c1015d-de86-4e9c-8eed-67b790b0fb6e": {
+            "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+              "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {}
+            },
+            "2e3e998e-c422-4609-91ab-ad31ccaab0f6": {
+              "bf35d41f-fa1c-4308-bbb8-aac17efa9756": {}
+            }
+          },
+          "323982f5-d872-42e8-b6ca-36893eec676a": {
+            "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true
+  }
+}

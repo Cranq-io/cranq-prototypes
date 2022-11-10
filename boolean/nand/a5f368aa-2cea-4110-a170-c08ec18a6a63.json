@@ -1,5 +1,5 @@
 {
-  "name": "boolean/nand",
+  "name": "boolean/Nand",
   "description": "Performs a boolean NAND operation on the values received via inputs `a` and `b`.\n\nExample:\n\n1. true@0 is received via `a`\n2. true@0 is received via `b`\n3. false@0 is sent via `nand`",
   "interface": {
     "inputs": {

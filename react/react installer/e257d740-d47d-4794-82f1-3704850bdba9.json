@@ -1,0 +1,47 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "df3107d7-179c-4e60-86b4-323813c9e86e": "const { exec } = require( \"child_process\" );\nconst { projectPath } = data;\nconst command = \"npx create-react-app \" + data + \" --use-npm\";\noutputs.stdout( command, tag )\nif (state.running)\n  outputs.bounced(data, tag);\nelse {\n  state.running = true;\n  exec(command, (error, stdout, stderr) => {\n    if (error) {\n      outputs.error(`${error}`, tag);\n      outputs.trigger(true, tag);\n    }\n    else {\n      outputs.stdout(stdout || \"\", tag);\n      outputs.stderr(stderr || \"\", tag);\n      outputs.error(null, tag);\n      outputs.trigger(true, tag);\n    }\n    state.running = false;\n  });\n}\n"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "df3107d7-179c-4e60-86b4-323813c9e86e": {
+        "type": "string",
+        "name": "projectPath"
+      }
+    },
+    "outputs": {
+      "94074b45-8d35-46d1-8a73-f09c55487709": {
+        "type": "boolean",
+        "name": "trigger",
+        "description": "Sends true@\"start\" right after the installer completes successfully."
+      },
+      "531c9742-9153-400a-ab29-160e618d4b04": {
+        "type": "any",
+        "name": "stdout"
+      },
+      "c33ef99d-731e-47fc-82da-8bc9ec3cca30": {
+        "type": "any",
+        "name": "stderr"
+      },
+      "657b3ec0-1b44-4bd6-8a8e-7cf4e903823e": {
+        "type": "any",
+        "name": "error"
+      },
+      "ae982924-274e-4871-9d75-4725bcce2eb2": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "react/React Installer",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "keywords": {
+    "react": null,
+    "installer": null
+  },
+  "attributes": {}
+}

@@ -1,0 +1,53 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "045a62ad-7340-479a-b544-f10d56f16597": "const { start } = data;\nif (data !== false ){\n  const { exec } = require( \"child_process\" );\n\n  const { dependencies } = params;\n  const command = \"cd \" + data + \" && \" + \"npm install \" + params.dependencies.join(' ');\n  outputs.stdout( command, tag );\n  outputs.stdout( data, tag );\n}",
+        "984ca59b-d063-475e-837b-e05bbce338ed": "const { projectPath } = data;"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "93078915-107a-4854-baaf-e2cdd4c06760": {
+        "type": "any",
+        "name": "dependencies"
+      },
+      "984ca59b-d063-475e-837b-e05bbce338ed": {
+        "type": "string",
+        "name": "projectPath"
+      },
+      "045a62ad-7340-479a-b544-f10d56f16597": {
+        "type": "boolean",
+        "name": "start"
+      }
+    },
+    "outputs": {
+      "86e1623a-d67c-4e74-98bb-449e29005d56": {
+        "type": "any",
+        "name": "stdout"
+      },
+      "735430f5-61ba-48c6-a8a6-e952edcb259e": {
+        "type": "any",
+        "name": "stderr"
+      },
+      "8b7a505c-873e-4936-9195-f1b3e28c5520": {
+        "type": "any",
+        "name": "error"
+      },
+      "4c3736af-6977-4632-b048-5446eaa87edd": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "react/React Dependency Installer",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "keywords": {
+    "react": null,
+    "npm": null,
+    "dependency": null,
+    "installer": null
+  },
+  "attributes": {}
+}

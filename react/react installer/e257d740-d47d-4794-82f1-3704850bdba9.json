@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "df3107d7-179c-4e60-86b4-323813c9e86e": "const { exec } = require( \"child_process\" );\nconst { projectPath } = data;\nconst command = \"npx create-react-app \" + data + \" --use-npm\";\noutputs.stdout( command, tag )\nif (state.running)\n  outputs.bounced(data, tag);\nelse {\n  state.running = true;\n  exec(command, (error, stdout, stderr) => {\n    if (error) {\n      outputs.error(`${error}`, tag);\n      outputs.trigger(true, tag);\n    }\n    else {\n      outputs.stdout(stdout || \"\", tag);\n      outputs.stderr(stderr || \"\", tag);\n      outputs.error(null, tag);\n      outputs.trigger(true, tag);\n    }\n    state.running = false;\n  });\n}\n"
+        "df3107d7-179c-4e60-86b4-323813c9e86e": "const { exec } = require( \"child_process\" );\nconst { projectPath } = data;\nconst command = \"npx create-react-app \" + data + \" --use-npm\";\noutputs.stdout( command, tag );\nif (state.running){\n  outputs.bounced(data, tag);\n} else {\n  state.running = true;\n  exec(command, (error, stdout, stderr) => {\nif (error) {\n  outputs.error(`${error}`, tag);\n  outputs.trigger(false, tag);\n} else {\n  outputs.stdout(stdout || \"\", tag);\n  outputs.stderr(stderr || \"\", tag);\n  outputs.error(null, tag);\n  outputs.trigger(true, tag);\n}\n  state.running = false;\n  });\n}"
       }
     }
   },
@@ -10,7 +10,8 @@
     "inputs": {
       "df3107d7-179c-4e60-86b4-323813c9e86e": {
         "type": "string",
-        "name": "projectPath"
+        "name": "projectPath",
+        "description": "Full file path of react application. "
       }
     },
     "outputs": {

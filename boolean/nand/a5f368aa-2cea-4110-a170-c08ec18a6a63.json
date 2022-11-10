@@ -1,0 +1,87 @@
+{
+  "name": "boolean/Nand",
+  "description": "Performs a boolean NAND operation on the values received via inputs `a` and `b`.\n\nExample:\n\n1. true@0 is received via `a`\n2. true@0 is received via `b`\n3. false@0 is sent via `nand`",
+  "interface": {
+    "inputs": {
+      "ad9e2497-ee64-46bc-ae85-86ce71a33bd9": {
+        "type": "boolean",
+        "name": "a",
+        "description": "Receives the first operand."
+      },
+      "be8c4674-102e-4f03-a086-5ed02f3c41b6": {
+        "type": "boolean",
+        "name": "b",
+        "description": "Receives the second operand."
+      }
+    },
+    "outputs": {
+      "a3f3a3a4-3151-4d1f-ad3d-51a4592cf219": {
+        "type": "boolean",
+        "name": "nand",
+        "description": "Sends the result of the logical NAND operation."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0e550da6-9458-4d7c-89e2-cf289a48c972": {
+          "coordinates": [
+            -41.5,
+            -19.5
+          ],
+          "name": "and",
+          "prototype": "f8466ac8-afe7-4931-abac-3e8679e23199",
+          "params": {}
+        },
+        "044eb0b5-b1f5-4788-a95d-244f1248aa16": {
+          "coordinates": [
+            24.5,
+            18.5
+          ],
+          "name": "not",
+          "prototype": "f4ae2e14-2316-42ca-a3be-e1de3eaff164"
+        }
+      },
+      "connections": {
+        "0e550da6-9458-4d7c-89e2-cf289a48c972": {
+          "d65617ef-2d6e-4a4e-8e24-5e9434cc234b": {
+            "044eb0b5-b1f5-4788-a95d-244f1248aa16": {
+              "bffdd7a0-eeaa-41c5-b272-20aff39ae810": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ad9e2497-ee64-46bc-ae85-86ce71a33bd9": {
+            "0e550da6-9458-4d7c-89e2-cf289a48c972": {
+              "a218ce35-ba8f-40e7-9cee-e4355f5907b1": {}
+            }
+          },
+          "be8c4674-102e-4f03-a086-5ed02f3c41b6": {
+            "0e550da6-9458-4d7c-89e2-cf289a48c972": {
+              "5cfcd4a1-9167-4aa4-ad58-061a306fc901": {}
+            }
+          }
+        },
+        "outputs": {
+          "a3f3a3a4-3151-4d1f-ad3d-51a4592cf219": {
+            "044eb0b5-b1f5-4788-a95d-244f1248aa16": {
+              "442847b6-23b9-4ad6-a3f5-cce6e5159644": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "keywords": {
+    "boolean": null,
+    "nand": null,
+    "logical": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

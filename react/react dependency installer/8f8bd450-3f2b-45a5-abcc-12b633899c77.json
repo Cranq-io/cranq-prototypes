@@ -11,29 +11,29 @@
       "9484b15d-ca86-4d63-b07f-cb4f8f21e88b": {
         "type": "string",
         "name": "projectPath",
-        "description": "[Inherited from port `projectPath` of `syncer`] \nReceives full file path of react application."
+        "description": "Installation path for npm installer.\n"
       },
       "6668cb7f-874b-4c24-ae30-89fe2e24bad1": {
         "type": "any",
-        "name": "start",
-        "description": "[Inherited from port `start` of `syncer`] \nReceives individual item for syncing."
+        "name": "run",
+        "description": "Run npm installer if boolean value received is true.\n"
       }
     },
     "outputs": {
       "82d5b775-4619-466e-bb33-52c9b630500b": {
-        "type": "typeof `stdout` of `react dependency installer`",
+        "type": "any",
         "name": "stdout"
       },
       "9c6331a7-5dde-4bb4-a12d-f4a7b1b02ce1": {
-        "type": "typeof `stderr` of `react dependency installer`",
+        "type": "any",
         "name": "stderr"
       },
       "9c820c27-01f9-4a84-b2d3-a112e05dbb72": {
-        "type": "typeof `error` of `react dependency installer`",
+        "type": "{ \"error\" : string}",
         "name": "error"
       },
       "4655960f-34c8-41ff-b9e0-3fe400b97c5d": {
-        "type": "typeof `bounced` of `react dependency installer`",
+        "type": "any",
         "name": "bounced"
       }
     }
@@ -46,7 +46,7 @@
             95,
             -55
           ],
-          "name": "Dependency Installer",
+          "name": "dependency installer",
           "prototype": "e4e1b2e6-26a1-4b3b-b472-4464814fa69a",
           "params": {}
         },
@@ -58,7 +58,7 @@
           "name": "Syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"projectPath\",\"start\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"projectPath\",\"run\"]"
           }
         }
       },
@@ -73,19 +73,19 @@
       },
       "forwards": {
         "inputs": {
+          "1fc459fc-545e-4675-9916-b94bcab3563c": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "93078915-107a-4854-baaf-e2cdd4c06760": {}
+            }
+          },
           "6668cb7f-874b-4c24-ae30-89fe2e24bad1": {
             "0726521e-634a-461a-aa98-f4ea527b2bf8": {
-              "start": {}
+              "run": {}
             }
           },
           "9484b15d-ca86-4d63-b07f-cb4f8f21e88b": {
             "0726521e-634a-461a-aa98-f4ea527b2bf8": {
               "projectPath": {}
-            }
-          },
-          "1fc459fc-545e-4675-9916-b94bcab3563c": {
-            "1cd55979-d276-4251-8602-b1e7584641e6": {
-              "93078915-107a-4854-baaf-e2cdd4c06760": {}
             }
           }
         },

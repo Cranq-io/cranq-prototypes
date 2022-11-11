@@ -1,5 +1,6 @@
 {
   "name": "react/React Dependency Installer",
+  "description": "Installs dependencies defined by the user for the react installer node. Node uses npm to install the dependencies on the same application path as the react application.",
   "interface": {
     "inputs": {
       "1fc459fc-545e-4675-9916-b94bcab3563c": {
@@ -13,7 +14,7 @@
         "description": "[Inherited from port `projectPath` of `syncer`] \nReceives full file path of react application."
       },
       "6668cb7f-874b-4c24-ae30-89fe2e24bad1": {
-        "type": "typeof `start` of `syncer`",
+        "type": "any",
         "name": "start",
         "description": "[Inherited from port `start` of `syncer`] \nReceives individual item for syncing."
       }

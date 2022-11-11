@@ -1,0 +1,56 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "df3107d7-179c-4e60-86b4-323813c9e86e": "const { exec } = require( \"child_process\" );\nconst { projectPath } = data;\nconst { replace } = params;\nlet command = \"npx create-react-app \" + data + \" --use-npm\";\nif (state.running){\n  outputs.bounced(data, tag);\n} else {\n  state.running = true;\n  if ( params.replace === true ) {\n    command = \"rm -rf \" + data + \" && npx create-react-app \" + data + \" --use-npm\";\n  }\n  outputs.stdout( command, tag );\n  exec(command, (error, stdout, stderr) => {\nif (error && (params.replace === false || 'undefined' )) {\n  outputs.error(`Application folder already exists. Set the replace input to true if you wish to reinstall the application from scratch`, tag);\n  outputs.trigger(false, tag);\n} else {\n  outputs.stdout(stdout || \"\", tag);\n  outputs.stderr(stderr || \"\", tag);\n  outputs.error(null, tag);\n  outputs.trigger(true, tag);\n}\n  state.running = false;\n  });\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "df3107d7-179c-4e60-86b4-323813c9e86e": {
+        "type": "string",
+        "name": "projectPath",
+        "description": "Full file path of react application."
+      },
+      "32afb2d1-73c5-437c-a82a-8ec997b9a9c1": {
+        "type": "boolean",
+        "name": "replace",
+        "description": "Should the node delete and reinstall the application?\n\nboolean: defaults to false."
+      }
+    },
+    "outputs": {
+      "94074b45-8d35-46d1-8a73-f09c55487709": {
+        "type": "boolean",
+        "name": "trigger",
+        "description": "Sends true@\"start\" right after the installer completes successfully."
+      },
+      "531c9742-9153-400a-ab29-160e618d4b04": {
+        "type": "any",
+        "name": "stdout"
+      },
+      "c33ef99d-731e-47fc-82da-8bc9ec3cca30": {
+        "type": "any",
+        "name": "stderr"
+      },
+      "657b3ec0-1b44-4bd6-8a8e-7cf4e903823e": {
+        "type": "any",
+        "name": "error"
+      },
+      "ae982924-274e-4871-9d75-4725bcce2eb2": {
+        "type": "any",
+        "name": "bounced"
+      }
+    }
+  },
+  "name": "react/React Installer",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "keywords": {
+    "react": null,
+    "installer": null
+  },
+  "description": "Installs a react application to a location set by string:projectPath",
+  "attributes": {
+    "locked": true
+  }
+}

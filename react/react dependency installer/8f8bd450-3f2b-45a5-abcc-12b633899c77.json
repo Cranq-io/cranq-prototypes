@@ -35,6 +35,11 @@
       "4655960f-34c8-41ff-b9e0-3fe400b97c5d": {
         "type": "{ \"bounced\" : string}",
         "name": "bounced"
+      },
+      "8b79d136-31ec-41bc-927b-d6e0dd81fec7": {
+        "type": "boolean",
+        "name": "success",
+        "description": "Triggered when node completes successfully."
       }
     }
   },
@@ -108,6 +113,11 @@
           "4655960f-34c8-41ff-b9e0-3fe400b97c5d": {
             "1cd55979-d276-4251-8602-b1e7584641e6": {
               "4c3736af-6977-4632-b048-5446eaa87edd": {}
+            }
+          },
+          "8b79d136-31ec-41bc-927b-d6e0dd81fec7": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "8697236e-fccd-4083-9803-1a2d005bbbff": {}
             }
           }
         }

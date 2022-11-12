@@ -1,0 +1,127 @@
+{
+  "name": "react/React Dependency Installer",
+  "description": "Installs dependencies defined by the user for the react installer node. Node uses npm to install the dependencies on the same application path as the react application.",
+  "interface": {
+    "inputs": {
+      "1fc459fc-545e-4675-9916-b94bcab3563c": {
+        "type": "string[]",
+        "name": "dependencies",
+        "description": "Array of npm dependencies to install.\n\neg.\n\n[\"a\",\"b\"]"
+      },
+      "9484b15d-ca86-4d63-b07f-cb4f8f21e88b": {
+        "type": "string",
+        "name": "projectPath",
+        "description": "Installation path for npm installer.\n"
+      },
+      "6668cb7f-874b-4c24-ae30-89fe2e24bad1": {
+        "type": "boolean",
+        "name": "run",
+        "description": "Run npm installer if boolean value received is true.\n"
+      }
+    },
+    "outputs": {
+      "82d5b775-4619-466e-bb33-52c9b630500b": {
+        "type": "{ \"stdout\" : string}",
+        "name": "stdout"
+      },
+      "9c6331a7-5dde-4bb4-a12d-f4a7b1b02ce1": {
+        "type": "{ \"stderr\" : string}",
+        "name": "stderr"
+      },
+      "9c820c27-01f9-4a84-b2d3-a112e05dbb72": {
+        "type": "{ \"error\" : string}",
+        "name": "error"
+      },
+      "4655960f-34c8-41ff-b9e0-3fe400b97c5d": {
+        "type": "{ \"bounced\" : string}",
+        "name": "bounced"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1cd55979-d276-4251-8602-b1e7584641e6": {
+          "coordinates": [
+            95,
+            -55
+          ],
+          "name": "dependency installer",
+          "prototype": "e4e1b2e6-26a1-4b3b-b472-4464814fa69a",
+          "params": {}
+        },
+        "0726521e-634a-461a-aa98-f4ea527b2bf8": {
+          "coordinates": [
+            -26,
+            26
+          ],
+          "name": "Syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"projectPath\",\"run\"]"
+          }
+        }
+      },
+      "connections": {
+        "0726521e-634a-461a-aa98-f4ea527b2bf8": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "045a62ad-7340-479a-b544-f10d56f16597": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "1fc459fc-545e-4675-9916-b94bcab3563c": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "93078915-107a-4854-baaf-e2cdd4c06760": {}
+            }
+          },
+          "6668cb7f-874b-4c24-ae30-89fe2e24bad1": {
+            "0726521e-634a-461a-aa98-f4ea527b2bf8": {
+              "run": {}
+            }
+          },
+          "9484b15d-ca86-4d63-b07f-cb4f8f21e88b": {
+            "0726521e-634a-461a-aa98-f4ea527b2bf8": {
+              "projectPath": {}
+            }
+          }
+        },
+        "outputs": {
+          "82d5b775-4619-466e-bb33-52c9b630500b": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "86e1623a-d67c-4e74-98bb-449e29005d56": {}
+            }
+          },
+          "9c6331a7-5dde-4bb4-a12d-f4a7b1b02ce1": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "735430f5-61ba-48c6-a8a6-e952edcb259e": {}
+            }
+          },
+          "9c820c27-01f9-4a84-b2d3-a112e05dbb72": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "8b7a505c-873e-4936-9195-f1b3e28c5520": {}
+            }
+          },
+          "4655960f-34c8-41ff-b9e0-3fe400b97c5d": {
+            "1cd55979-d276-4251-8602-b1e7584641e6": {
+              "4c3736af-6977-4632-b048-5446eaa87edd": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "keywords": {
+    "react": null,
+    "npm": null,
+    "dependency": null,
+    "installer": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

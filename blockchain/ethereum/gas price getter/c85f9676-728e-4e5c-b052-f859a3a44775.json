@@ -1,0 +1,128 @@
+{
+  "name": "blockchain/ethereum/Gas price getter",
+  "description": "Sends a query to the given RPC node provider about the estimated gas price.\nThe gas price is determined by the last few blocks median gas price.",
+  "interface": {
+    "inputs": {
+      "3f02e1e7-4750-42ed-ae51-044f6f6d7694": {
+        "type": "(\n  {\"providerUrl\": string} \n  or string\n)",
+        "name": "providerUrl",
+        "description": "Receives the connection string to a node provider.\nThe received data can be single string or can be a wider credentials record that has a providerUrl field."
+      }
+    },
+    "outputs": {
+      "9a0136a1-d1cd-48f5-b90a-dd70bf10925c": {
+        "type": "number",
+        "name": "gasPrice",
+        "description": "Sends the queried gas price estimation in gwei."
+      },
+      "a63f87a2-9b92-429f-bc15-dd2ba294d51a": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7f95c4e3-aa7a-47fa-b042-9a1ae65f96ed": {
+          "coordinates": [
+            -148,
+            -87
+          ],
+          "name": "query gas price",
+          "prototype": "2bfd7f27-5344-49fa-aa0a-a9f968524379",
+          "params": {}
+        },
+        "c7605aa5-bba6-489a-8c97-2eda465213fc": {
+          "coordinates": [
+            -36,
+            -43
+          ],
+          "name": "parser",
+          "prototype": "55d5a31a-4e9e-4d06-9875-86fa88e0033d"
+        },
+        "76ecb943-f553-4e96-89dd-6405365d2112": {
+          "coordinates": [
+            53,
+            -21
+          ],
+          "name": "divider",
+          "prototype": "4d0c01f3-d192-4832-a316-7b4f3ff8fa87",
+          "params": {
+            "10bc95fb-d41f-4590-9390-6459c6644108": "1e9"
+          }
+        },
+        "6f617ec7-5a06-4bd6-a4db-ae575a5bfa84": {
+          "coordinates": [
+            211,
+            64
+          ],
+          "name": "store",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"Cannot calculate gas price\""
+          }
+        }
+      },
+      "connections": {
+        "7f95c4e3-aa7a-47fa-b042-9a1ae65f96ed": {
+          "7e872669-e0c1-4ebe-a7d6-75ba6c3cd5b9": {
+            "c7605aa5-bba6-489a-8c97-2eda465213fc": {
+              "68e94af3-1532-4b7d-a7e3-ceafacdccbfd": {}
+            }
+          }
+        },
+        "c7605aa5-bba6-489a-8c97-2eda465213fc": {
+          "72bad116-28e0-4288-b294-07824385a4b8": {
+            "76ecb943-f553-4e96-89dd-6405365d2112": {
+              "b8efe3c6-c75b-49eb-82b8-779a9b39962a": {}
+            }
+          }
+        },
+        "76ecb943-f553-4e96-89dd-6405365d2112": {
+          "009847de-abe7-45d4-968a-779b22f4e98e": {
+            "6f617ec7-5a06-4bd6-a4db-ae575a5bfa84": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3f02e1e7-4750-42ed-ae51-044f6f6d7694": {
+            "7f95c4e3-aa7a-47fa-b042-9a1ae65f96ed": {
+              "47948633-8f3e-451c-bd33-cfdf9a33a9f6": {}
+            }
+          }
+        },
+        "outputs": {
+          "a63f87a2-9b92-429f-bc15-dd2ba294d51a": {
+            "7f95c4e3-aa7a-47fa-b042-9a1ae65f96ed": {
+              "968befee-5d20-4262-a4ac-84126cdd70db": {}
+            },
+            "6f617ec7-5a06-4bd6-a4db-ae575a5bfa84": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          },
+          "9a0136a1-d1cd-48f5-b90a-dd70bf10925c": {
+            "76ecb943-f553-4e96-89dd-6405365d2112": {
+              "4d369c1d-574a-45ac-a98a-9a80ba2f941a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "ethereum": null,
+    "gas": null,
+    "gasPrice": null,
+    "wei": null,
+    "gwei": null,
+    "query": null
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -2,15 +2,15 @@
   "name": "apis/mailjet/v3.1/Email sender",
   "interface": {
     "inputs": {
-      "04c08c2f-2ac0-4726-ac4f-10db51886248": {
-        "type": "{\n  \"user id\": string,\n  \"password\": string\n}",
-        "name": "params",
-        "description": "Receives the parameters to invoke the Mailjet API with.\nFor more information, please refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/#authentication"
-      },
       "b19a6b56-f7c3-4aed-a0d8-f45d3bc8c599": {
         "type": "{\n  \"Messages\": {\n    \"From\": {\n      \"Email\": string,\n      \"Name\": string\n    },\n    \"To\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    optional \"Cc\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    optional \"Bcc\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    \"Subject\": string,\n    \"TextPart\": string,\n    \"HTMLPart\": string,\n    optional \"Attachments\": {\n      \"ContentType\": string,\n      \"Filename\": string,\n      \"Base64Content\": string\n    }[],\n    optional \"InlinedAttachments\": {\n      \"ContentType\": string,\n      \"Filename\": string,\n      \"ContentID\": string,\n      \"Base64Content\": string\n    }[],\n    optional \"Variables\": {string: string},\n    optional \"TemplateLanguage\": true,\n    optional \"TemplateID\": number,\n    optional \"Headers\": {string: string},\n    optional \"CustomID\": string,\n    optional \"EventPayload\": string,\n    optional \"CustomCampaign\": string,\n    optional \"DeduplicateCampaign\": boolean,\n    optional \"URLTags\": string\n  }[],\n  optional \"SandboxMode\": true\n}",
         "name": "request",
         "description": "Receives the request to dispatch.\nTo easily construct one, use node `apis/mailjet/v3.1/Simple email sender request builder`.\n\nFor more information, refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/send-api-v31/"
+      },
+      "04c08c2f-2ac0-4726-ac4f-10db51886248": {
+        "type": "{\n  \"user id\": string,\n  \"password\": string\n}",
+        "name": "params",
+        "description": "Receives the parameters to invoke the Mailjet API with.\nFor more information, please refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/#authentication"
       }
     },
     "outputs": {

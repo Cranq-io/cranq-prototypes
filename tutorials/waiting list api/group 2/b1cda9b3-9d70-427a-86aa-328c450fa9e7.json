@@ -1,0 +1,78 @@
+{
+  "name": "tutorials/Waiting list API/Group 2",
+  "interface": {
+    "inputs": {
+      "ee04ebd5-8253-413b-b9cc-ae64a6461055": {
+        "type": "typeof `read` of `body`",
+        "name": "build 400",
+        "description": "[Inherited from port `read` of `body`] \nReceives signal that triggers sending out the stored parameter value."
+      }
+    },
+    "outputs": {
+      "9eb87a80-22ce-4089-9004-0e60867b7b79": {
+        "type": "typeof `response` of `build response`",
+        "name": "response",
+        "description": "[Inherited from port `response` of `build response`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0d3ba62a-fa6f-4519-8b18-122e52793357": {
+          "coordinates": [
+            70,
+            -39.5
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146",
+          "params": {
+            "300852ca-cadf-4b8c-b238-6f257f3039fb": "{}",
+            "402286d6-3a51-4842-8c43-5bd757b60445": "400"
+          }
+        },
+        "5b2286c8-2646-4101-94d0-0da8c3a8d113": {
+          "coordinates": [
+            -70,
+            39.5
+          ],
+          "name": "body",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"success\": false,\n  \"error\": \"Invalid or no email address specified\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "5b2286c8-2646-4101-94d0-0da8c3a8d113": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "0d3ba62a-fa6f-4519-8b18-122e52793357": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ee04ebd5-8253-413b-b9cc-ae64a6461055": {
+            "5b2286c8-2646-4101-94d0-0da8c3a8d113": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "9eb87a80-22ce-4089-9004-0e60867b7b79": {
+            "0d3ba62a-fa6f-4519-8b18-122e52793357": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "a1949b00-e16d-4881-a027-47c9f5f6dae9",
+  "attributes": {
+    "internal": true
+  }
+}

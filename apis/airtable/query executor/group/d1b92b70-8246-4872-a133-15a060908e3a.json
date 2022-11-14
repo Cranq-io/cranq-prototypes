@@ -1,0 +1,83 @@
+{
+  "name": "apis/airtable/Query executor/Group",
+  "interface": {
+    "inputs": {
+      "3399362b-b1ac-486a-9c32-b3de94b49d56": {
+        "type": "typeof `base ID` of `build table url`",
+        "name": "base ID",
+        "description": "[Inherited from port `base ID` of `build table url`] \nReceives the ID of an AirTable base.\n\nExample:\n```\n\"app...\",\n```"
+      },
+      "8465721c-6784-4b2c-af80-b4578a6e9b6a": {
+        "type": "typeof `table name` of `build table url`",
+        "name": "table name",
+        "description": "[Inherited from port `table name` of `build table url`] \nReceives a table's identifier relative to an AirTable base.\n\nExample:\n```\n\"...\",\n```"
+      }
+    },
+    "outputs": {
+      "6182f006-1f08-48aa-8654-ae16b4f1c190": {
+        "type": "typeof `concatenated` of `concat /listRecords`",
+        "name": "url",
+        "description": "[Inherited from port `concatenated` of `concat /listRecords`] \nSends the concatenation of the two inputs."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+          "coordinates": [
+            -58.25,
+            -30.5
+          ],
+          "name": "build table url",
+          "prototype": "33620048-04d4-4314-a0aa-a00d73cb9029"
+        },
+        "cff1e015-34fd-40c8-8206-fdeaf8bf264e": {
+          "coordinates": [
+            58.25,
+            30.5
+          ],
+          "name": "concat /listRecords",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "6b3b4622-93d9-49c8-ac1e-89af0e30731d": "\"/listRecords \""
+          }
+        }
+      },
+      "connections": {
+        "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+          "ac3f79dc-f520-4670-a920-5f0fedc7d615": {
+            "cff1e015-34fd-40c8-8206-fdeaf8bf264e": {
+              "c82ab3aa-ab45-4819-9a81-0747863c5b7e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3399362b-b1ac-486a-9c32-b3de94b49d56": {
+            "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+              "1cb4639b-e7ff-495f-b3d7-cba64f43ed9d": {}
+            }
+          },
+          "8465721c-6784-4b2c-af80-b4578a6e9b6a": {
+            "91a52d9d-4720-4a7f-a596-c9f82e230a4d": {
+              "141104e6-3441-4b12-ab69-a76b5794cd4a": {}
+            }
+          }
+        },
+        "outputs": {
+          "6182f006-1f08-48aa-8654-ae16b4f1c190": {
+            "cff1e015-34fd-40c8-8206-fdeaf8bf264e": {
+              "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

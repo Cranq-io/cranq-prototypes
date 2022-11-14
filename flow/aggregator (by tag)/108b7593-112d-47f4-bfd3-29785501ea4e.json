@@ -1,0 +1,59 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ad42c18e-d152-42fa-b6ef-8afb57595e0a": {
+          "coordinates": [
+            -3,
+            25
+          ],
+          "name": "aggregate",
+          "prototype": "49e476e9-8204-4ee3-a2ab-b1bcef149842"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e1af6551-a04e-4459-bba4-3d37960580eb": {
+            "ad42c18e-d152-42fa-b6ef-8afb57595e0a": {
+              "a9addb92-077a-4a18-b8bf-455385347a8b": {}
+            }
+          },
+          "87573400-c3ca-4e78-8d13-efe9d85428ed": {
+            "ad42c18e-d152-42fa-b6ef-8afb57595e0a": {
+              "c7c782d9-03d2-4791-bdd1-497f1cb8ddb3": {}
+            }
+          }
+        },
+        "outputs": {
+          "f4eca9a7-1fd4-4a57-bb8d-4b900824ec7c": {
+            "ad42c18e-d152-42fa-b6ef-8afb57595e0a": {
+              "1206e030-dd5f-469f-8bbc-037b4a7eca28": {}
+            }
+          }
+        }
+      },
+      "connections": {}
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e1af6551-a04e-4459-bba4-3d37960580eb": {
+        "type": "any",
+        "name": "data"
+      },
+      "87573400-c3ca-4e78-8d13-efe9d85428ed": {
+        "type": "any",
+        "name": "release"
+      }
+    },
+    "outputs": {
+      "f4eca9a7-1fd4-4a57-bb8d-4b900824ec7c": {
+        "type": "any",
+        "name": "aggregated"
+      }
+    }
+  },
+  "name": "flow/Aggregator (by tag)",
+  "attributes": {},
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3"
+}

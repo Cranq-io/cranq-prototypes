@@ -1,0 +1,34 @@
+{
+  "implementations": {
+    "es6-node": {
+      "initFunction": "state.buffer = {};",
+      "cleanupFunction": "if (state.buffer) {\n  delete state.buffer;\n}",
+      "inputFunctions": {
+        "a9addb92-077a-4a18-b8bf-455385347a8b": "if (!state.buffer[tag]) {\n  state.buffer[tag] = [data];\n} else {\n  state.buffer[tag].push(data);\n}",
+        "c7c782d9-03d2-4791-bdd1-497f1cb8ddb3": "if (state.buffer[tag]) {\n  outputs.aggregated(state.buffer[tag], tag);\n  delete state.buffer[tag];\n} else {\n  outputs.aggregated([], tag);\n}\n"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "a9addb92-077a-4a18-b8bf-455385347a8b": {
+        "type": "any",
+        "name": "data"
+      },
+      "c7c782d9-03d2-4791-bdd1-497f1cb8ddb3": {
+        "type": "any",
+        "name": "release"
+      }
+    },
+    "outputs": {
+      "1206e030-dd5f-469f-8bbc-037b4a7eca28": {
+        "type": "any",
+        "name": "aggregated"
+      }
+    }
+  },
+  "name": "flow/Aggregator (by tag)/Aggregator",
+  "attributes": {
+    "internal": true
+  }
+}

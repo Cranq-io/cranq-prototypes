@@ -1,0 +1,145 @@
+{
+  "name": "apis/airtable/Query executor/Group 3",
+  "interface": {
+    "inputs": {
+      "526e2c0f-451e-42ed-b2e0-09d875cc9bbf": {
+        "type": "typeof `data` of `orig query`",
+        "name": "init query",
+        "description": "[Inherited from port `data` of `orig query`] \nReceives contents of the store. San be set as parameter, or received as signal."
+      },
+      "7abb4df8-a1ef-41ff-aa7f-d1f9df655e0f": {
+        "type": "typeof `data` of `orig params`",
+        "name": "init params",
+        "description": "[Inherited from port `data` of `orig params`] \nReceives contents of the store. San be set as parameter, or received as signal."
+      },
+      "c2036377-af89-4e47-9dee-cdcaa01d9a6a": {
+        "type": "typeof `dict` of `get offset`",
+        "name": "data",
+        "description": "[Inherited from port `dict` of `get offset`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    },
+    "outputs": {
+      "905fd68a-a3eb-4cab-aab7-71283466dc02": {
+        "type": "typeof `data` of `orig params`",
+        "name": "query",
+        "description": "[Inherited from port `data` of `orig params`] \nSends store contents."
+      },
+      "fe527972-8dcf-432f-9ed1-217955f1fd6e": {
+        "type": "typeof `dict` of `item setter`",
+        "name": "params",
+        "description": "[Inherited from port `dict` of `item setter`] \nSends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
+      },
+      "31b73f5f-bc04-4556-8167-cfb739e328f3": {
+        "type": "typeof `not found` of `get offset`",
+        "name": "done",
+        "description": "[Inherited from port `not found` of `get offset`] \nSends the input values, when the specified key is not found in the dictionary.\n\nExample:\n{ \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "69c435fd-ad69-4a2d-b60f-7457d24e15b3": {
+          "coordinates": [
+            -122.25,
+            107.25
+          ],
+          "name": "get offset",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"offset\""
+          }
+        },
+        "3dab380a-ca6c-4f5a-a1fd-2cd1576732ad": {
+          "coordinates": [
+            169.75,
+            25.25
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"offset\""
+          }
+        },
+        "144da857-c095-4344-ae6d-f247387007b1": {
+          "coordinates": [
+            -24.25,
+            -82.75
+          ],
+          "name": "orig query",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "a05ed0a4-a6d4-4d0b-95d4-227b23dce774": {
+          "coordinates": [
+            -22.25,
+            -164.75
+          ],
+          "name": "orig params",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        }
+      },
+      "connections": {
+        "69c435fd-ad69-4a2d-b60f-7457d24e15b3": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "3dab380a-ca6c-4f5a-a1fd-2cd1576732ad": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            },
+            "144da857-c095-4344-ae6d-f247387007b1": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "a05ed0a4-a6d4-4d0b-95d4-227b23dce774": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "144da857-c095-4344-ae6d-f247387007b1": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "3dab380a-ca6c-4f5a-a1fd-2cd1576732ad": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "526e2c0f-451e-42ed-b2e0-09d875cc9bbf": {
+            "144da857-c095-4344-ae6d-f247387007b1": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "7abb4df8-a1ef-41ff-aa7f-d1f9df655e0f": {
+            "a05ed0a4-a6d4-4d0b-95d4-227b23dce774": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "c2036377-af89-4e47-9dee-cdcaa01d9a6a": {
+            "69c435fd-ad69-4a2d-b60f-7457d24e15b3": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "31b73f5f-bc04-4556-8167-cfb739e328f3": {
+            "69c435fd-ad69-4a2d-b60f-7457d24e15b3": {
+              "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {}
+            }
+          },
+          "fe527972-8dcf-432f-9ed1-217955f1fd6e": {
+            "3dab380a-ca6c-4f5a-a1fd-2cd1576732ad": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          },
+          "905fd68a-a3eb-4cab-aab7-71283466dc02": {
+            "a05ed0a4-a6d4-4d0b-95d4-227b23dce774": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true
+  }
+}

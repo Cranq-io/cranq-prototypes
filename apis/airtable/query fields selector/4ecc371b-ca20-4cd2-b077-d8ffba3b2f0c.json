@@ -1,0 +1,63 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+          "coordinates": [
+            4,
+            28
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"fields\""
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "81dceb3c-3bf5-4e2b-99f9-b30e4a97a2d0": {
+            "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "50f5307f-27a3-4be9-87db-39041e183708": {
+            "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "e055c747-523c-495e-b6cb-c4fddc083f42": {
+            "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "connections": {}
+    }
+  },
+  "interface": {
+    "inputs": {
+      "81dceb3c-3bf5-4e2b-99f9-b30e4a97a2d0": {
+        "type": "any",
+        "name": "query"
+      },
+      "50f5307f-27a3-4be9-87db-39041e183708": {
+        "type": "any",
+        "name": "fields"
+      }
+    },
+    "outputs": {
+      "e055c747-523c-495e-b6cb-c4fddc083f42": {
+        "type": "any",
+        "name": "query"
+      }
+    }
+  },
+  "name": "apis/airtable/Query fields selector",
+  "original": "18a52d6d-20f5-49a6-b54a-10e2c16a09c0",
+  "attributes": {},
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df"
+}

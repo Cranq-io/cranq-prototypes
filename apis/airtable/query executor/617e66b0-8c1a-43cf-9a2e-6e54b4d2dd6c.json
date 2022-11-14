@@ -1,0 +1,193 @@
+{
+  "name": "apis/airtable/Query executor",
+  "interface": {
+    "inputs": {
+      "bb67dbe4-bbd2-4b1b-ae2f-84c632328b00": {
+        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "name": "query"
+      },
+      "52e7a985-0c5d-4271-8f94-105b3fc1ebe7": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "params",
+        "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
+      }
+    },
+    "outputs": {
+      "2a6d695f-1300-482f-b730-7a51945b9efe": {
+        "type": "{\n  \"records\": {\n     \"id\": \"\",\n     \"createdTime\": \"\",\n     \"fields\": {string: any}\n  }[]\n}",
+        "name": "AT records",
+        "description": "Sends the records retrieved from AirTable.\n\nExample:\n```json\n{\n  \"records\": [\n    {\n      \"id\": \"recCz4d3k2DzDAZjx\",\n      \"createdTime\": \"2022-09-29T08:15:51.000Z\",\n      \"fields\": {\n        \"number column\": 0,\n        \"string column\": \"value0\"\n      }\n    },\n    {\n      \"id\": \"recDbWgh8YnNo3LJa\",\n      \"createdTime\": \"2022-09-28T11:20:20.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    }\n  ]\n}\n```\n"
+      },
+      "c3328b14-8977-4fae-8f60-0a45928ec295": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}[]",
+        "name": "responses",
+        "description": "Sends the entire response from the AirTable API without modification."
+      },
+      "9ee7f6d0-3fff-4cb4-9297-3b3d4a4c490a": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error",
+        "description": "Sends the error, if one occurred."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "70c706b8-a65d-4791-8bfa-c812f8883329": {
+          "coordinates": [
+            -19.369047619047592,
+            -178.4047619047619
+          ],
+          "name": "execute query",
+          "prototype": "287a7be4-dd09-40a6-8d6f-f653019b5f3c"
+        },
+        "ae7c12fe-44ae-4fa3-b33e-c34c1df3013f": {
+          "coordinates": [
+            -258,
+            -3
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "94221f5e-2c0b-42f9-8a80-b089347029cc": {
+          "coordinates": [
+            252.3359375,
+            99.3359375
+          ],
+          "name": "aggr data",
+          "prototype": "108b7593-112d-47f4-bfd3-29785501ea4e"
+        },
+        "062b7bb9-2bf9-4cb4-8e71-dcce9336302a": {
+          "coordinates": [
+            254.3359375,
+            191.3359375
+          ],
+          "name": "aggr responses",
+          "prototype": "108b7593-112d-47f4-bfd3-29785501ea4e"
+        },
+        "87a67d97-966f-4972-b7db-16b5207608a9": {
+          "coordinates": [
+            -13.75,
+            77.75
+          ],
+          "name": "get next query",
+          "prototype": "59856de3-4136-48d9-8587-8e3235258bba"
+        },
+        "f1067c2c-ad7d-4a75-af41-f6f09ab0c175": {
+          "coordinates": [
+            398.5859375,
+            -116.1640625
+          ],
+          "name": "flatten records",
+          "prototype": "bdd51a58-56d8-40d0-babb-4ba401d41596"
+        }
+      },
+      "connections": {
+        "ae7c12fe-44ae-4fa3-b33e-c34c1df3013f": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "70c706b8-a65d-4791-8bfa-c812f8883329": {
+              "2e8b16af-8c50-48b3-bdf4-874cdd669a3d": {}
+            },
+            "87a67d97-966f-4972-b7db-16b5207608a9": {
+              "526e2c0f-451e-42ed-b2e0-09d875cc9bbf": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "70c706b8-a65d-4791-8bfa-c812f8883329": {
+              "0986edf2-b9de-4491-8f08-b899f7a47362": {}
+            },
+            "87a67d97-966f-4972-b7db-16b5207608a9": {
+              "7abb4df8-a1ef-41ff-aa7f-d1f9df655e0f": {}
+            }
+          }
+        },
+        "70c706b8-a65d-4791-8bfa-c812f8883329": {
+          "2310e948-f466-41f6-9f0e-57399637f92b": {
+            "94221f5e-2c0b-42f9-8a80-b089347029cc": {
+              "e1af6551-a04e-4459-bba4-3d37960580eb": {}
+            },
+            "87a67d97-966f-4972-b7db-16b5207608a9": {
+              "c2036377-af89-4e47-9dee-cdcaa01d9a6a": {}
+            }
+          },
+          "f460d04f-2952-49a4-8f86-923584f20e32": {
+            "062b7bb9-2bf9-4cb4-8e71-dcce9336302a": {
+              "e1af6551-a04e-4459-bba4-3d37960580eb": {}
+            }
+          }
+        },
+        "87a67d97-966f-4972-b7db-16b5207608a9": {
+          "31b73f5f-bc04-4556-8167-cfb739e328f3": {
+            "94221f5e-2c0b-42f9-8a80-b089347029cc": {
+              "87573400-c3ca-4e78-8d13-efe9d85428ed": {}
+            },
+            "062b7bb9-2bf9-4cb4-8e71-dcce9336302a": {
+              "87573400-c3ca-4e78-8d13-efe9d85428ed": {}
+            }
+          },
+          "fe527972-8dcf-432f-9ed1-217955f1fd6e": {
+            "70c706b8-a65d-4791-8bfa-c812f8883329": {
+              "2e8b16af-8c50-48b3-bdf4-874cdd669a3d": {}
+            }
+          },
+          "905fd68a-a3eb-4cab-aab7-71283466dc02": {
+            "70c706b8-a65d-4791-8bfa-c812f8883329": {
+              "0986edf2-b9de-4491-8f08-b899f7a47362": {}
+            }
+          }
+        },
+        "94221f5e-2c0b-42f9-8a80-b089347029cc": {
+          "f4eca9a7-1fd4-4a57-bb8d-4b900824ec7c": {
+            "f1067c2c-ad7d-4a75-af41-f6f09ab0c175": {
+              "99006053-a01f-4aec-8672-b5a1431435e6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bb67dbe4-bbd2-4b1b-ae2f-84c632328b00": {
+            "ae7c12fe-44ae-4fa3-b33e-c34c1df3013f": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "52e7a985-0c5d-4271-8f94-105b3fc1ebe7": {
+            "ae7c12fe-44ae-4fa3-b33e-c34c1df3013f": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "9ee7f6d0-3fff-4cb4-9297-3b3d4a4c490a": {
+            "70c706b8-a65d-4791-8bfa-c812f8883329": {
+              "d2887f2b-6714-45c7-a4c8-d43690cb1699": {}
+            }
+          },
+          "c3328b14-8977-4fae-8f60-0a45928ec295": {
+            "062b7bb9-2bf9-4cb4-8e71-dcce9336302a": {
+              "f4eca9a7-1fd4-4a57-bb8d-4b900824ec7c": {}
+            }
+          },
+          "2a6d695f-1300-482f-b730-7a51945b9efe": {
+            "f1067c2c-ad7d-4a75-af41-f6f09ab0c175": {
+              "a40806f7-edf6-4d82-9397-d5e50a4799b2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "--\n\nFor detailed parameter information, see the AirTable API documentation: \nhttps://airtable.com/api/meta",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "keywords": {
+    "airtable": null,
+    "select": null,
+    "get": null,
+    "fetch": null,
+    "records": null,
+    "rows": null,
+    "table": null
+  },
+  "original": "549d421f-d9cb-4ee0-976d-4512aae4caa3",
+  "attributes": {}
+}

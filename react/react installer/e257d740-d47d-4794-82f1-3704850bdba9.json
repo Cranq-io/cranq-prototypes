@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "df3107d7-179c-4e60-86b4-323813c9e86e": "const fs = require(\"fs\");\r\nconst { exec } = require( \"child_process\" );\r\nconst { replace } = params;\r\nconst command = \"npx create-react-app \" + data + \" --use-npm\";\r\nif (state.running){\r\n  outputs.bounced({\"bounced\" : data }, tag);\r\n} else {\r\n  state.running = true;\r\n  if ( params.replace === true && fs.existsSync(data + \"/.cranq-react-app\") ) {\r\n    outputs.stdout({\"stdout\" : \"Removing react application at \" + data});\r\n    fs.rmSync( data, { recursive: true, force: true }, (error) => { \r\n      outputs.error({ \"error\" : \"Error deleting react application.\"});\r\n    });\r\n  }\r\n  outputs.stdout( {\"stdout\" : command}, tag );\r\n  exec(command, (error, stdout, stderr) => {\r\nif (error && (params.replace === false || 'undefined' )) {\r\n  outputs.error({ \"error\" : \"Application folder already exists. Set the replace input to true if you wish to reinstall the application from scratch\" }, tag);\r\n  outputs.success(false, tag);\r\n} else {\r\n  outputs.stdout({\"stdout\" : stdout} || {\"stdout\" : \"\"}, tag);\r\n  outputs.stderr({\"stderr\" : stderr} || {\"stderr\" : \"\"}, tag);\r\n  fs.writeFileSync(data + \"/.cranq-react-app\", \"\");\r\n  outputs.success(true, tag);\r\n}\r\n  state.running = false;\r\n  });\r\n}"
+        "df3107d7-179c-4e60-86b4-323813c9e86e": "const fs = require(\"fs\");\r\nconst { exec } = require( \"child_process\" );\r\nconst { replace } = params;\r\nconst command = \"npx create-react-app \" + data + \" --use-npm\";\r\nif (state.running){\r\n  outputs.bounced(data, tag);\r\n} else {\r\n  state.running = true;\r\n  if ( params.replace === true && fs.existsSync(data + \"/.cranq-react-app\") ) {\r\n    outputs.stdout(\"Removing react application at \" + data);\r\n    fs.rmSync( data, { recursive: true, force: true }, (error) => { \r\n      outputs.error({ \"error\" : \"Error deleting react application.\"});\r\n    });\r\n  }\r\n  outputs.stdout( command, tag );\r\n  exec(command, (error, stdout, stderr) => {\r\nif (error && (params.replace === false || 'undefined' )) {\r\n  outputs.error({ \"error\" : \"Application folder already exists. Set the replace input to true if you wish to reinstall the application from scratch\" }, tag);\r\n  outputs.success(false, tag);\r\n} else {\r\n  outputs.stdout(stdout ||  \"\", tag);\r\n  outputs.stderr(stderr || \"\", tag);\r\n  fs.writeFileSync(data + \"/.cranq-react-app\", \"\");\r\n  outputs.success(true, tag);\r\n}\r\n  state.running = false;\r\n  });\r\n}"
       }
     }
   },
@@ -26,11 +26,11 @@
         "description": "Sends true@\"start\" right after the installer completes successfully."
       },
       "531c9742-9153-400a-ab29-160e618d4b04": {
-        "type": "{ \"stdout\" : string}",
+        "type": "string",
         "name": "stdout"
       },
       "c33ef99d-731e-47fc-82da-8bc9ec3cca30": {
-        "type": "{ \"stderr\" : string}",
+        "type": "string",
         "name": "stderr"
       },
       "657b3ec0-1b44-4bd6-8a8e-7cf4e903823e": {
@@ -38,7 +38,7 @@
         "name": "error"
       },
       "ae982924-274e-4871-9d75-4725bcce2eb2": {
-        "type": "{ \"bounced\" : string}",
+        "type": "string",
         "name": "bounced"
       }
     }

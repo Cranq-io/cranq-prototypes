@@ -1,5 +1,5 @@
 {
-  "name": "tutorials/Waiting list API/Group 6",
+  "name": "tutorials/Waiting list API V2/Group 6",
   "interface": {
     "inputs": {
       "6560601a-ab0f-472e-9db3-627bbfc74141": {
@@ -34,20 +34,21 @@
         },
         "b4e77ab1-82af-405e-8efa-c30f169bbafb": {
           "coordinates": [
-            48.75,
+            61.75,
             24.5
           ],
           "name": "simple email sender request builder",
           "prototype": "5d236262-2f39-4b97-8ae4-59772de68841",
           "params": {
+            "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": "{\r\n  \"Email\": \"andras.matisz@cranq.io\"\r\n}",
             "f9ff3874-2289-43c7-8033-e369604fa165": "\"Subscription received!\"",
             "9d05856a-b5a3-46f6-b48d-c13bde2b5cd0": "\"Your subscription was received! Stay tuned!\""
           }
         },
         "1249adb3-a502-4534-9328-a5e757d5672a": {
           "coordinates": [
-            -184.25,
-            -200.5
+            -208.25,
+            -118.5
           ],
           "name": "builder (key & value)",
           "prototype": "ad0c8e3a-6cd9-4a4e-b056-26d730fecf28",
@@ -57,24 +58,13 @@
         },
         "658f98b3-ed02-471d-9ed4-953300b094c9": {
           "coordinates": [
-            -33.25,
-            -144.5
+            -82.25,
+            -65.5
           ],
           "name": "builder",
           "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
           "params": {
             "ed11e46e-595d-4515-8681-ff35c7a555c6": "1"
-          }
-        },
-        "bc943a74-2450-436e-aae3-b8b4e6b36946": {
-          "coordinates": [
-            -143.078125,
-            -79.75
-          ],
-          "name": "item getter",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"from\""
           }
         }
       },
@@ -99,13 +89,6 @@
               "2b455e13-9320-4dac-a64c-f963ab2aeb3c": {}
             }
           }
-        },
-        "bc943a74-2450-436e-aae3-b8b4e6b36946": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "b4e77ab1-82af-405e-8efa-c30f169bbafb": {
-              "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": {}
-            }
-          }
         }
       },
       "forwards": {
@@ -116,9 +99,6 @@
             }
           },
           "419ad717-f9c6-4623-8766-eb4e0422d44c": {
-            "bc943a74-2450-436e-aae3-b8b4e6b36946": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
             "9e159fcc-5233-4079-bd39-8c9e40c3c6e2": {
               "04c08c2f-2ac0-4726-ac4f-10db51886248": {}
             }
@@ -134,8 +114,9 @@
       }
     }
   },
+  "iconId": "b625ef15-10fb-42c7-8177-242d8d7ef6e9",
+  "original": "4f78efd0-01de-423c-afff-8c6816c0d779",
   "attributes": {
     "internal": true
-  },
-  "iconId": "b625ef15-10fb-42c7-8177-242d8d7ef6e9"
+  }
 }

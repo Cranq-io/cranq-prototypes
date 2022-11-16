@@ -1,0 +1,104 @@
+{
+  "name": "tutorials/Waiting list API V2/Group",
+  "interface": {
+    "inputs": {
+      "dd87484a-d408-4b8e-902b-4846e8686217": {
+        "type": "typeof `email address` of `validate already registered`",
+        "name": "email address"
+      },
+      "5695fa95-ca2f-4b88-ad04-7c1ae720f168": {
+        "type": "typeof `params` of `insert into AT`",
+        "name": "params",
+        "description": "[Inherited from port `params` of `insert into AT`] \n[Inherited from port `params` of `record inserter`] \nReceives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
+      }
+    },
+    "outputs": {
+      "dbbdf3dd-50f7-4b6d-8672-cfdb0a8f4bdc": {
+        "type": "typeof `error` of `insert into AT`",
+        "name": "error",
+        "description": "[Inherited from port `error` of `insert into AT`] \n[Inherited from port `error` of `record inserter`] \nSends the error, if one occurred."
+      },
+      "64aba2fa-16ec-4844-ab98-409c9d9c179d": {
+        "type": "typeof `registered` of `validate already registered`",
+        "name": "registered"
+      },
+      "56d37ff5-1e50-49c0-baab-c4ca961f63bb": {
+        "type": "typeof `email address` of `insert into AT`",
+        "name": "email address",
+        "description": "[Inherited from port `email address` of `insert into AT`] \n[Inherited from port `data` of `email address`] \nSends store contents."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ff034167-03a0-4e53-b2d7-b29ace343939": {
+          "coordinates": [
+            70.875,
+            84.8359375
+          ],
+          "name": "insert into AT",
+          "prototype": "22acb667-aa81-463d-8448-c98962306032"
+        },
+        "223c816b-89cd-4001-9b94-36a1504fab98": {
+          "coordinates": [
+            -70.875,
+            -84.8359375
+          ],
+          "name": "validate already registered",
+          "prototype": "febe36e6-cd7c-4d01-bca5-4bf41bf65f32"
+        }
+      },
+      "connections": {
+        "223c816b-89cd-4001-9b94-36a1504fab98": {
+          "5f4bc2e9-ecda-4a9d-9943-afbe1d52f138": {
+            "ff034167-03a0-4e53-b2d7-b29ace343939": {
+              "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5695fa95-ca2f-4b88-ad04-7c1ae720f168": {
+            "ff034167-03a0-4e53-b2d7-b29ace343939": {
+              "3af901df-f037-4be3-bd9c-7de6f186b98f": {}
+            },
+            "223c816b-89cd-4001-9b94-36a1504fab98": {
+              "f3b4542c-23fc-4b96-b865-ec0c14511ac5": {}
+            }
+          },
+          "dd87484a-d408-4b8e-902b-4846e8686217": {
+            "223c816b-89cd-4001-9b94-36a1504fab98": {
+              "c1bc52b0-673b-4734-b169-e5d2d34a8b97": {}
+            }
+          }
+        },
+        "outputs": {
+          "dbbdf3dd-50f7-4b6d-8672-cfdb0a8f4bdc": {
+            "ff034167-03a0-4e53-b2d7-b29ace343939": {
+              "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {}
+            },
+            "223c816b-89cd-4001-9b94-36a1504fab98": {
+              "2870da20-2d3b-4139-8cbc-bc6c7431e3f3": {}
+            }
+          },
+          "56d37ff5-1e50-49c0-baab-c4ca961f63bb": {
+            "ff034167-03a0-4e53-b2d7-b29ace343939": {
+              "7b151a8d-7870-4e11-972a-fb845dd793d5": {}
+            }
+          },
+          "64aba2fa-16ec-4844-ab98-409c9d9c179d": {
+            "223c816b-89cd-4001-9b94-36a1504fab98": {
+              "10bd4788-40bb-4bef-8281-c221fd6c4923": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "attributes": {
+    "internal": true
+  }
+}

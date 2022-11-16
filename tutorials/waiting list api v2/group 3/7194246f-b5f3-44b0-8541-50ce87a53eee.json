@@ -1,5 +1,5 @@
 {
-  "name": "tutorials/Waiting list API/Group 3",
+  "name": "tutorials/Waiting list API V2/Group 3",
   "interface": {
     "inputs": {
       "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
@@ -9,12 +9,16 @@
       },
       "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {
         "type": "typeof `build 400` of `build 400`",
-        "name": "build 400",
+        "name": "build bad req",
         "description": "[Inherited from port `build 400` of `build 400`] \n[Inherited from port `read` of `body`] \nReceives signal that triggers sending out the stored parameter value."
+      },
+      "409632d4-89b7-4860-a034-0efa6bc3521b": {
+        "type": "any",
+        "name": "build duplicate"
       },
       "e1444412-e063-4500-aa81-929ef4c4d84a": {
         "type": "any",
-        "name": "build 500"
+        "name": "build error"
       }
     },
     "outputs": {
@@ -30,19 +34,19 @@
       "nodes": {
         "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
           "coordinates": [
-            0,
-            -48.5
+            -3,
+            -171.5
           ],
           "name": "build OK",
-          "prototype": "a1949b00-e16d-4881-a027-47c9f5f6dae9"
+          "prototype": "a9ef6844-4d49-4ccc-a8f1-4e836eb21541"
         },
         "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
           "coordinates": [
-            0,
-            48.5
+            -4,
+            -64.5
           ],
           "name": "build 400",
-          "prototype": "b1cda9b3-9d70-427a-86aa-328c450fa9e7"
+          "prototype": "77ab335d-c4f3-48b0-895f-6b52329c6d1e"
         },
         "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
           "coordinates": [
@@ -50,7 +54,15 @@
             157.5
           ],
           "name": "build 500",
-          "prototype": "3ec1b772-14cc-4794-b9ab-787e8d1da6cf"
+          "prototype": "faf50ef7-fd82-44ae-9b9c-d4948bed908d"
+        },
+        "3c9b9566-3270-4092-bcea-6537b70e57d0": {
+          "coordinates": [
+            0,
+            53.5
+          ],
+          "name": "build duplicate",
+          "prototype": "1e39f190-1b6a-40e9-a582-2cf23f916606"
         }
       },
       "connections": {},
@@ -70,6 +82,11 @@
             "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
               "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
             }
+          },
+          "409632d4-89b7-4860-a034-0efa6bc3521b": {
+            "3c9b9566-3270-4092-bcea-6537b70e57d0": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
           }
         },
         "outputs": {
@@ -82,6 +99,9 @@
             },
             "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
               "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            },
+            "3c9b9566-3270-4092-bcea-6537b70e57d0": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
             }
           }
         }
@@ -89,6 +109,7 @@
     }
   },
   "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "ffe26f46-9ee8-47ab-b383-0b605b9c7da6",
   "attributes": {
     "internal": true
   }

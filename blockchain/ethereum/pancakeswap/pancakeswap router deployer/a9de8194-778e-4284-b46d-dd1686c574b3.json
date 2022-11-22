@@ -15,25 +15,30 @@
       },
       "c7708f4f-1b7d-4292-bdf6-a607378707b4": {
         "type": "typeof `credentials` of `deploy contract preset`",
-        "name": "credentials"
+        "name": "credentials",
+        "description": "Receives a private URL to a node provider and a private key for a blockchain account."
       }
     },
     "outputs": {
       "2b7af6d6-aa19-4c89-9cba-5c8b4a8f6fb0": {
         "type": "typeof `events` of `deploy contract preset`",
-        "name": "events"
+        "name": "events",
+        "description": "Muliplexed events. Use a Demultiplexer to separate them if needed."
       },
       "c756affd-6db5-4293-920b-ed329630f3c6": {
-        "type": "typeof `source` of `deploy contract preset`",
-        "name": "source"
+        "type": "string",
+        "name": "source",
+        "description": "The source of the deployed contract in single file form. Required if want to perform contract verification on blockchain explorers (e.g. etherscan)."
       },
       "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
         "type": "{\n    optional \"evmVersion\": string,\n    \"optimizer\": {\n        \"enabled\": boolean,\n        \"runs\": number\n    }\n}",
-        "name": "compile settings"
+        "name": "compile settings",
+        "description": "The settings used to compile the contract, like solidiy version, optimization settings, etc.\nThese are required e.g. if you want to perform contract verification on blockchain explorers (e.g. etherscan)."
       },
       "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {
         "type": "typeof `error` of `deploy contract preset`",
-        "name": "error"
+        "name": "error",
+        "description": "Sends out any error that happened during compilation or deployment."
       }
     }
   },

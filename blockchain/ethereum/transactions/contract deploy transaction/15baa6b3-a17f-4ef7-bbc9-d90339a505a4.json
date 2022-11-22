@@ -1,0 +1,123 @@
+{
+  "name": "blockchain/ethereum/Transactions/Contract deploy transaction",
+  "interface": {
+    "inputs": {
+      "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
+        "type": "typeof `parameters` of `deploy contract`[\"contract\"]",
+        "name": "compiled contract",
+        "description": ""
+      },
+      "0618062e-aa1f-4a81-9727-fa078f93332f": {
+        "type": "string[]",
+        "name": "contract parameters",
+        "description": ""
+      },
+      "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
+        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "name": "credentials",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "3483ab3b-5295-4761-8832-ec968f7399d9": {
+        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n  ),\n  \"data\": any\n}",
+        "name": "events",
+        "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
+      },
+      "c8505107-dfeb-4ad6-a08c-2543a30b2887": {
+        "type": "typeof `error` of `deploy contract`",
+        "name": "error",
+        "description": "Sends out any error that happened during deployment\n\n"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+          "coordinates": [
+            -72.3515625,
+            -50.78125
+          ],
+          "name": "build parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"compiled contract\", \"contract parameters\", \"credentials\"]"
+          }
+        },
+        "6fc4e343-bc90-41dd-a679-d786673d317d": {
+          "coordinates": [
+            5.71875,
+            -50.3515625
+          ],
+          "name": "create deployment tx",
+          "prototype": "4ead778f-9aa6-447c-9867-d7468f97f56c"
+        },
+        "37f1668d-2ff1-44ff-b979-897d7b96bbb5": {
+          "coordinates": [
+            164.71875,
+            34.21875
+          ],
+          "name": "transaction submitter",
+          "prototype": "796f79ec-72e5-4cc5-9216-2fed849781c7"
+        }
+      },
+      "connections": {
+        "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6fc4e343-bc90-41dd-a679-d786673d317d": {
+              "237ebe7e-19c6-4936-9c2d-61ae3c4ea05c": {}
+            }
+          }
+        },
+        "6fc4e343-bc90-41dd-a679-d786673d317d": {
+          "5b47b61b-8b58-453f-bd09-d89fd2225644": {
+            "37f1668d-2ff1-44ff-b979-897d7b96bbb5": {
+              "980ea2ab-b815-46ec-a791-01178d935389": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
+            "37f1668d-2ff1-44ff-b979-897d7b96bbb5": {
+              "78ed2191-a5cd-48dc-b182-8b01463bd60f": {}
+            },
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "credentials": {}
+            }
+          },
+          "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "compiled contract": {}
+            }
+          },
+          "0618062e-aa1f-4a81-9727-fa078f93332f": {
+            "f7c0d38f-e3a0-41f0-8764-b7cb93ec8fab": {
+              "contract parameters": {}
+            }
+          }
+        },
+        "outputs": {
+          "3483ab3b-5295-4761-8832-ec968f7399d9": {
+            "37f1668d-2ff1-44ff-b979-897d7b96bbb5": {
+              "cf4d9a78-a76a-495a-a75b-61f1d46f8cbe": {}
+            }
+          },
+          "c8505107-dfeb-4ad6-a08c-2543a30b2887": {
+            "37f1668d-2ff1-44ff-b979-897d7b96bbb5": {
+              "026c4fcf-30bb-480f-9488-5da56ebea5be": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "original": "8118a097-e257-4b70-9691-ac8d9681a325",
+  "description": "Deploys a smart contract on an ethereum network",
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+          "coordinates": [
+            -142,
+            -24
+          ],
+          "name": "build contract parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "alters": "true",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\n  \"contract address\",\n  \"abi\",\n  \"method name\", \n  \"parameters\", \n  \"credentials\"\n]"
+          }
+        },
+        "7a4b57ae-7ca4-40a0-a444-274b1f0c3b89": {
+          "coordinates": [
+            62,
+            -62
+          ],
+          "name": "create method call tx",
+          "prototype": "5f7a7d60-27b2-4d26-84cc-64562380eac5"
+        },
+        "99c2e20d-1981-4fd9-89e1-0c731e120503": {
+          "coordinates": [
+            144,
+            2
+          ],
+          "name": "submit transaction",
+          "prototype": "796f79ec-72e5-4cc5-9216-2fed849781c7"
+        }
+      },
+      "connections": {
+        "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "7a4b57ae-7ca4-40a0-a444-274b1f0c3b89": {
+              "68fc7d11-40c7-484f-8717-684208cb6eca": {}
+            }
+          }
+        },
+        "7a4b57ae-7ca4-40a0-a444-274b1f0c3b89": {
+          "97da1d2d-c0e6-471f-ad4c-ef3fbba97da4": {
+            "99c2e20d-1981-4fd9-89e1-0c731e120503": {
+              "980ea2ab-b815-46ec-a791-01178d935389": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5e721c7e-2b06-494f-a65e-6b527531cddc": {
+            "99c2e20d-1981-4fd9-89e1-0c731e120503": {
+              "78ed2191-a5cd-48dc-b182-8b01463bd60f": {}
+            },
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "credentials": {}
+            }
+          },
+          "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "contract address": {}
+            }
+          },
+          "39a06197-ca9b-4ada-ab8e-6de9bd241529": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "abi": {}
+            }
+          },
+          "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "method name": {}
+            }
+          },
+          "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {
+            "a8b08540-468f-4bbe-b8dd-47df8ac7273b": {
+              "parameters": {}
+            }
+          }
+        },
+        "outputs": {
+          "87606a66-0567-440c-9686-f02bf52462e4": {
+            "99c2e20d-1981-4fd9-89e1-0c731e120503": {
+              "cf4d9a78-a76a-495a-a75b-61f1d46f8cbe": {}
+            }
+          },
+          "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {
+            "99c2e20d-1981-4fd9-89e1-0c731e120503": {
+              "026c4fcf-30bb-480f-9488-5da56ebea5be": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e62bb3b3-e749-4e85-b789-51e33a3fbe82": {
+        "type": "string",
+        "name": "contract address",
+        "description": "Receives the address of the contract to interact with.\n\nExample:\n\"0xab12345678ab12345678ab12345678ab12345678\""
+      },
+      "39a06197-ca9b-4ada-ab8e-6de9bd241529": {
+        "type": "{string:any}[]",
+        "name": "contract abi",
+        "description": "Receives the ABI of the contract to interact with."
+      },
+      "1c54037b-03d2-447f-8e10-41c1f3ebfbfe": {
+        "type": "string",
+        "name": "method name",
+        "description": "Receives the method name to execute on the contract."
+      },
+      "9ff09a73-b892-48f2-b976-2cd7de67dcbd": {
+        "type": "any[]",
+        "name": "parameters",
+        "description": "Receives the parameters of the method call as array."
+      },
+      "5e721c7e-2b06-494f-a65e-6b527531cddc": {
+        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "name": "credentials",
+        "description": "Receives the credentials required to interact with the chain."
+      }
+    },
+    "outputs": {
+      "87606a66-0567-440c-9686-f02bf52462e4": {
+        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n  ),\n  \"data\": any\n}",
+        "name": "events",
+        "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
+      },
+      "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {
+        "type": "typeof `error` of `method call`",
+        "name": "error",
+        "description": "Sends out any error that happened during contract method execution."
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Transactions/Contract execute transaction",
+  "original": "228b10ab-9b15-4317-8700-f5ddac476c25",
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "description": "Calls an altering method on a smart contract.",
+  "keywords": {
+    "smart contract": null,
+    "call": null,
+    "alters": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

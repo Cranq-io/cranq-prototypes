@@ -1,0 +1,117 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 2",
+  "interface": {
+    "inputs": {
+      "ce0c1226-fbaf-451f-aa24-9ffd82e82ab1": {
+        "type": "typeof `email address` of `query airtable`",
+        "name": "email address",
+        "description": "[Inherited from port `email address` of `query airtable`] \n[Inherited from port `email address` of `build filter`] \n[Inherited from port `value` of `builder (key & value)`] \nReceives the value to assign to all items.\n\nExample:\n1"
+      },
+      "fe82ce72-189f-429e-baaa-9161bbf7ef1e": {
+        "type": "typeof `params` of `query airtable`",
+        "name": "params",
+        "description": "[Inherited from port `params` of `query airtable`] \n[Inherited from port `params` of `query executor`] \nReceives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
+      }
+    },
+    "outputs": {
+      "11137444-0a6e-4bd3-9918-bf96566e49f8": {
+        "type": "typeof `on true` of `validated?`",
+        "name": "registered",
+        "description": "[Inherited from port `on true` of `validated?`] \nSends signal received via `data` when condition was true."
+      },
+      "45ea4e1e-fdfe-4686-afdd-0635c5bba556": {
+        "type": "any",
+        "name": "not registered"
+      },
+      "daf20ad4-0f60-458d-841e-09ed4b1474a4": {
+        "type": "typeof `error` of `query airtable`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8bbe44e9-6050-433b-91e1-1808f2dd042c": {
+          "coordinates": [
+            -97.39127604166669,
+            56.400390625
+          ],
+          "name": "query airtable",
+          "prototype": "efb9b915-7edc-4ffd-81da-3c8a64bd0ccf"
+        },
+        "f55a8df9-321b-45cd-96fb-547a2b49f128": {
+          "coordinates": [
+            11.241536458333314,
+            202.533203125
+          ],
+          "name": "build new sub",
+          "prototype": "cdcc3cfd-3e1b-4e92-9e5f-7e613f9851cc"
+        },
+        "9f78e84c-81f8-479a-8e0c-4cfd0f999959": {
+          "coordinates": [
+            4.241536458333371,
+            -89.466796875
+          ],
+          "name": "is validated?",
+          "prototype": "519c16b7-898b-49eb-bff4-87c52e1cc55b"
+        }
+      },
+      "connections": {
+        "8bbe44e9-6050-433b-91e1-1808f2dd042c": {
+          "6f2b1932-6472-4bac-af0c-26fc3a32c5e4": {
+            "f55a8df9-321b-45cd-96fb-547a2b49f128": {
+              "5c809060-1150-4f5b-ae3a-68b268b12fe7": {}
+            }
+          },
+          "854d6443-bf01-47e3-8da9-4e7bafe6adb0": {
+            "9f78e84c-81f8-479a-8e0c-4cfd0f999959": {
+              "e7587b53-b89e-42de-b35e-f231363bc174": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ce0c1226-fbaf-451f-aa24-9ffd82e82ab1": {
+            "8bbe44e9-6050-433b-91e1-1808f2dd042c": {
+              "cb5d41d3-4999-41d6-850a-7b7a84b614de": {}
+            },
+            "f55a8df9-321b-45cd-96fb-547a2b49f128": {
+              "00b426e0-1641-4304-b326-c8dd3e17565f": {}
+            }
+          },
+          "fe82ce72-189f-429e-baaa-9161bbf7ef1e": {
+            "8bbe44e9-6050-433b-91e1-1808f2dd042c": {
+              "881bbc94-92e6-4c67-b8b9-5e11a390c435": {}
+            }
+          }
+        },
+        "outputs": {
+          "daf20ad4-0f60-458d-841e-09ed4b1474a4": {
+            "8bbe44e9-6050-433b-91e1-1808f2dd042c": {
+              "2343a9d9-b521-4917-b419-997c4db3e6ac": {}
+            }
+          },
+          "11137444-0a6e-4bd3-9918-bf96566e49f8": {
+            "9f78e84c-81f8-479a-8e0c-4cfd0f999959": {
+              "d0d26749-16eb-4f57-a8b4-51d7781f4787": {}
+            }
+          },
+          "45ea4e1e-fdfe-4686-afdd-0635c5bba556": {
+            "9f78e84c-81f8-479a-8e0c-4cfd0f999959": {
+              "0e5301d7-cb30-4ef0-829e-0f6f7b4c3fe5": {}
+            },
+            "f55a8df9-321b-45cd-96fb-547a2b49f128": {
+              "f19b5b9a-1ec1-4160-aafd-7d1a4e6efff5": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004"
+}

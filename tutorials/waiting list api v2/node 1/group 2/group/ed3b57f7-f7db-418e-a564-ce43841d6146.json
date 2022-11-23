@@ -1,0 +1,118 @@
+{
+  "name": "tutorials/Waiting list API V2/Node 1/Group 2/Group",
+  "interface": {
+    "inputs": {
+      "61ddac20-3e0a-4229-b163-55a611b8a647": {
+        "type": "typeof `resp. data` of `records extractor`",
+        "name": "AT records",
+        "description": "[Inherited from port `resp. data` of `records extractor`] \nReceives the JSON body of the record insertion response from AirTable.\n\nExample:\n```json\n{\n  \"records\": [\n    {\n      \"id\": \"rec5GZcokQryzdZ4v\",\n      \"createdTime\": \"2022-09-29T13:22:12.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    },\n    {\n      \"id\": \"recAudXcaHdms3eSR\",\n      \"createdTime\": \"2022-09-29T13:18:10.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    }\n  ]\n}\n```"
+      }
+    },
+    "outputs": {
+      "f4a85589-1ba8-424a-92f0-dddc8784e02e": {
+        "type": "typeof `not found` of `first item getter (with not found)`",
+        "name": "not found",
+        "description": "[Inherited from port `not found` of `first item getter (with not found)`] \nSends the original array if it's empty."
+      },
+      "2471b693-1aff-46ff-b4ae-2e8fef40ba64": {
+        "type": "typeof `dict` of `item setter`",
+        "name": "subscription",
+        "description": "[Inherited from port `dict` of `item setter`] \nSends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "40121451-68c7-4db5-8341-29b3e374d90b": {
+          "coordinates": [
+            -193.5,
+            -6.75
+          ],
+          "name": "records extractor",
+          "prototype": "c78453a1-9ea5-42b7-8680-1f45629ca7d9"
+        },
+        "18230700-50a9-4e4a-abea-731cd665c627": {
+          "coordinates": [
+            -13.5,
+            -101.75
+          ],
+          "name": "first item getter (with not found)",
+          "prototype": "e408f545-5648-47e7-9392-6c39c0dd14d1"
+        },
+        "fe0ae2be-d010-47f2-b6cd-b12522017b9d": {
+          "coordinates": [
+            23.5,
+            91.25
+          ],
+          "name": "first item getter (with not found) B",
+          "prototype": "e408f545-5648-47e7-9392-6c39c0dd14d1"
+        },
+        "6f8448e0-916f-47ef-bd86-6ad6bdb078af": {
+          "coordinates": [
+            115.5,
+            8.25
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"AT_id\""
+          }
+        }
+      },
+      "connections": {
+        "40121451-68c7-4db5-8341-29b3e374d90b": {
+          "9d27a0c0-8a44-4d32-89cf-d8a44e3ea19e": {
+            "18230700-50a9-4e4a-abea-731cd665c627": {
+              "9af252dc-4c84-4abc-81ab-8a684f13674f": {}
+            }
+          },
+          "f48e3659-0620-4b9a-952f-a78e6f109a23": {
+            "fe0ae2be-d010-47f2-b6cd-b12522017b9d": {
+              "9af252dc-4c84-4abc-81ab-8a684f13674f": {}
+            }
+          }
+        },
+        "fe0ae2be-d010-47f2-b6cd-b12522017b9d": {
+          "c334590a-05e9-4390-98b3-6f95ba4392e0": {
+            "6f8448e0-916f-47ef-bd86-6ad6bdb078af": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "18230700-50a9-4e4a-abea-731cd665c627": {
+          "c334590a-05e9-4390-98b3-6f95ba4392e0": {
+            "6f8448e0-916f-47ef-bd86-6ad6bdb078af": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "61ddac20-3e0a-4229-b163-55a611b8a647": {
+            "40121451-68c7-4db5-8341-29b3e374d90b": {
+              "4f228730-0de6-431e-b706-f0ea78ea3be0": {}
+            }
+          }
+        },
+        "outputs": {
+          "f4a85589-1ba8-424a-92f0-dddc8784e02e": {
+            "18230700-50a9-4e4a-abea-731cd665c627": {
+              "197c335e-2cac-4e6a-862f-86d262e90241": {}
+            }
+          },
+          "2471b693-1aff-46ff-b4ae-2e8fef40ba64": {
+            "6f8448e0-916f-47ef-bd86-6ad6bdb078af": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {
+    "internal": true
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58"
+}

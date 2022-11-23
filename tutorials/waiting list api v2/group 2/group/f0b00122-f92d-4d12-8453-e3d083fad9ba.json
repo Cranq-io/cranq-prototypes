@@ -1,0 +1,74 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 2/Group",
+  "interface": {
+    "inputs": {
+      "93c8ba83-cb68-443c-8113-5702031ab7d9": {
+        "type": "typeof `tree` of `node setter (mutable) B`",
+        "name": "subscription",
+        "description": "[Inherited from port `tree` of `node setter (mutable) B`] \nTree data structure in which to store a node.\n\nWill be mutated."
+      }
+    },
+    "outputs": {
+      "af421268-4a7c-48e9-ad5f-c6770aca5d3b": {
+        "type": "typeof `modified tree` of `node setter (mutable) B`",
+        "name": "updated",
+        "description": "[Inherited from port `modified tree` of `node setter (mutable) B`] \nSends the modified tree"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fd592535-1407-4920-aa0f-dcf4a3a7c9f4": {
+          "coordinates": [
+            -92.5,
+            -114.5
+          ],
+          "name": "uuid generator",
+          "prototype": "8eb1cd6c-9946-43cf-ae1d-9f726576af53"
+        },
+        "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+          "coordinates": [
+            23,
+            38
+          ],
+          "name": "set validation token",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"validation_token\""
+          }
+        }
+      },
+      "connections": {
+        "fd592535-1407-4920-aa0f-dcf4a3a7c9f4": {
+          "772b0a51-1a6d-4a2e-b9ad-651a2ff8bfcb": {
+            "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "93c8ba83-cb68-443c-8113-5702031ab7d9": {
+            "fd592535-1407-4920-aa0f-dcf4a3a7c9f4": {
+              "4de21880-84de-41dd-ae3e-73f2de15a927": {}
+            },
+            "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "af421268-4a7c-48e9-ad5f-c6770aca5d3b": {
+            "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "attributes": {}
+}

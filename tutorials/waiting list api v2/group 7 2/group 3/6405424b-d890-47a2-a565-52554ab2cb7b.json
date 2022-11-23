@@ -1,0 +1,171 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 7 2/Group 3",
+  "interface": {
+    "inputs": {
+      "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
+        "type": "typeof `build OK` of `build OK`",
+        "name": "build OK",
+        "description": "[Inherited from port `build OK` of `build OK`] \n[Inherited from port `read` of `body`] \nReceives signal that triggers sending out the stored parameter value."
+      },
+      "e1444412-e063-4500-aa81-929ef4c4d84a": {
+        "type": "any",
+        "name": "build error"
+      },
+      "e240e1c7-674f-41a2-93e7-c491e437f760": {
+        "type": "any",
+        "name": "init Env params"
+      }
+    },
+    "outputs": {
+      "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+        "type": "typeof `response` of `build OK`",
+        "name": "response",
+        "description": "[Inherited from port `response` of `build OK`] \n[Inherited from port `response` of `build response`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8b7ae63a-c848-4c30-8701-b33e16ba2cde": {
+          "coordinates": [
+            -164.328125,
+            55.42187500000003
+          ],
+          "name": "buffer params",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "7144327c-4e98-4cd1-81fa-b02f89356368": {
+          "coordinates": [
+            249,
+            -17
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146",
+          "params": {
+            "e187184f-1252-49d5-8a23-10ef334b62de": "\"\"",
+            "402286d6-3a51-4842-8c43-5bd757b60445": "302"
+          }
+        },
+        "da9999a2-8260-41b0-9300-191f90b0e6d3": {
+          "coordinates": [
+            11.671875,
+            -214.57812499999997
+          ],
+          "name": "get url",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f"
+        },
+        "03b6301a-1a24-4932-8986-9afd118bae2d": {
+          "coordinates": [
+            120.671875,
+            -130.57812499999997
+          ],
+          "name": "build Location header",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}",
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Location\""
+          }
+        },
+        "d023f991-77e2-49d1-98f7-132457d9bebf": {
+          "coordinates": [
+            -276.328125,
+            -162.57812499999997
+          ],
+          "name": "\"RedirectSuccess\"",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"RedirectSuccess\""
+          }
+        },
+        "e3569ca8-4547-41da-be08-b3fd185a8b72": {
+          "coordinates": [
+            -275.328125,
+            -87.57812499999997
+          ],
+          "name": "\"RedirectError\"",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"RedirectError\""
+          }
+        }
+      },
+      "connections": {
+        "da9999a2-8260-41b0-9300-191f90b0e6d3": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "03b6301a-1a24-4932-8986-9afd118bae2d": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "03b6301a-1a24-4932-8986-9afd118bae2d": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "7144327c-4e98-4cd1-81fa-b02f89356368": {
+              "300852ca-cadf-4b8c-b238-6f257f3039fb": {}
+            }
+          }
+        },
+        "8b7ae63a-c848-4c30-8701-b33e16ba2cde": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "da9999a2-8260-41b0-9300-191f90b0e6d3": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "d023f991-77e2-49d1-98f7-132457d9bebf": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "da9999a2-8260-41b0-9300-191f90b0e6d3": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            },
+            "8b7ae63a-c848-4c30-8701-b33e16ba2cde": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "e3569ca8-4547-41da-be08-b3fd185a8b72": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "da9999a2-8260-41b0-9300-191f90b0e6d3": {
+              "23142cc5-6b71-4d69-8c46-cc1cd58793d1": {}
+            },
+            "8b7ae63a-c848-4c30-8701-b33e16ba2cde": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e240e1c7-674f-41a2-93e7-c491e437f760": {
+            "8b7ae63a-c848-4c30-8701-b33e16ba2cde": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
+            "d023f991-77e2-49d1-98f7-132457d9bebf": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "e1444412-e063-4500-aa81-929ef4c4d84a": {
+            "e3569ca8-4547-41da-be08-b3fd185a8b72": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+            "7144327c-4e98-4cd1-81fa-b02f89356368": {
+              "cd2cfdb3-e99f-4836-b743-42a5834316f7": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "7194246f-b5f3-44b0-8541-50ce87a53eee",
+  "attributes": {
+    "internal": true
+  }
+}

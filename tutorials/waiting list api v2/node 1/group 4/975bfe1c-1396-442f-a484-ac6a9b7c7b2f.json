@@ -1,0 +1,95 @@
+{
+  "name": "tutorials/Waiting list API V2/Node 1/Group 4",
+  "interface": {
+    "inputs": {
+      "d41d3718-d631-4e7a-b3ca-26750fe41bf9": {
+        "type": "typeof `data` of `fork`",
+        "name": "record",
+        "description": "[Inherited from port `data` of `fork`] \nReceives the data to be forwarded to either output."
+      }
+    },
+    "outputs": {
+      "c428aa71-9b6d-456a-9f30-943480c6d42e": {
+        "type": "boolean",
+        "name": "is validated?",
+        "description": "[Inherited from port `on true` of `fork`] \nSends signal received via `data` when condition was true."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e988e3f9-96c3-4aa4-b588-9519c89de2ac": {
+          "coordinates": [
+            64.33333333333331,
+            -124
+          ],
+          "name": "is validated?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": "\"true\""
+          }
+        },
+        "24c61ed6-dc23-4bd3-b8e6-48235743e1a3": {
+          "coordinates": [
+            -76.66666666666669,
+            -49
+          ],
+          "name": "node getter",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"fields\", \"validated\"]"
+          }
+        },
+        "417135f3-f790-454a-9f43-a354e26fb9f6": {
+          "coordinates": [
+            89.33333333333331,
+            9
+          ],
+          "name": "false",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "false"
+          }
+        }
+      },
+      "connections": {
+        "24c61ed6-dc23-4bd3-b8e6-48235743e1a3": {
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "e988e3f9-96c3-4aa4-b588-9519c89de2ac": {
+              "a0934373-43a4-4cd5-83eb-860bc20d790a": {}
+            }
+          },
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "417135f3-f790-454a-9f43-a354e26fb9f6": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d41d3718-d631-4e7a-b3ca-26750fe41bf9": {
+            "24c61ed6-dc23-4bd3-b8e6-48235743e1a3": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "c428aa71-9b6d-456a-9f30-943480c6d42e": {
+            "e988e3f9-96c3-4aa4-b588-9519c89de2ac": {
+              "61410efe-0096-4bd0-8169-30b254646910": {}
+            },
+            "417135f3-f790-454a-9f43-a354e26fb9f6": {
+              "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -2,45 +2,34 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "28f4d93c-4735-46bb-a715-abbb24a40e00": {
-          "coordinates": [
-            -85,
-            -150
-          ],
-          "name": "buffer email",
-          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
-        },
-        "b54a5b6b-22b1-4956-bae7-a735a197a923": {
-          "coordinates": [
-            44,
-            35
-          ],
-          "name": "emptiness tester",
-          "prototype": "4100c620-45a7-4e36-b3d6-4252cc616d1e"
-        },
-        "a28a157a-861f-4ca5-a11f-75937fdaa443": {
-          "coordinates": [
-            145,
-            -83
-          ],
-          "name": "fork",
-          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
-        },
         "5647c5fe-7210-43c3-b302-c06b4df472ce": {
           "coordinates": [
-            -103.625,
-            114.625
+            -378.625,
+            154.625
           ],
           "name": "query airtable",
           "prototype": "efb9b915-7edc-4ffd-81da-3c8a64bd0ccf"
+        },
+        "5f8d1b98-2f93-4f93-bee9-d781b2968d3b": {
+          "coordinates": [
+            -184.32552083333331,
+            -157.2421875
+          ],
+          "name": "check validated",
+          "prototype": "975bfe1c-1396-442f-a484-ac6a9b7c7b2f"
+        },
+        "399bc0fa-fc90-47d2-9534-093acaedf847": {
+          "coordinates": [
+            -35.9921875,
+            -76.2421875
+          ],
+          "name": "validated?",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
         }
       },
       "forwards": {
         "inputs": {
           "c1bc52b0-673b-4734-b169-e5d2d34a8b97": {
-            "28f4d93c-4735-46bb-a715-abbb24a40e00": {
-              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
-            },
             "5647c5fe-7210-43c3-b302-c06b4df472ce": {
               "cb5d41d3-4999-41d6-850a-7b7a84b614de": {}
             }
@@ -52,45 +41,33 @@
           }
         },
         "outputs": {
-          "5f4bc2e9-ecda-4a9d-9943-afbe1d52f138": {
-            "a28a157a-861f-4ca5-a11f-75937fdaa443": {
-              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
-            }
-          },
-          "10bd4788-40bb-4bef-8281-c221fd6c4923": {
-            "a28a157a-861f-4ca5-a11f-75937fdaa443": {
-              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
-            }
-          },
           "2870da20-2d3b-4139-8cbc-bc6c7431e3f3": {
             "5647c5fe-7210-43c3-b302-c06b4df472ce": {
               "2343a9d9-b521-4917-b419-997c4db3e6ac": {}
+            }
+          },
+          "10bd4788-40bb-4bef-8281-c221fd6c4923": {
+            "399bc0fa-fc90-47d2-9534-093acaedf847": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
             }
           }
         }
       },
       "connections": {
-        "b54a5b6b-22b1-4956-bae7-a735a197a923": {
-          "dbb99a85-ea24-4922-b098-994987c8a10f": {
-            "a28a157a-861f-4ca5-a11f-75937fdaa443": {
+        "5f8d1b98-2f93-4f93-bee9-d781b2968d3b": {
+          "c428aa71-9b6d-456a-9f30-943480c6d42e": {
+            "399bc0fa-fc90-47d2-9534-093acaedf847": {
               "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
-            },
-            "28f4d93c-4735-46bb-a715-abbb24a40e00": {
-              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
-            }
-          }
-        },
-        "28f4d93c-4735-46bb-a715-abbb24a40e00": {
-          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
-            "a28a157a-861f-4ca5-a11f-75937fdaa443": {
-              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
             }
           }
         },
         "5647c5fe-7210-43c3-b302-c06b4df472ce": {
           "854d6443-bf01-47e3-8da9-4e7bafe6adb0": {
-            "b54a5b6b-22b1-4956-bae7-a735a197a923": {
-              "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {}
+            "5f8d1b98-2f93-4f93-bee9-d781b2968d3b": {
+              "d41d3718-d631-4e7a-b3ca-26750fe41bf9": {}
+            },
+            "399bc0fa-fc90-47d2-9534-093acaedf847": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
             }
           }
         }
@@ -112,6 +89,10 @@
       "10bd4788-40bb-4bef-8281-c221fd6c4923": {
         "type": "any",
         "name": "registered"
+      },
+      "ed1992e9-ccea-463a-a5b2-4510f9bc9700": {
+        "type": "any",
+        "name": "not validated"
       },
       "5f4bc2e9-ecda-4a9d-9943-afbe1d52f138": {
         "type": "any",

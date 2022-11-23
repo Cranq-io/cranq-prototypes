@@ -1,0 +1,84 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 2/Group 2",
+  "interface": {
+    "inputs": {
+      "5c809060-1150-4f5b-ae3a-68b268b12fe7": {
+        "type": "typeof `read` of `store`",
+        "name": "build",
+        "description": "[Inherited from port `read` of `store`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+      },
+      "00b426e0-1641-4304-b326-c8dd3e17565f": {
+        "type": "typeof `data` of `store`",
+        "name": "email address",
+        "description": "[Inherited from port `data` of `store`] \nReceives contents of the store. San be set as parameter, or received as signal."
+      }
+    },
+    "outputs": {
+      "f19b5b9a-1ec1-4160-aafd-7d1a4e6efff5": {
+        "type": "typeof `modified tree` of `node setter (mutable)`",
+        "name": "subscription",
+        "description": "[Inherited from port `modified tree` of `node setter (mutable)`] \nSends the modified tree"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "68836d2e-bd1f-4890-a112-62835e992bc6": {
+          "coordinates": [
+            -69,
+            34
+          ],
+          "name": "store",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "8cfbfc40-796f-4b59-bf37-19e42280ab48": {
+          "coordinates": [
+            47,
+            -40
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"email\"",
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}"
+          }
+        }
+      },
+      "connections": {
+        "68836d2e-bd1f-4890-a112-62835e992bc6": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "8cfbfc40-796f-4b59-bf37-19e42280ab48": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5c809060-1150-4f5b-ae3a-68b268b12fe7": {
+            "68836d2e-bd1f-4890-a112-62835e992bc6": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "00b426e0-1641-4304-b326-c8dd3e17565f": {
+            "68836d2e-bd1f-4890-a112-62835e992bc6": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "outputs": {
+          "f19b5b9a-1ec1-4160-aafd-7d1a4e6efff5": {
+            "8cfbfc40-796f-4b59-bf37-19e42280ab48": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "attributes": {
+    "internal": true
+  }
+}

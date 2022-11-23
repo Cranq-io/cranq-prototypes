@@ -1,0 +1,85 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 11",
+  "interface": {
+    "inputs": {
+      "0ed00b37-c882-4dca-a75a-297a90d048b7": {
+        "type": "typeof `read` of `middlewares`",
+        "name": "configure",
+        "description": "[Inherited from port `read` of `middlewares`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+      }
+    },
+    "outputs": {
+      "e47858a8-d4e9-4e2a-bb77-f310783f440e": {
+        "type": "typeof `done` of `middlewares applicator`",
+        "name": "done"
+      },
+      "3ba38501-5e41-4f7f-bc6f-3fd1563aee0b": {
+        "type": "typeof `error` of `middlewares applicator`",
+        "name": "error",
+        "description": "[Inherited from port `error` of `middlewares applicator`] \nSends error information in case any of the specified the middlewares could not be applied."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fb216d3e-7064-47f6-96c2-65fd6d73b7ff": {
+          "coordinates": [
+            -68,
+            -44.5
+          ],
+          "name": "middlewares",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[\"cors\"]"
+          }
+        },
+        "a95b0c1c-130c-4a6b-b67a-3789122dd20c": {
+          "coordinates": [
+            68,
+            44.5
+          ],
+          "name": "middlewares applicator",
+          "prototype": "223c258a-c95c-4883-b843-500555539885",
+          "params": {
+            "61c9c665-4f1f-4cc7-bb80-d62178907edd": "\"server\""
+          }
+        }
+      },
+      "connections": {
+        "fb216d3e-7064-47f6-96c2-65fd6d73b7ff": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "a95b0c1c-130c-4a6b-b67a-3789122dd20c": {
+              "c25c69ad-ca69-4751-a265-81dab60504b7": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0ed00b37-c882-4dca-a75a-297a90d048b7": {
+            "fb216d3e-7064-47f6-96c2-65fd6d73b7ff": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "e47858a8-d4e9-4e2a-bb77-f310783f440e": {
+            "a95b0c1c-130c-4a6b-b67a-3789122dd20c": {
+              "775533fa-5012-4384-a88b-7130156e1fd4": {}
+            }
+          },
+          "3ba38501-5e41-4f7f-bc6f-3fd1563aee0b": {
+            "a95b0c1c-130c-4a6b-b67a-3789122dd20c": {
+              "cffbdc9b-3a76-4675-b92c-88a190da92c2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "internal": true
+  }
+}

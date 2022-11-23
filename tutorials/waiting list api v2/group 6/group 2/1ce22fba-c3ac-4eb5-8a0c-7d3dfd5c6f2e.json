@@ -1,0 +1,84 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 6/Group 2",
+  "interface": {
+    "inputs": {
+      "ca7ebd9e-19e6-4e47-9e49-5dff1e1f94d2": {
+        "type": "typeof `template` of `template filler`",
+        "name": "validation url",
+        "description": "[Inherited from port `template` of `template filler`] \nThe template to be filled"
+      },
+      "7828402d-efeb-4351-8ec8-d9051049c5af": {
+        "type": "typeof `params` of `template filler`",
+        "name": "subscription",
+        "description": "[Inherited from port `params` of `template filler`] \nThe actual parameters used for filling the template"
+      }
+    },
+    "outputs": {
+      "72b707c7-d2ea-4a56-8954-aad0262a9c7d": {
+        "type": "typeof `dict` of `item setter`",
+        "name": "variables",
+        "description": "[Inherited from port `dict` of `item setter`] \nSends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c80778bd-5b44-46c2-903b-185e32f28ef6": {
+          "coordinates": [
+            77.5,
+            -25.5
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}",
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"confirmation_link\""
+          }
+        },
+        "986e7d5b-4763-484f-bb77-2c7b5668a0e8": {
+          "coordinates": [
+            -77.5,
+            25.5
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67"
+        }
+      },
+      "connections": {
+        "986e7d5b-4763-484f-bb77-2c7b5668a0e8": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "c80778bd-5b44-46c2-903b-185e32f28ef6": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ca7ebd9e-19e6-4e47-9e49-5dff1e1f94d2": {
+            "986e7d5b-4763-484f-bb77-2c7b5668a0e8": {
+              "25aa567c-3316-4206-b42e-4cfe6a67b0c7": {}
+            }
+          },
+          "7828402d-efeb-4351-8ec8-d9051049c5af": {
+            "986e7d5b-4763-484f-bb77-2c7b5668a0e8": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "outputs": {
+          "72b707c7-d2ea-4a56-8954-aad0262a9c7d": {
+            "c80778bd-5b44-46c2-903b-185e32f28ef6": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "name": "data/Dictionary/Has key fork",
+  "interface": {
+    "inputs": {
+      "e57a3c4d-6843-4a14-82b9-7bf385bc585d": {
+        "type": "typeof `data` of `fork`",
+        "name": "dict",
+        "description": "[Inherited from port `data` of `fork`] \nReceives the data to be forwarded to either output."
+      },
+      "a5039ea6-7477-4a13-a0aa-8a327e9dcfc4": {
+        "type": "string",
+        "name": "key",
+        "description": "[Inherited from port `dict` of `has key tester`] \nReceives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    },
+    "outputs": {
+      "5c6f16f8-5f69-443f-a995-19ca99202716": {
+        "type": "typeof `on true` of `fork`",
+        "name": "on true",
+        "description": "[Inherited from port `on true` of `fork`] \nSends signal received via `data` when condition was true."
+      },
+      "530fbc2b-e1cd-45a0-8622-3dc8975cc6a3": {
+        "type": "typeof `on false` of `fork`",
+        "name": "on false",
+        "description": "[Inherited from port `on false` of `fork`] \nSends signal received via `data` when condition was false."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "e7deaa00-d600-4df0-a709-94a3db470a91": {
+          "coordinates": [
+            -15,
+            -66.5
+          ],
+          "name": "has key tester",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {}
+        },
+        "ea3e3780-7b5b-4133-9e43-8496cd20df16": {
+          "coordinates": [
+            57,
+            57.5
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "e7deaa00-d600-4df0-a709-94a3db470a91": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "ea3e3780-7b5b-4133-9e43-8496cd20df16": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a5039ea6-7477-4a13-a0aa-8a327e9dcfc4": {
+            "e7deaa00-d600-4df0-a709-94a3db470a91": {
+              "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": {}
+            }
+          },
+          "e57a3c4d-6843-4a14-82b9-7bf385bc585d": {
+            "e7deaa00-d600-4df0-a709-94a3db470a91": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            },
+            "ea3e3780-7b5b-4133-9e43-8496cd20df16": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "530fbc2b-e1cd-45a0-8622-3dc8975cc6a3": {
+            "ea3e3780-7b5b-4133-9e43-8496cd20df16": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          },
+          "5c6f16f8-5f69-443f-a995-19ca99202716": {
+            "ea3e3780-7b5b-4133-9e43-8496cd20df16": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {}
+}

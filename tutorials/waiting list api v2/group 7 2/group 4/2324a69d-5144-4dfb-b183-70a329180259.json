@@ -1,0 +1,84 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 7 2/Group 4",
+  "interface": {
+    "inputs": {
+      "925f29d4-cc38-48e9-8e38-b0f82e3b5fe2": {
+        "type": "typeof `request` of `request body getter`",
+        "name": "request",
+        "description": "[Inherited from port `request` of `request body getter`] \nReceives an HTTP request that has a body."
+      }
+    },
+    "outputs": {
+      "f5c1015d-de86-4e9c-8eed-67b790b0fb6e": {
+        "type": "typeof `not found` of `item getter`",
+        "name": "not found",
+        "description": "[Inherited from port `not found` of `item getter`] \nSends the input values, when the specified key is not found in the dictionary.\n\nExample:\n{ \"dict\":  { \"first\": 1, \"third\": 3, \"fifth\": 5 }, \"key\": \"second\" }"
+      },
+      "323982f5-d872-42e8-b6ca-36893eec676a": {
+        "type": "typeof `value` of `item getter`",
+        "name": "token",
+        "description": "[Inherited from port `value` of `item getter`] \nIf found, sends the value corresponding to the specified key.\n\nExample:\n1"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+          "coordinates": [
+            37,
+            28.333333333333314
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"token\""
+          }
+        },
+        "43e7cdc0-a1d4-41fc-95ca-2acab7608e59": {
+          "coordinates": [
+            -40.6640625,
+            -78.66666666666671
+          ],
+          "name": "query params getter",
+          "prototype": "3c2b2b2d-0790-4dd2-83a6-21b15c09c223"
+        }
+      },
+      "connections": {
+        "43e7cdc0-a1d4-41fc-95ca-2acab7608e59": {
+          "99ebb5db-866c-45a2-a3cd-ffa969dbd08f": {
+            "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "925f29d4-cc38-48e9-8e38-b0f82e3b5fe2": {
+            "43e7cdc0-a1d4-41fc-95ca-2acab7608e59": {
+              "bc400528-fea0-4547-ad9a-7b78f47c70dd": {}
+            }
+          }
+        },
+        "outputs": {
+          "f5c1015d-de86-4e9c-8eed-67b790b0fb6e": {
+            "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+              "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {}
+            }
+          },
+          "323982f5-d872-42e8-b6ca-36893eec676a": {
+            "b8e17168-a4c6-4471-bc1b-bfeba158f819": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "original": "6a7faaab-90e6-4fc4-bd5a-f9162445139b",
+  "attributes": {
+    "internal": true
+  }
+}

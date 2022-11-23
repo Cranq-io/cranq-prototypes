@@ -1,0 +1,59 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 7 2/Group",
+  "interface": {
+    "inputs": {
+      "93c8ba83-cb68-443c-8113-5702031ab7d9": {
+        "type": "typeof `tree` of `node setter (mutable) B`",
+        "name": "subscription",
+        "description": "[Inherited from port `tree` of `node setter (mutable) B`] \nTree data structure in which to store a node.\n\nWill be mutated."
+      }
+    },
+    "outputs": {
+      "af421268-4a7c-48e9-ad5f-c6770aca5d3b": {
+        "type": "typeof `modified tree` of `node setter (mutable) B`",
+        "name": "updated",
+        "description": "[Inherited from port `modified tree` of `node setter (mutable) B`] \nSends the modified tree"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+          "coordinates": [
+            5,
+            32
+          ],
+          "name": "set validation token",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"validated\"",
+            "0ab0c723-793b-48a1-87d5-d64267665bd3": "true"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "93c8ba83-cb68-443c-8113-5702031ab7d9": {
+            "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "af421268-4a7c-48e9-ad5f-c6770aca5d3b": {
+            "ea72c0c2-e6e8-45ee-a54f-cb2cb08e4756": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "original": "f0b00122-f92d-4d12-8453-e3d083fad9ba",
+  "attributes": {
+    "internal": true
+  }
+}

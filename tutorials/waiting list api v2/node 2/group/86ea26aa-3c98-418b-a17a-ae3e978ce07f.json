@@ -1,0 +1,76 @@
+{
+  "name": "tutorials/Waiting list API V2/Node 2/Group",
+  "interface": {
+    "inputs": {
+      "5c7a931f-75ca-46df-bbf9-691821ae6a57": {
+        "type": "typeof `read` of `store`",
+        "name": "API params",
+        "description": "[Inherited from port `read` of `store`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+      }
+    },
+    "outputs": {
+      "2d844e6a-1b95-4ab4-9e82-ebdfaf81300e": {
+        "type": "typeof `merged` of `merger`",
+        "name": "merged",
+        "description": "[Inherited from port `merged` of `merger`] \nSends the resulting merged dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "dcd84bb6-e8cb-492e-9951-d97857f3feaa": {
+          "coordinates": [
+            -37,
+            -59
+          ],
+          "name": "store",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"method\": \"GET\",\n  \"route\": \"/status\",\n  \"response\": {\n    \"contentType\": \"json\"\n  }\n}"
+          }
+        },
+        "69cb78e3-0ca9-4c51-a228-400f4052a1df": {
+          "coordinates": [
+            52,
+            39
+          ],
+          "name": "merger",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        }
+      },
+      "connections": {
+        "dcd84bb6-e8cb-492e-9951-d97857f3feaa": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "69cb78e3-0ca9-4c51-a228-400f4052a1df": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5c7a931f-75ca-46df-bbf9-691821ae6a57": {
+            "dcd84bb6-e8cb-492e-9951-d97857f3feaa": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "69cb78e3-0ca9-4c51-a228-400f4052a1df": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "2d844e6a-1b95-4ab4-9e82-ebdfaf81300e": {
+            "69cb78e3-0ca9-4c51-a228-400f4052a1df": {
+              "8357d165-4753-4d32-8c61-e3baff88d8ba": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true
+  }
+}

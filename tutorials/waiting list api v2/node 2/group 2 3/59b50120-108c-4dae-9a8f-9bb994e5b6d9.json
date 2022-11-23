@@ -1,0 +1,78 @@
+{
+  "name": "tutorials/Waiting list API V2/Node 2/Group 2 3",
+  "interface": {
+    "inputs": {
+      "a260a5a6-49eb-48f6-9d42-fa19e6251f1b": {
+        "type": "typeof `read` of `body OK`",
+        "name": "read",
+        "description": "[Inherited from port `read` of `body OK`] \nReceives a signal that triggers the contents being sent via `data` (output), or `not found` when has no content."
+      }
+    },
+    "outputs": {
+      "21ef0336-95cb-4291-9a59-2626d536798a": {
+        "type": "typeof `response` of `json response builder`",
+        "name": "response",
+        "description": "[Inherited from port `response` of `json response builder`] \n[Inherited from port `response` of `response builder`] \nSends the constructed HTTP response."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "404bdf61-2c09-444c-bd60-8cee0af87535": {
+          "coordinates": [
+            55,
+            -37
+          ],
+          "name": "json response builder",
+          "prototype": "82cf508e-5b08-43de-8c18-9e471f861c18",
+          "params": {
+            "3dc7c85c-32fc-4a1f-844f-b04f9cfe58a5": "200",
+            "556eb4c9-5de3-4464-825a-5d563ee509cd": "{}"
+          }
+        },
+        "752f9631-bf85-417d-8e3f-72c78c1bde61": {
+          "coordinates": [
+            -55,
+            37
+          ],
+          "name": "body OK",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"healthy\": true\n}"
+          }
+        }
+      },
+      "connections": {
+        "752f9631-bf85-417d-8e3f-72c78c1bde61": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "404bdf61-2c09-444c-bd60-8cee0af87535": {
+              "0d360a28-ed3a-4cc4-955a-2323b13b7378": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a260a5a6-49eb-48f6-9d42-fa19e6251f1b": {
+            "752f9631-bf85-417d-8e3f-72c78c1bde61": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "outputs": {
+          "21ef0336-95cb-4291-9a59-2626d536798a": {
+            "404bdf61-2c09-444c-bd60-8cee0af87535": {
+              "586c53e2-1fb7-4e93-a022-1b0aca6833d9": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "original": "741a5357-e01c-4f80-86c9-ed3c560d5405",
+  "attributes": {
+    "internal": true
+  }
+}

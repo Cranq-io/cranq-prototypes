@@ -1,0 +1,112 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 5/Group",
+  "interface": {
+    "inputs": {
+      "acf2d0f8-270d-4a74-bf66-8814e8156825": {
+        "type": "typeof `dict` of `item getter`",
+        "name": "subscription",
+        "description": "[Inherited from port `dict` of `item getter`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    },
+    "outputs": {
+      "c3ad8534-58ba-41b9-a814-c440ec1a1574": {
+        "type": "typeof `dict` of `item setter`",
+        "name": "dict",
+        "description": "[Inherited from port `dict` of `item setter`] \nSends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1299a1cb-3e7a-429c-ae9c-8aec9cf7b170": {
+          "coordinates": [
+            -81,
+            -77.5
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"AT_id\""
+          }
+        },
+        "8b3452e5-da6e-49b5-a55b-a9141e23b0d0": {
+          "coordinates": [
+            -68,
+            65.5
+          ],
+          "name": "item deleter",
+          "prototype": "73a9fd6e-d594-4efc-a0ae-acf4ab89b577",
+          "params": {
+            "091d8b21-8ac5-47c6-8dd3-c5b1e533da66": "\"AT_id\""
+          }
+        },
+        "facab794-ff82-4c51-a4ec-1fcc9a2fff7f": {
+          "coordinates": [
+            44,
+            24.5
+          ],
+          "name": "record to airtable record converter B",
+          "prototype": "e419e106-2619-4778-a199-51a92a9f1eac"
+        },
+        "7721b198-cb4f-4e1c-b460-6aabc3bc1fc4": {
+          "coordinates": [
+            134,
+            -52.5
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"id\""
+          }
+        }
+      },
+      "connections": {
+        "8b3452e5-da6e-49b5-a55b-a9141e23b0d0": {
+          "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
+            "facab794-ff82-4c51-a4ec-1fcc9a2fff7f": {
+              "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {}
+            }
+          }
+        },
+        "1299a1cb-3e7a-429c-ae9c-8aec9cf7b170": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "7721b198-cb4f-4e1c-b460-6aabc3bc1fc4": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "facab794-ff82-4c51-a4ec-1fcc9a2fff7f": {
+          "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+            "7721b198-cb4f-4e1c-b460-6aabc3bc1fc4": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "acf2d0f8-270d-4a74-bf66-8814e8156825": {
+            "1299a1cb-3e7a-429c-ae9c-8aec9cf7b170": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "8b3452e5-da6e-49b5-a55b-a9141e23b0d0": {
+              "af51c64a-620a-42e7-83e4-0497df3f0a65": {}
+            }
+          }
+        },
+        "outputs": {
+          "c3ad8534-58ba-41b9-a814-c440ec1a1574": {
+            "7721b198-cb4f-4e1c-b460-6aabc3bc1fc4": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "attributes": {
+    "internal": true
+  }
+}

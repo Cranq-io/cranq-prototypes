@@ -1,0 +1,53 @@
+{
+  "name": "tutorials/Waiting list API V2/Node 1/Group 3",
+  "interface": {
+    "inputs": {
+      "a033122a-badf-465d-bb58-d031ff890cce": {
+        "type": "typeof `data` of `fork`",
+        "name": "data",
+        "description": "[Inherited from port `data` of `fork`] \nReceives the data to be forwarded to either output."
+      }
+    },
+    "outputs": {
+      "35f625a0-6ef3-4b87-961e-5d69c3d254b5": {
+        "type": "typeof `on true` of `fork`",
+        "name": "registered",
+        "description": "[Inherited from port `on true` of `fork`] \nSends signal received via `data` when condition was true."
+      },
+      "e8ca6e7f-ce4e-4ed6-bc42-e8f4f087f3dd": {
+        "type": "typeof `on false` of `fork`",
+        "name": "not registered",
+        "description": "[Inherited from port `on false` of `fork`] \nSends signal received via `data` when condition was false."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "66db52a7-4190-4ca6-ba5e-66ae9bd7f9cf": {
+          "coordinates": [
+            -74.9921875,
+            -47.7421875
+          ],
+          "name": "is registered?",
+          "prototype": "e408f545-5648-47e7-9392-6c39c0dd14d1"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "a033122a-badf-465d-bb58-d031ff890cce": {
+            "66db52a7-4190-4ca6-ba5e-66ae9bd7f9cf": {
+              "9af252dc-4c84-4abc-81ab-8a684f13674f": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "internal": true
+  }
+}

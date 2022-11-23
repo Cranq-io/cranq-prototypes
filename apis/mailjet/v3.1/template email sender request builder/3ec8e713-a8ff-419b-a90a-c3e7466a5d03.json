@@ -1,0 +1,145 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b359f482-29f9-4020-8c92-b859b5c74e43": {
+          "coordinates": [
+            -16,
+            -90
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"From\", \"To\", \"Subject\", \"TemplateID\", \"TemplateLanguage\", \"Variables\"]",
+            "TemplateLanguage": "true"
+          }
+        },
+        "3fe3101d-9834-407f-81fa-463e17a1d17d": {
+          "coordinates": [
+            143,
+            14
+          ],
+          "name": "builder (key & value)",
+          "prototype": "ad0c8e3a-6cd9-4a4e-b056-26d730fecf28",
+          "params": {
+            "4cb1e461-05c1-4454-940e-5b7657cb916e": "\"messages\""
+          }
+        },
+        "24eea9ec-b34c-4fa3-be18-175123d94553": {
+          "coordinates": [
+            -20,
+            131
+          ],
+          "name": "builder",
+          "prototype": "28bc82de-76de-427e-8e2c-f0114cee3475",
+          "params": {
+            "ed11e46e-595d-4515-8681-ff35c7a555c6": "1"
+          }
+        }
+      },
+      "connections": {
+        "24eea9ec-b34c-4fa3-be18-175123d94553": {
+          "c0facb18-50d6-464f-8c91-d6255080b146": {
+            "3fe3101d-9834-407f-81fa-463e17a1d17d": {
+              "8b675c7e-77b3-4fc6-b065-adbedf46b485": {}
+            }
+          }
+        },
+        "b359f482-29f9-4020-8c92-b859b5c74e43": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "24eea9ec-b34c-4fa3-be18-175123d94553": {
+              "2813c5a2-d4d6-42ce-a52f-9def6df97814": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": {
+            "b359f482-29f9-4020-8c92-b859b5c74e43": {
+              "From": {}
+            }
+          },
+          "2b455e13-9320-4dac-a64c-f963ab2aeb3c": {
+            "b359f482-29f9-4020-8c92-b859b5c74e43": {
+              "To": {}
+            }
+          },
+          "f9ff3874-2289-43c7-8033-e369604fa165": {
+            "b359f482-29f9-4020-8c92-b859b5c74e43": {
+              "Subject": {}
+            }
+          },
+          "86ac9b36-1667-431c-af70-a52d96dd8ec5": {
+            "b359f482-29f9-4020-8c92-b859b5c74e43": {
+              "TemplateID": {}
+            }
+          },
+          "8508ade8-2825-462e-9ac7-3949eb19dcca": {
+            "b359f482-29f9-4020-8c92-b859b5c74e43": {
+              "Variables": {}
+            }
+          }
+        },
+        "outputs": {
+          "ba493bb0-5e08-4904-869f-e8854341976d": {
+            "3fe3101d-9834-407f-81fa-463e17a1d17d": {
+              "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+                "description": "undefined\nundefined"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": {
+        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}",
+        "name": "from",
+        "description": "Receives the sender."
+      },
+      "2b455e13-9320-4dac-a64c-f963ab2aeb3c": {
+        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}[]",
+        "name": "to",
+        "description": "Receives the recipients."
+      },
+      "f9ff3874-2289-43c7-8033-e369604fa165": {
+        "type": "string",
+        "name": "subject",
+        "description": "Receives the subject."
+      },
+      "86ac9b36-1667-431c-af70-a52d96dd8ec5": {
+        "type": "number",
+        "name": "template id",
+        "description": "Receives the TemplateID."
+      },
+      "8508ade8-2825-462e-9ac7-3949eb19dcca": {
+        "type": "{string:any}",
+        "name": "variables",
+        "description": "Receives the template variables."
+      }
+    },
+    "outputs": {
+      "ba493bb0-5e08-4904-869f-e8854341976d": {
+        "type": "{\n  \"Messages\": {\n    \"From\": {\n      \"Email\": string,\n      \"Name\": string\n    },\n    \"To\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    \"Subject\": string,\n    \"TemplateLanguage\": true,\n    \"TemplateID\": number,\n    \"Variables\": typeof `variables`\n  }[]\n}",
+        "name": "request",
+        "description": "Sends the constructed request to be used by the `apis/mailjet/v3.1/Email sender` node."
+      }
+    }
+  },
+  "name": "apis/mailjet/v3.1/Template email sender request builder",
+  "iconId": "b625ef15-10fb-42c7-8177-242d8d7ef6e9",
+  "keywords": {
+    "email": null,
+    "send": null,
+    "mailjet": null,
+    "message": null,
+    "build": null,
+    "template": null
+  },
+  "description": "Constructs a single-email request, based on the specified template, to be used by the `apis/mailjet/v3.1/Email sender` node, with the parameters received.",
+  "original": "5d236262-2f39-4b97-8ae4-59772de68841",
+  "attributes": {}
+}

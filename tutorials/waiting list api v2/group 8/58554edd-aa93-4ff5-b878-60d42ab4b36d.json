@@ -1,0 +1,135 @@
+{
+  "name": "tutorials/Waiting list API V2/Group 8",
+  "interface": {
+    "inputs": {
+      "65161dba-26c1-408a-bf88-354e2334e15d": {
+        "type": "typeof `read` of `env variable names`",
+        "name": "read",
+        "description": "[Inherited from port `read` of `env variable names`] \nReceives signal that triggers sending out the stored parameter value."
+      }
+    },
+    "outputs": {
+      "f3e64b3c-17a2-40f9-837c-2a09e5a1fe7a": {
+        "type": "typeof `empty` of `emptiness tester`",
+        "name": "ok",
+        "description": "[Inherited from port `empty` of `emptiness tester`] \nSends whether the `array` does not contain any element.\n\nExample:\ntrue"
+      },
+      "40995edb-ea75-4cb4-bc6a-26cc8da11aa8": {
+        "type": "typeof `API_params` of `splitter`",
+        "name": "API_params",
+        "description": "[Inherited from port `API_params` of `splitter`] \nSends input data split into individual fields."
+      },
+      "aa7d2178-87a5-46e3-a42f-2ffce5253d95": {
+        "type": "typeof `MailJet_params` of `splitter`",
+        "name": "MailJet_params",
+        "description": "[Inherited from port `MailJet_params` of `splitter`] \nSends input data split into individual fields."
+      },
+      "96767c71-5ca1-41a4-a74a-7f28e3381bad": {
+        "type": "typeof `AT_params` of `splitter`",
+        "name": "AT_params",
+        "description": "[Inherited from port `AT_params` of `splitter`] \nSends input data split into individual fields."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5ccdba1b-6023-47d3-8eb7-cb1674e5d495": {
+          "coordinates": [
+            -131,
+            104.5
+          ],
+          "name": "environment variables getter",
+          "prototype": "6fef4921-1b64-4155-b4f5-9da367b90103",
+          "params": {}
+        },
+        "6d7a319d-ac70-47a1-b460-10bdfab4a995": {
+          "coordinates": [
+            -225,
+            -27.5
+          ],
+          "name": "env variable names",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "[\"API_params\", \"AT_params\", \"MailJet_params\"]"
+          }
+        },
+        "dd5b498c-d3e9-40a9-958e-639a97b3a031": {
+          "coordinates": [
+            123,
+            -96.5
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"API_params\", \"AT_params\", \"MailJet_params\"]"
+          }
+        },
+        "3a11f30d-7c5c-422b-9a69-b53e77ba1daa": {
+          "coordinates": [
+            25,
+            169.5
+          ],
+          "name": "emptiness tester",
+          "prototype": "4100c620-45a7-4e36-b3d6-4252cc616d1e"
+        }
+      },
+      "connections": {
+        "6d7a319d-ac70-47a1-b460-10bdfab4a995": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "5ccdba1b-6023-47d3-8eb7-cb1674e5d495": {
+              "792013f3-4e43-4047-97e3-f7e4df0e08cb": {}
+            }
+          }
+        },
+        "5ccdba1b-6023-47d3-8eb7-cb1674e5d495": {
+          "299c4c0e-ad44-48c1-a77f-a3849ddc7d1e": {
+            "dd5b498c-d3e9-40a9-958e-639a97b3a031": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "de71284c-df99-4f10-a614-903d9777e6dd": {
+            "3a11f30d-7c5c-422b-9a69-b53e77ba1daa": {
+              "904fc9f3-3583-49e0-8c33-6e5ffd7e65a6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "65161dba-26c1-408a-bf88-354e2334e15d": {
+            "6d7a319d-ac70-47a1-b460-10bdfab4a995": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "f3e64b3c-17a2-40f9-837c-2a09e5a1fe7a": {
+            "3a11f30d-7c5c-422b-9a69-b53e77ba1daa": {
+              "dbb99a85-ea24-4922-b098-994987c8a10f": {}
+            }
+          },
+          "40995edb-ea75-4cb4-bc6a-26cc8da11aa8": {
+            "dd5b498c-d3e9-40a9-958e-639a97b3a031": {
+              "API_params": {}
+            }
+          },
+          "aa7d2178-87a5-46e3-a42f-2ffce5253d95": {
+            "dd5b498c-d3e9-40a9-958e-639a97b3a031": {
+              "MailJet_params": {}
+            }
+          },
+          "96767c71-5ca1-41a4-a74a-7f28e3381bad": {
+            "dd5b498c-d3e9-40a9-958e-639a97b3a031": {
+              "AT_params": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "attributes": {
+    "internal": true
+  }
+}

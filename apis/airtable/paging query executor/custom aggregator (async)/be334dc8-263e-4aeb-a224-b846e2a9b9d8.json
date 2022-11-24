@@ -1,0 +1,57 @@
+{
+  "implementations": {
+    "es6": {
+      "initFunction": "state.aggregated = state.aggregated || [];",
+      "inputFunctions": {
+        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",
+        "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
+      }
+    },
+    "es6-node": {
+      "initFunction": "state.aggregated = state.aggregated || [];",
+      "inputFunctions": {
+        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);\noutputs.received(data, tag);",
+        "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "86fe0f3a-e1c5-425e-b832-e056c31adec2": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives data items to be aggregated."
+      },
+      "e08ac6a2-b556-455a-8271-fa730e5b2366": {
+        "type": "any",
+        "name": "release",
+        "description": "Receives signal to release aggregated inputs. Independent of `data`."
+      }
+    },
+    "outputs": {
+      "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {
+        "type": "typeof `data`[]",
+        "name": "aggregated",
+        "description": "Sends the aggregated data."
+      },
+      "ff27e460-9229-4f6b-9032-7273ada788e7": {
+        "type": "any",
+        "name": "received"
+      }
+    }
+  },
+  "name": "apis/airtable/Paging query executor/Custom aggregator (async)",
+  "description": "Aggregates inputs into an array until released.\n\nThe `release` signal is received and processed independently from those received via `data`. (As opposed to `flow/Aggregator`.)\n\nThe output reflects the order as received through `data`. \n\nExample:\n1. \"a\"@0 is received via `data`\n2. \"b\"@1 is received via `data`\n3. null@2 is received via `release`\n5. [\"a\", \"b\"]@2 is sent via `aggregated`",
+  "keywords": {
+    "aggregate": null,
+    "collect": null,
+    "accumulate": null,
+    "burst": null
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "bca9d1a1-0963-430c-b523-3fb52e2851cc",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

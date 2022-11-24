@@ -1,0 +1,118 @@
+{
+  "name": "apis/airtable/Query sort adder/Group",
+  "interface": {
+    "inputs": {
+      "eb8ac420-dddf-4d51-ad04-10597f249f46": {
+        "type": "typeof `dict` of `has key tester`",
+        "name": "query",
+        "description": "[Inherited from port `dict` of `has key tester`] \nReceives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      }
+    },
+    "outputs": {
+      "9d12e972-712d-4cdc-9fb0-6b8881219fdf": {
+        "type": "typeof `data` of `default`",
+        "name": "sorts",
+        "description": "[Inherited from port `data` of `default`] \nSends store contents."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "53dd4ab6-9223-471d-b3a8-4ff32b2c2443": {
+          "coordinates": [
+            -138.5,
+            -83.625
+          ],
+          "name": "has key tester",
+          "prototype": "4e077cdd-36d3-43d4-b206-3a4386a748ba",
+          "params": {
+            "d1abdb29-7cc9-4d41-8b20-9594e3e9504c": "\"sort\""
+          }
+        },
+        "75e174c7-c30f-4e1f-99f4-796bb2ff51bb": {
+          "coordinates": [
+            -56.5,
+            49.375
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "0c2f6fb9-e0f0-485c-abdb-70e2d3f084b2": {
+          "coordinates": [
+            106.5,
+            86.375
+          ],
+          "name": "default",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "[]"
+          }
+        },
+        "3c9860eb-e9f2-413d-ae7c-cd5b71ab357e": {
+          "coordinates": [
+            90.5,
+            -71.125
+          ],
+          "name": "is array",
+          "prototype": "19aa85fb-32fd-4877-a6c8-96aa1865e89e"
+        }
+      },
+      "connections": {
+        "53dd4ab6-9223-471d-b3a8-4ff32b2c2443": {
+          "1f6bf4d0-2058-4552-9e89-1a67a502a762": {
+            "75e174c7-c30f-4e1f-99f4-796bb2ff51bb": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "75e174c7-c30f-4e1f-99f4-796bb2ff51bb": {
+          "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {
+            "0c2f6fb9-e0f0-485c-abdb-70e2d3f084b2": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {
+            "3c9860eb-e9f2-413d-ae7c-cd5b71ab357e": {
+              "498fba4a-b825-49aa-a999-b46f46c9bc46": {}
+            }
+          }
+        },
+        "3c9860eb-e9f2-413d-ae7c-cd5b71ab357e": {
+          "528c4d5c-16b3-47a1-9128-2c63c8a78ed1": {
+            "0c2f6fb9-e0f0-485c-abdb-70e2d3f084b2": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "eb8ac420-dddf-4d51-ad04-10597f249f46": {
+            "53dd4ab6-9223-471d-b3a8-4ff32b2c2443": {
+              "9debb883-e28c-42e7-8680-6e479e795d0d": {}
+            },
+            "75e174c7-c30f-4e1f-99f4-796bb2ff51bb": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "9d12e972-712d-4cdc-9fb0-6b8881219fdf": {
+            "0c2f6fb9-e0f0-485c-abdb-70e2d3f084b2": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            },
+            "3c9860eb-e9f2-413d-ae7c-cd5b71ab357e": {
+              "54739c09-5a28-4237-9e38-38e8aed6b189": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

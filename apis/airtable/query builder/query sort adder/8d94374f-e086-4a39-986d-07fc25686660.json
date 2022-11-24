@@ -1,0 +1,162 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c79e5ecd-1df8-45e7-8c84-22b0b8a5897a": {
+          "coordinates": [
+            100,
+            98
+          ],
+          "name": "item appender",
+          "prototype": "9882ea6b-43da-4a1f-b660-689da949c8f2"
+        },
+        "fe158eea-6112-47be-9626-41b6c644ce2e": {
+          "coordinates": [
+            -54.5,
+            -5.375
+          ],
+          "name": "has sorts or default",
+          "prototype": "46413ac8-08f7-4112-a959-4c1959971e68"
+        },
+        "4e23d528-ae0a-4b8c-8065-0fbca03f09ca": {
+          "coordinates": [
+            -119,
+            155
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"field\", \"direction\"]"
+          }
+        },
+        "6df40bd7-e9eb-4fc0-afa5-1af1420e4096": {
+          "coordinates": [
+            -228,
+            -74
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "bf82aac6-69f0-4c92-926c-ceff4913ec25": {
+          "coordinates": [
+            161,
+            -50
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"sort\""
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "81dceb3c-3bf5-4e2b-99f9-b30e4a97a2d0": {
+            "6df40bd7-e9eb-4fc0-afa5-1af1420e4096": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "50f5307f-27a3-4be9-87db-39041e183708": {
+            "6df40bd7-e9eb-4fc0-afa5-1af1420e4096": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "07ebc33b-8ef0-45a8-a7fe-af760fc24701": {
+            "6df40bd7-e9eb-4fc0-afa5-1af1420e4096": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "e055c747-523c-495e-b6cb-c4fddc083f42": {
+            "bf82aac6-69f0-4c92-926c-ceff4913ec25": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "fe158eea-6112-47be-9626-41b6c644ce2e": {
+          "9d12e972-712d-4cdc-9fb0-6b8881219fdf": {
+            "c79e5ecd-1df8-45e7-8c84-22b0b8a5897a": {
+              "5cbbb232-d9b4-4d06-9db0-e548e44e43b6": {}
+            }
+          }
+        },
+        "6df40bd7-e9eb-4fc0-afa5-1af1420e4096": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "fe158eea-6112-47be-9626-41b6c644ce2e": {
+              "eb8ac420-dddf-4d51-ad04-10597f249f46": {}
+            },
+            "bf82aac6-69f0-4c92-926c-ceff4913ec25": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "4e23d528-ae0a-4b8c-8065-0fbca03f09ca": {
+              "field": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "4e23d528-ae0a-4b8c-8065-0fbca03f09ca": {
+              "direction": {}
+            }
+          }
+        },
+        "4e23d528-ae0a-4b8c-8065-0fbca03f09ca": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "c79e5ecd-1df8-45e7-8c84-22b0b8a5897a": {
+              "2d02022b-c114-4207-935e-11490a6c2926": {}
+            }
+          }
+        },
+        "c79e5ecd-1df8-45e7-8c84-22b0b8a5897a": {
+          "092ca265-7614-4182-9d9f-bd325c094abb": {
+            "bf82aac6-69f0-4c92-926c-ceff4913ec25": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "81dceb3c-3bf5-4e2b-99f9-b30e4a97a2d0": {
+        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "name": "query",
+        "description": "Receives the AirTable query to extend. To start a new one, set `{}`."
+      },
+      "50f5307f-27a3-4be9-87db-39041e183708": {
+        "type": "string",
+        "name": "field name",
+        "description": "Receives the field name to sort by."
+      },
+      "07ebc33b-8ef0-45a8-a7fe-af760fc24701": {
+        "type": "(\"asc\" or \"desc\")",
+        "name": "direction",
+        "description": "Receives the direction in which to sort."
+      }
+    },
+    "outputs": {
+      "e055c747-523c-495e-b6cb-c4fddc083f42": {
+        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "name": "query",
+        "description": "Sends the resulting query."
+      }
+    }
+  },
+  "name": "apis/airtable/query builder/Query sort adder",
+  "original": "18a52d6d-20f5-49a6-b54a-10e2c16a09c0",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "description": "Adds sorting to an AirTable query.\n\nExecute the resulting query with the `apis/airtable/Query executor` node.",
+  "keywords": {
+    "airtable": null,
+    "query": null,
+    "sort": null,
+    "add": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

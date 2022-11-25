@@ -9,7 +9,7 @@
         "description": "Receives the connection string to a node provider.\nThe received data can be single string or can be a wider credentials record that has a providerUrl field."
       },
       "11a940f6-291f-4aaa-895e-57167ba88e2a": {
-        "type": "{\n\"price limit\": number,\noptional \"polling interval\": number,\noptional \"auto delay\": boolean\n}",
+        "type": "{\n  \"price limit\": number,\n  \"polling interval\": number,\n  \"auto delay\": boolean\n}",
         "name": "settings",
         "description": "Receives the parameters to poll and compare actual prices with the desired value.\n\nprice limit: the actual gas price must be equal or less than this value to send it to the output.\n\npolling interval: the minimum time that must elapse between subsequent polls.\n\nauto delay: enables temporarily increasing the next poll interval based on the last observed gas price. (Price change is limited between subsequent blocks on Ethereum) \n"
       }

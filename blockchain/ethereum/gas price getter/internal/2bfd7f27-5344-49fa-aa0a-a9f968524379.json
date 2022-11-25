@@ -1,0 +1,40 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "web3": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "47948633-8f3e-451c-bd33-cfdf9a33a9f6": "const providerUrl = (typeof data === \"object\") ? data[\"provider url\"] : data;\nconst priceLimit = data[\"price limit\"];\nconst pollingInterval = data[\"polling interval\"];\nconst autoDelay = data[\"auto delay\"] || false;\n\nif (\n  (providerUrl === undefined) ||\n  //  Price trigger parameters must either all be defined or none of them\n  ((priceLimit === undefined) != (pollingInterval === undefined))\n){\n  throw new Error(\"Input data is invalid. Please check it complies with type!\");\n}\n\nif (priceLimit && (priceLimit <= 0)){\n  throw new Error(\"If price limit is provided it must be strictly positive\");\n}\n\nconst Web3 = require(\"web3\");\nconst web3 = new Web3(providerUrl);\n\nconst checkGasPrice = () => {\n  web3.eth.getGasPrice(\n    (error, gasPrice) => {\n      if (error) {\n        outputs[\"error\"]({error: error.toString()}, tag);\n      } else {\n        handleActualPrice(gasPrice)\n      }\n    }\n  );\n};\n\nfunction handleActualPrice(gasPriceWei){\n  const gasPriceGWei = gasPriceWei / 1e9;\n  if (priceLimit === undefined || gasPriceGWei <= priceLimit){\n    outputs[\"gas price\"](gasPriceGWei, tag);\n  }\n  else{\n    //  priceLimit was defined, so we are in poll'n trigger mode\n    const delay = (autoDelay) ? calculateAutoDelay(gasPriceGWei) : pollingInterval;\n    setTimeout(()=>{checkGasPrice()}, delay);\n  }\n}\n\nfunction calculateAutoDelay(gasPriceGWei){\n  if (!gasPriceGWei){\n    return pollingInterval;\n  }\n\n  const delay = Math.max(\n    Math.floor(Math.log(priceLimit / gasPriceGWei)/Math.log(0.875)) * 12000,\n    pollingInterval);\n\n  return delay;\n}\n\ncheckGasPrice();"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "47948633-8f3e-451c-bd33-cfdf9a33a9f6": {
+        "type": "(\n  {\"providerUrl\": string} \n  or string\n)",
+        "name": "provider url"
+      }
+    },
+    "outputs": {
+      "7e872669-e0c1-4ebe-a7d6-75ba6c3cd5b9": {
+        "type": "any",
+        "name": "gas price"
+      },
+      "968befee-5d20-4262-a4ac-84126cdd70db": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Gas price getter/Internal",
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

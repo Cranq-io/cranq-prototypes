@@ -1,0 +1,117 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/subscribe/response builder",
+  "interface": {
+    "inputs": {
+      "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
+        "type": "any",
+        "name": "build OK",
+        "description": ""
+      },
+      "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {
+        "type": "any",
+        "name": "build bad req",
+        "description": ""
+      },
+      "409632d4-89b7-4860-a034-0efa6bc3521b": {
+        "type": "any",
+        "name": "build conflict"
+      },
+      "e1444412-e063-4500-aa81-929ef4c4d84a": {
+        "type": "any",
+        "name": "build error"
+      }
+    },
+    "outputs": {
+      "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+        "type": "typeof `response` of `build OK`",
+        "name": "response",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
+          "coordinates": [
+            -3,
+            -171.5
+          ],
+          "name": "build OK",
+          "prototype": "a9ef6844-4d49-4ccc-a8f1-4e836eb21541"
+        },
+        "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
+          "coordinates": [
+            -4,
+            -64.5
+          ],
+          "name": "build 400",
+          "prototype": "77ab335d-c4f3-48b0-895f-6b52329c6d1e"
+        },
+        "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
+          "coordinates": [
+            -3,
+            157.5
+          ],
+          "name": "build 500",
+          "prototype": "faf50ef7-fd82-44ae-9b9c-d4948bed908d"
+        },
+        "3c9b9566-3270-4092-bcea-6537b70e57d0": {
+          "coordinates": [
+            0,
+            53.5
+          ],
+          "name": "build duplicate",
+          "prototype": "1e39f190-1b6a-40e9-a582-2cf23f916606"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {
+            "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          },
+          "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {
+            "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          },
+          "e1444412-e063-4500-aa81-929ef4c4d84a": {
+            "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          },
+          "409632d4-89b7-4860-a034-0efa6bc3521b": {
+            "3c9b9566-3270-4092-bcea-6537b70e57d0": {
+              "ee04ebd5-8253-413b-b9cc-ae64a6461055": {}
+            }
+          }
+        },
+        "outputs": {
+          "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+            "42602edd-e29c-4192-81cf-8fc5f8f5152d": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            },
+            "c6ad9c78-8d36-4ec0-b3de-8fee57e7404b": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            },
+            "bf6bb519-0cd2-4e53-9871-fc6e0d40ef15": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            },
+            "3c9b9566-3270-4092-bcea-6537b70e57d0": {
+              "9eb87a80-22ce-4089-9004-0e60867b7b79": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "ffe26f46-9ee8-47ab-b383-0b605b9c7da6",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/subscribe/airtable repo",
+  "interface": {
+    "inputs": {
+      "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {
+        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "name": "subscription",
+        "description": ""
+      },
+      "3af901df-f037-4be3-bd9c-7de6f186b98f": {
+        "type": "typeof `params` of `record inserter`",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {
+        "type": "typeof `error` of `record inserter`",
+        "name": "error",
+        "description": ""
+      },
+      "7b151a8d-7870-4e11-972a-fb845dd793d5": {
+        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "name": "subscription",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+          "coordinates": [
+            143.75,
+            158
+          ],
+          "name": "record inserter",
+          "prototype": "909b0a7b-d472-4247-bea4-21d76dd85511"
+        },
+        "797d7a19-d8de-49f2-8948-223662327124": {
+          "coordinates": [
+            164.2578125,
+            -176.9140625
+          ],
+          "name": "record updater",
+          "prototype": "f7fe9e5d-7948-41de-8609-69df7ef3fff1"
+        },
+        "b219ef20-8b31-41a5-954c-bd1694578e2a": {
+          "coordinates": [
+            -270.7421875,
+            -80.4140625
+          ],
+          "name": "has id?",
+          "prototype": "6dc39005-b6d5-414d-9f1c-a6ca51d8796f",
+          "params": {
+            "a5039ea6-7477-4a13-a0aa-8a327e9dcfc4": "\"AT_id\""
+          }
+        },
+        "a68e6175-7309-46fd-a6a7-8a2571b66086": {
+          "coordinates": [
+            8.2578125,
+            102.0859375
+          ],
+          "name": "wrap for insert",
+          "prototype": "e419e106-2619-4778-a199-51a92a9f1eac"
+        },
+        "9dd1fc51-76f3-43d7-ad22-18d8fbbdb8e6": {
+          "coordinates": [
+            3.2578125,
+            -214.4140625
+          ],
+          "name": "wrap for update",
+          "prototype": "8ffeb954-f2ee-49d3-8624-bb8fc3cc1b92"
+        },
+        "533f7a36-1cc4-423d-823b-4cb44cdaa841": {
+          "coordinates": [
+            300.2578125,
+            -19.9140625
+          ],
+          "name": "buffer",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        }
+      },
+      "connections": {
+        "b219ef20-8b31-41a5-954c-bd1694578e2a": {
+          "530fbc2b-e1cd-45a0-8622-3dc8975cc6a3": {
+            "a68e6175-7309-46fd-a6a7-8a2571b66086": {
+              "e9cc5e51-213d-430e-ac75-2f039a4e9f33": {}
+            }
+          },
+          "5c6f16f8-5f69-443f-a995-19ca99202716": {
+            "9dd1fc51-76f3-43d7-ad22-18d8fbbdb8e6": {
+              "acf2d0f8-270d-4a74-bf66-8814e8156825": {}
+            }
+          }
+        },
+        "a68e6175-7309-46fd-a6a7-8a2571b66086": {
+          "9e493f2c-4bfe-4803-94e9-54574dc91ff9": {
+            "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+              "fd17c7a6-833e-4585-abf6-933387a0a47a": {}
+            }
+          }
+        },
+        "9dd1fc51-76f3-43d7-ad22-18d8fbbdb8e6": {
+          "c3ad8534-58ba-41b9-a814-c440ec1a1574": {
+            "797d7a19-d8de-49f2-8948-223662327124": {
+              "9b88e435-4f58-4c07-926e-94baf6e9c340": {}
+            }
+          }
+        },
+        "797d7a19-d8de-49f2-8948-223662327124": {
+          "d75e369c-d474-482e-a47b-e7068a6d3ae4": {
+            "533f7a36-1cc4-423d-823b-4cb44cdaa841": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+          "1adf578c-ed11-4554-935d-90eb0fbdf966": {
+            "533f7a36-1cc4-423d-823b-4cb44cdaa841": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3af901df-f037-4be3-bd9c-7de6f186b98f": {
+            "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+              "a9ed6b36-3134-42ce-b478-f84a0e013f88": {}
+            },
+            "797d7a19-d8de-49f2-8948-223662327124": {
+              "37fc2924-0221-44ab-a325-07df2836bc1f": {}
+            }
+          },
+          "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {
+            "b219ef20-8b31-41a5-954c-bd1694578e2a": {
+              "e57a3c4d-6843-4a14-82b9-7bf385bc585d": {}
+            },
+            "533f7a36-1cc4-423d-823b-4cb44cdaa841": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "outputs": {
+          "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {
+            "6389125c-b47d-4fb6-95ec-93f91ecd64b8": {
+              "038fb87a-68af-4081-9487-c8439a1f9954": {}
+            },
+            "797d7a19-d8de-49f2-8948-223662327124": {
+              "26ddc458-32eb-472a-8902-62e05c154332": {}
+            }
+          },
+          "7b151a8d-7870-4e11-972a-fb845dd793d5": {
+            "533f7a36-1cc4-423d-823b-4cb44cdaa841": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "original": "742bda5b-9e2c-48fa-8f70-b198f63875a8",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

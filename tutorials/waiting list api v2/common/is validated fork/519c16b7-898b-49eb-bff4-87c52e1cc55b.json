@@ -1,0 +1,110 @@
+{
+  "name": "tutorials/Waiting list API V2/common/is validated fork",
+  "interface": {
+    "inputs": {
+      "e7587b53-b89e-42de-b35e-f231363bc174": {
+        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\noptional \"validation_token\": string\n}",
+        "name": "subscription",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "0e5301d7-cb30-4ef0-829e-0f6f7b4c3fe5": {
+        "type": "{\n\"email\": string,\n\"validated\": false,\noptional \"validation_token\": string\n}",
+        "name": "not validated",
+        "description": ""
+      },
+      "d0d26749-16eb-4f57-a8b4-51d7781f4787": {
+        "type": "{\n\"email\": string,\n\"validated\": true,\noptional \"validation_token\": string\n}",
+        "name": "validated",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1a113ddc-97f9-4e58-95fb-bb5e228399c5": {
+          "coordinates": [
+            137.99999999999994,
+            60
+          ],
+          "name": "validated?",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        },
+        "b82e2116-cfd3-483f-8511-516b3f42985b": {
+          "coordinates": [
+            29,
+            129
+          ],
+          "name": "false",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "false"
+          }
+        },
+        "6a223500-1238-4556-8f19-60fb484d799d": {
+          "coordinates": [
+            -135.00000000000006,
+            83
+          ],
+          "name": "get \"validated\"",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"validated\""
+          }
+        }
+      },
+      "connections": {
+        "b82e2116-cfd3-483f-8511-516b3f42985b": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "1a113ddc-97f9-4e58-95fb-bb5e228399c5": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        },
+        "6a223500-1238-4556-8f19-60fb484d799d": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "1a113ddc-97f9-4e58-95fb-bb5e228399c5": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          },
+          "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {
+            "b82e2116-cfd3-483f-8511-516b3f42985b": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e7587b53-b89e-42de-b35e-f231363bc174": {
+            "1a113ddc-97f9-4e58-95fb-bb5e228399c5": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            },
+            "6a223500-1238-4556-8f19-60fb484d799d": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "0e5301d7-cb30-4ef0-829e-0f6f7b4c3fe5": {
+            "1a113ddc-97f9-4e58-95fb-bb5e228399c5": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          },
+          "d0d26749-16eb-4f57-a8b4-51d7781f4787": {
+            "1a113ddc-97f9-4e58-95fb-bb5e228399c5": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

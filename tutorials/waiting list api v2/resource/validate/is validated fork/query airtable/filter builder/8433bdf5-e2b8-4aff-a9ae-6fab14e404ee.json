@@ -1,0 +1,80 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/validate/is validated fork/query airtable/filter builder",
+  "interface": {
+    "inputs": {
+      "d8251ef2-8ae5-4752-8941-b6ba737a33a3": {
+        "type": "typeof `value` of `builder (key & value)`",
+        "name": "token",
+        "description": "[Inherited from port `value` of `builder (key & value)`] \nReceives the value to assign to all items.\n\nExample:\n1"
+      }
+    },
+    "outputs": {
+      "5be45501-f8e0-4121-b092-153055250566": {
+        "type": "typeof `filled` of `custom template filler`",
+        "name": "query",
+        "description": "[Inherited from port `filled` of `custom template filler`] \nSends the template string with replaced parameters.\n\nExample:\n\"Hello world!\""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "5857aca7-0a35-449b-8532-3a1304c2d9ad": {
+          "coordinates": [
+            17.5,
+            -89.5
+          ],
+          "name": "custom template filler",
+          "prototype": "04db51a6-0278-4937-9483-7406f96de641",
+          "params": {
+            "20fa9606-aa5f-48b5-af3c-3aaa9e38ebf4": "\"${\"",
+            "6ee3d9cc-c99d-41d8-a6cf-d1b100b64aa2": "\"}\"",
+            "07538bcd-7376-4aec-ad93-b4b368ae919c": "\"{validation_token} = '${token}'\""
+          }
+        },
+        "7f6b3462-a5e4-46db-b050-72581af22d71": {
+          "coordinates": [
+            -62.5,
+            75.5
+          ],
+          "name": "builder (key & value)",
+          "prototype": "ad0c8e3a-6cd9-4a4e-b056-26d730fecf28",
+          "params": {
+            "4cb1e461-05c1-4454-940e-5b7657cb916e": "\"token\""
+          }
+        }
+      },
+      "connections": {
+        "7f6b3462-a5e4-46db-b050-72581af22d71": {
+          "93171c70-9aa9-42ec-b7ff-60f99a488352": {
+            "5857aca7-0a35-449b-8532-3a1304c2d9ad": {
+              "06531082-3e2d-45ab-ba18-527917d0ef5e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d8251ef2-8ae5-4752-8941-b6ba737a33a3": {
+            "7f6b3462-a5e4-46db-b050-72581af22d71": {
+              "8b675c7e-77b3-4fc6-b065-adbedf46b485": {}
+            }
+          }
+        },
+        "outputs": {
+          "5be45501-f8e0-4121-b092-153055250566": {
+            "5857aca7-0a35-449b-8532-3a1304c2d9ad": {
+              "949d328e-fa91-41e4-8929-d3cd7a8d4cfc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "original": "4b902fce-6a99-4f76-a6f7-1be71017ad11",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/status/health checker",
+  "interface": {
+    "inputs": {
+      "6f39c146-fc45-4b1b-8014-102205350b11": {
+        "type": "any",
+        "name": "read",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "f252c332-4e1a-4d76-bf61-469c44012a17": {
+        "type": "typeof `error` of `get healthy`",
+        "name": "error"
+      },
+      "30af2e72-08d9-48c7-8c48-5a0c9bfa3fe1": {
+        "type": "typeof `true` of `condition`",
+        "name": "true",
+        "description": ""
+      },
+      "9effe0ea-9af8-4d1e-b356-084d9182f9fc": {
+        "type": "typeof `false` of `condition`",
+        "name": "false",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6f2e4fbb-949a-4496-ae3f-8bae9e24e98f": {
+          "coordinates": [
+            -6.666666666666671,
+            45
+          ],
+          "name": "get healthy",
+          "prototype": "2d7fd69e-e92a-485d-844d-51d64861c68f"
+        },
+        "cfbb2a08-7941-463b-b9c4-0cb7a90f3f46": {
+          "coordinates": [
+            -83.66666666666667,
+            -26
+          ],
+          "name": "\"healthy\"",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"healthy\""
+          }
+        },
+        "6fc57fe3-2a4d-421b-8692-8a7435800931": {
+          "coordinates": [
+            90.33333333333333,
+            -19
+          ],
+          "name": "condition",
+          "prototype": "a9ccc258-8320-46cd-a29a-180316401e63"
+        }
+      },
+      "connections": {
+        "cfbb2a08-7941-463b-b9c4-0cb7a90f3f46": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "6f2e4fbb-949a-4496-ae3f-8bae9e24e98f": {
+              "f2701c1a-1edf-4401-a2c5-3b7f2305f188": {}
+            }
+          }
+        },
+        "6f2e4fbb-949a-4496-ae3f-8bae9e24e98f": {
+          "084b014c-2a5f-40d2-86dc-7a7544c77024": {
+            "6fc57fe3-2a4d-421b-8692-8a7435800931": {
+              "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6f39c146-fc45-4b1b-8014-102205350b11": {
+            "cfbb2a08-7941-463b-b9c4-0cb7a90f3f46": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "f252c332-4e1a-4d76-bf61-469c44012a17": {
+            "6f2e4fbb-949a-4496-ae3f-8bae9e24e98f": {
+              "489f39d2-2cd6-4471-9f9f-08e89509359d": {}
+            }
+          },
+          "30af2e72-08d9-48c7-8c48-5a0c9bfa3fe1": {
+            "6fc57fe3-2a4d-421b-8692-8a7435800931": {
+              "d78d9223-eedf-44eb-acb0-244212fc86c5": {}
+            }
+          },
+          "9effe0ea-9af8-4d1e-b356-084d9182f9fc": {
+            "6fc57fe3-2a4d-421b-8692-8a7435800931": {
+              "7cfb1db4-bf11-4d32-b364-4f9281088541": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "11e997ab-33d0-473a-aa56-1e2fe4d30d5c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

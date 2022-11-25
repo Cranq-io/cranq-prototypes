@@ -1,0 +1,88 @@
+{
+  "name": "data/array/First item getter (with not found)",
+  "description": "Retrieves first item of the array. If the array is empty, outputs the input on `not found`.",
+  "interface": {
+    "inputs": {
+      "9af252dc-4c84-4abc-81ab-8a684f13674f": {
+        "type": "any[]",
+        "name": "array",
+        "description": "Receives the array to get the first item from."
+      }
+    },
+    "outputs": {
+      "c334590a-05e9-4390-98b3-6f95ba4392e0": {
+        "type": "typeof `array`[0]",
+        "name": "item",
+        "description": "Sends the first item of the input array."
+      },
+      "197c335e-2cac-4e6a-862f-86d262e90241": {
+        "type": "typeof `array`",
+        "name": "not found",
+        "description": "Sends the original array if it's empty."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1d3ac8e5-f7b7-4e06-bf23-093f4ec7c363": {
+          "coordinates": [
+            -13.5,
+            70.5
+          ],
+          "name": "first item getter",
+          "prototype": "5bead7ea-5031-4993-a855-dc9ca089802f"
+        },
+        "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+          "coordinates": [
+            -16.5,
+            -58.5
+          ],
+          "name": "array emptiness fork",
+          "prototype": "3c4dd863-5019-4842-9267-cabe0180b9a0"
+        }
+      },
+      "connections": {
+        "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+          "b5e877ae-0a50-4f7f-9028-af120c22fe32": {
+            "1d3ac8e5-f7b7-4e06-bf23-093f4ec7c363": {
+              "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "9af252dc-4c84-4abc-81ab-8a684f13674f": {
+            "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+              "50869472-16cb-461c-b9dd-c2907bbdb018": {}
+            }
+          }
+        },
+        "outputs": {
+          "c334590a-05e9-4390-98b3-6f95ba4392e0": {
+            "1d3ac8e5-f7b7-4e06-bf23-093f4ec7c363": {
+              "f7832747-fb1e-432b-9c10-60ac76c110cc": {}
+            }
+          },
+          "197c335e-2cac-4e6a-862f-86d262e90241": {
+            "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+              "68e8a523-ff1c-4fbe-95af-508d6deb63c2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "array": null,
+    "fork": null,
+    "empty": null,
+    "emptiness": null,
+    "length": null
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "locked": true
+  }
+}

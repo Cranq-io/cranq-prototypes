@@ -116,7 +116,7 @@
         "description": "Receives the parameters of the method call as array."
       },
       "5e721c7e-2b06-494f-a65e-6b527531cddc": {
-        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
         "name": "credentials",
         "description": "Receives the credentials required to interact with the chain."
       }

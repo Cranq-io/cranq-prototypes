@@ -2,21 +2,21 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "237ebe7e-19c6-4936-9c2d-61ae3c4ea05c": "const compiledContract = data[\"compiled contract\"];  // compiled contract\n  const contractParams = data[\"contract parameters\"];  // contract params\n  const credentials = data[\"credentials\"];\n  const transactionParameters = data[\"transaction parameters\"];\n\n  if (\n    (typeof compiledContract !== \"object\")\n    || (!Array.isArray(contractParams))\n    || (!credentials)\n    || (typeof credentials[\"providerUrl\"] !== \"string\")\n    || (typeof credentials[\"privateKey\"] !== \"string\")\n  ) {\n    throw new Error(\"Input data is invalid. Please check it complies with type!\");\n  }\n\n  deployContract(compiledContract, contractParams, credentials, transactionParameters);\n\n  async function deployContract(compiledContract, contractParams, credentials, transactionParameters) {\n    const Web3 = require(\"web3\");\n\n    //  Here, the providerUrl is only needed for estimateGas\n    const web3 = new Web3(credentials.providerUrl);\n    const ethContract = new web3.eth.Contract(compiledContract.abi);\n    const byteCode = compiledContract.evm.bytecode.object;\n\n    const deployTx = ethContract.deploy({data: byteCode, arguments: contractParams});\n    const gas = (transactionParameters && (\"gas\" in transactionParameters)) ? transactionParameters.gas : await deployTx.estimateGas();\n\n    //  Create a pure JSON data object\n    const transaction = {\n      ...transactionParameters,\n      data: deployTx.encodeABI(),\n      gas: gas\n    };\n\n    await outputs[\"transaction\"](transaction, tag);\n  }"
+        "237ebe7e-19c6-4936-9c2d-61ae3c4ea05c": "const compiledContract = data[\"compiled contract\"];  // compiled contract\n  const contractParams = data[\"contract parameters\"];  // contract params\n  const credentials = data[\"credentials\"];\n  const transactionParameters = data[\"transaction parameters\"];\n\n  if (\n    (typeof compiledContract !== \"object\")\n    || (!Array.isArray(contractParams))\n    || (!credentials)\n    || (typeof credentials[\"providerUrl\"] !== \"string\")\n  ) {\n    throw new Error(\"Input data is invalid. Please check it complies with type!\");\n  }\n\n  deployContract(compiledContract, contractParams, credentials, transactionParameters);\n\n  async function deployContract(compiledContract, contractParams, credentials, transactionParameters) {\n    const Web3 = require(\"web3\");\n\n    //  Here, the providerUrl is only needed for estimateGas\n    const web3 = new Web3(credentials.providerUrl);\n    const ethContract = new web3.eth.Contract(compiledContract.abi);\n    const byteCode = compiledContract.evm.bytecode.object;\n\n    const deployTx = ethContract.deploy({data: byteCode, arguments: contractParams});\n    const gas = (transactionParameters && (\"gas\" in transactionParameters)) ? transactionParameters.gas : await deployTx.estimateGas();\n\n    //  Create a pure JSON data object\n    const transaction = {\n      ...transactionParameters,\n      data: deployTx.encodeABI(),\n      gas: gas\n    };\n\n    outputs[\"transaction\"](transaction, tag);\n  }"
       }
     }
   },
   "interface": {
     "inputs": {
       "237ebe7e-19c6-4936-9c2d-61ae3c4ea05c": {
-        "type": "any",
+        "type": "{\n  \"compiled contract\": {\"abi\": {string: any}[],\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": \"any\",\n         \"object\": \"string\",\n         \"opcodes\": \"string\",\n         \"sourceMap\": \"string\"\n      }\n   }\n  },\n  \"contract parameters\": string[]\n}",
         "name": "parameters",
-        "description": "{\n  \"compiled contract\": {\"abi\": {\n      \"string\": \"any\"\n   },\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": \"any\",\n         \"object\": \"string\",\n         \"opcodes\": \"string\",\n         \"sourceMap\": \"string\"\n      }\n   }\n  },\n  \"contract parameters\": string[]\n}"
+        "description": ""
       }
     },
     "outputs": {
       "5b47b61b-8b58-453f-bd09-d89fd2225644": {
-        "type": "any",
+        "type": "{string: string}",
         "name": "transaction"
       }
     }

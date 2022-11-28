@@ -5,10 +5,10 @@
       "980ea2ab-b815-46ec-a791-01178d935389": {
         "type": "typeof `transaction_base` of `submit transaction`",
         "name": "transaction_base",
-        "description": "[Inherited from port `transaction_base` of `transaction submit`] \nThe credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask.\n\nThe transaction field receives an object with fields for the transaction that are known by the sender.\nThe input is not expected to be a completely filled transaction, it will be completed by this node: the nonce will be added, and (optionally) the from field or gas estimate. "
+        "description": "The credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask.\n\nThe transaction field receives an object with fields for the transaction that are known by the sender.\nThe input is not expected to be a completely filled transaction, it will be completed by this node: the nonce will be added, and (optionally) the from field or gas estimate. "
       },
       "78ed2191-a5cd-48dc-b182-8b01463bd60f": {
-        "type": "{\n    optional \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
         "name": "credentials"
       }
     },

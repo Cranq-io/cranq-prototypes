@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
-        "type": "{\n   \"abi\": {\n      \"string\": \"any\"\n   },\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": \"any\",\n         \"object\": \"string\",\n         \"opcodes\": \"string\",\n         \"sourceMap\": \"string\"\n      }\n   }\n}",
+        "type": "{\n   \"abi\": {string: any}[],\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": \"any\",\n         \"object\": \"string\",\n         \"opcodes\": \"string\",\n         \"sourceMap\": \"string\"\n      }\n   }\n}",
         "name": "compiled contract",
         "description": ""
       },
@@ -13,7 +13,7 @@
         "description": ""
       },
       "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
-        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
         "name": "credentials",
         "description": ""
       }

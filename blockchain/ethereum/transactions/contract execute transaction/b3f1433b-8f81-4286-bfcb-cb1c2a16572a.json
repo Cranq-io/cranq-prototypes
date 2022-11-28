@@ -128,7 +128,7 @@
         "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
       },
       "21d246f0-67a7-4b2e-984a-94cf1f7d21e8": {
-        "type": "typeof `error` of `method call`",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends out any error that happened during contract method execution."
       }

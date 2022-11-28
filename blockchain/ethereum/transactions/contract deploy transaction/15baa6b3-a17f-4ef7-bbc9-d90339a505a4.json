@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
-        "type": "typeof `parameters` of `deploy contract`[\"contract\"]",
+        "type": "{\n   \"abi\": {\n      \"string\": \"any\"\n   },\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": \"any\",\n         \"object\": \"string\",\n         \"opcodes\": \"string\",\n         \"sourceMap\": \"string\"\n      }\n   }\n}",
         "name": "compiled contract",
         "description": ""
       },
@@ -25,7 +25,7 @@
         "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
       },
       "c8505107-dfeb-4ad6-a08c-2543a30b2887": {
-        "type": "typeof `error` of `deploy contract`",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends out any error that happened during deployment\n\n"
       }

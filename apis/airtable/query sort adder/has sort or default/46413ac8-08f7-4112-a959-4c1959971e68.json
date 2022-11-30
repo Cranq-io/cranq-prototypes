@@ -1,18 +1,18 @@
 {
-  "name": "apis/airtable/Query sort adder/Group",
+  "name": "apis/airtable/Query sort adder/Has sort or default",
   "interface": {
     "inputs": {
       "eb8ac420-dddf-4d51-ad04-10597f249f46": {
         "type": "typeof `dict` of `has key tester`",
         "name": "query",
-        "description": "[Inherited from port `dict` of `has key tester`] \nReceives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+        "description": ""
       }
     },
     "outputs": {
       "9d12e972-712d-4cdc-9fb0-6b8881219fdf": {
         "type": "typeof `data` of `default`",
         "name": "sorts",
-        "description": "[Inherited from port `data` of `default`] \nSends store contents."
+        "description": ""
       }
     }
   },

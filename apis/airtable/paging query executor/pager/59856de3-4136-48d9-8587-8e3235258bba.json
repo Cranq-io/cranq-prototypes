@@ -5,12 +5,12 @@
       "526e2c0f-451e-42ed-b2e0-09d875cc9bbf": {
         "type": "typeof `data` of `orig query`",
         "name": "init query",
-        "description": "[Inherited from port `data` of `orig query`] \nReceives contents of the store. San be set as parameter, or received as signal."
+        "description": ""
       },
       "7abb4df8-a1ef-41ff-aa7f-d1f9df655e0f": {
         "type": "typeof `data` of `orig params`",
         "name": "init params",
-        "description": "[Inherited from port `data` of `orig params`] \nReceives contents of the store. San be set as parameter, or received as signal."
+        "description": ""
       },
       "ee139ff7-4f29-4ec4-9446-9fa86ebeb7fd": {
         "type": "any",
@@ -21,12 +21,12 @@
       "905fd68a-a3eb-4cab-aab7-71283466dc02": {
         "type": "typeof `data` of `orig params`",
         "name": "query",
-        "description": "[Inherited from port `data` of `orig params`] \nSends store contents."
+        "description": ""
       },
       "fe527972-8dcf-432f-9ed1-217955f1fd6e": {
         "type": "typeof `dict` of `item setter`",
         "name": "params",
-        "description": "[Inherited from port `dict` of `item setter`] \nSends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
+        "description": ""
       },
       "757a72a4-aa7c-4fd8-9df3-c5ac15e2e2df": {
         "type": "any",
@@ -80,7 +80,7 @@
             34.75,
             106.25
           ],
-          "name": "tag incrementer",
+          "name": "increment query tag",
           "prototype": "34ed5ff2-43d8-46c5-92cb-f25b1ecbfeda"
         },
         "6f3d46d5-cbad-4614-b74e-54baf3227790": {
@@ -88,7 +88,7 @@
             34.75,
             211.25
           ],
-          "name": "tag incrementer B",
+          "name": "increment params tag",
           "prototype": "34ed5ff2-43d8-46c5-92cb-f25b1ecbfeda"
         },
         "49deb7c2-72d7-4861-8a9a-aa9c0b3d0c9c": {
@@ -96,7 +96,7 @@
             -259.25,
             106.25
           ],
-          "name": "tag nester",
+          "name": "nest query tag",
           "prototype": "faf21612-e9e1-447b-8afd-b4eae3366676"
         },
         "ca2d6559-73a4-4591-bbdd-a336d6513a81": {
@@ -104,7 +104,7 @@
             -265.25,
             211.25
           ],
-          "name": "tag nester copy",
+          "name": "nest params tag",
           "prototype": "faf21612-e9e1-447b-8afd-b4eae3366676"
         }
       },
@@ -162,9 +162,7 @@
         "inputs": {
           "526e2c0f-451e-42ed-b2e0-09d875cc9bbf": {
             "646fc610-c49a-458b-93c2-a111a6aa3e65": {
-              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
-                "description": "undefined\nundefined"
-              }
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
             },
             "49deb7c2-72d7-4861-8a9a-aa9c0b3d0c9c": {
               "f5e0ae76-bfc3-4041-98b7-9fbc6688a148": {}
@@ -172,9 +170,7 @@
           },
           "7abb4df8-a1ef-41ff-aa7f-d1f9df655e0f": {
             "70254d32-41ef-409c-bb6e-0683a44ae99c": {
-              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
-                "description": "undefined\nundefined"
-              }
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
             },
             "ca2d6559-73a4-4591-bbdd-a336d6513a81": {
               "f5e0ae76-bfc3-4041-98b7-9fbc6688a148": {}

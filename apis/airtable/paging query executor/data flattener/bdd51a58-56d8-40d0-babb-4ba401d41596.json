@@ -4,15 +4,15 @@
     "inputs": {
       "99006053-a01f-4aec-8672-b5a1431435e6": {
         "type": "typeof `array` of `mapper`",
-        "name": "datas",
-        "description": "[Inherited from port `array` of `mapper`] \nRecieves array to be mapped.\n\nExample:\n[\"Foo\", \"Bar\"]"
+        "name": "data",
+        "description": ""
       }
     },
     "outputs": {
       "a40806f7-edf6-4d82-9397-d5e50a4799b2": {
         "type": "typeof `dict` of `builder (key & value)`",
         "name": "records",
-        "description": "[Inherited from port `dict` of `builder (key & value)`] \nSends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 1, \"fifth\": 1 }"
+        "description": ""
       }
     }
   },

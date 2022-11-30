@@ -47,19 +47,19 @@
       },
       "50f5307f-27a3-4be9-87db-39041e183708": {
         "type": "number",
-        "name": "record count",
+        "name": "max records",
         "description": "Receives the number of records to return."
       }
     },
     "outputs": {
       "e055c747-523c-495e-b6cb-c4fddc083f42": {
-        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
         "name": "query",
         "description": "Sends the resulting query."
       }
     }
   },
-  "name": "apis/airtable/query builder/Query record count setter",
+  "name": "apis/airtable/query builder/Query max records setter",
   "original": "fc413280-21af-40ad-a577-c4c9ba0cad61",
   "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
   "description": "Sets the number of records to return in an AirTable query.\n\nExecute the resulting query with the `apis/airtable/Query executor` node.",

@@ -5,7 +5,7 @@
       "68053643-eeaa-49c8-b2c9-7a86d79551c2": {
         "type": "typeof `release` of `aggregate data`",
         "name": "release",
-        "description": "[Inherited from port `release` of `aggregate data`] \nReceives signal to release aggregated inputs. Independent of `data`."
+        "description": ""
       },
       "677fa844-b3a3-4f75-8fc4-8091c5b79163": {
         "type": "any",
@@ -14,7 +14,7 @@
       "dffd3be3-5fd3-4ebd-889d-0d57667c18db": {
         "type": "typeof `data` of `aggregate data`",
         "name": "data",
-        "description": "[Inherited from port `data` of `aggregate data`] \nReceives data items to be aggregated."
+        "description": ""
       }
     },
     "outputs": {
@@ -24,7 +24,7 @@
       },
       "c1f87349-02e9-46ba-b054-911b7996a2ff": {
         "type": "any",
-        "name": "aggr response"
+        "name": "aggr responses"
       },
       "e9e039f0-9826-4093-aa26-4ab91db2affa": {
         "type": "any",
@@ -35,30 +35,6 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "893467c9-023f-46eb-8674-a2a77195cf78": {
-          "coordinates": [
-            -49.25,
-            -36.75
-          ],
-          "name": "aggregate response",
-          "prototype": "be334dc8-263e-4aeb-a224-b846e2a9b9d8"
-        },
-        "601441d5-0b61-42de-a53e-40b32f90367a": {
-          "coordinates": [
-            -50.25,
-            70.25
-          ],
-          "name": "aggregate data",
-          "prototype": "be334dc8-263e-4aeb-a224-b846e2a9b9d8"
-        },
-        "3bb455a5-9838-4666-97f4-541ec2905ece": {
-          "coordinates": [
-            170.75,
-            117.25
-          ],
-          "name": "forwarder (double) B",
-          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
-        },
         "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
           "coordinates": [
             -217.25,
@@ -66,71 +42,81 @@
           ],
           "name": "forwarder (triple)",
           "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+          "coordinates": [
+            -48.578125,
+            -60.328125
+          ],
+          "name": "aggregate response",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+          "coordinates": [
+            -49.578125,
+            29.671875
+          ],
+          "name": "aggregate data",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
         }
       },
       "connections": {
-        "893467c9-023f-46eb-8674-a2a77195cf78": {
-          "ff27e460-9229-4f6b-9032-7273ada788e7": {
-            "3bb455a5-9838-4666-97f4-541ec2905ece": {
-              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+        "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
             },
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            }
+          }
+        },
+        "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+          "edfbf7a9-5de4-4587-92a4-7f8a74662ed4": {
             "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
               "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
             }
           }
         },
-        "601441d5-0b61-42de-a53e-40b32f90367a": {
-          "ff27e460-9229-4f6b-9032-7273ada788e7": {
-            "3bb455a5-9838-4666-97f4-541ec2905ece": {
-              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
-            },
+        "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+          "edfbf7a9-5de4-4587-92a4-7f8a74662ed4": {
             "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
               "54c357a1-045e-4817-beda-0017a586a499": {}
-            }
-          }
-        },
-        "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
-          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
-            "893467c9-023f-46eb-8674-a2a77195cf78": {
-              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
-            },
-            "601441d5-0b61-42de-a53e-40b32f90367a": {
-              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
             }
           }
         }
       },
       "forwards": {
         "inputs": {
-          "dffd3be3-5fd3-4ebd-889d-0d57667c18db": {
-            "601441d5-0b61-42de-a53e-40b32f90367a": {
-              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
-            }
-          },
-          "677fa844-b3a3-4f75-8fc4-8091c5b79163": {
-            "893467c9-023f-46eb-8674-a2a77195cf78": {
-              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
-            }
-          },
           "68053643-eeaa-49c8-b2c9-7a86d79551c2": {
             "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
               "70da607a-8976-437b-b9e9-84cc63cd613b": {}
             }
+          },
+          "677fa844-b3a3-4f75-8fc4-8091c5b79163": {
+            "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          },
+          "dffd3be3-5fd3-4ebd-889d-0d57667c18db": {
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
           }
         },
         "outputs": {
-          "e9e039f0-9826-4093-aa26-4ab91db2affa": {
-            "3bb455a5-9838-4666-97f4-541ec2905ece": {
-              "d1295197-1962-4680-a037-5890f2175bb9": {}
+          "c1f87349-02e9-46ba-b054-911b7996a2ff": {
+            "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
             }
           },
-          "c1f87349-02e9-46ba-b054-911b7996a2ff": {
-            "893467c9-023f-46eb-8674-a2a77195cf78": {
+          "e9e039f0-9826-4093-aa26-4ab91db2affa": {
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
               "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
             }
           },
           "f8253e9a-d661-4751-8572-2c0f1fd5dd36": {
-            "601441d5-0b61-42de-a53e-40b32f90367a": {
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
               "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
             }
           }

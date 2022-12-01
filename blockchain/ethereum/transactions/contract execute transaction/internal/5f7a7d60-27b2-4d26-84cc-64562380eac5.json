@@ -9,7 +9,7 @@
         }
       },
       "inputFunctions": {
-        "68fc7d11-40c7-484f-8717-684208cb6eca": "const contractAddress = data[\"contract address\"];\nconst abi = data[\"abi\"];\nconst methodName = data[\"method name\"];\nconst parameters = data[\"parameters\"];\nconst transactionParameters = data[\"transaction parameters\"];\nconst credentials = data[\"credentials\"];\n\nif (\n  (!Array.isArray(abi))\n  ||(typeof contractAddress !== \"string\")\n  || (typeof methodName !== \"string\")\n  || (!Array.isArray(parameters))\n  || (!credentials)\n  || (transactionParameters && (typeof transactionParameters !== \"object\"))\n  || (typeof credentials[\"providerUrl\"] !== \"string\")\n  || (typeof credentials[\"privateKey\"] !== \"string\")\n) {\n  throw new Error(\"Input data is invalid. Please check it complies with type!\");\n}\n\nasync function sendMethod(contractAddress, abi, methodName, parameters, transactionParameters, credentials) {\n  const Web3 = require(\"web3\");\n  const web3 = new Web3(credentials.providerUrl);\n\n  const contract = new web3.eth.Contract(abi, contractAddress);\n  const tx = contract.methods[methodName](...parameters);\n\n  const transaction = {\n    ...transactionParameters,\n    to: contractAddress,\n    data: tx.encodeABI()\n  };\n \n  await outputs[\"transaction\"](transaction, tag);\n}\n\nsendMethod(contractAddress, abi, methodName, parameters, transactionParameters, credentials);"
+        "68fc7d11-40c7-484f-8717-684208cb6eca": "const contractAddress = data[\"contract address\"];\nconst abi = data[\"abi\"];\nconst methodName = data[\"method name\"];\nconst parameters = data[\"parameters\"];\nconst transactionParameters = data[\"transaction parameters\"];\nconst credentials = data[\"credentials\"];\n\nif (\n  (!Array.isArray(abi))\n  ||(typeof contractAddress !== \"string\")\n  || (typeof methodName !== \"string\")\n  || (!Array.isArray(parameters))\n  || (!credentials)\n  || (transactionParameters && (typeof transactionParameters !== \"object\"))\n  || (typeof credentials[\"providerUrl\"] !== \"string\")\n) {\n  throw new Error(\"Input data is invalid. Please check it complies with type!\");\n}\n\nfunction sendMethod(contractAddress, abi, methodName, parameters, transactionParameters, credentials) {\n  const Web3 = require(\"web3\");\n  const web3 = new Web3(credentials.providerUrl);\n\n  const contract = new web3.eth.Contract(abi, contractAddress);\n  const tx = contract.methods[methodName](...parameters);\n\n  const transaction = {\n    ...transactionParameters,\n    to: contractAddress,\n    data: tx.encodeABI()\n  };\n \n  outputs[\"transaction\"](transaction, tag);\n}\n\nsendMethod(contractAddress, abi, methodName, parameters, transactionParameters, credentials);"
       }
     }
   },
@@ -29,7 +29,6 @@
   },
   "name": "blockchain/ethereum/Transactions/Contract execute transaction/Internal",
   "attributes": {
-    "internal": true,
-    "locked": true
+    "internal": true
   }
 }

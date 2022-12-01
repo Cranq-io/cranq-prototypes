@@ -1,0 +1,27 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "46c46ba6-81bb-4a15-82da-5940280ffe4a": "const to = data[\"to\"];\nconst value = data[\"value\"];\nconst credentials = data[\"credentials\"];\n\nif ((typeof to !== \"string\")\n  || (typeof value !== \"string\")\n  || (!credentials)\n  || (typeof credentials[\"providerUrl\"] !== \"string\")\n  || (credentials[\"privateKey\"] && typeof credentials[\"privateKey\"] !== \"string\")\n) {\n  throw new Error(\"Input data is invalid. Please check it complies with type!\");\n}\n\ntransfer(to, value, credentials);\n\nasync function transfer(to, value, credentials) {\n\n  const gas = \"21000\";\n  transaction = {\n    gas: gas,\n    to: to,\n    value: value,\n    data: \"\"\n  };\n\n  await outputs[\"transaction\"](transaction, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "46c46ba6-81bb-4a15-82da-5940280ffe4a": {
+        "type": "{\n  \"to\": string,\n  \"value\": string,\n  \"credentials\": {\n    optional \"providerUrl\": string, \n    \"privateKey\": string\n  }\n}",
+        "name": "parameters"
+      }
+    },
+    "outputs": {
+      "c411e2e0-1d02-4291-a068-cd48b1d6839d": {
+        "type": "any",
+        "name": "transaction"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Transactions/Transfer transaction/Internal",
+  "attributes": {
+    "locked": true
+  }
+}

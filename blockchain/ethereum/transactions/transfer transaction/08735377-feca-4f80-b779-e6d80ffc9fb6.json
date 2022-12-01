@@ -1,0 +1,130 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3844735c-ab13-42fb-83a9-38620683ab3a": {
+          "coordinates": [
+            205,
+            23
+          ],
+          "name": "transaction submitter",
+          "prototype": "796f79ec-72e5-4cc5-9216-2fed849781c7"
+        },
+        "68d9cedb-56ad-4cd6-a38c-a6c305931cae": {
+          "coordinates": [
+            2,
+            -21
+          ],
+          "name": "create transfer tx",
+          "prototype": "3d1173f2-6ec7-4504-8b4c-ff49a2432528",
+          "params": {}
+        },
+        "19a8241a-1307-4373-80aa-c7222dfea817": {
+          "coordinates": [
+            -143.859375,
+            -29.5703125
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"to\", \"value\", \"credentials\"]"
+          }
+        }
+      },
+      "connections": {
+        "68d9cedb-56ad-4cd6-a38c-a6c305931cae": {
+          "c411e2e0-1d02-4291-a068-cd48b1d6839d": {
+            "3844735c-ab13-42fb-83a9-38620683ab3a": {
+              "980ea2ab-b815-46ec-a791-01178d935389": {}
+            }
+          }
+        },
+        "19a8241a-1307-4373-80aa-c7222dfea817": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "68d9cedb-56ad-4cd6-a38c-a6c305931cae": {
+              "46c46ba6-81bb-4a15-82da-5940280ffe4a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "53a004a3-bc53-4e8a-8cab-62e3c503bb9f": {
+            "19a8241a-1307-4373-80aa-c7222dfea817": {
+              "to": {}
+            }
+          },
+          "684ca91e-98ae-407c-8f3e-7145a9fed009": {
+            "19a8241a-1307-4373-80aa-c7222dfea817": {
+              "value": {}
+            }
+          },
+          "9a638ef5-f802-4f52-8d34-ba0e59d6ea2c": {
+            "19a8241a-1307-4373-80aa-c7222dfea817": {
+              "credentials": {}
+            },
+            "3844735c-ab13-42fb-83a9-38620683ab3a": {
+              "78ed2191-a5cd-48dc-b182-8b01463bd60f": {}
+            }
+          }
+        },
+        "outputs": {
+          "b74870c9-c6cd-4434-bff6-bb4263254428": {
+            "3844735c-ab13-42fb-83a9-38620683ab3a": {
+              "cf4d9a78-a76a-495a-a75b-61f1d46f8cbe": {}
+            }
+          },
+          "88a1f2fd-7828-4c7f-afce-8a7802201c62": {
+            "3844735c-ab13-42fb-83a9-38620683ab3a": {
+              "026c4fcf-30bb-480f-9488-5da56ebea5be": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "53a004a3-bc53-4e8a-8cab-62e3c503bb9f": {
+        "type": "string",
+        "name": "to",
+        "description": "Receives the address that will receive the transfer.\n\nExample:\n\"0xab12345678ab12345678ab12345678ab12345678\""
+      },
+      "684ca91e-98ae-407c-8f3e-7145a9fed009": {
+        "type": "string",
+        "name": "value",
+        "description": "Receives the amount of the transfer in wei.\n\nOn Ethereum networks 10^18 wei equals 1Eth."
+      },
+      "9a638ef5-f802-4f52-8d34-ba0e59d6ea2c": {
+        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
+        "name": "credentials",
+        "description": "The credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask."
+      }
+    },
+    "outputs": {
+      "b74870c9-c6cd-4434-bff6-bb4263254428": {
+        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n  ),\n  \"data\": any\n}",
+        "name": "events",
+        "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
+      },
+      "88a1f2fd-7828-4c7f-afce-8a7802201c62": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Transactions/Transfer transaction",
+  "original": "8755f171-d161-44b6-bd14-7ebad56789d4",
+  "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703",
+  "description": "Creates and submits a transaction that transfers native coins to the given address.",
+  "keywords": {
+    "web3": null,
+    "blockchain": null,
+    "ethereum": null,
+    "transaction": null,
+    "transfer": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

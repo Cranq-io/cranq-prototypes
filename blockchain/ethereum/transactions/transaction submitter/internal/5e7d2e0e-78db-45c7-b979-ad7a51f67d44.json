@@ -1,0 +1,41 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "81b80c35-7ed9-461d-8730-3a7c9ca2e688": "if ((data[\"transaction\"] === undefined) || data[\"credentials\"] === undefined) {\n  throw new Error(\"Input data is invalid. Please check it complies with type!\");\n}\n\nsubmitTransaction(data);\n\nasync function submitTransaction(data) {\n\n  const credentials = data[\"credentials\"];\n  const transaction_in = data[\"transaction\"];\n\n  const web3 = await getWeb3Instance(credentials.providerUrl);\n  const privateKey = credentials.privateKey;\n  const address = await getSigner(web3, privateKey);\n  const commonParameters = filterParametersByChain(\n    getCommonTransactionParameters(address, credentials.providerUrl), web3.detectedChainId\n  );\n\n  const transaction = {\n    ...commonParameters,\n    ...transaction_in\n  };\n\n  transaction.from = address;\n\n  const nonce = await reserveNonce(web3, address);\n  transaction.nonce = nonce;\n\n  const gas = ((\"gas\" in transaction)) ? transaction.gas : await web3.eth.estimateGas(transaction);\n  transaction.gas = gas;\n\n  let sentTransaction;\n  if (privateKey) {\n    const signedTx = await web3.eth.accounts.signTransaction(transaction, privateKey);\n    sentTransaction = web3.eth.sendSignedTransaction(signedTx.rawTransaction, (error) => {})\n  } else {\n    //  Metamask route Metamask\n    sentTransaction = web3.eth.sendTransaction(transaction, (error) => { })\n  }\n  \n  sentTransaction.once(\"transactionHash\", (txhash) => {\n    outputs[\"events\"]({data: txhash, field: \"transaction hash\"}, tag);\n  })\n    .once(\"receipt\", (receipt) => {\n      outputs[\"events\"]({data: receipt, field: \"receipt\"}, tag);\n    })\n    .on(\"confirmation\", (confirmationNumber, receipt, latestBlockHash) => {\n      outputs[\"events\"](\n        {data: {\n            confirmationNumber: confirmationNumber,\n            receipt: receipt,\n            latestBlockHash: latestBlockHash\n          },\n          field: \"confirmation\"\n        }, tag);\n    })\n    .once(\"error\", (error) => {\n      releaseNonce(web3, address);\n      outputs[\"error\"]({error: error.toString()}, tag);\n  });\n}\n\nasync function getWeb3Instance(providerUrl) {\n\n  const Web3 = require(\"web3\");\n  shared.web3 = shared.web3 || {};\n  let web3 = shared.web3[providerUrl];\n  if (!web3) {\n    web3 = new Web3(providerUrl);\n    //  avoid asynchronously query it every time\n    web3.detectedChainId = await web3.eth.getChainId();\n    shared.web3[providerUrl] = web3;\n  }\n\n  return web3;\n}\n\n//  Nonces must be assigned by chainId and address (even if accessed through multiple rpc urls)\nfunction getNonceStoreKey(address, web3) {\n  return `${address}_${web3.detectedChainId}`;\n}\n\nfunction getCommonParametersKey(address, providerUrl) {\n  return `${address}_${providerUrl}`;\n}\n\nfunction getCommonTransactionParameters(address, providerUrl) {\n  const key = getCommonParametersKey(address, providerUrl);\n  return (shared.commonParameters || {})[key] || {};\n}\n\nfunction clearCommonTransactionParameters(address, providerUrl) {\n  if (shared.commonParameters) {\n    const key = getCommonParametersKey(address, providerUrl);\n    delete shared.commonParameters[key];\n  }\n}\n\nfunction setCommonTransactionParameters(address, providerUrl, parameters) {\n  //  A candidate place for filtering chain-specific optional parameters\n  shared.commonParameters = shared.commonParameters || {};\n  const key = getCommonParametersKey(address, providerUrl);\n  shared.commonParameters[key] = {...shared.commonParameters[key], ...parameters};\n}\n\nfunction filterParametersByChain(parameters, chainId) {\n\n  const result = {...parameters};\n  //  gas must be stamped on a per-transaction basis\n  delete result[\"gas\"];\n  switch (chainId) {\n  case 97:\n    [\"maxFeePerGas\", \"maxPriorityFeePerGas\"].forEach(e => delete result[e]);\n    break;\n  }\n\n  return result;\n}\n\n//  Only one caller should be able to initiate the async query\nasync function reserveNonce(web3, address) {\n  const NONCE_QUERY_IN_PROGRESS = -1;\n  //  holds the _next_ available nonce for addresses\n  shared.nonces = shared.nonces || {};\n\n  const nonceKey = getNonceStoreKey(address, web3);\n  let bookedNonce = shared.nonces[nonceKey];\n  if (bookedNonce === undefined) {\n    //  invalid value prevent others to trigger the same query\n    shared.nonces[nonceKey] = NONCE_QUERY_IN_PROGRESS;\n    try {\n      bookedNonce = await web3.eth.getTransactionCount(address);\n      shared.nonces[nonceKey] = bookedNonce + 1;\n    } catch (e) {\n      //  give the opportunity to others\n      delete shared.nonces[nonceKey];\n      bookedNonce = undefined;\n    }\n  } else {\n    if (bookedNonce === NONCE_QUERY_IN_PROGRESS) {\n      await new Promise(resolve => setTimeout(resolve, 500));\n      bookedNonce = await reserveNonce(web3, address);\n    } else {\n      shared.nonces[nonceKey]++;\n    }\n  }\n\n  return bookedNonce;\n}\n\nasync function releaseNonce(web3, address) {\n  const nonceKey = getNonceStoreKey(address, web3);\n  const nonce = shared.nonces[nonceKey];\n  if ((nonce === undefined) || (shared.nonces[nonceKey] <= 0)) {\n    throw new Error(\"Inconsistent nonce state\");\n  }\n\n  shared.nonces[nonceKey]--;\n}\n\nasync function getSigner(web3, privateKey) {\n  let from;\n  if (privateKey) {\n    const signer = web3.eth.accounts.privateKeyToAccount(privateKey);\n    //  idempotent operation:\n    web3.eth.accounts.wallet.add(signer);\n    from = signer.address;\n  } else {\n    from = (await web3.eth.getAccounts())[0];\n  }\n  return from;\n}"
+      },
+      "dependencies": {
+        "npm": {
+          "web3": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "81b80c35-7ed9-461d-8730-3a7c9ca2e688": {
+        "type": "{\n  \"credentials\":  {\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n  },\n  \"transaction\": {\n     string: string\n  }\n}",
+        "name": "transaction_base",
+        "description": "The credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask.\n\nThe transaction field receives an object with fields for the transaction that are known by the sender.\nThe input is not expected to be a completely filled transaction, it will be completed by this node: the nonce will be added, and (optionally) the from field or gas estimate. "
+      }
+    },
+    "outputs": {
+      "801a1af3-30dd-4e0a-98b7-1a03d5c6aab3": {
+        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n    or \"error\"\n  ),\n  \"data\": any\n}",
+        "name": "events"
+      },
+      "a509fd73-6ea1-41f7-990d-c28e20bafbd6": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "blockchain/ethereum/Transactions/Transaction submitter/Internal",
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

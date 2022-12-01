@@ -1,0 +1,90 @@
+{
+  "name": "blockchain/ethereum/Transactions/Transaction submitter",
+  "interface": {
+    "inputs": {
+      "980ea2ab-b815-46ec-a791-01178d935389": {
+        "type": "typeof `transaction_base` of `submit transaction`",
+        "name": "transaction_base",
+        "description": "The credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask.\n\nThe transaction field receives an object with fields for the transaction that are known by the sender.\nThe input is not expected to be a completely filled transaction, it will be completed by this node: the nonce will be added, and (optionally) the from field or gas estimate. "
+      },
+      "78ed2191-a5cd-48dc-b182-8b01463bd60f": {
+        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "cf4d9a78-a76a-495a-a75b-61f1d46f8cbe": {
+        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n    or \"error\"\n  ),\n  \"data\": any\n}",
+        "name": "events"
+      },
+      "026c4fcf-30bb-480f-9488-5da56ebea5be": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a6f10127-a8e2-46c4-954d-2723d0777337": {
+          "coordinates": [
+            -84,
+            1
+          ],
+          "name": "submit transaction",
+          "prototype": "5e7d2e0e-78db-45c7-b979-ad7a51f67d44"
+        },
+        "cc926825-5bff-48f7-bbbf-54bad1178792": {
+          "coordinates": [
+            -333.28125,
+            -6.3515625
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"transaction\", \"credentials\"]"
+          }
+        }
+      },
+      "connections": {
+        "cc926825-5bff-48f7-bbbf-54bad1178792": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "a6f10127-a8e2-46c4-954d-2723d0777337": {
+              "81b80c35-7ed9-461d-8730-3a7c9ca2e688": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "980ea2ab-b815-46ec-a791-01178d935389": {
+            "cc926825-5bff-48f7-bbbf-54bad1178792": {
+              "transaction": {}
+            }
+          },
+          "78ed2191-a5cd-48dc-b182-8b01463bd60f": {
+            "cc926825-5bff-48f7-bbbf-54bad1178792": {
+              "credentials": {}
+            }
+          }
+        },
+        "outputs": {
+          "cf4d9a78-a76a-495a-a75b-61f1d46f8cbe": {
+            "a6f10127-a8e2-46c4-954d-2723d0777337": {
+              "801a1af3-30dd-4e0a-98b7-1a03d5c6aab3": {}
+            }
+          },
+          "026c4fcf-30bb-480f-9488-5da56ebea5be": {
+            "a6f10127-a8e2-46c4-954d-2723d0777337": {
+              "a509fd73-6ea1-41f7-990d-c28e20bafbd6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -3,14 +3,7 @@
     "es6": {
       "initFunction": "state.aggregated = state.aggregated || [];",
       "inputFunctions": {
-        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",
-        "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
-      }
-    },
-    "es6-node": {
-      "initFunction": "state.aggregated = state.aggregated || [];",
-      "inputFunctions": {
-        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);",
+        "86fe0f3a-e1c5-425e-b832-e056c31adec2": "state.aggregated.push(data);\noutputs[\"received data\"](data, tag);",
         "e08ac6a2-b556-455a-8271-fa730e5b2366": "const {aggregated} = state;\nstate.aggregated = [];\noutputs.aggregated(aggregated, tag);"
       }
     }
@@ -33,6 +26,11 @@
         "type": "typeof `data`[]",
         "name": "aggregated",
         "description": "Sends the aggregated data."
+      },
+      "edfbf7a9-5de4-4587-92a4-7f8a74662ed4": {
+        "type": "typeof `data`",
+        "name": "received data",
+        "description": "Forwards the received data."
       }
     }
   },

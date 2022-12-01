@@ -1,0 +1,90 @@
+{
+  "name": "data/array/Type tester fork",
+  "interface": {
+    "inputs": {
+      "498fba4a-b825-49aa-a999-b46f46c9bc46": {
+        "type": "any",
+        "name": "data",
+        "description": "Receives the data to be forwarded."
+      }
+    },
+    "outputs": {
+      "54739c09-5a28-4237-9e38-38e8aed6b189": {
+        "type": "any[]",
+        "name": "on array",
+        "description": "Sends the original data, if it's an array"
+      },
+      "528c4d5c-16b3-47a1-9128-2c63c8a78ed1": {
+        "type": "typeof `data`",
+        "name": "on not array",
+        "description": "Sends the original data, if it's not an array."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "699fb964-e040-4e4c-8a6c-a058f6d5c47f": {
+          "coordinates": [
+            -24,
+            -58.5
+          ],
+          "name": "type tester",
+          "prototype": "35c45234-1f7a-41c4-a876-48a6395770b8"
+        },
+        "97596dba-0362-4e27-ac60-a2091fbf35dd": {
+          "coordinates": [
+            44,
+            46.5
+          ],
+          "name": "array?",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "699fb964-e040-4e4c-8a6c-a058f6d5c47f": {
+          "63f3f918-df9f-4037-870b-b5189bea60ad": {
+            "97596dba-0362-4e27-ac60-a2091fbf35dd": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "498fba4a-b825-49aa-a999-b46f46c9bc46": {
+            "97596dba-0362-4e27-ac60-a2091fbf35dd": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            },
+            "699fb964-e040-4e4c-8a6c-a058f6d5c47f": {
+              "fbe078e3-bdcf-4dff-be9b-6be2e50bedb3": {}
+            }
+          }
+        },
+        "outputs": {
+          "528c4d5c-16b3-47a1-9128-2c63c8a78ed1": {
+            "97596dba-0362-4e27-ac60-a2091fbf35dd": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          },
+          "54739c09-5a28-4237-9e38-38e8aed6b189": {
+            "97596dba-0362-4e27-ac60-a2091fbf35dd": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
+  "description": "Forwards input data to one of two outputs, depending on whether the input data is an array.",
+  "keywords": {
+    "array": null,
+    "is": null,
+    "fork": null,
+    "type": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "name": "apis/airtable/Paging query executor/Aggregator",
+  "interface": {
+    "inputs": {
+      "68053643-eeaa-49c8-b2c9-7a86d79551c2": {
+        "type": "typeof `release` of `aggregate data`",
+        "name": "release",
+        "description": ""
+      },
+      "677fa844-b3a3-4f75-8fc4-8091c5b79163": {
+        "type": "any",
+        "name": "response"
+      },
+      "dffd3be3-5fd3-4ebd-889d-0d57667c18db": {
+        "type": "typeof `data` of `aggregate data`",
+        "name": "data",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "f8253e9a-d661-4751-8572-2c0f1fd5dd36": {
+        "type": "any",
+        "name": "aggr data"
+      },
+      "c1f87349-02e9-46ba-b054-911b7996a2ff": {
+        "type": "any",
+        "name": "aggr responses"
+      },
+      "e9e039f0-9826-4093-aa26-4ab91db2affa": {
+        "type": "any",
+        "name": "received data"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
+          "coordinates": [
+            -217.25,
+            215.25
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+          "coordinates": [
+            -48.578125,
+            -60.328125
+          ],
+          "name": "aggregate response",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        },
+        "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+          "coordinates": [
+            -49.578125,
+            29.671875
+          ],
+          "name": "aggregate data",
+          "prototype": "bca9d1a1-0963-430c-b523-3fb52e2851cc"
+        }
+      },
+      "connections": {
+        "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            },
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+              "e08ac6a2-b556-455a-8271-fa730e5b2366": {}
+            }
+          }
+        },
+        "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+          "edfbf7a9-5de4-4587-92a4-7f8a74662ed4": {
+            "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+          "edfbf7a9-5de4-4587-92a4-7f8a74662ed4": {
+            "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "68053643-eeaa-49c8-b2c9-7a86d79551c2": {
+            "cd0bff67-4f23-4501-8a7d-590d2baa2bff": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "677fa844-b3a3-4f75-8fc4-8091c5b79163": {
+            "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          },
+          "dffd3be3-5fd3-4ebd-889d-0d57667c18db": {
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+              "86fe0f3a-e1c5-425e-b832-e056c31adec2": {}
+            }
+          }
+        },
+        "outputs": {
+          "c1f87349-02e9-46ba-b054-911b7996a2ff": {
+            "d5fe3f8d-5651-44be-98f7-201288ddddc7": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
+            }
+          },
+          "e9e039f0-9826-4093-aa26-4ab91db2affa": {
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
+            }
+          },
+          "f8253e9a-d661-4751-8572-2c0f1fd5dd36": {
+            "4aa564cc-3969-4bc0-ad07-f4a6db816deb": {
+              "a59bd9f6-1060-46f5-913b-9a483e2ba3ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

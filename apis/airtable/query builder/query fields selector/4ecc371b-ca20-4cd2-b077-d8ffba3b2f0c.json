@@ -1,0 +1,76 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+          "coordinates": [
+            4,
+            28
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"fields\""
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "81dceb3c-3bf5-4e2b-99f9-b30e4a97a2d0": {
+            "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "50f5307f-27a3-4be9-87db-39041e183708": {
+            "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "e055c747-523c-495e-b6cb-c4fddc083f42": {
+            "0361071a-f6ba-4f3f-8152-39689d1cdfc8": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            }
+          }
+        }
+      },
+      "connections": {}
+    }
+  },
+  "interface": {
+    "inputs": {
+      "81dceb3c-3bf5-4e2b-99f9-b30e4a97a2d0": {
+        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "name": "query",
+        "description": "Receives the AirTable query to extend. To start a new one, set `{}`."
+      },
+      "50f5307f-27a3-4be9-87db-39041e183708": {
+        "type": "string[]",
+        "name": "fields",
+        "description": "Receives the list of fields to include."
+      }
+    },
+    "outputs": {
+      "e055c747-523c-495e-b6cb-c4fddc083f42": {
+        "type": "{\n  \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "name": "query",
+        "description": "Sends the resulting query."
+      }
+    }
+  },
+  "name": "apis/airtable/query builder/Query fields selector",
+  "original": "18a52d6d-20f5-49a6-b54a-10e2c16a09c0",
+  "iconId": "5555939f-919c-41f8-847e-4b71cd64b2df",
+  "description": "Sets the fields to return in an AirTable query.\n\nExecute the resulting query with the `apis/airtable/Query executor` node.",
+  "keywords": {
+    "airtable": null,
+    "query": null,
+    "field": null,
+    "set": null,
+    "select": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

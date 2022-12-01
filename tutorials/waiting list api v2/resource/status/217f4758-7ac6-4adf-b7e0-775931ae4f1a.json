@@ -1,0 +1,140 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "489d2682-f3aa-4c00-92c9-61aba64bb712": {
+          "coordinates": [
+            -48,
+            -73
+          ],
+          "name": "simplified endpoint listener",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e"
+        },
+        "569662ec-5705-40fb-9478-9e5b79b7332a": {
+          "coordinates": [
+            232,
+            -58
+          ],
+          "name": "build Healthy",
+          "prototype": "741a5357-e01c-4f80-86c9-ed3c560d5405"
+        },
+        "28875235-c043-4b8e-a3c5-53e8206c11cd": {
+          "coordinates": [
+            314,
+            37
+          ],
+          "name": "build Unhealthy",
+          "prototype": "eb6112bd-8475-4925-a0c8-30bf588562bd"
+        },
+        "49455ca7-4fa2-4c1a-b6f9-d1c00d5e7155": {
+          "coordinates": [
+            -9.333333333333314,
+            122
+          ],
+          "name": "check health",
+          "prototype": "2522dbe2-dadd-477a-9fd7-bdbeaff183f4"
+        },
+        "a11f2ffb-51fa-4fa5-bfd5-b2a97df572b5": {
+          "coordinates": [
+            -294,
+            -174
+          ],
+          "name": "resource config",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"method\": \"GET\",\n  \"route\": \"/status\",\n  \"response\": {\n    \"contentType\": \"json\"\n  }\n}"
+          }
+        },
+        "b73e8849-97d1-4ae4-91c3-75b4e043dacf": {
+          "coordinates": [
+            -218,
+            -44
+          ],
+          "name": "merge config",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        }
+      },
+      "connections": {
+        "569662ec-5705-40fb-9478-9e5b79b7332a": {
+          "21ef0336-95cb-4291-9a59-2626d536798a": {
+            "489d2682-f3aa-4c00-92c9-61aba64bb712": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "28875235-c043-4b8e-a3c5-53e8206c11cd": {
+          "21ef0336-95cb-4291-9a59-2626d536798a": {
+            "489d2682-f3aa-4c00-92c9-61aba64bb712": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "489d2682-f3aa-4c00-92c9-61aba64bb712": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "49455ca7-4fa2-4c1a-b6f9-d1c00d5e7155": {
+              "6f39c146-fc45-4b1b-8014-102205350b11": {}
+            }
+          }
+        },
+        "49455ca7-4fa2-4c1a-b6f9-d1c00d5e7155": {
+          "30af2e72-08d9-48c7-8c48-5a0c9bfa3fe1": {
+            "569662ec-5705-40fb-9478-9e5b79b7332a": {
+              "a260a5a6-49eb-48f6-9d42-fa19e6251f1b": {}
+            }
+          },
+          "9effe0ea-9af8-4d1e-b356-084d9182f9fc": {
+            "28875235-c043-4b8e-a3c5-53e8206c11cd": {
+              "a260a5a6-49eb-48f6-9d42-fa19e6251f1b": {}
+            }
+          },
+          "f252c332-4e1a-4d76-bf61-469c44012a17": {
+            "569662ec-5705-40fb-9478-9e5b79b7332a": {
+              "a260a5a6-49eb-48f6-9d42-fa19e6251f1b": {}
+            }
+          }
+        },
+        "a11f2ffb-51fa-4fa5-bfd5-b2a97df572b5": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "b73e8849-97d1-4ae4-91c3-75b4e043dacf": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "b73e8849-97d1-4ae4-91c3-75b4e043dacf": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "489d2682-f3aa-4c00-92c9-61aba64bb712": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "765e4e49-53f9-452c-b6ed-883294a27c3a": {
+            "a11f2ffb-51fa-4fa5-bfd5-b2a97df572b5": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "b73e8849-97d1-4ae4-91c3-75b4e043dacf": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "765e4e49-53f9-452c-b6ed-883294a27c3a": {
+        "type": "{\n  \"serverId\": string,\n  \"port\": number\n}",
+        "name": "API params"
+      }
+    },
+    "outputs": {}
+  },
+  "name": "tutorials/Waiting list API V2/resource/status",
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "internal": true
+  }
+}

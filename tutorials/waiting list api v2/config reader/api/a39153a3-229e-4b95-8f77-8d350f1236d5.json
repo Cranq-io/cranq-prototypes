@@ -1,0 +1,100 @@
+{
+  "name": "tutorials/Waiting list API V2/Config reader/Api",
+  "interface": {
+    "inputs": {
+      "7c3f01cb-112d-4f1a-b547-a46fedf8c0ed": {
+        "type": "any",
+        "name": "read"
+      }
+    },
+    "outputs": {
+      "23100059-065c-4be8-8c2b-bbfd04c1b896": {
+        "type": "{\n  \"serverId\": string,\n  \"port\": number\n}",
+        "name": "API params"
+      },
+      "30276ffe-1a62-4f66-b81e-c6e745386a78": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7096981f-e9f5-4127-8333-a3f1c4fe8f81": {
+          "coordinates": [
+            -178,
+            -112
+          ],
+          "name": "\"API_params\"",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"API_params\""
+          }
+        },
+        "f93cb9a3-7f93-472f-9a4e-a670bd4a06d0": {
+          "coordinates": [
+            -119,
+            69
+          ],
+          "name": "environment variable getter",
+          "prototype": "505f9cf6-92f9-4e19-ad69-62f485b56000"
+        },
+        "7d4d1473-fc89-47a5-a71f-ed9231041542": {
+          "coordinates": [
+            76,
+            -140
+          ],
+          "name": "json parser",
+          "prototype": "6470bc83-fb15-4801-942a-6f6dbc46a908"
+        }
+      },
+      "connections": {
+        "7096981f-e9f5-4127-8333-a3f1c4fe8f81": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "f93cb9a3-7f93-472f-9a4e-a670bd4a06d0": {
+              "a9d77664-8652-4a70-8fef-6f74e9facf57": {}
+            }
+          }
+        },
+        "f93cb9a3-7f93-472f-9a4e-a670bd4a06d0": {
+          "2886acb1-08d2-41b2-af64-929b44d8b21f": {
+            "7d4d1473-fc89-47a5-a71f-ed9231041542": {
+              "612de880-6653-4097-b917-aabc4f6aceb2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7c3f01cb-112d-4f1a-b547-a46fedf8c0ed": {
+            "7096981f-e9f5-4127-8333-a3f1c4fe8f81": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "23100059-065c-4be8-8c2b-bbfd04c1b896": {
+            "7d4d1473-fc89-47a5-a71f-ed9231041542": {
+              "6cdc0c38-5098-4ffd-a5d8-ee18d077dda3": {}
+            }
+          },
+          "30276ffe-1a62-4f66-b81e-c6e745386a78": {
+            "7d4d1473-fc89-47a5-a71f-ed9231041542": {
+              "426110b5-257a-45c2-976c-f42195dafde8": {},
+              "a42a0dbc-5235-416c-9166-9999d79c06f6": {}
+            },
+            "f93cb9a3-7f93-472f-9a4e-a670bd4a06d0": {
+              "edd9ef99-be38-4bae-a302-81e7cdb86636": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "original": "6fc25df4-6670-4447-bd6d-36c6c7897a74",
+  "attributes": {
+    "internal": true
+  }
+}

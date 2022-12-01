@@ -1,0 +1,78 @@
+{
+  "name": "tutorials/Waiting list API V2/Startup error handler",
+  "interface": {
+    "inputs": {
+      "94d49faf-e3cb-448f-9a56-eae06ef3c6be": {
+        "type": "typeof `data` of `logger (with message)`",
+        "name": "error"
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6cb8527f-98e0-4b19-8064-8e56a34d4d1f": {
+          "coordinates": [
+            -1,
+            -4.666666666666629
+          ],
+          "name": "set unhealthy",
+          "prototype": "13f860ae-0d8b-462a-98dc-29835c4de357",
+          "params": {
+            "25c7ef7d-f03e-4d11-8795-a841ff078903": "\"healthy\""
+          }
+        },
+        "9ff447da-509b-4510-872e-43f336336542": {
+          "coordinates": [
+            -8,
+            -112.66666666666663
+          ],
+          "name": "false",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "false"
+          }
+        },
+        "0900e57a-8df5-491b-9b53-0a81ca6da2ee": {
+          "coordinates": [
+            9,
+            117.33333333333337
+          ],
+          "name": "logger (with message)",
+          "prototype": "fafa45e5-b1dd-4348-bcd8-ac6fb25b3d07",
+          "params": {
+            "5773699e-0819-4c74-8282-fb2a9a77b0cf": "\"Startup error - invalid configuration\""
+          }
+        }
+      },
+      "connections": {
+        "9ff447da-509b-4510-872e-43f336336542": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "6cb8527f-98e0-4b19-8064-8e56a34d4d1f": {
+              "b27da556-2371-4233-822d-a60a129aaf03": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "94d49faf-e3cb-448f-9a56-eae06ef3c6be": {
+            "0900e57a-8df5-491b-9b53-0a81ca6da2ee": {
+              "b937ea64-339e-46d3-9eff-16cdcaaf7ec4": {}
+            },
+            "9ff447da-509b-4510-872e-43f336336542": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "iconId": "6e06ed83-301e-41ca-bae9-1257efb8e703",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

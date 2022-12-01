@@ -1,0 +1,91 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/subscribe/mailjet sender/build recepient",
+  "interface": {
+    "inputs": {
+      "0b9474dc-8cfd-489e-a00b-f8123070f1f7": {
+        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "name": "subscription",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "7eb1ce03-5400-4ce1-b562-17575fa38816": {
+        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}[]",
+        "name": "recipient"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d6271ad3-342a-4b87-8899-20c448d93035": {
+          "coordinates": [
+            -122,
+            77.33333333333333
+          ],
+          "name": "splitter C",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"email\", \"validation_token\"]"
+          }
+        },
+        "51cb506f-8f3e-4eb2-9f29-79db1d63514b": {
+          "coordinates": [
+            -2,
+            -25.66666666666667
+          ],
+          "name": "item setter B",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"Email\"",
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}"
+          }
+        },
+        "1e97528d-5886-4c89-af24-c83bbee4037f": {
+          "coordinates": [
+            124,
+            -51.66666666666667
+          ],
+          "name": "wrapper",
+          "prototype": "46f037ec-7586-4653-bcc8-363b7e769c41"
+        }
+      },
+      "connections": {
+        "d6271ad3-342a-4b87-8899-20c448d93035": {
+          "email": {
+            "51cb506f-8f3e-4eb2-9f29-79db1d63514b": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "51cb506f-8f3e-4eb2-9f29-79db1d63514b": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "1e97528d-5886-4c89-af24-c83bbee4037f": {
+              "3e97c47b-9e13-48f3-b6a9-95cd8b676a8e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "0b9474dc-8cfd-489e-a00b-f8123070f1f7": {
+            "d6271ad3-342a-4b87-8899-20c448d93035": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "outputs": {
+          "7eb1ce03-5400-4ce1-b562-17575fa38816": {
+            "1e97528d-5886-4c89-af24-c83bbee4037f": {
+              "51232407-ba2f-430d-b3fe-883a465cedd0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "attributes": {
+    "internal": true
+  }
+}

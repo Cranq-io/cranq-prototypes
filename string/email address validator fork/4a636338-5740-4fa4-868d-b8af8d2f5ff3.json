@@ -10,7 +10,7 @@
           "name": "regex tester",
           "prototype": "98f4e330-2578-4a0f-89c2-e90e8fff7ec4",
           "params": {
-            "4ad33973-93b5-42cd-b485-76c517507786": "\"^[\\\\w-\\\\.]+@([\\\\w-]+\\\\.)+[\\\\w-]{2,4}$\""
+            "4ad33973-93b5-42cd-b485-76c517507786": "\"(?:[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+(?:\\\\.[a-z0-9!#$%&'*+\\/=?^_`{|}~-]+)*|\\\"(?:[\\\\x01-\\\\x08\\\\x0b\\\\x0c\\\\x0e-\\\\x1f\\\\x21\\\\x23-\\\\x5b\\\\x5d-\\\\x7f]|\\\\\\\\[\\\\x01-\\\\x09\\\\x0b\\\\x0c\\\\x0e-\\\\x7f])*\\\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\\\x01-\\\\x08\\\\x0b\\\\x0c\\\\x0e-\\\\x1f\\\\x21-\\\\x5a\\\\x53-\\\\x7f]|\\\\\\\\[\\\\x01-\\\\x09\\\\x0b\\\\x0c\\\\x0e-\\\\x7f])+)\\\\])\""
           }
         },
         "84bd38e7-be57-46f4-855c-8438c1ab2b6b": {
@@ -79,7 +79,7 @@
     }
   },
   "name": "string/Email address validator fork",
-  "description": "Checks whether the input string is a semantically valid e-mail address & sends in on the appropriate output.",
+  "description": "Checks whether the input string is an RFC 5322 compliant e-mail address & sends in on the appropriate output.",
   "iconId": "802b6352-2279-4681-84b8-6558e185fd36",
   "keywords": {
     "email": null,

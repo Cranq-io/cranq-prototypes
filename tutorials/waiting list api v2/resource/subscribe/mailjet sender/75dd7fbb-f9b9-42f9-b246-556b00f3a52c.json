@@ -1,0 +1,171 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/subscribe/mailjet sender",
+  "interface": {
+    "inputs": {
+      "6560601a-ab0f-472e-9db3-627bbfc74141": {
+        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "name": "subscription",
+        "description": ""
+      },
+      "419ad717-f9c6-4623-8766-eb4e0422d44c": {
+        "type": "typeof `params` of `email sender`",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "ea56e8ae-b993-4cd0-a5cc-3176d0037b59": {
+        "type": "typeof `error` of `email sender`",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9e159fcc-5233-4079-bd39-8c9e40c3c6e2": {
+          "coordinates": [
+            228.75,
+            159.5
+          ],
+          "name": "email sender",
+          "prototype": "71e3329c-4b5a-4127-89b9-28ce06f22bee"
+        },
+        "20ee4604-52ca-49e3-a307-ce84581f682a": {
+          "coordinates": [
+            113.75,
+            -74.5
+          ],
+          "name": "template email sender request builder",
+          "prototype": "3ec8e713-a8ff-419b-a90a-c3e7466a5d03",
+          "params": {}
+        },
+        "b1d218f3-a77b-4b10-be3e-13f164d9a299": {
+          "coordinates": [
+            -261.7421875,
+            80.5859375
+          ],
+          "name": "split params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"Message\",\"Authentication\", \"ValidationURL\"]"
+          }
+        },
+        "82a0ab81-411d-4233-914a-dfd68dc2554c": {
+          "coordinates": [
+            -60.7421875,
+            0.5859375
+          ],
+          "name": "split message params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"From\", \"Subject\", \"TemplateID\"]"
+          }
+        },
+        "08fcd70b-b792-444d-b2e4-1ac6627ed94c": {
+          "coordinates": [
+            -139.7421875,
+            -235.74739583333337
+          ],
+          "name": "build recipient",
+          "prototype": "74b37b0e-8500-4bbd-9c46-6947a54dbb90"
+        },
+        "26d19821-d6ae-413d-815a-e0b1d5003f99": {
+          "coordinates": [
+            -80.2421875,
+            -136.9140625
+          ],
+          "name": "build variables",
+          "prototype": "1ce22fba-c3ac-4eb5-8a0c-7d3dfd5c6f2e"
+        }
+      },
+      "connections": {
+        "20ee4604-52ca-49e3-a307-ce84581f682a": {
+          "ba493bb0-5e08-4904-869f-e8854341976d": {
+            "9e159fcc-5233-4079-bd39-8c9e40c3c6e2": {
+              "b19a6b56-f7c3-4aed-a0d8-f45d3bc8c599": {}
+            }
+          }
+        },
+        "82a0ab81-411d-4233-914a-dfd68dc2554c": {
+          "From": {
+            "20ee4604-52ca-49e3-a307-ce84581f682a": {
+              "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": {}
+            }
+          },
+          "Subject": {
+            "20ee4604-52ca-49e3-a307-ce84581f682a": {
+              "f9ff3874-2289-43c7-8033-e369604fa165": {}
+            }
+          },
+          "TemplateID": {
+            "20ee4604-52ca-49e3-a307-ce84581f682a": {
+              "86ac9b36-1667-431c-af70-a52d96dd8ec5": {}
+            }
+          }
+        },
+        "b1d218f3-a77b-4b10-be3e-13f164d9a299": {
+          "Message": {
+            "82a0ab81-411d-4233-914a-dfd68dc2554c": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "Authentication": {
+            "9e159fcc-5233-4079-bd39-8c9e40c3c6e2": {
+              "04c08c2f-2ac0-4726-ac4f-10db51886248": {}
+            }
+          },
+          "ValidationURL": {
+            "26d19821-d6ae-413d-815a-e0b1d5003f99": {
+              "ca7ebd9e-19e6-4e47-9e49-5dff1e1f94d2": {}
+            }
+          }
+        },
+        "08fcd70b-b792-444d-b2e4-1ac6627ed94c": {
+          "7eb1ce03-5400-4ce1-b562-17575fa38816": {
+            "20ee4604-52ca-49e3-a307-ce84581f682a": {
+              "2b455e13-9320-4dac-a64c-f963ab2aeb3c": {}
+            }
+          }
+        },
+        "26d19821-d6ae-413d-815a-e0b1d5003f99": {
+          "72b707c7-d2ea-4a56-8954-aad0262a9c7d": {
+            "20ee4604-52ca-49e3-a307-ce84581f682a": {
+              "8508ade8-2825-462e-9ac7-3949eb19dcca": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "419ad717-f9c6-4623-8766-eb4e0422d44c": {
+            "b1d218f3-a77b-4b10-be3e-13f164d9a299": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "6560601a-ab0f-472e-9db3-627bbfc74141": {
+            "08fcd70b-b792-444d-b2e4-1ac6627ed94c": {
+              "0b9474dc-8cfd-489e-a00b-f8123070f1f7": {}
+            },
+            "26d19821-d6ae-413d-815a-e0b1d5003f99": {
+              "7828402d-efeb-4351-8ec8-d9051049c5af": {}
+            }
+          }
+        },
+        "outputs": {
+          "ea56e8ae-b993-4cd0-a5cc-3176d0037b59": {
+            "9e159fcc-5233-4079-bd39-8c9e40c3c6e2": {
+              "c48df05a-4244-43db-b7b8-6022f60d30b0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "b625ef15-10fb-42c7-8177-242d8d7ef6e9",
+  "original": "4f78efd0-01de-423c-afff-8c6816c0d779",
+  "attributes": {
+    "internal": true
+  }
+}

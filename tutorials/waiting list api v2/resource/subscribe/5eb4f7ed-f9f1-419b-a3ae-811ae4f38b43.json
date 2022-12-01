@@ -1,0 +1,308 @@
+{
+  "name": "tutorials/Waiting list API V2/resource/subscribe",
+  "interface": {
+    "inputs": {
+      "dae7b830-396f-479a-9331-55cc629af727": {
+        "type": "{\n  \"serverId\": string,\n  \"port\": number\n}",
+        "name": "API params"
+      },
+      "528aa7d8-291b-4c63-ab96-0312bf9be120": {
+        "type": "{  \n\"Authentication\": \n{    \n\"user id\": string,    \"password\": string  },  \"Message\": {    \n\"From\": \n{      \n\"Email\": string, \noptional \"Name\": string    },    \"TemplateID\": number,    \"Subject\": string  },  \"ValidationURL\": string}",
+        "name": "MailJet params",
+        "description": ""
+      },
+      "929e8d94-bfe4-4701-9e7f-b7a46b6ad482": {
+        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "name": "AT params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "61a5fec4-2600-47e9-82c9-134f78e0b04e": {
+        "type": "typeof `error` of `send confirmation`",
+        "name": "error",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "cf7d9c92-0496-4326-864d-f602c9601dad": {
+          "coordinates": [
+            -481.26375325520837,
+            -282.19832356770837
+          ],
+          "name": "POST /subscribe",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e",
+          "params": {}
+        },
+        "7182fd88-01a1-4844-9374-a1c5b43991da": {
+          "coordinates": [
+            283.73624674479163,
+            -253.19832356770834
+          ],
+          "name": "build response",
+          "prototype": "7194246f-b5f3-44b0-8541-50ce87a53eee"
+        },
+        "0aa62af1-699c-4d81-b697-2c5a39078a3a": {
+          "coordinates": [
+            -353.92781575520837,
+            -183.10978190104166
+          ],
+          "name": "get email from req",
+          "prototype": "6a7faaab-90e6-4fc4-bd5a-f9162445139b"
+        },
+        "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+          "coordinates": [
+            471.48624674479163,
+            397.97355143229163
+          ],
+          "name": "send confirmation",
+          "prototype": "75dd7fbb-f9b9-42f9-b246-556b00f3a52c"
+        },
+        "42774e2b-a988-449c-b8ee-d787a9876139": {
+          "coordinates": [
+            -232.76375325520837,
+            -90.52644856770834
+          ],
+          "name": "validate email address",
+          "prototype": "4a636338-5740-4fa4-868d-b8af8d2f5ff3"
+        },
+        "d3aafb59-29e0-4026-9a82-607302f6ad50": {
+          "coordinates": [
+            262.48624674479163,
+            232.47355143229166
+          ],
+          "name": "save to AirTable",
+          "prototype": "22acb667-aa81-463d-8448-c98962306032"
+        },
+        "56c3780b-37e2-46b7-8aa4-24692fcd8429": {
+          "coordinates": [
+            -46.497477213541686,
+            42.02628580729166
+          ],
+          "name": "get subscription",
+          "prototype": "83229a16-255a-4868-92b0-a365be43affb"
+        },
+        "20d07978-8e83-47cb-b852-35e0a003d494": {
+          "coordinates": [
+            108.74405924479163,
+            131.55948893229166
+          ],
+          "name": "set validation token",
+          "prototype": "f0b00122-f92d-4d12-8453-e3d083fad9ba"
+        },
+        "c1db38da-6f25-4982-b3e4-91f08dcfc7bb": {
+          "coordinates": [
+            -747.2559407552084,
+            -16.440511067708343
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "e232bbc8-fbf3-4a3f-835e-df41fdf6a0d3": {
+          "coordinates": [
+            -154.25594075520837,
+            397.55948893229163
+          ],
+          "name": "MailJet params",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "6fd55d0c-e107-4c4e-a2cc-9a34a97d8c3f": {
+          "coordinates": [
+            -180.25594075520837,
+            139.55948893229166
+          ],
+          "name": "AT params",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "7da43a11-702b-4365-8b95-fb5711b8ef24": {
+          "coordinates": [
+            -648.2559407552084,
+            -254.44051106770834
+          ],
+          "name": "merge config",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "1127c192-df01-4b0f-9030-b00c61f1a926": {
+          "coordinates": [
+            -777.2559407552084,
+            -148.44051106770834
+          ],
+          "name": "resource config",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"method\": \"POST\",\n  \"route\": \"/subscribe\",\n  \"request\": {\n    \"contentType\": \"json\"\n  },\n  \"response\": {\n    \"contentType\": \"json\"\n  }\n}"
+          }
+        }
+      },
+      "connections": {
+        "7182fd88-01a1-4844-9374-a1c5b43991da": {
+          "18e7ed6a-dd64-412c-8331-94eb06e94d94": {
+            "cf7d9c92-0496-4326-864d-f602c9601dad": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "cf7d9c92-0496-4326-864d-f602c9601dad": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "0aa62af1-699c-4d81-b697-2c5a39078a3a": {
+              "925f29d4-cc38-48e9-8e38-b0f82e3b5fe2": {}
+            }
+          }
+        },
+        "0aa62af1-699c-4d81-b697-2c5a39078a3a": {
+          "f5c1015d-de86-4e9c-8eed-67b790b0fb6e": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {}
+            }
+          },
+          "323982f5-d872-42e8-b6ca-36893eec676a": {
+            "42774e2b-a988-449c-b8ee-d787a9876139": {
+              "1241504c-0928-4b05-b945-d3f2c7c6940c": {}
+            }
+          }
+        },
+        "42774e2b-a988-449c-b8ee-d787a9876139": {
+          "414e95c3-4b44-4f91-b0a5-94a314316d4d": {
+            "56c3780b-37e2-46b7-8aa4-24692fcd8429": {
+              "ce0c1226-fbaf-451f-aa24-9ffd82e82ab1": {}
+            },
+            "6fd55d0c-e107-4c4e-a2cc-9a34a97d8c3f": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "3fa5162c-8bee-4f83-8f50-4233c26ebde8": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "f2fd493d-9c41-4ed5-97ce-ed04de4cfb34": {}
+            }
+          }
+        },
+        "d3aafb59-29e0-4026-9a82-607302f6ad50": {
+          "9210dffa-8eb1-4d4e-afc8-8496c7686bbf": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "e1444412-e063-4500-aa81-929ef4c4d84a": {}
+            }
+          },
+          "7b151a8d-7870-4e11-972a-fb845dd793d5": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "c0cb38b0-193a-42ad-914a-cacb5bf5ad65": {}
+            },
+            "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+              "6560601a-ab0f-472e-9db3-627bbfc74141": {}
+            },
+            "e232bbc8-fbf3-4a3f-835e-df41fdf6a0d3": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "56c3780b-37e2-46b7-8aa4-24692fcd8429": {
+          "daf20ad4-0f60-458d-841e-09ed4b1474a4": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "e1444412-e063-4500-aa81-929ef4c4d84a": {}
+            }
+          },
+          "11137444-0a6e-4bd3-9918-bf96566e49f8": {
+            "7182fd88-01a1-4844-9374-a1c5b43991da": {
+              "409632d4-89b7-4860-a034-0efa6bc3521b": {}
+            }
+          },
+          "45ea4e1e-fdfe-4686-afdd-0635c5bba556": {
+            "20d07978-8e83-47cb-b852-35e0a003d494": {
+              "93c8ba83-cb68-443c-8113-5702031ab7d9": {}
+            }
+          }
+        },
+        "20d07978-8e83-47cb-b852-35e0a003d494": {
+          "af421268-4a7c-48e9-ad5f-c6770aca5d3b": {
+            "d3aafb59-29e0-4026-9a82-607302f6ad50": {
+              "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {}
+            }
+          }
+        },
+        "c1db38da-6f25-4982-b3e4-91f08dcfc7bb": {
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "e232bbc8-fbf3-4a3f-835e-df41fdf6a0d3": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "6fd55d0c-e107-4c4e-a2cc-9a34a97d8c3f": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "7da43a11-702b-4365-8b95-fb5711b8ef24": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            },
+            "1127c192-df01-4b0f-9030-b00c61f1a926": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "e232bbc8-fbf3-4a3f-835e-df41fdf6a0d3": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+              "419ad717-f9c6-4623-8766-eb4e0422d44c": {}
+            }
+          }
+        },
+        "6fd55d0c-e107-4c4e-a2cc-9a34a97d8c3f": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "56c3780b-37e2-46b7-8aa4-24692fcd8429": {
+              "fe82ce72-189f-429e-baaa-9161bbf7ef1e": {}
+            },
+            "d3aafb59-29e0-4026-9a82-607302f6ad50": {
+              "3af901df-f037-4be3-bd9c-7de6f186b98f": {}
+            }
+          }
+        },
+        "1127c192-df01-4b0f-9030-b00c61f1a926": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "7da43a11-702b-4365-8b95-fb5711b8ef24": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "7da43a11-702b-4365-8b95-fb5711b8ef24": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "cf7d9c92-0496-4326-864d-f602c9601dad": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "dae7b830-396f-479a-9331-55cc629af727": {
+            "c1db38da-6f25-4982-b3e4-91f08dcfc7bb": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "528aa7d8-291b-4c63-ab96-0312bf9be120": {
+            "c1db38da-6f25-4982-b3e4-91f08dcfc7bb": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "929e8d94-bfe4-4701-9e7f-b7a46b6ad482": {
+            "c1db38da-6f25-4982-b3e4-91f08dcfc7bb": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "61a5fec4-2600-47e9-82c9-134f78e0b04e": {
+            "6a66ab2d-6eb7-43ef-bca1-8a9527384579": {
+              "ea56e8ae-b993-4cd0-a5cc-3176d0037b59": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "internal": true
+  }
+}

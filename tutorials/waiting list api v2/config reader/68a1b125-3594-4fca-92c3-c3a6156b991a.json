@@ -1,0 +1,131 @@
+{
+  "name": "tutorials/Waiting list API V2/Config reader",
+  "interface": {
+    "inputs": {
+      "1d81f857-c2ca-4fe1-9a5a-f13f423d336e": {
+        "type": "typeof `read` of `read AT params`",
+        "name": "read"
+      }
+    },
+    "outputs": {
+      "861ca7dc-08ef-4097-9e01-d2b34b195551": {
+        "type": "typeof `AT params` of `read AT params`",
+        "name": "AT params"
+      },
+      "d4a0a38c-c9aa-472c-8820-011e136a8023": {
+        "type": "typeof `API params` of `read API params`",
+        "name": "API params"
+      },
+      "c2a681cd-c0c2-43e9-9326-22b5b9b9211e": {
+        "type": "typeof `MailJet params` of `read MailJet params`",
+        "name": "MailJet params"
+      },
+      "90745434-d873-42f3-9122-cb56c0d5d0e6": {
+        "type": "typeof `Env params` of `read Env params`",
+        "name": "Env params"
+      },
+      "87c17df4-96d9-4524-b699-8569ce05425f": {
+        "type": "typeof `error` of `read AT params`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3250180a-816a-4142-aba6-2375ae97a8ab": {
+          "coordinates": [
+            -3.5,
+            49.75
+          ],
+          "name": "read AT params",
+          "prototype": "6fc25df4-6670-4447-bd6d-36c6c7897a74"
+        },
+        "47b21310-c425-4976-a82c-0ca2ee60d274": {
+          "coordinates": [
+            2.5,
+            -169.25
+          ],
+          "name": "read API params",
+          "prototype": "a39153a3-229e-4b95-8f77-8d350f1236d5"
+        },
+        "46645d5c-52eb-4757-b278-4914e472f49f": {
+          "coordinates": [
+            3.5,
+            -57.25
+          ],
+          "name": "read MailJet params",
+          "prototype": "4917327b-050e-4dc0-b78d-c403880f046d"
+        },
+        "f02de3ef-fd22-4dfb-9ee0-e39efa3b13b1": {
+          "coordinates": [
+            1.5,
+            164.75
+          ],
+          "name": "read Env params",
+          "prototype": "caa1f6af-066e-4d08-a966-afacdddc4529"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "1d81f857-c2ca-4fe1-9a5a-f13f423d336e": {
+            "3250180a-816a-4142-aba6-2375ae97a8ab": {
+              "7c3f01cb-112d-4f1a-b547-a46fedf8c0ed": {}
+            },
+            "46645d5c-52eb-4757-b278-4914e472f49f": {
+              "7c3f01cb-112d-4f1a-b547-a46fedf8c0ed": {}
+            },
+            "47b21310-c425-4976-a82c-0ca2ee60d274": {
+              "7c3f01cb-112d-4f1a-b547-a46fedf8c0ed": {}
+            },
+            "f02de3ef-fd22-4dfb-9ee0-e39efa3b13b1": {
+              "7c3f01cb-112d-4f1a-b547-a46fedf8c0ed": {}
+            }
+          }
+        },
+        "outputs": {
+          "861ca7dc-08ef-4097-9e01-d2b34b195551": {
+            "3250180a-816a-4142-aba6-2375ae97a8ab": {
+              "23100059-065c-4be8-8c2b-bbfd04c1b896": {}
+            }
+          },
+          "87c17df4-96d9-4524-b699-8569ce05425f": {
+            "3250180a-816a-4142-aba6-2375ae97a8ab": {
+              "30276ffe-1a62-4f66-b81e-c6e745386a78": {}
+            },
+            "f02de3ef-fd22-4dfb-9ee0-e39efa3b13b1": {
+              "30276ffe-1a62-4f66-b81e-c6e745386a78": {}
+            },
+            "46645d5c-52eb-4757-b278-4914e472f49f": {
+              "30276ffe-1a62-4f66-b81e-c6e745386a78": {}
+            },
+            "47b21310-c425-4976-a82c-0ca2ee60d274": {
+              "30276ffe-1a62-4f66-b81e-c6e745386a78": {}
+            }
+          },
+          "d4a0a38c-c9aa-472c-8820-011e136a8023": {
+            "47b21310-c425-4976-a82c-0ca2ee60d274": {
+              "23100059-065c-4be8-8c2b-bbfd04c1b896": {}
+            }
+          },
+          "c2a681cd-c0c2-43e9-9326-22b5b9b9211e": {
+            "46645d5c-52eb-4757-b278-4914e472f49f": {
+              "23100059-065c-4be8-8c2b-bbfd04c1b896": {}
+            }
+          },
+          "90745434-d873-42f3-9122-cb56c0d5d0e6": {
+            "f02de3ef-fd22-4dfb-9ee0-e39efa3b13b1": {
+              "23100059-065c-4be8-8c2b-bbfd04c1b896": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

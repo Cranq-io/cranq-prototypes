@@ -9,19 +9,19 @@
       "528aa7d8-291b-4c63-ab96-0312bf9be120": {
         "type": "{  \n\"Authentication\": \n{    \n\"user id\": string,    \"password\": string  },  \"Message\": {    \n\"From\": \n{      \n\"Email\": string, \noptional \"Name\": string    },    \"TemplateID\": number,    \"Subject\": string  },  \"ValidationURL\": string}",
         "name": "MailJet params",
-        "description": "[Inherited from port `params` of `send confirmation`] \n[Inherited from port `params` of `email sender`] \nReceives the parameters to invoke the Mailjet API with.\nFor more information, please refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/#authentication"
+        "description": ""
       },
       "929e8d94-bfe4-4701-9e7f-b7a46b6ad482": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
         "name": "AT params",
-        "description": "[Inherited from port `params` of `save to AirTable`] \n[Inherited from port `params` of `record inserter`] \nReceives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
+        "description": ""
       }
     },
     "outputs": {
       "61a5fec4-2600-47e9-82c9-134f78e0b04e": {
         "type": "typeof `error` of `send confirmation`",
         "name": "error",
-        "description": "[Inherited from port `error` of `send confirmation`] \n[Inherited from port `error` of `email sender`] \nSends the error, if one occurred."
+        "description": ""
       }
     }
   },

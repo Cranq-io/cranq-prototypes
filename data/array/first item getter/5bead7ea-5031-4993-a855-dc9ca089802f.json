@@ -1,40 +1,89 @@
 {
-  "description": "Retrieves first item of the array.\n\nExample:\n1. [1,2]@0 received via `array`\n2. 1@0 sent via `item`\n\nMore:\nhttps://github.com/Cranq-io/cranq-tutorials/blob/main/reference/3_querying_data/3_1_getters/README.md#getting-the-first--last-array-elements",
+  "name": "data/array/First item getter",
+  "description": "Retrieves first item of the array. If the array is empty, outputs the input on `not found`\n\nExample:\n1. [1,2]@0 received via `array`\n2. 1@0 sent via `item`",
   "interface": {
     "inputs": {
       "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {
-        "description": "Receives array to retrieve first item from.\n\nExample:\n[1,2]",
         "type": "any[]",
-        "name": "array"
+        "name": "array",
+        "description": "Receives the array to get the first item from."
       }
     },
     "outputs": {
       "f7832747-fb1e-432b-9c10-60ac76c110cc": {
-        "description": "Sends first item of the array.\n\nExample:\n1",
-        "type": "typeof `array`[number]",
-        "name": "item"
+        "type": "typeof `array`[0]",
+        "name": "item",
+        "description": "Sends the first item of the input array."
+      },
+      "197c335e-2cac-4e6a-862f-86d262e90241": {
+        "type": "typeof `array`",
+        "name": "not found",
+        "description": "Sends the original array if it's empty."
       }
     }
   },
   "implementations": {
-    "es6": {
-      "cleanupFunction": "",
-      "dependencies": {},
-      "initFunction": "",
-      "inputFunctions": {
-        "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": "outputs.item(data[0], tag);"
-      }
-    },
-    "es6-node": {
-      "cleanupFunction": "",
-      "dependencies": {},
-      "initFunction": "",
-      "inputFunctions": {
-        "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": "outputs.item(data[0], tag);"
+    "cranq": {
+      "nodes": {
+        "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+          "coordinates": [
+            -16.5,
+            -58.5
+          ],
+          "name": "array emptiness fork",
+          "prototype": "3c4dd863-5019-4842-9267-cabe0180b9a0"
+        },
+        "70b3f2f6-4de5-4890-a617-7db6a2c1723e": {
+          "coordinates": [
+            -6,
+            73
+          ],
+          "name": "item getter",
+          "prototype": "f659815e-3af3-4399-9c7b-dec6cd927b55",
+          "params": {
+            "a6846250-26ed-4240-b65a-fd5eddd57556": "0"
+          }
+        }
+      },
+      "connections": {
+        "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+          "b5e877ae-0a50-4f7f-9028-af120c22fe32": {
+            "70b3f2f6-4de5-4890-a617-7db6a2c1723e": {
+              "352fc29e-79dd-4fa0-8b8b-0ff79ea197d1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "cfd3b3e7-80fb-464a-a923-f9fcb9555b0c": {
+            "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+              "50869472-16cb-461c-b9dd-c2907bbdb018": {}
+            }
+          }
+        },
+        "outputs": {
+          "197c335e-2cac-4e6a-862f-86d262e90241": {
+            "b581ced4-8d1b-4526-a7d6-3e56183beaaa": {
+              "68e8a523-ff1c-4fbe-95af-508d6deb63c2": {}
+            }
+          },
+          "f7832747-fb1e-432b-9c10-60ac76c110cc": {
+            "70b3f2f6-4de5-4890-a617-7db6a2c1723e": {
+              "4a915651-a98d-4ce4-901f-16f958b5b3a9": {}
+            }
+          }
+        }
       }
     }
   },
-  "name": "data/array/First item getter",
+  "keywords": {
+    "array": null,
+    "fork": null,
+    "empty": null,
+    "emptiness": null,
+    "length": null
+  },
   "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
   "attributes": {
     "locked": true

@@ -5,12 +5,12 @@
       "ca7ebd9e-19e6-4e47-9e49-5dff1e1f94d2": {
         "type": "string",
         "name": "validation url",
-        "description": "[Inherited from port `template` of `template filler`] \nThe template to be filled"
+        "description": ""
       },
       "7828402d-efeb-4351-8ec8-d9051049c5af": {
         "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
         "name": "subscription",
-        "description": "[Inherited from port `params` of `template filler`] \nThe actual parameters used for filling the template"
+        "description": ""
       }
     },
     "outputs": {

@@ -9,7 +9,7 @@
       "929e8d94-bfe4-4701-9e7f-b7a46b6ad482": {
         "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
         "name": "AT params",
-        "description": "[Inherited from port `params` of `save to AirTable`] \n[Inherited from port `params` of `record inserter`] \nReceives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
+        "description": ""
       },
       "ffd198fd-5bb2-4edf-9d32-6ebfbe574de0": {
         "type": "{ \"RedirectSuccess\": string, \"RedirectError\": string } ",
@@ -259,6 +259,7 @@
   "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
   "original": "5eb4f7ed-f9f1-419b-a3ae-811ae4f38b43",
   "attributes": {
-    "internal": true
+    "internal": true,
+    "locked": true
   }
 }

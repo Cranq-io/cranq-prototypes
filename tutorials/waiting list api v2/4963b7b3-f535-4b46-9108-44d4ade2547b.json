@@ -1,8 +1,5 @@
 {
-  "attributes": {
-    "root": true
-  },
-  "description": "An extension of the \"Waiting List API\" project with e-mail verification, health check & extended operability features.",
+  "description": "An extension of the \"Waiting List API\" project with e-mail verification, health check & extended operability features.\n\nTo **configure**, set the following environment variables:\n\n**API_params**:\n```\n{\n  \"serverId\": \"server\",\n  \"port\": 8080\n}\n```\n**AT_params:**\n```\n{\n  \"apiKey\": \"***\",\n  \"baseId\": \"***\",\n  \"tableName\": \"***\"\n}\n```\n**MailJet_params:**\n```\n{  \n  \"Authentication\": {\n    \"user id\": \"***\",\n    \"password\": \"***\"\n  },\n  \"Message\": {\n    \"From\": {\n      \"Email\": \"***\",\n      \"Name\": \"***\"\n    },\n    \"TemplateID\": ***,\n    \"Subject\": \"***\"\n  },\n  \"ValidationURL\": \"https://***/validate?token={validation_token}\"\n}\n```\n**Env_params:**\n```\n{\n  \"RedirectSuccess\": \"https://***\",\n  \"RedirectError\": \"https://***\" \n}\n```\n\nConsider using the .env file:\nhttps://docs.cranq.io/going-further-with-cranq/using-environment-variables#the-.env-file",
   "interface": {
     "inputs": {},
     "outputs": {}
@@ -163,5 +160,9 @@
     "MailJet": null,
     "AirTable": null,
     "tutorial": null
+  },
+  "attributes": {
+    "root": true,
+    "locked": true
   }
 }

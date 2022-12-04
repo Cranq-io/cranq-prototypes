@@ -48,7 +48,7 @@
       "50f5307f-27a3-4be9-87db-39041e183708": {
         "type": "string",
         "name": "filter",
-        "description": "Receives the filter to append. \n\nFor reference, check out the AirTable documentation:\nhttps://support.airtable.com/docs/formula-field-reference"
+        "description": "Receives the filter to append. \n\nExample:\n`\"{column_name} = 'VALUE'\"`\n\nFor reference, check out the AirTable documentation:\nhttps://support.airtable.com/docs/formula-field-reference"
       }
     },
     "outputs": {

@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
-        "type": "{\n   \"abi\": {string: any}[],\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": \"any\",\n         \"object\": \"string\",\n         \"opcodes\": \"string\",\n         \"sourceMap\": \"string\"\n      }\n   }\n}",
+        "type": "{\n   \"abi\": {string: any}[],\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": any,\n         \"object\": string,\n         \"opcodes\": string,\n         \"sourceMap\": string\n      }\n   }\n}",
         "name": "compiled contract",
         "description": ""
       },

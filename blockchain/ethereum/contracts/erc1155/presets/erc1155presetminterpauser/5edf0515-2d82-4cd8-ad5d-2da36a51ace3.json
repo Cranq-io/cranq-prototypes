@@ -1,6 +1,6 @@
 {
   "name": "blockchain/ethereum/contracts/erc1155/presets/ERC1155PresetMinterPauser",
-  "description": "Compiles and deploys an ERC721 interface compatible token contract.\nThe particular implementation is derived from a public openzeppelin preset: \"ERC1155PresetMinterPauser\"\n\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/presets/ERC1155PresetMinterPauser.sol)\n\n\n\n",
+  "description": "Compiles and deploys an ERC1155 interface compatible token contract.\nThe particular implementation is derived from a public openzeppelin preset: \"ERC1155PresetMinterPauser\"\n\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/presets/ERC1155PresetMinterPauser.sol)\n\n\n\n",
   "interface": {
     "inputs": {
       "2dd1939f-cbcf-4bfd-9076-1bcf32623d5c": {
@@ -158,12 +158,12 @@
       }
     }
   },
-  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
   "original": "e9af93a1-4171-4683-bbfa-f6379bcf011e",
   "keywords": {
     "erc1155": null,
     "token": null
   },
+  "iconId": "eeec34e3-c832-4c7b-b045-62f82ebc3ddb",
   "attributes": {
     "locked": true
   }

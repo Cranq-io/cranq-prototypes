@@ -1,0 +1,115 @@
+{
+  "name": "AI/OpenAI/prompt call",
+  "interface": {
+    "inputs": {
+      "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {
+        "type": "string",
+        "name": "prompt"
+      },
+      "13db51b3-6810-4e36-a7ab-4c5c2e6cd2be": {
+        "type": "{string: any}",
+        "name": "query parameters"
+      },
+      "879c752d-3302-40bd-8104-110a5abda395": {
+        "type": "{\n  \"OPENAI_APIKEY\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "05c7bcbe-0aa5-447b-abb3-d5ad358c5dd9": {
+        "type": "string",
+        "name": "response"
+      },
+      "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+          "coordinates": [
+            144,
+            -20
+          ],
+          "name": "node 1",
+          "prototype": "829e91ac-a784-44b4-aeb6-7f0e441b8eb8",
+          "params": {}
+        },
+        "ab6936db-f9f4-4a25-83d5-3a4021011afb": {
+          "coordinates": [
+            -105,
+            -25
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"prompt\""
+          }
+        },
+        "50aaca30-c0c8-4afe-b4ec-4025a21771b1": {
+          "coordinates": [
+            -6.5,
+            70.421875
+          ],
+          "name": "item setter B",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"query parameters\""
+          }
+        }
+      },
+      "connections": {
+        "ab6936db-f9f4-4a25-83d5-3a4021011afb": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "50aaca30-c0c8-4afe-b4ec-4025a21771b1": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "50aaca30-c0c8-4afe-b4ec-4025a21771b1": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+              "8f23129f-1499-45ed-b280-631a500098f2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "879c752d-3302-40bd-8104-110a5abda395": {
+            "ab6936db-f9f4-4a25-83d5-3a4021011afb": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {
+            "ab6936db-f9f4-4a25-83d5-3a4021011afb": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          },
+          "13db51b3-6810-4e36-a7ab-4c5c2e6cd2be": {
+            "50aaca30-c0c8-4afe-b4ec-4025a21771b1": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "05c7bcbe-0aa5-447b-abb3-d5ad358c5dd9": {
+            "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+              "f445dd40-97e9-49ee-bbd7-ddc1d269363e": {}
+            }
+          },
+          "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {
+            "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+              "949b4615-89dc-4f97-ac80-0b321bd6071f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {},
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342"
+}

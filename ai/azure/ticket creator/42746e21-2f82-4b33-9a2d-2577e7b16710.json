@@ -1,0 +1,137 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9b6da0da-1088-4de1-9854-c522d93b696d": {
+          "coordinates": [
+            200,
+            65.5
+          ],
+          "name": "prompt call",
+          "prototype": "d4ebabb4-abcf-4ee4-9598-c37eba05e733"
+        },
+        "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+          "coordinates": [
+            -223,
+            56.5
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "4c3377cb-4983-40a8-9936-0cf80a28174b": {
+          "coordinates": [
+            12,
+            -105.5
+          ],
+          "name": "make prompt from task",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"\\\"Suggest a user story as a JIRA ticket for a task I give. It should include description, acceptance criteria and priority (critical, high, medium, low). Start the story as user or technical stories usually start. The task: \\\"\""
+          }
+        },
+        "7adabbce-5324-4202-8176-0c496656478c": {
+          "coordinates": [
+            12,
+            -15.5
+          ],
+          "name": "openapi call parameters",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n  \"model\": \"text-davinci-003\",\n  \"max_tokens\": 500,\n  \"temperature\": 0.0\n}"
+          }
+        }
+      },
+      "connections": {
+        "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "4c3377cb-4983-40a8-9936-0cf80a28174b": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            },
+            "7adabbce-5324-4202-8176-0c496656478c": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "879c752d-3302-40bd-8104-110a5abda395": {}
+            }
+          }
+        },
+        "4c3377cb-4983-40a8-9936-0cf80a28174b": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {}
+            }
+          }
+        },
+        "7adabbce-5324-4202-8176-0c496656478c": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "13db51b3-6810-4e36-a7ab-4c5c2e6cd2be": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "55d65171-c5d4-44d1-bd57-7c2b869521b8": {
+            "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "e7bb2a40-73f9-48de-9e68-5b07def66a47": {
+            "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "24f6b874-a3c8-41f3-b4ca-f039445f6364": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "05c7bcbe-0aa5-447b-abb3-d5ad358c5dd9": {}
+            }
+          },
+          "0a5240b9-0434-4e88-91a4-44063a40a0dd": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "55d65171-c5d4-44d1-bd57-7c2b869521b8": {
+        "type": "string",
+        "name": "task",
+        "description": "Receives the task description that should be ticketified in a free text form."
+      },
+      "e7bb2a40-73f9-48de-9e68-5b07def66a47": {
+        "type": "{\n  \"OPENAI_APIKEY\": string\n}",
+        "name": "credentials"
+      }
+    },
+    "outputs": {
+      "24f6b874-a3c8-41f3-b4ca-f039445f6364": {
+        "type": "string",
+        "name": "ticket"
+      },
+      "0a5240b9-0434-4e88-91a4-44063a40a0dd": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "AI/Azure/ticket creator",
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "description": "Creates a Jira ticket from a given free form instruction.",
+  "keywords": {
+    "AI": null,
+    "Jira": null,
+    "Ticket": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

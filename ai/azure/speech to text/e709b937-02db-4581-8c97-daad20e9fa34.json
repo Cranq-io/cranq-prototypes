@@ -1,0 +1,91 @@
+{
+  "name": "AI/Azure/speech to text",
+  "interface": {
+    "inputs": {
+      "d94b7b8b-2033-49d6-a041-782ba7f57ba0": {
+        "type": "{\n  \"SPEECH_KEY\": string,\n  \"SPEECH_REGION\": string\n}",
+        "name": "credentials",
+        "description": "Receives the credentials required to call Azure speech to text services.\n\nThe key and region values are available from Azure dashboard.\n\nexample:\n{\n  \"SPEECH_KEY\": \"1e***f\",\n  \"SPEECH_REGION\": \"eastus2\"\n}"
+      },
+      "9614de70-be21-4b26-914b-626411d10007": {
+        "type": "string",
+        "name": "file path",
+        "description": "Receives the path to the file containing the speech sample in vaw format.\n\ne.g.: \"/Users/user1/AzureSpeech/samples/speech.wav\""
+      }
+    },
+    "outputs": {
+      "c16a4c44-3931-48f0-b7d2-9306fb03dea1": {
+        "type": "string",
+        "name": "text"
+      },
+      "77ed0548-616e-453a-8531-78d6bbddc486": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "00b0aaa0-a057-4749-81f6-1501af08e556": {
+          "coordinates": [
+            60.5,
+            -6
+          ],
+          "name": "speech to text",
+          "prototype": "8c64ac9a-9a14-4d5c-956f-17df1418415c"
+        },
+        "85c42b1b-ce92-4fd5-a9a3-70405de2e7e0": {
+          "coordinates": [
+            -98.5,
+            -9
+          ],
+          "name": "merge parameters",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"file path\""
+          }
+        }
+      },
+      "connections": {
+        "85c42b1b-ce92-4fd5-a9a3-70405de2e7e0": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "00b0aaa0-a057-4749-81f6-1501af08e556": {
+              "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d94b7b8b-2033-49d6-a041-782ba7f57ba0": {
+            "85c42b1b-ce92-4fd5-a9a3-70405de2e7e0": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          },
+          "9614de70-be21-4b26-914b-626411d10007": {
+            "85c42b1b-ce92-4fd5-a9a3-70405de2e7e0": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "outputs": {
+          "c16a4c44-3931-48f0-b7d2-9306fb03dea1": {
+            "00b0aaa0-a057-4749-81f6-1501af08e556": {
+              "b9ffcede-7d83-4016-a12c-b9fb49244764": {}
+            }
+          },
+          "77ed0548-616e-453a-8531-78d6bbddc486": {
+            "00b0aaa0-a057-4749-81f6-1501af08e556": {
+              "47693f97-e134-4fde-8ef1-877461c7c656": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "89f4fde2-5391-4f4c-b55a-55ada280f89c",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -2,21 +2,10 @@
   "implementations": {
     "cranq": {
       "nodes": {
-        "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
-          "coordinates": [
-            -190,
-            140
-          ],
-          "name": "build base url",
-          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
-          "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://{jira domain}.atlassian.net/rest/api/3/issue/createmeta\""
-          }
-        },
         "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
           "coordinates": [
-            305,
-            -33
+            70,
+            63
           ],
           "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
@@ -26,28 +15,22 @@
             -137.33333333333337,
             -314.33333333333337
           ],
-          "name": "build basic authentication",
+          "name": "append authentication",
           "prototype": "0e5575f5-31d2-4ee0-9447-e4e89152c00a",
-          "params": {}
+          "params": {
+            "062e2787-00b2-4f9c-bb9f-b920a40ec68c": "{}"
+          }
         },
         "af0ab802-3ea5-4441-b062-b338445ae249": {
           "coordinates": [
-            128,
-            -208
+            14,
+            -229
           ],
           "name": "build request",
           "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
           "params": {
             "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
           }
-        },
-        "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
-          "coordinates": [
-            -35,
-            -76
-          ],
-          "name": "append query to url",
-          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e"
         },
         "d49df7bf-9976-4e63-8246-3d3cacb53125": {
           "coordinates": [
@@ -67,6 +50,25 @@
           ],
           "name": "forward inputs",
           "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "b649e354-f606-4eb2-9f03-a546624f79d8": {
+          "coordinates": [
+            346,
+            -158
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Getting create issue metadata  failed.\""
+          }
+        },
+        "9f59fdbe-644c-4f34-8fbe-7b77407d58ed": {
+          "coordinates": [
+            -199.5,
+            -27
+          ],
+          "name": "build url",
+          "prototype": "6b32aa02-e897-4c19-9fc3-16fe1269805d"
         }
       },
       "connections": {
@@ -84,20 +86,6 @@
             }
           }
         },
-        "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
-          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
-            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
-              "8c89bd87-3843-441c-989b-9b56288453f9": {}
-            }
-          }
-        },
-        "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
-          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
-            "af0ab802-3ea5-4441-b062-b338445ae249": {
-              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
-            }
-          }
-        },
         "d49df7bf-9976-4e63-8246-3d3cacb53125": {
           "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
             "581d738e-5d0b-4399-b273-50421c080a03": {
@@ -106,17 +94,31 @@
           }
         },
         "ee6133f7-a43b-4be1-9426-1d7060e1884c": {
-          "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
-              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
-            }
-          },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
-              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
-            },
             "d49df7bf-9976-4e63-8246-3d3cacb53125": {
               "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "9f59fdbe-644c-4f34-8fbe-7b77407d58ed": {
+              "e7e62c82-fd60-46f9-8da8-9b6360525c59": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "9f59fdbe-644c-4f34-8fbe-7b77407d58ed": {
+              "50b3cd2d-54d4-47fc-9663-4012cb264c53": {}
+            }
+          }
+        },
+        "9f59fdbe-644c-4f34-8fbe-7b77407d58ed": {
+          "d65364c9-1a9d-48f2-95c0-a2fc88e25d19": {
+            "af0ab802-3ea5-4441-b062-b338445ae249": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        },
+        "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "b649e354-f606-4eb2-9f03-a546624f79d8": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
             }
           }
         }
@@ -135,11 +137,6 @@
           }
         },
         "outputs": {
-          "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
-            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
-              "928a6619-42b4-4267-9dd7-416907a3939f": {}
-            }
-          },
           "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
             "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
               "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
@@ -148,6 +145,14 @@
           "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
             "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
               "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "b649e354-f606-4eb2-9f03-a546624f79d8": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
+            "b649e354-f606-4eb2-9f03-a546624f79d8": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
             }
           }
         }

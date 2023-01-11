@@ -1,7 +1,11 @@
 {
-  "name": "apis/JIRA/Authenticator",
+  "name": "apis/JIRA/Authorization inserter",
   "interface": {
     "inputs": {
+      "062e2787-00b2-4f9c-bb9f-b920a40ec68c": {
+        "type": "{string: string}",
+        "name": "headers"
+      },
       "b61d32e9-183d-4b2a-b315-9830a72619d3": {
         "type": "{\"email\": string, \"api token\": string}",
         "name": "auth",
@@ -21,19 +25,17 @@
       "nodes": {
         "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
           "coordinates": [
-            128.33333333333334,
-            9.333333333333343
+            97.33333333333337,
+            -123.66666666666663
           ],
           "name": "insert basic authorization",
           "prototype": "3288419c-e3c1-4a79-95f5-40789cee4de3",
-          "params": {
-            "a6b22162-d4e6-48ff-96bd-eb18b5753273": "{}"
-          }
+          "params": {}
         },
         "6d160946-5531-46ab-9ffd-d15652a5173d": {
           "coordinates": [
-            -60.66666666666666,
-            -40.66666666666666
+            -96.66666666666663,
+            4.333333333333371
           ],
           "name": "get email",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -43,8 +45,8 @@
         },
         "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
           "coordinates": [
-            -67.66666666666666,
-            31.333333333333343
+            -99.66666666666663,
+            102.33333333333337
           ],
           "name": "get api token",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
@@ -78,6 +80,11 @@
             "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
               "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             }
+          },
+          "062e2787-00b2-4f9c-bb9f-b920a40ec68c": {
+            "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
+              "a6b22162-d4e6-48ff-96bd-eb18b5753273": {}
+            }
           }
         },
         "outputs": {
@@ -91,7 +98,5 @@
     }
   },
   "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

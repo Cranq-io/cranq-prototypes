@@ -1,0 +1,209 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+          "coordinates": [
+            139,
+            42
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "581d738e-5d0b-4399-b273-50421c080a03": {
+          "coordinates": [
+            -109.33333333333337,
+            -241.33333333333337
+          ],
+          "name": "append authentication",
+          "prototype": "0e5575f5-31d2-4ee0-9447-e4e89152c00a",
+          "params": {
+            "062e2787-00b2-4f9c-bb9f-b920a40ec68c": "{}"
+          }
+        },
+        "d49df7bf-9976-4e63-8246-3d3cacb53125": {
+          "coordinates": [
+            -247,
+            -183
+          ],
+          "name": "get auth",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"auth\""
+          }
+        },
+        "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
+          "coordinates": [
+            52,
+            -170
+          ],
+          "name": "build request",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\""
+          }
+        },
+        "dbd884b9-5a9b-4504-8c1d-c234f71b5752": {
+          "coordinates": [
+            -416,
+            -25
+          ],
+          "name": "forward inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "2b5abf19-a328-42e9-b7e1-49ff578ffe16": {
+          "coordinates": [
+            314,
+            -145
+          ],
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Creating JIRA issue failed.\""
+          }
+        },
+        "d8728c9a-48a9-491c-bc2b-de749b688198": {
+          "coordinates": [
+            -221,
+            45.5
+          ],
+          "name": "build url",
+          "prototype": "49bbefe5-a811-459c-b7eb-594adb3b9519"
+        }
+      },
+      "connections": {
+        "d49df7bf-9976-4e63-8246-3d3cacb53125": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "581d738e-5d0b-4399-b273-50421c080a03": {
+              "b61d32e9-183d-4b2a-b315-9830a72619d3": {}
+            }
+          }
+        },
+        "581d738e-5d0b-4399-b273-50421c080a03": {
+          "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
+            "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
+          "42f1fa20-0597-484e-9610-1f9117b5a7f1": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "dbd884b9-5a9b-4504-8c1d-c234f71b5752": {
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          },
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "d49df7bf-9976-4e63-8246-3d3cacb53125": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "d8728c9a-48a9-491c-bc2b-de749b688198": {
+              "4dfa32c3-46ec-4fba-a2bd-0722716bcef1": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "d8728c9a-48a9-491c-bc2b-de749b688198": {
+              "78b522ea-efc3-4de6-9f23-648c01b4c374": {}
+            }
+          }
+        },
+        "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+          "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
+            "2b5abf19-a328-42e9-b7e1-49ff578ffe16": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
+            }
+          }
+        },
+        "d8728c9a-48a9-491c-bc2b-de749b688198": {
+          "4ce6445c-9e75-411f-b7fb-9b5a99b35d65": {
+            "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
+              "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7364dd97-8727-4fbc-a01d-218d460556cb": {
+            "dbd884b9-5a9b-4504-8c1d-c234f71b5752": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "c962b98a-447b-407d-bda9-9c1d38df3588": {
+            "dbd884b9-5a9b-4504-8c1d-c234f71b5752": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          },
+          "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
+            "dbd884b9-5a9b-4504-8c1d-c234f71b5752": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        },
+        "outputs": {
+          "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            },
+            "2b5abf19-a328-42e9-b7e1-49ff578ffe16": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
+            }
+          },
+          "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
+            "2b5abf19-a328-42e9-b7e1-49ff578ffe16": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "7364dd97-8727-4fbc-a01d-218d460556cb": {
+        "type": "{\n  optional \"transition\": {\n    optional \"id\": string,\n    \"looped\": boolean\n  },\n  \"fields\": {string: any},\n  \"update\": {string: any},\n  optional \"historyMetadata\": {\n    \"type\": string,\n    \"description\": string,\n    \"descriptionKey\": string,\n    \"activityDescription\": string,\n    \"activityDescriptionKey\": string,\n    \"emailDescription\": string,\n    \"emailDescriptionKey\": string,\n    \"actor\": {\n       \"id\": string,\n       \"displayName\": string,\n       \"displayNameKey\": string,\n       \"type\": string,\n       \"avatarUrl\": string,\n       \"url\": string\n    },\n    \"generator\": {\n       \"id\": string,\n      \"displayName\": string,\n      \"displayNameKey\": string,\n      \"type\": string,\n      \"avatarUrl\": string,\n      \"url\": string\n    },\n    \"cause\": {\n       \"id\": string,\n       \"displayName\": string,\n       \"displayNameKey\": string,\n       \"type\": string,\n      \"avatarUrl\": string,\n      \"url\": string\n    },\n    \"extraData\": {string: any}\n  }\n}",
+        "name": "issue"
+      },
+      "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
+        "type": "{\n   optional \"updateHistory\": boolean\n}",
+        "name": "query"
+      },
+      "c962b98a-447b-407d-bda9-9c1d38df3588": {
+        "type": "{\n   \"auth\": {\n       \"email\": string,\n      \"api token\": string\n   },\n   \"jira domain\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
+        "type": "{\n  \"projects\": {\n     \"self\": string,\n     \"id\": string,\n     \"key\": string,\n     \"name\": string,\n     \"avatarUrls\": {string:string},\n     \"issuetypes\": {string: any}[]\n   }[]\n}",
+        "name": "data",
+        "description": "    "
+      },
+      "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "apis/JIRA/Issue creator",
+  "original": "92a0878a-d7a3-4ce7-9fa1-3aaefc0d3126",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

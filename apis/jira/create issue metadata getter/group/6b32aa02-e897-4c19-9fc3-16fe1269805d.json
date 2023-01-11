@@ -1,0 +1,83 @@
+{
+  "name": "apis/JIRA/Create issue metadata getter/Group",
+  "interface": {
+    "inputs": {
+      "50b3cd2d-54d4-47fc-9663-4012cb264c53": {
+        "type": "typeof `query params` of `append query to url`",
+        "name": "query"
+      },
+      "e7e62c82-fd60-46f9-8da8-9b6360525c59": {
+        "type": "typeof `params` of `build base url`",
+        "name": "params",
+        "description": "[Inherited from port `params` of `build base url`] \nThe actual parameters used for filling the template"
+      }
+    },
+    "outputs": {
+      "d65364c9-1a9d-48f2-95c0-a2fc88e25d19": {
+        "type": "typeof `URL + query` of `append query to url`",
+        "name": "URL + query",
+        "description": "[Inherited from port `URL + query` of `append query to url`] \nSends URL including the query component."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
+          "coordinates": [
+            -77.5,
+            108
+          ],
+          "name": "build base url",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://{jira domain}.atlassian.net/rest/api/3/issue/createmeta\""
+          }
+        },
+        "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+          "coordinates": [
+            77.5,
+            -108
+          ],
+          "name": "append query to url",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e"
+        }
+      },
+      "connections": {
+        "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+              "8c89bd87-3843-441c-989b-9b56288453f9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "50b3cd2d-54d4-47fc-9663-4012cb264c53": {
+            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          },
+          "e7e62c82-fd60-46f9-8da8-9b6360525c59": {
+            "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "outputs": {
+          "d65364c9-1a9d-48f2-95c0-a2fc88e25d19": {
+            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+              "1c6231eb-000a-4683-9e33-0b3fa03361a5": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

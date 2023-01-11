@@ -1,0 +1,42 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": "const ffmpeg = require('fluent-ffmpeg');\nconst path = require('path');\nffmpeg.setFfmpegPath(\"/opt/homebrew/bin/ffmpeg\");\n\nconst sourcePath = data[\"source path\"];\nlet targetPath = data[\"target path\"];\nif (!targetPath){\n    const ext = path.extname(sourcePath);\n    if (ext){\n        targetPath = sourcePath.replace(ext, '.wav');\n    }\n    else{\n        targetPath = `${sourcePath}.wav`;\n    }\n}\n\nconst ffmpegProcess = ffmpeg(sourcePath);\nffmpegProcess.format('wav');\nffmpegProcess.save(targetPath);\nffmpegProcess.on('end', ()=>onSuccess(targetPath));\nffmpegProcess.on('error', (err)=>onError(err));\n\nfunction onSuccess(fileName){\n    outputs['result path'](fileName, tag);\n}\n\nfunction onError(err){\n    outputs['error'](err.toString(), tag);\n}\n\n\n"
+      },
+      "dependencies": {
+        "npm": {
+          "fluent-ffmpeg": {
+            "description": ""
+          },
+          "path": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {
+        "type": "any",
+        "name": "in"
+      }
+    },
+    "outputs": {
+      "996afa79-5436-4fcc-a8ce-6768a47396d2": {
+        "type": "string",
+        "name": "result path"
+      },
+      "9fd8a91b-c179-45a0-a793-b6e8fd0cd180": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "media/audio converter/internal",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

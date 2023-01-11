@@ -1,0 +1,181 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
+          "coordinates": [
+            -190,
+            140
+          ],
+          "name": "build base url",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://{jira domain}.atlassian.net/rest/api/3/issue/createmeta\""
+          }
+        },
+        "db552c54-1e02-4600-a9d2-28031e2771f2": {
+          "coordinates": [
+            -471,
+            -12
+          ],
+          "name": "forward inputs",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+          "coordinates": [
+            305,
+            -33
+          ],
+          "name": "dispatch request",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "581d738e-5d0b-4399-b273-50421c080a03": {
+          "coordinates": [
+            -137.33333333333337,
+            -314.33333333333337
+          ],
+          "name": "build basic authentication",
+          "prototype": "0e5575f5-31d2-4ee0-9447-e4e89152c00a",
+          "params": {}
+        },
+        "af0ab802-3ea5-4441-b062-b338445ae249": {
+          "coordinates": [
+            128,
+            -208
+          ],
+          "name": "build request",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+          "coordinates": [
+            -35,
+            -76
+          ],
+          "name": "append query to url",
+          "prototype": "1a4fdc47-a34c-4e63-9165-28a706c6650e"
+        }
+      },
+      "connections": {
+        "db552c54-1e02-4600-a9d2-28031e2771f2": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "581d738e-5d0b-4399-b273-50421c080a03": {
+              "b61d32e9-183d-4b2a-b315-9830a72619d3": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+              "bd284698-4b1c-47fc-a8f5-b02aabc3f008": {}
+            }
+          }
+        },
+        "581d738e-5d0b-4399-b273-50421c080a03": {
+          "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
+            "af0ab802-3ea5-4441-b062-b338445ae249": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        },
+        "af0ab802-3ea5-4441-b062-b338445ae249": {
+          "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        },
+        "46de5df3-782a-4208-9bbb-7aa1f8ef955f": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+              "8c89bd87-3843-441c-989b-9b56288453f9": {}
+            }
+          }
+        },
+        "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {
+          "1c6231eb-000a-4683-9e33-0b3fa03361a5": {
+            "af0ab802-3ea5-4441-b062-b338445ae249": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "095f9c9a-1716-4f05-855d-69b11eb27e0a": {
+            "db552c54-1e02-4600-a9d2-28031e2771f2": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "c962b98a-447b-407d-bda9-9c1d38df3588": {
+            "db552c54-1e02-4600-a9d2-28031e2771f2": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          },
+          "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
+            "db552c54-1e02-4600-a9d2-28031e2771f2": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          }
+        },
+        "outputs": {
+          "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "928a6619-42b4-4267-9dd7-416907a3939f": {}
+            }
+          },
+          "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {}
+            }
+          },
+          "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
+            "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "095f9c9a-1716-4f05-855d-69b11eb27e0a": {
+        "type": "{\"email\": string, \"api token\": string}",
+        "name": "auth"
+      },
+      "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
+        "type": "{\n  optional \"projectIds\": string[],\n  optional  \"projectKeys\" : string[],\n  optional  \"issuetypeIds\" : string[],\n  optional  \"issuetypeNames\" : string[],\n  optional  \"expand\" : string\n}",
+        "name": "query"
+      },
+      "c962b98a-447b-407d-bda9-9c1d38df3588": {
+        "type": "{\"jira domain\": string}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
+        "type": "{\n  \"projects\": {\n     \"self\": string,\n     \"id\": string,\n     \"key\": string,\n     \"name\": string,\n     \"avatarUrls\": {string:string},\n     \"issuetypes\": {string: any}[]\n   }[]\n}",
+        "name": "data",
+        "description": "    "
+      },
+      "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response"
+      },
+      "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "apis/JIRA/Create issue metadata getter",
+  "attributes": {
+    "locked": true
+  }
+}

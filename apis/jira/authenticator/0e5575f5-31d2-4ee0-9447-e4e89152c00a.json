@@ -1,0 +1,97 @@
+{
+  "name": "apis/JIRA/Authenticator",
+  "interface": {
+    "inputs": {
+      "b61d32e9-183d-4b2a-b315-9830a72619d3": {
+        "type": "{\"email\": string, \"api token\": string}",
+        "name": "auth",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
+        "type": "{string:string}",
+        "name": "headers",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
+          "coordinates": [
+            128.33333333333334,
+            9.333333333333343
+          ],
+          "name": "insert basic authorization",
+          "prototype": "3288419c-e3c1-4a79-95f5-40789cee4de3",
+          "params": {
+            "a6b22162-d4e6-48ff-96bd-eb18b5753273": "{}"
+          }
+        },
+        "6d160946-5531-46ab-9ffd-d15652a5173d": {
+          "coordinates": [
+            -60.66666666666666,
+            -40.66666666666666
+          ],
+          "name": "get email",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"email\""
+          }
+        },
+        "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
+          "coordinates": [
+            -67.66666666666666,
+            31.333333333333343
+          ],
+          "name": "get api token",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"api token\""
+          }
+        }
+      },
+      "connections": {
+        "6d160946-5531-46ab-9ffd-d15652a5173d": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
+              "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {}
+            }
+          }
+        },
+        "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
+              "23a1504c-0710-4791-bc67-cc280d056ea3": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b61d32e9-183d-4b2a-b315-9830a72619d3": {
+            "6d160946-5531-46ab-9ffd-d15652a5173d": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "outputs": {
+          "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
+            "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
+              "a81a2b55-ac4e-4e72-ba40-5f5179c77362": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "locked": true
+  }
+}

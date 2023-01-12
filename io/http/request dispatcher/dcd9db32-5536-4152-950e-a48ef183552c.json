@@ -27,7 +27,7 @@
       "dependencies": {},
       "initFunction": "",
       "inputFunctions": {
-        "b176e769-b2ab-45ad-b333-1886030931e3": "const {method, url, headers = {}} = data;\nlet {body} = data;\nconst {port, protocol, hostname, pathname, search} = new URL(url);\nconst isHttps = protocol === \"https:\";\nconst {request} = isHttps ? require(\"https\") : require(\"http\");\nconst contentType = headers[\"Content-Type\"];\nif (contentType && contentType.startsWith(\"multipart/form-data\"))\n  body = Buffer.from(body, \"base64\");\nconst options = {\n  hostname,\n  port: port || isHttps ? 443 : 80,\n  path: pathname + search,\n  method,\n  headers: body !== undefined\n    ? {\n      ...headers,\n      \"Content-Length\": Buffer.byteLength(body)\n    }\n    : headers\n};\nconst resultChunks = [];\nconst req = request(options, (response) => {\n  if (response.headers[\"content-type\"].startsWith(\"image/\")) {\n    response.setEncoding(\"base64\");\n  }\n  response.on(\"data\", (chunk) => {\n    resultChunks.push(String(chunk));\n  });\n  response.on(\"end\", () => {\n    outputs.response({\n      status: response.statusCode,\n      headers: response.headers,\n      body: resultChunks.join(\"\")\n    }, tag);\n  });\n});\nreq.on(\"error\", (error) => {\n  outputs.error({error: String(error)}, tag);\n});\nif (body !== undefined) {\n  req.write(body);\n}\nreq.end();\n"
+        "b176e769-b2ab-45ad-b333-1886030931e3": "const {method, url, headers = {}} = data;\nlet {body} = data;\nconst {port, protocol, hostname, pathname, search} = new URL(url);\nconst isHttps = protocol === \"https:\";\nconst {request} = isHttps ? require(\"https\") : require(\"http\");\nconst contentType = headers[\"Content-Type\"];\nif (contentType && contentType.startsWith(\"multipart/form-data\"))\n  body = Buffer.from(body, \"base64\");\nconst options = {\n  hostname,\n  port: port || isHttps ? 443 : 80,\n  path: pathname + search,\n  method,\n  headers: body !== undefined\n    ? {\n      ...headers,\n      \"Content-Length\": Buffer.byteLength(body)\n    }\n    : headers\n};\nconst resultChunks = [];\nconst req = request(options, (response) => {\n  const contentType = response.headers[\"content-type\"];\n  if (/^(?:image|audio)\\//.test(contentType)) {\n    response.setEncoding(\"base64\");\n  }\n  response.on(\"data\", (chunk) => {\n    resultChunks.push(String(chunk));\n  });\n  response.on(\"end\", () => {\n    outputs.response({\n      status: response.statusCode,\n      headers: response.headers,\n      body: resultChunks.join(\"\")\n    }, tag);\n  });\n});\nreq.on(\"error\", (error) => {\n  outputs.error({error: String(error)}, tag);\n});\nif (body !== undefined) {\n  req.write(body);\n}\nreq.end();\n"
       }
     }
   },
@@ -42,7 +42,5 @@
     "api": null
   },
   "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

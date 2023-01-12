@@ -1,0 +1,149 @@
+{
+  "name": "apis/whatsapp/Media URL fetcher",
+  "interface": {
+    "inputs": {
+      "5dfa1feb-fca5-43cc-8fde-1817013033bb": {
+        "type": "string",
+        "name": "media ID"
+      },
+      "ac18b55b-cd23-4d3c-977e-0c350f5a4ddb": {
+        "type": "{\n\"accessToken\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "b8468890-32c9-43d8-a100-a682b80d5c4b": {
+        "type": "{\n  \"messaging_product\": \"whatsapp\",\n  \"url\": string,\n  \"mime_type\": string,\n  \"sha256\": string,\n  \"file_size\": string,\n  \"id\": string\n}",
+        "name": "media metadata"
+      },
+      "f60e919d-4993-4a19-8040-00a8730b83c2": {
+        "type": "any",
+        "name": "response"
+      },
+      "5736d9f5-2221-4174-b7bc-985543797326": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
+          "coordinates": [
+            36.80000000000001,
+            145.39999999999998
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "41f84f4d-ad9e-476f-9867-826c909de87d": {
+          "coordinates": [
+            -273.2000000000001,
+            35.39999999999998
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "ff1965b2-234e-4dab-ae17-c71bef478b3d": {
+          "coordinates": [
+            -195.2000000000001,
+            197.39999999999998
+          ],
+          "name": "get access token",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"accessToken\"]"
+          }
+        },
+        "382b17e9-4a46-4e59-a881-c767f4b5ae77": {
+          "coordinates": [
+            -24.69999999999999,
+            -71.10000000000002
+          ],
+          "name": "build request",
+          "prototype": "fa62a2a5-5618-4dec-b682-d769c44bb08d"
+        },
+        "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
+          "coordinates": [
+            207.8,
+            -91.60000000000002
+          ],
+          "name": "json request body parser",
+          "prototype": "d61c432a-5b9e-483c-a103-5bb0c8f69748"
+        }
+      },
+      "connections": {
+        "41f84f4d-ad9e-476f-9867-826c909de87d": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "ff1965b2-234e-4dab-ae17-c71bef478b3d": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "382b17e9-4a46-4e59-a881-c767f4b5ae77": {
+              "7095d225-70b6-4c68-9577-7f21e9835035": {}
+            }
+          }
+        },
+        "382b17e9-4a46-4e59-a881-c767f4b5ae77": {
+          "3e184361-775b-4fcb-8061-8d1c78ad8a2e": {
+            "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "ff1965b2-234e-4dab-ae17-c71bef478b3d": {
+          "accessToken": {
+            "382b17e9-4a46-4e59-a881-c767f4b5ae77": {
+              "9cfc1bdd-3c2d-4087-888b-b244a4044ac1": {}
+            }
+          }
+        },
+        "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
+              "f522d573-49d0-45ab-ac2a-e8d4e576d60b": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "5dfa1feb-fca5-43cc-8fde-1817013033bb": {
+            "41f84f4d-ad9e-476f-9867-826c909de87d": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "ac18b55b-cd23-4d3c-977e-0c350f5a4ddb": {
+            "41f84f4d-ad9e-476f-9867-826c909de87d": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "b8468890-32c9-43d8-a100-a682b80d5c4b": {
+            "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
+              "c76bd5f3-cbf0-414e-85f2-125c06e2ca12": {}
+            }
+          },
+          "5736d9f5-2221-4174-b7bc-985543797326": {
+            "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            },
+            "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
+              "31345d9f-2a6a-4f32-a801-142fa82225d1": {}
+            }
+          },
+          "f60e919d-4993-4a19-8040-00a8730b83c2": {
+            "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {}
+}

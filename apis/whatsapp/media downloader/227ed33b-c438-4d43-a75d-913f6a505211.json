@@ -1,0 +1,164 @@
+{
+  "name": "apis/whatsapp/Media downloader",
+  "interface": {
+    "inputs": {
+      "6467943c-1cf4-4b21-8928-8106b5d77be1": {
+        "type": "string",
+        "name": "media URL"
+      },
+      "5ff2d8d9-ca24-44e0-b1b5-3ca4ccf0249b": {
+        "type": "{\n\"accessToken\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
+        "type": "string",
+        "name": "media contents"
+      },
+      "8f826b7a-a462-4945-b5c9-2f35479f9e91": {
+        "type": "any",
+        "name": "response"
+      },
+      "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {
+        "type": "{\"error\":string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+          "coordinates": [
+            134.75,
+            32.5
+          ],
+          "name": "request dispatcher",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "80df167c-b6b8-4da8-b01e-8ed0d8332bc8": {
+          "coordinates": [
+            303.75,
+            -91.5
+          ],
+          "name": "request body getter B",
+          "prototype": "d069d982-84e8-443d-ba57-adba00b85a71"
+        },
+        "0da57177-8040-488f-97e9-2196a60a8368": {
+          "coordinates": [
+            -234.25,
+            -58.5
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "ad376acb-5032-4ca2-bef8-be87f823dc6a": {
+          "coordinates": [
+            -199.25,
+            163.5
+          ],
+          "name": "splitter",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"accessToken\"]"
+          }
+        },
+        "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
+          "coordinates": [
+            -308.25,
+            99.5
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"mimeType\": \"audio/ogg\"}"
+          }
+        },
+        "2bfec558-8d96-438a-8400-5779dd682c55": {
+          "coordinates": [
+            43.25,
+            4
+          ],
+          "name": "group",
+          "prototype": "f553041c-0651-43fd-ac74-03c9330e6b67"
+        }
+      },
+      "connections": {
+        "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "80df167c-b6b8-4da8-b01e-8ed0d8332bc8": {
+              "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {}
+            }
+          }
+        },
+        "0da57177-8040-488f-97e9-2196a60a8368": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "2bfec558-8d96-438a-8400-5779dd682c55": {
+              "f9528478-5404-4a4c-80f9-e4e794877cdf": {}
+            }
+          }
+        },
+        "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "ad376acb-5032-4ca2-bef8-be87f823dc6a": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "2bfec558-8d96-438a-8400-5779dd682c55": {
+          "d8319d0d-7049-4b64-97e3-21e1ea19731a": {
+            "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "ad376acb-5032-4ca2-bef8-be87f823dc6a": {
+          "accessToken": {
+            "2bfec558-8d96-438a-8400-5779dd682c55": {
+              "194532df-c311-40ce-a891-d9dbbbf0819c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6467943c-1cf4-4b21-8928-8106b5d77be1": {
+            "0da57177-8040-488f-97e9-2196a60a8368": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "5ff2d8d9-ca24-44e0-b1b5-3ca4ccf0249b": {
+            "0da57177-8040-488f-97e9-2196a60a8368": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
+            "80df167c-b6b8-4da8-b01e-8ed0d8332bc8": {
+              "01a94511-1481-4dea-bc53-ad6c78a53d3a": {}
+            }
+          },
+          "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {
+            "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            }
+          },
+          "8f826b7a-a462-4945-b5c9-2f35479f9e91": {
+            "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "attributes": {},
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342"
+}

@@ -1,0 +1,104 @@
+{
+  "name": "apis/jira/utils/Simple issue builder",
+  "description": "Builds an issue structure based on 4 basic parameters",
+  "interface": {
+    "inputs": {
+      "233e1520-e9c4-4bf0-b763-31b71c026824": {
+        "type": "string",
+        "name": "issue type ID",
+        "description": ""
+      },
+      "18336e01-fc26-4481-8879-259ea4e0de91": {
+        "type": "string",
+        "name": "project key",
+        "description": ""
+      },
+      "21d42133-11a3-4c85-a733-d19bd2d26507": {
+        "type": "string",
+        "name": "summary"
+      },
+      "89ae774e-4c2d-4d31-9211-d212c6e494db": {
+        "type": "string",
+        "name": "description"
+      }
+    },
+    "outputs": {
+      "14f08274-327d-40d7-b570-c45c9f225f9a": {
+        "type": "typeof `tree` of `build issue parameter`",
+        "name": "tree",
+        "description": "[Inherited from port `tree` of `build issue parameter`] \nSends updated tree data structure.\n\nExample:\n{\n  \"a\": {\n     \"b\" : 0,\n     \"c\": 1\n  }\n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6936489b-55b0-4487-a051-e88f42049ee2": {
+          "coordinates": [
+            76.5,
+            -52
+          ],
+          "name": "build issue parameter",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\n  [\"fields\", \"issuetype\", \"id\"],\n  [\"fields\", \"project\", \"key\"],\n  [\"fields\", \"summary\"],\n  [\"fields\", \"description\", \"content\", 0, \"content\", 0, \"text\"]\n]",
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n\t\"fields\": {\r\n\t\t\"summary\": \"Untitled issue\",\r\n\t\t\"description\": {\r\n      \"type\": \"doc\",\r\n      \"version\": 1,\r\n      \"content\": [\r\n        {\r\n          \"type\": \"paragraph\",\r\n          \"content\": [\r\n            {\r\n              \"text\": \"\",\r\n              \"type\": \"text\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"issuetype\": {\r\n      \"id\": \"\"\r\n    },\r\n    \"project\": {\r\n      \"key\": \"\"\r\n    } \r\n\t}\r\n}"
+          }
+        },
+        "1ae7410b-f738-4ed2-8f10-82219835935f": {
+          "coordinates": [
+            -84.5,
+            39
+          ],
+          "name": "prepare build issue parameter",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1, 2, 3]"
+          }
+        }
+      },
+      "connections": {
+        "1ae7410b-f738-4ed2-8f10-82219835935f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "6936489b-55b0-4487-a051-e88f42049ee2": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "233e1520-e9c4-4bf0-b763-31b71c026824": {
+            "1ae7410b-f738-4ed2-8f10-82219835935f": {
+              "0": {}
+            }
+          },
+          "18336e01-fc26-4481-8879-259ea4e0de91": {
+            "1ae7410b-f738-4ed2-8f10-82219835935f": {
+              "1": {}
+            }
+          },
+          "21d42133-11a3-4c85-a733-d19bd2d26507": {
+            "1ae7410b-f738-4ed2-8f10-82219835935f": {
+              "2": {}
+            }
+          },
+          "89ae774e-4c2d-4d31-9211-d212c6e494db": {
+            "1ae7410b-f738-4ed2-8f10-82219835935f": {
+              "3": {}
+            }
+          }
+        },
+        "outputs": {
+          "14f08274-327d-40d7-b570-c45c9f225f9a": {
+            "6936489b-55b0-4487-a051-e88f42049ee2": {
+              "55f973dd-3c9f-4299-b0cc-b970b5f14193": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {}
+}

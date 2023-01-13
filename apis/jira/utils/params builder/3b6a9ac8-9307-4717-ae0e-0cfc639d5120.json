@@ -1,0 +1,97 @@
+{
+  "name": "apis/jira/utils/Params builder",
+  "interface": {
+    "inputs": {
+      "040aa768-5818-4feb-95de-8eedf279e6d2": {
+        "type": "string",
+        "name": "email",
+        "description": ""
+      },
+      "b5dd1445-1157-4a47-aa1f-40483aeb32be": {
+        "type": "string",
+        "name": "API token",
+        "description": ""
+      },
+      "7d0b805f-df13-4b74-9e12-f2e370c410b5": {
+        "type": "string",
+        "name": "JIRA domain",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "9ac03e75-2545-4bb9-bc48-617b1a87e1f1": {
+        "type": "typeof `tree` of `build params`",
+        "name": "tree",
+        "description": "[Inherited from port `tree` of `build params`] \nSends updated tree data structure.\n\nExample:\n{\n  \"a\": {\n     \"b\" : 0,\n     \"c\": 1\n  }\n}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "45f21db2-659a-4764-b2ba-8b18e29a2550": {
+          "coordinates": [
+            78.5,
+            -27
+          ],
+          "name": "build params",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\n  \"auth\": {\n  \"email\": \"csaba.kallai@cranq.io\",\n  \"api token\": \"RPVZKoflGJ9rhcMGSVZm27B2\"\n  },\n  \"jira domain\": \"kwaia\"\n}",
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\n  [\"auth\", \"email\"],\n  [\"auth\", \"api token\"],\n  [\"jira domain\"]\n]"
+          }
+        },
+        "222f62ed-cd82-46f2-9951-372a9bb624e6": {
+          "coordinates": [
+            -49.5,
+            20
+          ],
+          "name": "prepare build params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
+          }
+        }
+      },
+      "connections": {
+        "222f62ed-cd82-46f2-9951-372a9bb624e6": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "45f21db2-659a-4764-b2ba-8b18e29a2550": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "040aa768-5818-4feb-95de-8eedf279e6d2": {
+            "222f62ed-cd82-46f2-9951-372a9bb624e6": {
+              "0": {}
+            }
+          },
+          "b5dd1445-1157-4a47-aa1f-40483aeb32be": {
+            "222f62ed-cd82-46f2-9951-372a9bb624e6": {
+              "1": {}
+            }
+          },
+          "7d0b805f-df13-4b74-9e12-f2e370c410b5": {
+            "222f62ed-cd82-46f2-9951-372a9bb624e6": {
+              "2": {}
+            }
+          }
+        },
+        "outputs": {
+          "9ac03e75-2545-4bb9-bc48-617b1a87e1f1": {
+            "45f21db2-659a-4764-b2ba-8b18e29a2550": {
+              "55f973dd-3c9f-4299-b0cc-b970b5f14193": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "locked": true
+  }
+}

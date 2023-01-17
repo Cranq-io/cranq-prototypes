@@ -1,0 +1,42 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": "const fs = require(\"fs\");\nconst sdk = require(\"microsoft-cognitiveservices-speech-sdk\");\nconst {\n  subscriptionKey,\n  region,\n  fileName,\n  language = \"en-US\"\n} = data;\n\nconst speechConfig = sdk.SpeechConfig.fromSubscription(\n  subscriptionKey, region);\nspeechConfig.speechRecognitionLanguage = language;\n\nconst fileContents = fs.readFileSync(fileName);\nconst audioConfig = sdk.AudioConfig.fromWavFileInput(\n  fileContents);\nconst speechRecognizer = new sdk.SpeechRecognizer(\n  speechConfig, audioConfig);\n\nspeechRecognizer.recognizeOnceAsync(result => {\n  switch (result.reason) {\n    case sdk.ResultReason.RecognizedSpeech:\n      outputs['text'](result.text, tag);\n      break;\n    case sdk.ResultReason.NoMatch:\n      outputs['error']({\n        error: \"Speech could not be recognized.\"\n      }, tag);\n      break;\n    case sdk.ResultReason.Canceled:\n      const cancellation = sdk.CancellationDetails.fromResult(result);\n      const errorText = (cancellation.reason === sdk.CancellationReason.Error)\n      ? `, ErrorCode=${cancellation.ErrorCode}, ErrorDetails=${cancellation.errorDetails}`\n      : \"\";\n      outputs['error'](\n        {error: `CANCELED: Reason=${cancellation.reason} ${errorText}`}, tag);\n      break;\n  }\n  speechRecognizer.close();\n}, (err) => outputs.error({error: String(err)}, tag));\n"
+      },
+      "dependencies": {
+        "npm": {
+          "microsoft-cognitiveservices-speech-sdk": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": {
+        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  \"fileName\": string\n}",
+        "name": "params",
+        "description": "See https://learn.microsoft.com/en-us/dotnet/api/microsoft.cognitiveservices.speech.audio.audioconfig.fromwavfileinput?view=azure-dotnet."
+      }
+    },
+    "outputs": {
+      "b9ffcede-7d83-4016-a12c-b9fb49244764": {
+        "type": "string",
+        "name": "text"
+      },
+      "47693f97-e134-4fde-8ef1-877461c7c656": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "apis/azure/Speech to text/Internal",
+  "description": "",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

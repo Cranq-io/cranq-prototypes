@@ -4,25 +4,30 @@
     "inputs": {
       "6467943c-1cf4-4b21-8928-8106b5d77be1": {
         "type": "string",
-        "name": "media URL"
+        "name": "media URL",
+        "description": "Receives media URL. URL must be obtained via `apis/whatsapp/Media URL fetcher`."
       },
       "5ff2d8d9-ca24-44e0-b1b5-3ca4ccf0249b": {
         "type": "{\n\"accessToken\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives generic WhatsApp API parameters."
       }
     },
     "outputs": {
       "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
         "type": "string",
-        "name": "media contents"
+        "name": "media contents",
+        "description": "Sends media file contents as a base64 encoded string."
       },
       "8f826b7a-a462-4945-b5c9-2f35479f9e91": {
-        "type": "any",
-        "name": "response"
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends original endpoint response."
       },
       "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {
         "type": "{\"error\":string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends error."
       }
     }
   },
@@ -31,19 +36,11 @@
       "nodes": {
         "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
           "coordinates": [
-            134.75,
-            32.5
+            39.75,
+            -105.5
           ],
-          "name": "request dispatcher",
+          "name": "dispatch request",
           "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
-        },
-        "80df167c-b6b8-4da8-b01e-8ed0d8332bc8": {
-          "coordinates": [
-            303.75,
-            -91.5
-          ],
-          "name": "request body getter B",
-          "prototype": "d069d982-84e8-443d-ba57-adba00b85a71"
         },
         "0da57177-8040-488f-97e9-2196a60a8368": {
           "coordinates": [
@@ -58,7 +55,7 @@
             -199.25,
             163.5
           ],
-          "name": "splitter",
+          "name": "get access token",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
             "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"accessToken\"]"
@@ -77,21 +74,25 @@
         },
         "2bfec558-8d96-438a-8400-5779dd682c55": {
           "coordinates": [
-            43.25,
-            4
+            -31.75,
+            52
           ],
-          "name": "group",
+          "name": "build request",
           "prototype": "f553041c-0651-43fd-ac74-03c9330e6b67"
+        },
+        "5a979254-134e-4cac-8f7a-c981658abe81": {
+          "coordinates": [
+            207.5,
+            149.16666666666674
+          ],
+          "name": "detect errors",
+          "prototype": "f1bc2eec-3119-4574-a7ae-476631806c5b",
+          "params": {
+            "387fb819-948e-4bce-9542-dd8347977817": "\"WhatsApp media download failed\""
+          }
         }
       },
       "connections": {
-        "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
-          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
-            "80df167c-b6b8-4da8-b01e-8ed0d8332bc8": {
-              "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {}
-            }
-          }
-        },
         "0da57177-8040-488f-97e9-2196a60a8368": {
           "d1295197-1962-4680-a037-5890f2175bb9": {
             "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
@@ -124,6 +125,13 @@
               "194532df-c311-40ce-a891-d9dbbbf0819c": {}
             }
           }
+        },
+        "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "5a979254-134e-4cac-8f7a-c981658abe81": {
+              "53e51383-6bc2-4759-9921-0dfaf424099c": {}
+            }
+          }
         }
       },
       "forwards": {
@@ -140,25 +148,41 @@
           }
         },
         "outputs": {
-          "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
-            "80df167c-b6b8-4da8-b01e-8ed0d8332bc8": {
-              "01a94511-1481-4dea-bc53-ad6c78a53d3a": {}
-            }
-          },
           "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {
             "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
               "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            },
+            "5a979254-134e-4cac-8f7a-c981658abe81": {
+              "97d4c37a-7e13-4b19-9445-a29762a3966f": {}
             }
           },
           "8f826b7a-a462-4945-b5c9-2f35479f9e91": {
             "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
               "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
             }
+          },
+          "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
+            "5a979254-134e-4cac-8f7a-c981658abe81": {
+              "fde6f814-83e7-4133-995e-88a7771ed31d": {}
+            }
           }
         }
       }
     }
   },
-  "attributes": {},
-  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342"
+  "description": "Downloads media from WhatsApp. The received URL must be obtained through `apis/whatsapp/Media URL fetcher`.\n\nThe downloaded media content will be sent as a base64 encoded string.\n\nFurther info:\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/",
+  "keywords": {
+    "media": null,
+    "audio": null,
+    "image": null,
+    "video": null,
+    "OGG": null,
+    "opus": null,
+    "download": null,
+    "base64": null
+  },
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "attributes": {
+    "locked": true
+  }
 }

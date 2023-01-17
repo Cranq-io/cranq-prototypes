@@ -4,25 +4,30 @@
     "inputs": {
       "5dfa1feb-fca5-43cc-8fde-1817013033bb": {
         "type": "string",
-        "name": "media ID"
+        "name": "media ID",
+        "description": "Receives media ID obtained through WhatsApp webhooks."
       },
       "ac18b55b-cd23-4d3c-977e-0c350f5a4ddb": {
         "type": "{\n\"accessToken\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives generic WhatsApp API parameters."
       }
     },
     "outputs": {
       "b8468890-32c9-43d8-a100-a682b80d5c4b": {
         "type": "{\n  \"messaging_product\": \"whatsapp\",\n  \"url\": string,\n  \"mime_type\": string,\n  \"sha256\": string,\n  \"file_size\": string,\n  \"id\": string\n}",
-        "name": "media metadata"
+        "name": "media info",
+        "description": "Sends media information, including URL."
       },
       "f60e919d-4993-4a19-8040-00a8730b83c2": {
-        "type": "any",
-        "name": "response"
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends original API response."
       },
       "5736d9f5-2221-4174-b7bc-985543797326": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends error."
       }
     }
   },
@@ -31,8 +36,8 @@
       "nodes": {
         "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
           "coordinates": [
-            36.80000000000001,
-            145.39999999999998
+            123.80000000000001,
+            118.39999999999998
           ],
           "name": "dispatch request",
           "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
@@ -47,8 +52,8 @@
         },
         "ff1965b2-234e-4dab-ae17-c71bef478b3d": {
           "coordinates": [
-            -195.2000000000001,
-            197.39999999999998
+            -90.2000000000001,
+            170.39999999999998
           ],
           "name": "get access token",
           "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
@@ -58,19 +63,22 @@
         },
         "382b17e9-4a46-4e59-a881-c767f4b5ae77": {
           "coordinates": [
-            -24.69999999999999,
-            -71.10000000000002
+            -36.69999999999999,
+            -99.10000000000014
           ],
           "name": "build request",
           "prototype": "fa62a2a5-5618-4dec-b682-d769c44bb08d"
         },
-        "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
+        "bb801248-8f62-411b-809b-7049a1feebf8": {
           "coordinates": [
-            207.8,
-            -91.60000000000002
+            192.5,
+            -97.83333333333326
           ],
-          "name": "json request body parser",
-          "prototype": "d61c432a-5b9e-483c-a103-5bb0c8f69748"
+          "name": "json response error detector",
+          "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
+          "params": {
+            "40772bbe-67b9-436e-b2c5-41a9605972ce": "\"Fetching WhatsApp media URL failed.\""
+          }
         }
       },
       "connections": {
@@ -102,8 +110,8 @@
         },
         "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
           "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
-            "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
-              "f522d573-49d0-45ab-ac2a-e8d4e576d60b": {}
+            "bb801248-8f62-411b-809b-7049a1feebf8": {
+              "d063ef8a-843f-4caf-9f7b-ca8a39117333": {}
             }
           }
         }
@@ -122,28 +130,42 @@
           }
         },
         "outputs": {
-          "b8468890-32c9-43d8-a100-a682b80d5c4b": {
-            "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
-              "c76bd5f3-cbf0-414e-85f2-125c06e2ca12": {}
-            }
-          },
           "5736d9f5-2221-4174-b7bc-985543797326": {
             "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
               "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
             },
-            "3a903ddf-ef2d-4f0b-bbd7-34bf325dcce8": {
-              "31345d9f-2a6a-4f32-a801-142fa82225d1": {}
+            "bb801248-8f62-411b-809b-7049a1feebf8": {
+              "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {}
             }
           },
           "f60e919d-4993-4a19-8040-00a8730b83c2": {
             "4b0c2cd1-97a7-479f-a119-a9d5fbfa02e4": {
               "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
             }
+          },
+          "b8468890-32c9-43d8-a100-a682b80d5c4b": {
+            "bb801248-8f62-411b-809b-7049a1feebf8": {
+              "c7cf1f92-7748-4184-b078-e0eb04851e6f": {}
+            }
           }
         }
       }
     }
   },
-  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
-  "attributes": {}
+  "description": "Retrieves media URL from the WhatsApp API, based on the media ID.\n\nFurther info:\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/",
+  "keywords": {
+    "media": null,
+    "audio": null,
+    "image": null,
+    "photo": null,
+    "video": null,
+    "URL": null,
+    "obtain": null,
+    "retrieve": null,
+    "fetch": null
+  },
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "attributes": {
+    "locked": true
+  }
 }

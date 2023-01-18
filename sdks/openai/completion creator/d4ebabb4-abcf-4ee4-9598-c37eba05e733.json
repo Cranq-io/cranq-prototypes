@@ -1,0 +1,105 @@
+{
+  "name": "sdks/openai/Completion creator",
+  "interface": {
+    "inputs": {
+      "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {
+        "type": "{\n  \"model\": string,\n  optional \"prompt\": (any[] or number[] or string[] or string), \n    optional \"suffix\": (string or null),\n    optional \"max_tokens\": (number or null),\n    optional \"temperature\": (number or null),\n    optional \"top_p\": (number or null),\n    optional \"n\": (number or null),\n    optional \"stream\": (boolean or null),\n    optional \"logprobs\": (number or null),\n    optional \"stop\": (string or string[] or null),\n    optional \"presence_penalty\": (number or null),\n    optional \"frequency_penalty\": (number or null),\n    optional \"best_of\": (number or null),\n    optional \"logit_bias\": ({string: any} or null),\n    optional \"user\": string\n}",
+        "name": "request",
+        "description": "Receives the request for creating the completion.\n\nSee https://github.com/openai/openai-node/blob/master/api.ts"
+      },
+      "879c752d-3302-40bd-8104-110a5abda395": {
+        "type": "{\n  \"apiKey\": string\n}",
+        "name": "params",
+        "description": "Receives generic OpenAI params."
+      }
+    },
+    "outputs": {
+      "d293caee-efa3-41e7-84f9-084b15fe44e6": {
+        "type": "{\n  \"id\": string,\n  \"object\": string,\n  \"created\": number,\n  \"model\": string,\n  \"choices\": {\n    optional \"text\": string,\n    optional \"index\": number,\n    optional \"logprobs\": ({\n      optional \"tokens\": string[],\n      optional \"token_logprobs\": number[],\n    optional \"top_logprobs\": {string: any}[],\n    optional \"text_offset\": number[]\n}[] or null),\n    optional \"finish_reason\": string\n  }[],\n    \"usage\": {\n      \"prompt_tokens\": number,\n      \"completion_tokens\": number,\n      \"total_tokens\": number\n  }\n}",
+        "name": "response",
+        "description": "Sends completion response.\n\nSee https://github.com/openai/openai-node/blob/master/api.ts"
+      },
+      "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error occurred during the completion."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+          "coordinates": [
+            18,
+            95
+          ],
+          "name": "prompt call",
+          "prototype": "829e91ac-a784-44b4-aeb6-7f0e441b8eb8",
+          "params": {}
+        },
+        "51fdcb50-8216-4495-b91b-2ce9e613e9a3": {
+          "coordinates": [
+            -28,
+            -66.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"request\", \"params\"]"
+          }
+        }
+      },
+      "connections": {
+        "51fdcb50-8216-4495-b91b-2ce9e613e9a3": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+              "8f23129f-1499-45ed-b280-631a500098f2": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {
+            "51fdcb50-8216-4495-b91b-2ce9e613e9a3": {
+              "request": {}
+            }
+          },
+          "879c752d-3302-40bd-8104-110a5abda395": {
+            "51fdcb50-8216-4495-b91b-2ce9e613e9a3": {
+              "params": {}
+            }
+          }
+        },
+        "outputs": {
+          "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {
+            "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+              "949b4615-89dc-4f97-ac80-0b321bd6071f": {}
+            }
+          },
+          "d293caee-efa3-41e7-84f9-084b15fe44e6": {
+            "92209612-32f5-4d01-8ebc-692e21a1d4a8": {
+              "1e513315-e3f9-401c-9143-1e18cd265a11": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Creates a completion for the provided prompt.",
+  "keywords": {
+    "complete": null,
+    "predict": null,
+    "generate": null,
+    "prompt": null,
+    "ask": null,
+    "question": null,
+    "answer": null,
+    "openAI": null
+  },
+  "iconId": "826ef237-6282-4a24-98ed-6b5362264144",
+  "attributes": {
+    "locked": true
+  }
+}

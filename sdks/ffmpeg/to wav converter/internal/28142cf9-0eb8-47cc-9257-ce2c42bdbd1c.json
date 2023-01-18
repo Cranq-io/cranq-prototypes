@@ -1,0 +1,44 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": "const ffmpeg = require('fluent-ffmpeg');\nconst path = require('path');\nconst {\n  paths: {\n    source, \n    destination\n  }, \n  params: {\n    binPath = \"/usr/local/bin/ffmpeg\"\n  }\n} = data;\nffmpeg.setFfmpegPath(binPath);\n\nlet destPath;\nif (destination) {\n  destPath = destination;\n} else {\n  const ext = path.extname(source);\n  if (ext){\n    destPath = source.replace(ext, '.wav');\n  }\n  else{\n    destPath = `${source}.wav`;\n  }\n}\n\nconst ffmpegProcess = ffmpeg(source);\nffmpegProcess.format('wav');\nffmpegProcess.save(destPath);\nffmpegProcess.on('end', ()=>onSuccess(destPath));\nffmpegProcess.on('error', (err)=>onError(err));\n\nfunction onSuccess(fileName){\n    outputs.destPath(fileName, tag);\n}\n\nfunction onError(err){\n    outputs.error(err.toString(), tag);\n}"
+      },
+      "dependencies": {
+        "npm": {
+          "fluent-ffmpeg": {
+            "description": ""
+          },
+          "path": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {
+        "type": "{\n  \"paths\": {\n    \"source\": string,\n    optional \"destination\": string\n  },\n  \"params\": {\n    optional \"binPath\": string\n  }\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "996afa79-5436-4fcc-a8ce-6768a47396d2": {
+        "type": "string",
+        "name": "destPath"
+      },
+      "9fd8a91b-c179-45a0-a793-b6e8fd0cd180": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/ffmpeg/To WAV converter/Internal",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "description": "",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

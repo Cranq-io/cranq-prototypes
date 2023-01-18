@@ -1,27 +1,29 @@
 {
-  "name": "media/audio converter",
-  "description": "Converts audio files to wav file.\nIt requires ffmpeg to be installed.",
+  "name": "sdks/ffmpeg/To WAV converter",
+  "description": "Converts the file under the source path to WAV using Ffmpeg.\n\nIt requires ffmpeg to be installed.",
   "interface": {
     "inputs": {
-      "c0a00d5f-d519-41d5-9fe4-ae60a639155d": {
-        "type": "string",
-        "name": "source path",
-        "description": "The full path of the source audio file."
+      "4484df1e-602f-4c24-a085-74f9afd205ac": {
+        "type": "{\n  \"source\": string,\n  optional \"destination\": string\n}",
+        "name": "paths",
+        "description": "Receives the source and destination paths."
       },
-      "c1516906-d1b3-4ec7-817a-ff620b4806b5": {
-        "type": "string",
-        "name": "target path",
-        "description": "The target path for the converted audio file.\n"
+      "3e9ccdbc-5fba-4d2b-ba97-0fa4d38819a8": {
+        "type": "{\n  optional \"binPath\": string\n}",
+        "name": "params",
+        "description": "Receives generic parameters for the conversion."
       }
     },
     "outputs": {
       "21d80f49-630f-450c-b9ee-25ed699f61fb": {
         "type": "string",
-        "name": "result path"
+        "name": "destination path",
+        "description": "Sends teh actual destination path. (Might be different than what was received.)"
       },
       "9dc5f4c0-4757-49d5-85fb-9cee4d5a9a9a": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends any error that occurred during conversion."
       }
     }
   },
@@ -30,21 +32,21 @@
       "nodes": {
         "00c9f47a-0530-4289-bacc-112c5f015a65": {
           "coordinates": [
-            56,
-            -7
+            3,
+            66
           ],
-          "name": "convert audio",
+          "name": "convert to WAV",
           "prototype": "28142cf9-0eb8-47cc-9257-ce2c42bdbd1c"
         },
         "0aee94e9-d648-4318-a241-ac64bfc68b18": {
           "coordinates": [
-            -78,
-            -20
+            -26,
+            -68
           ],
           "name": "syncer",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"source path\", \"target path\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"paths\", \"params\"]"
           }
         }
       },
@@ -59,14 +61,14 @@
       },
       "forwards": {
         "inputs": {
-          "c0a00d5f-d519-41d5-9fe4-ae60a639155d": {
+          "4484df1e-602f-4c24-a085-74f9afd205ac": {
             "0aee94e9-d648-4318-a241-ac64bfc68b18": {
-              "source path": {}
+              "paths": {}
             }
           },
-          "c1516906-d1b3-4ec7-817a-ff620b4806b5": {
+          "3e9ccdbc-5fba-4d2b-ba97-0fa4d38819a8": {
             "0aee94e9-d648-4318-a241-ac64bfc68b18": {
-              "target path": {}
+              "params": {}
             }
           }
         },
@@ -88,9 +90,10 @@
   "keywords": {
     "audio": null,
     "conversion": null,
+    "convert": null,
     "wav": null
   },
-  "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
+  "iconId": "cf995246-acae-414e-a9c6-4b494413078e",
   "attributes": {
     "locked": true
   }

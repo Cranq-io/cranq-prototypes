@@ -1,22 +1,23 @@
 {
-  "name": "apis/jira/Create issue metadata getter/Group",
+  "name": "apis/jira/Create issue metadata fetcher/URL builder",
   "interface": {
     "inputs": {
       "50b3cd2d-54d4-47fc-9663-4012cb264c53": {
-        "type": "typeof `query params` of `append query to url`",
-        "name": "query"
+        "type": "{\n  optional \"projectIds\": string[],\n  optional  \"projectKeys\" : string[],\n  optional  \"issuetypeIds\" : string[],\n  optional  \"issuetypeNames\" : string[],\n  optional  \"expand\" : string\n}",
+        "name": "query",
+        "description": "Receives issue query."
       },
       "e7e62c82-fd60-46f9-8da8-9b6360525c59": {
-        "type": "typeof `params` of `build base url`",
+        "type": "{\n   \"jiraDomain\": string\n}",
         "name": "params",
-        "description": "[Inherited from port `params` of `build base url`] \nThe actual parameters used for filling the template"
+        "description": "Receives URL parameters"
       }
     },
     "outputs": {
       "d65364c9-1a9d-48f2-95c0-a2fc88e25d19": {
-        "type": "typeof `URL + query` of `append query to url`",
-        "name": "URL + query",
-        "description": "[Inherited from port `URL + query` of `append query to url`] \nSends URL including the query component."
+        "type": "string",
+        "name": "URL",
+        "description": "Sends URL to JIRA issue creation endpoint."
       }
     }
   },
@@ -31,7 +32,7 @@
           "name": "build base url",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{jira domain}/rest/api/3/issue/createmeta\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{jiraDomain}/rest/api/3/issue/createmeta\""
           }
         },
         "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {

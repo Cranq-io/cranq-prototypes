@@ -1,6 +1,6 @@
 {
   "name": "apis/jira/utils/Simple issue builder",
-  "description": "Builds an issue structure based on 4 basic parameters",
+  "description": "Builds an issue structure based on 4 basic parameters:\n* issue type ID\n* project key\n* summary\n* description\n\nThese parameters are sufficient for creating JIRA issues.",
   "interface": {
     "inputs": {
       "233e1520-e9c4-4bf0-b763-31b71c026824": {
@@ -24,9 +24,9 @@
     },
     "outputs": {
       "14f08274-327d-40d7-b570-c45c9f225f9a": {
-        "type": "typeof `tree` of `build issue parameter`",
-        "name": "tree",
-        "description": "[Inherited from port `tree` of `build issue parameter`] \nSends updated tree data structure.\n\nExample:\n{\n  \"a\": {\n     \"b\" : 0,\n     \"c\": 1\n  }\n}"
+        "type": "{\n  \"fields\": {\n    \"issuetype\": {\"id\": string},\n    \"project\": {\"key\": string},\n    \"summary\": string,\n    \"description\": {\n      \"content\": [{\n        \"content\": [string]\n      }]\n    }\n  }\n}",
+        "name": "issue",
+        "description": "Sends a JIRA issue containing only 4 parameters:\n* issue type ID\n* project key\n* summary\n* description\n\nThis is sufficient for creating new issues."
       }
     }
   },
@@ -35,8 +35,8 @@
       "nodes": {
         "6936489b-55b0-4487-a051-e88f42049ee2": {
           "coordinates": [
-            76.5,
-            -52
+            62.5,
+            -53
           ],
           "name": "build issue parameter",
           "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
@@ -99,6 +99,19 @@
       }
     }
   },
-  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
-  "attributes": {}
+  "iconId": "b6f70070-7071-4484-b8e1-ccadfdaad9a3",
+  "keywords": {
+    "create": null,
+    "build": null,
+    "JIRA": null,
+    "issue": null,
+    "ticket": null,
+    "structure": null,
+    "object": null,
+    "data": null,
+    "insertion": null
+  },
+  "attributes": {
+    "locked": true
+  }
 }

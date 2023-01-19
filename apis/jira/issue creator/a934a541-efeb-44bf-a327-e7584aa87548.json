@@ -4,16 +4,16 @@
       "nodes": {
         "2ac81a3a-8f15-480a-b528-5c48ce139d35": {
           "coordinates": [
-            139,
-            42
+            172,
+            189
           ],
           "name": "dispatch request",
           "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
         },
         "581d738e-5d0b-4399-b273-50421c080a03": {
           "coordinates": [
-            -109.33333333333337,
-            -241.33333333333337
+            -52.33333333333337,
+            -203.33333333333337
           ],
           "name": "append authentication",
           "prototype": "0e5575f5-31d2-4ee0-9447-e4e89152c00a",
@@ -21,21 +21,10 @@
             "062e2787-00b2-4f9c-bb9f-b920a40ec68c": "{}"
           }
         },
-        "d49df7bf-9976-4e63-8246-3d3cacb53125": {
-          "coordinates": [
-            -247,
-            -183
-          ],
-          "name": "get auth",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"auth\""
-          }
-        },
         "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
           "coordinates": [
-            52,
-            -170
+            -3,
+            26
           ],
           "name": "build request",
           "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
@@ -45,16 +34,16 @@
         },
         "dbd884b9-5a9b-4504-8c1d-c234f71b5752": {
           "coordinates": [
-            -416,
-            -25
+            -339,
+            -112
           ],
           "name": "forward inputs",
           "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
         },
         "2b5abf19-a328-42e9-b7e1-49ff578ffe16": {
           "coordinates": [
-            314,
-            -145
+            234,
+            -111
           ],
           "name": "json response error detector",
           "prototype": "96338675-b63b-4afe-9e7b-ea3f3e7e1040",
@@ -64,21 +53,14 @@
         },
         "d8728c9a-48a9-491c-bc2b-de749b688198": {
           "coordinates": [
-            -221,
-            45.5
+            -259,
+            194.5
           ],
           "name": "build url",
           "prototype": "49bbefe5-a811-459c-b7eb-594adb3b9519"
         }
       },
       "connections": {
-        "d49df7bf-9976-4e63-8246-3d3cacb53125": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "581d738e-5d0b-4399-b273-50421c080a03": {
-              "b61d32e9-183d-4b2a-b315-9830a72619d3": {}
-            }
-          }
-        },
         "581d738e-5d0b-4399-b273-50421c080a03": {
           "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
             "6b92f0a8-5339-49a9-9988-3a1acc72f223": {
@@ -100,11 +82,11 @@
             }
           },
           "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
-            "d49df7bf-9976-4e63-8246-3d3cacb53125": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
             "d8728c9a-48a9-491c-bc2b-de749b688198": {
               "4dfa32c3-46ec-4fba-a2bd-0722716bcef1": {}
+            },
+            "581d738e-5d0b-4399-b273-50421c080a03": {
+              "b61d32e9-183d-4b2a-b315-9830a72619d3": {}
             }
           },
           "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
@@ -180,29 +162,38 @@
         "name": "query"
       },
       "c962b98a-447b-407d-bda9-9c1d38df3588": {
-        "type": "{\n   \"auth\": {\n       \"email\": string,\n      \"api token\": string\n   },\n   \"jira domain\": string\n}",
+        "type": "{\n   \"email\": string,\n   \"apiToken\": string,\n   \"jiraDomain\": string\n}",
         "name": "params"
       }
     },
     "outputs": {
       "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
-        "type": "{\n  \"projects\": {\n     \"self\": string,\n     \"id\": string,\n     \"key\": string,\n     \"name\": string,\n     \"avatarUrls\": {string:string},\n     \"issuetypes\": {string: any}[]\n   }[]\n}",
+        "type": "{\n   \"self\": string,\n   \"id\": string,\n   \"key\": string,\n   \"transition\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   },\n   \"watchers\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   }\n}",
         "name": "data",
-        "description": "    "
+        "description": "Sends information about the created issue, and if necessary, any errors occurred in the meantime."
       },
       "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
-        "name": "response"
+        "name": "response",
+        "description": "Sends the original API response."
       },
       "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends any error that might have occurred during insertion."
       }
     }
   },
   "name": "apis/jira/Issue creator",
   "original": "92a0878a-d7a3-4ce7-9fa1-3aaefc0d3126",
-  "attributes": {
-    "locked": true
-  }
+  "iconId": "b6f70070-7071-4484-b8e1-ccadfdaad9a3",
+  "description": "Creates a JIRA issue via the JIRA API.\n\nFurther info:\nhttps://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-post",
+  "keywords": {
+    "create": null,
+    "insert": null,
+    "ticket": null,
+    "issue": null,
+    "JIRA": null
+  },
+  "attributes": {}
 }

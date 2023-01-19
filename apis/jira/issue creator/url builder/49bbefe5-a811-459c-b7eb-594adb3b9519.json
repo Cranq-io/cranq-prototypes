@@ -1,22 +1,22 @@
 {
-  "name": "apis/jira/Issue creator/Group",
+  "name": "apis/jira/Issue creator/URL builder",
   "interface": {
     "inputs": {
       "78b522ea-efc3-4de6-9f23-648c01b4c374": {
-        "type": "typeof `query params` of `append query to url`",
+        "type": "{\n   optional \"updateHistory\": boolean\n}",
         "name": "query"
       },
       "4dfa32c3-46ec-4fba-a2bd-0722716bcef1": {
-        "type": "typeof `params` of `build base url`",
+        "type": "{\n   \"jiraDomain\": string\n}",
         "name": "params",
-        "description": "[Inherited from port `params` of `build base url`] \nThe actual parameters used for filling the template"
+        "description": ""
       }
     },
     "outputs": {
       "4ce6445c-9e75-411f-b7fb-9b5a99b35d65": {
-        "type": "typeof `URL + query` of `append query to url`",
-        "name": "URL + query",
-        "description": "[Inherited from port `URL + query` of `append query to url`] \nSends URL including the query component."
+        "type": "string",
+        "name": "URL",
+        "description": ""
       }
     }
   },
@@ -31,7 +31,7 @@
           "name": "build base url",
           "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
           "params": {
-            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{jira domain}/rest/api/3/issue\""
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"{jiraDomain}/rest/api/3/issue\""
           }
         },
         "30e4ea33-ba86-454a-9afe-b60a7c94cf3b": {

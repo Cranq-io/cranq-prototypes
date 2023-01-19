@@ -1,29 +1,38 @@
 {
-  "name": "apis/jira/utils/Issuetype id getter",
+  "name": "apis/jira/utils/Issue type ID fetcher",
   "interface": {
     "inputs": {
       "c4dedb97-b83c-4880-9851-4dc033f405cd": {
         "type": "string",
-        "name": "project key"
+        "name": "project key",
+        "description": "Receives the key that identifies the JIRA project."
       },
       "db1f1076-1b6e-4624-840a-ee581790b944": {
         "type": "string",
-        "name": "issuetype name"
+        "name": "issue type name",
+        "description": "Receives the name of the issue type.\n\nExample: \"Bug\""
       },
       "1d26f894-3129-4063-8c67-4ee24d1704d8": {
-        "type": "typeof `params` of `get meta data`",
-        "name": "params"
+        "type": "{\n   \"email\": string,\n   \"apiToken\": string,\n   \"jiraDomain\": string\n}",
+        "name": "params",
+        "description": "Receives generic parameters for accessing the JIRA API."
       }
     },
     "outputs": {
       "a2ebd2e4-6e43-476d-8cb8-c718822d467c": {
         "type": "string",
-        "name": "issuetype id",
-        "description": "\n    "
+        "name": "issue type ID",
+        "description": "Sends an ID for the specified issue type."
+      },
+      "faaacf8b-09b8-43e8-a8d2-89c7d867cf54": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends original response."
       },
       "144c827d-40dc-4f8a-910e-af209d49df85": {
-        "type": "typeof `error` of `get meta data`",
-        "name": "error"
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that occurred during the metadata query request."
       }
     }
   },
@@ -32,34 +41,22 @@
       "nodes": {
         "663a5238-2044-43d5-b069-544a9ba2da49": {
           "coordinates": [
-            64,
-            60
+            22,
+            -33
           ],
-          "name": "get meta data",
+          "name": "get metadata",
           "prototype": "92a0878a-d7a3-4ce7-9fa1-3aaefc0d3126",
           "params": {}
         },
-        "e2dbe290-9438-4445-ab56-9da3c05d36af": {
-          "coordinates": [
-            -30,
-            -113
-          ],
-          "name": "build query",
-          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
-          "params": {
-            "e080c294-84b6-4587-b31c-a04e230f632e": "{}",
-            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[[\"projectKeys\"], [\"issuetypeNames\"]]"
-          }
-        },
         "9a72228d-2629-48c4-9e06-78ff12731b83": {
           "coordinates": [
-            -174,
-            -169
+            -150,
+            -155
           ],
-          "name": "build nodes array",
+          "name": "build metadata query",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"projectKeys\", \"issuetypeNames\"]"
           }
         },
         "b19be920-91f9-47a5-8d63-1679b50de109": {
@@ -72,45 +69,42 @@
         },
         "f22fd58a-f653-4490-ba39-0c1ab0c42191": {
           "coordinates": [
-            208,
-            -81
+            196,
+            -155
           ],
-          "name": "get first issuetype id",
+          "name": "get first issue type ID",
           "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
           "params": {
             "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"projects\", 0, \"issuetypes\", 0, \"id\"]"
           }
+        },
+        "e7d00e3e-8da9-4879-bd68-9371718cf8f8": {
+          "coordinates": [
+            213.5,
+            123.99999999999994
+          ],
+          "name": "\"not found\" error",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\"error\": \"Issue type ID not found in response.\"}"
+          }
         }
       },
       "connections": {
-        "e2dbe290-9438-4445-ab56-9da3c05d36af": {
-          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
-            "663a5238-2044-43d5-b069-544a9ba2da49": {
-              "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {}
-            }
-          }
-        },
-        "9a72228d-2629-48c4-9e06-78ff12731b83": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "e2dbe290-9438-4445-ab56-9da3c05d36af": {
-              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
-            }
-          }
-        },
         "b19be920-91f9-47a5-8d63-1679b50de109": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "663a5238-2044-43d5-b069-544a9ba2da49": {
+              "c962b98a-447b-407d-bda9-9c1d38df3588": {}
+            }
+          },
           "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
             "9a72228d-2629-48c4-9e06-78ff12731b83": {
-              "0": {}
+              "projectKeys": {}
             }
           },
           "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
             "9a72228d-2629-48c4-9e06-78ff12731b83": {
-              "1": {}
-            }
-          },
-          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
-            "663a5238-2044-43d5-b069-544a9ba2da49": {
-              "c962b98a-447b-407d-bda9-9c1d38df3588": {}
+              "issuetypeNames": {}
             }
           }
         },
@@ -118,6 +112,20 @@
           "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
             "f22fd58a-f653-4490-ba39-0c1ab0c42191": {
               "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "9a72228d-2629-48c4-9e06-78ff12731b83": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "663a5238-2044-43d5-b069-544a9ba2da49": {
+              "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {}
+            }
+          }
+        },
+        "f22fd58a-f653-4490-ba39-0c1ab0c42191": {
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "e7d00e3e-8da9-4879-bd68-9371718cf8f8": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
             }
           }
         }
@@ -144,16 +152,32 @@
           "144c827d-40dc-4f8a-910e-af209d49df85": {
             "663a5238-2044-43d5-b069-544a9ba2da49": {
               "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {}
+            },
+            "e7d00e3e-8da9-4879-bd68-9371718cf8f8": {
+              "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {}
             }
           },
           "a2ebd2e4-6e43-476d-8cb8-c718822d467c": {
             "f22fd58a-f653-4490-ba39-0c1ab0c42191": {
               "b6722d08-460c-465b-a9f1-d1f843500424": {}
             }
+          },
+          "faaacf8b-09b8-43e8-a8d2-89c7d867cf54": {
+            "663a5238-2044-43d5-b069-544a9ba2da49": {
+              "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {}
+            }
           }
         }
       }
     }
+  },
+  "iconId": "b6f70070-7071-4484-b8e1-ccadfdaad9a3",
+  "description": "Fetches the ID of an issue type via the JIRA API, based on its name and the project it belongs to.",
+  "keywords": {
+    "issue type": null,
+    "identifier": null,
+    "fetch": null,
+    "get": null
   },
   "attributes": {
     "locked": true

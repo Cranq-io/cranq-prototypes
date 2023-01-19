@@ -4,19 +4,20 @@
     "inputs": {
       "062e2787-00b2-4f9c-bb9f-b920a40ec68c": {
         "type": "{string: string}",
-        "name": "headers"
+        "name": "headers",
+        "description": "Receives the original request headers."
       },
       "b61d32e9-183d-4b2a-b315-9830a72619d3": {
-        "type": "{\"email\": string, \"api token\": string}",
+        "type": "{\n  \"email\": string,\n  \"apiToken\": string\n}",
         "name": "auth",
-        "description": ""
+        "description": "Receives the authentication parameters."
       }
     },
     "outputs": {
       "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
         "type": "{string:string}",
         "name": "headers",
-        "description": ""
+        "description": "Sends request headers including authentication header."
       }
     }
   },
@@ -25,46 +26,53 @@
       "nodes": {
         "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
           "coordinates": [
-            97.33333333333337,
-            -123.66666666666663
+            120.33333333333337,
+            -108.66666666666669
           ],
           "name": "insert basic authorization",
           "prototype": "3288419c-e3c1-4a79-95f5-40789cee4de3",
           "params": {}
         },
-        "6d160946-5531-46ab-9ffd-d15652a5173d": {
+        "8bad9cbe-efe2-4104-b804-849ccda6370c": {
           "coordinates": [
-            -96.66666666666663,
-            4.333333333333371
+            -135.16666666666663,
+            -40.666666666666686
           ],
-          "name": "get email",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"email\""
-          }
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
         },
-        "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
+        "b8591b3e-72fe-47b0-b0bd-d2643724fc8d": {
           "coordinates": [
-            -99.66666666666663,
-            102.33333333333337
+            -20.16666666666663,
+            107.33333333333331
           ],
-          "name": "get api token",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "name": "split auth",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
           "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"api token\""
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"email\", \"apiToken\"]"
           }
         }
       },
       "connections": {
-        "6d160946-5531-46ab-9ffd-d15652a5173d": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+        "8bad9cbe-efe2-4104-b804-849ccda6370c": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "b8591b3e-72fe-47b0-b0bd-d2643724fc8d": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
             "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
-              "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {}
+              "a6b22162-d4e6-48ff-96bd-eb18b5753273": {}
             }
           }
         },
-        "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+        "b8591b3e-72fe-47b0-b0bd-d2643724fc8d": {
+          "email": {
+            "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
+              "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {}
+            }
+          },
+          "apiToken": {
             "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
               "23a1504c-0710-4791-bc67-cc280d056ea3": {}
             }
@@ -74,16 +82,13 @@
       "forwards": {
         "inputs": {
           "b61d32e9-183d-4b2a-b315-9830a72619d3": {
-            "6d160946-5531-46ab-9ffd-d15652a5173d": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
-            "bfce7698-ad37-4318-8058-391ea7ffe9a1": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            "8bad9cbe-efe2-4104-b804-849ccda6370c": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
             }
           },
           "062e2787-00b2-4f9c-bb9f-b920a40ec68c": {
-            "42ef9470-8b97-46be-ae9f-a92ccb236d54": {
-              "a6b22162-d4e6-48ff-96bd-eb18b5753273": {}
+            "8bad9cbe-efe2-4104-b804-849ccda6370c": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
             }
           }
         },
@@ -97,8 +102,15 @@
       }
     }
   },
-  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
-  "attributes": {
-    "locked": true
-  }
+  "iconId": "b6f70070-7071-4484-b8e1-ccadfdaad9a3",
+  "description": "Inserts email and API token into request headers as basic authentication.",
+  "keywords": {
+    "jira": null,
+    "authentication": null,
+    "email": null,
+    "token": null,
+    "headers": null,
+    "request": null
+  },
+  "attributes": {}
 }

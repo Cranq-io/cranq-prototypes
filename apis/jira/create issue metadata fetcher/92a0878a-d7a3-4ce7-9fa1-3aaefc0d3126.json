@@ -12,8 +12,8 @@
         },
         "581d738e-5d0b-4399-b273-50421c080a03": {
           "coordinates": [
-            -137.33333333333337,
-            -314.33333333333337
+            -227.33333333333337,
+            -247.33333333333337
           ],
           "name": "append authentication",
           "prototype": "0e5575f5-31d2-4ee0-9447-e4e89152c00a",
@@ -23,24 +23,13 @@
         },
         "af0ab802-3ea5-4441-b062-b338445ae249": {
           "coordinates": [
-            14,
-            -229
+            -34,
+            -132
           ],
           "name": "build request",
           "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
           "params": {
             "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
-          }
-        },
-        "d49df7bf-9976-4e63-8246-3d3cacb53125": {
-          "coordinates": [
-            -274,
-            -227
-          ],
-          "name": "get auth",
-          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
-          "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"auth\""
           }
         },
         "ee6133f7-a43b-4be1-9426-1d7060e1884c": {
@@ -64,8 +53,8 @@
         },
         "9f59fdbe-644c-4f34-8fbe-7b77407d58ed": {
           "coordinates": [
-            -199.5,
-            -27
+            -225.5,
+            83
           ],
           "name": "build url",
           "prototype": "6b32aa02-e897-4c19-9fc3-16fe1269805d"
@@ -86,20 +75,13 @@
             }
           }
         },
-        "d49df7bf-9976-4e63-8246-3d3cacb53125": {
-          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
-            "581d738e-5d0b-4399-b273-50421c080a03": {
-              "b61d32e9-183d-4b2a-b315-9830a72619d3": {}
-            }
-          }
-        },
         "ee6133f7-a43b-4be1-9426-1d7060e1884c": {
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "d49df7bf-9976-4e63-8246-3d3cacb53125": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
             "9f59fdbe-644c-4f34-8fbe-7b77407d58ed": {
               "e7e62c82-fd60-46f9-8da8-9b6360525c59": {}
+            },
+            "581d738e-5d0b-4399-b273-50421c080a03": {
+              "b61d32e9-183d-4b2a-b315-9830a72619d3": {}
             }
           },
           "069a212d-9cea-4987-be45-e0079a13d96f": {
@@ -162,19 +144,21 @@
   "interface": {
     "inputs": {
       "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
-        "type": "{\n  optional \"projectIds\": string[],\n  optional  \"projectKeys\" : string[],\n  optional  \"issuetypeIds\" : string[],\n  optional  \"issuetypeNames\" : string[],\n  optional  \"expand\" : string\n}",
-        "name": "query"
+        "type": "{\n  optional \"projectIds\": (string or string[]),\n  optional  \"projectKeys\" : (string or string[]),\n  optional  \"issuetypeIds\" : (string or string[]),\n  optional  \"issuetypeNames\" : (string or string[]),\n  optional  \"expand\" : string\n}",
+        "name": "query",
+        "description": "Receives parameters for the metadata query.\n\nSee: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-get"
       },
       "c962b98a-447b-407d-bda9-9c1d38df3588": {
-        "type": "{\n   \"auth\": {\n       \"email\": string,\n      \"api token\": string\n   },\n   \"jira domain\": string\n}",
-        "name": "params"
+        "type": "{\n   \"email\": string,\n   \"apiToken\": string,\n   \"jiraDomain\": string\n}",
+        "name": "params",
+        "description": "Receives generic parameters for accessing the JIRA API."
       }
     },
     "outputs": {
       "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
         "type": "{\n  \"projects\": {\n     \"self\": string,\n     \"id\": string,\n     \"key\": string,\n     \"name\": string,\n     \"avatarUrls\": {string:string},\n     \"issuetypes\": {string: any}[]\n   }[]\n}",
         "name": "data",
-        "description": "    "
+        "description": "Sends details of projects and issue types within projects.\n\nSee: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-get"
       },
       "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -182,11 +166,23 @@
       },
       "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends any error that might have occurred during the request."
       }
     }
   },
-  "name": "apis/jira/Create issue metadata getter",
+  "name": "apis/jira/Create issue metadata fetcher",
+  "iconId": "b6f70070-7071-4484-b8e1-ccadfdaad9a3",
+  "description": "Fetches metatada from the JIRA API about the options for creating JIRA issues, including field names.\n\nFurther info:\nhttps://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-get",
+  "keywords": {
+    "JIRA": null,
+    "ticket": null,
+    "issue": null,
+    "creation": null,
+    "insertion": null,
+    "metadata": null,
+    "options": null
+  },
   "attributes": {
     "locked": true
   }

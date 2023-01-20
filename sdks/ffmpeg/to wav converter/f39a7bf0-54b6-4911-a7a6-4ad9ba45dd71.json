@@ -1,17 +1,12 @@
 {
   "name": "sdks/ffmpeg/To WAV converter",
-  "description": "Converts the file under the source path to WAV using Ffmpeg.\n\nIt requires ffmpeg to be installed.",
+  "description": "Converts the file under the source path to WAV using Ffmpeg.\n",
   "interface": {
     "inputs": {
       "4484df1e-602f-4c24-a085-74f9afd205ac": {
         "type": "{\n  \"source\": string,\n  optional \"destination\": string\n}",
         "name": "paths",
         "description": "Receives the source and destination paths."
-      },
-      "3e9ccdbc-5fba-4d2b-ba97-0fa4d38819a8": {
-        "type": "{\n  optional \"binPath\": string\n}",
-        "name": "params",
-        "description": "Receives generic parameters for the conversion."
       }
     },
     "outputs": {
@@ -37,38 +32,14 @@
           ],
           "name": "convert to WAV",
           "prototype": "28142cf9-0eb8-47cc-9257-ce2c42bdbd1c"
-        },
-        "0aee94e9-d648-4318-a241-ac64bfc68b18": {
-          "coordinates": [
-            -26,
-            -68
-          ],
-          "name": "syncer",
-          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"paths\", \"params\"]"
-          }
         }
       },
-      "connections": {
-        "0aee94e9-d648-4318-a241-ac64bfc68b18": {
-          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
-            "00c9f47a-0530-4289-bacc-112c5f015a65": {
-              "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {}
-            }
-          }
-        }
-      },
+      "connections": {},
       "forwards": {
         "inputs": {
           "4484df1e-602f-4c24-a085-74f9afd205ac": {
-            "0aee94e9-d648-4318-a241-ac64bfc68b18": {
-              "paths": {}
-            }
-          },
-          "3e9ccdbc-5fba-4d2b-ba97-0fa4d38819a8": {
-            "0aee94e9-d648-4318-a241-ac64bfc68b18": {
-              "params": {}
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {}
             }
           }
         },

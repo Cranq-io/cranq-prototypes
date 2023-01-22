@@ -6,27 +6,34 @@
       "233e1520-e9c4-4bf0-b763-31b71c026824": {
         "type": "string",
         "name": "issue type ID",
-        "description": ""
+        "description": "Receives the identifier of the issue type.\n\nSee `apis/jira/utils/Issue type ID fetcher` for more info."
       },
       "18336e01-fc26-4481-8879-259ea4e0de91": {
         "type": "string",
         "name": "project key",
-        "description": ""
+        "description": "Receives the JIRA project key.\n\nEg. \"PRJ\""
       },
       "21d42133-11a3-4c85-a733-d19bd2d26507": {
         "type": "string",
-        "name": "summary"
+        "name": "summary",
+        "description": "Receives the JIRA issue's short summary."
       },
       "89ae774e-4c2d-4d31-9211-d212c6e494db": {
         "type": "string",
-        "name": "description"
+        "name": "description",
+        "description": "Receives the JIRA issue's long-form description."
+      },
+      "de14fcfd-27d6-46d6-8237-9c2b598b690a": {
+        "type": "(\"Highest\" or \"High\" or \"Low\" or \"Lowest\")",
+        "name": "priority",
+        "description": "Receibes the issue's priority. (As per default priority field.)\n\nPossible values are:\n* Highest\n* High\n* Low\n* Lowest"
       }
     },
     "outputs": {
       "14f08274-327d-40d7-b570-c45c9f225f9a": {
         "type": "{\n  \"fields\": {\n    \"issuetype\": {\"id\": string},\n    \"project\": {\"key\": string},\n    \"summary\": string,\n    \"description\": {\n      \"content\": [{\n        \"content\": [string]\n      }]\n    }\n  }\n}",
         "name": "issue",
-        "description": "Sends a JIRA issue containing only 4 parameters:\n* issue type ID\n* project key\n* summary\n* description\n\nThis is sufficient for creating new issues."
+        "description": "Sends a JIRA issue containing only 4 parameters:\n* issue type ID\n* project key\n* summary\n* description\n* priority\n\nThis is sufficient for creating new issues."
       }
     }
   },
@@ -35,25 +42,25 @@
       "nodes": {
         "6936489b-55b0-4487-a051-e88f42049ee2": {
           "coordinates": [
-            62.5,
-            -53
+            57.5,
+            -65
           ],
           "name": "build issue parameter",
           "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
           "params": {
-            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\n  [\"fields\", \"issuetype\", \"id\"],\n  [\"fields\", \"project\", \"key\"],\n  [\"fields\", \"summary\"],\n  [\"fields\", \"description\", \"content\", 0, \"content\", 0, \"text\"]\n]",
-            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n\t\"fields\": {\r\n\t\t\"summary\": \"Untitled issue\",\r\n\t\t\"description\": {\r\n      \"type\": \"doc\",\r\n      \"version\": 1,\r\n      \"content\": [\r\n        {\r\n          \"type\": \"paragraph\",\r\n          \"content\": [\r\n            {\r\n              \"text\": \"\",\r\n              \"type\": \"text\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"issuetype\": {\r\n      \"id\": \"\"\r\n    },\r\n    \"project\": {\r\n      \"key\": \"\"\r\n    } \r\n\t}\r\n}"
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n\t\"fields\": {\r\n\t\t\"summary\": \"Untitled issue\",\r\n\t\t\"description\": {\r\n      \"type\": \"doc\",\r\n      \"version\": 1,\r\n      \"content\": [\r\n        {\r\n          \"type\": \"paragraph\",\r\n          \"content\": [\r\n            {\r\n              \"text\": \"\",\r\n              \"type\": \"text\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"issuetype\": {\r\n      \"id\": \"\"\r\n    },\r\n    \"project\": {\r\n      \"key\": \"\"\r\n    } \r\n\t}\r\n}",
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\n  [\"fields\", \"issuetype\", \"id\"],\n  [\"fields\", \"project\", \"key\"],\n  [\"fields\", \"summary\"],\n  [\"fields\", \"description\", \"content\", 0, \"content\", 0, \"text\"],\n  [\"fields\", \"priority\", \"name\"]\n]"
           }
         },
         "1ae7410b-f738-4ed2-8f10-82219835935f": {
           "coordinates": [
-            -84.5,
-            39
+            1.5,
+            94
           ],
           "name": "prepare build issue parameter",
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1, 2, 3]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0, 1, 2, 3, 4]"
           }
         }
       },
@@ -86,6 +93,11 @@
           "89ae774e-4c2d-4d31-9211-d212c6e494db": {
             "1ae7410b-f738-4ed2-8f10-82219835935f": {
               "3": {}
+            }
+          },
+          "de14fcfd-27d6-46d6-8237-9c2b598b690a": {
+            "1ae7410b-f738-4ed2-8f10-82219835935f": {
+              "4": {}
             }
           }
         },

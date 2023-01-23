@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": "const {resolve} = require('path')\nconst {spawn} = require('child_process')\nconst pathToFfmpeg = require('ffmpeg-static');\nconst {\n  source, \n  destination\n} = data;\n\nlet destPath;\nif (destination) {\n  destPath = destination;\n} else {\n  const ext = path.extname(source);\n  if (ext){\n    destPath = source.replace(ext, '.wav');\n  }\n  else{\n    destPath = `${source}.wav`;\n  }\n}\n\nconst makeWavArgs = [\n\t'-i', resolve(process.cwd(), source),\n  '-y',\n\t'-format', 'wav',\n\tresolve(process.cwd(), destPath),\n]\n\nconst ffmpegProc = spawn(pathToFfmpeg, makeWavArgs);\n\nffmpegProc.on('close', (code) => {\n  if (code === 0) {\n     outputs.destPath(destPath, tag);\n  } else {\n    outputs.error({error: \"FFmpeg execution failed.\"}, tag);\n  } \n});\n"
+        "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": "const {resolve,extname} = require('path')\nconst {spawn} = require('child_process')\nconst pathToFfmpeg = require('ffmpeg-static');\nconst {\n  source, \n  destination\n} = data;\n\nlet destPath;\nif (destination) {\n  destPath = destination;\n} else {\n  const ext = extname(source);\n  if (ext){\n    destPath = source.replace(ext, '.wav');\n  }\n  else{\n    destPath = `${source}.wav`;\n  }\n}\n\nconst makeWavArgs = [\n\t'-i', resolve(process.cwd(), source),\n  '-y',\n\t'-format', 'wav',\n\tresolve(process.cwd(), destPath),\n]\n\nconst ffmpegProc = spawn(pathToFfmpeg, makeWavArgs);\n\nffmpegProc.on('close', (code) => {\n  if (code === 0) {\n     outputs.destPath(destPath, tag);\n  } else {\n    outputs.error({error: \"FFmpeg execution failed.\"}, tag);\n  } \n});\n"
       },
       "dependencies": {
         "npm": {

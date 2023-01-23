@@ -25,13 +25,14 @@
     },
     "outputs": {
       "efe08520-9c31-4f80-a8fa-b45124488313": {
-        "type": "typeof `data` of `issue creator`",
+        "type": "{\n   \"self\": string,\n   \"id\": string,\n   \"key\": string,\n   \"transition\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   },\n   \"watchers\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   }\n}",
         "name": "data",
-        "description": "[Inherited from port `data` of `issue creator`] \n    "
+        "description": "Sends information about the created issue, and if necessary, any errors occurred in the meantime."
       },
       "7c3f3008-b961-4e99-a95c-6acadcc8849b": {
         "type": "{\"error\": string}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends any error that might have occurred while creating the JIRA issue."
       }
     }
   },

@@ -1,0 +1,47 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": "const fs = require(\"fs\");\nconst sdk = require(\"microsoft-cognitiveservices-speech-sdk\");\nconst {\n    fileName,\n    params: {\n        subscriptionKey,\n        region,\n        language = \"en-US\"\n    }\n} = data;\n\nconst speechConfig = sdk.SpeechConfig.fromSubscription(subscriptionKey, region);\nspeechConfig.speechRecognitionLanguage = language;\n\nlet audioConfig = sdk.AudioConfig.fromWavFileInput(fs.readFileSync(fileName));\nlet speechRecognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);\nlet parts = [];\n\nspeechRecognizer.recognized = (s, e) => {\n    if (e.result.reason == sdk.ResultReason.RecognizedSpeech) {\n        outputs['partial result'](e.result.text, tag);\n        parts.push(e.result.text);\n    }\n};\nspeechRecognizer.canceled = (s, e) => {\n    if (e.reason == sdk.CancellationReason.Error) {\n        outputs['error'](`ErrorCode=${e.errorCode}, ErrorDetails=${e.errorDetails}`);\n    }\n    else {\n        outputs['result'](parts.join(\" \"), tag);\n    }\n    speechRecognizer.stopContinuousRecognitionAsync();\n    speechRecognizer.close();\n};\nspeechRecognizer.sessionStopped = (s, e) => {\n    speechRecognizer.stopContinuousRecognitionAsync();\n};\n\nspeechRecognizer.startContinuousRecognitionAsync();"
+      },
+      "dependencies": {
+        "npm": {
+          "microsoft-cognitiveservices-speech-sdk": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": {
+        "type": "{\n  \"fileName\": string,\n  \"params\": {\n    \"subscriptionKey\": string,\n    \"region\": string,\n    optional \"language\": string\n  }\n}",
+        "name": "params",
+        "description": "See https://learn.microsoft.com/en-us/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#microsoft-cognitiveservices-speech-sdk-speechrecognizer-recognizeonceasync"
+      }
+    },
+    "outputs": {
+      "b9ffcede-7d83-4016-a12c-b9fb49244764": {
+        "type": "{\n  optional \"duration\": number, \n  optional \"errorDetails\": string,\n  optional \"language\": string, \n  optional \"languageDetectionConfidence\": string,\n  optional \"offset\": number,\n  optional \"properties\": {string: any}, \n  optional \"reason\": number,\n  optional \"resultId\": string,\n  optional \"speakerId\": string,\n  optional \"text\": string\n}",
+        "name": "result"
+      },
+      "d5ab5e81-dace-4eed-90dd-0de3f788fc97": {
+        "type": "string",
+        "name": "partial result"
+      },
+      "47693f97-e134-4fde-8ef1-877461c7c656": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/azure/Speech detailed recognizer (from WAV file input)/Internal",
+  "description": "",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "original": "8c64ac9a-9a14-4d5c-956f-17df1418415c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

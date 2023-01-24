@@ -1,0 +1,39 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "67ad96c0-f37d-474e-8112-1a5e50cdd984": "const fs = require(\"fs\");\nconst sdk = require(\"microsoft-cognitiveservices-speech-sdk\");\n\nconst {\n    [\"WAV file out path\"]: fileName,\n    text,\n    params: {\n        subscriptionKey,\n        region,\n        voiceName = \"en-US-JennyNeural\"\n    }\n} = data;\n\nconst speechConfig = sdk.SpeechConfig.fromSubscription(subscriptionKey, region);\nspeechConfig.speechSynthesisVoiceName = voiceName;\n\nconst audioConfig = sdk.AudioConfig.fromAudioFileOutput(fileName);\nvar synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);\n\nsynthesizer.speakTextAsync(text,\n    function (result) {\n        if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {\n            outputs['result'](fileName, tag);\n        } else {\n            outputs['error'](result.errorDetails, tag);\n        }\n        synthesizer.close();\n        synthesizer = null;\n    },\n    function (err) {\n        outputs['error'](err, tag);\n        synthesizer.close();\n        synthesizer = null;\n    }\n);\n"
+      },
+      "dependencies": {
+        "npm": {
+          "microsoft-cognitiveservices-speech-sdk": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "67ad96c0-f37d-474e-8112-1a5e50cdd984": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "cbde91cb-2b6b-48ca-add3-6738454ab943": {
+        "type": "string",
+        "name": "result",
+        "description": "Sends the file name of the synthesized woice."
+      },
+      "9c4af61b-e050-4c11-a18e-4af66ce3f14b": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/azure/Speech synthesizer (to WAV file output)/Internal",
+  "attributes": {
+    "internal": true
+  }
+}

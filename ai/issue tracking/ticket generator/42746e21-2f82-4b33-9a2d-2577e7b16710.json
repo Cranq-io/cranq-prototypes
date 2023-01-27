@@ -1,0 +1,259 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9b6da0da-1088-4de1-9854-c522d93b696d": {
+          "coordinates": [
+            29,
+            188
+          ],
+          "name": "create completion",
+          "prototype": "d4ebabb4-abcf-4ee4-9598-c37eba05e733"
+        },
+        "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+          "coordinates": [
+            -278,
+            82
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "4c3377cb-4983-40a8-9936-0cf80a28174b": {
+          "coordinates": [
+            -267,
+            -123
+          ],
+          "name": "make prompt from task",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"Suggest a user story as a JIRA ticket for a task I give. It should include a single line title, a description, acceptance criteria and priority (Highest, High, Low, Lowest). Start the description as user or technical stories usually start. Use the characters *** to separate the title, description, acceptance criteria, and priority sections.\\nThe task:\""
+          }
+        },
+        "5a6f19cf-1c96-4943-853e-10ec7238281c": {
+          "coordinates": [
+            -118,
+            -35.5
+          ],
+          "name": "add prompt to req",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\n  \"model\": \"text-davinci-003\",\n  \"max_tokens\": 500,\n  \"temperature\": 0.0\n}",
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"prompt\""
+          }
+        },
+        "b7c13835-ecdc-462d-b03a-b389beebdb96": {
+          "coordinates": [
+            67,
+            -121.5
+          ],
+          "name": "extract completion text",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"choices\", 0, \"text\"]"
+          }
+        },
+        "ec5afd9b-a4d2-4a4a-9cfb-429f56ff531e": {
+          "coordinates": [
+            225,
+            100.5
+          ],
+          "name": "error message",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\"error\": \"Completion not found in OpenAI response.\"}"
+          }
+        },
+        "ce52088e-6626-47d5-9e96-ba6034b0c2d3": {
+          "coordinates": [
+            -167,
+            263.5
+          ],
+          "name": "rename params",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"apiKey\": \"openAiApiKey\"}"
+          }
+        },
+        "c9a94bf9-fa69-43ec-9f01-78eb9195adf5": {
+          "coordinates": [
+            337,
+            -19.5
+          ],
+          "name": "split to section values",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"Title\", \"Description\", \"Acceptance Criteria\", \"Priority\"]"
+          }
+        },
+        "9bbb61c7-afea-4499-9a5a-6faeed493d7d": {
+          "coordinates": [
+            234.8,
+            -238.5
+          ],
+          "name": "parse ticket",
+          "prototype": "5ac25616-9315-457b-8a77-97de3c617c6b"
+        }
+      },
+      "connections": {
+        "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "4c3377cb-4983-40a8-9936-0cf80a28174b": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "ce52088e-6626-47d5-9e96-ba6034b0c2d3": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          }
+        },
+        "4c3377cb-4983-40a8-9936-0cf80a28174b": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "5a6f19cf-1c96-4943-853e-10ec7238281c": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "5a6f19cf-1c96-4943-853e-10ec7238281c": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {}
+            }
+          }
+        },
+        "9b6da0da-1088-4de1-9854-c522d93b696d": {
+          "d293caee-efa3-41e7-84f9-084b15fe44e6": {
+            "b7c13835-ecdc-462d-b03a-b389beebdb96": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "b7c13835-ecdc-462d-b03a-b389beebdb96": {
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "ec5afd9b-a4d2-4a4a-9cfb-429f56ff531e": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          },
+          "b6722d08-460c-465b-a9f1-d1f843500424": {
+            "9bbb61c7-afea-4499-9a5a-6faeed493d7d": {
+              "651d46a0-07dc-432a-b49a-d5a37b88799f": {}
+            }
+          }
+        },
+        "ce52088e-6626-47d5-9e96-ba6034b0c2d3": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "879c752d-3302-40bd-8104-110a5abda395": {}
+            }
+          }
+        },
+        "9bbb61c7-afea-4499-9a5a-6faeed493d7d": {
+          "2c275125-ef6a-4234-a831-1d43e12c0935": {
+            "c9a94bf9-fa69-43ec-9f01-78eb9195adf5": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "55d65171-c5d4-44d1-bd57-7c2b869521b8": {
+            "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "e7bb2a40-73f9-48de-9e68-5b07def66a47": {
+            "717cfe3b-0062-49eb-a6df-a7c59e320900": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "0a5240b9-0434-4e88-91a4-44063a40a0dd": {
+            "9b6da0da-1088-4de1-9854-c522d93b696d": {
+              "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {}
+            },
+            "ec5afd9b-a4d2-4a4a-9cfb-429f56ff531e": {
+              "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {}
+            }
+          },
+          "299a7b59-1dc1-4b9f-b6fb-4bdc0d103e66": {
+            "c9a94bf9-fa69-43ec-9f01-78eb9195adf5": {
+              "Title": {}
+            }
+          },
+          "fc7874a3-76d7-479c-b66c-f2c92ef85884": {
+            "c9a94bf9-fa69-43ec-9f01-78eb9195adf5": {
+              "Description": {}
+            }
+          },
+          "be06025f-d992-413f-8b68-c79ac29649d9": {
+            "c9a94bf9-fa69-43ec-9f01-78eb9195adf5": {
+              "Priority": {}
+            }
+          },
+          "6b5b8925-1c83-4b75-9d9b-f271fcd69432": {
+            "c9a94bf9-fa69-43ec-9f01-78eb9195adf5": {
+              "Acceptance Criteria": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "55d65171-c5d4-44d1-bd57-7c2b869521b8": {
+        "type": "string",
+        "name": "task description",
+        "description": "Receives the free-worded task description that should be 'ticketified'."
+      },
+      "e7bb2a40-73f9-48de-9e68-5b07def66a47": {
+        "type": "{\n  \"openAiApiKey\": string\n}",
+        "name": "params",
+        "description": "Receives generic API parameters, including credentials."
+      }
+    },
+    "outputs": {
+      "299a7b59-1dc1-4b9f-b6fb-4bdc0d103e66": {
+        "type": "string",
+        "name": "summary"
+      },
+      "fc7874a3-76d7-479c-b66c-f2c92ef85884": {
+        "type": "string",
+        "name": "description"
+      },
+      "6b5b8925-1c83-4b75-9d9b-f271fcd69432": {
+        "type": "string",
+        "name": "acceptance criteria"
+      },
+      "be06025f-d992-413f-8b68-c79ac29649d9": {
+        "type": "string",
+        "name": "priority"
+      },
+      "0a5240b9-0434-4e88-91a4-44063a40a0dd": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error occurred during the completion proces."
+      }
+    }
+  },
+  "name": "ai/issue tracking/Ticket generator",
+  "description": "Generates the basic fields for a ticket in an issue tracking system (eg. JIRA) based on the received free-form instruction.\n\nOutputs ticket summary, description, acceptance criteria, and priority.\n\nThe result can be plugged directly into a `apis/jira/utils/Simple issue builder` to prepare JIRA tickets for insertion.\n\nUses OpenAI GPT-3 internally. Requires OpenAI API key.",
+  "keywords": {
+    "AI": null,
+    "OpenAI": null,
+    "JIRA": null,
+    "ticket": null,
+    "issue": null,
+    "create": null,
+    "generate": null,
+    "tracking": null,
+    "project management": null,
+    "GPT-3": null
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {
+    "locked": true
+  }
+}

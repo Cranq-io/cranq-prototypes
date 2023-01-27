@@ -1,0 +1,71 @@
+{
+  "name": "sdks/ffmpeg/To WAV converter",
+  "description": "Converts the file under the source path to WAV using Ffmpeg.\n",
+  "interface": {
+    "inputs": {
+      "4484df1e-602f-4c24-a085-74f9afd205ac": {
+        "type": "{\n  \"source\": string,\n  optional \"destination\": string\n}",
+        "name": "paths",
+        "description": "Receives the source and destination paths."
+      }
+    },
+    "outputs": {
+      "21d80f49-630f-450c-b9ee-25ed699f61fb": {
+        "type": "string",
+        "name": "destination path",
+        "description": "Sends teh actual destination path. (Might be different than what was received.)"
+      },
+      "9dc5f4c0-4757-49d5-85fb-9cee4d5a9a9a": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that occurred during conversion."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "00c9f47a-0530-4289-bacc-112c5f015a65": {
+          "coordinates": [
+            3,
+            66
+          ],
+          "name": "convert to WAV",
+          "prototype": "28142cf9-0eb8-47cc-9257-ce2c42bdbd1c"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "4484df1e-602f-4c24-a085-74f9afd205ac": {
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {}
+            }
+          }
+        },
+        "outputs": {
+          "21d80f49-630f-450c-b9ee-25ed699f61fb": {
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "996afa79-5436-4fcc-a8ce-6768a47396d2": {}
+            }
+          },
+          "9dc5f4c0-4757-49d5-85fb-9cee4d5a9a9a": {
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "9fd8a91b-c179-45a0-a793-b6e8fd0cd180": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "audio": null,
+    "conversion": null,
+    "convert": null,
+    "wav": null
+  },
+  "iconId": "cf995246-acae-414e-a9c6-4b494413078e",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "sdks/azure/Speech recognizer (from WAV file input)",
+  "interface": {
+    "inputs": {
+      "9614de70-be21-4b26-914b-626411d10007": {
+        "type": "string",
+        "name": "WAV file path",
+        "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\n\ne.g.: \"/Users/user1/AzureSpeech/samples/speech.wav\""
+      },
+      "d94b7b8b-2033-49d6-a041-782ba7f57ba0": {
+        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"language\": string\n}",
+        "name": "params",
+        "description": "Receives generic parameters for Azure speech to text services,including credentials.\n\nThe key and region values are available from Azure dashboard.\n\nexample:\n{\n  \"subscriptionKey\": \"1e***f\",\n  \"region\": \"eastus2\",\n  \"language\": \"en-GB\"\n}"
+      }
+    },
+    "outputs": {
+      "c16a4c44-3931-48f0-b7d2-9306fb03dea1": {
+        "type": "{\n  optional \"duration\": number, \n  optional \"errorDetails\": string,\n  optional \"language\": string, \n  optional \"languageDetectionConfidence\": string,\n  optional \"offset\": number,\n  optional \"properties\": {string: any}, \n  optional \"reason\": number,\n  optional \"resultId\": string,\n  optional \"speakerId\": string,\n  optional \"text\": string\n}",
+        "name": "result",
+        "description": "Sends the result of the speech recognition."
+      },
+      "77ed0548-616e-453a-8531-78d6bbddc486": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during the API call."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "00b0aaa0-a057-4749-81f6-1501af08e556": {
+          "coordinates": [
+            1.5,
+            95
+          ],
+          "name": "speech to text",
+          "prototype": "8c64ac9a-9a14-4d5c-956f-17df1418415c"
+        },
+        "b58f4258-012e-4c78-b61e-93e58da0b396": {
+          "coordinates": [
+            -36,
+            -75
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"fileName\", \"params\"]"
+          }
+        }
+      },
+      "connections": {
+        "b58f4258-012e-4c78-b61e-93e58da0b396": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "00b0aaa0-a057-4749-81f6-1501af08e556": {
+              "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d94b7b8b-2033-49d6-a041-782ba7f57ba0": {
+            "b58f4258-012e-4c78-b61e-93e58da0b396": {
+              "params": {}
+            }
+          },
+          "9614de70-be21-4b26-914b-626411d10007": {
+            "b58f4258-012e-4c78-b61e-93e58da0b396": {
+              "fileName": {}
+            }
+          }
+        },
+        "outputs": {
+          "c16a4c44-3931-48f0-b7d2-9306fb03dea1": {
+            "00b0aaa0-a057-4749-81f6-1501af08e556": {
+              "b9ffcede-7d83-4016-a12c-b9fb49244764": {}
+            }
+          },
+          "77ed0548-616e-453a-8531-78d6bbddc486": {
+            "00b0aaa0-a057-4749-81f6-1501af08e556": {
+              "47693f97-e134-4fde-8ef1-877461c7c656": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Extracts text from speech recording supplied as a WAV file on the local filesystem.",
+  "keywords": {
+    "speech": null,
+    "text": null,
+    "transcribe": null,
+    "transcription": null,
+    "recognition": null,
+    "language": null
+  },
+  "iconId": "9f0828c8-d759-4f8e-81e4-68bdfc2e8759",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "description": "Matches a string to a non-global regular expression. \n\n",
+  "description": "Matches a string to a regular expression.",
   "interface": {
     "inputs": {
       "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {
@@ -11,6 +11,11 @@
         "type": "string",
         "name": "regex",
         "description": "Receives the regular expression.\r\n\r\nExample:\r\n\r\n\"(?<animal>fox|cat) jumps over\""
+      },
+      "0d116e49-2554-4f88-936c-d647dadaaac4": {
+        "type": "string",
+        "name": "flags",
+        "description": "Receives the option flags for the regular expression, which is a concatenation of these individual flags:\n- \"m\": multiline\n- \"i\": ignore case\n- \"g\": global\n- \"s\": dot matches all\n- \"y\": sticky\n- \"u\": unicode"
       }
     },
     "outputs": {
@@ -41,20 +46,20 @@
       "nodes": {
         "9b799024-1668-4772-8f10-0e497188a6ef": {
           "coordinates": [
-            -34,
-            -14
+            -38,
+            -69
           ],
           "description": "",
           "params": {
-            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"regex\",\"string\"]"
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"string\", \"regex\", \"flags\"]"
           },
           "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
-          "name": "sync regex & string"
+          "name": "params"
         },
         "ba1f2ca1-6018-4ff6-afd6-8b599c01748c": {
           "coordinates": [
-            42,
-            34
+            32,
+            89
           ],
           "description": "",
           "params": {},
@@ -84,6 +89,11 @@
             "9b799024-1668-4772-8f10-0e497188a6ef": {
               "regex": {}
             }
+          },
+          "0d116e49-2554-4f88-936c-d647dadaaac4": {
+            "9b799024-1668-4772-8f10-0e497188a6ef": {
+              "flags": {}
+            }
           }
         },
         "outputs": {
@@ -112,7 +122,7 @@
     }
   },
   "name": "string/Regex matcher",
-  "original": "98f4e330-2578-4a0f-89c2-e90e8fff7ec4",
+  "original": "8449789e-3b23-4bf5-9c33-931015049dc5",
   "keywords": {
     "string": null,
     "regular expression": null,

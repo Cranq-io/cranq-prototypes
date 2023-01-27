@@ -1,0 +1,204 @@
+{
+  "name": "apis/jira/Simplified issue creator",
+  "interface": {
+    "inputs": {
+      "9285d672-82fb-486d-a090-b808093f68a7": {
+        "type": "string",
+        "name": "summary",
+        "description": "Receives the single-line summary of the issue."
+      },
+      "8214e808-c4fe-4a56-8723-0ab0a9ffe360": {
+        "type": "string",
+        "name": "description",
+        "description": "Receives the full description of the issue."
+      },
+      "0d44ce26-fe86-4ad9-a62d-f9b3b05c8313": {
+        "type": "(\"Highest\" or \"High\" or \"Low\" or \"Lowest\")",
+        "name": "priority",
+        "description": "Receives the issue's priority.\n\nPossible values:\n* Highest\n* High\n* Low\n* Lowest"
+      },
+      "f6631e76-f1f3-4fc0-84b3-31e309b8f44d": {
+        "type": "{\n  \"email\": string,\n  \"apiToken\": string,\n  \"jiraDomain\": string,\n  \"projectKey\": string,\n  \"issueTypeName\": string\n}",
+        "name": "params",
+        "description": "Receives API parameters, including credentials, and project identification."
+      }
+    },
+    "outputs": {
+      "efe08520-9c31-4f80-a8fa-b45124488313": {
+        "type": "{\n   \"self\": string,\n   \"id\": string,\n   \"key\": string,\n   \"transition\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   },\n   \"watchers\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   }\n}",
+        "name": "data",
+        "description": "Sends information about the created issue, and if necessary, any errors occurred in the meantime."
+      },
+      "7c3f3008-b961-4e99-a95c-6acadcc8849b": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred while creating the JIRA issue."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0424badf-8c54-41b3-899b-4e7ce10d8bf1": {
+          "coordinates": [
+            239,
+            -25.5
+          ],
+          "name": "insert issue",
+          "prototype": "a934a541-efeb-44bf-a327-e7584aa87548",
+          "params": {
+            "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": "{}"
+          }
+        },
+        "0da09733-84cd-43bb-9b4a-8165428d2309": {
+          "coordinates": [
+            -3,
+            46.50000000000006
+          ],
+          "name": "get issue type ID",
+          "prototype": "38c2cdcc-6ef5-4ccc-8aed-2368fe9ec060"
+        },
+        "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+          "coordinates": [
+            46,
+            -177.5
+          ],
+          "name": "build issue",
+          "prototype": "9606cad2-3ea8-4afb-a5be-43406fa95872",
+          "params": {}
+        },
+        "fead09a6-a1c0-441d-8ae2-c3196708dfc0": {
+          "coordinates": [
+            -195,
+            155.5
+          ],
+          "name": "get API params",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"projectKey\", \"issueTypeName\"]"
+          }
+        },
+        "86d84b20-be7d-4ada-87a5-ae2eae19bdaf": {
+          "coordinates": [
+            -229,
+            -67.5
+          ],
+          "name": "forwarder (quadruple)",
+          "prototype": "761a7cff-0ef3-4630-88ed-2e644a17ab3b"
+        }
+      },
+      "connections": {
+        "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+          "14f08274-327d-40d7-b570-c45c9f225f9a": {
+            "0424badf-8c54-41b3-899b-4e7ce10d8bf1": {
+              "7364dd97-8727-4fbc-a01d-218d460556cb": {}
+            }
+          }
+        },
+        "0da09733-84cd-43bb-9b4a-8165428d2309": {
+          "a2ebd2e4-6e43-476d-8cb8-c718822d467c": {
+            "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+              "233e1520-e9c4-4bf0-b763-31b71c026824": {}
+            }
+          }
+        },
+        "fead09a6-a1c0-441d-8ae2-c3196708dfc0": {
+          "projectKey": {
+            "0da09733-84cd-43bb-9b4a-8165428d2309": {
+              "c4dedb97-b83c-4880-9851-4dc033f405cd": {}
+            },
+            "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+              "18336e01-fc26-4481-8879-259ea4e0de91": {}
+            }
+          },
+          "issueTypeName": {
+            "0da09733-84cd-43bb-9b4a-8165428d2309": {
+              "db1f1076-1b6e-4624-840a-ee581790b944": {}
+            }
+          }
+        },
+        "86d84b20-be7d-4ada-87a5-ae2eae19bdaf": {
+          "8ee51005-e876-4db5-88b5-c9e148feba3f": {
+            "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+              "21d42133-11a3-4c85-a733-d19bd2d26507": {}
+            }
+          },
+          "34f942cc-96a7-4278-a931-d9194e89dfe1": {
+            "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+              "89ae774e-4c2d-4d31-9211-d212c6e494db": {}
+            }
+          },
+          "da773107-7a7f-4fc2-b67d-bb9b76e361eb": {
+            "f611a0b5-e6b1-4d43-b2d7-20b76b291695": {
+              "de14fcfd-27d6-46d6-8237-9c2b598b690a": {}
+            }
+          },
+          "a5a46e47-dacb-477b-b823-398e570fe259": {
+            "fead09a6-a1c0-441d-8ae2-c3196708dfc0": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            },
+            "0424badf-8c54-41b3-899b-4e7ce10d8bf1": {
+              "c962b98a-447b-407d-bda9-9c1d38df3588": {}
+            },
+            "0da09733-84cd-43bb-9b4a-8165428d2309": {
+              "1d26f894-3129-4063-8c67-4ee24d1704d8": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8214e808-c4fe-4a56-8723-0ab0a9ffe360": {
+            "86d84b20-be7d-4ada-87a5-ae2eae19bdaf": {
+              "f1aff635-6110-419c-81b3-ea2bd8b5f791": {}
+            }
+          },
+          "9285d672-82fb-486d-a090-b808093f68a7": {
+            "86d84b20-be7d-4ada-87a5-ae2eae19bdaf": {
+              "b9f6ade5-9bdd-46ef-99d2-616f1cb608c4": {}
+            }
+          },
+          "0d44ce26-fe86-4ad9-a62d-f9b3b05c8313": {
+            "86d84b20-be7d-4ada-87a5-ae2eae19bdaf": {
+              "cbfbd020-ce7f-4fb5-aa15-d63e33d10941": {}
+            }
+          },
+          "f6631e76-f1f3-4fc0-84b3-31e309b8f44d": {
+            "86d84b20-be7d-4ada-87a5-ae2eae19bdaf": {
+              "4fcb135a-9c6c-497b-a96e-526c4727a64a": {}
+            }
+          }
+        },
+        "outputs": {
+          "efe08520-9c31-4f80-a8fa-b45124488313": {
+            "0424badf-8c54-41b3-899b-4e7ce10d8bf1": {
+              "f0ca216e-46c6-4336-8ff3-1c0da809835e": {}
+            }
+          },
+          "7c3f3008-b961-4e99-a95c-6acadcc8849b": {
+            "0424badf-8c54-41b3-899b-4e7ce10d8bf1": {
+              "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {}
+            },
+            "0da09733-84cd-43bb-9b4a-8165428d2309": {
+              "144c827d-40dc-4f8a-910e-af209d49df85": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Creates a JIRA ticket based on the narrowest set of parameters possible.\n\nRequired:\n* issue summary, description, & priority\n* credentials",
+  "iconId": "b6f70070-7071-4484-b8e1-ccadfdaad9a3",
+  "keywords": {
+    "simpified": null,
+    "issue": null,
+    "ticket": null,
+    "create": null,
+    "insert": null,
+    "jira": null,
+    "atlassian": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

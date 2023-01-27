@@ -1,0 +1,122 @@
+{
+  "name": "apis/whatsapp/Media URL fetcher/Request builder",
+  "interface": {
+    "inputs": {
+      "7095d225-70b6-4c68-9577-7f21e9835035": {
+        "type": "string",
+        "name": "media ID",
+        "description": ""
+      },
+      "9cfc1bdd-3c2d-4087-888b-b244a4044ac1": {
+        "type": "typeof `token` of `bearer token inserter`",
+        "name": "bearer token",
+        "description": "[Inherited from port `token` of `bearer token inserter`] \nReceives the string token to be inserted into the Authorization header as Bearer token.\nThe token is usually used in base64 encoded form.\n\nExample: \n- \"SomeDummyToken\" as plain text \n- \"U29tZUR1bW15VG9rZW4=\" as base64 encoded text"
+      }
+    },
+    "outputs": {
+      "3e184361-775b-4fcb-8061-8d1c78ad8a2e": {
+        "type": "typeof `request` of `body-less request builder`",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a878b223-36b2-4803-807d-4e8f4f09c7c7": {
+          "coordinates": [
+            110.5,
+            62.5
+          ],
+          "name": "body-less request builder",
+          "prototype": "39ccfb28-afad-4f91-b70b-65f5513e1b5d",
+          "params": {
+            "f31b205d-f076-4f29-a03e-fa2140ad1c7f": "\"GET\""
+          }
+        },
+        "b90f0620-11da-400f-9f73-5b8ce4afc5c1": {
+          "coordinates": [
+            -3.5,
+            -44.5
+          ],
+          "name": "template filler",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://graph.facebook.com/v15.0/{MEDIA_ID}/\""
+          }
+        },
+        "fe31b9de-b8a0-4f5c-b441-7f08cdfede97": {
+          "coordinates": [
+            -59.5,
+            -161.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"MEDIA_ID\"]"
+          }
+        },
+        "a1240a89-8824-4d35-8dab-4ba7ab071f1b": {
+          "coordinates": [
+            -47.5,
+            143.5
+          ],
+          "name": "bearer token inserter",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        }
+      },
+      "connections": {
+        "fe31b9de-b8a0-4f5c-b441-7f08cdfede97": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b90f0620-11da-400f-9f73-5b8ce4afc5c1": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "b90f0620-11da-400f-9f73-5b8ce4afc5c1": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "a878b223-36b2-4803-807d-4e8f4f09c7c7": {
+              "c375d741-c7d3-4d82-a258-9efce9b40060": {}
+            }
+          }
+        },
+        "a1240a89-8824-4d35-8dab-4ba7ab071f1b": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "a878b223-36b2-4803-807d-4e8f4f09c7c7": {
+              "cf61e886-7ac8-4db4-b292-d1a078f1c2d4": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "7095d225-70b6-4c68-9577-7f21e9835035": {
+            "fe31b9de-b8a0-4f5c-b441-7f08cdfede97": {
+              "MEDIA_ID": {}
+            }
+          },
+          "9cfc1bdd-3c2d-4087-888b-b244a4044ac1": {
+            "a1240a89-8824-4d35-8dab-4ba7ab071f1b": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          }
+        },
+        "outputs": {
+          "3e184361-775b-4fcb-8061-8d1c78ad8a2e": {
+            "a878b223-36b2-4803-807d-4e8f4f09c7c7": {
+              "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

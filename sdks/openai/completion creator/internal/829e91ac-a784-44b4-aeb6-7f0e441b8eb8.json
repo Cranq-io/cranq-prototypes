@@ -1,0 +1,40 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "openai": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "8f23129f-1499-45ed-b280-631a500098f2": "const { Configuration, OpenAIApi } = require(\"openai\");\nconst {request, params: {apiKey}} = data;\nconst configuration = new Configuration({apiKey});\nconst openai = new OpenAIApi(configuration);\n\nasync function main() {\n  try {\n    const response = await openai.createCompletion(request);\n    outputs['response'](response.data, tag);\n  } catch (error) {\n    if (error.response) {\n      const message = `[${error.response.status}] ${error.response.data}`;\n      outputs['error']({error: message}, tag);\n    } else {\n      outputs['error']({error: error.message}, tag);\n    }\n  }\n}\n\nmain();"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "8f23129f-1499-45ed-b280-631a500098f2": {
+        "type": "{\n\"request\": {\n  \"model\": string,\n  optional \"prompt\": (any[] or number[] or string[] or string), \n    optional \"suffix\": (string or null),\n    optional \"max_tokens\": (number or null),\n    optional \"temperature\": (number or null),\n    optional \"top_p\": (number or null),\n    optional \"n\": (number or null),\n    optional \"stream\": (boolean or null),\n    optional \"logprobs\": (number or null),\n    optional \"stop\": (string or string[] or null),\n    optional \"presence_penalty\": (number or null),\n    optional \"frequency_penalty\": (number or null),\n    optional \"best_of\": (number or null),\n    optional \"logit_bias\": ({string: any} or null),\n    optional \"user\": string\n},\n  \"params\": {\n    \"apiKey\": string\n  }\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "1e513315-e3f9-401c-9143-1e18cd265a11": {
+        "type": "any",
+        "name": "response"
+      },
+      "949b4615-89dc-4f97-ac80-0b321bd6071f": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/openai/Completion creator/Internal",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

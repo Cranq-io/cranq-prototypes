@@ -1,0 +1,188 @@
+{
+  "name": "apis/whatsapp/Media downloader",
+  "interface": {
+    "inputs": {
+      "6467943c-1cf4-4b21-8928-8106b5d77be1": {
+        "type": "string",
+        "name": "media URL",
+        "description": "Receives media URL. URL must be obtained via `apis/whatsapp/Media URL fetcher`."
+      },
+      "5ff2d8d9-ca24-44e0-b1b5-3ca4ccf0249b": {
+        "type": "{\n\"accessToken\": string\n}",
+        "name": "params",
+        "description": "Receives generic WhatsApp API parameters."
+      }
+    },
+    "outputs": {
+      "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
+        "type": "string",
+        "name": "media contents",
+        "description": "Sends media file contents as a base64 encoded string."
+      },
+      "8f826b7a-a462-4945-b5c9-2f35479f9e91": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends original endpoint response."
+      },
+      "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {
+        "type": "{\"error\":string}",
+        "name": "error",
+        "description": "Sends error."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+          "coordinates": [
+            39.75,
+            -105.5
+          ],
+          "name": "dispatch request",
+          "prototype": "dcd9db32-5536-4152-950e-a48ef183552c"
+        },
+        "0da57177-8040-488f-97e9-2196a60a8368": {
+          "coordinates": [
+            -234.25,
+            -58.5
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "ad376acb-5032-4ca2-bef8-be87f823dc6a": {
+          "coordinates": [
+            -199.25,
+            163.5
+          ],
+          "name": "get access token",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"accessToken\"]"
+          }
+        },
+        "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
+          "coordinates": [
+            -308.25,
+            99.5
+          ],
+          "name": "apply defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
+          "params": {
+            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\"mimeType\": \"audio/ogg\"}"
+          }
+        },
+        "2bfec558-8d96-438a-8400-5779dd682c55": {
+          "coordinates": [
+            -31.75,
+            52
+          ],
+          "name": "build request",
+          "prototype": "f553041c-0651-43fd-ac74-03c9330e6b67"
+        },
+        "5a979254-134e-4cac-8f7a-c981658abe81": {
+          "coordinates": [
+            207.5,
+            149.16666666666674
+          ],
+          "name": "detect errors",
+          "prototype": "f1bc2eec-3119-4574-a7ae-476631806c5b",
+          "params": {
+            "387fb819-948e-4bce-9542-dd8347977817": "\"WhatsApp media download failed\""
+          }
+        }
+      },
+      "connections": {
+        "0da57177-8040-488f-97e9-2196a60a8368": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "2bfec558-8d96-438a-8400-5779dd682c55": {
+              "f9528478-5404-4a4c-80f9-e4e794877cdf": {}
+            }
+          }
+        },
+        "bfbcafcc-0af6-482f-9a4c-0d8ef4972f28": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "ad376acb-5032-4ca2-bef8-be87f823dc6a": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "2bfec558-8d96-438a-8400-5779dd682c55": {
+          "d8319d0d-7049-4b64-97e3-21e1ea19731a": {
+            "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+              "b176e769-b2ab-45ad-b333-1886030931e3": {}
+            }
+          }
+        },
+        "ad376acb-5032-4ca2-bef8-be87f823dc6a": {
+          "accessToken": {
+            "2bfec558-8d96-438a-8400-5779dd682c55": {
+              "194532df-c311-40ce-a891-d9dbbbf0819c": {}
+            }
+          }
+        },
+        "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+          "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {
+            "5a979254-134e-4cac-8f7a-c981658abe81": {
+              "53e51383-6bc2-4759-9921-0dfaf424099c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "6467943c-1cf4-4b21-8928-8106b5d77be1": {
+            "0da57177-8040-488f-97e9-2196a60a8368": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "5ff2d8d9-ca24-44e0-b1b5-3ca4ccf0249b": {
+            "0da57177-8040-488f-97e9-2196a60a8368": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {
+            "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+              "741875aa-5ef2-4704-a593-f26f3eeddbfa": {}
+            },
+            "5a979254-134e-4cac-8f7a-c981658abe81": {
+              "97d4c37a-7e13-4b19-9445-a29762a3966f": {}
+            }
+          },
+          "8f826b7a-a462-4945-b5c9-2f35479f9e91": {
+            "721b8dc9-8746-49ae-aa55-a02fa39ac606": {
+              "2b56fb5f-6bc5-4f51-8f62-b08957bec6a2": {}
+            }
+          },
+          "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {
+            "5a979254-134e-4cac-8f7a-c981658abe81": {
+              "fde6f814-83e7-4133-995e-88a7771ed31d": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Downloads media from WhatsApp. The received URL must be obtained through `apis/whatsapp/Media URL fetcher`.\n\nThe downloaded media content will be sent as a base64 encoded string.\n\nFurther info:\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/",
+  "keywords": {
+    "media": null,
+    "audio": null,
+    "image": null,
+    "video": null,
+    "OGG": null,
+    "opus": null,
+    "download": null,
+    "base64": null
+  },
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "name": "ai/issue tracking/Ticket creator/Ticket parser",
+  "interface": {
+    "inputs": {
+      "651d46a0-07dc-432a-b49a-d5a37b88799f": {
+        "type": "string",
+        "name": "issue text",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "2c275125-ef6a-4234-a831-1d43e12c0935": {
+        "type": "{\n  \"Title\": string,\n  \"Description\": string,\n  \"Acceptance Criteria\": string,\n  \"Priority\": string\n}",
+        "name": "issue properties",
+        "description": ""
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8339e765-55d3-4e22-803c-a7a564524807": {
+          "coordinates": [
+            -209,
+            45
+          ],
+          "name": "regex splitter",
+          "prototype": "ecf09e5e-6518-4cb1-92fb-f1a96a783a6d",
+          "params": {
+            "911ebfec-b4f0-4e10-ab25-f82a6b8ff8c7": "\"\\\\s+\\\\*\\\\*\\\\*\\\\s+\""
+          }
+        },
+        "23c93023-919f-4fa0-b347-0e13e43e5a75": {
+          "coordinates": [
+            125,
+            -54
+          ],
+          "name": "extract key & value",
+          "prototype": "55e32362-d99d-4563-8735-2c7a7e352b1f",
+          "params": {
+            "4ad33973-93b5-42cd-b485-76c517507786": "\"^\\\\s*(Title|Description|Acceptance Criteria|Priority):\\\\s*(.*?)\\\\s*$\"",
+            "0d116e49-2554-4f88-936c-d647dadaaac4": "\"s\""
+          }
+        },
+        "94e92ffd-ff46-4f5c-954a-6d6c393194c3": {
+          "coordinates": [
+            -25,
+            108
+          ],
+          "name": "map sections to KV pairs",
+          "prototype": "8193ce91-bc7b-4d4d-89d6-49abe83d2de3"
+        },
+        "456b91a8-81de-41db-87f6-7060664496ab": {
+          "coordinates": [
+            198,
+            41
+          ],
+          "name": "build dictionary",
+          "prototype": "9c4ba861-295c-4b59-be22-fc4482fde20c"
+        },
+        "eddd8e2c-7b79-470d-b479-fcb17458041b": {
+          "coordinates": [
+            -70,
+            -62
+          ],
+          "name": "to key-value pair",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"key\": 0, \"value\": 1}"
+          }
+        }
+      },
+      "connections": {
+        "8339e765-55d3-4e22-803c-a7a564524807": {
+          "9556e9e9-e13f-44d0-a648-f58013e3ff27": {
+            "94e92ffd-ff46-4f5c-954a-6d6c393194c3": {
+              "9552da55-ccec-4df0-a06b-c5eb0e961eab": {}
+            }
+          }
+        },
+        "94e92ffd-ff46-4f5c-954a-6d6c393194c3": {
+          "dd117561-ffee-4b4f-aaec-44fb964dc6e5": {
+            "23c93023-919f-4fa0-b347-0e13e43e5a75": {
+              "e79c5f02-8a3c-42e7-95cc-79bfe07a4784": {}
+            }
+          },
+          "9a0b52f5-51ec-4ad4-b49c-f7ca8e6e3ef7": {
+            "456b91a8-81de-41db-87f6-7060664496ab": {
+              "6a7d3e96-88ec-43b5-a8ae-eab6206748b3": {}
+            }
+          }
+        },
+        "23c93023-919f-4fa0-b347-0e13e43e5a75": {
+          "0ae97343-7bd6-43c7-bc0a-08acc2b964c8": {
+            "eddd8e2c-7b79-470d-b479-fcb17458041b": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          }
+        },
+        "eddd8e2c-7b79-470d-b479-fcb17458041b": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "94e92ffd-ff46-4f5c-954a-6d6c393194c3": {
+              "246b2ba5-761d-44bc-932b-9ee909b00258": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "651d46a0-07dc-432a-b49a-d5a37b88799f": {
+            "8339e765-55d3-4e22-803c-a7a564524807": {
+              "aeed0ec7-7761-4612-b575-7b0c8858f57f": {}
+            }
+          }
+        },
+        "outputs": {
+          "2c275125-ef6a-4234-a831-1d43e12c0935": {
+            "456b91a8-81de-41db-87f6-7060664496ab": {
+              "647899b9-8122-4a5b-a622-c9763e51d0c1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "73998790-4b3b-4bba-b5b9-99d4e55e0534",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

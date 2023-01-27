@@ -1,0 +1,184 @@
+{
+  "name": "apis/whatsapp/utils/Audio media ID getter",
+  "interface": {
+    "inputs": {
+      "bd9358fe-4aab-4027-ab93-dfd602283987": {
+        "type": "{\n  \"entry\": {\n    \"changes\": {\n      \"value\": {\n        \"messages\": {\n          \"type\": string,\n          \"audio\": {\n            \"id\": string\n          }\n        }[]\n      }\n    }[]\n  }[]\n}",
+        "name": "message",
+        "description": "Receives the message from WhatsApp."
+      }
+    },
+    "outputs": {
+      "679b3161-af6e-494d-bf6d-fa8d18e6185e": {
+        "type": "string",
+        "name": "media ID",
+        "description": "Sends the extracted media ID."
+      },
+      "66c2bb00-c9bf-40c1-91b2-df56331d5166": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any errors that might have occurred during extraction."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "1b2590c6-3228-46bc-8e77-2c073063dbcf": {
+          "coordinates": [
+            -195,
+            121.16666666666652
+          ],
+          "name": "get msg type & audio ID",
+          "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1",
+          "params": {
+            "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": "[\n  [\"entry\", 0, \"changes\", 0, \"value\", \"messages\", 0, \"type\"],\n  [\"entry\", 0, \"changes\", 0, \"value\", \"messages\", 0, \"audio\", \"id\"]\n]"
+          }
+        },
+        "06954965-144c-4d2c-8b47-bdaedb5bf901": {
+          "coordinates": [
+            -64,
+            -203.83333333333348
+          ],
+          "name": "is audio msg?",
+          "prototype": "ff69726b-734e-4fb7-ac51-72c8eea8bdd6",
+          "params": {
+            "a0934373-43a4-4cd5-83eb-860bc20d790a": "\"audio\""
+          }
+        },
+        "ad45a391-ca54-48ba-b143-7d4b5003bb91": {
+          "coordinates": [
+            -140,
+            -61.833333333333485
+          ],
+          "name": "split msg type & audio ID",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[0, 1]"
+          }
+        },
+        "575e7faa-b9fd-4e05-9e01-92e24fc18d3a": {
+          "coordinates": [
+            75.5,
+            254.5
+          ],
+          "name": "item setter",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"\\\"details\\\"\"",
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{\"error\": \"Message type or audio ID not found.\"}"
+          }
+        },
+        "4447bcd4-9d29-4b58-b820-d6227f602df7": {
+          "coordinates": [
+            63.5,
+            -140.5
+          ],
+          "name": "fork",
+          "prototype": "a9ccc258-8320-46cd-a29a-180316401e63"
+        },
+        "9d5ff7ec-098f-49ca-a894-9d2ff61c5b72": {
+          "coordinates": [
+            218.5,
+            -37.5
+          ],
+          "name": "parameter",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\"error\": \"Not an audio message.\"}"
+          }
+        },
+        "251aea1e-ce71-4979-ac48-7ec89697af19": {
+          "coordinates": [
+            38.5,
+            66.5
+          ],
+          "name": "depot",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        }
+      },
+      "connections": {
+        "1b2590c6-3228-46bc-8e77-2c073063dbcf": {
+          "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
+            "ad45a391-ca54-48ba-b143-7d4b5003bb91": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "8ce22765-deb4-489f-9ab1-5f60416d65c2": {
+            "575e7faa-b9fd-4e05-9e01-92e24fc18d3a": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            }
+          }
+        },
+        "ad45a391-ca54-48ba-b143-7d4b5003bb91": {
+          "0": {
+            "06954965-144c-4d2c-8b47-bdaedb5bf901": {
+              "3a93b0f5-d7ce-4dfd-bc70-f46c768bf142": {}
+            }
+          },
+          "1": {
+            "251aea1e-ce71-4979-ac48-7ec89697af19": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            }
+          }
+        },
+        "06954965-144c-4d2c-8b47-bdaedb5bf901": {
+          "61410efe-0096-4bd0-8169-30b254646910": {
+            "4447bcd4-9d29-4b58-b820-d6227f602df7": {
+              "1ea5f02f-e710-4bb6-911e-da7b2ab0dc71": {}
+            }
+          }
+        },
+        "4447bcd4-9d29-4b58-b820-d6227f602df7": {
+          "7cfb1db4-bf11-4d32-b364-4f9281088541": {
+            "9d5ff7ec-098f-49ca-a894-9d2ff61c5b72": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          },
+          "d78d9223-eedf-44eb-acb0-244212fc86c5": {
+            "251aea1e-ce71-4979-ac48-7ec89697af19": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "bd9358fe-4aab-4027-ab93-dfd602283987": {
+            "1b2590c6-3228-46bc-8e77-2c073063dbcf": {
+              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
+            }
+          }
+        },
+        "outputs": {
+          "66c2bb00-c9bf-40c1-91b2-df56331d5166": {
+            "575e7faa-b9fd-4e05-9e01-92e24fc18d3a": {
+              "7adbf554-0042-42c0-90b4-03b5d1406a88": {}
+            },
+            "9d5ff7ec-098f-49ca-a894-9d2ff61c5b72": {
+              "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {}
+            }
+          },
+          "679b3161-af6e-494d-bf6d-fa8d18e6185e": {
+            "251aea1e-ce71-4979-ac48-7ec89697af19": {
+              "eb4c2873-890f-4780-a895-53e321f3739e": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Extracts media ID from a WhatsApp audio message.\n\nWhen there is no audio in the message, sends and error.",
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "keywords": {
+    "extract": null,
+    "audio": null,
+    "media ID": null,
+    "message": null,
+    "voice": null,
+    "sound": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

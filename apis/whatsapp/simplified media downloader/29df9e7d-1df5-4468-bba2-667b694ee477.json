@@ -1,0 +1,147 @@
+{
+  "name": "apis/whatsapp/Simplified media downloader",
+  "description": "Downloads media from WhatsApp, using just a media ID.\n\nThe downloaded media content will be sent as a base64 encoded string.\n\nFurther info:\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/",
+  "interface": {
+    "inputs": {
+      "b4999965-9f53-4192-9c21-60c0a59a55e5": {
+        "type": "string",
+        "name": "media ID",
+        "description": "Receives media ID obtained through WhatsApp webhooks."
+      },
+      "14aabd16-ab51-4564-a994-abcbc8180ab7": {
+        "type": "{\n\"accessToken\": string\n}",
+        "name": "params",
+        "description": "Receives generic WhatsApp API parameters."
+      }
+    },
+    "outputs": {
+      "a083fa44-2fcf-4934-bc4b-b8ddb67f3243": {
+        "type": "string",
+        "name": "media contents",
+        "description": "Sends media file contents as a base64 encoded string."
+      },
+      "15fd5a71-a4ae-4005-808f-8042543fe5eb": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during downloading media."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "89dffe73-5241-464b-ad14-79fdbfc7299b": {
+          "coordinates": [
+            -45,
+            -143.66666666666674
+          ],
+          "name": "fetch audio metadata",
+          "prototype": "3de4d585-599e-427e-b090-5862012bffc8"
+        },
+        "4323c7c5-8167-46a3-9528-e34c13842d51": {
+          "coordinates": [
+            23,
+            -7.666666666666686
+          ],
+          "name": "get URL",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"url\"]"
+          }
+        },
+        "c2670bf2-9649-4145-9c85-cc43d0adceed": {
+          "coordinates": [
+            95,
+            140.33333333333331
+          ],
+          "name": "download audio",
+          "prototype": "227ed33b-c438-4d43-a75d-913f6a505211"
+        },
+        "cbde060c-9ea9-4dd1-b3e5-d6f7250b0ed3": {
+          "coordinates": [
+            -171,
+            65.66666666666674
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        }
+      },
+      "connections": {
+        "89dffe73-5241-464b-ad14-79fdbfc7299b": {
+          "b8468890-32c9-43d8-a100-a682b80d5c4b": {
+            "4323c7c5-8167-46a3-9528-e34c13842d51": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          }
+        },
+        "4323c7c5-8167-46a3-9528-e34c13842d51": {
+          "url": {
+            "c2670bf2-9649-4145-9c85-cc43d0adceed": {
+              "6467943c-1cf4-4b21-8928-8106b5d77be1": {}
+            }
+          }
+        },
+        "cbde060c-9ea9-4dd1-b3e5-d6f7250b0ed3": {
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "89dffe73-5241-464b-ad14-79fdbfc7299b": {
+              "ac18b55b-cd23-4d3c-977e-0c350f5a4ddb": {}
+            },
+            "c2670bf2-9649-4145-9c85-cc43d0adceed": {
+              "5ff2d8d9-ca24-44e0-b1b5-3ca4ccf0249b": {}
+            }
+          },
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "89dffe73-5241-464b-ad14-79fdbfc7299b": {
+              "5dfa1feb-fca5-43cc-8fde-1817013033bb": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b4999965-9f53-4192-9c21-60c0a59a55e5": {
+            "cbde060c-9ea9-4dd1-b3e5-d6f7250b0ed3": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "14aabd16-ab51-4564-a994-abcbc8180ab7": {
+            "cbde060c-9ea9-4dd1-b3e5-d6f7250b0ed3": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "a083fa44-2fcf-4934-bc4b-b8ddb67f3243": {
+            "c2670bf2-9649-4145-9c85-cc43d0adceed": {
+              "afd1d0b5-6ac6-49ea-afaa-d9440b2cc703": {}
+            }
+          },
+          "15fd5a71-a4ae-4005-808f-8042543fe5eb": {
+            "89dffe73-5241-464b-ad14-79fdbfc7299b": {
+              "5736d9f5-2221-4174-b7bc-985543797326": {}
+            },
+            "c2670bf2-9649-4145-9c85-cc43d0adceed": {
+              "a94cd86e-ad94-46c4-8cc9-ee18ded9523c": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "keywords": {
+    "media": null,
+    "audio": null,
+    "image": null,
+    "video": null,
+    "OGG": null,
+    "opus": null,
+    "download": null,
+    "base64": null,
+    "simple": null,
+    "simplified": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

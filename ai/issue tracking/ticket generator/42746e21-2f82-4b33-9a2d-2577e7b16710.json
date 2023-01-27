@@ -238,14 +238,16 @@
       }
     }
   },
-  "name": "ai/issue tracking/Ticket creator",
-  "description": "Creates the basic fields for a ticket in an issue tracking system (eg. JIRA) based on the received free-form instruction.\n\nOutputs ticket summary, description, acceptance criteria, and priority.\n\nThe result can be plugged directly into a `apis/jira/utils/Simple issue builder` to prepare JIRA tickets for insertion.\n\nUses OpenAI GPT-3 internally. Requires OpenAI API key.",
+  "name": "ai/issue tracking/Ticket generator",
+  "description": "Generates the basic fields for a ticket in an issue tracking system (eg. JIRA) based on the received free-form instruction.\n\nOutputs ticket summary, description, acceptance criteria, and priority.\n\nThe result can be plugged directly into a `apis/jira/utils/Simple issue builder` to prepare JIRA tickets for insertion.\n\nUses OpenAI GPT-3 internally. Requires OpenAI API key.",
   "keywords": {
     "AI": null,
     "OpenAI": null,
     "JIRA": null,
     "ticket": null,
     "issue": null,
+    "create": null,
+    "generate": null,
     "tracking": null,
     "project management": null,
     "GPT-3": null

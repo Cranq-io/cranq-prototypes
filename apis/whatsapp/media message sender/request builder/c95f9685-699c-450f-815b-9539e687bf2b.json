@@ -1,0 +1,274 @@
+{
+  "name": "apis/whatsapp/Media message sender/Request builder",
+  "interface": {
+    "inputs": {
+      "273c7dd8-d00b-44c3-a279-30474c653b7c": {
+        "type": "{\n \"recipient_type\": string,\n  \"to\": string,\n  \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"),\n \"media id\": string\n}",
+        "name": "message",
+        "description": "Receives the dictionary to set the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+      },
+      "af942f8e-6733-4d86-a090-a32c0adf3ef8": {
+        "type": "{\n\"access token\": string,\n\"phone number id\": string,\n\"messaging_product\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "694cb32d-d2b4-4f45-988d-bff151d4e17d": {
+        "type": "typeof `JSON req.` of `json request builder`",
+        "name": "JSON req."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "a0244870-c458-4206-b14e-462e338385d8": {
+          "coordinates": [
+            -1.8571428571428896,
+            244.71428571428572
+          ],
+          "name": "insert bearer token",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        },
+        "c867f0a3-10e1-45e1-9d81-2a4fea41ba9b": {
+          "coordinates": [
+            -228.8571428571429,
+            184.71428571428578
+          ],
+          "name": "get access token",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"access token\""
+          }
+        },
+        "c76c7ca7-03cc-42cc-afcc-362e34871cc8": {
+          "coordinates": [
+            335.1428571428571,
+            -35.28571428571422
+          ],
+          "name": "json request builder",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\""
+          }
+        },
+        "6184084f-224e-41b0-81da-c535f84df5bf": {
+          "coordinates": [
+            12.14285714285711,
+            58.71428571428578
+          ],
+          "name": "build url",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://graph.facebook.com/v15.0/{PHONE-NUMBER-ID}/messages\""
+          }
+        },
+        "30d7a55d-b1dd-4c00-aa9b-fe690236ef8d": {
+          "coordinates": [
+            -170.8571428571429,
+            13.71428571428578
+          ],
+          "name": "map url parameter",
+          "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
+          "params": {
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"PHONE-NUMBER-ID\": \"phone number id\"}"
+          }
+        },
+        "121172a1-764c-48c3-a39b-8fbff7c2d07f": {
+          "coordinates": [
+            -52,
+            -407
+          ],
+          "name": "get message base values",
+          "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1",
+          "params": {
+            "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": "[\n  [\"messaging_product\"],\n  [\"recipient_type\"],\n  [\"to\"],\n  [\"type\"]\n]"
+          }
+        },
+        "8fa3b959-f1f6-4977-8bfe-ffe9bba2dc90": {
+          "coordinates": [
+            176,
+            -362
+          ],
+          "name": "build message",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"messaging_product\"],\r\n  [\"recipient_type\"],\r\n  [\"to\"],\r\n  [\"type\"]\r\n]",
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"messaging_product\": \"\",\r\n  \"recipient_type\": \"\",\r\n  \"to\": \"\",\r\n  \"type\": \"\"\r\n}"
+          }
+        },
+        "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
+          "coordinates": [
+            -295.8571428571429,
+            -250.28571428571422
+          ],
+          "name": "merge inputs",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "6cf4a675-6d86-44e5-ae14-f29dbb42501c": {
+          "coordinates": [
+            -64.85714285714289,
+            -284.2857142857142
+          ],
+          "name": "get type",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"type\""
+          }
+        },
+        "1360c8e8-5aa3-4d94-b050-75e6e45bc72f": {
+          "coordinates": [
+            -4.85714285714289,
+            -125.28571428571422
+          ],
+          "name": "get media id",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"media id\""
+          }
+        },
+        "28d2b5a7-35c5-4012-8613-377623f7bec8": {
+          "coordinates": [
+            287.1428571428571,
+            -190.28571428571422
+          ],
+          "name": "set media id",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403"
+        },
+        "9014bc99-9ca5-48b0-9acf-76fb94b6229f": {
+          "coordinates": [
+            52.14285714285711,
+            -237.28571428571422
+          ],
+          "name": "build media id path",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "1": "\"id\"",
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1]"
+          }
+        }
+      },
+      "connections": {
+        "c867f0a3-10e1-45e1-9d81-2a4fea41ba9b": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "a0244870-c458-4206-b14e-462e338385d8": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          }
+        },
+        "a0244870-c458-4206-b14e-462e338385d8": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "c76c7ca7-03cc-42cc-afcc-362e34871cc8": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "30d7a55d-b1dd-4c00-aa9b-fe690236ef8d": {
+          "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
+            "6184084f-224e-41b0-81da-c535f84df5bf": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        },
+        "6184084f-224e-41b0-81da-c535f84df5bf": {
+          "d6272c3f-069b-4af8-8d4c-fe762a581c40": {
+            "c76c7ca7-03cc-42cc-afcc-362e34871cc8": {
+              "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {}
+            }
+          }
+        },
+        "121172a1-764c-48c3-a39b-8fbff7c2d07f": {
+          "4d78bf44-44cc-48a8-9222-2982e5299bb3": {
+            "8fa3b959-f1f6-4977-8bfe-ffe9bba2dc90": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "121172a1-764c-48c3-a39b-8fbff7c2d07f": {
+              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
+            },
+            "6cf4a675-6d86-44e5-ae14-f29dbb42501c": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "1360c8e8-5aa3-4d94-b050-75e6e45bc72f": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        },
+        "8fa3b959-f1f6-4977-8bfe-ffe9bba2dc90": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "28d2b5a7-35c5-4012-8613-377623f7bec8": {
+              "2041b83b-940c-4ef5-89e6-07eb74a42daf": {}
+            }
+          }
+        },
+        "1360c8e8-5aa3-4d94-b050-75e6e45bc72f": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "28d2b5a7-35c5-4012-8613-377623f7bec8": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          }
+        },
+        "28d2b5a7-35c5-4012-8613-377623f7bec8": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "c76c7ca7-03cc-42cc-afcc-362e34871cc8": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          }
+        },
+        "6cf4a675-6d86-44e5-ae14-f29dbb42501c": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "9014bc99-9ca5-48b0-9acf-76fb94b6229f": {
+              "0": {}
+            }
+          }
+        },
+        "9014bc99-9ca5-48b0-9acf-76fb94b6229f": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "28d2b5a7-35c5-4012-8613-377623f7bec8": {
+              "bae8488b-e628-456c-8ba4-df9b28a52d3e": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "273c7dd8-d00b-44c3-a279-30474c653b7c": {
+            "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          },
+          "af942f8e-6733-4d86-a090-a32c0adf3ef8": {
+            "c867f0a3-10e1-45e1-9d81-2a4fea41ba9b": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "30d7a55d-b1dd-4c00-aa9b-fe690236ef8d": {
+              "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            },
+            "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "outputs": {
+          "694cb32d-d2b4-4f45-988d-bff151d4e17d": {
+            "c76c7ca7-03cc-42cc-afcc-362e34871cc8": {
+              "42f1fa20-0597-484e-9610-1f9117b5a7f1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

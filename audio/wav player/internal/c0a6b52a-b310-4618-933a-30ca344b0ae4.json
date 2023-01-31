@@ -1,0 +1,39 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "e16991a1-c4c5-4d29-8398-fd4e7d4b49b1": "const fs = require(\"fs\");\nconst wav = require(\"wav\");\nconst Speaker = require(\"speaker\");\n\nconst inputFile = data || \"\";\nif(typeof inputFile !== \"string\" || inputFile.trim().length === 0) {\n  throw new Error(\"Input file parameter is invalid, please check type!\")\n}\n\nconst file = fs.createReadStream(inputFile);\nconst reader = new wav.Reader();\nconst speaker = new Speaker();\n\nreader.on('format', (format) => {\n  const speaker = new Speaker(format);\n  reader.pipe(speaker);\n  speaker.on(\"flush\", () => {\n    outputs[\"played\"](inputFile, tag);\n  });\n});\n\n\n// pipe the WAVE file to the Reader instance\nfile.pipe(reader);"
+      },
+      "dependencies": {
+        "npm": {
+          "wav": {
+            "description": ""
+          },
+          "speaker": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "e16991a1-c4c5-4d29-8398-fd4e7d4b49b1": {
+        "type": "string",
+        "name": "input file"
+      }
+    },
+    "outputs": {
+      "633b3ff3-fd12-446e-9fc6-c521698e4031": {
+        "type": "string",
+        "name": "played"
+      }
+    }
+  },
+  "name": "audio/Wav player/Internal",
+  "description": "See `audio/Wav player`",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

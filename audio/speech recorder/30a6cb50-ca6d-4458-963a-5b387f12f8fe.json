@@ -1,0 +1,139 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d6ea574c-c919-4249-b5db-cb783f47e4fa": {
+          "coordinates": [
+            247,
+            23
+          ],
+          "name": "record speech",
+          "prototype": "e93dcdd4-255c-4662-8c45-649ccd1aad16"
+        },
+        "046170aa-1b1c-46ae-9797-393a2b51bd16": {
+          "coordinates": [
+            -103,
+            -26
+          ],
+          "name": "merge optional params with defaults",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "96521625-35c4-4597-b5fd-f2776abc9c4d": {
+          "coordinates": [
+            -226,
+            87
+          ],
+          "name": "wrap required params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"output file\"]"
+          }
+        },
+        "1cdab8f9-e628-4a07-ae1e-f35362b0597a": {
+          "coordinates": [
+            68,
+            55
+          ],
+          "name": "merge required and optional params",
+          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
+        },
+        "ae79096b-0e05-450e-bf5c-e5c454e58288": {
+          "coordinates": [
+            -218,
+            -113
+          ],
+          "name": "defaults",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"skip non speech chunks\": false, \n  \"max length\": 0, \n  \"non speech timeout\": 3000, \n  \"sample rate\": 16000\n}"
+          }
+        }
+      },
+      "connections": {
+        "96521625-35c4-4597-b5fd-f2776abc9c4d": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "1cdab8f9-e628-4a07-ae1e-f35362b0597a": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          }
+        },
+        "046170aa-1b1c-46ae-9797-393a2b51bd16": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "1cdab8f9-e628-4a07-ae1e-f35362b0597a": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        },
+        "1cdab8f9-e628-4a07-ae1e-f35362b0597a": {
+          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
+            "d6ea574c-c919-4249-b5db-cb783f47e4fa": {
+              "1adeff4b-e728-4346-907b-948b1d41a3f0": {}
+            }
+          }
+        },
+        "ae79096b-0e05-450e-bf5c-e5c454e58288": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "046170aa-1b1c-46ae-9797-393a2b51bd16": {
+              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f4c1e05b-833c-47bb-83ea-678e686c29b0": {
+            "046170aa-1b1c-46ae-9797-393a2b51bd16": {
+              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            }
+          },
+          "1edad7a1-73c8-48a2-b450-eb0f5737147b": {
+            "ae79096b-0e05-450e-bf5c-e5c454e58288": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "96521625-35c4-4597-b5fd-f2776abc9c4d": {
+              "output file": {}
+            }
+          }
+        },
+        "outputs": {
+          "d347b181-4d3f-4f6d-8988-2f0c0286933e": {
+            "d6ea574c-c919-4249-b5db-cb783f47e4fa": {
+              "a7cb594f-e518-4e1d-9cb2-cd2b6a984f18": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1edad7a1-73c8-48a2-b450-eb0f5737147b": {
+        "type": "string",
+        "name": "output file",
+        "description": "Receives the path of the output file"
+      },
+      "f4c1e05b-833c-47bb-83ea-678e686c29b0": {
+        "type": "{optional \"skip non speech chunks\": boolean, optional \"max length\": number, optional \"non speech timeout\": number, optional \"sample rate\": number}",
+        "name": "parameters",
+        "description": "Receives optional parameters:\n * \"skip non speech chunks\": whether to use automatic speech recognition to exclude from the recording periods where no speech was detected\n * \"max lenght\": maximal length of the recording in milliseconds, after that time recording will be stopped\n * \"non speech timeout\": length of the period in milliseconds after that recording will be stopped (defaults to 5000)\n * \"sample rate\": sample rate to use for the recording (default: 16000)"
+      }
+    },
+    "outputs": {
+      "d347b181-4d3f-4f6d-8988-2f0c0286933e": {
+        "type": "typeof `recorded` of `record speech`",
+        "name": "recorded"
+      }
+    }
+  },
+  "name": "audio/Speech recorder",
+  "description": "Records speech via microphone (default audio input device)",
+  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721",
+  "keywords": {
+    "audio": null,
+    "speech": null,
+    "record": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

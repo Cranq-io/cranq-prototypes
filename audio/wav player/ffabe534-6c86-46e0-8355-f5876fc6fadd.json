@@ -1,0 +1,58 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "535fad28-dab2-49ed-ba61-d97bb070c983": {
+          "coordinates": [
+            4,
+            0
+          ],
+          "name": "player",
+          "prototype": "c0a6b52a-b310-4618-933a-30ca344b0ae4"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "22d8bc2f-6d30-4277-a6a0-cab0dcacd614": {
+            "535fad28-dab2-49ed-ba61-d97bb070c983": {
+              "e16991a1-c4c5-4d29-8398-fd4e7d4b49b1": {}
+            }
+          }
+        },
+        "outputs": {
+          "224004d2-6e16-417f-9a63-7146b430e12c": {
+            "535fad28-dab2-49ed-ba61-d97bb070c983": {
+              "633b3ff3-fd12-446e-9fc6-c521698e4031": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "22d8bc2f-6d30-4277-a6a0-cab0dcacd614": {
+        "type": "string",
+        "name": "input file",
+        "description": "Received the path of the input audio wav file to play."
+      }
+    },
+    "outputs": {
+      "224004d2-6e16-417f-9a63-7146b430e12c": {
+        "type": "string",
+        "name": "played"
+      }
+    }
+  },
+  "name": "audio/Wav player",
+  "description": "Playes a wav file through the speaker (default audio output device)",
+  "keywords": {
+    "audio": null,
+    "speaker": null,
+    "wav": null
+  },
+  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721",
+  "attributes": {
+    "locked": true
+  }
+}

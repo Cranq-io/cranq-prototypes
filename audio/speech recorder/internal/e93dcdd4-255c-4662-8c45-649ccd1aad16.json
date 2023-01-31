@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "speech-recorder": {
+            "description": ""
+          },
+          "wav": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "1adeff4b-e728-4346-907b-948b1d41a3f0": "  const {\n    \"output file\": outputFile,\n    \"skip non speech chunks\": skipNonSpeechChunks = false,\n    \"max length\": maxDuration = 0,\n    \"non speech timeout\": nonSpeechTimeout = 5000,\n    \"sample rate\": sampleRate = 16000\n  } = data;\n\n  const WavFileWriter = require(\"wav\").FileWriter;\n  const writeStream = new WavFileWriter(\n    outputFile,\n    {\n      sampleRate: sampleRate,\n      channels: 1\n    });\n  const {SpeechRecorder} = require(\"speech-recorder\");\n\n  let lastSilenceTimestamp = Date.now();\n  const recorder = new SpeechRecorder({\n    onAudio: ({audio, speaking, speech}) => {\n      if (speaking) {\n        lastSilenceTimestamp = Date.now();\n      }\n      if(speech || !skipNonSpeechChunks) {\n        writeStream.write(Buffer.from(audio.buffer));\n      }\n      if (nonSpeechTimeout && Date.now() - lastSilenceTimestamp > nonSpeechTimeout) {\n        recorder.stop();\n        writeStream.end();\n        outputs[\"recorded\"](outputFile, tag);\n      }\n    }\n  });\n\n  console.log(\"Starting recording.\");\n  nonSpeechTimeout && console.log(`Recording will stop after ${nonSpeechTimeout / 1000} seconds of silence`);\n  if(maxDuration) {\n    console.log(`Max recording length is ${maxDuration / 1000} seconds`);\n    setTimeout(() => {\n      recorder.stop();\n      writeStream.end();\n      outputs[\"recorded\"](outputFile, tag);\n    }, maxDuration)\n  }\n  console.log(\"Ready...\");\n  setTimeout(() => {\n    console.log(\"Speak!\");\n    recorder.start();\n  }, 1000);\n"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "1adeff4b-e728-4346-907b-948b1d41a3f0": {
+        "type": "{\"output file\": string, \"skip non speech chunks\": boolean, \"max length\": number, \"non speech timeout\": number, \"sample rate\": number}",
+        "name": "parameters"
+      }
+    },
+    "outputs": {
+      "a7cb594f-e518-4e1d-9cb2-cd2b6a984f18": {
+        "type": "string",
+        "name": "recorded"
+      }
+    }
+  },
+  "name": "audio/Speech recorder/Internal",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

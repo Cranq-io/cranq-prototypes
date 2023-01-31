@@ -1,0 +1,45 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": "const {resolve,extname} = require('path')\nconst {spawn} = require('child_process')\nconst pathToFfmpeg = require('ffmpeg-static');\nconst {\n  source, \n  destination\n} = data;\n\nlet destPath;\nif (destination) {\n  destPath = destination;\n} else {\n  const ext = extname(source);\n  if (ext){\n    destPath = source.replace(ext, '.ogg');\n  }\n  else{\n    destPath = `${source}.ogg`;\n  }\n}\n\nconst makeWavArgs = [\n\t'-i', resolve(process.cwd(), source),\n  '-y',\n\t'-format', 'ogg',\n\tresolve(process.cwd(), destPath),\n]\n\nconst ffmpegProc = spawn(pathToFfmpeg, makeWavArgs);\n\nffmpegProc.on('close', (code) => {\n  if (code === 0) {\n     outputs.destPath(destPath, tag);\n  } else {\n    outputs.error({error: \"FFmpeg execution failed.\"}, tag);\n  } \n});\n"
+      },
+      "dependencies": {
+        "npm": {
+          "ffmpeg-static": {
+            "description": ""
+          },
+          "path": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {
+        "type": "{\n   \"source\": string,\n    optional \"destination\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "996afa79-5436-4fcc-a8ce-6768a47396d2": {
+        "type": "string",
+        "name": "destPath"
+      },
+      "9fd8a91b-c179-45a0-a793-b6e8fd0cd180": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/ffmpeg/To OGG converter/Internal",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "description": "",
+  "original": "28142cf9-0eb8-47cc-9257-ce2c42bdbd1c",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

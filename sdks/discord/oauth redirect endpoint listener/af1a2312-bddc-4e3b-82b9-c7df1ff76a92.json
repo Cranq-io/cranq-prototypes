@@ -1,0 +1,127 @@
+{
+  "name": "sdks/discord/OAuth redirect endpoint listener",
+  "interface": {
+    "inputs": {
+      "fbc142a8-6932-4479-9348-b425fe86ca41": {
+        "type": "typeof `params` of `oauth_redir_init`",
+        "name": "params"
+      },
+      "bc533132-a733-4995-b958-7738d25f3fa1": {
+        "type": "typeof `read` of `OK`",
+        "name": "ok",
+        "description": "Receives signal that triggers sending out the stored parameter value."
+      },
+      "d6eaa0a8-5050-482d-8a33-982d58980fdc": {
+        "type": "typeof `read` of `error`",
+        "name": "error",
+        "description": "Receives signal that triggers sending out the stored parameter value."
+      }
+    },
+    "outputs": {
+      "3daa53f4-97bc-4561-9fe5-396ddfb706c3": {
+        "type": "typeof `guild_id` of `get guild & auth`",
+        "name": "guild_id",
+        "description": "Sends input data split into individual fields."
+      },
+      "8296975c-f5b9-4e18-9c23-300cf8abe75d": {
+        "type": "typeof `code` of `get guild & auth`",
+        "name": "code",
+        "description": "Sends input data split into individual fields."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "f55690f6-f6d1-4dea-aa1a-41d4b98d19f6": {
+          "coordinates": [
+            49.125,
+            -133.75
+          ],
+          "name": "oauth_redir_init",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e"
+        },
+        "637aa3d2-3ad7-4e01-81c2-c726b548450c": {
+          "coordinates": [
+            175.625,
+            0.25
+          ],
+          "name": "get guild & auth",
+          "prototype": "105968fa-9bb9-4d00-bf02-6f75c5d1c62c"
+        },
+        "75164890-b088-44ec-9f90-680efaf1f72c": {
+          "coordinates": [
+            -131.875,
+            -6.25
+          ],
+          "name": "OK",
+          "prototype": "bcf586ec-913d-48f2-92ef-23cadab3ee76"
+        },
+        "3e505e24-422b-4bc7-8be9-a8d052e4d673": {
+          "coordinates": [
+            -92.875,
+            139.75
+          ],
+          "name": "error",
+          "prototype": "7ee7f144-37e6-4e20-acd3-761aae067661"
+        }
+      },
+      "connections": {
+        "f55690f6-f6d1-4dea-aa1a-41d4b98d19f6": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "637aa3d2-3ad7-4e01-81c2-c726b548450c": {
+              "2403df70-1db1-4ec1-997f-08fd67652917": {}
+            }
+          }
+        },
+        "75164890-b088-44ec-9f90-680efaf1f72c": {
+          "3bc56386-ad76-44e0-b48c-102b3aed80e4": {
+            "f55690f6-f6d1-4dea-aa1a-41d4b98d19f6": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "3e505e24-422b-4bc7-8be9-a8d052e4d673": {
+          "3bc56386-ad76-44e0-b48c-102b3aed80e4": {
+            "f55690f6-f6d1-4dea-aa1a-41d4b98d19f6": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "fbc142a8-6932-4479-9348-b425fe86ca41": {
+            "f55690f6-f6d1-4dea-aa1a-41d4b98d19f6": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          },
+          "bc533132-a733-4995-b958-7738d25f3fa1": {
+            "75164890-b088-44ec-9f90-680efaf1f72c": {
+              "d754dd89-7738-4acf-b62e-104855de7b65": {}
+            }
+          },
+          "d6eaa0a8-5050-482d-8a33-982d58980fdc": {
+            "3e505e24-422b-4bc7-8be9-a8d052e4d673": {
+              "d754dd89-7738-4acf-b62e-104855de7b65": {}
+            }
+          }
+        },
+        "outputs": {
+          "3daa53f4-97bc-4561-9fe5-396ddfb706c3": {
+            "637aa3d2-3ad7-4e01-81c2-c726b548450c": {
+              "ea1d3e98-f826-449a-8f40-3c9c10f166fc": {}
+            }
+          },
+          "8296975c-f5b9-4e18-9c23-300cf8abe75d": {
+            "637aa3d2-3ad7-4e01-81c2-c726b548450c": {
+              "0b3960cd-4401-4f73-98fa-d0fe0845ebc3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {}
+}

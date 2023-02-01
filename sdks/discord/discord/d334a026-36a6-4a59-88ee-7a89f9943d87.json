@@ -1,0 +1,72 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "discord.js": {
+            "description": ""
+          },
+          "libsodium-wrappers": {
+            "description": ""
+          },
+          "@discordjs/voice": {
+            "description": ""
+          },
+          "@discordjs/opus": {
+            "description": ""
+          },
+          "ffmpeg-static": {
+            "description": ""
+          },
+          "prism-media": {
+            "description": ""
+          },
+          "wav": {
+            "description": ""
+          }
+        }
+      },
+      "initFunction": "state.msgIndex = 0;\nstate.interactionIndex = 0;\n\nstate.pendingInteractions = {}",
+      "inputFunctions": {
+        "81bd9d2d-e0a3-4df0-9347-38a83bde632a": "const { Client, Collection, Events, GatewayIntentBits, Partials, SlashCommandBuilder, User } = require('discord.js');\nconst { entersState, joinVoiceChannel, getVoiceConnection, createAudioPlayer, createAudioResource, VoiceConnection, VoiceConnectionStatus, EndBehaviorType, StreamType, VoiceReceiver } = require('@discordjs/voice');\nconst { createWriteStream } = require('node:fs');\nconst { pipeline } = require('node:stream');\nconst prism = require('prism-media');\nconst path = require('path');\n\n// TODO\nconst { message, response, reaction, id, type, options } = data;\n\nlet client = shared[id]?.client;\n\nif (!client) {\n  client = new Client({ \n    intents: [\n    GatewayIntentBits.Guilds, \n    GatewayIntentBits.GuildMessages, \n    GatewayIntentBits.DirectMessages,\n    GatewayIntentBits.MessageContent,\n    GatewayIntentBits.GuildVoiceStates],\n    partials: [\n      Partials.Channel]\n  });\n  shared[id] = { client };\n  \n  client.commands = new Collection();\n  client.once(Events.ClientReady, c => {\n    console.log(`Logged in as ${c.user.tag}`);\n\t  outputs.done(data, tag);\n  });\n}\n\nswitch (type) {\n  case 'login':\n    client.login(options.authentication.token);\n    break;\n\tcase 'setGuildCommands':\n\t  client.guilds.fetch(options.guild).then(\n\t    resolvedGuild => {\n\t       resolvedGuild.commands.set(options.commands);\n\t    }).catch(err => outputs.error(err, tag));\n\t    \n\t  client.on(Events.InteractionCreate, interaction => {\n\t    const interactionTag = `${tag}.${id}.interaction#${state.interactionIndex++}`\n\t    \n\t    state[interactionTag] = interaction;\n\t    outputs.interaction(interaction, interactionTag);\n    });\n    break;\n\tcase 'command':\n\t  client.guilds.fetch(options.guild).then(\n\t    resolvedGuild => {\n\t       resolvedGuild.commands.set(options.commands);\n\t    }).catch(err => outputs.error(err, tag));\n\t  break;\n\tcase 'messageSubscribe':\n\t  client.on('messageCreate', message => {\n\t    const messageTag = `${tag}.msg#${state.msgIndex++}`\n      outputs.event(message, messageTag);\n    });\n    outputs.done(data, tag);\n    break;\n  case 'reply':\n    client.channels.fetch(message.channelId).then(\n      resolvedChannel => {\n        resolvedChannel.messages.fetch(message).then(\n          resolvedMessage => {\n            resolvedMessage.reply(response).then(() => {\n              outputs.done(tag);\n            }).catch(err => outputs.error(err, tag));\n        }).catch(err => outputs.error(err, tag))\n      }).catch(err => outputs.error(err, tag))\n    break;\n  case 'react':\n    client.channels.fetch(message.channelId).then(\n      resolvedChannel => {\n        resolvedChannel.messages.fetch(message).then(\n          resolvedMessage => {\n            resolvedMessage.react(reaction).then(() => {\n              outputs.done(tag);\n            }).catch(err => outputs.error(err, tag));\n        }).catch(err => outputs.error(err, tag))\n      }).catch(err => outputs.error(err, tag))\n    break;\n  case 'joinVoice': {\n    client.guilds.fetch(options.guild).then(\n\t    resolvedGuild => {\n\t      const voiceConnection = joinVoiceChannel({\n\t\t\t    channelId: data.options.channelId,\n\t\t\t    guildId: data.options.guild,\n\t\t\t    selfDeaf: false,\n\t\t\t    selfMute: false,\n\t\t\t    adapterCreator: resolvedGuild.voiceAdapterCreator\n\t\t    });\n\t\t    \n\t\t    outputs.done(data, tag);\n\t    }).catch(err => outputs.error(err, tag))\n    break;\n  }\n  case 'leaveVoice': {\n    const voiceConnection = getVoiceConnection(data.options.guild);\n    if (voiceConnection) {\n      voiceConnection.disconnect();\n    }\n    outputs.done(data, tag);\n    break;\n  }\n  case 'listen': {\n    const voiceConnection = getVoiceConnection(data.options.guild);\n    if (!voiceConnection) {\n      outputs.error(\"Not joined to voice channel\", tag);\n      return;\n    }\n    let receiver = voiceConnection.receiver;\n    \n    const recStream = receiver.subscribe(data.options.userId,\n      { \n        end: { behavior: EndBehaviorType.AfterSilence, duration: 1000 },\n        objectMode: true\n      }\n    );\n    const decodeStream = new prism.opus.Decoder({ frameSize: 960, channels: 2, rate: 48000 });\n    \n    const wav = require('wav');\n    const wavStream = new wav.Writer({\n        \"channels\": 2,\n        \"sampleRate\": 48000,\n        \"bitDepth\": 16\n    });\n    \n\t  const filename = path.join(data.options.saveLocation,`${Date.now()}-${data.options.userId}.wav`);\n\t  const out = createWriteStream(filename);\n    \n    outputs.listening(data, tag);\n    \n    pipeline(recStream, decodeStream, wavStream, out, (err) => {\n\t\t  if (err) {\n\t\t\t  outputs.error(err, tag);\n\t\t  } else {\n\t\t\t  outputs.done({\n\t\t\t    ...data,\n\t\t\t    \"recPath\": filename\n\t\t\t  }, tag);\n\t\t  }\n\t  });\n\t  break;\n  }\n  case 'play': {\n    const voiceConnection = getVoiceConnection(data.options.guild);\n    if (!voiceConnection) {\n      outputs.error(\"Not joined to voice channel\", tag);\n      return;\n    }\n    // TODO:cache\n    const player = createAudioPlayer();\n    voiceConnection.subscribe(player);\n    const resource = createAudioResource(data.options.filePath, {\n      inputType: StreamType.Arbitrary\n    });\n    player.play(resource);\n    \n    outputs.done(data, tag);\n  }\n  default:\n    // code\n}",
+        "067ece86-4356-4d27-bcaf-3db32f729d0e": "const { Client, Collection, Events, GatewayIntentBits, Partials, SlashCommandBuilder } = require('discord.js');\n\nconst interaction = state[tag];\nif (!interaction) {\n  outputs.error(\"Unknown interaction\", tag);\n  return;\n}\n\nif (!interaction.replied) {\n  interaction.reply(data);\n} else {\n  interaction.followUp(data);\n}\n\n"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "81bd9d2d-e0a3-4df0-9347-38a83bde632a": {
+        "type": "any",
+        "name": "action"
+      },
+      "067ece86-4356-4d27-bcaf-3db32f729d0e": {
+        "type": "any",
+        "name": "reply"
+      }
+    },
+    "outputs": {
+      "43f652e7-50d8-4ead-ba80-79ee702cbbfc": {
+        "type": "any",
+        "name": "done"
+      },
+      "74fa3515-b48a-4dca-9682-f8602433cf9f": {
+        "type": "any",
+        "name": "error"
+      },
+      "b4b0ed54-d739-4e0a-affd-1ea1d2de52a4": {
+        "type": "any",
+        "name": "interaction"
+      },
+      "d54b8055-721e-4b75-8266-b77bfda3492a": {
+        "type": "any",
+        "name": "event"
+      },
+      "41f5168f-aaab-42d1-92c0-040936bd106c": {
+        "type": "any",
+        "name": "listening"
+      }
+    }
+  },
+  "name": "sdks/discord/Discord",
+  "attributes": {}
+}

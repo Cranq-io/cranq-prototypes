@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "discord-verify": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "dd6f0296-9764-4882-9007-08981d6e80f0": "// TODO: consider replacing this library\nconst { verify, PlatformAlgorithm } = require(\"discord-verify/node\");\nconst crypto = require('node:crypto')\n\nconst {\n  request,\n  publicKey\n} = data;\n\nverify(\n  JSON.stringify(request.body),\n  request.headers[\"x-signature-ed25519\"],\n  request.headers[\"x-signature-timestamp\"],\n  publicKey,\n  crypto.webcrypto.subtle,\n  PlatformAlgorithm.OldNode).then(valid => {\n  if (valid) {\n    outputs.valid(request, tag);\n  } else {\n    outputs[\"not valid\"](request, tag);\n  }\n})"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "dd6f0296-9764-4882-9007-08981d6e80f0": {
+        "type": "any",
+        "name": "request & pk"
+      }
+    },
+    "outputs": {
+      "c787ca6f-b9a7-43b4-8f95-cbf808cece26": {
+        "type": "any",
+        "name": "valid"
+      },
+      "02a5e236-ee8f-4bda-ab5b-be562b38eee0": {
+        "type": "any",
+        "name": "not valid"
+      }
+    }
+  },
+  "name": "sdks/discord/Webhook request verifier/Verify",
+  "attributes": {
+    "internal": true
+  }
+}

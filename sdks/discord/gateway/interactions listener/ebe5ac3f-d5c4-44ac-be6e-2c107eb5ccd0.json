@@ -1,0 +1,141 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "10578532-fce8-4166-bd0e-437be4fc6d78": {
+          "coordinates": [
+            -220,
+            -217
+          ],
+          "name": "item getter",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"id\""
+          }
+        },
+        "35ed2b49-2dca-4aad-89d9-d661d65c83ff": {
+          "coordinates": [
+            -9,
+            -59
+          ],
+          "name": "syncer B",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"setGuildCommands\""
+          }
+        },
+        "f1bf26f7-3bec-4ce4-9031-4a8333baaded": {
+          "coordinates": [
+            104,
+            107
+          ],
+          "name": "discord",
+          "prototype": "d334a026-36a6-4a59-88ee-7a89f9943d87"
+        },
+        "72e90477-864c-4fc2-be29-ee9863a297dd": {
+          "coordinates": [
+            -77,
+            -129
+          ],
+          "name": "id",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "63e98fbd-6d0f-49bb-9b61-cadc2a9ed0a0": {
+            "10578532-fce8-4166-bd0e-437be4fc6d78": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          },
+          "a4cafe3a-0963-4217-b027-8c65278b20d7": {
+            "35ed2b49-2dca-4aad-89d9-d661d65c83ff": {
+              "options": {}
+            },
+            "72e90477-864c-4fc2-be29-ee9863a297dd": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "b4b5877c-0aa6-4871-a85b-9770164508d1": {
+            "f1bf26f7-3bec-4ce4-9031-4a8333baaded": {
+              "067ece86-4356-4d27-bcaf-3db32f729d0e": {}
+            }
+          }
+        },
+        "outputs": {
+          "ca913a70-a714-4702-9c67-b811c48df2c3": {
+            "f1bf26f7-3bec-4ce4-9031-4a8333baaded": {
+              "43f652e7-50d8-4ead-ba80-79ee702cbbfc": {}
+            }
+          },
+          "ff84562a-2ca5-4461-9327-d6f048ac6e1b": {
+            "f1bf26f7-3bec-4ce4-9031-4a8333baaded": {
+              "74fa3515-b48a-4dca-9682-f8602433cf9f": {}
+            }
+          },
+          "e5658891-6046-4e4f-9c4f-57f36fab0d03": {
+            "f1bf26f7-3bec-4ce4-9031-4a8333baaded": {
+              "b4b0ed54-d739-4e0a-affd-1ea1d2de52a4": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "35ed2b49-2dca-4aad-89d9-d661d65c83ff": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "f1bf26f7-3bec-4ce4-9031-4a8333baaded": {
+              "81bd9d2d-e0a3-4df0-9347-38a83bde632a": {}
+            }
+          }
+        },
+        "10578532-fce8-4166-bd0e-437be4fc6d78": {
+          "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {
+            "72e90477-864c-4fc2-be29-ee9863a297dd": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "72e90477-864c-4fc2-be29-ee9863a297dd": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "35ed2b49-2dca-4aad-89d9-d661d65c83ff": {
+              "id": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "63e98fbd-6d0f-49bb-9b61-cadc2a9ed0a0": {
+        "type": "any",
+        "name": "discord"
+      },
+      "a4cafe3a-0963-4217-b027-8c65278b20d7": {
+        "type": "any",
+        "name": "params"
+      },
+      "b4b5877c-0aa6-4871-a85b-9770164508d1": {
+        "type": "any",
+        "name": "reply"
+      }
+    },
+    "outputs": {
+      "ca913a70-a714-4702-9c67-b811c48df2c3": {
+        "type": "any",
+        "name": "done"
+      },
+      "ff84562a-2ca5-4461-9327-d6f048ac6e1b": {
+        "type": "any",
+        "name": "error"
+      },
+      "e5658891-6046-4e4f-9c4f-57f36fab0d03": {
+        "type": "any",
+        "name": "command"
+      }
+    }
+  },
+  "name": "sdks/discord/gateway/Interactions listener",
+  "attributes": {}
+}

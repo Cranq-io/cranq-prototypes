@@ -1,0 +1,109 @@
+{
+  "name": "sdks/discord/Login",
+  "interface": {
+    "inputs": {
+      "ab12c0db-507f-4b57-8f45-4889ff4e67cc": {
+        "type": "any",
+        "name": "id"
+      },
+      "14726128-85a0-47f8-9567-2e1761c4ce06": {
+        "type": "any",
+        "name": "auth token"
+      }
+    },
+    "outputs": {
+      "d1cadf85-ce03-4093-ad24-6a06b6992ddf": {
+        "type": "typeof `done` of `discord`",
+        "name": "done"
+      },
+      "879669d4-fa0b-41de-b5e7-6ed37b354118": {
+        "type": "typeof `error` of `discord`",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "d155cdfc-e958-4b56-9e3a-78fa4899bcfc": {
+          "coordinates": [
+            97.33333333333331,
+            55
+          ],
+          "name": "discord",
+          "prototype": "d334a026-36a6-4a59-88ee-7a89f9943d87"
+        },
+        "bbd8e4ca-4663-4db6-874e-eedaf7c373b0": {
+          "coordinates": [
+            -21.666666666666686,
+            -136
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"login\""
+          }
+        },
+        "83588f15-0763-4079-9510-c4c98945e6cf": {
+          "coordinates": [
+            -163.66666666666669,
+            34
+          ],
+          "name": "node setter",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\n  \"authentication\": {\n    \"token\": \"\"\n  }\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"authentication\", \"token\"]"
+          }
+        }
+      },
+      "connections": {
+        "83588f15-0763-4079-9510-c4c98945e6cf": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "bbd8e4ca-4663-4db6-874e-eedaf7c373b0": {
+              "options": {}
+            }
+          }
+        },
+        "bbd8e4ca-4663-4db6-874e-eedaf7c373b0": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d155cdfc-e958-4b56-9e3a-78fa4899bcfc": {
+              "81bd9d2d-e0a3-4df0-9347-38a83bde632a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "14726128-85a0-47f8-9567-2e1761c4ce06": {
+            "83588f15-0763-4079-9510-c4c98945e6cf": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
+            }
+          },
+          "ab12c0db-507f-4b57-8f45-4889ff4e67cc": {
+            "bbd8e4ca-4663-4db6-874e-eedaf7c373b0": {
+              "id": {}
+            }
+          }
+        },
+        "outputs": {
+          "879669d4-fa0b-41de-b5e7-6ed37b354118": {
+            "d155cdfc-e958-4b56-9e3a-78fa4899bcfc": {
+              "74fa3515-b48a-4dca-9682-f8602433cf9f": {}
+            }
+          },
+          "d1cadf85-ce03-4093-ad24-6a06b6992ddf": {
+            "d155cdfc-e958-4b56-9e3a-78fa4899bcfc": {
+              "43f652e7-50d8-4ead-ba80-79ee702cbbfc": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true
+  }
+}

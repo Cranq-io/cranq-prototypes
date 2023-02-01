@@ -1,0 +1,34 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "965503a5-40ad-4672-85ad-47a289b52652": "const {\n  commandName\n} = data;\n\nif (outputs[commandName]) {\n  outputs[commandName](data, tag);\n} else {\n  outputs[\"other\"](data, tag);\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "214c3e15-35cd-4eb2-b949-89cca866a29f": {
+        "type": "any",
+        "name": "command names"
+      },
+      "965503a5-40ad-4672-85ad-47a289b52652": {
+        "type": "any",
+        "name": "command"
+      }
+    },
+    "outputs": {
+      "211c0c40-0f78-4e97-867b-87b21671eacb": {
+        "type": "any",
+        "name": "out",
+        "paramId": "214c3e15-35cd-4eb2-b949-89cca866a29f"
+      },
+      "3050563f-0c78-4e35-84a2-0d43e43363da": {
+        "type": "any",
+        "name": "other"
+      }
+    }
+  },
+  "name": "sdks/discord/Command switch",
+  "attributes": {}
+}

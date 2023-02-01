@@ -1,0 +1,136 @@
+{
+  "name": "sdks/discord/Guild commands deployer",
+  "interface": {
+    "inputs": {
+      "d08b6042-3caf-42e4-958a-b58658864b12": {
+        "type": "typeof `app_id` of `build url`",
+        "name": "app_id",
+        "description": "Receives individual item for syncing."
+      },
+      "3e617b1e-a811-4bee-a61f-95ad4d7a8b84": {
+        "type": "typeof `guild_id` of `build url`",
+        "name": "guild_id",
+        "description": "Receives individual item for syncing."
+      },
+      "782d96eb-b84b-4408-988b-7ffbc4425916": {
+        "type": "typeof `data` of `json request builder`",
+        "name": "data"
+      },
+      "d8e538be-60b1-413d-a0dc-4501905da698": {
+        "type": "typeof `token` of `build headers`",
+        "name": "token",
+        "description": "Receives the string token to be inserted into the Authorization header as Bearer token.\nThe token is usually used in base64 encoded form.\n\nExample: \n- \"SomeDummyToken\" as plain text \n- \"U29tZUR1bW15VG9rZW4=\" as base64 encoded text"
+      }
+    },
+    "outputs": {
+      "067fa5d7-900c-4ac0-a4bd-077fa611fcdd": {
+        "type": "any",
+        "name": "done"
+      },
+      "e99332e7-4a21-4511-8c04-11f668d82158": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "2166e749-8704-4b56-a540-617380690816": {
+          "coordinates": [
+            145.5,
+            -74.75
+          ],
+          "name": "json request dispatcher",
+          "prototype": "cda14b10-9f4c-4f9b-84df-da475264fbd3"
+        },
+        "9f01eddb-a59d-4c8d-8077-2b8ff44fa088": {
+          "coordinates": [
+            21.5,
+            26.25
+          ],
+          "name": "json request builder",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\""
+          }
+        },
+        "32bcaed9-1b84-4264-91d7-49fe8c1f7871": {
+          "coordinates": [
+            -130.5,
+            -41.75
+          ],
+          "name": "build url",
+          "prototype": "0d36bacb-9a2b-4a50-9467-1b564573c8dc"
+        },
+        "c27d12a7-a18f-4a27-9711-dd011bde9535": {
+          "coordinates": [
+            -117.5,
+            79.25
+          ],
+          "name": "build headers",
+          "prototype": "0a7ee808-3e3b-47b2-85bb-72f5e1c7f5e3",
+          "params": {
+            "84d949e6-dadd-4a81-b5e9-0625da43c8ae": "{}"
+          }
+        }
+      },
+      "connections": {
+        "32bcaed9-1b84-4264-91d7-49fe8c1f7871": {
+          "880e006a-b3a1-44a6-8c26-a9909c740b5c": {
+            "9f01eddb-a59d-4c8d-8077-2b8ff44fa088": {
+              "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {}
+            }
+          }
+        },
+        "c27d12a7-a18f-4a27-9711-dd011bde9535": {
+          "444e0ab1-5053-4a77-bed3-e5061f3b7d10": {
+            "9f01eddb-a59d-4c8d-8077-2b8ff44fa088": {
+              "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": {}
+            }
+          }
+        },
+        "9f01eddb-a59d-4c8d-8077-2b8ff44fa088": {
+          "42f1fa20-0597-484e-9610-1f9117b5a7f1": {
+            "2166e749-8704-4b56-a540-617380690816": {
+              "3f371a08-e057-48db-bb41-9a66072ae89a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "d08b6042-3caf-42e4-958a-b58658864b12": {
+            "32bcaed9-1b84-4264-91d7-49fe8c1f7871": {
+              "45a87c99-6c55-4aa3-a706-aad5acb92772": {}
+            }
+          },
+          "782d96eb-b84b-4408-988b-7ffbc4425916": {
+            "9f01eddb-a59d-4c8d-8077-2b8ff44fa088": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          },
+          "d8e538be-60b1-413d-a0dc-4501905da698": {
+            "c27d12a7-a18f-4a27-9711-dd011bde9535": {
+              "1c98fc7c-432f-40c4-84f4-4253b0bbefc9": {}
+            }
+          }
+        },
+        "outputs": {
+          "e99332e7-4a21-4511-8c04-11f668d82158": {
+            "2166e749-8704-4b56-a540-617380690816": {
+              "787f8eca-e644-4e60-8345-51b6864c68e2": {}
+            }
+          },
+          "067fa5d7-900c-4ac0-a4bd-077fa611fcdd": {
+            "2166e749-8704-4b56-a540-617380690816": {
+              "928a6619-42b4-4267-9dd7-416907a3939f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "47baa0d3-adcc-4071-8ab3-768676771342",
+  "attributes": {}
+}

@@ -1,0 +1,75 @@
+{
+  "name": "sdks/discord/interactions/Message response builder",
+  "interface": {
+    "inputs": {
+      "c8b9f080-ecf9-4849-b521-d72abb299fcf": {
+        "type": "typeof `content` of `syncer B`",
+        "name": "content",
+        "description": "Receives individual item for syncing."
+      }
+    },
+    "outputs": {
+      "55a87152-4b6d-4e23-8ef7-acee23ea3dc9": {
+        "type": "typeof `synced` of `syncer`",
+        "name": "response",
+        "description": "Sends synchronized inputs as a record or tuple indexed by the names of the ports they were received through.\n\nExample:\n{\"a\": \"Foo\", \"b\": \"Bar\"}"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8928c0e7-29b4-4aaf-9a23-170c12ed6802": {
+          "coordinates": [
+            26.5,
+            -56.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"type\", \"data\"]",
+            "type": "4"
+          }
+        },
+        "9c1809e3-e29e-4c94-bb11-777331a604dd": {
+          "coordinates": [
+            -26.5,
+            56.5
+          ],
+          "name": "syncer B",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"content\"]"
+          }
+        }
+      },
+      "connections": {
+        "9c1809e3-e29e-4c94-bb11-777331a604dd": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "8928c0e7-29b4-4aaf-9a23-170c12ed6802": {
+              "data": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "c8b9f080-ecf9-4849-b521-d72abb299fcf": {
+            "9c1809e3-e29e-4c94-bb11-777331a604dd": {
+              "content": {}
+            }
+          }
+        },
+        "outputs": {
+          "55a87152-4b6d-4e23-8ef7-acee23ea3dc9": {
+            "8928c0e7-29b4-4aaf-9a23-170c12ed6802": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {}
+}

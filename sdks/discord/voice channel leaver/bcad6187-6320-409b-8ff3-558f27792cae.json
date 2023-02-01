@@ -1,0 +1,88 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "812e5490-ef96-4284-b59c-9cee0423419b": {
+          "coordinates": [
+            49,
+            -33
+          ],
+          "name": "discord",
+          "prototype": "d334a026-36a6-4a59-88ee-7a89f9943d87"
+        },
+        "1dd5db48-025e-4962-93a0-ea03c42fa629": {
+          "coordinates": [
+            -93,
+            71
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"id\", \"type\", \"options\"]",
+            "type": "\"leaveVoice\""
+          }
+        }
+      },
+      "connections": {
+        "1dd5db48-025e-4962-93a0-ea03c42fa629": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "812e5490-ef96-4284-b59c-9cee0423419b": {
+              "81bd9d2d-e0a3-4df0-9347-38a83bde632a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "df098a87-6ea9-4b82-b61a-9d802d328a9c": {
+            "1dd5db48-025e-4962-93a0-ea03c42fa629": {
+              "id": {}
+            }
+          },
+          "c332f352-dc01-4e42-879f-d4954809ebfc": {
+            "1dd5db48-025e-4962-93a0-ea03c42fa629": {
+              "options": {}
+            }
+          }
+        },
+        "outputs": {
+          "0ec57a56-6e4a-4bbf-95d5-9c7c69be9fac": {
+            "812e5490-ef96-4284-b59c-9cee0423419b": {
+              "43f652e7-50d8-4ead-ba80-79ee702cbbfc": {}
+            }
+          },
+          "064680d6-78dc-430f-88b5-6c3ac6baaab7": {
+            "812e5490-ef96-4284-b59c-9cee0423419b": {
+              "74fa3515-b48a-4dca-9682-f8602433cf9f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "df098a87-6ea9-4b82-b61a-9d802d328a9c": {
+        "type": "any",
+        "name": "discord"
+      },
+      "c332f352-dc01-4e42-879f-d4954809ebfc": {
+        "type": "any",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "0ec57a56-6e4a-4bbf-95d5-9c7c69be9fac": {
+        "type": "any",
+        "name": "done"
+      },
+      "064680d6-78dc-430f-88b5-6c3ac6baaab7": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/discord/Voice channel leaver",
+  "original": "1d68bf9d-2555-4958-a0d5-5cb84581379e",
+  "attributes": {}
+}

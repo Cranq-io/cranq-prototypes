@@ -1,0 +1,153 @@
+{
+  "name": "sdks/discord/App owner token retriever",
+  "interface": {
+    "inputs": {
+      "932ad96f-2778-4edf-bfd8-6cc0a567c771": {
+        "type": "typeof `client secret` of `group`",
+        "name": "client secret",
+        "description": "Recieves user password.\n\nExample:\n```\n\"P@ssw0rd\"\n```"
+      },
+      "c11e6a13-bede-4878-8f7f-8f2cb4aeb4b3": {
+        "type": "typeof `client id` of `group`",
+        "name": "client id",
+        "description": "Recieves user id.\n\nExample:\n```\n\"John01\"\n```"
+      }
+    },
+    "outputs": {
+      "eeddc520-8795-459b-b73c-187ae23b76f7": {
+        "type": "typeof `value` of `get access token`",
+        "name": "token",
+        "description": "If found, sends the value corresponding to the specified key.\n\nExample:\n1"
+      },
+      "b53e9b1e-988c-4bc8-bfd9-2cef5e09ea69": {
+        "type": "any",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c2794366-5691-45ff-8825-95ccf7523d13": {
+          "coordinates": [
+            215.375,
+            -84.625
+          ],
+          "name": "get access token",
+          "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
+          "params": {
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"access_token\""
+          }
+        },
+        "c75707e5-eb42-4841-af5d-ab5c07a7efd8": {
+          "coordinates": [
+            -208.625,
+            181.375
+          ],
+          "name": "basic authorization inserter",
+          "prototype": "3288419c-e3c1-4a79-95f5-40789cee4de3",
+          "params": {
+            "a6b22162-d4e6-48ff-96bd-eb18b5753273": "{\r\n  \"Content-Type\": \"application/x-www-form-urlencoded\"\r\n}"
+          }
+        },
+        "cf4a6317-c086-4a3b-bdf1-c8b19a6fa441": {
+          "coordinates": [
+            89.375,
+            157.375
+          ],
+          "name": "url-encoded request dispatcher",
+          "prototype": "f946e595-da67-400f-9316-dfcf07f5ac10"
+        },
+        "a42496b6-2879-4c63-a274-dc300e7a8863": {
+          "coordinates": [
+            -207.625,
+            -59.625
+          ],
+          "name": "token url",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"https://discord.com/api/v10/oauth2/token\""
+          }
+        },
+        "de612e6d-87df-4e7e-86a0-b0ad2d860541": {
+          "coordinates": [
+            -7.625,
+            -170.625
+          ],
+          "name": "url-encoded request builder",
+          "prototype": "663589ca-76ee-48a9-ae87-6595e530f496",
+          "params": {
+            "df4b6b5b-fc5e-4205-a9bf-562640a349db": "\"POST\"",
+            "63cb20e0-c747-4891-b8bb-7efedf9097e7": "{\n  \"grant_type\": \"client_credentials\",\n  \"scope\": \"identify applications.commands.update\"\n}"
+          }
+        }
+      },
+      "connections": {
+        "a42496b6-2879-4c63-a274-dc300e7a8863": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "de612e6d-87df-4e7e-86a0-b0ad2d860541": {
+              "97f34b28-8a88-433d-870c-6710cfbffc60": {}
+            }
+          }
+        },
+        "c75707e5-eb42-4841-af5d-ab5c07a7efd8": {
+          "a81a2b55-ac4e-4e72-ba40-5f5179c77362": {
+            "de612e6d-87df-4e7e-86a0-b0ad2d860541": {
+              "4708ec78-1d26-4cf1-b16a-3fc87e63395c": {}
+            },
+            "a42496b6-2879-4c63-a274-dc300e7a8863": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "de612e6d-87df-4e7e-86a0-b0ad2d860541": {
+          "fdd1089c-fd96-4534-a1e6-da2902d73bcc": {
+            "cf4a6317-c086-4a3b-bdf1-c8b19a6fa441": {
+              "8e35c4f4-47d8-4245-8054-6c1f75759a70": {}
+            }
+          }
+        },
+        "cf4a6317-c086-4a3b-bdf1-c8b19a6fa441": {
+          "f00e5f0f-6faf-4848-963e-f4bf81d01f72": {
+            "c2794366-5691-45ff-8825-95ccf7523d13": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "932ad96f-2778-4edf-bfd8-6cc0a567c771": {
+            "c75707e5-eb42-4841-af5d-ab5c07a7efd8": {
+              "23a1504c-0710-4791-bc67-cc280d056ea3": {}
+            }
+          },
+          "c11e6a13-bede-4878-8f7f-8f2cb4aeb4b3": {
+            "c75707e5-eb42-4841-af5d-ab5c07a7efd8": {
+              "c9e495b0-469c-4ae5-86d0-c525cb9a5dcc": {}
+            }
+          }
+        },
+        "outputs": {
+          "eeddc520-8795-459b-b73c-187ae23b76f7": {
+            "c2794366-5691-45ff-8825-95ccf7523d13": {
+              "ebb678af-2bc0-4d06-99dd-6dbb5647ad6a": {}
+            }
+          },
+          "b53e9b1e-988c-4bc8-bfd9-2cef5e09ea69": {
+            "c2794366-5691-45ff-8825-95ccf7523d13": {
+              "3e1b4eaf-6e2c-44f4-80bc-d685af75dbb7": {}
+            },
+            "cf4a6317-c086-4a3b-bdf1-c8b19a6fa441": {
+              "dc5b2f35-cf47-4707-9760-7749cdacc114": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "88cb21a8-d088-476e-8a3a-fb62c6a5fd58",
+  "attributes": {
+    "internal": true
+  }
+}

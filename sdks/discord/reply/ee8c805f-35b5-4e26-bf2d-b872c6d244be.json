@@ -1,0 +1,71 @@
+{
+  "name": "sdks/discord/Reply",
+  "interface": {
+    "inputs": {
+      "066bbbe1-a378-49d0-aafa-8566ab1fe3b7": {
+        "type": "typeof `message` of `syncer`",
+        "name": "message",
+        "description": "Receives individual item for syncing."
+      },
+      "9f52efc6-870a-47c2-9545-cc57adf70df7": {
+        "type": "typeof `response` of `syncer`",
+        "name": "response",
+        "description": "Receives individual item for syncing."
+      }
+    },
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "519a78ff-ee48-45d7-b193-33b302c6daca": {
+          "coordinates": [
+            90,
+            79.5
+          ],
+          "name": "discord copy",
+          "prototype": "d334a026-36a6-4a59-88ee-7a89f9943d87"
+        },
+        "b5b75284-fa7f-40e5-8afd-ee9539840d5a": {
+          "coordinates": [
+            -90,
+            -79.5
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"response\", \"message\", \"type\", \"id\"]",
+            "type": "\"reply\"",
+            "id": "\"CranqBot\""
+          }
+        }
+      },
+      "connections": {
+        "b5b75284-fa7f-40e5-8afd-ee9539840d5a": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "519a78ff-ee48-45d7-b193-33b302c6daca": {
+              "81bd9d2d-e0a3-4df0-9347-38a83bde632a": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "066bbbe1-a378-49d0-aafa-8566ab1fe3b7": {
+            "b5b75284-fa7f-40e5-8afd-ee9539840d5a": {
+              "message": {}
+            }
+          },
+          "9f52efc6-870a-47c2-9545-cc57adf70df7": {
+            "b5b75284-fa7f-40e5-8afd-ee9539840d5a": {
+              "response": {}
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {}
+}

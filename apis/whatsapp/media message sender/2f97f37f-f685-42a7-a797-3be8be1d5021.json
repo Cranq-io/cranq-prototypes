@@ -20,8 +20,8 @@
         },
         "71cbb8de-1e95-4725-8309-d07aba592ff7": {
           "coordinates": [
-            -104.14285714285711,
-            -136.71428571428578
+            -102.14285714285711,
+            -134.71428571428578
           ],
           "name": "build request",
           "prototype": "c95f9685-699c-450f-815b-9539e687bf2b"
@@ -84,11 +84,11 @@
   "interface": {
     "inputs": {
       "2fb6e8bc-91df-45f0-960e-c811aeb54a05": {
-        "type": "{\n \"recipient_type\": string,\n  \"to\": string,\n  \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"),\n \"media id\": string\n}",
+        "type": "{\"recipient_type\": string, \"to\": string, \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"), \"media_id\": string}",
         "name": "message"
       },
       "7973be30-1776-4438-93e6-ae8e0123f5b7": {
-        "type": "{\n\"access token\": string,\n\"phone number id\": string,\n\"messaging_product\": string\n}",
+        "type": "{\n\"access token\": string, \n\"phone number id\": string}",
         "name": "params"
       }
     },
@@ -98,16 +98,17 @@
         "name": "data"
       },
       "5d872be0-5c7b-466d-b5d8-94ade93e0be5": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "73d46e40-dc7c-4d2b-8469-b4186cab5192": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }
   },
   "name": "apis/whatsapp/Media message sender",
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
   "attributes": {
     "locked": true
   }

@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "273c7dd8-d00b-44c3-a279-30474c653b7c": {
-        "type": "{\n \"recipient_type\": string,\n  \"to\": string,\n  \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"),\n \"media id\": string\n}",
+        "type": "{\n \"recipient_type\": string,\n  \"to\": string,\n  \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"),\n \"media_id\": string\n}",
         "name": "message",
         "description": "Receives the dictionary to set the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "af942f8e-6733-4d86-a090-a32c0adf3ef8": {
-        "type": "{\n\"access token\": string,\n\"phone number id\": string,\n\"messaging_product\": string\n}",
+        "type": "{\n\"access_token\": string,\n\"phone_number_id\": string\n}",
         "name": "params",
         "description": ""
       }
@@ -42,7 +42,7 @@
           "name": "get access token",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"access token\""
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"access_token\""
           }
         },
         "c76c7ca7-03cc-42cc-afcc-362e34871cc8": {
@@ -75,7 +75,7 @@
           "name": "map url parameter",
           "prototype": "20ab24f4-9017-4cf1-9b44-45211ec3d074",
           "params": {
-            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"PHONE-NUMBER-ID\": \"phone number id\"}"
+            "dfab5f2f-9107-481d-b7b1-19a7631381fb": "{\"PHONE-NUMBER-ID\": \"phone_number_id\"}"
           }
         },
         "121172a1-764c-48c3-a39b-8fbff7c2d07f": {
@@ -86,7 +86,7 @@
           "name": "get message base values",
           "prototype": "3233dca6-ee3f-43cb-ba8a-073f2f64c5a1",
           "params": {
-            "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": "[\n  [\"messaging_product\"],\n  [\"recipient_type\"],\n  [\"to\"],\n  [\"type\"]\n]"
+            "b3fa27ae-5c1d-4f44-a803-09f34edc02bd": "[\n  [\"recipient_type\"],\n  [\"to\"],\n  [\"type\"]\n]"
           }
         },
         "8fa3b959-f1f6-4977-8bfe-ffe9bba2dc90": {
@@ -97,17 +97,9 @@
           "name": "build message",
           "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
           "params": {
-            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"messaging_product\"],\r\n  [\"recipient_type\"],\r\n  [\"to\"],\r\n  [\"type\"]\r\n]",
-            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"messaging_product\": \"\",\r\n  \"recipient_type\": \"\",\r\n  \"to\": \"\",\r\n  \"type\": \"\"\r\n}"
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"messaging_product\": \"whatsapp\",\r\n  \"recipient_type\": \"\",\r\n  \"to\": \"\",\r\n  \"type\": \"\"\r\n}",
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[\r\n  [\"recipient_type\"],\r\n  [\"to\"],\r\n  [\"type\"]\r\n]"
           }
-        },
-        "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
-          "coordinates": [
-            -295.8571428571429,
-            -250.28571428571422
-          ],
-          "name": "merge inputs",
-          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301"
         },
         "6cf4a675-6d86-44e5-ae14-f29dbb42501c": {
           "coordinates": [
@@ -128,7 +120,7 @@
           "name": "get media id",
           "prototype": "857aacdb-326e-4b2e-a261-5197b667e14f",
           "params": {
-            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"media id\""
+            "23142cc5-6b71-4d69-8c46-cc1cd58793d1": "\"media_id\""
           }
         },
         "28d2b5a7-35c5-4012-8613-377623f7bec8": {
@@ -188,19 +180,6 @@
             }
           }
         },
-        "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
-          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "121172a1-764c-48c3-a39b-8fbff7c2d07f": {
-              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
-            },
-            "6cf4a675-6d86-44e5-ae14-f29dbb42501c": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            },
-            "1360c8e8-5aa3-4d94-b050-75e6e45bc72f": {
-              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
-            }
-          }
-        },
         "8fa3b959-f1f6-4977-8bfe-ffe9bba2dc90": {
           "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
             "28d2b5a7-35c5-4012-8613-377623f7bec8": {
@@ -239,20 +218,23 @@
       },
       "forwards": {
         "inputs": {
-          "273c7dd8-d00b-44c3-a279-30474c653b7c": {
-            "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
-              "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {}
-            }
-          },
           "af942f8e-6733-4d86-a090-a32c0adf3ef8": {
             "c867f0a3-10e1-45e1-9d81-2a4fea41ba9b": {
               "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             },
             "30d7a55d-b1dd-4c00-aa9b-fe690236ef8d": {
               "be713809-1c65-4abb-9525-87ee9f75e9be": {}
+            }
+          },
+          "273c7dd8-d00b-44c3-a279-30474c653b7c": {
+            "1360c8e8-5aa3-4d94-b050-75e6e45bc72f": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
             },
-            "8a619804-0b4b-40bb-80ed-23c4b91bd96d": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            "6cf4a675-6d86-44e5-ae14-f29dbb42501c": {
+              "47c56035-5bed-4f91-b7a9-606dedd7a13c": {}
+            },
+            "121172a1-764c-48c3-a39b-8fbff7c2d07f": {
+              "78d20842-0e8f-40a9-86e5-fecd315da10f": {}
             }
           }
         },

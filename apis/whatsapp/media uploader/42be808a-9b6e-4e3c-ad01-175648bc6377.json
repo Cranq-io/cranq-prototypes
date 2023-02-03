@@ -1,6 +1,6 @@
 {
   "name": "apis/whatsapp/Media uploader",
-  "description": "",
+  "description": "Uploads media to WhatsApp. The received id can be used with  apis/whatsapp/Media message sender.\r\n\r\n\r\nFurther info: \r\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/#upload-media",
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
@@ -10,14 +10,15 @@
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
         "type": "{\n\"access_token\": string,\n\"phone_number_id\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives generic WhatsApp API parameters."
       }
     },
     "outputs": {
       "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
         "type": "{\n  \"id\": string\n}",
         "name": "data",
-        "description": ""
+        "description": "Sends id of the uploaded media."
       },
       "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
         "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
@@ -26,7 +27,8 @@
       },
       "15ee012a-e010-4b7a-b555-435d4e2a85f8": {
         "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
-        "name": "error"
+        "name": "error",
+        "description": "Sends error, if any."
       }
     }
   },
@@ -134,7 +136,14 @@
     }
   },
   "keywords": {
-    "": null
+    "media": null,
+    "audio": null,
+    "image": null,
+    "video": null,
+    "OGG": null,
+    "opus": null,
+    "upload": null,
+    "base64": null
   },
   "original": "bc7bbefe-8cb5-4299-96b2-1c75fc221b12",
   "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",

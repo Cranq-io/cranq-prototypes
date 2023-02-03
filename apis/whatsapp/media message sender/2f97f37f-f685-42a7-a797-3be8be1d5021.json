@@ -84,12 +84,14 @@
   "interface": {
     "inputs": {
       "2fb6e8bc-91df-45f0-960e-c811aeb54a05": {
-        "type": "{\"recipient_type\": string, \"to\": string, \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"), \"media_id\": string}",
-        "name": "message"
+        "type": "{\n\"recipient_type\": string, \n\"to\": string, \n\"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"), \n\"media_id\": string\n}",
+        "name": "message",
+        "description": "Receives the message parameters."
       },
       "7973be30-1776-4438-93e6-ae8e0123f5b7": {
         "type": "{\n\"access_token\": string, \n\"phone_number_id\": string\n}",
-        "name": "params"
+        "name": "params",
+        "description": "Receives generic WhatsApp API parameters."
       }
     },
     "outputs": {
@@ -109,6 +111,7 @@
   },
   "name": "apis/whatsapp/Media message sender",
   "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "description": "Sends media messages to WhatsApp phone number, using uploaded media ID.\r\n\r\nFor uploading media use the apis/whatsapp/Media uploader prototype.\r\n\r\nFurther info: \r\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages",
   "attributes": {
     "locked": true
   }

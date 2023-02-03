@@ -1,0 +1,102 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "76436975-7f34-43f6-912e-65efd99bc32d": {
+          "coordinates": [
+            -13,
+            -32
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"text\", \"WAV file out path\", \"params\"]"
+          }
+        },
+        "e769fa2d-5346-4c6c-bf34-4fccb00ca9ed": {
+          "coordinates": [
+            132,
+            -14
+          ],
+          "name": "text to speech",
+          "prototype": "db5a2b02-58a1-47f7-bd71-087b05eca448"
+        }
+      },
+      "connections": {
+        "76436975-7f34-43f6-912e-65efd99bc32d": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "e769fa2d-5346-4c6c-bf34-4fccb00ca9ed": {
+              "67ad96c0-f37d-474e-8112-1a5e50cdd984": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "8c4b169b-56e2-4987-a2d3-d1c3fa6f97c4": {
+            "76436975-7f34-43f6-912e-65efd99bc32d": {
+              "text": {}
+            }
+          },
+          "8c8483ec-74a8-4f00-9ac2-79b3a9652dfa": {
+            "76436975-7f34-43f6-912e-65efd99bc32d": {
+              "WAV file out path": {}
+            }
+          },
+          "8459bee0-330e-479e-959c-1714c0f00938": {
+            "76436975-7f34-43f6-912e-65efd99bc32d": {
+              "params": {}
+            }
+          }
+        },
+        "outputs": {
+          "9ed3db41-00e3-4a88-846d-a1ef4f3c3c25": {
+            "e769fa2d-5346-4c6c-bf34-4fccb00ca9ed": {
+              "cbde91cb-2b6b-48ca-add3-6738454ab943": {}
+            }
+          },
+          "f4115ca5-ed9b-4d8a-9ac0-8d36100bd682": {
+            "e769fa2d-5346-4c6c-bf34-4fccb00ca9ed": {
+              "9c4af61b-e050-4c11-a18e-4af66ce3f14b": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "8c4b169b-56e2-4987-a2d3-d1c3fa6f97c4": {
+        "type": "string",
+        "name": "text",
+        "description": "Receives the text to be synthesized."
+      },
+      "8c8483ec-74a8-4f00-9ac2-79b3a9652dfa": {
+        "type": "string",
+        "name": "WAV file out path",
+        "description": "Receives the path where the file with the generated voice should be saved.\n\ne.g.: \"/Users/user1/AzureSpeech/samples/synthesizedSpeech.wav\""
+      },
+      "8459bee0-330e-479e-959c-1714c0f00938": {
+        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"voiceName\": string\n}",
+        "name": "params",
+        "description": "Receives generic parameters for Azure text to speech services,including credentials.\n\nThe key and region values are available from Azure dashboard.\n\nexample:\n{\n  \"subscriptionKey\": \"1e***f\",\n  \"region\": \"eastus2\",\n  \"voiceName\": \"en-US-JennyNeural\"\n}"
+      }
+    },
+    "outputs": {
+      "9ed3db41-00e3-4a88-846d-a1ef4f3c3c25": {
+        "type": "string",
+        "name": "result",
+        "description": "Sends the file name of the synthesized woice."
+      },
+      "f4115ca5-ed9b-4d8a-9ac0-8d36100bd682": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/azure/Speech synthesizer (to WAV file output)",
+  "iconId": "9f0828c8-d759-4f8e-81e4-68bdfc2e8759",
+  "attributes": {
+    "locked": true
+  }
+}

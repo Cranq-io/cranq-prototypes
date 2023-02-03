@@ -88,13 +88,13 @@
         "name": "message"
       },
       "7973be30-1776-4438-93e6-ae8e0123f5b7": {
-        "type": "{\n\"access token\": string, \n\"phone number id\": string}",
+        "type": "{\n\"access_token\": string, \n\"phone_number_id\": string\n}",
         "name": "params"
       }
     },
     "outputs": {
       "ca54348d-e572-4eaa-9357-d28fec0d7105": {
-        "type": "any",
+        "type": "{\n  \"messages\":{\"id\": string}[]\n}",
         "name": "data"
       },
       "5d872be0-5c7b-466d-b5d8-94ade93e0be5": {
@@ -102,7 +102,7 @@
         "name": "response"
       },
       "73d46e40-dc7c-4d2b-8469-b4186cab5192": {
-        "type": "{\"error\": string, \"details\": any}",
+        "type": "{\"error\": string, optional  \"details\": any}",
         "name": "error"
       }
     }

@@ -1,10 +1,10 @@
 {
-  "name": "apis/whatsapp/utils/From phonenumber getter",
+  "name": "apis/whatsapp/utils/From phone number getter",
   "interface": {
     "inputs": {
       "a7f0a140-8e7e-416b-8858-8e7324b8584c": {
         "type": "{\n  \"entry\": {\n    \"changes\": {\n      \"value\": {\n        \"messages\": {\n          \"from\": string\n        }[]\n      }\n    }[]\n  }[]\n}",
-        "name": "messaage",
+        "name": "message",
         "description": "is extracted from"
       }
     },

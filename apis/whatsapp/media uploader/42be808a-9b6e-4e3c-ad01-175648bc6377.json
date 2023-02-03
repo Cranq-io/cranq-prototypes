@@ -25,7 +25,7 @@
         "description": "Sends the original response."
       },
       "15ee012a-e010-4b7a-b555-435d4e2a85f8": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
         "name": "error"
       }
     }

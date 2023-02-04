@@ -6,7 +6,7 @@
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
         "type": "{\n  \"data\": string,\n  \"fileName\": string,\n  \"contentType\": string\n}",
         "name": "file",
-        "description": "Receives base64-encoded binary file contents."
+        "description": "Recives the meta data of the file to be uploaded.\n\nThe data field is base64-encoded binary file content.\n\nSupported content types: https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/#supported-media-types"
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
         "type": "{\n\"access_token\": string,\n\"phone_number_id\": string\n}",

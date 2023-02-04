@@ -97,7 +97,8 @@
     "outputs": {
       "ca54348d-e572-4eaa-9357-d28fec0d7105": {
         "type": "{\n  \"messages\":{\"id\": string}[]\n}",
-        "name": "data"
+        "name": "data",
+        "description": "Sends the message id."
       },
       "5d872be0-5c7b-466d-b5d8-94ade93e0be5": {
         "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
@@ -112,6 +113,15 @@
   "name": "apis/whatsapp/Media message sender",
   "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
   "description": "Sends media messages to WhatsApp phone number, using uploaded media ID.\r\n\r\nFor uploading media use the apis/whatsapp/Media uploader prototype.\r\n\r\nFurther info: \r\nhttps://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages",
+  "keywords": {
+    "media": null,
+    "audio": null,
+    "image": null,
+    "video": null,
+    "OGG": null,
+    "opus": null,
+    "message": null
+  },
   "attributes": {
     "locked": true
   }

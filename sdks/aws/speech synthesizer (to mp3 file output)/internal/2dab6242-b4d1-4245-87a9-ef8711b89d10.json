@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "016a86e6-3fdf-4be5-8ac4-0480ba481103": "const {\n    PollyClient,\n    SynthesizeSpeechCommand\n} = require(\"@aws-sdk/client-polly\");\nconst {\n    writeFile\n} = require(\"fs\").promises;\n\nconst {\n    [\"MP3 file out path\"]: fileName,\n    text,\n    params: {\n        region,\n        language,\n        accessKeyId,\n        secretAccessKey,\n        voiceId = \"Amy\",\n        engine,\n        sampleRate\n    }\n} = data\n\nconst polly = new PollyClient({\n    region,\n    credentials: {\n        accessKeyId,\n        secretAccessKey,\n    },\n});\n\nconst params = {\n    OutputFormat: \"mp3\",\n    Text: text,\n    VoiceId: voiceId,\n    ...(language ? {LanguageCode: language} : {}),\n    ...(engine ? {\n        Engine: engine} : {}),\n    ...(sampleRate ? {SampleRate: sampleRate} : {})\n};\n\nconsole.log(params);\n\n\nconst synthesizeSpeechCommand = new SynthesizeSpeechCommand(params);\n\nconsole.log(fileName)\n\nconst synthesis = async () => {\n    try {\n        const data = await polly.send(synthesizeSpeechCommand);\n        const audioStream = data.AudioStream;\n        await writeFile(fileName, audioStream);\n        console.log(`ready ${fileName}`)\n        outputs['result'](fileName, tag);\n    } catch (err) {\n        outputs['error'](err, tag);\n        console.error(err)\n    }\n};\n\nsynthesis();"
+      },
+      "dependencies": {
+        "npm": {
+          "@aws-sdk/client-polly": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "016a86e6-3fdf-4be5-8ac4-0480ba481103": {
+        "type": "{ \"MP3 file out path\": \"string\",\n    \"text\": \"string\",\n    \"params\": {\n  \"accessKeyId\": \"string\",\n        \"secretAccessKey\": \"string\",\n        \"voiceId\": \"string\",\n        optional \"region\": \"string\",\n        optional \"language\": \"string\",\n        optional \"engine\": \"string\",\n        optional \"sampleRate\": \"string\" }}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "8971079d-563e-4ed5-bf93-9c9978655e04": {
+        "type": "string",
+        "name": "result"
+      },
+      "034c5469-e8b1-45c4-a9b5-23853096ed19": {
+        "type": "string",
+        "name": "error"
+      }
+    }
+  },
+  "name": "sdks/aws/Speech synthesizer (to mp3 file output)/internal",
+  "attributes": {
+    "internal": true
+  }
+}

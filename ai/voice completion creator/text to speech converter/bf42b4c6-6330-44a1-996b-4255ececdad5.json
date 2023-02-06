@@ -8,14 +8,14 @@
         "description": "Receives the text to be synthesized."
       },
       "b0f90625-5a6c-429d-82b9-b5537dfe851f": {
-        "type": "typeof `string` of `global regex replacer`",
+        "type": "string",
         "name": "wav file path",
         "description": "Receives the string to be replaced.\n\nExample:\n\n\"dog cat rain Dog\"\n\n"
       },
       "09a1d5eb-35aa-449e-a462-65e1a6e11039": {
-        "type": "typeof `dict` of `item setter`",
+        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"voiceName\": string\n}",
         "name": "params",
-        "description": "Receives the dictionary to set the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
+        "description": ""
       }
     },
     "outputs": {

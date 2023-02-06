@@ -10,7 +10,7 @@
       "1dcb52db-4df8-438f-9dae-d79af9cac576": {
         "type": "{\n  \"azureSubscriptionKey\": string,\n  \"azureRegion\": string,\n  optional \"azureLanguage\": string,\n  \"openAIApiKey\": string\n}",
         "name": "params",
-        "description": "Receives generic parameters for Azure speech to text services,including credentials.\r\n\r\nThe key and region values are available from Azure dashboard.\r\n\r\nexample: { \"subscriptionKey\": \"1e***f\", \"region\": \"eastus2\", \"language\": \"en-GB\" }"
+        "description": "Receives generic parameters for Azure speech to text services,including credentials.\r\n\r\nThe key and region values are available from Azure dashboard.\r\n\r\nexample: { \"azureSubscriptionKey\": \"1e***f\", \"azureRegion\": \"eastus2\", \"azureLanguage\": \"en-GB\",\r\n\"openAIApiKey\": \"apiKey1\"}"
       }
     },
     "outputs": {

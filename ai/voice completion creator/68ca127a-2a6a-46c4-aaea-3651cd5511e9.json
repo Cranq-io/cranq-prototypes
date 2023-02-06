@@ -1,0 +1,157 @@
+{
+  "name": "ai/Voice completion creator",
+  "interface": {
+    "inputs": {
+      "140bae5b-c167-41d5-8cde-a550b8a2b192": {
+        "type": "string",
+        "name": "wav file path",
+        "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\r\n\r\ne.g.: \"/Users/user1/AzureSpeech/samples/speech.wav\""
+      },
+      "1dcb52db-4df8-438f-9dae-d79af9cac576": {
+        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"language\": string,\n  \"apiKey\": string\n}",
+        "name": "params",
+        "description": "Receives generic parameters for Azure speech to text services,including credentials.\r\n\r\nThe key and region values are available from Azure dashboard.\r\n\r\nexample: { \"subscriptionKey\": \"1e***f\", \"region\": \"eastus2\", \"language\": \"en-GB\" }"
+      }
+    },
+    "outputs": {
+      "2a8fc41e-3816-4990-9051-f2c620a03d9a": {
+        "type": "string",
+        "name": "result",
+        "description": "Sends the file name of the synthesized voice."
+      },
+      "1fe2debf-43bd-4a27-a334-a8804d903cd4": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Send error, if any."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "bf3c77bd-ac2c-412e-a49a-d26844872942": {
+          "coordinates": [
+            -147.28125,
+            170
+          ],
+          "name": "recognize speech",
+          "prototype": "99944a0b-2fe7-4a29-b834-cd0c324a0845",
+          "params": {}
+        },
+        "45dde67d-ceaf-404c-a69c-52a96fb90072": {
+          "coordinates": [
+            -475,
+            -23.5
+          ],
+          "name": "forward inputs",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "9b753c04-c7e8-4405-9e4e-d91cc82b8994": {
+          "coordinates": [
+            246.47916666666663,
+            -261
+          ],
+          "name": "convert to speech",
+          "prototype": "bf42b4c6-6330-44a1-996b-4255ececdad5"
+        },
+        "0a2cbc01-7ac9-4325-9f9d-ed08f5c4438f": {
+          "coordinates": [
+            86.47916666666663,
+            -82.140625
+          ],
+          "name": "openai completion",
+          "prototype": "432eba18-3961-4ccd-a538-11ee1008a512"
+        }
+      },
+      "connections": {
+        "bf3c77bd-ac2c-412e-a49a-d26844872942": {
+          "c16a4c44-3931-48f0-b7d2-9306fb03dea1": {
+            "0a2cbc01-7ac9-4325-9f9d-ed08f5c4438f": {
+              "75b39328-1224-442f-931b-baed97c0b483": {}
+            }
+          }
+        },
+        "45dde67d-ceaf-404c-a69c-52a96fb90072": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "bf3c77bd-ac2c-412e-a49a-d26844872942": {
+              "9614de70-be21-4b26-914b-626411d10007": {}
+            },
+            "9b753c04-c7e8-4405-9e4e-d91cc82b8994": {
+              "b0f90625-5a6c-429d-82b9-b5537dfe851f": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "bf3c77bd-ac2c-412e-a49a-d26844872942": {
+              "d94b7b8b-2033-49d6-a041-782ba7f57ba0": {}
+            },
+            "9b753c04-c7e8-4405-9e4e-d91cc82b8994": {
+              "09a1d5eb-35aa-449e-a462-65e1a6e11039": {}
+            },
+            "0a2cbc01-7ac9-4325-9f9d-ed08f5c4438f": {
+              "740846ad-2d16-4a20-b166-b42fc35fbe62": {}
+            }
+          }
+        },
+        "0a2cbc01-7ac9-4325-9f9d-ed08f5c4438f": {
+          "5538443c-b6a1-4678-b989-b10a02282155": {
+            "9b753c04-c7e8-4405-9e4e-d91cc82b8994": {
+              "ae396438-854d-4002-8748-e68984961b86": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "140bae5b-c167-41d5-8cde-a550b8a2b192": {
+            "45dde67d-ceaf-404c-a69c-52a96fb90072": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "1dcb52db-4df8-438f-9dae-d79af9cac576": {
+            "45dde67d-ceaf-404c-a69c-52a96fb90072": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "2a8fc41e-3816-4990-9051-f2c620a03d9a": {
+            "9b753c04-c7e8-4405-9e4e-d91cc82b8994": {
+              "944b4946-3ff6-44bf-be51-fb600a42bb9f": {}
+            }
+          },
+          "1fe2debf-43bd-4a27-a334-a8804d903cd4": {
+            "9b753c04-c7e8-4405-9e4e-d91cc82b8994": {
+              "62da332f-747b-4c9f-bb06-6fd60048860b": {}
+            },
+            "bf3c77bd-ac2c-412e-a49a-d26844872942": {
+              "77ed0548-616e-453a-8531-78d6bbddc486": {}
+            },
+            "0a2cbc01-7ac9-4325-9f9d-ed08f5c4438f": {
+              "3ba51575-2424-4ee1-b20c-51d9cdf083c0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "826ef237-6282-4a24-98ed-6b5362264144",
+  "keywords": {
+    "speech": null,
+    "text": null,
+    "transcribe": null,
+    "transcription": null,
+    "recognition": null,
+    "language": null,
+    "complete": null,
+    "predict": null,
+    "generate": null,
+    "prompt": null,
+    "ask": null,
+    "question": null,
+    "answer": null,
+    "openAI": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

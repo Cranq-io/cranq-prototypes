@@ -9,7 +9,7 @@
         }
       },
       "inputFunctions": {
-        "8f23129f-1499-45ed-b280-631a500098f2": "const { Configuration, OpenAIApi } = require(\"openai\");\nconst {request, params: {apiKey}} = data;\nconst configuration = new Configuration({apiKey});\nconst openai = new OpenAIApi(configuration);\n\nasync function main() {\n  try {\n    const response = await openai.createCompletion(request);\n    outputs['response'](response.data, tag);\n  } catch (error) {\n    if (error.response) {\n      const message = `[${error.response.status}] ${error.response.data}`;\n      outputs['error']({error: message}, tag);\n    } else {\n      outputs['error']({error: error.message}, tag);\n    }\n  }\n}\n\nmain();"
+        "8f23129f-1499-45ed-b280-631a500098f2": "const { Configuration, OpenAIApi } = require(\"openai\");\nconst {request, params: {apiKey}} = data;\nconst configuration = new Configuration({apiKey});\nconst openai = new OpenAIApi(configuration);\n\nasync function main() {\n  try {\n    const response = await openai.createCompletion(request);\n    outputs['response'](response.data, tag);\n  } catch (error) {\n    if (error.response) {\n      const message = `[${error.response.status}] ${JSON.stringify(error.response.data)}`;\n      outputs['error']({error: message}, tag);\n    } else {\n      outputs['error']({error: error.message}, tag);\n    }\n  }\n}\n\nmain();"
       }
     }
   },

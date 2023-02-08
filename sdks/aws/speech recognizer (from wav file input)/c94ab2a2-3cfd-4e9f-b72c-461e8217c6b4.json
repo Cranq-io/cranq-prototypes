@@ -74,7 +74,7 @@
       "a05bf83f-4203-45b9-b234-06810d3d5636": {
         "type": "{\"accessKeyId\": string, \"secretAccessKey\": string, \"region\": string, optional \"language\": string}",
         "name": "params",
-        "description": "Receives generic parameters for AWS speech to text services,including credentials.\n\nThe keys and region values are available from AWS dashboard.\n\nexample: { \n\"accessKeyId\": \"***\", \n\"secretAccessKey\": \"***\", \"region\": \"eastus2\", \"language\": \"en-GB\" }"
+        "description": "Receives generic parameters for AWS speech to text services,including credentials.\n\nThe keys and region values are available from AWS dashboard.\n\nexample: { \n\"accessKeyId\": \"***\", \n\"secretAccessKey\": \"***\", \"region\": \"eu-west-1\", \"language\": \"en-GB\" }"
       }
     },
     "outputs": {
@@ -102,8 +102,8 @@
     "language": null
   },
   "description": "Extracts text from speech recording supplied as a WAV file on the local filesystem.",
-"iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
-"attributes": {
-  "locked": true
-}
+  "iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
+  "attributes": {
+    "locked": true
+  }
 }

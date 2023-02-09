@@ -1,0 +1,124 @@
+{
+  "name": "ai/Voice completion creator/Text to speech converter",
+  "interface": {
+    "inputs": {
+      "ae396438-854d-4002-8748-e68984961b86": {
+        "type": "string",
+        "name": "text",
+        "description": "Receives the text to be synthesized."
+      },
+      "b0f90625-5a6c-429d-82b9-b5537dfe851f": {
+        "type": "string",
+        "name": "wav file path",
+        "description": "Receives the string to be replaced.\n\nExample:\n\n\"dog cat rain Dog\"\n\n"
+      },
+      "09a1d5eb-35aa-449e-a462-65e1a6e11039": {
+        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"voiceName\": string\n}",
+        "name": "params",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "944b4946-3ff6-44bf-be51-fb600a42bb9f": {
+        "type": "string",
+        "name": "result",
+        "description": "Sends the file name of the synthesized voice."
+      },
+      "62da332f-747b-4c9f-bb06-6fd60048860b": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7fa80b5f-6a2b-43b3-9165-9cb9b5cc1615": {
+          "coordinates": [
+            121.23958333333337,
+            -5.499999999999986
+          ],
+          "name": "speech synthesizer (to wav file output)",
+          "prototype": "364e444e-c18d-4180-bd87-6c824b94d3b6",
+          "params": {}
+        },
+        "99f5295f-e713-4cb2-8f79-0c3f559599e8": {
+          "coordinates": [
+            -34.76041666666663,
+            116
+          ],
+          "name": "set voice name",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"voiceName\"",
+            "0ab0c723-793b-48a1-87d5-d64267665bd3": "\"en-US-JasonNeural\""
+          }
+        },
+        "0f82755e-b4fd-4770-9547-84289bef64bb": {
+          "coordinates": [
+            -113.47916666666663,
+            7.500000000000014
+          ],
+          "name": "update wav file name",
+          "prototype": "5719fd66-d597-45ee-bff8-64106b48879e",
+          "params": {
+            "d1118ac0-749b-46e9-81af-8fc74dc14e10": "\".wav\"",
+            "3490f391-9b3b-441e-b4a2-b078669cf5b4": "\"_response.wav\""
+          }
+        }
+      },
+      "connections": {
+        "99f5295f-e713-4cb2-8f79-0c3f559599e8": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "7fa80b5f-6a2b-43b3-9165-9cb9b5cc1615": {
+              "8459bee0-330e-479e-959c-1714c0f00938": {}
+            }
+          }
+        },
+        "0f82755e-b4fd-4770-9547-84289bef64bb": {
+          "de479f5a-4a4f-4edc-9419-a79e46fef91c": {
+            "7fa80b5f-6a2b-43b3-9165-9cb9b5cc1615": {
+              "8c8483ec-74a8-4f00-9ac2-79b3a9652dfa": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ae396438-854d-4002-8748-e68984961b86": {
+            "7fa80b5f-6a2b-43b3-9165-9cb9b5cc1615": {
+              "8c4b169b-56e2-4987-a2d3-d1c3fa6f97c4": {}
+            }
+          },
+          "b0f90625-5a6c-429d-82b9-b5537dfe851f": {
+            "0f82755e-b4fd-4770-9547-84289bef64bb": {
+              "0e374f58-6b9c-453c-9d2e-e4887e0a367e": {}
+            }
+          },
+          "09a1d5eb-35aa-449e-a462-65e1a6e11039": {
+            "99f5295f-e713-4cb2-8f79-0c3f559599e8": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        },
+        "outputs": {
+          "944b4946-3ff6-44bf-be51-fb600a42bb9f": {
+            "7fa80b5f-6a2b-43b3-9165-9cb9b5cc1615": {
+              "9ed3db41-00e3-4a88-846d-a1ef4f3c3c25": {}
+            }
+          },
+          "62da332f-747b-4c9f-bb06-6fd60048860b": {
+            "7fa80b5f-6a2b-43b3-9165-9cb9b5cc1615": {
+              "f4115ca5-ed9b-4d8a-9ac0-8d36100bd682": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "9f0828c8-d759-4f8e-81e4-68bdfc2e8759",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

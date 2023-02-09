@@ -1,0 +1,100 @@
+{
+  "name": "sdks/ffmpeg/To OGG converter",
+  "description": "Converts the file under the source path to OGG using Ffmpeg.\n",
+  "interface": {
+    "inputs": {
+      "4484df1e-602f-4c24-a085-74f9afd205ac": {
+        "type": "{\n  \"source\": string,\n  optional \"destination\": string\n}",
+        "name": "paths",
+        "description": "Receives the source and destination paths."
+      },
+      "3094105a-b139-4e65-8fbf-c24437a31c26": {
+        "type": "{\n  optional \"bitrate\": (\"24k\" or \"96k\" or \"128k\" or \"256k\" or \"450k\")\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "21d80f49-630f-450c-b9ee-25ed699f61fb": {
+        "type": "string",
+        "name": "destination path",
+        "description": "Sends the actual destination path. (Might be different than what was received.)"
+      },
+      "9dc5f4c0-4757-49d5-85fb-9cee4d5a9a9a": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that occurred during conversion."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "00c9f47a-0530-4289-bacc-112c5f015a65": {
+          "coordinates": [
+            79,
+            31
+          ],
+          "name": "convert to OGG",
+          "prototype": "efbb5121-936b-4985-be21-881a2ba80615"
+        },
+        "c19eeaea-ac03-4d5f-abb1-1d7708ec1326": {
+          "coordinates": [
+            -53,
+            -49
+          ],
+          "name": "merge inputs",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"paths\", \"params\"]"
+          }
+        }
+      },
+      "connections": {
+        "c19eeaea-ac03-4d5f-abb1-1d7708ec1326": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "67588a6b-9e00-4fdf-8573-7bdea33e3e5d": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "4484df1e-602f-4c24-a085-74f9afd205ac": {
+            "c19eeaea-ac03-4d5f-abb1-1d7708ec1326": {
+              "paths": {}
+            }
+          },
+          "3094105a-b139-4e65-8fbf-c24437a31c26": {
+            "c19eeaea-ac03-4d5f-abb1-1d7708ec1326": {
+              "params": {}
+            }
+          }
+        },
+        "outputs": {
+          "21d80f49-630f-450c-b9ee-25ed699f61fb": {
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "996afa79-5436-4fcc-a8ce-6768a47396d2": {}
+            }
+          },
+          "9dc5f4c0-4757-49d5-85fb-9cee4d5a9a9a": {
+            "00c9f47a-0530-4289-bacc-112c5f015a65": {
+              "9fd8a91b-c179-45a0-a793-b6e8fd0cd180": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "audio": null,
+    "conversion": null,
+    "convert": null,
+    "wav": null
+  },
+  "iconId": "cf995246-acae-414e-a9c6-4b494413078e",
+  "original": "f39a7bf0-54b6-4911-a7a6-4ad9ba45dd71",
+  "attributes": {
+    "locked": true
+  }
+}

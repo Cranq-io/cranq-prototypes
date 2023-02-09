@@ -1,0 +1,133 @@
+{
+  "name": "ai/Voice completion creator/OpenAI completion creator",
+  "interface": {
+    "inputs": {
+      "75b39328-1224-442f-931b-baed97c0b483": {
+        "type": "string",
+        "name": "query",
+        "description": "Receives the value to set.\n\nExample:\n2"
+      },
+      "740846ad-2d16-4a20-b166-b42fc35fbe62": {
+        "type": "{\n  \"apiKey\": string\n}",
+        "name": "params",
+        "description": "Receives generic OpenAI params."
+      }
+    },
+    "outputs": {
+      "5538443c-b6a1-4678-b989-b10a02282155": {
+        "type": "string",
+        "name": "node",
+        "description": "Sends the node at the specified path"
+      },
+      "3ba51575-2424-4ee1-b20c-51d9cdf083c0": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "9406c221-29ad-474b-80c6-3a2f4c44842a": {
+          "coordinates": [
+            52.71875,
+            41
+          ],
+          "name": "completion",
+          "prototype": "d4ebabb4-abcf-4ee4-9598-c37eba05e733",
+          "params": {}
+        },
+        "3f5e18e9-101c-4b99-8089-ba6dbae489ac": {
+          "coordinates": [
+            167.71875,
+            -45.921875
+          ],
+          "name": "get text",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"choices\", 0, \"text\"]"
+          }
+        },
+        "94f868fb-604b-4539-96c8-9cb70b6c6fc1": {
+          "coordinates": [
+            -43,
+            -44.5
+          ],
+          "name": "add prompt",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"prompt\""
+          }
+        },
+        "953778ad-26af-4bc2-8b1a-be7f2b37b87c": {
+          "coordinates": [
+            -148.83958333333334,
+            -107.95625
+          ],
+          "name": "basic query params",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\n    \"model\": \"text-davinci-003\",\n    \"max_tokens\": 1000\n  }"
+          }
+        }
+      },
+      "connections": {
+        "9406c221-29ad-474b-80c6-3a2f4c44842a": {
+          "d293caee-efa3-41e7-84f9-084b15fe44e6": {
+            "3f5e18e9-101c-4b99-8089-ba6dbae489ac": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "94f868fb-604b-4539-96c8-9cb70b6c6fc1": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "9406c221-29ad-474b-80c6-3a2f4c44842a": {
+              "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {}
+            }
+          }
+        },
+        "953778ad-26af-4bc2-8b1a-be7f2b37b87c": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "94f868fb-604b-4539-96c8-9cb70b6c6fc1": {
+              "96243772-f5b9-49b6-b60f-6841b5c8a535": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "75b39328-1224-442f-931b-baed97c0b483": {
+            "94f868fb-604b-4539-96c8-9cb70b6c6fc1": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
+            },
+            "953778ad-26af-4bc2-8b1a-be7f2b37b87c": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "740846ad-2d16-4a20-b166-b42fc35fbe62": {
+            "9406c221-29ad-474b-80c6-3a2f4c44842a": {
+              "879c752d-3302-40bd-8104-110a5abda395": {}
+            }
+          }
+        },
+        "outputs": {
+          "5538443c-b6a1-4678-b989-b10a02282155": {
+            "3f5e18e9-101c-4b99-8089-ba6dbae489ac": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            }
+          },
+          "3ba51575-2424-4ee1-b20c-51d9cdf083c0": {
+            "9406c221-29ad-474b-80c6-3a2f4c44842a": {
+              "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "826ef237-6282-4a24-98ed-6b5362264144",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

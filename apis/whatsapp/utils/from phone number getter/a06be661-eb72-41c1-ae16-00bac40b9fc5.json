@@ -1,0 +1,95 @@
+{
+  "name": "apis/whatsapp/utils/From phone number getter",
+  "interface": {
+    "inputs": {
+      "a7f0a140-8e7e-416b-8858-8e7324b8584c": {
+        "type": "{\n  \"entry\": {\n    \"changes\": {\n      \"value\": {\n        \"messages\": {\n          \"from\": string\n        }[]\n      }\n    }[]\n  }[]\n}",
+        "name": "message",
+        "description": "is extracted from"
+      }
+    },
+    "outputs": {
+      "9665563f-0555-44b4-b9ed-a068671ce1a5": {
+        "type": "string",
+        "name": "phone number",
+        "description": ""
+      },
+      "303fb4cd-30d2-423f-b392-b42b58cc4ea4": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "75c59051-8347-40a6-bfc6-ae5705b2bc5f": {
+          "coordinates": [
+            -107,
+            -98
+          ],
+          "name": "get from from message",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"entry\", \"0\", \"changes\", \"0\", \"value\", \"messages\", \"0\", \"from\"]"
+          }
+        },
+        "20c6e9f6-bef9-48db-b787-13c2deeeb93b": {
+          "coordinates": [
+            81,
+            98
+          ],
+          "name": "store",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {
+            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"error\": \"Not a from number.\"}"
+          }
+        }
+      },
+      "connections": {
+        "75c59051-8347-40a6-bfc6-ae5705b2bc5f": {
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "20c6e9f6-bef9-48db-b787-13c2deeeb93b": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "a7f0a140-8e7e-416b-8858-8e7324b8584c": {
+            "75c59051-8347-40a6-bfc6-ae5705b2bc5f": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "9665563f-0555-44b4-b9ed-a068671ce1a5": {
+            "75c59051-8347-40a6-bfc6-ae5705b2bc5f": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            }
+          },
+          "303fb4cd-30d2-423f-b392-b42b58cc4ea4": {
+            "20c6e9f6-bef9-48db-b787-13c2deeeb93b": {
+              "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "362c12ce-79dd-4de1-b0ca-887e0f2c1a7d",
+  "description": "Extracts from phone number from a WhatsApp audio message.\r\n\r\nWhen there is no from phone number in the message, sends and error.",
+  "keywords": {
+    "extract": null,
+    "audio": null,
+    "phone": null,
+    "number": null,
+    "message": null,
+    "voice": null,
+    "sound": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

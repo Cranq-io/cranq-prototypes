@@ -12,14 +12,14 @@
         }
       },
       "inputFunctions": {
-        "1adeff4b-e728-4346-907b-948b1d41a3f0": "  const {\n    \"output file\": outputFile,\n    \"skip non speech chunks\": skipNonSpeechChunks = false,\n    \"max length\": maxDuration = 0,\n    \"non speech timeout\": nonSpeechTimeout = 5000,\n    \"sample rate\": sampleRate = 16000\n  } = data;\n\n  const WavFileWriter = require(\"wav\").FileWriter;\n  const writeStream = new WavFileWriter(\n    outputFile,\n    {\n      sampleRate: sampleRate,\n      channels: 1\n    });\n  const {SpeechRecorder} = require(\"speech-recorder\");\n\n  let lastSilenceTimestamp = Date.now();\n  const recorder = new SpeechRecorder({\n    onAudio: ({audio, speaking, speech}) => {\n      if (speaking) {\n        lastSilenceTimestamp = Date.now();\n      }\n      if(speech || !skipNonSpeechChunks) {\n        writeStream.write(Buffer.from(audio.buffer));\n      }\n      if (nonSpeechTimeout && Date.now() - lastSilenceTimestamp > nonSpeechTimeout) {\n        recorder.stop();\n        writeStream.end();\n        outputs[\"recorded\"](outputFile, tag);\n      }\n    }\n  });\n\n  console.log(\"Starting recording.\");\n  nonSpeechTimeout && console.log(`Recording will stop after ${nonSpeechTimeout / 1000} seconds of silence`);\n  if(maxDuration) {\n    console.log(`Max recording length is ${maxDuration / 1000} seconds`);\n    setTimeout(() => {\n      recorder.stop();\n      writeStream.end();\n      outputs[\"recorded\"](outputFile, tag);\n    }, maxDuration)\n  }\n  console.log(\"Ready...\");\n  setTimeout(() => {\n    console.log(\"Speak!\");\n    recorder.start();\n  }, 1000);\n"
+        "1adeff4b-e728-4346-907b-948b1d41a3f0": "const {\n  deviceId,\n  \"output file\": outputFile,\n  \"skip non speech chunks\": skipNonSpeechChunks = false,\n  \"max length\": maxDuration = 0,\n  \"non speech timeout\": nonSpeechTimeout = 5000,\n  \"sample rate\": sampleRate = 16000\n} = data;\n\nconst sendEvent = (eventName, message) => {\n  outputs[\"events\"](\n    {eventName, message, params: {...data, deviceName}},\n    tag\n  );\n}\n\nconst WavFileWriter = require(\"wav\").FileWriter;\nconst writeStream = new WavFileWriter(\n  outputFile,\n  {\n    sampleRate: sampleRate,\n    channels: 1\n  });\nconst {devices, SpeechRecorder} = require(\"speech-recorder\");\n\nconst deviceName = (deviceId \n? devices().find((device) => device.id === deviceId)\n: devices().find((device) => device.isDefaultInput))?.name\n\nif(!deviceName) {\n  outputs[\"error\"](deviceId \n  ? `Could not find audio input device with id ${deviceId}`\n  : `Could not find default audio input device`,\n  tag);\n}\n\nlet lastSilenceTimestamp = Date.now();\nconst recorder = new SpeechRecorder({\n  device: deviceId,\n  onChunkStart: () => {\n    sendEvent(\"speech started\", \"Speech started\")\n  },\n  onChunkEnd: () => {\n    sendEvent(\"speech ended\", \"Speech ended\");\n  },\n  onAudio: ({audio, speaking, speech}) => {\n    if (speaking) {\n      lastSilenceTimestamp = Date.now();\n    }\n    if(speech || !skipNonSpeechChunks) {\n      writeStream.write(Buffer.from(audio.buffer));\n    }\n    if (nonSpeechTimeout && Date.now() - lastSilenceTimestamp > nonSpeechTimeout) {\n      recorder.stop();\n      sendEvent(\"ended\", \"Recording stopped\");\n      writeStream.end();\n      outputs[\"recorded\"](outputFile, tag);\n    }\n  }\n});\n\nconst startEventMessage = `Starting recording via ${deviceName}` \n+ (nonSpeechTimeout ? `\\nRecording will stop after ${nonSpeechTimeout / 1000} seconds of silence` : \"\")\n+ (maxDuration ? `\\nMax recording length is ${maxDuration / 1000} seconds` : \"\");\nsendEvent(\"starting\", startEventMessage);\n\nif(maxDuration) {\n  setTimeout(() => {\n    recorder.stop();\n    writeStream.end();\n    sendEvent(\"ended\", \"Recording stopped\");\n    outputs[\"recorded\"](outputFile, tag);\n  }, maxDuration)\n}\n\nsendEvent(\"ready\", \"Ready...\");\nsetTimeout(() => {\n  recorder.start();\n  sendEvent(\"started\", \"Speak!\");\n}, 1000);\n"
       }
     }
   },
   "interface": {
     "inputs": {
       "1adeff4b-e728-4346-907b-948b1d41a3f0": {
-        "type": "{\"output file\": string, \"skip non speech chunks\": boolean, \"max length\": number, \"non speech timeout\": number, \"sample rate\": number}",
+        "type": "{\n  \"output file\": string,\n  optional \"deviceId\": number,\n  optional \"skip non speech chunks\": boolean,\n  optional \"max length\": number,\n  optional \"non speech timeout\": number,\n  optional \"sample rate\": number\n}",
         "name": "parameters"
       }
     },
@@ -27,10 +27,19 @@
       "a7cb594f-e518-4e1d-9cb2-cd2b6a984f18": {
         "type": "string",
         "name": "recorded"
+      },
+      "960a881b-3564-4b1e-960c-5ec2f6034817": {
+        "type": "{\n  \"eventName\": (\"starting\" or \"ready\" or \"recording\" or \"ended\" or \"speech started\" or \"speech ended\") ,\n  \"message\": string,\n  \"params\": {\n  \"output file\": string,\n  \"skip non speech chunks\": boolean,\n  \"max length\": number,\n  \"non speech timeout\": number,\n  \"sample rate\": number\n}\n}",
+        "name": "events"
+      },
+      "75270624-e739-40ef-b0ff-5234d9e35e45": {
+        "type": "{\"error\": string}",
+        "name": "error"
       }
     }
   },
   "name": "audio/Speech recorder/Internal",
+  "description": "See audio/Speech recorder",
   "attributes": {
     "internal": true,
     "locked": true

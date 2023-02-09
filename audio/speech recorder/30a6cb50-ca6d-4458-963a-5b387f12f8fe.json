@@ -100,6 +100,16 @@
             "d6ea574c-c919-4249-b5db-cb783f47e4fa": {
               "a7cb594f-e518-4e1d-9cb2-cd2b6a984f18": {}
             }
+          },
+          "bf3a02c5-f0c7-499f-bdbc-ec178485a1f2": {
+            "d6ea574c-c919-4249-b5db-cb783f47e4fa": {
+              "960a881b-3564-4b1e-960c-5ec2f6034817": {}
+            }
+          },
+          "58896cf7-70c3-4698-9258-ad3928fa3614": {
+            "d6ea574c-c919-4249-b5db-cb783f47e4fa": {
+              "75270624-e739-40ef-b0ff-5234d9e35e45": {}
+            }
           }
         }
       }
@@ -113,26 +123,38 @@
         "description": "Receives the path of the output file"
       },
       "f4c1e05b-833c-47bb-83ea-678e686c29b0": {
-        "type": "{optional \"skip non speech chunks\": boolean, optional \"max length\": number, optional \"non speech timeout\": number, optional \"sample rate\": number}",
+        "type": "{\n  optional \"deviceId\": number,\n  optional \"skip non speech chunks\": boolean,\n  optional \"max length\": number,\n  optional \"non speech timeout\": number,\n  optional \"sample rate\": number\n}",
         "name": "parameters",
-        "description": "Receives optional parameters:\n * \"skip non speech chunks\": whether to use automatic speech recognition to exclude from the recording periods where no speech was detected\n * \"max lenght\": maximal length of the recording in milliseconds, after that time recording will be stopped\n * \"non speech timeout\": length of the period in milliseconds after that recording will be stopped (defaults to 5000)\n * \"sample rate\": sample rate to use for the recording (default: 16000)"
+        "description": "Optional parameters to be set as **static values**:\n * \"deviceId\": the id of the device to use for reording (defaults to the system default, for list of devices see audio/Speech recorder/Audio input device lister)\n * \"skip non speech chunks\": whether to use automatic speech recognition to exclude from the recording periods where no speech was detected (defaults to false)\n * \"max length\": maximal length of the recording in milliseconds, after that time recording will be stopped, (defaults to 0 meaning no timeout)\n * \"non speech timeout\": length of the period in milliseconds after that recording will be stopped (defaults to 3000)\n * \"sample rate\": sample rate to use for the recording (defaults to 16000)"
       }
     },
     "outputs": {
       "d347b181-4d3f-4f6d-8988-2f0c0286933e": {
-        "type": "typeof `recorded` of `record speech`",
-        "name": "recorded"
+        "type": "string",
+        "name": "recorded",
+        "description": "Sends out the path of the recorded Wave file."
+      },
+      "bf3a02c5-f0c7-499f-bdbc-ec178485a1f2": {
+        "type": "{\n  \"eventName\": (\"starting\" or \"ready\" or \"recording\" or \"ended\" or \"speech started\" or \"speech ended\") ,\n  \"message\": string,\n  \"params\": {\n  \"output file\": string,\n  \"skip non speech chunks\": boolean,\n  \"max length\": number,\n  \"non speech timeout\": number,\n  \"sample rate\": number\n}\n}",
+        "name": "events",
+        "description": "Sends out events at various stages of the recording with default message and parameters to construct custom message."
+      },
+      "58896cf7-70c3-4698-9258-ad3928fa3614": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends out any error occured during recording"
       }
     }
   },
   "name": "audio/Speech recorder",
-  "description": "Records speech via microphone (default audio input device)",
-  "iconId": "6876e900-c9f1-44f9-a00a-83df8456d721",
+  "description": "Records speech via microphone (default audio input device) in Wave format.",
   "keywords": {
     "audio": null,
     "speech": null,
-    "record": null
+    "record": null,
+    "wav": null
   },
+  "iconId": "c049fdc0-a9ec-400b-8149-89ec7c723f3a",
   "attributes": {
     "locked": true
   }

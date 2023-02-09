@@ -1,0 +1,44 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "speech-recorder": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "26745501-2eae-4efc-8991-d367162f03db": "const { devices } = require(\"speech-recorder\");\n\noutputs[\"devices\"](devices(), tag);"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "26745501-2eae-4efc-8991-d367162f03db": {
+        "type": "any",
+        "name": "start",
+        "description": "Receives a start signal"
+      }
+    },
+    "outputs": {
+      "3a958825-b3ff-4202-a974-9c0257070a1f": {
+        "type": "{\n    \"id\": number,\n    \"name\": string,\n    \"apiName\": string,\n    \"maxInputChannels\": number,\n    \"maxOutputChannels\": number,\n    \"defaultSampleRate\": number,\n    \"isDefaultInput\": boolean,\n    \"isDefaultOutput\": boolean\n  }[]",
+        "name": "devices",
+        "description": "Sends out information about available audio devices"
+      }
+    }
+  },
+  "name": "audio/Speech recorder/Audio input device lister",
+  "description": "Lists available audio input devices",
+  "iconId": "c049fdc0-a9ec-400b-8149-89ec7c723f3a",
+  "keywords": {
+    "audio": null,
+    "input": null,
+    "record": null,
+    "microphone": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -3,34 +3,34 @@
     "es6-node": {
       "dependencies": {
         "npm": {
-          "ethers": {
+          "web3": {
             "description": ""
           }
         }
       },
       "inputFunctions": {
-        "b3cea331-0e22-4273-be38-3a574b507611": "const ethers = require(\"ethers\");\nconst {units, decimals = 18} = data;\n\nconst result = ethers.utils.parseUnits(units.toString(), decimals);\n\noutputs[\"result\"](result, tag);"
+        "b3cea331-0e22-4273-be38-3a574b507611": "const {unitMap, toWei} = require(\"web3\").utils;\nconst {units, decimals = 18} = data;\n\nconst toUnitName = Object.entries(unitMap)\n  .find(([unitName, value]) =>{\n    return value === `1${\"0\".repeat(decimals)}`\n  })?.[0];\n  \nif(!toUnitName) {\n  throw new Error(\"Invalid value given for decimals\");\n}\n\nconst result = toWei(units.toString(), toUnitName);\n\noutputs[\"result\"](result, tag);"
       }
     }
   },
   "interface": {
     "inputs": {
       "b3cea331-0e22-4273-be38-3a574b507611": {
-        "type": "number",
+        "type": "{\n\"units\": number,\n\"decimals\": number\n}",
         "name": "units & deximals",
-        "description": "The number to convert to BigNumber"
+        "description": ""
       }
     },
     "outputs": {
       "9efa481d-63ea-4735-b8df-06add0d6d1bc": {
-        "type": "{string: any}",
+        "type": "string",
         "name": "result",
-        "description": "The number converted to BigNumber"
+        "description": ""
       }
     }
   },
   "name": "blockchain/ethereum/Unit parser/Internal",
-  "description": "Creates BigNumber representation of number units useing the specified amount of decimals.\n\n",
+  "description": "See blockchain/ethereum/Unit parser",
   "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
   "attributes": {
     "internal": true,

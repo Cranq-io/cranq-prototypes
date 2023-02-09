@@ -1,24 +1,24 @@
 {
   "name": "blockchain/ethereum/Unit formatter",
-  "description": "Returns a string representation of value formatted with unit digits .\n\nSee: https://docs.ethers.io/v5/api/utils/display-logic/#utils-formatUnits",
+  "description": "Returns a string representation of value formatted with unit digits.\n\nEg:\n1. `units` receives \"1500000000000000000\"@0\n2. `decimal` is set to 18\n3. `result` sends out \"1.5\"@0",
   "interface": {
     "inputs": {
       "0d455460-c659-44c5-afd7-bdba5211c32d": {
-        "type": "{string: any}",
+        "type": "(string or number)",
         "name": "units",
-        "description": "The value as BigNumber"
+        "description": "Receives the value in units."
       },
       "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {
         "type": "number",
         "name": "decimals",
-        "description": "The number of decimals to represent the unit.\nDefaults to 18."
+        "description": "Receives the number of decimals to represent the unit. \nDefaults to 18 (=\"ether\")."
       }
     },
     "outputs": {
       "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
-        "type": "typeof `result` of `format BigNumber to string`",
+        "type": "string",
         "name": "result",
-        "description": "The string representation of value formatted with unit digits."
+        "description": "Sends out the string representation of value formatted with unit digits."
       }
     }
   },
@@ -101,7 +101,8 @@
   "keywords": {
     "ethers": null,
     "decimals": null,
-    "BigNumber": null
+    "BigNumber": null,
+    "BigInt": null
   },
   "original": "eb3f5e07-27f3-42dc-9ac1-60f747d6c1b5",
   "iconId": "eeec34e3-c832-4c7b-b045-62f82ebc3ddb",

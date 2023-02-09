@@ -9,14 +9,14 @@
         }
       },
       "inputFunctions": {
-        "b3cea331-0e22-4273-be38-3a574b507611": "const ethers = require(\"ethers\");\nconst {units, decimals = 18} = data;\n\nconst result = ethers.utils.formatUnits(units.toString(), decimals);\n\noutputs[\"result\"](result, tag);"
+        "b3cea331-0e22-4273-be38-3a574b507611": "const {fromWei, unitMap} = require(\"web3\").utils;\nconst {units, decimals = 18} = data;\n\n    \nconst fromUnitName = Object.entries(unitMap)\n  .find(([unitName, value]) =>{\n    return value === `1${\"0\".repeat(decimals)}`\n  })?.[0];\n  \nif(!fromUnitName) {\n  throw new Error(\"Invalid value given for decimals\");\n}\n\nconst result = fromWei(units.toString(), fromUnitName);\n\noutputs[\"result\"](result, tag);"
       }
     }
   },
   "interface": {
     "inputs": {
       "b3cea331-0e22-4273-be38-3a574b507611": {
-        "type": "number",
+        "type": "{\n  \"units\": string,\n  \"decimals\": string\n}",
         "name": "units & decimals",
         "description": ""
       }
@@ -25,12 +25,12 @@
       "9efa481d-63ea-4735-b8df-06add0d6d1bc": {
         "type": "string",
         "name": "result",
-        "description": "The number converted to BigNumber"
+        "description": ""
       }
     }
   },
   "name": "blockchain/ethereum/Unit formatter/Internal",
-  "description": "\n",
+  "description": "See blockchain/ethereum/Unit formatter\n",
   "iconId": "cbb85c56-3c8f-4e5e-afdd-a9dd9e84385d",
   "original": "d81d132f-a682-42ab-b17e-436701e3974c",
   "attributes": {

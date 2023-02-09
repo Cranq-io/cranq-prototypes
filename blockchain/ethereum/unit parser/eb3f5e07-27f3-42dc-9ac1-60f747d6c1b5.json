@@ -1,24 +1,24 @@
 {
   "name": "blockchain/ethereum/Unit parser",
-  "description": "Creates BigNumber representation of number units useing the specified amount of decimals.\n\nSee: https://docs.ethers.io/v5/api/utils/display-logic/#utils-parseUnits",
+  "description": "Converts the decimal string value of units to a string assuming unit decimal places.\n\nEg:\n1. `units` receives 1.5@0\n2. `decimals` is set to 18\n3. `results` sends out \"1500000000000000000\"",
   "interface": {
     "inputs": {
       "0d455460-c659-44c5-afd7-bdba5211c32d": {
-        "type": "number",
+        "type": "(string or number)",
         "name": "units",
-        "description": "The number of units"
+        "description": "Receives the number of units."
       },
       "6ffb69e8-3e06-43ed-b449-83880fdcedcf": {
         "type": "number",
         "name": "decimals",
-        "description": "The number of decimals to represent the unit"
+        "description": "Receives the number of decimals to represent the unit. \nDefaults to 18 (=\"ether\")."
       }
     },
     "outputs": {
       "aaa7049a-c2b9-4257-a583-eaf68de2c346": {
-        "type": "typeof `result` of `convert to BigNumber`",
+        "type": "string",
         "name": "result",
-        "description": "The BigNumber representation of value, parsed with unit digits."
+        "description": "Sends out the string representation of value parsed with unit digits."
       }
     }
   },
@@ -101,7 +101,8 @@
   "keywords": {
     "ethers": null,
     "decimals": null,
-    "BigNumber": null
+    "BigNumber": null,
+    "BigIng": null
   },
   "iconId": "eeec34e3-c832-4c7b-b045-62f82ebc3ddb",
   "attributes": {

@@ -1,0 +1,99 @@
+{
+  "name": "apis/telegram/bot/Webhook deleter",
+  "description": "Deletes webhook associated with a Telegram bot, optionally dropping all pending updates.",
+  "interface": {
+    "inputs": {
+      "b0eb150b-e4df-4c54-9045-9f37efa9e47a": {
+        "type": "{\n  optional \"drop_pending_updates\": boolean\n}",
+        "name": "data",
+        "description": "Receives whether to drop pending updates.\n\nSee https://core.telegram.org/bots/api#deletewebhook."
+      },
+      "3ed48e38-8f38-44b3-880b-97f6222bc472": {
+        "type": "{\n  \"token\": string\n}",
+        "name": "params",
+        "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
+      }
+    },
+    "outputs": {
+      "2ad1fb54-d94e-4e42-8684-0873730b3214": {
+        "type": "boolean",
+        "name": "ok",
+        "description": "Sends whether the request was successful."
+      },
+      "92817332-b534-4843-9cb2-b226a06737e3": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original API reponse."
+      },
+      "9636c450-36d2-46b8-926d-159dfad2173f": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during the request."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "dd627b74-a958-4cd9-8ec7-07989bc5d5f1": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "dispatch request",
+          "prototype": "35abf766-77ec-4529-a995-00a3794e7a7f",
+          "params": {
+            "5c88ea0f-4b95-419e-8cca-ca3bd2713b92": "\"deleteWebhook\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "b0eb150b-e4df-4c54-9045-9f37efa9e47a": {
+            "dd627b74-a958-4cd9-8ec7-07989bc5d5f1": {
+              "8f946004-37d0-4527-bfec-16b2869e4fa4": {}
+            }
+          },
+          "3ed48e38-8f38-44b3-880b-97f6222bc472": {
+            "dd627b74-a958-4cd9-8ec7-07989bc5d5f1": {
+              "53f1a8ab-1e1a-4887-874e-0ebbef17c9e3": {}
+            }
+          }
+        },
+        "outputs": {
+          "2ad1fb54-d94e-4e42-8684-0873730b3214": {
+            "dd627b74-a958-4cd9-8ec7-07989bc5d5f1": {
+              "bcd7f146-5636-4c3c-86cb-673d1903017f": {}
+            }
+          },
+          "92817332-b534-4843-9cb2-b226a06737e3": {
+            "dd627b74-a958-4cd9-8ec7-07989bc5d5f1": {
+              "16628685-ee02-4611-9b03-cdaaada20ef7": {}
+            }
+          },
+          "9636c450-36d2-46b8-926d-159dfad2173f": {
+            "dd627b74-a958-4cd9-8ec7-07989bc5d5f1": {
+              "29f62e60-4fd2-4589-a0f8-04c9d92995e6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "update": null,
+    "notification": null,
+    "event": null,
+    "callback": null,
+    "webhook": null,
+    "delete": null,
+    "remove": null,
+    "purge": null,
+    "drop": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

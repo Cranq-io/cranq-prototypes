@@ -1,0 +1,77 @@
+{
+  "name": "apis/telegram/bot/utils/Simple message builder",
+  "description": "Builds a simple input for `apis/telegram/bots/Message sender`, consisting of only a chat ID and text.\n\nNot an actual Message as per https://core.telegram.org/bots/api#message.",
+  "interface": {
+    "inputs": {
+      "47579859-9bf7-4dba-b499-266da98b03e5": {
+        "type": "string",
+        "name": "chat ID",
+        "description": "Receives chat ID."
+      },
+      "a9c626d6-597e-4ce9-8349-fc7a100f7edd": {
+        "type": "string",
+        "name": "text",
+        "description": "Receives text of the message."
+      }
+    },
+    "outputs": {
+      "34907f84-66ce-4b27-a754-334cc825b620": {
+        "type": "{\n  \"chat_id\": string,\n  \"text\": string\n}",
+        "name": "message",
+        "description": "Sends simple message."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "206090c4-6b97-49b0-a744-1f93d967becf": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "sync params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"chat_id\", \"text\"]"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "47579859-9bf7-4dba-b499-266da98b03e5": {
+            "206090c4-6b97-49b0-a744-1f93d967becf": {
+              "chat_id": {}
+            }
+          },
+          "a9c626d6-597e-4ce9-8349-fc7a100f7edd": {
+            "206090c4-6b97-49b0-a744-1f93d967becf": {
+              "text": {}
+            }
+          }
+        },
+        "outputs": {
+          "34907f84-66ce-4b27-a754-334cc825b620": {
+            "206090c4-6b97-49b0-a744-1f93d967becf": {
+              "75cde7e3-b158-4836-8bcd-a89e72314ee8": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "message": null,
+    "text": null,
+    "only": null,
+    "simple": null,
+    "build": null,
+    "construct": null,
+    "chat": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "apis/telegram/bot/Message sender",
+  "description": "Sends a Telegram message.\n\nMore info: https://core.telegram.org/bots/api#sendmessage.",
+  "interface": {
+    "inputs": {
+      "00efb324-8002-4834-8fdf-2204596b0dcb": {
+        "type": "{\n  \"chat_id\": (string or number),\n  optional \"message_thread_id\": number,\n  \"text\": string,\n  optional \"parse_mode\": string,\n  optional \"entities\": {\n    \"type\": (\"mention\" or \"hashtag\" or \"cashtag\" or \"bot_command\" or \"url\" or \"email\" or \"phone_number\" or \"bold\" or \"italic\" or \"underline\" or \"strikethrough\" or \"spoiler\" or \"code\" or \"pre\" or \"text_link\" or \"text_mention\" or \"custom_emoji\"),\n    \"offset\": number,\n    \"length\": number,\n    optional \"url\": string,\n    optional \"user\": {\n      \"id\": string,\n      \"is_bot\": boolean,\n      optional \"first_name\": string,\n      optional \"last_name\": string,\n      optional \"username\": string,\n      optional \"language_code\": string,\n      optional \"is_premium\": true,\n      optional \"added_to_attachment_menu\": true,\n      optional \"can_join_groups\": boolean,\n      optional \"can_read_all_group_messages\": boolean,\n      optional \"supports_inline_queries\": boolean\n    },\n    optional \"language\": string,\n    optional \"custom_emoji_id\": string\n  }[],\n  optional \"disable_web_page_preview\": boolean,\n  optional \"disable_notification\": boolean,\n  optional \"protect_content\": boolean,\n  optional \"reply_to_message_id\": number,\n  optional \"allow_sending_without_reply\": boolean,\n  optional \"reply_markup\": any\n}",
+        "name": "data",
+        "description": "Receives message to send.\n\nExample:\n```\n{\n  \"chat_id\": 12345,\n  \"text\": \"Hello!\"\n}\n```"
+      },
+      "48798463-9aec-43eb-87c5-f8a4ca6e7d6c": {
+        "type": "{\n  \"token\": string\n}",
+        "name": "params",
+        "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
+      }
+    },
+    "outputs": {
+      "33e6e6c4-5a0c-4a34-9354-88677cb5d69b": {
+        "type": "boolean",
+        "name": "ok",
+        "description": "Sends whether the request was successful."
+      },
+      "fc70699d-7410-44f5-9034-2d5797ed7034": {
+        "type": "{\n  \"message_id\": number,\n  optional \"from\": {\n    \"id\": number,\n    \"is_bot\": boolean,\n    optional \"first_name\": string,\n    optional \"last_name\": string,\n    optional \"username\": string,\n    optional \"language_code\":  string\n  },\n  \"date\": number,\n  \"chat\": {\n    \"id\": number,\n    \"type\": (\"private\" or \"group\" or \"supergroup\" or \"channel\"),\n    optional \"username\": string,\n    optional \"first_name\": string,\n    optional \"last_name\": string\n  },\n  optional \"text\": string,\n  optional \"audio\": {\n    \"file_id\": string,\n    \"file_unique_id\": string,\n    \"duration\": number\n  },\n  optional \"document\": {\n    \"file_id\": string,\n    \"file_unique_id\": string\n  },\n  optional \"photo\": {\n    \"file_id\": string,\n    \"file_unique_id\": string,\n    \"width\": number,\n    \"height\": number\n  }[],\n  optional \"video\": {\n    \"file_id\": string,\n    \"file_unique_id\": string,\n    \"width\": number,\n    \"height\": number,\n    \"duration\": number\n  }\n}",
+        "name": "message",
+        "description": "Sends message that was actually sent.\n\nMore info: https://core.telegram.org/bots/api#message."
+      },
+      "8bae14df-4d9e-443b-bb5e-69e202fd34b2": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during sending the message."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8ae96615-fd42-4c4f-8ba0-d7c6dc17163f": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "non-file request dispatcher",
+          "prototype": "35abf766-77ec-4529-a995-00a3794e7a7f",
+          "params": {
+            "5c88ea0f-4b95-419e-8cca-ca3bd2713b92": "\"sendMessage\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "48798463-9aec-43eb-87c5-f8a4ca6e7d6c": {
+            "8ae96615-fd42-4c4f-8ba0-d7c6dc17163f": {
+              "53f1a8ab-1e1a-4887-874e-0ebbef17c9e3": {}
+            }
+          },
+          "00efb324-8002-4834-8fdf-2204596b0dcb": {
+            "8ae96615-fd42-4c4f-8ba0-d7c6dc17163f": {
+              "8f946004-37d0-4527-bfec-16b2869e4fa4": {}
+            }
+          }
+        },
+        "outputs": {
+          "33e6e6c4-5a0c-4a34-9354-88677cb5d69b": {
+            "8ae96615-fd42-4c4f-8ba0-d7c6dc17163f": {
+              "bcd7f146-5636-4c3c-86cb-673d1903017f": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "send": null,
+    "message": null,
+    "telegram": null,
+    "bot": null,
+    "chatbot": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "apis/telegram/bot/utils/Update getter",
+  "description": "Extracts the update record from a Telegramn update received via a webhook request.\n\nSee https://core.telegram.org/bots/api#update.",
+  "interface": {
+    "inputs": {
+      "6db50f44-7715-492a-9da2-ac9336ddd828": {
+        "type": "{\n  \"body\": any\n}",
+        "name": "request",
+        "description": "Receives Telegram update webhook request."
+      }
+    },
+    "outputs": {
+      "0a848ee9-3d47-48a4-882c-9483cecdc7a6": {
+        "type": "{\n  \"update_id\": number,\n  optional \"message\": {\n    \"message_id\": number,\n    optional \"from\": {\n      \"id\": number,\n      \"is_bot\": boolean,\n      optional \"first_name\": string,\n      optional \"last_name\": string,\n      optional \"username\": string,\n      optional \"language_code\":  string\n    },\n    \"date\": number,\n    \"chat\": {\n      \"id\": number,\n      \"type\": (\"private\" or \"group\" or \"supergroup\" or \"channel\"),\n      optional \"username\": string,\n      optional \"first_name\": string,\n      optional \"last_name\": string\n    },\n    optional \"text\": string,\n    optional \"audio\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"duration\": number\n    },\n    optional \"document\": {\n      \"file_id\": string,\n      \"file_unique_id\": string\n    },\n    optional \"photo\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number\n    }[],\n    optional \"video\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number,\n      \"duration\": number\n    }\n  }\n}",
+        "name": "update",
+        "description": "Sends update record. Type documents simple messages only. For full field types see https://core.telegram.org/bots/api#update."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "7a9987a6-6853-400c-8ec4-f82977ec3a6c": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "request body getter",
+          "prototype": "d069d982-84e8-443d-ba57-adba00b85a71"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "6db50f44-7715-492a-9da2-ac9336ddd828": {
+            "7a9987a6-6853-400c-8ec4-f82977ec3a6c": {
+              "0c5be1dc-0f76-416f-81f3-695d2f7aa91d": {}
+            }
+          }
+        },
+        "outputs": {
+          "0a848ee9-3d47-48a4-882c-9483cecdc7a6": {
+            "7a9987a6-6853-400c-8ec4-f82977ec3a6c": {
+              "01a94511-1481-4dea-bc53-ad6c78a53d3a": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "update": null,
+    "body": null,
+    "request": null,
+    "telegram": null,
+    "bot": null,
+    "message": null,
+    "event": null,
+    "extract": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

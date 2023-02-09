@@ -1,0 +1,159 @@
+{
+  "name": "apis/telegram/bot/On-demand webhook setter",
+  "description": "Registers a webhook for a Telegram bot on demand.\n\nWhen a webhook is already registered for the bot, it leaves the existing webhook unchanged.",
+  "interface": {
+    "inputs": {
+      "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": {
+        "type": "{\n  \"url\": string,\n  optional \"ip_address\": string,\n  optional \"max_connections\": number,\n  optional \"allowed_updates\": string[],\n  optional \"drop_pending_updates\": boolean,\n  optional \"secret_token\": string\n}",
+        "name": "data",
+        "description": "Receives request data. Does not support 'certificate' field yet.\n\nSee https://core.telegram.org/bots/api#setwebhook"
+      },
+      "4b9def7c-0790-442e-b18c-ce1e2b0be0d7": {
+        "type": "{\n  \"token\": string\n}",
+        "name": "params",
+        "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
+      }
+    },
+    "outputs": {
+      "10d5cb4b-af9d-414d-b39a-a4c59ab64842": {
+        "type": "boolean",
+        "name": "ok",
+        "description": "Sends whether the webhook registration completed successfully."
+      },
+      "3dd876bc-7dbc-43e0-a973-35d6dcd6940d": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the last original API reponse."
+      },
+      "0a869efd-4873-4e14-93b7-33b9203242d9": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during the request(s)."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "3375f445-8f12-4f2e-8acc-eab8b2b80db4": {
+          "coordinates": [
+            140.1,
+            62.5
+          ],
+          "name": "register webhook",
+          "prototype": "ef329cc9-7717-4491-b887-ae69c06996ef"
+        },
+        "42ef11c4-67bd-42f5-b6de-2f0ab50c2e0a": {
+          "coordinates": [
+            47.724999999999994,
+            214.125
+          ],
+          "name": "hold params",
+          "prototype": "62c8e48b-0926-4fa7-8322-02975bf4dc41"
+        },
+        "6446d8f5-a173-41ff-a8bc-08f2024c2ee4": {
+          "coordinates": [
+            -174.27499999999998,
+            124.125
+          ],
+          "name": "forwarder (double)",
+          "prototype": "9067c53e-399e-4f28-a6ed-26e987ab2418"
+        },
+        "3e892483-87b4-4690-8dad-c9114b1c8944": {
+          "coordinates": [
+            -132.675,
+            -140.275
+          ],
+          "name": "check webhook",
+          "prototype": "f32e700d-493c-45a0-9d25-cce3897d6cb4"
+        }
+      },
+      "connections": {
+        "42ef11c4-67bd-42f5-b6de-2f0ab50c2e0a": {
+          "eb4c2873-890f-4780-a895-53e321f3739e": {
+            "3375f445-8f12-4f2e-8acc-eab8b2b80db4": {
+              "7abe53d3-e467-4d9d-8a15-fd23c097e19a": {}
+            }
+          }
+        },
+        "6446d8f5-a173-41ff-a8bc-08f2024c2ee4": {
+          "069a212d-9cea-4987-be45-e0079a13d96f": {
+            "3375f445-8f12-4f2e-8acc-eab8b2b80db4": {
+              "2d8eacc1-a1e8-4d50-8668-0e091710ef32": {}
+            }
+          },
+          "d1295197-1962-4680-a037-5890f2175bb9": {
+            "42ef11c4-67bd-42f5-b6de-2f0ab50c2e0a": {
+              "72a73ffe-8319-4427-878e-3e67f2d150ff": {}
+            },
+            "3e892483-87b4-4690-8dad-c9114b1c8944": {
+              "91bec4d0-c409-4245-922d-fb1e74ec9dd1": {}
+            }
+          }
+        },
+        "3e892483-87b4-4690-8dad-c9114b1c8944": {
+          "39579158-0dd4-4b5c-9c8d-c745a2722636": {
+            "42ef11c4-67bd-42f5-b6de-2f0ab50c2e0a": {
+              "f58efe33-f70e-4570-ac54-670aaf844385": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": {
+            "6446d8f5-a173-41ff-a8bc-08f2024c2ee4": {
+              "e76062c0-e298-4443-a187-94cbd4b3bc74": {}
+            }
+          },
+          "4b9def7c-0790-442e-b18c-ce1e2b0be0d7": {
+            "6446d8f5-a173-41ff-a8bc-08f2024c2ee4": {
+              "7af76a3e-ed65-41b9-9f9d-1a4593c5bf69": {}
+            }
+          }
+        },
+        "outputs": {
+          "0a869efd-4873-4e14-93b7-33b9203242d9": {
+            "3375f445-8f12-4f2e-8acc-eab8b2b80db4": {
+              "6efaac9e-2068-4212-99c4-fbf0e68f7d95": {}
+            },
+            "3e892483-87b4-4690-8dad-c9114b1c8944": {
+              "00bbf658-b0d7-408e-8c49-ffdb7589fd0b": {}
+            }
+          },
+          "10d5cb4b-af9d-414d-b39a-a4c59ab64842": {
+            "3375f445-8f12-4f2e-8acc-eab8b2b80db4": {
+              "1c5904f5-57b1-43e8-9cc3-653bee07b607": {}
+            },
+            "3e892483-87b4-4690-8dad-c9114b1c8944": {
+              "437f0525-4321-4b08-9fcd-67a08936224b": {}
+            }
+          },
+          "3dd876bc-7dbc-43e0-a973-35d6dcd6940d": {
+            "3375f445-8f12-4f2e-8acc-eab8b2b80db4": {
+              "0610a96b-eaf5-41c8-a48b-2b04b068e9d1": {}
+            },
+            "3e892483-87b4-4690-8dad-c9114b1c8944": {
+              "ef559d91-2706-4b62-9207-d7f3245ea3a1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "update": null,
+    "notification": null,
+    "event": null,
+    "callback": null,
+    "webhook": null,
+    "setup": null,
+    "register": null,
+    "initialize": null,
+    "on-demand": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

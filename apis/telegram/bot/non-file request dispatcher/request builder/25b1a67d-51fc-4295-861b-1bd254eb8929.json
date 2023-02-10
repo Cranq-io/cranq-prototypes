@@ -1,0 +1,134 @@
+{
+  "name": "apis/telegram/bot/Non-file request dispatcher/Request builder",
+  "interface": {
+    "inputs": {
+      "301a8e2d-7162-4dc0-8347-b2082fa87d37": {
+        "type": "string",
+        "name": "method name"
+      },
+      "53a6d2c9-d023-4378-a2cf-ea3dddf948a1": {
+        "type": "any",
+        "name": "data"
+      },
+      "d6111fa1-32df-4aba-a93f-a09d3d5cdfb5": {
+        "type": "{\n  \"token\": string\n}",
+        "name": "params"
+      }
+    },
+    "outputs": {
+      "5078d543-05ad-4410-8cb0-d0e09ed2eacb": {
+        "type": "{\n  \"method\": \"POST\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": any\n}",
+        "name": "request"
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "469ab514-c74e-4069-bdf5-d9f9c75433da": {
+          "coordinates": [
+            67,
+            155
+          ],
+          "name": "build endpoint URL",
+          "prototype": "8230cd1b-9698-4518-828b-ac6e37f8ad49"
+        },
+        "dfea48be-0b14-4391-97d3-555f80338c3f": {
+          "coordinates": [
+            -111.5,
+            -120.5
+          ],
+          "name": "forwarder (triple)",
+          "prototype": "ccd44557-20cf-4582-9c10-99bc31b22380"
+        },
+        "43d2524d-48ec-420a-9e56-0cb3d8db90d9": {
+          "coordinates": [
+            -101.5,
+            22.5
+          ],
+          "name": "get token",
+          "prototype": "73303290-6d1e-44cf-9414-66769cbb8e91",
+          "params": {
+            "7b39d568-3d5a-46fe-8670-3355f60c2746": "[\"token\"]"
+          }
+        },
+        "ba02cd85-881d-40e4-b458-94e558a4fdb6": {
+          "coordinates": [
+            147.5,
+            -58.5
+          ],
+          "name": "build request",
+          "prototype": "f4ef803f-bddf-4736-8557-122e377749b5",
+          "params": {
+            "469d89df-1072-4a3e-acc8-8d15e4eb95e5": "\"POST\"",
+            "9bcb2c48-1edf-4c53-b9d9-31152486c6ce": "{}"
+          }
+        }
+      },
+      "connections": {
+        "dfea48be-0b14-4391-97d3-555f80338c3f": {
+          "3f67095a-501d-4010-b37d-4e1ece60e2f2": {
+            "43d2524d-48ec-420a-9e56-0cb3d8db90d9": {
+              "6ad86184-6890-4323-8021-3496a682c98e": {}
+            }
+          },
+          "c3fcabea-63e8-48a2-b736-e7a9954cf5ca": {
+            "469ab514-c74e-4069-bdf5-d9f9c75433da": {
+              "692ffedb-b5b7-4096-81a4-01381c232c9a": {}
+            }
+          },
+          "9b746d54-f007-4bc0-9988-acb0a0a05cd5": {
+            "ba02cd85-881d-40e4-b458-94e558a4fdb6": {
+              "1385c1b6-6761-4662-abaf-a9e2d6a7b019": {}
+            }
+          }
+        },
+        "43d2524d-48ec-420a-9e56-0cb3d8db90d9": {
+          "token": {
+            "469ab514-c74e-4069-bdf5-d9f9c75433da": {
+              "ceb6f06d-0d5c-4378-80a9-d9f0e958568d": {}
+            }
+          }
+        },
+        "469ab514-c74e-4069-bdf5-d9f9c75433da": {
+          "45e120a5-06d1-455f-b0d0-16f79915babb": {
+            "ba02cd85-881d-40e4-b458-94e558a4fdb6": {
+              "4c7cce66-b66e-4a06-8a7b-6e935fc443d6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "301a8e2d-7162-4dc0-8347-b2082fa87d37": {
+            "dfea48be-0b14-4391-97d3-555f80338c3f": {
+              "70da607a-8976-437b-b9e9-84cc63cd613b": {}
+            }
+          },
+          "53a6d2c9-d023-4378-a2cf-ea3dddf948a1": {
+            "dfea48be-0b14-4391-97d3-555f80338c3f": {
+              "54c357a1-045e-4817-beda-0017a586a499": {}
+            }
+          },
+          "d6111fa1-32df-4aba-a93f-a09d3d5cdfb5": {
+            "dfea48be-0b14-4391-97d3-555f80338c3f": {
+              "507a0b1a-b9eb-4e67-a64d-47b405e17422": {}
+            }
+          }
+        },
+        "outputs": {
+          "5078d543-05ad-4410-8cb0-d0e09ed2eacb": {
+            "ba02cd85-881d-40e4-b458-94e558a4fdb6": {
+              "42f1fa20-0597-484e-9610-1f9117b5a7f1": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "7341443a-8a0a-4a83-b302-effdb497c0f3",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

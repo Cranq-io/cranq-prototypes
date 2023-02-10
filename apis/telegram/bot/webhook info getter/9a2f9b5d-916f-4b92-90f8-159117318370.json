@@ -1,0 +1,98 @@
+{
+  "name": "apis/telegram/bot/Webhook info getter",
+  "description": "Retrieves information about the webhook associated with a Telegram bot.\n\nMore: https://core.telegram.org/bots/api#getwebhookinfo.",
+  "interface": {
+    "inputs": {
+      "d81cfa4d-8c97-4008-bf4a-7c38dfa9353a": {
+        "type": "{\n  \"token\": string\n}",
+        "name": "params",
+        "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
+      }
+    },
+    "outputs": {
+      "97a43124-886c-4107-abda-ffe37ce5e1b0": {
+        "type": "boolean",
+        "name": "ok",
+        "description": "Sends whether the request was successful."
+      },
+      "4dcac245-285d-4edb-93bf-d41d7776c0fb": {
+        "type": "{\n  \"url\": string,\n  \"has_custom_certificate\": boolean,\n  \"pending_update_count\": number,\n  optional \"ip_address\": string,\n  optional \"last_error_date\": number,\n  optional \"last_error_message\": string,\n  optional \"last_synchronization_error_date\": number,\n  optional \"max_connections\": number,\n  optional \"allowed_updates\": string[]\n}",
+        "name": "webhookInfo",
+        "description": "Sends webhook details. See https://core.telegram.org/bots/api#webhookinfo."
+      },
+      "8c47a318-a7b1-4679-b6bb-bedac5c33345": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original API reponse."
+      },
+      "932b6e15-1d2e-4638-891f-e862acffb9da": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during the request."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "861aa142-7074-4dd4-b7c1-acda41dd1c67": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "dispatch request",
+          "prototype": "35abf766-77ec-4529-a995-00a3794e7a7f",
+          "params": {
+            "5c88ea0f-4b95-419e-8cca-ca3bd2713b92": "\"getWebhookInfo\"",
+            "8f946004-37d0-4527-bfec-16b2869e4fa4": "{}"
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "d81cfa4d-8c97-4008-bf4a-7c38dfa9353a": {
+            "861aa142-7074-4dd4-b7c1-acda41dd1c67": {
+              "53f1a8ab-1e1a-4887-874e-0ebbef17c9e3": {}
+            }
+          }
+        },
+        "outputs": {
+          "8c47a318-a7b1-4679-b6bb-bedac5c33345": {
+            "861aa142-7074-4dd4-b7c1-acda41dd1c67": {
+              "16628685-ee02-4611-9b03-cdaaada20ef7": {}
+            }
+          },
+          "932b6e15-1d2e-4638-891f-e862acffb9da": {
+            "861aa142-7074-4dd4-b7c1-acda41dd1c67": {
+              "29f62e60-4fd2-4589-a0f8-04c9d92995e6": {}
+            }
+          },
+          "97a43124-886c-4107-abda-ffe37ce5e1b0": {
+            "861aa142-7074-4dd4-b7c1-acda41dd1c67": {
+              "bcd7f146-5636-4c3c-86cb-673d1903017f": {}
+            }
+          },
+          "4dcac245-285d-4edb-93bf-d41d7776c0fb": {
+            "861aa142-7074-4dd4-b7c1-acda41dd1c67": {
+              "7453db8b-12f9-4ef2-9e3e-dabd69b910f6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "telegram": null,
+    "bot": null,
+    "chatbot": null,
+    "webhook": null,
+    "info": null,
+    "details": null,
+    "initialized": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

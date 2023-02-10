@@ -1,0 +1,98 @@
+{
+  "name": "apis/telegram/bot/Webhook setter",
+  "description": "Registers a URL for a Telegram bot via which to get updates.\n\nSee https://core.telegram.org/bots/api#setwebhook",
+  "interface": {
+    "inputs": {
+      "2d8eacc1-a1e8-4d50-8668-0e091710ef32": {
+        "type": "{\n  \"url\": string,\n  optional \"ip_address\": string,\n  optional \"max_connections\": number,\n  optional \"allowed_updates\": string[],\n  optional \"drop_pending_updates\": boolean,\n  optional \"secret_token\": string\n}",
+        "name": "data",
+        "description": "Receives request data. Does not support 'certificate' field yet.\n\nSee https://core.telegram.org/bots/api#setwebhook"
+      },
+      "7abe53d3-e467-4d9d-8a15-fd23c097e19a": {
+        "type": "{\n  \"token\": string\n}",
+        "name": "params",
+        "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
+      }
+    },
+    "outputs": {
+      "1c5904f5-57b1-43e8-9cc3-653bee07b607": {
+        "type": "boolean",
+        "name": "ok",
+        "description": "Sends whether the request was successful."
+      },
+      "0610a96b-eaf5-41c8-a48b-2b04b068e9d1": {
+        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "name": "response",
+        "description": "Sends the original API reponse."
+      },
+      "6efaac9e-2068-4212-99c4-fbf0e68f7d95": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends any error that might have occurred during the request."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "90334e68-5444-46bc-99cf-191eafc54485": {
+          "coordinates": [
+            -0.125,
+            -0.125
+          ],
+          "name": "dispatch request",
+          "prototype": "35abf766-77ec-4529-a995-00a3794e7a7f",
+          "params": {
+            "5c88ea0f-4b95-419e-8cca-ca3bd2713b92": "\"setWebhook\""
+          }
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "2d8eacc1-a1e8-4d50-8668-0e091710ef32": {
+            "90334e68-5444-46bc-99cf-191eafc54485": {
+              "8f946004-37d0-4527-bfec-16b2869e4fa4": {}
+            }
+          },
+          "7abe53d3-e467-4d9d-8a15-fd23c097e19a": {
+            "90334e68-5444-46bc-99cf-191eafc54485": {
+              "53f1a8ab-1e1a-4887-874e-0ebbef17c9e3": {}
+            }
+          }
+        },
+        "outputs": {
+          "1c5904f5-57b1-43e8-9cc3-653bee07b607": {
+            "90334e68-5444-46bc-99cf-191eafc54485": {
+              "bcd7f146-5636-4c3c-86cb-673d1903017f": {}
+            }
+          },
+          "0610a96b-eaf5-41c8-a48b-2b04b068e9d1": {
+            "90334e68-5444-46bc-99cf-191eafc54485": {
+              "16628685-ee02-4611-9b03-cdaaada20ef7": {}
+            }
+          },
+          "6efaac9e-2068-4212-99c4-fbf0e68f7d95": {
+            "90334e68-5444-46bc-99cf-191eafc54485": {
+              "29f62e60-4fd2-4589-a0f8-04c9d92995e6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "update": null,
+    "notification": null,
+    "event": null,
+    "callback": null,
+    "webhook": null,
+    "setup": null,
+    "register": null,
+    "initialize": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

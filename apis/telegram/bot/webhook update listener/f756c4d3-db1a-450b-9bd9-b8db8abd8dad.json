@@ -1,0 +1,181 @@
+{
+  "name": "apis/telegram/bot/Webhook update listener",
+  "description": "Sets up an listener for Telegram bot webhook updates.",
+  "interface": {
+    "inputs": {
+      "6d1a73a2-0137-48ed-9664-9187a349e2da": {
+        "type": "any",
+        "name": "ok",
+        "description": "Receives a signal indicating the success of processing the webhook request.\n\nTruthy indicates success, falsy indicates failure."
+      },
+      "b51aea51-092d-4e26-9988-c4f4a49ca794": {
+        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"route\": string,\n  optional \"host\": string,\n  optional \"timeout\": number\n}",
+        "name": "params",
+        "description": "Receives static parameters for the webhook endpoint."
+      }
+    },
+    "outputs": {
+      "92a129a0-11e0-4d8f-9999-096f66dcb04a": {
+        "type": "{\n  \"update_id\": number,\n  optional \"message\": {\n    \"message_id\": number,\n    optional \"from\": {\n      \"id\": number,\n      \"is_bot\": boolean,\n      optional \"first_name\": string,\n      optional \"last_name\": string,\n      optional \"username\": string,\n      optional \"language_code\": string\n    },\n    \"date\": number,\n    \"chat\": {\n      \"id\": number,\n      \"type\": (\n        \"private\"\n        or \"group\"\n        or \"supergroup\"\n        or \"channel\"\n      ),\n      optional \"username\": string,\n      optional \"first_name\": string,\n      optional \"last_name\": string\n    },\n    optional \"text\": string,\n    optional \"audio\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"duration\": number\n    },\n    optional \"document\": {\n      \"file_id\": string,\n      \"file_unique_id\": string\n    },\n    optional \"photo\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number\n    }[],\n    optional \"video\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number,\n      \"duration\": number\n    }\n  }\n}",
+        "name": "update",
+        "description": "Sends the update received by the webhook."
+      },
+      "cbcc67ea-adc3-4bef-8fb7-196f49b422dc": {
+        "type": "{\n  \"baseUrl\": string,\n  \"body\": any,\n  \"cookies\": any,\n  \"hostname\": string,\n  \"headers\": {string: string},\n  \"ip\": string,\n  \"ips\": string[],\n  \"method\": \"POST\",\n  \"originalUrl\": string,\n  \"params\": {string: string},\n  \"path\": string,\n  \"protocol\": (\n    \"http\"\n    or \"https\"\n  ),\n  \"query\": {string: any},\n  \"route\": string,\n  \"secure\": boolean,\n  \"signedCookies\": any,\n  \"stale\": boolean,\n  \"subdomains\": string[],\n  \"xhr\": boolean\n}",
+        "name": "request",
+        "description": "Sends original request."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "c2c38013-5dfe-4dde-b1d9-55148a257d78": {
+          "coordinates": [
+            177.5,
+            -26.5
+          ],
+          "name": "simplified endpoint listener",
+          "prototype": "cf29d613-2fc6-4230-8c7f-bd86cb1c4c9e"
+        },
+        "badcdf74-7f0e-45ec-a5cd-2dc10e77c064": {
+          "coordinates": [
+            -143.5,
+            -103.5
+          ],
+          "name": "response body",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"\""
+          }
+        },
+        "86e28709-5210-4cc8-8759-83b5286d11c4": {
+          "coordinates": [
+            -58.5,
+            32.5
+          ],
+          "name": "default endpoint params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"method\": \"POST\",\n  \"request\": {\n    \"contentType\": \"json\"\n  }\n}"
+          }
+        },
+        "77077d64-3668-43ed-9075-8a72e31e4685": {
+          "coordinates": [
+            -54.5,
+            152.5
+          ],
+          "name": "apply defaults",
+          "prototype": "5d12659a-6cfc-460a-b1c8-9dd0c6b16d3d"
+        },
+        "e6c578e6-4537-4229-af01-110fbb790788": {
+          "coordinates": [
+            7.5,
+            -196.5
+          ],
+          "name": "build response",
+          "prototype": "d0b45448-d851-4132-8abb-2a1c09347146",
+          "params": {
+            "402286d6-3a51-4842-8c43-5bd757b60445": "200",
+            "300852ca-cadf-4b8c-b238-6f257f3039fb": "{}"
+          }
+        },
+        "b3f7d1c3-8341-4060-84cc-def0ba0dde02": {
+          "coordinates": [
+            187.5,
+            138.5
+          ],
+          "name": "extract update",
+          "prototype": "6298a59d-d2fc-42f3-b3fd-fa033cd85100"
+        }
+      },
+      "connections": {
+        "86e28709-5210-4cc8-8759-83b5286d11c4": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "77077d64-3668-43ed-9075-8a72e31e4685": {
+              "ee22e0d2-e49b-4547-adf5-af8938feb5db": {}
+            }
+          }
+        },
+        "77077d64-3668-43ed-9075-8a72e31e4685": {
+          "f5757305-2a5f-41d3-9678-119d8128e22f": {
+            "c2c38013-5dfe-4dde-b1d9-55148a257d78": {
+              "43b7c75d-51f5-4220-b36f-353103f6c417": {}
+            }
+          }
+        },
+        "badcdf74-7f0e-45ec-a5cd-2dc10e77c064": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "e6c578e6-4537-4229-af01-110fbb790788": {
+              "e187184f-1252-49d5-8a23-10ef334b62de": {}
+            }
+          }
+        },
+        "e6c578e6-4537-4229-af01-110fbb790788": {
+          "cd2cfdb3-e99f-4836-b743-42a5834316f7": {
+            "c2c38013-5dfe-4dde-b1d9-55148a257d78": {
+              "0ac1c0dd-c9a1-4c72-8e14-9d1bb82b348d": {}
+            }
+          }
+        },
+        "c2c38013-5dfe-4dde-b1d9-55148a257d78": {
+          "5a854048-67ff-4e70-b80b-d0473bd2df6a": {
+            "b3f7d1c3-8341-4060-84cc-def0ba0dde02": {
+              "6db50f44-7715-492a-9da2-ac9336ddd828": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "b51aea51-092d-4e26-9988-c4f4a49ca794": {
+            "77077d64-3668-43ed-9075-8a72e31e4685": {
+              "d767ae4f-9534-4f5a-a1a9-15b519a2740c": {}
+            },
+            "86e28709-5210-4cc8-8759-83b5286d11c4": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          },
+          "6d1a73a2-0137-48ed-9664-9187a349e2da": {
+            "badcdf74-7f0e-45ec-a5cd-2dc10e77c064": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "outputs": {
+          "cbcc67ea-adc3-4bef-8fb7-196f49b422dc": {
+            "c2c38013-5dfe-4dde-b1d9-55148a257d78": {
+              "5a854048-67ff-4e70-b80b-d0473bd2df6a": {}
+            }
+          },
+          "92a129a0-11e0-4d8f-9999-096f66dcb04a": {
+            "b3f7d1c3-8341-4060-84cc-def0ba0dde02": {
+              "0a848ee9-3d47-48a4-882c-9483cecdc7a6": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "telegram": null,
+    "bot": null,
+    "chatbot": null,
+    "webhook": null,
+    "update": null,
+    "message": null,
+    "event": null,
+    "receive": null,
+    "intercept": null,
+    "http": null,
+    "https": null,
+    "server": null,
+    "endpoint": null,
+    "listen": null,
+    "api": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

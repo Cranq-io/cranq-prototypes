@@ -1,0 +1,93 @@
+{
+  "name": "apis/telegram/bot/utils/Endpoint URL builder",
+  "description": "Builds an URL for a Telegram bot API endpoint.\n\nMore info:\nhttps://core.telegram.org/bots/api",
+  "interface": {
+    "inputs": {
+      "ceb6f06d-0d5c-4378-80a9-d9f0e958568d": {
+        "type": "string",
+        "name": "token",
+        "description": "Receives token associated with Telegram bot."
+      },
+      "692ffedb-b5b7-4096-81a4-01381c232c9a": {
+        "type": "string",
+        "name": "method name",
+        "description": "Receives the name of the bot API method.\n\nMore info:\nhttps://core.telegram.org/bots/api#available-methods"
+      }
+    },
+    "outputs": {
+      "45e120a5-06d1-455f-b0d0-16f79915babb": {
+        "type": "string",
+        "name": "URL",
+        "description": "Sends the endpoint URL."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "63d945e3-93ec-4225-9d29-8a2ed5b85cb5": {
+          "coordinates": [
+            18,
+            -63.5
+          ],
+          "name": "fill template",
+          "prototype": "d57766a1-8ced-4ed9-ba56-f6b3988d7d67",
+          "params": {
+            "25aa567c-3316-4206-b42e-4cfe6a67b0c7": "\"https://api.telegram.org/bot{TOKEN}/{METHOD_NAME}\""
+          }
+        },
+        "b83b5241-5199-431a-999f-b0a47224a232": {
+          "coordinates": [
+            -21,
+            84.5
+          ],
+          "name": "sync params",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"TOKEN\", \"METHOD_NAME\"]"
+          }
+        }
+      },
+      "connections": {
+        "b83b5241-5199-431a-999f-b0a47224a232": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "63d945e3-93ec-4225-9d29-8a2ed5b85cb5": {
+              "d0eb3b1c-04b8-4b95-96ee-76b37fc067c6": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "ceb6f06d-0d5c-4378-80a9-d9f0e958568d": {
+            "b83b5241-5199-431a-999f-b0a47224a232": {
+              "TOKEN": {}
+            }
+          },
+          "692ffedb-b5b7-4096-81a4-01381c232c9a": {
+            "b83b5241-5199-431a-999f-b0a47224a232": {
+              "METHOD_NAME": {}
+            }
+          }
+        },
+        "outputs": {
+          "45e120a5-06d1-455f-b0d0-16f79915babb": {
+            "63d945e3-93ec-4225-9d29-8a2ed5b85cb5": {
+              "d6272c3f-069b-4af8-8d4c-fe762a581c40": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": {
+    "telegram": null,
+    "bot": null,
+    "chatbot": null,
+    "api": null
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "attributes": {
+    "locked": true
+  }
+}

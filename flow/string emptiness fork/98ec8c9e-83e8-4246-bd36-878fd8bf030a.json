@@ -1,0 +1,93 @@
+{
+  "name": "flow/String emptiness fork",
+  "description": "Checks whether the input `string` is empty & sends it on the appropriate output.",
+  "interface": {
+    "inputs": {
+      "40d2f78c-c130-4c91-bfad-a020f2e9fad7": {
+        "type": "string",
+        "name": "string",
+        "description": "Receives string to be tested."
+      }
+    },
+    "outputs": {
+      "a9b9cf31-7d92-4303-b15e-4fae00d9c6f1": {
+        "type": "typeof `string`",
+        "name": "on empty",
+        "description": "Forwards incoming string when empty."
+      },
+      "dca324b1-980f-44aa-aecb-dae66938ae90": {
+        "type": "typeof `string`",
+        "name": "on not empty",
+        "description": "Forwards incoming string when not empty."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "32d6a87b-2423-482a-bef6-9465b03da4aa": {
+          "coordinates": [
+            -59,
+            -71
+          ],
+          "name": "emptiness tester",
+          "prototype": "4ed5e255-fd33-4e11-9bad-13f4cd4749aa"
+        },
+        "b9ac8573-29c9-45bc-a896-1582dadb624f": {
+          "coordinates": [
+            92,
+            86
+          ],
+          "name": "fork",
+          "prototype": "567a3cd3-24f4-4fb1-86cd-35abfcda96ce"
+        }
+      },
+      "connections": {
+        "32d6a87b-2423-482a-bef6-9465b03da4aa": {
+          "513683c2-be43-4b6b-9355-4450004d1f53": {
+            "b9ac8573-29c9-45bc-a896-1582dadb624f": {
+              "8e1a5f69-ca43-484d-8099-ef265bedda62": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "40d2f78c-c130-4c91-bfad-a020f2e9fad7": {
+            "32d6a87b-2423-482a-bef6-9465b03da4aa": {
+              "2ff42537-6311-4256-85c9-8d2fca6c7103": {}
+            },
+            "b9ac8573-29c9-45bc-a896-1582dadb624f": {
+              "8dae1988-d752-4c9b-b8c5-f9222e776dec": {}
+            }
+          }
+        },
+        "outputs": {
+          "a9b9cf31-7d92-4303-b15e-4fae00d9c6f1": {
+            "b9ac8573-29c9-45bc-a896-1582dadb624f": {
+              "26b011f0-6b5a-45a3-a4b6-a90d93ce7046": {}
+            }
+          },
+          "dca324b1-980f-44aa-aecb-dae66938ae90": {
+            "b9ac8573-29c9-45bc-a896-1582dadb624f": {
+              "8c42e25b-e7f1-421a-90f5-cd88a4674cf0": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c3fdd7fb-1ae3-400a-bf93-30e24b1ea004",
+  "keywords": {
+    "string": null,
+    "text": null,
+    "fork": null,
+    "empty": null,
+    "emptiness": null,
+    "length": null,
+    "zero": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

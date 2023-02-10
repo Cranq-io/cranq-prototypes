@@ -1,0 +1,96 @@
+{
+  "name": "apis/telegram/bot/utils/Message text getter",
+  "description": "Extracts the text body of a message from a Telegram bot update, if there is one in it.",
+  "interface": {
+    "inputs": {
+      "f82f6ab3-c099-4566-9b7d-a1193c56f509": {
+        "type": "{\n  optional \"message\": {\n    optional \"text\": string\n  }\n}",
+        "name": "update",
+        "description": "Receives update record. Type documents minimal required input. For full field types see https://core.telegram.org/bots/api#update."
+      }
+    },
+    "outputs": {
+      "046161f4-2cf6-4bf4-a4b2-1fa5620a2e44": {
+        "type": "string",
+        "name": "text",
+        "description": "Sends text body of message from telegram update."
+      },
+      "68d722df-df3f-48f5-b91e-5720d404a201": {
+        "type": "{\"error\": string}",
+        "name": "error",
+        "description": "Sends error when the text message body was not found in the update."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "0ce19eba-5e94-40ef-83d9-8a319c241dd7": {
+          "coordinates": [
+            -27,
+            -75.5
+          ],
+          "name": "get text",
+          "prototype": "d8608f30-9132-4d0f-992e-9d66f6636256",
+          "params": {
+            "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"message\", \"text\"]"
+          }
+        },
+        "9f6ea998-a58a-4b0f-b8d0-f5b5d745f35f": {
+          "coordinates": [
+            27,
+            75.5
+          ],
+          "name": "error",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\"error\": \"Chat ID not found in update.\"}"
+          }
+        }
+      },
+      "connections": {
+        "0ce19eba-5e94-40ef-83d9-8a319c241dd7": {
+          "e97caed4-5898-4f86-911d-8e31acb2617b": {
+            "9f6ea998-a58a-4b0f-b8d0-f5b5d745f35f": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "f82f6ab3-c099-4566-9b7d-a1193c56f509": {
+            "0ce19eba-5e94-40ef-83d9-8a319c241dd7": {
+              "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "outputs": {
+          "68d722df-df3f-48f5-b91e-5720d404a201": {
+            "9f6ea998-a58a-4b0f-b8d0-f5b5d745f35f": {
+              "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {}
+            }
+          },
+          "046161f4-2cf6-4bf4-a4b2-1fa5620a2e44": {
+            "0ce19eba-5e94-40ef-83d9-8a319c241dd7": {
+              "b6722d08-460c-465b-a9f1-d1f843500424": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "c04248e8-5fb2-4c5c-8c17-48c02c843227",
+  "keywords": {
+    "text": null,
+    "message": null,
+    "extract": null,
+    "get": null,
+    "update": null,
+    "bot": null,
+    "telegram": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

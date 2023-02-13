@@ -20,6 +20,14 @@
           "params": {
             "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"fileName\", \"params\"]"
           }
+        },
+        "29033d85-d443-44bb-931f-a132c868698c": {
+          "coordinates": [
+            134,
+            -127
+          ],
+          "name": "json parser",
+          "prototype": "6470bc83-fb15-4801-942a-6f6dbc46a908"
         }
       },
       "forwards": {
@@ -37,8 +45,8 @@
         },
         "outputs": {
           "1c280501-3bf4-4171-bdbf-c8c109ba7f42": {
-            "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
-              "d1fff01f-b192-4657-a239-56d29eabbc68": {}
+            "29033d85-d443-44bb-931f-a132c868698c": {
+              "6cdc0c38-5098-4ffd-a5d8-ee18d077dda3": {}
             }
           },
           "b2c84b80-0ad5-487b-b521-995033f25274": {
@@ -49,6 +57,9 @@
           "84d3e051-2427-4897-98d7-c50fa39397fd": {
             "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
               "8ef25d06-2f4c-45ee-a81a-d22ad5164b3d": {}
+            },
+            "29033d85-d443-44bb-931f-a132c868698c": {
+              "a42a0dbc-5235-416c-9166-9999d79c06f6": {}
             }
           }
         }
@@ -58,6 +69,13 @@
           "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
             "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
               "a15cf573-9e68-4fc6-ac40-67a4acbf0c57": {}
+            }
+          }
+        },
+        "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
+          "d1fff01f-b192-4657-a239-56d29eabbc68": {
+            "29033d85-d443-44bb-931f-a132c868698c": {
+              "612de880-6653-4097-b917-aabc4f6aceb2": {}
             }
           }
         }
@@ -103,7 +121,5 @@
   },
   "description": "Extracts text from speech recording supplied as a WAV file on the local filesystem.",
   "iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
-  "attributes": {
-    "locked": true
-  }
+  "attributes": {}
 }

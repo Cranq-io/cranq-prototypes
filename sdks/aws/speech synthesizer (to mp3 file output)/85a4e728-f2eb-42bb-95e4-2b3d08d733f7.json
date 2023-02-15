@@ -77,7 +77,7 @@
         "description": "Receives the path where the file with the generated voice should be saved.\n\ne.g.: \"/Users/user1/AWS/samples/synthesizedSpeech.mp3\""
       },
       "b98df242-2258-4b19-8694-9ae0cb974fa5": {
-        "type": " {\n  \"accessKeyId\": \"string\",\n        \"secretAccessKey\": \"string\",\n        \"voiceId\": \"string\",\n        optional \"region\": \"string\",\n        optional \"language\": \"region\",\n        optional \"engine\": \"string\",\n        optional \"sampleRate\": \"string\"\n    }",
+        "type": "{\"accessKeyId\": \"string\", \"secretAccessKey\": \"string\", \"voiceId\": \"string\", optional \"region\": \"string\", optional \"language\": \"region\", optional \"engine\": \"string\", optional \"sampleRate\": \"string\"}",
         "name": "params",
         "description": "Receives generic parameters for AWS Polly text to speech services,including credentials.\nCheck for possible inputs in the documentation of aws polly: https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-SampleRate\n\nexample:{\n accessKeyId: \"xxxx\",\n       secretAccessKey: \"xxxxxxxxx\",\n        voiceId: \"Kendra\",\n        region: \"eu-west-1\",\n        language: \"en-US\",\n        engine: \"neural\",\n        sampleRate: \"8000\"\n    }"
       }
@@ -94,6 +94,7 @@
     }
   },
   "name": "sdks/aws/Speech synthesizer (to mp3 file output)",
+  "iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
   "attributes": {
     "locked": true
   }

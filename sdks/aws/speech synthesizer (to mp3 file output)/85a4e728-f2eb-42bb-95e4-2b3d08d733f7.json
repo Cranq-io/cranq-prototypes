@@ -85,11 +85,13 @@
     "outputs": {
       "2b9f806e-4888-421a-9997-f7b48f86901d": {
         "type": "string",
-        "name": "result"
+        "name": "result",
+        "description": "Sends the file name of the synthesized voice."
       },
       "0d2ed715-8cc0-4075-a406-13aaac74660b": {
         "type": "string",
-        "name": "error"
+        "name": "error",
+        "description": "Sends any error that might have occurred during the API call."
       }
     }
   },

@@ -1,0 +1,38 @@
+{
+  "implementations": {
+    "es6-node": {
+      "dependencies": {
+        "npm": {
+          "jsonwebtoken": {
+            "description": ""
+          }
+        }
+      },
+      "inputFunctions": {
+        "16a90cfa-fa8d-438b-b964-27cebbd657f1": "const jwt = require('jsonwebtoken');\nconst {id, options = {}} = data;\n\nswitch (id) {\n  case 'sign':\n    sign(options);\n    break;\n  case 'verify':\n    verify(options)\n    break;\n  default:\n    outputs.error({\"error\": \"Unknown id!\"}, tag);\n}\n\nfunction sign(options) {\n  const {payload, secret, options: verifyOptions} = options;\n  jwt.sign(payload, secret, verifyOptions, function(err, token) {\n    if (err) {\n      outputs.error({\"error\": JSON.stringify(err)}, tag);\n    } else {\n      outputs.result({token}, tag);\n    }\n  });\n}\n\n\nfunction verify(options){\n  const {token, secret, options: signOptions} = options;\n  jwt.verify(token, secret, signOptions, function(err, token) {\n    if (err) {\n      outputs.error({\"error\": JSON.stringify(err)}, tag);\n    } else {\n      outputs.result({token}, tag);\n    }\n  });\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "16a90cfa-fa8d-438b-b964-27cebbd657f1": {
+        "type": "{\n\"id\": string, \n\"options\": {string: any}\n}",
+        "name": "action"
+      }
+    },
+    "outputs": {
+      "0a18ce2f-7584-4f19-96e8-bfde48a98f83": {
+        "type": "{string:any}",
+        "name": "result"
+      },
+      "fe26a23e-3f5a-4331-ac18-d6b22c174332": {
+        "type": "{\"error\": string}",
+        "name": "error"
+      }
+    }
+  },
+  "name": "io/http/jwt/JWT",
+  "attributes": {
+    "locked": true
+  }
+}

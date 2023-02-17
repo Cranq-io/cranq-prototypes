@@ -99,12 +99,12 @@
       "1c280501-3bf4-4171-bdbf-c8c109ba7f42": {
         "type": "{\"TranscriptEvent\": {\"Transcript\": {\"Results\": {\"Alternatives\": {\"Items\": {\"Confidence\": number, \"Content\": string, \"EndTime\": number, \"StartTime\": number, \"Type\": string, \"VocabularyFilterMatch\": boolean}[], \"Transcript\": string}[], \"ChannelId\": string, \"EndTime\": number, \"IsPartial\": boolean, \"ResultId\": string, \"StartTime\": number, \"test\": string}[]}}}",
         "name": "result",
-        "description": "Contains a set of Transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.\nhttps://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_Result.html"
+        "description": "Send a results of the transcription.  It is Transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.\nhttps://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_Result.html"
       },
       "b2c84b80-0ad5-487b-b521-995033f25274": {
         "type": "{\"TranscriptEvent\": {\"Transcript\": {\"Results\": {\"Alternatives\": {\"Items\": {\"Confidence\": number, \"Content\": string, \"EndTime\": number, \"StartTime\": number, \"Type\": string, \"VocabularyFilterMatch\": boolean}[], \"Transcript\": string}[], \"ChannelId\": string, \"EndTime\": number, \"IsPartial\": boolean, \"ResultId\": string, \"StartTime\": number}[]}}}",
         "name": "current",
-        "description": "On the fly part of the results. Contains a set of  transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data."
+        "description": "Send immediately the result of each chunk of the speech. Contains a set of  transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data."
       },
       "84d3e051-2427-4897-98d7-c50fa39397fd": {
         "type": "{\"error\": string}",

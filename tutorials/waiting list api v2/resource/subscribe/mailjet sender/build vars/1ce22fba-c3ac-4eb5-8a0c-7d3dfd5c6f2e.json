@@ -8,14 +8,14 @@
         "description": ""
       },
       "7828402d-efeb-4351-8ec8-d9051049c5af": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, \"validation_token\": string}",
         "name": "subscription",
         "description": ""
       }
     },
     "outputs": {
       "72b707c7-d2ea-4a56-8954-aad0262a9c7d": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "variables",
         "description": ""
       }

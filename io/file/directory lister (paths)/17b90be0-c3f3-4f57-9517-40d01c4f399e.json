@@ -20,7 +20,7 @@
         "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/dir1\""
       },
       "1ecda668-2270-43f1-8bfb-9e10dc7f48e8": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, scandir 'home/user1'\"\n}"
       }

@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "1de82346-fe83-4b80-9607-eb7cdf52597e": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, optional \"data\": any}",
         "name": "JSON req.",
         "description": ""
       }
     },
     "outputs": {
       "2569e6b1-cc8d-403f-9c47-1a6fed3c54b1": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"body\": string\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, optional \"body\": string}",
         "name": "request",
         "description": ""
       }

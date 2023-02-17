@@ -4,19 +4,19 @@
   "interface": {
     "inputs": {
       "866e87d8-3ad7-44f7-8ee8-14701e30cd2d": {
-        "type": "{\n  \"currencyPair\": string,\n  optional \"start\": number,\n  optional \"end\": number\n}",
+        "type": "{\"currencyPair\": string, optional \"start\": number, optional \"end\": number}",
         "name": "query",
         "description": ""
       }
     },
     "outputs": {
       "baf30abf-b032-4ab6-93c8-085aea1ba9bb": {
-        "type": "{\n    \"globalTradeID\": number,\n    \"tradeID\": number,\n    \"date\": string,\n    \"type\": string,\n    \"rate\": string,\n    \"amount\": string,\n    \"total\": string,\n    \"orderNumber\": number\n}[]",
+        "type": "{\"globalTradeID\": number, \"tradeID\": number, \"date\": string, \"type\": string, \"rate\": string, \"amount\": string, \"total\": string, \"orderNumber\": number}[]",
         "name": "data",
         "description": ""
       },
       "c743c320-fec2-425f-a503-e0aa00a810b0": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "f7c8d9b8-111f-4699-9632-f1f7994745e6": {

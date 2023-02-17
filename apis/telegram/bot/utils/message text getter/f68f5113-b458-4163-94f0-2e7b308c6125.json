@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "f82f6ab3-c099-4566-9b7d-a1193c56f509": {
-        "type": "{\n  optional \"message\": {\n    optional \"text\": string\n  }\n}",
+        "type": "{optional \"message\": {optional \"text\": string}}",
         "name": "update",
         "description": "Receives update record. Type documents minimal required input. For full field types see https://core.telegram.org/bots/api#update."
       }

@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "9a597666-3f4f-4aec-92b4-83af37e8b644": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, optional \"data\": any}",
         "name": "JSON req.",
         "description": ""
       }

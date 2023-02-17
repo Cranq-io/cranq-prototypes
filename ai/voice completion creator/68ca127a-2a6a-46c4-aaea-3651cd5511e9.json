@@ -8,7 +8,7 @@
         "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\r\n\r\ne.g.: \"/Users/user1/AzureSpeech/samples/speech.wav\""
       },
       "1dcb52db-4df8-438f-9dae-d79af9cac576": {
-        "type": "{\n  \"azureSubscriptionKey\": string,\n  \"azureRegion\": string,\n  optional \"azureLanguage\": string,\n  \"openAIApiKey\": string\n}",
+        "type": "{\"azureSubscriptionKey\": string, \"azureRegion\": string, optional \"azureLanguage\": string, \"openAIApiKey\": string}",
         "name": "params",
         "description": "Receives generic parameters for Azure speech to text services,including credentials.\r\n\r\nThe key and region values are available from Azure dashboard.\r\n\r\nexample: { \"azureSubscriptionKey\": \"1e***f\", \"azureRegion\": \"eastus2\", \"azureLanguage\": \"en-GB\",\r\n\"openAIApiKey\": \"apiKey1\"}"
       }

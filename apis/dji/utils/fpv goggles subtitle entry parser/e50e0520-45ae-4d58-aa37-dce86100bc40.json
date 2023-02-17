@@ -4,14 +4,14 @@
   "interface": {
     "inputs": {
       "c3888579-c396-41c1-8e35-3aa6fce1b112": {
-        "type": "{\n  \"position\": string,\n  \"start\": string,\n  \"end\": string,\n  \"subtitle\": string\n}",
+        "type": "{\"position\": string, \"start\": string, \"end\": string, \"subtitle\": string}",
         "name": "subtitle",
         "description": ""
       }
     },
     "outputs": {
       "0c024a5f-b618-4f87-8407-a57c6b7bef1f": {
-        "type": "{\n  \"signal\": string,\n  \"ch\": string,\n  \"flightTime\": string,\n  \"uavBat\": string,\n  \"glsBat\": string,\n  \"uavBatCells\": string,\n  \"glsBatCells\": string,\n  \"delay\": string,\n  \"bitrate\": string,\n  \"rcSignal\": string\n}",
+        "type": "{\"signal\": string, \"ch\": string, \"flightTime\": string, \"uavBat\": string, \"glsBat\": string, \"uavBatCells\": string, \"glsBatCells\": string, \"delay\": string, \"bitrate\": string, \"rcSignal\": string}",
         "name": "OSD sample",
         "description": ""
       }

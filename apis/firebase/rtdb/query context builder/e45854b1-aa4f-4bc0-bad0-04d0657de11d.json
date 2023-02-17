@@ -16,7 +16,7 @@
     "outputs": {
       "367a9897-be40-4dcf-854b-d565e32acfbf": {
         "description": "Sends synchronized inputs as a dictionary, indexed by field.",
-        "type": "{\n  \"ID token\": typeof `ID token`,\n  \"DB URL\" : typeof `DB URL`\n}",
+        "type": "{\"ID token\": typeof `ID token`, \"DB URL\": typeof `DB URL`}",
         "name": "sync context-synced"
       }
     }

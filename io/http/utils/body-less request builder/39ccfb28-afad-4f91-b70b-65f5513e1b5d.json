@@ -18,7 +18,7 @@
     },
     "outputs": {
       "caa880c8-d5c8-4376-8cfe-a0d31bb0d1ad": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string}\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}}",
         "name": "request"
       }
     }

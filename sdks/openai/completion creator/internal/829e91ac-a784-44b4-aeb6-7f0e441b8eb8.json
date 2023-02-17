@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "8f23129f-1499-45ed-b280-631a500098f2": {
-        "type": "{\n\"request\": {\n  \"model\": string,\n  optional \"prompt\": (any[] or number[] or string[] or string), \n    optional \"suffix\": (string or null),\n    optional \"max_tokens\": (number or null),\n    optional \"temperature\": (number or null),\n    optional \"top_p\": (number or null),\n    optional \"n\": (number or null),\n    optional \"stream\": (boolean or null),\n    optional \"logprobs\": (number or null),\n    optional \"stop\": (string or string[] or null),\n    optional \"presence_penalty\": (number or null),\n    optional \"frequency_penalty\": (number or null),\n    optional \"best_of\": (number or null),\n    optional \"logit_bias\": ({string: any} or null),\n    optional \"user\": string\n},\n  \"params\": {\n    \"apiKey\": string\n  }\n}",
+        "type": "{\"request\": {\"model\": string, optional \"prompt\": (any[] or number[] or string[] or string), optional \"suffix\": (string or null), optional \"max_tokens\": (number or null), optional \"temperature\": (number or null), optional \"top_p\": (number or null), optional \"n\": (number or null), optional \"stream\": (boolean or null), optional \"logprobs\": (number or null), optional \"stop\": (string or string[] or null), optional \"presence_penalty\": (number or null), optional \"frequency_penalty\": (number or null), optional \"best_of\": (number or null), optional \"logit_bias\": ({string: any} or null), optional \"user\": string}, \"params\": {\"apiKey\": string}}",
         "name": "params"
       }
     },

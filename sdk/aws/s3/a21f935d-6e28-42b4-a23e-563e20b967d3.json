@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "28bb158a-e5ba-434e-817c-f48800f4bbae": {
-        "type": "{\n\"sessionid\": number,\n\"type\": \"auth\",\n\"options\": {string: any}\n}",
+        "type": "{\"sessionid\": number, \"type\": \"auth\", \"options\": {string: any}}",
         "name": "action",
         "description": "Receives the parameters of the action to execute.\n\nExample: \n{\n  \"id\": \"aws-s3\",\n  \"type\": \"auth\",\n\"options\": {\n    \"accessKeyId\": \"ACCESS_KEY_ID\",\n    \"secretAccessKey\": \"SECRET_ACCES:KEY\"\n  }\n}"
       }
@@ -27,7 +27,7 @@
         "name": "done"
       },
       "0f149349-b2c1-4393-9f12-7869f5c51f8f": {
-        "type": "{\n\"error\": string\n}",
+        "type": "{\"error\": string}",
         "name": "error"
       }
     }

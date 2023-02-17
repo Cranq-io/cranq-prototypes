@@ -4,12 +4,12 @@
   "interface": {
     "inputs": {
       "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": {
-        "type": "{\n  \"url\": string,\n  optional \"ip_address\": string,\n  optional \"max_connections\": number,\n  optional \"allowed_updates\": string[],\n  optional \"drop_pending_updates\": boolean,\n  optional \"secret_token\": string\n}",
+        "type": "{\"url\": string, optional \"ip_address\": string, optional \"max_connections\": number, optional \"allowed_updates\": string[], optional \"drop_pending_updates\": boolean, optional \"secret_token\": string}",
         "name": "data",
         "description": "Receives request data. Does not support 'certificate' field yet.\n\nSee https://core.telegram.org/bots/api#setwebhook"
       },
       "4b9def7c-0790-442e-b18c-ce1e2b0be0d7": {
-        "type": "{\n  \"token\": string\n}",
+        "type": "{\"token\": string}",
         "name": "params",
         "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
       }
@@ -21,7 +21,7 @@
         "description": "Sends whether the webhook registration completed successfully."
       },
       "3dd876bc-7dbc-43e0-a973-35d6dcd6940d": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the last original API reponse."
       },

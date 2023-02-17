@@ -9,7 +9,7 @@
         "description": "Receives the request."
       },
       "f3fd3ffa-75f9-4307-a0b3-7da7509931ea": {
-        "type": "{\n\"status\": number,\n\"headers\": {string:string},\n\"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Receives the response."
       },
@@ -21,7 +21,7 @@
     },
     "outputs": {
       "55ef7d83-6219-4e21-83f9-a297a902936d": {
-        "type": "{\n\"status\": number,\n\"headers\": {string:string},\n\"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Sends response."
       }

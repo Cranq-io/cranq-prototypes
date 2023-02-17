@@ -9,7 +9,7 @@
   "interface": {
     "inputs": {
       "237ebe7e-19c6-4936-9c2d-61ae3c4ea05c": {
-        "type": "{\n  \"compiled contract\": {\"abi\": {string: any}[],\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": any,\n         \"object\": string,\n         \"opcodes\": string,\n         \"sourceMap\": string\n      }\n   }\n  },\n  \"contract parameters\": string[]\n}",
+        "type": "{\"compiled contract\": {\"abi\": {string: any}[], \"evm\": {\"bytecode\": {\"linkReferences\": any, \"object\": string, \"opcodes\": string, \"sourceMap\": string}}}, \"contract parameters\": string[]}",
         "name": "parameters",
         "description": ""
       }

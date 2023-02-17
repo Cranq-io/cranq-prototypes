@@ -28,7 +28,7 @@
     },
     "outputs": {
       "232f9f14-c24e-4f7f-b415-27ccbdfb9dbf": {
-        "type": "typeof`array`[number]",
+        "type": "typeof `array`[number]",
         "name": "item",
         "description": "The next item in the array.\n\nThe first item (index 0) bears the tag of the received array, subsequent items bear the tag of the corresponding signals received through `next`.\n\nExample:\n\"A\""
       },
@@ -38,7 +38,7 @@
         "description": "The next index in the array.\n\nThe first index (0) bears the tag of the received array, subsequent indexes bear the tag of the corresponding signals received through `next`.\n\nExample:\n0"
       },
       "e159c36b-a301-46ff-92db-64eaeab74d69": {
-        "type": "typeof`array`",
+        "type": "typeof `array`",
         "name": "done",
         "description": "Sends out the iterated array when there are no more items in the array and a signal was received through `next`, or, when an array was received through `array` that has one or 0 items.\n\nThe tag of the outgoing signal matches that of he original array.\n\nExample:\n[\"A\",\"B\",\"C\"]"
       }

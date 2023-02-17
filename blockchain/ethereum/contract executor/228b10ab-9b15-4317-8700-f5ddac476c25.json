@@ -106,7 +106,7 @@
         "description": "Receives the address of the contract to interact with."
       },
       "39a06197-ca9b-4ada-ab8e-6de9bd241529": {
-        "type": "{string:any}[]",
+        "type": "{string: any}[]",
         "name": "contract abi",
         "description": "Receives the ABI of the contract to interact with."
       },
@@ -121,7 +121,7 @@
         "description": "Receives the parameters of the method call as array."
       },
       "a1d2a03b-c119-442d-b464-d3aeeab20f1e": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "transaction parameters",
         "description": "Receives the parameters of the transaction.\n\nExample: \n{\n  \"gas\": 2000000,\n  \"value\": \"foobar\"\n}"
       },

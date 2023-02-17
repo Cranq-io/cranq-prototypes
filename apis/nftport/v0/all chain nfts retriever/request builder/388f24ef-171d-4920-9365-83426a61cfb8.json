@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "f80327aa-1222-4b02-8b37-060eb135e2e4": {
-        "type": "{\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
+        "type": "{optional \"continuation\": string, optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[], optional \"page_size\": number}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": ""
       }

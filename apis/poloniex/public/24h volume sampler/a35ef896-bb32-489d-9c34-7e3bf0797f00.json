@@ -11,12 +11,12 @@
     },
     "outputs": {
       "93dae74f-c6ce-45bf-bd9f-859cbf65f1bf": {
-        "type": "({\n  string: {\n    string: string\n  }\n} and {\n  string: string\n})",
+        "type": "({string: {string: string}} and {string: string})",
         "name": "data",
         "description": ""
       },
       "428735ff-f078-49db-aa28-7dc7840a49ca": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "d5c71ce3-0c0a-41dd-becf-7ff7b247533f": {

@@ -8,22 +8,22 @@
         "description": "Receives list of record identifiers relative to an AirTable table."
       },
       "ffb3e416-b70e-4825-abec-ba0809dd5713": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "params"
       }
     },
     "outputs": {
       "79f5e7b0-3567-45b8-a81e-1feeb9ac7bae": {
-        "type": "{\n  \"deleted\": boolean,\n  \"id\": typeof `record IDs`[number]\n}[]",
+        "type": "{\"deleted\": boolean, \"id\": typeof `record IDs`[number]}[]",
         "name": "data"
       },
       "17457009-e587-4711-8e20-b7103e2cb471": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the entire response from the AirTable API without modification."
       },
       "034026ba-ea5d-4412-8a52-bc046f06e324": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

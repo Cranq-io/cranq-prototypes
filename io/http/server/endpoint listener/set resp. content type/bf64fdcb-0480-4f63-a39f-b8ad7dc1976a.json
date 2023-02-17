@@ -7,7 +7,7 @@
         "name": "response"
       },
       "5704c0a6-55bd-4c29-b7d7-46daf5dbd235": {
-        "type": "{\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
+        "type": "{optional \"response\": {optional \"contentType\": (\"text\" or \"json\")}}",
         "name": "params",
         "description": ""
       }

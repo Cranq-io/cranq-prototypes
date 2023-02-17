@@ -113,7 +113,7 @@
   "interface": {
     "inputs": {
       "ad76a43c-2d59-4007-a362-d44ef757ea74": {
-        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n    or \"error\"\n  ),\n  \"data\": any\n}",
+        "type": "{\"field\": (\"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\" or \"error\"), \"data\": any}",
         "name": "events"
       }
     },

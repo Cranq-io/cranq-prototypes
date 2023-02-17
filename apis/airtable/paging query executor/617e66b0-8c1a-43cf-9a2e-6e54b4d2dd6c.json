@@ -3,29 +3,29 @@
   "interface": {
     "inputs": {
       "bb67dbe4-bbd2-4b1b-ae2f-84c632328b00": {
-        "type": "{\n  optional \"fields\": string[],\n   optional \"filterByFormula\": string,\n   optional \"sort\": \n    {\n      \"field\": string,\n      \"direction\": (\"desc\" or \"asc\")\n    }[],\n    optional \"maxRecords\": number,\n    optional \"pageSize\": number,\n    optional \"view\": string,\n    optional \"returnFieldsByFieldId\": boolean\n}",
+        "type": "{optional \"fields\": string[], optional \"filterByFormula\": string, optional \"sort\": {\"field\": string, \"direction\": (\"desc\" or \"asc\")}[], optional \"maxRecords\": number, optional \"pageSize\": number, optional \"view\": string, optional \"returnFieldsByFieldId\": boolean}",
         "name": "query",
         "description": "Receives the AirTable query to execute. \n\nTo build one, have a look at the `apis/airtable/query builder` namespace."
       },
       "52e7a985-0c5d-4271-8f94-105b3fc1ebe7": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "params",
         "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
     },
     "outputs": {
       "2a6d695f-1300-482f-b730-7a51945b9efe": {
-        "type": "{\n  \"records\": {\n     \"id\": \"\",\n     \"createdTime\": \"\",\n     \"fields\": {string: any}\n  }[]\n}",
+        "type": "{\"records\": {\"id\": \"\", \"createdTime\": \"\", \"fields\": {string: any}}[]}",
         "name": "AT records",
         "description": "Sends the records retrieved from AirTable.\n\nExample:\n```json\n{\n  \"records\": [\n    {\n      \"id\": \"recCz4d3k2DzDAZjx\",\n      \"createdTime\": \"2022-09-29T08:15:51.000Z\",\n      \"fields\": {\n        \"number column\": 0,\n        \"string column\": \"value0\"\n      }\n    },\n    {\n      \"id\": \"recDbWgh8YnNo3LJa\",\n      \"createdTime\": \"2022-09-28T11:20:20.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    }\n  ]\n}\n```\n"
       },
       "c3328b14-8977-4fae-8f60-0a45928ec295": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}[]",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}[]",
         "name": "responses",
         "description": "Sends all of the responses received from the AirTable API without modification."
       },
       "9ee7f6d0-3fff-4cb4-9297-3b3d4a4c490a": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends the error, if one occurred."
       }

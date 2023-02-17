@@ -4,7 +4,7 @@
     "inputs": {
       "6563df06-3ce3-4d32-a3d6-44d78d203e8a": {
         "description": "Receives moralis post data.\n\nExample:\n[\n    {\n      \"path\": \"moralis/logo.jpg\",\n      \"content\": \"iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3\"\n    }\n  ]",
-        "type": "{\n \"path\": string,\n \"content\": \n string\n} []",
+        "type": "{\"path\": string, \"content\": string}[]",
         "name": "folder data"
       },
       "dcec7b3f-c0c0-4778-9f37-004a68adf620": {

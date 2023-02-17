@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "96243772-f5b9-49b6-b60f-6841b5c8a535": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict",
         "description": "Receives the dictionary to set the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
@@ -13,14 +13,14 @@
         "description": "Receives the key corresponding to the value to set.\n\nExample:\n\"second\""
       },
       "0ab0c723-793b-48a1-87d5-d64267665bd3": {
-        "type": "typeof`dict`[string]",
+        "type": "typeof `dict`[string]",
         "name": "value",
         "description": "Receives the value to set.\n\nExample:\n2"
       }
     },
     "outputs": {
       "7adbf554-0042-42c0-90b4-03b5d1406a88": {
-        "type": "typeof`dict`",
+        "type": "typeof `dict`",
         "name": "dict",
         "description": "Sends the resulting dictionary, with the new/altered item.\n\nExample:\n{ \"first\": 1, \"second\":2, \"third\": 3, \"fifth\": 5 }"
       }

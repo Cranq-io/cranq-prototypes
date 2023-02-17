@@ -18,7 +18,7 @@
         "description": "Receives the HTTP status code to be sent with the response to the client.\n\nExample: \n200"
       },
       "2f08d598-abff-4424-897a-67d3e7cdf98f": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "headers",
         "description": "Receives the HTTP headers to be sent with the response to the client.\n\nExample: \n{\n  \"content-type\": \"application/json\"\n}"
       },

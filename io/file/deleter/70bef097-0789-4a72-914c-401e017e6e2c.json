@@ -16,16 +16,16 @@
     "outputs": {
       "cb592eed-1a47-441d-9f18-853b646ae9e7": {
         "description": "Sends synced parameters if operation has failed.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
-        "type": "{ \"path\": typeof `path`, \"recursive\": typeof `recursive` }",
+        "type": "{\"path\": typeof `path`, \"recursive\": typeof `recursive`}",
         "name": "bounced"
       },
       "b5fbbb89-cc84-4fbc-8005-e076edf97ebc": {
         "description": "Sends synced parameters if the operation has succeeded.\n\nExample:\n- { path: \"/home/user1/dir1\", recursive: true }\n- { path: \"/home/user1/dir1/foo.txt\", recursive: false }",
-        "type": "{ \"path\": typeof `path`, \"recursive\": typeof `recursive` }",
+        "type": "{\"path\": typeof `path`, \"recursive\": typeof `recursive`}",
         "name": "deleted"
       },
       "d8b90ced-0042-4b3b-99fa-32071f0d29f0": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, stat 'home/user1'\"\n}"
       }

@@ -8,12 +8,12 @@
         "description": "Receives the session id of the drive action.\n\nExample: \n\"drive_session\""
       },
       "a9c8e0b2-b81a-400a-be8e-d0d73981f2cd": {
-        "type": "{\n  \"email\": string,\n  \"key\": string\n}",
+        "type": "{\"email\": string, \"key\": string}",
         "name": "auth data",
         "description": "Receives the authentication data of service account.\n\nExample: \n{\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}\n"
       },
       "74e5d4eb-b876-4809-88f6-36bed9ef4484": {
-        "type": "{\n   \"file meta data\": {string:any},\n   \"supports all drives\": boolean\n}",
+        "type": "{\"file meta data\": {string: any}, \"supports all drives\": boolean}",
         "name": "create spreadsheet data",
         "description": "Receives the data of the spreadsheet.\n\n\nExample:\n{\n  \"file meta data\": {\n    \"name\": \"Test!\",\n    \"driveId\": \"0AFITUOLHhs3T_ID\",\n    \"corpora\": \"drive\",\n    \"parents\": [\n      \"1_ghBRrDju9oMNSy8DqqNtOEfDRIVE_Id\"\n    ]\n  },\n  \"supports all drives\": true\n}\n"
       }

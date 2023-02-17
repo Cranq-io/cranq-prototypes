@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "68fc7d11-40c7-484f-8717-684208cb6eca": {
-        "type": "{\n  \"to\": string,\n  \"value\": string,\n  \"credentials\": {\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n  }\n}",
+        "type": "{\"to\": string, \"value\": string, \"credentials\": {\"providerUrl\": string, optional \"privateKey\": string}}",
         "name": "parameters"
       }
     },

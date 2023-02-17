@@ -3,29 +3,29 @@
   "interface": {
     "inputs": {
       "b19a6b56-f7c3-4aed-a0d8-f45d3bc8c599": {
-        "type": "{\n  \"Messages\": {\n    \"From\": {\n      \"Email\": string,\n      \"Name\": string\n    },\n    \"To\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    optional \"Cc\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    optional \"Bcc\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    \"Subject\": string,\n    \"TextPart\": string,\n    \"HTMLPart\": string,\n    optional \"Attachments\": {\n      \"ContentType\": string,\n      \"Filename\": string,\n      \"Base64Content\": string\n    }[],\n    optional \"InlinedAttachments\": {\n      \"ContentType\": string,\n      \"Filename\": string,\n      \"ContentID\": string,\n      \"Base64Content\": string\n    }[],\n    optional \"Variables\": {string: string},\n    optional \"TemplateLanguage\": true,\n    optional \"TemplateID\": number,\n    optional \"Headers\": {string: string},\n    optional \"CustomID\": string,\n    optional \"EventPayload\": string,\n    optional \"CustomCampaign\": string,\n    optional \"DeduplicateCampaign\": boolean,\n    optional \"URLTags\": string\n  }[],\n  optional \"SandboxMode\": true\n}",
+        "type": "{\"Messages\": {\"From\": {\"Email\": string, \"Name\": string}, \"To\": {\"Email\": string, \"Name\": string}[], optional \"Cc\": {\"Email\": string, \"Name\": string}[], optional \"Bcc\": {\"Email\": string, \"Name\": string}[], \"Subject\": string, \"TextPart\": string, \"HTMLPart\": string, optional \"Attachments\": {\"ContentType\": string, \"Filename\": string, \"Base64Content\": string}[], optional \"InlinedAttachments\": {\"ContentType\": string, \"Filename\": string, \"ContentID\": string, \"Base64Content\": string}[], optional \"Variables\": {string: string}, optional \"TemplateLanguage\": true, optional \"TemplateID\": number, optional \"Headers\": {string: string}, optional \"CustomID\": string, optional \"EventPayload\": string, optional \"CustomCampaign\": string, optional \"DeduplicateCampaign\": boolean, optional \"URLTags\": string}[], optional \"SandboxMode\": true}",
         "name": "request",
         "description": "Receives the request to dispatch.\nTo easily construct one, use node `apis/mailjet/v3.1/Simple email sender request builder`.\n\nFor more information, refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/send-api-v31/"
       },
       "04c08c2f-2ac0-4726-ac4f-10db51886248": {
-        "type": "{\n  \"user id\": string,\n  \"password\": string\n}",
+        "type": "{\"user id\": string, \"password\": string}",
         "name": "params",
         "description": "Receives the parameters to invoke the Mailjet API with.\nFor more information, please refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/#authentication"
       }
     },
     "outputs": {
       "7f42b0ef-c7eb-4507-9557-ca0e7a9cbc6d": {
-        "type": "{\n  \"Messages\": {\n    \"Status\": (\"success\" or \"error\"),\n    \"To\": {\n        \"Email\": string,\n        \"MessageUUID\": string,\n        \"MessageID\": number,\n        \"MessageHref\": string\n    }[],\n    optional \"Cc\": {\n        \"Email\": string,\n        \"MessageUUID\": string,\n        \"MessageID\": number,\n        \"MessageHref\": string\n    }[],\n\toptional \"Bcc\": {\n        \"Email\": string,\n        \"MessageUUID\": string,\n        \"MessageID\": number,\n        \"MessageHref\": string\n    }[],\n    optional \"Errors\": {\n      \"ErrorIdentifier\": string,\n      \"ErrorCode\": string,\n      \"StatusCode\": number,\n      \"ErrorMessage\": string,\n      \"ErrorRelatedTo\": string[]\n    }[]\n  }[]\n}",
+        "type": "{\"Messages\": {\"Status\": (\"success\" or \"error\"), \"To\": {\"Email\": string, \"MessageUUID\": string, \"MessageID\": number, \"MessageHref\": string}[], optional \"Cc\": {\"Email\": string, \"MessageUUID\": string, \"MessageID\": number, \"MessageHref\": string}[], optional \"Bcc\": {\"Email\": string, \"MessageUUID\": string, \"MessageID\": number, \"MessageHref\": string}[], optional \"Errors\": {\"ErrorIdentifier\": string, \"ErrorCode\": string, \"StatusCode\": number, \"ErrorMessage\": string, \"ErrorRelatedTo\": string[]}[]}[]}",
         "name": "messages sent",
         "description": "Sends information about the messages sent, and any errors, if one occurred.\n\nFor more information, refer to the Mailjet API documentation:\nhttps://dev.mailjet.com/email/guides/send-api-v31/"
       },
       "addb397c-d9dc-48a0-9115-1750ae123dfb": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the raw API response."
       },
       "c48df05a-4244-43db-b7b8-6022f60d30b0": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends the error, if one occurred."
       }

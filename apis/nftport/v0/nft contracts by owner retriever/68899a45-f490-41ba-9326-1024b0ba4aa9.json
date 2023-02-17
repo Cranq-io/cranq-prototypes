@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "945d8d4a-cfea-4d6e-9f8d-fc965be6f064": {
-        "type": "{  \n \"account_address\": string,\noptional \"continuation\": string,\n   optional \"page_size\": number,\n  optional \"type\" : \"owns_contract_nfts\"\n}",
+        "type": "{\"account_address\": string, optional \"continuation\": string, optional \"page_size\": number, optional \"type\": \"owns_contract_nfts\"}",
         "name": "query",
         "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account#Request"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, optional \"chain\": (\"ethereum\" or \"rinkeby\")}",
         "name": "params",
         "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account#Request\n\nDefault chain value: \"ethereum\"\n"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"contracts\": \n  {\n    \"name\": string,\n    \"symbol\": string,\n    \"type\": (\"ERC721\" or \"ERC1155\"),\n    \"address\": string,\n    \"num_nfts_owned\": number\n  }[],\n  \"total\": number,\n  optional \"continuation\": string\n}",
+        "type": "{\"response\": \"OK\", \"contracts\": {\"name\": string, \"symbol\": string, \"type\": (\"ERC721\" or \"ERC1155\"), \"address\": string, \"num_nfts_owned\": number}[], \"total\": number, optional \"continuation\": string}",
         "name": "data",
         "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-contracts-owned-by-an-account#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": "Sends the error, if any"
       }

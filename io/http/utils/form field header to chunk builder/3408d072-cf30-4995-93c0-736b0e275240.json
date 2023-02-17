@@ -4,14 +4,14 @@
   "interface": {
     "inputs": {
       "f576663e-5371-4470-9d86-153027e97de5": {
-        "type": "{\n  \"name\": string,\n  \"data\": string,\n  optional \"fileName\": string,\n  optional \"contentType\": string\n}",
+        "type": "{\"name\": string, \"data\": string, optional \"fileName\": string, optional \"contentType\": string}",
         "name": "field",
         "description": ""
       }
     },
     "outputs": {
       "0518f1eb-15d2-4e69-b045-30ccdc8f8c1f": {
-        "type": "{\n  \"data\": string,\n  \"encoding\": (\"utf8\" or \"base64\")\n}",
+        "type": "{\"data\": string, \"encoding\": (\"utf8\" or \"base64\")}",
         "name": "chunk"
       }
     }

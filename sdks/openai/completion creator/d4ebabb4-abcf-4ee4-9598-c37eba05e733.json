@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {
-        "type": "{\n  \"model\": string,\n  optional \"prompt\": (any[] or number[] or string[] or string), \n    optional \"suffix\": (string or null),\n    optional \"max_tokens\": (number or null),\n    optional \"temperature\": (number or null),\n    optional \"top_p\": (number or null),\n    optional \"n\": (number or null),\n    optional \"stream\": (boolean or null),\n    optional \"logprobs\": (number or null),\n    optional \"stop\": (string or string[] or null),\n    optional \"presence_penalty\": (number or null),\n    optional \"frequency_penalty\": (number or null),\n    optional \"best_of\": (number or null),\n    optional \"logit_bias\": ({string: any} or null),\n    optional \"user\": string\n}",
+        "type": "{\"model\": string, optional \"prompt\": (any[] or number[] or string[] or string), optional \"suffix\": (string or null), optional \"max_tokens\": (number or null), optional \"temperature\": (number or null), optional \"top_p\": (number or null), optional \"n\": (number or null), optional \"stream\": (boolean or null), optional \"logprobs\": (number or null), optional \"stop\": (string or string[] or null), optional \"presence_penalty\": (number or null), optional \"frequency_penalty\": (number or null), optional \"best_of\": (number or null), optional \"logit_bias\": ({string: any} or null), optional \"user\": string}",
         "name": "request",
         "description": "Receives the request for creating the completion.\n\nSee https://github.com/openai/openai-node/blob/master/api.ts"
       },
       "879c752d-3302-40bd-8104-110a5abda395": {
-        "type": "{\n  \"apiKey\": string\n}",
+        "type": "{\"apiKey\": string}",
         "name": "params",
         "description": "Receives generic OpenAI params."
       }
     },
     "outputs": {
       "d293caee-efa3-41e7-84f9-084b15fe44e6": {
-        "type": "{\n  \"id\": string,\n  \"object\": string,\n  \"created\": number,\n  \"model\": string,\n  \"choices\": {\n    optional \"text\": string,\n    optional \"index\": number,\n    optional \"logprobs\": ({\n      optional \"tokens\": string[],\n      optional \"token_logprobs\": number[],\n    optional \"top_logprobs\": {string: any}[],\n    optional \"text_offset\": number[]\n}[] or null),\n    optional \"finish_reason\": string\n  }[],\n    \"usage\": {\n      \"prompt_tokens\": number,\n      \"completion_tokens\": number,\n      \"total_tokens\": number\n  }\n}",
+        "type": "{\"id\": string, \"object\": string, \"created\": number, \"model\": string, \"choices\": {optional \"text\": string, optional \"index\": number, optional \"logprobs\": ({optional \"tokens\": string[], optional \"token_logprobs\": number[], optional \"top_logprobs\": {string: any}[], optional \"text_offset\": number[]}[] or null), optional \"finish_reason\": string}[], \"usage\": {\"prompt_tokens\": number, \"completion_tokens\": number, \"total_tokens\": number}}",
         "name": "response",
         "description": "Sends completion response.\n\nSee https://github.com/openai/openai-node/blob/master/api.ts"
       },

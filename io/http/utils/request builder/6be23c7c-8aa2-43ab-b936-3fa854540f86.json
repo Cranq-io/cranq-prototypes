@@ -22,7 +22,7 @@
     },
     "outputs": {
       "d1692afa-7953-4b5b-87c9-6d75c06364ef": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, \"body\": string}",
         "name": "request"
       }
     }

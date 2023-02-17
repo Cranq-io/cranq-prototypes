@@ -12,13 +12,13 @@
         "description": "[Inherited from port `key` of `syncer B`] \nReceives individual item for syncing."
       },
       "f2ebfb93-683f-49f8-a60c-f05d4ad29b65": {
-        "type": "({\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": (\"tiny\" or \"mid\" or \"small\"),\n    optional \"color\": string,\n    optional \"label\": string\n  }\n})",
+        "type": "({optional \"type\": \"center\", \"center\": [number, number], \"zoom\": number} or {\"type\": \"path\", \"points\": [number, number][], \"style\": {optional \"weight\": number, optional \"color\": string, optional \"fillColor\": string, optional \"geodesic\": boolean}} or {\"type\": \"markers\", \"points\": [number, number][], \"style\": {optional \"size\": (\"tiny\" or \"mid\" or \"small\"), optional \"color\": string, optional \"label\": string}})",
         "name": "area"
       }
     },
     "outputs": {
       "c975f776-cf0d-4780-9496-bea7f4ed405c": {
-        "type": "{\n  \"method\": \"GET\",\n  \"url\": string,\n  \"headers\": {string: string}\n}\n",
+        "type": "{\"method\": \"GET\", \"url\": string, \"headers\": {string: string}}",
         "name": "request",
         "description": ""
       },

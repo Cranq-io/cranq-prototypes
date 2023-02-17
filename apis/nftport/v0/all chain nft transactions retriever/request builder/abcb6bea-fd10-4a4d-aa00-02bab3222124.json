@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "af43dd8f-6144-41c3-a8fd-cbaf792c3589": {
-        "type": "{\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[],\n  optional \"from_block\": number,\n  optional \"to_block\": number\n}",
+        "type": "{optional \"continuation\": string, optional \"page_size\": number, optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[], optional \"from_block\": number, optional \"to_block\": number}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": \"ethereum\"\n}",
+        "type": "{\"api_key\": string, \"chain\": \"ethereum\"}",
         "name": "params",
         "description": ""
       }

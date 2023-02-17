@@ -9,7 +9,7 @@
         "description": "The name of the created contract. It must be a valid Solidity contract name (no spaces, special characters)."
       },
       "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {
-        "type": "{\n   \"name\": string, \n   \"symbol\": string, \n   \"baseTokenURI\": string\n}",
+        "type": "{\"name\": string, \"symbol\": string, \"baseTokenURI\": string}",
         "name": "init parameters",
         "description": "Receives the parameters to be given to the contract's constructor when deployed.\n\n\nReference:\nSee the constructor of the contract in\n[base contract at openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/presets/ERC721PresetMinterPauserAutoId.sol)\n"
       },
@@ -28,7 +28,7 @@
         "name": "source"
       },
       "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
-        "type": "{\n    optional \"evmVersion\": string,\n    \"optimizer\": {\n        \"enabled\": boolean,\n        \"runs\": number\n    }\n}",
+        "type": "{optional \"evmVersion\": string, \"optimizer\": {\"enabled\": boolean, \"runs\": number}}",
         "name": "compile settings"
       },
       "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {

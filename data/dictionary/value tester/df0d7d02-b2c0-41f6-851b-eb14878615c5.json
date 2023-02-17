@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "d38c874c-3db0-4be0-b69a-27dd0bdbab38": {
-        "type": "{string:typeof`value`}",
+        "type": "{string: typeof `value`}",
         "name": "dict",
         "description": "Receives the dictionary to validate the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },

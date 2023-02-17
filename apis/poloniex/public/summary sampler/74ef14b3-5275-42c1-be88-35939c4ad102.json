@@ -11,12 +11,12 @@
     },
     "outputs": {
       "26e81849-111c-450a-a756-0f5feb2fd0b7": {
-        "type": "{\n  string: {\n    \"id\": number,\n    \"last\": string,\n    \"lowestAsk\": string,\n    \"highestBid\": string,\n    \"percentChange\": string,\n    \"baseVolume\": string,\n    \"quoteVolume\": string,\n    \"isFrozen\": string,\n    \"postOnly\": string,\n    \"marginTradingEnabled\": string,\n    \"high24hr\": string,\n    \"low24hr\": string\n  }\n}",
+        "type": "{string: {\"id\": number, \"last\": string, \"lowestAsk\": string, \"highestBid\": string, \"percentChange\": string, \"baseVolume\": string, \"quoteVolume\": string, \"isFrozen\": string, \"postOnly\": string, \"marginTradingEnabled\": string, \"high24hr\": string, \"low24hr\": string}}",
         "name": "data",
         "description": ""
       },
       "170070b9-b575-4db6-ad0b-d00e56479585": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "a5f6a4bd-f8a9-47b4-bb33-4ae6e2ea5e4a": {

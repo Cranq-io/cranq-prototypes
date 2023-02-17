@@ -11,7 +11,7 @@
     "outputs": {
       "7fb8ce69-80c0-43af-a17c-c12ee71b7e5b": {
         "description": "Sends the converted records.\n\n```json\n[\n  {\n    \"fields\": {\n      \"string column\": \"value0\",\n      \"number column\": 0,\n      \"bool column\": false\n    }\n  },\n  {\n    \"fields\": {\n      \"string column\": \"value1\",\n      \"number column\": 1,\n      \"bool column\": true\n    }\n  }\n]\n```",
-        "type": "{\n  \"fields\": typeof `records`[number]\n}[]",
+        "type": "{\"fields\": typeof `records`[number]}[]",
         "name": "AT records"
       }
     }

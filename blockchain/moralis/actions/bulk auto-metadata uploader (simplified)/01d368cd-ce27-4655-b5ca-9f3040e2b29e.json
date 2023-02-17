@@ -8,7 +8,7 @@
         "name": "state"
       },
       "5a150752-a164-4106-bd1d-0ef9577b17c5": {
-        "type": "{\n  \"cwd\": string,\n  \"moralis-api-key\": string,\n  \"image-urls\": string[],\n  \"image-names\": string[]\n}",
+        "type": "{\"cwd\": string, \"moralis-api-key\": string, \"image-urls\": string[], \"image-names\": string[]}",
         "name": "params",
         "description": "Recieves upload metadata script parameters.\n\nExample:\n{\n  \"cwd\": \"./nft\",\n  \"moralis-api-key\": \"API_KEY\",\n  \"image-urls\" : [\"https://ipfs.moralis.io:2053/ipfs/QmVsdDLF8gmZeUCdrqgjXHLZ4VupdvxQaCiCdDvVApmR2o/nft\\\\batch-images\\\\logo.jpg\"],\n  \"image-names\": [\"logo.jpg\"]\n}"
       }

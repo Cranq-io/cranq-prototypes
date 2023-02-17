@@ -16,14 +16,14 @@
   "interface": {
     "inputs": {
       "bd95258a-5c14-43b5-b464-6bd778608b05": {
-        "type": "{\n\"transaction_hash\": string,\n\"provider\": string\n}",
+        "type": "{\"transaction_hash\": string, \"provider\": string}",
         "name": "transaction hash & provider",
         "description": "Receives transaction hash & web3 provider.\n\nExample:\n{\n  \"transaction_hash\": \"0x9fc76417374aa880d4449a1f7f31ec597f00b1f6f3dd2d66f4c9c6c445836d8b\",\n \"provider\": \"https://speedy-nodes-nyc.moralis.io/1a2b3c4d5e6f1a2b3c4d5e6f/eth/mainnet\"\n}\n"
       }
     },
     "outputs": {
       "d7125241-138e-4e1d-bb3b-1af5bc733fb5": {
-        "type": "{\n  \"status\": boolean,\n  \"transactionHash\": string,\n  \"transactionIndex\": number,\n  \"from\": string,\n  \"to\": string,\n  \"blockHash\": string,\n  \"blockNumber\": number,\n  \"contractAddress\": string,\n  \"cumulativeGasUsed\": number,\n  \"gasUsed\": number,\n  \"logs\": {\n    \"data\": string,\n    \"topics\": string[], \n    \"logIndex\": number,\n    \"transactionIndex\": number,\n    \"transactionHash\": string,\n    \"blockHash\": string,\n    \"blockNumber\": number,\n    \"address\": string\n  }[]\n}",
+        "type": "{\"status\": boolean, \"transactionHash\": string, \"transactionIndex\": number, \"from\": string, \"to\": string, \"blockHash\": string, \"blockNumber\": number, \"contractAddress\": string, \"cumulativeGasUsed\": number, \"gasUsed\": number, \"logs\": {\"data\": string, \"topics\": string[], \"logIndex\": number, \"transactionIndex\": number, \"transactionHash\": string, \"blockHash\": string, \"blockNumber\": number, \"address\": string}[]}",
         "name": "transaction_receipt",
         "description": "Sends the transaction receipt.\n\nMore: https://web3js.readthedocs.io/en/v1.7.1/web3-eth.html#gettransactionreceipt\n\nExample:\n{\n  \"status\": true,\n  \"transactionHash\": \"0x9fc76417374aa880d4449a1f7f31ec597f00b1f6f3dd2d66f4c9c6c445836d8b\",\n  \"transactionIndex\": 0,\n  \"blockHash\": \"0xef95f2f1ed3ca60b048b4bf67cde2195961e0bba6f70bcbea9a2c4e133e34b46\",\n  \"blockNumber\": 3,\n  \"contractAddress\": \"0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe\",\n  \"cumulativeGasUsed\": 314159,\n  \"gasUsed\": 30234,\n  \"logs\": [{\n    data: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',\n    topics: ['0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7', '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385']\n    logIndex: 0,\n    transactionIndex: 0,\n    transactionHash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',\n    blockHash: '0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7',\n    blockNumber: 1234,\n    address: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'\n}.]\n}\n"
       },

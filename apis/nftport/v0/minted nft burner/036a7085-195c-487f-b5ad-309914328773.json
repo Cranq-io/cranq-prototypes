@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "eb1ebd32-e742-4b7e-81a4-b906017555c7": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string\n}",
+        "type": "{\"contract_address\": string, \"token_id\": string}",
         "name": "NFT",
         "description": "Receives the data of the NFT to be burnt.\n\n\nhttps://docs.nftport.xyz/docs/nftport/?search=burn-a-minted-nft#request-body"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": "https://docs.nftport.xyz/docs/nftport/?search=burn-a-minted-nft#Request"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string\n}",
+        "type": "{\"response\": \"OK\", \"chain\": (\"polygon\" or \"rinkeby\"), \"contract_address\": string, \"transaction_hash\": string, \"transaction_external_url\": string}",
         "name": "data",
         "description": "Sends  transaction hash which can be used to confirm that the transaction was successful (blockchain transactions can take up to a few minutes depending on how congested the network is).\n\n\nhttps://docs.nftport.xyz/docs/nftport/?search=burn-a-minted-nft#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

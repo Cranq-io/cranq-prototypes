@@ -8,7 +8,7 @@
         "name": "state"
       },
       "32af231d-5dbc-458f-b0bd-f119fe2dd9d1": {
-        "type": "{\n  \"build-data\": typeof `params` of `build image metadata`,\n  \"upload\": typeof `params` of `folder uploader`\n}",
+        "type": "{\"build-data\": typeof `params` of `build image metadata`, \"upload\": typeof `params` of `folder uploader`}",
         "name": "params",
         "description": "Recieves upload metadata script parameters.\n\nExample:\n{\n  \"build-data\": {\n    \"cwd\": \"./nft\",\n    \"result-path\": \"ipfs.image-metadata\",\n    \"message\": \"Building metadata for images...\",\n    \"image-urls\": [],\n    \"image-names\": []\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"ipfs.metadata-urls\",\n      \"message\": \"Uploading metadata to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"ipfs.image-metadata\"\n    }\n  }\n}"
       }

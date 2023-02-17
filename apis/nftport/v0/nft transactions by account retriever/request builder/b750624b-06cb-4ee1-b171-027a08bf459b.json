@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "2368b69a-6b88-493e-bece-823e126c008a": {
-        "type": "{\n\"account_address\": string,\n  optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer_from\" or \"transfer_to\" or \"mint\" or \"burn\" or \"make_bid\" or \"get_bid\" or \"list\" or \"buy\" or \"sell\" or \"all\")[]\n}",
+        "type": "{\"account_address\": string, optional \"continuation\": string, optional \"page_size\": number, optional \"type\": (\"transfer_from\" or \"transfer_to\" or \"mint\" or \"burn\" or \"make_bid\" or \"get_bid\" or \"list\" or \"buy\" or \"sell\" or \"all\")[]}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {

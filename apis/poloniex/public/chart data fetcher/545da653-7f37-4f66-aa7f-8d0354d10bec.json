@@ -4,18 +4,18 @@
   "interface": {
     "inputs": {
       "b5c40467-b8f0-496e-99cf-1742a385d73e": {
-        "type": "{\n  \"currencyPair\": string,\n  \"start\": number,\n  \"end\": number,\n  \"period\": number\n}",
+        "type": "{\"currencyPair\": string, \"start\": number, \"end\": number, \"period\": number}",
         "name": "query",
         "description": ""
       }
     },
     "outputs": {
       "0796ac8c-c88f-41ee-ac7e-266b7f87bb3c": {
-        "type": "{\n    \"date\": number,\n    \"high\": number,\n    \"low\": number,\n    \"open\": number,\n    \"close\": number,\n    \"volume\": number,\n    \"quoteVolume\": number,\n    \"weightedAverage\": number\n}[]",
+        "type": "{\"date\": number, \"high\": number, \"low\": number, \"open\": number, \"close\": number, \"volume\": number, \"quoteVolume\": number, \"weightedAverage\": number}[]",
         "name": "data"
       },
       "8ed11487-4a37-481b-aee6-91e30470b250": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "e751c313-a92a-458c-bf63-a5fcd3645cb7": {

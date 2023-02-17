@@ -18,7 +18,7 @@
         "description": "Receives the number of tokens to be transferred.\n\nExample:\n1\n"
       },
       "72dd5e22-5f73-4591-8709-004e1b200909": {
-        "type": "{\n    \"providerUrl\": string,\n    \"privateKey\": string\n}",
+        "type": "{\"providerUrl\": string, \"privateKey\": string}",
         "name": "credentials",
         "description": "Recives the node provider URL and the wallet private key.\n\n```\n{\n  \"providerUrl\": \"https://eth-goerli.alchemyapi.io/v2/71n6GXE_ROLFP-1DELzRWrgsyqqWXXXXX\",\n  \"privateKey\": \"XXXXXXXXXXXXXXXXXXXXXX\"\n}\n```"
       }

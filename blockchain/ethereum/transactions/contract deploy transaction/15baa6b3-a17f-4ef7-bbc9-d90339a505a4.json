@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "ca45ccd6-b1fb-4bb7-86ca-b9e774f899bb": {
-        "type": "{\n   \"abi\": {string: any}[],\n   \"evm\": {\n      \"bytecode\": {\n         \"linkReferences\": any,\n         \"object\": string,\n         \"opcodes\": string,\n         \"sourceMap\": string\n      }\n   }\n}",
+        "type": "{\"abi\": {string: any}[], \"evm\": {\"bytecode\": {\"linkReferences\": any, \"object\": string, \"opcodes\": string, \"sourceMap\": string}}}",
         "name": "compiled contract",
         "description": ""
       },
@@ -13,14 +13,14 @@
         "description": ""
       },
       "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
-        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
+        "type": "{\"providerUrl\": string, optional \"privateKey\": string}",
         "name": "credentials",
         "description": ""
       }
     },
     "outputs": {
       "3483ab3b-5295-4761-8832-ec968f7399d9": {
-        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n  ),\n  \"data\": any\n}",
+        "type": "{\"field\": (\"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\"), \"data\": any}",
         "name": "events",
         "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
       },

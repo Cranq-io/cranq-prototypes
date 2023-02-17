@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "14c6fd48-6a62-42fa-9c50-731dccb6de9e": {
-        "type": "{\n  \"cwd\": string\n}",
+        "type": "{\"cwd\": string}",
         "name": "params",
         "description": "Receives essential parameters for initializing the state of the script.\n\nProperty 'cwd' defaults to \"./temp\".\n\nExamples:\n* {}\n* {\"cwd\": \"./foo\"}"
       }

@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "55b201f2-00f5-40a3-8aa2-42411ed7f88d": {
-        "type": "{\n  \"command\": string,\n  \"currencyPair\": string,\n  optional \"start\": number,\n  optional \"end\": number\n}",
+        "type": "{\"command\": string, \"currencyPair\": string, optional \"start\": number, optional \"end\": number}",
         "name": "query params"
       }
     },

@@ -9,7 +9,7 @@
         "description": "Receives the identifier of the record to be deleted.\n\nExample:\n```json\n\"rec32C7MUspwlCGaY\"\n```"
       },
       "c6345eab-aa9c-4ba9-ae15-e516f446350b": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "params",
         "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
@@ -21,17 +21,17 @@
         "description": "Sends the ID of the deleted record.\n\nExample:\n```json\n\"rec32C7MUspwlCGaY\"\n```"
       },
       "e62d5284-1d0d-4f5f-8301-3daa6fbc49db": {
-        "type": "{\n  \"deleted\": boolean,\n  \"id\": string\n}",
+        "type": "{\"deleted\": boolean, \"id\": string}",
         "name": "AT record",
         "description": "Sends the ID of the record requested for deletion, as returned from AirTable.\n\nExample:\n```json\n{\n  \"deleted\": true,\n  \"id\": \"rec7Ytz8K2GiRMUdQ\"\n}\n```"
       },
       "d948f797-1fbc-4db7-b901-771d62961643": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the entire response from the AirTable API without modification."
       },
       "60c437e9-73a3-4982-b6fa-89a21511479d": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends the error, if one occurred."
       }

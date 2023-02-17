@@ -18,14 +18,14 @@
         "description": "Receives the issue's priority.\n\nPossible values:\n* Highest\n* High\n* Low\n* Lowest"
       },
       "f6631e76-f1f3-4fc0-84b3-31e309b8f44d": {
-        "type": "{\n  \"email\": string,\n  \"apiToken\": string,\n  \"jiraDomain\": string,\n  \"projectKey\": string,\n  \"issueTypeName\": string\n}",
+        "type": "{\"email\": string, \"apiToken\": string, \"jiraDomain\": string, \"projectKey\": string, \"issueTypeName\": string}",
         "name": "params",
         "description": "Receives API parameters, including credentials, and project identification."
       }
     },
     "outputs": {
       "efe08520-9c31-4f80-a8fa-b45124488313": {
-        "type": "{\n   \"self\": string,\n   \"id\": string,\n   \"key\": string,\n   \"transition\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   },\n   \"watchers\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   }\n}",
+        "type": "{\"self\": string, \"id\": string, \"key\": string, \"transition\": {\"status\": number, \"errorCollection\": {\"errorMessages\": string[], \"errors\": {string: any}}}, \"watchers\": {\"status\": number, \"errorCollection\": {\"errorMessages\": string[], \"errors\": {string: any}}}}",
         "name": "data",
         "description": "Sends information about the created issue, and if necessary, any errors occurred in the meantime."
       },

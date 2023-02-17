@@ -20,7 +20,7 @@
         "description": "Sends file path if the file writting was successful.\n\nExample:\n\"c:/image.png\"@1"
       },
       "b7f7cfdc-dfaf-4750-b623-cd4fe77b4278": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": "Sends the error, if any.\n\nExample:\n{\n  \"error\": \"Writing file failed.\",\n  \"details\": \"Error: ENOENT: no such file or directory, open 'j:\\\\test.png'\"\n}@1"
       }

@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "257885b0-08c2-41c8-ba17-d6f9b80e93d1": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict",
         "description": "Receives the dictionary to get the values from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
@@ -15,7 +15,7 @@
     },
     "outputs": {
       "6dd99f55-3d65-42ca-b301-c2c6367c334c": {
-        "type": "typeof`dict`[string][]",
+        "type": "typeof `dict`[string][]",
         "name": "values",
         "description": "Sends the values corresponding to the received keys.\n\nExample:\n[1, 3]"
       },

@@ -31,7 +31,7 @@
     },
     "outputs": {
       "14f08274-327d-40d7-b570-c45c9f225f9a": {
-        "type": "{\n  \"fields\": {\n    \"issuetype\": {\"id\": string},\n    \"project\": {\"key\": string},\n    \"summary\": string,\n    \"description\": {\n      \"content\": [{\n        \"content\": [string]\n      }]\n    }\n  }\n}",
+        "type": "{\"fields\": {\"issuetype\": {\"id\": string}, \"project\": {\"key\": string}, \"summary\": string, \"description\": {\"content\": [{\"content\": [string]}]}}}",
         "name": "issue",
         "description": "Sends a JIRA issue containing only 4 parameters:\n* issue type ID\n* project key\n* summary\n* description\n* priority\n\nThis is sufficient for creating new issues."
       }

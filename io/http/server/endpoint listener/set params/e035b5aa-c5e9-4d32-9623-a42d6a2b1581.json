@@ -8,14 +8,14 @@
         "description": "[Inherited from port `item` of `builder`] \nReceives item to be added to the array.\n\nExample:\n\"Foo\""
       },
       "6c56929c-0fc1-40bb-bee1-272948dedc70": {
-        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\noptional \"host\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
+        "type": "{\"serverId\": string, \"port\": number, \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"route\": string, optional \"host\": string, optional \"request\": {optional \"bearerToken\": string, optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")}, optional \"response\": {optional \"contentType\": (\"text\" or \"json\")}}",
         "name": "dict",
         "description": "[Inherited from port `dict` of `item getter with default`] \nReceives the dictionary to get the value from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
     },
     "outputs": {
       "1ea4dc7d-b20d-4c33-a15d-f40e69b55d09": {
-        "type": "{\"port\": number,\n\"host\": string }",
+        "type": "{\"port\": number, \"host\": string}",
         "name": "server params",
         "description": "[Inherited from port `array` of `item inserter`] \nSends array with specified item inserted.\n\nExample:\n[1,1,2,3]"
       }

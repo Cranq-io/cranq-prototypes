@@ -11,13 +11,13 @@
         "name": "data"
       },
       "d6111fa1-32df-4aba-a93f-a09d3d5cdfb5": {
-        "type": "{\n  \"token\": string\n}",
+        "type": "{\"token\": string}",
         "name": "params"
       }
     },
     "outputs": {
       "5078d543-05ad-4410-8cb0-d0e09ed2eacb": {
-        "type": "{\n  \"method\": \"POST\",\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": any\n}",
+        "type": "{\"method\": \"POST\", \"url\": string, \"headers\": {string: string}, \"data\": any}",
         "name": "request"
       }
     }

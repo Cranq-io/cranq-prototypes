@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "8ca098bf-2df5-4dc8-8fb9-a2ddbead41b2": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict",
         "description": "Receives a dictionary to extract the key-value pairs from.\n\nExample:\n { \"first\": 1, \"third\": 3 }"
       }
     },
     "outputs": {
       "c1e0e7c9-b331-443a-8005-d72bc86a0e07": {
-        "type": "{\"key\":string,\"value\":typeof`dict`[string]}[]",
+        "type": "{\"key\": string, \"value\": typeof `dict`[string]}[]",
         "name": "key-value pairs",
         "description": "Sends the extracted key-value pairs.\n\nExample:\n[ { \"key\":\"first\", \"value\": 1 }, { \"key\":\"third\", \"value\": 3 } ]"
       }

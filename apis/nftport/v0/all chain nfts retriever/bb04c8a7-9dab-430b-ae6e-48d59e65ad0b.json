@@ -4,28 +4,28 @@
   "interface": {
     "inputs": {
       "c502541e-0be6-4faa-89c0-b14d3c9b76e0": {
-        "type": "{\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[],\n   optional \"page_size\": number\n}",
+        "type": "{optional \"continuation\": string, optional \"include\": (\"default\" or \"metadata\" or \"file_information\" or \"contract_information\" or \"all\")[], optional \"page_size\": number}",
         "name": "query"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": "Receives the query parameters.\n\nDefault chain value: \"ethereum\"\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-all-nf-ts#Query-Parameters"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"nfts\": {\n\t\"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"),\n\t\"contract_address\": string,\n\t\"token_id\": string,\n\toptional \"contract\": {\n\t\t\"name\": string,\n\t\t\"symbol\": string,\n\t\t\"type\": (\"ERC721\" or \"ERC1155\")\n\t},\n\toptional \"metadata\": {string:any},\n\toptional \"metadata_url\": string,\n\toptional \"file_url\": string,\n\toptional \"animation_url\": string,\n\toptional \"cached_file_url\": string,\n\toptional \"cached_animation_url\": string,\n\toptional \"mint_date\": string,\n\toptional \"file_information\": {\n\t\t\"height\": number,\n\t\t\"width\": number,\n\t\t\"file_size\": number\n\t},\n\toptional \"updated_date\": string\n  }[],\n  \"continuation\": string\n}",
+        "type": "{\"response\": \"OK\", \"nfts\": {\"chain\": (\"ethereum\" or \"polygon\" or \"rinkeby\"), \"contract_address\": string, \"token_id\": string, optional \"contract\": {\"name\": string, \"symbol\": string, \"type\": (\"ERC721\" or \"ERC1155\")}, optional \"metadata\": {string: any}, optional \"metadata_url\": string, optional \"file_url\": string, optional \"animation_url\": string, optional \"cached_file_url\": string, optional \"cached_animation_url\": string, optional \"mint_date\": string, optional \"file_information\": {\"height\": number, \"width\": number, \"file_size\": number}, optional \"updated_date\": string}[], \"continuation\": string}",
         "name": "data",
         "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-all-nf-ts#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": "Sends the error, if one occurred."
       }

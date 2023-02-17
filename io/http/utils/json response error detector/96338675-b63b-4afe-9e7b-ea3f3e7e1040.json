@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "d063ef8a-843f-4caf-9f7b-ca8a39117333": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Receives JSON response that might contain an error."
       },
@@ -21,7 +21,7 @@
         "description": "Sends response data, when the response was successful."
       },
       "8b5a046d-d4ef-473c-b352-5ed40bf53a73": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
-        "type": "{\n  \"data\": string,\n  \"fileName\": string,\n  \"contentType\": string\n}",
+        "type": "{\"data\": string, \"fileName\": string, \"contentType\": string}",
         "name": "file",
         "description": "Recives the meta data of the file to be uploaded.\n\nThe data field is base64-encoded binary file content.\n\nSupported content types: https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/#supported-media-types"
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
-        "type": "{\n\"access_token\": string,\n\"phone_number_id\": string\n}",
+        "type": "{\"access_token\": string, \"phone_number_id\": string}",
         "name": "params",
         "description": "Receives generic WhatsApp API parameters."
       }
     },
     "outputs": {
       "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
-        "type": "{\n  \"id\": string\n}",
+        "type": "{\"id\": string}",
         "name": "data",
         "description": "Sends id of the uploaded media."
       },
       "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "15ee012a-e010-4b7a-b555-435d4e2a85f8": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends error, if any."
       }

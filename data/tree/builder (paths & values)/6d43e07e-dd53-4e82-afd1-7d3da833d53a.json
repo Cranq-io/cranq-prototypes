@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "babc9690-9f74-4f4e-9629-c795c657ac33": {
-        "type": "((string or number)[])[]",
+        "type": "(string or number)[][]",
         "name": "paths",
         "description": "Receives paths that form the structure of the constructed tree."
       },
@@ -20,7 +20,7 @@
         "name": "tree"
       },
       "e6aa5a22-96bb-43c4-8dc8-857bbd557fb9": {
-        "type": "{\n  \"paths\": ((string or number)[])[],\n  \"values\": any[]\n}",
+        "type": "{\"paths\": (string or number)[][], \"values\": any[]}",
         "name": "bounced"
       }
     }

@@ -28,7 +28,7 @@
         "name": "source"
       },
       "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
-        "type": "{\n    optional \"evmVersion\": string,\n    \"optimizer\": {\n        \"enabled\": boolean,\n        \"runs\": number\n    }\n}",
+        "type": "{optional \"evmVersion\": string, \"optimizer\": {\"enabled\": boolean, \"runs\": number}}",
         "name": "compile settings"
       },
       "86c83cbf-ac3a-4a4e-bab8-1578bbdcb5ba": {

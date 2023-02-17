@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "7e1c79f2-3603-41bc-bfdb-e4e64d27b0a2": {
-        "type": "{\noptional \"protocol\": (\"http\" or \"https\" or \"ws\" or \"wss\"), \n\"hostname\": string,\noptional \"port\": number,\noptional \"path\": string,\noptional \"query\": string,\noptional \"hash\": string\n}",
+        "type": "{optional \"protocol\": (\"http\" or \"https\" or \"ws\" or \"wss\"), \"hostname\": string, optional \"port\": number, optional \"path\": string, optional \"query\": string, optional \"hash\": string}",
         "name": "params",
         "description": "The url parameters used for create an url string."
       }

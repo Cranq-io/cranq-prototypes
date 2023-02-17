@@ -25,7 +25,7 @@
         "name": "written"
       },
       "31b24ad1-7133-4085-9404-793adda54770": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}"
       }

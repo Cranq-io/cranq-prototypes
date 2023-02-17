@@ -144,24 +144,24 @@
   "interface": {
     "inputs": {
       "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
-        "type": "{\n  optional \"projectIds\": (string or string[]),\n  optional  \"projectKeys\" : (string or string[]),\n  optional  \"issuetypeIds\" : (string or string[]),\n  optional  \"issuetypeNames\" : (string or string[]),\n  optional  \"expand\" : string\n}",
+        "type": "{optional \"projectIds\": (string or string[]), optional \"projectKeys\": (string or string[]), optional \"issuetypeIds\": (string or string[]), optional \"issuetypeNames\": (string or string[]), optional \"expand\": string}",
         "name": "query",
         "description": "Receives parameters for the metadata query.\n\nSee: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-get"
       },
       "c962b98a-447b-407d-bda9-9c1d38df3588": {
-        "type": "{\n   \"email\": string,\n   \"apiToken\": string,\n   \"jiraDomain\": string\n}",
+        "type": "{\"email\": string, \"apiToken\": string, \"jiraDomain\": string}",
         "name": "params",
         "description": "Receives generic parameters for accessing the JIRA API."
       }
     },
     "outputs": {
       "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
-        "type": "{\n  \"projects\": {\n     \"self\": string,\n     \"id\": string,\n     \"key\": string,\n     \"name\": string,\n     \"avatarUrls\": {string:string},\n     \"issuetypes\": {string: any}[]\n   }[]\n}",
+        "type": "{\"projects\": {\"self\": string, \"id\": string, \"key\": string, \"name\": string, \"avatarUrls\": {string: string}, \"issuetypes\": {string: any}[]}[]}",
         "name": "data",
         "description": "Sends details of projects and issue types within projects.\n\nSee: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-get"
       },
       "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "4b03e3b6-ed24-4d0f-9889-4a523e1aa747": {

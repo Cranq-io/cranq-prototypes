@@ -8,7 +8,7 @@
         "description": ""
       },
       "21dc533c-92b5-4354-9d81-1cfd46f095c8": {
-        "type": "{\n    \"providerUrl\": string, \n    \"privateKey\": string\n}",
+        "type": "{\"providerUrl\": string, \"privateKey\": string}",
         "name": "connect credentials",
         "description": ""
       },
@@ -22,13 +22,13 @@
         "name": "only estimate gas"
       },
       "9c78c7d9-7aee-4e04-92d6-5342e133d6b5": {
-        "type": " {\n    \"gas\": number, \n    optional \"gasPrice\": string\n  }",
+        "type": "{\"gas\": number, optional \"gasPrice\": string}",
         "name": "settings"
       }
     },
     "outputs": {
       "3483ab3b-5295-4761-8832-ec968f7399d9": {
-        "type": "{ \n  \"field\": (\n    \"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\" or \"error\"\n  ),\n\"data\": any\n}",
+        "type": "{\"field\": (\"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\" or \"error\"), \"data\": any}",
         "name": "events",
         "description": "Multiplexed events. Useful for monitoring progress.\nUse Demultiplexer to separate them."
       },

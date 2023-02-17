@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "3f02e1e7-4750-42ed-ae51-044f6f6d7694": {
-        "type": "(\n  {\"providerUrl\": string} \n  or string\n)",
+        "type": "({\"providerUrl\": string} or string)",
         "name": "provider url",
         "description": "Receives the connection string to a node provider.\nThe received data can be single string or can be a wider credentials record that has a providerUrl field."
       }

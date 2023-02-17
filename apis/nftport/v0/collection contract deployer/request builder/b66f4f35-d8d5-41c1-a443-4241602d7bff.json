@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "e2a7b1a3-82a7-412d-aa95-a7ede386e225": {
-        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"max_supply\": number,\n  \"mint_price\": number,\n  \"tokens_per_mint\": number,\n  \"owner_address\": string,\n  \"treasury_address\": string,\n  \"public_mint_start_date\": string,\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"prereveal_token_uri\": string,\n  optional \"presale_mint_start_date\": string,\n  optional \"presale_whitelisted_addresses\": string[],\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
+        "type": "{\"name\": string, \"symbol\": string, \"max_supply\": number, \"mint_price\": number, \"tokens_per_mint\": number, \"owner_address\": string, \"treasury_address\": string, \"public_mint_start_date\": string, optional \"metadata_updatable\": boolean, optional \"base_uri\": string, optional \"prereveal_token_uri\": string, optional \"presale_mint_start_date\": string, optional \"presale_whitelisted_addresses\": string[], optional \"royalties_share\": number, optional \"royalties_address\": string}",
         "name": "contract",
         "description": ""
       },
       "679f7d97-9d3d-46ca-85af-a4d0e2bbf5a9": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": ""
       }

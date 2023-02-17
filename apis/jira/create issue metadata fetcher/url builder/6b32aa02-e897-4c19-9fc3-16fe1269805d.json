@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "50b3cd2d-54d4-47fc-9663-4012cb264c53": {
-        "type": "{\n  optional \"projectIds\": string[],\n  optional  \"projectKeys\" : string[],\n  optional  \"issuetypeIds\" : string[],\n  optional  \"issuetypeNames\" : string[],\n  optional  \"expand\" : string\n}",
+        "type": "{optional \"projectIds\": string[], optional \"projectKeys\": string[], optional \"issuetypeIds\": string[], optional \"issuetypeNames\": string[], optional \"expand\": string}",
         "name": "query",
         "description": "Receives issue query."
       },
       "e7e62c82-fd60-46f9-8da8-9b6360525c59": {
-        "type": "{\n   \"jiraDomain\": string\n}",
+        "type": "{\"jiraDomain\": string}",
         "name": "params",
         "description": "Receives URL parameters"
       }

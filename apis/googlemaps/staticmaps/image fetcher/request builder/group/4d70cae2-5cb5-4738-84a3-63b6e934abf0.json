@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "46654f1d-e3d7-4d37-a91d-0d0c9e14c9e2": {
-        "type": "{\n  \"center\": [number, number],\n  \"zoom\": number\n}",
+        "type": "{\"center\": [number, number], \"zoom\": number}",
         "name": "center area",
         "description": "[Inherited from port `unsplit` of `splitter`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
       }
     },
     "outputs": {
       "6e5f3126-78af-43bf-949f-4b36197e5558": {
-        "type": "{\n  \"center\": string,\n  \"zoom\": string\n}",
+        "type": "{\"center\": string, \"zoom\": string}",
         "name": "area query params",
         "description": "[Inherited from port `joined` of `build params 1`] \nSends the resulting joined dictionary.\n\nExample:\n{\"first\": 1,\"third\": 3}"
       }

@@ -96,14 +96,14 @@
         "description": "Receives the amount of the transfer in wei.\n\nOn Ethereum networks 10^18 wei equals 1Eth."
       },
       "9a638ef5-f802-4f52-8d34-ba0e59d6ea2c": {
-        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
+        "type": "{\"providerUrl\": string, optional \"privateKey\": string}",
         "name": "credentials",
         "description": "The credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask."
       }
     },
     "outputs": {
       "b74870c9-c6cd-4434-bff6-bb4263254428": {
-        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n  ),\n  \"data\": any\n}",
+        "type": "{\"field\": (\"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\"), \"data\": any}",
         "name": "events",
         "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
       },

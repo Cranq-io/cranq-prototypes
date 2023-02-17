@@ -9,19 +9,19 @@
         "description": "Receives a signal indicating the success of processing the webhook request.\n\nTruthy indicates success, falsy indicates failure."
       },
       "b51aea51-092d-4e26-9988-c4f4a49ca794": {
-        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"route\": string,\n  optional \"host\": string,\n  optional \"timeout\": number\n}",
+        "type": "{\"serverId\": string, \"port\": number, \"route\": string, optional \"host\": string, optional \"timeout\": number}",
         "name": "params",
         "description": "Receives static parameters for the webhook endpoint."
       }
     },
     "outputs": {
       "92a129a0-11e0-4d8f-9999-096f66dcb04a": {
-        "type": "{\n  \"update_id\": number,\n  optional \"message\": {\n    \"message_id\": number,\n    optional \"from\": {\n      \"id\": number,\n      \"is_bot\": boolean,\n      optional \"first_name\": string,\n      optional \"last_name\": string,\n      optional \"username\": string,\n      optional \"language_code\": string\n    },\n    \"date\": number,\n    \"chat\": {\n      \"id\": number,\n      \"type\": (\n        \"private\"\n        or \"group\"\n        or \"supergroup\"\n        or \"channel\"\n      ),\n      optional \"username\": string,\n      optional \"first_name\": string,\n      optional \"last_name\": string\n    },\n    optional \"text\": string,\n    optional \"audio\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"duration\": number\n    },\n    optional \"document\": {\n      \"file_id\": string,\n      \"file_unique_id\": string\n    },\n    optional \"photo\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number\n    }[],\n    optional \"video\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number,\n      \"duration\": number\n    }\n  }\n}",
+        "type": "{\"update_id\": number, optional \"message\": {\"message_id\": number, optional \"from\": {\"id\": number, \"is_bot\": boolean, optional \"first_name\": string, optional \"last_name\": string, optional \"username\": string, optional \"language_code\": string}, \"date\": number, \"chat\": {\"id\": number, \"type\": (\"private\" or \"group\" or \"supergroup\" or \"channel\"), optional \"username\": string, optional \"first_name\": string, optional \"last_name\": string}, optional \"text\": string, optional \"audio\": {\"file_id\": string, \"file_unique_id\": string, \"duration\": number}, optional \"document\": {\"file_id\": string, \"file_unique_id\": string}, optional \"photo\": {\"file_id\": string, \"file_unique_id\": string, \"width\": number, \"height\": number}[], optional \"video\": {\"file_id\": string, \"file_unique_id\": string, \"width\": number, \"height\": number, \"duration\": number}}}",
         "name": "update",
         "description": "Sends the update received by the webhook."
       },
       "cbcc67ea-adc3-4bef-8fb7-196f49b422dc": {
-        "type": "{\n  \"baseUrl\": string,\n  \"body\": any,\n  \"cookies\": any,\n  \"hostname\": string,\n  \"headers\": {string: string},\n  \"ip\": string,\n  \"ips\": string[],\n  \"method\": \"POST\",\n  \"originalUrl\": string,\n  \"params\": {string: string},\n  \"path\": string,\n  \"protocol\": (\n    \"http\"\n    or \"https\"\n  ),\n  \"query\": {string: any},\n  \"route\": string,\n  \"secure\": boolean,\n  \"signedCookies\": any,\n  \"stale\": boolean,\n  \"subdomains\": string[],\n  \"xhr\": boolean\n}",
+        "type": "{\"baseUrl\": string, \"body\": any, \"cookies\": any, \"hostname\": string, \"headers\": {string: string}, \"ip\": string, \"ips\": string[], \"method\": \"POST\", \"originalUrl\": string, \"params\": {string: string}, \"path\": string, \"protocol\": (\"http\" or \"https\"), \"query\": {string: any}, \"route\": string, \"secure\": boolean, \"signedCookies\": any, \"stale\": boolean, \"subdomains\": string[], \"xhr\": boolean}",
         "name": "request",
         "description": "Sends original request."
       }

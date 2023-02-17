@@ -9,7 +9,7 @@
   "interface": {
     "inputs": {
       "9b36effb-8108-4c7a-a27d-4f3f986ca2bb": {
-        "type": "{\n  \"path\": string,\n  \"base64\": string\n}",
+        "type": "{\"path\": string, \"base64\": string}",
         "name": "path & base64"
       }
     },
@@ -19,7 +19,7 @@
         "name": "written"
       },
       "b78360a0-85b0-47ad-94cd-6cb4315802cb": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

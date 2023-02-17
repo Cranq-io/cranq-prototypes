@@ -16,13 +16,13 @@
   "interface": {
     "inputs": {
       "3a55b8dd-6eec-44c8-acae-4b1e60f90d7a": {
-        "type": "{\n\"contracts\": any, \n\"outputList\": string[], \"compileSettings\": {\n  \"includeRoots\": string[], \n  \"solidityVersion\": string, \n  \"compileOptions\": {string: any}\n}\n}",
+        "type": "{\"contracts\": any, \"outputList\": string[], \"compileSettings\": {\"includeRoots\": string[], \"solidityVersion\": string, \"compileOptions\": {string: any}}}",
         "name": "data"
       }
     },
     "outputs": {
       "6e0ac013-ee3c-4e0e-8b72-8eeb2419795c": {
-        "type": "{\n  string: {\n    \"abi\": {string:any}[],\n    \"evm\": {\n      \"bytecode\": {\n        \"object\": string\n      }\n    }\n  }\n}",
+        "type": "{string: {\"abi\": {string: any}[], \"evm\": {\"bytecode\": {\"object\": string}}}}",
         "name": "compiled contracts"
       },
       "b73438f2-808b-4980-9902-c63866012a5d": {

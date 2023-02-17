@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "6560601a-ab0f-472e-9db3-627bbfc74141": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, \"validation_token\": string}",
         "name": "subscription",
         "description": ""
       },

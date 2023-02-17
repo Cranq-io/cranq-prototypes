@@ -149,12 +149,12 @@
   "interface": {
     "inputs": {
       "d2574f8d-3ee8-4a8c-9977-0634e5092c9c": {
-        "type": "({\n  optional \"type\": \"center\",\n  \"center\": [number, number],\n  \"zoom\": number\n}\nor\n{\n  \"type\": \"path\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"weight\": number,\n    optional \"color\": string,\n    optional \"fillColor\": string,\n    optional \"geodesic\": boolean\n  }\n}\nor\n{\n  \"type\": \"markers\",\n  \"points\": [number, number][],\n  \"style\": {\n    optional \"size\": (\"tiny\" or \"mid\" or \"small\"),\n    optional \"color\": string,\n    optional \"label\": string\n  }\n})",
+        "type": "({optional \"type\": \"center\", \"center\": [number, number], \"zoom\": number} or {\"type\": \"path\", \"points\": [number, number][], \"style\": {optional \"weight\": number, optional \"color\": string, optional \"fillColor\": string, optional \"geodesic\": boolean}} or {\"type\": \"markers\", \"points\": [number, number][], \"style\": {optional \"size\": (\"tiny\" or \"mid\" or \"small\"), optional \"color\": string, optional \"label\": string}})",
         "name": "area",
         "description": "Defines the area to be captured."
       },
       "5a8f796e-f323-4f40-ab8d-bb77bdb42817": {
-        "type": "{\n  \"apiKey\": string,\n  \"size\": [number, number],\n  optional \"scale\": number,\n  optional \"format\": (\"png8\" or \"png\" or \"png32\" or \"gif\" or \"jpg\" or \"jpg-baseline\"),\n  optional \"mapType\": (\"roadmap\" or \"satellite\" or \"hybrid\" or \"terrain\"),\n  optional \"language\": string,\n  optional \"region\": string\n}",
+        "type": "{\"apiKey\": string, \"size\": [number, number], optional \"scale\": number, optional \"format\": (\"png8\" or \"png\" or \"png32\" or \"gif\" or \"jpg\" or \"jpg-baseline\"), optional \"mapType\": (\"roadmap\" or \"satellite\" or \"hybrid\" or \"terrain\"), optional \"language\": string, optional \"region\": string}",
         "name": "params",
         "description": "Optional params are ignored ATM."
       }
@@ -169,7 +169,7 @@
         "name": "response"
       },
       "afe577cc-a4c4-4afe-9490-cdded0e3d3a7": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

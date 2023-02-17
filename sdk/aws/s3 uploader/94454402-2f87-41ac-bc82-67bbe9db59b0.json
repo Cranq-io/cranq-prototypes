@@ -25,12 +25,12 @@
     },
     "outputs": {
       "9def3ecf-d9cd-4ea1-81fb-26622b2b0f5f": {
-        "type": "{\n  \"ETag\": string,\n  \"Location\": string,\n  \"key\": string,\n  \"Key\": string,\n  \"Bucket\": string\n} ",
+        "type": "{\"ETag\": string, \"Location\": string, \"key\": string, \"Key\": string, \"Bucket\": string}",
         "name": "done",
         "description": "Sent the data about the successful upload.\n\nExample:\n{\n  \"ETag\": \"\\\"7c36f14325954cd6cf996f8ee1261d56\\\"\",\n  \"Location\": \"https://bucket-name.s3.amazonaws.com/test.txt\",\n  \"key\": \"test.txt\",\n  \"Key\": \"test.txt\",\n  \"Bucket\": \"bucket-name\"\n} "
       },
       "25c3af35-75e6-46b7-bd00-0555efdcc9b7": {
-        "type": "{\n\"error\": string\n}",
+        "type": "{\"error\": string}",
         "name": "error"
       }
     }

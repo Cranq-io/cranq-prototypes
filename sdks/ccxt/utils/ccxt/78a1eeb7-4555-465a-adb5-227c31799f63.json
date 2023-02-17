@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "faa04647-7b0d-4187-86ff-d39034e4b0c4": {
-        "type": "{\n  \"name\": (\"loadMarkets\" or \"fetchOrderBook\" or \"fetchOrderBooks\" or \"fetchTicker\" or \"fetchTickers\" or \"fetchOHLCV\" or \"fetchTrades\" or \"fetchTime\" or \"fetchStatus\" or \"fetchBorrowRate\" or \"fetchBorrowRates\" or \"fetchBorrowRatesPerSymbol\" or \"fetchBorrowRateHistory\" or \"fetchMarketLeverageTiers\" or \"fetchFundingRate\" or \"fetchFundingRateHistory \" or \"fetchOpenInterestHistory\" or \"fetchPositionsRisk\"\nor \"createOrder\"\nor \"fetchBalance\"\nor \"fetchOrder\"\nor \"fetchOrders\"\nor \"fetchOpenOrders\"\nor \"fetchClosedOrders\"\nor \"cancelOrder\"\nor \"fetchMyTrades\"\n),\n  \"parameters\" :{\n     \"exchange\": {\n       \"id\": string,\n       optional \"credentials\": {\n         \"apiKey\": string,\n         \"secret\": string,\n         optional \"uid\": string,\n         optional \"password\": string\n       },\n       optional \"sandboxMode\": boolean\n    }\n  }\n}",
+        "type": "{\"name\": (\"loadMarkets\" or \"fetchOrderBook\" or \"fetchOrderBooks\" or \"fetchTicker\" or \"fetchTickers\" or \"fetchOHLCV\" or \"fetchTrades\" or \"fetchTime\" or \"fetchStatus\" or \"fetchBorrowRate\" or \"fetchBorrowRates\" or \"fetchBorrowRatesPerSymbol\" or \"fetchBorrowRateHistory\" or \"fetchMarketLeverageTiers\" or \"fetchFundingRate\" or \"fetchFundingRateHistory \" or \"fetchOpenInterestHistory\" or \"fetchPositionsRisk\" or \"createOrder\" or \"fetchBalance\" or \"fetchOrder\" or \"fetchOrders\" or \"fetchOpenOrders\" or \"fetchClosedOrders\" or \"cancelOrder\" or \"fetchMyTrades\"), \"parameters\": {\"exchange\": {\"id\": string, optional \"credentials\": {\"apiKey\": string, \"secret\": string, optional \"uid\": string, optional \"password\": string}, optional \"sandboxMode\": boolean}}}",
         "name": "action"
       }
     },
@@ -26,7 +26,7 @@
         "name": "data"
       },
       "de97ff64-6274-4fd2-af01-2a8e652a2188": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

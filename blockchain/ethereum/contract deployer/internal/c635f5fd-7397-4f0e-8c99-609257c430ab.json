@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "d4d6f2e9-1a7a-4bc8-8d8c-c0c8d0eacc68": {
-        "type": "{\n  \"contract\": {\n    \"abi\": {string:any}[],\n    \"evm\": {\n      \"bytecode\": {\n        \"object\": string\n      }\n    }\n  },\n\"contractParams\": string[], \n\"settings\":  {\n    \"providerUrl\": string, \n    \"privateKey\": string,\n    \"gas\": number, \n    optional \"gasPrice\": string\n  }, \n\"estimateGas\": boolean\n}",
+        "type": "{\"contract\": {\"abi\": {string: any}[], \"evm\": {\"bytecode\": {\"object\": string}}}, \"contractParams\": string[], \"settings\": {\"providerUrl\": string, \"privateKey\": string, \"gas\": number, optional \"gasPrice\": string}, \"estimateGas\": boolean}",
         "name": "parameters"
       }
     },
@@ -27,17 +27,17 @@
         "description": "Sends out the transaction hash of the deployment received from the chain."
       },
       "b81cd0dc-f7c4-43c4-8579-7e2c38cff351": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "receipt",
         "description": "Sends out the receipt of the deployment as received from the chain."
       },
       "64e1ca3c-3e06-4ed5-9563-d71098ea99f4": {
-        "type": "{\n  \"confirmationNumber\": number,\n  \"receipt\": {\n    \"contractAddress\": string\n  },\n  \"latestBlockHash\": string\n}",
+        "type": "{\"confirmationNumber\": number, \"receipt\": {\"contractAddress\": string}, \"latestBlockHash\": string}",
         "name": "confirmation",
         "description": "Sends out the confirmation(s) of the deployment as received from the chain."
       },
       "dc68467f-bdb9-4d16-9eb7-0d4d366b95ff": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "contract",
         "description": "Sends out the deployed contract instance."
       },

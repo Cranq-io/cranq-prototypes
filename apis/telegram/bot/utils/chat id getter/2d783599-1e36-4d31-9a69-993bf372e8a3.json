@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "0159dbde-b435-4ec6-beaa-e87878380924": {
-        "type": "{\n  optional \"message\": {\n    \"chat\": {\n      \"id\": number\n    }\n  }\n}",
+        "type": "{optional \"message\": {\"chat\": {\"id\": number}}}",
         "name": "update",
         "description": "Receives update record. Type documents minimal required input. For full field types see https://core.telegram.org/bots/api#update."
       }

@@ -4,19 +4,19 @@
   "interface": {
     "inputs": {
       "5486ea8d-2ceb-4645-8086-54ab6c3108f7": {
-        "type": "{\n  \"currencyPair\": string,\n  optional \"depth\": number\n}",
+        "type": "{\"currencyPair\": string, optional \"depth\": number}",
         "name": "query",
         "description": ""
       }
     },
     "outputs": {
       "4280d0c5-e89f-4a50-9193-3dad04b066f9": {
-        "type": "{\n  \"asks\": [string, number][],\n  \"bids\": [string, number][],\n  \"isFrozen\": string,\n  \"postOnly\": string,\n  \"seq\": number\n}",
+        "type": "{\"asks\": [string, number][], \"bids\": [string, number][], \"isFrozen\": string, \"postOnly\": string, \"seq\": number}",
         "name": "data",
         "description": ""
       },
       "f1d017b6-2d2e-46c0-a541-2404068691c3": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "55813496-c674-4e60-ae80-57d3484d56ce": {

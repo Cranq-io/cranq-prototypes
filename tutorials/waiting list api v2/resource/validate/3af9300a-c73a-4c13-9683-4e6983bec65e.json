@@ -3,16 +3,16 @@
   "interface": {
     "inputs": {
       "dae7b830-396f-479a-9331-55cc629af727": {
-        "type": "{\n  \"serverId\": string,\n  \"port\": number\n}",
+        "type": "{\"serverId\": string, \"port\": number}",
         "name": "API params"
       },
       "929e8d94-bfe4-4701-9e7f-b7a46b6ad482": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "AT params",
         "description": ""
       },
       "ffd198fd-5bb2-4edf-9d32-6ebfbe574de0": {
-        "type": "{ \"RedirectSuccess\": string, \"RedirectError\": string } ",
+        "type": "{\"RedirectSuccess\": string, \"RedirectError\": string}",
         "name": "Env params"
       }
     },

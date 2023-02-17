@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "e7587b53-b89e-42de-b35e-f231363bc174": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\noptional \"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, optional \"validation_token\": string}",
         "name": "subscription",
         "description": ""
       }
     },
     "outputs": {
       "0e5301d7-cb30-4ef0-829e-0f6f7b4c3fe5": {
-        "type": "{\n\"email\": string,\n\"validated\": false,\noptional \"validation_token\": string\n}",
+        "type": "{\"email\": string, \"validated\": false, optional \"validation_token\": string}",
         "name": "on not validated",
         "description": ""
       },
       "d0d26749-16eb-4f57-a8b4-51d7781f4787": {
-        "type": "{\n\"email\": string,\n\"validated\": true,\noptional \"validation_token\": string\n}",
+        "type": "{\"email\": string, \"validated\": true, optional \"validation_token\": string}",
         "name": "on validated",
         "description": ""
       }

@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "ea527587-25ce-410a-b8c8-cb087d5ada52": {
-        "type": "{\n  \"records\": {\n    \"id\": string,\n    \"createdTime\": string,\n    \"fields\": {string: any}\n  }[]\n}",
+        "type": "{\"records\": {\"id\": string, \"createdTime\": string, \"fields\": {string: any}}[]}",
         "name": "resp. data",
         "description": "Receives the JSON body of the record insertion response from AirTable.\n\nExample:\n```json\n{\n  \"records\": [\n    {\n      \"id\": \"rec5GZcokQryzdZ4v\",\n      \"createdTime\": \"2022-09-29T13:22:12.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    },\n    {\n      \"id\": \"recAudXcaHdms3eSR\",\n      \"createdTime\": \"2022-09-29T13:18:10.000Z\",\n      \"fields\": {\n        \"string column\": \"value0\",\n        \"number column\": 0\n      }\n    }\n  ]\n}\n```"
       }

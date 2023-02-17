@@ -4,17 +4,17 @@
   "interface": {
     "inputs": {
       "90e2012d-d791-4c4d-b65b-a05e7e7b891a": {
-        "type": "{\n  \"email\": string,\n  \"key\": string\n}",
+        "type": "{\"email\": string, \"key\": string}",
         "name": "auth data",
         "description": "Receives the authentication data of service account.\n\nExample: \n{\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}"
       },
       "36dad606-38dd-4c0d-94ca-a3fa326a1c81": {
-        "type": "{\n   \"file meta data\": {string:any},\n   \"supports all drives\": boolean\n}",
+        "type": "{\"file meta data\": {string: any}, \"supports all drives\": boolean}",
         "name": "drive data",
         "description": "Receives the data of the drive where the spreadsheet is stored.\n\n\nExample:\n{\n  \"file meta data\": {\n    \"name\": \"Test!\",\n    \"driveId\": \"0AFITUOLHhs3T_ID\",\n    \"corpora\": \"drive\",\n    \"parents\": [\n      \"1_ghBRrDju9oMNSy8DqqNtOEfDRIVE_Id\"\n    ]\n  },\n  \"supports all drives\": true\n}"
       },
       "32114ed5-c5df-4fea-98fc-7c9a2a305518": {
-        "type": "{\n  \"update meta data\": {   string: any},\n  \"values\": any[][]\n}",
+        "type": "{\"update meta data\": {string: any}, \"values\": any[][]}",
         "name": "spreadsheet data",
         "description": "Receives the spreadsheet metadata.\n\n{\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\"A1 value\", \"B1 value\"],\n    [\"A2 value\", \"B2 value\"]\n  ]\n}\n"
       }

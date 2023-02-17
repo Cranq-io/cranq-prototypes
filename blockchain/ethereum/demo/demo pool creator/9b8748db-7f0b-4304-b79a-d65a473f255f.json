@@ -268,7 +268,7 @@
   "interface": {
     "inputs": {
       "af501b12-aec0-4fbd-9576-3da317663cb8": {
-        "type": "{\n  \"address\": string,\n  \"abi\": {string: any}\n}",
+        "type": "{\"address\": string, \"abi\": {string: any}}",
         "name": "router contract",
         "description": "Receives the address of the router contract and its ABI."
       },
@@ -278,7 +278,7 @@
         "description": "Receives the address of a wallet that will initially own the created demo ERC20 tokens."
       },
       "47834e14-a7f7-46e8-b335-198770f544e5": {
-        "type": "{\n  \"providerUrl\": string,\n  \"privateKey\": string\n}",
+        "type": "{\"providerUrl\": string, \"privateKey\": string}",
         "name": "credentials",
         "description": "Receives a connect string to a node provider to the actual blockchain and the private key for an account that deploys test tokens and interacts with the DEX router."
       }

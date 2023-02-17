@@ -9,24 +9,24 @@
         "description": "Receives the message receiver phone number."
       },
       "8c46f0b2-d85e-4af3-af01-17a0ce07cd8c": {
-        "type": "{\n  \"data\": string,\n  \"fileName\": string,\n  \"contentType\": string\n}",
+        "type": "{\"data\": string, \"fileName\": string, \"contentType\": string}",
         "name": "file",
         "description": "Recives the meta data of the file to be uploaded.\n\nThe data field is base64-encoded binary file content.\n\nSupported content types: https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media/#supported-media-types"
       },
       "4680886c-ea34-4dc9-8217-c7aaab5b553d": {
-        "type": "{\n  \"access_token\": string,\n  \"phone_number_id\": string\n}",
+        "type": "{\"access_token\": string, \"phone_number_id\": string}",
         "name": "params",
         "description": "Receives generic WhatsApp API parameters."
       }
     },
     "outputs": {
       "a5c7659d-46b2-413d-b08f-8c9fa7b9d372": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends error, if any."
       },
       "e01f8335-b922-44d6-b835-b74a054c3914": {
-        "type": "{\n  \"messages\":{\"id\": string}[]\n}",
+        "type": "{\"messages\": {\"id\": string}[]}",
         "name": "data",
         "description": "Sends the message id."
       }

@@ -3,18 +3,18 @@
   "interface": {
     "inputs": {
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
+        "type": "{\"api_key\": string, optional \"chain\": \"ethereum\"}",
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       },
       "ae5c933e-9982-4178-8a66-e7434d34db57": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n    optional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[]\n}",
+        "type": "{\"contract_address\": string, \"token_id\": string, optional \"continuation\": string, optional \"page_size\": number, optional \"type\": (\"transfer\" or \"mint\" or \"burn\" or \"sale\" or \"all\")[]}",
         "name": "query"
       }
     },
     "outputs": {
       "1758023f-d14f-4097-9c6b-56ebd5ca5a7d": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, optional \"data\": any}",
         "name": "request"
       }
     }

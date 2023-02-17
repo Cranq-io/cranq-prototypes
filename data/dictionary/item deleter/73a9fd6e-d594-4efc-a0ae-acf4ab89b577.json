@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "af51c64a-620a-42e7-83e4-0497df3f0a65": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict",
         "description": "Receives the dictionary to delete the item from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
@@ -16,7 +16,7 @@
     },
     "outputs": {
       "56c7d74d-57b2-4c50-afb8-5d675e28df74": {
-        "type": "typeof`dict`",
+        "type": "typeof `dict`",
         "name": "dict",
         "description": "Sends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"fifth\": 5 }"
       }

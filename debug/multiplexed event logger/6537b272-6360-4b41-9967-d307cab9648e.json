@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "36268fed-37a0-40c5-bd24-79fab399251e": {
-        "type": "{\n\"field\": string,\n\"data\": any\n}",
+        "type": "{\"field\": string, \"data\": any}",
         "name": "multiplexed event",
         "description": "[Inherited from port `unsplit` of `splitter`] \nReceives records or tuples to be split into individual items.\n\nExamples:\n* {\"a\": 5, \"b\": 2}\n* [5, 2]"
       }

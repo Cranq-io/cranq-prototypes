@@ -4,24 +4,24 @@
   "interface": {
     "inputs": {
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string\n}",
+        "type": "{\"api_key\": string}",
         "name": "params",
         "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=user-settings#Request"
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"profile\": {\n    \"name\": string,\n    \"email\": string,\n    \"joined_date\": string\n  },\n  \"subscription_period\": {\n\t\"start_date\": string,\n\t\"end_date\": string\n  },\n  \"data_usage_and_limits\": {\n    \"data_usage\": {\n\t\toptional \"subscription_data_requests_made\": number\n\t},\n    \"data_limits\": {\n\t  optional \"subscription_data_requests_included\": number,\n      \"max_data_requests_per_second\": number,\n      \"max_data_requests_per_month\": number\n    }\n  },\n  \"minting_usage_and_limits\": {\n    \"polygon\": {\n      \"minting_usage\": {\n        \"total_nfts_minted\": number,\n\t\toptional \"subscription_nfts_minted\": number\n      },\n      \"minting_limits\": {\n        \"max_mints\": number,\n\t\toptional \"subscription_mints_included\": number\n      },\n      \"contract_deployment_usage\": {\n        \"total_contracts_deployed\": number,\n\t\toptional \"subscription_contracts_deployed\": number\n      },\n      \"contract_deployment_limits\": {\n        \"max_contracts\": number,\n\t\toptional \"subscription_contracts_included\": number\n      }\n    },\n    \"rinkeby\": {\n      \"minting_usage\": {\n        \"total_nfts_minted\": number,\n\t\toptional \"subscription_nfts_minted\": number\n      },\n      \"minting_limits\": {\n        \"max_mints\": number,\n\t\toptional \"subscription_mints_included\": number\n      },\n      \"contract_deployment_usage\": {\n        \"total_contracts_deployed\": number,\n\t\toptional \"subscription_contracts_deployed\": number\n      },\n      \"contract_deployment_limits\": {\n        \"max_contracts\": number,\n\t\toptional \"subscription_contracts_included\": number\n      }\n    }\n  }\n}",
+        "type": "{\"response\": \"OK\", \"profile\": {\"name\": string, \"email\": string, \"joined_date\": string}, \"subscription_period\": {\"start_date\": string, \"end_date\": string}, \"data_usage_and_limits\": {\"data_usage\": {optional \"subscription_data_requests_made\": number}, \"data_limits\": {optional \"subscription_data_requests_included\": number, \"max_data_requests_per_second\": number, \"max_data_requests_per_month\": number}}, \"minting_usage_and_limits\": {\"polygon\": {\"minting_usage\": {\"total_nfts_minted\": number, optional \"subscription_nfts_minted\": number}, \"minting_limits\": {\"max_mints\": number, optional \"subscription_mints_included\": number}, \"contract_deployment_usage\": {\"total_contracts_deployed\": number, optional \"subscription_contracts_deployed\": number}, \"contract_deployment_limits\": {\"max_contracts\": number, optional \"subscription_contracts_included\": number}}, \"rinkeby\": {\"minting_usage\": {\"total_nfts_minted\": number, optional \"subscription_nfts_minted\": number}, \"minting_limits\": {\"max_mints\": number, optional \"subscription_mints_included\": number}, \"contract_deployment_usage\": {\"total_contracts_deployed\": number, optional \"subscription_contracts_deployed\": number}, \"contract_deployment_limits\": {\"max_contracts\": number, optional \"subscription_contracts_included\": number}}}}",
         "name": "data",
         "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=user-settings#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": "Sends the error, if any"
       }

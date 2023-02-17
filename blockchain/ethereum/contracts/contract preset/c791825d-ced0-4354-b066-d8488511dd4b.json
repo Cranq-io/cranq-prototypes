@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {
-        "type": "{\n    \"contract template\":  string,\n    \"name to replace\":  string,\n    \"compile settings\": {\n        \"includeRoots\": string[],\n        \"solidityVersion\": string,\n        \"compileOptions\": {\n            optional \"evmVersion\": string,\n            \"optimizer\": {\n                \"enabled\": boolean,\n                \"runs\": number\n            }\n        }\n    },\n\"deploy settings\": {\n        \"gas\": number,\n        optional \"gasPrice\": number\n\n    }\n}",
+        "type": "{\"contract template\": string, \"name to replace\": string, \"compile settings\": {\"includeRoots\": string[], \"solidityVersion\": string, \"compileOptions\": {optional \"evmVersion\": string, \"optimizer\": {\"enabled\": boolean, \"runs\": number}}}, \"deploy settings\": {\"gas\": number, optional \"gasPrice\": number}}",
         "name": "data",
         "description": "Receives contents of the store. Can be set as parameter, or received as signal."
       },

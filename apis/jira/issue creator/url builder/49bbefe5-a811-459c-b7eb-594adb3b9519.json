@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "78b522ea-efc3-4de6-9f23-648c01b4c374": {
-        "type": "{\n   optional \"updateHistory\": boolean\n}",
+        "type": "{optional \"updateHistory\": boolean}",
         "name": "query"
       },
       "4dfa32c3-46ec-4fba-a2bd-0722716bcef1": {
-        "type": "{\n   \"jiraDomain\": string\n}",
+        "type": "{\"jiraDomain\": string}",
         "name": "params",
         "description": ""
       }

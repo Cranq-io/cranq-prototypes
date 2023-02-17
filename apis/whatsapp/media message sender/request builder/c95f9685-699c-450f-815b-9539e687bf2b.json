@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "273c7dd8-d00b-44c3-a279-30474c653b7c": {
-        "type": "{\n \"recipient_type\": string,\n  \"to\": string,\n  \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"),\n \"media_id\": string\n}",
+        "type": "{\"recipient_type\": string, \"to\": string, \"type\": (\"audio\" or \"document\" or \"image\" or \"sticker\" or \"video\"), \"media_id\": string}",
         "name": "message",
         "description": "Receives the dictionary to set the value in.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       },
       "af942f8e-6733-4d86-a090-a32c0adf3ef8": {
-        "type": "{\n\"access_token\": string,\n\"phone_number_id\": string\n}",
+        "type": "{\"access_token\": string, \"phone_number_id\": string}",
         "name": "params",
         "description": ""
       }

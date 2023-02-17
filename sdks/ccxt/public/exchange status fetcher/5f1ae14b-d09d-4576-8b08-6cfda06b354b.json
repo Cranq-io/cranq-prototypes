@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
-        "type": "{\n  \"id\": string\n}",
+        "type": "{\"id\": string}",
         "name": "exchange",
         "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n{\"id\": \"upbit\"}\n```"
       },
       "958e1641-dd76-41a7-a436-92290000eb61": {
-        "type": "{\n  optional \"params\": {string: any}\n}",
+        "type": "{optional \"params\": {string: any}}",
         "name": "query",
         "description": "Received the orderbooks parameters to be fetched.\n\nExample:\n```\n{\n}\n```"
       }
     },
     "outputs": {
       "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
-        "type": "{\n    \"status\": (\"ok\" or \"shutdown\" or \"error\" or \"maintenance\"),\n    optional \"updated\": number,\n    optional \"eta\": string,\n    optional \"url\": string\n}",
+        "type": "{\"status\": (\"ok\" or \"shutdown\" or \"error\" or \"maintenance\"), optional \"updated\": number, optional \"eta\": string, optional \"url\": string}",
         "name": "data",
         "description": "Sends the latest known information on the availability of the exchange API.\n\nExample:\n```\n{\n  \"status\": \"ok\"\n}\n```\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#exchange-status-structure"
       },
       "e776d410-3c57-4114-8189-1ed584a01974": {
-        "type": "typeof `error`of `ccxt`",
+        "type": "typeof `error` of `ccxt`",
         "name": "error"
       }
     }

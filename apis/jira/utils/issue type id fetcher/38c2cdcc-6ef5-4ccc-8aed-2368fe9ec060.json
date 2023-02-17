@@ -13,7 +13,7 @@
         "description": "Receives the name of the issue type.\n\nExample: \"Bug\""
       },
       "1d26f894-3129-4063-8c67-4ee24d1704d8": {
-        "type": "{\n   \"email\": string,\n   \"apiToken\": string,\n   \"jiraDomain\": string\n}",
+        "type": "{\"email\": string, \"apiToken\": string, \"jiraDomain\": string}",
         "name": "params",
         "description": "Receives generic parameters for accessing the JIRA API."
       }
@@ -25,7 +25,7 @@
         "description": "Sends an ID for the specified issue type."
       },
       "faaacf8b-09b8-43e8-a8d2-89c7d867cf54": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends original response."
       },

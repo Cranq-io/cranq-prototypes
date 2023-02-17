@@ -16,14 +16,14 @@
   "interface": {
     "inputs": {
       "81b80c35-7ed9-461d-8730-3a7c9ca2e688": {
-        "type": "{\n  \"credentials\":  {\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n  },\n  \"transaction\": {\n     string: string\n  }\n}",
+        "type": "{\"credentials\": {\"providerUrl\": string, optional \"privateKey\": string}, \"transaction\": {string: string}}",
         "name": "transaction_base",
         "description": "The credentials field receives a record containing \n- a connection url to a node provider of the given chain\n- a private key for a sender account. If undefined it is expected the user wants to use a wallet connector like Metamask.\n\nThe transaction field receives an object with fields for the transaction that are known by the sender.\nThe input is not expected to be a completely filled transaction, it will be completed by this node: the nonce will be added, and (optionally) the from field or gas estimate. "
       }
     },
     "outputs": {
       "801a1af3-30dd-4e0a-98b7-1a03d5c6aab3": {
-        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n    or \"error\"\n  ),\n  \"data\": any\n}",
+        "type": "{\"field\": (\"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\" or \"error\"), \"data\": any}",
         "name": "events"
       },
       "a509fd73-6ea1-41f7-990d-c28e20bafbd6": {

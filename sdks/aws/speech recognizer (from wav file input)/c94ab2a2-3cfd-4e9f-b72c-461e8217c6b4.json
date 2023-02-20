@@ -69,7 +69,7 @@
       "081ff324-ae71-4409-8319-aa4d9de66ef2": {
         "type": "string",
         "name": "wav file path",
-        "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\n\ne.g.: \"/Users/user1/AzureSpeech/samples/speech.wav\""
+        "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\n\ne.g.: \"/Users/user1/AWS_speech/samples/speech.wav\""
       },
       "a05bf83f-4203-45b9-b234-06810d3d5636": {
         "type": "{\"accessKeyId\": string, \"secretAccessKey\": string, \"region\": string, optional \"language\": string}",
@@ -91,7 +91,7 @@
       "84d3e051-2427-4897-98d7-c50fa39397fd": {
         "type": "{\"error\": string, \"details\": any}",
         "name": "error",
-        "description": "Sends any error that might have occurred during the API call."
+        "description": "Sends error, if any."
       }
     }
   },

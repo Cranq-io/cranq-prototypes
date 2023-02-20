@@ -89,7 +89,7 @@
         "description": "Sends the result of each chunk of the audio, as soon as part of the recognition is ready. Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data."
       },
       "84d3e051-2427-4897-98d7-c50fa39397fd": {
-        "type": "{\"error\": string}",
+        "type": "{\"msg\": string,\n\"error\": string}",
         "name": "error",
         "description": "Sends any error that might have occurred during the API call."
       }

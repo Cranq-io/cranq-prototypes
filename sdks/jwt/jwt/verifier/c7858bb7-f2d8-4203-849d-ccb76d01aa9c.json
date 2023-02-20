@@ -1,0 +1,81 @@
+{
+  "name": "sdks/jwt/JWT/Verifier",
+  "description": "Verifies the JWT token.\n\nMore:\nhttps://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback",
+  "interface": {
+    "inputs": {
+      "e1704c28-bc27-4a21-855f-94631c333cfd": {
+        "type": "string",
+        "name": "token",
+        "description": "Receives the JWT token to be verified.\n\nExample:\n```\n\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2NzY5MTAyOTIsImV4cCI6MTY3NjkxMDQxMn0.rBayWKAETkf9AZaduzjbYfv6684Du8dfH23sQzXuaHU\"\n```"
+      },
+      "76318593-02a9-4f1d-8330-753f01f4cee7": {
+        "type": "string",
+        "name": "secretOrPrivateKey",
+        "description": "Receives the secret for HMAC algorithms or the PEM encoded private key for RSA and ECDSA.\n\nExample:\n```\nHASH\n```"
+      },
+      "1d260e13-512e-43a0-9a87-ca1d85735ff6": {
+        "type": "{\n  optional \"algorithm\": string,\n  optional \"audience\": string,\n  optional \"complete\": boolean,\n  optional \"issuer\": string,\n  optional \"jwtid\": string,\n  optional \"ignoreExpiration\": boolean,\n  optional \"ignoreNotBefore\": boolean,\n optional \"subject\": string,\n  optional \"clockTolerance\": number,\n  optional \"maxAge\": (string or number),\n  optional \"clockTimestamp\":  number,\n  optional \"nonce \":  string,\n  optional \"allowInvalidAsymmetricKeyTypes\": boolean\n}",
+        "name": "options",
+        "description": "Receives verify options.\n\nExample:\n```\n{ \n  audience: 'urn:foo'\n}\n```"
+      }
+    },
+    "outputs": {
+      "c94acdd8-374b-4967-b111-3133a133295a": {
+        "type": "{string: any}",
+        "name": "payload",
+        "description": "Sends the decoded payload if the signature is valid and optional expiration, audience, or issuer are valid.\n\nExample:\n```\n{ \"foo\": \"bar\" }\n```"
+      },
+      "4e3f5885-41fc-4b1e-8a72-dd7e365d3268": {
+        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "name": "error",
+        "description": "Sends error, if any."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "name": "node 1 copy",
+          "prototype": "1c20f905-e7e0-426c-8603-aa16b21450ba"
+        }
+      },
+      "connections": {},
+      "forwards": {
+        "inputs": {
+          "e1704c28-bc27-4a21-855f-94631c333cfd": {
+            "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+              "16a90cfa-fa8d-438b-b964-27cebbd657f1": {}
+            }
+          }
+        },
+        "outputs": {
+          "c94acdd8-374b-4967-b111-3133a133295a": {
+            "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+              "0a18ce2f-7584-4f19-96e8-bfde48a98f83": {}
+            }
+          },
+          "4e3f5885-41fc-4b1e-8a72-dd7e365d3268": {
+            "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+              "fe26a23e-3f5a-4331-ac18-d6b22c174332": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "f63ac48f-ac5d-474c-bb39-e0010ddd99f9",
+  "keywords": {
+    "http": null,
+    "authentication": null,
+    "authorization": null
+  },
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

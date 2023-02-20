@@ -1,12 +1,12 @@
 {
   "name": "sdks/jwt/JWT/Signer",
-  "description": "Signs the payload and returns as string token.",
+  "description": "Signs the payload and returns as string token.\n\nMore:\nhttps://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback",
   "interface": {
     "inputs": {
       "72a0f383-2a01-4d61-9954-2c20c2fd19c0": {
         "type": "{string:any}",
         "name": "payload",
-        "description": "Receives the payload.\n\n"
+        "description": "Receives the payload to be signed.\n\nExample:\n```\n{ \"foo\": \"bar\" }\n```"
       },
       "37ed754b-cca6-4480-a943-ee472a8e0161": {
         "type": "string",
@@ -16,7 +16,7 @@
       "84fbf37c-00bb-40a0-86b0-629127260ab9": {
         "type": "{\n  optional \"algorithm\": string,\n  optional \"expiresIn\": (string or number),\n  optional \"notBefore\": string,\n  optional \"audience\": string,\n  optional \"issuer\": string,\n  optional \"jwtid\": string,\n  optional \"subject\": string,\n  optional \"noTimestamp\": boolean,\n  optional \"header\": {string:any},\n optional \"keyid\": string,\n  optional \"mutatePayload\": boolean,\n  optional \"allowInsecureKeySizes\": boolean,\n  optional \"allowInvalidAsymmetricKeyTypes\": boolean\n}",
         "name": "options",
-        "description": "Example:\n\n```\n{\n  \"expiresIn\": 120\n}\n```"
+        "description": "Receives sign options.\n\nExample:\n\n```\n{\n  \"expiresIn\": 120\n}\n```"
       }
     },
     "outputs": {

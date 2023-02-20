@@ -2,7 +2,7 @@
   "implementations": {
     "es6-node": {
       "inputFunctions": {
-        "016a86e6-3fdf-4be5-8ac4-0480ba481103": "const {\n    PollyClient,\n    SynthesizeSpeechCommand\n} = require(\"@aws-sdk/client-polly\");\nconst {\n    writeFile\n} = require(\"fs\").promises;\n\nconst synthesis = async () => {\n    try {\n         const {\n        [\"MP3 file out path\"]: fileName,\n        text,\n        params: {\n            region,\n            language = \"\",\n            accessKeyId,\n            secretAccessKey,\n            voiceId = \"Amy\",\n            engine,\n            sampleRate\n        }\n    } = data\n      \n        const polly = new PollyClient({\n            region,\n            credentials: {\n                accessKeyId,\n                secretAccessKey,\n            },\n        });\n\n        const params = {\n            OutputFormat: \"mp3\",\n            Text: text,\n            VoiceId: voiceId,\n            ...(language ? {\n                LanguageCode: language\n            } : {}),\n            ...(engine ? {\n                Engine: engine\n            } : {}),\n            ...(sampleRate ? {\n                SampleRate: sampleRate\n            } : {})\n        };\n\n        const synthesizeSpeechCommand = new SynthesizeSpeechCommand(params);\n        \n        const audioData = await polly.send(synthesizeSpeechCommand);\n        const audioStream = audioData.AudioStream;\n        await writeFile(fileName, audioStream);\n        outputs['result'](fileName, tag);\n    } catch (err) {\n        outputs['error']({error: err}, tag);\n    }\n};\n\nsynthesis();"
+        "016a86e6-3fdf-4be5-8ac4-0480ba481103": "const {\n    PollyClient,\n    SynthesizeSpeechCommand\n} = require(\"@aws-sdk/client-polly\");\nconst {\n    writeFile\n} = require(\"fs\").promises;\n\nconst synthesis = async () => {\n    try {\n         const {\n        [\"MP3 file out path\"]: fileName,\n        text,\n        params: {\n            region,\n            language = \"\",\n            accessKeyId,\n            secretAccessKey,\n            voiceId = \"Amy\",\n            engine,\n            sampleRate\n        }\n    } = data\n      \n        const polly = new PollyClient({\n            region,\n            credentials: {\n                accessKeyId,\n                secretAccessKey,\n            },\n        });\n\n        const params = {\n            OutputFormat: \"mp3\",\n            Text: text,\n            VoiceId: voiceId,\n            ...(language ? {\n                LanguageCode: language\n            } : {}),\n            ...(engine ? {\n                Engine: engine\n            } : {}),\n            ...(sampleRate ? {\n                SampleRate: sampleRate\n            } : {})\n        };\n\n        const synthesizeSpeechCommand = new SynthesizeSpeechCommand(params);\n        \n        const audioData = await polly.send(synthesizeSpeechCommand);\n        const audioStream = audioData.AudioStream;\n        await writeFile(fileName, audioStream);\n        outputs['result'](fileName, tag);\n    } catch (err) {\n        outputs['error']({error: \"Something went wrong at speech synthesizer\", details: err}, tag);\n    }\n};\n\nsynthesis();"
       },
       "dependencies": {
         "npm": {
@@ -26,7 +26,7 @@
         "name": "result"
       },
       "034c5469-e8b1-45c4-a9b5-23853096ed19": {
-        "type": "string",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

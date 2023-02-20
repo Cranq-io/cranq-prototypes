@@ -89,7 +89,7 @@
         "description": "Sends the file name of the synthesized voice."
       },
       "0d2ed715-8cc0-4075-a406-13aaac74660b": {
-        "type": "string",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": "Sends any error that might have occurred during the API call."
       }

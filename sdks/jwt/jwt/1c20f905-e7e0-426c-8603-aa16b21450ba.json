@@ -18,7 +18,7 @@
       "16a90cfa-fa8d-438b-b964-27cebbd657f1": {
         "type": "{\n\"id\": string, \n\"options\": {string: any}\n}",
         "name": "action",
-        "description": "Receives the parameters of the action to execute.\r\n\r\nExample:\r\n```\r\n{\r\n  \"id\": \"sign\", \r\n  \"options\": {\r\n    \"payload\": { \"foo\": \"bar\" }, \r\n    \"secretOrPrivateKey\": \"HASH\",\r\n    \"options\": {\r\n      \"expiresIn\": 120\r\n    }\r\n  }\r\n}\r\n```"
+        "description": "Receives the parameters of the action to execute.\r\n\r\nExample:\r\n```\r\n{\r\n  \"id\": \"sign\", \r\n  \"options\": {\r\n    \"payload\": { \"foo\": \"bar\" }, \r\n    \"secretOrPrivateKey\": \"HASH\",\r\n    \"options\": {\r\n      \"expiresIn\": \"120\"\r\n    }\r\n  }\r\n}\r\n```"
       }
     },
     "outputs": {

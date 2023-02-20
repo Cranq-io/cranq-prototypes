@@ -1,0 +1,40 @@
+{
+  "name": "io/http/Response",
+  "type": "namedDataType",
+  "dataType": {
+    "name": "record",
+    "items": [
+      {
+        "key": {
+          "name": "string-literal",
+          "value": "status"
+        },
+        "value": {
+          "name": "number"
+        },
+        "optional": false
+      },
+      {
+        "key": {
+          "name": "string-literal",
+          "value": "headers"
+        },
+        "value": {
+          "name": "reference",
+          "label": "io/http/Response headers"
+        },
+        "optional": false
+      },
+      {
+        "key": {
+          "name": "string-literal",
+          "value": "body"
+        },
+        "value": {
+          "name": "string"
+        },
+        "optional": false
+      }
+    ]
+  }
+}

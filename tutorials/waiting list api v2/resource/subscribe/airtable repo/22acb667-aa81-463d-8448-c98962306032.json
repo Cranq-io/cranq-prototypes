@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "e79ba24c-06bc-4d19-8196-d9a82ebc69d0": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, \"validation_token\": string}",
         "name": "subscription",
         "description": ""
       },
@@ -20,7 +20,7 @@
         "description": ""
       },
       "7b151a8d-7870-4e11-972a-fb845dd793d5": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, \"validation_token\": string}",
         "name": "subscription",
         "description": ""
       }

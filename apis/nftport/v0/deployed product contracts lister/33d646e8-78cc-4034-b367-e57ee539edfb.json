@@ -4,24 +4,24 @@
   "interface": {
     "inputs": {
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
-        "type": "{\n  \"api_key\": string\n}",
+        "type": "{\"api_key\": string}",
         "name": "params",
         "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-deployed-contracts#Request"
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
-        "type": "{\n  \"response\": \"OK\",\n  \"contracts\": {\n    \"name\": string,\n    \"symbol\": string,\n    \"transaction_hash\": string,\n    \"chain\": (\"polygon\" or \"rinkeby\"),\n    \"address\": string,\n    \"owner_address\": string,\n    \"creation_date\": string,\n    \"metadata_frozen\": boolean,\n    \"tokens_burnable\": boolean,\n    \"tokens_transferable\": \n boolean,\n    \"type\": (\"erc721\" or \"erc1155\"),\n    optional \"royalties_share\": number,\n    optional \"royalties_address\": string\n  }[]\n}",
+        "type": "{\"response\": \"OK\", \"contracts\": {\"name\": string, \"symbol\": string, \"transaction_hash\": string, \"chain\": (\"polygon\" or \"rinkeby\"), \"address\": string, \"owner_address\": string, \"creation_date\": string, \"metadata_frozen\": boolean, \"tokens_burnable\": boolean, \"tokens_transferable\": boolean, \"type\": (\"erc721\" or \"erc1155\"), optional \"royalties_share\": number, optional \"royalties_address\": string}[]}",
         "name": "data",
         "description": "Sends details of the deployed contracts.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-deployed-contracts#response-body"
       },
       "384bbd6b-c13e-4fed-9724-336637c51b87": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "e14e707e-19d7-4c5a-8408-dca6b0227725": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": ""
       }

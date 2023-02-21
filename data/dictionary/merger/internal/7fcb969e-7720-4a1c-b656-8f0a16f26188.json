@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "ca5090ac-fdf0-4efd-a672-e66c52507873": {
-        "type": "{\"a\":{string:any},\"b\":{string:any}}",
+        "type": "{\"a\": {string: any}, \"b\": {string: any}}",
         "name": "a & b"
       }
     },
     "outputs": {
       "ca5f3c12-33fa-4548-997c-d8e006c5dc0b": {
-        "type": "{\nstring: (typeof `a & b`[\"a\"][string] or typeof `a & b`[\"b\"][string])\n}",
+        "type": "{string: (typeof `a & b`[\"a\"][string] or typeof `a & b`[\"b\"][string])}",
         "name": "merged"
       }
     }

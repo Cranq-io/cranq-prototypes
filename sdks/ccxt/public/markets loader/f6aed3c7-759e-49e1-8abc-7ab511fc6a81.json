@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
-        "type": "{\n  \"id\": string\n}",
+        "type": "{\"id\": string}",
         "name": "exchange",
         "description": "Received the exchange to be load.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n{\"id\": \"aax\"}\n```"
       }
     },
     "outputs": {
       "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
-        "type": "{\n    \"id\": string,\n    \"symbol\": string,\n    \"base\": string,\n    \"quote\": string,\n    \"baseId\": string,\n    \"quoteId\": string,\n    \"active\": boolean,\n    \"type\": string,\n    \"spot\": boolean,\n    \"margin\": boolean,\n    \"future\": boolean,\n    \"swap\": boolean,\n    \"option\": boolean,\n    \"contract\": boolean,\n    \"settle\": string,\n    optional \"settleId\": string,\n    \"contractSize\": number,\n    \"linear\": boolean,\n    \"inverse\": boolean,\n    \"expiry\":  number, \n    \"expiryDatetime\": string,\n    \"strike\": number,\n    \"optionType\": (\"call\" or \"put\"),\n    \"taker\": number,\n    \"maker\": number,\n    \"percentage\": boolean,\n    \"tierBased\": boolean,\n    \"feeSide\": (\"get\" or \"give\" or \"base\" or \"quote\" or \"other\"),\n    \"precision\": {          \n        \"price\": number,\n        optional \"amount\": number,\n        optional \"cost\": number\n    },\n    \"limits\": {\n        \"amount\": {\n            \"min\": number,\n            \"max\": number\n        },\n        \"price\": any,\n        \"cost\":  any,\n        \"leverage\": any\n    },\n    \"info\": any\n}",
+        "type": "{\"id\": string, \"symbol\": string, \"base\": string, \"quote\": string, \"baseId\": string, \"quoteId\": string, \"active\": boolean, \"type\": string, \"spot\": boolean, \"margin\": boolean, \"future\": boolean, \"swap\": boolean, \"option\": boolean, \"contract\": boolean, \"settle\": string, optional \"settleId\": string, \"contractSize\": number, \"linear\": boolean, \"inverse\": boolean, \"expiry\": number, \"expiryDatetime\": string, \"strike\": number, \"optionType\": (\"call\" or \"put\"), \"taker\": number, \"maker\": number, \"percentage\": boolean, \"tierBased\": boolean, \"feeSide\": (\"get\" or \"give\" or \"base\" or \"quote\" or \"other\"), \"precision\": {\"price\": number, optional \"amount\": number, optional \"cost\": number}, \"limits\": {\"amount\": {\"min\": number, \"max\": number}, \"price\": any, \"cost\": any, \"leverage\": any}, \"info\": any}",
         "name": "data",
         "description": "List of markets and trading symbols for a particular exchange \n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#market-structure"
       },
       "e776d410-3c57-4114-8189-1ed584a01974": {
-        "type": "typeof `error`of `ccxt`",
+        "type": "typeof `error` of `ccxt`",
         "name": "error"
       }
     }

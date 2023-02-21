@@ -4,18 +4,18 @@
   "interface": {
     "inputs": {
       "44e2c567-49e9-4ef1-aa29-9d8f2d80d688": {
-        "type": "{\n  \"currency\": string\n}",
+        "type": "{\"currency\": string}",
         "name": "query",
         "description": ""
       }
     },
     "outputs": {
       "340e2092-612e-4a02-9465-dc59d92a64ba": {
-        "type": "{\n  \"offers\": {\n      \"rate\": string,\n      \"amount\": string,\n      \"rangeMin\": number,\n      \"rangeMax\": number\n    }[],\n  \"demands\": {\n      \"rate\": string,\n      \"amount\": string,\n      \"rangeMin\": number,\n      \"rangeMax\": number\n    }[]\n}",
+        "type": "{\"offers\": {\"rate\": string, \"amount\": string, \"rangeMin\": number, \"rangeMax\": number}[], \"demands\": {\"rate\": string, \"amount\": string, \"rangeMin\": number, \"rangeMax\": number}[]}",
         "name": "data"
       },
       "47c4d3a8-0eb6-4e47-a618-01d0048b0a84": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "4b811632-bc1d-432d-bfe3-92339132ac9c": {

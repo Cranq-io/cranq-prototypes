@@ -162,7 +162,7 @@
   "interface": {
     "inputs": {
       "f487ec75-4a18-44e9-afab-e0c9b643b24a": {
-        "type": "{\n \"status\": number, \n \"headers\": {string: string}, \n \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Receives request dispatcher response.\n\nExample: \n{\n \"status\": 200, \n \"headers\": {}, \n \"body\": \"OK\"\n}"
       },

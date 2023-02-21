@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-        "type": "{\n  \"account_address\": string,\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"contract_information\"),\n optional \"page_size\" : number\n}",
+        "type": "{\"account_address\": string, optional \"continuation\": string, optional \"include\": (\"default\" or \"metadata\" or \"contract_information\"), optional \"page_size\": number}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": \"ethereum\"\n}",
+        "type": "{\"api_key\": string, \"chain\": \"ethereum\"}",
         "name": "params",
         "description": ""
       }

@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "245b22de-b713-4c11-b7d0-58173ecdad17": {
-        "type": "{\n\"url\": string,\noptional \"page_number\" :number, \noptional \"page_size\" :number,\noptional \"threshold\" :number,\noptional \"filter_out_contract_address\" :string\n}",
+        "type": "{\"url\": string, optional \"page_number\": number, optional \"page_size\": number, optional \"threshold\": number, optional \"filter_out_contract_address\": string}",
         "name": "query",
         "description": ""
       },
       "4c521523-a827-4aff-b950-4f84d4adb978": {
-        "type": "{\n\"api_key\": string\n}",
+        "type": "{\"api_key\": string}",
         "name": "params",
         "description": ""
       }

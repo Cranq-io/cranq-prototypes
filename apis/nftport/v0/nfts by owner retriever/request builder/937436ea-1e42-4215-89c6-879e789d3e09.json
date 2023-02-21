@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "0d9cd4ff-5370-4a0c-8a4b-81854c4ca9f0": {
-        "type": "{  \n\"account_address\": string,\noptional \"continuation\": string,\n  optional \"page_size\": number,\n  optional \"include\" : (\"default\" or \"contract_information\" or \"metadata\")[],\n  optional \"exclude\": (\"erc721\" or \"erc1155\")[],\n  optional \"contract_address\": string\n }",
+        "type": "{\"account_address\": string, optional \"continuation\": string, optional \"page_size\": number, optional \"include\": (\"default\" or \"contract_information\" or \"metadata\")[], optional \"exclude\": (\"erc721\" or \"erc1155\")[], optional \"contract_address\": string}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {

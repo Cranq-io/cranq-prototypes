@@ -21,7 +21,7 @@
     "outputs": {
       "1544a7b6-ca75-411f-8e50-6b899ac4ca44": {
         "description": "The report context identifies an individual assertion by suite ID, case ID, and assertion ID.\nIt also contains the preprocessed report and the assertion record.",
-        "type": "{\n  \"assertion ID\": typeof `assertion ID`,\n\"assertion\": typeof `assertion`,\n\"pre-report\": typeof `pre-report`\n}",
+        "type": "{\"assertion ID\": typeof `assertion ID`, \"assertion\": typeof `assertion`, \"pre-report\": typeof `pre-report`}",
         "name": "context"
       }
     }

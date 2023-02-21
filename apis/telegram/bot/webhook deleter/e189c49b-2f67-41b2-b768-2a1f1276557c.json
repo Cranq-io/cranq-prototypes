@@ -4,12 +4,12 @@
   "interface": {
     "inputs": {
       "b0eb150b-e4df-4c54-9045-9f37efa9e47a": {
-        "type": "{\n  optional \"drop_pending_updates\": boolean\n}",
+        "type": "{optional \"drop_pending_updates\": boolean}",
         "name": "data",
         "description": "Receives whether to drop pending updates.\n\nSee https://core.telegram.org/bots/api#deletewebhook."
       },
       "3ed48e38-8f38-44b3-880b-97f6222bc472": {
-        "type": "{\n  \"token\": string\n}",
+        "type": "{\"token\": string}",
         "name": "params",
         "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
       }
@@ -21,7 +21,7 @@
         "description": "Sends whether the request was successful."
       },
       "92817332-b534-4843-9cb2-b226a06737e3": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original API reponse."
       },

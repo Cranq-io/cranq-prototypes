@@ -8,12 +8,12 @@
         "description": "Receives the target of the HTML form post.\n\nExample:\n\"https://httpbin.org/post\""
       },
       "b3fa6289-8e3a-4047-a72e-226ac0fd596e": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "headers",
         "description": "Receives request headers. \n\nExample:\n{}"
       },
       "9517a9f8-a280-48ae-8ee3-71acafc2be06": {
-        "type": "{\nstring: (string or string[])\n}",
+        "type": "{string: (string or string[])}",
         "name": "form data",
         "description": "Receives the form data to be posted.\n\nExample:\n{\n  \"custname\": \"John Doe\",\n  \"custtel\": \"1234567890\", \n  \"custemail\": \"john.doe@email.doe\",  \n\"size\": \"small\",\n\"topping\": [\"bacon\", \"cheese\", \"onion\"]\n}"
       }
@@ -25,7 +25,7 @@
         "description": "Sends HTTP response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200"
       },
       "af92b0f2-6ae6-438d-a8d9-b375c4e41ec6": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "headers",
         "description": "Sends HTTP response headers."
       },

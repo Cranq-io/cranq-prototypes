@@ -16,13 +16,13 @@
         "name": "headers"
       },
       "ecf8b5c4-85b9-4000-bfc4-3569ea78c92e": {
-        "type": "{\n  \"boundary\": string,\n  \"fields\": {\n    \"name\": string,\n    \"data\": string,\n    optional \"fileName\": string,\n    optional \"contentType\": string\n  }[]\n}",
+        "type": "{\"boundary\": string, \"fields\": {\"name\": string, \"data\": string, optional \"fileName\": string, optional \"contentType\": string}[]}",
         "name": "form"
       }
     },
     "outputs": {
       "16bd1179-4895-42be-80f8-4d3b3c4478f4": {
-        "type": "{\n  \"method\": typeof `method`,\n  \"url\": typeof `URL`,\n  \"headers\": typeof `headers`,\n  \"form\": typeof `form`\n}",
+        "type": "{\"method\": typeof `method`, \"url\": typeof `URL`, \"headers\": typeof `headers`, \"form\": typeof `form`}",
         "name": "form req."
       }
     }

@@ -8,7 +8,7 @@
         "description": "Receives the session id of the drive action.\n\nExample: \n\"drive_session\""
       },
       "67d952ea-512f-4028-8a2f-8f768bfa2e7a": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "file meta data",
         "description": "Receives the metadata of the file creation.\n\nExample in case of shared drive:\n\n{\n  \"name\": \"Test from CRANQ dynamic\",\n  \"driveId\": \"0AFITUOLHhs3TUk9PVA\",\n  \"corpora\": \"drive\",\n  \"parents\": [\n    \"FOLDER_ID\"\n  ],\n  \"mimeType\": \"application/vnd.google-apps.spreadsheet\"\n}\n\n\nExample in case of shared folder:\n\n{\n  \"name\": \"Test from CRANQ dynamic\",\n  \"parents\": [\n    \"FOLDER_ID\"\n  ]\n  \"mimeType\": \"application/vnd.google-apps.spreadsheet\"\n}\n"
       },

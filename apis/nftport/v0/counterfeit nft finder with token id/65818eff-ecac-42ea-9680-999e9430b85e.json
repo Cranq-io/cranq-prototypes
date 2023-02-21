@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
+        "type": "{\"contract_address\": string, \"token_id\": string, optional \"page_number\": number, optional \"page_size\": number, optional \"threshold\": number}",
         "name": "query",
         "description": "Receives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id#request-body"
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
-        "type": "{ \n\"api_key\": string,\n  optional \"chain\": (\"ethereum\" or \"polygon\")\n}",
+        "type": "{\"api_key\": string, optional \"chain\": (\"ethereum\" or \"polygon\")}",
         "name": "params",
         "description": "chain default: ethereum;\n\nReceives parameters that customize the result NFT list.\n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id#request-body"
       }
     },
     "outputs": {
       "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
-        "type": "{\n\"response\": \"OK\",\n \"is_similar\": boolean,\n  \"similar_nfts\": [\n    {\n      \"contract_address\": string,\n      \"token_id\": string,\n      \"chain\":(\"ethereum\" or \"polygon\"),\n      \"similarity\": number,\n      optional \"file_url\": string,\n      optional \"metadata_url\": string,\n      optional \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string,\n        \"name\": string,\n        \"animation_url\": string\n      },\n      optional \"mint_date\": string\n    }\n  ]\n}",
+        "type": "{\"response\": \"OK\", \"is_similar\": boolean, \"similar_nfts\": [{\"contract_address\": string, \"token_id\": string, \"chain\": (\"ethereum\" or \"polygon\"), \"similarity\": number, optional \"file_url\": string, optional \"metadata_url\": string, optional \"metadata\": {\"description\": string, \"background_color\": string, \"external_url\": string, \"image\": string, \"name\": string, \"animation_url\": string}, optional \"mint_date\": string}]}",
         "name": "data",
         "description": "https://docs.nftport.xyz/docs/nftport/?search=find-counterfeit-nf-ts-w-token-id#Responses"
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "6c7e2a8d-a7e5-4514-a41e-8c3d34c4fe24": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

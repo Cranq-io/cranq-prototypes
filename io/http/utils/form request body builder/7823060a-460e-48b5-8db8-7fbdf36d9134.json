@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "43185963-59a0-4d36-8d29-64e764aa56a9": {
-        "type": "{\n  \"boundary\": string,\n  \"fields\": {\n    \"name\": string,\n    \"data\": string,\n    optional \"fileName\": string,\n    optional \"contentType\": string\n  }[]\n}",
+        "type": "{\"boundary\": string, \"fields\": {\"name\": string, \"data\": string, optional \"fileName\": string, optional \"contentType\": string}[]}",
         "name": "form",
         "description": "Receives a data structure that describes form values"
       }

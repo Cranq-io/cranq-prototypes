@@ -8,7 +8,7 @@
         "name": "state"
       },
       "5ccbb1e3-defa-4b8f-94e5-b81e502bdc35": {
-        "type": "{\n  \"get-names\": typeof `params` of `get image names`,\n  \"build-paths\": typeof `params` of `build image paths`,\n  \"build-data\": typeof `params` of `build image data`,\n  \"upload\": typeof `params` of `upload images`\n}",
+        "type": "{\"get-names\": typeof `params` of `get image names`, \"build-paths\": typeof `params` of `build image paths`, \"build-data\": typeof `params` of `build image data`, \"upload\": typeof `params` of `upload images`}",
         "name": "params",
         "description": "Recieves upload images params.\n\nExample:\n{\n  \"get-names\": {\n    \"cwd\": \"./nft\",\n    \"result-path\": \"image-names\",\n    \"message\": \"Reading list of images...\",\n    \"directory-path\": \"nft/batch-images\"\n  },\n  \"build-paths\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-paths\",\n      \"message\": \"Constructing image paths...\",\n      \"base-path\": \"nft/batch-images\"\n    },\n    \"mapping\": {\n      \"child-paths\": \"image-names\"\n    }\n  },\n  \"build-data\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-upload-data\",\n      \"message\": \"Preparing image upload data...\"\n    },\n    \"mapping\": {\n      \"image-paths\": \"image-paths\"\n    }\n  },\n  \"upload\": {\n    \"params\": {\n      \"cwd\": \"./nft\",\n      \"result-path\": \"image-urls\",\n      \"message\": \"Uploading images to IPFS...\",\n      \"api-key\": \"API_KEY\"\n    },\n    \"mapping\": {\n      \"folder-upload-data\": \"image-upload-data\"\n    }\n  }\n}"
       }

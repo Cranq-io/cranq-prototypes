@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
-        "type": " {\n       \"id\": string,\n       optional \"credentials\": {\n         \"apiKey\": string,\n         \"secret\": string,\n         optional \"uid\": string,\n         optional \"password\": string\n       },\n       optional \"sandboxMode\": boolean\n    }",
+        "type": "{\"id\": string, optional \"credentials\": {\"apiKey\": string, \"secret\": string, optional \"uid\": string, optional \"password\": string}, optional \"sandboxMode\": boolean}",
         "name": "exchange",
         "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n {\n     \"id\": \"coinbasepro\",\n       \"credentials\": {\n        \"apiKey\": \"API_KEY\",\n        \"secret\": \"SECRET\",\n        \"password\": \"PASSWORD\"\n      },\n      \"sandboxMode\": true\n}\n```"
       },
       "958e1641-dd76-41a7-a436-92290000eb61": {
-        "type": "{\n  \"symbol\": string,\n  optional  \"since\": number,\n  optional  \"limit\": number,\n  optional \"params\": {string: any}\n}",
+        "type": "{\"symbol\": string, optional \"since\": number, optional \"limit\": number, optional \"params\": {string: any}}",
         "name": "query",
         "description": "Received the orders parameters to be fetched.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#all-orders\n\nExample:\n```\n  {  \n      \"symbol\": \"BTC/USDT\"\n  }\n```"
       }
     },
     "outputs": {
       "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
-        "type": " {\n      \"id\": string,\n      optional \"clientOrderId\": string,\n      optional \"datetime\": string,\n      optional \"timestamp\": number,\n      optional \"lastTradeTimestamp\": number,\n      \"status\": (\"open\" or \"closed\" or \"canceled\" or \"expired\" or \"rejected\"),\n      \"symbol\": string,\n      \"type\": (\"market\" or \"limit\"),\n      \"timeInForce\": (\"GTC\" or \"IOC\" or \"FOK\" or \"PO\"),\n      \"side\": (\"buy\" or \"sell\"),\n      optional \"price\": number,\n      optional \"average\": number,\n      optional \"amount\": number,\n      \"filled\": number,\n      optional \"remaining\": number,\n      \"cost\": number,\n      \"trades\": any[],       \n      optional \"fee\": { \n          \"currency\": string,  \n          \"cost\": number, \n          \"rate\": number \n      },\n      \"info\": any\n  }[]",
+        "type": "{\"id\": string, optional \"clientOrderId\": string, optional \"datetime\": string, optional \"timestamp\": number, optional \"lastTradeTimestamp\": number, \"status\": (\"open\" or \"closed\" or \"canceled\" or \"expired\" or \"rejected\"), \"symbol\": string, \"type\": (\"market\" or \"limit\"), \"timeInForce\": (\"GTC\" or \"IOC\" or \"FOK\" or \"PO\"), \"side\": (\"buy\" or \"sell\"), optional \"price\": number, optional \"average\": number, optional \"amount\": number, \"filled\": number, optional \"remaining\": number, \"cost\": number, \"trades\": any[], optional \"fee\": {\"currency\": string, \"cost\": number, \"rate\": number}, \"info\": any}[]",
         "name": "data",
         "description": "Sends information about the order.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#order-structure\n\nExample:\n```\n[{\n  \"id\": \"4bba5198-9aac-4e3e-8e07-8c200daad567\",\n  \"info\": {\n    \"id\": \"4bba5198-9aac-4e3e-8e07-8c200daad567\",\n    \"price\": \"100.00000000\",\n    \"size\": \"1.00000000\",\n    \"product_id\": \"BTC-USD\",\n    \"profile_id\": \"c6d9dc69-1a9a-4439-92e2-1996392ea3be\",\n    \"side\": \"buy\",\n    \"type\": \"limit\",\n    \"time_in_force\": \"GTC\",\n    \"post_only\": false,\n    \"created_at\": \"2022-08-08T09:30:41.374971Z\",\n    \"fill_fees\": \"0.0000000000000000\",\n    \"filled_size\": \"0.00000000\",\n    \"executed_value\": \"0.0000000000000000\",\n    \"status\": \"open\",\n    \"settled\": false\n  },\n  \"timestamp\": 1659951041374,\n  \"datetime\": \"2022-08-08T09:30:41.374Z\",\n  \"status\": \"open\",\n  \"symbol\": \"BTC/USD\",\n  \"type\": \"limit\",\n  \"timeInForce\": \"GTC\",\n  \"postOnly\": false,\n  \"side\": \"buy\",\n  \"price\": 100,\n  \"cost\": 0,\n  \"amount\": 1,\n  \"filled\": 0,\n  \"remaining\": 1,\n  \"fee\": {\n    \"cost\": 0,\n    \"currency\": \"USD\"\n  },\n  \"trades\": [],\n  \"fees\": [\n    {\n      \"cost\": 0,\n      \"currency\": \"USD\"\n    }\n  ]\n}]\n```\n"
       },
       "e776d410-3c57-4114-8189-1ed584a01974": {
-        "type": "typeof `error`of `ccxt`",
+        "type": "typeof `error` of `ccxt`",
         "name": "error"
       }
     }

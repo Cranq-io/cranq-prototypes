@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "53e51383-6bc2-4759-9921-0dfaf424099c": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Receives response that might contain an error."
       },
@@ -20,7 +20,7 @@
         "name": "body"
       },
       "97d4c37a-7e13-4b19-9445-a29762a3966f": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

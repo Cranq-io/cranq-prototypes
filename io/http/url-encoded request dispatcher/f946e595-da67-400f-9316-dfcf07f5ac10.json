@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "8e35c4f4-47d8-4245-8054-6c1f75759a70": {
-        "type": "{\n  \"method\": string,\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {string: (string or string[])}\n}",
+        "type": "{\"method\": string, \"url\": string, \"headers\": {string: string}, \"data\": {string: (string or string[])}}",
         "name": "URL-enc. req."
       }
     },
@@ -15,7 +15,7 @@
         "description": "Sends HTTP response message body as data.\n\nExample:\n{\n  \"userId\": 1, \n  \"id\": 1, \n  \"title\": \"delectus aut autem\",  \n  \"completed\": false\n}\""
       },
       "74fc698e-31af-41e8-a099-342c49e33d17": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Sends original response."
       },

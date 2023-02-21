@@ -9,7 +9,7 @@
   "interface": {
     "inputs": {
       "46c46ba6-81bb-4a15-82da-5940280ffe4a": {
-        "type": "{\n  \"to\": string,\n  \"value\": string,\n  \"credentials\": {\n    optional \"providerUrl\": string, \n    \"privateKey\": string\n  }\n}",
+        "type": "{\"to\": string, \"value\": string, \"credentials\": {optional \"providerUrl\": string, \"privateKey\": string}}",
         "name": "parameters"
       }
     },

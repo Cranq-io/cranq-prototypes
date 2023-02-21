@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "8a82bc3e-2765-4d8b-b372-fbb77a4f4383": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict",
         "description": "Receives the dictionary to extract the values from.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 } "
       }
     },
     "outputs": {
       "807f86ec-082e-4a9a-a304-021a397dca4c": {
-        "type": "typeof`dict`[string]",
+        "type": "typeof `dict`[string]",
         "name": "values",
         "description": "Sends the values of the dictionary as an array,\n\nExample:\n[ 1,3,5 ]"
       }

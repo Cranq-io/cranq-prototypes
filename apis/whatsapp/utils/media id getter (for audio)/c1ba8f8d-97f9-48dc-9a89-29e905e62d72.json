@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "bd9358fe-4aab-4027-ab93-dfd602283987": {
-        "type": "{\n  \"entry\": {\n    \"changes\": {\n      \"value\": {\n        \"messages\": {\n          \"type\": string,\n          \"audio\": {\n            \"id\": string\n          }\n        }[]\n      }\n    }[]\n  }[]\n}",
+        "type": "{\"entry\": {\"changes\": {\"value\": {\"messages\": {\"type\": string, \"audio\": {\"id\": string}}[]}}[]}[]}",
         "name": "message",
         "description": "Receives the message from WhatsApp."
       }

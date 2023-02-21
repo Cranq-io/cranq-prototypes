@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "d81cfa4d-8c97-4008-bf4a-7c38dfa9353a": {
-        "type": "{\n  \"token\": string\n}",
+        "type": "{\"token\": string}",
         "name": "params",
         "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
       }
@@ -16,12 +16,12 @@
         "description": "Sends whether the request was successful."
       },
       "4dcac245-285d-4edb-93bf-d41d7776c0fb": {
-        "type": "{\n  \"url\": string,\n  \"has_custom_certificate\": boolean,\n  \"pending_update_count\": number,\n  optional \"ip_address\": string,\n  optional \"last_error_date\": number,\n  optional \"last_error_message\": string,\n  optional \"last_synchronization_error_date\": number,\n  optional \"max_connections\": number,\n  optional \"allowed_updates\": string[]\n}",
+        "type": "{\"url\": string, \"has_custom_certificate\": boolean, \"pending_update_count\": number, optional \"ip_address\": string, optional \"last_error_date\": number, optional \"last_error_message\": string, optional \"last_synchronization_error_date\": number, optional \"max_connections\": number, optional \"allowed_updates\": string[]}",
         "name": "webhookInfo",
         "description": "Sends webhook details. See https://core.telegram.org/bots/api#webhookinfo."
       },
       "8c47a318-a7b1-4679-b6bb-bedac5c33345": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original API reponse."
       },

@@ -14,7 +14,7 @@
         "description": "Receives the data for the request."
       },
       "53f1a8ab-1e1a-4887-874e-0ebbef17c9e3": {
-        "type": "{\n  \"token\": string\n}",
+        "type": "{\"token\": string}",
         "name": "params",
         "description": "Receives static params associated with Telegram bot, including token.\n\nMore info:\nhttps://core.telegram.org/bots/api#authorizing-your-bot"
       }
@@ -31,7 +31,7 @@
         "description": "Sends the result of the API request. Usually an 'Update' record.\n\nSee https://core.telegram.org/bots/api#update."
       },
       "16628685-ee02-4611-9b03-cdaaada20ef7": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends original response."
       },

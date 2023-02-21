@@ -101,7 +101,7 @@
         "description": "Receives the address of the contract to interact with.\n\nExample:\n\"0xab12345678ab12345678ab12345678ab12345678\""
       },
       "39a06197-ca9b-4ada-ab8e-6de9bd241529": {
-        "type": "{string:any}[]",
+        "type": "{string: any}[]",
         "name": "contract abi",
         "description": "Receives the ABI of the contract to interact with."
       },
@@ -116,14 +116,14 @@
         "description": "Receives the parameters of the method call as array."
       },
       "5e721c7e-2b06-494f-a65e-6b527531cddc": {
-        "type": "{\n    \"providerUrl\": string, \n    optional \"privateKey\": string\n}",
+        "type": "{\"providerUrl\": string, optional \"privateKey\": string}",
         "name": "credentials",
         "description": "Receives the credentials required to interact with the chain."
       }
     },
     "outputs": {
       "87606a66-0567-440c-9686-f02bf52462e4": {
-        "type": "{\n  \"field\": (\n    \"transaction hash\"\n    or \"receipt\"\n    or \"confirmation\"\n    or \"contract\"\n  ),\n  \"data\": any\n}",
+        "type": "{\"field\": (\"transaction hash\" or \"receipt\" or \"confirmation\" or \"contract\"), \"data\": any}",
         "name": "events",
         "description": "Multiplexed events that are received after submitting a transaction. Useful for monitoring progress. Use Demultiplexer to separate them."
       },

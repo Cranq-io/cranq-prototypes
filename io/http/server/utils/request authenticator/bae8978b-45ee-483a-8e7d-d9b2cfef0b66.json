@@ -4,12 +4,12 @@
   "interface": {
     "inputs": {
       "f62d2761-14db-434f-bbea-7eb1ee3b4d84": {
-        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": (\"http\" or \"https\"), \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "type": "{\"baseUrl\": string, \"body\": any, \"cookies\": any, \"hostname\": string, \"headers\": {string: string}, \"ip\": string, \"ips\": string[], \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"originalUrl\": string, \"params\": {string: string}, \"path\": string, \"protocol\": (\"http\" or \"https\"), \"query\": {string: any}, \"route\": string, \"secure\": boolean, \"signedCookies\": any, \"stale\": boolean, \"subdomains\": string[], \"xhr\": boolean}",
         "name": "request",
         "description": "Receives request to be authenticated"
       },
       "46e0d2a7-3be6-42bc-923e-dc769220a7ab": {
-        "type": "{\n  optional \"bearerToken\": string\n}",
+        "type": "{optional \"bearerToken\": string}",
         "name": "params",
         "description": "Receives authentication parameters."
       }
@@ -21,7 +21,7 @@
         "description": "Sends request appended with authentication parameters."
       },
       "b4bb5e77-f02d-4c31-9fff-5c76a7b8da85": {
-        "type": "{\n  \"error\": \"incorrect bearer token\"\n}",
+        "type": "{\"error\": \"incorrect bearer token\"}",
         "name": "error"
       }
     }

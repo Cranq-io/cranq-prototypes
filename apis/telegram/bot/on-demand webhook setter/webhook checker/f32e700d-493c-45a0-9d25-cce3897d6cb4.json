@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "91bec4d0-c409-4245-922d-fb1e74ec9dd1": {
-        "type": "{\n  \"token\": string\n}",
+        "type": "{\"token\": string}",
         "name": "params",
         "description": ""
       }
@@ -20,7 +20,7 @@
         "description": ""
       },
       "ef559d91-2706-4b62-9207-d7f3245ea3a1": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Emits only when webhook is already registered."
       },

@@ -9,13 +9,13 @@
   "interface": {
     "inputs": {
       "e80684cd-6d93-411e-ab82-6b53436ccd32": {
-        "type": "({\n  \"a\": {string: string},\n  \"b\": {string: any}\n} or {\n  \"a\": {string: number},\n  \"b\": any[]\n} or {\n  \"a\": string[],\n  \"b\": {string: any}\n} or {\n  \"a\": number[],\n  \"b\": any[]\n})",
+        "type": "({\"a\": {string: string}, \"b\": {string: any}} or {\"a\": {string: number}, \"b\": any[]} or {\"a\": string[], \"b\": {string: any}} or {\"a\": number[], \"b\": any[]})",
         "name": "a & b"
       }
     },
     "outputs": {
       "687f1676-31d6-423b-a0cc-34fb9a3a686a": {
-        "type": "(\n{string: typeof `a & b`[string]}\nor {string: typeof `a & b`[number]}\n)",
+        "type": "({string: typeof `a & b`[string]} or {string: typeof `a & b`[number]})",
         "name": "joined"
       }
     }

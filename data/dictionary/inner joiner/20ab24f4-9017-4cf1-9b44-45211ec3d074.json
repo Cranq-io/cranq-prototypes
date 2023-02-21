@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "dfab5f2f-9107-481d-b7b1-19a7631381fb": {
-        "type": "(\n{string:string}\nor {string: number}\nor string[]\nor number[]\n)",
+        "type": "({string: string} or {string: number} or string[] or number[])",
         "name": "a",
         "description": "Receives the dictionary containing the keys to join and the values to join by.\n\nExample:\n{\"first\":\"first_id\", \"third\":\"third_id\", \"fifth\":\"fifth_id\"}"
       },
       "be713809-1c65-4abb-9525-87ee9f75e9be": {
-        "type": "(\n{string:any}\nor any[]\n)",
+        "type": "({string: any} or any[])",
         "name": "b",
         "description": "Receives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       }
     },
     "outputs": {
       "81c6113a-17f2-4f3b-840b-51a7f1026d3d": {
-        "type": "(\n{string: typeof `b`[string]}\nor {string: typeof `b`[number]}\n)",
+        "type": "({string: typeof `b`[string]} or {string: typeof `b`[number]})",
         "name": "joined",
         "description": "Sends the resulting joined dictionary.\n\nExample:\n{\"first\": 1,\"third\": 3}"
       }

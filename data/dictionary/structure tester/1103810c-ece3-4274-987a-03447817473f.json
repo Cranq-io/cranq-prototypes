@@ -4,12 +4,12 @@
     "inputs": {
       "8ad77d9b-7994-4f7e-88b9-f2808948f5f7": {
         "description": "Receives the dictionary to test.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }",
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict"
       },
       "7345d213-6dde-4944-ba8b-7f8c0b88e6e3": {
         "description": "Receives the dictionary with the reference structure, to which the comparison will be made.\n\nExample:\n{ \"first\": 0, \"fifth\": 0 }",
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "structure"
       },
       "39d945ae-4df1-4409-822e-eb45b47695ee": {

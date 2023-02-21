@@ -16,16 +16,16 @@
     "outputs": {
       "de57a318-d6a3-49c5-bf1c-2c6a21ffec86": {
         "description": "Sends synced parameters if operation has failed.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}",
-        "type": "{ \"source\": string, \"destination\": string }",
+        "type": "{\"source\": string, \"destination\": string}",
         "name": "bounced"
       },
       "6c8e4252-68df-4c72-b3dd-f34955aa93f0": {
         "description": "Sends synced parameters if operation has succeeded.\n\nExample:\n{ \n  source: \"/home/user1/dir1/foo.txt\", \n  destination: \"/home/user1/dir2/bar.txt\"\n}",
-        "type": "{ \"source\": string, \"destination\": string }",
+        "type": "{\"source\": string, \"destination\": string}",
         "name": "moved"
       },
       "14ba3f81-13c6-4d9d-a08f-6dfca5766529": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, rename '/home/user1/dir1/foo.txt' -> '/home/user1/dir2/bar.txt'\"\n}"
       }

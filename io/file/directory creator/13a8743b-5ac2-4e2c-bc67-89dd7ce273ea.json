@@ -20,7 +20,7 @@
         "name": "bounced"
       },
       "062c5d6b-8e47-4dd0-8419-c0a8e65e489b": {
-        "type": "{ \"message\": string }",
+        "type": "{\"message\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"message\": \"ENOENT: no such file or directory, mkdir '/home/user1/newdir'\"\n}"
       }

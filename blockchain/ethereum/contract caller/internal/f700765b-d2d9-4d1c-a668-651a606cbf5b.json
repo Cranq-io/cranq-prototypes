@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "244fb79b-f74f-4ba9-ad9b-9d4bbfb66d96": {
-        "type": "{\n  \"contract parameters\": {\n    \"contract address\": string,\n    \"abi\": {string:any}[],\n    \"method name\": string,\n    \"parameters\": any[],\n    \"alters\": boolean\n},\n  \"web3_credentials\": {\n    \"providerUrl\": string,\n    \"privateKey\": string\n  },\n optional \"transaction parameters\": {string:any}\n}",
+        "type": "{\"contract parameters\": {\"contract address\": string, \"abi\": {string: any}[], \"method name\": string, \"parameters\": any[], \"alters\": boolean}, \"web3_credentials\": {\"providerUrl\": string, \"privateKey\": string}, optional \"transaction parameters\": {string: any}}",
         "name": "data"
       }
     },

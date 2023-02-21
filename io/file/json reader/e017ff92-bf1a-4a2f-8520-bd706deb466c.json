@@ -10,7 +10,7 @@
     },
     "outputs": {
       "a858b493-c881-476d-89af-688826173640": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "data",
         "description": "Sends the parsed JSON content read from the file specified by `path`.\n\nExample:\n{\n  \"foo\": 1,\n  \"bar\": 2,\n  \"foobar\": [1,2]\n}\n"
       },
@@ -20,7 +20,7 @@
         "description": "Sends the path if the operation has failed.\n\nExample:\n\"/home/user1/dir1/foo.json\""
       },
       "5f515f63-3948-4612-8987-0417f8b03ae9": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample (file access error): \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}\n\nExample (json parse error):\n{\n  \"error\": \"SyntaxError: Unexpected token } in JSON at position 45\"\n}"
       }

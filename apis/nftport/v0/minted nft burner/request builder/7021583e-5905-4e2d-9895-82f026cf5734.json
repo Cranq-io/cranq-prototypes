@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "a9783222-e2dd-452c-9ac3-2fc0babfdb2f": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string\n}",
+        "type": "{\"contract_address\": string, \"token_id\": string}",
         "name": "NFT",
         "description": ""
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": ""
       }

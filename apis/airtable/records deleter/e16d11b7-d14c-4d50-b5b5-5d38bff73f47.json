@@ -8,7 +8,7 @@
         "description": "Receives the IDs of the records to be deleted from AirTable.\n\nExample:\n```json\n[\n  \"rec32C7MUspwlCGaY\",\n  \"rec5F6YjCMk4ajxgQ\"\n]\n```"
       },
       "6be4a66d-3bba-455b-9835-55ca7aea9b1f": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "params",
         "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
@@ -20,17 +20,17 @@
         "description": "Sends the IDs corresponding to the deleted records.\n\nExample:\n```json\n[\n  \"rec32C7MUspwlCGaY\",\n  \"rec5F6YjCMk4ajxgQ\"\n]\n```"
       },
       "54e0ebd3-3906-4cdb-9bc6-51c7fcaa5bc0": {
-        "type": "{\n  \"id\": string,\n  \"deleted\": boolean\n}",
+        "type": "{\"id\": string, \"deleted\": boolean}",
         "name": "AT records",
         "description": "Sends the ID of each record to be deleted, and whether the deletion was successful, as returned by AirTable.\n\nExample:\n```json\n[\n  {\n    \"deleted\": true,\n    \"id\": \"rec32C7MUspwlCGaY\"\n  },\n  {\n    \"deleted\": true,\n    \"id\": \"rec5F6YjCMk4ajxgQ\"\n  }\n]\n```"
       },
       "0a220faf-20ca-4d84-b7eb-89440968b029": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the entire response from the AirTable API without modification.\r\n\r\nSee link for correct formats of request and response 'delete record' messages: \r\nhttps://airtable.com/appJrRnzGR3Yp5M7b/api/docs"
       },
       "533b48dd-fc81-4c9c-890f-a714f0974bc2": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends the error, if one occurred."
       }

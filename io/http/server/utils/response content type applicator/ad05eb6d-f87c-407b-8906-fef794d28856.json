@@ -4,12 +4,12 @@
   "interface": {
     "inputs": {
       "a12287c7-5f64-4ba1-9a30-c60293a28d1e": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string:string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": ""
       },
       "287c923c-5e36-4c3c-9fca-496631da77c7": {
-        "type": "{\n  optional \"contentType\": (\"text\" or \"json\")\n}",
+        "type": "{optional \"contentType\": (\"text\" or \"json\")}",
         "name": "params",
         "description": ""
       }

@@ -13,7 +13,7 @@
         "description": "Receives the target of the HTTP request. Also called \"resource\" \n\nExample:\n\"https://jsonplaceholder.typicode.com/todos/1\""
       },
       "50a82f4b-f270-470f-872e-f7f6f2f0fc36": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "headers",
         "description": "Receives request headers. It is  used to describe a resource, or the behavior of the server or the client.\n\nExample:\n{\n  \"content-type\": \"application/json; charset=utf-8\"\n}"
       },
@@ -30,7 +30,7 @@
         "description": "Sends http response status code. Indicates whether the request has been  successfully completed.\n\nExample:\n200"
       },
       "d057c749-d7a8-4108-adcc-31eb1878349b": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "headers",
         "description": "Sends http response headers.\n\nExample:\n{\n\"content-type\": \"application/json; charset=utf-8\",\n\"cache-control\":\"max-age=43200\"\n}\n"
       },
@@ -45,7 +45,7 @@
         "description": "Sends http response communication error.\n\n\nExample:\n{\n  \"error\": \"Error: getaddrinfo ENOTFOUND x.y\"\n} "
       },
       "665ac8d5-15c4-4988-8bb4-cc65d5a63bf6": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       }
     }

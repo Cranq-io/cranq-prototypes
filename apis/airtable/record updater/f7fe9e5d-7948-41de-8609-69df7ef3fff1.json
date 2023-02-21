@@ -4,12 +4,12 @@
   "interface": {
     "inputs": {
       "9b88e435-4f58-4c07-926e-94baf6e9c340": {
-        "type": "{\n  \"id\" : \"string\",\n  \"fields\" : {string:any}\n}",
+        "type": "{\"id\": \"string\", \"fields\": {string: any}}",
         "name": "AT record",
         "description": "Receives a single record to be updated in AirTable.\n\nExample:\n```json\n{\n  \"id\": \"rect1iBB9su0rT0JI\",\n  \"fields\": {\n    \"number column\": 0,\n    \"string column\": \"value0\"\n  }\n}\n```"
       },
       "37fc2924-0221-44ab-a325-07df2836bc1f": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "params",
         "description": "Receives the authentication & table parameters required to construct the request.\n\nAPI Key: In AirTable, go to 'Help?' and click on 'API Documentation'. Scroll to the \"Authorization\" section to retrieve your API key.\n\nBase ID: In AirTable, go to 'Help?' and click on 'API Documentation'. Find the ID of the base in the introduction.\n\nTable Name: Use the table name located on the tab of the spreadsheet.\n\nExample:\n```json\n{\n  \"apiKey\": \"key...\",\n  \"baseId\": \"app...\",\n  \"tableName\": \"...\"\n}\n```"
       }
@@ -21,17 +21,17 @@
         "description": "Sends the records that were successfully updated in AirTable.\r\n\r\nExample:\r\n```json\r\n[\r\n  {\r\n    \"number column\": 0,\r\n    \"string column\": \"value0\"\r\n  },\r\n  {\r\n    \"number column\": 1,\r\n    \"string column\": \"value1\",\r\n    \"bool column\": true\r\n  }\r\n]\r\n```\r\n"
       },
       "7aff9429-65a9-4455-ae0a-ad5c5241ee38": {
-        "type": "{\n  \"id\": string,\n  \"createdTime\": \"string\",\n  \"fields\": typeof `AT record`[\"fields\"][]\n}[]",
+        "type": "{\"id\": string, \"createdTime\": \"string\", \"fields\": typeof `AT record`[\"fields\"][]}[]",
         "name": "AT records",
         "description": "Sends records that were successfully updated in AirTable, in the format returned by AirTable, including metadata like row ID.\r\n\r\nExample:\r\n```json\r\n[\r\n  {\r\n    \"id\": \"rect1iBB9su0rT0JI\",\r\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\r\n    \"fields\": {\r\n      \"number column\": 0,\r\n      \"string column\": \"value0\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"recpIPBXdPlv5wv7D\",\r\n    \"createdTime\": \"2022-09-29T07:25:20.000Z\",\r\n    \"fields\": {\r\n      \"number column\": 1,\r\n      \"string column\": \"value1\",\r\n      \"bool column\": true\r\n    }\r\n  }\r\n]\r\n```\r\n"
       },
       "903e6cfd-269e-4888-902a-7d5338ac2f56": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the entire response from the AirTable API without modification."
       },
       "26ddc458-32eb-472a-8902-62e05c154332": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends the error, if one occurred."
       }

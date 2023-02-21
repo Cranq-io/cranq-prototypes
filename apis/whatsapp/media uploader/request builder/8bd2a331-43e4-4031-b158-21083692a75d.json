@@ -3,18 +3,18 @@
   "interface": {
     "inputs": {
       "ffd19d57-881b-4ac2-9f39-89413e79522c": {
-        "type": "{\n  \"data\": string,\n  \"fileName\": string,\n  \"contentType\": string\n}",
+        "type": "{\"data\": string, \"fileName\": string, \"contentType\": string}",
         "name": "file"
       },
       "beb00f72-a918-4133-93f1-e5826a151d43": {
-        "type": "{\n\"access_token\": string,\n\"phone_number_id\": string\n}",
+        "type": "{\"access_token\": string, \"phone_number_id\": string}",
         "name": "params",
         "description": ""
       }
     },
     "outputs": {
       "44d91318-ce93-42a5-a984-c9f7f1955233": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, \"form\": {\"boundary\": string, \"fields\": {\"name\": string, \"data\": string, optional \"fileName\": string, optional \"contentType\": string}[]}}",
         "name": "form req."
       }
     }

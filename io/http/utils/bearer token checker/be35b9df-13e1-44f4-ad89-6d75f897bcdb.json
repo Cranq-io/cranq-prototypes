@@ -193,14 +193,14 @@
         "description": "Receives the bearer token to be verified."
       },
       "c97ad031-661f-457d-b4b7-bdfb2d7e7493": {
-        "type": "{\n\"headers\": {string:string},\n\"body\": string\n}",
+        "type": "{\"headers\": {string: string}, \"body\": string}",
         "name": "request",
         "description": "Receives the request to be authorized."
       }
     },
     "outputs": {
       "10e32cd9-0ad1-44dc-9472-dbd4acdb9b2a": {
-        "type": "{\n\"headers\": {string:string},\n\"body\": string\n}",
+        "type": "{\"headers\": {string: string}, \"body\": string}",
         "name": "request"
       },
       "41615356-7284-4969-bdc6-aa93fcac2294": {

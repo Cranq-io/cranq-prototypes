@@ -318,12 +318,12 @@
   "interface": {
     "inputs": {
       "4602e6ff-ae72-46bd-bddb-2065b4f4895a": {
-        "type": "{\n  \"address\": string,\n  \"desiredAmount\": number,\n  optional \"minimalAmount\": number\n}",
+        "type": "{\"address\": string, \"desiredAmount\": number, optional \"minimalAmount\": number}",
         "name": "tokenA",
         "description": "Receives parameters for tokenA.\n- address: the address of the token\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenA\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenA, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
       "e971b0f8-3982-4b6e-98d7-22f8409f3817": {
-        "type": "{\n\"address\": string,\n\"desiredAmount\": number,\noptional \"minimalAmount\": number\n}",
+        "type": "{\"address\": string, \"desiredAmount\": number, optional \"minimalAmount\": number}",
         "name": "tokenB",
         "description": "Receives parameters for tokenB.\n- address: the address of the token\n- desiredAmount: the (maximal) amount we want to add to the liquidity pool in tokenB\n- minimalAmount: the minimal amount we want to add to the liquidity pool in tokenB, if the current exchange ratio implies an amount smaller than that, the operation should fail"
       },
@@ -355,7 +355,7 @@
         "description": "Sends out the result of the operation in case of success"
       },
       "193c7b18-8f27-4b68-878f-2c2d0bc1b8c4": {
-        "type": "((typeof `data` of `errors`) or (typeof `error` of `add liquidity`))",
+        "type": "(typeof `data` of `errors` or typeof `error` of `add liquidity`)",
         "name": "error",
         "description": "Sends out any error that occured during the liquidity addition process."
       }

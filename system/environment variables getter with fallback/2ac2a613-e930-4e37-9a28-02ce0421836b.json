@@ -8,14 +8,14 @@
         "description": "Receives a list of variable names to be resolved from the environment.\n\nExample:\n[\"Var1\", \"Var2\"]"
       },
       "2793a39a-95ef-44bd-a075-6554a4c35d0b": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "default values",
         "description": "Receives optional default values for undefined environment variables.\n\nExample:\n{ \"var1\": \"value1\" }"
       }
     },
     "outputs": {
       "25b50086-6321-402e-82e6-8b7879683cc3": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "resolved variables",
         "description": "Sends the dictionary of resolved environment variables as a name:value dictionary.\n\nContains the environment value if found, otherwise the specified default value if any.\n\n\nExample:\n{\n  \"V1\": \"value 1\",\n  \"V2\": \"default value 2\"\n}"
       }

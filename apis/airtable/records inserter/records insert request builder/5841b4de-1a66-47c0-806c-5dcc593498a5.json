@@ -22,7 +22,7 @@
     },
     "outputs": {
       "4cdde0a4-4828-4393-b0d1-6186d643a5a9": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {\n    \"records\": typeof `AT records`[]\n  }\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, \"data\": {\"records\": typeof `AT records`[]}}",
         "name": "JSON req."
       }
     }

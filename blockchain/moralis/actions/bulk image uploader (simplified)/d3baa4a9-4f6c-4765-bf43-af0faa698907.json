@@ -8,7 +8,7 @@
         "name": "state"
       },
       "549815a9-c81e-42ae-8bfc-7604206bb6de": {
-        "type": "{\n  \"cwd\": string,\n  \"images-directory\": string,\n  \"moralis-api-key\": string\n}\n",
+        "type": "{\"cwd\": string, \"images-directory\": string, \"moralis-api-key\": string}",
         "name": "params",
         "description": "Recieves upload images script parameters.\n\nExample:\n{\n  \"cwd\": \"./nft\",\n  \"images-directory\": \"nft/batch-images\",\n  \"moralis-api-key\": \"API_KEY\"\n}"
       }

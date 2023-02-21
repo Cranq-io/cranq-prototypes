@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "6a0b4927-4e32-4f46-9917-bb55eba79aea": {
-        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"max_supply\": number,\n  \"mint_price\": number,\n  \"tokens_per_mint\": number,\n  \"owner_address\": string,\n  \"treasury_address\": string,\n  \"public_mint_start_date\": string,\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"prereveal_token_uri\": string,\n  optional \"presale_mint_start_date\": string,\n  optional \"presale_whitelisted_addresses\": string[],\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
+        "type": "{\"name\": string, \"symbol\": string, \"max_supply\": number, \"mint_price\": number, \"tokens_per_mint\": number, \"owner_address\": string, \"treasury_address\": string, \"public_mint_start_date\": string, optional \"metadata_updatable\": boolean, optional \"base_uri\": string, optional \"prereveal_token_uri\": string, optional \"presale_mint_start_date\": string, optional \"presale_whitelisted_addresses\": string[], optional \"royalties_share\": number, optional \"royalties_address\": string}",
         "name": "contract",
         "description": "Receives details of the cotract to be deployed.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=deploy-an-nft-collection-contract#request-body"
       },
       "55e933ac-c051-439a-9695-c6a5d0c0940e": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\")\n}",
+        "type": "{\"api_key\": string, optional \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\")}",
         "name": "params",
         "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/?search=deploy-an-nft-collection-contract#request-body\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {
       "284d7025-55ce-4d59-ae7b-9e14b37904d5": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\"),\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": (\"erc721\" or \"erc1155\"),\n  \"name\": string,\n  \"symbol\": string\n}",
+        "type": "{\"response\": \"OK\", \"chain\": (\"polygon\" or \"rinkeby\" or \"ethereum\"), \"transaction_hash\": string, \"transaction_external_url\": string, \"owner_address\": string, \"type\": (\"erc721\" or \"erc1155\"), \"name\": string, \"symbol\": string}",
         "name": "data",
         "description": "Sends details of the deployed contract.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=deploy-an-nft-collection-contract#response-body"
       },
       "42bad89e-6d6f-4548-8d77-a87368a34e85": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "b1034bc0-1f04-4162-98a8-ad466658d145": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

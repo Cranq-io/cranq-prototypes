@@ -21,29 +21,29 @@
   "interface": {
     "inputs": {
       "816628e2-c7f2-41f6-8cf2-27d752eff31c": {
-        "type": "{\n\"id\": string, \n\"type\": string, \n\"options\": {string: any}\n}",
+        "type": "{\"id\": string, \"type\": string, \"options\": {string: any}}",
         "name": "action",
         "description": "Receives the parameters of the action to execute.\n\nExample: \n{\n  \"id\": \"my-express-server\",\n  \"type\": \"listen\",\n  \"options\": {\n    \"port\": 3000\n  }\n}"
       },
       "a6b8ed07-3298-4bc7-acee-4c18f2399ffd": {
-        "type": "{\n\"status\": number,\n\"headers\": {string:string},\n\"body\": any\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": any}",
         "name": "response",
         "description": "Receives the response to be sent out to the client.\n\nExample:\n{\n  \"status\": 200,\n  \"headers\": {\n    \"content-type\": \"application/json\" \n  },\n  \"body\": \"Done\"\n}"
       }
     },
     "outputs": {
       "38ea8704-dc28-470e-b30f-f1eee9adaafd": {
-        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": (\"http\" or \"https\"), \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "type": "{\"baseUrl\": string, \"body\": any, \"cookies\": any, \"hostname\": string, \"headers\": {string: string}, \"ip\": string, \"ips\": string[], \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"originalUrl\": string, \"params\": {string: string}, \"path\": string, \"protocol\": (\"http\" or \"https\"), \"query\": {string: any}, \"route\": string, \"secure\": boolean, \"signedCookies\": any, \"stale\": boolean, \"subdomains\": string[], \"xhr\": boolean}",
         "name": "request",
         "description": "Sends the request processed by  defined handlers. Can be used to post-process the request."
       },
       "2d59f4f5-da3a-4e88-b071-f863cda4e553": {
-        "type": "(null or\n \n{\n  \"port\": number,  \n  \"hostname\": string \n}) ",
+        "type": "(null or {\"port\": number, \"hostname\": string})",
         "name": "done",
         "description": "Event triggered when the specified action has been executed."
       },
       "1eb10a35-5039-4196-b3b5-e59757befe88": {
-        "type": "{\n\"error\": string,  \n\"origin\": string\n}",
+        "type": "{\"error\": string, \"origin\": string}",
         "name": "error",
         "description": "Sends error information in case the specified action could not be successfully executed.\n\nExample:\n{\n  \"error\": \"listen EADDRINUSE: address already in use 127.0.0.1:8080\",\n  \"origin\": \"server\"\n}"
       }

@@ -8,14 +8,14 @@
         "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\n\ne.g.: \"/Users/user1/AzureSpeech/samples/speech.wav\""
       },
       "d94b7b8b-2033-49d6-a041-782ba7f57ba0": {
-        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"language\": string\n}",
+        "type": "{\"subscriptionKey\": string, \"region\": string, optional \"language\": string}",
         "name": "params",
         "description": "Receives generic parameters for Azure speech to text services,including credentials.\n\nThe key and region values are available from Azure dashboard.\n\nexample:\n{\n  \"subscriptionKey\": \"1e***f\",\n  \"region\": \"eastus2\",\n  \"language\": \"en-GB\"\n}"
       }
     },
     "outputs": {
       "c16a4c44-3931-48f0-b7d2-9306fb03dea1": {
-        "type": "{\n  optional \"duration\": number, \n  optional \"errorDetails\": string,\n  optional \"language\": string, \n  optional \"languageDetectionConfidence\": string,\n  optional \"offset\": number,\n  optional \"properties\": {string: any}, \n  optional \"reason\": number,\n  optional \"resultId\": string,\n  optional \"speakerId\": string,\n  optional \"text\": string\n}",
+        "type": "{optional \"duration\": number, optional \"errorDetails\": string, optional \"language\": string, optional \"languageDetectionConfidence\": string, optional \"offset\": number, optional \"properties\": {string: any}, optional \"reason\": number, optional \"resultId\": string, optional \"speakerId\": string, optional \"text\": string}",
         "name": "result",
         "description": "Sends the result of the speech recognition."
       },

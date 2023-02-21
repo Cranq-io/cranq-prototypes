@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "245b22de-b713-4c11-b7d0-58173ecdad17": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"page_number\": number,\n  optional \"page_size\": number,\n  optional \"threshold\": number\n}",
+        "type": "{\"contract_address\": string, \"token_id\": string, optional \"page_number\": number, optional \"page_size\": number, optional \"threshold\": number}",
         "name": "query",
         "description": ""
       },
       "4c521523-a827-4aff-b950-4f84d4adb978": {
-        "type": "{ \n  \"api_key\": string,\n  \"chain\": (\"ethereum\" or \"polygon\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"ethereum\" or \"polygon\")}",
         "name": "params",
         "description": ""
       }

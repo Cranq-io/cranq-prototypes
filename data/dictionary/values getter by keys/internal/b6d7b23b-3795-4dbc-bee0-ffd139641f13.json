@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "9af21210-8f9c-4067-986a-f29fe11cede0": {
-        "type": "{\"dict\":{string:any},\"keys\":string[]}",
+        "type": "{\"dict\": {string: any}, \"keys\": string[]}",
         "name": "dict & keys"
       }
     },
     "outputs": {
       "9e6164b8-807d-4f53-9a1b-2c8654bdcbbd": {
-        "type": "(typeof `dict & keys`)[\"dict\"][string][]",
+        "type": "typeof `dict & keys`[\"dict\"][string][]",
         "name": "values"
       },
       "ab3fd02c-4e36-4df3-89cb-6cd199426950": {

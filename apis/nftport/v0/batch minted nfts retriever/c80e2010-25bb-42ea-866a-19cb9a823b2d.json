@@ -9,24 +9,24 @@
         "description": "Receives the hash for the transaction that minted the NFTs.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-batch-minted-nf-ts#Path-Parameters"
       },
       "af69ae31-f9c6-43a1-b184-41de1f19d0b2": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"rinkeby\" or \"polygon\") \n}",
+        "type": "{\"api_key\": string, optional \"chain\": (\"rinkeby\" or \"polygon\")}",
         "name": "params",
         "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-batch-minted-nf-ts#Query-Parameters\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {
       "6a557de8-cac3-4a74-8a33-25c2fca5f4f5": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"contract_address\": string,\n  \"token_ids\": string[]\n}\n\n",
+        "type": "{\"response\": \"OK\", \"chain\": (\"polygon\" or \"rinkeby\"), \"contract_address\": string, \"token_ids\": string[]}",
         "name": "data",
         "description": "Sends the data of the NFTs which were minted in the specified transaction.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-batch-minted-nf-ts#response-body"
       },
       "5445f777-9824-43a6-8306-dcb941471807": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "b3f88e13-ec3c-4d84-b6ee-c55d15bb19d5": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

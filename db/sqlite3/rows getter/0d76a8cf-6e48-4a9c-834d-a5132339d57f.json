@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "068f3cc7-b4b9-4560-b552-967541884c10": {
-        "type": "{\n  \"dbId\": string,\n  \"sql\": string,\n  optional \"params\": (string or number)[]\n}",
+        "type": "{\"dbId\": string, \"sql\": string, optional \"params\": (string or number)[]}",
         "name": "params"
       }
     },

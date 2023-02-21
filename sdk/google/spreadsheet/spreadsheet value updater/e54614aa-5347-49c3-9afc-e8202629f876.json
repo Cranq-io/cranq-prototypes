@@ -13,7 +13,7 @@
         "description": "Receives the id of the spreadsheet to be updated.\n\nExample:\n\"1_ewweewweFileID\""
       },
       "1e5a9466-5429-4551-ab34-b5bf1ddd0bb4": {
-        "type": "{\n\"range\": string,\n\"valueInputOption\": (\"RAW\" or \"USER_ENTERED\")\n}",
+        "type": "{\"range\": string, \"valueInputOption\": (\"RAW\" or \"USER_ENTERED\")}",
         "name": "update meta data",
         "description": "Receives the metadata of the update values.\n\nrange: The A1 notation of the values to update. More: \nhttps://developers.google.com/sheets/api/guides/concepts\n\nvalueInputOption: Determines how input data should be interpreted. More: https://developers.google.com/sheets/api/reference/rest/v4/ValueInputOption\n\nExample:\n{\n \"range\": \"Sheet1!A1:B10\"\",\n \"valueInputOption\": \"RAW\" \n}"
       },

@@ -19,7 +19,7 @@
         "description": "Receives the identifier of the token in the context of its governing contract."
       },
       "b997d4a4-b81e-49bb-9784-a474fcd18546": {
-        "type": "{\n  \"chain\": (\"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\"),\n  \"format\": (\"decimal\" or \"hex\"),\n  \"offset\": number,\n  \"limit\": number,\n  \"order\": string,\n  \"cursor\": string\n}",
+        "type": "{\"chain\": (\"eth\" or \"ropsten\" or \"rinkeby\" or \"goerli\" or \"kovan\" or \"polygon\" or \"mumbai\" or \"bsc\" or \"bsc testnet\" or \"avalanche\" or \"avalanche testnet\" or \"fantom\"), \"format\": (\"decimal\" or \"hex\"), \"offset\": number, \"limit\": number, \"order\": string, \"cursor\": string}",
         "name": "params",
         "description": "Receives parameters refining the transfers query.\n\nExample:\n{\n  \"chain\": \"ropsten\"\n}"
       }

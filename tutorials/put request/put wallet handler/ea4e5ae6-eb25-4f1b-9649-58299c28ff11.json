@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "4118e64c-bd53-4dd3-b6f5-349f6141bc8d": {
-        "type": "{\n  \"baseUrl\": string,\n  \"body\": any,\n  \"cookies\": any,\n  \"hostname\": string,\n  \"headers\": {string: string},\n  \"ip\": string,\n  \"ips\": string[],\n  \"method\": (\n    \"GET\"\n    or \"POST\"\n    or \"PUT\"\n    or \"PATCH\"\n    or \"DELETE\"\n  ),\n  \"originalUrl\": string,\n  \"params\": {string: string},\n  \"path\": string,\n  \"protocol\": (\n    \"http\"\n    or \"https\"\n  ),\n  \"query\": {string: any},\n  \"route\": string,\n  \"secure\": boolean,\n  \"signedCookies\": any,\n  \"stale\": boolean,\n  \"subdomains\": string[],\n  \"xhr\": boolean\n}",
+        "type": "{\"baseUrl\": string, \"body\": any, \"cookies\": any, \"hostname\": string, \"headers\": {string: string}, \"ip\": string, \"ips\": string[], \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"originalUrl\": string, \"params\": {string: string}, \"path\": string, \"protocol\": (\"http\" or \"https\"), \"query\": {string: any}, \"route\": string, \"secure\": boolean, \"signedCookies\": any, \"stale\": boolean, \"subdomains\": string[], \"xhr\": boolean}",
         "name": "request",
         "description": "[Inherited from port `request` of `request body getter`] \nReceives an HTTP request that has a body."
       }
     },
     "outputs": {
       "54c0e270-f5dc-460b-98d2-83c49eb95e1b": {
-        "type": "\n{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "[Inherited from port `response` of `response builder`] \nSends the constructed HTTP response."
       }

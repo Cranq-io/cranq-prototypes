@@ -8,7 +8,7 @@
         "description": "Receives the session id of the spreadsheet action.\n\nExample: \n\"spreadsheet_session\""
       },
       "fca2bdd7-409e-4c62-9a88-c9ee2852eb96": {
-        "type": "{\n  \"email\": string,\n  \"key\": string\n}",
+        "type": "{\"email\": string, \"key\": string}",
         "name": "auth data",
         "description": "Receives the authentication data of service account.\n\nExample: \n{\n  \"email\": \"email@email.com\",\n  \"key\": \"TopSecretKey!\"\n}\n"
       },
@@ -18,7 +18,7 @@
         "description": "Receives the id of the spreadsheet to be updated.\n\nExample:\n\"1_ewweewweFileID\""
       },
       "4d02f829-1ee7-4d6b-9ee1-78bae9c4895f": {
-        "type": "{\n  \"update meta data\": {   string: any},\n  \"values\": any[][]\n}",
+        "type": "{\"update meta data\": {string: any}, \"values\": any[][]}",
         "name": "update data",
         "description": "{\n  \"update meta data\": {\n    \"range\": \"Sheet1!A1:B10\"\n  },\n  \"values\": [\n    [\"A1 value\", \"B1 value\"],\n    [\"A2 value\", \"B2 value\"]\n  ]\n}"
       }

@@ -4,7 +4,7 @@
     "inputs": {
       "94c10e1e-15a5-4a1a-94fa-88f6279dd9e3": {
         "description": "Receives the components to build the path from.\n\nExample (Windows): \n{\n  \"directory\": \"C:/Users/User1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}\n\nExample (OSX & *nix): \n{\n  \"directory\": \"/home/user1/dir1\",\n  \"basename\": \"foo\",\n  \"extension\": \".txt\"\n}\n\n(To keep the application portable use \"/\" as path separator.)",
-        "type": "{\n  \"directory\": string,\n  \"basename\": string,\n  \"extension\": string\n}",
+        "type": "{\"directory\": string, \"basename\": string, \"extension\": string}",
         "name": "components"
       }
     },

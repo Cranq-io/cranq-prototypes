@@ -16,14 +16,14 @@
   "interface": {
     "inputs": {
       "89c3add3-f586-4007-ae67-6cc5ec4f0fe6": {
-        "type": "{\n  \"fileName\": string,\n  \"params\": {\n    \"subscriptionKey\": string,\n    \"region\": string,\n    optional \"language\": string\n  }\n}",
+        "type": "{\"fileName\": string, \"params\": {\"subscriptionKey\": string, \"region\": string, optional \"language\": string}}",
         "name": "params",
         "description": "See https://learn.microsoft.com/en-us/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#microsoft-cognitiveservices-speech-sdk-speechrecognizer-recognizeonceasync"
       }
     },
     "outputs": {
       "b9ffcede-7d83-4016-a12c-b9fb49244764": {
-        "type": "{\n  optional \"duration\": number, \n  optional \"errorDetails\": string,\n  optional \"language\": string, \n  optional \"languageDetectionConfidence\": string,\n  optional \"offset\": number,\n  optional \"properties\": {string: any}, \n  optional \"reason\": number,\n  optional \"resultId\": string,\n  optional \"speakerId\": string,\n  optional \"text\": string\n}",
+        "type": "{optional \"duration\": number, optional \"errorDetails\": string, optional \"language\": string, optional \"languageDetectionConfidence\": string, optional \"offset\": number, optional \"properties\": {string: any}, optional \"reason\": number, optional \"resultId\": string, optional \"speakerId\": string, optional \"text\": string}",
         "name": "result"
       },
       "47693f97-e134-4fde-8ef1-877461c7c656": {

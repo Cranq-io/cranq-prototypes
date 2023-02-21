@@ -8,19 +8,19 @@
         "description": ""
       },
       "fe82ce72-189f-429e-baaa-9161bbf7ef1e": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "params",
         "description": ""
       }
     },
     "outputs": {
       "11137444-0a6e-4bd3-9918-bf96566e49f8": {
-        "type": "{\n\"email\": string,\n\"validated\": true,\noptional \"validation_token\": string\n}",
+        "type": "{\"email\": string, \"validated\": true, optional \"validation_token\": string}",
         "name": "registered",
         "description": ""
       },
       "45ea4e1e-fdfe-4686-afdd-0635c5bba556": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\noptional \"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, optional \"validation_token\": string}",
         "name": "not registered"
       },
       "daf20ad4-0f60-458d-841e-09ed4b1474a4": {

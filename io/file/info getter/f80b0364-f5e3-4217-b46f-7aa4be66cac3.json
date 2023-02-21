@@ -11,7 +11,7 @@
     "outputs": {
       "64cad980-4f8d-4481-82fc-7087ee134d30": {
         "description": "The resulting file/directory information.\n\nExample:\n{\n  \"size_bytes\": 3128,\n  \"created\": \"2021-12-09T15:47:56.441Z\",\n  \"accessed\": \"2021-12-09T15:47:56.441Z\",\n  \"modified\": \"2021-12-09T15:47:56.441Z\",\n  \"changed\": \"2021-12-09T22:08:22.314Z\"\n}",
-        "type": "{\n  \"size_bytes\": number,\n  \"created\": string,\n  \"accessed\": string,\n  \"modified\": string,\n  \"changed\": string\n}",
+        "type": "{\"size_bytes\": number, \"created\": string, \"accessed\": string, \"modified\": string, \"changed\": string}",
         "name": "info"
       },
       "e9d1e0bf-5e20-4912-96f5-b9ceef99d0d4": {

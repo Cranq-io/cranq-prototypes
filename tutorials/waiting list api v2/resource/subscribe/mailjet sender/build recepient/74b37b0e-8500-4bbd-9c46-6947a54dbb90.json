@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "0b9474dc-8cfd-489e-a00b-f8123070f1f7": {
-        "type": "{\n\"email\": string,\noptional \"validated\": boolean,\n\"validation_token\": string\n}",
+        "type": "{\"email\": string, optional \"validated\": boolean, \"validation_token\": string}",
         "name": "subscription",
         "description": ""
       }
     },
     "outputs": {
       "7eb1ce03-5400-4ce1-b562-17575fa38816": {
-        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}[]",
+        "type": "{optional \"Name\": string, \"Email\": string}[]",
         "name": "recipient"
       }
     }

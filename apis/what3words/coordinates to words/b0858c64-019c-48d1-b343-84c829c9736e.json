@@ -156,23 +156,23 @@
         "description": "Receives the coordinates to be converted to what3words.\n\nFormat: [latitude, longitude]"
       },
       "6063c7b0-d06b-4a0a-8746-e839d0e34bee": {
-        "type": "{\n  \"apiKey\": string,\n  optional \"language\": string,\n  optional \"format\": (\"json\" or \"geojson\")\n}",
+        "type": "{\"apiKey\": string, optional \"language\": string, optional \"format\": (\"json\" or \"geojson\")}",
         "name": "params",
         "description": "Receives what3words API parameters."
       }
     },
     "outputs": {
       "6c0a336c-dae0-46f6-8852-e3eb143bb456": {
-        "type": "({\n  \"country\": string,\n  \"square\": {\n      \"southwest\": {\n          \"lng\": number,\n          \"lat\": number\n      },\n      \"northeast\": {\n          \"lng\": number,\n          \"lat\": number\n      }\n  },\n  \"nearestPlace\": string,\n  \"coordinates\": {\n      \"lng\": string,\n      \"lat\": string\n  },\n  \"words\": string,\n  \"language\": string,\n  \"map\": string\n}\nor\n{\n  \"features\": [\n      {\n          \"bbox\": [number, number, number, number],\n          \"geometry\": {\n              \"coordinates\": [number, number],\n              \"type\": \"Point\"\n          },\n          \"type\": \"Feature\",\n          \"properties\": {\n              \"country\": string,\n              \"nearestPlace\": string,\n              \"words\": string,\n              \"language\": string,\n              \"map\": string\n          }\n      }\n  ],\n  \"type\": \"FeatureCollection\"\n})",
+        "type": "({\"country\": string, \"square\": {\"southwest\": {\"lng\": number, \"lat\": number}, \"northeast\": {\"lng\": number, \"lat\": number}}, \"nearestPlace\": string, \"coordinates\": {\"lng\": string, \"lat\": string}, \"words\": string, \"language\": string, \"map\": string} or {\"features\": [{\"bbox\": [number, number, number, number], \"geometry\": {\"coordinates\": [number, number], \"type\": \"Point\"}, \"type\": \"Feature\", \"properties\": {\"country\": string, \"nearestPlace\": string, \"words\": string, \"language\": string, \"map\": string}}], \"type\": \"FeatureCollection\"})",
         "name": "data",
         "description": "Sends data structure describing the geographical area identified by the 3-word address."
       },
       "480f26de-4ca0-4960-bda9-162480781a86": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "047920a4-9412-4a90-a2e7-95b06f9ee533": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

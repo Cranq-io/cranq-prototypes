@@ -8,14 +8,14 @@
         "description": "The id of the express instance.\n\nExample: \n\"my-express-server\""
       },
       "11745554-d9d0-41bb-af77-987d8450ccfe": {
-        "type": "(\n  {\n    \"port\": number,\n    \"host\": string\n  }\n  or number\n)",
+        "type": "({\"port\": number, \"host\": string} or number)",
         "name": "params",
         "description": "The port number express should listen to.\n\nExample: \n3000"
       }
     },
     "outputs": {
       "f0468ce8-f1ab-47d7-9f2f-1903fad4326a": {
-        "type": "(null or\n \n{\n  \"port\": number,  \n  \"hostname\": string \n}) ",
+        "type": "(null or {\"port\": number, \"hostname\": string})",
         "name": "done",
         "description": "Event triggered when the action has been executed."
       },

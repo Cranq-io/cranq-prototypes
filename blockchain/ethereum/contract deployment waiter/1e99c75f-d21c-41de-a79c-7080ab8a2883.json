@@ -166,7 +166,7 @@
   "interface": {
     "inputs": {
       "67c68864-f37a-4967-9ddd-3a87617ac325": {
-        "type": "{\n  \"confirmationNumber\": number,\n  \"receipt\": {\n\"contractAddress\": string}\n}",
+        "type": "{\"confirmationNumber\": number, \"receipt\": {\"contractAddress\": string}}",
         "name": "confirmation",
         "description": "Receives the confirmation(s) of the deployment as received from the chain."
       },

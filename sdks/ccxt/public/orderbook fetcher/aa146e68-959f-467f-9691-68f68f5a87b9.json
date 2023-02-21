@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
-        "type": "{\n  \"id\": string\n}",
+        "type": "{\"id\": string}",
         "name": "exchange",
         "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n{\"id\": \"upbit\"}\n```"
       },
       "958e1641-dd76-41a7-a436-92290000eb61": {
-        "type": "{\n  \"symbol\": string,\n  optional \"limit\": number,\n  optional \"params\": {string: any}\n}",
+        "type": "{\"symbol\": string, optional \"limit\": number, optional \"params\": {string: any}}",
         "name": "query",
         "description": "Received the orderbook parameters to be fetched.\n\nExample:\n```\n{\n  \"symbol\": \"BTC/USDT\"\n}\n```"
       }
     },
     "outputs": {
       "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
-        "type": " {\n      \"bids\": [number, number][],\n      \"asks\": [number, number][],\n      \"symbol\": string,\n      optional  \"timestamp\": number,\n      optional \"datetime\": string,\n      optional \"nonce\": number\n  }",
+        "type": "{\"bids\": [number, number][], \"asks\": [number, number][], \"symbol\": string, optional \"timestamp\": number, optional \"datetime\": string, optional \"nonce\": number}",
         "name": "data",
         "description": "Sends information on open orders with bid (buy) and ask (sell) prices.\n\nExample:\n```\n{\n  \"symbol\": \"BTC/USDT\",\n  \"bids\": [\n    [\n      23340.881,\n      1.07108207\n    ],\n    [\n      23320.59700001,\n      0.00238276\n    ],\n    [\n      23320.597,\n      0.00127999\n    ],\n    [\n      23315.3649803,\n      0.00003501\n    ],\n    [\n      23302.07806294,\n      0.00013228\n    ],\n    [\n      23298.08462788,\n      0.00000951\n    ],\n    [\n      23281.21445401,\n      0.00038168\n    ],\n    [\n      23281.11,\n      0.00006959\n    ],\n    [\n      23250.503,\n      0.0308213\n    ],\n    [\n      23246.0481615,\n      0.10754516\n    ],\n    [\n      23241.06615375,\n      0.21513642\n    ],\n    [\n      23224.176,\n      2.49919148\n    ],\n    [\n      23087.5730675,\n      0.00476805\n    ],\n    [\n      22982.00175076,\n      0.00047025\n    ],\n    [\n      22938.00000001,\n      0.0001613\n    ]\n  ],\n  \"asks\": [\n    [\n      23411.01,\n      1.06787363\n    ],\n    [\n      23429.07818475,\n      0.1\n    ],\n    [\n      23508.38496241,\n      0.00568306\n    ],\n    [\n      23528.0658,\n      0.00004972\n    ],\n    [\n      23528.066,\n      1.86310435\n    ],\n    [\n      23658.76724138,\n      0.05370671\n    ],\n    [\n      23659.00383142,\n      0.05047722\n    ],\n    [\n      23659.77011495,\n      0.0194021\n    ],\n    [\n      23668.19923372,\n      0.17716542\n    ],\n    [\n      23750.00000001,\n      0.00388776\n    ],\n    [\n      23829,\n      0.00767275\n    ],\n    [\n      23838.46153847,\n      0.00809952\n    ],\n    [\n      23943.41085272,\n      0.00351427\n    ],\n    [\n      24000,\n      0.0327\n    ],\n    [\n      24180.902,\n      0.00644413\n    ]\n  ],\n  \"timestamp\": 1659364372388,\n  \"datetime\": \"2022-08-01T14:32:52.388Z\"\n}\n```\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#order-book-structure"
       },
       "e776d410-3c57-4114-8189-1ed584a01974": {
-        "type": "typeof `error`of `ccxt`",
+        "type": "typeof `error` of `ccxt`",
         "name": "error"
       }
     }

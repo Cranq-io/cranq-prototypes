@@ -3,18 +3,18 @@
   "interface": {
     "inputs": {
       "b8a73db8-c764-4542-aba1-43969ca5b0c9": {
-        "type": "{\n  \"api_key\": string,\n  \"chain\" :(\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, \"chain\": (\"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": ""
       },
       "60d7f88c-3327-4602-ad48-3be33dee6369": {
-        "type": "{\n  optional \"page_number\": number,\n  optional \"page_size\": number\n}",
+        "type": "{optional \"page_number\": number, optional \"page_size\": number}",
         "name": "query"
       }
     },
     "outputs": {
       "95cdf2b6-c42d-4eae-8600-c42331319b69": {
-        "type": "{\n  \"method\": \"GET\",\n  \"url\": string,\n  \"headers\": {string: string}\n}",
+        "type": "{\"method\": \"GET\", \"url\": string, \"headers\": {string: string}}",
         "name": "request"
       }
     }

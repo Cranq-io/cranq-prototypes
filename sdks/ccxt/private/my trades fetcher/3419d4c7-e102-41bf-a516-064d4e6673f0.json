@@ -3,24 +3,24 @@
   "interface": {
     "inputs": {
       "f838d7e5-74b5-4245-8630-aa75ce419cb1": {
-        "type": " {\n       \"id\": string,\n       optional \"credentials\": {\n         \"apiKey\": string,\n         \"secret\": string,\n         optional \"uid\": string,\n         optional \"password\": string\n       },\n       optional \"sandboxMode\": boolean\n    }",
+        "type": "{\"id\": string, optional \"credentials\": {\"apiKey\": string, \"secret\": string, optional \"uid\": string, optional \"password\": string}, optional \"sandboxMode\": boolean}",
         "name": "exchange",
         "description": "Received the exchange to be used.\n\nMore:\nhttps://docs.ccxt.com/en/latest/exchange-markets.html\n\nExample:\n```\n {\n     \"id\": \"coinbasepro\",\n       \"credentials\": {\n        \"apiKey\": \"API_KEY\",\n        \"secret\": \"SECRET\",\n        \"password\": \"PASSWORD\"\n      },\n      \"sandboxMode\": true\n}\n```"
       },
       "958e1641-dd76-41a7-a436-92290000eb61": {
-        "type": "{\n  \"symbol\": string,\n  optional  \"since\": number,\n  optional  \"limit\": number,\n  optional \"params\": {string: any}\n}",
+        "type": "{\"symbol\": string, optional \"since\": number, optional \"limit\": number, optional \"params\": {string: any}}",
         "name": "query",
         "description": "Received the trades parameters to be fetched.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#personal-trades\n\nExample:\n```\n  {  \n      \"symbol\": \"BTC/USDT\"\n  }\n```"
       }
     },
     "outputs": {
       "1b5bfbab-7759-4f93-8905-5d7d5c0c48a6": {
-        "type": "{\n  \"info\": any,\n  \"id\": string,\n  optional \"datetime\": string,\n  optional \"timestamp\": number,\n  \"symbol\": string,\n  optional \"order\": string,\n  optional \"type\": (\"limit\"or \"market\"),\n  \"side\": (\"buy\" or \"sell\"),\n  \"takerOrMaker\": (\"taker\" or \"maker\"),\n  optional \"price\": number,\n  optional \"amount\": number,\n  \"cost\": number,\n  optional \"fee\": {\n\t\"currency\": string,\n\t\"cost\": number,\n\t\"rate\": number\n  }\n}[]",
+        "type": "{\"info\": any, \"id\": string, optional \"datetime\": string, optional \"timestamp\": number, \"symbol\": string, optional \"order\": string, optional \"type\": (\"limit\" or \"market\"), \"side\": (\"buy\" or \"sell\"), \"takerOrMaker\": (\"taker\" or \"maker\"), optional \"price\": number, optional \"amount\": number, \"cost\": number, optional \"fee\": {\"currency\": string, \"cost\": number, \"rate\": number}}[]",
         "name": "data",
         "description": "Sends historical trades.\n\nMore:\nhttps://docs.ccxt.com/en/latest/manual.html#trade-structure\n\nExample:\n```\n[\n  {\n    \"info\": {\n      \"symbol\": \"BTCUSDT\",\n      \"id\": \"994046\",\n      \"orderId\": \"3383621\",\n      \"orderListId\": \"-1\",\n      \"price\": \"24496.40000000\",\n      \"qty\": \"0.06694900\",\n      \"quoteQty\": \"1640.00948360\",\n      \"commission\": \"0.00000000\",\n      \"commissionAsset\": \"USDT\",\n      \"time\": \"1660208141103\",\n      \"isBuyer\": false,\n      \"isMaker\": false,\n      \"isBestMatch\": true\n    },\n    \"timestamp\": 1660208141103,\n    \"datetime\": \"2022-08-11T08:55:41.103Z\",\n    \"symbol\": \"BTC/USDT\",\n    \"id\": \"994046\",\n    \"order\": \"3383621\",\n    \"side\": \"sell\",\n    \"takerOrMaker\": \"taker\",\n    \"price\": 24496.4,\n    \"amount\": 0.066949,\n    \"cost\": 1640.0094836,\n    \"fee\": {\n      \"cost\": 0,\n      \"currency\": \"USDT\"\n    },\n    \"fees\": [\n      {\n        \"cost\": 0,\n        \"currency\": \"USDT\"\n      }\n    ]\n  }\n]\n```\n"
       },
       "e776d410-3c57-4114-8189-1ed584a01974": {
-        "type": "typeof `error`of `ccxt`",
+        "type": "typeof `error` of `ccxt`",
         "name": "error"
       }
     }

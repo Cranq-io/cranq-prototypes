@@ -77,7 +77,7 @@
         "description": "Receives the path where the file with the generated voice should be saved.\n\ne.g.: \"/Users/user1/AzureSpeech/samples/synthesizedSpeech.wav\""
       },
       "8459bee0-330e-479e-959c-1714c0f00938": {
-        "type": "{\n  \"subscriptionKey\": string,\n  \"region\": string,\n  optional \"voiceName\": string\n}",
+        "type": "{\"subscriptionKey\": string, \"region\": string, optional \"voiceName\": string}",
         "name": "params",
         "description": "Receives generic parameters for Azure text to speech services,including credentials.\n\nThe key and region values are available from Azure dashboard.\n\nexample:\n{\n  \"subscriptionKey\": \"1e***f\",\n  \"region\": \"eastus2\",\n  \"voiceName\": \"en-US-JennyNeural\"\n}"
       }

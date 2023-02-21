@@ -3,12 +3,12 @@
   "interface": {
     "inputs": {
       "545a5e1a-9807-4456-b557-dfa8aa8ef28a": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "a",
         "description": "Receives the dictionary to merge onto.\n\nExample:\n{ \"first\": 1, \"third\": 0 }"
       },
       "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "b",
         "description": "Receives the dictionary to merge with.\n\nExample:\n{ \"third\": 3, \"fifth\": 5 }"
       }

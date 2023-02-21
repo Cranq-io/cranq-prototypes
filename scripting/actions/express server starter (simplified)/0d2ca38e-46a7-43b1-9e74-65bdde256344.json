@@ -9,7 +9,7 @@
         "description": "Receives script state."
       },
       "cd9b4ff4-1a3b-4b5f-a5e1-bccaac9dfdd9": {
-        "type": "{\n  \"cwd\": string,\n  \"app-id\": string,\n  \"port\": number,\n  \"middlewares\": (\"json\" or \"cors\" or \"urlencoded\")[]\n}",
+        "type": "{\"cwd\": string, \"app-id\": string, \"port\": number, \"middlewares\": (\"json\" or \"cors\" or \"urlencoded\")[]}",
         "name": "params",
         "description": "Receives:\n* 'cwd' locates directory for persisted state\n* 'app-id' identifies Express server (default: \"default\")\n* 'port' specifies port to run server on (default: 8080)\n* 'middlewares' lists express middlewares to be activated (default: [])\n\nExample:\n{\n  \"cwd\": \"./express\",\n  \"middlewares\": [\"json\"]\n}"
       }

@@ -4,14 +4,14 @@
   "interface": {
     "inputs": {
       "8a4f7d44-e12d-4640-a0e2-c0339b240709": {
-        "type": "{\n  \"error\": \"incorrect bearer token\"\n}",
+        "type": "{\"error\": \"incorrect bearer token\"}",
         "name": "error",
         "description": ""
       }
     },
     "outputs": {
       "9a048bdf-a9cb-43f3-a514-d88ab0f798a3": {
-        "type": "({\n  \"status\": 400,\n  \"headers\": {string: string},\n  \"body\": \"Bad request\"\n} or {\n  \"status\": 403,\n  \"headers\": {string: string},\n  \"body\": \"Unauthorized\"\n})",
+        "type": "({\"status\": 400, \"headers\": {string: string}, \"body\": \"Bad request\"} or {\"status\": 403, \"headers\": {string: string}, \"body\": \"Unauthorized\"})",
         "name": "response"
       }
     }

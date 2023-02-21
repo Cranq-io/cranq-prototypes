@@ -25,7 +25,7 @@
         "name": "renamed"
       },
       "db50d76f-e0bc-4d56-a919-90167da777c9": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, rename '/home/user1/dir1/foo.txt' -> '/home/user1/dir1/bar.txt'\"\n}"
       }

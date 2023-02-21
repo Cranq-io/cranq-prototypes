@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "4484df1e-602f-4c24-a085-74f9afd205ac": {
-        "type": "{\n  \"source\": string,\n  optional \"destination\": string\n}",
+        "type": "{\"source\": string, optional \"destination\": string}",
         "name": "paths",
         "description": "Receives the source and destination paths."
       }

@@ -18,7 +18,7 @@
         "description": "Receives end date timestamp for querying data.\n\nExample:\n1644364800"
       },
       "53d36ecc-ffe2-4d9e-892b-7b4d109db763": {
-        "type": "(\"1d\" or \"5d\" or \"1mo\" or \"3mo\" or  \"6mo\" or \"1y\" or \"2y\" or \"5y\" or \"10y\" or \"ytd\" or \"max\")",
+        "type": "(\"1d\" or \"5d\" or \"1mo\" or \"3mo\" or \"6mo\" or \"1y\" or \"2y\" or \"5y\" or \"10y\" or \"ytd\" or \"max\")",
         "name": "interval",
         "description": "Receives the interval of the `rates per date` output"
       }
@@ -30,7 +30,7 @@
         "description": "Sent the rates of the symbol per interval"
       },
       "afd96529-112a-4aeb-8b85-bd3c996feaae": {
-        "type": "{\n  \"error\": \"Service unavailable\"\n}",
+        "type": "{\"error\": \"Service unavailable\"}",
         "name": "error"
       }
     }

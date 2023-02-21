@@ -8,7 +8,7 @@
         "description": ""
       },
       "e5147482-7585-4b2b-b12a-ab4399681f66": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": ""
       }
@@ -19,7 +19,7 @@
         "name": "data"
       },
       "418124c3-bbfa-4098-8412-8ba469ecb063": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error"
       }
     }

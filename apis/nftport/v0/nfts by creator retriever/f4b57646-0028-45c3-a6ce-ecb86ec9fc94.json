@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "9d5f36c3-0f97-4655-b3b4-17e69247c391": {
-        "type": "{\n  \"account_address\": string,\n  optional \"continuation\": string,\n  optional \"include\": (\"default\" or \"metadata\" or \"contract_information\"),\n optional \"page_size\" : number\n}",
+        "type": "{\"account_address\": string, optional \"continuation\": string, optional \"include\": (\"default\" or \"metadata\" or \"contract_information\"), optional \"page_size\": number}",
         "name": "query",
         "description": "Receives the query parameters.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-nf-ts-created-by-an-account#Request\n"
       },
       "df450167-1afc-4494-b1c3-afa5c07b3f69": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": \"ethereum\"\n}",
+        "type": "{\"api_key\": string, optional \"chain\": \"ethereum\"}",
         "name": "params",
         "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-nf-ts-created-by-an-account#Request\n\nDefault chain value: \"ethereum\""
       }
     },
     "outputs": {
       "c74ef5b6-1c9b-49f2-9444-e64dd26fc0eb": {
-        "type": "{\n  \"response\": \"OK\",\n  \"nfts\": \n  {\n    \"chain\": \"ethereum\",\n    \"contract_address\": string,\n    \"token_id\": number,\n    optional \"name\": string,\n    optional \"description\": string,\n    optional \"metadata\": any,\n    optional \"metadata_url\": (string or null),\n    optional \"file_url\": (string or null),\n    optional \"animation_url\": (string or null),\n    optional \"cached_file_url\": (string or null),\n    optional \"cached_animation_url\": (string or null),\n    optional \"owner_addresses\": string[]\n  }[],\n  optional \"continuation\": string\n}",
+        "type": "{\"response\": \"OK\", \"nfts\": {\"chain\": \"ethereum\", \"contract_address\": string, \"token_id\": number, optional \"name\": string, optional \"description\": string, optional \"metadata\": any, optional \"metadata_url\": (string or null), optional \"file_url\": (string or null), optional \"animation_url\": (string or null), optional \"cached_file_url\": (string or null), optional \"cached_animation_url\": (string or null), optional \"owner_addresses\": string[]}[], optional \"continuation\": string}",
         "name": "data",
         "description": "Sends the query response.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=retrieve-nf-ts-created-by-an-account#Responses"
       },
       "b4f5ae7e-4534-4409-a7dc-8080b78487ee": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "dfc658fc-5d14-4119-8a1a-d66a1bb5717e": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": "Sends the error, if any"
       }

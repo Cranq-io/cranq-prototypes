@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "6a7d3e96-88ec-43b5-a8ae-eab6206748b3": {
-        "type": "{\"key\":string,\"value\":any}[]",
+        "type": "{\"key\": string, \"value\": any}[]",
         "name": "key-value pairs",
         "description": "Receives objects having key & value properties.\n\nExample:\n[ { \"key\":\"first\", \"value\": 1 }, { \"key\":\"third\", \"value\": 3 } ]"
       }
     },
     "outputs": {
       "647899b9-8122-4a5b-a622-c9763e51d0c1": {
-        "type": "{string:typeof`key-value pairs`[number][\"value\"]}",
+        "type": "{string: typeof `key-value pairs`[number][\"value\"]}",
         "name": "dict",
         "description": "Sends the resulting dictionary.\n\nExample:\n{ \"first\": 1, \"third\": 3 }"
       }

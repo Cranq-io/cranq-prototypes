@@ -3,16 +3,16 @@
   "interface": {
     "inputs": {
       "dae7b830-396f-479a-9331-55cc629af727": {
-        "type": "{\n  \"serverId\": string,\n  \"port\": number\n}",
+        "type": "{\"serverId\": string, \"port\": number}",
         "name": "API params"
       },
       "528aa7d8-291b-4c63-ab96-0312bf9be120": {
-        "type": "{  \n\"Authentication\": \n{    \n\"user id\": string,    \"password\": string  },  \"Message\": {    \n\"From\": \n{      \n\"Email\": string, \noptional \"Name\": string    },    \"TemplateID\": number,    \"Subject\": string  },  \"ValidationURL\": string}",
+        "type": "{\"Authentication\": {\"user id\": string, \"password\": string}, \"Message\": {\"From\": {\"Email\": string, optional \"Name\": string}, \"TemplateID\": number, \"Subject\": string}, \"ValidationURL\": string}",
         "name": "MailJet params",
         "description": ""
       },
       "929e8d94-bfe4-4701-9e7f-b7a46b6ad482": {
-        "type": "{\n  \"apiKey\": string,\n  \"baseId\": string,\n  \"tableName\": string\n}",
+        "type": "{\"apiKey\": string, \"baseId\": string, \"tableName\": string}",
         "name": "AT params",
         "description": ""
       }

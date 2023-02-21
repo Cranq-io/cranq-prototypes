@@ -3,14 +3,14 @@
   "interface": {
     "inputs": {
       "994dd3e0-c1a7-4e71-8e11-272a668dafea": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "dict",
         "description": "Receives the dictionary to iterate through.\n\nExample:\n{ \"first\": 1, \"third\": 3, \"fifth\": 5 }"
       }
     },
     "outputs": {
       "38e1ece7-ee49-4fe2-a10c-c10edcecbf2f": {
-        "type": "typeof`dict`[string]",
+        "type": "typeof `dict`[string]",
         "name": "value",
         "description": "Sends the value of the current item, with the tag corresponding to the iteration."
       },

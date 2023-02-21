@@ -94,12 +94,12 @@
   "interface": {
     "inputs": {
       "cd1c33d6-2d5c-454b-8306-2335d4bffcaa": {
-        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}",
+        "type": "{optional \"Name\": string, \"Email\": string}",
         "name": "from",
         "description": "Receives the sender."
       },
       "2b455e13-9320-4dac-a64c-f963ab2aeb3c": {
-        "type": "{\n  optional \"Name\": string,\n  \"Email\": string\n}[]",
+        "type": "{optional \"Name\": string, \"Email\": string}[]",
         "name": "to",
         "description": "Receives the recipients."
       },
@@ -114,14 +114,14 @@
         "description": "Receives the TemplateID."
       },
       "8508ade8-2825-462e-9ac7-3949eb19dcca": {
-        "type": "{string:any}",
+        "type": "{string: any}",
         "name": "variables",
         "description": "Receives the template variables."
       }
     },
     "outputs": {
       "ba493bb0-5e08-4904-869f-e8854341976d": {
-        "type": "{\n  \"Messages\": {\n    \"From\": {\n      \"Email\": string,\n      \"Name\": string\n    },\n    \"To\": {\n      \"Email\": string,\n      \"Name\": string\n    }[],\n    \"Subject\": string,\n    \"TemplateLanguage\": true,\n    \"TemplateID\": number,\n    \"Variables\": typeof `variables`\n  }[]\n}",
+        "type": "{\"Messages\": {\"From\": {\"Email\": string, \"Name\": string}, \"To\": {\"Email\": string, \"Name\": string}[], \"Subject\": string, \"TemplateLanguage\": true, \"TemplateID\": number, \"Variables\": typeof `variables`}[]}",
         "name": "request",
         "description": "Sends the constructed request to be used by the `apis/mailjet/v3.1/Email sender` node."
       }

@@ -9,7 +9,7 @@
   "interface": {
     "inputs": {
       "9ec2ec0d-0d42-4f25-a7e5-a09a770546b1": {
-        "type": "{\n  \"encoding\": (\"utf8\" or \"base64\"),\n  \"data\": string\n}[]",
+        "type": "{\"encoding\": (\"utf8\" or \"base64\"), \"data\": string}[]",
         "name": "chunks",
         "description": "Receives the chunks to be joined."
       }

@@ -25,7 +25,7 @@
     },
     "outputs": {
       "71403cb3-0658-45ab-892c-e673f042d552": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"data\": {\n    \"records\": [typeof `AT record`]\n  }\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, \"data\": {\"records\": [typeof `AT record`]}}",
         "name": "JSON req."
       }
     }

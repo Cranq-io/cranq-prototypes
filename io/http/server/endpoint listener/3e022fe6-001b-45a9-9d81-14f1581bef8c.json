@@ -4,24 +4,24 @@
   "interface": {
     "inputs": {
       "b791f485-a790-4e63-8c41-867597d4d42c": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string:string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": ""
       },
       "aac93261-9159-4995-ba5e-faf09ebdffd6": {
-        "type": "{\n  \"serverId\": string,\n  \"port\": number,\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"route\": string,\noptional \"host\": string,\n  optional \"request\": {\n    optional \"bearerToken\": string,\n    optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")\n  },\n  optional \"response\": { \n   optional \"contentType\": (\"text\" or \"json\")\n  }\n}",
+        "type": "{\"serverId\": string, \"port\": number, \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"route\": string, optional \"host\": string, optional \"request\": {optional \"bearerToken\": string, optional \"contentType\": (\"text\" or \"json\" or \"urlencoded\")}, optional \"response\": {optional \"contentType\": (\"text\" or \"json\")}}",
         "name": "params",
         "description": ""
       }
     },
     "outputs": {
       "e05aabf8-4835-4f7b-95c4-c32cab2291ad": {
-        "type": "{\n\"baseUrl\": string, \n\"body\": any, \n\"cookies\": any, \n\"hostname\": string, \n\"headers\": {string:string}, \n\"ip\": string, \n\"ips\": string[], \n\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \n\"originalUrl\": string,\n\"params\": {string:string}, \n\"path\": string, \n\"protocol\": (\"http\" or \"https\"), \n\"query\": {string: any}, \n\"route\": string, \n\"secure\": boolean, \n\"signedCookies\": any, \n\"stale\": boolean, \n\"subdomains\": string[], \n\"xhr\": boolean\n}",
+        "type": "{\"baseUrl\": string, \"body\": any, \"cookies\": any, \"hostname\": string, \"headers\": {string: string}, \"ip\": string, \"ips\": string[], \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"originalUrl\": string, \"params\": {string: string}, \"path\": string, \"protocol\": (\"http\" or \"https\"), \"query\": {string: any}, \"route\": string, \"secure\": boolean, \"signedCookies\": any, \"stale\": boolean, \"subdomains\": string[], \"xhr\": boolean}",
         "name": "request",
         "description": "Sends request received via HTTP."
       },
       "bc3489db-427f-4744-ab1f-3edc82d0f8f0": {
-        "type": "{\n  \"error\": string,\n  optional \"origin\": string\n}",
+        "type": "{\"error\": string, optional \"origin\": string}",
         "name": "error",
         "description": "Sends error about incoming request."
       },

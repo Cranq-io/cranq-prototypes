@@ -3,7 +3,7 @@
   "interface": {
     "inputs": {
       "2438d8d0-99a7-4b38-ae31-e76d9d92245a": {
-        "type": "{  \n \"account_address\": string,\noptional \"continuation\": string,\n   optional \"page_size\": number,\n  optional \"type\" : \"owns_contract_nfts\"\n}",
+        "type": "{\"account_address\": string, optional \"continuation\": string, optional \"page_size\": number, optional \"type\": \"owns_contract_nfts\"}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {

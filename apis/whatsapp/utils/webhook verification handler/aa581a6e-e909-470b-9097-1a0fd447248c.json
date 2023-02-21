@@ -3,19 +3,19 @@
   "interface": {
     "inputs": {
       "cf834880-e703-4f3a-a5e0-7d898c778aa5": {
-        "type": "{\n  \"query\": {\n    \"hub.mode\": \"subscribe\",\n    \"hub.challenge\": string,\n    \"hub.verify_token\": string\n  }\n}",
+        "type": "{\"query\": {\"hub.mode\": \"subscribe\", \"hub.challenge\": string, \"hub.verify_token\": string}}",
         "name": "request",
         "description": "Receives the WhatsApp webhook verification request.\n\nSee https://developers.facebook.com/docs/graph-api/webhooks/getting-started."
       },
       "747d6bd6-3a3c-49b6-8bd8-4e497d6c3d16": {
-        "type": "{\n  \"verifyToken\": string\n}",
+        "type": "{\"verifyToken\": string}",
         "name": "params",
         "description": "Receives static parameters, including the verify token that the request will be checked against."
       }
     },
     "outputs": {
       "e9036dcc-14bb-4b7e-89c6-cf9b9cf9a018": {
-        "type": "{\n  \"status\": (200 or 400),\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"status\": (200 or 400), \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Sends the response to the verification request."
       }

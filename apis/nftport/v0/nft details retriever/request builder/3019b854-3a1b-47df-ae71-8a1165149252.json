@@ -3,11 +3,11 @@
   "interface": {
     "inputs": {
       "b2308e42-ac2d-4591-892a-e8c392dd8935": {
-        "type": "{\n  \"contract_address\": string,\n  \"token_id\": string,\n  optional \"refresh_metadata\": boolean\n}",
+        "type": "{\"contract_address\": string, \"token_id\": string, optional \"refresh_metadata\": boolean}",
         "name": "query"
       },
       "aa0de135-9752-416c-9ea7-b9c2561cc1a2": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "params",
         "description": "[Inherited from port `b` of `inner joiner`] \nReceives the dictionary containing the values to join and the keys to join by.\n\nExample:\n{\"first_id\":1, \"second_id\":2, \"third_id\":3}"
       }

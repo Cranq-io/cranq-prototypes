@@ -3,13 +3,13 @@
   "interface": {
     "inputs": {
       "c36c722f-3c5b-48ce-abf7-da9610333d7e": {
-        "type": "{\"array\":any[],\"from\":number,\"to\":number}",
+        "type": "{\"array\": any[], \"from\": number, \"to\": number}",
         "name": "array & from & to"
       }
     },
     "outputs": {
       "98df0cad-94e1-4c6a-8ddf-8204f44a73d9": {
-        "type": "typeof`array & from & to`[\"array\"]",
+        "type": "typeof `array & from & to`[\"array\"]",
         "name": "slice"
       }
     }

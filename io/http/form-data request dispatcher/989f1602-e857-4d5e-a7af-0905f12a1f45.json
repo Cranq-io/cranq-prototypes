@@ -4,13 +4,13 @@
   "interface": {
     "inputs": {
       "0410c79a-5ea7-45c8-80ae-417492d414fa": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  \"form\": {\n    \"boundary\": string,\n    \"fields\": {\n      \"name\": string,\n      \"data\": string,\n      optional \"fileName\": string,\n      optional \"contentType\": string\n    }[]\n  }\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, \"form\": {\"boundary\": string, \"fields\": {\"name\": string, \"data\": string, optional \"fileName\": string, optional \"contentType\": string}[]}}",
         "name": "form req."
       }
     },
     "outputs": {
       "b823f037-d710-44df-963d-1fa300277739": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "19081d3b-87ba-48bd-af9a-84275a718cc3": {

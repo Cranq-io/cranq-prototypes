@@ -4,14 +4,14 @@
   "interface": {
     "inputs": {
       "6db50f44-7715-492a-9da2-ac9336ddd828": {
-        "type": "{\n  \"body\": any\n}",
+        "type": "{\"body\": any}",
         "name": "request",
         "description": "Receives Telegram update webhook request."
       }
     },
     "outputs": {
       "0a848ee9-3d47-48a4-882c-9483cecdc7a6": {
-        "type": "{\n  \"update_id\": number,\n  optional \"message\": {\n    \"message_id\": number,\n    optional \"from\": {\n      \"id\": number,\n      \"is_bot\": boolean,\n      optional \"first_name\": string,\n      optional \"last_name\": string,\n      optional \"username\": string,\n      optional \"language_code\":  string\n    },\n    \"date\": number,\n    \"chat\": {\n      \"id\": number,\n      \"type\": (\"private\" or \"group\" or \"supergroup\" or \"channel\"),\n      optional \"username\": string,\n      optional \"first_name\": string,\n      optional \"last_name\": string\n    },\n    optional \"text\": string,\n    optional \"audio\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"duration\": number\n    },\n    optional \"document\": {\n      \"file_id\": string,\n      \"file_unique_id\": string\n    },\n    optional \"photo\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number\n    }[],\n    optional \"video\": {\n      \"file_id\": string,\n      \"file_unique_id\": string,\n      \"width\": number,\n      \"height\": number,\n      \"duration\": number\n    }\n  }\n}",
+        "type": "{\"update_id\": number, optional \"message\": {\"message_id\": number, optional \"from\": {\"id\": number, \"is_bot\": boolean, optional \"first_name\": string, optional \"last_name\": string, optional \"username\": string, optional \"language_code\": string}, \"date\": number, \"chat\": {\"id\": number, \"type\": (\"private\" or \"group\" or \"supergroup\" or \"channel\"), optional \"username\": string, optional \"first_name\": string, optional \"last_name\": string}, optional \"text\": string, optional \"audio\": {\"file_id\": string, \"file_unique_id\": string, \"duration\": number}, optional \"document\": {\"file_id\": string, \"file_unique_id\": string}, optional \"photo\": {\"file_id\": string, \"file_unique_id\": string, \"width\": number, \"height\": number}[], optional \"video\": {\"file_id\": string, \"file_unique_id\": string, \"width\": number, \"height\": number, \"duration\": number}}}",
         "name": "update",
         "description": "Sends update record. Type documents simple messages only. For full field types see https://core.telegram.org/bots/api#update."
       }

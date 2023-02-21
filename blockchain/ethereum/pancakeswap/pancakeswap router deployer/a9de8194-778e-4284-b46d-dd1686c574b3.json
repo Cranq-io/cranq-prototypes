@@ -9,7 +9,7 @@
         "description": "The name of the created contract. It must be a valid Solidity contract name (no spaces, special characters)."
       },
       "2ce2b32e-927f-41b3-bcab-d77769eb3da9": {
-        "type": "{\n    \"factory address\": string, \n    \"WBNB address\": string\n}",
+        "type": "{\"factory address\": string, \"WBNB address\": string}",
         "name": "init parameters",
         "description": "Receives an address of an already deployed Pancace factory contract and an already deployed wrapped BNB contract."
       },
@@ -31,7 +31,7 @@
         "description": "The source of the deployed contract in single file form. Required if want to perform contract verification on blockchain explorers (e.g. etherscan)."
       },
       "27ebe7c3-33de-4485-ba68-e659a8581cd0": {
-        "type": "{\n    optional \"evmVersion\": string,\n    \"optimizer\": {\n        \"enabled\": boolean,\n        \"runs\": number\n    }\n}",
+        "type": "{optional \"evmVersion\": string, \"optimizer\": {\"enabled\": boolean, \"runs\": number}}",
         "name": "compile settings",
         "description": "The settings used to compile the contract, like solidiy version, optimization settings, etc.\nThese are required e.g. if you want to perform contract verification on blockchain explorers (e.g. etherscan)."
       },

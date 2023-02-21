@@ -4,18 +4,18 @@
   "interface": {
     "inputs": {
       "30168da8-b242-48ac-a79e-a79ce8f0880a": {
-        "type": "{\n  optional \"includeMultiChainCurrencies\": boolean\n}",
+        "type": "{optional \"includeMultiChainCurrencies\": boolean}",
         "name": "query",
         "description": ""
       }
     },
     "outputs": {
       "9d13fc9f-fe60-4575-8b64-67e6cd282a88": {
-        "type": "{\n  \"id\": 1,\n  \"name\": string,\n  \"humanType\": string,\n  \"currencyType\": string,\n  \"txFee\": string,\n  \"minConf\": number,\n  \"depositAddress\": null,\n  \"disabled\": number,\n  \"frozen\": number,\n  \"hexColor\": string,\n  \"blockchain\": string,\n  \"delisted\": number,\n  \"isGeofenced\": number\n}",
+        "type": "{\"id\": 1, \"name\": string, \"humanType\": string, \"currencyType\": string, \"txFee\": string, \"minConf\": number, \"depositAddress\": null, \"disabled\": number, \"frozen\": number, \"hexColor\": string, \"blockchain\": string, \"delisted\": number, \"isGeofenced\": number}",
         "name": "data"
       },
       "8a524d61-82ff-4edd-aef4-51abee5e950f": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response"
       },
       "f268cdaa-f0c2-4988-bd79-882080ab3ff9": {

@@ -154,26 +154,26 @@
   "interface": {
     "inputs": {
       "7364dd97-8727-4fbc-a01d-218d460556cb": {
-        "type": "{\n  optional \"transition\": {\n    optional \"id\": string,\n    \"looped\": boolean\n  },\n  \"fields\": {string: any},\n  optional \"update\": {string: any},\n  optional \"historyMetadata\": {\n    \"type\": string,\n    \"description\": string,\n    \"descriptionKey\": string,\n    \"activityDescription\": string,\n    \"activityDescriptionKey\": string,\n    \"emailDescription\": string,\n    \"emailDescriptionKey\": string,\n    \"actor\": {\n       \"id\": string,\n       \"displayName\": string,\n       \"displayNameKey\": string,\n       \"type\": string,\n       \"avatarUrl\": string,\n       \"url\": string\n    },\n    \"generator\": {\n       \"id\": string,\n      \"displayName\": string,\n      \"displayNameKey\": string,\n      \"type\": string,\n      \"avatarUrl\": string,\n      \"url\": string\n    },\n    \"cause\": {\n       \"id\": string,\n       \"displayName\": string,\n       \"displayNameKey\": string,\n       \"type\": string,\n      \"avatarUrl\": string,\n      \"url\": string\n    },\n    \"extraData\": {string: any}\n  }\n}",
+        "type": "{optional \"transition\": {optional \"id\": string, \"looped\": boolean}, \"fields\": {string: any}, optional \"update\": {string: any}, optional \"historyMetadata\": {\"type\": string, \"description\": string, \"descriptionKey\": string, \"activityDescription\": string, \"activityDescriptionKey\": string, \"emailDescription\": string, \"emailDescriptionKey\": string, \"actor\": {\"id\": string, \"displayName\": string, \"displayNameKey\": string, \"type\": string, \"avatarUrl\": string, \"url\": string}, \"generator\": {\"id\": string, \"displayName\": string, \"displayNameKey\": string, \"type\": string, \"avatarUrl\": string, \"url\": string}, \"cause\": {\"id\": string, \"displayName\": string, \"displayNameKey\": string, \"type\": string, \"avatarUrl\": string, \"url\": string}, \"extraData\": {string: any}}}",
         "name": "issue"
       },
       "b0cae8e5-22d5-4a6b-b439-b4ce5775b3ba": {
-        "type": "{\n   optional \"updateHistory\": boolean\n}",
+        "type": "{optional \"updateHistory\": boolean}",
         "name": "query"
       },
       "c962b98a-447b-407d-bda9-9c1d38df3588": {
-        "type": "{\n   \"email\": string,\n   \"apiToken\": string,\n   \"jiraDomain\": string\n}",
+        "type": "{\"email\": string, \"apiToken\": string, \"jiraDomain\": string}",
         "name": "params"
       }
     },
     "outputs": {
       "f0ca216e-46c6-4336-8ff3-1c0da809835e": {
-        "type": "{\n   \"self\": string,\n   \"id\": string,\n   \"key\": string,\n   \"transition\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   },\n   \"watchers\": {\n      \"status\": number,\n      \"errorCollection\": {\n        \"errorMessages\": string[],\n        \"errors\": {string: any}\n      }\n   }\n}",
+        "type": "{\"self\": string, \"id\": string, \"key\": string, \"transition\": {\"status\": number, \"errorCollection\": {\"errorMessages\": string[], \"errors\": {string: any}}}, \"watchers\": {\"status\": number, \"errorCollection\": {\"errorMessages\": string[], \"errors\": {string: any}}}}",
         "name": "data",
         "description": "Sends information about the created issue, and if necessary, any errors occurred in the meantime."
       },
       "f20c5aa1-62e3-4a6f-891c-4b29c3b93a90": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original API response."
       },

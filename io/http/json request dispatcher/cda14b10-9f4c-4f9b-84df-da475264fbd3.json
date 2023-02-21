@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "3f371a08-e057-48db-bb41-9a66072ae89a": {
-        "type": "{\n  \"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"),\n  \"url\": string,\n  \"headers\": {string: string},\n  optional \"data\": any\n}",
+        "type": "{\"method\": (\"GET\" or \"POST\" or \"PUT\" or \"PATCH\" or \"DELETE\"), \"url\": string, \"headers\": {string: string}, optional \"data\": any}",
         "name": "JSON req.",
         "description": "Receives request with JSON body."
       }
@@ -16,7 +16,7 @@
         "description": "Sends HTTP response message body as data.\n\nExample:\n{\n  \"userId\": 1, \n  \"id\": 1, \n  \"title\": \"delectus aut autem\",  \n  \"completed\": false\n}\""
       },
       "099f75f3-56c7-43e1-a0ac-9b5b830a5353": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends original response."
       },

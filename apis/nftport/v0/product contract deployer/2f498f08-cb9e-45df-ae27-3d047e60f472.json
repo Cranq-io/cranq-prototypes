@@ -4,28 +4,28 @@
   "interface": {
     "inputs": {
       "b0cf441e-2aad-4cad-a60c-3b2833649b47": {
-        "type": "{\n  \"name\": string,\n  \"symbol\": string,\n  \"owner_address\": string,\n  optional \"type\": (\"erc721\" or \"erc1155\"),\n  optional \"metadata_updatable\": boolean,\n  optional \"base_uri\": string,\n  optional \"royalties_share\": number,\n  optional \"royalties_address\": string\n}",
+        "type": "{\"name\": string, \"symbol\": string, \"owner_address\": string, optional \"type\": (\"erc721\" or \"erc1155\"), optional \"metadata_updatable\": boolean, optional \"base_uri\": string, optional \"royalties_share\": number, optional \"royalties_address\": string}",
         "name": "contract",
         "description": "Receives the data of the contract to be deployed.\n\nReference: https://docs.nftport.xyz/docs/nftport/?search=deploy-a-contract-for-nft-products#Request"
       },
       "031ade40-fbaa-4c74-b943-205d22e30885": {
-        "type": "{\n  \"api_key\": string,\n  optional \"chain\": (\"polygon\" or \"rinkeby\")\n}",
+        "type": "{\"api_key\": string, optional \"chain\": (\"polygon\" or \"rinkeby\")}",
         "name": "params",
         "description": "Reference: https://docs.nftport.xyz/docs/nftport/?search=deploy-a-contract-for-nft-products#Request\n\nDefault chain value: \"polygon\""
       }
     },
     "outputs": {
       "be391f0e-4fbe-47ce-8c70-dedc7fa4d6ea": {
-        "type": "{\n  \"response\": \"OK\",\n  \"chain\": (\"polygon\" or \"rinkeby\"),\n  \"transaction_hash\": string,\n  \"transaction_external_url\": string,\n  \"owner_address\": string,\n  \"type\": (\"erc721\" or \"erc1155\"),\n  \"name\": string,\n  \"symbol\": string\n}",
+        "type": "{\"response\": \"OK\", \"chain\": (\"polygon\" or \"rinkeby\"), \"transaction_hash\": string, \"transaction_external_url\": string, \"owner_address\": string, \"type\": (\"erc721\" or \"erc1155\"), \"name\": string, \"symbol\": string}",
         "name": "data"
       },
       "08d18e3e-d1b8-4fd6-ab06-25e7ee52fdb6": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "6c7e2a8d-a7e5-4514-a41e-8c3d34c4fe24": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

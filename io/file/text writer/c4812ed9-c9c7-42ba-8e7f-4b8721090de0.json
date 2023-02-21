@@ -25,7 +25,7 @@
         "description": "Sends synced parameters if operation has succeeded..\n\nExample:\n{ \n  path: \"/home/user1/dir1/foo.txt\", \n  text: \"Hello World\"\n}"
       },
       "9f719c89-b9c3-4f02-be23-dcedd3a4befe": {
-        "type": "{ \"error\": string }",
+        "type": "{\"error\": string}",
         "name": "error",
         "description": "Sends error information if the operation has failed.\n\nExample: \n{\n  \"error\": \"Error: ENOENT: no such file or directory, open '/home/user1/dir1/foo.txt'\"\n}"
       }

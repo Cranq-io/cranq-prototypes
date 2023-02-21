@@ -8,14 +8,14 @@
         "description": "Receives the original request headers."
       },
       "b61d32e9-183d-4b2a-b315-9830a72619d3": {
-        "type": "{\n  \"email\": string,\n  \"apiToken\": string\n}",
+        "type": "{\"email\": string, \"apiToken\": string}",
         "name": "auth",
         "description": "Receives the authentication parameters."
       }
     },
     "outputs": {
       "7c23af6c-a56f-4f62-ac87-254df1ab16d4": {
-        "type": "{string:string}",
+        "type": "{string: string}",
         "name": "headers",
         "description": "Sends request headers including authentication header."
       }

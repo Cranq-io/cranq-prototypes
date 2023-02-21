@@ -8,7 +8,7 @@
         "name": "command"
       },
       "2306645b-1405-4270-acda-dab0946ef715": {
-        "type": "{\n\"cwd\": string,\n\"env\": {string: string}\n}",
+        "type": "{\"cwd\": string, \"env\": {string: string}}",
         "name": "options"
       }
     },
@@ -27,7 +27,7 @@
         "description": "Null on success."
       },
       "ff5e32e3-a7b2-4443-9f25-6f5b108c3d97": {
-        "type": "{\n\"command\": typeof `command`,\n\"options\": typeof `options`\n}",
+        "type": "{\"command\": typeof `command`, \"options\": typeof `options`}",
         "name": "on busy",
         "description": "The received command and options when the node is still executing another command."
       },

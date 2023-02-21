@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "2ca21771-3f31-4a8d-8bbb-09797ff1ad9e": {
-        "type": "{\n  \"file\": {\n    \"data\": string,\n    \"fileName\": string,\n    \"contentType\": string\n  },\n   optional \"page_number\" :number, \n  optional \"page_size\" :number\n}",
+        "type": "{\"file\": {\"data\": string, \"fileName\": string, \"contentType\": string}, optional \"page_number\": number, optional \"page_size\": number}",
         "name": "query",
         "description": "File receives base64-encoded binary file contents.\npage_number and page_size are optional. \n\nhttps://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-file-upload#Request"
       },
       "598c8d3f-11ba-43e3-b15e-666108b6a5c7": {
-        "type": "{\n  \"api_key\": string\n}",
+        "type": "{\"api_key\": string}",
         "name": "params",
         "description": ""
       }
     },
     "outputs": {
       "fc336a27-fc93-47d4-ae36-b8e97ec01129": {
-        "type": "{\n  \"response\": \"OK\",\n   \"nfts\": [\n    {\n      \"chain\": (\"ethereum\" or \"polygon\"),\n      \"contract_address\": string,\n      \"token_id\": string,\n      optional \"cached_file_url\": string,\n     optional  \"metadata\": {\n        \"description\": string,\n        \"background_color\": string,\n        \"external_url\": string,\n        \"image\": string\n      }\n    }\n  ]\n}",
+        "type": "{\"response\": \"OK\", \"nfts\": [{\"chain\": (\"ethereum\" or \"polygon\"), \"contract_address\": string, \"token_id\": string, optional \"cached_file_url\": string, optional \"metadata\": {\"description\": string, \"background_color\": string, \"external_url\": string, \"image\": string}}]}",
         "name": "data",
         "description": "https://docs.nftport.xyz/docs/nftport/?search=find-similar-nf-ts-w-file-upload#Responses"
       },
       "32b405d3-1ec6-4031-bdf7-2e15edcf8262": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: any},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: any}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "15ee012a-e010-4b7a-b555-435d4e2a85f8": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

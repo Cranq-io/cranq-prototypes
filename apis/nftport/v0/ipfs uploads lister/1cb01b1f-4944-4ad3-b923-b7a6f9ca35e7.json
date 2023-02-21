@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "4a333578-e942-49e8-ad65-4b3f688de26b": {
-        "type": "{\n  \"type\": (\"file\" or \"metadata\" or \"metadata_directory\" or \"all\")[],\n  optional \"start_date\": string,\n  optional \"end_date\": string,\n  optional \"page_size\": number,\n  optional \"page_number\": number\n}",
+        "type": "{\"type\": (\"file\" or \"metadata\" or \"metadata_directory\" or \"all\")[], optional \"start_date\": string, optional \"end_date\": string, optional \"page_size\": number, optional \"page_number\": number}",
         "name": "query",
         "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-ipfs-uploads#Query-Parameters"
       },
       "2668fdd8-ea37-4f6b-9ab6-a18ab279758f": {
-        "type": "{\n  \"api_key\": string\n}",
+        "type": "{\"api_key\": string}",
         "name": "params",
         "description": "Reference:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-ipfs-uploads#Request"
       }
     },
     "outputs": {
       "6591c184-b6f5-487a-b894-2d549507728b": {
-        "type": "{\n  \"response\": \"OK\",\n  \"storage\": {\n    \"type\": (\"file\" or \"metadata\"),\n    optional \"file_name\": string,\n    \"ipfs_uri\": string,\n    \"ipfs_url\": string,\n    \"uploaded_date\": string,\n    optional \"content_type\": string,\n    optional \"file_size\": number,\n    optional \"file_size_mb\": number\n  }[]\n}",
+        "type": "{\"response\": \"OK\", \"storage\": {\"type\": (\"file\" or \"metadata\"), optional \"file_name\": string, \"ipfs_uri\": string, \"ipfs_url\": string, \"uploaded_date\": string, optional \"content_type\": string, optional \"file_size\": number, optional \"file_size_mb\": number}[]}",
         "name": "data",
         "description": "Sends the list of all the data uploaded to IPFS by you.\n\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=list-all-your-ipfs-uploads#response-body"
       },
       "95f5d309-756e-4573-970a-c51d5948593d": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response."
       },
       "a9c8bf6b-cf82-4680-a241-7b291ac45394": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error"
       }
     }

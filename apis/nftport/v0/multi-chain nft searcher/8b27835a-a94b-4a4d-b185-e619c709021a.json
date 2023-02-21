@@ -4,29 +4,29 @@
   "interface": {
     "inputs": {
       "a4507c2e-9c5a-4bc9-9ed8-cfc67217139e": {
-        "type": "{\n\"text\": string,\noptional \"filter_by_contract_address\" : string,\noptional \"order_by\": (\"relevance\" or \"mint_date\"),\noptional \"page_number\": number,\noptional \"page_size\": number,\noptional \"sort_order\": (\"desc\" or \"asc\")\n}",
+        "type": "{\"text\": string, optional \"filter_by_contract_address\": string, optional \"order_by\": (\"relevance\" or \"mint_date\"), optional \"page_number\": number, optional \"page_size\": number, optional \"sort_order\": (\"desc\" or \"asc\")}",
         "name": "query",
         "description": "Receives search query.\n\nRerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Request"
       },
       "7b2245d4-6e9d-4e04-a2af-fbef907a485d": {
-        "type": "{\n\"api_key\": string,\noptional \"chain\" :(\"polygon\" or \"ethereum\" or \"all\")\n}",
+        "type": "{\"api_key\": string, optional \"chain\": (\"polygon\" or \"ethereum\" or \"all\")}",
         "name": "params",
         "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Request\n\nDefault chain value: \"all\""
       }
     },
     "outputs": {
       "c2521e42-e908-4135-bac8-a6ea10fe79cf": {
-        "type": "{\n\n  \"response\":\"OK\",\n  \"search_results\": [\n    {\n      \"chain\": (\"polygon\" or \"ethereum\"),\n      \"contract_address\": \"string\",\n      \"token_id\": string,\n      \"name\": string,\n      \"description\": string,\n       optional \"mint_date\": string\n    }\n  ]\n}",
+        "type": "{\"response\": \"OK\", \"search_results\": [{\"chain\": (\"polygon\" or \"ethereum\"), \"contract_address\": \"string\", \"token_id\": string, \"name\": string, \"description\": string, optional \"mint_date\": string}]}",
         "name": "data",
         "description": "Rerefence:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Responses"
       },
       "384bbd6b-c13e-4fed-9724-336637c51b87": {
-        "type": "{\n  \"status\": number,\n  \"headers\": {string: string},\n  \"body\": string\n}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"body\": string}",
         "name": "response",
         "description": "Sends the original response.\nReference:\nhttps://docs.nftport.xyz/docs/nftport/?search=multi-chain-nft-search#Responses"
       },
       "e14e707e-19d7-4c5a-8408-dca6b0227725": {
-        "type": "{\n  \"error\": string,\n  \"details\": any\n}",
+        "type": "{\"error\": string, \"details\": any}",
         "name": "error",
         "description": ""
       }

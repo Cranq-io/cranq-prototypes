@@ -117,12 +117,12 @@
   "interface": {
     "inputs": {
       "a4bdd9b1-c558-40b5-af27-29f8860f3c94": {
-        "type": "{string:any}[]",
+        "type": "{string: any}[]",
         "name": "a",
         "description": "Receives the `a` table operand."
       },
       "1d351185-7542-47ca-a59f-febcea83f4f1": {
-        "type": "{string:any}[]",
+        "type": "{string: any}[]",
         "name": "b",
         "description": "Receives the `b` table operand."
       },
@@ -134,7 +134,7 @@
     },
     "outputs": {
       "3fe58e7f-4801-433b-9d22-ef97e2e81a80": {
-        "type": "{string:any}[]",
+        "type": "{string: any}[]",
         "name": "joined",
         "description": "Sends the resulting table."
       }

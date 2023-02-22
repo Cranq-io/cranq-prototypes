@@ -9,7 +9,7 @@
         }
       },
       "inputFunctions": {
-        "16a90cfa-fa8d-438b-b964-27cebbd657f1": "const jwt = require('jsonwebtoken');\nconst {id, options = {}} = data;\n\ntry {\n  switch (id) {\n    case 'sign':\n      sign(options);\n      break;\n    case 'verify':\n      verify(options)\n      break;\n    default:\n      outputs.error({\"error\": \"Unknown id!\"}, tag);\n  }\n} catch (e){\n  outputs.error({\"error\": `Error happend during ${id}`,  details: e}, tag);\n}\n\nfunction sign(options) {\n  const {payload, secretOrPrivateKey, options: verifyOptions} = options;\n  jwt.sign(payload, secretOrPrivateKey, verifyOptions, function(err, token) {\n    if (err) {\n      outputs.error({\"error\": \"Error happend during sign\", \"details\": err}, tag);\n    } else {\n      outputs.result({token}, tag);\n    }\n  });\n}\n\n\nfunction verify(options){\n  const {token, secretOrPrivateKey, options: signOptions} = options;\n  jwt.verify(token, secretOrPrivateKey, signOptions, function(err, token) {\n    if (err) {\n      outputs.error({\"error\": \"Error happend during verify\", \"details\": err}, tag);\n    } else {\n      outputs.result({token}, tag);\n    }\n  });\n}"
+        "16a90cfa-fa8d-438b-b964-27cebbd657f1": "const jwt = require('jsonwebtoken');\nconst {id, options = {}} = data;\n\ntry {\n  switch (id) {\n    case 'sign':\n      sign(options);\n      break;\n    case 'verify':\n      verify(options)\n      break;\n    default:\n      outputs.error({\"error\": \"Unknown id!\"}, tag);\n  }\n} catch (e){\n  outputs.error({\"error\": `Error happend during ${id}`,  details: e}, tag);\n}\n\nfunction sign(options) {\n  const {payload, secretOrPrivateKey, options: verifyOptions} = options;\n  jwt.sign(payload, secretOrPrivateKey, verifyOptions, function(err, token) {\n    if (err) {\n      outputs.error({\"error\": \"Error happend during sign\", \"details\": err}, tag);\n    } else {\n      outputs.token(token, tag);\n    }\n  });\n}\n\n\nfunction verify(options){\n  const {token, secretOrPrivateKey, options: signOptions} = options;\n  jwt.verify(token, secretOrPrivateKey, signOptions, function(err, payload) {\n      if (err) {\n        outputs.error({\"error\": \"Error happend during verify\", \"details\": err}, tag);\n      } else {\n        outputs.payload(payload, tag);\n      }\n  });\n}"
       }
     }
   },
@@ -23,9 +23,14 @@
     },
     "outputs": {
       "0a18ce2f-7584-4f19-96e8-bfde48a98f83": {
+        "type": "string",
+        "name": "token",
+        "description": "Sends the result of the action.\n\nExample:\n\n```\n \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2NzY5MDI4MTIsImV4cCI6MTY3NjkwMjkzMn0.osso9qXLcL2nunecJCH3h8RVzkAGkUDHEAzf4nG7wFc\"\n```"
+      },
+      "6b1609c0-020f-4218-8230-60acb3e13c22": {
         "type": "{string: any}",
-        "name": "result",
-        "description": "Sends the result of the action.\n\nExample:\n\n```\n{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2NzY5MDI4MTIsImV4cCI6MTY3NjkwMjkzMn0.osso9qXLcL2nunecJCH3h8RVzkAGkUDHEAzf4nG7wFc\"\n}\n```"
+        "name": "payload",
+        "description": "Sends the decoded payload if the signature is valid and optional expiration, audience, or issuer are valid.\n\nExample:\n```\n{ \"foo\": \"bar\" }\n```"
       },
       "fe26a23e-3f5a-4331-ac18-d6b22c174332": {
         "type": "{\"error\": string, optional \"details\": any}",
@@ -40,7 +45,8 @@
   "keywords": {
     "http": null,
     "authentication": null,
-    "authorization": null
+    "authorization": null,
+    "jwt": null
   },
   "attributes": {
     "locked": true

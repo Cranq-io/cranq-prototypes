@@ -16,7 +16,7 @@
   "interface": {
     "inputs": {
       "016a86e6-3fdf-4be5-8ac4-0480ba481103": {
-        "type": "{ \"MP3 file out path\": \"string\",\n    \"text\": \"string\",\n    \"params\": {\n  \"accessKeyId\": \"string\",\n        \"secretAccessKey\": \"string\",\n        optional \"voiceId\": \"string\",\n        optional \"region\": \"string\",\n        optional \"language\": \"string\",\n        optional \"engine\": \"string\",\n        optional \"sampleRate\": \"string\" }}",
+        "type": "{\"MP3 file out path\": \"string\", \"text\": \"string\", \"params\": {\"accessKeyId\": \"string\", \"secretAccessKey\": \"string\", optional \"voiceId\": \"string\", optional \"region\": \"string\", optional \"language\": \"string\", optional \"engine\": \"string\", optional \"sampleRate\": \"string\"}}",
         "name": "params"
       }
     },

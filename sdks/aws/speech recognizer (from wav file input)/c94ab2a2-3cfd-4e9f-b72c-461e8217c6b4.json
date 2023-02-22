@@ -1,0 +1,112 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
+          "coordinates": [
+            6,
+            20
+          ],
+          "name": "internal",
+          "prototype": "ac8be953-62dc-494e-b9a0-999ce2c65d21"
+        },
+        "41b155b5-c807-4bfc-98a2-ffa3467da92c": {
+          "coordinates": [
+            -84,
+            -78
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"fileName\", \"params\"]"
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "081ff324-ae71-4409-8319-aa4d9de66ef2": {
+            "41b155b5-c807-4bfc-98a2-ffa3467da92c": {
+              "fileName": {}
+            }
+          },
+          "a05bf83f-4203-45b9-b234-06810d3d5636": {
+            "41b155b5-c807-4bfc-98a2-ffa3467da92c": {
+              "params": {}
+            }
+          }
+        },
+        "outputs": {
+          "b2c84b80-0ad5-487b-b521-995033f25274": {
+            "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
+              "49c0b9e1-d375-439b-bad0-07ae0141f09e": {}
+            }
+          },
+          "84d3e051-2427-4897-98d7-c50fa39397fd": {
+            "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
+              "8ef25d06-2f4c-45ee-a81a-d22ad5164b3d": {}
+            }
+          },
+          "1c280501-3bf4-4171-bdbf-c8c109ba7f42": {
+            "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
+              "d1fff01f-b192-4657-a239-56d29eabbc68": {}
+            }
+          }
+        }
+      },
+      "connections": {
+        "41b155b5-c807-4bfc-98a2-ffa3467da92c": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "8cd20c54-41a3-45d0-8a56-f4ce2e9843f0": {
+              "a15cf573-9e68-4fc6-ac40-67a4acbf0c57": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "081ff324-ae71-4409-8319-aa4d9de66ef2": {
+        "type": "string",
+        "name": "wav file path",
+        "description": "Receives the path to the file containing the speech sample in WAV (PCM) format.\n\ne.g.: \"/Users/user1/AWS_speech/samples/speech.wav\""
+      },
+      "a05bf83f-4203-45b9-b234-06810d3d5636": {
+        "type": "{\"accessKeyId\": string, \"secretAccessKey\": string, \"region\": string, optional \"language\": string}",
+        "name": "params",
+        "description": "Receives generic parameters for AWS speech to text services,including credentials.\n\nThe keys and region values are available from AWS dashboard.\n\nexample: { \n\"accessKeyId\": \"***\", \n\"secretAccessKey\": \"***\", \"region\": \"eu-west-1\", \"language\": \"en-GB\" }"
+      }
+    },
+    "outputs": {
+      "1c280501-3bf4-4171-bdbf-c8c109ba7f42": {
+        "type": "{\"TranscriptEvent\": {\"Transcript\": {\"Results\": {\"Alternatives\": {\"Items\": {\"Confidence\": number, \"Content\": string, \"EndTime\": number, \"StartTime\": number, \"Type\": string, \"VocabularyFilterMatch\": boolean}[], \"Transcript\": string}[], \"ChannelId\": string, \"EndTime\": number, \"IsPartial\": boolean, \"ResultId\": string, \"StartTime\": number, \"test\": string}[]}}}",
+        "name": "result",
+        "description": "Sends a results of the recognition. Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.\nhttps://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_Result.html"
+      },
+      "b2c84b80-0ad5-487b-b521-995033f25274": {
+        "type": "{\"TranscriptEvent\": {\"Transcript\": {\"Results\": {\"Alternatives\": {\"Items\": {\"Confidence\": number, \"Content\": string, \"EndTime\": number, \"StartTime\": number, \"Type\": string, \"VocabularyFilterMatch\": boolean}[], \"Transcript\": string}[], \"ChannelId\": string, \"EndTime\": number, \"IsPartial\": boolean, \"ResultId\": string, \"StartTime\": number}[]}}}",
+        "name": "current",
+        "description": "Sends the result of each chunk of the audio, as soon as part of the recognition is ready. Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data."
+      },
+      "84d3e051-2427-4897-98d7-c50fa39397fd": {
+        "type": "{\"error\": string, \"details\": any}",
+        "name": "error",
+        "description": "Sends error, if any."
+      }
+    }
+  },
+  "name": "sdks/aws/Speech recognizer (from WAV file input)",
+  "keywords": {
+    "speech": null,
+    "text": null,
+    "transcribe": null,
+    "transcription": null,
+    "recognition": null,
+    "language": null
+  },
+  "description": "Extracts text from speech recording supplied as a WAV file on the local filesystem.",
+  "iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
+  "attributes": {
+    "locked": true
+  }
+}

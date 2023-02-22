@@ -1,0 +1,112 @@
+{
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "b346822d-db08-48c9-a5b4-efc39fb61318": {
+          "coordinates": [
+            47,
+            -13
+          ],
+          "name": "speech to text",
+          "prototype": "2dab6242-b4d1-4245-87a9-ef8711b89d10"
+        },
+        "d8e7e5e9-dcb9-4883-8f69-8875c04d9fc1": {
+          "coordinates": [
+            -28,
+            -96
+          ],
+          "name": "syncer",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[\"text\", \"MP3 file out path\", \"params\"]"
+          }
+        }
+      },
+      "connections": {
+        "d8e7e5e9-dcb9-4883-8f69-8875c04d9fc1": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "b346822d-db08-48c9-a5b4-efc39fb61318": {
+              "016a86e6-3fdf-4be5-8ac4-0480ba481103": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "45fe1ad3-8872-48f7-b6d2-47bd281ce5a1": {
+            "d8e7e5e9-dcb9-4883-8f69-8875c04d9fc1": {
+              "text": {}
+            }
+          },
+          "7b8df638-d817-4018-aa3c-a7b21d3d3640": {
+            "d8e7e5e9-dcb9-4883-8f69-8875c04d9fc1": {
+              "MP3 file out path": {}
+            }
+          },
+          "b98df242-2258-4b19-8694-9ae0cb974fa5": {
+            "d8e7e5e9-dcb9-4883-8f69-8875c04d9fc1": {
+              "params": {}
+            }
+          }
+        },
+        "outputs": {
+          "2b9f806e-4888-421a-9997-f7b48f86901d": {
+            "b346822d-db08-48c9-a5b4-efc39fb61318": {
+              "8971079d-563e-4ed5-bf93-9c9978655e04": {}
+            }
+          },
+          "0d2ed715-8cc0-4075-a406-13aaac74660b": {
+            "b346822d-db08-48c9-a5b4-efc39fb61318": {
+              "034c5469-e8b1-45c4-a9b5-23853096ed19": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "45fe1ad3-8872-48f7-b6d2-47bd281ce5a1": {
+        "type": "string",
+        "name": "text",
+        "description": "Receives the text to be synthesized.\n\n"
+      },
+      "7b8df638-d817-4018-aa3c-a7b21d3d3640": {
+        "type": "string",
+        "name": "MP3 file out path",
+        "description": "Receives the path where the file with the generated voice should be saved.\n\ne.g.: \"/Users/user1/AWS/samples/synthesizedSpeech.mp3\""
+      },
+      "b98df242-2258-4b19-8694-9ae0cb974fa5": {
+        "type": "{\"accessKeyId\": \"string\", \"secretAccessKey\": \"string\", optional \"voiceId\": \"string\", optional \"region\": \"string\", optional \"language\": \"region\", optional \"engine\": \"string\", optional \"sampleRate\": \"string\"}",
+        "name": "params",
+        "description": "Receives generic parameters for AWS Polly text to speech services,including credentials.\nCheck for possible inputs in the documentation of aws polly: https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-SampleRate\n\nexample:{\n accessKeyId: \"xxxx\",\n       secretAccessKey: \"xxxxxxxxx\",\n        voiceId: \"Kendra\",\n        region: \"eu-west-1\",\n        language: \"en-US\",\n        engine: \"neural\",\n        sampleRate: \"8000\"\n    }"
+      }
+    },
+    "outputs": {
+      "2b9f806e-4888-421a-9997-f7b48f86901d": {
+        "type": "string",
+        "name": "result",
+        "description": "Sends the file name of the synthesized voice."
+      },
+      "0d2ed715-8cc0-4075-a406-13aaac74660b": {
+        "type": "{\"error\": string, \"details\": any}",
+        "name": "error",
+        "description": "Sends error, if any."
+      }
+    }
+  },
+  "name": "sdks/aws/Speech synthesizer (to mp3 file output)",
+  "iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
+  "description": "Extracts text from speech recording supplied as a MP3 file on the local filesystem.",
+  "keywords": {
+    "speech": null,
+    "text": null,
+    "transcribe": null,
+    "transcription": null,
+    "recognition": null,
+    "language": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "name": "sdks/jsonwebtoken/Signer",
+  "description": "Signs the payload and returns as string token.\n\nMore:\nhttps://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback",
+  "interface": {
+    "inputs": {
+      "72a0f383-2a01-4d61-9954-2c20c2fd19c0": {
+        "type": "{string: any}",
+        "name": "payload",
+        "description": "Receives the payload to be signed.\n\nExample:\n```\n{ \"foo\": \"bar\" }\n```"
+      },
+      "37ed754b-cca6-4480-a943-ee472a8e0161": {
+        "type": "string",
+        "name": "secretOrPrivateKey",
+        "description": "Receives the secret for HMAC algorithms or the PEM encoded private key for RSA and ECDSA.\n\nExample: \n```\nHASH\n```"
+      },
+      "84fbf37c-00bb-40a0-86b0-629127260ab9": {
+        "type": "{optional \"algorithm\": string, optional \"expiresIn\": (string or number), optional \"notBefore\": string, optional \"audience\": string, optional \"issuer\": string, optional \"jwtid\": string, optional \"subject\": string, optional \"noTimestamp\": boolean, optional \"header\": {string: any}, optional \"keyid\": string, optional \"mutatePayload\": boolean, optional \"allowInsecureKeySizes\": boolean, optional \"allowInvalidAsymmetricKeyTypes\": boolean}",
+        "name": "options",
+        "description": "Receives sign options.\n\nExample:\n\n```\n{\n  \"expiresIn\": 120\n}\n```"
+      }
+    },
+    "outputs": {
+      "e8b27e45-c308-450a-90aa-57dd60c6b99c": {
+        "type": "string",
+        "name": "token",
+        "description": "Sends the generated token.\n\nExample:\n\n```\n \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2NzY5MDI4MTIsImV4cCI6MTY3NjkwMjkzMn0.osso9qXLcL2nunecJCH3h8RVzkAGkUDHEAzf4nG7wFc\"\n```"
+      },
+      "a7e5e20d-e947-45d1-b40e-aa2404a6902f": {
+        "type": "{\"error\": string, optional \"details\": any}",
+        "name": "error",
+        "description": "Sends error, if any."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "6cf7620d-fefc-43a0-9ffc-ed2cd3d9d6c0": {
+          "coordinates": [
+            148,
+            -114
+          ],
+          "name": "jwt",
+          "prototype": "1c20f905-e7e0-426c-8603-aa16b21450ba"
+        },
+        "d760f2af-3815-428c-a435-7759208c7bd1": {
+          "coordinates": [
+            7,
+            -61
+          ],
+          "name": "build action",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"id\": \"sign\", \r\n  \"options\": {\r\n    \"payload\": { }, \r\n    \"secretOrPrivateKey\": \"\",\r\n    \"options\": {\r\n    }\r\n  }\r\n}",
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[[\"options\", \"payload\"],[\"options\", \"secretOrPrivateKey\"], [\"options\", \"options\"]]"
+          }
+        },
+        "181c366d-30f7-4ad5-adcf-e7c93998f8ad": {
+          "coordinates": [
+            -138,
+            47
+          ],
+          "name": "prepare action parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
+          }
+        }
+      },
+      "connections": {
+        "181c366d-30f7-4ad5-adcf-e7c93998f8ad": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "d760f2af-3815-428c-a435-7759208c7bd1": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "d760f2af-3815-428c-a435-7759208c7bd1": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "6cf7620d-fefc-43a0-9ffc-ed2cd3d9d6c0": {
+              "16a90cfa-fa8d-438b-b964-27cebbd657f1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "72a0f383-2a01-4d61-9954-2c20c2fd19c0": {
+            "181c366d-30f7-4ad5-adcf-e7c93998f8ad": {
+              "0": {}
+            }
+          },
+          "37ed754b-cca6-4480-a943-ee472a8e0161": {
+            "181c366d-30f7-4ad5-adcf-e7c93998f8ad": {
+              "1": {}
+            }
+          },
+          "84fbf37c-00bb-40a0-86b0-629127260ab9": {
+            "181c366d-30f7-4ad5-adcf-e7c93998f8ad": {
+              "2": {}
+            }
+          }
+        },
+        "outputs": {
+          "a7e5e20d-e947-45d1-b40e-aa2404a6902f": {
+            "6cf7620d-fefc-43a0-9ffc-ed2cd3d9d6c0": {
+              "fe26a23e-3f5a-4331-ac18-d6b22c174332": {}
+            }
+          },
+          "e8b27e45-c308-450a-90aa-57dd60c6b99c": {
+            "6cf7620d-fefc-43a0-9ffc-ed2cd3d9d6c0": {
+              "0a18ce2f-7584-4f19-96e8-bfde48a98f83": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "f63ac48f-ac5d-474c-bb39-e0010ddd99f9",
+  "keywords": {
+    "http": null,
+    "authentication": null,
+    "authorization": null,
+    "jwt": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

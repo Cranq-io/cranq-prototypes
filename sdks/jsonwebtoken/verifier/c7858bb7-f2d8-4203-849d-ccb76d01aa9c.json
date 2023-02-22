@@ -1,0 +1,129 @@
+{
+  "name": "sdks/jsonwebtoken/Verifier",
+  "description": "Verifies the JWT token.\n\nMore:\nhttps://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback",
+  "interface": {
+    "inputs": {
+      "e1704c28-bc27-4a21-855f-94631c333cfd": {
+        "type": "string",
+        "name": "token",
+        "description": "Receives the JWT token to be verified.\n\nExample:\n```\n\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2NzY5MTAyOTIsImV4cCI6MTY3NjkxMDQxMn0.rBayWKAETkf9AZaduzjbYfv6684Du8dfH23sQzXuaHU\"\n```"
+      },
+      "76318593-02a9-4f1d-8330-753f01f4cee7": {
+        "type": "string",
+        "name": "secretOrPrivateKey",
+        "description": "Receives the secret for HMAC algorithms or the PEM encoded private key for RSA and ECDSA.\n\nExample:\n```\nHASH\n```"
+      },
+      "1d260e13-512e-43a0-9a87-ca1d85735ff6": {
+        "type": "{optional \"algorithm\": string, optional \"audience\": string, optional \"complete\": boolean, optional \"issuer\": string, optional \"jwtid\": string, optional \"ignoreExpiration\": boolean, optional \"ignoreNotBefore\": boolean, optional \"subject\": string, optional \"clockTolerance\": number, optional \"maxAge\": (string or number), optional \"clockTimestamp\": number, optional \"nonce \": string, optional \"allowInvalidAsymmetricKeyTypes\": boolean}",
+        "name": "options",
+        "description": "Receives verify options.\n\nExample:\n```\n{ \n  audience: 'urn:foo'\n}\n```"
+      }
+    },
+    "outputs": {
+      "c94acdd8-374b-4967-b111-3133a133295a": {
+        "type": "{string: any}",
+        "name": "payload",
+        "description": "Sends the decoded payload if the signature is valid and optional expiration, audience, or issuer are valid.\n\nExample:\n```\n{ \"foo\": \"bar\" }\n```"
+      },
+      "4e3f5885-41fc-4b1e-8a72-dd7e365d3268": {
+        "type": "{\"error\": string, optional \"details\": any}",
+        "name": "error",
+        "description": "Sends error, if any."
+      }
+    }
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+          "coordinates": [
+            105,
+            -171
+          ],
+          "name": "jwt",
+          "prototype": "1c20f905-e7e0-426c-8603-aa16b21450ba"
+        },
+        "254d07e6-4b46-4ca0-96e8-fcb44c773b74": {
+          "coordinates": [
+            -54,
+            -67
+          ],
+          "name": "build action",
+          "prototype": "4841750e-52da-4ef4-a2de-dd356987b398",
+          "params": {
+            "e080c294-84b6-4587-b31c-a04e230f632e": "{\r\n  \"id\": \"verify\", \r\n  \"options\": {\r\n    \"token\": \"\", \r\n    \"secretOrPrivateKey\": \"\",\r\n    \"options\": {\r\n    }\r\n  }\r\n}",
+            "2cb4d528-cacc-4d46-97a2-eee2143be1c1": "[[\"options\", \"token\"],[\"options\", \"secretOrPrivateKey\"], [\"options\", \"options\"]]"
+          }
+        },
+        "4fd05c1b-c70d-4024-8a36-12327cca4b31": {
+          "coordinates": [
+            -208,
+            15
+          ],
+          "name": "prepare action parameters",
+          "prototype": "222a7543-3692-4c6d-b027-c422c99b23a1",
+          "params": {
+            "ef31c1e9-cfd5-458b-8d3a-951e3db9c232": "[0,1,2]"
+          }
+        }
+      },
+      "connections": {
+        "4fd05c1b-c70d-4024-8a36-12327cca4b31": {
+          "75cde7e3-b158-4836-8bcd-a89e72314ee8": {
+            "254d07e6-4b46-4ca0-96e8-fcb44c773b74": {
+              "d95610f3-4cdb-46b0-89f2-5acc9c14346c": {}
+            }
+          }
+        },
+        "254d07e6-4b46-4ca0-96e8-fcb44c773b74": {
+          "55f973dd-3c9f-4299-b0cc-b970b5f14193": {
+            "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+              "16a90cfa-fa8d-438b-b964-27cebbd657f1": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {
+          "e1704c28-bc27-4a21-855f-94631c333cfd": {
+            "4fd05c1b-c70d-4024-8a36-12327cca4b31": {
+              "0": {}
+            }
+          },
+          "76318593-02a9-4f1d-8330-753f01f4cee7": {
+            "4fd05c1b-c70d-4024-8a36-12327cca4b31": {
+              "1": {}
+            }
+          },
+          "1d260e13-512e-43a0-9a87-ca1d85735ff6": {
+            "4fd05c1b-c70d-4024-8a36-12327cca4b31": {
+              "2": {}
+            }
+          }
+        },
+        "outputs": {
+          "4e3f5885-41fc-4b1e-8a72-dd7e365d3268": {
+            "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+              "fe26a23e-3f5a-4331-ac18-d6b22c174332": {}
+            }
+          },
+          "c94acdd8-374b-4967-b111-3133a133295a": {
+            "fdce07fe-6f9a-4bb8-acc9-5bd8162fe33b": {
+              "6b1609c0-020f-4218-8230-60acb3e13c22": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "iconId": "f63ac48f-ac5d-474c-bb39-e0010ddd99f9",
+  "keywords": {
+    "http": null,
+    "authentication": null,
+    "authorization": null,
+    "jwt": null
+  },
+  "attributes": {
+    "locked": true
+  }
+}

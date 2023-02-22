@@ -30,7 +30,7 @@
         "description": "Sends a list of NFT transfers as returned by the Moralis API"
       },
       "c957f9d8-fa55-499c-8439-7cd42c334413": {
-        "type": "{\"status\": number, \"headers\": {string: string}, \"data\": `blockchain/moralis/NFT data`}",
+        "type": "{\"status\": number, \"headers\": {string: string}, \"data\": `blockchain/moralis/NFT data response`}",
         "name": "response",
         "description": "Sends the entire response from the Moralis API, including status and header."
       },

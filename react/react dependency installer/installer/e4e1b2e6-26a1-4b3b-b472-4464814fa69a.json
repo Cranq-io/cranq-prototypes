@@ -1,0 +1,55 @@
+{
+  "implementations": {
+    "es6-node": {
+      "inputFunctions": {
+        "045a62ad-7340-479a-b544-f10d56f16597": "const { exec } = require( \"child_process\" );\nconst { dependencies } = params;\nif (data.start !== false ){\n  const command = \"cd \" + data.projectPath + \" && \" + \"npm install \" + params.dependencies.join(' ') + \" react-router-dom\";\n  outputs.stdout( command, tag );\n  if (state.running){\n    outputs.bounced( data, tag);\n  } else {\n    state.running = true;\n    exec(command, (error, stdout, stderr) => {\n      if (error) {\n        outputs.error( {\"error\" : `${error}`}, tag);\n      } else {\n        outputs.stdout(stdout ||  \"\", tag);\n        outputs.stderr(stderr ||  \"\", tag);\n        outputs.success(true,tag);\n      }\n      state.running = false;\n    });\n  }\n}"
+      }
+    }
+  },
+  "interface": {
+    "inputs": {
+      "93078915-107a-4854-baaf-e2cdd4c06760": {
+        "type": "string[]",
+        "name": "dependencies",
+        "description": "Array of npm dependencies to install.\n\neg.\n\n[\"a\",\"b\"]"
+      },
+      "045a62ad-7340-479a-b544-f10d56f16597": {
+        "type": "{\n\"projectPath\": string, \n\"start\": boolean\n}",
+        "name": "projectPath & start",
+        "description": ""
+      }
+    },
+    "outputs": {
+      "86e1623a-d67c-4e74-98bb-449e29005d56": {
+        "type": "string",
+        "name": "stdout"
+      },
+      "735430f5-61ba-48c6-a8a6-e952edcb259e": {
+        "type": "string",
+        "name": "stderr"
+      },
+      "8b7a505c-873e-4936-9195-f1b3e28c5520": {
+        "type": "{ \"error\" : string}",
+        "name": "error"
+      },
+      "4c3736af-6977-4632-b048-5446eaa87edd": {
+        "type": "string",
+        "name": "bounced"
+      },
+      "8697236e-fccd-4083-9803-1a2d005bbbff": {
+        "type": "boolean",
+        "name": "success"
+      }
+    }
+  },
+  "name": "react/React Dependency Installer/Installer",
+  "iconId": "abac34e3-c832-4c7b-b045-62f82ebc3ddb",
+  "keywords": {
+    "": null
+  },
+  "description": "see react/React Dependency Installer",
+  "attributes": {
+    "internal": true,
+    "locked": true
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "sdks/jwt/JWT/Verifier",
+  "name": "sdks/jsonwebtoken/Verifier",
   "description": "Verifies the JWT token.\n\nMore:\nhttps://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback",
   "interface": {
     "inputs": {
@@ -14,7 +14,7 @@
         "description": "Receives the secret for HMAC algorithms or the PEM encoded private key for RSA and ECDSA.\n\nExample:\n```\nHASH\n```"
       },
       "1d260e13-512e-43a0-9a87-ca1d85735ff6": {
-        "type": "{\n  optional \"algorithm\": string,\n  optional \"audience\": string,\n  optional \"complete\": boolean,\n  optional \"issuer\": string,\n  optional \"jwtid\": string,\n  optional \"ignoreExpiration\": boolean,\n  optional \"ignoreNotBefore\": boolean,\n optional \"subject\": string,\n  optional \"clockTolerance\": number,\n  optional \"maxAge\": (string or number),\n  optional \"clockTimestamp\":  number,\n  optional \"nonce \":  string,\n  optional \"allowInvalidAsymmetricKeyTypes\": boolean\n}",
+        "type": "{optional \"algorithm\": string, optional \"audience\": string, optional \"complete\": boolean, optional \"issuer\": string, optional \"jwtid\": string, optional \"ignoreExpiration\": boolean, optional \"ignoreNotBefore\": boolean, optional \"subject\": string, optional \"clockTolerance\": number, optional \"maxAge\": (string or number), optional \"clockTimestamp\": number, optional \"nonce \": string, optional \"allowInvalidAsymmetricKeyTypes\": boolean}",
         "name": "options",
         "description": "Receives verify options.\n\nExample:\n```\n{ \n  audience: 'urn:foo'\n}\n```"
       }
@@ -26,7 +26,7 @@
         "description": "Sends the decoded payload if the signature is valid and optional expiration, audience, or issuer are valid.\n\nExample:\n```\n{ \"foo\": \"bar\" }\n```"
       },
       "4e3f5885-41fc-4b1e-8a72-dd7e365d3268": {
-        "type": "{\n  \"error\": string,\n  optional \"details\": any\n}",
+        "type": "{\"error\": string, optional \"details\": any}",
         "name": "error",
         "description": "Sends error, if any."
       }

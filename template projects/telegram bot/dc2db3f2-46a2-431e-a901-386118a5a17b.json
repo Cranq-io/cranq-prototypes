@@ -1,0 +1,219 @@
+{
+  "attributes": {
+    "root": true,
+    "template": true
+  },
+  "description": "Basic telegram webhook with registration.\n\nThe webhook send back the message.\n\nPrecondition is a bot token.\nMore: https://core.telegram.org/bots/tutorial#obtain-your-bot-token",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -691,
+            -8
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            532,
+            287
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "f3c274fb-6e25-4fde-93c2-2ee378a26c36": {
+          "coordinates": [
+            -392.5,
+            57.5
+          ],
+          "name": "bot params - FILL IT!!!",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\"token\": \"\"}"
+          },
+          "description": "Set the token which was given by the BotFather.\n\nEg:\n```\n{\"token\": \"TOKEN\"}\n```\n\nHow to obtain one: https://core.telegram.org/bots/tutorial#obtain-your-bot-token\n\nHandle the verify token as a secret. Recommended solution is storing in evironment variable.\n\nMore: https://docs.cranq.io/toolbox/using-environment-variables"
+        },
+        "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
+          "coordinates": [
+            -181.22500000000002,
+            248.375
+          ],
+          "name": "register webhook -  FILL IT!!!",
+          "prototype": "abdf3344-9a54-46b2-959a-0efdf9e193e1",
+          "params": {
+            "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": "{\n  \"url\": \"WEBHOOK URL\"\n}"
+          },
+          "description": "The webhook url for registration  has to be set in the data port."
+        },
+        "db7d1bd3-7973-4197-a04b-1ce64735e2ab": {
+          "coordinates": [
+            -389.5,
+            -45.5
+          ],
+          "name": "webbhook params",
+          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
+          "params": {
+            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\n  \"serverId\": \"telegramBot\",\n  \"port\": 8080,\n  \"route\": \"/\"\n}"
+          }
+        },
+        "3a485e70-e09a-42c4-aa80-75d2094f8bb4": {
+          "coordinates": [
+            191.5,
+            -262.5
+          ],
+          "name": "get chat ID",
+          "prototype": "2d783599-1e36-4d31-9a69-993bf372e8a3",
+          "params": {}
+        },
+        "6fdb6c57-f736-4b7f-87bb-f4eeb35e71ef": {
+          "coordinates": [
+            202.5,
+            153.5
+          ],
+          "name": "send echo",
+          "prototype": "c6265da5-2696-4fdd-8c6b-630dd53b83bf"
+        },
+        "f44c9057-70c1-4bb6-be6a-5f4d07d461ce": {
+          "coordinates": [
+            414.5,
+            -10.5
+          ],
+          "name": "build message",
+          "prototype": "50944912-b957-4bd4-a753-a228cfa0da48",
+          "params": {}
+        },
+        "a836782b-4eab-464b-b7aa-c9927da815d4": {
+          "coordinates": [
+            45.5,
+            125.5
+          ],
+          "name": "repeat bot params",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f"
+        },
+        "94fcd1f6-17e7-44d3-a1ca-ed0aedb6e9f0": {
+          "coordinates": [
+            187,
+            -73.5
+          ],
+          "name": "get text",
+          "prototype": "f68f5113-b458-4163-94f0-2e7b308c6125"
+        },
+        "060c5468-749c-4e9b-b0ff-26d744139320": {
+          "coordinates": [
+            -145,
+            -168
+          ],
+          "name": "listen for updates",
+          "prototype": "f756c4d3-db1a-450b-9bd9-b8db8abd8dad",
+          "description": ""
+        }
+      },
+      "connections": {
+        "f3c274fb-6e25-4fde-93c2-2ee378a26c36": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
+              "4b9def7c-0790-442e-b18c-ce1e2b0be0d7": {}
+            },
+            "a836782b-4eab-464b-b7aa-c9927da815d4": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "3a485e70-e09a-42c4-aa80-75d2094f8bb4": {
+          "831e5078-4dee-4728-a6a8-3faaace517c3": {
+            "f44c9057-70c1-4bb6-be6a-5f4d07d461ce": {
+              "47579859-9bf7-4dba-b499-266da98b03e5": {}
+            }
+          }
+        },
+        "f44c9057-70c1-4bb6-be6a-5f4d07d461ce": {
+          "34907f84-66ce-4b27-a754-334cc825b620": {
+            "6fdb6c57-f736-4b7f-87bb-f4eeb35e71ef": {
+              "00efb324-8002-4834-8fdf-2204596b0dcb": {}
+            }
+          }
+        },
+        "6fdb6c57-f736-4b7f-87bb-f4eeb35e71ef": {
+          "33e6e6c4-5a0c-4a34-9354-88677cb5d69b": {
+            "060c5468-749c-4e9b-b0ff-26d744139320": {
+              "6d1a73a2-0137-48ed-9664-9187a349e2da": {}
+            }
+          },
+          "fc70699d-7410-44f5-9034-2d5797ed7034": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "a836782b-4eab-464b-b7aa-c9927da815d4": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "6fdb6c57-f736-4b7f-87bb-f4eeb35e71ef": {
+              "48798463-9aec-43eb-87c5-f8a4ca6e7d6c": {}
+            }
+          }
+        },
+        "94fcd1f6-17e7-44d3-a1ca-ed0aedb6e9f0": {
+          "046161f4-2cf6-4bf4-a4b2-1fa5620a2e44": {
+            "f44c9057-70c1-4bb6-be6a-5f4d07d461ce": {
+              "a9c626d6-597e-4ce9-8349-fc7a100f7edd": {}
+            }
+          }
+        },
+        "db7d1bd3-7973-4197-a04b-1ce64735e2ab": {
+          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
+            "060c5468-749c-4e9b-b0ff-26d744139320": {
+              "b51aea51-092d-4e26-9988-c4f4a49ca794": {}
+            }
+          }
+        },
+        "060c5468-749c-4e9b-b0ff-26d744139320": {
+          "cbcc67ea-adc3-4bef-8fb7-196f49b422dc": {
+            "a836782b-4eab-464b-b7aa-c9927da815d4": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          },
+          "92a129a0-11e0-4d8f-9999-096f66dcb04a": {
+            "3a485e70-e09a-42c4-aa80-75d2094f8bb4": {
+              "0159dbde-b435-4ec6-beaa-e87878380924": {}
+            },
+            "94fcd1f6-17e7-44d3-a1ca-ed0aedb6e9f0": {
+              "f82f6ab3-c099-4566-9b7d-a1193c56f509": {}
+            }
+          }
+        },
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "db7d1bd3-7973-4197-a04b-1ce64735e2ab": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            },
+            "f3c274fb-6e25-4fde-93c2-2ee378a26c36": {
+              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            }
+          }
+        },
+        "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
+          "3dd876bc-7dbc-43e0-a973-35d6dcd6940d": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "template projects/Telegram bot"
+}

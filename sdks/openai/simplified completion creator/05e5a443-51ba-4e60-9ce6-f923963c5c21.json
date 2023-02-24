@@ -4,7 +4,7 @@
   "interface": {
     "inputs": {
       "77151a8d-f339-4d97-ac15-e6cdd6a9a0cb": {
-        "type": "{\"prompt\": (any[] or number[] or string[] or string), optional \"max_tokens\": (number or null)}",
+        "type": "{\"prompt\": string, optional \"max_tokens\": (number or null)}",
         "name": "request",
         "description": "Receives the request for creating the completion.\n\nIt uses text-davinci-003 as model.\nThe max_tokens default is 1000.\n\nExample:\n```\n{\n  \"prompt\": \"What is the third planet?\"\n}\n```"
       },

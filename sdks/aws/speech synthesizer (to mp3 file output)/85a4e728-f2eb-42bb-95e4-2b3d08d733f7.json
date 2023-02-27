@@ -97,7 +97,7 @@
   },
   "name": "sdks/aws/Speech synthesizer (to mp3 file output)",
   "iconId": "e070cf79-6b7e-463c-ac2c-d955f862da22",
-  "description": "Extracts text from speech recording supplied as a MP3 file on the local filesystem.",
+  "description": "Extracts text (using AWS AI service) from speech recording supplied as a MP3 file on the local filesystem.",
   "keywords": {
     "speech": null,
     "text": null,
@@ -107,7 +107,7 @@
     "language": null
   },
   "attributes": {
-    "locked": true,
-    "featured": true
+    "featured": true,
+    "locked": true
   }
 }

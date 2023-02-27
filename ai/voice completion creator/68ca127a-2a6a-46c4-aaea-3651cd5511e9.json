@@ -185,11 +185,12 @@
     "ask": null,
     "question": null,
     "answer": null,
-    "openAI": null
+    "openAI": null,
+    "azure": null
   },
-  "description": "Creates a voice completion for the provided wav file.",
+  "description": "Creates a voice completion using OpenAI and Azure Cognitive Service for the provided wav file.",
   "attributes": {
-    "locked": true,
-    "featured": true
+    "featured": true,
+    "locked": true
   }
 }

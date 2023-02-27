@@ -87,7 +87,7 @@
       }
     }
   },
-  "description": "Creates a completion for the provided prompt.",
+  "description": "Creates a completion using OpenAI for the provided prompt.",
   "keywords": {
     "complete": null,
     "predict": null,
@@ -96,11 +96,12 @@
     "ask": null,
     "question": null,
     "answer": null,
-    "openAI": null
+    "openAI": null,
+    "ChatGPT": null
   },
   "iconId": "826ef237-6282-4a24-98ed-6b5362264144",
   "attributes": {
-    "locked": true,
-    "featured": true
+    "featured": true,
+    "locked": true
   }
 }

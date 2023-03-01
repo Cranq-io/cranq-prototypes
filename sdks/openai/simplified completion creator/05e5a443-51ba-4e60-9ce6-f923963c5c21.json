@@ -6,7 +6,7 @@
       "77151a8d-f339-4d97-ac15-e6cdd6a9a0cb": {
         "type": "{\"prompt\": string, optional \"max_tokens\": (number or null)}",
         "name": "request",
-        "description": "Receives the request for creating the completion.\n\nIt uses text-davinci-003 as model.\nThe max_tokens default is 1000.\n\nExample:\n```\n{\n  \"prompt\": \"What is the third planet?\"\n}\n```"
+        "description": "Receives the request for creating the completion.\n\nIt uses text-davinci-003 as model.\n\n\nprompt: the request for the AI\n\nmax_tokens : the maximum number of tokens allowed for the generated answer, default is 1000.\n\nExample:\n```\n{\n  \"prompt\": \"What is the third planet?\"\n}\n```"
       },
       "8237fcf6-04af-4582-96ce-81d8c660f71e": {
         "type": "{\"apiKey\": string}",
@@ -19,11 +19,6 @@
         "type": "string",
         "name": "completion",
         "description": "Sends the completion.\n\nExample:\n```\n\"\\n\\nThe third planet from the sun is Earth.\" \n```"
-      },
-      "5f6196b8-72bb-46f6-a05d-0cd889be3d77": {
-        "type": "{\"id\": string, \"object\": string, \"created\": number, \"model\": string, \"choices\": {optional \"text\": string, optional \"index\": number, optional \"logprobs\": ({optional \"tokens\": string[], optional \"token_logprobs\": number[], optional \"top_logprobs\": {string: any}[], optional \"text_offset\": number[]}[] or null), optional \"finish_reason\": string}[], \"usage\": {\"prompt_tokens\": number, \"completion_tokens\": number, \"total_tokens\": number}}",
-        "name": "response",
-        "description": "Sends completion response.\n\nSee https://github.com/openai/openai-node/blob/master/api.ts\n\nExample:\n```\n{\n  \"id\": \"cmpl-6nUAV4KYExmGXCqDTL7AdqyjHYF7i\",\n  \"object\": \"text_completion\",\n  \"created\": 1677252059,\n  \"model\": \"text-davinci-003\",\n  \"choices\": [\n    {\n      \"text\": \"\\n\\nThe third planet from the sun is Earth.\",\n      \"index\": 0,\n      \"logprobs\": null,\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 6,\n    \"completion_tokens\": 33,\n    \"total_tokens\": 39\n  }\n} \n```"
       },
       "06b343c5-4652-47ad-a953-d198c4e718cf": {
         "type": "{\"error\": string}",
@@ -116,11 +111,6 @@
           }
         },
         "outputs": {
-          "5f6196b8-72bb-46f6-a05d-0cd889be3d77": {
-            "e08742c5-f291-462a-8bde-f9e64762d03f": {
-              "d293caee-efa3-41e7-84f9-084b15fe44e6": {}
-            }
-          },
           "06b343c5-4652-47ad-a953-d198c4e718cf": {
             "e08742c5-f291-462a-8bde-f9e64762d03f": {
               "ca7b4c58-ffdf-4059-89b5-11a11c83da34": {}

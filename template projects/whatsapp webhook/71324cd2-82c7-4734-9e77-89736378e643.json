@@ -1,6 +1,6 @@
 {
   "attributes": {
-    "root": true,
+    "root": true, 
     "template": true
   },
   "description": "Basic Whatsapp webhook with verify endpoint.\n\nPrecondtion is a configured webhook in facebook developer portal. More: https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
@@ -87,9 +87,7 @@
           ],
           "name": "handle verify params - FILL IT!!!",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"verifyToken\": \"\"}"
-          },
+          "params": {},
           "description": "Set the verify token of the webhook configuration.\n\n\nExample: \n```\n{\"verifyToken\": \"TOKEN\"}\n```\nMore:  https://developers.facebook.com/docs/graph-api/webhooks/getting-started\n\nHandle the verify token as a secret. \nRecommended solution is storing in evironment variable.\n\nMore: https://docs.cranq.io/toolbox/using-environment-variables"
         },
         "739cda90-47ca-4973-931d-c94564bfb0c3": {
@@ -97,7 +95,7 @@
             304.5,
             -6.5
           ],
-          "name": "YOUR LOGIC",
+          "name": "YOUR LOGIC - REPLACE ME!!!",
           "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
           "params": {
             "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "\"\""
@@ -116,6 +114,17 @@
             "300852ca-cadf-4b8c-b238-6f257f3039fb": "{}"
           },
           "description": "Builds a 200 http response."
+        },
+        "6743286b-d653-42e7-85fe-d644a248d0fc": {
+          "coordinates": [
+            232,
+            534.5
+          ],
+          "name": "log missing parameter message",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING HANLDE VERIFY PARAMS!!!\\n!!!!!!!!!!!!\\n\""
+          }
         }
       },
       "connections": {
@@ -167,6 +176,11 @@
           "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
             "8ec0bf8c-33a2-48e8-91f0-362fe754a8c1": {
               "747d6bd6-3a3c-49b6-8bd8-4e497d6c3d16": {}
+            }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "6743286b-d653-42e7-85fe-d644a248d0fc": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
             }
           }
         },

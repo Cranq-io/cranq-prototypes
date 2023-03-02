@@ -1,6 +1,6 @@
 {
   "attributes": {
-    "root": true,
+    "root": true, 
     "template": true
   },
   "description": "Basic telegram webhook with registration.\n\nThe webhook send back the message.\n\nPrecondition is a bot token.\nMore: https://core.telegram.org/bots/tutorial#obtain-your-bot-token",
@@ -31,18 +31,6 @@
           "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
           "name": "log"
         },
-        "f3c274fb-6e25-4fde-93c2-2ee378a26c36": {
-          "coordinates": [
-            -392.5,
-            57.5
-          ],
-          "name": "bot params - FILL IT!!!",
-          "prototype": "321d0ab7-fd53-436d-8c08-8eff32103e5f",
-          "params": {
-            "cc0b6ce0-74f3-4f00-982b-d6dba32d5466": "{\"token\": \"\"}"
-          },
-          "description": "Set the token which was given by the BotFather.\n\nEg:\n```\n{\"token\": \"TOKEN\"}\n```\n\nHow to obtain one: https://core.telegram.org/bots/tutorial#obtain-your-bot-token\n\nHandle the verify token as a secret. Recommended solution is storing in evironment variable.\n\nMore: https://docs.cranq.io/toolbox/using-environment-variables"
-        },
         "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
           "coordinates": [
             -181.22500000000002,
@@ -53,7 +41,7 @@
           "params": {
             "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": "{\n  \"url\": \"WEBHOOK URL\"\n}"
           },
-          "description": "The webhook url for registration  has to be set in the data port."
+          "description": "The webhook url for registration  has to be set in the data port.\n\nEg:\n```\n{\"url\": \"WEBHOOK URL\"}\n```"
         },
         "db7d1bd3-7973-4197-a04b-1ce64735e2ab": {
           "coordinates": [
@@ -116,19 +104,29 @@
           "name": "listen for updates",
           "prototype": "f756c4d3-db1a-450b-9bd9-b8db8abd8dad",
           "description": ""
+        },
+        "eec52cda-8abf-4556-8974-53d11137fe5e": {
+          "coordinates": [
+            -429,
+            88.5
+          ],
+          "name": "bot params - FILL IT!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "description": "Set the token which was given by the BotFather.\n\nEg:\n```\n{\"token\": \"TOKEN\"}\n```\n\nHow to obtain one: https://core.telegram.org/bots/tutorial#obtain-your-bot-token\n\nHandle the verify token as a secret. Recommended solution is storing in evironment variable.\n\nMore: https://docs.cranq.io/toolbox/using-environment-variables"
+        },
+        "50674a1f-ab36-4df5-9dd0-f2e053bcd904": {
+          "coordinates": [
+            -260,
+            510.5
+          ],
+          "name": "log missing bot params",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nBOT PARAMS!!!\\n!!!!!!!!!!!!\\n\""
+          }
         }
       },
       "connections": {
-        "f3c274fb-6e25-4fde-93c2-2ee378a26c36": {
-          "3c84fe6c-9ef4-4112-8d18-f80f2eeafb1c": {
-            "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
-              "4b9def7c-0790-442e-b18c-ce1e2b0be0d7": {}
-            },
-            "a836782b-4eab-464b-b7aa-c9927da815d4": {
-              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
-            }
-          }
-        },
         "3a485e70-e09a-42c4-aa80-75d2094f8bb4": {
           "831e5078-4dee-4728-a6a8-3faaace517c3": {
             "f44c9057-70c1-4bb6-be6a-5f4d07d461ce": {
@@ -196,8 +194,8 @@
             "db7d1bd3-7973-4197-a04b-1ce64735e2ab": {
               "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
             },
-            "f3c274fb-6e25-4fde-93c2-2ee378a26c36": {
-              "f7bc63dd-b6e2-44f6-95e2-bbab764ca450": {}
+            "eec52cda-8abf-4556-8974-53d11137fe5e": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
@@ -205,6 +203,21 @@
           "3dd876bc-7dbc-43e0-a973-35d6dcd6940d": {
             "79688e50-8550-40b8-afea-3c7497fcb9f3": {
               "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        },
+        "eec52cda-8abf-4556-8974-53d11137fe5e": {
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "50674a1f-ab36-4df5-9dd0-f2e053bcd904": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          },
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
+              "4b9def7c-0790-442e-b18c-ce1e2b0be0d7": {}
+            },
+            "a836782b-4eab-464b-b7aa-c9927da815d4": {
+              "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
             }
           }
         }

@@ -1,6 +1,6 @@
 {
   "attributes": {
-    "root": true,
+    "root": true, 
     "template": true
   },
   "description": "Build a basic prompt and ask ChatGPT.\n\nOpenAI api key is required.\n\nMore: https://openai.com/api/",
@@ -58,9 +58,7 @@
           ],
           "name": "question -  FILL IT!!!",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "\"\""
-          },
+          "params": {},
           "description": "Fill the value of the data port with your question."
         },
         "d39603a2-2007-4aff-ab76-0895fcc48f12": {
@@ -70,9 +68,7 @@
           ],
           "name": "ChatGPT params - FILL IT!!!",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
-          "params": {
-            "543f8ad2-7755-44f6-bc9b-e6208c87b15a": "{\"apiKey\": \"\"}"
-          },
+          "params": {},
           "description": "Set the OpenAI api key.\n\nExample:\n```\n{\"apiKey\": \"API-KEY\"}\n```\n\nHow to obtain one: https://platform.openai.com/account/api-keys\n\nHandle your api key as a secret. \n\nRecommended solution is storing in evironment variable.\n\nMore: https://docs.cranq.io/toolbox/using-environment-variables"
         },
         "4fb3dd43-53a8-4e16-a772-b0c99a18f0d7": {
@@ -99,6 +95,28 @@
             "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"prompt\"]"
           },
           "description": "Default configuration is \"model\": \"text-davinci-003\" and \"max_tokens\": 1000.\n\nUpdate the value of the tree port if you need different setting."
+        },
+        "5d1499f8-0a90-4795-bd4d-fe418d8a69a4": {
+          "coordinates": [
+            -285,
+            244.5
+          ],
+          "name": "log missing chatgpt params",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING CHATGPT PARAMS!!!\\n!!!!!!!!!!!!\\n\""
+          }
+        },
+        "cb5775b3-6d43-44cd-8667-175f82e19e29": {
+          "coordinates": [
+            -364,
+            -59.5
+          ],
+          "name": "log missing question",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING QUESTION!!!\\n!!!!!!!!!!!!\\n\""
+          }
         }
       },
       "connections": {
@@ -124,12 +142,22 @@
             "ffaff8ea-0269-480d-8240-6e687479963f": {
               "879c752d-3302-40bd-8104-110a5abda395": {}
             }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "5d1499f8-0a90-4795-bd4d-fe418d8a69a4": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
           }
         },
         "c216dc40-6ec2-48d5-9975-4f5e70c90179": {
           "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
             "4fb3dd43-53a8-4e16-a772-b0c99a18f0d7": {
               "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "cb5775b3-6d43-44cd-8667-175f82e19e29": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
             }
           }
         },

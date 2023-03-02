@@ -1,17 +1,17 @@
 {
   "name": "sdks/openai/Simplified completion creator",
-  "description": "Creates a completion for the provided prompt.\n\nIt uses text-davinci-003 as model.",
+  "description": "Creates a completion for the provided prompt.\n\nIt uses text-davinci-003 as model.\n\nThe max_tokens is set 2000.\n\nFor fine-tuning the requrst use: sdks/openai/Completion creator ",
   "interface": {
     "inputs": {
       "77151a8d-f339-4d97-ac15-e6cdd6a9a0cb": {
-        "type": "{\"prompt\": string, optional \"max_tokens\": (number or null)}",
-        "name": "request",
-        "description": "Receives the request for creating the completion.\n\nIt uses text-davinci-003 as model.\n\n\nprompt: the request for the AI\n\nmax_tokens : the maximum number of tokens allowed for the generated answer, default is 1000.\n\nExample:\n```\n{\n  \"prompt\": \"What is the third planet?\"\n}\n```"
+        "type": "string",
+        "name": "prompt",
+        "description": "Receives the prompt which is sent as request for the ChatGPT.\n\n\nIt uses text-davinci-003 as model.\nThe max_tokens is set 2000.\n\n\nExample:\n```\n\"What is the third planet?\"\n```"
       },
       "8237fcf6-04af-4582-96ce-81d8c660f71e": {
-        "type": "{\"apiKey\": string}",
-        "name": "params",
-        "description": "Receives generic OpenAI params.\n\nExample: \n```\n{\"apiKey\": \"sk-XXXXXXXXXXYYYYYYYZZZZZZZnx\"}\n```"
+        "type": "string",
+        "name": "api key",
+        "description": "Receives OpenAI api key.\n\nYou can create one here: https://platform.openai.com/account/api-keys\n\nExample: \n```\n\"sk-XXXXXXXXXXYYYYYYYZZZZZZZnx\"\n```"
       }
     },
     "outputs": {
@@ -32,22 +32,11 @@
       "nodes": {
         "e08742c5-f291-462a-8bde-f9e64762d03f": {
           "coordinates": [
-            52.5,
-            -73.5
+            53.5,
+            -74.5
           ],
           "name": "ask ChatGPT",
           "prototype": "d4ebabb4-abcf-4ee4-9598-c37eba05e733"
-        },
-        "eed4ca0f-c587-4e47-b5ed-40e88b492e46": {
-          "coordinates": [
-            -141.5,
-            -116.5
-          ],
-          "name": "apply defaults",
-          "prototype": "b7a6187f-2d42-4e0c-b0b7-8e1ec0f45301",
-          "params": {
-            "545a5e1a-9807-4456-b557-dfa8aa8ef28a": "{\n  \"model\": \"text-davinci-003\",\n  \"max_tokens\": 1000\n}"
-          }
         },
         "7120904c-4abd-4148-a311-498fcb30db47": {
           "coordinates": [
@@ -67,25 +56,42 @@
           "params": {
             "927e6b17-97e0-44de-887f-57204b7a1f9b": "[\"choices\", 0, \"text\"]"
           }
+        },
+        "c9078190-b243-404f-a0b0-b43dd75b1364": {
+          "coordinates": [
+            -18,
+            74
+          ],
+          "name": "set apiKey",
+          "prototype": "3966e767-b7a7-4221-961d-338a13d18c57",
+          "params": {
+            "96243772-f5b9-49b6-b60f-6841b5c8a535": "{}",
+            "922a1964-91d4-4ad3-a9e4-7d245662a978": "\"apiKey\""
+          }
+        },
+        "5f141ba1-edf1-4636-8fe7-8040360fdcd9": {
+          "coordinates": [
+            -84,
+            -149
+          ],
+          "name": "build request",
+          "prototype": "8f655b1d-c6be-4864-a92c-081e62f12403",
+          "params": {
+            "2041b83b-940c-4ef5-89e6-07eb74a42daf": "{\n  \"model\": \"text-davinci-003\",\n  \"max_tokens\": 2000\n}",
+            "bae8488b-e628-456c-8ba4-df9b28a52d3e": "[\"prompt\"]"
+          }
         }
       },
       "connections": {
-        "eed4ca0f-c587-4e47-b5ed-40e88b492e46": {
-          "8357d165-4753-4d32-8c61-e3baff88d8ba": {
-            "e08742c5-f291-462a-8bde-f9e64762d03f": {
-              "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {}
-            }
-          }
-        },
         "7120904c-4abd-4148-a311-498fcb30db47": {
           "069a212d-9cea-4987-be45-e0079a13d96f": {
-            "eed4ca0f-c587-4e47-b5ed-40e88b492e46": {
-              "d694bd76-84f6-465f-9c8e-8b9570cc8e69": {}
+            "5f141ba1-edf1-4636-8fe7-8040360fdcd9": {
+              "5dca309f-984d-4c27-8402-d2eedf77f5aa": {}
             }
           },
           "d1295197-1962-4680-a037-5890f2175bb9": {
-            "e08742c5-f291-462a-8bde-f9e64762d03f": {
-              "879c752d-3302-40bd-8104-110a5abda395": {}
+            "c9078190-b243-404f-a0b0-b43dd75b1364": {
+              "0ab0c723-793b-48a1-87d5-d64267665bd3": {}
             }
           }
         },
@@ -93,6 +99,20 @@
           "d293caee-efa3-41e7-84f9-084b15fe44e6": {
             "cd9c6066-102e-4478-9907-582b7cd953d2": {
               "cf2ad35e-cfac-4c59-ab25-30a4dd08111f": {}
+            }
+          }
+        },
+        "c9078190-b243-404f-a0b0-b43dd75b1364": {
+          "7adbf554-0042-42c0-90b4-03b5d1406a88": {
+            "e08742c5-f291-462a-8bde-f9e64762d03f": {
+              "879c752d-3302-40bd-8104-110a5abda395": {}
+            }
+          }
+        },
+        "5f141ba1-edf1-4636-8fe7-8040360fdcd9": {
+          "b73a3075-cfcf-4981-b23f-95d3b18de8a6": {
+            "e08742c5-f291-462a-8bde-f9e64762d03f": {
+              "abc200e1-a89d-45b4-9ed8-f14993fc6aed": {}
             }
           }
         }
@@ -135,7 +155,12 @@
     "question": null,
     "answer": null,
     "openAI": null,
-    "davinci": null
+    "davinci": null,
+    "chat": null,
+    "gpt": null,
+    "chatgpt": null,
+    "open": null,
+    "ai": null
   },
   "attributes": {
     "locked": true

@@ -38,9 +38,7 @@
           ],
           "name": "register webhook -  FILL IT!!!",
           "prototype": "abdf3344-9a54-46b2-959a-0efdf9e193e1",
-          "params": {
-            "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": "{\n  \"url\": \"WEBHOOK URL\"\n}"
-          },
+          "params": {},
           "description": "The webhook url for registration  has to be set in the data port.\n\nEg:\n```\n{\"url\": \"WEBHOOK URL\"}\n```"
         },
         "db7d1bd3-7973-4197-a04b-1ce64735e2ab": {
@@ -122,7 +120,7 @@
           "name": "log missing bot params",
           "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
           "params": {
-            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nBOT PARAMS!!!\\n!!!!!!!!!!!!\\n\""
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING BOT PARAMS!!!\\n!!!!!!!!!!!!\\n\""
           }
         }
       },

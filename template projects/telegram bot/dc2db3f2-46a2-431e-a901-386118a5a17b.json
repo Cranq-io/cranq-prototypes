@@ -1,6 +1,6 @@
 {
   "attributes": {
-    "root": true, 
+    "root": true,
     "template": true
   },
   "description": "Basic telegram webhook with registration.\n\nThe webhook send back the message.\n\nPrecondition is a bot token.\nMore: https://core.telegram.org/bots/tutorial#obtain-your-bot-token",
@@ -105,8 +105,8 @@
         },
         "eec52cda-8abf-4556-8974-53d11137fe5e": {
           "coordinates": [
-            -429,
-            88.5
+            -558,
+            182.5
           ],
           "name": "bot params - FILL IT!!!",
           "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
@@ -114,13 +114,33 @@
         },
         "50674a1f-ab36-4df5-9dd0-f2e053bcd904": {
           "coordinates": [
-            -260,
-            510.5
+            -427,
+            573.5
           ],
           "name": "log missing bot params",
           "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
           "params": {
             "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING BOT PARAMS!!!\\n!!!!!!!!!!!!\\n\""
+          }
+        },
+        "18f189d3-99b8-4805-b78a-1353832a4397": {
+          "coordinates": [
+            -477,
+            96.5
+          ],
+          "name": "webhook data - FILL IT!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "description": "Set the token which was given by the BotFather.\n\n\nSet the webhook url for registration \nEg:\n```\n{\"url\": \"WEBHOOK URL\"}\n\n\n"
+        },
+        "dc5f4ec4-054d-4574-863a-bfdef3420987": {
+          "coordinates": [
+            -298,
+            472.5
+          ],
+          "name": "log missing webhook data",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING WEBHOOK DATA!!!\\n!!!!!!!!!!!!\\n\""
           }
         }
       },
@@ -194,6 +214,9 @@
             },
             "eec52cda-8abf-4556-8974-53d11137fe5e": {
               "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "18f189d3-99b8-4805-b78a-1353832a4397": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
             }
           }
         },
@@ -216,6 +239,18 @@
             },
             "a836782b-4eab-464b-b7aa-c9927da815d4": {
               "543f8ad2-7755-44f6-bc9b-e6208c87b15a": {}
+            }
+          }
+        },
+        "18f189d3-99b8-4805-b78a-1353832a4397": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "67b8d39e-a115-4d64-b705-c5ad1ac67ab6": {
+              "3822be7d-2186-45b8-a4f2-8a4fc15f9dad": {}
+            }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "dc5f4ec4-054d-4574-863a-bfdef3420987": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
             }
           }
         }

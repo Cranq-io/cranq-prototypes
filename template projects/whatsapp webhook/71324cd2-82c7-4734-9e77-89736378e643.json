@@ -3,7 +3,7 @@
     "root": true,
     "template": true
   },
-  "description": "Basic Whatsapp webhook with verify endpoint.\n\nPrecondtion is a configured webhook in facebook developer portal. More: https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+  "description": "Basic Whatsapp webhook with verify endpoint.\n\nPrecondtion is a configured webhook in facebook developer portal. More: https://developers.facebook.com/docs/whatsapp/cloud-api/get-started\n\nVideo tutorial: https://www.youtube.com/watch?v=khdJKj_4KmM",
   "interface": {
     "inputs": {},
     "outputs": {}
@@ -125,6 +125,15 @@
           "params": {
             "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING HANLDE VERIFY PARAMS!!!\\n!!!!!!!!!!!!\\n\""
           }
+        },
+        "1f8e6618-e386-4a9d-8be6-fee2cb727f57": {
+          "coordinates": [
+            -403,
+            -107.5
+          ],
+          "name": "CLICK ME!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "description": "About the template: \n\nBasic Whatsapp webhook with verify endpoint.\n\nPrecondtion is a configured webhook in facebook developer portal. More: https://developers.facebook.com/docs/whatsapp/cloud-api/get-started\n\nVideo tutorial: https://www.youtube.com/watch?v=khdJKj_4KmM"
         }
       },
       "connections": {

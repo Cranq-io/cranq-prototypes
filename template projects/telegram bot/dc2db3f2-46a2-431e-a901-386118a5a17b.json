@@ -3,7 +3,7 @@
     "root": true,
     "template": true
   },
-  "description": "Basic telegram webhook with registration.\n\nThe webhook send back the message.\n\nPrecondition is a bot token.\nMore: https://core.telegram.org/bots/tutorial#obtain-your-bot-token",
+  "description": "Basic telegram webhook with registration.\n\nThe webhook send back the message.\n\nPrecondition is a bot token.\nMore: https://core.telegram.org/bots/tutorial#obtain-your-bot-token\n\nVideo tutorial: https://www.youtube.com/watch?v=lN65BTBq3eE",
   "interface": {
     "inputs": {},
     "outputs": {}
@@ -142,6 +142,15 @@
           "params": {
             "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING WEBHOOK DATA!!!\\n!!!!!!!!!!!!\\n\""
           }
+        },
+        "2f92971b-6677-473e-9a48-56ba0d7048b8": {
+          "coordinates": [
+            -678,
+            -167.5
+          ],
+          "name": "CLICK ME!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "description": "About the template: \n\nBasic telegram webhook with registration.\n\nThe webhook send back the message.\n\nPrecondition is a bot token.\nMore: https://core.telegram.org/bots/tutorial#obtain-your-bot-token\n\nVideo tutorial: https://www.youtube.com/watch?v=lN65BTBq3eE"
         }
       },
       "connections": {

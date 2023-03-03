@@ -1,0 +1,163 @@
+{
+  "attributes": {
+    "root": true,
+    "template": true
+  },
+  "description": "Build a basic prompt and ask ChatGPT.\n\nOpenAI api key is required.\n\nMore: https://openai.com/api/",
+  "interface": {
+    "inputs": {},
+    "outputs": {}
+  },
+  "implementations": {
+    "cranq": {
+      "nodes": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "coordinates": [
+            -672,
+            13
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "d227e22b-e827-4c9d-99db-f96da179bd52",
+          "name": "start"
+        },
+        "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+          "coordinates": [
+            253,
+            42
+          ],
+          "description": "",
+          "params": {},
+          "prototype": "1d2a6438-e4bd-4105-b491-cebbb4cae348",
+          "name": "log"
+        },
+        "c216dc40-6ec2-48d5-9975-4f5e70c90179": {
+          "coordinates": [
+            -518,
+            -116.5
+          ],
+          "name": "question -  FILL IT!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {},
+          "description": "Fill the value of the data port with your question."
+        },
+        "d39603a2-2007-4aff-ab76-0895fcc48f12": {
+          "coordinates": [
+            -459,
+            92.5
+          ],
+          "name": "ChatGPT api key- FILL IT!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "params": {},
+          "description": "Set the OpenAI api key.\n\nExample:\n```\n\"API-KEY\"\n```\n\nHow to obtain one: https://platform.openai.com/account/api-keys\n\nHandle your api key as a secret. \n\nRecommended solution is storing in evironment variable.\n\nMore: https://docs.cranq.io/toolbox/using-environment-variables"
+        },
+        "4fb3dd43-53a8-4e16-a772-b0c99a18f0d7": {
+          "coordinates": [
+            -418,
+            -213.5
+          ],
+          "name": "build prompt",
+          "prototype": "7d656b61-f5f9-445d-ab75-e7bbeeb32062",
+          "params": {
+            "c82ab3aa-ab45-4819-9a81-0747863c5b7e": "\"I will give you a prompt. Your task is to respond to it.  Prompt: \""
+          },
+          "description": "It contains instruction to the ChatGPT."
+        },
+        "5d1499f8-0a90-4795-bd4d-fe418d8a69a4": {
+          "coordinates": [
+            -285,
+            244.5
+          ],
+          "name": "log missing chatgpt api key",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING CHATGPT API KEY!!!\\n!!!!!!!!!!!!\\n\""
+          }
+        },
+        "cb5775b3-6d43-44cd-8667-175f82e19e29": {
+          "coordinates": [
+            -364,
+            -59.5
+          ],
+          "name": "log missing question",
+          "prototype": "0cffaed3-aa41-4adc-a4f1-32f0c7313660",
+          "params": {
+            "a47305ec-75e3-43d6-84cf-54f5d04fa823": "\"\\n!!!!!!!!!!!!\\nMISSING QUESTION!!!\\n!!!!!!!!!!!!\\n\""
+          }
+        },
+        "fdeaba03-37af-441c-875a-2c53734383ad": {
+          "coordinates": [
+            -33,
+            -67.5
+          ],
+          "name": "ask ChatGPT",
+          "prototype": "05e5a443-51ba-4e60-9ce6-f923963c5c21"
+        },
+        "35938c3a-0924-4ef4-8c9d-bb9853b81818": {
+          "coordinates": [
+            -659,
+            -190.5
+          ],
+          "name": "CLICK ME!!!",
+          "prototype": "485b6519-9402-4e78-8599-47ad52c92b2f",
+          "description": "About the template: \n\nBuild a basic prompt and ask ChatGPT.\n\nOpenAI api key is required.\n\nMore: https://openai.com/api/\n"
+        }
+      },
+      "connections": {
+        "8253ddd3-0709-42eb-b91e-309f5d3acf43": {
+          "fb159194-7413-4b61-9b9a-f6bbfd3d7977": {
+            "c216dc40-6ec2-48d5-9975-4f5e70c90179": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            },
+            "d39603a2-2007-4aff-ab76-0895fcc48f12": {
+              "0b28df10-b056-4666-ae14-2357d747f7b9": {}
+            }
+          }
+        },
+        "d39603a2-2007-4aff-ab76-0895fcc48f12": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "fdeaba03-37af-441c-875a-2c53734383ad": {
+              "8237fcf6-04af-4582-96ce-81d8c660f71e": {}
+            }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "5d1499f8-0a90-4795-bd4d-fe418d8a69a4": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          }
+        },
+        "c216dc40-6ec2-48d5-9975-4f5e70c90179": {
+          "e7a0df14-dc8c-41bd-8aba-367fdb468ce3": {
+            "4fb3dd43-53a8-4e16-a772-b0c99a18f0d7": {
+              "6b3b4622-93d9-49c8-ac1e-89af0e30731d": {}
+            }
+          },
+          "e3876be5-e8c8-4983-b770-81fc8cdf5ff5": {
+            "cb5775b3-6d43-44cd-8667-175f82e19e29": {
+              "e466ea21-7500-4746-9676-2255590b6b93": {}
+            }
+          }
+        },
+        "4fb3dd43-53a8-4e16-a772-b0c99a18f0d7": {
+          "9958bb0a-dc6f-45d1-9b73-c1c719192c59": {
+            "fdeaba03-37af-441c-875a-2c53734383ad": {
+              "77151a8d-f339-4d97-ac15-e6cdd6a9a0cb": {}
+            }
+          }
+        },
+        "fdeaba03-37af-441c-875a-2c53734383ad": {
+          "b362d0b8-194a-4d53-8893-3b3d3f7c4b7f": {
+            "79688e50-8550-40b8-afea-3c7497fcb9f3": {
+              "73758fba-7b0c-4ea6-8fec-0b56982d5451": {}
+            }
+          }
+        }
+      },
+      "forwards": {
+        "inputs": {},
+        "outputs": {}
+      }
+    }
+  },
+  "name": "template projects/ChatGPT"
+}

@@ -96,7 +96,7 @@
   },
   "name": "sdks/azure/Speech synthesizer (to WAV file output)",
   "iconId": "9f0828c8-d759-4f8e-81e4-68bdfc2e8759",
-  "description": "Creates a synthesized speech recording as a WAV file on the local filesystem from the received.",
+  "description": "Creates a synthesized speech (using Azure Cognitive Service) recording as a WAV file on the local filesystem from the received text.",
   "keywords": {
     "speech": null,
     "text": null,
@@ -106,6 +106,7 @@
     "text to speech": null
   },
   "attributes": {
+    "featured": true,
     "locked": true
   }
 }

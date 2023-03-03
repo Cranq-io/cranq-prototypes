@@ -86,17 +86,20 @@
       }
     }
   },
-  "description": "Extracts text from speech recording supplied as a WAV file on the local filesystem.",
+  "description": "Extracts text (using Azure Cognitive Service) from speech recording supplied as a WAV file on the local filesystem.",
   "keywords": {
     "speech": null,
     "text": null,
     "transcribe": null,
     "transcription": null,
     "recognition": null,
-    "language": null
+    "language": null,
+    "speech to text": null,
+    "voice": null
   },
   "iconId": "9f0828c8-d759-4f8e-81e4-68bdfc2e8759",
   "attributes": {
+    "featured": true,
     "locked": true
   }
 }
